@@ -13,7 +13,7 @@ const MenuFilled = (props: SVGProps<SVGSVGElement>) => {
         d="M10.75 15.75a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1zm-7.5-6a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1z"
       />
       <path
-        fill="#8A8F99"
+        fill={props.color ? 'currentColor' : '#8A8F99'}
         d="M3.25 15.75a1 1 0 0 1-1-1v-2.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1zm6.5-12.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"
       />
     </svg>

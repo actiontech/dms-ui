@@ -1,5 +1,11 @@
 {
   "icon": 16,
   "typescript": true,
-  "jsxRuntime": "automatic"
+  "jsxRuntime": "automatic",
+  "replaceAttrValues": {
+    "#F66074": "{props.color ? 'currentColor' : '#F66074'}",
+    "#EBAD1C": "{props.color ? 'currentColor' : '#EBAD1C'}",
+    "#8A8F99": "{props.color ? 'currentColor' : '#8A8F99'}",
+    "#4583FF": "{props.color ? 'currentColor' : '#4583FF'}"
+  }
 }

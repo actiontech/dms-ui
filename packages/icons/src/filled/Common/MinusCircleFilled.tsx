@@ -9,7 +9,7 @@ const MinusCircleFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#F66074"
+        fill={props.color ? 'currentColor' : '#F66074'}
         d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
       />
     </svg>
