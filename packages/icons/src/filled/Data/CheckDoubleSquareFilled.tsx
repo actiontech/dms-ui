@@ -18,7 +18,13 @@ const CheckDoubleSquareFilled = (props: SVGProps<SVGSVGElement>) => {
         rx={1.5}
       />
       <rect width={18} height={18} x={2} y={4} fill="currentColor" rx={2} />
-      <path stroke="#fff" d="m7.8 13 2.475 2.475 4.243-4.243" />
+      <path
+        stroke="#fff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="m7.8 13 2.475 2.475 4.243-4.243"
+      />
     </svg>
   );
 };

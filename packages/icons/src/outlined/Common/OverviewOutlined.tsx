@@ -9,7 +9,7 @@ const OverviewOutlined = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#C3C6CD"
+        fill={props.color ? 'currentColor' : '#C3C6CD'}
         d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
       />
       <path

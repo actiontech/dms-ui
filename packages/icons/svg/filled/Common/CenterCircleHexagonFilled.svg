@@ -1,6 +1,6 @@
 <!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx -->
 <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-  <path fillRule="evenodd" clipRule="evenodd"
+  <path fill-rule="evenodd" clip-rule="evenodd"
     d="M16.125 4.875L9 0.75L1.875 4.875V13.125L9 17.25L16.125 13.125V4.875ZM9 12.75C11.0711 12.75 12.75 11.0711 12.75 9C12.75 6.92893 11.0711 5.25 9 5.25C6.92893 5.25 5.25 6.92893 5.25 9C5.25 11.0711 6.92893 12.75 9 12.75Z"
     fill="#C3C6CD" />
 

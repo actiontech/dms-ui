@@ -12,6 +12,9 @@ const TrendCardFilled = (props: SVGProps<SVGSVGElement>) => {
       <rect width={20} height={17} x={2} y={5} rx={2} />
       <path
         stroke="#fff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
         d="m16.243 12.088-2.829 2.829-2.828-2.829-2.829 2.829"
       />
     </svg>

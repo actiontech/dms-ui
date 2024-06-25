@@ -9,7 +9,7 @@ const OperateAuditFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#C3C6CD"
+        fill={props.color ? 'currentColor' : '#C3C6CD'}
         d="M3 1.5h11.25a.75.75 0 0 1 .75.75v6a3.75 3.75 0 0 0-6 3c.007.517.119 1.028.33 1.5A2.25 2.25 0 0 0 7.5 15v1.5H3a.75.75 0 0 1-.75-.75V2.25A.75.75 0 0 1 3 1.5M6 9h2.25V7.5H6zm0-3h5.25V4.5H6z"
       />
       <path

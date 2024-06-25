@@ -1,5 +1,5 @@
 <!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/base/src/icon/sideMenu.tsx -->
 <svg width="14" height="14" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="6" cy="6" r="2.5" fill="#F66074" />
-  <circle cx="6" cy="6" r="4" stroke="#F66074" strokeOpacity="0.2" strokeWidth="3" />
+  <circle cx="6" cy="6" r="4" stroke="#F66074" stroke-opacity="0.2" stroke-width="3" />
 </svg>

@@ -3,8 +3,8 @@
   <path
     d="M1 1L9 5L17 1"
     stroke="#E6E4E3"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
   />
 </svg>

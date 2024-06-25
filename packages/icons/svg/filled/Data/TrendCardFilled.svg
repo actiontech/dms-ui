@@ -2,6 +2,6 @@
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <rect opacity="0.5" x="5" y="2" width="14" height="16" rx="1.5" />
   <rect x="2" y="5" width="20" height="17" rx="2" />
-  <path d="M16.2426 12.0884L13.4142 14.9169L10.5858 12.0884L7.75736 14.9169" stroke="white" strokeWidth="2"
-    strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M16.2426 12.0884L13.4142 14.9169L10.5858 12.0884L7.75736 14.9169" stroke="white" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round" />
 </svg>

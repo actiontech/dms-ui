@@ -9,8 +9,14 @@ const ClockCircleFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <circle cx={12} cy={12} r={11} fill="currentColor" />
-      <circle cx={12} cy={12} r={10} stroke="#fff" />
-      <path stroke="#fff" d="M12 7.5V12h3.5" />
+      <circle cx={12} cy={12} r={10} stroke="#fff" strokeWidth={2} />
+      <path
+        stroke="#fff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M12 7.5V12h3.5"
+      />
     </svg>
   );
 };
