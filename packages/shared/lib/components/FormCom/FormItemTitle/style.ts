@@ -16,6 +16,10 @@ export const FormItemBigTitleStyleWrapper = styled(Typography.Title)`
     border-radius: 6px;
     padding: 3px 4px;
     margin-right: 16px;
+    svg {
+      width: 32px;
+      height: 32px;
+    }
 
     .custom-icon {
       display: flex;
