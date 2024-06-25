@@ -3,10 +3,9 @@ import { Space } from 'antd';
 import { useBoolean } from 'ahooks';
 import { DrawerFormIconWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicInput, EmptyBox, BasicToolTips } from '@actiontech/shared';
-import { IconCommonEdit } from '@actiontech/shared/lib/Icon';
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
-import { IconFormListDelete } from '@actiontech/shared/lib/Icon';
 import { useTranslation } from 'react-i18next';
+import { EditFilled, MinusCircleFilled } from '@actiontech/icons';
 
 type BusinessListFieldProps = {
   value?: string;
@@ -51,7 +50,7 @@ const BusinessListField: React.FC<BusinessListFieldProps> = ({
               onClick={() => {
                 showField();
               }}
-              icon={<IconCommonEdit />}
+              icon={<EditFilled />}
               className="edit-button"
             />
           </Space>
@@ -73,14 +72,14 @@ const BusinessListField: React.FC<BusinessListFieldProps> = ({
             <DrawerFormIconWrapper
               className="delete-button-disabled"
               disabled
-              icon={<IconFormListDelete />}
+              icon={<MinusCircleFilled />}
             />
           </BasicToolTips>
         }
       >
         <DrawerFormIconWrapper
           onClick={onDelete}
-          icon={<IconFormListDelete />}
+          icon={<MinusCircleFilled />}
           className="delete-button"
         />
       </EmptyBox>

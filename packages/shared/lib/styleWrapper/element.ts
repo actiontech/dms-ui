@@ -129,6 +129,10 @@ export const TableColumnWithIconStyleWrapper = styled('div')`
   display: flex;
   align-items: center;
 
+  svg {
+    margin-right: 12px;
+  }
+
   span {
     margin-right: 12px;
 
