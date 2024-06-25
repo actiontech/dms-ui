@@ -3,13 +3,13 @@ import {
   DEFAULT_PROJECT_NAME
 } from '@actiontech/shared/lib/data/common';
 import { Typography } from 'antd';
-import { IconProjectFlag } from 'sqle/src/icon/Rule';
 import ProjectTitle from './ProjectTitle';
 import UserMenu from './UserMenu';
 import { CEModeProjectWrapperStyleWrapper } from './style';
 import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import MenuList from './MenuList';
+import { FlagFilled } from '@actiontech/icons';
 
 const CESideMenu = () => {
   const { username, theme, updateTheme, isAdmin, role } = useCurrentUser();
@@ -20,7 +20,7 @@ const CESideMenu = () => {
         <ProjectTitle />
 
         <CEModeProjectWrapperStyleWrapper>
-          <IconProjectFlag />
+          <FlagFilled width={18} height={18} />
           <Typography.Text className="default-project-name">
             {DEFAULT_PROJECT_NAME}
           </Typography.Text>
