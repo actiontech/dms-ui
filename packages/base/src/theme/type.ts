@@ -95,4 +95,8 @@ export type IconTheme = {
   home: {
     common: string;
   };
+  system: {
+    basicTitleTips: string;
+    modify: string;
+  };
 };

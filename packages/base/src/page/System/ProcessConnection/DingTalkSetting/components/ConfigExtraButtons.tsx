@@ -4,10 +4,10 @@ import { useRef } from 'react';
 import { message, Space } from 'antd';
 import { BasicToolTips, BasicButton } from '@actiontech/shared';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
-import { IconTest } from '../../../../../icon/system';
 
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ThunderBoltFilled } from '@actiontech/icons';
 
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;
@@ -58,7 +58,7 @@ const ConfigExtraButtons = ({
             className="system-config-button"
             loading={testTing.current}
             disabled={testTing.current}
-            icon={<IconTest />}
+            icon={<ThunderBoltFilled />}
             onClick={testDingTalkConfiguration}
           />
         </BasicToolTips>
