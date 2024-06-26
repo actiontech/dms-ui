@@ -6,7 +6,12 @@ import {
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
-import { BasicInput, EmptyBox, ModeSwitcher } from '@actiontech/shared';
+import {
+  BasicInput,
+  BasicToolTips,
+  EmptyBox,
+  ModeSwitcher
+} from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
@@ -69,7 +74,14 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
             }
           ]}
           {...formItemLayout.fullLine}
-          label={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
+          label={
+            <BasicToolTips
+              suffixIcon
+              title={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrlTips')}
+            >
+              {t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
+            </BasicToolTips>
+          }
         >
           <BasicInput
             disabled={submitLoading}

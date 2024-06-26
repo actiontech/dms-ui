@@ -13,40 +13,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
       </div>
       <div
         class="extra"
-      >
-        <a
-          href="/project/700300/db-services/create"
-        >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
-          >
-            <span
-              class="ant-btn-icon"
-            >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
-              >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
-      </div>
+      />
     </div>
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
@@ -241,7 +208,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -276,7 +243,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -434,38 +401,63 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -696,7 +688,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -854,38 +846,63 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -1126,7 +1143,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                 <span
                   class="custom-select-placeholder-prefix"
                 >
-                  数据库类型
+                  数据源类型
                 </span>
                 <span
                   class="custom-select-placeholder-value"
@@ -1270,7 +1287,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1801,38 +1818,63 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -2073,7 +2115,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                 <span
                   class="custom-select-placeholder-prefix"
                 >
-                  数据库类型
+                  数据源类型
                 </span>
                 <span
                   class="custom-select-placeholder-value"
@@ -2217,7 +2259,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -2952,7 +2994,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -3143,7 +3185,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -3223,7 +3265,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -3407,38 +3449,63 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -3644,7 +3711,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4068,7 +4135,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                 <span
                   class="more-button-item-text"
                 >
-                  测试数据库连通性
+                  测试数据源连通性
                 </span>
               </div>
             </div>
@@ -4133,7 +4200,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                   <span
                     class="ant-modal-confirm-title"
                   >
-                    数据库{{instanceName}}连通性测试失败
+                    数据源{{instanceName}}连通性测试失败
                   </span>
                   <div
                     class="ant-modal-confirm-content"
@@ -4186,38 +4253,63 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -4423,7 +4515,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4847,7 +4939,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                 <span
                   class="more-button-item-text"
                 >
-                  测试数据库连通性
+                  测试数据源连通性
                 </span>
               </div>
             </div>
@@ -4912,7 +5004,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                   <span
                     class="ant-modal-confirm-title"
                   >
-                    数据库{{instanceName}}连通性测试失败
+                    数据源{{instanceName}}连通性测试失败
                   </span>
                   <div
                     class="ant-modal-confirm-content"
@@ -4965,38 +5057,63 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -5202,7 +5319,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -5733,38 +5850,63 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -5995,7 +6137,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -6526,38 +6668,63 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -6763,7 +6930,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -6921,38 +7088,63 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -7158,7 +7350,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -7316,38 +7508,63 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
       <div
         class="extra"
       >
-        <a
-          href="/project/700300/db-services/create"
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            type="button"
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
-            <span
-              class="ant-btn-icon"
+            <a
+              href="/project/700300/db-services/batch-import"
             >
-              <span
-                class="custom-icon custom-icon-add css-u3jcp4"
-                role="img"
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span>
+                  批量导入数据源
+                </span>
+              </button>
+            </a>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <a
+              href="/project/700300/db-services/create"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
                 >
-                  <path
-                    d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                  />
-                </svg>
-              </span>
-            </span>
-            <span>
-              添加数据源
-            </span>
-          </button>
-        </a>
+                  <span
+                    class="custom-icon custom-icon-add css-u3jcp4"
+                    role="img"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span>
+                  添加数据源
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -7553,7 +7770,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        数据库类型
+                        数据源类型
                       </th>
                       <th
                         class="ant-table-cell"

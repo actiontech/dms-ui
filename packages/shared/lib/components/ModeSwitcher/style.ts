@@ -79,6 +79,7 @@ export const ModeSwitcherItemStyleWrapper = styled('div')`
 
   &.actiontech-mode-switcher-item-disabled {
     cursor: not-allowed;
+    pointer-events: none;
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorFillTertiary};
 

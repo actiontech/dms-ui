@@ -753,7 +753,9 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -761,7 +763,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -823,7 +825,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -885,7 +887,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -947,7 +949,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -1009,7 +1011,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -1086,9 +1088,44 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
                 for="gitHttpUrl"
-                title="GIT地址"
+                title=""
               >
-                GIT地址
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    GIT地址
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span
+                      aria-label="info-circle"
+                      class="anticon anticon-info-circle tooltips-default-icon"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="info-circle"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                        />
+                        <path
+                          d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </label>
             </div>
             <div
@@ -2103,7 +2140,9 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -2111,7 +2150,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2172,7 +2211,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2234,7 +2273,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2296,7 +2335,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2358,7 +2397,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3456,7 +3495,9 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -3464,7 +3505,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3525,7 +3566,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3587,7 +3628,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3649,7 +3690,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3711,7 +3752,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4637,7 +4678,9 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -4645,7 +4688,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4707,7 +4750,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4768,7 +4811,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4830,7 +4873,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4892,7 +4935,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -5935,7 +5978,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -5943,7 +5988,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6005,7 +6050,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6067,7 +6112,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6128,7 +6173,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6190,7 +6235,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7233,7 +7278,9 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -7241,7 +7288,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7303,7 +7350,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7365,7 +7412,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7427,7 +7474,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -7488,7 +7535,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"

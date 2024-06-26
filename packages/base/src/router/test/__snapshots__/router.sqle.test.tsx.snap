@@ -462,6 +462,20 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route createSqlExecWorkflow 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlExecWorkflow"
+    >
+      <div>
+        createSqlExecWorkflow
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route list 1`] = `
 <body>
   <div>
@@ -476,21 +490,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route orderCreate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="sqlExecWorkflow"
-    >
-      <div>
-        createSqlExecWorkflow
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route orderDetail 1`] = `
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route workflow render route workflowDetail 1`] = `
 <body>
   <div>
     <div
@@ -602,6 +602,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "key": "projectImport",
         "path": "import",
       },
+      {
+        "element": <div>
+          projectBatchImportDataSource
+        </div>,
+        "key": "projectBatchImportDataSource",
+        "path": "batch-import",
+      },
     ],
     "key": "project",
     "path": "project",
@@ -637,6 +644,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
             </div>,
             "key": "dataSourceUpdate",
             "path": "update/:dbServiceUid",
+          },
+          {
+            "element": <div>
+              batchImportDataSource
+            </div>,
+            "key": "batchImportDataSource",
+            "path": "batch-import",
           },
         ],
         "element": <div

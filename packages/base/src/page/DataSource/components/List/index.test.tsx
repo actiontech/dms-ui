@@ -79,14 +79,25 @@ describe('page/DataSource/DataSourceList', () => {
 
     expect(screen.getByText('数据源列表')).toBeInTheDocument();
     expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render list no permission', async () => {
-    const { baseElement } = customRender({ role: '' });
-
-    expect(screen.getByText('数据源列表')).toBeInTheDocument();
+    const { baseElement } = customRender({ role: '', bindProjects: [] });
+    expect(screen.queryByText('添加数据源')).not.toBeInTheDocument();
+    expect(screen.queryByText('批量导入数据源')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
+
+    cleanup();
+    customRender({ role: '' });
+    expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
+
+    cleanup();
+    customRender({ bindProjects: [] });
+    expect(screen.getByText('添加数据源')).toBeInTheDocument();
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
   });
 
   it('render table for api return no data', async () => {
@@ -354,13 +365,13 @@ describe('page/DataSource/DataSourceList', () => {
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(screen.getByText('测试数据库连通性')).toBeInTheDocument();
-      fireEvent.click(screen.getByText('测试数据库连通性'));
+      expect(screen.getByText('测试数据源连通性')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('测试数据源连通性'));
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestTestConnect).toHaveBeenCalled();
-      expect(screen.getByText('数据库连通性测试成功')).toBeInTheDocument();
+      expect(screen.getByText('数据源连通性测试成功')).toBeInTheDocument();
     });
 
     it('render table for test connect action error', async () => {
@@ -383,8 +394,8 @@ describe('page/DataSource/DataSourceList', () => {
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(screen.getByText('测试数据库连通性')).toBeInTheDocument();
-      fireEvent.click(screen.getByText('测试数据库连通性'));
+      expect(screen.getByText('测试数据源连通性')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('测试数据源连通性'));
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
@@ -412,8 +423,8 @@ describe('page/DataSource/DataSourceList', () => {
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
       await act(async () => jest.advanceTimersByTime(300));
-      expect(screen.getByText('测试数据库连通性')).toBeInTheDocument();
-      fireEvent.click(screen.getByText('测试数据库连通性'));
+      expect(screen.getByText('测试数据源连通性')).toBeInTheDocument();
+      fireEvent.click(screen.getByText('测试数据源连通性'));
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
@@ -435,7 +446,7 @@ describe('page/DataSource/DataSourceList', () => {
       });
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestTableList).toHaveBeenCalled();
-      expect(screen.getAllByText('测试数据库连通性').length).toBe(2);
+      expect(screen.getAllByText('测试数据源连通性').length).toBe(2);
       expect(baseElement).toMatchSnapshot();
     });
   });

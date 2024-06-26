@@ -11,11 +11,13 @@ import { BasicSelect, EmptyBox, ModeSwitcher } from '@actiontech/shared';
 import { sqlExecModeOptions } from '../index.data';
 import { useTranslation } from 'react-i18next';
 import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
-import { Form } from 'antd';
+import { Form, Tooltip } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useEffect } from 'react';
+import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   fieldPrefixPath,
@@ -30,6 +32,14 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
     form
   );
 
+  const disabledSqlFileExecMode =
+    !isSupportFileModeExecuteSql ||
+    ![
+      AuditTaskResV1SqlSourceEnum.sql_file,
+      AuditTaskResV1SqlSourceEnum.zip_file
+    ].includes(currentSqlUploadType);
+
+  // #if [ee]
   const isSupportsFileSortUpload =
     currentSqlUploadType === AuditTaskResV1SqlSourceEnum.zip_file &&
     currentExecuteMode === CreateAuditTasksGroupReqV1ExecModeEnum.sql_file;
@@ -53,15 +63,20 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
       ready: isSupportsFileSortUpload
     }
   );
+  // #endif
+
+  useEffect(() => {
+    if (disabledSqlFileExecMode) {
+      form.setFieldValue(
+        [fieldPrefixPath, 'exec_mode'],
+        CreateAuditTasksGroupReqV1ExecModeEnum.sqls
+      );
+    }
+  }, [fieldPrefixPath, form, disabledSqlFileExecMode]);
 
   return (
     <EmptyBox
-      if={
-        [
-          AuditTaskResV1SqlSourceEnum.sql_file,
-          AuditTaskResV1SqlSourceEnum.zip_file
-        ].includes(currentSqlUploadType) && isSupportFileModeExecuteSql
-      }
+      if={currentSqlUploadType !== AuditTaskResV1SqlSourceEnum.form_data}
     >
       <FormItemLabel
         className="has-label-tip form-item-label-mb-16"
@@ -79,13 +94,43 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
           </div>
         }
       />
-      <FormItemNoLabel
-        name={[fieldPrefixPath, 'exec_mode']}
-        initialValue={CreateAuditTasksGroupReqV1ExecModeEnum.sqls}
+      <EmptyBox
+        if={disabledSqlFileExecMode}
+        defaultNode={
+          <FormItemNoLabel
+            initialValue={CreateAuditTasksGroupReqV1ExecModeEnum.sqls}
+            name={[fieldPrefixPath, 'exec_mode']}
+          >
+            <ModeSwitcher
+              data-testid="exec-mode-selector"
+              rowProps={{ gutter: 10 }}
+              options={sqlExecModeOptions}
+            />
+          </FormItemNoLabel>
+        }
       >
-        <ModeSwitcher rowProps={{ gutter: 10 }} options={sqlExecModeOptions} />
-      </FormItemNoLabel>
+        <Tooltip
+          className="full-width-element"
+          trigger="hover"
+          {...tooltipsCommonProps(
+            t('execWorkflow.create.form.sqlInfo.execModeDisabledTips')
+          )}
+        >
+          <FormItemNoLabel
+            initialValue={CreateAuditTasksGroupReqV1ExecModeEnum.sqls}
+            name={[fieldPrefixPath, 'exec_mode']}
+          >
+            <ModeSwitcher
+              data-testid="exec-mode-selector"
+              disabled={disabledSqlFileExecMode}
+              rowProps={{ gutter: 10 }}
+              options={sqlExecModeOptions}
+            />
+          </FormItemNoLabel>
+        </Tooltip>
+      </EmptyBox>
 
+      {/* #if [ee] */}
       {isSupportsFileSortUpload && (
         <FormItemLabel
           label={t('execWorkflow.create.form.sqlInfo.selectFileSortMethod')}
@@ -97,6 +142,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
           />
         </FormItemLabel>
       )}
+      {/* #endif */}
     </EmptyBox>
   );
 };

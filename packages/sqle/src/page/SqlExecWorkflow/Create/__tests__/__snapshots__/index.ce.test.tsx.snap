@@ -577,7 +577,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -761,6 +761,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -768,7 +769,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -829,7 +830,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -891,7 +892,7 @@ exports[`sqle/SqlExecWorkflow/Create ce should snapshot render initial workflow 
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"

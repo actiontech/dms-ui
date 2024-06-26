@@ -99,6 +99,16 @@ describe('base/router-base-ee', () => {
         expect(baseElement).toMatchSnapshot();
       });
 
+      it('render route batchImportDataSource', async () => {
+        const { baseElement } = customRender([
+          `/project/${projectID}/db-services/batch-import`
+        ]);
+
+        await act(async () => jest.advanceTimersByTime(0));
+        expect(screen.getByText('batchImportDataSource')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+
       it('render router cloud-beaver', async () => {
         const { baseElement } = customRender([
           `/project/${projectID}/cloud-beaver`
@@ -123,6 +133,15 @@ describe('base/router-base-ee', () => {
         const { baseElement } = customRender(['/project/import']);
 
         expect(screen.getByText('projectImport')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+
+      it('render router batch projectBatchImportDataSource', async () => {
+        const { baseElement } = customRender(['/project/batch-import']);
+
+        expect(
+          screen.getByText('projectBatchImportDataSource')
+        ).toBeInTheDocument();
         expect(baseElement).toMatchSnapshot();
       });
     });
