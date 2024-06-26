@@ -23,6 +23,7 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('sqle/SqlExecWorkflow/Create', () => {
   const projectName = mockProjectInfo.projectName;
@@ -128,7 +129,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(
-      screen.getByText('测试数据库连通性').closest('button')
+      screen.getByText('测试数据源连通性').closest('button')
     ).toBeDisabled();
 
     // select instance
@@ -142,10 +143,10 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
-      screen.getByText('测试数据库连通性').closest('button')
+      screen.getByText('测试数据源连通性').closest('button')
     ).not.toBeDisabled();
 
-    fireEvent.click(screen.getByText('测试数据库连通性'));
+    fireEvent.click(screen.getByText('测试数据源连通性'));
     expect(batchCheckInstanceIsConnectableByName).toHaveBeenCalledTimes(1);
     expect(batchCheckInstanceIsConnectableByName).toHaveBeenNthCalledWith(1, {
       project_name: projectName,
@@ -153,11 +154,11 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(screen.queryByText('数据库连通性测试成功')).toBeInTheDocument();
+    expect(screen.queryByText('数据源连通性测试成功')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('重 置'));
 
-    expect(screen.queryByText('数据库连通性测试成功')).not.toBeInTheDocument();
+    expect(screen.queryByText('数据源连通性测试成功')).not.toBeInTheDocument();
 
     expect(getBySelector('#workflow_subject')).toHaveValue('');
     expect(getBySelector('#desc')).toHaveValue('');
@@ -689,5 +690,66 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(requestAuditTask).not.toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should clear exec_mode data when disabled execute mode selector', async () => {
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.change(getBySelector('#workflow_subject', baseElement), {
+      target: {
+        value: 'workflow_name_3'
+      }
+    });
+
+    const instanceNameEle = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    const instanceNameLabel = `${instanceTipsMockData[2].instance_name}(${instanceTipsMockData[2].host}:${instanceTipsMockData[2].port})`;
+    expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+      await act(async () => jest.advanceTimersByTime(3000));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 上传SQL文件
+    fireEvent.click(screen.getByText('上传SQL文件'));
+    await act(async () => jest.advanceTimersByTime(300));
+
+    expect(screen.queryByText('选择上线模式')).toBeInTheDocument();
+    expect(
+      queryBySelector('.actiontech-mode-switcher-item-disabled')
+    ).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('文件模式'));
+
+    fireEvent.click(screen.getByText('输入SQL语句'));
+    await act(async () => jest.advanceTimersByTime(0));
+    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
+    fireEvent.change(monacoEditor, {
+      target: { value: 'select * from user' }
+    });
+
+    // audit btn
+    await act(async () => {
+      fireEvent.click(screen.getByText('审 核'));
+      await act(async () => jest.advanceTimersByTime(0));
+    });
+    expect(requestAuditTask).toHaveBeenCalled();
+    expect(requestAuditTask).toHaveBeenCalledWith({
+      instances: [{ instance_name: 'xin-test-database' }],
+      project_name: projectName
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledWith({
+      task_group_id: 99,
+      sql: 'select * from user'
+    });
   });
 });

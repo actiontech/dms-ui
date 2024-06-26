@@ -483,6 +483,41 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
@@ -540,7 +575,9 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -548,7 +585,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -610,7 +647,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -672,7 +709,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -734,7 +771,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -796,7 +833,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -1926,6 +1963,41 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               </div>
             </div>
           </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
@@ -1983,7 +2055,9 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -1991,7 +2065,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2052,7 +2126,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2114,7 +2188,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2176,7 +2250,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2238,7 +2312,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3291,6 +3365,41 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
@@ -3348,7 +3457,9 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -3356,7 +3467,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3418,7 +3529,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3479,7 +3590,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3541,7 +3652,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3603,7 +3714,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4668,6 +4779,41 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
@@ -4725,7 +4871,9 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -4733,7 +4881,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4795,7 +4943,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4857,7 +5005,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4918,7 +5066,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -4980,7 +5128,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6045,6 +6193,41 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
+              </div>
+            </div>
+          </div>
         </div>
         <div
           class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
@@ -6102,7 +6285,9 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -6110,7 +6295,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6172,7 +6357,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6234,7 +6419,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6296,7 +6481,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6357,7 +6542,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-5exgjg"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"

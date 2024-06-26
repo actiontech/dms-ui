@@ -670,7 +670,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -879,6 +879,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           >
                             <div
                               class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                              id="0_currentUploadType"
                               style="margin-left: -6px; margin-right: -6px;"
                             >
                               <div
@@ -886,7 +887,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -947,7 +948,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -1009,7 +1010,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -3059,7 +3060,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -3268,6 +3269,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           >
                             <div
                               class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                              id="0_currentUploadType"
                               style="margin-left: -6px; margin-right: -6px;"
                             >
                               <div
@@ -3275,7 +3277,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -3336,7 +3338,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -3398,7 +3400,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -5474,7 +5476,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     type="button"
                                   >
                                     <span>
-                                      测试数据库连通性
+                                      测试数据源连通性
                                     </span>
                                   </button>
                                 </div>
@@ -5683,6 +5685,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                                  id="0_currentUploadType"
                                   style="margin-left: -6px; margin-right: -6px;"
                                 >
                                   <div
@@ -5690,7 +5693,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -5751,7 +5754,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -5813,7 +5816,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -6700,7 +6703,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -6909,6 +6912,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           >
                             <div
                               class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                              id="0_currentUploadType"
                               style="margin-left: -6px; margin-right: -6px;"
                             >
                               <div
@@ -6916,7 +6920,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -6977,7 +6981,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -7039,7 +7043,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 style="padding-left: 6px; padding-right: 6px;"
                               >
                                 <div
-                                  class="actiontech-mode-switcher-item css-1x7j8vu"
+                                  class="actiontech-mode-switcher-item css-5exgjg"
                                 >
                                   <span
                                     class="actiontech-mode-switcher-item-icon"
@@ -9612,7 +9616,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     type="button"
                                   >
                                     <span>
-                                      测试数据库连通性
+                                      测试数据源连通性
                                     </span>
                                   </button>
                                 </div>
@@ -9821,6 +9825,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                                  id="0_currentUploadType"
                                   style="margin-left: -6px; margin-right: -6px;"
                                 >
                                   <div
@@ -9828,7 +9833,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -9890,7 +9895,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -9951,7 +9956,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 6px; padding-right: 6px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -10305,6 +10310,8 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                                  data-testid="exec-mode-selector"
+                                  id="0_exec_mode"
                                   style="margin-left: -5px; margin-right: -5px;"
                                 >
                                   <div
@@ -10312,7 +10319,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 5px; padding-right: 5px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -10373,7 +10380,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     style="padding-left: 5px; padding-right: 5px;"
                                   >
                                     <div
-                                      class="actiontech-mode-switcher-item css-1x7j8vu"
+                                      class="actiontech-mode-switcher-item css-5exgjg"
                                     >
                                       <span
                                         class="actiontech-mode-switcher-item-icon"
@@ -11133,7 +11140,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -11317,6 +11324,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -11324,7 +11332,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -11385,7 +11393,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -11447,7 +11455,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -12405,7 +12413,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -12589,6 +12597,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -12596,7 +12605,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -12657,7 +12666,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -12719,7 +12728,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -13985,7 +13994,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -14169,6 +14178,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -14176,7 +14186,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -14237,7 +14247,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -14299,7 +14309,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -15569,7 +15579,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -15753,6 +15763,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -15760,7 +15771,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -15821,7 +15832,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -15883,7 +15894,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -17613,7 +17624,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -17797,6 +17808,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -17804,7 +17816,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -17865,7 +17877,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -17927,7 +17939,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -18843,7 +18855,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                                 type="button"
                               >
                                 <span>
-                                  测试数据库连通性
+                                  测试数据源连通性
                                 </span>
                               </button>
                             </div>
@@ -19027,6 +19039,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -19034,7 +19047,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -19096,7 +19109,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -19157,7 +19170,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -19511,6 +19524,8 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            data-testid="exec-mode-selector"
+                            id="0_exec_mode"
                             style="margin-left: -5px; margin-right: -5px;"
                           >
                             <div
@@ -19518,7 +19533,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -19579,7 +19594,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                               style="padding-left: 5px; padding-right: 5px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item css-1x7j8vu"
+                                class="actiontech-mode-switcher-item css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"

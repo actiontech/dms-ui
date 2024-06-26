@@ -63,7 +63,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         name={currentUploadTypeFieldName}
         initialValue={defaultUploadTypeOptions[0].value}
       >
-        <ModeSwitcher<AuditTaskResV1SqlSourceEnum>
+        <ModeSwitcher
           rowProps={{ gutter: 12 }}
           options={defaultUploadTypeOptions}
           onChange={uploadTypeChangeHandle}
@@ -76,13 +76,11 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         fieldPrefixPath={fieldPrefixPath}
       />
 
-      {/* #if [ee] */}
       <SqlExecModeSelector
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
         isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
       />
-      {/* #endif */}
 
       <SqlFormatterAndSubmitter
         currentSqlUploadType={currentUploadType}

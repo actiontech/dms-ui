@@ -11,6 +11,24 @@ import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import { RingProgressConfig } from '@ant-design/plots';
+
+jest.mock('@ant-design/plots', () => {
+  return {
+    ...jest.requireActual('@ant-design/plots'),
+    RingProgress: jest
+      .requireActual('@ant-design/plots')
+      .RingProgressWithCustomRenderCalled({
+        statistic: {
+          title: {
+            customHtml: (props: RingProgressConfig) => {
+              return [null, null, { percent: props.percent }];
+            }
+          }
+        }
+      })
+  };
+});
 
 jest.mock('react-router-dom', () => {
   return {

@@ -171,6 +171,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -178,7 +179,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -239,7 +240,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -301,7 +302,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -1068,6 +1069,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -1075,7 +1077,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -1136,7 +1138,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -1198,7 +1200,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -1959,6 +1961,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -1966,7 +1969,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -2027,7 +2030,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -2089,7 +2092,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -3115,6 +3118,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -3122,7 +3126,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -3183,7 +3187,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
@@ -3245,7 +3249,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"

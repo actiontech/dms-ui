@@ -44,7 +44,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       'instance_name',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_task_instance_name',
+        filterKey: 'filter_task_instance_id',
         filterLabel: t('execWorkflow.list.dataSource'),
         checked: false
       }

@@ -131,9 +131,9 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="type"
-                  title="数据库类型"
+                  title="数据源类型"
                 >
-                  数据库类型
+                  数据源类型
                 </label>
               </div>
               <div
@@ -174,7 +174,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         <span
                           class="ant-select-selection-placeholder"
                         >
-                          请选择数据库类型
+                          请选择数据源类型
                         </span>
                       </div>
                       <span
@@ -221,9 +221,9 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="ip"
-                  title="数据库地址"
+                  title="数据源地址"
                 >
-                  数据库地址
+                  数据源地址
                 </label>
               </div>
               <div
@@ -239,7 +239,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                       aria-required="true"
                       class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                       id="ip"
-                      placeholder="请输入数据库IP或域名"
+                      placeholder="请输入数据源IP或域名"
                       type="text"
                       value=""
                     />
@@ -260,9 +260,9 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="port"
-                  title="数据库端口"
+                  title="数据源端口"
                 >
-                  数据库端口
+                  数据源端口
                 </label>
               </div>
               <div
@@ -278,7 +278,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                       aria-required="true"
                       class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                       id="port"
-                      placeholder="请输入数据库端口"
+                      placeholder="请输入数据源端口"
                       type="text"
                       value="NaN"
                     />
@@ -430,7 +430,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                           type="button"
                         >
                           <span>
-                            测试数据库连通性
+                            测试数据源连通性
                           </span>
                         </button>
                       </div>

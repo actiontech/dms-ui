@@ -170,6 +170,18 @@ describe('base/router-sqle-ce', () => {
           expect(baseElement).toMatchSnapshot();
           expect(screen.getByText('workflowDetail')).toBeInTheDocument();
         });
+
+        it('render SQLFileStatementOverview', async () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/exec-workflow/123/files/434/sqls`
+          ]);
+
+          await act(async () => jest.advanceTimersByTime(300));
+          expect(baseElement).toMatchSnapshot();
+          expect(
+            screen.getByText('workflowSQLFileStatementOverview')
+          ).toBeInTheDocument();
+        });
       });
 
       describe('render route sqlAudit', () => {
