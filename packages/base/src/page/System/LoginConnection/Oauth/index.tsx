@@ -8,7 +8,6 @@ import {
   EmptyBox,
   EnterpriseFeatureDisplay
 } from '@actiontech/shared';
-import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import ConfigModifyBtn from '../../components/ConfigModifyBtn';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigField from './components/ConfigField';
@@ -29,9 +28,12 @@ import {
   IOauth2Configuration
 } from '@actiontech/shared/lib/api/base/service/common';
 import { IUpdateOauth2ConfigurationParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { InfoCircleOutlined } from '@actiontech/icons';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 const Oauth = () => {
   const { t } = useTranslation();
+  const { baseTheme } = useThemeStyleData();
 
   const {
     form,
@@ -175,7 +177,13 @@ const Oauth = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.oauth.clientIdTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.oauth.clientId')}
             </BasicToolTips>
@@ -229,7 +237,13 @@ const Oauth = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.oauth.accessTokenKeyNameTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.oauth.accessTokenKeyName')}
             </BasicToolTips>
@@ -242,7 +256,13 @@ const Oauth = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.oauth.userIdKeyNameTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.oauth.userIdKeyName')}
             </BasicToolTips>
@@ -255,7 +275,13 @@ const Oauth = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.oauth.userEmailTagNameTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.oauth.userEmailTagName')}
             </BasicToolTips>
@@ -268,7 +294,13 @@ const Oauth = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.oauth.userWechatTagNameTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.oauth.userWechatTagName')}
             </BasicToolTips>
@@ -281,7 +313,13 @@ const Oauth = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.oauth.loginButtonTextTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.oauth.loginButtonText')}
             </BasicToolTips>
@@ -293,7 +331,13 @@ const Oauth = () => {
         {
           label: (
             <BasicToolTips
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
               title={t('dmsSystem.oauth.autoCreateUserTips')}
             >
               {t('dmsSystem.oauth.autoCreateUser')}
@@ -309,7 +353,13 @@ const Oauth = () => {
         {
           label: (
             <BasicToolTips
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
               title={t('dmsSystem.oauth.skipStateCheckTips')}
             >
               {t('dmsSystem.oauth.skipCheckState')}
@@ -323,7 +373,7 @@ const Oauth = () => {
           )
         }
       ];
-    }, [oauthConfig?.enable_oauth2, t]);
+    }, [oauthConfig?.enable_oauth2, t, baseTheme]);
 
   return (
     <div className="config-form-wrapper">

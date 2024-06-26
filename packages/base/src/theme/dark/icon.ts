@@ -11,5 +11,9 @@ export const iconThem: IconTheme = {
   },
   home: {
     common: '#ffffff'
+  },
+  system: {
+    basicTitleTips: '#8A8F99',
+    modify: '#292C33'
   }
 };
