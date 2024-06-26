@@ -37,7 +37,7 @@ import useMemberTips from '../../../hooks/useMemberTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { MinusCircleOutlined } from '@actiontech/icons';
-import { PlusOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@actiontech/icons';
 
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -200,7 +200,12 @@ const ExportWorkflowList: React.FC = () => {
                 <BasicButton
                   type="primary"
                   icon={
-                    <PlusOutlined width={14} height={14} color="currentColor" />
+                    <PlusOutlined
+                      width={10}
+                      height={10}
+                      fill="currentColor"
+                      color="currentColor"
+                    />
                   }
                 >
                   {t('dmsDataExport.create.button')}
