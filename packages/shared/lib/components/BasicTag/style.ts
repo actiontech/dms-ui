@@ -11,6 +11,10 @@ export const BasicTagStyleWrapper = styled(Tag)<{ color: BasicTagColor }>`
     align-items: center;
     border-radius: 4px;
 
+    svg:first-of-type {
+      margin-right: 6px;
+    }
+
     span:first-of-type {
       margin-right: 6px;
     }

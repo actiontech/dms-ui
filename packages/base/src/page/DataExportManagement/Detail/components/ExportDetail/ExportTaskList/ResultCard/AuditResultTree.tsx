@@ -1,10 +1,11 @@
 import type { DataNode } from 'antd/es/tree';
-import { IconArrowDown } from '@actiontech/shared/lib/Icon';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IAuditSQLResult } from '@actiontech/shared/lib/api/base/service/common';
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import { ExportResultTreeStyleWrapper } from '../../style';
+import { DownOutlined } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
 
 const AuditResultTree: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
   auditResult
@@ -63,7 +64,11 @@ const AuditResultTree: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
   return (
     <ExportResultTreeStyleWrapper
       showLine
-      switcherIcon={<IconArrowDown width={16} height={16} />}
+      switcherIcon={
+        <CommonIconStyleWrapper className="custom-icon custom-icon-arrow-down">
+          <DownOutlined width={16} height={16} />
+        </CommonIconStyleWrapper>
+      }
       treeData={treeData}
       selectable={false}
     />

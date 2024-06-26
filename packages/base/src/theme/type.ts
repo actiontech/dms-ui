@@ -88,4 +88,8 @@ export type IconTheme = {
     user: string;
     password: string;
   };
+  dataExport: {
+    infoCircle: string;
+    clock: string;
+  };
 };
