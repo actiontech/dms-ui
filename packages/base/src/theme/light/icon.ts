@@ -8,5 +8,8 @@ export const iconThem: IconTheme = {
   dataExport: {
     infoCircle: '#8A8F99',
     clock: '#6094FC'
+  },
+  home: {
+    common: '#ffffff'
   }
 };

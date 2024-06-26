@@ -1,14 +1,19 @@
 import { t } from '../../../../../locale';
-import { IconStepDatabase, IconStepMember } from '../../../../../icon/home';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
+import { MemberFilled, DatabaseFilled } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 export const getDatabaseManagerSteps: (
   arg: DevopsStepsProps
-) => UserDevopsStepsFactory[0] = ({ navigate, projectID }) => {
+) => UserDevopsStepsFactory[0] = ({ navigate, projectID, iconColor }) => {
   return {
     key: 'databaseTarget',
     title: t('dmsHome.defaultScene.steps.databaseTarget.title'),
-    icon: <IconStepDatabase />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <DatabaseFilled color={iconColor} height={24} width={24} />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       {
         key: 'baseDataSource',
@@ -69,11 +74,15 @@ export const getDatabaseManagerSteps: (
 
 export const getMemberAndPermissionSteps: (
   arg: DevopsStepsProps
-) => UserDevopsStepsFactory[0] = ({ navigate, projectID }) => {
+) => UserDevopsStepsFactory[0] = ({ navigate, projectID, iconColor }) => {
   return {
     key: 'memberAndPermission',
     title: t('dmsHome.defaultScene.steps.memberAndPermission.title'),
-    icon: <IconStepMember />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <MemberFilled color={iconColor} height={24} width={24} />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       {
         key: 'subMemberAndPermission',
