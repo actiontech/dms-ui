@@ -9,9 +9,9 @@ import {
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
-import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../../icon/member';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 
 export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
@@ -39,9 +39,9 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
       return (
         <TableColumnWithIconStyleWrapper>
           {status === ListUserStatEnum.被禁用 ? (
-            <IconMemberNotAdmin />
+            <CloseHexagonOutlined />
           ) : (
-            <IconMemberIsAdmin />
+            <CheckHexagonOutlined />
           )}
           <span>{status}</span>
         </TableColumnWithIconStyleWrapper>
