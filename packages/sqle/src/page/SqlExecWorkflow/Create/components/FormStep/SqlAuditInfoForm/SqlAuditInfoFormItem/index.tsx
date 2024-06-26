@@ -2,7 +2,6 @@ import { Form } from 'antd';
 import { SqlAuditInfoFormItemProps } from '../index.type';
 import DatabaseSelectionItem from './DatabaseSelectionItems';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
-import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { useTranslation } from 'react-i18next';
 import { BasicSwitch } from '@actiontech/shared';
 import { useEffect, useMemo } from 'react';
@@ -12,6 +11,8 @@ import {
 } from '../../../../index.type';
 import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
+import { RingPieFilled } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
   auditAction,
@@ -99,7 +100,9 @@ const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
         label={
           <div className="label-cont-custom">
             <div>
-              <IconEllipse />
+              <CommonIconStyleWrapper className="custom-icon-ellipse">
+                <RingPieFilled />
+              </CommonIconStyleWrapper>
               <span>
                 {t('execWorkflow.create.form.sqlInfo.isSameSqlForAll')}
               </span>

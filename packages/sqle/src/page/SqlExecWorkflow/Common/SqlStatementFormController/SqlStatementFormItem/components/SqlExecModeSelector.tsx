@@ -10,7 +10,6 @@ import {
 import { BasicSelect, EmptyBox, ModeSwitcher } from '@actiontech/shared';
 import { sqlExecModeOptions } from '../index.data';
 import { useTranslation } from 'react-i18next';
-import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { Form, Tooltip } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { useRequest } from 'ahooks';
@@ -18,6 +17,8 @@ import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useEffect } from 'react';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
+import { RingPieFilled } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   fieldPrefixPath,
@@ -83,7 +84,9 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
         label={
           <div className="label-cont-custom">
             <div>
-              <IconEllipse />
+              <CommonIconStyleWrapper className="custom-icon-ellipse">
+                <RingPieFilled />
+              </CommonIconStyleWrapper>
               <span>
                 {t('execWorkflow.create.form.sqlInfo.selectExecuteMode')}
               </span>

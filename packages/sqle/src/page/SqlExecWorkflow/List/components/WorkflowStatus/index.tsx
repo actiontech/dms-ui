@@ -1,65 +1,65 @@
 import { ReactNode } from 'react';
-import {
-  IconWorkflowStatusIsCanceled,
-  IconWorkflowStatusIsExecuting,
-  IconWorkflowStatusIsFailed,
-  IconWorkflowStatusIsFinished,
-  IconWorkflowStatusIsRejected,
-  IconWorkflowStatusIsWaitAudit,
-  IconWorkflowStatusIsWaitExecution
-} from '../../../../../icon/SqlExecWorkflow';
 import { WorkflowStatusStyleWrapper } from './style';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { t } from '../../../../../locale';
+import {
+  HexagonOutlined,
+  CheckHexagonOutlined,
+  PartialHexagonFilled,
+  CloseHexagonOutlined,
+  AdvancedHexagonFilled,
+  EmptyHexagonOutlined,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
 
 const WorkflowStatusMap = () => {
   return new Map<WorkflowDetailResV1StatusEnum, ReactNode>([
     [
       WorkflowDetailResV1StatusEnum.canceled,
       <>
-        <IconWorkflowStatusIsCanceled />
+        <CloseHexagonOutlined />
         <span>{t('execWorkflow.common.workflowStatus.canceled')}</span>
       </>
     ],
     [
       WorkflowDetailResV1StatusEnum.executing,
       <>
-        <IconWorkflowStatusIsExecuting />
+        <AdvancedHexagonFilled />
         <span>{t('execWorkflow.common.workflowStatus.executing')}</span>
       </>
     ],
     [
       WorkflowDetailResV1StatusEnum.finished,
       <>
-        <IconWorkflowStatusIsFinished />
+        <CheckHexagonOutlined />
         <span>{t('execWorkflow.common.workflowStatus.execSucceeded')}</span>
       </>
     ],
     [
       WorkflowDetailResV1StatusEnum.exec_failed,
       <>
-        <IconWorkflowStatusIsFailed />
+        <InfoHexagonOutlined />
         <span>{t('execWorkflow.common.workflowStatus.execFailed')}</span>
       </>
     ],
     [
       WorkflowDetailResV1StatusEnum.wait_for_audit,
       <>
-        <IconWorkflowStatusIsWaitAudit />
+        <EmptyHexagonOutlined />
         <span>{t('execWorkflow.common.workflowStatus.waitForAudit')}</span>
       </>
     ],
     [
       WorkflowDetailResV1StatusEnum.wait_for_execution,
       <>
-        <IconWorkflowStatusIsWaitExecution />
+        <PartialHexagonFilled />
         <span>{t('execWorkflow.common.workflowStatus.waitForExecution')}</span>
       </>
     ],
     [
       WorkflowDetailResV1StatusEnum.rejected,
       <>
-        <IconWorkflowStatusIsRejected />
+        <HexagonOutlined />
         <span>{t('execWorkflow.common.workflowStatus.reject')}</span>
       </>
     ]

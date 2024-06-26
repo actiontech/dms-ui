@@ -13,11 +13,6 @@ import { Divider, Space, Spin, message } from 'antd';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import {
-  IconArrowDown,
-  IconFillListActive,
-  IconPosition
-} from '@actiontech/shared/lib/Icon/common';
 import { SqlExecuteResultCardProps } from './index.type';
 import ExecStatusTag from './components/ExecStatusTag';
 import AuditResultTag from './components/AuditResultTag';
@@ -28,6 +23,13 @@ import {
   TasksResultCardStyleWrapper
 } from './style';
 import { TaskAuditResultTreeStyleWrapper } from './components/style';
+import {
+  ProfileSquareFilled,
+  DownOutlined,
+  EnvironmentFilled
+} from '@actiontech/icons';
+import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectName,
@@ -40,6 +42,8 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   const [messageApi, contextHolder] = message.useMessage();
 
   const [showExecSql, { setTrue, setFalse }] = useBoolean(true);
+
+  const { sqleTheme } = useThemeStyleData();
 
   const [loading, { set }] = useBoolean();
 
@@ -127,7 +131,15 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                   title={t('execWorkflow.audit.sqlFileSource.tips')}
                 >
                   <Space>
-                    <BasicTag icon={<IconFillListActive />}>
+                    <BasicTag
+                      icon={
+                        <ProfileSquareFilled
+                          width={18}
+                          height={18}
+                          color={sqleTheme.icon.execWorkFlow.fileList}
+                        />
+                      }
+                    >
                       <span className="sql-source-title">
                         {t('execWorkflow.audit.sqlFileSource.source')}
                       </span>
@@ -137,14 +149,22 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                 </BasicToolTips>
               }
             >
-              <BasicTag icon={<IconFillListActive />}>
+              <BasicTag
+                icon={
+                  <ProfileSquareFilled
+                    width={18}
+                    height={18}
+                    color={sqleTheme.icon.execWorkFlow.fileList}
+                  />
+                }
+              >
                 <span className="sql-source-title">
                   {t('execWorkflow.audit.sqlFileSource.source')}
                 </span>
                 {props?.sql_source_file}
               </BasicTag>
             </EmptyBox>
-            <BasicTag icon={<IconPosition />}>
+            <BasicTag icon={<EnvironmentFilled width={18} height={18} />}>
               <span className="sql-source-title">
                 {t('execWorkflow.audit.sqlFileSource.fileLine')}
               </span>
@@ -168,7 +188,9 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
             }
           ]}
           switcherIcon={
-            <IconArrowDown width={16} height={16} color="#C3C6CD" />
+            <CommonIconStyleWrapper className="custom-icon custom-icon-arrow-down">
+              <DownOutlined width={16} height={16} />
+            </CommonIconStyleWrapper>
           }
         />
       </div>

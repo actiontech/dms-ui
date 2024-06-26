@@ -9,7 +9,7 @@ const CheckCircleFilled = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <path
-        fill="#41BF9A"
+        fill={props.color ? 'currentColor' : '#41BF9A'}
         d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
       />
     </svg>

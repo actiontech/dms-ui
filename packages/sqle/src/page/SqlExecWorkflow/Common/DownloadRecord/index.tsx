@@ -1,19 +1,18 @@
 import { Popover, Space } from 'antd';
 import { DownloadRecordProps } from './index.type';
 import { BasicButton } from '@actiontech/shared';
-import {
-  IconArrowDown,
-  IconArrowUp,
-  IconDownload
-} from '@actiontech/shared/lib/Icon';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { DownloadDropdownStyleWrapper } from './style';
 import {
-  IconWorkflowDownloadReport,
-  IconWorkflowDownloadSQL
-} from '../../../../icon/SqlExecWorkflow';
+  ProfileFilled,
+  DownOutlined,
+  UpOutlined,
+  PanelCardOutlined,
+  DownArrowLineOutlined
+} from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
@@ -47,12 +46,15 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
     return (
       <DownloadDropdownStyleWrapper>
         <div className="download-record-item" onClick={downloadReport}>
-          <IconWorkflowDownloadReport className="download-record-item-icon" />
+          <ProfileFilled
+            color="currentColor"
+            className="download-record-item-icon"
+          />
           {t('execWorkflow.audit.downloadReport')}
         </div>
 
         <div className="download-record-item" onClick={downloadSql}>
-          <IconWorkflowDownloadSQL className="download-record-item-icon" />
+          <PanelCardOutlined className="download-record-item-icon" />
           {t('execWorkflow.audit.downloadSql')}
         </div>
       </DownloadDropdownStyleWrapper>
@@ -71,11 +73,16 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
         padding: 0
       }}
     >
-      <BasicButton size="small">
+      <BasicButton size="small" icon={<DownArrowLineOutlined />}>
         <Space size={5}>
-          <IconDownload />
           {t('common.download')}
-          {open ? <IconArrowUp /> : <IconArrowDown />}
+          <CommonIconStyleWrapper>
+            {open ? (
+              <UpOutlined color="currentColor" />
+            ) : (
+              <DownOutlined color="currentColor" />
+            )}
+          </CommonIconStyleWrapper>
         </Space>
       </BasicButton>
     </Popover>

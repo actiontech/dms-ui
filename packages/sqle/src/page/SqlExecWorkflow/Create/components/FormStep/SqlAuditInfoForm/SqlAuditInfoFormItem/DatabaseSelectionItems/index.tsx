@@ -1,11 +1,4 @@
 import {
-  IconDatabase,
-  IconDatabaseActive,
-  IconDatabaseSchema,
-  IconDatabaseSchemaActive,
-  IconEllipse
-} from '@actiontech/shared/lib/Icon/common';
-import {
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
@@ -21,6 +14,13 @@ import { SqlAuditInfoFormFields } from '../../../../../index.type';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useRenderDatabaseSelectionItems from './hooks/useRenderDatabaseSelectionItems';
 import { BasicButton } from '@actiontech/shared';
+import {
+  DatabaseSchemaFilled,
+  RingPieFilled,
+  DatabaseFilled
+} from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
@@ -29,6 +29,8 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
   const { projectName } = useCurrentProject();
+
+  const { sqleTheme } = useThemeStyleData();
 
   const {
     testDatabaseConnect,
@@ -73,7 +75,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
         className="has-required-style form-item-label-mb-16"
         label={
           <>
-            <IconEllipse />
+            <RingPieFilled className="custom-icon-ellipse" />
             <span>{t('execWorkflow.create.form.sqlInfo.instanceName')}</span>
           </>
         }
@@ -111,8 +113,20 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
                         allowClear={false}
                         popupMatchSelectWidth
                         className="data-source-row-select"
-                        prefix={<IconDatabase />}
-                        valuePrefix={<IconDatabaseActive />}
+                        prefix={
+                          <CommonIconStyleWrapper>
+                            <DatabaseFilled width={18} height={18} />
+                          </CommonIconStyleWrapper>
+                        }
+                        valuePrefix={
+                          <CommonIconStyleWrapper>
+                            <DatabaseFilled
+                              width={18}
+                              height={18}
+                              color={sqleTheme.icon.execWorkFlow.databaseFilled}
+                            />
+                          </CommonIconStyleWrapper>
+                        }
                         size="middle"
                         loading={instanceTipsLoading}
                         options={instanceOptions}
@@ -137,8 +151,20 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
                         onChange={(value) =>
                           handleInstanceSchemaChange(fieldKey, value)
                         }
-                        prefix={<IconDatabaseSchema />}
-                        valuePrefix={<IconDatabaseSchemaActive />}
+                        prefix={
+                          <CommonIconStyleWrapper>
+                            <DatabaseSchemaFilled width={18} height={18} />
+                          </CommonIconStyleWrapper>
+                        }
+                        valuePrefix={
+                          <CommonIconStyleWrapper>
+                            <DatabaseSchemaFilled
+                              width={18}
+                              height={18}
+                              color={sqleTheme.icon.execWorkFlow.schemaFilled}
+                            />
+                          </CommonIconStyleWrapper>
+                        }
                         size="middle"
                         options={getInstanceSchemaOptions(fieldKey)}
                         placeholder={t(
