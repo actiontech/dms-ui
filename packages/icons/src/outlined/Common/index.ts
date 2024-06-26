@@ -7,6 +7,7 @@ export { default as CodeOutlined } from './CodeOutlined';
 export { default as DashOutlined } from './DashOutlined';
 export { default as DownArrowLineOutlined } from './DownArrowLineOutlined';
 export { default as DownTriangleOutlined } from './DownTriangleOutlined';
+export { default as EmptyHexagonOutlined } from './EmptyHexagonOutlined';
 export { default as HexagonOutlined } from './HexagonOutlined';
 export { default as ListLayoutOutlined } from './ListLayoutOutlined';
 export { default as MinusCircleOutlined } from './MinusCircleOutlined';
