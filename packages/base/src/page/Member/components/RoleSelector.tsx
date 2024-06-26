@@ -10,11 +10,8 @@ import {
   DrawerFormIconWrapper,
   FormListAddButtonWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  IconFormListDelete,
-  IconFormListAdd
-} from '@actiontech/shared/lib/Icon';
 import { MemberRoleSelectorRowStyleWrapper } from '../style';
+import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
 
 const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
   const { t } = useTranslation();
@@ -100,7 +97,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                     onClick={() => {
                       remove(index);
                     }}
-                    icon={<IconFormListDelete />}
+                    icon={<MinusCircleFilled />}
                   />
                 </Form.Item>
               </Col>
@@ -108,7 +105,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
           ))}
           <Form.Item label="" colon={false}>
             <FormListAddButtonWrapper
-              icon={<IconFormListAdd />}
+              icon={<PlusCircleFilled />}
               onClick={() => {
                 add();
               }}
