@@ -9,7 +9,6 @@ import {
   EmptyBox,
   SegmentedTabs
 } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ProjectMemberStyleWrapper } from './style';
 import { MemberListTypeEnum } from './index.enum';
 import MemberList from './List/MemberList';
@@ -24,6 +23,7 @@ import {
   useCurrentUser
 } from '@actiontech/shared/lib/global';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
+import { PlusOutlined } from '@actiontech/icons';
 
 const Member: React.FC = () => {
   const { t } = useTranslation();
@@ -71,7 +71,14 @@ const Member: React.FC = () => {
         <BasicButton
           hidden={activePage !== MemberListTypeEnum.member_list}
           type="primary"
-          icon={<IconAdd />}
+          icon={
+            <PlusOutlined
+              width={10}
+              height={10}
+              fill="currentColor"
+              color="currentColor"
+            />
+          }
           onClick={() => {
             handleClick(ModalName.DMS_Add_Member);
           }}
@@ -82,7 +89,14 @@ const Member: React.FC = () => {
         <BasicButton
           hidden={activePage !== MemberListTypeEnum.member_group_list}
           type="primary"
-          icon={<IconAdd />}
+          icon={
+            <PlusOutlined
+              width={10}
+              height={10}
+              fill="currentColor"
+              color="currentColor"
+            />
+          }
           onClick={() => {
             handleClick(ModalName.DMS_Add_Member_Group);
           }}
