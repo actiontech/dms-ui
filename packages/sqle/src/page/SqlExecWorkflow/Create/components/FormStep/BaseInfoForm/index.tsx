@@ -5,20 +5,17 @@ import {
 } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import BaseInfoFormItem from './BaseInfoFormItem';
-import { IconWorkflowCreateTitle } from '../../../../../../icon/SqlExecWorkflow';
-import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
+import { BriefcaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const BaseInfoForm: React.FC = () => {
   const { t } = useTranslation();
-  const { sqleTheme } = useThemeStyleData();
 
   return (
     <FormAreaLineStyleWrapper className="has-border">
       <FormAreaBlockStyleWrapper>
         <FormItemBigTitle>
-          <IconWorkflowCreateTitle
-            color={sqleTheme.execWorkflow.create.form.baseInfoTitleIconColor}
-          />
+          <Icon component={BriefcaseFilled} className="title-icon" />
           <span>{t('execWorkflow.create.title')}</span>
         </FormItemBigTitle>
         <BaseInfoFormItem />

@@ -1,12 +1,13 @@
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import type { DataNode, TreeProps } from 'antd/es/tree';
-import { IconArrowDown } from '@actiontech/shared/lib/Icon';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import AuditResultMessage from '../../../../../../../../../components/AuditResultMessage';
 import { TaskAuditResultTreeStyleWrapper } from './style';
+import { DownOutlined } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
 
 export interface AuditResultTreeProps {
   auditResult?: IAuditResult[];
@@ -127,7 +128,11 @@ const AuditResultTree: React.FC<AuditResultTreeProps> = ({ auditResult }) => {
   return (
     <TaskAuditResultTreeStyleWrapper
       showLine
-      switcherIcon={<IconArrowDown width={16} height={16} color="#C3C6CD" />}
+      switcherIcon={
+        <CommonIconStyleWrapper className="custom-icon custom-icon-arrow-down">
+          <DownOutlined width={16} height={16} />
+        </CommonIconStyleWrapper>
+      }
       treeData={treeData}
       selectable={false}
       loadData={onLoadData}

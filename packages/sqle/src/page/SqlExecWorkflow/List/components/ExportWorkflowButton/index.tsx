@@ -1,5 +1,4 @@
 import { BasicButton } from '@actiontech/shared';
-import { IconDownload } from '@actiontech/shared/lib/Icon';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IExportWorkflowV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -8,6 +7,7 @@ import { useBoolean } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportWorkflowButtonProps } from './index.type';
+import { DownArrowLineOutlined } from '@actiontech/icons';
 
 const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   tableFilterInfo,
@@ -75,7 +75,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       <BasicButton
         onClick={exportWorkflow}
         disabled={exportButtonDisabled}
-        icon={<IconDownload />}
+        icon={<DownArrowLineOutlined />}
       >
         {t('execWorkflow.list.exportWorkflow.buttonText')}
       </BasicButton>

@@ -1,15 +1,17 @@
 import { Popover, Space } from 'antd';
 import { BasicButton } from '@actiontech/shared';
-import { IconArrowDown, IconArrowUp } from '@actiontech/shared/lib/Icon';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { DownloadDropdownStyleWrapper } from '../../../../Common/DownloadRecord/style';
 import { TaskResultListLayoutEnum } from '../index.enum';
 import {
-  IconWorkflowResultLayout,
-  IconWorkflowResultListLayout,
-  IconWorkflowResultWaterFallLayout
-} from '../../../../../../icon/SqlExecWorkflow';
+  SquareCardFilled,
+  DownOutlined,
+  UpOutlined,
+  ListLayoutFilled,
+  ListLayoutOutlined
+} from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 const ListLayoutSelector: React.FC<{
   onChange: (v: TaskResultListLayoutEnum) => void;
@@ -30,7 +32,7 @@ const ListLayoutSelector: React.FC<{
             setOpen(false);
           }}
         >
-          <IconWorkflowResultListLayout className="download-record-item-icon" />
+          <ListLayoutFilled className="download-record-item-icon" />
           {t('execWorkflow.detail.paginationDisplay')}
         </div>
 
@@ -43,7 +45,7 @@ const ListLayoutSelector: React.FC<{
             setOpen(false);
           }}
         >
-          <IconWorkflowResultWaterFallLayout className="download-record-item-icon" />
+          <SquareCardFilled className="download-record-item-icon" />
           {t('execWorkflow.detail.waterfallDisplay')}
         </div>
       </DownloadDropdownStyleWrapper>
@@ -63,11 +65,19 @@ const ListLayoutSelector: React.FC<{
     >
       <BasicButton size="small">
         <Space size={5}>
-          <IconWorkflowResultLayout />
+          <CommonIconStyleWrapper>
+            <ListLayoutOutlined width={14} height={14} />
+          </CommonIconStyleWrapper>
           {value === TaskResultListLayoutEnum.pagination
             ? t('execWorkflow.detail.paginationDisplay')
             : t('execWorkflow.detail.waterfallDisplay')}
-          {open ? <IconArrowUp /> : <IconArrowDown />}
+          <CommonIconStyleWrapper>
+            {open ? (
+              <UpOutlined color="currentColor" />
+            ) : (
+              <DownOutlined color="currentColor" />
+            )}
+          </CommonIconStyleWrapper>
         </Space>
       </BasicButton>
     </Popover>
