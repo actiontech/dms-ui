@@ -7,19 +7,23 @@ import {
   AdminUserDevopsSteps,
   NormalUserDevopsSteps
 } from './components/StepItems/index.data';
+import useThemeStyleData from '../../../hooks/useThemeStyleData';
 
 const CEDefaultScene: React.FC = () => {
   const { isAdmin } = useCurrentUser();
   const navigate = useNavigate();
+  const { baseTheme } = useThemeStyleData();
 
   const steps = isAdmin
     ? AdminUserDevopsSteps({
         navigate,
-        projectID: DEFAULT_PROJECT_ID
+        projectID: DEFAULT_PROJECT_ID,
+        iconColor: baseTheme.icon.home.common
       })
     : NormalUserDevopsSteps({
         navigate,
-        projectID: DEFAULT_PROJECT_ID
+        projectID: DEFAULT_PROJECT_ID,
+        iconColor: baseTheme.icon.home.common
       });
 
   return (

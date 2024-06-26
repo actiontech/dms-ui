@@ -92,4 +92,7 @@ export type IconTheme = {
     infoCircle: string;
     clock: string;
   };
+  home: {
+    common: string;
+  };
 };
