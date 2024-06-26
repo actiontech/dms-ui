@@ -12,10 +12,7 @@ import {
   BasicResult,
   EmptyBox
 } from '@actiontech/shared';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
+import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import DataSourceForm from '../Form';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -26,6 +23,7 @@ import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const AddDataSource = () => {
   const { t } = useTranslation();
@@ -106,7 +104,7 @@ const AddDataSource = () => {
         title={
           <BasicButton
             onClick={() => navigate(`/project/${projectID}/db-services`)}
-            icon={<IconLeftArrow />}
+            icon={<LeftArrowOutlined />}
           >
             {t('dmsDataSource.backDesc')}
           </BasicButton>
