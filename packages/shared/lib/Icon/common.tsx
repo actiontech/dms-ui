@@ -646,6 +646,8 @@ export const IconEdit: React.FC<CustomIconProps> = ({
     </CommonIconStyleWrapper>
   );
 };
+
+// destroy icon
 export const IconLeftArrow = () => {
   return (
     <svg
@@ -1151,7 +1153,7 @@ export const IconTagBookMark = ({ className = '', ...props }) => {
     </CommonIconStyleWrapper>
   );
 };
-
+// destroy icon
 export const IconCommonEdit: React.FC<CustomIconProps> = ({
   width = 16,
   height = 16,
@@ -1211,6 +1213,7 @@ export const IconCommonSelected: React.FC<CustomIconProps> = ({
   );
 };
 
+// destroy icon
 export const IconProjectFlag: React.FC<CustomIconProps> = ({
   width = 18,
   height = 18
@@ -1233,6 +1236,7 @@ export const IconProjectFlag: React.FC<CustomIconProps> = ({
   );
 };
 
+// destroy icon
 export const IconProjectArchived: React.FC<CustomIconProps> = ({
   width = 18,
   height = 18
@@ -1535,7 +1539,7 @@ export const IconTimeLine: React.FC<CustomIconProps> = ({ className }) => {
     </CommonIconStyleWrapper>
   );
 };
-
+// destroy icon
 export const IconFormListDelete: React.FC<CustomIconProps> = ({
   width = 16,
   height = 16,
@@ -1557,6 +1561,7 @@ export const IconFormListDelete: React.FC<CustomIconProps> = ({
   );
 };
 
+// destroy icon
 export const IconFormListAdd: React.FC<CustomIconProps> = ({
   width = 16,
   height = 16,
