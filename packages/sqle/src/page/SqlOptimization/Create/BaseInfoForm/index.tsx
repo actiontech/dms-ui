@@ -7,12 +7,11 @@ import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { BaseForm } from '../../index.type';
 import BaseInfoFormItem from './BaseInfoFormItem';
-import { IconWorkflowCreateTitle } from '../../../../icon/SqlExecWorkflow';
-import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { BriefcaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const BaseInfoForm: React.FC<{ form: BaseForm }> = ({ form }) => {
   const { t } = useTranslation();
-  const { sharedTheme } = useThemeStyleData();
 
   return (
     <FormStyleWrapper
@@ -25,9 +24,7 @@ const BaseInfoForm: React.FC<{ form: BaseForm }> = ({ form }) => {
       <FormAreaLineStyleWrapper>
         <FormAreaBlockStyleWrapper>
           <FormItemBigTitle>
-            <IconWorkflowCreateTitle
-              color={sharedTheme.uiToken.colorTextQuaternary}
-            />
+            <Icon component={BriefcaseFilled} className="title-icon" />
             <span>{t('sqlOptimization.create.base.title')}</span>
           </FormItemBigTitle>
           <BaseInfoFormItem />
