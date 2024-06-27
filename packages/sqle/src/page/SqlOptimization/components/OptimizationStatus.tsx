@@ -1,33 +1,33 @@
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
-import {
-  IconWorkflowStatusIsExecuting,
-  IconWorkflowStatusIsFailed,
-  IconWorkflowStatusIsFinished
-} from '../../../icon/SqlExecWorkflow';
 import { OptimizationStatusStyleWrapper } from '../style';
 import { SqlOptimizationStatusEnum } from '../index.data';
+import {
+  CheckHexagonOutlined,
+  AdvancedHexagonFilled,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
 
 const optimizationStatusMap = () => {
   return new Map<SqlOptimizationStatusEnum, ReactNode>([
     [
       SqlOptimizationStatusEnum.optimizing,
       <>
-        <IconWorkflowStatusIsExecuting />
+        <AdvancedHexagonFilled />
         <span>{t('sqlOptimization.status.optimizing')}</span>
       </>
     ],
     [
       SqlOptimizationStatusEnum.finish,
       <>
-        <IconWorkflowStatusIsFinished />
+        <CheckHexagonOutlined />
         <span>{t('sqlOptimization.status.finish')}</span>
       </>
     ],
     [
       SqlOptimizationStatusEnum.failed,
       <>
-        <IconWorkflowStatusIsFailed />
+        <InfoHexagonOutlined />
         <span>{t('sqlOptimization.status.failed')}</span>
       </>
     ]

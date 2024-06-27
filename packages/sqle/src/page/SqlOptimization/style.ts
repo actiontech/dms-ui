@@ -133,7 +133,7 @@ export const DetailComStyleWrapper = styled('section')`
         background-color: ${({ theme }) =>
           theme.sqleTheme.auditPlan.detail.tag.default.background} !important;
 
-        * {
+        div {
           font-size: 13px;
           font-weight: 600;
           line-height: 20px;
@@ -183,6 +183,10 @@ export const HeaderSpaceTagStyleWrapper = styled(Space)`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .ant-space-item {
+    display: flex;
   }
 
   &.project-name-space {
