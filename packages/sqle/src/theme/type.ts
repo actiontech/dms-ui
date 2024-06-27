@@ -311,4 +311,8 @@ export type IconTheme = {
     fileList: string;
     clock: string;
   };
+  workflowTemplate: {
+    common: string;
+    userCircleFilled: string;
+  };
 };

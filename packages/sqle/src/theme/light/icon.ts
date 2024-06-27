@@ -8,5 +8,9 @@ export const iconTheme: IconTheme = {
     schemaFilled: '#15C7D4',
     fileList: '#4583FF',
     clock: '#6094FC'
+  },
+  workflowTemplate: {
+    common: 'white',
+    userCircleFilled: '#1CB889'
   }
 };
