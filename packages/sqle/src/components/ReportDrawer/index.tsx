@@ -11,11 +11,9 @@ import {
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
 import { AuditReportStyleWrapper } from './style';
 import AuditResultMessage from '../AuditResultMessage';
-import {
-  IconFillListActive,
-  IconPosition
-} from '@actiontech/shared/lib/Icon/common';
 import { Typography, Space } from 'antd';
+import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
+import useThemeStyleData from '../../hooks/useThemeStyleData';
 
 const ReportDrawer = ({
   open,
@@ -26,6 +24,8 @@ const ReportDrawer = ({
   showSourceFile
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
+
+  const { sqleTheme } = useThemeStyleData();
 
   const closeModal = () => {
     onClose();
@@ -112,7 +112,18 @@ const ReportDrawer = ({
                         title={t('auditPlan.report.drawer.sourceTip')}
                       >
                         <Space>
-                          <BasicTag icon={<IconFillListActive />}>
+                          <BasicTag
+                            icon={
+                              <ProfileSquareFilled
+                                width={18}
+                                height={18}
+                                color={
+                                  sqleTheme.icon.execWorkFlow
+                                    .profileSquareFilled
+                                }
+                              />
+                            }
+                          >
                             <span className="sql-source-title">
                               {t('auditPlan.report.drawer.source')}
                             </span>{' '}
@@ -123,7 +134,15 @@ const ReportDrawer = ({
                     }
                   >
                     <BasicTag
-                      icon={<IconFillListActive />}
+                      icon={
+                        <ProfileSquareFilled
+                          width={18}
+                          height={18}
+                          color={
+                            sqleTheme.icon.execWorkFlow.profileSquareFilled
+                          }
+                        />
+                      }
                       className="ellipsis-column-width"
                     >
                       <span className="sql-source-title">
@@ -137,7 +156,7 @@ const ReportDrawer = ({
                       />
                     </BasicTag>
                   </EmptyBox>
-                  <BasicTag icon={<IconPosition />}>
+                  <BasicTag icon={<EnvironmentFilled width={18} height={18} />}>
                     <span className="sql-source-title">
                       {t('auditPlan.report.drawer.fileLine')}
                     </span>
