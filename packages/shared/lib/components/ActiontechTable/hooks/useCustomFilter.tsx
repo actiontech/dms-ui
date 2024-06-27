@@ -10,7 +10,7 @@ import {
 import { CustomSelect, CustomSelectProps } from '../../CustomSelect';
 import { CustomFilterRangePickerStyleWrapper } from '../components/style';
 import CustomInput from '../../CustomInput';
-import { IconSearch } from '../../../Icon';
+import { SearchOutlined } from '@actiontech/icons';
 
 const useCustomFilter = () => {
   const { t } = useTranslation();
@@ -73,7 +73,9 @@ const useCustomFilter = () => {
           setSearchValue(e.target.value);
         }}
         suffix={
-          <IconSearch
+          <SearchOutlined
+            width={14}
+            height={14}
             className="pointer"
             onClick={() => onPressEnter?.(searchValue)}
           />
