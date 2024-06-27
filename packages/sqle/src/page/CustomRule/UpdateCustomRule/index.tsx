@@ -11,11 +11,9 @@ import { UpdateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
+import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdateCustomRule: React.FC = () => {
   const { t } = useTranslation();
@@ -78,7 +76,10 @@ const UpdateCustomRule: React.FC = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton onClick={onGoCustomRuleList} icon={<IconLeftArrow />}>
+          <BasicButton
+            onClick={onGoCustomRuleList}
+            icon={<LeftArrowOutlined />}
+          >
             {t('customRule.backToList')}
           </BasicButton>
         }
