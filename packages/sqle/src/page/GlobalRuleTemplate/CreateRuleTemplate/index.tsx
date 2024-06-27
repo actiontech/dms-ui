@@ -8,10 +8,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
+import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import {
@@ -20,6 +17,7 @@ import {
 } from '../../../hooks/useRuleTemplateForm';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -91,7 +89,7 @@ const CreateRuleTemplate = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
+          <BasicButton onClick={gotoListPage} icon={<LeftArrowOutlined />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }

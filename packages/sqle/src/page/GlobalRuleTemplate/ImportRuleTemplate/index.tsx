@@ -17,10 +17,7 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
+import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -30,13 +27,13 @@ import {
   formItemLayout
 } from '@actiontech/shared/lib/components/FormCom/style';
 import Icon from '@ant-design/icons';
-import { IconRuleTitle } from '../../../icon/Rule';
 import {
   useImportRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
 
 const ImportRuleTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -112,7 +109,7 @@ const ImportRuleTemplate: React.FC = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
+          <BasicButton onClick={gotoListPage} icon={<LeftArrowOutlined />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -164,7 +161,10 @@ const ImportRuleTemplate: React.FC = () => {
                 {...formItemLayout.spaceBetween}
               >
                 <FormItemBigTitle>
-                  <Icon component={IconRuleTitle} className="title-icon" />
+                  <Icon
+                    component={ProfileSquareFilled}
+                    className="title-icon"
+                  />
                   <span>{t('ruleTemplate.importRuleTemplate.title')}</span>
                 </FormItemBigTitle>
                 <FormItemLabel
