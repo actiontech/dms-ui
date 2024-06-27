@@ -4,7 +4,7 @@ import BaseInfoForm from './BaseInfoForm';
 import EditRuleScript from './EditRuleScript';
 import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
-import { IconRuleTitle } from '../../../icon/Rule';
+import { ProfileSquareFilled } from '@actiontech/icons';
 
 const CustomRuleForm: React.FC<CustomRuleFormProps> = (props) => {
   const {
@@ -28,7 +28,7 @@ const CustomRuleForm: React.FC<CustomRuleFormProps> = (props) => {
       <FormAreaBlockStyleWrapper>
         <div hidden={step !== 0} data-testid="base-form">
           <FormItemBigTitle>
-            <Icon component={IconRuleTitle} className="title-icon" />
+            <Icon component={ProfileSquareFilled} className="title-icon" />
             <span>{title}</span>
           </FormItemBigTitle>
           <BaseInfoForm
