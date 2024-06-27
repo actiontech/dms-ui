@@ -10,12 +10,7 @@ import {
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { AxiosResponse } from 'axios';
 import usePanelCommonRequest from '../../hooks/usePanelCommonRequest';
-import {
-  IconAuditPassRate,
-  IconOrderAverageAuditTime,
-  IconOrderTotalNum,
-  IconTodayIncreased
-} from '../../../../../icon/ReportStatistics';
+import { IconOrderTotalNum } from '../../../../../icon/ReportStatistics';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import {
   IGetWorkflowAuditPassPercentV1Return,
@@ -24,6 +19,11 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import {
+  TrendCardFilled,
+  CheckDoubleSquareFilled,
+  ClockCircleFilled
+} from '@actiontech/icons';
 
 const defaultVal = 0;
 
@@ -112,7 +112,9 @@ const CardNumberShow = () => {
         <div className="item-wrapper card-wrapper marginTop20">
           <CardShow
             titleCont={t('reportStatistics.cardLine.title.todayIncreased')}
-            extraIcon={renderCardIcon(IconTodayIncreased)}
+            extraIcon={renderCardIcon(() => (
+              <TrendCardFilled width={24} height={24} fill="currentColor" />
+            ))}
             numberCont={
               loading || errorMessage
                 ? defaultVal
@@ -130,7 +132,9 @@ const CardNumberShow = () => {
             titleCont={t(
               'reportStatistics.cardLine.title.orderAverageAuditTime'
             )}
-            extraIcon={renderCardIcon(IconOrderAverageAuditTime)}
+            extraIcon={renderCardIcon(() => (
+              <ClockCircleFilled width={24} height={24} fill="currentColor" />
+            ))}
             numberCont={timeLoading || timeError ? '0' : time}
             noteCont={
               <div className="note-wrapper">
@@ -155,7 +159,13 @@ const CardNumberShow = () => {
         <div className="item-wrapper card-wrapper marginTop20">
           <CardShow
             titleCont={t('reportStatistics.cardLine.title.auditPassRate')}
-            extraIcon={renderCardIcon(IconAuditPassRate)}
+            extraIcon={renderCardIcon(() => (
+              <CheckDoubleSquareFilled
+                width={24}
+                height={24}
+                fill="currentColor"
+              />
+            ))}
             numberCont={auditPassLoading || auditPassError ? '0' : auditPass}
             noteCont={
               <div className="note-wrapper">
