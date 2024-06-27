@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { message } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -31,6 +30,7 @@ import SqlAuditListColumn, {
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
+import { PlusOutlined } from '@actiontech/icons';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -165,7 +165,12 @@ const SqlAuditList = () => {
         extra={
           !projectArchive ? (
             <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
+              <BasicButton
+                type="primary"
+                icon={
+                  <PlusOutlined color="currentColor" width={10} height={10} />
+                }
+              >
                 {t('sqlAudit.list.action.create')}
               </BasicButton>
             </Link>

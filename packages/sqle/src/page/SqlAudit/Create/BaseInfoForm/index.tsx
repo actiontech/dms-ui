@@ -23,14 +23,13 @@ import useSQLAuditRecordTag from '../../../../hooks/useSQLAuditRecordTag';
 import { useForm } from 'antd/es/form/Form';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { FormSubmitStatusContext } from '..';
-import { IconWorkflowCreateTitle } from '../../../../icon/SqlExecWorkflow';
-import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { BriefcaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const submitLoading = useContext(FormSubmitStatusContext);
-  const { sharedTheme } = useThemeStyleData();
 
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading, updateSQLAuditRecordTag, auditRecordTags } =
@@ -110,9 +109,7 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
         <FormAreaLineStyleWrapper className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemBigTitle>
-              <IconWorkflowCreateTitle
-                color={sharedTheme.uiToken.colorTextQuaternary}
-              />
+              <Icon component={BriefcaseFilled} className="title-icon" />
               <span>{t('sqlAudit.create.title')}</span>
             </FormItemBigTitle>
             <FormItemLabel
