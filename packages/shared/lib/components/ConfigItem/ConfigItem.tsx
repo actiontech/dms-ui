@@ -1,10 +1,10 @@
 import { useBoolean } from 'ahooks';
 import { ConfigItemStyledWrapper } from './style';
 import { Col, Space } from 'antd';
-import { IconCommonEdit } from '../../Icon/common';
 import { ConfigItemProps } from './index.type';
 import BasicButton from '../BasicButton';
 import useHideConfigInputNode from './hooks/useHideConfigInputNode';
+import { EditFilled } from '@actiontech/icons';
 
 const ConfigItem: React.FC<ConfigItemProps> = ({
   label,
@@ -51,7 +51,7 @@ const ConfigItem: React.FC<ConfigItemProps> = ({
               <BasicButton
                 className="config-item-filed-edit-button"
                 hidden={!needEditButton || !editButtonVisible}
-                icon={<IconCommonEdit />}
+                icon={<EditFilled />}
                 onClick={showField}
               />
             }

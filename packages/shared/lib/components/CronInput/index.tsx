@@ -3,7 +3,6 @@ import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { Col, Divider, Row } from 'antd';
 import BasicInput from '../BasicInput';
 import BasicButton from '../BasicButton';
-import { IconDate } from '../../Icon/common';
 import { ButtonType } from 'antd/es/button';
 import { isEqual } from 'lodash';
 import {
@@ -18,6 +17,7 @@ import { CronSelectStyleWrapper } from './style';
 import { CronInputProps, CronMode, typeCronMode } from './index.type';
 import useCron from './useCron';
 import classNames from 'classnames';
+import { CalendarOutlined } from '@actiontech/icons';
 
 const CronInputCom = (props: CronInputProps) => {
   const {
@@ -182,7 +182,9 @@ const CronInputCom = (props: CronInputProps) => {
             size="large"
             type={currentButtonType}
             disabled={props.disabled ?? false}
-            icon={<IconDate />}
+            icon={
+              <CalendarOutlined width={18} height={18} viewBox={`0 0 18 18`} />
+            }
             onClick={onChangeCronMode}
           ></BasicButton>
         </Col>

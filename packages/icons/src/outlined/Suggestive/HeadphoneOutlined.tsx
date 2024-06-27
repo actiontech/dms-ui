@@ -21,8 +21,8 @@ const HeadphoneOutlined = (props: SVGProps<SVGSVGElement>) => {
           y2={133.333}
           gradientUnits="userSpaceOnUse"
         >
-          <stop />
-          <stop offset={1} />
+          <stop stopColor="#2E6BE6" stopOpacity={0.4} />
+          <stop offset={1} stopColor="#2E6BE6" />
         </linearGradient>
       </defs>
     </svg>
