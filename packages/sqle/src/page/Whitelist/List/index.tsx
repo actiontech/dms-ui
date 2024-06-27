@@ -17,7 +17,6 @@ import {
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon/common';
 import WhitelistDrawer from '../Drawer';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
@@ -30,6 +29,7 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
+import { PlusOutlined } from '@actiontech/icons';
 
 const WhitelistList = () => {
   const { t } = useTranslation();
@@ -174,7 +174,9 @@ const WhitelistList = () => {
           >
             <BasicButton
               type="primary"
-              icon={<IconAdd />}
+              icon={
+                <PlusOutlined width={10} height={10} color="currentColor" />
+              }
               onClick={openAddWhitelistModal}
             >
               {t('whitelist.operate.addWhitelist')}
