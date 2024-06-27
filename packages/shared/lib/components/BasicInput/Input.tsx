@@ -2,10 +2,10 @@ import { InputProps, ConfigProvider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { InputRef } from 'antd';
 import { forwardRef } from 'react';
-import { IconClose } from '../../Icon';
 import classnames from 'classnames';
 import { StyleComponent } from './style';
 import { ComponentControlHeight } from '../../data/common';
+import { CloseOutlined } from '@actiontech/icons';
 
 const Wrapper = StyleComponent('Input');
 
@@ -36,7 +36,9 @@ const InternalInput: React.ForwardRefRenderFunction<InputRef, InputProps> = (
         allowClear={
           allowClear
             ? {
-                clearIcon: <IconClose />
+                clearIcon: (
+                  <CloseOutlined width={14} height={14} fill="currentColor" />
+                )
               }
             : false
         }
