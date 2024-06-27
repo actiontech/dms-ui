@@ -1,6 +1,6 @@
 <!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx -->
 <svg viewBox="0 0 160 140" xmlns="http://www.w3.org/2000/svg">
-  <g opacity="0.06">
+  <g>
     <path
       d="M20 103.333V13.3333C20 2.28759 28.9543 -6.66675 40 -6.66675H133.333C137.015 -6.66675 140 -3.68195 140 -8.10623e-05V120C140 123.682 137.015 126.667 133.333 126.667H43.3333C30.4467 126.667 20 116.22 20 103.333ZM126.667 113.333V93.3333H43.3333C37.8105 93.3333 33.3333 97.8106 33.3333 103.333C33.3333 108.856 37.8105 113.333 43.3333 113.333H126.667ZM66.6667 6.66659H40C36.3181 6.66659 33.3333 9.65139 33.3333 13.3333V82.2453C36.3642 80.8053 39.7547 79.9999 43.3333 79.9999H126.667V6.66659H113.333V59.9999L90 46.6666L66.6667 59.9999V6.66659Z"
       fill="url(#paint0_linear_2190_5858)" />
@@ -8,8 +8,8 @@
   <defs>
     <linearGradient id="paint0_linear_2190_5858" x1="80" y1="-6.66675" x2="80" y2="126.667"
       gradientUnits="userSpaceOnUse">
-      <stop stopColor="#169E75" stopOpacity="0.4" />
-      <stop offset="1" stopColor="#169E75" />
+      <stop stop-color="#169E75" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#169E75" />
     </linearGradient>
   </defs>
 </svg>

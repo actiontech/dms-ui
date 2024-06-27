@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { Typography } from 'antd';
 import { TokenWrapperStyleWrapper, TokenRectStyleWrapper } from './style';
-import { IconToken } from '../../Icon/common';
 import BasicToolTips from '../BasicToolTips';
+import { TokenFilled } from '@actiontech/icons';
 
 type typeTokenCom = {
   text: string;
@@ -42,7 +42,7 @@ const TokenCom = (props: typeTokenCom) => {
               {text}
             </Typography.Text>
           ) : (
-            <IconToken />
+            <TokenFilled />
           )}
         </TokenRectStyleWrapper>
       </BasicToolTips>
