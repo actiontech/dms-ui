@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Space, message } from 'antd';
 import { useRequest, useBoolean } from 'ahooks';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconDownload } from '@actiontech/shared/lib/Icon';
 import operationRecord from '@actiontech/shared/lib/api/sqle/service/OperationRecord';
 import {
   IGetOperationRecordListV1Params,
@@ -27,6 +26,7 @@ import {
 import useOperationTypeName from '../../../hooks/useOperationTypeName';
 import useOperationActions from '../../../hooks/useOperationActions';
 import { ResponseCode } from '../../../data/common';
+import { DownArrowLineOutlined } from '@actiontech/icons';
 
 const OperationRecordList: React.FC = () => {
   const { t } = useTranslation();
@@ -158,7 +158,7 @@ const OperationRecordList: React.FC = () => {
         extra={
           <Space size={12}>
             <BasicButton
-              icon={<IconDownload />}
+              icon={<DownArrowLineOutlined fill="currentColor" />}
               type="primary"
               onClick={onExport}
               disabled={exportButtonEnableStatus}
