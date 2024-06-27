@@ -5,7 +5,6 @@ import {
   SQLStatementFormProps,
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
-import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import {
   BasicInput,
   BasicToolTips,
@@ -17,6 +16,7 @@ import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style'
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
+import { RingPieFilled } from '@actiontech/icons';
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
@@ -45,7 +45,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
         name="uploadType"
         label={
           <>
-            <IconEllipse />
+            <RingPieFilled className="custom-icon-ellipse" />
             <span>{t('sqlAudit.create.sqlInfo.form.uploadType')}</span>
           </>
         }

@@ -17,13 +17,13 @@ import DatabaseInfo from './DatabaseInfo';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
-import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormSubmitStatusContext } from '..';
 import {
   FormatLanguageSupport,
   formatterSQL
 } from '@actiontech/shared/lib/utils/FormatterSQL';
+import { InfoCircleOutlined } from '@actiontech/icons';
 
 const SQLInfoFormItem = ({
   form,
@@ -148,7 +148,7 @@ const SQLInfoFormItem = ({
             {t('order.sqlInfo.format')}
           </BasicButton>
           <BasicToolTips
-            prefixIcon={<IconTipGray />}
+            prefixIcon={<InfoCircleOutlined />}
             title={t('order.sqlInfo.formatTips', {
               supportType: Object.keys(FormatLanguageSupport).join('、')
             })}

@@ -9,14 +9,6 @@ import {
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
-import {
-  IconDatabase,
-  IconDatabaseActive,
-  IconDatabaseSchema,
-  IconDatabaseSchemaActive,
-  IconFillList,
-  IconFillListActive
-} from '@actiontech/shared/lib/Icon/common';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
 import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -25,6 +17,13 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
 import { FormSubmitStatusContext } from '..';
+import {
+  DatabaseSchemaFilled,
+  DatabaseFilled,
+  ProfileSquareFilled
+} from '@actiontech/icons';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
 
 const DatabaseInfo = ({
   form,
@@ -34,6 +33,7 @@ const DatabaseInfo = ({
 }: DatabaseInfoProps) => {
   const { t } = useTranslation();
   const { projectID, projectName } = useCurrentProject();
+  const { sqleTheme } = useThemeStyleData();
   const submitLoading = useContext(FormSubmitStatusContext);
 
   const isDynamic = useMemo(
@@ -66,9 +66,10 @@ const DatabaseInfo = ({
   const renderRuleTemplateDisplay = useCallback(() => {
     if (!instanceInfo || !instanceInfo.rule_template) {
       return (
-        <BasicButton style={{ width: 36, height: 36 }}>
-          <IconFillList />
-        </BasicButton>
+        <BasicButton
+          style={{ width: 36, height: 36 }}
+          icon={<ProfileSquareFilled width={18} height={18} />}
+        />
       );
     }
 
@@ -84,12 +85,19 @@ const DatabaseInfo = ({
           </Link>
         }
       >
-        <BasicButton style={{ width: 36, height: 36 }}>
-          <IconFillListActive />
-        </BasicButton>
+        <BasicButton
+          style={{ width: 36, height: 36 }}
+          icon={
+            <ProfileSquareFilled
+              width={18}
+              height={18}
+              color={sqleTheme.icon.execWorkFlow.profileSquareFilled}
+            />
+          }
+        />
       </BasicToolTips>
     );
-  }, [instanceInfo, projectID, t]);
+  }, [instanceInfo, projectID, t, sqleTheme]);
 
   return (
     <div hidden={!isDynamic}>
@@ -114,8 +122,20 @@ const DatabaseInfo = ({
           <CustomSelect
             className="data-source-row-select"
             allowClear={false}
-            prefix={<IconDatabase />}
-            valuePrefix={<IconDatabaseActive />}
+            prefix={
+              <CommonIconStyleWrapper>
+                <DatabaseFilled width={18} height={18} />
+              </CommonIconStyleWrapper>
+            }
+            valuePrefix={
+              <CommonIconStyleWrapper>
+                <DatabaseFilled
+                  width={18}
+                  height={18}
+                  color={sqleTheme.icon.execWorkFlow.databaseFilled}
+                />
+              </CommonIconStyleWrapper>
+            }
             size="middle"
             disabled={submitLoading}
             loading={instanceLoading}
@@ -138,8 +158,20 @@ const DatabaseInfo = ({
             className="data-source-row-select"
             size="middle"
             disabled={submitLoading || !instanceName}
-            prefix={<IconDatabaseSchema />}
-            valuePrefix={<IconDatabaseSchemaActive />}
+            prefix={
+              <CommonIconStyleWrapper>
+                <DatabaseSchemaFilled width={18} height={18} />
+              </CommonIconStyleWrapper>
+            }
+            valuePrefix={
+              <CommonIconStyleWrapper>
+                <DatabaseSchemaFilled
+                  width={18}
+                  height={18}
+                  color={sqleTheme.icon.execWorkFlow.schemaFilled}
+                />
+              </CommonIconStyleWrapper>
+            }
             loading={getInstanceSchemaListLoading}
             placeholder={t('common.form.placeholder.select', {
               name: t('sqlAudit.create.sqlInfo.form.instanceSchema')
