@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useState } from 'react';
-import { Space, Popover } from 'antd';
+import { Popover } from 'antd';
 
-import { IconArrowDown, IconArrowUp, IconSetting } from '../../../Icon';
 import BasicButton from '../../BasicButton';
 import { CatchTableColumnValueType, ColumnsSettingProps } from '../index.type';
 import useTableSettings from '../hooks/useTableSettings';
@@ -26,6 +25,8 @@ import {
   verticalListSortingStrategy
 } from '@dnd-kit/sortable';
 import ColumnsItems, { typeFixed } from './ColumnsItems';
+import { DownOutlined, UpOutlined, SettingOutlined } from '@actiontech/icons';
+import { ColumnsSettingStyleWrapper } from './style';
 
 /**
  * todo:
@@ -280,11 +281,19 @@ const ColumnsSetting = <
         className="actiontech-table-setting-namespace"
         style={{ padding: '0 6px 0 8px' }}
       >
-        <Space size={5} align="center">
-          <IconSetting />
+        <ColumnsSettingStyleWrapper size={5} align="center">
+          <SettingOutlined
+            width={13}
+            height={11}
+            className="custom-icon custom-icon-setting"
+          />
           {t('common.actiontechTable.setting.buttonText')}
-          {open ? <IconArrowUp /> : <IconArrowDown />}
-        </Space>
+          {open ? (
+            <UpOutlined color="currrentColor" width={14} height={14} />
+          ) : (
+            <DownOutlined color="currrentColor" width={14} height={14} />
+          )}
+        </ColumnsSettingStyleWrapper>
       </BasicButton>
     </Popover>
   );

@@ -14,11 +14,11 @@ import {
   InlineTableActionButtonsStyleWrapper,
   InlineTableActionMoreButtonPopoverStyleWrapper
 } from '../components/style';
-import { IconMoreFill } from '../../../Icon';
 import EmptyBox from '../../EmptyBox';
 import { checkButtonPermissions, checkButtonDisabled } from '../utils';
 import { PopconfirmMessageStyleWrapper } from '../../../styleWrapper/element';
 import classNames from 'classnames';
+import { DashOutlined } from '@actiontech/icons';
 
 export const ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH = 82;
 export const ACTIONTECH_TABLE_MORE_BUTTON_WIDTH = 40;
@@ -258,7 +258,7 @@ const MoreButtons = <T extends Record<string, any>>({
     >
       <BasicButton
         className="actiontech-table-actions-button actiontech-table-actions-more-button"
-        icon={<IconMoreFill />}
+        icon={<DashOutlined color="currentColor" />}
         onClick={() => {
           setOpen(true);
         }}

@@ -1,6 +1,5 @@
 import { Checkbox, CheckboxProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { IconDraggable } from '../../../Icon';
 
 import { CatchTableColumnValueType } from '../index.type';
 import { getColumnsLabel } from '../utils';
@@ -14,6 +13,7 @@ import {
   VerticalAlignTopOutlined
 } from '@ant-design/icons';
 import BasicToolTips from '../../BasicToolTips';
+import { DragOutlined } from '@actiontech/icons';
 
 export type typeFixed = 'left' | 'right' | 'no-fixed';
 export interface IColumnsItems<T> {
@@ -61,7 +61,7 @@ const ColumnsItems = <T extends Record<string, any>>({
       {...attributes}
       {...listeners}
     >
-      <IconDraggable />
+      <DragOutlined />
       <div className="columns-setting-item">
         <Checkbox checked={data?.show} onChange={onShowChange}>
           <div style={{ width: '90px' }}>
