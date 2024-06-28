@@ -191,14 +191,13 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                       style="color: rgb(69, 131, 255);"
                     >
                       <svg
-                        fill="none"
+                        fill="currentColor"
                         height="24"
                         viewBox="0 0 24 24"
                         width="24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <rect
-                          fill="currentColor"
                           height="16"
                           opacity="0.5"
                           rx="1.5"
@@ -207,7 +206,6 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                           y="2"
                         />
                         <rect
-                          fill="currentColor"
                           height="17"
                           rx="2"
                           width="20"
@@ -215,8 +213,8 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                           y="5"
                         />
                         <path
-                          d="M16.2426 12.0884L13.4142 14.9169L10.5858 12.0884L7.75736 14.9169"
-                          stroke="white"
+                          d="m16.243 12.088-2.829 2.829-2.828-2.829-2.829 2.829"
+                          stroke="#fff"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           stroke-width="2"
@@ -290,7 +288,7 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                       style="color: rgb(69, 131, 255);"
                     >
                       <svg
-                        fill="none"
+                        fill="currentColor"
                         height="24"
                         viewBox="0 0 24 24"
                         width="24"
@@ -306,13 +304,12 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                           cx="12"
                           cy="12"
                           r="10"
-                          stroke="white"
-                          stroke-opacity="0.5"
+                          stroke="#fff"
                           stroke-width="2"
                         />
                         <path
-                          d="M12 7.5V12H15.5"
-                          stroke="white"
+                          d="M12 7.5V12h3.5"
+                          stroke="#fff"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           stroke-width="2"
@@ -395,8 +392,8 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                           y="4"
                         />
                         <path
-                          d="M7.79999 13L10.2749 15.4749L14.5175 11.2322"
-                          stroke="white"
+                          d="m7.8 13 2.475 2.475 4.243-4.243"
+                          stroke="#fff"
                           stroke-linecap="round"
                           stroke-linejoin="round"
                           stroke-width="2"
@@ -486,22 +483,17 @@ exports[`sqle/ReportStatistics/EEIndex render report statics page 1`] = `
                           <div
                             class="ant-picker-range-separator"
                           >
-                            <span
-                              class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                              />
+                            </svg>
                           </div>
                           <div
                             class="ant-picker-input"
