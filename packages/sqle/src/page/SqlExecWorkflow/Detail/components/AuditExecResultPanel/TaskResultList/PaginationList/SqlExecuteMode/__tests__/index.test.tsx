@@ -7,6 +7,7 @@ import { superRender } from '../../../../../../../../../testUtils/customRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test PaginationList/SQLExecuteMode', () => {
   const customRender = (params?: Partial<SqlExecuteModeProps>) => {
@@ -24,6 +25,7 @@ describe('test PaginationList/SQLExecuteMode', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     mockUseCurrentProject();
   });

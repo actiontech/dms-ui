@@ -85,7 +85,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
           <div className="label-cont-custom">
             <div>
               <CommonIconStyleWrapper className="custom-icon-ellipse">
-                <RingPieFilled />
+                <RingPieFilled className="custom-icon-ellipse" />
               </CommonIconStyleWrapper>
               <span>
                 {t('execWorkflow.create.form.sqlInfo.selectExecuteMode')}

@@ -11,6 +11,7 @@ import {
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import rule_template from '../../../../../..//testUtils/mockApi/rule_template';
 import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   let requestUpdateAuditTaskSQLs: jest.SpyInstance;
@@ -21,6 +22,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestUpdateAuditTaskSQLs = execWorkflow.updateAuditTaskSQLs();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();

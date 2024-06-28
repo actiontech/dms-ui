@@ -6,8 +6,17 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { cleanup } from '@testing-library/react';
 
 describe('test TaskResultList/SQLStatementResultTable', () => {
+  beforeEach(() => {
+    mockUseCurrentUser();
+  });
+  afterEach(() => {
+    cleanup();
+  });
+
   it('should match snapshot', async () => {
     rule_template.getRuleList();
     jest.useFakeTimers();
