@@ -9,6 +9,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import system from '../../../../../testUtils/mockApi/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons', () => {
   let requestTestWechatAuditConfig: jest.SpyInstance;
@@ -22,6 +23,7 @@ describe('base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons', 
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestTestWechatAuditConfig = system.testWechatAuditConfig();
   });

@@ -5,6 +5,7 @@ import system from '../../../../testUtils/mockApi/system';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PushNotification/LarkSetting', () => {
   let requestGetFeishuConfiguration: jest.SpyInstance;
@@ -14,6 +15,7 @@ describe('base/System/PushNotification/LarkSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetFeishuConfiguration = system.getLarkConfig();
     requestUpdateFeishuConfiguration = system.updateLarkConfig();
