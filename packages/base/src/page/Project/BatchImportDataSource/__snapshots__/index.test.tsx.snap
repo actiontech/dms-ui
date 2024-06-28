@@ -59,7 +59,7 @@ exports[`base/Project/BatchImportDataSource render delete file 1`] = `
         class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
         >
           <span
             class="anticon title-icon"
@@ -319,7 +319,7 @@ exports[`base/Project/BatchImportDataSource render init snap 1`] = `
         class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
         >
           <span
             class="anticon title-icon"
@@ -506,7 +506,7 @@ exports[`base/Project/BatchImportDataSource render test connection 1`] = `
         class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
         >
           <span
             class="anticon title-icon"
