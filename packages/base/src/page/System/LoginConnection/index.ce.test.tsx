@@ -7,6 +7,7 @@ import system from '../../../testUtils/mockApi/system';
 import { cleanup, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import LoginConnection from '.';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/LoginConnection-ce', () => {
   const customRender = () => {
@@ -14,6 +15,7 @@ describe('base/System/LoginConnection-ce', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     system.mockAllApi();
   });

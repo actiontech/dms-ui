@@ -11,6 +11,7 @@ import {
 
 import system from '../../../../../testUtils/mockApi/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
   let requestTestWeChatConfiguration: jest.SpyInstance;
@@ -24,6 +25,7 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestTestWeChatConfiguration = system.testWeChatConfig();
   });
