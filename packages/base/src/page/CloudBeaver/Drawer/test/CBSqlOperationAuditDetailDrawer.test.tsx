@@ -6,6 +6,8 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';
 import rule_template from 'sqle/src/testUtils/mockApi/rule_template/index';
 import { listCBOperationLogsMockData } from '../../../../testUtils/mockApi/cloudBeaver/data';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => {
   return {
@@ -21,7 +23,11 @@ describe('base/CloudBeaver/CBSqlOperationAuditDetailDrawer', () => {
 
   beforeEach(() => {
     getRuleListSpy = rule_template.getRuleList();
-    (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
+    mockUseCurrentUser();
+    mockUseCurrentProject();
+    (useDispatch as jest.Mock).mockImplementation(
+      () => mockDispatch
+    );
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         cloudBeaver: {
