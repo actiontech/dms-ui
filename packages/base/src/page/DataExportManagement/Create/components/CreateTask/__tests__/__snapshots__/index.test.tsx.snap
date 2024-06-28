@@ -52,14 +52,13 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -94,21 +93,25 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
               >
                 <span
-                  class="custom-icon order-create-title-icon title-icon css-a29a66"
+                  class="anticon title-icon"
+                  role="img"
                 >
                   <svg
+                    aria-hidden="true"
+                    class=""
                     fill="currentColor"
-                    height="28"
+                    focusable="false"
+                    height="1em"
                     viewBox="0 0 24 28"
-                    width="24"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                      fill="currentColor"
+                      d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                      fill="#C3C6CD"
                     />
                   </svg>
                 </span>
@@ -238,37 +241,35 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       <div
                         class="label-cont-custom"
                       >
-                        <div>
-                          <span
-                            class="custom-icon-ellipse css-u3jcp4"
+                        <span
+                          class="custom-icon-ellipse css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
+                            <rect
+                              fill="#E8F3FF"
                               height="16"
-                              viewBox="0 0 16 16"
+                              rx="3"
                               width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <rect
-                                fill="#E8F3FF"
-                                height="16"
-                                rx="3"
-                                width="16"
-                              />
-                              <circle
-                                cx="8"
-                                cy="8"
-                                fill="white"
-                                r="3"
-                                stroke="#4583FF"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </span>
-                          <span>
-                            数据源
-                          </span>
-                        </div>
+                            />
+                            <circle
+                              cx="8"
+                              cy="8"
+                              fill="#fff"
+                              r="3"
+                              stroke="#4583FF"
+                              stroke-width="2"
+                            />
+                          </svg>
+                        </span>
+                        <span>
+                          数据源
+                        </span>
                       </div>
                     </label>
                   </div>
@@ -365,37 +366,35 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       <div
                         class="label-cont-custom"
                       >
-                        <div>
-                          <span
-                            class="custom-icon-ellipse css-u3jcp4"
+                        <span
+                          class="custom-icon-ellipse css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
+                            <rect
+                              fill="#E8F3FF"
                               height="16"
-                              viewBox="0 0 16 16"
+                              rx="3"
                               width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <rect
-                                fill="#E8F3FF"
-                                height="16"
-                                rx="3"
-                                width="16"
-                              />
-                              <circle
-                                cx="8"
-                                cy="8"
-                                fill="white"
-                                r="3"
-                                stroke="#4583FF"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </span>
-                          <span>
-                            数据库
-                          </span>
-                        </div>
+                            />
+                            <circle
+                              cx="8"
+                              cy="8"
+                              fill="#fff"
+                              r="3"
+                              stroke="#4583FF"
+                              stroke-width="2"
+                            />
+                          </svg>
+                        </span>
+                        <span>
+                          数据库
+                        </span>
                       </div>
                     </label>
                   </div>
@@ -513,33 +512,27 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                     >
                       <div
                         class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
-                        id="exportMethod"
                       >
                         <div
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                         >
                           <div
-                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
+                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                           >
                             <span
                               class="actiontech-mode-switcher-item-icon"
                             >
-                              <span
-                                class="custom-icon  css-u3jcp4"
+                              <svg
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
+                                <path
+                                  d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                   fill="currentColor"
-                                  height="18"
-                                  viewBox="0 0 18 18"
-                                  width="18"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                    fill="currentColor"
-                                  />
-                                </svg>
-                              </span>
+                                />
+                              </svg>
                             </span>
                             <span
                               class="actiontech-mode-switcher-item-text"
@@ -550,7 +543,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                               class="active-icon-wrapper"
                             >
                               <span
-                                class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                class="icon-mode-switcher-checked active-icon"
                               >
                                 <svg
                                   fill="none"
@@ -711,15 +704,15 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                   class="ant-space-item"
                 >
                   <svg
-                    fill="none"
+                    color="#8A8F99"
                     height="14"
                     viewBox="0 0 14 14"
                     width="14"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                      fill="#8A8F99"
+                      d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                      fill="currentColor"
                     />
                   </svg>
                 </div>
@@ -761,14 +754,13 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -802,21 +794,25 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
               >
                 <span
-                  class="custom-icon order-create-title-icon title-icon css-a29a66"
+                  class="anticon title-icon"
+                  role="img"
                 >
                   <svg
+                    aria-hidden="true"
+                    class=""
                     fill="currentColor"
-                    height="28"
+                    focusable="false"
+                    height="1em"
                     viewBox="0 0 24 28"
-                    width="24"
+                    width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                      fill="currentColor"
+                      d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                      fill="#C3C6CD"
                     />
                   </svg>
                 </span>
@@ -946,37 +942,35 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       <div
                         class="label-cont-custom"
                       >
-                        <div>
-                          <span
-                            class="custom-icon-ellipse css-u3jcp4"
+                        <span
+                          class="custom-icon-ellipse css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
+                            <rect
+                              fill="#E8F3FF"
                               height="16"
-                              viewBox="0 0 16 16"
+                              rx="3"
                               width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <rect
-                                fill="#E8F3FF"
-                                height="16"
-                                rx="3"
-                                width="16"
-                              />
-                              <circle
-                                cx="8"
-                                cy="8"
-                                fill="white"
-                                r="3"
-                                stroke="#4583FF"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </span>
-                          <span>
-                            数据源
-                          </span>
-                        </div>
+                            />
+                            <circle
+                              cx="8"
+                              cy="8"
+                              fill="#fff"
+                              r="3"
+                              stroke="#4583FF"
+                              stroke-width="2"
+                            />
+                          </svg>
+                        </span>
+                        <span>
+                          数据源
+                        </span>
                       </div>
                     </label>
                   </div>
@@ -1073,37 +1067,35 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                       <div
                         class="label-cont-custom"
                       >
-                        <div>
-                          <span
-                            class="custom-icon-ellipse css-u3jcp4"
+                        <span
+                          class="custom-icon-ellipse css-u3jcp4"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
+                            <rect
+                              fill="#E8F3FF"
                               height="16"
-                              viewBox="0 0 16 16"
+                              rx="3"
                               width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <rect
-                                fill="#E8F3FF"
-                                height="16"
-                                rx="3"
-                                width="16"
-                              />
-                              <circle
-                                cx="8"
-                                cy="8"
-                                fill="white"
-                                r="3"
-                                stroke="#4583FF"
-                                stroke-width="2"
-                              />
-                            </svg>
-                          </span>
-                          <span>
-                            数据库
-                          </span>
-                        </div>
+                            />
+                            <circle
+                              cx="8"
+                              cy="8"
+                              fill="#fff"
+                              r="3"
+                              stroke="#4583FF"
+                              stroke-width="2"
+                            />
+                          </svg>
+                        </span>
+                        <span>
+                          数据库
+                        </span>
                       </div>
                     </label>
                   </div>
@@ -1221,33 +1213,27 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                     >
                       <div
                         class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
-                        id="exportMethod"
                       >
                         <div
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                         >
                           <div
-                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-5exgjg"
+                            class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                           >
                             <span
                               class="actiontech-mode-switcher-item-icon"
                             >
-                              <span
-                                class="custom-icon  css-u3jcp4"
+                              <svg
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
+                                <path
+                                  d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                   fill="currentColor"
-                                  height="18"
-                                  viewBox="0 0 18 18"
-                                  width="18"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                    fill="currentColor"
-                                  />
-                                </svg>
-                              </span>
+                                />
+                              </svg>
                             </span>
                             <span
                               class="actiontech-mode-switcher-item-text"
@@ -1258,7 +1244,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                               class="active-icon-wrapper"
                             >
                               <span
-                                class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                class="icon-mode-switcher-checked active-icon"
                               >
                                 <svg
                                   fill="none"
@@ -1373,15 +1359,15 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                   class="ant-space-item"
                 >
                   <svg
-                    fill="none"
+                    color="#8A8F99"
                     height="14"
                     viewBox="0 0 14 14"
                     width="14"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                      fill="#8A8F99"
+                      d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                      fill="currentColor"
                     />
                   </svg>
                 </div>
