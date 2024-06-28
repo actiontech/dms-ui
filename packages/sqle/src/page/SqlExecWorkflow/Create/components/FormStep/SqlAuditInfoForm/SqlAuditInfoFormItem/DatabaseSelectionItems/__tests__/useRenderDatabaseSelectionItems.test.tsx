@@ -11,9 +11,11 @@ import {
 import system from '../../../../../../../../../testUtils/mockApi/system';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test useRenderDatabaseSelectionItems', () => {
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     mockUseCurrentProject();
   });

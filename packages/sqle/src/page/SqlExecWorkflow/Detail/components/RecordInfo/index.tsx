@@ -23,7 +23,7 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
           <span className="workflow-record-info-header-text">
             {t('execWorkflow.detail.operator.title')}
           </span>
-          <CloseOutlined onClick={onClose} />
+          <CloseOutlined className="custom-icon-close" onClick={onClose} />
         </div>
 
         <WorkflowBasicInfo

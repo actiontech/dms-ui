@@ -3,6 +3,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import { AuditResultDrawerProps } from '../index.type';
 import { superRender } from '../../../../../../testUtils/customRender';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
   const onCloseFn = jest.fn();
@@ -12,6 +13,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

@@ -55,23 +55,17 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-error css-u3jcp4"
-                    role="img"
+                  <svg
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                        fill="#F66074"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                      fill="#F66074"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -97,23 +91,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-warn css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                        fill="#EBAD1C"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                      fill="#EBAD1C"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -134,7 +123,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -145,22 +134,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 <div
                   class="ant-space-item"
                 >
-                  <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currrentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                       fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                      />
-                    </svg>
-                  </span>
+                    />
+                  </svg>
                 </div>
               </div>
             </button>
@@ -188,33 +173,26 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  />
+                </svg>
+              </span>
               <div
                 class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
               >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 5px;"
-                >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
                 <div
                   class="ant-space-item"
                   style="margin-right: 5px;"
@@ -225,18 +203,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                   class="ant-space-item"
                 >
                   <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
+                      color="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -257,24 +235,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               style="margin-right: 5px;"
             >
               <span
-                class="custom-icon  css-u3jcp4"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="none"
                   height="14"
                   viewBox="0 0 14 14"
                   width="14"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="layout-bottom-2-line"
-                  >
-                    <path
-                      d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                    fill="#292C33"
+                  />
                 </svg>
               </span>
             </div>
@@ -288,18 +260,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-space-item"
             >
               <span
-                class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                role="img"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
+                  color="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -678,23 +650,17 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-error css-u3jcp4"
-                    role="img"
+                  <svg
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                        fill="#F66074"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                      fill="#F66074"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -720,23 +686,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-warn css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                        fill="#EBAD1C"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                      fill="#EBAD1C"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -757,7 +718,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -768,22 +729,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 <div
                   class="ant-space-item"
                 >
-                  <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currrentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                       fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                      />
-                    </svg>
-                  </span>
+                    />
+                  </svg>
                 </div>
               </div>
             </button>
@@ -811,33 +768,26 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  />
+                </svg>
+              </span>
               <div
                 class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
               >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 5px;"
-                >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
                 <div
                   class="ant-space-item"
                   style="margin-right: 5px;"
@@ -848,18 +798,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                   class="ant-space-item"
                 >
                   <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
+                      color="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -880,24 +830,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               style="margin-right: 5px;"
             >
               <span
-                class="custom-icon  css-u3jcp4"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="none"
                   height="14"
                   viewBox="0 0 14 14"
                   width="14"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="layout-bottom-2-line"
-                  >
-                    <path
-                      d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                    fill="#292C33"
+                  />
                 </svg>
               </span>
             </div>
@@ -911,18 +855,18 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-space-item"
             >
               <span
-                class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                role="img"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
+                  color="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -1090,7 +1034,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
                             准备执行
                           </span>
@@ -1105,26 +1049,20 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1u3lh6f css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh css-dev-only-do-not-override-txh9fw"
                                 style="background-color: gray;"
                               >
-                                <span
-                                  class="custom-icon custom-icon-level-normal css-u3jcp4"
-                                  role="img"
+                                <svg
+                                  height="19"
+                                  viewBox="0 0 18 19"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
-                                    height="19"
-                                    viewBox="0 0 18 19"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M15 17H3C2.80109 17 2.61032 16.921 2.46967 16.7803C2.32902 16.6397 2.25 16.4489 2.25 16.25V2.75C2.25 2.55109 2.32902 2.36032 2.46967 2.21967C2.61032 2.07902 2.80109 2 3 2H15C15.1989 2 15.3897 2.07902 15.5303 2.21967C15.671 2.36032 15.75 2.55109 15.75 2.75V16.25C15.75 16.4489 15.671 16.6397 15.5303 16.7803C15.3897 16.921 15.1989 17 15 17ZM6 5.75V7.25H12V5.75H6ZM6 8.75V10.25H12V8.75H6ZM6 11.75V13.25H9.75V11.75H6Z"
-                                      fill="#7D8CA8"
-                                    />
-                                  </svg>
-                                </span>
+                                  <path
+                                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                    fill="#C3C6CD"
+                                  />
+                                </svg>
                                 0
                               </span>
                             </div>
@@ -1211,25 +1149,20 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      color="#4583FF"
+                                      height="18"
+                                      viewBox="0 0 18 19"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="18"
-                                        viewBox="0 0 18 18"
-                                        width="18"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                                          fill="#4583FF"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
                                     <span>
                                       <span
                                         class="sql-source-title"
@@ -1248,26 +1181,19 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
-                              role="img"
+                            <svg
+                              height="18"
+                              viewBox="0 0 1024 1024"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                height="18"
-                                id="mx_n_1705397970752"
-                                version="1.1"
-                                viewBox="0 0 1024 1024"
-                                width="18"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M512 938.666667c-53.333333 0-384-257.258667-384-469.333334S299.925333 85.333333 512 85.333333s384 171.925333 384 384-330.666667 469.333333-384 469.333334z m0-352c64.8 0 117.333333-52.533333 117.333333-117.333334s-52.533333-117.333333-117.333333-117.333333-117.333333 52.533333-117.333333 117.333333 52.533333 117.333333 117.333333 117.333334z"
-                                  fill="#4583FF"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                                fill="#4583FF"
+                              />
+                            </svg>
                             <span>
                               <span
                                 class="sql-source-title"
@@ -1359,18 +1285,16 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                   class="ant-tree-switcher ant-tree-switcher_close"
                                 >
                                   <span
-                                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                                    role="img"
+                                    class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
                                       height="16"
                                       viewBox="0 0 16 16"
                                       width="16"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                                         fill="#C3C6CD"
                                       />
                                     </svg>
@@ -1446,18 +1370,16 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                                   class="ant-tree-switcher ant-tree-switcher_close"
                                 >
                                   <span
-                                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                                    role="img"
+                                    class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
                                       height="16"
                                       viewBox="0 0 16 16"
                                       width="16"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                                         fill="#C3C6CD"
                                       />
                                     </svg>
@@ -1493,21 +1415,15 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                           class="css-lpwde2"
                         >
                           <svg
-                            fill="none"
                             height="16"
                             viewBox="0 0 16 16"
                             width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g
-                              id="edit-2-fill"
-                            >
-                              <path
-                                d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                fill="#8A8F99"
-                                id="Vector"
-                              />
-                            </g>
+                            <path
+                              d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                              fill="#8A8F99"
+                            />
                           </svg>
                           <input
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
@@ -1739,23 +1655,17 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-error css-u3jcp4"
-                    role="img"
+                  <svg
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                        fill="#F66074"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                      fill="#F66074"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -1781,23 +1691,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-warn css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                        fill="#EBAD1C"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                      fill="#EBAD1C"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -1820,7 +1725,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -1831,22 +1736,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                 <div
                   class="ant-space-item"
                 >
-                  <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currrentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                       fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                      />
-                    </svg>
-                  </span>
+                    />
+                  </svg>
                 </div>
               </div>
             </button>
@@ -1874,33 +1775,26 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  />
+                </svg>
+              </span>
               <div
                 class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
               >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 5px;"
-                >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
                 <div
                   class="ant-space-item"
                   style="margin-right: 5px;"
@@ -1911,18 +1805,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                   class="ant-space-item"
                 >
                   <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
+                      color="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1943,24 +1837,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
               style="margin-right: 5px;"
             >
               <span
-                class="custom-icon  css-u3jcp4"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="none"
                   height="14"
                   viewBox="0 0 14 14"
                   width="14"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="layout-bottom-2-line"
-                  >
-                    <path
-                      d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                    fill="#292C33"
+                  />
                 </svg>
               </span>
             </div>
@@ -1974,18 +1862,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
               class="ant-space-item"
             >
               <span
-                class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                role="img"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
+                  color="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -2213,29 +2101,25 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                         <div
                           class="css-3q8fl"
                         >
-                          <span
-                            class="custom-icon css-u3jcp4"
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                stroke="#41BF9A"
-                                stroke-width="1.5"
-                              />
-                              <path
-                                d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                                stroke="#41BF9A"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                              stroke="#41BF9A"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              d="m5.083 8 2.084 2.083 4.166-4.166"
+                              stroke="#41BF9A"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                            />
+                          </svg>
                           <span>
                             上线成功
                           </span>
@@ -2342,29 +2226,25 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                         <div
                           class="css-3q8fl"
                         >
-                          <span
-                            class="custom-icon css-u3jcp4"
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                stroke="#41BF9A"
-                                stroke-width="1.5"
-                              />
-                              <path
-                                d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                                stroke="#41BF9A"
-                                stroke-linejoin="round"
-                                stroke-width="1.5"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                              stroke="#41BF9A"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              d="m5.083 8 2.084 2.083 4.166-4.166"
+                              stroke="#41BF9A"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                            />
+                          </svg>
                           <span>
                             上线成功
                           </span>
@@ -2523,23 +2403,17 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-error css-u3jcp4"
-                    role="img"
+                  <svg
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                        fill="#F66074"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                      fill="#F66074"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -2565,23 +2439,18 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                 <span
                   class="instance-segmented-label-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-level-warn css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="none"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="14"
-                      viewBox="0 0 18 19"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                        fill="#EBAD1C"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                      fill="#EBAD1C"
+                    />
+                  </svg>
                 </span>
               </div>
             </div>
@@ -2602,7 +2471,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -2613,22 +2482,18 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                 <div
                   class="ant-space-item"
                 >
-                  <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currrentColor"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
+                    <path
+                      d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                       fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                      />
-                    </svg>
-                  </span>
+                    />
+                  </svg>
                 </div>
               </div>
             </button>
@@ -2656,33 +2521,26 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  />
+                </svg>
+              </span>
               <div
                 class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
               >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 5px;"
-                >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
                 <div
                   class="ant-space-item"
                   style="margin-right: 5px;"
@@ -2693,18 +2551,18 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                   class="ant-space-item"
                 >
                   <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
+                      color="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -2725,24 +2583,18 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
               style="margin-right: 5px;"
             >
               <span
-                class="custom-icon  css-u3jcp4"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="none"
                   height="14"
                   viewBox="0 0 14 14"
                   width="14"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="layout-bottom-2-line"
-                  >
-                    <path
-                      d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                    fill="#292C33"
+                  />
                 </svg>
               </span>
             </div>
@@ -2756,18 +2608,18 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
               class="ant-space-item"
             >
               <span
-                class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                role="img"
+                class="css-u3jcp4"
               >
                 <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
+                  color="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -2942,7 +2794,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                               >
                                 准备执行
                               </span>
@@ -2957,26 +2809,20 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1u3lh6f css-dev-only-do-not-override-txh9fw"
+                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh css-dev-only-do-not-override-txh9fw"
                                     style="background-color: gray;"
                                   >
-                                    <span
-                                      class="custom-icon custom-icon-level-normal css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      height="19"
+                                      viewBox="0 0 18 19"
+                                      width="18"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="19"
-                                        viewBox="0 0 18 19"
-                                        width="18"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M15 17H3C2.80109 17 2.61032 16.921 2.46967 16.7803C2.32902 16.6397 2.25 16.4489 2.25 16.25V2.75C2.25 2.55109 2.32902 2.36032 2.46967 2.21967C2.61032 2.07902 2.80109 2 3 2H15C15.1989 2 15.3897 2.07902 15.5303 2.21967C15.671 2.36032 15.75 2.55109 15.75 2.75V16.25C15.75 16.4489 15.671 16.6397 15.5303 16.7803C15.3897 16.921 15.1989 17 15 17ZM6 5.75V7.25H12V5.75H6ZM6 8.75V10.25H12V8.75H6ZM6 11.75V13.25H9.75V11.75H6Z"
-                                          fill="#7D8CA8"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                        fill="#C3C6CD"
+                                      />
+                                    </svg>
                                     0
                                   </span>
                                 </div>
@@ -3063,25 +2909,20 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                       >
-                                        <span
-                                          class="custom-icon css-u3jcp4"
-                                          role="img"
+                                        <svg
+                                          color="#4583FF"
+                                          height="18"
+                                          viewBox="0 0 18 19"
+                                          width="18"
+                                          xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <svg
-                                            fill="none"
-                                            height="18"
-                                            viewBox="0 0 18 18"
-                                            width="18"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                          >
-                                            <path
-                                              d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                                              fill="#4583FF"
-                                            />
-                                          </svg>
-                                        </span>
+                                          <path
+                                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                            fill="currentColor"
+                                          />
+                                        </svg>
                                         <span>
                                           <span
                                             class="sql-source-title"
@@ -3100,26 +2941,19 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                               >
-                                <span
-                                  class="custom-icon css-u3jcp4"
-                                  role="img"
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    height="18"
-                                    id="mx_n_1705397970752"
-                                    version="1.1"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M512 938.666667c-53.333333 0-384-257.258667-384-469.333334S299.925333 85.333333 512 85.333333s384 171.925333 384 384-330.666667 469.333333-384 469.333334z m0-352c64.8 0 117.333333-52.533333 117.333333-117.333334s-52.533333-117.333333-117.333333-117.333333-117.333333 52.533333-117.333333 117.333333 52.533333 117.333333 117.333333 117.333334z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
+                                  <path
+                                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
                                 <span>
                                   <span
                                     class="sql-source-title"
@@ -3211,18 +3045,16 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       class="ant-tree-switcher ant-tree-switcher_close"
                                     >
                                       <span
-                                        class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                                        role="img"
+                                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                                       >
                                         <svg
-                                          fill="none"
                                           height="16"
                                           viewBox="0 0 16 16"
                                           width="16"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <path
-                                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                                             fill="#C3C6CD"
                                           />
                                         </svg>
@@ -3298,18 +3130,16 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                       class="ant-tree-switcher ant-tree-switcher_close"
                                     >
                                       <span
-                                        class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                                        role="img"
+                                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                                       >
                                         <svg
-                                          fill="none"
                                           height="16"
                                           viewBox="0 0 16 16"
                                           width="16"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
                                           <path
-                                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                                             fill="#C3C6CD"
                                           />
                                         </svg>
@@ -3345,21 +3175,15 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                               class="css-lpwde2"
                             >
                               <svg
-                                fill="none"
                                 height="16"
                                 viewBox="0 0 16 16"
                                 width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
-                                <g
-                                  id="edit-2-fill"
-                                >
-                                  <path
-                                    d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                    fill="#8A8F99"
-                                    id="Vector"
-                                  />
-                                </g>
+                                <path
+                                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                  fill="#8A8F99"
+                                />
                               </svg>
                               <input
                                 class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"

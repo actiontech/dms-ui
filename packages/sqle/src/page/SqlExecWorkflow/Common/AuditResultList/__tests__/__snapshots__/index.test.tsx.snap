@@ -565,23 +565,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                   <span
                     class="instance-segmented-label-icon"
                   >
-                    <span
-                      class="custom-icon custom-icon-level-warn css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="none"
-                        height="14"
-                        viewBox="0 0 18 19"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                          fill="#EBAD1C"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                        fill="#EBAD1C"
+                      />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -607,23 +602,17 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                   <span
                     class="instance-segmented-label-icon"
                   >
-                    <span
-                      class="custom-icon custom-icon-level-error css-u3jcp4"
-                      role="img"
+                    <svg
+                      height="14"
+                      viewBox="0 0 16 16"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="none"
-                        height="14"
-                        viewBox="0 0 18 19"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                          fill="#F66074"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                        fill="#F66074"
+                      />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -657,33 +646,26 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  />
+                </svg>
+              </span>
               <div
                 class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
               >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 5px;"
-                >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
                 <div
                   class="ant-space-item"
                   style="margin-right: 5px;"
@@ -694,18 +676,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                   class="ant-space-item"
                 >
                   <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
+                      color="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -996,23 +978,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                   <span
                     class="instance-segmented-label-icon"
                   >
-                    <span
-                      class="custom-icon custom-icon-level-warn css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="none"
-                        height="14"
-                        viewBox="0 0 18 19"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                          fill="#EBAD1C"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                        fill="#EBAD1C"
+                      />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -1038,23 +1015,17 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                   <span
                     class="instance-segmented-label-icon"
                   >
-                    <span
-                      class="custom-icon custom-icon-level-error css-u3jcp4"
-                      role="img"
+                    <svg
+                      height="14"
+                      viewBox="0 0 16 16"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="none"
-                        height="14"
-                        viewBox="0 0 18 19"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                          fill="#F66074"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                        fill="#F66074"
+                      />
+                    </svg>
                   </span>
                 </div>
               </div>
@@ -1088,33 +1059,26 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                  />
+                </svg>
+              </span>
               <div
                 class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
               >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 5px;"
-                >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
-                </div>
                 <div
                   class="ant-space-item"
                   style="margin-right: 5px;"
@@ -1125,18 +1089,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                   class="ant-space-item"
                 >
                   <span
-                    class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
+                      color="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -1433,14 +1397,13 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                                 class="icon-wrapper"
                               >
                                 <svg
-                                  fill="none"
                                   height="20"
                                   viewBox="0 0 20 20"
                                   width="20"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
+                                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
                                     fill="#41BF9A"
                                   />
                                 </svg>
