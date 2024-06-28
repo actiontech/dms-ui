@@ -16,6 +16,7 @@ import EmitterKey from '../../../../../../data/EmitterKey';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import rule_template from '../../../../../../testUtils/mockApi/rule_template';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -26,6 +27,7 @@ describe('page/SqlManagement/StatusDrawer', () => {
   const dispatchSpy = jest.fn();
 
   beforeEach(() => {
+    mockUseCurrentUser();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     rule_template.mockAllApi();
     jest.useFakeTimers();
