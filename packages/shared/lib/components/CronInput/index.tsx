@@ -183,7 +183,12 @@ const CronInputCom = (props: CronInputProps) => {
             type={currentButtonType}
             disabled={props.disabled ?? false}
             icon={
-              <CalendarOutlined width={18} height={18} viewBox={`0 0 18 18`} />
+              <CalendarOutlined
+                className="custom-icon custom-icon-date"
+                width={18}
+                height={18}
+                viewBox={`0 0 18 18`}
+              />
             }
             onClick={onChangeCronMode}
           ></BasicButton>
