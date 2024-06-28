@@ -9,7 +9,13 @@ const RefreshButton: React.FC<TableRefreshButtonProps> = ({
   return (
     <BasicButton
       size="small"
-      icon={<RefreshOutlined width={14} height={14} />}
+      icon={
+        <RefreshOutlined
+          className="custom-icon custom-icon-refresh"
+          width={14}
+          height={14}
+        />
+      }
       onClick={refresh}
       {...props}
     ></BasicButton>

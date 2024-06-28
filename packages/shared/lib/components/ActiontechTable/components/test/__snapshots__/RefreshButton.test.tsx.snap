@@ -11,6 +11,7 @@ exports[`lib/ActiontechTable-RefreshButton render refresh btn 1`] = `
         class="ant-btn-icon"
       >
         <svg
+          class="custom-icon custom-icon-refresh"
           height="14"
           viewBox="0 0 14 14"
           width="14"
