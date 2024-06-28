@@ -314,6 +314,9 @@ importers:
 
   packages/sqle:
     dependencies:
+      '@actiontech/icons':
+        specifier: workspace:^
+        version: link:../icons
       '@actiontech/shared':
         specifier: workspace:^1.0.0
         version: link:../shared
