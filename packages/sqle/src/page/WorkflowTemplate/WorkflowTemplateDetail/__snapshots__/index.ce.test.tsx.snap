@@ -44,21 +44,16 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                       class="add-file-icon"
                     >
                       <svg
-                        fill="none"
+                        color="white"
+                        fill="currentColor"
                         height="14"
                         viewBox="0 0 14 14"
                         width="14"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g
-                          id="file-add-fill"
-                        >
-                          <path
-                            d="M9.33333 1.16666L12.25 4.08332V12.2547C12.2498 12.4082 12.1887 12.5554 12.0801 12.6639C11.9715 12.7724 11.8243 12.8333 11.6707 12.8333H2.32925C2.17605 12.8323 2.02943 12.771 1.92104 12.6627C1.81266 12.5544 1.75122 12.4079 1.75 12.2547V1.74532C1.75 1.42566 2.00958 1.16666 2.32925 1.16666H9.33333ZM6.41667 6.41666H4.66667V7.58332H6.41667V9.33332H7.58333V7.58332H9.33333V6.41666H7.58333V4.66666H6.41667V6.41666Z"
-                            fill="white"
-                            id="Vector"
-                          />
-                        </g>
+                        <path
+                          d="m9.333 1.167 2.917 2.916v8.172a.58.58 0 0 1-.58.578H2.33a.583.583 0 0 1-.58-.578V1.745c0-.32.26-.578.58-.578zm-2.916 5.25h-1.75v1.166h1.75v1.75h1.166v-1.75h1.75V6.417h-1.75v-1.75H6.417z"
+                        />
                       </svg>
                     </span>
                   </div>
@@ -94,13 +89,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="6"
+                    height="18"
                     viewBox="0 0 18 6"
                     width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M1 1L9 5L17 1"
+                      d="m1 1 8 4 8-4"
                       stroke="#E6E4E3"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -109,13 +104,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </svg>
                   <svg
                     fill="none"
-                    height="6"
+                    height="18"
                     viewBox="0 0 18 6"
                     width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M1 1L9 5L17 1"
+                      d="m1 1 8 4 8-4"
                       stroke="#E6E4E3"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -133,28 +128,16 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                       class="audit-icon"
                     >
                       <svg
-                        fill="none"
+                        color="white"
+                        fill="currentColor"
                         height="14"
                         viewBox="0 0 14 14"
                         width="14"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g
-                          id="audit-fill"
-                        >
-                          <g
-                            id="Vector"
-                          >
-                            <path
-                              d="M8.16667 5.83334C8.16667 5.27914 8.49673 4.7902 8.83836 4.35381C9.14847 3.95768 9.33333 3.45877 9.33333 2.91668C9.33333 1.62801 8.28866 0.583344 7 0.583344C5.71134 0.583344 4.66667 1.62801 4.66667 2.91668C4.66667 3.45877 4.85153 3.95768 5.16164 4.35381C5.50327 4.7902 5.83333 5.27914 5.83333 5.83334H2.91667C2.27233 5.83334 1.75 6.35568 1.75 7.00001V9.33334C1.75 9.65551 2.01117 9.91668 2.33333 9.91668H11.6667C11.9888 9.91668 12.25 9.65551 12.25 9.33334V7.00001C12.25 6.35568 11.7277 5.83334 11.0833 5.83334H8.16667Z"
-                              fill="white"
-                            />
-                            <path
-                              d="M12.25 12.25V11.0833H1.75V12.25H12.25Z"
-                              fill="white"
-                            />
-                          </g>
-                        </g>
+                        <path
+                          d="M8.167 5.833c0-.554.33-1.043.671-1.48a2.333 2.333 0 1 0-3.677 0c.342.437.672.926.672 1.48H2.917c-.645 0-1.167.523-1.167 1.167v2.333c0 .323.261.584.583.584h9.334a.583.583 0 0 0 .583-.584V7c0-.644-.522-1.167-1.167-1.167zM12.25 12.25v-1.167H1.75v1.167z"
+                        />
                       </svg>
                     </span>
                   </div>
@@ -197,21 +180,16 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                               class="operator-content"
                             >
                               <svg
-                                fill="none"
+                                color="#1CB889"
                                 height="18"
-                                viewBox="0 0 18 18"
+                                viewBox="0 0 16 16"
                                 width="18"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
-                                <g
-                                  id="account-circle-fill"
-                                >
-                                  <path
-                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
-                                    fill="#1CB889"
-                                    id="Vector"
-                                  />
-                                </g>
+                                <path
+                                  d="M8 1.333A6.67 6.67 0 0 1 14.666 8 6.67 6.67 0 0 1 8 14.667 6.67 6.67 0 0 1 1.333 8 6.67 6.67 0 0 1 8 1.333m-3.985 8.944c.979 1.46 2.448 2.39 4.091 2.39s3.113-.93 4.091-2.39a5.98 5.98 0 0 0-4.09-1.61 5.98 5.98 0 0 0-4.092 1.61M8 7.333a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                                  fill="currentColor"
+                                />
                               </svg>
                               <span
                                 class="review-exec-auth-text"
@@ -230,13 +208,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="6"
+                    height="18"
                     viewBox="0 0 18 6"
                     width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M1 1L9 5L17 1"
+                      d="m1 1 8 4 8-4"
                       stroke="#E6E4E3"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -254,28 +232,16 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                       class="audit-icon"
                     >
                       <svg
-                        fill="none"
+                        color="white"
+                        fill="currentColor"
                         height="14"
                         viewBox="0 0 14 14"
                         width="14"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g
-                          id="audit-fill"
-                        >
-                          <g
-                            id="Vector"
-                          >
-                            <path
-                              d="M8.16667 5.83334C8.16667 5.27914 8.49673 4.7902 8.83836 4.35381C9.14847 3.95768 9.33333 3.45877 9.33333 2.91668C9.33333 1.62801 8.28866 0.583344 7 0.583344C5.71134 0.583344 4.66667 1.62801 4.66667 2.91668C4.66667 3.45877 4.85153 3.95768 5.16164 4.35381C5.50327 4.7902 5.83333 5.27914 5.83333 5.83334H2.91667C2.27233 5.83334 1.75 6.35568 1.75 7.00001V9.33334C1.75 9.65551 2.01117 9.91668 2.33333 9.91668H11.6667C11.9888 9.91668 12.25 9.65551 12.25 9.33334V7.00001C12.25 6.35568 11.7277 5.83334 11.0833 5.83334H8.16667Z"
-                              fill="white"
-                            />
-                            <path
-                              d="M12.25 12.25V11.0833H1.75V12.25H12.25Z"
-                              fill="white"
-                            />
-                          </g>
-                        </g>
+                        <path
+                          d="M8.167 5.833c0-.554.33-1.043.671-1.48a2.333 2.333 0 1 0-3.677 0c.342.437.672.926.672 1.48H2.917c-.645 0-1.167.523-1.167 1.167v2.333c0 .323.261.584.583.584h9.334a.583.583 0 0 0 .583-.584V7c0-.644-.522-1.167-1.167-1.167zM12.25 12.25v-1.167H1.75v1.167z"
+                        />
                       </svg>
                     </span>
                   </div>
@@ -347,13 +313,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                 >
                   <svg
                     fill="none"
-                    height="6"
+                    height="18"
                     viewBox="0 0 18 6"
                     width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M1 1L9 5L17 1"
+                      d="m1 1 8 4 8-4"
                       stroke="#E6E4E3"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -362,13 +328,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </svg>
                   <svg
                     fill="none"
-                    height="6"
+                    height="18"
                     viewBox="0 0 18 6"
                     width="18"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M1 1L9 5L17 1"
+                      d="m1 1 8 4 8-4"
                       stroke="#E6E4E3"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -386,21 +352,16 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                       class="send-plane-icon"
                     >
                       <svg
-                        fill="none"
+                        color="white"
+                        fill="currentColor"
                         height="14"
                         viewBox="0 0 14 14"
                         width="14"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g
-                          id="send-plane-fill"
-                        >
-                          <path
-                            d="M1.13517 5.43373C0.830674 5.33223 0.827757 5.16832 1.14101 5.0639L12.2751 1.35273C12.5837 1.25007 12.7604 1.42273 12.6741 1.7249L9.49259 12.8584C9.40509 13.167 9.22717 13.1775 9.09651 12.8846L7.00001 8.16665L10.5 3.49998L5.83334 6.99998L1.13517 5.43373Z"
-                            fill="white"
-                            id="Vector"
-                          />
-                        </g>
+                        <path
+                          d="M1.135 5.434c-.304-.102-.307-.266.006-.37l11.134-3.711c.309-.103.485.07.4.372L9.492 12.858c-.088.309-.266.32-.396.027L7 8.167 10.5 3.5 5.833 7z"
+                        />
                       </svg>
                     </span>
                   </div>
@@ -438,21 +399,16 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                               class="operator-content"
                             >
                               <svg
-                                fill="none"
+                                color="#1CB889"
                                 height="18"
-                                viewBox="0 0 18 18"
+                                viewBox="0 0 16 16"
                                 width="18"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
-                                <g
-                                  id="account-circle-fill"
-                                >
-                                  <path
-                                    d="M9 1.5C13.14 1.5 16.5 4.86 16.5 9C16.5 13.14 13.14 16.5 9 16.5C4.86 16.5 1.5 13.14 1.5 9C1.5 4.86 4.86 1.5 9 1.5ZM4.51725 11.562C5.61825 13.2045 7.27125 14.25 9.12 14.25C10.968 14.25 12.6217 13.2052 13.722 11.562C12.4738 10.3954 10.8285 9.74761 9.12 9.75C7.41128 9.74742 5.76563 10.3953 4.51725 11.562ZM9 8.25C9.59674 8.25 10.169 8.01295 10.591 7.59099C11.0129 7.16903 11.25 6.59674 11.25 6C11.25 5.40326 11.0129 4.83097 10.591 4.40901C10.169 3.98705 9.59674 3.75 9 3.75C8.40326 3.75 7.83097 3.98705 7.40901 4.40901C6.98705 4.83097 6.75 5.40326 6.75 6C6.75 6.59674 6.98705 7.16903 7.40901 7.59099C7.83097 8.01295 8.40326 8.25 9 8.25Z"
-                                    fill="#1CB889"
-                                    id="Vector"
-                                  />
-                                </g>
+                                <path
+                                  d="M8 1.333A6.67 6.67 0 0 1 14.666 8 6.67 6.67 0 0 1 8 14.667 6.67 6.67 0 0 1 1.333 8 6.67 6.67 0 0 1 8 1.333m-3.985 8.944c.979 1.46 2.448 2.39 4.091 2.39s3.113-.93 4.091-2.39a5.98 5.98 0 0 0-4.09-1.61 5.98 5.98 0 0 0-4.092 1.61M8 7.333a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                                  fill="currentColor"
+                                />
                               </svg>
                               <span
                                 class="review-exec-auth-text"
@@ -560,21 +516,15 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                     class="ant-typography auth-info-item auth-info-time css-dev-only-do-not-override-txh9fw"
                   >
                     <svg
-                      fill="none"
                       height="16"
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 18 18"
                       width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g
-                        id="time-line"
-                      >
-                        <path
-                          d="M8.00004 14.6666C4.31804 14.6666 1.33337 11.682 1.33337 7.99998C1.33337 4.31798 4.31804 1.33331 8.00004 1.33331C11.682 1.33331 14.6667 4.31798 14.6667 7.99998C14.6667 11.682 11.682 14.6666 8.00004 14.6666ZM8.00004 13.3333C9.41453 13.3333 10.7711 12.7714 11.7713 11.7712C12.7715 10.771 13.3334 9.41447 13.3334 7.99998C13.3334 6.58549 12.7715 5.22894 11.7713 4.22874C10.7711 3.22855 9.41453 2.66665 8.00004 2.66665C6.58555 2.66665 5.229 3.22855 4.2288 4.22874C3.22861 5.22894 2.66671 6.58549 2.66671 7.99998C2.66671 9.41447 3.22861 10.771 4.2288 11.7712C5.229 12.7714 6.58555 13.3333 8.00004 13.3333ZM8.66671 7.99998H11.3334V9.33331H7.33337V4.66665H8.66671V7.99998Z"
-                          fill="#8A8F99"
-                          id="Vector"
-                        />
-                      </g>
+                      <path
+                        d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
+                        fill="#8A8F99"
+                      />
                     </svg>
                     <span
                       class="update-time"
