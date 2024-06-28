@@ -26,14 +26,13 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -57,22 +56,21 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-add css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currentColor"
+                    fill="none"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m5.02.5-.012 9M.5 5h9"
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
                 </span>
                 <span>
                   创建审核
@@ -104,7 +102,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               审核状态
               ：
               <span
-                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-ce1x2t css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
               >
                 审核成功
               </span>
@@ -115,7 +113,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               业务标签
               ：
               <span
-                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-n94hhh css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7 css-dev-only-do-not-override-txh9fw"
               >
                 test
               </span>
@@ -156,33 +154,26 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                   type="button"
                 >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                      />
+                    </svg>
+                  </span>
                   <div
                     class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                   >
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 5px;"
-                    >
-                      <span
-                        class="custom-icon custom-icon-download css-u3jcp4"
-                        role="img"
-                      >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                          />
-                        </svg>
-                      </span>
-                    </div>
                     <div
                       class="ant-space-item"
                       style="margin-right: 5px;"
@@ -193,18 +184,18 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                       class="ant-space-item"
                     >
                       <span
-                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                        role="img"
+                        class="css-u3jcp4"
                       >
                         <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
+                          color="currentColor"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
                           />
                         </svg>
                       </span>
@@ -504,14 +495,13 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                       class="icon-wrapper"
                                     >
                                       <svg
-                                        fill="none"
                                         height="20"
                                         viewBox="0 0 20 20"
                                         width="20"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
+                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
                                           fill="#41BF9A"
                                         />
                                       </svg>
@@ -540,22 +530,19 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
                                   tabindex="0"
                                 >
-                                  <span
-                                    class="custom-icon custom-icon-edit css-u3jcp4"
-                                    role="img"
+                                  <svg
+                                    class="custom-icon"
+                                    color="currentColor"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
                                       fill="currentColor"
-                                      height="16"
-                                      viewBox="0 0 16 16"
-                                      width="16"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </div>
                                 <span
                                   aria-hidden="true"
@@ -579,22 +566,19 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
                                     tabindex="0"
                                   >
-                                    <span
-                                      class="custom-icon custom-icon-edit css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      class="custom-icon"
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
                                         fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      />
+                                    </svg>
                                   </div>
                                 </span>
                               </div>
