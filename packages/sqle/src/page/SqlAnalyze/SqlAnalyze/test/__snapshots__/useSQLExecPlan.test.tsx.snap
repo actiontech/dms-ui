@@ -66,9 +66,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           <div
             className="line-left"
           >
-            <IconSqlLine
+            <span
               className="icon-line"
-            />
+            >
+              <HorizontalTripleLineOutlined
+                height={12}
+                width={14}
+              />
+            </span>
             <div
               className="line-desc"
             >
@@ -240,9 +245,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           <div
             className="line-left"
           >
-            <IconSqlLine
+            <span
               className="icon-line"
-            />
+            >
+              <HorizontalTripleLineOutlined
+                height={12}
+                width={14}
+              />
+            </span>
             <div
               className="line-desc"
             >
@@ -334,9 +344,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           <div
             className="line-left"
           >
-            <IconSqlLine
+            <span
               className="icon-line"
-            />
+            >
+              <HorizontalTripleLineOutlined
+                height={12}
+                width={14}
+              />
+            </span>
             <div
               className="line-desc"
             >
@@ -428,9 +443,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have d
           <div
             className="line-left"
           >
-            <IconSqlLine
+            <span
               className="icon-line"
-            />
+            >
+              <HorizontalTripleLineOutlined
+                height={12}
+                width={14}
+              />
+            </span>
             <div
               className="line-desc"
             >
@@ -522,9 +542,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when have e
           <div
             className="line-left"
           >
-            <IconSqlLine
+            <span
               className="icon-line"
-            />
+            >
+              <HorizontalTripleLineOutlined
+                height={12}
+                width={14}
+              />
+            </span>
             <div
               className="line-desc"
             >
