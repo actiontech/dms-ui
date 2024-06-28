@@ -138,7 +138,9 @@ const RuleList: React.FC<RuleListProps> = ({
                 shape="circle"
                 className="action-circle-btn edit-rule-item"
                 key="edit-rule-btn"
-                icon={<EditFilled className="icon-edit" />}
+                icon={
+                  <EditFilled className="icon-edit custom-icon custom-icon-edit" />
+                }
                 onClick={(e) => {
                   e.stopPropagation();
                   onActionHandle?.(rule, EnumActionType.edit);
