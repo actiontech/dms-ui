@@ -199,24 +199,20 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                           class="line-left"
                         >
                           <span
-                            class="icon-line custom-icon custom-icon-line css-u3jcp4"
-                            role="img"
+                            class="icon-line"
                           >
                             <svg
-                              fill="none"
                               height="12"
                               viewBox="0 0 14 12"
                               width="14"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
                               />
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
@@ -224,7 +220,6 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is empty 1`] = `
                                 y="5"
                               />
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
@@ -487,24 +482,20 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                           class="line-left"
                         >
                           <span
-                            class="icon-line custom-icon custom-icon-line css-u3jcp4"
-                            role="img"
+                            class="icon-line"
                           >
                             <svg
-                              fill="none"
                               height="12"
                               viewBox="0 0 14 12"
                               width="14"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
                               />
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
@@ -512,7 +503,6 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when data is loading 1`] = `
                                 y="5"
                               />
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
@@ -1221,24 +1211,20 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                           class="line-left"
                         >
                           <span
-                            class="icon-line custom-icon custom-icon-line css-u3jcp4"
-                            role="img"
+                            class="icon-line"
                           >
                             <svg
-                              fill="none"
                               height="12"
                               viewBox="0 0 14 12"
                               width="14"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
                               />
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
@@ -1246,7 +1232,6 @@ exports[`SqlAnalyze/Global-SqlAnalyze render snap when have data 1`] = `
                                 y="5"
                               />
                               <rect
-                                fill="#292C33"
                                 height="2"
                                 rx="0.5"
                                 width="10"
