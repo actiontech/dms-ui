@@ -142,6 +142,7 @@ const GlobalSetting: React.FC<{
           height={18}
           color={open ? sharedTheme.uiToken.colorTextSecondary : ''}
           fill="none"
+          className="custom-icon-global-system"
         />
       </div>
     </Popover>
