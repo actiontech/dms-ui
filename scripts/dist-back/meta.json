@@ -5,7 +5,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDeleteActive.svg",
     "name": "minus-circle",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "MinusCircleFilled"
   },
   {
     "originSvgName": "IconWorkflowFileUpload",
@@ -13,7 +14,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowFileUpload.svg",
     "name": "file-upload",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "FileUploadFilled"
   },
   {
     "originSvgName": "IconWorkflowStatusIsRejected",
@@ -21,7 +23,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsRejected.svg",
     "name": "hexagon",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "HexagonOutlined"
   },
   {
     "originSvgName": "IconPermissionGroup",
@@ -29,7 +32,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionGroup.svg",
     "name": "lock",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "LockFilled"
   },
   {
     "originSvgName": "IconRightArrow",
@@ -37,7 +41,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRightArrow.svg",
     "name": "arrow-right",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "ArrowRightOutlined"
   },
   {
     "originSvgName": "IconMemberAndPermissions",
@@ -45,7 +50,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberAndPermissions.svg",
     "name": "member",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "MemberFilled"
   },
   {
     "originSvgName": "IconDatabaseSchema",
@@ -53,7 +59,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseSchema.svg",
     "name": "database-schema",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "DatabaseSchemaFilled"
   },
   {
     "originSvgName": "IconSqlManagement",
@@ -61,7 +68,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlManagement.svg",
     "name": "management",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ManagementFilled"
   },
   {
     "originSvgName": "IconPermissionTemplate",
@@ -69,7 +77,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionTemplate.svg",
     "name": "light-shield",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "LightShieldFilled"
   },
   {
     "originSvgName": "IconAuthList",
@@ -77,7 +86,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuthList.svg",
     "name": "key",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "KeyFilled"
   },
   {
     "originSvgName": "IconSearch",
@@ -85,7 +95,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSearch.svg",
     "name": "search",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "SearchOutlined"
   },
   {
     "originSvgName": "IconStepMember",
@@ -93,7 +104,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepMember.svg",
     "name": "",
     "style": "",
-    "desc": "等同于 IconMemberAndPermissions"
+    "desc": "等同于 IconMemberAndPermissions",
+    "iconName": "MemberFilled"
   },
   {
     "originSvgName": "IconFlashlight",
@@ -101,7 +113,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFlashlight.svg",
     "name": "thunder-bolt",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ThunderBoltFilled"
   },
   {
     "originSvgName": "IconWorkflowResultWaterFallLayout",
@@ -109,7 +122,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultWaterFallLayout.svg",
     "name": "square-card",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "SquareCardFilled"
   },
   {
     "originSvgName": "IconTodayIncreased",
@@ -117,7 +131,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodayIncreased.svg",
     "name": "trend-card",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "TrendCardFilled"
   },
   {
     "originSvgName": "IconAuditTaskName",
@@ -125,7 +140,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditTaskName.svg",
     "name": "profile",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ProfileFilled"
   },
   {
     "originSvgName": "IconSystem",
@@ -133,7 +149,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSystem.svg",
     "name": "gear",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "GearFilled"
   },
   {
     "originSvgName": "IconReportStatistics",
@@ -141,7 +158,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconReportStatistics.svg",
     "name": "signal",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "SignalFilled"
   },
   {
     "originSvgName": "IconCustomService",
@@ -149,7 +167,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCustomService.svg",
     "name": "headphone",
     "style": "outlined",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "HeadphoneOutlined"
   },
   {
     "originSvgName": "IconWorkflowStatusIsFinished",
@@ -157,7 +176,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsFinished.svg",
     "name": "check-hexagon",
     "style": "outlined",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "CheckHexagonOutlined"
   },
   {
     "originSvgName": "IconEllipse",
@@ -165,7 +185,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEllipse.svg",
     "name": "ring",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "RingOutlined"
   },
   {
     "originSvgName": "IconSendPlane",
@@ -173,7 +194,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSendPlane.svg",
     "name": "paper-plane",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "PaperPlaneFilled"
   },
   {
     "originSvgName": "IconPermissionOrder",
@@ -181,7 +203,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPermissionOrder.svg",
     "name": "profile-shield",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ProfileShieldFilled"
   },
   {
     "originSvgName": "IconModify",
@@ -189,7 +212,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconModify.svg",
     "name": "edit",
     "style": "filled",
-    "feature": "Editorial"
+    "feature": "Editorial",
+    "iconName": "EditFilled"
   },
   {
     "originSvgName": "IconAuditPassRate",
@@ -197,7 +221,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPassRate.svg",
     "name": "check-double-square",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "CheckDoubleSquareFilled"
   },
   {
     "originSvgName": "IconProjectFlag",
@@ -205,7 +230,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectFlag.svg",
     "name": "flag",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "FlagFilled"
   },
   {
     "originSvgName": "IconDisabledRule",
@@ -213,7 +239,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDisabledRule.svg",
     "name": "close",
     "style": "outlined",
-    "desc": "建议后续使用 另一个 close 替代"
+    "desc": "建议后续使用 另一个 close 替代",
+    "iconName": "CloseOutlined"
   },
   {
     "originSvgName": "IconDatabaseType",
@@ -221,7 +248,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseType.svg",
     "name": "double-database",
     "style": "outlined",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "DoubleDatabaseOutlined"
   },
   {
     "originSvgName": "IconClose",
@@ -229,7 +257,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconClose.svg",
     "name": "close",
     "style": "outlined",
-    "feature": "Editorial"
+    "feature": "Editorial",
+    "iconName": "CloseOutlined"
   },
   {
     "originSvgName": "IconWorkflowTemplate",
@@ -237,7 +266,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowTemplate.svg",
     "name": "workflow",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "WorkflowFilled"
   },
   {
     "originSvgName": "IconAuditPlanTaskList",
@@ -245,7 +275,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlanTaskList.svg",
     "name": "scan",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ScanFilled"
   },
   {
     "originSvgName": "IconRightArrowSelectSuffix",
@@ -253,7 +284,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRightArrowSelectSuffix.svg",
     "name": "arrow-right",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "ArrowRightOutlined"
   },
   {
     "originSvgName": "IconEnabledRule",
@@ -261,7 +293,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEnabledRule.svg",
     "name": "plus",
     "style": "outlined",
-    "feature": "Editorial"
+    "feature": "Editorial",
+    "iconName": "PlusOutlined"
   },
   {
     "originSvgName": "IconProjectArchived",
@@ -269,7 +302,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectArchived.svg",
     "name": "lock",
     "style": "outlined",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "LockOutlined"
   },
   {
     "originSvgName": "IconLevelNormal",
@@ -277,7 +311,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelNormal.svg",
     "name": "profile-square",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconDataExport",
@@ -285,7 +320,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDataExport.svg",
     "name": "export",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "ExportFilled"
   },
   {
     "originSvgName": "IconDatabaseActive",
@@ -293,7 +329,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseActive.svg",
     "name": "database",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "DatabaseFilled"
   },
   {
     "originSvgName": "IconHonour",
@@ -301,7 +338,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconHonour.svg",
     "name": "honour",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "HonourFilled"
   },
   {
     "originSvgName": "IconUser",
@@ -309,7 +347,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUser.svg",
     "name": "user",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "UserFilled"
   },
   {
     "originSvgName": "IconStatusSuccess",
@@ -317,7 +356,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusSuccess.svg",
     "name": "check-circle",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "CheckCircleFilled"
   },
   {
     "originSvgName": "IconLogout",
@@ -325,7 +365,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLogout.svg",
     "name": "arrow-right-circle",
     "style": "filled",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "ArrowRightCircleFilled"
   },
   {
     "originSvgName": "IconStepDatabase",
@@ -333,7 +374,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepDatabase.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDatabaseActive"
+    "desc": "同 IconDatabaseActive",
+    "iconName": "DatabaseFilled"
   },
   {
     "originSvgName": "IconWorkflowCreateTitle",
@@ -341,7 +383,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowCreateTitle.svg",
     "name": "briefcase",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "BriefcaseFilled"
   },
   {
     "originSvgName": "IconFormListAdd",
@@ -349,7 +392,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFormListAdd.svg",
     "name": "plus-circle",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "PlusCircleFilled"
   },
   {
     "originSvgName": "IconTodoList",
@@ -357,7 +401,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTodoList.svg",
     "name": "menu",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "MenuFilled"
   },
   {
     "originSvgName": "IconOrderName",
@@ -365,7 +410,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderName.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowCreateTitle"
+    "desc": "同 IconWorkflowCreateTitle",
+    "iconName": "BriefcaseFilled"
   },
   {
     "originSvgName": "IconSqlLine",
@@ -373,7 +419,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlLine.svg",
     "name": "horizontal-triple-line",
     "style": "outlined",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "HorizontalTripleLineOutlined"
   },
   {
     "originSvgName": "IconWorkflowStatusIsWaitExecution",
@@ -381,7 +428,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsWaitExecution.svg",
     "name": "partial-hexagon",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "PartialHexagonFilled"
   },
   {
     "originSvgName": "IconAdd",
@@ -389,7 +437,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAdd.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconEnabledRule"
+    "desc": "同 IconEnabledRule",
+    "iconName": "PlusOutlined"
   },
   {
     "originSvgName": "IconLevelNotice",
@@ -397,7 +446,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelNotice.svg",
     "name": "exclamation-hexagon",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "ExclamationHexagonFilled"
   },
   {
     "originSvgName": "IconError",
@@ -413,7 +463,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInspectionAndDiagnosis.svg",
     "name": "thunder-bulb",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "ThunderBulbFilled"
   },
   {
     "originSvgName": "IconWorkflowDownloadReport",
@@ -421,7 +472,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowDownloadReport.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconAuditTaskName"
+    "desc": "同 IconAuditTaskName",
+    "iconName": "ProfileFilled"
   },
   {
     "originSvgName": "IconAuditPlan",
@@ -429,7 +481,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAuditPlan.svg",
     "name": "plan",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "PlanFilled"
   },
   {
     "originSvgName": "IconImport",
@@ -437,7 +490,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconImport.svg",
     "name": "login-box",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "LoginBoxOutlined"
   },
   {
     "originSvgName": "IconWorkflowStatusIsExecScheduled",
@@ -445,7 +499,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsExecScheduled.svg",
     "name": "advanced-hexagon",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "AdvancedHexagonFilled"
   },
   {
     "originSvgName": "IconLeftArrow",
@@ -453,7 +508,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLeftArrow.svg",
     "name": "left-arrow",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "LeftArrowOutlined"
   },
   {
     "originSvgName": "IconWorkflowAuditResultWarning",
@@ -461,7 +517,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultWarning.svg",
     "name": "warning",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "WarningFilled"
   },
   {
     "originSvgName": "IconArrowRight",
@@ -469,7 +526,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowRight.svg",
     "name": "right",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "RightOutlined"
   },
   {
     "originSvgName": "IconSuccessResult",
@@ -485,7 +543,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleItem.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNormal"
+    "desc": "同 IconLevelNormal",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconFailed",
@@ -493,7 +552,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFailed.svg",
     "name": "close-circle",
     "style": "outlined",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "CloseCircleOutlined"
   },
   {
     "originSvgName": "IconCommonPassword",
@@ -502,7 +562,8 @@
     "name": "",
     "style": "",
     "desc": "同 IconPermissionGroup",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "LockFilled"
   },
   {
     "originSvgName": "IconAccount",
@@ -510,7 +571,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAccount.svg",
     "name": "user-circle",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "UserCircleFilled"
   },
   {
     "originSvgName": "IconTimeLine",
@@ -518,7 +580,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTimeLine.svg",
     "name": "clock-circle",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ClockCircleOutlined"
   },
   {
     "originSvgName": "IconMinus",
@@ -526,7 +589,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMinus.svg",
     "name": "minus-circle",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "MinusCircleOutlined"
   },
   {
     "originSvgName": "IconExportRule",
@@ -534,7 +598,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconExportRule.svg",
     "name": "logout-box",
     "style": "filled",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "LogoutBoxFilled"
   },
   {
     "originSvgName": "IconWorkflowUploadTypeChecked",
@@ -550,7 +615,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectFlag-1.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconProjectFlag"
+    "desc": "同 IconProjectFlag",
+    "iconName": "FlagFilled"
   },
   {
     "originSvgName": "IconWorkflowAuditResultNotice",
@@ -558,7 +624,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultNotice.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNotice"
+    "desc": "同 IconLevelNotice",
+    "iconName": "ExclamationHexagonFilled"
   },
   {
     "originSvgName": "IconFillList",
@@ -566,7 +633,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFillList.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNormal"
+    "desc": "同 IconLevelNormal",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconDatePickerUp",
@@ -574,7 +642,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerUp.svg",
     "name": "up",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "UpOutlined"
   },
   {
     "originSvgName": "IconDatePickerPrefix",
@@ -582,7 +651,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerPrefix.svg",
     "name": "clock-circle",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ClockCircleFilled"
   },
   {
     "originSvgName": "IconStepSafetyRule",
@@ -590,7 +660,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepSafetyRule.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconPermissionGroup"
+    "desc": "同 IconPermissionGroup",
+    "iconName": "LockFilled"
   },
   {
     "originSvgName": "IconProjectOverview",
@@ -598,7 +669,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectOverview.svg",
     "name": "overview",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "OverviewOutlined"
   },
   {
     "originSvgName": "IconBookMark",
@@ -606,7 +678,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconBookMark.svg",
     "name": "book-mark",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "BookMarkOutlined"
   },
   {
     "originSvgName": "IconMoreFill",
@@ -614,7 +687,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMoreFill.svg",
     "name": "dash",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "DashOutlined"
   },
   {
     "originSvgName": "IconOrderAverageAuditTime",
@@ -622,7 +696,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOrderAverageAuditTime.svg",
     "name": "clock-circle",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ClockCircleFilled"
   },
   {
     "originSvgName": "IconWorkflowSQLUpload",
@@ -630,7 +705,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowSQLUpload.svg",
     "name": "panel-card",
     "style": "outlined",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "PanelCardOutlined"
   },
   {
     "originSvgName": "IconDraggable",
@@ -638,7 +714,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDraggable.svg",
     "name": "drag",
     "style": "outlined",
-    "feature": "Editorial"
+    "feature": "Editorial",
+    "iconName": "DragOutlined"
   },
   {
     "originSvgName": "IconLink",
@@ -646,7 +723,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLink.svg",
     "name": "like",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "LikeFilled"
   },
   {
     "originSvgName": "IconClock",
@@ -654,7 +732,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconClock.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDatePickerPrefix"
+    "desc": "同 IconDatePickerPrefix",
+    "iconName": "ClockCircleFilled"
   },
   {
     "originSvgName": "IconTagBookMark",
@@ -662,7 +741,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTagBookMark.svg",
     "name": "book-mark-tag",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "BookMarkTagFilled"
   },
   {
     "originSvgName": "IconCreatedTitle",
@@ -670,7 +750,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCreatedTitle.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconAuditPlan"
+    "desc": "同 IconAuditPlan",
+    "iconName": "PlanFilled"
   },
   {
     "originSvgName": "IconDatePickerDown",
@@ -678,7 +759,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerDown.svg",
     "name": "down",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "DownOutlined"
   },
   {
     "originSvgName": "IconMemberIsAdmin",
@@ -686,7 +768,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberIsAdmin.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowStatusIsFinished"
+    "desc": "同 IconWorkflowStatusIsFinished",
+    "iconName": "CheckHexagonOutlined"
   },
   {
     "originSvgName": "IconProgressWorkflowStep",
@@ -694,7 +777,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProgressWorkflowStep.svg",
     "name": "progress-circle",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ProgressCircleFilled"
   },
   {
     "originSvgName": "IconSqlOptimization",
@@ -702,7 +786,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlOptimization.svg",
     "name": "rise-square",
     "style": "outlined",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "RiseSquareOutlined"
   },
   {
     "originSvgName": "IconSucceeded",
@@ -710,7 +795,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSucceeded.svg",
     "name": "check-circle",
     "style": "outlined",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "CheckCircleOutlined"
   },
   {
     "originSvgName": "IconUpdateTime",
@@ -718,7 +804,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUpdateTime.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconTimeLine"
+    "desc": "同 IconTimeLine",
+    "iconName": "ClockCircleOutlined"
   },
   {
     "originSvgName": "IconWhitelist",
@@ -726,7 +813,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWhitelist.svg",
     "name": "resolve-file",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ResolveFileFilled"
   },
   {
     "originSvgName": "IconWorkflowRejectReason",
@@ -734,7 +822,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowRejectReason.svg",
     "name": "reject-file",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "RejectFileFilled"
   },
   {
     "originSvgName": "IconArrowDown",
@@ -742,7 +831,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowDown.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDatePickerDown"
+    "desc": "同 IconDatePickerDown",
+    "iconName": "DownOutlined"
   },
   {
     "originSvgName": "IconCommonEdit",
@@ -750,7 +840,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonEdit.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconModify"
+    "desc": "同 IconModify",
+    "iconName": "EditFilled"
   },
   {
     "originSvgName": "IconCheckout",
@@ -758,7 +849,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCheckout.svg",
     "name": "check-strong",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "CheckStrongOutlined"
   },
   {
     "originSvgName": "IconUserCenter",
@@ -766,7 +858,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUserCenter.svg",
     "name": "user-shield",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "UserShieldFilled"
   },
   {
     "originSvgName": "IconDatabaseSchemaActive",
@@ -774,7 +867,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabaseSchemaActive.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDatabaseType"
+    "desc": "同 IconDatabaseType",
+    "iconName": "DoubleDatabaseOutlined"
   },
   {
     "originSvgName": "IcoScanId",
@@ -782,7 +876,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IcoScanId.svg",
     "name": "scan-task",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ScanTaskFilled"
   },
   {
     "originSvgName": "IconStatusWarning",
@@ -790,7 +885,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusWarning.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowAuditResultWarning"
+    "desc": "同 IconWorkflowAuditResultWarning",
+    "iconName": "WarningFilled"
   },
   {
     "originSvgName": "IconDatePickerRight",
@@ -798,7 +894,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerRight.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconArrowRight"
+    "desc": "同 IconArrowRight",
+    "iconName": "RightOutlined"
   },
   {
     "originSvgName": "IconTipOrange",
@@ -806,7 +903,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTipOrange.svg",
     "name": "info-circle",
     "style": "outlined",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "InfoCircleOutlined"
   },
   {
     "originSvgName": "IconWorkflowStatusWrapper",
@@ -822,7 +920,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSubmenuExpandDown.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDatePickerDown"
+    "desc": "同 IconDatePickerDown",
+    "iconName": "DownOutlined"
   },
   {
     "originSvgName": "IconStatusTip",
@@ -830,7 +929,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusTip.svg",
     "name": "info-hexagon",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "InfoHexagonFilled"
   },
   {
     "originSvgName": "IconSqlAudit",
@@ -838,7 +938,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSqlAudit.svg",
     "name": "magnifier",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "MagnifierFilled"
   },
   {
     "originSvgName": "IconSun",
@@ -846,7 +947,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSun.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconSqlAudit"
+    "desc": "同 IconSqlAudit",
+    "iconName": "MagnifierFilled"
   },
   {
     "originSvgName": "IconArrowUp",
@@ -854,7 +956,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconArrowUp.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDatePickerUp"
+    "desc": "同 IconDatePickerUp",
+    "iconName": "UpOutlined"
   },
   {
     "originSvgName": "IconExportWorkflowCreateTitle",
@@ -862,7 +965,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconExportWorkflowCreateTitle.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowCreateTitle"
+    "desc": "同 IconWorkflowCreateTitle",
+    "iconName": "BriefcaseFilled"
   },
   {
     "originSvgName": "IconDirectory",
@@ -870,7 +974,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDirectory.svg",
     "name": "folder",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "FolderFilled"
   },
   {
     "originSvgName": "IconAudit",
@@ -878,7 +983,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAudit.svg",
     "name": "stamp",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "StampFilled"
   },
   {
     "originSvgName": "IconEmpty",
@@ -894,7 +1000,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFailedWorkflowStep.svg",
     "name": "close-circle",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "CloseCircleFilled"
   },
   {
     "originSvgName": "IconWorkflowStatusIsCanceled",
@@ -902,7 +1009,7 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsCanceled.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowStatusIsRejected"
+    "iconName": "CloseHexagonOutlined"
   },
   {
     "originSvgName": "IconEdit",
@@ -910,7 +1017,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEdit.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconModify"
+    "desc": "同 IconModify",
+    "iconName": "EditFilled"
   },
   {
     "originSvgName": "IconWorkflowDownloadSQL",
@@ -918,7 +1026,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowDownloadSQL.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowSQLUpload"
+    "desc": "同 IconWorkflowSQLUpload",
+    "iconName": "PanelCardOutlined"
   },
   {
     "originSvgName": "IconRuleTemplate",
@@ -926,7 +1035,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleTemplate.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNormal"
+    "desc": "同 IconLevelNormal",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconProjectTitle",
@@ -934,7 +1044,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconProjectTitle.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconProjectOverview"
+    "desc": "同 IconProjectOverview",
+    "iconName": "OverviewOutlined"
   },
   {
     "originSvgName": "IconFormListDelete",
@@ -942,7 +1053,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFormListDelete.svg",
     "name": "minus-circle",
     "style": "",
-    "desc": "同 IconDeleteActive"
+    "desc": "同 IconDeleteActive",
+    "iconName": "MinusCircleFilled"
   },
   {
     "originSvgName": "IconTitleMore",
@@ -950,7 +1062,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTitleMore.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconMoreFill"
+    "desc": "同 IconMoreFill",
+    "iconName": "DashOutlined"
   },
   {
     "originSvgName": "IconWorkflowStatusIsExecuting",
@@ -958,7 +1071,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsExecuting.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowStatusIsExecScheduled"
+    "desc": "同 IconWorkflowStatusIsExecScheduled",
+    "iconName": "AdvancedHexagonFilled"
   },
   {
     "originSvgName": "IconWaitForOrderList",
@@ -966,7 +1080,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWaitForOrderList.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconTagBookMark"
+    "desc": "同 IconTagBookMark",
+    "iconName": "BookMarkTagFilled"
   },
   {
     "originSvgName": "IconPluginAudit",
@@ -974,7 +1089,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPluginAudit.svg",
     "name": "code",
     "style": "outlined",
-    "feature":"Common"
+    "feature": "Common",
+    "iconName": "CodeOutlined"
   },
   {
     "originSvgName": "IconSQLFile",
@@ -982,7 +1098,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLFile.svg",
     "name": "sql-file",
     "style": "outlined",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "SqlFileOutlined"
   },
   {
     "originSvgName": "IconViewVersion",
@@ -990,7 +1107,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconViewVersion.svg",
     "name": "info-circle",
     "style": "filled",
-    "feature": "Suggestive"
+    "feature": "Suggestive",
+    "iconName": "InfoCircleFilled"
   },
   {
     "originSvgName": "IconStepDataQuery",
@@ -998,7 +1116,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepDataQuery.svg",
     "name": "snippets",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "SnippetsFilled"
   },
   {
     "originSvgName": "IconStatusError",
@@ -1006,7 +1125,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStatusError.svg",
     "name": "close-circle",
     "style": "",
-    "desc": "同 IconFailedWorkflowStep"
+    "desc": "同 IconFailedWorkflowStep",
+    "iconName": "CloseCircleFilled"
   },
   {
     "originSvgName": "IconCloneRule",
@@ -1014,7 +1134,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCloneRule.svg",
     "name": "checkbox-multiple-blank",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "CheckboxMultipleBlankFilled"
   },
   {
     "originSvgName": "IconMemberNotAdmin",
@@ -1022,7 +1143,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMemberNotAdmin.svg",
     "name": "close-hexagon",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "CloseHexagonOutlined"
   },
   {
     "originSvgName": "IconDatePickerLeft",
@@ -1030,7 +1152,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatePickerLeft.svg",
     "name": "left",
     "style": "outlined",
-    "feature": "Directional"
+    "feature": "Directional",
+    "iconName": "LeftOutlined"
   },
   {
     "originSvgName": "IconDatabase",
@@ -1038,15 +1161,16 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDatabase.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconStepDatabase"
+    "desc": "同 IconStepDatabase",
+    "iconName": "DatabaseFilled"
   },
   {
     "originSvgName": "IconEllipse-1",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconEllipse-1.svg",
-    "name": "",
-    "style": "",
-    "desc": "同 IconEllipse"
+    "name": "ring-pie",
+    "style": "Filled",
+    "iconName": "RingPieFilled"
   },
   {
     "originSvgName": "IconOperateAndAudit",
@@ -1054,7 +1178,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconOperateAndAudit.svg",
     "name": "operate-audit",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "OperateAuditFilled"
   },
   {
     "originSvgName": "IconCommonSelected",
@@ -1070,7 +1195,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRefresh.svg",
     "name": "refresh",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "RefreshOutlined"
   },
   {
     "originSvgName": "IconWorkflowResultListLayout",
@@ -1078,7 +1204,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultListLayout.svg",
     "name": "list-layout",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ListLayoutFilled"
   },
   {
     "originSvgName": "IconAddFile",
@@ -1086,7 +1213,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconAddFile.svg",
     "name": "plus-file",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "PlusFileFilled"
   },
   {
     "originSvgName": "IconDate",
@@ -1094,7 +1222,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDate.svg",
     "name": "calendar",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "CalendarOutlined"
   },
   {
     "originSvgName": "IconRuleTitle",
@@ -1102,7 +1231,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleTitle.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNormal"
+    "desc": "同 IconLevelNormal",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconGlobalSystem",
@@ -1110,7 +1240,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconGlobalSystem.svg",
     "name": "center-circle-hexagon",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "CenterCircleHexagonFilled"
   },
   {
     "originSvgName": "IconWorkflowId",
@@ -1118,7 +1249,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowId.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowCreateTitle"
+    "desc": "同 IconWorkflowCreateTitle",
+    "iconName": "BriefcaseFilled"
   },
   {
     "originSvgName": "IconViewRule",
@@ -1126,7 +1258,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconViewRule.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNormal"
+    "desc": "同 IconLevelNormal",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconMinus-1",
@@ -1134,7 +1267,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMinus-1.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconMinus"
+    "desc": "同 IconMinus",
+    "iconName": "MinusCircleOutlined"
   },
   {
     "originSvgName": "IconDelete",
@@ -1142,7 +1276,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDelete.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconDeleteActive"
+    "desc": "同 IconDeleteActive",
+    "iconName": "MinusCircleFilled"
   },
   {
     "originSvgName": "IconWorkflowAuditResultError",
@@ -1150,7 +1285,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultError.svg",
     "name": "close-circle",
     "style": "",
-    "desc": "同 IconFailedWorkflowStep"
+    "desc": "同 IconFailedWorkflowStep",
+    "iconName": "CloseCircleFilled"
   },
   {
     "originSvgName": "IconPosition",
@@ -1158,15 +1294,16 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconPosition.svg",
     "name": "environment",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "EnvironmentFilled"
   },
   {
     "originSvgName": "IconWorkflowStatusIsWaitAudit",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsWaitAudit.svg",
-    "name": "",
-    "style": "",
-    "desc": "同 IconWorkflowStatusIsRejected"
+    "name": "empty-hexagon",
+    "style": "outlined",
+    "iconName": "EmptyHexagonOutlined"
   },
   {
     "originSvgName": "IconStepOperation",
@@ -1174,7 +1311,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconStepOperation.svg",
     "name": "util",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "UtilOutlined"
   },
   {
     "originSvgName": "IconCommonUser",
@@ -1182,7 +1320,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCommonUser.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconUser"
+    "desc": "同 IconUser",
+    "iconName": "UserFilled"
   },
   {
     "originSvgName": "IconMoon",
@@ -1190,7 +1329,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMoon.svg",
     "name": "moon",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "MoonOutlined"
   },
   {
     "originSvgName": "IconSetting",
@@ -1198,7 +1338,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSetting.svg",
     "name": "setting",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "SettingOutlined"
   },
   {
     "originSvgName": "IconWorkflowResultLayout",
@@ -1206,7 +1347,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowResultLayout.svg",
     "name": "list-layout",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ListLayoutOutlined"
   },
   {
     "originSvgName": "IconFillListActive",
@@ -1214,7 +1356,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFillListActive.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconLevelNormal"
+    "desc": "同 IconLevelNormal",
+    "iconName": "ProfileSquareFilled"
   },
   {
     "originSvgName": "IconTest",
@@ -1222,7 +1365,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTest.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconFlashlight"
+    "desc": "同 IconFlashlight",
+    "iconName": "ThunderBoltFilled"
   },
   {
     "originSvgName": "IconDownload",
@@ -1230,7 +1374,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconDownload.svg",
     "name": "down-arrow-line",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "DownArrowLineOutlined"
   },
   {
     "originSvgName": "IconLevelWarn",
@@ -1238,7 +1383,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelWarn.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconStatusWarning"
+    "desc": "同 IconStatusWarning",
+    "iconName": "WarningFilled"
   },
   {
     "originSvgName": "IconSubmenuExpandTop",
@@ -1246,15 +1392,16 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSubmenuExpandTop.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconArrowUp"
+    "desc": "同 IconArrowUp",
+    "iconName": "UpOutlined"
   },
   {
     "originSvgName": "IconWorkflowStatusIsFailed",
     "originPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx",
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowStatusIsFailed.svg",
-    "name": "",
-    "style": "",
-    "desc": "同 IconWorkflowStatusIsRejected"
+    "name": "info-hexagon",
+    "style": "outlined",
+    "iconName": "InfoHexagonOutlined"
   },
   {
     "originSvgName": "IconInstanceManager",
@@ -1262,7 +1409,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInstanceManager.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconStepDatabase"
+    "desc": "同 IconStepDatabase",
+    "iconName": "DatabaseFilled"
   },
   {
     "originSvgName": "IconSpin-1",
@@ -1278,7 +1426,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTipGray.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconTipOrange"
+    "desc": "同 IconTipOrange",
+    "iconName": "InfoCircleOutlined"
   },
   {
     "originSvgName": "IconSQLExecWorkflow",
@@ -1286,7 +1435,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLExecWorkflow.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowCreateTitle"
+    "desc": "同 IconWorkflowCreateTitle",
+    "iconName": "BriefcaseFilled"
   },
   {
     "originSvgName": "IconCloudBeaver",
@@ -1294,7 +1444,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCloudBeaver.svg",
     "name": "computer",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "ComputerFilled"
   },
   {
     "originSvgName": "IconTaskType",
@@ -1302,7 +1453,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconTaskType.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconTagBookMark"
+    "desc": "同 IconTagBookMark",
+    "iconName": "BookMarkTagFilled"
   },
   {
     "originSvgName": "IconInitializedWorkflowStep",
@@ -1310,7 +1462,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconInitializedWorkflowStep.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconFormListAdd"
+    "desc": "同 IconFormListAdd",
+    "iconName": "PlusCircleFilled"
   },
   {
     "originSvgName": "IconSpin",
@@ -1326,7 +1479,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconRuleManage.svg",
     "name": "profile-edit",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "ProfileEditFilled"
   },
   {
     "originSvgName": "IconToken",
@@ -1334,7 +1488,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconToken.svg",
     "name": "token",
     "style": "filled",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "TokenFilled"
   },
   {
     "originSvgName": "IconNextStep",
@@ -1342,7 +1497,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconNextStep.svg",
     "name": "down-triangle",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "DownTriangleOutlined"
   },
   {
     "originSvgName": "IconOrderTotalNum",
@@ -1358,7 +1514,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconFinishedWorkflowStep.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconStatusSuccess"
+    "desc": "同 IconStatusSuccess",
+    "iconName": "CheckCircleFilled"
   },
   {
     "originSvgName": "IconSQLOrder",
@@ -1366,7 +1523,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconSQLOrder.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowCreateTitle"
+    "desc": "同 IconWorkflowCreateTitle",
+    "iconName": "BriefcaseFilled"
   },
   {
     "originSvgName": "IconWorkflowAuditResultSuccess",
@@ -1374,7 +1532,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconWorkflowAuditResultSuccess.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconWorkflowCreateTitle"
+    "desc": "同 IconWorkflowCreateTitle",
+    "iconName": "CheckCircleFilled"
   },
   {
     "originSvgName": "IconLevelError",
@@ -1382,7 +1541,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconLevelError.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconFailedWorkflowStep"
+    "desc": "同 IconFailedWorkflowStep",
+    "iconName": "CloseCircleFilled"
   },
   {
     "originSvgName": "IconCircleAccount",
@@ -1390,7 +1550,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconCircleAccount.svg",
     "name": "",
     "style": "",
-    "desc": "同 IconAccount"
+    "desc": "同 IconAccount",
+    "iconName": "UserCircleFilled"
   },
   {
     "originSvgName": "IconMyOrderList",
@@ -1398,7 +1559,8 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconMyOrderList.svg",
     "name": "menu-square",
     "style": "filled",
-    "feature": "Data"
+    "feature": "Data",
+    "iconName": "MenuSquareFilled"
   },
   {
     "originSvgName": "IconUploadCloud",
@@ -1406,6 +1568,7 @@
     "currentPath": "/Users/liyu/work/actionsky/dms-ui/dms-ui/scripts/dist/svg/IconUploadCloud.svg",
     "name": "upload-cloud",
     "style": "outlined",
-    "feature": "Common"
+    "feature": "Common",
+    "iconName": "UploadCloudOutlined"
   }
 ]
