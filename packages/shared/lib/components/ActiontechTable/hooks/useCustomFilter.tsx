@@ -76,7 +76,7 @@ const useCustomFilter = () => {
           <SearchOutlined
             width={14}
             height={14}
-            className="pointer"
+            className="pointer custom-icon custom-icon-search"
             onClick={() => onPressEnter?.(searchValue)}
           />
         }

@@ -30,7 +30,12 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
         onChange?.(e.target.value);
       }}
       suffix={
-        <SearchOutlined width={14} height={14} onClick={() => onSearch?.()} />
+        <SearchOutlined
+          className="custom-icon custom-icon-search"
+          width={14}
+          height={14}
+          onClick={() => onSearch?.()}
+        />
       }
       {...props}
     />
