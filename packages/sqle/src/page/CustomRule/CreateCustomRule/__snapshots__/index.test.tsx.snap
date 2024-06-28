@@ -20,14 +20,13 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -82,33 +81,27 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
             hidden=""
           >
             <h3
-              class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
                 role="img"
               >
-                <span
-                  class="custom-icon css-u3jcp4"
+                <svg
+                  aria-hidden="true"
+                  class=""
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 18 19"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    width="32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="file-list-2-fill"
-                    >
-                      <path
-                        d="M26.6667 29.3332H5.33333C4.97971 29.3332 4.64057 29.1927 4.39052 28.9426C4.14048 28.6926 4 28.3535 4 27.9998V3.99984C4 3.64622 4.14048 3.30708 4.39052 3.05703C4.64057 2.80698 4.97971 2.6665 5.33333 2.6665H26.6667C27.0203 2.6665 27.3594 2.80698 27.6095 3.05703C27.8595 3.30708 28 3.64622 28 3.99984V27.9998C28 28.3535 27.8595 28.6926 27.6095 28.9426C27.3594 29.1927 27.0203 29.3332 26.6667 29.3332ZM10.6667 9.33317V11.9998H21.3333V9.33317H10.6667ZM10.6667 14.6665V17.3332H21.3333V14.6665H10.6667ZM10.6667 19.9998V22.6665H17.3333V19.9998H10.6667Z"
-                        fill="#C3C6CD"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
               </span>
               <span>
                 创建自定义审核规则
@@ -394,22 +387,17 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -1364,14 +1352,13 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -1401,33 +1388,27 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
             hidden=""
           >
             <h3
-              class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
                 role="img"
               >
-                <span
-                  class="custom-icon css-u3jcp4"
+                <svg
+                  aria-hidden="true"
+                  class=""
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 18 19"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    width="32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="file-list-2-fill"
-                    >
-                      <path
-                        d="M26.6667 29.3332H5.33333C4.97971 29.3332 4.64057 29.1927 4.39052 28.9426C4.14048 28.6926 4 28.3535 4 27.9998V3.99984C4 3.64622 4.14048 3.30708 4.39052 3.05703C4.64057 2.80698 4.97971 2.6665 5.33333 2.6665H26.6667C27.0203 2.6665 27.3594 2.80698 27.6095 3.05703C27.8595 3.30708 28 3.64622 28 3.99984V27.9998C28 28.3535 27.8595 28.6926 27.6095 28.9426C27.3594 29.1927 27.0203 29.3332 26.6667 29.3332ZM10.6667 9.33317V11.9998H21.3333V9.33317H10.6667ZM10.6667 14.6665V17.3332H21.3333V14.6665H10.6667ZM10.6667 19.9998V22.6665H17.3333V19.9998H10.6667Z"
-                        fill="#C3C6CD"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
               </span>
               <span>
                 创建自定义审核规则
@@ -1713,22 +1694,17 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -2682,14 +2658,13 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -2730,33 +2705,27 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
             data-testid="base-form"
           >
             <h3
-              class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
                 role="img"
               >
-                <span
-                  class="custom-icon css-u3jcp4"
+                <svg
+                  aria-hidden="true"
+                  class=""
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 18 19"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    width="32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="file-list-2-fill"
-                    >
-                      <path
-                        d="M26.6667 29.3332H5.33333C4.97971 29.3332 4.64057 29.1927 4.39052 28.9426C4.14048 28.6926 4 28.3535 4 27.9998V3.99984C4 3.64622 4.14048 3.30708 4.39052 3.05703C4.64057 2.80698 4.97971 2.6665 5.33333 2.6665H26.6667C27.0203 2.6665 27.3594 2.80698 27.6095 3.05703C27.8595 3.30708 28 3.64622 28 3.99984V27.9998C28 28.3535 27.8595 28.6926 27.6095 28.9426C27.3594 29.1927 27.0203 29.3332 26.6667 29.3332ZM10.6667 9.33317V11.9998H21.3333V9.33317H10.6667ZM10.6667 14.6665V17.3332H21.3333V14.6665H10.6667ZM10.6667 19.9998V22.6665H17.3333V19.9998H10.6667Z"
-                        fill="#C3C6CD"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
               </span>
               <span>
                 创建自定义审核规则

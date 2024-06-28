@@ -1395,7 +1395,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -1530,7 +1530,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -1665,7 +1665,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -1780,7 +1780,7 @@ exports[`sqle/components/RuleList should match snap shot when actionType is enab
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -3559,7 +3559,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -3668,7 +3668,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -3777,7 +3777,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"
@@ -3866,7 +3866,7 @@ exports[`sqle/components/RuleList should match snap shot when has renderDisableN
                             class="ant-btn-icon"
                           >
                             <svg
-                              class="icon-edit"
+                              class="icon-edit custom-icon custom-icon-edit"
                               height="16"
                               viewBox="0 0 16 16"
                               width="16"

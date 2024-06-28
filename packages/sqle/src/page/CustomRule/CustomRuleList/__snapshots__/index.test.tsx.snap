@@ -129,22 +129,17 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                           <span
                             class="ant-input-suffix"
                           >
-                            <span
-                              class="custom-icon custom-icon-search css-u3jcp4"
-                              role="img"
+                            <svg
+                              class="custom-icon custom-icon-search"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                              />
+                            </svg>
                           </span>
                         </span>
                       </div>
@@ -185,23 +180,17 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                       <div
                         class="level-icon"
                       >
-                        <span
-                          class="custom-icon custom-icon-level-notice css-u3jcp4"
-                          role="img"
+                        <svg
+                          height="19"
+                          viewBox="0 0 18 19"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
-                            height="19"
-                            viewBox="0 0 18 19"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
-                              fill="#6094FC"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                            fill="#6094FC"
+                          />
+                        </svg>
                         <span
                           class="level-icon-text"
                         >
@@ -243,22 +232,18 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                                   <span
                                     class="ant-btn-icon"
                                   >
-                                    <span
-                                      class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      class="icon-edit custom-icon custom-icon-edit"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="#8A8F99"
+                                      />
+                                    </svg>
                                   </span>
                                 </button>
                               </div>
@@ -268,25 +253,22 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
                                 class="ant-btn-icon"
                               >
                                 <svg
-                                  fill="none"
-                                  height="10"
-                                  viewBox="0 0 10 10"
-                                  width="10"
+                                  class="icon-disabled"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 14 14"
+                                  width="16"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
-                                    id="Vector"
-                                    stroke="#F66074"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
+                                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                   />
                                 </svg>
                               </span>
@@ -765,22 +747,17 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                           <span
                             class="ant-input-suffix"
                           >
-                            <span
-                              class="custom-icon custom-icon-search css-u3jcp4"
-                              role="img"
+                            <svg
+                              class="custom-icon custom-icon-search"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                              />
+                            </svg>
                           </span>
                         </span>
                       </div>
@@ -821,23 +798,17 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                       <div
                         class="level-icon"
                       >
-                        <span
-                          class="custom-icon custom-icon-level-notice css-u3jcp4"
-                          role="img"
+                        <svg
+                          height="19"
+                          viewBox="0 0 18 19"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
-                            height="19"
-                            viewBox="0 0 18 19"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
-                              fill="#6094FC"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                            fill="#6094FC"
+                          />
+                        </svg>
                         <span
                           class="level-icon-text"
                         >
@@ -879,22 +850,18 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                                   <span
                                     class="ant-btn-icon"
                                   >
-                                    <span
-                                      class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      class="icon-edit custom-icon custom-icon-edit"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="#8A8F99"
+                                      />
+                                    </svg>
                                   </span>
                                 </button>
                               </div>
@@ -904,25 +871,22 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
                                 class="ant-btn-icon"
                               >
                                 <svg
-                                  fill="none"
-                                  height="10"
-                                  viewBox="0 0 10 10"
-                                  width="10"
+                                  class="icon-disabled"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 14 14"
+                                  width="16"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
-                                    id="Vector"
-                                    stroke="#F66074"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
+                                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                   />
                                 </svg>
                               </span>
@@ -938,23 +902,17 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                       <div
                         class="level-icon"
                       >
-                        <span
-                          class="custom-icon custom-icon-level-notice css-u3jcp4"
-                          role="img"
+                        <svg
+                          height="19"
+                          viewBox="0 0 18 19"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
-                            height="19"
-                            viewBox="0 0 18 19"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
-                              fill="#6094FC"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                            fill="#6094FC"
+                          />
+                        </svg>
                         <span
                           class="level-icon-text"
                         >
@@ -996,22 +954,18 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                                   <span
                                     class="ant-btn-icon"
                                   >
-                                    <span
-                                      class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      class="icon-edit custom-icon custom-icon-edit"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="#8A8F99"
+                                      />
+                                    </svg>
                                   </span>
                                 </button>
                               </div>
@@ -1021,25 +975,22 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
                                 class="ant-btn-icon"
                               >
                                 <svg
-                                  fill="none"
-                                  height="10"
-                                  viewBox="0 0 10 10"
-                                  width="10"
+                                  class="icon-disabled"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 14 14"
+                                  width="16"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
-                                    id="Vector"
-                                    stroke="#F66074"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
+                                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                   />
                                 </svg>
                               </span>
@@ -1194,22 +1145,17 @@ exports[`sqle/CustomRuleList should render empty tips when request return null 1
                           <span
                             class="ant-input-suffix"
                           >
-                            <span
-                              class="custom-icon custom-icon-search css-u3jcp4"
-                              role="img"
+                            <svg
+                              class="custom-icon custom-icon-search"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                              />
+                            </svg>
                           </span>
                         </span>
                       </div>
