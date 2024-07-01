@@ -3,7 +3,7 @@
 exports[`lib/BasicEmpty render empty ui 1`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
   >
     <div
       class="ant-empty-image"
@@ -63,7 +63,7 @@ exports[`lib/BasicEmpty render empty ui 1`] = `
 exports[`lib/BasicEmpty render empty ui 2`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
   >
     <div
       class="ant-empty-image"
@@ -123,7 +123,7 @@ exports[`lib/BasicEmpty render empty ui 2`] = `
 exports[`lib/BasicEmpty render error ui 1`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
   >
     <div
       class="ant-empty-image"
@@ -194,7 +194,7 @@ exports[`lib/BasicEmpty render error ui 1`] = `
 exports[`lib/BasicEmpty render error ui 2`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
   >
     <div
       class="ant-empty-image"
@@ -226,7 +226,7 @@ exports[`lib/BasicEmpty render error ui 2`] = `
 exports[`lib/BasicEmpty render error ui 3`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
   >
     <div
       class="ant-empty-image"
@@ -257,7 +257,7 @@ exports[`lib/BasicEmpty render error ui 3`] = `
 exports[`lib/BasicEmpty render has refresh icon 1`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
   >
     <div
       class="ant-empty-image"
@@ -326,7 +326,7 @@ exports[`lib/BasicEmpty render has refresh icon 1`] = `
 exports[`lib/BasicEmpty render loading ui 1`] = `
 <div>
   <div
-    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
   >
     <div
       class="ant-empty-image"
