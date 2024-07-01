@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import { Space } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import RuleTemplateForm from '../RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
@@ -180,7 +179,7 @@ const UpdateRuleTemplate = () => {
         </RuleTemplateContStyleWrapper>
         <div hidden={!submitSuccessStatus}>
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('ruleTemplate.updateRuleTemplate.successTitle', {
               name: urlParams.templateName
             })}

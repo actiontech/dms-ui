@@ -18,7 +18,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useEffect } from 'react';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { RingPieFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   fieldPrefixPath,

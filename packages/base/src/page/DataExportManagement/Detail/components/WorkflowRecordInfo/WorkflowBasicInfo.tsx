@@ -5,7 +5,7 @@ import { Space } from 'antd';
 import WorkflowStatus from '../../../Common/WorkflowStatus';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ClockCircleOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
   createTime,
   createUserName,

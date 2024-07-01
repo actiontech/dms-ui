@@ -10,7 +10,7 @@ import { CreateExportTaskFormEntryProps } from '../index.type';
 import { Form, SelectProps } from 'antd';
 import dayjs from 'dayjs';
 import { RingPieFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const ExportSourceFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'sourceForm' | 'baseForm'>

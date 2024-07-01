@@ -5,7 +5,7 @@ import { IAuditSQLResult } from '@actiontech/shared/lib/api/base/service/common'
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import { ExportResultTreeStyleWrapper } from '../../style';
 import { DownOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const AuditResultTree: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
   auditResult

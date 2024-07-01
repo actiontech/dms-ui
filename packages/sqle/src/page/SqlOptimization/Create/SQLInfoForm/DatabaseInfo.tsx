@@ -21,7 +21,7 @@ import {
   ProfileSquareFilled
 } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
   form,

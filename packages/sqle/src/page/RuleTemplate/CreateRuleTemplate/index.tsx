@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { Space } from 'antd';
 import { RuleTemplateContStyleWrapper } from './style';
 import RuleTemplateForm from '../RuleTemplateForm';
@@ -139,7 +138,7 @@ const CreateRuleTemplate = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('ruleTemplate.createRuleTemplate.successTitle')}
           extra={[
             <BasicButton key="re-create-new-rule-template" onClick={resetAll}>

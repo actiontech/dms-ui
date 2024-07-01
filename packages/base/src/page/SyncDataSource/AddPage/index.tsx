@@ -13,7 +13,6 @@ import {
   PageHeader
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -124,7 +123,7 @@ const AddSyncTask: React.FC = () => {
         }
       >
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('dmsSyncDataSource.addSyncTask.successTips')}
           extra={[
             <BasicButton key="close" onClick={hiddenResult}>

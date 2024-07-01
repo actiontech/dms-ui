@@ -12,7 +12,7 @@ import {
 import SqlStatementFormController from '../../../../../Common/SqlStatementFormController';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { RingPieFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const SqlAuditInfoFormItem: React.FC<SqlAuditInfoFormItemProps> = ({
   auditAction,

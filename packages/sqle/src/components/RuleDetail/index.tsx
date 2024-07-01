@@ -14,8 +14,6 @@ import {
   BasicResult,
   EmptyBox
 } from '@actiontech/shared';
-import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconError } from '@actiontech/shared/lib/Icon';
 import { DetailComStyleWrapper } from '../../page/AuditPlan/PlanDetail/DetailCom/style';
 import { RuleStatus, RuleTypes, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
@@ -165,7 +163,6 @@ const RuleDetail = () => {
             <BasicResult
               status="error"
               title={t('ruleTemplate.detail.error')}
-              icon={<Icon component={IconError} />}
             />
           }
         >
