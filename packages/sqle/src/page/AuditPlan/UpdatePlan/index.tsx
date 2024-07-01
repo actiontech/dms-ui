@@ -22,10 +22,8 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import PlanForm from '../PlanForm';
 
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
+import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdatePlan = () => {
   const { t } = useTranslation();
@@ -133,7 +131,7 @@ const UpdatePlan = () => {
       <PageHeader
         fixed
         title={
-          <BasicButton onClick={onSkipList} icon={<IconLeftArrow />}>
+          <BasicButton onClick={onSkipList} icon={<LeftArrowOutlined />}>
             {t('auditPlan.action.backButton')}
           </BasicButton>
         }

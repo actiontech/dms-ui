@@ -13,9 +13,8 @@ import { Link } from 'react-router-dom';
 import { t } from '../../../locale';
 import { ModalName } from '../../../data/ModalName';
 import { BasicToolTips, DatabaseTypeLogo, TokenCom } from '@actiontech/shared';
-import { IconTipGray } from '@actiontech/shared/lib/Icon';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconWorkflowId } from '../../../icon/SqlExecWorkflow';
+import { BriefcaseFilled, InfoCircleOutlined } from '@actiontech/icons';
 
 export type PlanListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetAuditPlansV2Params,
@@ -126,7 +125,7 @@ const PlanListColumn: (
       render: (text: string) => {
         return (
           <TableColumnWithIconStyleWrapper>
-            <IconWorkflowId />
+            <BriefcaseFilled width={14} height={14} />
             <Link to={`/sqle/project/${projectID}/audit-plan/detail/${text}`}>
               <span>{text}</span>
             </Link>
@@ -188,7 +187,7 @@ const PlanListColumn: (
       title: () => (
         <>
           <BasicToolTips
-            suffixIcon={<IconTipGray />}
+            suffixIcon={<InfoCircleOutlined />}
             title={t('auditPlan.list.table.audit_plan_token_tips')}
           >
             {t('auditPlan.list.table.audit_plan_token')}
