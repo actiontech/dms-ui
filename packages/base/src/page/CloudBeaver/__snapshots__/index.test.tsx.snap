@@ -440,6 +440,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                         class="ant-btn-icon"
                       >
                         <svg
+                          class="custom-icon custom-icon-refresh"
                           height="14"
                           viewBox="0 0 14 14"
                           width="14"
@@ -1064,6 +1065,7 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
                         class="ant-btn-icon"
                       >
                         <svg
+                          class="custom-icon custom-icon-refresh"
                           height="14"
                           viewBox="0 0 14 14"
                           width="14"
@@ -2407,6 +2409,7 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
                         class="ant-btn-icon"
                       >
                         <svg
+                          class="custom-icon custom-icon-refresh"
                           height="14"
                           viewBox="0 0 14 14"
                           width="14"
