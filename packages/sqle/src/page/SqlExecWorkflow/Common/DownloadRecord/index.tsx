@@ -12,7 +12,7 @@ import {
   PanelCardOutlined,
   DownArrowLineOutlined
 } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,

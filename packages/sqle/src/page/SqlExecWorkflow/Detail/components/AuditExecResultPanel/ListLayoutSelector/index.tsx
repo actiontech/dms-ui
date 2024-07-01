@@ -11,7 +11,7 @@ import {
   ListLayoutFilled,
   ListLayoutOutlined
 } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const ListLayoutSelector: React.FC<{
   onChange: (v: TaskResultListLayoutEnum) => void;

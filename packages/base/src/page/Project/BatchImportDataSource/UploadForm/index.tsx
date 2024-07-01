@@ -11,18 +11,22 @@ import {
 } from '@actiontech/shared/lib/components/FormCom';
 import Icon from '@ant-design/icons';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { IconProjectTitle } from '../../../../icon/sideMenu';
 import { BatchImportDataSourceFormType } from '../index.type';
 import FileUpload from './FileUpload';
 import { UploadProps, Space, Typography } from 'antd';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IconSucceeded, IconFailed } from '@actiontech/shared/lib/Icon/common';
 import { useBoolean } from 'ahooks';
 import { useState } from 'react';
 import { IDBServicesConnectionItem } from '@actiontech/shared/lib/api/base/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { useEffect } from 'react';
+import {
+  CloseCircleOutlined,
+  CheckCircleOutlined,
+  OverviewOutlined
+} from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const BatchImportDataSourceForm: React.FC<{
   form: BatchImportDataSourceFormType;
@@ -82,7 +86,7 @@ const BatchImportDataSourceForm: React.FC<{
         {...formItemLayout.spaceBetween}
       >
         <FormItemBigTitle>
-          <Icon component={IconProjectTitle} className="title-icon" />
+          <Icon component={OverviewOutlined} className="title-icon" />
           <span>{t('dmsProject.batchImportDataSource.title')}</span>
         </FormItemBigTitle>
         <FormItemLabel
@@ -123,7 +127,9 @@ const BatchImportDataSourceForm: React.FC<{
             <Space direction="vertical">
               <EmptyBox if={!!connectionTestResult?.successful_num}>
                 <Space>
-                  <IconSucceeded />
+                  <CommonIconStyleWrapper>
+                    <CheckCircleOutlined />
+                  </CommonIconStyleWrapper>
                   <Typography.Text type="success">
                     {t('dmsProject.batchImportDataSource.testConnectSuccess', {
                       count: connectionTestResult?.successful_num
@@ -133,7 +139,9 @@ const BatchImportDataSourceForm: React.FC<{
               </EmptyBox>
               <EmptyBox if={!!connectionTestResult?.failed_num}>
                 <Space>
-                  <IconFailed />
+                  <CommonIconStyleWrapper>
+                    <CloseCircleOutlined />
+                  </CommonIconStyleWrapper>
                   <Typography.Text type="danger">
                     {t('dmsProject.batchImportDataSource.testConnectFail', {
                       count: connectionTestResult?.failed_num,

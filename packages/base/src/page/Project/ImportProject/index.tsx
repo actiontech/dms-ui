@@ -26,7 +26,6 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
 import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/common';
 import { importProjectListColumn } from './column';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { ImportProjectUploadFileWrapper } from '../style';
 import { LeftArrowOutlined, OverviewOutlined } from '@actiontech/icons';
 
@@ -111,7 +110,7 @@ const ImportProject = () => {
         if={!resultVisible}
         defaultNode={
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('dmsProject.importProject.successTitle')}
             subTitle={
               <Link to={`/project`}>

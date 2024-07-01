@@ -7,7 +7,6 @@ import { useForm } from 'antd/es/form/Form';
 import { useNavigate } from 'react-router-dom';
 import { PlanFormField } from '../PlanForm/index.type';
 import PlanForm from '../PlanForm';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
@@ -104,7 +103,7 @@ const CreatePlan = () => {
       />
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('auditPlan.create.successTitle')}
           extra={[
             <BasicButton key="clone-audit-plan" onClick={cloneAuditPlan}>

@@ -11,7 +11,6 @@ import { UpdateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import { LeftArrowOutlined } from '@actiontech/icons';
 
@@ -134,7 +133,7 @@ const UpdateCustomRule: React.FC = () => {
 
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('customRule.editCustomRule.successTitle')}
           extra={[
             <BasicButton

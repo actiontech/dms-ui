@@ -14,7 +14,6 @@ import {
   EmptyBox,
   PageHeader
 } from '@actiontech/shared';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
 import {
   FormAreaBlockStyleWrapper,
@@ -226,7 +225,7 @@ const ImportRuleTemplate = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('ruleTemplate.importRuleTemplate.successTitle')}
           extra={[
             <BasicButton

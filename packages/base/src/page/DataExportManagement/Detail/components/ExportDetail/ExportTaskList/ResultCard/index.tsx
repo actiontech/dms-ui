@@ -10,7 +10,7 @@ import {
 } from '../../style';
 import AuditResultTag from './AuditResultTag';
 import { DownOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   const { t } = useTranslation();

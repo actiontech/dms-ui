@@ -5,8 +5,8 @@ import { Table, ConfigProvider, TableProps } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { TableTopListStyleWrapper } from './style';
-import { IconSpin } from '@actiontech/shared/lib/Icon/common';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export interface ITableTopList<RecordType> extends TableProps<RecordType> {
   apiLoading: boolean;
@@ -57,7 +57,117 @@ const TableTopList = <T extends Record<string, any>>(
             spinning: apiLoading,
             indicator: (
               <Icon
-                component={IconSpin}
+                component={() => (
+                  <CommonIconStyleWrapper className="custom-icon-spin-dot">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="30px"
+                      viewBox="0 0 24 30"
+                      fill="currentColor"
+                    >
+                      <rect
+                        x="0"
+                        y="10"
+                        width="4"
+                        height="10"
+                        fill="currentColor"
+                        opacity="0.2"
+                      >
+                        <animate
+                          attributeName="opacity"
+                          attributeType="XML"
+                          values="0.2; 1; .2"
+                          begin="0s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="height"
+                          attributeType="XML"
+                          values="10; 20; 10"
+                          begin="0s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="y"
+                          attributeType="XML"
+                          values="10; 5; 10"
+                          begin="0s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                      </rect>
+                      <rect
+                        x="8"
+                        y="10"
+                        width="4"
+                        height="10"
+                        fill="currentColor"
+                        opacity="0.2"
+                      >
+                        <animate
+                          attributeName="opacity"
+                          attributeType="XML"
+                          values="0.2; 1; .2"
+                          begin="0.15s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="height"
+                          attributeType="XML"
+                          values="10; 20; 10"
+                          begin="0.15s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="y"
+                          attributeType="XML"
+                          values="10; 5; 10"
+                          begin="0.15s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                      </rect>
+                      <rect
+                        x="16"
+                        y="10"
+                        width="4"
+                        height="10"
+                        fill="currentColor"
+                        opacity="0.2"
+                      >
+                        <animate
+                          attributeName="opacity"
+                          attributeType="XML"
+                          values="0.2; 1; .2"
+                          begin="0.3s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="height"
+                          attributeType="XML"
+                          values="10; 20; 10"
+                          begin="0.3s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="y"
+                          attributeType="XML"
+                          values="10; 5; 10"
+                          begin="0.3s"
+                          dur="0.6s"
+                          repeatCount="indefinite"
+                        />
+                      </rect>
+                    </svg>
+                  </CommonIconStyleWrapper>
+                )}
                 style={{
                   color: sqleTheme.reportStatistics.loadingColor
                 }}

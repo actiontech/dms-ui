@@ -22,7 +22,6 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import PlanForm from '../PlanForm';
 
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdatePlan = () => {
@@ -155,7 +154,7 @@ const UpdatePlan = () => {
       />
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('auditPlan.update.successTitle')}
           extra={[
             <BasicButton

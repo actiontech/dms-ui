@@ -6,7 +6,6 @@ import {
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
@@ -103,7 +102,7 @@ const BatchImportDataSource = () => {
         if={!resultVisible}
         defaultNode={
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('dmsDataSource.batchImportDataSource.successTitle')}
             extra={[
               <BasicButton

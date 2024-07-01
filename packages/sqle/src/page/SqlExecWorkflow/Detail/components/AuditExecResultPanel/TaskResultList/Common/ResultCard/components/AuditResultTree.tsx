@@ -7,7 +7,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import AuditResultMessage from '../../../../../../../../../components/AuditResultMessage';
 import { TaskAuditResultTreeStyleWrapper } from './style';
 import { DownOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export interface AuditResultTreeProps {
   auditResult?: IAuditResult[];

@@ -9,7 +9,6 @@ import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { CreateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
 import { LeftArrowOutlined } from '@actiontech/icons';
@@ -119,7 +118,7 @@ const CreateCustomRule: React.FC = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('customRule.addCustomRule.successTitle')}
           subTitle={t('customRule.addCustomRule.successTips')}
           extra={[

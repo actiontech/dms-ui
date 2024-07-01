@@ -12,7 +12,6 @@ import {
   BasicResult,
   EmptyBox
 } from '@actiontech/shared';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import DataSourceForm from '../Form';
 
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -127,7 +126,7 @@ const AddDataSource = () => {
         defaultNode={<DataSourceForm form={form} submit={addDatabase} />}
       >
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('dmsDataSource.addDatabaseSuccess')}
           subTitle={
             <Link to={`/project/${projectID}/db-services`}>

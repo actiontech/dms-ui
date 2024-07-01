@@ -19,7 +19,7 @@ import {
   RingPieFilled,
   DatabaseFilled
 } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({

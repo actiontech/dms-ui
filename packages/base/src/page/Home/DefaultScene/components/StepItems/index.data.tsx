@@ -16,7 +16,7 @@ import {
   getSQLEOperateStepItem
 } from './sqle';
 import { LockFilled, SnippetsFilled, UtilOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const UserTypeDictionary: StringDictionary = {
   admin: t('dmsHome.defaultScene.header.adminUser'),

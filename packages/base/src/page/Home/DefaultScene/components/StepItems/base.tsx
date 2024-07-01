@@ -1,7 +1,7 @@
 import { t } from '../../../../../locale';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
 import { MemberFilled, DatabaseFilled } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const getDatabaseManagerSteps: (
   arg: DevopsStepsProps

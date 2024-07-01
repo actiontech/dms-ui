@@ -29,7 +29,7 @@ import {
   EnvironmentFilled
 } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon/style';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectName,

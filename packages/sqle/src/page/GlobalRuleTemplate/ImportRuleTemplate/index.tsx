@@ -17,7 +17,6 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -223,7 +222,7 @@ const ImportRuleTemplate: React.FC = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('ruleTemplate.importRuleTemplate.successTitle')}
           extra={[
             <BasicButton

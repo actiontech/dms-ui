@@ -5,7 +5,7 @@ import { Space } from 'antd';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import WorkflowStatus from '../../../../List/components/WorkflowStatus';
 import { ClockCircleOutlined } from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/Icon';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
   createTime,
