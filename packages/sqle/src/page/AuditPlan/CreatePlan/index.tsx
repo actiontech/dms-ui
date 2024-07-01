@@ -7,10 +7,7 @@ import { useForm } from 'antd/es/form/Form';
 import { useNavigate } from 'react-router-dom';
 import { PlanFormField } from '../PlanForm/index.type';
 import PlanForm from '../PlanForm';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
+import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
@@ -18,6 +15,7 @@ import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import { ResponseCode } from '../../../data/common';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const CreatePlan = () => {
   const { t } = useTranslation();
@@ -82,7 +80,7 @@ const CreatePlan = () => {
       <PageHeader
         fixed
         title={
-          <BasicButton onClick={onSkipList} icon={<IconLeftArrow />}>
+          <BasicButton onClick={onSkipList} icon={<LeftArrowOutlined />}>
             {t('auditPlan.action.backButton')}
           </BasicButton>
         }
