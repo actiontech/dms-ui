@@ -136,73 +136,70 @@ exports[`test base/DataExport/Detail should match snapshot 1`] = `
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -1081,73 +1078,70 @@ exports[`test base/DataExport/Detail should match snapshot 2`] = `
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -3665,73 +3659,70 @@ exports[`test base/DataExport/Detail should match snapshot 3`] = `
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -6249,73 +6240,70 @@ exports[`test base/DataExport/Detail should match snapshot 4`] = `
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -8833,73 +8821,70 @@ exports[`test base/DataExport/Detail should match snapshot with reject workflow 
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
