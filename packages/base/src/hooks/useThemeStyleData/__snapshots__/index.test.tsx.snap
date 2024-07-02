@@ -67,6 +67,23 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 1`] = `
       },
     },
   },
+  "icon": {
+    "bindUser": {
+      "password": "#C3C6CD",
+      "user": "#C3C6CD",
+    },
+    "dataExport": {
+      "clock": "#6094FC",
+      "infoCircle": "#8A8F99",
+    },
+    "home": {
+      "common": "#ffffff",
+    },
+    "system": {
+      "basicTitleTips": "#8A8F99",
+      "modify": "#292C33",
+    },
+  },
   "sideMenu": {
     "projectSelector": {
       "dropdown": {
@@ -657,6 +674,20 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
     },
     "steps": {
       "boxShadow": "0px 1px 4px 0px rgba(51, 44, 31, 0.12)",
+    },
+  },
+  "icon": {
+    "execWorkFlow": {
+      "clock": "#6094FC",
+      "databaseFilled": "#4583FF",
+      "fileList": "#4583FF",
+      "minusCircleFilledDisabled": "#C3C6CD",
+      "profileSquareFilled": "#4583FF",
+      "schemaFilled": "#15C7D4",
+    },
+    "workflowTemplate": {
+      "common": "white",
+      "userCircleFilled": "#1CB889",
     },
   },
   "projectOverview": {

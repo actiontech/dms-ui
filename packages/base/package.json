@@ -17,6 +17,7 @@
   "dependencies": {
     "@actiontech/shared": "workspace:^",
     "babel-preset-react-app": "^10.0.1",
-    "sqle": "workspace:^"
+    "sqle": "workspace:^",
+    "@actiontech/icons": "workspace:^"
   }
 }

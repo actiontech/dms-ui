@@ -92,22 +92,17 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                     <span
                       class="custom-select-option-content-prefix"
                     >
-                      <span
-                        class="project-flag-icon css-u3jcp4"
+                      <svg
+                        height="18"
+                        viewBox="0 0 18 18"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M2.25 2.25H9.2865C9.42575 2.25007 9.56222 2.28891 9.68064 2.36216C9.79907 2.43542 9.89476 2.54019 9.957 2.66475L10.5 3.75H15C15.1989 3.75 15.3897 3.82902 15.5303 3.96967C15.671 4.11032 15.75 4.30109 15.75 4.5V12.75C15.75 12.9489 15.671 13.1397 15.5303 13.2803C15.3897 13.421 15.1989 13.5 15 13.5H10.2135C10.0743 13.4999 9.93778 13.4611 9.81936 13.3878C9.70093 13.3146 9.60524 13.2098 9.543 13.0853L9 12H3.75V16.5H2.25V2.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                          fill="#EBAD1C"
+                        />
+                      </svg>
                     </span>
                     <span
                       class="custom-select-option-content-label"
@@ -123,22 +118,18 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 style="user-select: none;"
                 unselectable="on"
               >
-                <span
-                  class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
-                  role="img"
+                <svg
+                  class="custom-icon-right-arrow-select-suffix"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
+                  <path
+                    d="m8.781 8-3.3-3.3.943-.943L10.667 8l-4.243 4.243-.943-.943z"
                     fill="currentColor"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
-                    />
-                  </svg>
-                </span>
+                  />
+                </svg>
               </span>
             </div>
           </div>
@@ -178,28 +169,26 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
         <div
           class="global-system-icon-wrapper"
         >
-          <span
-            class="custom-icon-global-system css-u3jcp4"
+          <svg
+            class="custom-icon-global-system"
+            color=""
+            fill="none"
+            height="18"
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M16.125 4.875L9 0.75L1.875 4.875V13.125L9 17.25L16.125 13.125V4.875ZM9 12.75C11.0711 12.75 12.75 11.0711 12.75 9C12.75 6.92893 11.0711 5.25 9 5.25C6.92893 5.25 5.25 6.92893 5.25 9C5.25 11.0711 6.92893 12.75 9 12.75Z"
-                fill="#c3c6cd"
-                fill-rule="evenodd"
-              />
-              <path
-                d="M9 11.25C9.59674 11.25 10.169 11.0129 10.591 10.591C11.0129 10.169 11.25 9.59674 11.25 9C11.25 8.40326 11.0129 7.83097 10.591 7.40901C10.169 6.98705 9.59674 6.75 9 6.75C8.40326 6.75 7.83097 6.98705 7.40901 7.40901C6.98705 7.83097 6.75 8.40326 6.75 9C6.75 9.59674 6.98705 10.169 7.40901 10.591C7.83097 11.0129 8.40326 11.25 9 11.25Z"
-                fill="#8a8f99"
-              />
-            </svg>
-          </span>
+            <path
+              clip-rule="evenodd"
+              d="M16.125 4.875 9 .75 1.875 4.875v8.25L9 17.25l7.125-4.125zM9 12.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5"
+              fill="#C3C6CD"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M9 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"
+              fill="#8A8F99"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -275,23 +264,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                     <span
                       class="custom-select-option-content-prefix"
                     >
-                      <span
-                        class="css-u3jcp4"
+                      <svg
+                        height="18"
+                        viewBox="64 64 896 896"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="lock"
-                          fill="currentColor"
-                          focusable="false"
-                          height="18"
-                          viewBox="64 64 896 896"
-                          width="18"
-                        >
-                          <path
-                            d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 10-56 0z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32M332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332zm460 600H232V536h560zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0"
+                        />
+                      </svg>
                     </span>
                     <span
                       class="custom-select-option-content-label"
@@ -307,22 +289,18 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 style="user-select: none;"
                 unselectable="on"
               >
-                <span
-                  class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
-                  role="img"
+                <svg
+                  class="custom-icon-right-arrow-select-suffix"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
+                  <path
+                    d="m8.781 8-3.3-3.3.943-.943L10.667 8l-4.243 4.243-.943-.943z"
                     fill="currentColor"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
-                    />
-                  </svg>
-                </span>
+                  />
+                </svg>
               </span>
             </div>
           </div>
@@ -362,28 +340,26 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
         <div
           class="global-system-icon-wrapper"
         >
-          <span
-            class="custom-icon-global-system css-u3jcp4"
+          <svg
+            class="custom-icon-global-system"
+            color=""
+            fill="none"
+            height="18"
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M16.125 4.875L9 0.75L1.875 4.875V13.125L9 17.25L16.125 13.125V4.875ZM9 12.75C11.0711 12.75 12.75 11.0711 12.75 9C12.75 6.92893 11.0711 5.25 9 5.25C6.92893 5.25 5.25 6.92893 5.25 9C5.25 11.0711 6.92893 12.75 9 12.75Z"
-                fill="#c3c6cd"
-                fill-rule="evenodd"
-              />
-              <path
-                d="M9 11.25C9.59674 11.25 10.169 11.0129 10.591 10.591C11.0129 10.169 11.25 9.59674 11.25 9C11.25 8.40326 11.0129 7.83097 10.591 7.40901C10.169 6.98705 9.59674 6.75 9 6.75C8.40326 6.75 7.83097 6.98705 7.40901 7.40901C6.98705 7.83097 6.75 8.40326 6.75 9C6.75 9.59674 6.98705 10.169 7.40901 10.591C7.83097 11.0129 8.40326 11.25 9 11.25Z"
-                fill="#8a8f99"
-              />
-            </svg>
-          </span>
+            <path
+              clip-rule="evenodd"
+              d="M16.125 4.875 9 .75 1.875 4.875v8.25L9 17.25l7.125-4.125zM9 12.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5"
+              fill="#C3C6CD"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M9 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"
+              fill="#8A8F99"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -459,23 +435,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                     <span
                       class="custom-select-option-content-prefix"
                     >
-                      <span
-                        class="css-u3jcp4"
+                      <svg
+                        height="18"
+                        viewBox="64 64 896 896"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="lock"
-                          fill="currentColor"
-                          focusable="false"
-                          height="18"
-                          viewBox="64 64 896 896"
-                          width="18"
-                        >
-                          <path
-                            d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 10-56 0z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32M332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332zm460 600H232V536h560zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0"
+                        />
+                      </svg>
                     </span>
                     <span
                       class="custom-select-option-content-label"
@@ -491,22 +460,18 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 style="user-select: none;"
                 unselectable="on"
               >
-                <span
-                  class="custom-icon custom-icon-right-arrow-select-suffix css-u3jcp4"
-                  role="img"
+                <svg
+                  class="custom-icon-right-arrow-select-suffix"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
+                  <path
+                    d="m8.781 8-3.3-3.3.943-.943L10.667 8l-4.243 4.243-.943-.943z"
                     fill="currentColor"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.78145 7.99999L5.48145 4.69999L6.42411 3.75732L10.6668 7.99999L6.42411 12.2427L5.48145 11.3L8.78145 7.99999Z"
-                    />
-                  </svg>
-                </span>
+                  />
+                </svg>
               </span>
             </div>
           </div>
@@ -546,28 +511,26 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
         <div
           class="global-system-icon-wrapper"
         >
-          <span
-            class="custom-icon-global-system css-u3jcp4"
+          <svg
+            class="custom-icon-global-system"
+            color=""
+            fill="none"
+            height="18"
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M16.125 4.875L9 0.75L1.875 4.875V13.125L9 17.25L16.125 13.125V4.875ZM9 12.75C11.0711 12.75 12.75 11.0711 12.75 9C12.75 6.92893 11.0711 5.25 9 5.25C6.92893 5.25 5.25 6.92893 5.25 9C5.25 11.0711 6.92893 12.75 9 12.75Z"
-                fill="#c3c6cd"
-                fill-rule="evenodd"
-              />
-              <path
-                d="M9 11.25C9.59674 11.25 10.169 11.0129 10.591 10.591C11.0129 10.169 11.25 9.59674 11.25 9C11.25 8.40326 11.0129 7.83097 10.591 7.40901C10.169 6.98705 9.59674 6.75 9 6.75C8.40326 6.75 7.83097 6.98705 7.40901 7.40901C6.98705 7.83097 6.75 8.40326 6.75 9C6.75 9.59674 6.98705 10.169 7.40901 10.591C7.83097 11.0129 8.40326 11.25 9 11.25Z"
-                fill="#8a8f99"
-              />
-            </svg>
-          </span>
+            <path
+              clip-rule="evenodd"
+              d="M16.125 4.875 9 .75 1.875 4.875v8.25L9 17.25l7.125-4.125zM9 12.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5"
+              fill="#C3C6CD"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M9 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"
+              fill="#8A8F99"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -598,22 +561,17 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 role="button"
                 tabindex="-1"
               >
-                <span
-                  class="custom-icon custom-icon-close css-u3jcp4"
-                  role="img"
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="currentColor"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    width="14"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
               </span>
             </span>
           </span>
@@ -661,23 +619,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                         <div
                           class="css-gmbytu"
                         >
-                          <span
-                            class="css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="64 64 896 896"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              aria-hidden="true"
-                              data-icon="lock"
-                              fill="currentColor"
-                              focusable="false"
-                              height="18"
-                              viewBox="64 64 896 896"
-                              width="18"
-                            >
-                              <path
-                                d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 10-56 0z"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32M332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332zm460 600H232V536h560zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0"
+                            />
+                          </svg>
                           <span
                             class="project-selector-label-text"
                           >
@@ -723,23 +674,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 <div
                   class="css-gmbytu"
                 >
-                  <span
-                    class="css-u3jcp4"
+                  <svg
+                    height="18"
+                    viewBox="64 64 896 896"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="lock"
-                      fill="currentColor"
-                      focusable="false"
-                      height="18"
-                      viewBox="64 64 896 896"
-                      width="18"
-                    >
-                      <path
-                        d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 10-56 0z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32M332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332zm460 600H232V536h560zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0"
+                    />
+                  </svg>
                   <span
                     class="project-selector-label-text"
                   >
@@ -757,22 +701,19 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 <div
                   class="css-gmbytu"
                 >
-                  <span
-                    class="project-flag-icon css-u3jcp4"
+                  <svg
+                    class="project-flag-icon"
+                    color="currentColor"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.25 2.25H9.2865C9.42575 2.25007 9.56222 2.28891 9.68064 2.36216C9.79907 2.43542 9.89476 2.54019 9.957 2.66475L10.5 3.75H15C15.1989 3.75 15.3897 3.82902 15.5303 3.96967C15.671 4.11032 15.75 4.30109 15.75 4.5V12.75C15.75 12.9489 15.671 13.1397 15.5303 13.2803C15.3897 13.421 15.1989 13.5 15 13.5H10.2135C10.0743 13.4999 9.93778 13.4611 9.81936 13.3878C9.70093 13.3146 9.60524 13.2098 9.543 13.0853L9 12H3.75V16.5H2.25V2.25Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                      fill="currentColor"
+                    />
+                  </svg>
                   <span
                     class="project-selector-label-text"
                   >
@@ -790,23 +731,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 <div
                   class="css-gmbytu"
                 >
-                  <span
-                    class="css-u3jcp4"
+                  <svg
+                    height="18"
+                    viewBox="64 64 896 896"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      aria-hidden="true"
-                      data-icon="lock"
-                      fill="currentColor"
-                      focusable="false"
-                      height="18"
-                      viewBox="64 64 896 896"
-                      width="18"
-                    >
-                      <path
-                        d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332V240zm460 600H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 10-56 0z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M832 464h-68V240c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32M332 240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v224H332zm460 600H232V536h560zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0"
+                    />
+                  </svg>
                   <span
                     class="project-selector-label-text"
                   >

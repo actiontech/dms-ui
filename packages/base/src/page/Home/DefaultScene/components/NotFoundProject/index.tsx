@@ -1,11 +1,11 @@
 import { SelectProps } from 'antd';
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IconProjectFlag } from 'sqle/src/icon/Rule';
 import { ProjectSelectorLabelStyleWrapper } from '../../../../Nav/SideMenu/ProjectSelector/style';
 import ProjectSelectorModal from '../../../../Project/Detail/NotFoundRecentlyProject/ProjectSelectorModal';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { NotFoundProjectProps } from './index.type';
+import { FlagFilled } from '@actiontech/icons';
 
 const NotFoundProject: React.FC<NotFoundProjectProps> = ({
   open,
@@ -40,7 +40,7 @@ const NotFoundProject: React.FC<NotFoundProjectProps> = ({
           value: v.project_id,
           label: (
             <ProjectSelectorLabelStyleWrapper>
-              <IconProjectFlag />
+              <FlagFilled width={18} height={18} />
               <span className="project-selector-label-text">
                 {v.project_name}
               </span>

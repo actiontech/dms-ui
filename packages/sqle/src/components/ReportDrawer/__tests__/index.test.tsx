@@ -3,6 +3,7 @@ import ReportDrawer from '..';
 import { renderWithTheme } from '../../../testUtils/customRender';
 import { DetailReportDrawerProps } from '../index.type';
 import { cleanup } from '@testing-library/react';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/components/ReportDrawer', () => {
   const customRender = (params: DetailReportDrawerProps) => {
@@ -10,6 +11,7 @@ describe('sqle/components/ReportDrawer', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

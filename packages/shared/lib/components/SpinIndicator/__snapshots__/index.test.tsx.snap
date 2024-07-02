@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/SpinIndicator should match init snap 1`] = `
+<body>
+  <div>
+    <span
+      class="custom-icon-spin-dot css-u3jcp4"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        viewBox="0 0 24 30"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="currentColor"
+          height="10"
+          opacity="0.2"
+          width="4"
+          x="0"
+          y="10"
+        >
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="0.2; 1; .2"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 20; 10"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 5; 10"
+          />
+        </rect>
+        <rect
+          fill="currentColor"
+          height="10"
+          opacity="0.2"
+          width="4"
+          x="8"
+          y="10"
+        >
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="0.2; 1; .2"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 20; 10"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 5; 10"
+          />
+        </rect>
+        <rect
+          fill="currentColor"
+          height="10"
+          opacity="0.2"
+          width="4"
+          x="16"
+          y="10"
+        >
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="0.2; 1; .2"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 20; 10"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 5; 10"
+          />
+        </rect>
+      </svg>
+    </span>
+  </div>
+</body>
+`;
+
+exports[`lib/SpinIndicator should match snap when modify prop 1`] = `
+<body>
+  <div>
+    <span
+      class="custom-icon-spin-dot css-u3jcp4"
+    >
+      <svg
+        fill="currentColor"
+        height="40"
+        viewBox="0 0 30 40"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="currentColor"
+          height="10"
+          opacity="0.2"
+          width="4"
+          x="0"
+          y="10"
+        >
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="0.2; 1; .2"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 20; 10"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            begin="0s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 5; 10"
+          />
+        </rect>
+        <rect
+          fill="currentColor"
+          height="10"
+          opacity="0.2"
+          width="4"
+          x="8"
+          y="10"
+        >
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="0.2; 1; .2"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 20; 10"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            begin="0.15s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 5; 10"
+          />
+        </rect>
+        <rect
+          fill="currentColor"
+          height="10"
+          opacity="0.2"
+          width="4"
+          x="16"
+          y="10"
+        >
+          <animate
+            attributeName="opacity"
+            attributeType="XML"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="0.2; 1; .2"
+          />
+          <animate
+            attributeName="height"
+            attributeType="XML"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 20; 10"
+          />
+          <animate
+            attributeName="y"
+            attributeType="XML"
+            begin="0.3s"
+            dur="0.6s"
+            repeatCount="indefinite"
+            values="10; 5; 10"
+          />
+        </rect>
+      </svg>
+    </span>
+  </div>
+</body>
+`;

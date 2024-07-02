@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../icon/member';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 
 const IsProjectAdmin: React.FC<{ value: boolean }> = ({ value }) => {
   const { t } = useTranslation();
@@ -9,12 +9,12 @@ const IsProjectAdmin: React.FC<{ value: boolean }> = ({ value }) => {
     <TableColumnWithIconStyleWrapper>
       {value ? (
         <>
-          <IconMemberIsAdmin />
+          <CheckHexagonOutlined />
           <span>{t('common.true')}</span>
         </>
       ) : (
         <>
-          <IconMemberNotAdmin />
+          <CloseHexagonOutlined />
           <span>{t('common.false')}</span>
         </>
       )}

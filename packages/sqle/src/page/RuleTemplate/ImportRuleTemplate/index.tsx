@@ -14,10 +14,6 @@ import {
   EmptyBox,
   PageHeader
 } from '@actiontech/shared';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
 import {
   FormAreaBlockStyleWrapper,
@@ -29,12 +25,12 @@ import {
   FormItemLabel
 } from '@actiontech/shared/lib/components/FormCom';
 import Icon from '@ant-design/icons';
-import { IconRuleTitle } from '../../../icon/Rule';
 import RuleTemplateForm from '../RuleTemplateForm';
 import {
   useImportRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
+import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
 
 const ImportRuleTemplate = () => {
   const { t } = useTranslation();
@@ -114,7 +110,7 @@ const ImportRuleTemplate = () => {
         title={
           <BasicButton
             onClick={onGotoRuleTemplateList}
-            icon={<IconLeftArrow />}
+            icon={<LeftArrowOutlined />}
           >
             {t('ruleTemplate.backToList')}
           </BasicButton>
@@ -167,7 +163,10 @@ const ImportRuleTemplate = () => {
                 {...formItemLayout.spaceBetween}
               >
                 <FormItemBigTitle>
-                  <Icon component={IconRuleTitle} className="title-icon" />
+                  <Icon
+                    component={ProfileSquareFilled}
+                    className="title-icon"
+                  />
                   <span>{t('ruleTemplate.importRuleTemplate.title')}</span>
                 </FormItemBigTitle>
                 <FormItemLabel
@@ -226,7 +225,7 @@ const ImportRuleTemplate = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('ruleTemplate.importRuleTemplate.successTitle')}
           extra={[
             <BasicButton

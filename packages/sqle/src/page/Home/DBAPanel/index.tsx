@@ -19,7 +19,6 @@ import {
   NoBorderedPageHeaderStyleWrapper,
   TableTitleStyleWrapper
 } from '../CommonTable/style';
-import { IconWaitForOrderList } from '../../../icon/Dashboard';
 import { CustomToolbar } from '../CommonTable/CustomToolbar';
 import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
@@ -29,6 +28,7 @@ import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
+import { BookMarkTagFilled } from '@actiontech/icons';
 
 const DBAPanel: React.FC<IDBAPanelProps> = ({
   workflowStatistics,
@@ -80,7 +80,7 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
     <DashboardCommonListStyleWrapper>
       <NoBorderedPageHeaderStyleWrapper>
         <TableTitleStyleWrapper>
-          <IconWaitForOrderList />
+          <BookMarkTagFilled width={20} height={20} className="custom-icon" />
           {t('dashboard.title.pendingOrder')}
         </TableTitleStyleWrapper>
       </NoBorderedPageHeaderStyleWrapper>

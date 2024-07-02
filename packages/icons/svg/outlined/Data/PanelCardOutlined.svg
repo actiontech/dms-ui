@@ -1,0 +1,5 @@
+<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/SqlExecWorkflow.tsx -->
+<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z" fill="currentColor" />
+</svg>

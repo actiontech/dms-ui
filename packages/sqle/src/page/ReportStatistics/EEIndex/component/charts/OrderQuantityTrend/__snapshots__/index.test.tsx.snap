@@ -52,22 +52,17 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
                   <div
                     class="ant-picker-range-separator"
                   >
-                    <span
-                      class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="ant-picker-input"
@@ -102,7 +97,7 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -198,22 +193,17 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
                   <div
                     class="ant-picker-range-separator"
                   >
-                    <span
-                      class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="ant-picker-input"
@@ -248,7 +238,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -344,22 +334,17 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 2`] = `
                   <div
                     class="ant-picker-range-separator"
                   >
-                    <span
-                      class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="ant-picker-input"
@@ -461,22 +446,17 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
                   <div
                     class="ant-picker-range-separator"
                   >
-                    <span
-                      class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="ant-picker-input"
@@ -511,51 +491,46 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
                 >
-                  <span
-                    class="anticon"
-                    role="img"
+                  <svg
+                    fill="none"
+                    height="80"
+                    viewBox="0 0 80 80"
+                    width="80"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="none"
-                      height="80"
-                      viewBox="0 0 80 80"
-                      width="80"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <g
+                      clip-path="url(#clip0_1412_15009)"
                     >
-                      <g
-                        clip-path="url(#clip0_1412_15009)"
+                      <path
+                        d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                        fill="#EBEAE7"
+                      />
+                      <path
+                        d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                        fill="#F2F1EF"
+                      />
+                      <path
+                        d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                        fill="#E6E4E3"
+                      />
+                    </g>
+                    <defs>
+                      <clippath
+                        id="clip0_1412_15009"
                       >
-                        <path
-                          d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
-                          fill="#EBEAE7"
+                        <rect
+                          fill="white"
+                          height="80"
+                          width="80"
                         />
-                        <path
-                          d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
-                          fill="#F2F1EF"
-                        />
-                        <path
-                          d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
-                          fill="#E6E4E3"
-                        />
-                      </g>
-                      <defs>
-                        <clippath
-                          id="clip0_1412_15009"
-                        >
-                          <rect
-                            fill="white"
-                            height="80"
-                            width="80"
-                          />
-                        </clippath>
-                      </defs>
-                    </svg>
-                  </span>
+                      </clippath>
+                    </defs>
+                  </svg>
                 </div>
                 <div
                   class="ant-empty-description"
@@ -1145,22 +1120,17 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
                   <div
                     class="ant-picker-range-separator"
                   >
-                    <span
-                      class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="ant-picker-input"
@@ -1195,7 +1165,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -1290,22 +1260,17 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                   <div
                     class="ant-picker-range-separator"
                   >
-                    <span
-                      class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                      role="img"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                        />
-                      </svg>
-                    </span>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
+                    </svg>
                   </div>
                   <div
                     class="ant-picker-input ant-picker-input-active"
@@ -1372,24 +1337,18 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                       type="button"
                                     >
                                       <span
-                                        class="custom-icon prev-icon css-u3jcp4"
+                                        class="prev-icon"
                                       >
                                         <svg
-                                          fill="none"
                                           height="14"
                                           viewBox="0 0 14 14"
                                           width="14"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <g
-                                            id="arrow-m-left-line"
-                                          >
-                                            <path
-                                              d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
-                                              fill="#292C33"
-                                              id="Vector"
-                                            />
-                                          </g>
+                                          <path
+                                            d="m6.316 7 2.888 2.888-.825.824L4.667 7l3.712-3.712.825.825z"
+                                            fill="#292C33"
+                                          />
                                         </svg>
                                       </span>
                                     </button>
@@ -1418,24 +1377,17 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                       type="button"
                                     >
                                       <span
-                                        class="custom-icon next-icon css-u3jcp4"
+                                        class="next-icon"
                                       >
                                         <svg
-                                          fill="none"
                                           height="14"
                                           viewBox="0 0 14 14"
                                           width="14"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <g
-                                            id="arrow-m-right-line"
-                                          >
-                                            <path
-                                              d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
-                                              fill="#292C33"
-                                              id="Vector"
-                                            />
-                                          </g>
+                                          <path
+                                            d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                          />
                                         </svg>
                                       </span>
                                     </button>
@@ -1946,24 +1898,18 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                       type="button"
                                     >
                                       <span
-                                        class="custom-icon prev-icon css-u3jcp4"
+                                        class="prev-icon"
                                       >
                                         <svg
-                                          fill="none"
                                           height="14"
                                           viewBox="0 0 14 14"
                                           width="14"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <g
-                                            id="arrow-m-left-line"
-                                          >
-                                            <path
-                                              d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
-                                              fill="#292C33"
-                                              id="Vector"
-                                            />
-                                          </g>
+                                          <path
+                                            d="m6.316 7 2.888 2.888-.825.824L4.667 7l3.712-3.712.825.825z"
+                                            fill="#292C33"
+                                          />
                                         </svg>
                                       </span>
                                     </button>
@@ -1991,24 +1937,17 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                       type="button"
                                     >
                                       <span
-                                        class="custom-icon next-icon css-u3jcp4"
+                                        class="next-icon"
                                       >
                                         <svg
-                                          fill="none"
                                           height="14"
                                           viewBox="0 0 14 14"
                                           width="14"
                                           xmlns="http://www.w3.org/2000/svg"
                                         >
-                                          <g
-                                            id="arrow-m-right-line"
-                                          >
-                                            <path
-                                              d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
-                                              fill="#292C33"
-                                              id="Vector"
-                                            />
-                                          </g>
+                                          <path
+                                            d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                          />
                                         </svg>
                                       </span>
                                     </button>
@@ -2512,7 +2451,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"

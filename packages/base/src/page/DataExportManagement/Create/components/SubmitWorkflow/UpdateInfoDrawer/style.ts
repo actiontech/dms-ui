@@ -33,11 +33,6 @@ export const UpdateBseInfoFormStyleWrapper = styled(Form)`
 
   .base-info-form-item-slot {
     margin-bottom: 16px;
-
-    .project-flag-icon {
-      color: ${({ theme }) =>
-        theme.sqleTheme.execWorkflow.create.editForm.projectFlagIconColor};
-    }
   }
 
   .ant-form-item {

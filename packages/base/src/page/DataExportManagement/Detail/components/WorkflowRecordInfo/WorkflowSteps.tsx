@@ -11,11 +11,11 @@ import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/servic
 import { IWorkflowStep } from '@actiontech/shared/lib/api/base/service/common';
 import classNames from 'classnames';
 import {
-  IconFailedWorkflowStep,
-  IconFinishedWorkflowStep,
-  IconInitializedWorkflowStep,
-  IconProgressWorkflowStep
-} from 'sqle/src/icon/SqlExecWorkflow';
+  ProgressCircleFilled,
+  CloseCircleFilled,
+  PlusCircleFilled,
+  CheckCircleFilled
+} from '@actiontech/icons';
 
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
@@ -159,13 +159,14 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   const renderOrderStepsItemIcon = useCallback(
     (type?: string) => {
       if (type === 'create') {
-        return <IconInitializedWorkflowStep />;
+        return <PlusCircleFilled color="currentColor" />;
       }
 
       if (type === 'approve') {
         const isRejected = workflowStatus === WorkflowRecordStatusEnum.rejected;
         return (
-          <IconProgressWorkflowStep
+          <ProgressCircleFilled
+            fill="currentColor"
             color={isRejected ? sharedTheme.uiToken.colorWarning : undefined}
           />
         );
@@ -179,17 +180,13 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             WorkflowRecordStatusEnum.rejected
           ].includes(workflowStatus)
         ) {
-          return (
-            <IconFailedWorkflowStep color={sharedTheme.uiToken.colorWarning} />
-          );
+          return <CloseCircleFilled color={sharedTheme.uiToken.colorWarning} />;
         }
 
         if (workflowStatus === WorkflowRecordStatusEnum.failed) {
-          return (
-            <IconFailedWorkflowStep color={sharedTheme.uiToken.colorWarning} />
-          );
+          return <CloseCircleFilled color={sharedTheme.uiToken.colorWarning} />;
         }
-        return <IconFinishedWorkflowStep />;
+        return <CheckCircleFilled />;
       }
     },
     [workflowStatus, sharedTheme.uiToken.colorWarning]

@@ -17,21 +17,14 @@ exports[`base/System/components/ConfigTestBtn render snap when Popover cont show
             class="ant-btn-icon"
           >
             <svg
-              fill="none"
               height="16"
-              viewBox="0 0 16 16"
+              viewBox="0 0 17 16"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="flashlight-fill"
-              >
-                <path
-                  d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+              />
             </svg>
           </span>
         </button>
@@ -85,21 +78,14 @@ exports[`base/System/components/ConfigTestBtn render snap when btn hover 1`] = `
             class="ant-btn-icon"
           >
             <svg
-              fill="none"
               height="16"
-              viewBox="0 0 16 16"
+              viewBox="0 0 17 16"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="flashlight-fill"
-              >
-                <path
-                  d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+              />
             </svg>
           </span>
         </button>
@@ -149,21 +135,14 @@ exports[`base/System/components/ConfigTestBtn render snap when btn is default 1`
             class="ant-btn-icon"
           >
             <svg
-              fill="none"
               height="16"
-              viewBox="0 0 16 16"
+              viewBox="0 0 17 16"
               width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="flashlight-fill"
-              >
-                <path
-                  d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+              />
             </svg>
           </span>
         </button>

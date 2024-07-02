@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { DetailComStyleWrapper } from './style';
 import { SyncOutlined } from '@ant-design/icons';
-import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
 import { ColumnType, TableProps } from 'antd/es/table';
 import { BasicTable, SQLRenderer } from '@actiontech/shared';
 import { useParams } from 'react-router-dom';
@@ -14,6 +13,7 @@ import { IAuditPlanSQLHeadV1 } from '@actiontech/shared/lib/api/sqle/service/com
 import { AuditPlanSQLHeadV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { useTableRequestParams } from '@actiontech/shared/lib/components/ActiontechTable';
+import { BookMarkTagFilled } from '@actiontech/icons';
 
 const DetailCom = () => {
   const { t } = useTranslation();
@@ -105,7 +105,9 @@ const DetailCom = () => {
         </section>
         <section className="tag-wrapper">
           <div className="custom-tag-item">
-            <IconTagBookMark className="custom-tag-icon bookmark-icon" />
+            <span className="custom-icon custom-tag-icon bookmark-icon">
+              <BookMarkTagFilled />
+            </span>
             <div>
               {t('auditPlan.detailPage.auditTaskType', {
                 type:

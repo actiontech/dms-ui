@@ -12,10 +12,12 @@ import {
 import { instanceTipsMockData } from '../../../../../../../../../testUtils/mockApi/instance/data';
 import { mockDatabaseType } from '../../../../../../../../../testUtils/mockHooks/mockDatabaseType';
 import { Form } from 'antd';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test DatabaseSelectionItems', () => {
   beforeEach(() => {
     jest.useFakeTimers();
+    mockUseCurrentUser();
     mockUseCurrentProject();
     instance.getInstanceSchemas();
     instance.getInstance();

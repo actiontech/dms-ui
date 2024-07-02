@@ -12,7 +12,6 @@ import { IOptimizationRecordOverview } from '@actiontech/shared/lib/api/sqle/ser
 import { OrderQuantityTrendExtraStyleWrapper } from '../../../ReportStatistics/EEIndex/component/charts/OrderQuantityTrend/style';
 import { BasicRangePicker } from '@actiontech/shared';
 import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconRightArrow } from '@actiontech/shared/lib/Icon';
 import { RangePickerProps } from 'antd/es/date-picker';
 import dayjs, { Dayjs } from 'dayjs';
 import {
@@ -22,6 +21,7 @@ import {
   renderTooltipCustomContent,
   renderTooltipFormatter
 } from './index.data';
+import { ArrowRightOutlined } from '@actiontech/icons';
 
 const dateFormat = 'YYYY-MM-DD';
 
@@ -197,7 +197,7 @@ const OptimizationDistribution = () => {
             className="orderQuantityTrend-range"
             format={dateFormat}
             suffixIcon={<></>}
-            separator={<Icon component={IconRightArrow} />}
+            separator={<Icon component={ArrowRightOutlined} />}
             defaultValue={defaultRangeValue}
             value={range}
             disabledDate={disabledDate}

@@ -8,6 +8,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PushNotification/Wechat', () => {
   let requestGetWeChatConfiguration: jest.SpyInstance;
@@ -17,6 +18,7 @@ describe('base/System/PushNotification/Wechat', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetWeChatConfiguration = system.getWeChatConfig();
     requestUpdateWeChatConfiguration = system.updateWeChatConfig();

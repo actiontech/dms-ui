@@ -1,9 +1,4 @@
 import { t } from '../../../locale';
-import {
-  IconCloneRule,
-  IconRuleItem,
-  IconExportRule
-} from '../../../icon/Rule';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableActionMeta,
@@ -15,6 +10,11 @@ import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import {
+  ProfileSquareFilled,
+  LogoutBoxFilled,
+  CheckboxMultipleBlankFilled
+} from '@actiontech/icons';
 
 export const RuleTemplateColumns =
   (): ActiontechTableColumn<IRuleTemplateResV1> => {
@@ -35,7 +35,7 @@ export const RuleTemplateColumns =
               }`}
             >
               <Space size={12}>
-                <IconRuleItem />
+                <ProfileSquareFilled />
                 {name}
               </Space>
             </Link>
@@ -114,14 +114,14 @@ export const RuleTemplateActions = (
         key: 'clone-rule-template',
         text: t('ruleTemplate.cloneRuleTemplate.button'),
         onClick: (record) => openCloneRuleTemplateModal(record ?? {}),
-        icon: <IconCloneRule />
+        icon: <CheckboxMultipleBlankFilled />
       },
       {
         key: 'export-rule-template',
         text: t('ruleTemplate.exportRuleTemplate.button'),
         onClick: (record) =>
           exportRuleTemplate(record?.rule_template_name ?? ''),
-        icon: <IconExportRule />
+        icon: <LogoutBoxFilled />
       }
     ]
   };

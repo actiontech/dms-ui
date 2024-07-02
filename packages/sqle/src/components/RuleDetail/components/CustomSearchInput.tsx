@@ -1,9 +1,9 @@
 import { ICustomInputProps } from '@actiontech/shared/lib/components/CustomInput';
 import { RuleDetailCustomSearchInputStyleWrapper } from '../style';
-import { IconSearch } from '@actiontech/shared/lib/Icon';
 import { useState, useEffect } from 'react';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { SearchOutlined } from '@actiontech/icons';
 
 const CustomSearchInput: React.FC<ICustomInputProps> = ({
   onCustomPressEnter,
@@ -34,7 +34,7 @@ const CustomSearchInput: React.FC<ICustomInputProps> = ({
         setValue(e.target.value);
       }}
       suffix={
-        <IconSearch
+        <SearchOutlined
           className="pointer"
           onClick={() => onCustomPressEnter?.(value as string)}
         />

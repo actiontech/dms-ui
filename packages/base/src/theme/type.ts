@@ -82,3 +82,21 @@ export type DataExportTheme = {
     };
   };
 };
+
+export type IconTheme = {
+  bindUser: {
+    user: string;
+    password: string;
+  };
+  dataExport: {
+    infoCircle: string;
+    clock: string;
+  };
+  home: {
+    common: string;
+  };
+  system: {
+    basicTitleTips: string;
+    modify: string;
+  };
+};

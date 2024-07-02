@@ -15,9 +15,14 @@ exports[`test useRenderDatabaseSelectionItems should render rule template displa
 >
   <BasicButton
     className="data-source-row-rule-template"
-  >
-    <IconFillListActive />
-  </BasicButton>
+    icon={
+      <ProfileSquareFilled
+        color="#4583FF"
+        height="18"
+        width="18"
+      />
+    }
+  />
 </BasicToolTips>
 `;
 
@@ -36,8 +41,13 @@ exports[`test useRenderDatabaseSelectionItems should render rule template displa
 >
   <BasicButton
     className="data-source-row-rule-template"
-  >
-    <IconFillListActive />
-  </BasicButton>
+    icon={
+      <ProfileSquareFilled
+        color="#4583FF"
+        height="18"
+        width="18"
+      />
+    }
+  />
 </BasicToolTips>
 `;

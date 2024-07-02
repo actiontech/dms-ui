@@ -14,11 +14,7 @@ import {
   BasicResult,
   EmptyBox
 } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
-import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconError } from '@actiontech/shared/lib/Icon';
 import { DetailComStyleWrapper } from '../../page/AuditPlan/PlanDetail/DetailCom/style';
-import { IconProjectFlag, IconDatabaseType } from '../../icon/Rule';
 import { RuleStatus, RuleTypes, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
 import {
@@ -27,9 +23,16 @@ import {
 } from './style';
 import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
 import CustomSearchInput from './components/CustomSearchInput';
+import {
+  FlagFilled,
+  DoubleDatabaseOutlined,
+  LeftArrowOutlined
+} from '@actiontech/icons';
+import useThemeStyleData from '../../hooks/useThemeStyleData';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
+  const { sqleTheme } = useThemeStyleData();
   const { goBack } = useBack();
   const [fuzzyKeyword, setFuzzyKeyword] = useState<string>();
 
@@ -148,7 +151,7 @@ const RuleDetail = () => {
     <RuleTemplateDetailStyleWrapper>
       <PageHeader
         title={
-          <BasicButton icon={<IconLeftArrow />} onClick={() => goBack()}>
+          <BasicButton icon={<LeftArrowOutlined />} onClick={() => goBack()}>
             {t('ruleTemplate.backToList')}
           </BasicButton>
         }
@@ -160,7 +163,6 @@ const RuleDetail = () => {
             <BasicResult
               status="error"
               title={t('ruleTemplate.detail.error')}
-              icon={<Icon component={IconError} />}
             />
           }
         >
@@ -176,7 +178,7 @@ const RuleDetail = () => {
                       size={6}
                       className="project-name-space"
                     >
-                      <IconProjectFlag className="tag-icon" />
+                      <FlagFilled className="tag-icon" />
                       <div>
                         {t('ruleTemplate.detail.project')}：{projectName || '-'}
                       </div>
@@ -187,7 +189,10 @@ const RuleDetail = () => {
                       size={6}
                       className="database-type-space"
                     >
-                      <IconDatabaseType className="tag-icon" />
+                      <DoubleDatabaseOutlined
+                        className="tag-icon"
+                        fill={sqleTheme.icon.execWorkFlow.schemaFilled}
+                      />
                       <div>
                         {t('ruleTemplate.detail.dbType')}：{dbType || '-'}
                       </div>

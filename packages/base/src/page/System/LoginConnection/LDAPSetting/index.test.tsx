@@ -6,6 +6,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 import LDAPSetting from '.';
 
@@ -17,6 +18,7 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetLDAPConfiguration = system.getLDAPConfig();
     requestUpdateLDAPConfiguration = system.updateLDAPConfig();

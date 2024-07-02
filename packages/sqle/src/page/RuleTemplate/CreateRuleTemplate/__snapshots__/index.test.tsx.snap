@@ -20,14 +20,13 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -82,33 +81,27 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
                 role="img"
               >
-                <span
-                  class="custom-icon css-u3jcp4"
+                <svg
+                  aria-hidden="true"
+                  class=""
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 18 19"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    width="32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="file-list-2-fill"
-                    >
-                      <path
-                        d="M26.6667 29.3332H5.33333C4.97971 29.3332 4.64057 29.1927 4.39052 28.9426C4.14048 28.6926 4 28.3535 4 27.9998V3.99984C4 3.64622 4.14048 3.30708 4.39052 3.05703C4.64057 2.80698 4.97971 2.6665 5.33333 2.6665H26.6667C27.0203 2.6665 27.3594 2.80698 27.6095 3.05703C27.8595 3.30708 28 3.64622 28 3.99984V27.9998C28 28.3535 27.8595 28.6926 27.6095 28.9426C27.3594 29.1927 27.0203 29.3332 26.6667 29.3332ZM10.6667 9.33317V11.9998H21.3333V9.33317H10.6667ZM10.6667 14.6665V17.3332H21.3333V14.6665H10.6667ZM10.6667 19.9998V22.6665H17.3333V19.9998H10.6667Z"
-                        fill="#C3C6CD"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
               </span>
               <span>
                 创建审核规则模版
@@ -314,22 +307,17 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -424,27 +412,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                     role="button"
                     tabindex="-1"
                   >
-                    <span
-                      class="custom-icon custom-icon-close css-u3jcp4"
-                      role="img"
-                    >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class="pointer custom-icon custom-icon-search css-u3jcp4"
-                    role="img"
-                  >
                     <svg
                       fill="currentColor"
                       height="14"
@@ -453,10 +420,21 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                       />
                     </svg>
                   </span>
+                  <svg
+                    class="pointer"
+                    height="16"
+                    viewBox="0 0 14 14"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    />
+                  </svg>
                 </span>
               </span>
             </div>
@@ -488,51 +466,46 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                   class="css-1br6ibb"
                 >
                   <div
-                    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
                   >
                     <div
                       class="ant-empty-image"
                     >
-                      <span
-                        class="anticon"
-                        role="img"
+                      <svg
+                        fill="none"
+                        height="80"
+                        viewBox="0 0 80 80"
+                        width="80"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          height="80"
-                          viewBox="0 0 80 80"
-                          width="80"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <g
+                          clip-path="url(#clip0_1412_15009)"
                         >
-                          <g
-                            clip-path="url(#clip0_1412_15009)"
+                          <path
+                            d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                            fill="#EBEAE7"
+                          />
+                          <path
+                            d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                            fill="#F2F1EF"
+                          />
+                          <path
+                            d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                            fill="#E6E4E3"
+                          />
+                        </g>
+                        <defs>
+                          <clippath
+                            id="clip0_1412_15009"
                           >
-                            <path
-                              d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
-                              fill="#EBEAE7"
+                            <rect
+                              fill="white"
+                              height="80"
+                              width="80"
                             />
-                            <path
-                              d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
-                              fill="#F2F1EF"
-                            />
-                            <path
-                              d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
-                              fill="#E6E4E3"
-                            />
-                          </g>
-                          <defs>
-                            <clippath
-                              id="clip0_1412_15009"
-                            >
-                              <rect
-                                fill="white"
-                                height="80"
-                                width="80"
-                              />
-                            </clippath>
-                          </defs>
-                        </svg>
-                      </span>
+                          </clippath>
+                        </defs>
+                      </svg>
                     </div>
                     <div
                       class="ant-empty-description"
@@ -560,7 +533,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
@@ -1086,14 +1059,13 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -1148,33 +1120,27 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
                 role="img"
               >
-                <span
-                  class="custom-icon css-u3jcp4"
+                <svg
+                  aria-hidden="true"
+                  class=""
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 18 19"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    width="32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="file-list-2-fill"
-                    >
-                      <path
-                        d="M26.6667 29.3332H5.33333C4.97971 29.3332 4.64057 29.1927 4.39052 28.9426C4.14048 28.6926 4 28.3535 4 27.9998V3.99984C4 3.64622 4.14048 3.30708 4.39052 3.05703C4.64057 2.80698 4.97971 2.6665 5.33333 2.6665H26.6667C27.0203 2.6665 27.3594 2.80698 27.6095 3.05703C27.8595 3.30708 28 3.64622 28 3.99984V27.9998C28 28.3535 27.8595 28.6926 27.6095 28.9426C27.3594 29.1927 27.0203 29.3332 26.6667 29.3332ZM10.6667 9.33317V11.9998H21.3333V9.33317H10.6667ZM10.6667 14.6665V17.3332H21.3333V14.6665H10.6667ZM10.6667 19.9998V22.6665H17.3333V19.9998H10.6667Z"
-                        fill="#C3C6CD"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
               </span>
               <span>
                 创建审核规则模版
@@ -1380,22 +1346,17 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -1489,27 +1450,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                     role="button"
                     tabindex="-1"
                   >
-                    <span
-                      class="custom-icon custom-icon-close css-u3jcp4"
-                      role="img"
-                    >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class="pointer custom-icon custom-icon-search css-u3jcp4"
-                    role="img"
-                  >
                     <svg
                       fill="currentColor"
                       height="14"
@@ -1518,10 +1458,21 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                       />
                     </svg>
                   </span>
+                  <svg
+                    class="pointer"
+                    height="16"
+                    viewBox="0 0 14 14"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    />
+                  </svg>
                 </span>
               </span>
             </div>
@@ -1576,23 +1527,17 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                         <div
                           class="level-icon"
                         >
-                          <span
-                            class="custom-icon custom-icon-level-error css-u3jcp4"
-                            role="img"
+                          <svg
+                            height="19"
+                            viewBox="0 0 16 16"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="19"
-                              viewBox="0 0 18 19"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                                fill="#F66074"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                              fill="#F66074"
+                            />
+                          </svg>
                           <span
                             class="level-icon-text"
                           >
@@ -1668,22 +1613,18 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                                     <span
                                       class="ant-btn-icon"
                                     >
-                                      <span
-                                        class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
-                                        role="img"
+                                      <svg
+                                        class="icon-edit custom-icon custom-icon-edit"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          fill="currentColor"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                          width="16"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                          />
-                                        </svg>
-                                      </span>
+                                        <path
+                                          d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                          fill="#8A8F99"
+                                        />
+                                      </svg>
                                     </span>
                                   </button>
                                 </div>
@@ -1706,18 +1647,15 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                                       class="ant-btn-icon"
                                     >
                                       <svg
-                                        fill="none"
-                                        height="10"
-                                        viewBox="0 0 10 10"
-                                        width="10"
+                                        class="icon-disabled"
+                                        fill="currentColor"
+                                        height="16"
+                                        viewBox="0 0 14 14"
+                                        width="16"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
-                                          id="Vector"
-                                          stroke="#F66074"
-                                          stroke-linejoin="round"
-                                          stroke-width="1.5"
+                                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                         />
                                       </svg>
                                     </span>
@@ -1748,7 +1686,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
@@ -2725,14 +2663,13 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -2773,33 +2710,27 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
                 role="img"
               >
-                <span
-                  class="custom-icon css-u3jcp4"
+                <svg
+                  aria-hidden="true"
+                  class=""
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="0 0 18 19"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    width="32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="file-list-2-fill"
-                    >
-                      <path
-                        d="M26.6667 29.3332H5.33333C4.97971 29.3332 4.64057 29.1927 4.39052 28.9426C4.14048 28.6926 4 28.3535 4 27.9998V3.99984C4 3.64622 4.14048 3.30708 4.39052 3.05703C4.64057 2.80698 4.97971 2.6665 5.33333 2.6665H26.6667C27.0203 2.6665 27.3594 2.80698 27.6095 3.05703C27.8595 3.30708 28 3.64622 28 3.99984V27.9998C28 28.3535 27.8595 28.6926 27.6095 28.9426C27.3594 29.1927 27.0203 29.3332 26.6667 29.3332ZM10.6667 9.33317V11.9998H21.3333V9.33317H10.6667ZM10.6667 14.6665V17.3332H21.3333V14.6665H10.6667ZM10.6667 19.9998V22.6665H17.3333V19.9998H10.6667Z"
-                        fill="#C3C6CD"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
               </span>
               <span>
                 创建审核规则模版
@@ -3079,27 +3010,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                     role="button"
                     tabindex="-1"
                   >
-                    <span
-                      class="custom-icon custom-icon-close css-u3jcp4"
-                      role="img"
-                    >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class="pointer custom-icon custom-icon-search css-u3jcp4"
-                    role="img"
-                  >
                     <svg
                       fill="currentColor"
                       height="14"
@@ -3108,10 +3018,21 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                       />
                     </svg>
                   </span>
+                  <svg
+                    class="pointer"
+                    height="16"
+                    viewBox="0 0 14 14"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    />
+                  </svg>
                 </span>
               </span>
             </div>
@@ -3129,51 +3050,46 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                   class="css-1br6ibb"
                 >
                   <div
-                    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                    class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
                   >
                     <div
                       class="ant-empty-image"
                     >
-                      <span
-                        class="anticon"
-                        role="img"
+                      <svg
+                        fill="none"
+                        height="80"
+                        viewBox="0 0 80 80"
+                        width="80"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          height="80"
-                          viewBox="0 0 80 80"
-                          width="80"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <g
+                          clip-path="url(#clip0_1412_15009)"
                         >
-                          <g
-                            clip-path="url(#clip0_1412_15009)"
+                          <path
+                            d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                            fill="#EBEAE7"
+                          />
+                          <path
+                            d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                            fill="#F2F1EF"
+                          />
+                          <path
+                            d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                            fill="#E6E4E3"
+                          />
+                        </g>
+                        <defs>
+                          <clippath
+                            id="clip0_1412_15009"
                           >
-                            <path
-                              d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
-                              fill="#EBEAE7"
+                            <rect
+                              fill="white"
+                              height="80"
+                              width="80"
                             />
-                            <path
-                              d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
-                              fill="#F2F1EF"
-                            />
-                            <path
-                              d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
-                              fill="#E6E4E3"
-                            />
-                          </g>
-                          <defs>
-                            <clippath
-                              id="clip0_1412_15009"
-                            >
-                              <rect
-                                fill="white"
-                                height="80"
-                                width="80"
-                              />
-                            </clippath>
-                          </defs>
-                        </svg>
-                      </span>
+                          </clippath>
+                        </defs>
+                      </svg>
                     </div>
                     <div
                       class="ant-empty-description"
@@ -3201,7 +3117,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"

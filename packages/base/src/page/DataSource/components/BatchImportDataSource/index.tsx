@@ -6,10 +6,6 @@ import {
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
@@ -17,6 +13,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -83,7 +80,7 @@ const BatchImportDataSource = () => {
       <PageHeader
         title={
           <Link to={`/project/${projectID}/db-services`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsDataSource.backDesc')}
             </BasicButton>
           </Link>
@@ -105,7 +102,7 @@ const BatchImportDataSource = () => {
         if={!resultVisible}
         defaultNode={
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('dmsDataSource.batchImportDataSource.successTitle')}
             extra={[
               <BasicButton

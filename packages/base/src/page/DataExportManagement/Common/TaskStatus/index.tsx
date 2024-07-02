@@ -1,47 +1,47 @@
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import {
-  IconWorkflowStatusIsExecuting,
-  IconWorkflowStatusIsFailed,
-  IconWorkflowStatusIsFinished
-} from 'sqle/src/icon/SqlExecWorkflow';
 import { t } from '../../../../locale';
 import { StatusStyleWrapper } from '../style';
-import { IconDelete } from '@actiontech/shared/lib/Icon/common';
+import {
+  CheckHexagonOutlined,
+  AdvancedHexagonFilled,
+  MinusCircleFilled,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
 
 const taskStatusMap = () => {
   return new Map<GetDataExportTaskStatusEnum, React.ReactNode>([
     [
       GetDataExportTaskStatusEnum.exporting,
       <>
-        <IconWorkflowStatusIsExecuting />
+        <AdvancedHexagonFilled />
         <span>{t('dmsDataExport.status.exporting')}</span>
       </>
     ],
     [
       GetDataExportTaskStatusEnum.failed,
       <>
-        <IconWorkflowStatusIsFailed />
+        <InfoHexagonOutlined />
         <span>{t('dmsDataExport.status.export_failed')}</span>
       </>
     ],
     [
       GetDataExportTaskStatusEnum.finish,
       <>
-        <IconWorkflowStatusIsFinished />
+        <CheckHexagonOutlined />
         <span>{t('dmsDataExport.status.finished')}</span>
       </>
     ],
     [
       GetDataExportTaskStatusEnum.init,
       <>
-        <IconWorkflowStatusIsExecuting />
+        <AdvancedHexagonFilled />
         <span>{t('dmsDataExport.status.wait_for_export')}</span>
       </>
     ],
     [
       GetDataExportTaskStatusEnum.file_deleted,
       <>
-        <IconDelete />
+        <MinusCircleFilled />
         <span>{t('dmsDataExport.status.file_deleted')}</span>
       </>
     ]

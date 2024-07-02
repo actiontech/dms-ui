@@ -8,12 +8,6 @@ import { Empty, Spin } from 'antd';
 import { SyncOutlined } from '@ant-design/icons';
 import { BasicToolTips, EmptyBox } from '@actiontech/shared';
 import {
-  IconStatusSuccess,
-  IconStatusWarning,
-  IconStatusTip,
-  IconStatusError
-} from '../../../../icon/AuditPlan';
-import {
   AuditResultStyleWrapper,
   AuditItemStyleWrapper,
   PaginationStyleWrapper
@@ -28,6 +22,12 @@ import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import {
+  CheckCircleFilled,
+  WarningFilled,
+  InfoHexagonFilled,
+  CloseCircleFilled
+} from '@actiontech/icons';
 
 const AuditResult = () => {
   const { t } = useTranslation();
@@ -77,19 +77,19 @@ const AuditResult = () => {
     return {
       [AuditPlanReportResV1AuditLevelEnum.normal]: {
         class: 'status-success',
-        icon: <IconStatusSuccess />
+        icon: <CheckCircleFilled width={20} height={20} />
       },
       [AuditPlanReportResV1AuditLevelEnum.notice]: {
         class: 'status-tip',
-        icon: <IconStatusTip />
+        icon: <InfoHexagonFilled width={20} height={20} />
       },
       [AuditPlanReportResV1AuditLevelEnum.warn]: {
         class: 'status-warning',
-        icon: <IconStatusWarning />
+        icon: <WarningFilled width={20} height={20} />
       },
       [AuditPlanReportResV1AuditLevelEnum.error]: {
         class: 'status-error',
-        icon: <IconStatusError />
+        icon: <CloseCircleFilled width={20} height={20} />
       }
     };
   }, []);

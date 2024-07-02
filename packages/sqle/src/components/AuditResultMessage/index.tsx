@@ -3,18 +3,18 @@ import { useMemo } from 'react';
 import classNames from 'classnames';
 import { AuditResultMessageProps } from './index.type';
 import {
-  IconStatusSuccess,
-  IconStatusTip,
-  IconStatusWarning,
-  IconStatusError
-} from '../../icon/AuditPlan';
-import {
   AuditResultMessageStyleWrapper,
   AuditResultMessageWithAnnotationStyleWrapper
 } from './style';
 import { EmptyBox } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
 import { Tag, Typography } from 'antd';
+import {
+  CheckCircleFilled,
+  WarningFilled,
+  InfoHexagonFilled,
+  CloseCircleFilled
+} from '@actiontech/icons';
 
 const passStatusLevelData = ['normal', 'UNKNOWN'];
 
@@ -31,16 +31,16 @@ const AuditResultMessage = ({
   const renderIcon = useMemo(() => {
     const { level } = auditResult || {};
     if (!level || passStatusLevelData.includes(level)) {
-      return <IconStatusSuccess />;
+      return <CheckCircleFilled width={20} height={20} />;
     }
     if (level === 'notice') {
-      return <IconStatusTip />;
+      return <InfoHexagonFilled width={20} height={20} />;
     }
     if (level === 'warn') {
-      return <IconStatusWarning />;
+      return <WarningFilled width={20} height={20} />;
     }
     if (level === 'error') {
-      return <IconStatusError />;
+      return <CloseCircleFilled width={20} height={20} />;
     }
   }, [auditResult]);
 
@@ -56,7 +56,7 @@ const AuditResultMessage = ({
     return (
       <AuditResultMessageStyleWrapper className={classNames([styleClass])}>
         <span className="icon-wrapper">
-          <IconStatusSuccess />
+          <CheckCircleFilled width={20} height={20} />
         </span>
         <span className="text-wrapper">{t('order.operator.sqlReview')}</span>
       </AuditResultMessageStyleWrapper>

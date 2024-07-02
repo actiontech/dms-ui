@@ -3,23 +3,26 @@ import { IWorkflowTemplateStepInfoProps } from './index.type';
 import { stepInfo } from '../../../components/StepCard/stepInfo';
 import { Col, Row } from 'antd';
 import StepCard from '../../../components/StepCard';
-import { IconNextStep } from '../../../../../icon/WorkflowTemplate';
 import {
   StepInfoArrowEnum,
   StepInfoEnum
 } from '../../../components/StepCard/index.type';
 import { WorkflowTemplateStepInfoStyleWrapper } from '../../../components/StepCard/style';
+import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
+import { DownTriangleOutlined } from '@actiontech/icons';
 
 const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
   props
 ) => {
+  const { sqleTheme } = useThemeStyleData();
   return (
     <WorkflowTemplateStepInfoStyleWrapper>
       {stepInfo({
         mode: StepInfoEnum.detail,
         reviewStepData: props.reviewStepData,
         execStepData: props.execStepData,
-        usernameList: props.usernameList
+        usernameList: props.usernameList,
+        theme: sqleTheme.icon
       }).map((step) =>
         step.show ? (
           <React.Fragment key={`${step.key}-wrapper`}>
@@ -43,9 +46,9 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
             </Row>
             {step.arrow !== StepInfoArrowEnum.none ? (
               <Row key={`${step.key}-next-icon`} className="next-step-icon">
-                <IconNextStep />
+                <DownTriangleOutlined width={18} height={6} />
                 {step.arrow === StepInfoArrowEnum.double ? (
-                  <IconNextStep />
+                  <DownTriangleOutlined width={18} height={6} />
                 ) : null}
               </Row>
             ) : null}

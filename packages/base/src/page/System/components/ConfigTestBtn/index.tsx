@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { MutableRefObject } from 'react';
 import { Popover } from 'antd';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import { IconTest } from '../../../../icon/system';
+import { ThunderBoltFilled } from '@actiontech/icons';
 
 interface ConfigTestBtnParams {
   popoverOpen: boolean;
@@ -32,7 +32,7 @@ const ConfigTestBtn: React.FC<ConfigTestBtnParams> = ({
           className="system-config-button"
           loading={testingRef.current}
           disabled={testingRef.current}
-          icon={<IconTest />}
+          icon={<ThunderBoltFilled />}
         />
       </BasicToolTips>
     </Popover>

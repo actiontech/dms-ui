@@ -3,7 +3,7 @@ import { NavigateOptions, To, useNavigate } from 'react-router-dom';
 import { CardProps, Tooltip } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { CardWrapperStyleWrapper } from './style';
-import { IconTipOrange, IconTitleMore } from '@actiontech/shared/lib/Icon';
+import { InfoCircleOutlined, DashOutlined } from '@actiontech/icons';
 
 export interface ICardWrapper extends CardProps {
   enabledLoading?: boolean;
@@ -35,12 +35,15 @@ const CardWrapper = (props: ICardWrapper) => {
           <div className="title-cont">{title}</div>
           {titleToolTips && (
             <Tooltip title={titleToolTips}>
-              <Icon component={IconTipOrange} className="icon-tip" />
+              <Icon
+                component={() => <InfoCircleOutlined width={14} height={14} />}
+                className="icon-tip"
+              />
             </Tooltip>
           )}
         </div>
         <div className="extra" onClick={onSkipPage}>
-          {moreRouteLink && <Icon component={IconTitleMore} />}
+          {moreRouteLink && <Icon component={DashOutlined} />}
           {extraNode ?? null}
         </div>
       </header>

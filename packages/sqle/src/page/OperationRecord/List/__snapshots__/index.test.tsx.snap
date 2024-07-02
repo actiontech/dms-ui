@@ -28,22 +28,17 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                    />
+                  </svg>
                 </span>
                 <span>
                   导出
@@ -87,22 +82,17 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -115,7 +105,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -126,22 +116,19 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-up css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -165,22 +152,17 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -218,22 +200,17 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
               <div
                 class="ant-picker-range-separator"
               >
-                <span
-                  class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                  role="img"
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="currentColor"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    width="14"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                  />
+                </svg>
               </div>
               <div
                 class="ant-picker-input"
@@ -536,31 +513,27 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                           class="ant-table-cell"
                         >
                           <div
-                            class="css-q547fy"
+                            class="css-10kos8e"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                  stroke="#41BF9A"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                                  stroke="#41BF9A"
-                                  stroke-linejoin="round"
-                                  stroke-width="1.5"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                stroke="#41BF9A"
+                                stroke-width="1.5"
+                              />
+                              <path
+                                d="m5.083 8 2.084 2.083 4.166-4.166"
+                                stroke="#41BF9A"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </svg>
                             <span>
                               成功
                             </span>
@@ -595,35 +568,21 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
                           class="ant-table-cell"
                         >
                           <div
-                            class="css-q547fy"
+                            class="css-10kos8e"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M8 10L8 12"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M8 4L8.00415 8.5"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                stroke="#F59957"
+                                stroke-width="1.5"
+                              />
+                            </svg>
                             <span>
                               失败
                             </span>
@@ -821,22 +780,17 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                    />
+                  </svg>
                 </span>
                 <span>
                   导出
@@ -880,22 +834,17 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -908,7 +857,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -919,22 +868,18 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -958,22 +903,17 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1139,31 +1079,27 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                           class="ant-table-cell"
                         >
                           <div
-                            class="css-q547fy"
+                            class="css-10kos8e"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                  stroke="#41BF9A"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                                  stroke="#41BF9A"
-                                  stroke-linejoin="round"
-                                  stroke-width="1.5"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                stroke="#41BF9A"
+                                stroke-width="1.5"
+                              />
+                              <path
+                                d="m5.083 8 2.084 2.083 4.166-4.166"
+                                stroke="#41BF9A"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </svg>
                             <span>
                               成功
                             </span>
@@ -1198,35 +1134,21 @@ exports[`sqle/OperationRecord/List render operation record table when request re
                           class="ant-table-cell"
                         >
                           <div
-                            class="css-q547fy"
+                            class="css-10kos8e"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M8 10L8 12"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M8 4L8.00415 8.5"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                stroke="#F59957"
+                                stroke-width="1.5"
+                              />
+                            </svg>
                             <span>
                               失败
                             </span>
@@ -1424,22 +1346,17 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-download css-u3jcp4"
-                    role="img"
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                    />
+                  </svg>
                 </span>
                 <span>
                   导出
@@ -1483,22 +1400,17 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -1511,7 +1423,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -1522,22 +1434,18 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -1561,22 +1469,17 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1742,31 +1645,27 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                           class="ant-table-cell"
                         >
                           <div
-                            class="css-q547fy"
+                            class="css-10kos8e"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                  stroke="#41BF9A"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                                  stroke="#41BF9A"
-                                  stroke-linejoin="round"
-                                  stroke-width="1.5"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                stroke="#41BF9A"
+                                stroke-width="1.5"
+                              />
+                              <path
+                                d="m5.083 8 2.084 2.083 4.166-4.166"
+                                stroke="#41BF9A"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                              />
+                            </svg>
                             <span>
                               成功
                             </span>
@@ -1801,35 +1700,21 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
                           class="ant-table-cell"
                         >
                           <div
-                            class="css-q547fy"
+                            class="css-10kos8e"
                           >
-                            <span
-                              class="custom-icon css-u3jcp4"
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="none"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M8 10L8 12"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                                <path
-                                  d="M8 4L8.00415 8.5"
-                                  stroke="#F59957"
-                                  stroke-width="1.5"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                stroke="#F59957"
+                                stroke-width="1.5"
+                              />
+                            </svg>
                             <span>
                               失败
                             </span>

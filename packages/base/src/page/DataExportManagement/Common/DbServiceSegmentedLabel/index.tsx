@@ -1,9 +1,9 @@
 import {
-  IconLevelError,
-  IconLevelNormal,
-  IconLevelNotice,
-  IconLevelWarn
-} from '@actiontech/shared/lib/Icon/LevelIcon';
+  ProfileSquareFilled,
+  ExclamationHexagonFilled,
+  WarningFilled,
+  CloseCircleFilled
+} from '@actiontech/icons';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { DbServiceSegmentedLabelStyleWrapper } from './style';
 import { DbServiceSegmentedLabelProps } from './index.type';
@@ -14,13 +14,13 @@ const DbServiceSegmentedLabel: React.FC<DbServiceSegmentedLabelProps> = ({
 }) => {
   const levelIcon = () => {
     if (auditLevel === AuditTaskResV1AuditLevelEnum.error) {
-      return <IconLevelError width={14} height={14} />;
+      return <CloseCircleFilled width={14} height={14} />;
     } else if (auditLevel === AuditTaskResV1AuditLevelEnum.normal) {
-      return <IconLevelNormal width={14} height={14} />;
+      return <ProfileSquareFilled width={14} height={14} />;
     } else if (auditLevel === AuditTaskResV1AuditLevelEnum.notice) {
-      return <IconLevelNotice width={14} height={14} />;
+      return <ExclamationHexagonFilled width={14} height={14} />;
     } else if (auditLevel === AuditTaskResV1AuditLevelEnum.warn) {
-      return <IconLevelWarn width={14} height={14} />;
+      return <WarningFilled width={14} height={14} />;
     }
     return null;
   };

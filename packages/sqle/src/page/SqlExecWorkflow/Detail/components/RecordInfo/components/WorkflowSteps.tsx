@@ -14,11 +14,11 @@ import { EmptyBox } from '@actiontech/shared';
 import { IWorkflowStepResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import {
-  IconFailedWorkflowStep,
-  IconFinishedWorkflowStep,
-  IconInitializedWorkflowStep,
-  IconProgressWorkflowStep
-} from '../../../../../../icon/SqlExecWorkflow';
+  CloseCircleOutlined,
+  ProgressCircleFilled,
+  PlusCircleFilled,
+  CheckCircleFilled
+} from '@actiontech/icons';
 
 const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
   workflowSteps,
@@ -190,7 +190,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
         type === WorkflowStepResV2TypeEnum.create_workflow ||
         type === WorkflowStepResV2TypeEnum.update_workflow
       ) {
-        return <IconInitializedWorkflowStep />;
+        return <PlusCircleFilled fill="currentColor" color="currentColor" />;
       }
 
       if (type === WorkflowStepResV2TypeEnum.sql_review) {
@@ -198,7 +198,8 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           workflowStatus === WorkflowRecordResV2StatusEnum.rejected &&
           state === WorkflowStepResV2StateEnum.rejected;
         return (
-          <IconProgressWorkflowStep
+          <ProgressCircleFilled
+            fill="currentColor"
             color={isRejected ? sharedTheme.uiToken.colorWarning : undefined}
           />
         );
@@ -213,7 +214,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
           ].includes(workflowStatus)
         ) {
           return (
-            <IconFailedWorkflowStep
+            <CloseCircleOutlined
               color={
                 stepNumber === workflowSteps?.length
                   ? sharedTheme.uiToken.colorWarning
@@ -225,10 +226,10 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
 
         if (workflowStatus === WorkflowRecordResV2StatusEnum.exec_failed) {
           return (
-            <IconFailedWorkflowStep color={sharedTheme.uiToken.colorWarning} />
+            <CloseCircleOutlined color={sharedTheme.uiToken.colorWarning} />
           );
         }
-        return <IconFinishedWorkflowStep />;
+        return <CheckCircleFilled fill="currentColor" color="currentColor" />;
       }
     },
     [

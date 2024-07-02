@@ -7,7 +7,6 @@ import { updateToken } from '../../store/user';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import LoginLayout from './components/LoginLayout';
 import { BasicInput, BasicButton } from '@actiontech/shared';
-import { IconCommonUser, IconCommonPassword } from '../../icon/common';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
 import {
@@ -16,6 +15,8 @@ import {
 } from '@actiontech/shared/lib/data/common';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
+import { LockFilled, UserFilled } from '@actiontech/icons';
+import useThemeStyleData from '../../hooks/useThemeStyleData';
 
 // #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -27,6 +28,8 @@ import {
 
 const Login = () => {
   const { t } = useTranslation();
+
+  const { baseTheme } = useThemeStyleData();
 
   useBrowserVersionTips();
 
@@ -125,7 +128,13 @@ const Login = () => {
             className="login-form-field"
             placeholder={t('common.username')}
             autoFocus
-            prefix={<IconCommonUser />}
+            prefix={
+              <UserFilled
+                width="18"
+                height="19"
+                color={baseTheme.icon.bindUser.user}
+              />
+            }
           />
         </Form.Item>
         <Form.Item
@@ -142,7 +151,13 @@ const Login = () => {
           <BasicInput.Password
             className="login-form-field"
             placeholder={t('common.password')}
-            prefix={<IconCommonPassword />}
+            prefix={
+              <LockFilled
+                width={18}
+                height={18}
+                color={baseTheme.icon.bindUser.password}
+              />
+            }
           />
         </Form.Item>
         {/* #if [ee] */}

@@ -6,8 +6,9 @@ exports[`test BaseInfoForm should match snapshot 1`] = `
 >
   <Styled(section)>
     <FormItemBigTitle>
-      <IconWorkflowCreateTitle
-        color="#c3c6cd"
+      <AntdIcon
+        className="title-icon"
+        component={[Function]}
       />
       <span>
         创建工单

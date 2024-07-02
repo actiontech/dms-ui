@@ -16,8 +16,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ComputerFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/cloud-beaver",
         "label": <Link
@@ -28,8 +29,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         "structKey": "cloud-beaver",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ExportFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/data/export",
         "label": <Link
@@ -73,7 +75,10 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
           },
         ],
         "expandIcon": [Function],
-        "icon": <IconInstanceManager />,
+        "icon": <DatabaseFilled
+          height={18}
+          width={18}
+        />,
         "key": "instance-management",
         "label": "数据源管理",
         "structKey": "instance-management",
@@ -82,8 +87,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
       null,
       null,
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <MemberFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/member",
         "label": <Link
@@ -114,8 +120,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ComputerFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/cloud-beaver",
         "label": <Link
@@ -126,8 +133,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
         "structKey": "cloud-beaver",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ExportFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/data/export",
         "label": <Link
@@ -171,7 +179,10 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
           },
         ],
         "expandIcon": [Function],
-        "icon": <IconInstanceManager />,
+        "icon": <DatabaseFilled
+          height={18}
+          width={18}
+        />,
         "key": "instance-management",
         "label": "数据源管理",
         "structKey": "instance-management",
@@ -180,8 +191,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
       null,
       null,
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <MemberFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/member",
         "label": <Link
@@ -205,8 +217,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
 [
   {
-    "icon": <AntdIcon
-      component={[Function]}
+    "icon": <OverviewOutlined
+      height={18}
+      width={18}
     />,
     "key": "sqle/project/projectID/overview",
     "label": <Link
@@ -218,8 +231,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
   },
   {
     "className": "menu-todo-list-item",
-    "icon": <AntdIcon
-      component={[Function]}
+    "icon": <MenuFilled
+      height={18}
+      width={18}
     />,
     "key": "sqle/project/projectID/dashboard",
     "label": <React.Fragment>
@@ -228,7 +242,10 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       >
         待关注清单
       </Link>
-      <IconEllipse />
+      <RingOutlined
+        height={14}
+        width={14}
+      />
     </React.Fragment>,
     "structKey": "dashboard",
   },
@@ -238,8 +255,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ComputerFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/cloud-beaver",
         "label": <Link
@@ -250,8 +268,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "cloud-beaver",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ExportFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/data/export",
         "label": <Link
@@ -262,8 +281,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "data-export",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <MagnifierFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/sql-audit",
         "label": <Link
@@ -274,8 +294,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "sql-audit",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <CodeOutlined
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/plugin-audit",
         "label": <Link
@@ -286,8 +307,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "plugin-audit",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <RiseSquareOutlined
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/sql-optimization",
         "label": <Link
@@ -304,8 +326,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <BriefcaseFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/exec-workflow",
         "label": <Link
@@ -322,8 +345,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ManagementFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/sql-management",
         "label": <Link
@@ -334,8 +358,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "sql-management",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <PlanFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/audit-plan",
         "label": <Link
@@ -374,14 +399,19 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
           },
         ],
         "expandIcon": [Function],
-        "icon": <IconInstanceManager />,
+        "icon": <DatabaseFilled
+          height={18}
+          width={18}
+        />,
         "key": "instance-management",
         "label": "数据源管理",
         "structKey": "instance-management",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ProfileSquareFilled
+          fill="none"
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/rule/template",
         "label": <Link
@@ -392,8 +422,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "rule-template",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ResolveFileFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/whitelist",
         "label": <Link
@@ -404,8 +435,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "whitelist",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <WorkflowFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/progress",
         "label": <Link
@@ -416,8 +448,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "workflow-template",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <MemberFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/member",
         "label": <Link
@@ -441,8 +474,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
 [
   {
-    "icon": <AntdIcon
-      component={[Function]}
+    "icon": <OverviewOutlined
+      height={18}
+      width={18}
     />,
     "key": "sqle/project/projectID/overview",
     "label": <Link
@@ -454,8 +488,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
   },
   {
     "className": "menu-todo-list-item",
-    "icon": <AntdIcon
-      component={[Function]}
+    "icon": <MenuFilled
+      height={18}
+      width={18}
     />,
     "key": "sqle/project/projectID/dashboard",
     "label": <React.Fragment>
@@ -464,7 +499,10 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       >
         待关注清单
       </Link>
-      <IconEllipse />
+      <RingOutlined
+        height={14}
+        width={14}
+      />
     </React.Fragment>,
     "structKey": "dashboard",
   },
@@ -474,8 +512,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ComputerFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/cloud-beaver",
         "label": <Link
@@ -486,8 +525,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "cloud-beaver",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ExportFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/data/export",
         "label": <Link
@@ -498,8 +538,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "data-export",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <MagnifierFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/sql-audit",
         "label": <Link
@@ -510,8 +551,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "sql-audit",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <CodeOutlined
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/plugin-audit",
         "label": <Link
@@ -522,8 +564,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "plugin-audit",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <RiseSquareOutlined
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/sql-optimization",
         "label": <Link
@@ -540,8 +583,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <BriefcaseFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/exec-workflow",
         "label": <Link
@@ -558,8 +602,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ManagementFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/sql-management",
         "label": <Link
@@ -570,8 +615,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "sql-management",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <PlanFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/audit-plan",
         "label": <Link
@@ -610,14 +656,19 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
           },
         ],
         "expandIcon": [Function],
-        "icon": <IconInstanceManager />,
+        "icon": <DatabaseFilled
+          height={18}
+          width={18}
+        />,
         "key": "instance-management",
         "label": "数据源管理",
         "structKey": "instance-management",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ProfileSquareFilled
+          fill="none"
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/rule/template",
         "label": <Link
@@ -628,8 +679,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "rule-template",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <ResolveFileFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/whitelist",
         "label": <Link
@@ -640,8 +692,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "whitelist",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <WorkflowFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/progress",
         "label": <Link
@@ -652,8 +705,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "workflow-template",
       },
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <MemberFilled
+          height={18}
+          width={18}
         />,
         "key": "project/projectID/member",
         "label": <Link
@@ -673,8 +727,9 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
   {
     "children": [
       {
-        "icon": <AntdIcon
-          component={[Function]}
+        "icon": <OperateAuditFilled
+          height={18}
+          width={18}
         />,
         "key": "sqle/project/projectID/operation-record",
         "label": <Link

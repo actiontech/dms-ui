@@ -20,18 +20,14 @@ import Icon from '@ant-design/icons';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useBoolean } from 'ahooks';
-import { IconProjectTitle } from '../../../icon/sideMenu';
 import FileUpload from './FileUpload';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
 import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/common';
 import { importProjectListColumn } from './column';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import { ImportProjectUploadFileWrapper } from '../style';
+import { LeftArrowOutlined, OverviewOutlined } from '@actiontech/icons';
 
 const ImportProject = () => {
   const { t } = useTranslation();
@@ -93,7 +89,7 @@ const ImportProject = () => {
         fixed
         title={
           <Link to={`/project`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsProject.backToList')}
             </BasicButton>
           </Link>
@@ -114,7 +110,7 @@ const ImportProject = () => {
         if={!resultVisible}
         defaultNode={
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('dmsProject.importProject.successTitle')}
             subTitle={
               <Link to={`/project`}>
@@ -142,7 +138,7 @@ const ImportProject = () => {
             {...formItemLayout.spaceBetween}
           >
             <FormItemBigTitle>
-              <Icon component={IconProjectTitle} className="title-icon" />
+              <Icon component={OverviewOutlined} className="title-icon" />
               <span>{t('dmsProject.importProject.title')}</span>
             </FormItemBigTitle>
             <FormItemLabel

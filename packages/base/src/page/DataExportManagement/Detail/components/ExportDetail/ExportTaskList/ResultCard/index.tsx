@@ -9,7 +9,8 @@ import {
   ExportResultTreeStyleWrapper
 } from '../../style';
 import AuditResultTag from './AuditResultTag';
-import { IconArrowDown } from '@actiontech/shared/lib/Icon';
+import { DownOutlined } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
   const { t } = useTranslation();
@@ -77,7 +78,11 @@ const ExportResultCard: React.FC<ExportResultCardProp> = (props) => {
               ]
             }
           ]}
-          switcherIcon={<IconArrowDown width={16} height={16} />}
+          switcherIcon={
+            <CommonIconStyleWrapper className="custom-icon custom-icon-arrow-down">
+              <DownOutlined width={16} height={16} />
+            </CommonIconStyleWrapper>
+          }
         />
       </div>
     </ExportResultCardStyleWrapper>

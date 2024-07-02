@@ -15,7 +15,7 @@ import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/s
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
-import { IconWorkflowId } from '../../../../icon/SqlExecWorkflow';
+import { BriefcaseFilled } from '@actiontech/icons';
 
 const OrderRiskList = () => {
   const { t } = useTranslation();
@@ -48,7 +48,7 @@ const OrderRiskList = () => {
           if (!name) return '-';
           return (
             <TableColumnWithIconStyleWrapper>
-              <IconWorkflowId />
+              <BriefcaseFilled width={14} height={14} />
               <Link
                 to={`/sqle/project/${projectID}/exec-workflow/${record.workflow_id}`}
               >

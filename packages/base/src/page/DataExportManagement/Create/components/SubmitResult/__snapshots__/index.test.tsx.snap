@@ -6,7 +6,7 @@ exports[`test base/DataExport/Create/SubmitResult should match snapshot 1`] = `
     class="basic-result-wrapper css-7vto1s"
   >
     <div
-      class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+      class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-result-icon"

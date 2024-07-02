@@ -101,6 +101,7 @@ export const BasicDatePickerFieldStyleWrapper = styled(
   position: relative;
 
   .prefix-icon {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextQuaternary};
     position: absolute;
     left: 12px;
     top: 50%;

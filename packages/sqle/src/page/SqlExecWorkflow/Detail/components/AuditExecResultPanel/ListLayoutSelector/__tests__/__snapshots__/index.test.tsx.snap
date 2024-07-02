@@ -15,24 +15,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           style="margin-right: 5px;"
         >
           <span
-            class="custom-icon  css-u3jcp4"
+            class="css-u3jcp4"
           >
             <svg
-              fill="none"
               height="14"
               viewBox="0 0 14 14"
               width="14"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="layout-bottom-2-line"
-              >
-                <path
-                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                fill="#292C33"
+              />
             </svg>
           </span>
         </div>
@@ -46,18 +40,19 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           class="ant-space-item"
         >
           <span
-            class="custom-icon custom-icon-arrow-up css-u3jcp4"
-            role="img"
+            class="css-u3jcp4"
           >
             <svg
-              fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
+              color="currentColor"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -87,53 +82,35 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-bottom-2-fill"
-                    >
-                      <path
-                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M14 2c.368 0 .667.298.667.667v10.666A.667.667 0 0 1 14 14H2a.667.667 0 0 1-.667-.667V2.667C1.333 2.298 1.632 2 2 2zm-1.333 8.667H3.333V12h9.334z"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 分页展示
               </div>
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-row-fill"
-                    >
-                      <path
-                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M12.667 8H3.333v4.667h9.334zm-10-6h10.666c.368 0 .667.298.667.667v10.666a.667.667 0 0 1-.667.667H2.667A.667.667 0 0 1 2 13.333V2.667C2 2.298 2.298 2 2.667 2"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 瀑布流展示
               </div>
             </div>
@@ -160,24 +137,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           style="margin-right: 5px;"
         >
           <span
-            class="custom-icon  css-u3jcp4"
+            class="css-u3jcp4"
           >
             <svg
-              fill="none"
               height="14"
               viewBox="0 0 14 14"
               width="14"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="layout-bottom-2-line"
-              >
-                <path
-                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                fill="#292C33"
+              />
             </svg>
           </span>
         </div>
@@ -191,18 +162,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           class="ant-space-item"
         >
           <span
-            class="custom-icon custom-icon-arrow-down css-u3jcp4"
-            role="img"
+            class="css-u3jcp4"
           >
             <svg
-              fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -232,53 +203,35 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-bottom-2-fill"
-                    >
-                      <path
-                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M14 2c.368 0 .667.298.667.667v10.666A.667.667 0 0 1 14 14H2a.667.667 0 0 1-.667-.667V2.667C1.333 2.298 1.632 2 2 2zm-1.333 8.667H3.333V12h9.334z"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 分页展示
               </div>
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-row-fill"
-                    >
-                      <path
-                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M12.667 8H3.333v4.667h9.334zm-10-6h10.666c.368 0 .667.298.667.667v10.666a.667.667 0 0 1-.667.667H2.667A.667.667 0 0 1 2 13.333V2.667C2 2.298 2.298 2 2.667 2"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 瀑布流展示
               </div>
             </div>
@@ -305,24 +258,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           style="margin-right: 5px;"
         >
           <span
-            class="custom-icon  css-u3jcp4"
+            class="css-u3jcp4"
           >
             <svg
-              fill="none"
               height="14"
               viewBox="0 0 14 14"
               width="14"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="layout-bottom-2-line"
-              >
-                <path
-                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                fill="#292C33"
+              />
             </svg>
           </span>
         </div>
@@ -336,18 +283,19 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           class="ant-space-item"
         >
           <span
-            class="custom-icon custom-icon-arrow-up css-u3jcp4"
-            role="img"
+            class="css-u3jcp4"
           >
             <svg
-              fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
+              color="currentColor"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
+                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -377,53 +325,35 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-bottom-2-fill"
-                    >
-                      <path
-                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M14 2c.368 0 .667.298.667.667v10.666A.667.667 0 0 1 14 14H2a.667.667 0 0 1-.667-.667V2.667C1.333 2.298 1.632 2 2 2zm-1.333 8.667H3.333V12h9.334z"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 分页展示
               </div>
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-row-fill"
-                    >
-                      <path
-                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M12.667 8H3.333v4.667h9.334zm-10-6h10.666c.368 0 .667.298.667.667v10.666a.667.667 0 0 1-.667.667H2.667A.667.667 0 0 1 2 13.333V2.667C2 2.298 2.298 2 2.667 2"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 瀑布流展示
               </div>
             </div>
@@ -450,24 +380,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           style="margin-right: 5px;"
         >
           <span
-            class="custom-icon  css-u3jcp4"
+            class="css-u3jcp4"
           >
             <svg
-              fill="none"
               height="14"
               viewBox="0 0 14 14"
               width="14"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="layout-bottom-2-line"
-              >
-                <path
-                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                fill="#292C33"
+              />
             </svg>
           </span>
         </div>
@@ -481,18 +405,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
           class="ant-space-item"
         >
           <span
-            class="custom-icon custom-icon-arrow-down css-u3jcp4"
-            role="img"
+            class="css-u3jcp4"
           >
             <svg
-              fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -522,53 +446,35 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when cli
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-bottom-2-fill"
-                    >
-                      <path
-                        d="M13.9999 2C14.3681 2 14.6666 2.29848 14.6666 2.66667V13.3333C14.6666 13.7015 14.3681 14 13.9999 14H1.99992C1.63173 14 1.33325 13.7015 1.33325 13.3333V2.66667C1.33325 2.29848 1.63173 2 1.99992 2H13.9999ZM12.6666 10.6667H3.33325V12H12.6666V10.6667Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M14 2c.368 0 .667.298.667.667v10.666A.667.667 0 0 1 14 14H2a.667.667 0 0 1-.667-.667V2.667C1.333 2.298 1.632 2 2 2zm-1.333 8.667H3.333V12h9.334z"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 分页展示
               </div>
               <div
                 class="download-record-item"
               >
-                <span
-                  class="download-record-item-icon custom-icon  css-u3jcp4"
+                <svg
+                  class="download-record-item-icon"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g
-                      id="layout-row-fill"
-                    >
-                      <path
-                        d="M12.6667 8H3.33333V12.6667H12.6667V8ZM2.66667 2H13.3333C13.7015 2 14 2.29848 14 2.66667V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V2.66667C2 2.29848 2.29848 2 2.66667 2Z"
-                        fill="#8A8F99"
-                        id="Vector"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                  <path
+                    d="M12.667 8H3.333v4.667h9.334zm-10-6h10.666c.368 0 .667.298.667.667v10.666a.667.667 0 0 1-.667.667H2.667A.667.667 0 0 1 2 13.333V2.667C2 2.298 2.298 2 2.667 2"
+                    fill="#8A8F99"
+                  />
+                </svg>
                 瀑布流展示
               </div>
             </div>
@@ -595,24 +501,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when sho
           style="margin-right: 5px;"
         >
           <span
-            class="custom-icon  css-u3jcp4"
+            class="css-u3jcp4"
           >
             <svg
-              fill="none"
               height="14"
               viewBox="0 0 14 14"
               width="14"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="layout-bottom-2-line"
-              >
-                <path
-                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                fill="#292C33"
+              />
             </svg>
           </span>
         </div>
@@ -626,18 +526,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when sho
           class="ant-space-item"
         >
           <span
-            class="custom-icon custom-icon-arrow-down css-u3jcp4"
-            role="img"
+            class="css-u3jcp4"
           >
             <svg
-              fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -663,24 +563,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when sho
           style="margin-right: 5px;"
         >
           <span
-            class="custom-icon  css-u3jcp4"
+            class="css-u3jcp4"
           >
             <svg
-              fill="none"
               height="14"
               viewBox="0 0 14 14"
               width="14"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g
-                id="layout-bottom-2-line"
-              >
-                <path
-                  d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                  fill="#292C33"
-                  id="Vector"
-                />
-              </g>
+              <path
+                d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                fill="#292C33"
+              />
             </svg>
           </span>
         </div>
@@ -694,18 +588,18 @@ exports[`sqle/ExecWorkflow/Detail/Common/ListLayoutSelector render snap when sho
           class="ant-space-item"
         >
           <span
-            class="custom-icon custom-icon-arrow-down css-u3jcp4"
-            role="img"
+            class="css-u3jcp4"
           >
             <svg
-              fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                fill="currentColor"
               />
             </svg>
           </span>

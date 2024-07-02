@@ -1,6 +1,6 @@
 import { TableRefreshButtonProps } from '../index.type';
-import { IconRefresh } from '../../../Icon';
 import BasicButton from '../../BasicButton';
+import { RefreshOutlined } from '@actiontech/icons';
 
 const RefreshButton: React.FC<TableRefreshButtonProps> = ({
   refresh,
@@ -9,7 +9,13 @@ const RefreshButton: React.FC<TableRefreshButtonProps> = ({
   return (
     <BasicButton
       size="small"
-      icon={<IconRefresh />}
+      icon={
+        <RefreshOutlined
+          className="custom-icon custom-icon-refresh"
+          width={14}
+          height={14}
+        />
+      }
       onClick={refresh}
       {...props}
     ></BasicButton>

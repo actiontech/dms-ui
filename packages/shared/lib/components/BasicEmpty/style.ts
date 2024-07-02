@@ -42,4 +42,10 @@ export const EmptyStyleWrapper = styled(Empty)`
       }
     }
   }
+
+  &.is-icon-loading .custom-icon-spin-dot {
+    width: 24px !important;
+    height: 30px !important;
+    position: absolute !important;
+  }
 `;
