@@ -60,7 +60,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -1432,7 +1432,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -2756,7 +2756,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -3898,7 +3898,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -5164,7 +5164,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -6430,7 +6430,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"

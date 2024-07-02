@@ -11,7 +11,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
         class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
         >
           <span
             class="anticon title-icon"

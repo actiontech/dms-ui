@@ -20,7 +20,7 @@ exports[`page/SyncDataSource/SyncTaskForm render dbType form item 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -1578,7 +1578,7 @@ exports[`page/SyncDataSource/SyncTaskForm render dbType form item 2`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -3285,7 +3285,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -4627,7 +4627,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for prepare api request 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -5969,7 +5969,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -7324,7 +7324,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -8679,7 +8679,7 @@ exports[`page/SyncDataSource/SyncTaskForm render source form item 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -10131,7 +10131,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>
@@ -11484,7 +11484,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 这里是标题
               </h3>

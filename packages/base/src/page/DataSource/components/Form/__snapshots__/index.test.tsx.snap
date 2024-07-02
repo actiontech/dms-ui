@@ -14,7 +14,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -1266,7 +1266,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -2497,7 +2497,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -3550,7 +3550,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -4604,7 +4604,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -5783,7 +5783,7 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -6761,7 +6761,7 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -7739,7 +7739,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -8729,7 +8729,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"
@@ -9719,7 +9719,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
               class="anticon title-icon"

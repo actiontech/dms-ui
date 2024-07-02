@@ -81,7 +81,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
             hidden=""
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -1388,7 +1388,7 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
             hidden=""
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -2705,7 +2705,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
             data-testid="base-form"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"

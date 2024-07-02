@@ -114,7 +114,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -1742,7 +1742,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -3177,7 +3177,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -4660,7 +4660,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
