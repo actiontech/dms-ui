@@ -631,7 +631,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
@@ -2096,7 +2096,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
@@ -3289,7 +3289,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"

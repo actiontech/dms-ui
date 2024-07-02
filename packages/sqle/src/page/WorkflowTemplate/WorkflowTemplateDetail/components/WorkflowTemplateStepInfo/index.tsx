@@ -46,9 +46,9 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
             </Row>
             {step.arrow !== StepInfoArrowEnum.none ? (
               <Row key={`${step.key}-next-icon`} className="next-step-icon">
-                <DownTriangleOutlined width={18} height={18} />
+                <DownTriangleOutlined width={18} height={6} />
                 {step.arrow === StepInfoArrowEnum.double ? (
-                  <DownTriangleOutlined width={18} height={18} />
+                  <DownTriangleOutlined width={18} height={6} />
                 ) : null}
               </Row>
             ) : null}

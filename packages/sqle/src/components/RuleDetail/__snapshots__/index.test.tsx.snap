@@ -255,7 +255,7 @@ exports[`sqle/components/RuleDetail click return button 1`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -549,7 +549,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -867,7 +867,7 @@ exports[`sqle/components/RuleDetail render snap 1`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -1161,7 +1161,7 @@ exports[`sqle/components/RuleDetail render snap 2`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -1805,7 +1805,7 @@ exports[`sqle/components/RuleDetail render snap when input fuzzy test 1`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -2124,7 +2124,7 @@ exports[`sqle/components/RuleDetail send global request when not select project 
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-1hr7xjo"
+                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
