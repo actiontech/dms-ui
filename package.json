@@ -23,9 +23,9 @@
     "test:ci": "sh ./scripts/jest/run-ci-ee.sh && sh ./scripts/jest/run-ci-ce.sh && node ./scripts/jest/merge-report-json.js",
     "test:clean": "jest --clearCache",
     "icon:g": "pnpm --filter @actiontech/icons icon:g",
-    "doc:g": "pnpm --filter @actiontech/icons docs:g",
-    "doc": "pnpm --filter @actiontech/icons start",
-    "doc:build": "pnpm --filter @actiontech/icons docs:build",
+    "icon:docs:g": "pnpm --filter @actiontech/icons docs:g",
+    "icon:docs": "pnpm --filter @actiontech/icons start",
+    "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
     "icon:build": "pnpm --filter @actiontech/icons build"
   },
   "keywords": [],
@@ -121,8 +121,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.3.0",
     "recoil": "^0.7.4",
-    "sql-formatter": "^12.2.4",
-    "ts-node": "^8.0.0"
+    "sql-formatter": "^12.2.4"
   },
   "resolutions": {
     "headers-polyfill": "3.0.10"

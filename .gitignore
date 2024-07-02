@@ -40,4 +40,5 @@ yarn-error.log*
 
 /packages/icons/.dumi/tmp*
 docs-dist
+docs-dist.tar.gz
 es

@@ -7,6 +7,10 @@ DOCKER_IMAGE  ?= reg.actiontech.com/actiontech-dev/pnpm:8.3.1-node20
 COMMAND       ?=
 EDITION       ?=ce
 
+RELEASE_FTP_HOST ?=
+ICONS_DOCS_OUTER_BUILD_NAME ?= docs-dist.tar.gz
+SYNC_ICONS_DOCS_STATIC_HOST ?=
+
 ifeq ($(EDITION),ce)
     COMMAND :=pnpm start
 else ifeq ($(EDITION),ee)
@@ -41,3 +45,13 @@ docker_build_ee: pull_image docker_install_node_modules
 
 docker_build_demo: pull_image docker_install_node_modules
 	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm build:demo"
+
+docker_build_icons_docs: pull_image docker_install_node_modules
+	$(DOCKER) run -v $(MAIN_MODULE):/usr/src/app --user $(UID):$(GID) -w /usr/src/app --rm $(DOCKER_IMAGE) sh -c "pnpm icon:docs:g && pnpm icon:docs:build && mv packages/icons/docs-dist ./docs-dist && tar zcf $(ICONS_DOCS_OUTER_BUILD_NAME) ./docs-dist"
+
+docker_upload_icons_docs:
+	curl -T $(ICONS_DOCS_OUTER_BUILD_NAME)  \
+	ftp://$(RELEASE_FTP_HOST)/actiontech-dms-ui/icons/$(ICONS_DOCS_OUTER_BUILD_NAME) --ftp-create-dirs
+
+docker_sync_icons_docs_static:
+	curl -X POST ${SYNC_ICONS_DOCS_STATIC_HOST}/sync-static 
