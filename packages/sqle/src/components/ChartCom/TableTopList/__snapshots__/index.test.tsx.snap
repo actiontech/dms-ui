@@ -260,9 +260,9 @@ exports[`sqle/components/ChartCom/TableTopList render snap when loading is true 
                 >
                   <svg
                     fill="currentColor"
-                    height="30px"
+                    height="30"
                     viewBox="0 0 24 30"
-                    width="24px"
+                    width="24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <rect
