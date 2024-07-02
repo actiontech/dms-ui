@@ -46,6 +46,13 @@ import { RejectFileFilled } from '@actiontech/icons';
 export default () => <RejectFileFilled width={32} height={32} />
 ```
 
+## RingPieFilled
+```jsx
+import { RingPieFilled } from '@actiontech/icons';
+
+export default () => <RingPieFilled width={32} height={32} />
+```
+
 ## ThunderBulbFilled
 ```jsx
 import { ThunderBulbFilled } from '@actiontech/icons';
@@ -93,6 +100,13 @@ export default () => <HeadphoneOutlined width={32} height={32} />
 import { InfoCircleOutlined } from '@actiontech/icons';
 
 export default () => <InfoCircleOutlined width={32} height={32} />
+```
+
+## InfoHexagonOutlined
+```jsx
+import { InfoHexagonOutlined } from '@actiontech/icons';
+
+export default () => <InfoHexagonOutlined width={32} height={32} />
 ```
 
 ## LockOutlined
