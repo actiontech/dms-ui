@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowRecordInfoProps } from './index.type';
 import { WorkflowStepsStyleWrapper } from './style';
-import { IconClose } from '@actiontech/shared/lib/Icon';
 import WorkflowBasicInfo from './components/WorkflowBasicInfo';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import WorkflowSteps from './components/WorkflowSteps';
 import { EmptyBox, LazyLoadComponent } from '@actiontech/shared';
 import WorkflowHistorySteps from './components/WorkflowHistorySteps';
+import { CloseOutlined } from '@actiontech/icons';
 
 const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
   visibility,
@@ -23,7 +23,7 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
           <span className="workflow-record-info-header-text">
             {t('execWorkflow.detail.operator.title')}
           </span>
-          <IconClose onClick={onClose} />
+          <CloseOutlined className="custom-icon-close" onClick={onClose} />
         </div>
 
         <WorkflowBasicInfo

@@ -4,12 +4,6 @@ import { useBack } from '@actiontech/shared/lib/hooks';
 
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import {
-  IconArrowRight,
-  IconDownload,
-  IconLeftArrow,
-  IconTagBookMark
-} from '@actiontech/shared/lib/Icon/common';
 import { DetailReportStyleWrapper } from './style';
 import {
   useTableRequestError,
@@ -48,6 +42,12 @@ import {
 import DetailReportDrawer from './Drawer';
 import { Spin, message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import {
+  LeftArrowOutlined,
+  RightOutlined,
+  BookMarkTagFilled,
+  DownArrowLineOutlined
+} from '@actiontech/icons';
 
 type typeIAuditPlanReportResV1 = keyof IAuditPlanReportResV1;
 
@@ -276,7 +276,7 @@ const DetailReport = () => {
       <PageHeader
         fixed
         title={
-          <BasicButton onClick={goBack} icon={<IconLeftArrow />}>
+          <BasicButton onClick={goBack} icon={<LeftArrowOutlined />}>
             {t('auditPlan.action.backDetail')}
           </BasicButton>
         }
@@ -284,7 +284,7 @@ const DetailReport = () => {
           <BasicButton
             htmlType="submit"
             onClick={exportReport}
-            icon={<IconDownload />}
+            icon={<DownArrowLineOutlined />}
             loading={exportButtonDisabled}
           >
             {t('auditPlan.report.exportBtnText')}
@@ -305,7 +305,7 @@ const DetailReport = () => {
               </h3>
               <section className="tag-wrapper">
                 <div className="custom-tag-item">
-                  <IconTagBookMark className="custom-tag-icon bookmark-icon" />
+                  <BookMarkTagFilled className="custom-tag-icon bookmark-icon" />
                   <div>
                     {t('auditPlan.detailPage.auditTaskType', {
                       type:
@@ -325,7 +325,7 @@ const DetailReport = () => {
                       name: auditTask?.data?.rule_template_name ?? '--'
                     })}
                   </div>
-                  <IconArrowRight className="custom-tag-right-icon" />
+                  <RightOutlined className="custom-tag-right-icon" />
                 </div>
               </section>
             </div>

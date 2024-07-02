@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import { Button, message, Empty, Typography, Spin } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import DataSourceForm from '../Form';
 
@@ -21,6 +20,7 @@ import { DataSourceFormField } from '../Form/index.type';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { UpdateDataSourceUrlParams } from './index.type';
 import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdateDataSource = () => {
   const { t } = useTranslation();
@@ -141,7 +141,7 @@ const UpdateDataSource = () => {
         title={
           <BasicButton
             onClick={() => navigate(`/project/${projectID}/db-services`)}
-            icon={<IconLeftArrow />}
+            icon={<LeftArrowOutlined />}
           >
             {t('dmsDataSource.backDesc')}
           </BasicButton>

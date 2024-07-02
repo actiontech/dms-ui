@@ -12,8 +12,6 @@ import {
   BasicResult,
   SQLRenderer
 } from '@actiontech/shared';
-import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconError } from '@actiontech/shared/lib/Icon';
 
 const useTableSchema = (options?: UseTableSchemaOption) => {
   const { t } = useTranslation();
@@ -124,13 +122,7 @@ const useTableSchema = (options?: UseTableSchemaOption) => {
     const renderErrorMessage = () => {
       if (hiddenVal) return <></>;
       if (!!item.tableMeta.message) {
-        return (
-          <BasicResult
-            status="error"
-            title={item.tableMeta.message}
-            icon={<Icon component={IconError} />}
-          />
-        );
+        return <BasicResult status="error" title={item.tableMeta.message} />;
       }
       if (!!item.errorMessage) {
         return (

@@ -10,6 +10,7 @@ import { SqlExecuteResultCardProps } from '../index.type';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 const projectName = 'default';
 const taskId = 'task_id_1234';
@@ -36,6 +37,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestUpdateSqlDesc = task.updateAuditTaskSQLs();
     rule_template.getRuleList();

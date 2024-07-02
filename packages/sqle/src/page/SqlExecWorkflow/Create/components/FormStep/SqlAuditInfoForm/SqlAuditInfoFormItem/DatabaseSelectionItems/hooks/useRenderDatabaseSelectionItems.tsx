@@ -3,12 +3,7 @@ import { DatabaseSelectionItemProps } from '../../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import {
-  IconDelete,
-  IconDeleteActive,
-  IconFillList,
-  IconFillListActive
-} from '@actiontech/shared/lib/Icon/common';
+import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FormListFieldData } from 'antd';
@@ -17,6 +12,7 @@ import {
   getSystemModuleStatusDbTypeEnum,
   getSystemModuleStatusModuleNameEnum
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+import useThemeStyleData from '../../../../../../../../../hooks/useThemeStyleData';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
@@ -27,6 +23,7 @@ const useRenderDatabaseSelectionItems = ({
 >) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
+  const { sqleTheme } = useThemeStyleData();
   const updateSchemaList = async (key: string, instanceName: string) => {
     instance
       .getInstanceSchemasV1({
@@ -125,9 +122,10 @@ const useRenderDatabaseSelectionItems = ({
 
     if (!rule || !dbType) {
       return (
-        <BasicButton className="data-source-row-rule-template">
-          <IconFillList />
-        </BasicButton>
+        <BasicButton
+          className="data-source-row-rule-template"
+          icon={<ProfileSquareFilled width="18" height="18" />}
+        />
       );
     }
 
@@ -143,9 +141,16 @@ const useRenderDatabaseSelectionItems = ({
           </Link>
         }
       >
-        <BasicButton className="data-source-row-rule-template">
-          <IconFillListActive />
-        </BasicButton>
+        <BasicButton
+          className="data-source-row-rule-template"
+          icon={
+            <ProfileSquareFilled
+              width="18"
+              height="18"
+              color={sqleTheme.icon.execWorkFlow.profileSquareFilled}
+            />
+          }
+        />
       </BasicToolTips>
     );
   };
@@ -174,9 +179,18 @@ const useRenderDatabaseSelectionItems = ({
           handleClick();
           removeItem();
         }}
-      >
-        {fields.length > 1 ? <IconDeleteActive /> : <IconDelete />}
-      </BasicButton>
+        icon={
+          fields.length > 1 ? (
+            <MinusCircleFilled width="18" height="18" />
+          ) : (
+            <MinusCircleFilled
+              width="18"
+              height="18"
+              color={sqleTheme.icon.execWorkFlow.minusCircleFilledDisabled}
+            />
+          )
+        }
+      />
     );
   };
 

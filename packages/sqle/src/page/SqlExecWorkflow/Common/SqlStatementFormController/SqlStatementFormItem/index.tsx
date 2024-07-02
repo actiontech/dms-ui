@@ -1,5 +1,4 @@
 import { ModeSwitcher } from '@actiontech/shared';
-import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   FormItemLabel,
@@ -14,6 +13,7 @@ import { Form } from 'antd';
 import { SqlAuditInfoFormProps } from '../../../Create/components/FormStep/SqlAuditInfoForm/index.type';
 import SqlExecModeSelector from './components/SqlExecModeSelector';
 import SqlFormatterAndSubmitter from './components/SqlFormatterAndSubmitter';
+import { RingPieFilled } from '@actiontech/icons';
 
 const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   fieldPrefixPath,
@@ -52,7 +52,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
       <FormItemLabel
         label={
           <>
-            <IconEllipse />
+            <RingPieFilled className="custom-icon-ellipse" />
             <span>{t('execWorkflow.create.form.sqlInfo.uploadType')}</span>
           </>
         }

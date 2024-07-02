@@ -4,12 +4,14 @@ import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { cleanup, act, screen } from '@testing-library/react';
 
 import system from '../../../testUtils/mockApi/system';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/setting/pushNotification', () => {
   const customRender = () => {
     return superRender(<PushNotification />);
   };
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     system.mockAllApi();
   });

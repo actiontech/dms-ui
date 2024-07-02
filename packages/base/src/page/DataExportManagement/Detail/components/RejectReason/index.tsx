@@ -1,14 +1,14 @@
 import { RejectReasonStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { RejectReasonProps } from './index.type';
-import { IconWorkflowRejectReason } from 'sqle/src/icon/SqlExecWorkflow';
+import { RejectFileFilled } from '@actiontech/icons';
 
 const RejectReason: React.FC<RejectReasonProps> = ({ stepInfo }) => {
   const { t } = useTranslation();
   return (
     <>
       <RejectReasonStyleWrapper>
-        <IconWorkflowRejectReason />
+        <RejectFileFilled width={24} height={24} />
         <div className="reject-workflow-reason-content">
           <div className="reject-workflow-reason-content-text">
             {t('dmsDataExport.detail.reject.reason', {

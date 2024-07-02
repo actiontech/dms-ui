@@ -2,21 +2,20 @@ import { Popover } from 'antd';
 import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import {
-  IconGlobalSystem,
-  IconSystem,
-  IconUserCenter,
-
-  // #if [sqle]
-  IconViewRule,
-  IconReportStatistics,
-  IconRuleManage
-  // #endif
-} from '../../../../../icon/sideMenu';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { EmptyBox } from '@actiontech/shared';
+import {
+  GearFilled,
+  UserShieldFilled,
+  CenterCircleHexagonFilled,
+  // #if [sqle]
+  ProfileSquareFilled,
+  SignalFilled,
+  ProfileEditFilled
+  // #endif
+} from '@actiontech/icons';
 
 const GlobalSetting: React.FC<{
   updateTheme: (theme: SupportTheme) => void;
@@ -50,7 +49,7 @@ const GlobalSetting: React.FC<{
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule`)}
               >
-                <IconViewRule />
+                <ProfileSquareFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.viewRule')}
                 </span>
@@ -64,7 +63,7 @@ const GlobalSetting: React.FC<{
                 className="content-item"
                 onClick={() => handleClickItem('/user-center')}
               >
-                <IconUserCenter />
+                <UserShieldFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.userCenter')}
                 </span>
@@ -74,7 +73,7 @@ const GlobalSetting: React.FC<{
                 className="content-item"
                 onClick={() => handleClickItem('/sqle/report-statistics')}
               >
-                <IconReportStatistics />
+                <SignalFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.reportStatistics')}
                 </span>
@@ -83,7 +82,7 @@ const GlobalSetting: React.FC<{
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule`)}
               >
-                <IconViewRule />
+                <ProfileSquareFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.viewRule')}
                 </span>
@@ -92,7 +91,7 @@ const GlobalSetting: React.FC<{
                 className="content-item"
                 onClick={() => handleClickItem(`/sqle/rule-manager`)}
               >
-                <IconRuleManage />
+                <ProfileEditFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.ruleManage')}
                 </span>
@@ -102,7 +101,7 @@ const GlobalSetting: React.FC<{
                 className="content-item"
                 onClick={() => handleClickItem(`/system`)}
               >
-                <IconSystem />
+                <GearFilled />
                 <span className="content-item-text">
                   {t('dmsMenu.globalSettings.system')}
                 </span>
@@ -138,17 +137,12 @@ const GlobalSetting: React.FC<{
       overlayInnerStyle={{ padding: 0 }}
     >
       <div className="global-system-icon-wrapper">
-        <IconGlobalSystem
-          color={
-            open
-              ? sharedTheme.uiToken.colorTextSecondary
-              : sharedTheme.uiToken.colorTextQuaternary
-          }
-          color2={
-            open
-              ? sharedTheme.uiToken.colorTextSecondary
-              : sharedTheme.uiToken.colorTextTertiary
-          }
+        <CenterCircleHexagonFilled
+          width={18}
+          height={18}
+          color={open ? sharedTheme.uiToken.colorTextSecondary : ''}
+          fill="none"
+          className="custom-icon-global-system"
         />
       </div>
     </Popover>

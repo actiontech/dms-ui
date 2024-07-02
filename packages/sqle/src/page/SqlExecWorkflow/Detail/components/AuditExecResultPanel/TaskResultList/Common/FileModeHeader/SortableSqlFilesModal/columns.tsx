@@ -1,9 +1,9 @@
 import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
-import { IconSQLFile } from '@actiontech/shared/lib/Icon/common';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IAuditFileStatistic } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../../../../../../locale';
+import { SqlFileOutlined } from '@actiontech/icons';
 
 export const SortableSqlFilesModalColumns: () => IBasicTable<
   IAuditFileStatistic & { index: number }
@@ -49,7 +49,7 @@ export const SortableSqlFilesModalColumns: () => IBasicTable<
 
         return (
           <TableColumnWithIconStyleWrapper>
-            <IconSQLFile />
+            <SqlFileOutlined />
             <BasicTypographyEllipsis textCont={fileName} copyable={false} />
           </TableColumnWithIconStyleWrapper>
         );

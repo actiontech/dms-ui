@@ -1,11 +1,13 @@
 import { cleanup, fireEvent, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 import ConfigModifyBtn from '.';
 
 describe('base/System/components/ConfigModifyBtn', () => {
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

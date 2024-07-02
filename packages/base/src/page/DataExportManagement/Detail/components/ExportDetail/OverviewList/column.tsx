@@ -9,7 +9,7 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import dayjs from 'dayjs';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicToolTips } from '@actiontech/shared';
-import { IconTipOrange } from '@actiontech/shared/lib/Icon';
+import { InfoCircleOutlined } from '@actiontech/icons';
 
 export const OverviewListColumn: () => ActiontechTableColumn<
   IGetDataExportTask,
@@ -81,7 +81,7 @@ export const OverviewListAction: (
           title={t(
             'dmsDataExport.detail.exportResult.overview.column.action.downloadTips'
           )}
-          suffixIcon={<IconTipOrange />}
+          suffixIcon={<InfoCircleOutlined width={14} height={14} />}
         >
           {t('common.operate')}
         </BasicToolTips>

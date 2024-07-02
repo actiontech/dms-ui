@@ -1,9 +1,9 @@
-import { IconCommonEdit } from '@actiontech/shared/lib/Icon';
 import { BasicButton, BasicInput } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { FocusEvent, useEffect, useState } from 'react';
 import { useBoolean } from 'ahooks';
 import { TaskResultDescribeStyleWrapper } from './style';
+import { EditFilled } from '@actiontech/icons';
 
 const ResultDescribe: React.FC<{
   value: string;
@@ -28,7 +28,7 @@ const ResultDescribe: React.FC<{
 
   return (
     <TaskResultDescribeStyleWrapper>
-      <IconCommonEdit />
+      <EditFilled />
       <BasicInput
         className="result-describe-input"
         onBlur={onInputBlur}

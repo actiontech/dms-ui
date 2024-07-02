@@ -6,8 +6,9 @@ import {
 } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import BaseInfoFormItem from './BaseInfoFormItem';
-import { IconTaskCreateTitleStyleWrapper } from './style';
 import { CreateExportTaskFormEntryProps } from '../index.type';
+import { BriefcaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const BaseInfoForm: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'baseForm'>
@@ -24,7 +25,7 @@ const BaseInfoForm: React.FC<
       <FormAreaLineStyleWrapper className="has-border">
         <FormAreaBlockStyleWrapper>
           <FormItemBigTitle>
-            <IconTaskCreateTitleStyleWrapper />
+            <Icon component={BriefcaseFilled} className="title-icon" />
             <span>{t('dmsDataExport.create.form.base.title')}</span>
           </FormItemBigTitle>
           <BaseInfoFormItem />

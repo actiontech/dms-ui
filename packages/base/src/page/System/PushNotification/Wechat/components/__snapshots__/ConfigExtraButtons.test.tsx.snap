@@ -25,21 +25,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -63,21 +56,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -114,21 +102,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -152,21 +133,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -243,21 +219,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -503,21 +474,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -722,21 +688,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -760,21 +719,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -810,21 +764,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -848,21 +795,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -1028,21 +970,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -1066,21 +1001,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -1246,21 +1176,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -1284,21 +1207,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>
@@ -1357,21 +1275,14 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 17 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="flashlight-fill"
-                  >
-                    <path
-                      d="M8.6665 6.66669H13.3332L7.33317 15.3334V9.33335H2.6665L8.6665 0.666687V6.66669Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                  />
                 </svg>
               </span>
             </button>
@@ -1395,21 +1306,16 @@ exports[`base/System/PushNotification/Wechat/ConfigExtraButtons render snap when
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
+                  color="#292C33"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    id="edit-2-fill"
-                  >
-                    <path
-                      d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                      fill="#292C33"
-                      id="Vector"
-                    />
-                  </g>
+                  <path
+                    d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                    fill="currentColor"
+                  />
                 </svg>
               </span>
             </button>

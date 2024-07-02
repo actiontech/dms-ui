@@ -11,6 +11,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test AuditResultStep', () => {
   const customRender = (createAction: () => Promise<void>) => {
@@ -38,7 +39,7 @@ describe('test AuditResultStep', () => {
   ]);
 
   beforeEach(() => {
-    mockUseCurrentProject();
+    mockUseCurrentUser();
     mockUseCurrentProject();
     jest.useFakeTimers();
     execWorkflow.mockAllApi();

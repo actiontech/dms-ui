@@ -16,22 +16,23 @@ import { useTranslation } from 'react-i18next';
 import { FloatButton, Space, Spin, Typography } from 'antd';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
-  IconLevelError,
-  IconLevelNotice,
-  IconLevelNormal,
-  IconLevelWarn
-} from '@actiontech/shared/lib/Icon/LevelIcon';
-import {
   IRuleParamResV1,
   IRuleResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { IconEdit } from '@actiontech/shared/lib/Icon/common';
-import { IconDisabledRule, IconEnabledRule } from '../../icon/Rule';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import RuleDetailModal from './RuleDetailModal';
 import { useBoolean } from 'ahooks';
 import { isEqual } from 'lodash';
 import { useCurrentPermission } from '@actiontech/shared/lib/global';
+import {
+  CloseOutlined,
+  PlusOutlined,
+  ProfileSquareFilled,
+  ExclamationHexagonFilled,
+  EditFilled,
+  WarningFilled,
+  CloseCircleFilled
+} from '@actiontech/icons';
 
 const scrollStepRange = 30;
 
@@ -56,13 +57,13 @@ const RuleList: React.FC<RuleListProps> = ({
   const renderLevelIcon = (level?: RuleResV1LevelEnum) => {
     const levelIcon = () => {
       if (level === RuleResV1LevelEnum.error) {
-        return <IconLevelError />;
+        return <CloseCircleFilled width={18} height={19} />;
       } else if (level === RuleResV1LevelEnum.normal) {
-        return <IconLevelNormal />;
+        return <ProfileSquareFilled width={18} height={19} />;
       } else if (level === RuleResV1LevelEnum.notice) {
-        return <IconLevelNotice />;
+        return <ExclamationHexagonFilled width={18} height={19} />;
       } else if (level === RuleResV1LevelEnum.warn) {
-        return <IconLevelWarn />;
+        return <WarningFilled width={18} height={19} />;
       }
     };
     return (
@@ -137,7 +138,9 @@ const RuleList: React.FC<RuleListProps> = ({
                 shape="circle"
                 className="action-circle-btn edit-rule-item"
                 key="edit-rule-btn"
-                icon={<IconEdit className="icon-edit" />}
+                icon={
+                  <EditFilled className="icon-edit custom-icon custom-icon-edit" />
+                }
                 onClick={(e) => {
                   e.stopPropagation();
                   onActionHandle?.(rule, EnumActionType.edit);
@@ -153,7 +156,13 @@ const RuleList: React.FC<RuleListProps> = ({
                 shape="circle"
                 className="action-circle-btn enabled-rule-item"
                 key="enabled-rule-btn"
-                icon={<IconEnabledRule className="icon-enabled" />}
+                icon={
+                  <PlusOutlined
+                    width={10}
+                    height={10}
+                    className="icon-enabled"
+                  />
+                }
                 onClick={(e) => {
                   e.stopPropagation();
                   onActionHandle?.(rule, EnumActionType.enabled);
@@ -171,7 +180,12 @@ const RuleList: React.FC<RuleListProps> = ({
                 danger
                 className="action-circle-btn disabled-rule-item"
                 key="disabled-rule-btn"
-                icon={<IconDisabledRule className="icon-disabled" />}
+                icon={
+                  <CloseOutlined
+                    fill="currentColor"
+                    className="icon-disabled"
+                  />
+                }
                 onClick={(e) => {
                   e.stopPropagation();
                   onActionHandle?.(rule, EnumActionType.disabled);

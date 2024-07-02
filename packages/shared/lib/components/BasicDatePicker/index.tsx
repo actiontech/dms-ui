@@ -1,17 +1,17 @@
 import { useRef } from 'react';
 import { BasicDatePickerFieldStyleWrapper } from './style';
 import type { DatePickerProps } from 'antd/es/date-picker';
-import {
-  IconDatePickerPrefix,
-  IconDatePickerDown,
-  IconDatePickerUp,
-  IconDatePickerLeft,
-  IconDatePickerRight
-} from '../../Icon/common';
 import { useBoolean } from 'ahooks';
 import { DatePicker, ConfigProvider } from 'antd';
 import classnames from 'classnames';
 import { ComponentControlHeight } from '../../data/common';
+import {
+  UpOutlined,
+  ClockCircleFilled,
+  DownOutlined,
+  RightOutlined,
+  LeftOutlined
+} from '@actiontech/icons';
 
 export type IBasicDatePicker = DatePickerProps & { hideSuperIcon?: boolean };
 
@@ -42,10 +42,15 @@ const BasicDatePicker: React.FC<IBasicDatePicker> = ({
         hideSuperIcon={hideSuperIcon}
         className={classnames('basic-date-picker-wrapper', className)}
       >
-        <IconDatePickerPrefix className="prefix-icon" />
+        <ClockCircleFilled
+          fill="currentColor"
+          width={18}
+          height={18}
+          className="prefix-icon"
+        />
         <DatePicker
           {...otherProps}
-          suffixIcon={!open ? <IconDatePickerDown /> : <IconDatePickerUp />}
+          suffixIcon={!open ? <DownOutlined /> : <UpOutlined />}
           onOpenChange={(data: boolean) => {
             set(data);
             onOpenChange && onOpenChange(data);
@@ -53,8 +58,16 @@ const BasicDatePicker: React.FC<IBasicDatePicker> = ({
           getPopupContainer={() => {
             return ref.current!;
           }}
-          nextIcon={<IconDatePickerRight className="next-icon" />}
-          prevIcon={<IconDatePickerLeft className="prev-icon" />}
+          nextIcon={
+            <span className="next-icon">
+              <RightOutlined width={14} height={14} />
+            </span>
+          }
+          prevIcon={
+            <span className="prev-icon">
+              <LeftOutlined width={14} height={14} />
+            </span>
+          }
         />
       </BasicDatePickerFieldStyleWrapper>
     </ConfigProvider>

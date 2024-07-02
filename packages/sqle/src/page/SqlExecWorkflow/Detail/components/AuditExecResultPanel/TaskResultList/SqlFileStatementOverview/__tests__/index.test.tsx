@@ -7,6 +7,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -25,6 +26,7 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     getTaskSQLsSpy = task.getAuditTaskSQLs();
     getAuditFileExecStatistic = task.getAuditFileExecStatistic();

@@ -6,7 +6,7 @@ exports[`test UpdateFormDrawer should match snapshot 1`] = `
 >
   <BasicTag
     icon={
-      <IconProjectFlag
+      <FlagFilled
         height={12}
         width={12}
       />
@@ -16,7 +16,9 @@ exports[`test UpdateFormDrawer should match snapshot 1`] = `
   </BasicTag>
   <BasicTag
     icon={
-      <IconClock
+      <ClockCircleFilled
+        color="#6094FC"
+        fill="none"
         height={12}
         width={12}
       />
@@ -26,7 +28,7 @@ exports[`test UpdateFormDrawer should match snapshot 1`] = `
   </BasicTag>
   <BasicTag
     icon={
-      <IconUser
+      <UserFilled
         height={12}
         width={12}
       />

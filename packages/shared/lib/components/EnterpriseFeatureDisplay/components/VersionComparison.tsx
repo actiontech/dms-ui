@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import BasicTag from '../../BasicTag';
 import { versionList } from '../index.data';
 import { VersionComparisonItem } from '../index.type';
-import { IconCheckout } from '../../../Icon/common';
+import { CheckStrongOutlined } from '@actiontech/icons';
 
 const VersionComparison: React.FC = () => {
   const { t } = useTranslation();
@@ -46,7 +46,7 @@ const VersionComparison: React.FC = () => {
               align="start"
               className="full-width-element version-desc-wrap"
             >
-              <IconCheckout></IconCheckout>
+              <CheckStrongOutlined width={18} height={18} />
               <Typography.Text key={index}>{item}</Typography.Text>
             </Space>
           );

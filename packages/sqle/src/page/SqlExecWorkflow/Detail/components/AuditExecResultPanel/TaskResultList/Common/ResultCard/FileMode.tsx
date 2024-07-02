@@ -2,7 +2,6 @@ import { Collapse, Divider, Space } from 'antd';
 import { FileExecuteResultCardProps } from './index.type';
 import ExecStatusTag from './components/ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { IconSQLFile } from '@actiontech/shared/lib/Icon/common';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import AuditResultTag from './components/AuditResultTag';
 import { useMemo } from 'react';
@@ -14,6 +13,7 @@ import SqlStatementResultTable from '../SqlStatementResultTable';
 import { Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { TasksResultCardStyleWrapper } from './style';
+import { SqlFileOutlined } from '@actiontech/icons';
 
 const FileMode: React.FC<FileExecuteResultCardProps> = ({
   taskId,
@@ -85,7 +85,7 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
               <span className="number">#{props.exec_order}</span>
 
               <div className="file-info">
-                <IconSQLFile />
+                <SqlFileOutlined />
                 <Link
                   className="file-info-name"
                   to={`/sqle/project/${projectID}/exec-workflow/${taskId}/files/${props.file_id}/sqls`}

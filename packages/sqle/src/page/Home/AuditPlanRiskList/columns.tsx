@@ -2,10 +2,10 @@ import { t } from '../../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { Typography } from 'antd';
-import { IconAuditTaskName } from '../../../icon/Dashboard';
 import { Link } from 'react-router-dom';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { ProfileFilled } from '@actiontech/icons';
 
 export const AuditPlanRiskColumns: (
   projectID: string
@@ -21,7 +21,7 @@ export const AuditPlanRiskColumns: (
         )}`;
         return (
           <TableColumnWithIconStyleWrapper>
-            <IconAuditTaskName />
+            <ProfileFilled />
             <Link
               data-testid="report-time"
               to={`/sqle/project/${projectID}/audit-plan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}

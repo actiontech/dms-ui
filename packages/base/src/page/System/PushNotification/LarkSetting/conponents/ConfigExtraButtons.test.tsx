@@ -12,6 +12,7 @@ import {
 import system from '../../../../../testUtils/mockApi/system';
 import { TestFeishuConfigurationAccountTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
   let requestTestFeishuConfiguration: jest.SpyInstance;
@@ -25,6 +26,7 @@ describe('base/System/PushNotification/LarkSetting/ConfigExtraButtons', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestTestFeishuConfiguration = system.testLarkConfig();
   });

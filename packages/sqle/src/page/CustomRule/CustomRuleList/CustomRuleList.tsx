@@ -15,11 +15,11 @@ import {
   EnumActionType,
   RuleStatusEnum
 } from '../../../components/RuleList/index.type';
-import { IconDisabledRule } from '../../../icon/Rule';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { CloseOutlined } from '@actiontech/icons';
 
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
@@ -99,11 +99,12 @@ const CustomRuleList: React.FC = () => {
         okText={t('common.ok')}
       >
         <BasicButton
+          size="small"
           shape="circle"
           danger
           className="action-circle-btn disabled-rule-item custom-rule-item-operator"
           key={`${item.rule_id}-remove-item`}
-          icon={<IconDisabledRule className="icon-disabled" />}
+          icon={<CloseOutlined className="icon-disabled" fill="currentColor" />}
           onClick={(e) => {
             e.stopPropagation();
           }}

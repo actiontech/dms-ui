@@ -55,18 +55,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
                     class="ant-tree-switcher ant-tree-switcher_close"
                   >
                     <span
-                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                      role="img"
+                      class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                     >
                       <svg
-                        fill="currentColor"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </span>
@@ -144,18 +143,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
                   class="ant-tree-switcher ant-tree-switcher_close"
                 >
                   <span
-                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
                       height="16"
                       viewBox="0 0 16 16"
                       width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </span>
@@ -290,18 +288,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
                     class="ant-tree-switcher ant-tree-switcher_close"
                   >
                     <span
-                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                      role="img"
+                      class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                     >
                       <svg
-                        fill="currentColor"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </span>
@@ -378,18 +375,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
                     class="ant-tree-switcher ant-tree-switcher_close"
                   >
                     <span
-                      class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                      role="img"
+                      class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                     >
                       <svg
-                        fill="currentColor"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="#C3C6CD"
                         />
                       </svg>
                     </span>
@@ -467,18 +463,17 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
                   class="ant-tree-switcher ant-tree-switcher_close"
                 >
                   <span
-                    class="ant-tree-switcher-icon custom-icon custom-icon-arrow-down css-u3jcp4"
-                    role="img"
+                    class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
                   >
                     <svg
-                      fill="currentColor"
                       height="16"
                       viewBox="0 0 16 16"
                       width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                        d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </span>

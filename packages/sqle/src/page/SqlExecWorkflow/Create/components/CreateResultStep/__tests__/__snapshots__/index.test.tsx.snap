@@ -20,14 +20,13 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -46,7 +45,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
       class="basic-result-wrapper css-7vto1s"
     >
       <div
-        class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+        class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-result-icon"

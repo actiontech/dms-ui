@@ -6,6 +6,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import Oauth from '.';
 import { oauthConfig } from '../../../../testUtils/mockApi/system/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/LoginConnection/Oauth', () => {
   let requestGetOauth2Configuration: jest.SpyInstance;
@@ -16,6 +17,7 @@ describe('base/System/LoginConnection/Oauth', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetOauth2Configuration = system.getOauth2Config();
     requestUpdateOauth2Configuration = system.updateOauth2Config();

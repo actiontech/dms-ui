@@ -1,10 +1,10 @@
 import { ConfigProvider, SelectProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { IconClose } from '../../Icon';
 import classnames from 'classnames';
 import { BasicSelectStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';
 import BasicEmpty from '../BasicEmpty';
+import { CloseOutlined } from '@actiontech/icons';
 
 const BasicSelect = <V = any,>(props: SelectProps<V>) => {
   const { t } = useTranslation();
@@ -29,7 +29,7 @@ const BasicSelect = <V = any,>(props: SelectProps<V>) => {
           loading ? <BasicEmpty loading={loading} /> : <BasicEmpty />
         }
         {...otherParams}
-        clearIcon={<IconClose />}
+        clearIcon={<CloseOutlined width={14} height={14} fill="currentColor" />}
         allowClear={allowClear}
         loading={loading}
         //ts checker error
