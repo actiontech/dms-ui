@@ -1,5 +1,0 @@
-<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx -->
-<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-  <path id="Vector" d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669" stroke={color ? color : '#4583FF' }
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-</svg>
