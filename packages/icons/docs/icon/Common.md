@@ -312,6 +312,13 @@ import { DownTriangleOutlined } from '@actiontech/icons';
 export default () => <DownTriangleOutlined width={32} height={32} />
 ```
 
+## EmptyHexagonOutlined
+```jsx
+import { EmptyHexagonOutlined } from '@actiontech/icons';
+
+export default () => <EmptyHexagonOutlined width={32} height={32} />
+```
+
 ## HexagonOutlined
 ```jsx
 import { HexagonOutlined } from '@actiontech/icons';

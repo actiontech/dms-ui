@@ -16,19 +16,19 @@ pnpm icon:g
 **生成icon组件文档**
 
 ```shell
-pnpm doc:g
+pnpm icon:docs:g
 ```
 
 **本地查看文档**
 
 ```shell
-pnpm doc
+pnpm icon:docs
 ```
 
 **build文档产物**
 
 ```shell
-pnpm doc:build
+pnpm icon:docs:build
 ```
 
 **build组件产物**
