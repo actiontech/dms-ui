@@ -4,7 +4,7 @@ import { guidanceTheme } from './guidance';
 import { sqleLightTheme } from 'sqle/src/theme/light';
 import { systemTheme } from './system';
 import { dataExportTheme } from './dataExport';
-import { iconThem } from './icon';
+import { iconTheme } from './icon';
 
 const lightTheme = createTheme({
   baseTheme: {
@@ -12,7 +12,7 @@ const lightTheme = createTheme({
     guidance: guidanceTheme,
     system: systemTheme,
     dataExport: dataExportTheme,
-    icon: iconThem
+    icon: iconTheme
   },
   sqleTheme: sqleLightTheme
 });

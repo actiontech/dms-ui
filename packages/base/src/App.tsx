@@ -4,7 +4,7 @@ import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
-import { EmptyBox, HeaderProgress } from '@actiontech/shared';
+import { EmptyBox, HeaderProgress, SpinIndicator } from '@actiontech/shared';
 import zhCN from 'antd/locale/zh_CN';
 import {
   useChangeTheme,
@@ -34,7 +34,6 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
 import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 import './index.less';
 
@@ -43,117 +42,7 @@ dayjs.updateLocale('zh-cn', {
   weekStart: 0
 });
 
-Spin.setDefaultIndicator(
-  <CommonIconStyleWrapper className="custom-icon-spin-dot">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24px"
-      height="30px"
-      viewBox="0 0 24 30"
-      fill="currentColor"
-    >
-      <rect
-        x="0"
-        y="10"
-        width="4"
-        height="10"
-        fill="currentColor"
-        opacity="0.2"
-      >
-        <animate
-          attributeName="opacity"
-          attributeType="XML"
-          values="0.2; 1; .2"
-          begin="0s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="height"
-          attributeType="XML"
-          values="10; 20; 10"
-          begin="0s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="y"
-          attributeType="XML"
-          values="10; 5; 10"
-          begin="0s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-      </rect>
-      <rect
-        x="8"
-        y="10"
-        width="4"
-        height="10"
-        fill="currentColor"
-        opacity="0.2"
-      >
-        <animate
-          attributeName="opacity"
-          attributeType="XML"
-          values="0.2; 1; .2"
-          begin="0.15s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="height"
-          attributeType="XML"
-          values="10; 20; 10"
-          begin="0.15s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="y"
-          attributeType="XML"
-          values="10; 5; 10"
-          begin="0.15s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-      </rect>
-      <rect
-        x="16"
-        y="10"
-        width="4"
-        height="10"
-        fill="currentColor"
-        opacity="0.2"
-      >
-        <animate
-          attributeName="opacity"
-          attributeType="XML"
-          values="0.2; 1; .2"
-          begin="0.3s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="height"
-          attributeType="XML"
-          values="10; 20; 10"
-          begin="0.3s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-        <animate
-          attributeName="y"
-          attributeType="XML"
-          values="10; 5; 10"
-          begin="0.3s"
-          dur="0.6s"
-          repeatCount="indefinite"
-        />
-      </rect>
-    </svg>
-  </CommonIconStyleWrapper>
-);
+Spin.setDefaultIndicator(<SpinIndicator />);
 
 //fix  https://github.com/actiontech/sqle/issues/1350
 export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
