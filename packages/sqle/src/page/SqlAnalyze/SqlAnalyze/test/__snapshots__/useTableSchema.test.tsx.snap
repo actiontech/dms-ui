@@ -513,11 +513,6 @@ exports[`SqlAnalyze/useTableSchema render generateTableSchemaContent render ele 
 <EmptyBox
   defaultNode={
     <BasicResult
-      icon={
-        <AntdIcon
-          component={[Function]}
-        />
-      }
       status="error"
       title="error"
     />

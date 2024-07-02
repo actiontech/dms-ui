@@ -558,7 +558,7 @@ exports[`sqle/CustomRule/UpdateCustomRule return to custom list page 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
@@ -1551,7 +1551,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 1`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
@@ -2797,7 +2797,7 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 2`] = `
           class="basic-result-wrapper css-7vto1s"
         >
           <div
-            class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+            class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-result-icon"
