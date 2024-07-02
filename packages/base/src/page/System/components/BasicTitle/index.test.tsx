@@ -4,15 +4,15 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { cleanup } from '@testing-library/react';
 
 describe('base/System/components/BasicTitle', () => {
-   beforeEach(() => {
-     mockUseCurrentUser();
-     jest.useFakeTimers();
-   });
+  beforeEach(() => {
+    mockUseCurrentUser();
+    jest.useFakeTimers();
+  });
 
-   afterEach(() => {
-     jest.useRealTimers();
-     cleanup();
-   });
+  afterEach(() => {
+    jest.useRealTimers();
+    cleanup();
+  });
 
   const customRender = (params: SystemBasicTitleProps) => {
     return renderWithTheme(<SystemBasicTitle {...params} />);

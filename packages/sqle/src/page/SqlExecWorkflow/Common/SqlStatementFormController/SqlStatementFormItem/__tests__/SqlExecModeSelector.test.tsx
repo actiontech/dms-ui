@@ -5,7 +5,10 @@ import SqlExecModeSelector from '../components/SqlExecModeSelector';
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SqlExecModeSelectorProps } from '../components/index.type';
-import { getAllBySelector, getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('test SqlExecModeSelector', () => {
   let getSqlFileOrderMethodSpy: jest.SpyInstance;
@@ -34,7 +37,7 @@ describe('test SqlExecModeSelector', () => {
   };
 
   it('should disabled the execute mode selector when file mode execute SQL is not supported', async () => {
-    const {baseElement} = customRender({
+    const { baseElement } = customRender({
       currentSqlUploadType: AuditTaskResV1SqlSourceEnum.zip_file
     });
     expect(screen.queryByText('选择上线模式')).toBeInTheDocument();
