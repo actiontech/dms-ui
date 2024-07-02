@@ -25,9 +25,7 @@ describe('base/CloudBeaver/CBSqlOperationAuditDetailDrawer', () => {
     getRuleListSpy = rule_template.getRuleList();
     mockUseCurrentUser();
     mockUseCurrentProject();
-    (useDispatch as jest.Mock).mockImplementation(
-      () => mockDispatch
-    );
+    (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         cloudBeaver: {
