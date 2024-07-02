@@ -68,7 +68,7 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
               >
                 <span
                   class="anticon title-icon"

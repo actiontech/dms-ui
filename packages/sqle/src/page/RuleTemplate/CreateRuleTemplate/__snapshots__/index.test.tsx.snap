@@ -81,7 +81,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -1120,7 +1120,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -2710,7 +2710,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"

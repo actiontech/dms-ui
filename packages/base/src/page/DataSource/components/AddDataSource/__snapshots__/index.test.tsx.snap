@@ -80,7 +80,7 @@ exports[`page/DataSource/AddDataSource render add database snap 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -1127,7 +1127,7 @@ exports[`page/DataSource/AddDataSource render isFixedBusiness is true 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -2359,7 +2359,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -4684,7 +4684,7 @@ exports[`page/DataSource/AddDataSource render submit when add database api succe
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"

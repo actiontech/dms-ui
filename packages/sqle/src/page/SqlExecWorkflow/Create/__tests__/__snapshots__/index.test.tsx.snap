@@ -88,7 +88,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -2425,7 +2425,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -5971,7 +5971,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -10330,7 +10330,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -11537,7 +11537,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -13080,7 +13080,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -14627,7 +14627,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -16650,7 +16650,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"
@@ -17796,7 +17796,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                   class="css-bspaai"
                 >
                   <h3
-                    class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                   >
                     <span
                       class="anticon title-icon"

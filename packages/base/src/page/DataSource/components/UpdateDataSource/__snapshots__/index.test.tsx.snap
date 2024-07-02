@@ -65,7 +65,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -1364,7 +1364,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -2722,7 +2722,7 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -4122,7 +4122,7 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -5283,7 +5283,7 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"

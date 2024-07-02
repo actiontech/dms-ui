@@ -87,7 +87,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -1028,7 +1028,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 1`] = `
             class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
           >
             <h3
-              class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
             >
               <span
                 class="anticon title-icon"
@@ -1622,7 +1622,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 2`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
@@ -2674,7 +2674,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-hxehx1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="anticon title-icon"
