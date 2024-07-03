@@ -153,7 +153,16 @@ export const NormalUserDevopsSteps: (
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
-    icon: <IconStepOperation />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <UtilOutlined
+          color={iconColor}
+          fill="currentColor"
+          height={24}
+          width={24}
+        />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       {
         key: 'operationCheck',

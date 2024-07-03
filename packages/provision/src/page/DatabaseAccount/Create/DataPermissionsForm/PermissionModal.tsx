@@ -16,10 +16,6 @@ import {
   FormListAddButtonWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
 import { useTranslation } from 'react-i18next';
-import {
-  IconFormListAdd,
-  IconFormListDelete
-} from '@actiontech/shared/lib/Icon';
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { useRequest } from 'ahooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
@@ -32,6 +28,7 @@ import {
 import { EventEmitterKey } from '../../../../data/enum';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { getOperationSetsParamsSerializer } from '../../index.utils';
+import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
 
 const defaultParams = {
   page_index: 1,
@@ -415,7 +412,7 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
                             handleRemoveDataObject(index);
                             remove(field.name);
                           }}
-                          icon={<IconFormListDelete />}
+                          icon={<MinusCircleFilled />}
                         />
                       </EmptyBox>
                     </Col>
@@ -424,7 +421,7 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
               ))}
               <Form.Item label="" colon={false}>
                 <FormListAddButtonWrapper
-                  icon={<IconFormListAdd />}
+                  icon={<PlusCircleFilled />}
                   onClick={() => {
                     add();
                   }}

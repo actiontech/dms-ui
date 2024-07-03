@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { IconDataMask } from '../../../../../icon/sideMenu';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { GenerateMenuItemType } from './index.type';
-import Icon from '@ant-design/icons';
 import { t } from '../../../../../locale';
+import { EyeClosedOutlined } from '@actiontech/icons';
 
 export const dataMaskRuleMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
@@ -12,7 +11,7 @@ export const dataMaskRuleMenuItem: GenerateMenuItemType = (projectID) => ({
     </Link>
   ),
 
-  key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-mask-rule-overview/list`,
-  icon: <Icon component={IconDataMask} />,
+  key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-mask-rule-overview`,
+  icon: <EyeClosedOutlined width={18} height={18} />,
   structKey: 'data-mask-rule'
 });

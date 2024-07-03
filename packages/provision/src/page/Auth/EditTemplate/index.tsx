@@ -24,15 +24,10 @@ import {
   PageHeader
 } from '@actiontech/shared';
 import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
-import {
   AuthTemplateFormStyleWrapper,
   EditAuthTemplateStyleWrapper
 } from './style';
 import classNames from 'classnames';
-import { IconSelectedBusiness } from '~/icon/AuthTemplate';
 import {
   ActiontechTable,
   TableToolbar,
@@ -44,6 +39,8 @@ import {
   IEditTemplateFormFields,
   IEditTemplateActionTypeEnum
 } from './index.type';
+import { LeftArrowOutlined } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const EditTemplate = () => {
   const { t } = useTranslation();
@@ -224,7 +221,7 @@ const EditTemplate = () => {
               onClick={() =>
                 navigate(`/provision/project/${projectID}/auth/template`)
               }
-              icon={<IconLeftArrow />}
+              icon={<LeftArrowOutlined />}
             >
               {t('auth.backToAuthTemplateList')}
             </BasicButton>
@@ -244,7 +241,7 @@ const EditTemplate = () => {
 
         {resultVisible ? (
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('auth.editTemplate.addSuccessTips', {
               name: form.getFieldValue('name')
             })}
@@ -292,7 +289,20 @@ const EditTemplate = () => {
               </Form>
               <Space>
                 <section className="tag-wrapper">
-                  <IconSelectedBusiness />
+                  <CommonIconStyleWrapper className="custom-icon">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.66659 3.33329V1.33329C4.66659 1.15648 4.73682 0.986912 4.86185 0.861888C4.98687 0.736864 5.15644 0.666626 5.33325 0.666626H10.6666C10.8434 0.666626 11.013 0.736864 11.138 0.861888C11.263 0.986912 11.3333 1.15648 11.3333 1.33329V3.33329H13.9999C14.1767 3.33329 14.3463 3.40353 14.4713 3.52855C14.5963 3.65358 14.6666 3.82315 14.6666 3.99996V13.3333C14.6666 13.5101 14.5963 13.6797 14.4713 13.8047C14.3463 13.9297 14.1767 14 13.9999 14H1.99992C1.82311 14 1.65354 13.9297 1.52851 13.8047C1.40349 13.6797 1.33325 13.5101 1.33325 13.3333V3.99996C1.33325 3.82315 1.40349 3.65358 1.52851 3.52855C1.65354 3.40353 1.82311 3.33329 1.99992 3.33329H4.66659ZM2.66659 9.99996V12.6666H13.3333V9.99996H2.66659ZM7.33325 7.33329V8.66663H8.66659V7.33329H7.33325ZM5.99992 1.99996V3.33329H9.99992V1.99996H5.99992Z"
+                        fill="#3DB5F1"
+                      />
+                    </svg>
+                  </CommonIconStyleWrapper>
                   <Typography.Text
                     className={classNames('selected-business-text', {
                       'has-selected': hasSelectedBusiness
