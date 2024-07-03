@@ -1,7 +1,6 @@
 import i18n from 'i18next';
-import { IconInspectionAndDiagnosis, IconUserCenter } from '../../../../icon';
-import Icon from '@ant-design/icons';
 import { GenerateMenuItemsType } from './common';
+import { ThunderBulbFilled, UserShieldFilled } from '@actiontech/icons';
 
 export const DiagnosisMenuItems: GenerateMenuItemsType = ({ navigate }) => [
   {
@@ -12,14 +11,14 @@ export const DiagnosisMenuItems: GenerateMenuItemsType = ({ navigate }) => [
     order: 1,
     label: <>{i18n.t('menu.monitorSourceConfig')}</>,
     key: `/monitor-source-config`,
-    icon: <Icon component={IconInspectionAndDiagnosis} />,
+    icon: <ThunderBulbFilled width={18} height={18} />,
     onClick: () => navigate(`/monitor-source-config`)
   },
   {
     order: 2,
     label: <>{i18n.t('menu.userManagement')}</>,
     key: `/user-management`,
-    icon: <Icon component={IconUserCenter} />,
+    icon: <UserShieldFilled width={18} height={18} />,
     onClick: () => navigate(`/user-management`)
   }
 ];

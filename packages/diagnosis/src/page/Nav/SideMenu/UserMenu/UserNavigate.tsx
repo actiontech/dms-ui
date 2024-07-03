@@ -1,10 +1,10 @@
 import { Popover } from 'antd';
 import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
-import { IconAccount } from '../../../../icon';
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
 import useGetUserInfo from '../../../../hooks/useGetUserInfo';
+import { UserCircleFilled } from '@actiontech/icons';
 
 const UserNavigate: React.FC<{
   username: string;
@@ -34,7 +34,7 @@ const UserNavigate: React.FC<{
                 setOpen(false);
               }}
             >
-              <IconAccount />
+              <UserCircleFilled />
               <span className="content-item-text">{t('login.logout')}</span>
             </div>
           </div>

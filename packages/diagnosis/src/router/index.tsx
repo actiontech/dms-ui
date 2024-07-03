@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
 import { Navigate, RouteObject } from 'react-router-dom';
-import { SolutionOutlined } from '@ant-design/icons';
-import { IconUserCenter } from '../icon';
 
 const Login = React.lazy(() => import('../page/Login'));
 const MonitorSourceConfig = React.lazy(
@@ -28,14 +26,12 @@ export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
     path: '/',
     label: 'menu.monitorSourceConfig',
     key: 'monitorSourceConfig',
-    icon: <SolutionOutlined />,
     element: <MonitorSourceConfig />
   },
   {
     path: '/monitor-source-config',
     label: 'menu.monitorSourceConfig',
     key: 'monitorSourceConfig',
-    icon: <SolutionOutlined />,
     element: <MonitorSourceConfig />
   },
   {
@@ -48,7 +44,6 @@ export const diagnosisAuthRouterConfig: RouterConfigItem[] = [
     path: '/user-management',
     label: 'menu.userManagement',
     key: 'userManagement',
-    icon: <IconUserCenter />,
     element: <UserManagement />
   },
   {

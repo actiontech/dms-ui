@@ -8,7 +8,6 @@ import {
   PageHeader,
   SegmentedTabs
 } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ModalName } from '../../data/ModalName';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
@@ -20,6 +19,7 @@ import PermissionList from './components/PermissionList';
 import EmitterKey from '../../data/EmitterKey';
 import { AdminRolePermission } from '../../data/enum';
 import useCurrentUser from '../../hooks/useCurrentUser';
+import { PlusOutlined } from '@actiontech/icons';
 
 const UserManagement: React.FC = () => {
   const { t } = useTranslation();
@@ -54,7 +54,7 @@ const UserManagement: React.FC = () => {
         >
           <BasicButton
             type="primary"
-            icon={<IconAdd />}
+            icon={<PlusOutlined width={12} height={12} color="currentColor" />}
             onClick={() => {
               handleClick(ModalName.Add_User);
             }}
@@ -73,7 +73,7 @@ const UserManagement: React.FC = () => {
         >
           <BasicButton
             type="primary"
-            icon={<IconAdd />}
+            icon={<PlusOutlined width={12} height={12} color="currentColor" />}
             onClick={() => {
               handleClick(ModalName.Add_Role);
             }}
