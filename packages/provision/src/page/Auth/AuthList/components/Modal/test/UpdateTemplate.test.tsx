@@ -78,10 +78,6 @@ describe('page/Auth/AuthList/UpdateTemplate', () => {
       const formItem = getAllBySelector('.ant-form-item-row', baseElement);
       expect(formItem.length).toBe(1);
       expect(baseElement).toMatchSnapshot();
-
-      const closedIcon = getBySelector('.custom-icon-close', baseElement);
-      fireEvent.click(closedIcon);
-      await act(() => jest.advanceTimersByTime(300));
     });
 
     it('render click closed text', async () => {
