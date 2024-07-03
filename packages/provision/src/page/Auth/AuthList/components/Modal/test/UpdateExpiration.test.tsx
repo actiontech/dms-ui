@@ -67,10 +67,6 @@ describe('page/Auth/AuthList/UpdateExpiration', () => {
       expect(
         screen.getByText('说明：续期指在当前时间基础上增加有效期时间')
       ).toBeInTheDocument();
-
-      const closedIcon = getBySelector('.custom-icon-close', baseElement);
-      fireEvent.click(closedIcon);
-      await act(() => jest.advanceTimersByTime(300));
     });
 
     it('render click closed text', async () => {

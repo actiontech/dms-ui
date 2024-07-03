@@ -301,3 +301,18 @@ export type WorkflowTemplateTheme = {
     authInfoColor: string;
   };
 };
+
+export type IconTheme = {
+  execWorkFlow: {
+    minusCircleFilledDisabled: string;
+    profileSquareFilled: string;
+    databaseFilled: string;
+    schemaFilled: string;
+    fileList: string;
+    clock: string;
+  };
+  workflowTemplate: {
+    common: string;
+    userCircleFilled: string;
+  };
+};

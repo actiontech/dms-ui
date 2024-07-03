@@ -13,7 +13,6 @@ import monitor from '../../../../api/monitor';
 import { IV1ListMonitorRoutineParams } from '../../../../api/monitor/index.d';
 import { IViewMonitorConfigReply } from '../../../../api/common';
 import { useRequest } from 'ahooks';
-import { IconTagBookMark } from '@actiontech/shared/lib/Icon/common';
 import {
   MonitorConfigActions,
   MonitorConfigColumns,
@@ -26,6 +25,7 @@ import MonitorConfigModal from './components/Modal';
 import useMonitorSourceConfigRedux from '../../hooks/useMonitorSourceConfigRedux';
 import useCurrentUser from '../../../../hooks/useCurrentUser';
 import { AdminRolePermission } from '../../../../data/enum';
+import { BookMarkTagFilled } from '@actiontech/icons';
 
 const MonitorConfig = () => {
   const { t } = useTranslation();
@@ -108,7 +108,7 @@ const MonitorConfig = () => {
           </section>
           <section className="tag-wrapper">
             <div className="custom-tag-item">
-              <IconTagBookMark className="custom-tag-icon bookmark-icon" />
+              <BookMarkTagFilled className="custom-icon custom-tag-icon bookmark-icon" />
               <div>
                 {t('monitorSourceConfig.sourceType.typeLabel', {
                   type: monitorSourceDictionary[

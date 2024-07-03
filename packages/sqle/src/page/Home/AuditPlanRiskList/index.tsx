@@ -8,12 +8,12 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { TableTitleStyleWrapper } from '../CommonTable/style';
-import { IconAuditPlanTaskList } from '../../../icon/Dashboard';
 import { CustomToolbar } from '../CommonTable/CustomToolbar';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IGetRiskAuditPlanV1Params } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DASHBOARD_COMMON_GET_ORDER_NUMBER } from '../CommonTable';
+import { ScanFilled } from '@actiontech/icons';
 
 const AuditPlanRiskList: React.FC<IAuditPlanRiskProps> = ({
   projectName,
@@ -39,7 +39,7 @@ const AuditPlanRiskList: React.FC<IAuditPlanRiskProps> = ({
     <>
       <CustomToolbar refreshButton={{ refresh, disabled: loading }}>
         <TableTitleStyleWrapper>
-          <IconAuditPlanTaskList />
+          <ScanFilled width={20} height={20} className="custom-icon" />
           {t('dashboard.title.auditPlanRisk')}
         </TableTitleStyleWrapper>
       </CustomToolbar>

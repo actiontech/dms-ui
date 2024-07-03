@@ -5,7 +5,7 @@ import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
 import SyncRecoil from 'provision/src/utils/SyncRecoil';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
-import { EmptyBox, HeaderProgress } from '@actiontech/shared';
+import { EmptyBox, HeaderProgress, SpinIndicator } from '@actiontech/shared';
 import zhCN from 'antd/locale/zh_CN';
 import {
   useChangeTheme,
@@ -21,7 +21,6 @@ import {
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
-import { IconSpin } from '@actiontech/shared/lib/Icon/common';
 import { ThemeData } from './theme';
 import {
   StyleProvider,
@@ -44,7 +43,7 @@ dayjs.updateLocale('zh-cn', {
   weekStart: 0
 });
 
-Spin.setDefaultIndicator(<IconSpin />);
+Spin.setDefaultIndicator(<SpinIndicator />);
 
 //fix  https://github.com/actiontech/sqle/issues/1350
 export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {

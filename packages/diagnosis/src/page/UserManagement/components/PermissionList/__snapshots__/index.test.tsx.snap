@@ -43,7 +43,7 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -54,22 +54,18 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                        role="img"
+                      <svg
+                        color="currrentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </div>
                   </div>
                 </button>
@@ -222,7 +218,7 @@ exports[`diagnosis/test user table should clear filter when click filter button 
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -233,22 +229,18 @@ exports[`diagnosis/test user table should clear filter when click filter button 
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                        role="img"
+                      <svg
+                        color="currrentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </div>
                   </div>
                 </button>
@@ -569,7 +561,7 @@ exports[`diagnosis/test user table should render filter result when has default 
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -580,22 +572,19 @@ exports[`diagnosis/test user table should render filter result when has default 
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="custom-icon custom-icon-arrow-up css-u3jcp4"
-                        role="img"
+                      <svg
+                        color="currrentColor"
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </div>
                   </div>
                 </button>
@@ -679,22 +668,17 @@ exports[`diagnosis/test user table should render filter result when has default 
             style="user-select: none;"
             unselectable="on"
           >
-            <span
-              class="custom-icon custom-icon-close css-u3jcp4"
-              role="img"
+            <svg
+              fill="currentColor"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="currentColor"
-                height="14"
-                viewBox="0 0 14 14"
-                width="14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+              />
+            </svg>
           </span>
         </div>
       </div>
@@ -1002,7 +986,7 @@ exports[`diagnosis/test user table should render normal table 1`] = `
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -1013,22 +997,18 @@ exports[`diagnosis/test user table should render normal table 1`] = `
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                        role="img"
+                      <svg
+                        color="currrentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </div>
                   </div>
                 </button>
@@ -1334,7 +1314,7 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -1345,22 +1325,18 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                        role="img"
+                      <svg
+                        color="currrentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </div>
                   </div>
                 </button>
@@ -1513,7 +1489,7 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -1524,22 +1500,18 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                        role="img"
+                      <svg
+                        color="currrentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </div>
                   </div>
                 </button>

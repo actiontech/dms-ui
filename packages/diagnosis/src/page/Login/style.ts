@@ -129,5 +129,13 @@ export const LoginPageRightStyleWrapper = styled('div')`
       margin-left: 12px;
       font-size: 14px !important;
     }
+
+    .user-filled-icon {
+      color: ${({ theme }) => theme.diagnosisTheme.login.icon.user};
+    }
+
+    .lock-filled-icon {
+      color: ${({ theme }) => theme.diagnosisTheme.login.icon.password};
+    }
   }
 `;

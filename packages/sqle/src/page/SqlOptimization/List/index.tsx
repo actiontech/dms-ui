@@ -25,8 +25,8 @@ import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimiz
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { PageHeader, BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { Link, useNavigate } from 'react-router-dom';
+import { PlusOutlined } from '@actiontech/icons';
 
 const SqlOptimizationList = () => {
   const { t } = useTranslation();
@@ -113,7 +113,12 @@ const SqlOptimizationList = () => {
         title={t('sqlOptimization.pageTitle')}
         extra={
           <Link to={`/sqle/project/${projectID}/sql-optimization/create`}>
-            <BasicButton type="primary" icon={<IconAdd />}>
+            <BasicButton
+              type="primary"
+              icon={
+                <PlusOutlined color="currentColor" width={10} height={10} />
+              }
+            >
               {t('sqlOptimization.create.linkButton')}
             </BasicButton>
           </Link>

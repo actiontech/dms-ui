@@ -53,6 +53,7 @@ export const CEIndexStyleWrapper = styled('section')`
         z-index: 1;
         top: 0;
         right: 0;
+        opacity: 0.06;
       }
 
       .info-cont-wrapper {

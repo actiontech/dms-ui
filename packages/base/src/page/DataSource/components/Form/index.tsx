@@ -30,7 +30,6 @@ import {
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
-import { IconInstanceManager } from '../../../../icon/sideMenu';
 import { turnDataSourceAsyncFormToCommon } from '../../tool';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
@@ -45,6 +44,8 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 // #endif
 import useProjectTips from '../../../../hooks/useProjectTips';
+import { DatabaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -267,11 +268,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       <FormAreaLineStyleWrapper className="has-border">
         <FormAreaBlockStyleWrapper>
           <FormItemBigTitle>
-            <IconInstanceManager
-              className="title-icon"
-              width={32}
-              height={32}
-            />
+            <Icon component={DatabaseFilled} className="title-icon" />
             <span>
               {props.isUpdate
                 ? t('dmsDataSource.updateDatabase.title')

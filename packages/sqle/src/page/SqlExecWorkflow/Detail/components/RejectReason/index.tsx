@@ -6,8 +6,8 @@ import {
 import { RejectReasonStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { RejectReasonProps } from './index.type';
-import { IconWorkflowRejectReason } from '../../../../../icon/SqlExecWorkflow';
 import { Col, Row } from 'antd';
+import { RejectFileFilled } from '@actiontech/icons';
 
 const RejectReason: React.FC<RejectReasonProps> = ({
   stepInfo,
@@ -19,7 +19,7 @@ const RejectReason: React.FC<RejectReasonProps> = ({
 
   return (
     <RejectReasonStyleWrapper>
-      <IconWorkflowRejectReason />
+      <RejectFileFilled width={24} height={24} />
       <Row wrap={false} align="middle" className="full-width-element">
         <Col xxl={{ span: 22 }} sm={{ span: 20 }}>
           <div className="reject-workflow-reason-content">

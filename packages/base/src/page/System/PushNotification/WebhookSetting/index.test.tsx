@@ -6,6 +6,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DEFAULT_CONSTANT } from './index.data';
 
 import WebHook from '.';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PushNotification/WebhookSetting', () => {
   let requestGetWebHookConfiguration: jest.SpyInstance;
@@ -16,6 +17,7 @@ describe('base/System/PushNotification/WebhookSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetWebHookConfiguration = system.getWebhookConfig();
     requestUpdateWebHookConfiguration = system.updateWebhookConfig();

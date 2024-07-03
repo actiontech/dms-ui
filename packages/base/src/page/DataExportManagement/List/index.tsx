@@ -1,5 +1,4 @@
 import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import {
   useTableRequestParams,
   TableToolbar,
@@ -29,7 +28,6 @@ import WorkflowStatusFilter from './components/WorkflowStatusFilter';
 import useDbService from '../../../hooks/useDbService';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import { IconMinus } from '../../../icon/dataExport';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ListDBServiceTipsFunctionalModuleEnum,
@@ -38,6 +36,8 @@ import {
 import useMemberTips from '../../../hooks/useMemberTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { MinusCircleOutlined } from '@actiontech/icons';
+import { PlusOutlined } from '@actiontech/icons';
 
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -197,7 +197,17 @@ const ExportWorkflowList: React.FC = () => {
           <Space size={12}>
             <EmptyBox if={!projectArchive}>
               <Link to={`/project/${projectID}/data/export/create`}>
-                <BasicButton type="primary" icon={<IconAdd />}>
+                <BasicButton
+                  type="primary"
+                  icon={
+                    <PlusOutlined
+                      width={10}
+                      height={10}
+                      fill="currentColor"
+                      color="currentColor"
+                    />
+                  }
+                >
                   {t('dmsDataExport.create.button')}
                 </BasicButton>
               </Link>
@@ -214,7 +224,13 @@ const ExportWorkflowList: React.FC = () => {
             key: 'close',
             text: t('dmsDataExport.batchClose.button'),
             buttonProps: {
-              icon: <IconMinus />,
+              icon: (
+                <MinusCircleOutlined
+                  fill="currentColor"
+                  width={14}
+                  height={14}
+                />
+              ),
               disabled: selectedRowKeys?.length === 0,
               loading: batchCloseConfirmLoading
             },

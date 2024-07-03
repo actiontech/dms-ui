@@ -2,9 +2,9 @@ import { superRender } from '../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { fireEvent, screen } from '@testing-library/react';
 import DraggableCard, { DraggableCardProps } from '.';
-import { IconHonour } from '../../../../icon/WorkflowTemplate';
 import { StepInfoArrowEnum } from '../StepCard/index.type';
 import { workflowTemplateData } from '../../../../testUtils/mockApi/workflowTemplate/data';
+import { HonourFilled } from '@actiontech/icons';
 
 const workflowTemplateCardProps = {
   rowKey: '1',
@@ -15,7 +15,7 @@ const workflowTemplateCardProps = {
   disabled: false,
   icon: (
     <span className="honour-icon">
-      <IconHonour />
+      <HonourFilled />
     </span>
   ),
   arrow: StepInfoArrowEnum.none,

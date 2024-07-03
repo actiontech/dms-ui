@@ -5,12 +5,12 @@ import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/comm
 import { useMemo } from 'react';
 import { Space } from 'antd';
 import {
-  IconLevelError,
-  IconLevelNormal,
-  IconLevelNotice,
-  IconLevelWarn
-} from '@actiontech/shared/lib/Icon/LevelIcon';
-import { IconWorkflowAuditResultSuccess } from '../../../../../../../../../icon/SqlExecWorkflow';
+  ProfileSquareFilled,
+  ExclamationHexagonFilled,
+  WarningFilled,
+  CheckCircleFilled,
+  CloseCircleFilled
+} from '@actiontech/icons';
 
 export interface AuditResultTagProps {
   auditResult?: IAuditResult[];
@@ -48,7 +48,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
       <BasicTag
         color="green"
         size="large"
-        icon={<IconWorkflowAuditResultSuccess />}
+        icon={<CheckCircleFilled />}
         bordered={false}
       >
         {t('execWorkflow.audit.auditSuccess')}
@@ -61,7 +61,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
           <BasicTag
             color="gray"
             size="large"
-            icon={<IconLevelNormal />}
+            icon={<ProfileSquareFilled width={18} height={19} />}
             bordered={false}
           >
             {noticeResult.length}
@@ -71,7 +71,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
           <BasicTag
             color="blue"
             size="large"
-            icon={<IconLevelNotice />}
+            icon={<ExclamationHexagonFilled width={18} height={19} />}
             bordered={false}
           >
             {noticeResult.length}
@@ -81,7 +81,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
           <BasicTag
             color="orange"
             size="large"
-            icon={<IconLevelWarn />}
+            icon={<WarningFilled width={18} height={19} />}
             bordered={false}
           >
             {warnResult.length}
@@ -91,7 +91,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
           <BasicTag
             color="red"
             size="large"
-            icon={<IconLevelError />}
+            icon={<CloseCircleFilled />}
             bordered={false}
           >
             {errorResult.length}

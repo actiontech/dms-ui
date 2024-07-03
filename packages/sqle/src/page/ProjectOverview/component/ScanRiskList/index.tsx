@@ -11,11 +11,11 @@ import TableTopList, {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { IcoScanId } from '../../../../icon/Scan';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { ScanTaskFilled } from '@actiontech/icons';
 
 const ScanRiskList = () => {
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ const ScanRiskList = () => {
           return (
             <TableColumnWithIconStyleWrapper>
               <span>
-                <IcoScanId />
+                <ScanTaskFilled />
               </span>
               <Link
                 data-testid="report-time"

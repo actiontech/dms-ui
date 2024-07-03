@@ -50,22 +50,17 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -78,7 +73,7 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -89,22 +84,18 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -128,22 +119,17 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -573,22 +559,17 @@ exports[`page/Audit/ServiceAudit render action when click detail drawer 1`] = `
                       class="ant-space-item"
                       style="margin-right: 8px; padding-bottom: 8px;"
                     >
-                      <span
-                        class="custom-icon css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9 15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.4087 14.3679 5.88258 13.2426 4.75736C12.1174 3.63214 10.5913 3 9 3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.5913 3.63214 12.1174 4.75736 13.2426C5.88258 14.3679 7.4087 15 9 15ZM9.75 9H12.75V10.5H8.25V5.25H9.75V9Z"
-                            fill="#8A8F99"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
+                          fill="#8A8F99"
+                        />
+                      </svg>
                     </div>
                     <div
                       class="ant-space-item"
@@ -753,22 +734,17 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -781,7 +757,7 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -792,22 +768,18 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -831,22 +803,17 @@ exports[`page/Audit/ServiceAudit render column service_audit 1`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1240,22 +1207,17 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -1268,7 +1230,7 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -1279,22 +1241,18 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -1319,22 +1277,17 @@ exports[`page/Audit/ServiceAudit render init snap 1`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1565,22 +1518,17 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -1593,7 +1541,7 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -1604,22 +1552,18 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -1643,22 +1587,17 @@ exports[`page/Audit/ServiceAudit render init snap 2`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -1865,22 +1804,17 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -1893,7 +1827,7 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -1904,22 +1838,18 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -1943,22 +1873,17 @@ exports[`page/Audit/ServiceAudit render table list when api return data 1`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>
@@ -2452,22 +2377,17 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
                     <span
                       class="ant-input-suffix"
                     >
-                      <span
-                        class="custom-icon custom-icon-search css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
                     </span>
                   </span>
                 </div>
@@ -2480,7 +2400,7 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
@@ -2491,22 +2411,18 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
                       <div
                         class="ant-space-item"
                       >
-                        <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                             fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                            />
-                          </svg>
-                        </span>
+                          />
+                        </svg>
                       </div>
                     </div>
                   </button>
@@ -2530,22 +2446,17 @@ exports[`page/Audit/ServiceAudit render table list when api return error 1`] = `
                     <span
                       class="ant-btn-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-refresh css-u3jcp4"
-                        role="img"
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
                     </span>
                   </button>
                 </div>

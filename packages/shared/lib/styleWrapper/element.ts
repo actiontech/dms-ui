@@ -129,6 +129,10 @@ export const TableColumnWithIconStyleWrapper = styled('div')`
   display: flex;
   align-items: center;
 
+  svg {
+    margin-right: 12px;
+  }
+
   span {
     margin-right: 12px;
 
@@ -182,5 +186,32 @@ export const FormItemWithExtraStyleWrapper = styled(Form.Item)`
     background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
     font-size: 12px;
     line-height: 20px;
+  }
+`;
+
+export const CommonIconStyleWrapper = styled('span')`
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+
+  svg {
+    display: inline-block;
+  }
+
+  * {
+    line-height: 1;
+  }
+
+  &.custom-icon-spin-dot {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 50%;
+    margin: -10px;
   }
 `;

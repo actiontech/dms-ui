@@ -8,7 +8,6 @@ import {
   PageHeader,
   SegmentedTabs
 } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { ModalName } from '../../data/ModalName';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
@@ -20,6 +19,7 @@ import useCurrentUser from '../../hooks/useCurrentUser';
 import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 import { AdminRolePermission } from '../../data/enum';
 import { SearchInput } from '@actiontech/shared/lib/components/ActiontechTable';
+import { PlusOutlined } from '@actiontech/icons';
 
 const MonitorSourceConfig: React.FC = () => {
   const { t } = useTranslation();
@@ -60,7 +60,7 @@ const MonitorSourceConfig: React.FC = () => {
         >
           <BasicButton
             type="primary"
-            icon={<IconAdd />}
+            icon={<PlusOutlined width={12} height={12} color="currentColor" />}
             onClick={() => {
               handleClick(ModalName.Add_Server_Monitor);
             }}
@@ -79,7 +79,7 @@ const MonitorSourceConfig: React.FC = () => {
         >
           <BasicButton
             type="primary"
-            icon={<IconAdd />}
+            icon={<PlusOutlined width={12} height={12} color="currentColor" />}
             onClick={() => {
               handleClick(ModalName.Add_Database_Monitor);
             }}

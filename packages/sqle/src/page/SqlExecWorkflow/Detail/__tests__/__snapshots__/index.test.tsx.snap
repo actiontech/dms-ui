@@ -32,14 +32,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                       class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                           fill="currentColor"
                         />
                       </svg>
@@ -216,24 +215,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                         style="margin-right: 5px;"
                       >
                         <span
-                          class="custom-icon  css-u3jcp4"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="none"
                             height="14"
                             viewBox="0 0 14 14"
                             width="14"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g
-                              id="layout-bottom-2-line"
-                            >
-                              <path
-                                d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                                fill="#292C33"
-                                id="Vector"
-                              />
-                            </g>
+                            <path
+                              d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                              fill="#292C33"
+                            />
                           </svg>
                         </span>
                       </div>
@@ -247,18 +240,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -557,14 +550,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                           fill="currentColor"
                         />
                       </svg>
@@ -686,73 +678,70 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -820,7 +809,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                         type="button"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
                         >
                           <div
                             class="ant-space-item"
@@ -831,22 +820,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                           <div
                             class="ant-space-item"
                           >
-                            <span
-                              class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                              role="img"
+                            <svg
+                              color="currrentColor"
+                              height="14"
+                              viewBox="0 0 16 16"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                                 fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                                />
-                              </svg>
-                            </span>
+                              />
+                            </svg>
                           </div>
                         </div>
                       </button>
@@ -874,33 +859,26 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                         type="button"
                       >
+                        <span
+                          class="ant-btn-icon"
+                        >
+                          <svg
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                            />
+                          </svg>
+                        </span>
                         <div
                           class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span
-                              class="custom-icon custom-icon-download css-u3jcp4"
-                              role="img"
-                            >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                                />
-                              </svg>
-                            </span>
-                          </div>
                           <div
                             class="ant-space-item"
                             style="margin-right: 5px;"
@@ -911,18 +889,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                              role="img"
+                              class="css-u3jcp4"
                             >
                               <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
+                                color="currentColor"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                                  d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                  fill="currentColor"
                                 />
                               </svg>
                             </span>
@@ -943,24 +921,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                         style="margin-right: 5px;"
                       >
                         <span
-                          class="custom-icon  css-u3jcp4"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="none"
                             height="14"
                             viewBox="0 0 14 14"
                             width="14"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g
-                              id="layout-bottom-2-line"
-                            >
-                              <path
-                                d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                                fill="#292C33"
-                                id="Vector"
-                              />
-                            </g>
+                            <path
+                              d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                              fill="#292C33"
+                            />
                           </svg>
                         </span>
                       </div>
@@ -974,18 +946,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -1213,23 +1185,19 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                   <div
                                     class="css-3q8fl"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                          stroke="#7453DA"
-                                          stroke-width="1.5"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                        stroke="#7453DA"
+                                        stroke-width="1.5"
+                                      />
+                                    </svg>
                                     <span>
                                       待审核
                                     </span>
@@ -1370,14 +1338,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                           fill="currentColor"
                         />
                       </svg>
@@ -1499,73 +1466,70 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -1681,7 +1645,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                         type="button"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
                         >
                           <div
                             class="ant-space-item"
@@ -1692,22 +1656,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                           <div
                             class="ant-space-item"
                           >
-                            <span
-                              class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                              role="img"
+                            <svg
+                              color="currrentColor"
+                              height="14"
+                              viewBox="0 0 16 16"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                                 fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-                                />
-                              </svg>
-                            </span>
+                              />
+                            </svg>
                           </div>
                         </div>
                       </button>
@@ -1735,33 +1695,26 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                         type="button"
                       >
+                        <span
+                          class="ant-btn-icon"
+                        >
+                          <svg
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                            />
+                          </svg>
+                        </span>
                         <div
                           class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span
-                              class="custom-icon custom-icon-download css-u3jcp4"
-                              role="img"
-                            >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                                />
-                              </svg>
-                            </span>
-                          </div>
                           <div
                             class="ant-space-item"
                             style="margin-right: 5px;"
@@ -1772,18 +1725,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                             class="ant-space-item"
                           >
                             <span
-                              class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                              role="img"
+                              class="css-u3jcp4"
                             >
                               <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
+                                color="currentColor"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                                  d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                  fill="currentColor"
                                 />
                               </svg>
                             </span>
@@ -1804,24 +1757,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                         style="margin-right: 5px;"
                       >
                         <span
-                          class="custom-icon  css-u3jcp4"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="none"
                             height="14"
                             viewBox="0 0 14 14"
                             width="14"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g
-                              id="layout-bottom-2-line"
-                            >
-                              <path
-                                d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                                fill="#292C33"
-                                id="Vector"
-                              />
-                            </g>
+                            <path
+                              d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                              fill="#292C33"
+                            />
                           </svg>
                         </span>
                       </div>
@@ -1835,18 +1782,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -2074,23 +2021,19 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                   <div
                                     class="css-3q8fl"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                          stroke="#7453DA"
-                                          stroke-width="1.5"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                        stroke="#7453DA"
+                                        stroke-width="1.5"
+                                      />
+                                    </svg>
                                     <span>
                                       待审核
                                     </span>
@@ -2231,14 +2174,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
                         height="16"
                         viewBox="0 0 16 16"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                           fill="currentColor"
                         />
                       </svg>
@@ -2359,73 +2301,70 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
               <div
                 class="workflow-base-info-status"
               >
-                <span
-                  class="icon-workflow-status-wrapper css-u3jcp4"
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="55"
-                    viewBox="0 0 74 55"
-                    width="74"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
                   >
-                    <g
-                      filter="url(#filter0_d_1360_13602)"
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
                     >
-                      <path
-                        d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
-                        fill="currentColor"
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
                       />
-                    </g>
-                    <defs>
-                      <filter
-                        color-interpolation-filters="sRGB"
-                        filterUnits="userSpaceOnUse"
-                        height="57.2961"
-                        id="filter0_d_1360_13602"
-                        width="74"
-                        x="0"
-                        y="-3"
-                      >
-                        <feflood
-                          flood-opacity="0"
-                          result="BackgroundImageFix"
-                        />
-                        <fecolormatrix
-                          in="SourceAlpha"
-                          result="hardAlpha"
-                          type="matrix"
-                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                        />
-                        <feoffset
-                          dy="2"
-                        />
-                        <fegaussianblur
-                          stdDeviation="2.5"
-                        />
-                        <fecomposite
-                          in2="hardAlpha"
-                          operator="out"
-                        />
-                        <fecolormatrix
-                          type="matrix"
-                          values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
-                        />
-                        <feblend
-                          in2="BackgroundImageFix"
-                          mode="normal"
-                          result="effect1_dropShadow_2935_18512"
-                        />
-                        <feblend
-                          in="SourceGraphic"
-                          in2="effect1_dropShadow_2935_18512"
-                          mode="normal"
-                          result="shape"
-                        />
-                      </filter>
-                    </defs>
-                  </svg>
-                </span>
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <span
                   class="workflow-base-info-status-text"
                 >
@@ -2447,14 +2386,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
               class="css-rbyh4u"
             >
               <svg
-                fill="none"
                 height="24"
                 viewBox="0 0 24 24"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M21 11.6736C20.0907 11.2417 19.0736 11 18 11C14.134 11 11 14.134 11 18C11 19.4872 11.4638 20.8662 12.2547 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H16L21 7V11.6736ZM18 23C15.2386 23 13 20.7614 13 18C13 15.2386 15.2386 13 18 13C20.7614 13 23 15.2386 23 18C23 20.7614 20.7614 23 18 23ZM16.7066 20.7076C17.0982 20.895 17.5369 21 18 21C19.6569 21 21 19.6569 21 18C21 17.5369 20.895 17.0982 20.7076 16.7066L16.7066 20.7076ZM15.2924 19.2934L19.2934 15.2924C18.9018 15.105 18.4631 15 18 15C16.3431 15 15 16.3431 15 18C15 18.4631 15.105 18.9018 15.2924 19.2934Z"
+                  d="M21 11.674A7 7 0 0 0 12.255 22H3.993A1 1 0 0 1 3 21.008V2.992C3 2.444 3.445 2 3.993 2H16l5 5zM18 23a5 5 0 1 1 0-10 5 5 0 0 1 0 10m-1.293-2.292a3 3 0 0 0 4.001-4.001zm-1.415-1.415 4.001-4a3 3 0 0 0-4.001 4.001"
                   fill="#EBAD1C"
                 />
               </svg>
@@ -2642,24 +2580,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                         style="margin-right: 5px;"
                       >
                         <span
-                          class="custom-icon  css-u3jcp4"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="none"
                             height="14"
                             viewBox="0 0 14 14"
                             width="14"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g
-                              id="layout-bottom-2-line"
-                            >
-                              <path
-                                d="M12.2501 1.75C12.5723 1.75 12.8334 2.01117 12.8334 2.33333V11.6667C12.8334 11.9888 12.5723 12.25 12.2501 12.25H1.75008C1.42792 12.25 1.16675 11.9888 1.16675 11.6667V2.33333C1.16675 2.01117 1.42792 1.75 1.75008 1.75H12.2501ZM11.6667 2.91667H2.33341V11.0833H11.6667V2.91667ZM10.5001 8.75V9.91667H3.50008V8.75H10.5001Z"
-                                fill="#292C33"
-                                id="Vector"
-                              />
-                            </g>
+                            <path
+                              d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                              fill="#292C33"
+                            />
                           </svg>
                         </span>
                       </div>
@@ -2673,18 +2605,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -2912,29 +2844,25 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                   <div
                                     class="css-3q8fl"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                          stroke="#41BF9A"
-                                          stroke-width="1.5"
-                                        />
-                                        <path
-                                          d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                                          stroke="#41BF9A"
-                                          stroke-linejoin="round"
-                                          stroke-width="1.5"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                        stroke="#41BF9A"
+                                        stroke-width="1.5"
+                                      />
+                                      <path
+                                        d="m5.083 8 2.084 2.083 4.166-4.166"
+                                        stroke="#41BF9A"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                      />
+                                    </svg>
                                     <span>
                                       上线成功
                                     </span>
@@ -3041,29 +2969,25 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                   <div
                                     class="css-3q8fl"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                          stroke="#6094FC"
-                                          stroke-width="1.5"
-                                        />
-                                        <path
-                                          clip-rule="evenodd"
-                                          d="M7.99995 3.15466V7.99996L3.79321 10.4038C3.87976 10.5615 4.00868 10.6956 4.16982 10.7886L7.49995 12.7113C7.80935 12.8899 8.19055 12.8899 8.49995 12.7113L11.8301 10.7886C12.1395 10.61 12.3301 10.2799 12.3301 9.92261V6.07731C12.3301 5.72005 12.1395 5.38992 11.8301 5.21129L8.49995 3.28864C8.34525 3.19932 8.1726 3.15466 7.99995 3.15466Z"
-                                          fill="#6094FC"
-                                          fill-rule="evenodd"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                        stroke="#6094FC"
+                                        stroke-width="1.5"
+                                      />
+                                      <path
+                                        clip-rule="evenodd"
+                                        d="M8 3.155V8l-4.207 2.404a1 1 0 0 0 .377.385L7.5 12.71a1 1 0 0 0 1 0l3.33-1.922a1 1 0 0 0 .5-.866V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+                                        fill="#6094FC"
+                                        fill-rule="evenodd"
+                                      />
+                                    </svg>
                                     <span>
                                       正在上线
                                     </span>
@@ -3160,33 +3084,19 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                   <div
                                     class="css-3q8fl"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                                          stroke="#F59957"
-                                          stroke-width="1.5"
-                                        />
-                                        <path
-                                          d="M8 10L8 12"
-                                          stroke="#F59957"
-                                          stroke-width="1.5"
-                                        />
-                                        <path
-                                          d="M8 4L8.00415 8.5"
-                                          stroke="#F59957"
-                                          stroke-width="1.5"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                        stroke="#F59957"
+                                        stroke-width="1.5"
+                                      />
+                                    </svg>
                                     <span>
                                       上线失败
                                     </span>
@@ -3302,22 +3212,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 >
                   工单信息
                 </span>
-                <span
-                  class="custom-icon custom-icon-close css-u3jcp4"
-                  role="img"
+                <svg
+                  class="custom-icon-close"
+                  height="16"
+                  viewBox="0 0 14 14"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="currentColor"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    width="14"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
               </div>
               <div
                 class="workflow-steps-basic-info"
@@ -3379,17 +3284,16 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="custom-icon css-u3jcp4"
+                        class="css-u3jcp4"
                       >
                         <svg
-                          fill="none"
                           height="18"
                           viewBox="0 0 18 18"
                           width="18"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9 15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.4087 14.3679 5.88258 13.2426 4.75736C12.1174 3.63214 10.5913 3 9 3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.5913 3.63214 12.1174 4.75736 13.2426C5.88258 14.3679 7.4087 15 9 15ZM9.75 9H12.75V10.5H8.25V5.25H9.75V9Z"
+                            d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
                             fill="#8A8F99"
                           />
                         </svg>
@@ -3418,28 +3322,19 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     <div
                       class="css-3q8fl"
                     >
-                      <span
-                        class="custom-icon css-u3jcp4"
+                      <svg
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                            stroke="#EBAD1C"
-                            stroke-width="1.5"
-                          />
-                          <path
-                            d="M5 8H11"
-                            stroke="#EBAD1C"
-                            stroke-width="1.5"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM5 8h6"
+                          stroke="#EBAD1C"
+                          stroke-width="1.5"
+                        />
+                      </svg>
                       <span>
                         已驳回
                       </span>
@@ -3474,14 +3369,15 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                           class="ant-steps-icon"
                         >
                           <svg
-                            fill="none"
+                            color="currentColor"
+                            fill="currentColor"
                             height="16"
                             viewBox="0 0 16 16"
                             width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                              d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                               fill="currentColor"
                             />
                           </svg>
@@ -3553,22 +3449,18 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                         <span
                           class="ant-steps-icon"
                         >
-                          <span
-                            class="icon-failed-workflow-step css-u3jcp4"
+                          <svg
+                            color="#edb054"
+                            fill="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                                fill="#edb054"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                            />
+                          </svg>
                         </span>
                       </div>
                       <div
@@ -3644,22 +3536,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                         <span
                           class="ant-steps-icon"
                         >
-                          <span
-                            class="icon-failed-workflow-step css-u3jcp4"
+                          <svg
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M7.99998 14.6663C4.31798 14.6663 1.33331 11.6817 1.33331 7.99967C1.33331 4.31767 4.31798 1.33301 7.99998 1.33301C11.682 1.33301 14.6666 4.31767 14.6666 7.99967C14.6666 11.6817 11.682 14.6663 7.99998 14.6663ZM7.99998 7.05701L6.11465 5.17101L5.17131 6.11434L7.05731 7.99967L5.17131 9.88501L6.11465 10.8283L7.99998 8.94234L9.88531 10.8283L10.8286 9.88501L8.94265 7.99967L10.8286 6.11434L9.88531 5.17101L7.99998 7.05701Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                              fill="#F66074"
+                            />
+                          </svg>
                         </span>
                       </div>
                       <div

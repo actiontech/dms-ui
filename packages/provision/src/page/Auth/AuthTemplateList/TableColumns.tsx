@@ -8,9 +8,8 @@ import {
   ActiontechTableColumn,
   ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IconAuthTemplateName } from '../../../icon/AuthTemplate';
-import Icon from '@ant-design/icons';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BriefcaseFilled } from '@actiontech/icons';
 
 export const AuthTemplateListTableColumns: (
   projectID: string
@@ -21,7 +20,7 @@ export const AuthTemplateListTableColumns: (
     render: (name: string) => {
       return (
         <TableColumnWithIconStyleWrapper>
-          <Icon component={IconAuthTemplateName} />
+          <BriefcaseFilled width={14} height={14} />
           <span>{name ?? '-'}</span>
         </TableColumnWithIconStyleWrapper>
       );

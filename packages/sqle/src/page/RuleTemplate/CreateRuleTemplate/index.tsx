@@ -1,10 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import { Space } from 'antd';
 import { RuleTemplateContStyleWrapper } from './style';
 import RuleTemplateForm from '../RuleTemplateForm';
@@ -18,6 +14,7 @@ import {
   useCreateRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -85,7 +82,7 @@ const CreateRuleTemplate = () => {
         title={
           <BasicButton
             onClick={onGotoRuleTemplateList}
-            icon={<IconLeftArrow />}
+            icon={<LeftArrowOutlined />}
           >
             {t('ruleTemplate.backToList')}
           </BasicButton>
@@ -141,7 +138,7 @@ const CreateRuleTemplate = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('ruleTemplate.createRuleTemplate.successTitle')}
           extra={[
             <BasicButton key="re-create-new-rule-template" onClick={resetAll}>

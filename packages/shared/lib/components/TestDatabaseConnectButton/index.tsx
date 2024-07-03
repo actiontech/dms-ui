@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import EmptyBox from '../EmptyBox';
 import { TestDatabaseConnectButtonProps } from './index.type';
 import BasicButton from '../BasicButton';
-import { IconFailed, IconSucceeded } from '../../Icon/common';
 import {
   TestConnectDisableReasonStyleWrapper,
   TestConnectResultStyleWrapper
 } from './style';
 import BasicToolTips from '../BasicToolTips';
+import { CloseCircleOutlined, CheckCircleOutlined } from '@actiontech/icons';
 
 const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
   props
@@ -37,7 +37,7 @@ const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
         )}
         {!props.loading && props.connectAble && (
           <TestConnectResultStyleWrapper success>
-            <IconSucceeded />
+            <CheckCircleOutlined className="custom-icon" />
             {t('common.testDatabaseConnectButton.testSuccess')}
           </TestConnectResultStyleWrapper>
         )}
@@ -50,7 +50,7 @@ const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
             }
           >
             <TestConnectResultStyleWrapper success={false}>
-              <IconFailed />
+              <CloseCircleOutlined className="custom-icon" />
               {t('common.testDatabaseConnectButton.testFailed')}
             </TestConnectResultStyleWrapper>
           </BasicToolTips>

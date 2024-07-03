@@ -37,14 +37,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                     fill="currentColor"
                   />
                 </svg>
@@ -96,21 +95,25 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon account-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
-                fill="#c3c6cd"
-                height="28"
+                aria-hidden="true"
+                class=""
+                fill="currentColor"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -810,7 +813,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                                 class="ant-btn-icon"
                               >
                                 <span
-                                  class="custom-icon css-u3jcp4"
+                                  class="css-u3jcp4"
                                 >
                                   <svg
                                     fill="none"
@@ -1037,31 +1040,26 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
-                <span
-                  class="custom-icon custom-icon-selected css-u3jcp4"
-                  role="img"
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    id="selected"
                   >
-                    <g
-                      id="selected"
-                    >
-                      <path
-                        d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
-                        id="Vector"
-                        stroke="#4583FF"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                    <path
+                      d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
+                      id="Vector"
+                      stroke="#4583FF"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </g>
+                </svg>
               </div>
               <div
                 class="ant-space-item"
@@ -1933,14 +1931,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                               class="ant-btn-icon"
                             >
                               <svg
-                                fill="none"
                                 height="16"
                                 viewBox="0 0 16 16"
                                 width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00004C0.333496 3.31804 3.31816 0.333374 7.00016 0.333374C10.6822 0.333374 13.6668 3.31804 13.6668 7.00004C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM6.3335 6.33337H3.66683V7.66671H6.3335V10.3334H7.66683V7.66671H10.3335V6.33337H7.66683V3.66671H6.3335V6.33337Z"
+                                  d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                                   fill="#4583FF"
                                 />
                               </svg>
@@ -2202,7 +2199,7 @@ exports[`provision/DatabaseAccount/Create create account 2`] = `
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
               >
                 database-1.table-1
               </span>
@@ -2219,7 +2216,7 @@ exports[`provision/DatabaseAccount/Create create account 2`] = `
               class="ant-space-item"
             >
               <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
               >
                 查询
               </span>
@@ -2307,14 +2304,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                     fill="currentColor"
                   />
                 </svg>
@@ -2366,21 +2362,25 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon account-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
-                fill="#c3c6cd"
-                height="28"
+                aria-hidden="true"
+                class=""
+                fill="currentColor"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -3080,7 +3080,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                 class="ant-btn-icon"
                               >
                                 <span
-                                  class="custom-icon css-u3jcp4"
+                                  class="css-u3jcp4"
                                 >
                                   <svg
                                     fill="none"
@@ -3266,7 +3266,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                               class="ant-space-item"
                                             >
                                               <span
-                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                                               >
                                                 database-1.table-1
                                               </span>
@@ -3283,7 +3283,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                               class="ant-space-item"
                                             >
                                               <span
-                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                                               >
                                                 查询
                                               </span>
@@ -3370,31 +3370,26 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
-                <span
-                  class="custom-icon custom-icon-selected css-u3jcp4"
-                  role="img"
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <g
+                    id="selected"
                   >
-                    <g
-                      id="selected"
-                    >
-                      <path
-                        d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
-                        id="Vector"
-                        stroke="#4583FF"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </g>
-                  </svg>
-                </span>
+                    <path
+                      d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
+                      id="Vector"
+                      stroke="#4583FF"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </g>
+                </svg>
               </div>
               <div
                 class="ant-space-item"
@@ -4263,14 +4258,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                               class="ant-btn-icon"
                             >
                               <svg
-                                fill="none"
                                 height="16"
                                 viewBox="0 0 16 16"
                                 width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00004C0.333496 3.31804 3.31816 0.333374 7.00016 0.333374C10.6822 0.333374 13.6668 3.31804 13.6668 7.00004C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM6.3335 6.33337H3.66683V7.66671H6.3335V10.3334H7.66683V7.66671H10.3335V6.33337H7.66683V3.66671H6.3335V6.33337Z"
+                                  d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                                   fill="#4583FF"
                                 />
                               </svg>
@@ -4540,14 +4534,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 class="ant-btn-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                     fill="currentColor"
                   />
                 </svg>
@@ -4599,21 +4592,25 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon account-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
-                fill="#c3c6cd"
-                height="28"
+                aria-hidden="true"
+                class=""
+                fill="currentColor"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -5306,7 +5303,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                                 class="ant-btn-icon"
                               >
                                 <span
-                                  class="custom-icon css-u3jcp4"
+                                  class="css-u3jcp4"
                                 >
                                   <svg
                                     fill="none"

@@ -11,7 +11,6 @@ import { switchFieldName } from './index.data';
 
 import { ISMTPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { BasicToolTips } from '@actiontech/shared';
-import { IconTipGray } from '@actiontech/shared/lib/Icon';
 
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import ConfigSwitch from '../../components/ConfigSwitch';
@@ -22,9 +21,12 @@ import ConfigExtraButtons from './components/ConfigExtraButtons';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+import { InfoCircleOutlined } from '@actiontech/icons';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 const SMTPSetting = () => {
   const { t } = useTranslation();
+  const { baseTheme } = useThemeStyleData();
 
   const {
     form,
@@ -83,7 +85,13 @@ const SMTPSetting = () => {
           label: (
             <BasicToolTips
               title={t('dmsSystem.smtp.skipVerifyTips')}
-              suffixIcon={<IconTipGray />}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
             >
               {t('dmsSystem.smtp.isSkipVerify')}
             </BasicToolTips>
@@ -94,7 +102,7 @@ const SMTPSetting = () => {
           render: (val) => <>{!!val ? t('common.true') : t('common.false')}</>
         }
       ];
-    }, [t, smtpInfo]);
+    }, [t, smtpInfo, baseTheme]);
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();

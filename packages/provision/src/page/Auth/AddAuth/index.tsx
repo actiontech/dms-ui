@@ -33,12 +33,9 @@ import {
   CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
 import { AddAuthFormFields } from './index.type';
-import {
-  IconSuccessResult,
-  IconLeftArrow
-} from '@actiontech/shared/lib/Icon/common';
 import { FormValidatorRule } from '@actiontech/shared/lib/types/common.type';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const AddAuth: React.FC = () => {
   const { t } = useTranslation();
@@ -184,7 +181,10 @@ const AddAuth: React.FC = () => {
       <PageHeader
         fixed
         title={
-          <BasicButton onClick={() => navigate(-1)} icon={<IconLeftArrow />}>
+          <BasicButton
+            onClick={() => navigate(-1)}
+            icon={<LeftArrowOutlined />}
+          >
             {t('auth.addAuth.backAuthList')}
           </BasicButton>
         }
@@ -332,7 +332,7 @@ const AddAuth: React.FC = () => {
         }
       >
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('auth.addAuth.result.success')}
           subTitle={
             <>

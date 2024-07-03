@@ -33,6 +33,10 @@ export type LoginTheme = {
   logo: {
     boxShadow: string;
   };
+  icon: {
+    user: string;
+    password: string;
+  };
 };
 
 export type UserManagementTheme = {

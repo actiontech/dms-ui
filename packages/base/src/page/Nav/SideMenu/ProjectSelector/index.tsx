@@ -5,7 +5,6 @@ import { InputRef, SelectProps } from 'antd';
 import { BasicButton, EmptyBox } from '@actiontech/shared';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
-import { IconRightArrowSelectSuffix } from '@actiontech/shared/lib/Icon';
 import {
   ProjectSelectorPopupMenuStyleWrapper,
   ProjectSelectorStyleWrapper
@@ -14,6 +13,7 @@ import { CustomSelectPopupMenuStyleWrapper } from '@actiontech/shared/lib/compon
 import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
 import { fuzzySearchAndSortByWeight } from '@actiontech/shared/lib/utils/Tool';
+import { ArrowRightOutlined } from '@actiontech/icons';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -137,7 +137,9 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
         }
       }}
       options={options}
-      suffixIcon={<IconRightArrowSelectSuffix />}
+      suffixIcon={
+        <ArrowRightOutlined className="custom-icon-right-arrow-select-suffix" />
+      }
       popupMatchSelectWidth={240}
       bordered={false}
       notFoundContent={

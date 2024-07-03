@@ -1,18 +1,18 @@
 import {
-  IconAuditStatusIsCreated,
-  IconAuditStatusIsDeleted,
-  IconAuditStatusIsUpdated
-} from '~/icon/audit';
+  AdvancedHexagonFilled,
+  CheckHexagonOutlined,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
 
 const AuditActionIcon: React.FC<{ value: string | undefined }> = ({
   value
 }) => {
   if (value && /_created$/.test(value)) {
-    return <IconAuditStatusIsCreated />;
+    return <CheckHexagonOutlined />;
   } else if (value && /_deleted$/.test(value)) {
-    return <IconAuditStatusIsDeleted />;
+    return <InfoHexagonOutlined />;
   } else if (value && /_updated$/.test(value)) {
-    return <IconAuditStatusIsUpdated />;
+    return <AdvancedHexagonFilled />;
   }
   return null;
 };

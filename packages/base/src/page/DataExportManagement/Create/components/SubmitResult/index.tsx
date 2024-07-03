@@ -1,5 +1,4 @@
 import { BasicButton, BasicResult } from '@actiontech/shared';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -11,7 +10,7 @@ const ExportWorkflowSubmitResult: React.FC = () => {
   const { formValues, workflowID } = useCreateDataExportReduxManage();
   return (
     <BasicResult
-      icon={<IconSuccessResult />}
+      status="success"
       title={t('dmsDataExport.create.result.success')}
       subTitle={formValues?.baseValues.desc}
       extra={[

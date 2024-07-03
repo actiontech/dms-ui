@@ -4,6 +4,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { Form } from 'antd';
 import ConfigField from './ConfigField';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/LoginConnection/LDAPSetting/ConfigField', () => {
   const customRender = () => {
@@ -15,6 +16,7 @@ describe('base/System/LoginConnection/LDAPSetting/ConfigField', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

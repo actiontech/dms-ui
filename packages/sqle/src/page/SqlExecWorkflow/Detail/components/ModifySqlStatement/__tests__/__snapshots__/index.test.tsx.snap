@@ -26,14 +26,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -66,21 +65,25 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
-                    class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+                    class="anticon title-icon"
+                    role="img"
                   >
                     <svg
+                      aria-hidden="true"
+                      class=""
                       fill="currentColor"
-                      height="28"
+                      focusable="false"
+                      height="1em"
                       viewBox="0 0 24 28"
-                      width="24"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                        fill="#c3c6cd"
+                        d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </span>
@@ -101,32 +104,29 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <span
-                          class="custom-icon-ellipse css-u3jcp4"
+                        <svg
+                          class="custom-icon-ellipse"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
+                          <rect
+                            fill="#E8F3FF"
                             height="16"
-                            viewBox="0 0 16 16"
+                            rx="3"
                             width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="white"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                        </span>
+                          />
+                          <circle
+                            cx="8"
+                            cy="8"
+                            fill="#fff"
+                            r="3"
+                            stroke="#4583FF"
+                            stroke-width="2"
+                          />
+                        </svg>
                         <span>
                           选择SQL语句上传方式
                         </span>
@@ -171,7 +171,6 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
-                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -179,27 +178,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -210,7 +204,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                                   class="active-icon-wrapper"
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -240,27 +234,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -272,7 +261,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -302,27 +291,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -334,7 +318,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -537,23 +521,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         <span
                           class="instance-segmented-label-icon"
                         >
-                          <span
-                            class="custom-icon custom-icon-level-warn css-u3jcp4"
-                            role="img"
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 18 19"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                                fill="#EBAD1C"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
                         </span>
                       </div>
                     </div>
@@ -587,33 +566,26 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                        />
+                      </svg>
+                    </span>
                     <div
                       class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 5px;"
-                      >
-                        <span
-                          class="custom-icon custom-icon-download css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
                       <div
                         class="ant-space-item"
                         style="margin-right: 5px;"
@@ -624,18 +596,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -924,14 +896,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -964,21 +935,25 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
-                    class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+                    class="anticon title-icon"
+                    role="img"
                   >
                     <svg
+                      aria-hidden="true"
+                      class=""
                       fill="currentColor"
-                      height="28"
+                      focusable="false"
+                      height="1em"
                       viewBox="0 0 24 28"
-                      width="24"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                        fill="#c3c6cd"
+                        d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </span>
@@ -999,32 +974,29 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <span
-                          class="custom-icon-ellipse css-u3jcp4"
+                        <svg
+                          class="custom-icon-ellipse"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
+                          <rect
+                            fill="#E8F3FF"
                             height="16"
-                            viewBox="0 0 16 16"
+                            rx="3"
                             width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="white"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                        </span>
+                          />
+                          <circle
+                            cx="8"
+                            cy="8"
+                            fill="#fff"
+                            r="3"
+                            stroke="#4583FF"
+                            stroke-width="2"
+                          />
+                        </svg>
                         <span>
                           选择SQL语句上传方式
                         </span>
@@ -1069,7 +1041,6 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
-                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -1077,27 +1048,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -1108,7 +1074,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   class="active-icon-wrapper"
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -1138,27 +1104,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -1170,7 +1131,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -1200,27 +1161,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -1232,7 +1188,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -1435,23 +1391,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         <span
                           class="instance-segmented-label-icon"
                         >
-                          <span
-                            class="custom-icon custom-icon-level-warn css-u3jcp4"
-                            role="img"
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 18 19"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                                fill="#EBAD1C"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
                         </span>
                       </div>
                     </div>
@@ -1485,33 +1436,26 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                        />
+                      </svg>
+                    </span>
                     <div
                       class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 5px;"
-                      >
-                        <span
-                          class="custom-icon custom-icon-download css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
                       <div
                         class="ant-space-item"
                         style="margin-right: 5px;"
@@ -1522,18 +1466,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -1816,14 +1760,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -1856,21 +1799,25 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
-                    class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+                    class="anticon title-icon"
+                    role="img"
                   >
                     <svg
+                      aria-hidden="true"
+                      class=""
                       fill="currentColor"
-                      height="28"
+                      focusable="false"
+                      height="1em"
                       viewBox="0 0 24 28"
-                      width="24"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                        fill="#c3c6cd"
+                        d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </span>
@@ -1891,32 +1838,29 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <span
-                          class="custom-icon-ellipse css-u3jcp4"
+                        <svg
+                          class="custom-icon-ellipse"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
+                          <rect
+                            fill="#E8F3FF"
                             height="16"
-                            viewBox="0 0 16 16"
+                            rx="3"
                             width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="white"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                        </span>
+                          />
+                          <circle
+                            cx="8"
+                            cy="8"
+                            fill="#fff"
+                            r="3"
+                            stroke="#4583FF"
+                            stroke-width="2"
+                          />
+                        </svg>
                         <span>
                           选择SQL语句上传方式
                         </span>
@@ -1961,7 +1905,6 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
-                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -1969,27 +1912,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -2000,7 +1938,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   class="active-icon-wrapper"
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -2030,27 +1968,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -2062,7 +1995,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -2092,27 +2025,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -2124,7 +2052,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -2328,23 +2256,18 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                         <span
                           class="instance-segmented-label-icon"
                         >
-                          <span
-                            class="custom-icon custom-icon-level-warn css-u3jcp4"
-                            role="img"
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 18 19"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                                fill="#EBAD1C"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
                         </span>
                       </div>
                     </div>
@@ -2378,33 +2301,26 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                        />
+                      </svg>
+                    </span>
                     <div
                       class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 5px;"
-                      >
-                        <span
-                          class="custom-icon custom-icon-download css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
                       <div
                         class="ant-space-item"
                         style="margin-right: 5px;"
@@ -2415,18 +2331,18 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -2723,14 +2639,13 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       class="icon-wrapper"
                                     >
                                       <svg
-                                        fill="none"
                                         height="20"
                                         viewBox="0 0 20 20"
                                         width="20"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
+                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
                                           fill="#41BF9A"
                                         />
                                       </svg>
@@ -2973,14 +2888,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                      d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                       fill="currentColor"
                     />
                   </svg>
@@ -3013,21 +2927,25 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
                 >
                   <span
-                    class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+                    class="anticon title-icon"
+                    role="img"
                   >
                     <svg
+                      aria-hidden="true"
+                      class=""
                       fill="currentColor"
-                      height="28"
+                      focusable="false"
+                      height="1em"
                       viewBox="0 0 24 28"
-                      width="24"
+                      width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                        fill="#c3c6cd"
+                        d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                        fill="#C3C6CD"
                       />
                     </svg>
                   </span>
@@ -3048,32 +2966,29 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         class="ant-form-item-no-colon"
                         title=""
                       >
-                        <span
-                          class="custom-icon-ellipse css-u3jcp4"
+                        <svg
+                          class="custom-icon-ellipse"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
+                          <rect
+                            fill="#E8F3FF"
                             height="16"
-                            viewBox="0 0 16 16"
+                            rx="3"
                             width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              fill="#E8F3FF"
-                              height="16"
-                              rx="3"
-                              width="16"
-                            />
-                            <circle
-                              cx="8"
-                              cy="8"
-                              fill="white"
-                              r="3"
-                              stroke="#4583FF"
-                              stroke-width="2"
-                            />
-                          </svg>
-                        </span>
+                          />
+                          <circle
+                            cx="8"
+                            cy="8"
+                            fill="#fff"
+                            r="3"
+                            stroke="#4583FF"
+                            stroke-width="2"
+                          />
+                        </svg>
                         <span>
                           选择SQL语句上传方式
                         </span>
@@ -3118,7 +3033,6 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
-                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -3126,27 +3040,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -3157,7 +3066,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   class="active-icon-wrapper"
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -3187,27 +3096,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -3219,7 +3123,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -3249,27 +3153,22 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
-                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-5exgjg"
+                                class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
                               >
                                 <span
                                   class="actiontech-mode-switcher-item-icon"
                                 >
-                                  <span
-                                    class="custom-icon  css-u3jcp4"
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 18 18"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
+                                    <path
+                                      d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                                       fill="currentColor"
-                                      height="18"
-                                      viewBox="0 0 18 18"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                        fill="currentColor"
-                                      />
-                                    </svg>
-                                  </span>
+                                    />
+                                  </svg>
                                 </span>
                                 <span
                                   class="actiontech-mode-switcher-item-text"
@@ -3281,7 +3180,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   hidden=""
                                 >
                                   <span
-                                    class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                    class="icon-mode-switcher-checked active-icon"
                                   >
                                     <svg
                                       fill="none"
@@ -3484,23 +3383,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         <span
                           class="instance-segmented-label-icon"
                         >
-                          <span
-                            class="custom-icon custom-icon-level-warn css-u3jcp4"
-                            role="img"
+                          <svg
+                            fill="none"
+                            height="14"
+                            viewBox="0 0 16 16"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 18 19"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M9.64875 2.75013L16.7934 15.1252C17.0005 15.4839 16.8776 15.9426 16.5189 16.1496C16.4049 16.2155 16.2756 16.2502 16.1439 16.2502H1.85449C1.44027 16.2502 1.10449 15.9144 1.10449 15.5002C1.10449 15.3685 1.13914 15.2392 1.20497 15.1252L8.34967 2.75013C8.55682 2.3914 9.01545 2.2685 9.37417 2.47561C9.48825 2.54143 9.5829 2.63611 9.64875 2.75013ZM8.24917 12.5002V14.0002H9.74917V12.5002H8.24917ZM8.24917 7.25013V11.0002H9.74917V7.25013H8.24917Z"
-                                fill="#EBAD1C"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
                         </span>
                       </div>
                     </div>
@@ -3534,33 +3428,26 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.75 11.083h10.5v1.167H1.75zm5.833-3.4 3.542-3.541.825.824L7 9.916 2.05 4.968l.825-.825 3.542 3.54V1.167h1.166z"
+                        />
+                      </svg>
+                    </span>
                     <div
                       class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 5px;"
-                      >
-                        <span
-                          class="custom-icon custom-icon-download css-u3jcp4"
-                          role="img"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M1.75 11.0833H12.25V12.25H1.75V11.0833ZM7.58333 7.68363L11.1247 4.14163L11.9496 4.96646L7 9.91663L2.05042 4.96704L2.87525 4.14163L6.41667 7.68246V1.16663H7.58333V7.68363Z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
                       <div
                         class="ant-space-item"
                         style="margin-right: 5px;"
@@ -3571,18 +3458,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         class="ant-space-item"
                       >
                         <span
-                          class="custom-icon custom-icon-arrow-down css-u3jcp4"
-                          role="img"
+                          class="css-u3jcp4"
                         >
                           <svg
-                            fill="currentColor"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
                             />
                           </svg>
                         </span>
@@ -3879,14 +3766,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                       class="icon-wrapper"
                                     >
                                       <svg
-                                        fill="none"
                                         height="20"
                                         viewBox="0 0 20 20"
                                         width="20"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
+                                          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
                                           fill="#41BF9A"
                                         />
                                       </svg>

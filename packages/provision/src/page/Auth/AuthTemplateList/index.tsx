@@ -26,9 +26,9 @@ import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { IListDataPermissionTemplate } from '@actiontech/shared/lib/api/provision/service/common';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { Spin } from 'antd';
 import { IEditTemplateActionTypeEnum } from '../EditTemplate/index.type';
+import { PlusOutlined } from '@actiontech/icons';
 
 const AuthTemplateList = () => {
   const { t } = useTranslation();
@@ -115,7 +115,12 @@ const AuthTemplateList = () => {
           <Link
             to={`/provision/project/${projectID}/auth/template/edit-template`}
           >
-            <BasicButton type="primary" icon={<IconAdd />}>
+            <BasicButton
+              type="primary"
+              icon={
+                <PlusOutlined color="currentColor" width={12} height={12} />
+              }
+            >
               {t('auth.button.addTemplate')}
             </BasicButton>
           </Link>

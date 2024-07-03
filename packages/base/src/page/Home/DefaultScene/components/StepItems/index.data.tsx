@@ -1,10 +1,5 @@
 import { StringDictionary } from '@actiontech/shared/lib/types/common.type';
 import { t } from '../../../../../locale/index';
-import {
-  IconStepDataQuery,
-  IconStepOperation,
-  IconStepSafetyRule
-} from '../../../../../icon/home';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
 
 import {
@@ -21,6 +16,8 @@ import {
   getDataModifyStep,
   getSQLEOperateStepItem
 } from './sqle';
+import { LockFilled, SnippetsFilled, UtilOutlined } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 import { getAuthAuditStepItems, getDatabaseAuthStep } from './provision';
 
@@ -34,15 +31,20 @@ export const AdminUserDevopsSteps: (
 ) => UserDevopsStepsFactory = ({
   navigate,
   projectID = '',
-  setOpenRulePageProjectSelectorModal
+  setOpenRulePageProjectSelectorModal,
+  iconColor
 }) => [
-  getDatabaseManagerSteps({ navigate, projectID }),
-  getMemberAndPermissionSteps({ navigate, projectID }),
+  getDatabaseManagerSteps({ navigate, projectID, iconColor }),
+  getMemberAndPermissionSteps({ navigate, projectID, iconColor }),
 
   {
     key: 'safetyRule',
     title: t('dmsHome.defaultScene.steps.safetyRule.title'),
-    icon: <IconStepSafetyRule />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <LockFilled color={iconColor} height={24} width={24} />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       // #if [sqle]
       getAuditManageStep({
@@ -65,7 +67,16 @@ export const AdminUserDevopsSteps: (
   {
     key: 'queryAndModify',
     title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
-    icon: <IconStepDataQuery />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <SnippetsFilled
+          color={iconColor}
+          fill="currentColor"
+          height={24}
+          width={24}
+        />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       getSqlEditorStep({ navigate, projectID }),
 
@@ -84,7 +95,16 @@ export const AdminUserDevopsSteps: (
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
-    icon: <IconStepOperation />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <UtilOutlined
+          color={iconColor}
+          fill="currentColor"
+          height={24}
+          width={24}
+        />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       {
         key: 'operationCheck',
@@ -110,11 +130,15 @@ export const AdminUserDevopsSteps: (
 
 export const NormalUserDevopsSteps: (
   arg: DevopsStepsProps
-) => UserDevopsStepsFactory = ({ navigate, projectID }) => [
+) => UserDevopsStepsFactory = ({ navigate, projectID, iconColor }) => [
   {
     key: 'queryAndModify',
     title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
-    icon: <IconStepDataQuery />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <SnippetsFilled color={iconColor} height={24} width={24} />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       getSqlEditorStep({ navigate, projectID }),
 
@@ -129,7 +153,16 @@ export const NormalUserDevopsSteps: (
   {
     key: 'devopsAndAudit',
     title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
-    icon: <IconStepOperation />,
+    icon: (
+      <CommonIconStyleWrapper className="step-icon">
+        <UtilOutlined
+          color={iconColor}
+          fill="currentColor"
+          height={24}
+          width={24}
+        />
+      </CommonIconStyleWrapper>
+    ),
     children: [
       {
         key: 'operationCheck',

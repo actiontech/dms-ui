@@ -5,10 +5,6 @@ import classNames from 'classnames';
 import { Space } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import RuleTemplateForm from '../RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
@@ -19,6 +15,7 @@ import {
   useUpdateRuleTemplateForm,
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -119,7 +116,7 @@ const UpdateRuleTemplate = () => {
           title={
             <BasicButton
               onClick={onGotoRuleTemplateList}
-              icon={<IconLeftArrow />}
+              icon={<LeftArrowOutlined />}
             >
               {t('ruleTemplate.backToList')}
             </BasicButton>
@@ -182,7 +179,7 @@ const UpdateRuleTemplate = () => {
         </RuleTemplateContStyleWrapper>
         <div hidden={!submitSuccessStatus}>
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('ruleTemplate.updateRuleTemplate.successTitle', {
               name: urlParams.templateName
             })}

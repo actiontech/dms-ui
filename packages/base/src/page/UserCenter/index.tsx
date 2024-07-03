@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
 import { BasicButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +14,7 @@ import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedT
 import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
+import { PlusOutlined } from '@actiontech/icons';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
@@ -60,7 +60,14 @@ const UserCenter: React.FC = () => {
         <BasicButton
           hidden={activePage !== UserCenterListEnum.user_list}
           type="primary"
-          icon={<IconAdd />}
+          icon={
+            <PlusOutlined
+              width={10}
+              height={10}
+              fill="currentColor"
+              color="currentColor"
+            />
+          }
           onClick={() => {
             handleClick(ModalName.DMS_Add_User);
           }}
@@ -71,7 +78,14 @@ const UserCenter: React.FC = () => {
         <BasicButton
           hidden={activePage !== UserCenterListEnum.role_list}
           type="primary"
-          icon={<IconAdd />}
+          icon={
+            <PlusOutlined
+              width={10}
+              height={10}
+              fill="currentColor"
+              color="currentColor"
+            />
+          }
           onClick={() => {
             handleClick(ModalName.DMS_Add_Role);
           }}

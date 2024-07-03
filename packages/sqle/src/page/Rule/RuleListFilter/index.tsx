@@ -8,7 +8,6 @@ import {
 } from '../style';
 import { useMemo, useEffect } from 'react';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
 import useRuleTemplate from '../../../hooks/useRuleTemplate';
 import useGlobalRuleTemplate from '../../../hooks/useGlobalRuleTemplate';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
@@ -16,6 +15,7 @@ import { RuleListFilterProps } from '../index.type';
 import { useLocation } from 'react-router-dom';
 import CustomSelectField from './CustomSelectFiled';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
+import { FlagFilled } from '@actiontech/icons';
 
 const RuleListFilter: React.FC<RuleListFilterProps> = ({
   setShowNorRuleTemplatePage,
@@ -38,7 +38,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
       label: (
         <RuleListProjectFilterStyleWrapper>
           <TableColumnWithIconStyleWrapper>
-            <IconProjectFlag />
+            <FlagFilled width={18} height={18} />
             <span> {v.project_name} </span>
           </TableColumnWithIconStyleWrapper>
         </RuleListProjectFilterStyleWrapper>

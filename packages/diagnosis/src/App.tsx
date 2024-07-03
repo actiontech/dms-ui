@@ -10,7 +10,8 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import {
   EmptyBox,
   HeaderProgress,
-  LocalStorageWrapper
+  LocalStorageWrapper,
+  SpinIndicator
 } from '@actiontech/shared';
 import zhCN from 'antd/es/locale/zh_CN';
 import { useNotificationContext } from '@actiontech/shared/lib/hooks';
@@ -18,7 +19,6 @@ import { StorageKey, SupportTheme } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import { ConfigProvider, theme as antdTheme, Spin } from 'antd';
 import './index.less';
-import { IconSpin } from '@actiontech/shared/lib/Icon/common';
 import { ThemeData } from './theme';
 import {
   StyleProvider,
@@ -27,7 +27,7 @@ import {
 import useGetUserInfo from './hooks/useGetUserInfo';
 import useChangeTheme from './hooks/useChangeTheme';
 
-Spin.setDefaultIndicator(<IconSpin />);
+Spin.setDefaultIndicator(<SpinIndicator />);
 
 function App() {
   const { token, theme, userId } = useSelector((state: IReduxState) => ({

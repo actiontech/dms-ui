@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowBasicInfoProps } from '../index.type';
 import { AvatarCom } from '@actiontech/shared';
-import { IconTimeLine } from '@actiontech/shared/lib/Icon/common';
 import { Space } from 'antd';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import WorkflowStatus from '../../../../List/components/WorkflowStatus';
+import { ClockCircleOutlined } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
   createTime,
@@ -34,7 +35,9 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
           {t('execWorkflow.detail.operator.baseInfo.createTime')}
         </div>
         <Space className="workflow-steps-basic-info-item-value" align="center">
-          <IconTimeLine />
+          <CommonIconStyleWrapper>
+            <ClockCircleOutlined width={18} height={18} />
+          </CommonIconStyleWrapper>
           <span>{createTime}</span>
         </Space>
       </div>

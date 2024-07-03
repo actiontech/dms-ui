@@ -4,10 +4,10 @@ import { message, Space } from 'antd';
 
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import { IconTest } from '../../../../../icon/system';
 
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ThunderBoltFilled } from '@actiontech/icons';
 
 export interface ConfigExtraButtonsProps {
   enabled: string | number | boolean;
@@ -70,7 +70,7 @@ const ConfigExtraButtons = ({
             className="system-config-button"
             loading={testTing.current}
             disabled={testTing.current}
-            icon={<IconTest />}
+            icon={<ThunderBoltFilled />}
             onClick={() => {
               if (!enabled) return;
               test();

@@ -5,16 +5,11 @@ import {
   BasicResult
 } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import { useTranslation } from 'react-i18next';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Form, Space } from 'antd';
 import { CreateAccountFormType } from '../index.type';
 import { CreateAccountFormStyleWrapper } from '../style';
-import { IconAccountCreateTitle } from '../../../icon/account';
 import BaseInfoForm from './BaseInfoForm';
 import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
@@ -24,6 +19,8 @@ import { useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import PreviewModal from './PreviewModal';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
+import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const CreateDatabaseAccount = () => {
   const { t } = useTranslation();
@@ -84,7 +81,7 @@ const CreateDatabaseAccount = () => {
         fixed
         title={
           <Link to={`/provision/project/${projectID}/database-account`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('databaseAccount.create.returnText')}
             </BasicButton>
           </Link>
@@ -111,7 +108,7 @@ const CreateDatabaseAccount = () => {
           >
             <CreateAccountFormStyleWrapper>
               <FormItemBigTitle>
-                <IconAccountCreateTitle />
+                <Icon component={BriefcaseFilled} className="title-icon" />
                 {t('databaseAccount.create.title')}
               </FormItemBigTitle>
               <BaseInfoForm />
@@ -121,7 +118,7 @@ const CreateDatabaseAccount = () => {
         }
       >
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('databaseAccount.create.result.success')}
           extra={
             <Space>

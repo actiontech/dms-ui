@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux';
 import { updateToken, updateUser } from '../../store/user';
 import LoginLayout from './components/LoginLayout';
 import { BasicInput, BasicButton } from '@actiontech/shared';
-import { IconCommonUser, IconCommonPassword } from '../../icon';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
 import auth from '../../api/auth';
+import { LockFilled, UserFilled } from '@actiontech/icons';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -75,7 +75,14 @@ const Login = () => {
             className="login-form-field"
             placeholder={t('common.username')}
             autoFocus
-            prefix={<IconCommonUser />}
+            prefix={
+              <UserFilled
+                width="18"
+                height="19"
+                className="user-filled-icon"
+                color="currentColor"
+              />
+            }
           />
         </Form.Item>
         <Form.Item
@@ -92,7 +99,9 @@ const Login = () => {
           <BasicInput.Password
             className="login-form-field"
             placeholder={t('common.password')}
-            prefix={<IconCommonPassword />}
+            prefix={
+              <LockFilled width="18" height="18" className="lock-filled-icon" />
+            }
           />
         </Form.Item>
         <Form.Item name="userAgreement" valuePropName="checked">

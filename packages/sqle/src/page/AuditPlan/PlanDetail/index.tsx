@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { PlanDetailRowStyleWrapper } from './style';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import DetailCom from './DetailCom';
 import AuditResult from './AuditResult';
 
@@ -17,6 +16,7 @@ import { PlanDetailUrlParams } from './index.type';
 import { ResponseCode } from '../../../data/common';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const PlanDetail = () => {
   const { t } = useTranslation();
@@ -58,7 +58,7 @@ const PlanDetail = () => {
       <PageHeader
         fixed
         title={
-          <BasicButton onClick={onSkipList} icon={<IconLeftArrow />}>
+          <BasicButton onClick={onSkipList} icon={<LeftArrowOutlined />}>
             {t('auditPlan.action.backButton')}
           </BasicButton>
         }

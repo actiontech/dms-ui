@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 
 import { message } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { useForm } from 'antd/es/form/Form';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
@@ -16,6 +15,7 @@ import { SQLInfoFormFields, SQLInfoFormProps } from './SQLInfoForm/index.type';
 import { ICreateSQLAuditRecordV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ISQLAuditRecordResData } from '@actiontech/shared/lib/api/sqle/service/common';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
@@ -96,7 +96,7 @@ const SqlAuditCreate = () => {
         fixed
         title={
           <Link to={`/sqle/project/${projectID}/sql-audit`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('sqlAudit.common.goBackList')}
             </BasicButton>
           </Link>

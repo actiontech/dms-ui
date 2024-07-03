@@ -26,9 +26,12 @@ import {
   verticalListSortingStrategy
 } from '@dnd-kit/sortable';
 import DraggableCard from '../../../components/DraggableCard';
+import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 
 const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
   const { t } = useTranslation();
+
+  const { sqleTheme } = useThemeStyleData();
 
   const { currentLevelData, levelText } = useGetLevelData(props?.authLevel);
 
@@ -44,14 +47,16 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
         mode: StepInfoEnum.update,
         reviewStepData: props.reviewStepData,
         execStepData: props.execStepData,
-        usernameList: props.usernameList
+        usernameList: props.usernameList,
+        theme: sqleTheme.icon
       }),
     [
       templateLevel,
       props.currentStep,
       props.execStepData,
       props.reviewStepData,
-      props.usernameList
+      props.usernameList,
+      sqleTheme
     ]
   );
 
