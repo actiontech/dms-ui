@@ -134,7 +134,7 @@ exports[`diagnosis/test role table can not check permission for no id 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -144,7 +144,7 @@ exports[`diagnosis/test role table can not check permission for no id 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -154,7 +154,7 @@ exports[`diagnosis/test role table can not check permission for no id 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               添加服务器
                             </span>
@@ -524,7 +524,7 @@ exports[`diagnosis/test role table delete role failed 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -534,7 +534,7 @@ exports[`diagnosis/test role table delete role failed 1`] = `
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -879,7 +879,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -889,7 +889,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -899,7 +899,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               添加服务器
                             </span>
@@ -981,7 +981,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -991,7 +991,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -1318,7 +1318,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -1328,7 +1328,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -1338,7 +1338,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               添加服务器
                             </span>
@@ -1420,7 +1420,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -1430,7 +1430,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -1775,7 +1775,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -1785,7 +1785,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -1795,7 +1795,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               添加服务器
                             </span>
@@ -1877,7 +1877,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -1887,7 +1887,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -2232,7 +2232,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -2242,7 +2242,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -2252,7 +2252,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               添加服务器
                             </span>
@@ -2334,7 +2334,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -2344,7 +2344,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -2689,7 +2689,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -2699,7 +2699,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
@@ -2709,7 +2709,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               添加服务器
                             </span>
@@ -2791,7 +2791,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               更新任何用户的密码
                             </span>
@@ -2801,7 +2801,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                             style="padding-bottom: 8px;"
                           >
                             <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
                             >
                               访问操作权限列表
                             </span>
