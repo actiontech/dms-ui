@@ -48,7 +48,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -217,7 +217,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -310,7 +310,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -413,6 +413,63 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           <div
             class="sub-title"
           >
+            数据源账号管理
+          </div>
+          <div
+            class="desc"
+          >
+            兼顾账号发现及管理，监控数据源账号安全
+          </div>
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    账号列表
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    临期列表
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="sub-title"
+          >
             审批流程
           </div>
           <div
@@ -499,7 +556,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -615,6 +672,44 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="sub-title"
+          >
+            数据脱敏
+          </div>
+          <div
+            class="desc"
+          >
+            开启脱敏，保障敏感数据安全
+          </div>
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
+          >
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    查看脱敏规则
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -667,7 +762,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -686,6 +781,44 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    授权审计
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    权限模板审计
+                  </div>
+                </div>
+              </button>
+            </div>
             <div
               class="ant-space-item"
               style="padding-bottom: 8px;"
@@ -765,7 +898,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -875,6 +1008,126 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     发起导出工单
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      style="flex: 0 0 40px; min-width: 0;"
+    >
+      <span
+        class="step-icon css-u3jcp4"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="icons/tool"
+          >
+            <path
+              d="M5.32992 3.271C5.95397 3.04837 6.62839 3.00745 7.27478 3.153C7.92116 3.29855 8.51296 3.62458 8.98136 4.09319C9.44977 4.5618 9.77553 5.15374 9.92079 5.8002C10.066 6.44665 10.0248 7.12105 9.80192 7.745L20.6469 18.59L18.5249 20.711L7.67992 9.867C7.05587 10.0896 6.38145 10.1305 5.73506 9.985C5.08868 9.83945 4.49688 9.51342 4.02848 9.04481C3.56008 8.5762 3.23431 7.98425 3.08905 7.3378C2.9438 6.69135 2.98502 6.01695 3.20792 5.393L5.44392 7.63C5.58229 7.77326 5.74781 7.88754 5.93081 7.96615C6.11382 8.04476 6.31065 8.08614 6.50982 8.08787C6.70899 8.08961 6.90651 8.05165 7.09085 7.97623C7.2752 7.90081 7.44268 7.78943 7.58351 7.64859C7.72435 7.50775 7.83573 7.34027 7.91115 7.15593C7.98658 6.97159 8.02453 6.77407 8.0228 6.5749C8.02107 6.37573 7.97969 6.1789 7.90107 5.99589C7.82246 5.81289 7.70819 5.64737 7.56492 5.509L5.32892 3.27L5.32992 3.271ZM15.6969 5.155L18.8789 3.387L20.2929 4.801L18.5249 7.983L16.7569 8.337L14.6369 10.458L13.2219 9.044L15.3429 6.923L15.6969 5.155ZM8.62592 12.933L10.7469 15.055L5.79692 20.005C5.52396 20.2754 5.15764 20.4308 4.7735 20.439C4.38937 20.4473 4.01671 20.3078 3.73237 20.0494C3.44804 19.791 3.27372 19.4333 3.24535 19.0501C3.21699 18.6669 3.33674 18.2875 3.57992 17.99L3.67692 17.883L8.62692 12.933H8.62592Z"
+              fill="white"
+              fill-opacity="0.6"
+              id="1"
+            />
+            <path
+              d="M15.6969 5.15499L18.8789 3.38699L20.2929 4.80099L18.5249 7.98299L16.7569 8.33699L14.6369 10.458L13.2219 9.04399L15.3429 6.92299L15.6969 5.15499ZM8.62588 12.933L10.7469 15.055L5.79688 20.005C5.52391 20.2754 5.15759 20.4308 4.77346 20.439C4.38932 20.4473 4.01666 20.3078 3.73233 20.0494C3.448 19.791 3.27367 19.4333 3.24531 19.0501C3.21694 18.6669 3.3367 18.2875 3.57988 17.99L3.67688 17.883L8.62588 12.933Z"
+              fill="white"
+              id="2"
+            />
+          </g>
+        </svg>
+      </span>
+    </div>
+    <div
+      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      style="flex-basis: auto; min-width: 0;"
+    >
+      <div
+        class="title-wrapper"
+      >
+        <div
+          class="inner-title-wrapper"
+        >
+          <div
+            class="step-index"
+          >
+            STEP2
+          </div>
+          <div
+            class="step-title"
+          >
+            运维与审计
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="sub-title"
+          >
+            操作审计
+          </div>
+          <div
+            class="desc"
+          >
+            审计平台内用户操作
+          </div>
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    授权审计
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                type="button"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    权限模板审计
                   </div>
                 </div>
               </button>
