@@ -10,9 +10,10 @@ const FilterContainer = <
 >({
   filterContainerMeta = [],
   updateTableFilterInfo,
-  filterCustomProps = new Map(),
+  filterCustomProps,
   style,
-  className
+  className,
+  inlineToolbar = false
 }: TableFilterContainerProps<T, F>) => {
   const {
     generateSelectFilter,
@@ -34,7 +35,10 @@ const FilterContainer = <
         align="center"
         className={classNames(
           className,
-          'actiontech-table-filter-container-namespace full-width-element'
+          'actiontech-table-filter-container-namespace full-width-element',
+          {
+            'actiontech-table-filter-container-inline': inlineToolbar
+          }
         )}
         wrap
         hidden={filterContainerMeta.length === 0}
@@ -45,7 +49,10 @@ const FilterContainer = <
             return generateSelectFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<keyof T, FilterCustomProps<'select'>>
+              (filterCustomProps as Map<
+                keyof T,
+                FilterCustomProps<'select'>
+              >) ?? new Map()
             );
           }
 
@@ -53,7 +60,10 @@ const FilterContainer = <
             return generateDataRangeFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<keyof T, FilterCustomProps<'date-range'>>
+              (filterCustomProps as Map<
+                keyof T,
+                FilterCustomProps<'date-range'>
+              >) ?? new Map()
             );
           }
 
@@ -61,7 +71,8 @@ const FilterContainer = <
             return generateInputFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<keyof T, FilterCustomProps<'input'>>
+              (filterCustomProps as Map<keyof T, FilterCustomProps<'input'>>) ??
+                new Map()
             );
           }
 
@@ -69,10 +80,10 @@ const FilterContainer = <
             return generateSearchInputFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<
+              (filterCustomProps as Map<
                 keyof T,
                 FilterCustomProps<'search-input'>
-              >
+              >) ?? new Map()
             );
           }
 

@@ -3,8 +3,9 @@ import { ToggleTokensProps } from './index.type';
 import { ToggleTokensStyleWrapper } from './style';
 import BasicButton from '../BasicButton';
 import { useControllableValue } from 'ahooks';
-import { Checkbox } from 'antd';
 import EmptyBox from '../EmptyBox';
+import { IconCheckoutCircle } from '../../Icon/common';
+import { useMemo } from 'react';
 
 const ToggleTokens = <V extends string | number | null = string>({
   className,
@@ -13,6 +14,9 @@ const ToggleTokens = <V extends string | number | null = string>({
   onChange,
   multiple,
   withCheckbox,
+  noStyle,
+  labelDictionary,
+  defaultValue,
   ...props
 }: ToggleTokensProps<V>) => {
   // #if [DEV]
@@ -27,10 +31,12 @@ const ToggleTokens = <V extends string | number | null = string>({
     typeof value !== 'undefined' && onChange
       ? {
           value,
-          onChange
+          onChange,
+          defaultValue
         }
       : {
-          onChange
+          onChange,
+          defaultValue
         }
   );
 
@@ -49,14 +55,49 @@ const ToggleTokens = <V extends string | number | null = string>({
     }
   };
 
+  const transformOptions = useMemo(() => {
+    return options.map((item) => {
+      if (labelDictionary) {
+        if (typeof item === 'string') {
+          return {
+            label: labelDictionary[item] ?? item,
+            value: item
+          };
+        }
+
+        return {
+          label:
+            typeof item.label === 'string'
+              ? labelDictionary[item.label] ?? item.label
+              : item.label,
+          value: item.value,
+          className: item.className
+        };
+      }
+
+      if (typeof item === 'string') {
+        return {
+          label: item,
+          value: item
+        };
+      }
+
+      return {
+        label: item.label,
+        value: item.value,
+        className: item.className
+      };
+    });
+  }, [labelDictionary, options]);
+
   return (
     <ToggleTokensStyleWrapper
       className={classNames(className, 'actiontech-toggle-tokens')}
       {...props}
     >
-      {options.map((item) => {
-        const label = typeof item === 'string' ? item : item.label;
-        const itemValue = typeof item === 'string' ? item : item.value;
+      {transformOptions.map((item) => {
+        const label = item.label;
+        const itemValue = item.value;
 
         let checked = false;
 
@@ -67,23 +108,62 @@ const ToggleTokens = <V extends string | number | null = string>({
           checked = internalValue === itemValue;
         }
 
+        const commonCls = classNames('toggle-token-item', {
+          'toggle-token-item-with-checkbox': withCheckbox,
+          'toggle-token-item-checked': checked
+        });
+
+        const renderTokenWithButtonStyle = () => {
+          return (
+            <BasicButton
+              className={classNames(
+                commonCls,
+                'toggle-token-item-button-style'
+              )}
+              type={checked ? 'primary' : undefined}
+              onClick={() => {
+                handleClick(itemValue as V);
+              }}
+            >
+              {renderChildren()}
+            </BasicButton>
+          );
+        };
+
+        const renderTokenWithNoStyle = () => {
+          return (
+            <div
+              className={classNames(commonCls, 'toggle-token-item-no-style')}
+              onClick={() => {
+                handleClick(itemValue as V);
+              }}
+            >
+              {renderChildren()}
+            </div>
+          );
+        };
+
+        const renderChildren = () => {
+          const labelCls = classNames('toggle-token-item-label');
+          if (withCheckbox && checked) {
+            return (
+              <div className="toggle-token-item-with-checkbox-children">
+                <IconCheckoutCircle />
+                <span className={labelCls}>{label}</span>
+              </div>
+            );
+          }
+          return <span className={labelCls}>{label}</span>;
+        };
+
         return (
-          <BasicButton
-            className={classNames('toggle-token-item', {
-              'toggle-token-item-with-checkbox': withCheckbox,
-              'toggle-token-item-checked': checked
-            })}
-            type={checked ? 'primary' : undefined}
+          <EmptyBox
             key={itemValue as string}
-            onClick={() => {
-              handleClick(itemValue as V);
-            }}
+            if={!noStyle}
+            defaultNode={renderTokenWithNoStyle()}
           >
-            <EmptyBox if={withCheckbox}>
-              <Checkbox checked={checked} />
-            </EmptyBox>
-            <span>{label}</span>
-          </BasicButton>
+            {renderTokenWithButtonStyle()}
+          </EmptyBox>
         );
       })}
     </ToggleTokensStyleWrapper>

@@ -14,6 +14,11 @@ export const FilterContainerStyleWrapper = styled(Space)`
   & .ant-space-item {
     padding-bottom: 0 !important;
   }
+
+  &.actiontech-table-filter-container-inline {
+    padding: 0;
+    border-bottom: none;
+  }
 `;
 
 export const SearchInputStyleWrapper = styled(BasicInput)`

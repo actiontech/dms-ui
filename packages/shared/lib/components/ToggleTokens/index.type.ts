@@ -4,6 +4,7 @@ export type ToggleTokensOptionsType = Array<
   | {
       label: React.ReactNode;
       value: string | number;
+      className?: string;
     }
   | string
 >;
@@ -11,18 +12,22 @@ export type ToggleTokensOptionsType = Array<
 type BaseToggleTokenPropsType = Omit<SpaceProps, 'onChange'> & {
   options: ToggleTokensOptionsType;
   withCheckbox?: boolean;
+  noStyle?: boolean;
+  labelDictionary?: Record<string, string>;
 };
 
 type ToggleTokensMultipleModeProps<V extends string | number | null = string> =
   {
     value?: V[];
-    onChange?: (val?: V[]) => void;
+    onChange?: (val: V[]) => void;
+    defaultValue?: V[];
     multiple: true;
   };
 
 type ToggleTokensSingleModeProps<V extends string | number | null = string> = {
   value?: V;
-  onChange?: (val?: V) => void;
+  onChange?: (val: V) => void;
+  defaultValue?: V;
   multiple?: false;
 };
 

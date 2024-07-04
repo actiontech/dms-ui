@@ -65,6 +65,16 @@ export interface IAuditFileResp {
   file_name?: string;
 }
 
+export interface IAuditPlan {
+  audit_plan_cron?: string;
+
+  audit_plan_params?: IAuditPlanParamReqV1[];
+
+  audit_plan_type?: string;
+
+  rule_template_name?: string;
+}
+
 export interface IAuditPlanCount {
   audit_plan_count?: number;
 
@@ -419,6 +429,18 @@ export interface ICreateCustomRuleReqV1 {
   rule_script?: string;
 
   type?: string;
+}
+
+export interface ICreateInstanceAuditPlanReqV1 {
+  audit_plans?: IAuditPlan[];
+
+  business?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  static_audit?: boolean;
 }
 
 export interface ICreateProjectRuleTemplateReqV1 {
@@ -787,6 +809,24 @@ export interface IGetFeishuAuditConfigurationResV1 {
   data?: IFeishuConfigurationV1;
 
   message?: string;
+}
+
+export interface IGetInstanceAuditPlanInfoResV1 {
+  code?: number;
+
+  data?: IInstanceAuditPlanInfoResV1[];
+
+  message?: string;
+}
+
+export interface IGetInstanceAuditPlansResV1 {
+  code?: number;
+
+  data?: IInstanceAuditPlanResV1[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IGetInstanceConnectableResV1 {
@@ -1335,6 +1375,38 @@ export interface IInstanceAdditionalParamResV1 {
   type?: string;
 
   value?: string;
+}
+
+export interface IInstanceAuditPlanInfoResV1 {
+  audit_plan_db_type?: string;
+
+  audit_plan_instance_database?: string;
+
+  audit_plan_instance_name?: string;
+
+  audit_plan_name?: string;
+
+  audit_plan_token?: string;
+
+  id?: string;
+}
+
+export interface IInstanceAuditPlanResV1 {
+  active_status?: boolean;
+
+  audit_plan_types?: string[];
+
+  business?: string;
+
+  create_time?: string;
+
+  creator?: string;
+
+  instance_audit_plan_id?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
 }
 
 export interface IInstanceConnectableResV1 {
@@ -2203,6 +2275,10 @@ export interface IUpdateFeishuConfigurationReqV1 {
   app_secret: string;
 
   is_feishu_notification_enabled: boolean;
+}
+
+export interface IUpdateInstanceAuditPlanReqV1 {
+  audit_plans?: IAuditPlan[];
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {

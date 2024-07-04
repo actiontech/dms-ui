@@ -98,7 +98,7 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-const SQLManagement = React.lazy(
+const SqlManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
@@ -139,7 +139,7 @@ const AuditPlanSqlAnalyze = React.lazy(
 // #if [ee]
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 
-const SQLManagementAnalyze = React.lazy(
+const SqlManagementAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/SqlManage')
 );
 
@@ -162,11 +162,22 @@ const SqlWorkflowDetail = React.lazy(
   () => import('../page/SqlExecWorkflow/Detail')
 );
 
-const WorkflowSQLFileStatementOverview = React.lazy(
+const WorkflowSqlFileStatementOverview = React.lazy(
   () =>
     import(
       '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview'
     )
+);
+
+// sql management configuration
+const SqlManagementConfList = React.lazy(
+  () => import('../page/SqlManagementConf/List')
+);
+const CreateSqlManagementConf = React.lazy(
+  () => import('../page/SqlManagementConf/Create')
+);
+const SqlManagementConfDetail = React.lazy(
+  () => import('../page/SqlManagementConf/Detail')
 );
 
 //sqle global page
@@ -224,8 +235,8 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       {
         path: ':taskId/files/:fileId/sqls',
-        element: <WorkflowSQLFileStatementOverview />,
-        key: 'workflowSQLFileStatementOverview'
+        element: <WorkflowSqlFileStatementOverview />,
+        key: 'workflowSqlFileStatementOverview'
       }
     ]
   },
@@ -248,6 +259,47 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <SqlAuditDetail />,
         key: 'sqlAuditDetail'
       }
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sql-management-conf`,
+    key: 'sqlManagementConf',
+    children: [
+      {
+        index: true,
+        element: <SqlManagementConfList />,
+        key: 'SqlManagementConfList'
+      },
+      {
+        element: <CreateSqlManagementConf />,
+        key: 'CreateSqlManagementConf',
+        path: 'create'
+      },
+
+      {
+        element: <SqlManagementConfDetail />,
+        key: 'SqlManagementConfDetail',
+        path: ':id'
+      }
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sql-management`,
+    key: 'sqlManagement',
+    children: [
+      {
+        index: true,
+        element: <SqlManagement />,
+        key: 'SqlManagement'
+      },
+      // #if [ee]
+      {
+        path: ':sqlManageId/analyze',
+        hideInSliderMenu: true,
+        element: <SqlManagementAnalyze />,
+        key: 'SqlManagementAnalyze'
+      }
+      // #endif
     ]
   },
   {
@@ -357,25 +409,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     element: <OperationRecord />,
     role: [SystemRole.admin]
   },
-  {
-    path: `${PROJECT_ROUTER_PARAM}/sql-management`,
-    key: 'sqlManagement',
-    children: [
-      {
-        index: true,
-        element: <SQLManagement />,
-        key: 'SQLManagement'
-      },
-      // #if [ee]
-      {
-        path: ':sqlManageId/analyze',
-        hideInSliderMenu: true,
-        element: <SQLManagementAnalyze />,
-        key: 'SQLManagementAnalyze'
-      }
-      // #endif
-    ]
-  },
+
   {
     path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
     key: 'pluginAudit',
