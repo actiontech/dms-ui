@@ -319,6 +319,13 @@ import { EmptyHexagonOutlined } from '@actiontech/icons';
 export default () => <EmptyHexagonOutlined width={32} height={32} />
 ```
 
+## EyeClosedOutlined
+```jsx
+import { EyeClosedOutlined } from '@actiontech/icons';
+
+export default () => <EyeClosedOutlined width={32} height={32} />
+```
+
 ## HexagonOutlined
 ```jsx
 import { HexagonOutlined } from '@actiontech/icons';

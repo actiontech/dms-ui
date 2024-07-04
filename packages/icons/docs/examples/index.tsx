@@ -3,7 +3,7 @@
  */
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { message, Segmented } from 'antd';
+import { message, Segmented, Input, Space } from 'antd';
 import * as ActiontechIcons from '../../src';
 
 const Container = styled('div')`
@@ -42,15 +42,22 @@ const allIcons: {
 const AllIconDemo = () => {
   const [currentTheme, setCurrentTheme] = React.useState('Outlined');
 
+  const [searchKey, setSearchKey] = React.useState('');
+
   const [messageApi, contextHolder] = message.useMessage();
 
-  const visibleIconList = React.useMemo(
-    () =>
-      Object.keys(allIcons).filter((iconName) =>
-        iconName.includes(currentTheme)
-      ),
-    [currentTheme]
-  );
+  const visibleIconList = React.useMemo(() => {
+    const currentThemeIcons = Object.keys(allIcons).filter((iconName) =>
+      iconName.includes(currentTheme)
+    );
+    if (!searchKey) {
+      return currentThemeIcons;
+    }
+
+    return currentThemeIcons.filter((iconName) =>
+      iconName.toLowerCase().includes(searchKey.toLowerCase())
+    );
+  }, [currentTheme, searchKey]);
 
   const onCopy = (name: string) => {
     if (navigator.clipboard) {
@@ -63,7 +70,14 @@ const AllIconDemo = () => {
   return (
     <div style={{ color: '#555' }}>
       {contextHolder}
-      <div style={{ textAlign: 'center' }}>
+      <Space
+        size={32}
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          marginBottom: '24px'
+        }}
+      >
         <Segmented
           options={['Filled', 'Outlined']}
           value={currentTheme}
@@ -71,7 +85,13 @@ const AllIconDemo = () => {
             setCurrentTheme(value as string);
           }}
         />
-      </div>
+        <Input.Search
+          placeholder="输入关键词搜索"
+          onSearch={(value) => {
+            setSearchKey(value);
+          }}
+        />
+      </Space>
       <Container>
         {visibleIconList.map((iconName) => {
           const Component = allIcons[iconName];
