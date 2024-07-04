@@ -8,8 +8,6 @@ import {
   BasicSegmented,
   PageHeader
 } from '@actiontech/shared';
-import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconError } from '@actiontech/shared/lib/Icon';
 
 import { SqlAnalyzeContStyleWrapper, SqlContStyleWrapper } from './style';
 import useTableSchema from './useTableSchema';
@@ -39,7 +37,6 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
           status={errorType}
           title={t('common.request.noticeFailTitle')}
           subTitle={errorMessage}
-          icon={<Icon component={IconError} />}
         />
       );
     }

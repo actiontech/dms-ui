@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
+<body>
+  <div />
+  <div>
+    <section
+      class="fix-header-padding css-bspaai"
+    >
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      >
+        <h3
+          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="anticon title-icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 18 18"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+          <span>
+            批量导入数据源
+          </span>
+        </h3>
+        <div
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required ant-form-item-no-colon"
+                for="files"
+                title="请选择导入文件"
+              >
+                请选择导入文件
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="css-18zq7vp"
+                  >
+                    <span
+                      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-upload ant-upload-select"
+                      >
+                        <span
+                          class="ant-upload"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <input
+                            accept=".csv"
+                            aria-required="true"
+                            id="files"
+                            style="display: none;"
+                            type="file"
+                          />
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              选择文件上传
+                            </span>
+                          </button>
+                        </span>
+                      </div>
+                      <div
+                        class="ant-upload-list ant-upload-list-text"
+                      />
+                    </span>
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                      type="button"
+                    >
+                      <span>
+                        下载导入模板
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              disabled=""
+              type="button"
+            >
+              <span>
+                批量测试数据源连通性
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+`;

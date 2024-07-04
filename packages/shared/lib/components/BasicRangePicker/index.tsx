@@ -1,12 +1,11 @@
 import { ConfigProvider } from 'antd';
-import { IconArrowRight, IconClose } from '../../Icon';
 import { RangePickerProps } from 'antd/es/date-picker';
 import classnames from 'classnames';
 import { ReactNode } from 'react';
 import { BasicRangePickerStyleWrapper } from './style';
 import { ComponentControlHeight } from '../../data/common';
-import { IconDatePickerLeft, IconDatePickerRight } from '../../Icon/common';
 import { BasicDatePickerDropDownStyleWrapper } from '../BasicDatePicker/style';
+import { CloseOutlined, RightOutlined, LeftOutlined } from '@actiontech/icons';
 
 export type BasicRangePickerProps = RangePickerProps & {
   prefix?: ReactNode;
@@ -45,13 +44,23 @@ const BasicRangePicker = (props: BasicRangePickerProps) => {
            */
           suffixIcon={suffixIcon ?? prefix}
           //todo allowClear={{clearIcon: <IconClose />}} need antd 5.8.0
-          clearIcon={<IconClose />}
-          separator={<IconArrowRight />}
+          clearIcon={<CloseOutlined fill="currentColor" />}
+          separator={
+            <RightOutlined width={14} height={14} fill="currentColor" />
+          }
           getPopupContainer={(trigger) => {
             return trigger;
           }}
-          nextIcon={<IconDatePickerRight className="next-icon" />}
-          prevIcon={<IconDatePickerLeft className="prev-icon" />}
+          nextIcon={
+            <span className="next-icon">
+              <RightOutlined width={14} height={14} />
+            </span>
+          }
+          prevIcon={
+            <span className="prev-icon">
+              <LeftOutlined width={14} height={14} />
+            </span>
+          }
         />
       </BasicDatePickerDropDownStyleWrapper>
     </ConfigProvider>

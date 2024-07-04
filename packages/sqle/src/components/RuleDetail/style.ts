@@ -5,8 +5,8 @@ import { CustomInputStyleWrapper } from '@actiontech/shared/lib/components/Custo
 export const HeaderSpaceTagStyleWrapper = styled(Space)`
   .tag-icon {
     border-radius: 3px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     display: flex;
     align-items: center;
     justify-content: center;

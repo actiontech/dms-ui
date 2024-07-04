@@ -103,27 +103,17 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
-                              <span
-                                class="custom-icon css-u3jcp4"
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 19"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <g
-                                    id="file-list-2-fill"
-                                  >
-                                    <path
-                                      d="M13.3333 14.6668H2.66667C2.48986 14.6668 2.32029 14.5966 2.19526 14.4716C2.07024 14.3465 2 14.177 2 14.0002V2.00016C2 1.82335 2.07024 1.65378 2.19526 1.52876C2.32029 1.40373 2.48986 1.3335 2.66667 1.3335H13.3333C13.5101 1.3335 13.6797 1.40373 13.8047 1.52876C13.9298 1.65378 14 1.82335 14 2.00016V14.0002C14 14.177 13.9298 14.3465 13.8047 14.4716C13.6797 14.5966 13.5101 14.6668 13.3333 14.6668ZM5.33333 4.66683V6.00016H10.6667V4.66683H5.33333ZM5.33333 7.3335V8.66683H10.6667V7.3335H5.33333ZM5.33333 10.0002V11.3335H8.66667V10.0002H5.33333Z"
-                                      fill="#C3C6CD"
-                                      id="Vector"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
+                                <path
+                                  d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                  fill="#C3C6CD"
+                                />
+                              </svg>
                             </div>
                             <div
                               class="ant-space-item"
@@ -247,27 +237,17 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
-                              <span
-                                class="custom-icon css-u3jcp4"
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 19"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <g
-                                    id="file-list-2-fill"
-                                  >
-                                    <path
-                                      d="M13.3333 14.6668H2.66667C2.48986 14.6668 2.32029 14.5966 2.19526 14.4716C2.07024 14.3465 2 14.177 2 14.0002V2.00016C2 1.82335 2.07024 1.65378 2.19526 1.52876C2.32029 1.40373 2.48986 1.3335 2.66667 1.3335H13.3333C13.5101 1.3335 13.6797 1.40373 13.8047 1.52876C13.9298 1.65378 14 1.82335 14 2.00016V14.0002C14 14.177 13.9298 14.3465 13.8047 14.4716C13.6797 14.5966 13.5101 14.6668 13.3333 14.6668ZM5.33333 4.66683V6.00016H10.6667V4.66683H5.33333ZM5.33333 7.3335V8.66683H10.6667V7.3335H5.33333ZM5.33333 10.0002V11.3335H8.66667V10.0002H5.33333Z"
-                                      fill="#C3C6CD"
-                                      id="Vector"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
+                                <path
+                                  d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                  fill="#C3C6CD"
+                                />
+                              </svg>
                             </div>
                             <div
                               class="ant-space-item"

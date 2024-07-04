@@ -2,9 +2,9 @@ import { useState, useRef } from 'react';
 import { EditTypeProps } from './index.type';
 import EmptyBox from '../EmptyBox';
 import BasicButton from '../BasicButton';
-import { IconEdit } from '../../Icon/common';
 import { EditTextStyleWrapper } from './style';
 import classNames from 'classnames';
+import { EditFilled } from '@actiontech/icons';
 
 const EditText: React.FC<EditTypeProps> = ({
   value,
@@ -30,7 +30,7 @@ const EditText: React.FC<EditTypeProps> = ({
             onEnd: () => {
               editable?.onEnd?.(internalValue.current);
             },
-            icon: <IconEdit />,
+            icon: <EditFilled className="custom-icon" color="currentColor" />,
             tooltip: false
           }}
         >
@@ -48,7 +48,11 @@ const EditText: React.FC<EditTypeProps> = ({
             className={classNames({
               'has-icon-primary': !editButtonProps?.children
             })}
-            icon={editButtonProps?.children ? undefined : <IconEdit />}
+            icon={
+              editButtonProps?.children ? undefined : (
+                <EditFilled className="custom-icon" color="currentColor" />
+              )
+            }
             {...editButtonProps}
             onClick={(e) => {
               e.stopPropagation();

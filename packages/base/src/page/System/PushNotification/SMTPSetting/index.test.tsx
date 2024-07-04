@@ -8,6 +8,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PushNotification/SMTPSetting', () => {
   let requestGetSMTPConfiguration: jest.SpyInstance;
@@ -17,6 +18,7 @@ describe('base/System/PushNotification/SMTPSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetSMTPConfiguration = system.getSMTPConfig();
     requestUpdateSMTPConfiguration = system.updateSMTPConfig();

@@ -20,14 +20,13 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateDetail should match snap shot 1`] =
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -73,28 +72,24 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateDetail should match snap shot 1`] =
                     hidden=""
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-1bj33q9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 6px;"
                       >
-                        <span
-                          class="tag-icon project-flag-icon css-u3jcp4"
+                        <svg
+                          class="tag-icon"
+                          height="16"
+                          viewBox="0 0 18 18"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2.25 2.25H9.2865C9.42575 2.25007 9.56222 2.28891 9.68064 2.36216C9.79907 2.43542 9.89476 2.54019 9.957 2.66475L10.5 3.75H15C15.1989 3.75 15.3897 3.82902 15.5303 3.96967C15.671 4.11032 15.75 4.30109 15.75 4.5V12.75C15.75 12.9489 15.671 13.1397 15.5303 13.2803C15.3897 13.421 15.1989 13.5 15 13.5H10.2135C10.0743 13.4999 9.93778 13.4611 9.81936 13.3878C9.70093 13.3146 9.60524 13.2098 9.543 13.0853L9 12H3.75V16.5H2.25V2.25Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                            fill="#EBAD1C"
+                          />
+                        </svg>
                       </div>
                       <div
                         class="ant-space-item"
@@ -111,33 +106,24 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateDetail should match snap shot 1`] =
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-1bj33q9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 6px;"
                       >
-                        <span
-                          class="tag-icon database-type-icon css-u3jcp4"
+                        <svg
+                          class="tag-icon"
+                          fill="#15C7D4"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g
-                              id="database-fill"
-                            >
-                              <path
-                                d="M7.33331 4.66667V2.66667C7.33331 2.48986 7.40355 2.32029 7.52858 2.19526C7.6536 2.07024 7.82317 2 7.99998 2H14C14.1768 2 14.3464 2.07024 14.4714 2.19526C14.5964 2.32029 14.6666 2.48986 14.6666 2.66667V13.3333C14.6666 13.5101 14.5964 13.6797 14.4714 13.8047C14.3464 13.9298 14.1768 14 14 14H1.99998C1.82317 14 1.6536 13.9298 1.52858 13.8047C1.40355 13.6797 1.33331 13.5101 1.33331 13.3333V5.33333C1.33331 5.15652 1.40355 4.98695 1.52858 4.86193C1.6536 4.7369 1.82317 4.66667 1.99998 4.66667H7.33331ZM3.33331 10.6667V12H6.66665V10.6667H3.33331ZM9.33331 10.6667V12H12.6666V10.6667H9.33331ZM9.33331 8.66667V10H12.6666V8.66667H9.33331ZM9.33331 6.66667V8H12.6666V6.66667H9.33331ZM3.33331 8.66667V10H6.66665V8.66667H3.33331Z"
-                                fill="currentColor"
-                                id="Vector"
-                              />
-                            </g>
-                          </svg>
-                        </span>
+                          <path
+                            d="M7.333 4.667v-2A.667.667 0 0 1 8 2h6a.667.667 0 0 1 .667.667v10.666A.667.667 0 0 1 14 14H2a.666.666 0 0 1-.667-.667v-8A.667.667 0 0 1 2 4.667zm-4 6V12h3.334v-1.333zm6 0V12h3.334v-1.333zm0-2V10h3.334V8.667zm0-2V8h3.334V6.667zm-6 2V10h3.334V8.667z"
+                          />
+                        </svg>
                       </div>
                       <div
                         class="ant-space-item"
@@ -214,27 +200,6 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateDetail should match snap shot 1`] =
                     role="button"
                     tabindex="-1"
                   >
-                    <span
-                      class="custom-icon custom-icon-close css-u3jcp4"
-                      role="img"
-                    >
-                      <svg
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                  <span
-                    class="pointer custom-icon custom-icon-search css-u3jcp4"
-                    role="img"
-                  >
                     <svg
                       fill="currentColor"
                       height="14"
@@ -243,10 +208,21 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateDetail should match snap shot 1`] =
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                       />
                     </svg>
                   </span>
+                  <svg
+                    class="pointer"
+                    height="16"
+                    viewBox="0 0 14 14"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    />
+                  </svg>
                 </span>
               </span>
             </div>
@@ -295,23 +271,17 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateDetail should match snap shot 1`] =
                     <div
                       class="level-icon"
                     >
-                      <span
-                        class="custom-icon custom-icon-level-error css-u3jcp4"
-                        role="img"
+                      <svg
+                        height="19"
+                        viewBox="0 0 16 16"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          fill="none"
-                          height="19"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9 17C4.85775 17 1.5 13.6423 1.5 9.5C1.5 5.35775 4.85775 2 9 2C13.1423 2 16.5 5.35775 16.5 9.5C16.5 13.6423 13.1423 17 9 17ZM9 8.4395L6.879 6.31775L5.81775 7.379L7.9395 9.5L5.81775 11.621L6.879 12.6823L9 10.5605L11.121 12.6823L12.1823 11.621L10.0605 9.5L12.1823 7.379L11.121 6.31775L9 8.4395Z"
-                            fill="#F66074"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                          fill="#F66074"
+                        />
+                      </svg>
                       <span
                         class="level-icon-text"
                       >

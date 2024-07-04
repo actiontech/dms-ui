@@ -59,9 +59,14 @@ import {
   IListProjectsReturn,
   IAddProjectParams,
   IAddProjectReturn,
+  IDBServicesConnectionParams,
+  IDBServicesConnectionReturn,
   IExportProjectsParams,
   IImportProjectsParams,
   IImportProjectsReturn,
+  IImportDBServicesOfProjectsParams,
+  IImportDBServicesOfProjectsReturn,
+  IImportDBServicesOfProjectsCheckParams,
   IPreviewImportProjectsParams,
   IPreviewImportProjectsReturn,
   IGetProjectTipsParams,
@@ -119,6 +124,9 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
+  IImportDBServicesOfOneProjectParams,
+  IImportDBServicesOfOneProjectReturn,
+  IImportDBServicesOfOneProjectCheckParams,
   IListDBServiceTipsParams,
   IListDBServiceTipsReturn,
   IUpdateDBServiceParams,
@@ -563,8 +571,24 @@ class DmsService extends ServiceBase {
     );
   }
 
-  public ExportProjects(options?: AxiosRequestConfig) {
-    return this.get('/v1/dms/projects/export', undefined, options);
+  public DBServicesConnection(
+    params: IDBServicesConnectionParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IDBServicesConnectionReturn>(
+      '/v1/dms/projects/db_services_connection',
+      paramsData,
+      options
+    );
+  }
+
+  public ExportProjects(
+    params: IExportProjectsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get('/v1/dms/projects/export', paramsData, options);
   }
 
   public ImportProjects(
@@ -575,6 +599,51 @@ class DmsService extends ServiceBase {
     return this.post<IImportProjectsReturn>(
       '/v1/dms/projects/import',
       paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfProjects(
+    params: IImportDBServicesOfProjectsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IImportDBServicesOfProjectsReturn>(
+      '/v1/dms/projects/import_db_services',
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfProjectsCheck(
+    params: IImportDBServicesOfProjectsCheckParams,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.db_services_file != undefined) {
+      paramsData.append('db_services_file', params.db_services_file as any);
+    }
+
+    return this.post(
+      '/v1/dms/projects/import_db_services_check',
+      paramsData,
+      config
+    );
+  }
+
+  public GetImportDBServicesTemplate(options?: AxiosRequestConfig) {
+    return this.get(
+      '/v1/dms/projects/import_db_services_template',
+      undefined,
       options
     );
   }
@@ -1067,6 +1136,48 @@ class DmsService extends ServiceBase {
       `/v1/dms/projects/${project_uid}/db_services/connection`,
       paramsData,
       options
+    );
+  }
+
+  public ImportDBServicesOfOneProject(
+    params: IImportDBServicesOfOneProjectParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IImportDBServicesOfOneProjectReturn>(
+      `/v1/dms/projects/${project_uid}/db_services/import`,
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfOneProjectCheck(
+    params: IImportDBServicesOfOneProjectCheckParams,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.db_services_file != undefined) {
+      paramsData.append('db_services_file', params.db_services_file as any);
+    }
+
+    const project_uid = params.project_uid;
+
+    return this.post(
+      `/v1/dms/projects/${project_uid}/db_services/import_check`,
+      paramsData,
+      config
     );
   }
 

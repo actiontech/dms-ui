@@ -18,32 +18,29 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
             class=""
             title=""
           >
-            <span
-              class="custom-icon-ellipse css-u3jcp4"
+            <svg
+              class="custom-icon-ellipse"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
+              <rect
+                fill="#E8F3FF"
                 height="16"
-                viewBox="0 0 16 16"
+                rx="3"
                 width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  fill="#E8F3FF"
-                  height="16"
-                  rx="3"
-                  width="16"
-                />
-                <circle
-                  cx="8"
-                  cy="8"
-                  fill="white"
-                  r="3"
-                  stroke="#4583FF"
-                  stroke-width="2"
-                />
-              </svg>
-            </span>
+              />
+              <circle
+                cx="8"
+                cy="8"
+                fill="#fff"
+                r="3"
+                stroke="#4583FF"
+                stroke-width="2"
+              />
+            </svg>
             <span>
               选择SQL语句上传方式
             </span>
@@ -95,27 +92,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -126,7 +118,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                       class="active-icon-wrapper"
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -156,27 +148,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                    class="actiontech-mode-switcher-item css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -188,7 +175,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                       hidden=""
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -218,27 +205,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                    class="actiontech-mode-switcher-item css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -250,7 +232,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
                       hidden=""
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -438,32 +420,29 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
             class=""
             title=""
           >
-            <span
-              class="custom-icon-ellipse css-u3jcp4"
+            <svg
+              class="custom-icon-ellipse"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
+              <rect
+                fill="#E8F3FF"
                 height="16"
-                viewBox="0 0 16 16"
+                rx="3"
                 width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  fill="#E8F3FF"
-                  height="16"
-                  rx="3"
-                  width="16"
-                />
-                <circle
-                  cx="8"
-                  cy="8"
-                  fill="white"
-                  r="3"
-                  stroke="#4583FF"
-                  stroke-width="2"
-                />
-              </svg>
-            </span>
+              />
+              <circle
+                cx="8"
+                cy="8"
+                fill="#fff"
+                r="3"
+                stroke="#4583FF"
+                stroke-width="2"
+              />
+            </svg>
             <span>
               选择SQL语句上传方式
             </span>
@@ -515,27 +494,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                    class="actiontech-mode-switcher-item css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -547,7 +521,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                       hidden=""
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -577,27 +551,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                    class="actiontech-mode-switcher-item css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -609,7 +578,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                       hidden=""
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -639,27 +608,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -670,7 +634,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                       class="active-icon-wrapper"
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -791,23 +755,18 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                       <div
                         class="ant-upload-drag-container"
                       >
-                        <span
-                          class="custom-icon css-u3jcp4"
-                          role="img"
+                        <svg
+                          class="custom-icon"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            fill="none"
-                            height="40"
-                            viewBox="0 0 40 40"
-                            width="40"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M20 20.9767L27.0717 28.0467L24.7133 30.405L21.6667 27.3584V36.6667H18.3333V27.355L15.2867 30.405L12.9283 28.0467L20 20.9767ZM20 3.33337C22.8616 3.33351 25.6234 4.38523 27.7603 6.28857C29.8972 8.19191 31.2601 10.8141 31.59 13.6567C33.6638 14.2222 35.4729 15.4985 36.7011 17.2626C37.9293 19.0266 38.4986 21.1662 38.3094 23.3074C38.1201 25.4485 37.1845 27.4551 35.6659 28.9764C34.1474 30.4977 32.1425 31.437 30.0017 31.63V28.2734C30.7686 28.1638 31.5061 27.9026 32.171 27.505C32.8359 27.1074 33.4149 26.5812 33.8743 25.9574C34.3336 25.3335 34.6641 24.6244 34.8465 23.8714C35.0288 23.1185 35.0593 22.3367 34.9362 21.5718C34.8131 20.8069 34.5389 20.0742 34.1295 19.4165C33.7202 18.7587 33.1839 18.1891 32.552 17.7408C31.9201 17.2926 31.2053 16.9747 30.4492 16.8057C29.6931 16.6368 28.9109 16.6201 28.1483 16.7567C28.4094 15.5415 28.3952 14.2833 28.107 13.0743C27.8188 11.8653 27.2638 10.736 26.4827 9.76926C25.7015 8.8025 24.714 8.02272 23.5925 7.48703C22.4709 6.95135 21.2437 6.67332 20.0008 6.67332C18.7579 6.67332 17.5308 6.95135 16.4092 7.48703C15.2877 8.02272 14.3002 8.8025 13.519 9.76926C12.7379 10.736 12.1828 11.8653 11.8946 13.0743C11.6064 14.2833 11.5923 15.5415 11.8533 16.7567C10.3328 16.4712 8.76103 16.8014 7.48391 17.6746C6.20678 18.5479 5.32888 19.8928 5.04333 21.4134C4.75778 22.9339 5.08797 24.5057 5.96127 25.7828C6.83456 27.0599 8.17943 27.9378 9.7 28.2234L10 28.2734V31.63C7.85908 31.4373 5.85401 30.4982 4.33522 28.977C2.81644 27.4559 1.88054 25.4493 1.69112 23.3081C1.5017 21.1669 2.0708 19.0272 3.29895 17.263C4.5271 15.4988 6.33618 14.2224 8.41 13.6567C8.73951 10.814 10.1023 8.19156 12.2393 6.28815C14.3763 4.38474 17.1383 3.33315 20 3.33337Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m20 20.977 7.072 7.07-2.359 2.358-3.046-3.047v9.309h-3.334v-9.312l-3.046 3.05-2.359-2.358zm0-17.644a11.67 11.67 0 0 1 11.59 10.324 9.166 9.166 0 0 1-1.588 17.973v-3.357a5.836 5.836 0 0 0 4.934-6.701 5.83 5.83 0 0 0-6.788-4.815 8.332 8.332 0 1 0-16.295 0A5.834 5.834 0 0 0 9.7 28.223l.3.05v3.357a9.166 9.166 0 0 1-1.59-17.973A11.666 11.666 0 0 1 20 3.333"
+                            fill="currentColor"
+                          />
+                        </svg>
                         <div
                           class="title"
                         >
@@ -847,6 +806,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   class="custom-icon-ellipse css-u3jcp4"
                 >
                   <svg
+                    class="custom-icon-ellipse"
                     fill="none"
                     height="16"
                     viewBox="0 0 16 16"
@@ -862,7 +822,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                     <circle
                       cx="8"
                       cy="8"
-                      fill="white"
+                      fill="#fff"
                       r="3"
                       stroke="#4583FF"
                       stroke-width="2"
@@ -927,27 +887,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   style="padding-left: 5px; padding-right: 5px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -958,7 +913,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                       class="active-icon-wrapper"
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"
@@ -988,27 +943,22 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                   style="padding-left: 5px; padding-right: 5px;"
                 >
                   <div
-                    class="actiontech-mode-switcher-item css-1x7j8vu"
+                    class="actiontech-mode-switcher-item css-klzra6"
                   >
                     <span
                       class="actiontech-mode-switcher-item-icon"
                     >
-                      <span
-                        class="custom-icon  css-u3jcp4"
+                      <svg
+                        height="16"
+                        viewBox="0 0 18 18"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                           fill="currentColor"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </span>
+                        />
+                      </svg>
                     </span>
                     <span
                       class="actiontech-mode-switcher-item-text"
@@ -1020,7 +970,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 2`] = 
                       hidden=""
                     >
                       <span
-                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                        class="icon-mode-switcher-checked active-icon"
                       >
                         <svg
                           fill="none"

@@ -59,6 +59,15 @@ export const ModeSwitcherItemStyleWrapper = styled('div')`
       position: absolute;
       top: 0;
       right: 0;
+      display: inline-block;
+      color: inherit;
+      font-style: normal;
+      line-height: 0;
+      text-align: center;
+      text-transform: none;
+      vertical-align: -0.125em;
+      text-rendering: optimizelegibility;
+      -webkit-font-smoothing: antialiased;
 
       .active-icon {
         position: absolute;
@@ -70,6 +79,7 @@ export const ModeSwitcherItemStyleWrapper = styled('div')`
 
   &.actiontech-mode-switcher-item-disabled {
     cursor: not-allowed;
+    pointer-events: none;
     background-color: ${({ theme }) =>
       theme.sharedTheme.uiToken.colorFillTertiary};
 

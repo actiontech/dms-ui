@@ -9,10 +9,12 @@ import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProje
 import NotFoundProject from './components/NotFoundProject';
 import { useState } from 'react';
 import StepItems from './components/StepItems';
+import useThemeStyleData from '../../../hooks/useThemeStyleData';
 
 const DefaultScene: React.FC = () => {
   const { isAdmin, bindProjects } = useCurrentUser();
   const navigate = useNavigate();
+  const { baseTheme } = useThemeStyleData();
 
   const [
     openRulePageProjectSelectorModal,
@@ -25,12 +27,14 @@ const DefaultScene: React.FC = () => {
     ? AdminUserDevopsSteps({
         navigate,
         projectID: currentProjectID,
-        setOpenRulePageProjectSelectorModal
+        setOpenRulePageProjectSelectorModal,
+        iconColor: baseTheme.icon.home.common
       })
     : NormalUserDevopsSteps({
         navigate,
         projectID: currentProjectID,
-        setOpenRulePageProjectSelectorModal
+        setOpenRulePageProjectSelectorModal,
+        iconColor: baseTheme.icon.home.common
       });
 
   return (

@@ -3,9 +3,9 @@ import { RuleTemplateFormProps } from './index.type';
 import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconRuleTitle } from '../../../icon/Rule';
 import BaseInfoForm from './BaseInfoForm';
 import RuleSelect from './RuleSelect';
+import { ProfileSquareFilled } from '@actiontech/icons';
 
 const RuleTemplateForm = (props: RuleTemplateFormProps) => {
   return (
@@ -13,7 +13,7 @@ const RuleTemplateForm = (props: RuleTemplateFormProps) => {
       <section hidden={props.step !== 0} data-testid="base-form">
         <FormAreaBlockStyleWrapper>
           <FormItemBigTitle>
-            <Icon component={IconRuleTitle} className="title-icon" />
+            <Icon component={ProfileSquareFilled} className="title-icon" />
             <span>{props.title}</span>
           </FormItemBigTitle>
           <BaseInfoForm

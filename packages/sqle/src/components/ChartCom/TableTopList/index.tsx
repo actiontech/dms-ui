@@ -5,8 +5,8 @@ import { Table, ConfigProvider, TableProps } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { TableTopListStyleWrapper } from './style';
-import { IconSpin } from '@actiontech/shared/lib/Icon/common';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import { SpinIndicator } from '@actiontech/shared';
 
 export interface ITableTopList<RecordType> extends TableProps<RecordType> {
   apiLoading: boolean;
@@ -57,7 +57,7 @@ const TableTopList = <T extends Record<string, any>>(
             spinning: apiLoading,
             indicator: (
               <Icon
-                component={IconSpin}
+                component={() => <SpinIndicator />}
                 style={{
                   color: sqleTheme.reportStatistics.loadingColor
                 }}

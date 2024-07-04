@@ -1,5 +1,4 @@
 import { BasicButton } from '@actiontech/shared';
-import { IconDownload } from '@actiontech/shared/lib/Icon';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IExportWorkflowV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -8,6 +7,7 @@ import { useBoolean } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportWorkflowButtonProps } from './index.type';
+import { DownArrowLineOutlined } from '@actiontech/icons';
 
 const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   tableFilterInfo,
@@ -36,7 +36,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       filter_create_user_id,
       filter_current_step_assignee_user_id,
       filter_subject,
-      filter_task_instance_name
+      filter_task_instance_id
     } = tableFilterInfo;
 
     const params: IExportWorkflowV1Params = {
@@ -46,7 +46,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       filter_current_step_assignee_user_id,
       filter_status: filterStatus,
       filter_subject,
-      filter_task_instance_name,
+      filter_task_instance_id,
       filter_create_time_from,
       filter_create_time_to,
       filter_task_execute_start_time_from,
@@ -75,7 +75,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
       <BasicButton
         onClick={exportWorkflow}
         disabled={exportButtonDisabled}
-        icon={<IconDownload />}
+        icon={<DownArrowLineOutlined />}
       >
         {t('execWorkflow.list.exportWorkflow.buttonText')}
       </BasicButton>

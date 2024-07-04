@@ -8,14 +8,14 @@ import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
 import { Link } from 'react-router-dom';
-import {
-  IconCloneRule,
-  IconExportRule,
-  IconRuleItem
-} from '../../../icon/Rule';
 import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { DatabaseTypeLogo } from '@actiontech/shared';
+import {
+  ProfileSquareFilled,
+  LogoutBoxFilled,
+  CheckboxMultipleBlankFilled
+} from '@actiontech/icons';
 
 export type RuleTemplateTableParamType =
   PageInfoWithoutIndexAndSize<IGetProjectRuleTemplateListV1Params>;
@@ -67,13 +67,13 @@ export const RuleTemplateTableActions = (
             key: 'clone-rule-template',
             text: t('ruleTemplate.cloneRuleTemplate.button'),
             onClick: (record) => onAction(record, 'clone'),
-            icon: <IconCloneRule />
+            icon: <CheckboxMultipleBlankFilled />
           },
           {
             key: 'export-rule-template',
             text: t('ruleTemplate.exportRuleTemplate.button'),
             onClick: (record) => onAction(record, 'export'),
-            icon: <IconExportRule />
+            icon: <LogoutBoxFilled />
           }
         ]
       }
@@ -130,7 +130,7 @@ export const RuleTemplateTableColumn: (
         return (
           <Link to={skipUrl}>
             <Space size={12}>
-              <IconRuleItem />
+              <ProfileSquareFilled />
               {name}
             </Space>
           </Link>

@@ -26,7 +26,6 @@ import {
 } from './components/ReviewNodeInfo/index.type';
 import { cloneDeep } from 'lodash';
 import { useBoolean, useRequest } from 'ahooks';
-import { IconSuccessResult } from '@actiontech/shared/lib/Icon/common';
 import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
 import useUsername from '../../../hooks/useUsername';
@@ -299,7 +298,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
           </Row>
         ) : (
           <BasicResult
-            icon={<IconSuccessResult />}
+            status="success"
             title={t('workflowTemplate.update.result.title')}
             extra={[
               <Link

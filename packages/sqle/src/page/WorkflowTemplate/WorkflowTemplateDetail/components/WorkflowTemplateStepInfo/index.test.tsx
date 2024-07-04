@@ -4,9 +4,11 @@ import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowT
 import { screen } from '@testing-library/react';
 import { IWorkflowTemplateStepInfoProps } from './index.type';
 import { userTipListData } from '../../../../../testUtils/mockApi/user/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('page/WorkflowTemplate/WorkflowTemplateStepInfo', () => {
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

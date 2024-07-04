@@ -1,0 +1,11 @@
+<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/sqle/src/icon/ReportStatistics.tsx -->
+<svg viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.3335 6.66663H14.0002L8.00016 15.3333V9.33329H3.3335L9.3335 0.666626V6.66663Z" />
+  <defs>
+    <linearGradient id="paint0_linear_2181_1474" x1="8.66683" y1="0.666626" x2="8.66683" y2="15.3333"
+      gradientUnits="userSpaceOnUse">
+      <stop stopColor="#FDCE46" />
+      <stop offset="1" stopColor="#F4AB2C" />
+    </linearGradient>
+  </defs>
+</svg>

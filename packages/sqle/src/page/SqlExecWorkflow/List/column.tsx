@@ -10,8 +10,8 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '../../../locale';
 import WorkflowStatus from './components/WorkflowStatus';
 import { SqlExecWorkflowListTableFilterParam } from './index.type';
-import { IconWorkflowId } from '../../../icon/SqlExecWorkflow';
 import { WorkflowNameStyleWrapper } from './style';
+import { BriefcaseFilled } from '@actiontech/icons';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IWorkflowDetailResV1 & {
@@ -44,7 +44,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       'instance_name',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_task_instance_name',
+        filterKey: 'filter_task_instance_id',
         filterLabel: t('execWorkflow.list.dataSource'),
         checked: false
       }
@@ -66,7 +66,7 @@ export const SqlExecWorkflowListColumn: (
       render: (id: string) => {
         return (
           <TableColumnWithIconStyleWrapper>
-            <IconWorkflowId />
+            <BriefcaseFilled width={14} height={14} />
             <span>{id}</span>
           </TableColumnWithIconStyleWrapper>
         );

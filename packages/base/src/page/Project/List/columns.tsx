@@ -12,11 +12,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  IconProjectArchived,
-  IconProjectFlag
-} from '@actiontech/shared/lib/Icon/common';
-import { ProjectArchiveStyledWrapper } from './style';
+import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { BasicTag, BasicToolTips } from '@actiontech/shared';
 import { Space } from 'antd';
@@ -76,23 +72,19 @@ export const ProjectListTableColumnFactory =
         title: () => t('dmsProject.projectList.columns.status'),
         render(archived: boolean) {
           return (
-            <ProjectArchiveStyledWrapper>
-              <TableColumnWithIconStyleWrapper>
-                {archived ? (
-                  <>
-                    <IconProjectArchived />
-                    <span>
-                      {t('dmsProject.projectList.columns.unavailable')}
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <IconProjectFlag />
-                    <span>{t('dmsProject.projectList.columns.available')}</span>
-                  </>
-                )}
-              </TableColumnWithIconStyleWrapper>
-            </ProjectArchiveStyledWrapper>
+            <TableColumnWithIconStyleWrapper>
+              {archived ? (
+                <>
+                  <LockOutlined width={18} height={18} />
+                  <span>{t('dmsProject.projectList.columns.unavailable')}</span>
+                </>
+              ) : (
+                <>
+                  <FlagFilled width={18} height={18} />
+                  <span>{t('dmsProject.projectList.columns.available')}</span>
+                </>
+              )}
+            </TableColumnWithIconStyleWrapper>
           );
         }
       },

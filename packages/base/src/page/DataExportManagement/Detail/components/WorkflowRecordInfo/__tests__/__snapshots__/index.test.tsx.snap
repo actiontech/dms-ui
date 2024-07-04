@@ -14,22 +14,17 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
       >
         工单信息
       </span>
-      <span
-        class="custom-icon custom-icon-close css-u3jcp4"
-        role="img"
+      <svg
+        class="custom-icon-close"
+        height="16"
+        viewBox="0 0 14 14"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          fill="currentColor"
-          height="14"
-          viewBox="0 0 14 14"
-          width="14"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-          />
-        </svg>
-      </span>
+        <path
+          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+        />
+      </svg>
     </div>
     <div
       class="workflow-steps-basic-info"
@@ -91,17 +86,16 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
             style="margin-right: 8px;"
           >
             <span
-              class="custom-icon css-u3jcp4"
+              class="css-u3jcp4"
             >
               <svg
-                fill="none"
                 height="18"
                 viewBox="0 0 18 18"
                 width="18"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9 15C10.5913 15 12.1174 14.3679 13.2426 13.2426C14.3679 12.1174 15 10.5913 15 9C15 7.4087 14.3679 5.88258 13.2426 4.75736C12.1174 3.63214 10.5913 3 9 3C7.4087 3 5.88258 3.63214 4.75736 4.75736C3.63214 5.88258 3 7.4087 3 9C3 10.5913 3.63214 12.1174 4.75736 13.2426C5.88258 14.3679 7.4087 15 9 15ZM9.75 9H12.75V10.5H8.25V5.25H9.75V9Z"
+                  d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
                   fill="#8A8F99"
                 />
               </svg>
@@ -130,29 +124,25 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
           <div
             class="css-3q8fl"
           >
-            <span
-              class="custom-icon css-u3jcp4"
+            <svg
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.875 1.51554C7.57115 1.11362 8.42885 1.11362 9.125 1.51554L13.0532 3.78349C13.7494 4.18542 14.1782 4.9282 14.1782 5.73205V10.2679C14.1782 11.0718 13.7494 11.8146 13.0532 12.2165L9.125 14.4845C8.42885 14.8864 7.57115 14.8864 6.875 14.4845L2.9468 12.2165C2.25064 11.8146 1.8218 11.0718 1.8218 10.2679V5.73205C1.8218 4.9282 2.25064 4.18542 2.9468 3.78349L6.875 1.51554Z"
-                  stroke="#41BF9A"
-                  stroke-width="1.5"
-                />
-                <path
-                  d="M5.08325 7.99996L7.16659 10.0833L11.3333 5.91663"
-                  stroke="#41BF9A"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </span>
+              <path
+                d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                stroke="#41BF9A"
+                stroke-width="1.5"
+              />
+              <path
+                d="m5.083 8 2.084 2.083 4.166-4.166"
+                stroke="#41BF9A"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              />
+            </svg>
             <span>
               导出成功
             </span>
@@ -187,14 +177,14 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -266,22 +256,17 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -351,15 +336,14 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 20 20"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33525 10.6668L12.0486 5.95283L11.1059 5.01016L7.33525 8.7815L5.44925 6.8955L4.50659 7.83816L7.33525 10.6668Z"
-                    fill="currentColor"
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
                   />
                 </svg>
               </span>

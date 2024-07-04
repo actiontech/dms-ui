@@ -4,7 +4,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { workflowTemplateData } from '../../../../testUtils/mockApi/workflowTemplate/data';
 import { IStepCardProps, StepInfoArrowEnum } from './index.type';
-import { IconHonour } from '../../../../icon/WorkflowTemplate';
+import { HonourFilled } from '@actiontech/icons';
 
 export const workflowTemplateCardProps = {
   rowKey: '1',
@@ -15,7 +15,7 @@ export const workflowTemplateCardProps = {
   disabled: false,
   icon: (
     <span className="honour-icon">
-      <IconHonour />
+      <HonourFilled />
     </span>
   ),
   arrow: StepInfoArrowEnum.none,

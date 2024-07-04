@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { Form } from 'antd';
-import { BasicSelect, BasicSwitch } from '@actiontech/shared';
-import { useTranslation } from 'react-i18next';
+import { BasicSelect, BasicSwitch, BasicToolTips } from '@actiontech/shared';
+import { Trans, useTranslation } from 'react-i18next';
 import { IMemberFormProps } from '../index.type';
 import useUsername from '../../../../hooks/useUsername';
 import RoleSelector from '../../components/RoleSelector';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { Link } from 'react-router-dom';
 
 const MemberForm: React.FC<IMemberFormProps> = ({
   form,
@@ -30,7 +31,19 @@ const MemberForm: React.FC<IMemberFormProps> = ({
     <Form form={form} layout="vertical">
       <Form.Item
         name="userUid"
-        label={t('dmsMember.memberForm.username')}
+        label={
+          <BasicToolTips
+            suffixIcon
+            title={
+              <Trans i18nKey={'dmsMember.memberForm.usernameTips'}>
+                {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+                <Link target="_blank" to="/user-center" />
+              </Trans>
+            }
+          >
+            {t('dmsMember.memberForm.username')}
+          </BasicToolTips>
+        }
         validateFirst={true}
         rules={[
           {

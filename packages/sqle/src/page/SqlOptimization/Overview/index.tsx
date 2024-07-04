@@ -6,7 +6,6 @@ import {
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { SqlOptimizationOverviewUrlParams } from '../index.type';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
@@ -14,19 +13,23 @@ import { useRequest } from 'ahooks';
 import { Spin, Col, Row, Statistic, Typography, Card } from 'antd';
 import { SqlOptimizationOverviewBaseInfoStyleWrapper } from '../style';
 import { DetailComStyleWrapper, HeaderSpaceTagStyleWrapper } from '../style';
-import {
-  IconDatabaseActive,
-  IconDatabaseSchemaActive
-} from '@actiontech/shared/lib/Icon/common';
 import OptimizationSqlList from './OptimizationSqlList';
 import { useState } from 'react';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import RecommendIndex from '../components/RecommendIndex';
 import { SqlOptimizationStatusEnum } from '../index.data';
-import { IconWorkflowStatusIsFailed } from '../../../icon/SqlExecWorkflow';
+import {
+  DatabaseSchemaFilled,
+  DatabaseFilled,
+  LeftArrowOutlined,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
+import useThemeStyleData from '../../../hooks/useThemeStyleData';
 
 const OptimizationOverview = () => {
   const { t } = useTranslation();
+
+  const { sqleTheme } = useThemeStyleData();
 
   const urlParams = useParams<SqlOptimizationOverviewUrlParams>();
 
@@ -70,7 +73,7 @@ const OptimizationOverview = () => {
           fixed
           title={
             <Link to={`/sqle/project/${projectID}/sql-optimization`}>
-              <BasicButton icon={<IconLeftArrow />}>
+              <BasicButton icon={<LeftArrowOutlined />}>
                 {t('sqlOptimization.create.returnButton')}
               </BasicButton>
             </Link>
@@ -89,7 +92,11 @@ const OptimizationOverview = () => {
                   size={6}
                   className="project-name-space"
                 >
-                  <IconDatabaseActive />
+                  <DatabaseFilled
+                    width={18}
+                    height={18}
+                    color={sqleTheme.icon.execWorkFlow.databaseFilled}
+                  />
                   <div>
                     {t('sqlOptimization.table.instanceName')}：
                     {optimizationRecord?.instance_name || '-'}
@@ -101,7 +108,11 @@ const OptimizationOverview = () => {
                   size={6}
                   className="database-type-space"
                 >
-                  <IconDatabaseSchemaActive />
+                  <DatabaseSchemaFilled
+                    width={18}
+                    height={18}
+                    color={sqleTheme.icon.execWorkFlow.schemaFilled}
+                  />
                   <div>
                     {t('sqlOptimization.table.dbType')}：
                     {optimizationRecord?.db_type || '-'}
@@ -120,7 +131,7 @@ const OptimizationOverview = () => {
                     size={6}
                     className="database-type-space"
                   >
-                    <IconWorkflowStatusIsFailed />
+                    <InfoHexagonOutlined />
                     <div>{t('sqlOptimization.overview.failedStatusTips')}</div>
                   </HeaderSpaceTagStyleWrapper>
                 </div>

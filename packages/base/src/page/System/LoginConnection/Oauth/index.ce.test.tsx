@@ -6,6 +6,7 @@ import { cleanup, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
 import Oauth from '.';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/LoginConnection/Oauth-ce', () => {
   const customRender = () => {
@@ -13,6 +14,7 @@ describe('base/System/LoginConnection/Oauth-ce', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 

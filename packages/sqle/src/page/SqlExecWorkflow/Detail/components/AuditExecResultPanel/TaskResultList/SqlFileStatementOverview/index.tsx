@@ -22,7 +22,6 @@ import {
   CustomSegmentedFilter,
   PageHeader
 } from '@actiontech/shared';
-import { IconSQLFile, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import {
@@ -33,6 +32,7 @@ import { Divider, Space } from 'antd';
 import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
 import DownloadRecord from '../../../../../Common/DownloadRecord';
 import { AuditResultFilterContainerStyleWrapper } from '../../../../../Common/AuditResultFilterContainer/style';
+import { LeftArrowOutlined, SqlFileOutlined } from '@actiontech/icons';
 
 const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
@@ -99,13 +99,13 @@ const SqlFileStatementOverview: React.FC = () => {
       <PageHeader
         title={
           <div className="page-title-wrapper">
-            <IconSQLFile width={24} height={24} />
+            <SqlFileOutlined width={24} height={24} />
             {currentFileOverview?.file_name ?? ''}
           </div>
         }
         extra={
           <BasicButton
-            icon={<IconLeftArrow />}
+            icon={<LeftArrowOutlined />}
             onClick={() => {
               navigate(-1);
             }}

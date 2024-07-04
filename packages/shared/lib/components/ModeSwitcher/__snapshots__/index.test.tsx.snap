@@ -9,7 +9,7 @@ exports[`test ModeSwitcher render snapshot when disabled props is equal true 1`]
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -28,7 +28,7 @@ exports[`test ModeSwitcher render snapshot when disabled props is equal true 1`]
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -57,7 +57,7 @@ exports[`test ModeSwitcher render snapshot when disabled props is equal true 1`]
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -76,7 +76,7 @@ exports[`test ModeSwitcher render snapshot when disabled props is equal true 1`]
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -105,7 +105,7 @@ exports[`test ModeSwitcher render snapshot when disabled props is equal true 1`]
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-1x7j8vu"
+        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-disabled css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -124,7 +124,7 @@ exports[`test ModeSwitcher render snapshot when disabled props is equal true 1`]
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -162,7 +162,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 1`] =
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -181,7 +181,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 1`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -210,7 +210,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 1`] =
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -229,7 +229,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 1`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -258,7 +258,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 1`] =
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -277,7 +277,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 1`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -315,7 +315,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 2`] =
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -333,7 +333,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 2`] =
           class="active-icon-wrapper"
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -362,7 +362,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 2`] =
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -381,7 +381,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 2`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -410,7 +410,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 2`] =
       class="ant-col ant-col-2 css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -429,7 +429,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options 2`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -469,7 +469,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options and c
       style="padding-left: 5px; padding-right: 5px;"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -488,7 +488,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options and c
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -518,7 +518,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options and c
       style="padding-left: 5px; padding-right: 5px;"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -537,7 +537,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options and c
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -567,7 +567,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options and c
       style="padding-left: 5px; padding-right: 5px;"
     >
       <div
-        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-icon"
@@ -585,7 +585,7 @@ exports[`test ModeSwitcher render snapshot with Array<object> type options and c
           class="active-icon-wrapper"
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -624,7 +624,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 1`] =
       class="ant-col css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-text only-text"
@@ -636,7 +636,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 1`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -665,7 +665,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 1`] =
       class="ant-col css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-text only-text"
@@ -677,7 +677,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 1`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -706,7 +706,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 1`] =
       class="ant-col css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-text only-text"
@@ -718,7 +718,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 1`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -756,7 +756,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 2`] =
       class="ant-col css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-text only-text"
@@ -767,7 +767,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 2`] =
           class="active-icon-wrapper"
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -796,7 +796,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 2`] =
       class="ant-col css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-text only-text"
@@ -808,7 +808,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 2`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"
@@ -837,7 +837,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 2`] =
       class="ant-col css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="actiontech-mode-switcher-item css-1x7j8vu"
+        class="actiontech-mode-switcher-item css-klzra6"
       >
         <span
           class="actiontech-mode-switcher-item-text only-text"
@@ -849,7 +849,7 @@ exports[`test ModeSwitcher render snapshot with Array<string> type options 2`] =
           hidden=""
         >
           <span
-            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+            class="icon-mode-switcher-checked active-icon"
           >
             <svg
               fill="none"

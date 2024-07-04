@@ -32,22 +32,17 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
             <div
               class="ant-picker-range-separator"
             >
-              <span
-                class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                />
+              </svg>
             </div>
             <div
               class="ant-picker-input"
@@ -76,22 +71,17 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
             <span
               class="ant-picker-clear"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="16"
+                viewBox="0 0 14 14"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </div>
         </div>
@@ -133,22 +123,17 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
             <div
               class="ant-picker-range-separator"
             >
-              <span
-                class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                />
+              </svg>
             </div>
             <div
               class="ant-picker-input ant-picker-input-active"
@@ -176,22 +161,17 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
             <span
               class="ant-picker-clear"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="16"
+                viewBox="0 0 14 14"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
             <div
               class="ant-picker-dropdown css-dev-only-do-not-override-1q11hvz ant-picker-dropdown-range ant-picker-dropdown-placement-bottomLeft"
@@ -241,24 +221,18 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
                                 type="button"
                               >
                                 <span
-                                  class="custom-icon prev-icon css-u3jcp4"
+                                  class="prev-icon"
                                 >
                                   <svg
-                                    fill="none"
                                     height="14"
                                     viewBox="0 0 14 14"
                                     width="14"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <g
-                                      id="arrow-m-left-line"
-                                    >
-                                      <path
-                                        d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
-                                        fill="#292C33"
-                                        id="Vector"
-                                      />
-                                    </g>
+                                    <path
+                                      d="m6.316 7 2.888 2.888-.825.824L4.667 7l3.712-3.712.825.825z"
+                                      fill="#292C33"
+                                    />
                                   </svg>
                                 </span>
                               </button>
@@ -287,24 +261,17 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
                                 type="button"
                               >
                                 <span
-                                  class="custom-icon next-icon css-u3jcp4"
+                                  class="next-icon"
                                 >
                                   <svg
-                                    fill="none"
                                     height="14"
                                     viewBox="0 0 14 14"
                                     width="14"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <g
-                                      id="arrow-m-right-line"
-                                    >
-                                      <path
-                                        d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
-                                        fill="#292C33"
-                                        id="Vector"
-                                      />
-                                    </g>
+                                    <path
+                                      d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                    />
                                   </svg>
                                 </span>
                               </button>
@@ -815,24 +782,18 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
                                 type="button"
                               >
                                 <span
-                                  class="custom-icon prev-icon css-u3jcp4"
+                                  class="prev-icon"
                                 >
                                   <svg
-                                    fill="none"
                                     height="14"
                                     viewBox="0 0 14 14"
                                     width="14"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <g
-                                      id="arrow-m-left-line"
-                                    >
-                                      <path
-                                        d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
-                                        fill="#292C33"
-                                        id="Vector"
-                                      />
-                                    </g>
+                                    <path
+                                      d="m6.316 7 2.888 2.888-.825.824L4.667 7l3.712-3.712.825.825z"
+                                      fill="#292C33"
+                                    />
                                   </svg>
                                 </span>
                               </button>
@@ -860,24 +821,17 @@ exports[`lib/ActiontechTable-FilterContainer render date-range type when filter 
                                 type="button"
                               >
                                 <span
-                                  class="custom-icon next-icon css-u3jcp4"
+                                  class="next-icon"
                                 >
                                   <svg
-                                    fill="none"
                                     height="14"
                                     viewBox="0 0 14 14"
                                     width="14"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <g
-                                      id="arrow-m-right-line"
-                                    >
-                                      <path
-                                        d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
-                                        fill="#292C33"
-                                        id="Vector"
-                                      />
-                                    </g>
+                                    <path
+                                      d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                    />
                                   </svg>
                                 </span>
                               </button>
@@ -1429,22 +1383,17 @@ exports[`lib/ActiontechTable-FilterContainer render search input type 1`] = `
           <span
             class="ant-input-suffix"
           >
-            <span
-              class="pointer custom-icon custom-icon-search css-u3jcp4"
-              role="img"
+            <svg
+              class="pointer custom-icon custom-icon-search"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="currentColor"
-                height="14"
-                viewBox="0 0 14 14"
-                width="14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+              />
+            </svg>
           </span>
         </span>
       </div>
@@ -1476,22 +1425,17 @@ exports[`lib/ActiontechTable-FilterContainer render search input type 2`] = `
           <span
             class="ant-input-suffix"
           >
-            <span
-              class="pointer custom-icon custom-icon-search css-u3jcp4"
-              role="img"
+            <svg
+              class="pointer custom-icon custom-icon-search"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="currentColor"
-                height="14"
-                viewBox="0 0 14 14"
-                width="14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+              />
+            </svg>
           </span>
         </span>
       </div>
@@ -1660,22 +1604,17 @@ exports[`lib/ActiontechTable-FilterContainer render select type when filterKey i
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -1906,22 +1845,17 @@ exports[`lib/ActiontechTable-FilterContainer render select type when filterKey i
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -2082,22 +2016,17 @@ exports[`lib/ActiontechTable-FilterContainer render wrapper style for all custom
             <div
               class="ant-picker-range-separator"
             >
-              <span
-                class="custom-icon custom-icon-arrow-right css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7.68389 6.99993L4.79639 4.11243L5.62122 3.2876L9.33355 6.99993L5.62122 10.7123L4.79639 9.88743L7.68389 6.99993Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                />
+              </svg>
             </div>
             <div
               class="ant-picker-input"
@@ -2162,22 +2091,17 @@ exports[`lib/ActiontechTable-FilterContainer render wrapper style for all custom
           <span
             class="ant-input-suffix"
           >
-            <span
-              class="pointer custom-icon custom-icon-search css-u3jcp4"
-              role="img"
+            <svg
+              class="pointer custom-icon custom-icon-search"
+              height="14"
+              viewBox="0 0 14 14"
+              width="14"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                fill="currentColor"
-                height="14"
-                viewBox="0 0 14 14"
-                width="14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                />
-              </svg>
-            </span>
+              <path
+                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+              />
+            </svg>
           </span>
         </span>
       </div>

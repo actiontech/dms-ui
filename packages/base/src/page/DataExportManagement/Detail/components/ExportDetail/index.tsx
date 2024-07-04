@@ -10,7 +10,7 @@ import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/se
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean } from 'ahooks';
-import { IconWorkflowDownloadSQL } from 'sqle/src/icon/SqlExecWorkflow';
+import { PanelCardOutlined } from '@actiontech/icons';
 
 const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
 
@@ -87,7 +87,7 @@ const ExportDetail: React.FC = () => {
           loading={downloadSQLsLoading}
           onClick={downloadSQLs}
           hidden={!curTaskID}
-          icon={<IconWorkflowDownloadSQL />}
+          icon={<PanelCardOutlined />}
         >
           {t('dmsDataExport.detail.exportResult.taskDetail.downloadSQL')}
         </BasicButton>

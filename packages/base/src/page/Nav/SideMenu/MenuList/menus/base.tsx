@@ -1,26 +1,29 @@
 /* eslint-disable no-template-curly-in-string */
 import { Link } from 'react-router-dom';
 import {
-  IconSubmenuExpandTop,
-  IconSubmenuExpandDown,
-  IconInstanceManager,
-  IconMemberAndPermissions,
-  IconCloudBeaver,
-  IconDataExport
-} from '../../../../../icon/sideMenu';
+  MemberFilled,
+  ExportFilled,
+  DownOutlined,
+  UpOutlined,
+  DatabaseFilled,
+  ComputerFilled
+} from '@actiontech/icons';
 import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import Icon from '@ant-design/icons';
 
 export const dbServiceManagementMenuItem: GenerateMenuItemType = (
   projectID
 ) => ({
   label: t('dmsMenu.instanceManager'),
   expandIcon({ isOpen }) {
-    return isOpen ? <IconSubmenuExpandTop /> : <IconSubmenuExpandDown />;
+    return isOpen ? (
+      <UpOutlined width={18} height={18} />
+    ) : (
+      <DownOutlined width={18} height={18} />
+    );
   },
-  icon: <IconInstanceManager />,
+  icon: <DatabaseFilled width={18} height={18} />,
   key: 'instance-management',
   structKey: 'instance-management',
   children: [
@@ -49,7 +52,7 @@ export const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.memberAndPermissions')}
     </Link>
   ),
-  icon: <Icon component={IconMemberAndPermissions} />,
+  icon: <MemberFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
   structKey: 'member'
 });
@@ -60,7 +63,7 @@ export const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.SQLWorkbench')}
     </Link>
   ),
-  icon: <Icon component={IconCloudBeaver} />,
+  icon: <ComputerFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/cloud-beaver`,
   structKey: 'cloud-beaver'
 });
@@ -71,7 +74,7 @@ export const dataExportMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.dataExportManagement')}
     </Link>
   ),
-  icon: <Icon component={IconDataExport} />,
+  icon: <ExportFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/export`,
   structKey: 'data-export'
 });

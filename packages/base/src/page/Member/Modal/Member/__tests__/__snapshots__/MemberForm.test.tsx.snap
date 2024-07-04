@@ -19,9 +19,44 @@ exports[`base/Member/Modal/MemberForm should match snapshot when isUpdate is fal
             <label
               class="ant-form-item-required"
               for="userUid"
-              title="用户名称"
+              title=""
             >
-              用户名称
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  用户名称
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    aria-label="info-circle"
+                    class="anticon anticon-info-circle tooltips-default-icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="info-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      />
+                      <path
+                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </label>
           </div>
           <div
@@ -172,14 +207,13 @@ exports[`base/Member/Modal/MemberForm should match snapshot when isUpdate is fal
                     class="ant-btn-icon"
                   >
                     <svg
-                      fill="none"
                       height="16"
                       viewBox="0 0 16 16"
                       width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00004C0.333496 3.31804 3.31816 0.333374 7.00016 0.333374C10.6822 0.333374 13.6668 3.31804 13.6668 7.00004C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM6.3335 6.33337H3.66683V7.66671H6.3335V10.3334H7.66683V7.66671H10.3335V6.33337H7.66683V3.66671H6.3335V6.33337Z"
+                        d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                         fill="#4583FF"
                       />
                     </svg>
@@ -217,9 +251,44 @@ exports[`base/Member/Modal/MemberForm should match snapshot when isUpdate is tru
             <label
               class="ant-form-item-required"
               for="userUid"
-              title="用户名称"
+              title=""
             >
-              用户名称
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  用户名称
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    aria-label="info-circle"
+                    class="anticon anticon-info-circle tooltips-default-icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="info-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      />
+                      <path
+                        d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </label>
           </div>
           <div
@@ -371,14 +440,13 @@ exports[`base/Member/Modal/MemberForm should match snapshot when isUpdate is tru
                     class="ant-btn-icon"
                   >
                     <svg
-                      fill="none"
                       height="16"
                       viewBox="0 0 16 16"
                       width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M7.00016 13.6667C3.31816 13.6667 0.333496 10.682 0.333496 7.00004C0.333496 3.31804 3.31816 0.333374 7.00016 0.333374C10.6822 0.333374 13.6668 3.31804 13.6668 7.00004C13.6668 10.682 10.6822 13.6667 7.00016 13.6667ZM6.3335 6.33337H3.66683V7.66671H6.3335V10.3334H7.66683V7.66671H10.3335V6.33337H7.66683V3.66671H6.3335V6.33337Z"
+                        d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                         fill="#4583FF"
                       />
                     </svg>

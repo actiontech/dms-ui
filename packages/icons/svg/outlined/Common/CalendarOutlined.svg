@@ -1,0 +1,5 @@
+<!-- 所属路径: /Users/liyu/work/actionsky/dms-ui/dms-ui/packages/shared/lib/icon/common.tsx -->
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <path id="Vector"
+    d="M6.75 0.75V2.25H11.25V0.75H12.75V2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25H5.25V0.75H6.75ZM15 8.25H3V14.25H15V8.25ZM8.25 9.75V12.75H4.5V9.75H8.25ZM5.25 3.75H3V6.75H15V3.75H12.75V5.25H11.25V3.75H6.75V5.25H5.25V3.75Z" />
+</svg>

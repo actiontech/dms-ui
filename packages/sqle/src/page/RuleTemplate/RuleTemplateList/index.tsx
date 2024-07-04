@@ -6,7 +6,6 @@ import {
   EmptyBox,
   SegmentedTabs
 } from '@actiontech/shared';
-import { IconAdd, IconImport } from '@actiontech/shared/lib/Icon';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useNavigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
@@ -18,6 +17,7 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import CloneRuleTemplate from '../CloneRuleTemplate';
 import CommonTable from './CommonTable';
+import { PlusOutlined, LoginBoxOutlined } from '@actiontech/icons';
 
 const RuleTemplateList = () => {
   const { t } = useTranslation();
@@ -56,10 +56,16 @@ const RuleTemplateList = () => {
           key="ruleTemplateButton"
         >
           <Space size={12}>
-            <BasicButton icon={<IconImport />} onClick={onImport}>
+            <BasicButton icon={<LoginBoxOutlined />} onClick={onImport}>
               {t('ruleTemplate.importRuleTemplate.button')}
             </BasicButton>
-            <BasicButton type="primary" icon={<IconAdd />} onClick={onCreate}>
+            <BasicButton
+              type="primary"
+              icon={
+                <PlusOutlined color="currentColor" width={10} height={10} />
+              }
+              onClick={onCreate}
+            >
               {t('ruleTemplate.createRuleTemplate.button')}
             </BasicButton>
           </Space>

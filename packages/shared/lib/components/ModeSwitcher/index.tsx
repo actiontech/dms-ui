@@ -2,7 +2,6 @@ import { useControllableValue } from 'ahooks';
 import { ModeSwitcherProps } from './index.type';
 import { ModeSwitcherItemStyleWrapper } from './style';
 import classNames from 'classnames';
-import { IconModeSwitcherChecked } from '../../Icon/common';
 import { Col, Row } from 'antd';
 import EmptyBox from '../EmptyBox';
 
@@ -69,7 +68,30 @@ const ModeSwitcher = <V extends string | number = string>({
                 {label}
               </span>
               <div className="active-icon-wrapper" hidden={!active}>
-                <IconModeSwitcherChecked className="active-icon" />
+                <span
+                  className={classNames(
+                    'icon-mode-switcher-checked active-icon',
+                    className
+                  )}
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="Frame">
+                      <path
+                        id="Vector"
+                        d="M3.88879 7.00002L6.22213 9.33335L10.8888 4.66669"
+                        stroke="#FCFBF9"
+                        strokeWidth="1.5"
+                        strokeLinejoin="round"
+                      />
+                    </g>
+                  </svg>
+                </span>
               </div>
             </ModeSwitcherItemStyleWrapper>
           </Col>

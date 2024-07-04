@@ -3,7 +3,6 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconDownload } from '@actiontech/shared/lib/Icon';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   ActiontechTable,
@@ -49,6 +48,7 @@ import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
 import { actionsButtonData, defaultActionButton } from './index.data';
 import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
+import { DownArrowLineOutlined } from '@actiontech/icons';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -328,7 +328,7 @@ const SQLEEIndex = () => {
         extra={
           <BasicButton
             onClick={handleExport}
-            icon={<IconDownload />}
+            icon={<DownArrowLineOutlined />}
             disabled={exportButtonDisabled}
           >
             {t('sqlManagement.pageHeader.action.export')}

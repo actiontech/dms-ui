@@ -6,11 +6,13 @@ import { act } from '@testing-library/react';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import { TaskFileListMockData } from '../../../../../../../../../testUtils/mockApi/task/data';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test TaskResultList/Result/FileMode', () => {
   let getTaskSQLsSpy: jest.SpyInstance;
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     getTaskSQLsSpy = task.getAuditTaskSQLs();
   });

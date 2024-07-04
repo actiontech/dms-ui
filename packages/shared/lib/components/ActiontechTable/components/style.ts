@@ -239,3 +239,9 @@ export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
     }
   }
 `;
+
+export const ColumnsSettingStyleWrapper = styled(Space)`
+  .ant-space-item {
+    display: flex;
+  }
+`;

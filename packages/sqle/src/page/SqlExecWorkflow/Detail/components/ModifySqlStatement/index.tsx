@@ -18,15 +18,12 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
 } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
-import { IconWorkflowCreateTitle } from '../../../../../icon/SqlExecWorkflow';
-import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import useSharedStepDetail from '../../../Create/hooks/useSharedStepDetail';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
@@ -35,6 +32,8 @@ import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
 import { ModifySqlStatementFormStyleWrapper } from './style';
 import useCheckTaskAuditSqlCount from '../../../Create/hooks/useCheckTaskAuditSqlCount';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../hooks/useAuditExecResultPanelSetup';
+import { BriefcaseFilled, LeftArrowOutlined } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
@@ -54,7 +53,6 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [form] = Form.useForm<{ [key in string]: SqlStatementFields }>();
-  const { sqleTheme } = useThemeStyleData();
 
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
@@ -232,7 +230,10 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         <PageHeader
           fixed
           title={
-            <BasicButton icon={<IconLeftArrow />} onClick={innerBackToDetail}>
+            <BasicButton
+              icon={<LeftArrowOutlined />}
+              onClick={innerBackToDetail}
+            >
               {t('execWorkflow.detail.operator.backToDetail')}
             </BasicButton>
           }
@@ -256,11 +257,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           <FormAreaLineStyleWrapper className="has-border">
             <FormAreaBlockStyleWrapper>
               <FormItemBigTitle>
-                <IconWorkflowCreateTitle
-                  color={
-                    sqleTheme.execWorkflow.create.form.baseInfoTitleIconColor
-                  }
-                />
+                <Icon component={BriefcaseFilled} className="title-icon" />
                 <span>{t('execWorkflow.detail.operator.modifySql')}</span>
               </FormItemBigTitle>
 

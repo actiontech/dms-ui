@@ -66,7 +66,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                   class="ant-spin-container"
                 >
                   <form
-                    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-12jsja7"
+                    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-khl98u"
                   >
                     <div
                       class="css-4t8s6h"
@@ -118,24 +118,19 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                         >
-                          <span
-                            class="project-flag-icon css-u3jcp4"
+                          <svg
+                            height="12"
+                            viewBox="0 0 18 18"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="12"
-                              viewBox="0 0 18 18"
-                              width="12"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.25 2.25H9.2865C9.42575 2.25007 9.56222 2.28891 9.68064 2.36216C9.79907 2.43542 9.89476 2.54019 9.957 2.66475L10.5 3.75H15C15.1989 3.75 15.3897 3.82902 15.5303 3.96967C15.671 4.11032 15.75 4.30109 15.75 4.5V12.75C15.75 12.9489 15.671 13.1397 15.5303 13.2803C15.3897 13.421 15.1989 13.5 15 13.5H10.2135C10.0743 13.4999 9.93778 13.4611 9.81936 13.3878C9.70093 13.3146 9.60524 13.2098 9.543 13.0853L9 12H3.75V16.5H2.25V2.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
                           <span>
                             default
                           </span>
@@ -146,24 +141,37 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                         >
-                          <span
-                            class="custom-icon-clock css-u3jcp4"
+                          <svg
+                            color="#6094FC"
+                            fill="none"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="12"
-                              viewBox="0 0 12 12"
-                              width="12"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6 11C3.2385 11 1 8.7615 1 6C1 3.2385 3.2385 1 6 1C8.7615 1 11 3.2385 11 6C11 8.7615 8.7615 11 6 11ZM6.5 6V3.5H5.5V7H8.5V6H6.5Z"
-                                fill="#6094FC"
-                              />
-                            </svg>
-                          </span>
+                            <circle
+                              cx="12"
+                              cy="12"
+                              fill="currentColor"
+                              r="11"
+                            />
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="#fff"
+                              stroke-width="2"
+                            />
+                            <path
+                              d="M12 7.5V12h3.5"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />
+                          </svg>
                           <span>
                             2024-01-31
                           </span>
@@ -173,44 +181,22 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                         >
-                          <span
-                            class="custom-icon-user css-u3jcp4"
+                          <svg
+                            height="12"
+                            viewBox="0 0 12 12"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="12"
-                              viewBox="0 0 12 12"
-                              width="12"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <g
+                              fill="#15C7D4"
                             >
-                              <g
-                                clip-path="url(#clip0_1166_8039)"
-                              >
-                                <path
-                                  d="M4.45704 4.68416C4.04773 4.27486 3.81779 3.71972 3.81779 3.14088C3.81779 2.56203 4.04773 2.00689 4.45704 1.59759C4.86634 1.18828 5.42148 0.958336 6.00033 0.958336C6.57917 0.958336 7.13431 1.18828 7.54361 1.59759C7.95292 2.00689 8.18286 2.56203 8.18286 3.14088C8.18286 3.71972 7.95292 4.27486 7.54361 4.68416C7.13431 5.09347 6.57917 5.32341 6.00033 5.32341C5.42148 5.32341 4.86634 5.09347 4.45704 4.68416Z"
-                                  fill="#15C7D4"
-                                />
-                                <path
-                                  d="M10.5837 9.47022C10.5837 7.54151 9.02031 5.97816 7.0916 5.97816H4.90906C2.98035 5.97816 1.41699 7.54151 1.41699 9.47022V9.68848C1.41699 9.92002 1.50897 10.1421 1.67269 10.3058C1.83641 10.4695 2.05847 10.5615 2.29001 10.5615H9.71064C9.94218 10.5615 10.1642 10.4695 10.328 10.3058C10.4917 10.1421 10.5837 9.92002 10.5837 9.68848V9.47022Z"
-                                  fill="#15C7D4"
-                                />
-                              </g>
-                              <defs>
-                                <clippath
-                                  id="clip0_1166_8039"
-                                >
-                                  <rect
-                                    fill="white"
-                                    height="11"
-                                    transform="translate(0.5 0.5)"
-                                    width="11"
-                                  />
-                                </clippath>
-                              </defs>
-                            </svg>
-                          </span>
+                              <path
+                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                              />
+                            </g>
+                          </svg>
                           <span>
                             admin
                           </span>
@@ -301,37 +287,35 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                             <div
                               class="label-cont-custom"
                             >
-                              <div>
-                                <span
-                                  class="custom-icon-ellipse css-u3jcp4"
+                              <span
+                                class="custom-icon-ellipse css-u3jcp4"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
+                                  <rect
+                                    fill="#E8F3FF"
                                     height="16"
-                                    viewBox="0 0 16 16"
+                                    rx="3"
                                     width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <rect
-                                      fill="#E8F3FF"
-                                      height="16"
-                                      rx="3"
-                                      width="16"
-                                    />
-                                    <circle
-                                      cx="8"
-                                      cy="8"
-                                      fill="white"
-                                      r="3"
-                                      stroke="#4583FF"
-                                      stroke-width="2"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  数据源
-                                </span>
-                              </div>
+                                  />
+                                  <circle
+                                    cx="8"
+                                    cy="8"
+                                    fill="#fff"
+                                    r="3"
+                                    stroke="#4583FF"
+                                    stroke-width="2"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                数据源
+                              </span>
                             </div>
                           </label>
                         </div>
@@ -429,37 +413,35 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                             <div
                               class="label-cont-custom"
                             >
-                              <div>
-                                <span
-                                  class="custom-icon-ellipse css-u3jcp4"
+                              <span
+                                class="custom-icon-ellipse css-u3jcp4"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
+                                  <rect
+                                    fill="#E8F3FF"
                                     height="16"
-                                    viewBox="0 0 16 16"
+                                    rx="3"
                                     width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <rect
-                                      fill="#E8F3FF"
-                                      height="16"
-                                      rx="3"
-                                      width="16"
-                                    />
-                                    <circle
-                                      cx="8"
-                                      cy="8"
-                                      fill="white"
-                                      r="3"
-                                      stroke="#4583FF"
-                                      stroke-width="2"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  数据库
-                                </span>
-                              </div>
+                                  />
+                                  <circle
+                                    cx="8"
+                                    cy="8"
+                                    fill="#fff"
+                                    r="3"
+                                    stroke="#4583FF"
+                                    stroke-width="2"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                数据库
+                              </span>
                             </div>
                           </label>
                         </div>
@@ -582,27 +564,22 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                                   class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
                                     >
-                                      <span
-                                        class="custom-icon  css-u3jcp4"
+                                      <svg
+                                        height="18"
+                                        viewBox="0 0 18 18"
+                                        width="18"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
+                                        <path
+                                          d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                           fill="currentColor"
-                                          height="18"
-                                          viewBox="0 0 18 18"
-                                          width="18"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                            fill="currentColor"
-                                          />
-                                        </svg>
-                                      </span>
+                                        />
+                                      </svg>
                                     </span>
                                     <span
                                       class="actiontech-mode-switcher-item-text"
@@ -613,7 +590,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                                       class="active-icon-wrapper"
                                     >
                                       <span
-                                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                        class="icon-mode-switcher-checked active-icon"
                                       >
                                         <svg
                                           fill="none"
@@ -726,15 +703,15 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot 1`] 
                             class="ant-space-item"
                           >
                             <svg
-                              fill="none"
+                              color="#8A8F99"
                               height="14"
                               viewBox="0 0 14 14"
                               width="14"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                                fill="#8A8F99"
+                                d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                fill="currentColor"
                               />
                             </svg>
                           </div>
@@ -881,7 +858,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                   class="ant-spin-container ant-spin-blur"
                 >
                   <form
-                    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-12jsja7"
+                    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-khl98u"
                   >
                     <div
                       class="css-4t8s6h"
@@ -933,24 +910,19 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                         >
-                          <span
-                            class="project-flag-icon css-u3jcp4"
+                          <svg
+                            height="12"
+                            viewBox="0 0 18 18"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="12"
-                              viewBox="0 0 18 18"
-                              width="12"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.25 2.25H9.2865C9.42575 2.25007 9.56222 2.28891 9.68064 2.36216C9.79907 2.43542 9.89476 2.54019 9.957 2.66475L10.5 3.75H15C15.1989 3.75 15.3897 3.82902 15.5303 3.96967C15.671 4.11032 15.75 4.30109 15.75 4.5V12.75C15.75 12.9489 15.671 13.1397 15.5303 13.2803C15.3897 13.421 15.1989 13.5 15 13.5H10.2135C10.0743 13.4999 9.93778 13.4611 9.81936 13.3878C9.70093 13.3146 9.60524 13.2098 9.543 13.0853L9 12H3.75V16.5H2.25V2.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
                           <span>
                             default
                           </span>
@@ -961,24 +933,37 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                         >
-                          <span
-                            class="custom-icon-clock css-u3jcp4"
+                          <svg
+                            color="#6094FC"
+                            fill="none"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="12"
-                              viewBox="0 0 12 12"
-                              width="12"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6 11C3.2385 11 1 8.7615 1 6C1 3.2385 3.2385 1 6 1C8.7615 1 11 3.2385 11 6C11 8.7615 8.7615 11 6 11ZM6.5 6V3.5H5.5V7H8.5V6H6.5Z"
-                                fill="#6094FC"
-                              />
-                            </svg>
-                          </span>
+                            <circle
+                              cx="12"
+                              cy="12"
+                              fill="currentColor"
+                              r="11"
+                            />
+                            <circle
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="#fff"
+                              stroke-width="2"
+                            />
+                            <path
+                              d="M12 7.5V12h3.5"
+                              stroke="#fff"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                            />
+                          </svg>
                           <span>
                             2024-01-31
                           </span>
@@ -988,44 +973,22 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-16jha8l css-dev-only-do-not-override-txh9fw"
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                         >
-                          <span
-                            class="custom-icon-user css-u3jcp4"
+                          <svg
+                            height="12"
+                            viewBox="0 0 12 12"
+                            width="12"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="12"
-                              viewBox="0 0 12 12"
-                              width="12"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <g
+                              fill="#15C7D4"
                             >
-                              <g
-                                clip-path="url(#clip0_1166_8039)"
-                              >
-                                <path
-                                  d="M4.45704 4.68416C4.04773 4.27486 3.81779 3.71972 3.81779 3.14088C3.81779 2.56203 4.04773 2.00689 4.45704 1.59759C4.86634 1.18828 5.42148 0.958336 6.00033 0.958336C6.57917 0.958336 7.13431 1.18828 7.54361 1.59759C7.95292 2.00689 8.18286 2.56203 8.18286 3.14088C8.18286 3.71972 7.95292 4.27486 7.54361 4.68416C7.13431 5.09347 6.57917 5.32341 6.00033 5.32341C5.42148 5.32341 4.86634 5.09347 4.45704 4.68416Z"
-                                  fill="#15C7D4"
-                                />
-                                <path
-                                  d="M10.5837 9.47022C10.5837 7.54151 9.02031 5.97816 7.0916 5.97816H4.90906C2.98035 5.97816 1.41699 7.54151 1.41699 9.47022V9.68848C1.41699 9.92002 1.50897 10.1421 1.67269 10.3058C1.83641 10.4695 2.05847 10.5615 2.29001 10.5615H9.71064C9.94218 10.5615 10.1642 10.4695 10.328 10.3058C10.4917 10.1421 10.5837 9.92002 10.5837 9.68848V9.47022Z"
-                                  fill="#15C7D4"
-                                />
-                              </g>
-                              <defs>
-                                <clippath
-                                  id="clip0_1166_8039"
-                                >
-                                  <rect
-                                    fill="white"
-                                    height="11"
-                                    transform="translate(0.5 0.5)"
-                                    width="11"
-                                  />
-                                </clippath>
-                              </defs>
-                            </svg>
-                          </span>
+                              <path
+                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                              />
+                            </g>
+                          </svg>
                           <span>
                             admin
                           </span>
@@ -1116,37 +1079,35 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                             <div
                               class="label-cont-custom"
                             >
-                              <div>
-                                <span
-                                  class="custom-icon-ellipse css-u3jcp4"
+                              <span
+                                class="custom-icon-ellipse css-u3jcp4"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
+                                  <rect
+                                    fill="#E8F3FF"
                                     height="16"
-                                    viewBox="0 0 16 16"
+                                    rx="3"
                                     width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <rect
-                                      fill="#E8F3FF"
-                                      height="16"
-                                      rx="3"
-                                      width="16"
-                                    />
-                                    <circle
-                                      cx="8"
-                                      cy="8"
-                                      fill="white"
-                                      r="3"
-                                      stroke="#4583FF"
-                                      stroke-width="2"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  数据源
-                                </span>
-                              </div>
+                                  />
+                                  <circle
+                                    cx="8"
+                                    cy="8"
+                                    fill="#fff"
+                                    r="3"
+                                    stroke="#4583FF"
+                                    stroke-width="2"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                数据源
+                              </span>
                             </div>
                           </label>
                         </div>
@@ -1244,37 +1205,35 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                             <div
                               class="label-cont-custom"
                             >
-                              <div>
-                                <span
-                                  class="custom-icon-ellipse css-u3jcp4"
+                              <span
+                                class="custom-icon-ellipse css-u3jcp4"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <svg
-                                    fill="none"
+                                  <rect
+                                    fill="#E8F3FF"
                                     height="16"
-                                    viewBox="0 0 16 16"
+                                    rx="3"
                                     width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <rect
-                                      fill="#E8F3FF"
-                                      height="16"
-                                      rx="3"
-                                      width="16"
-                                    />
-                                    <circle
-                                      cx="8"
-                                      cy="8"
-                                      fill="white"
-                                      r="3"
-                                      stroke="#4583FF"
-                                      stroke-width="2"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  数据库
-                                </span>
-                              </div>
+                                  />
+                                  <circle
+                                    cx="8"
+                                    cy="8"
+                                    fill="#fff"
+                                    r="3"
+                                    stroke="#4583FF"
+                                    stroke-width="2"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                数据库
+                              </span>
                             </div>
                           </label>
                         </div>
@@ -1397,27 +1356,22 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                                   class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
                                 >
                                   <div
-                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                                    class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                                   >
                                     <span
                                       class="actiontech-mode-switcher-item-icon"
                                     >
-                                      <span
-                                        class="custom-icon  css-u3jcp4"
+                                      <svg
+                                        height="18"
+                                        viewBox="0 0 18 18"
+                                        width="18"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
+                                        <path
+                                          d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                                           fill="currentColor"
-                                          height="18"
-                                          viewBox="0 0 18 18"
-                                          width="18"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                            fill="currentColor"
-                                          />
-                                        </svg>
-                                      </span>
+                                        />
+                                      </svg>
                                     </span>
                                     <span
                                       class="actiontech-mode-switcher-item-text"
@@ -1428,7 +1382,7 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                                       class="active-icon-wrapper"
                                     >
                                       <span
-                                        class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                                        class="icon-mode-switcher-checked active-icon"
                                       >
                                         <svg
                                           fill="none"
@@ -1587,15 +1541,15 @@ exports[`test base/DataExport/Create/UpdateInfoDrawer should match snapshot when
                             class="ant-space-item"
                           >
                             <svg
-                              fill="none"
+                              color="#8A8F99"
                               height="14"
                               viewBox="0 0 14 14"
                               width="14"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                                fill="#8A8F99"
+                                d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                fill="currentColor"
                               />
                             </svg>
                           </div>

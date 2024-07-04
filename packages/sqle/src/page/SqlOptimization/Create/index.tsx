@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { Form, message } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import BaseInfoForm from './BaseInfoForm';
@@ -13,6 +12,7 @@ import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimiz
 import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 // todo 后续统一移除掉 context 尽量统一用 redux 来管理
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
@@ -89,7 +89,7 @@ const SqlOptimizationCreate = () => {
         fixed
         title={
           <Link to={`/sqle/project/${projectID}/sql-optimization`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('sqlOptimization.create.returnButton')}
             </BasicButton>
           </Link>

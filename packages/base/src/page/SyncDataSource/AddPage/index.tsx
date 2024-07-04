@@ -13,11 +13,6 @@ import {
   PageHeader
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
-import { IconInstanceManager } from '../../../icon/sideMenu';
 
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -26,6 +21,8 @@ import { IAddDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base
 
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
+import { LeftArrowOutlined, DatabaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const AddSyncTask: React.FC = () => {
   const { t } = useTranslation();
@@ -84,7 +81,7 @@ const AddSyncTask: React.FC = () => {
         fixed
         title={
           <Link to={`/project/${projectID}/sync-data-source`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsSyncDataSource.addSyncTask.backToList')}
             </BasicButton>
           </Link>
@@ -118,11 +115,7 @@ const AddSyncTask: React.FC = () => {
             form={form}
             title={
               <>
-                <IconInstanceManager
-                  className="title-icon"
-                  width={32}
-                  height={32}
-                />
+                <Icon component={DatabaseFilled} className="title-icon" />
                 <span>{t('dmsSyncDataSource.addSyncTask.title')}</span>
               </>
             }
@@ -130,7 +123,7 @@ const AddSyncTask: React.FC = () => {
         }
       >
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('dmsSyncDataSource.addSyncTask.successTips')}
           extra={[
             <BasicButton key="close" onClick={hiddenResult}>
