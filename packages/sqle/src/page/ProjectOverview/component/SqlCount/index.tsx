@@ -105,7 +105,7 @@ const SqlCount = () => {
           textAlign: 'center'
         },
         customHtml: (container, view, datum) => {
-          return datum?.percent ? `${datum.percent * 100}%` : '0';
+          return datum?.percent ? `${datum.percent * 100}%` : '0%';
         }
       },
       content: {
@@ -125,7 +125,7 @@ const SqlCount = () => {
       <ChartWrapper
         loading={loading}
         errorInfo={errorMessage}
-        dataLength={data}
+        dataLength={parseInt(totalData.total_sql_count)}
         emptyCont={t('common.tip.no_data')}
         onRefresh={() => {
           getApiData();
