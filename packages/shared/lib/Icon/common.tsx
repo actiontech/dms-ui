@@ -1635,6 +1635,29 @@ export const IconCheckout = () => {
   );
 };
 
+export const IconCheckoutCircle: React.FC<CustomIconProps> = ({
+  width = 16,
+  height = 16,
+  color
+}) => {
+  return (
+    <CommonIconStyleWrapper role="img" className="custom-icon">
+      <svg
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM9.16925 13.3334L15.0609 7.44092L13.8826 6.26258L9.16925 10.9767L6.81175 8.61925L5.63341 9.79758L9.16925 13.3334Z"
+          fill={color ?? 'currentColor'}
+        />
+      </svg>
+    </CommonIconStyleWrapper>
+  );
+};
+
 export const IconBookMark = () => {
   return (
     <svg

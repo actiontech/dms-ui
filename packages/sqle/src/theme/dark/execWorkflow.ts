@@ -59,8 +59,8 @@ export const execWorkflowTheme: ExecWorkflowTheme = {
         schemaValueColor: '#7d8ca8'
       },
       options: {
-        bgColor: darkThemeUI.uiToken.colorTextTertiary,
-        activeBgColor: darkThemeUI.uiToken.colorPrimary,
+        bgColor: darkThemeUI.uiToken.colorFillTertiary,
+        activeBgColor: darkThemeBasic.basic.colorPrimaryBgActive,
         textColor: darkThemeUI.uiToken.colorTextTertiary,
         textActiveColor: darkThemeUI.uiToken.colorPrimary,
         numColor: darkThemeUI.uiToken.colorTextSecondary,

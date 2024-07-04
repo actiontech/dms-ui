@@ -15,16 +15,18 @@ const SegmentedTabs = <T extends string | number = string>({
   segmentedRowExtraContent,
   ...props
 }: SegmentedTabsProps<T>) => {
+  const defaultActiveKey = props.defaultActiveKey ?? items[0]?.value;
+
   const [activeKey, onChange] = useControllableValue(
     typeof props.activeKey !== 'undefined'
       ? {
           value: props.activeKey,
           onChange: props.onChange,
-          defaultValue: props.defaultActiveKey
+          defaultValue: defaultActiveKey
         }
       : {
           onChange: props.onChange,
-          defaultValue: props.defaultActiveKey
+          defaultValue: defaultActiveKey
         }
   );
 
@@ -44,7 +46,7 @@ const SegmentedTabs = <T extends string | number = string>({
           options={segmentedOptions}
           onChange={onChange}
           value={activeKey}
-          defaultValue={props.defaultActiveKey}
+          defaultValue={defaultActiveKey}
         />
 
         {!!segmentedRowExtraContent && segmentedRowExtraContent}

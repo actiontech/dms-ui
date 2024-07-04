@@ -161,6 +161,17 @@ export const sqleOperationRecordMenuItem: GenerateMenuItemType = (
   role: [SystemRole.admin]
 });
 
+export const sqlManagementConf: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/sql-management-conf`}>
+      {t('dmsMenu.sqlManagementConf')}
+    </Link>
+  ),
+  icon: <Icon component={IconWhitelist} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-conf`,
+  structKey: 'sql-management-conf'
+});
+
 const sqleMenusCollection = [
   projectOverviewMenuItem,
   dashboardMenuItem,
@@ -174,7 +185,8 @@ const sqleMenusCollection = [
   whiteListMenuItem,
   workflowTemplateMenuItem,
   workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem
+  sqleOperationRecordMenuItem,
+  sqlManagementConf
 ];
 
 export default sqleMenusCollection;
