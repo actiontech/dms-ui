@@ -70,7 +70,14 @@ const AllIconDemo = () => {
   return (
     <div style={{ color: '#555' }}>
       {contextHolder}
-      <Space style={{ width: '100%', justifyContent: 'center' }}>
+      <Space
+        size={32}
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          marginBottom: '24px'
+        }}
+      >
         <Segmented
           options={['Filled', 'Outlined']}
           value={currentTheme}
