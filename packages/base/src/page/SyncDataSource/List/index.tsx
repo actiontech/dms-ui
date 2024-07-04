@@ -15,8 +15,8 @@ import {
   TableRefreshButton,
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { useMemo } from 'react';
+import { PlusOutlined } from '@actiontech/icons';
 
 const SyncTaskList: React.FC = () => {
   const { t } = useTranslation();
@@ -105,7 +105,17 @@ const SyncTaskList: React.FC = () => {
         extra={[
           <EmptyBox if={!projectArchive && actionPermission} key="addSyncTask">
             <Link to={`/project/${projectID}/sync-data-source/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
+              <BasicButton
+                type="primary"
+                icon={
+                  <PlusOutlined
+                    width={10}
+                    height={10}
+                    fill="currentColor"
+                    color="currentColor"
+                  />
+                }
+              >
                 {t('dmsSyncDataSource.syncTaskList.addSyncTask')}
               </BasicButton>
             </Link>

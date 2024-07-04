@@ -9,7 +9,6 @@ import { Spin, Typography, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import { SqlOptimizationDetailUrlParams } from '../index.type';
 import { useBoolean, useRequest } from 'ahooks';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
@@ -24,6 +23,7 @@ import CodeBlock from '../components/CodeBlock';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 import RecommendIndex from '../components/RecommendIndex';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const OptimizationDetail = () => {
   const { t } = useTranslation();
@@ -61,7 +61,7 @@ const OptimizationDetail = () => {
             <Link
               to={`/sqle/project/${projectID}/sql-optimization/overview/${urlParams.optimizationId}`}
             >
-              <BasicButton icon={<IconLeftArrow />}>
+              <BasicButton icon={<LeftArrowOutlined />}>
                 {t('sqlOptimization.detail.returnButton')}
               </BasicButton>
             </Link>

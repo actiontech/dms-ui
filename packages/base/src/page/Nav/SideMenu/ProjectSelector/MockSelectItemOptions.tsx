@@ -5,11 +5,8 @@ import {
   MockSelectItemOptionsStyleWrapper,
   ProjectSelectorLabelStyleWrapper
 } from './style';
-import {
-  IconProjectArchived,
-  IconProjectFlag
-} from '@actiontech/shared/lib/Icon/common';
 import { IBindProject } from './index.type';
+import { FlagFilled, LockOutlined } from '@actiontech/icons';
 
 const MockSelectItemOptions: React.FC<{
   list: IBindProject[];
@@ -39,7 +36,16 @@ const MockSelectItemOptions: React.FC<{
           >
             <div className={`ant-select-item-option-content`}>
               <ProjectSelectorLabelStyleWrapper>
-                {v.archived ? <IconProjectArchived /> : <IconProjectFlag />}
+                {v.archived ? (
+                  <LockOutlined width={18} height={18} />
+                ) : (
+                  <FlagFilled
+                    color="currentColor"
+                    width={18}
+                    height={18}
+                    className="project-flag-icon"
+                  />
+                )}
 
                 <span className="project-selector-label-text">
                   {v.project_name}

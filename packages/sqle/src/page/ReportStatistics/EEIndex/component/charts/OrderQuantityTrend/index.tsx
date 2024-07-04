@@ -22,7 +22,6 @@ import {
   OrderQuantityTrendExtraStyleWrapper
 } from './style';
 import { BasicRangePicker } from '@actiontech/shared';
-import { IconRightArrow } from '@actiontech/shared/lib/Icon';
 import { IWorkflowCreatedCountsEachDayItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   IGetWorkflowCreatedCountEachDayV1Params,
@@ -31,6 +30,7 @@ import {
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { ArrowRightOutlined } from '@actiontech/icons';
 
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;
@@ -259,7 +259,7 @@ const OrderQuantityTrend = () => {
             className="orderQuantityTrend-range"
             format={dateFormat}
             suffixIcon={<></>}
-            separator={<Icon component={IconRightArrow} />}
+            separator={<Icon component={ArrowRightOutlined} />}
             defaultValue={defaultRangeValue}
             value={range}
             disabledDate={disabledDate}

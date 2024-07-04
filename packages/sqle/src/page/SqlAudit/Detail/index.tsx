@@ -3,12 +3,12 @@ import { Link, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
 import { BasicButton, PageHeader } from '@actiontech/shared';
-import { IconAdd, IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
 import BasicInfoWrapper from './BasicInfoWrapper';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
+import { PlusOutlined, LeftArrowOutlined } from '@actiontech/icons';
 
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
@@ -46,7 +46,7 @@ const SqlAuditDetail = () => {
           fixed
           title={
             <Link to={`/sqle/project/${projectID}/sql-audit`}>
-              <BasicButton icon={<IconLeftArrow />}>
+              <BasicButton icon={<LeftArrowOutlined />}>
                 {t('sqlAudit.common.goBackList')}
               </BasicButton>
             </Link>
@@ -54,7 +54,12 @@ const SqlAuditDetail = () => {
           extra={
             !projectArchive ? (
               <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
-                <BasicButton type="primary" icon={<IconAdd />}>
+                <BasicButton
+                  type="primary"
+                  icon={
+                    <PlusOutlined color="currentColor" width={10} height={10} />
+                  }
+                >
                   {t('sqlAudit.list.action.create')}
                 </BasicButton>
               </Link>

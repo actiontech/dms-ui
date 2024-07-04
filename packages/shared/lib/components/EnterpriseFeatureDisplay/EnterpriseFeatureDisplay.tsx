@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { CEIndexStyleWrapper } from './style';
 import Icon from '@ant-design/icons';
 import BasicButton from '../BasicButton';
-import { IconBookMark, IconCustomService } from '../../Icon/common';
 import { DMS_DEFAULT_WEB_TITLE } from '../../data/common';
 import EmptyBox from '../EmptyBox';
 import VersionComparison from './components/VersionComparison';
 import classNames from 'classnames';
+import { HeadphoneOutlined, BookMarkOutlined } from '@actiontech/icons';
 
 const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
   children,
@@ -35,7 +35,10 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
 
   const renderBookMarkCard = () => (
     <Card className="ce-card-info" hoverable>
-      <Icon component={IconBookMark} className="bg-icon" />
+      <Icon
+        component={() => <BookMarkOutlined width="160" height="140" />}
+        className="bg-icon"
+      />
       <div className="info-cont-wrapper">
         <div className="title">Action {DMS_DEFAULT_WEB_TITLE}</div>
         <p className="cont-tip">
@@ -58,7 +61,10 @@ const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
 
   const renderCustomServiceCard = () => (
     <Card className="ce-card-info" hoverable>
-      <Icon component={IconCustomService} className="bg-icon" />
+      <Icon
+        component={() => <HeadphoneOutlined width="160" height="140" />}
+        className="bg-icon"
+      />
       <div className="info-cont-wrapper">
         <div className="title">Action {DMS_DEFAULT_WEB_TITLE}</div>
         <p className="cont-tip">

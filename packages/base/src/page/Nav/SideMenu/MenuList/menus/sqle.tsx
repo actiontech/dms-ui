@@ -1,24 +1,23 @@
 import { Link } from 'react-router-dom';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import {
-  IconAuditPlan,
-  IconEllipse,
-  IconOperateAndAudit,
-  IconPluginAudit,
-  IconSqlOptimization,
-  IconProjectOverview,
-  IconRuleTemplate,
-  IconSqlAudit,
-  IconSqlManagement,
-  IconTodoList,
-  IconWhitelist,
-  IconWorkflowTemplate,
-  IconSQLExecWorkflow
-} from '../../../../../icon/sideMenu';
 import { t } from '../../../../../locale';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { GenerateMenuItemType } from './index.type';
-import Icon from '@ant-design/icons';
+import {
+  ManagementFilled,
+  RingOutlined,
+  WorkflowFilled,
+  MenuFilled,
+  PlanFilled,
+  OverviewOutlined,
+  RiseSquareOutlined,
+  ResolveFileFilled,
+  MagnifierFilled,
+  ProfileSquareFilled,
+  CodeOutlined,
+  OperateAuditFilled,
+  BriefcaseFilled
+} from '@actiontech/icons';
 
 export const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
@@ -26,7 +25,7 @@ export const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.projectOverview')}
     </Link>
   ),
-  icon: <Icon component={IconProjectOverview} />,
+  icon: <OverviewOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/overview`,
   structKey: 'project-overview'
 });
@@ -38,10 +37,10 @@ export const dashboardMenuItem: GenerateMenuItemType = (projectID) => ({
       <Link to={`/sqle/project/${projectID}/dashboard`}>
         {t('dmsMenu.todoList')}
       </Link>
-      <IconEllipse />
+      <RingOutlined width={14} height={14} />
     </>
   ),
-  icon: <Icon component={IconTodoList} />,
+  icon: <MenuFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/dashboard`,
   structKey: 'dashboard'
 });
@@ -52,7 +51,7 @@ export const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.sqlAudit')}
     </Link>
   ),
-  icon: <Icon component={IconSqlAudit} />,
+  icon: <MagnifierFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-audit`,
   structKey: 'sql-audit'
 });
@@ -63,7 +62,7 @@ export const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.pluginAudit')}
     </Link>
   ),
-  icon: <Icon component={IconPluginAudit} />,
+  icon: <CodeOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/plugin-audit`,
   structKey: 'plugin-audit'
 });
@@ -74,7 +73,7 @@ export const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.sqlOptimization')}
     </Link>
   ),
-  icon: <Icon component={IconSqlOptimization} />,
+  icon: <RiseSquareOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-optimization`,
   structKey: 'sql-optimization'
 });
@@ -85,7 +84,7 @@ export const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.sqlWorkflow')}
     </Link>
   ),
-  icon: <Icon component={IconSQLExecWorkflow} />,
+  icon: <BriefcaseFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/exec-workflow`,
   structKey: 'exec-workflow'
 });
@@ -96,7 +95,7 @@ export const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.sqlManagement')}
     </Link>
   ),
-  icon: <Icon component={IconSqlManagement} />,
+  icon: <ManagementFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management`,
   structKey: 'sql-management'
 });
@@ -107,7 +106,7 @@ export const auditPlanMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.auditPlan')}
     </Link>
   ),
-  icon: <Icon component={IconAuditPlan} />,
+  icon: <PlanFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit-plan`,
   structKey: 'audit-plane'
 });
@@ -120,7 +119,7 @@ export const projectRuleTemplateMenuItem: GenerateMenuItemType = (
       {t('dmsMenu.ruleTemplate')}
     </Link>
   ),
-  icon: <Icon component={IconRuleTemplate} />,
+  icon: <ProfileSquareFilled width={18} height={18} fill="none" />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/rule/template`,
   structKey: 'rule-template'
 });
@@ -131,7 +130,7 @@ export const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.whitelist')}
     </Link>
   ),
-  icon: <Icon component={IconWhitelist} />,
+  icon: <ResolveFileFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/whitelist`,
   structKey: 'whitelist'
 });
@@ -142,7 +141,7 @@ export const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.workflowTemplate')}
     </Link>
   ),
-  icon: <Icon component={IconWorkflowTemplate} />,
+  icon: <WorkflowFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/progress`,
   structKey: 'workflow-template'
 });
@@ -155,7 +154,7 @@ export const sqleOperationRecordMenuItem: GenerateMenuItemType = (
       {t('dmsMenu.SQLEOperateRecord')}
     </Link>
   ),
-  icon: <Icon component={IconOperateAndAudit} />,
+  icon: <OperateAuditFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`,
   structKey: 'sqle-log',
   role: [SystemRole.admin]

@@ -238,6 +238,10 @@ export interface ICBOperationLog {
   uid?: string;
 }
 
+export interface ICBOperationLogTips {
+  exec_result?: string[];
+}
+
 export interface ICancelDataExportWorkflowPayload {
   data_export_workflow_uids: string[];
 }
@@ -264,6 +268,22 @@ export interface ICheckDbConnectable {
   db_type: string;
 
   host: string;
+
+  password: string;
+
+  port: string;
+
+  user: string;
+}
+
+export interface ICheckDbsConnectable {
+  additional_params?: IAdditionalParam[];
+
+  db_type: string;
+
+  host: string;
+
+  name: string;
 
   password: string;
 
@@ -318,6 +338,22 @@ export interface IDBService {
   sqle_config?: ISQLEConfig;
 
   user: string;
+}
+
+export interface IDBServicesConnectionItem {
+  failed_names?: string[];
+
+  failed_num?: number;
+
+  successful_num?: number;
+}
+
+export interface IDBServicesConnectionReply {
+  code?: number;
+
+  data?: IDBServicesConnectionItem;
+
+  message?: string;
 }
 
 export interface IDMSProxyTarget {
@@ -760,6 +796,44 @@ export interface IIPluginDBService {
   SQLERuleTemplateName?: string;
 
   User?: string;
+}
+
+export interface IImportDBService {
+  additional_params?: IAdditionalParam[];
+
+  business?: string;
+
+  db_type?: string;
+
+  desc?: string;
+
+  host?: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  user?: string;
+}
+
+export interface IImportDBServicesCheckReply {
+  code?: number;
+
+  data?: IImportDBService[];
+
+  message?: string;
 }
 
 export interface IImportProjects {
@@ -1784,8 +1858,4 @@ export interface IWorkflowStep {
   state?: WorkflowStepStateEnum;
 
   type?: string;
-}
-
-export interface ICBOperationLogTips {
-  exec_result?: string[];
 }

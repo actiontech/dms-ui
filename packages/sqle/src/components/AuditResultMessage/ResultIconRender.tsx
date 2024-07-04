@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 
-import {
-  IconStatusSuccess,
-  IconStatusTip,
-  IconStatusWarning,
-  IconStatusError
-} from '../../icon/AuditPlan';
 import { Space } from 'antd';
+import {
+  CheckCircleFilled,
+  WarningFilled,
+  InfoHexagonFilled,
+  CloseCircleFilled
+} from '@actiontech/icons';
 
 export type IResultIconRender = {
   iconLevels: string[];
@@ -21,10 +21,10 @@ const ResultIconRender = (props: IResultIconRender) => {
 
   const renderIcon = useMemo(() => {
     return {
-      normal: <IconStatusSuccess />,
-      notice: <IconStatusTip />,
-      warn: <IconStatusWarning />,
-      error: <IconStatusError />
+      normal: <CheckCircleFilled width={20} height={20} />,
+      notice: <InfoHexagonFilled width={20} height={20} />,
+      warn: <WarningFilled width={20} height={20} />,
+      error: <CloseCircleFilled width={20} height={20} />
     };
   }, []);
 

@@ -5,11 +5,11 @@ import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { BasicInput, BasicSwitch, EmptyBox } from '@actiontech/shared';
 import BusinessListField from './BusinessListField';
 import { FormListAddButtonWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconFormListAdd } from '@actiontech/shared/lib/Icon';
 import {
   CustomLabelContent,
   FormItemLabel
 } from '@actiontech/shared/lib/components/FormCom';
+import { PlusCircleFilled } from '@actiontech/icons';
 
 const ProjectForm: React.FC<ProjectFormProps> = ({
   form,
@@ -86,7 +86,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
               ))}
               <Form.Item label="" colon={false}>
                 <FormListAddButtonWrapper
-                  icon={<IconFormListAdd />}
+                  icon={<PlusCircleFilled />}
                   onClick={() => {
                     add();
                   }}

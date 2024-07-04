@@ -134,6 +134,28 @@ describe('test base/page/project', () => {
     expect(screen.getByText('正在导出项目')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(exportProjectsSpy).toHaveBeenCalledTimes(1);
-    expect(exportProjectsSpy).toHaveBeenCalledWith({ responseType: 'blob' });
+    expect(exportProjectsSpy).toHaveBeenCalledWith(
+      {},
+      { responseType: 'blob' }
+    );
+  });
+
+  it('render batch import data source button', async () => {
+    superRender(<Project />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('批量导入数据源'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+
+    cleanup();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
+    mockUseCurrentUser({
+      isAdmin: false
+    });
+    superRender(<Project />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('批量导入数据源')).not.toBeInTheDocument();
   });
 });

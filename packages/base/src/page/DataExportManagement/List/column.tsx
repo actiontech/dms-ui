@@ -11,7 +11,7 @@ import WorkflowStatus from '../Common/WorkflowStatus';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconWorkflowId } from 'sqle/src/icon/SqlExecWorkflow';
+import { BriefcaseFilled } from '@actiontech/icons';
 
 export type ExportWorkflowListFilterParamType = PageInfoWithoutIndexAndSize<
   IListDataExportWorkflowsParams & { page_index: number },
@@ -56,7 +56,7 @@ export const ExportWorkflowListColumn: (
       render: (id: string) => {
         return (
           <TableColumnWithIconStyleWrapper>
-            <IconWorkflowId />
+            <BriefcaseFilled width={14} height={14} />
             <span>{id}</span>
           </TableColumnWithIconStyleWrapper>
         );

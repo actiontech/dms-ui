@@ -8,13 +8,13 @@ import {
   SegmentedTabs
 } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IconAdd, IconImport } from '@actiontech/shared/lib/Icon';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import CustomRuleList from '../CustomRule/CustomRuleList';
 import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
 import { RuleManagerSegmentedKey } from './index.type';
 import useRuleManagerSegmented from './useRuleManagerSegmented';
+import { PlusOutlined, LoginBoxOutlined } from '@actiontech/icons';
 
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
@@ -36,14 +36,14 @@ const RuleManager: React.FC = () => {
         >
           <BasicButton
             type="text"
-            icon={<IconImport />}
+            icon={<LoginBoxOutlined />}
             onClick={() => navigate('/sqle/rule-manager/global-import')}
           >
             {t('ruleTemplate.importRuleTemplate.button')}
           </BasicButton>
           <BasicButton
             type="primary"
-            icon={<IconAdd />}
+            icon={<PlusOutlined color="currentColor" width={10} height={10} />}
             onClick={() => navigate('/sqle/rule-manager/global-create')}
           >
             {t('ruleTemplate.createRuleTemplate.button')}

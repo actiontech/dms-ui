@@ -2,63 +2,63 @@ import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/bas
 import { t } from '../../../../locale';
 import { StatusStyleWrapper } from '../style';
 import {
-  IconWorkflowStatusIsCanceled,
-  IconWorkflowStatusIsExecuting,
-  IconWorkflowStatusIsFailed,
-  IconWorkflowStatusIsFinished,
-  IconWorkflowStatusIsRejected,
-  IconWorkflowStatusIsWaitAudit,
-  IconWorkflowStatusIsWaitExecution
-} from 'sqle/src/icon/SqlExecWorkflow';
+  HexagonOutlined,
+  CheckHexagonOutlined,
+  PartialHexagonFilled,
+  AdvancedHexagonFilled,
+  InfoHexagonOutlined,
+  EmptyHexagonOutlined,
+  CloseHexagonOutlined
+} from '@actiontech/icons';
 
 const workflowStatusMap = () => {
   return new Map<ListDataExportWorkflowStatusEnum, React.ReactNode>([
     [
       ListDataExportWorkflowStatusEnum.cancel,
       <>
-        <IconWorkflowStatusIsCanceled />
+        <CloseHexagonOutlined />
         <span>{t('dmsDataExport.status.canceled')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.exporting,
       <>
-        <IconWorkflowStatusIsExecuting />
+        <AdvancedHexagonFilled />
         <span>{t('dmsDataExport.status.exporting')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.finish,
       <>
-        <IconWorkflowStatusIsFinished />
+        <CheckHexagonOutlined />
         <span>{t('dmsDataExport.status.finished')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.wait_for_export,
       <>
-        <IconWorkflowStatusIsWaitExecution />
+        <PartialHexagonFilled />
         <span>{t('dmsDataExport.status.wait_for_export')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.failed,
       <>
-        <IconWorkflowStatusIsFailed />
+        <InfoHexagonOutlined />
         <span>{t('dmsDataExport.status.export_failed')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.wait_for_approve,
       <>
-        <IconWorkflowStatusIsWaitAudit />
+        <EmptyHexagonOutlined />
         <span>{t('dmsDataExport.status.wait_for_audit')}</span>
       </>
     ],
     [
       ListDataExportWorkflowStatusEnum.rejected,
       <>
-        <IconWorkflowStatusIsRejected />
+        <HexagonOutlined />
         <span>{t('dmsDataExport.status.rejected')}</span>
       </>
     ]

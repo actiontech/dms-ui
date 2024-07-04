@@ -9,11 +9,11 @@ import {
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
-import { IconMemberIsAdmin, IconMemberNotAdmin } from '../../../../icon/member';
 import generateTag from '../../utils/generateTag';
 import { Space } from 'antd';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 
 export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
   {
@@ -35,9 +35,9 @@ export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
       return (
         <TableColumnWithIconStyleWrapper>
           {stat === ListRoleStatEnum.被禁用 ? (
-            <IconMemberNotAdmin />
+            <CloseHexagonOutlined />
           ) : (
-            <IconMemberIsAdmin />
+            <CheckHexagonOutlined />
           )}
           <span>{stat}</span>
         </TableColumnWithIconStyleWrapper>

@@ -3,7 +3,11 @@ import { ResponseCode } from '../../../enum';
 import Download from '../../../utils/Download';
 import i18n from 'i18next';
 import store from '../../../../../base/src/store';
-import { getResponseErrorMessage } from '../../../utils/Common';
+import {
+  getResponseErrorMessage,
+  getResponseCode,
+  isExportFileResponse
+} from '../../../utils/Common';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
 import { ArgsProps } from 'antd/es/notification/interface';
@@ -12,9 +16,10 @@ import EmitterKey from '../../../data/EmitterKey';
 class ApiBase {
   public interceptorsResponse(authInvalid: () => void) {
     const successFn = async (res: AxiosResponse<any, any>) => {
+      const code = await getResponseCode(res);
       if (res.status === 401) {
         authInvalid();
-      } else if (res.headers?.['content-disposition']?.includes('attachment')) {
+      } else if (isExportFileResponse(res)) {
         const disposition: string = res.headers?.['content-disposition'];
         const flag = 'filename=';
         const flagCharset = 'filename*=';
@@ -29,7 +34,7 @@ class ApiBase {
         Download.downloadByCreateElementA(res.data, filename);
         return res;
       } else if (
-        (res.status === 200 && res?.data?.code !== ResponseCode.SUCCESS) ||
+        (res.status === 200 && code !== ResponseCode.SUCCESS) ||
         res.status !== 200
       ) {
         const message = await getResponseErrorMessage(res);

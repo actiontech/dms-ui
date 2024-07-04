@@ -6,10 +6,6 @@ import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  IconLeftArrow,
-  IconSuccessResult
-} from '@actiontech/shared/lib/Icon/common';
 import { Space, Spin } from 'antd';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import classNames from 'classnames';
@@ -22,6 +18,7 @@ import {
 } from '../../../hooks/useRuleTemplateForm';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -126,7 +123,7 @@ const UpdateRuleTemplate = () => {
       <PageHeader
         fixed={step !== 1}
         title={
-          <BasicButton onClick={gotoListPage} icon={<IconLeftArrow />}>
+          <BasicButton onClick={gotoListPage} icon={<LeftArrowOutlined />}>
             {t('ruleManager.backToGlobalRuleTemplateList')}
           </BasicButton>
         }
@@ -187,7 +184,7 @@ const UpdateRuleTemplate = () => {
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>
         <BasicResult
-          icon={<IconSuccessResult />}
+          status="success"
           title={t('ruleTemplate.updateRuleTemplate.successTitle', {
             name: urlParams.templateName
           })}

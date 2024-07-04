@@ -20,14 +20,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -61,21 +60,25 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
+                aria-hidden="true"
+                class=""
                 fill="currentColor"
-                height="28"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -235,19 +238,18 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#4583FF"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M15.75 7.125V9.375C15.75 11.2387 12.7275 12.75 9 12.75C5.2725 12.75 2.25 11.2387 2.25 9.375V7.125C2.25 8.98875 5.2725 10.5 9 10.5C12.7275 10.5 15.75 8.98875 15.75 7.125ZM2.25 10.875C2.25 12.7387 5.2725 14.25 9 14.25C12.7275 14.25 15.75 12.7387 15.75 10.875V13.125C15.75 14.9887 12.7275 16.5 9 16.5C5.2725 16.5 2.25 14.9887 2.25 13.125V10.875ZM9 9C5.2725 9 2.25 7.48875 2.25 5.625C2.25 3.76125 5.2725 2.25 9 2.25C12.7275 2.25 15.75 3.76125 15.75 5.625C15.75 7.48875 12.7275 9 9 9Z"
-                                        fill="#4583FF"
+                                        d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -366,19 +368,18 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#15C7D4"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8.25 5.25V3C8.25 2.80109 8.32902 2.61032 8.46967 2.46967C8.61032 2.32902 8.80109 2.25 9 2.25H15.75C15.9489 2.25 16.1397 2.32902 16.2803 2.46967C16.421 2.61032 16.5 2.80109 16.5 3V15C16.5 15.1989 16.421 15.3897 16.2803 15.5303C16.1397 15.671 15.9489 15.75 15.75 15.75H2.25C2.05109 15.75 1.86032 15.671 1.71967 15.5303C1.57902 15.3897 1.5 15.1989 1.5 15V6C1.5 5.80109 1.57902 5.61032 1.71967 5.46967C1.86032 5.32902 2.05109 5.25 2.25 5.25H8.25ZM3.75 12V13.5H7.5V12H3.75ZM10.5 12V13.5H14.25V12H10.5ZM10.5 9.75V11.25H14.25V9.75H10.5ZM10.5 7.5V9H14.25V7.5H10.5ZM3.75 9.75V11.25H7.5V9.75H3.75Z"
-                                        fill="#15C7D4"
+                                        d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -423,22 +424,17 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -457,29 +453,63 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
                     <span
-                      class="custom-icon css-u3jcp4"
-                      role="img"
+                      class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
+                        color="#4583FF"
                         height="18"
-                        viewBox="0 0 18 18"
+                        viewBox="0 0 18 19"
                         width="18"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                          fill="#4583FF"
+                          d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                          fill="currentColor"
                         />
                       </svg>
                     </span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
               </div>
             </div>
           </div>
@@ -499,32 +529,29 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 for="uploadType"
                 title=""
               >
-                <span
-                  class="custom-icon-ellipse css-u3jcp4"
+                <svg
+                  class="custom-icon-ellipse"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
+                  <rect
+                    fill="#E8F3FF"
                     height="16"
-                    viewBox="0 0 16 16"
+                    rx="3"
                     width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="#E8F3FF"
-                      height="16"
-                      rx="3"
-                      width="16"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      fill="white"
-                      r="3"
-                      stroke="#4583FF"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </span>
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    fill="#fff"
+                    r="3"
+                    stroke="#4583FF"
+                    stroke-width="2"
+                  />
+                </svg>
                 <span>
                   选择SQL语句上传方式
                 </span>
@@ -548,27 +575,22 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -580,7 +602,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -610,27 +632,22 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -642,7 +659,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -672,27 +689,22 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -704,7 +716,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -734,27 +746,22 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -766,7 +773,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -796,7 +803,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -830,7 +837,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                           class="active-icon-wrapper"
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -1052,15 +1059,14 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                     class="ant-space-item"
                   >
                     <svg
-                      fill="none"
-                      height="14"
+                      height="16"
                       viewBox="0 0 14 14"
-                      width="14"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                        fill="#8A8F99"
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="#EDB054"
                       />
                     </svg>
                   </div>
@@ -1095,22 +1101,17 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -1300,22 +1301,17 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -1463,14 +1459,13 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -1504,21 +1499,25 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
+                aria-hidden="true"
+                class=""
                 fill="currentColor"
-                height="28"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -1678,19 +1677,18 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#4583FF"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M15.75 7.125V9.375C15.75 11.2387 12.7275 12.75 9 12.75C5.2725 12.75 2.25 11.2387 2.25 9.375V7.125C2.25 8.98875 5.2725 10.5 9 10.5C12.7275 10.5 15.75 8.98875 15.75 7.125ZM2.25 10.875C2.25 12.7387 5.2725 14.25 9 14.25C12.7275 14.25 15.75 12.7387 15.75 10.875V13.125C15.75 14.9887 12.7275 16.5 9 16.5C5.2725 16.5 2.25 14.9887 2.25 13.125V10.875ZM9 9C5.2725 9 2.25 7.48875 2.25 5.625C2.25 3.76125 5.2725 2.25 9 2.25C12.7275 2.25 15.75 3.76125 15.75 5.625C15.75 7.48875 12.7275 9 9 9Z"
-                                        fill="#4583FF"
+                                        d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -1809,19 +1807,18 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#15C7D4"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8.25 5.25V3C8.25 2.80109 8.32902 2.61032 8.46967 2.46967C8.61032 2.32902 8.80109 2.25 9 2.25H15.75C15.9489 2.25 16.1397 2.32902 16.2803 2.46967C16.421 2.61032 16.5 2.80109 16.5 3V15C16.5 15.1989 16.421 15.3897 16.2803 15.5303C16.1397 15.671 15.9489 15.75 15.75 15.75H2.25C2.05109 15.75 1.86032 15.671 1.71967 15.5303C1.57902 15.3897 1.5 15.1989 1.5 15V6C1.5 5.80109 1.57902 5.61032 1.71967 5.46967C1.86032 5.32902 2.05109 5.25 2.25 5.25H8.25ZM3.75 12V13.5H7.5V12H3.75ZM10.5 12V13.5H14.25V12H10.5ZM10.5 9.75V11.25H14.25V9.75H10.5ZM10.5 7.5V9H14.25V7.5H10.5ZM3.75 9.75V11.25H7.5V9.75H3.75Z"
-                                        fill="#15C7D4"
+                                        d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -1866,22 +1863,17 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -1900,29 +1892,63 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
                     <span
-                      class="custom-icon css-u3jcp4"
-                      role="img"
+                      class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
+                        color="#4583FF"
                         height="18"
-                        viewBox="0 0 18 18"
+                        viewBox="0 0 18 19"
                         width="18"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                          fill="#4583FF"
+                          d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                          fill="currentColor"
                         />
                       </svg>
                     </span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
               </div>
             </div>
           </div>
@@ -1942,32 +1968,29 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 for="uploadType"
                 title=""
               >
-                <span
-                  class="custom-icon-ellipse css-u3jcp4"
+                <svg
+                  class="custom-icon-ellipse"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
+                  <rect
+                    fill="#E8F3FF"
                     height="16"
-                    viewBox="0 0 16 16"
+                    rx="3"
                     width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="#E8F3FF"
-                      height="16"
-                      rx="3"
-                      width="16"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      fill="white"
-                      r="3"
-                      stroke="#4583FF"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </span>
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    fill="#fff"
+                    r="3"
+                    stroke="#4583FF"
+                    stroke-width="2"
+                  />
+                </svg>
                 <span>
                   选择SQL语句上传方式
                 </span>
@@ -1991,27 +2014,22 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -2022,7 +2040,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                           class="active-icon-wrapper"
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -2052,27 +2070,22 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -2084,7 +2097,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -2114,27 +2127,22 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -2146,7 +2154,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -2176,27 +2184,22 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -2208,7 +2211,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -2238,7 +2241,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -2273,7 +2276,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -2388,15 +2391,14 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                     class="ant-space-item"
                   >
                     <svg
-                      fill="none"
-                      height="14"
+                      height="16"
                       viewBox="0 0 14 14"
-                      width="14"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                        fill="#8A8F99"
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="#EDB054"
                       />
                     </svg>
                   </div>
@@ -2431,22 +2433,17 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -2636,22 +2633,17 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -2828,14 +2820,13 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -2869,21 +2860,25 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
+                aria-hidden="true"
+                class=""
                 fill="currentColor"
-                height="28"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -3043,19 +3038,18 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#4583FF"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M15.75 7.125V9.375C15.75 11.2387 12.7275 12.75 9 12.75C5.2725 12.75 2.25 11.2387 2.25 9.375V7.125C2.25 8.98875 5.2725 10.5 9 10.5C12.7275 10.5 15.75 8.98875 15.75 7.125ZM2.25 10.875C2.25 12.7387 5.2725 14.25 9 14.25C12.7275 14.25 15.75 12.7387 15.75 10.875V13.125C15.75 14.9887 12.7275 16.5 9 16.5C5.2725 16.5 2.25 14.9887 2.25 13.125V10.875ZM9 9C5.2725 9 2.25 7.48875 2.25 5.625C2.25 3.76125 5.2725 2.25 9 2.25C12.7275 2.25 15.75 3.76125 15.75 5.625C15.75 7.48875 12.7275 9 9 9Z"
-                                        fill="#4583FF"
+                                        d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -3174,19 +3168,18 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#15C7D4"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8.25 5.25V3C8.25 2.80109 8.32902 2.61032 8.46967 2.46967C8.61032 2.32902 8.80109 2.25 9 2.25H15.75C15.9489 2.25 16.1397 2.32902 16.2803 2.46967C16.421 2.61032 16.5 2.80109 16.5 3V15C16.5 15.1989 16.421 15.3897 16.2803 15.5303C16.1397 15.671 15.9489 15.75 15.75 15.75H2.25C2.05109 15.75 1.86032 15.671 1.71967 15.5303C1.57902 15.3897 1.5 15.1989 1.5 15V6C1.5 5.80109 1.57902 5.61032 1.71967 5.46967C1.86032 5.32902 2.05109 5.25 2.25 5.25H8.25ZM3.75 12V13.5H7.5V12H3.75ZM10.5 12V13.5H14.25V12H10.5ZM10.5 9.75V11.25H14.25V9.75H10.5ZM10.5 7.5V9H14.25V7.5H10.5ZM3.75 9.75V11.25H7.5V9.75H3.75Z"
-                                        fill="#15C7D4"
+                                        d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -3231,22 +3224,17 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -3265,29 +3253,63 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
                     <span
-                      class="custom-icon css-u3jcp4"
-                      role="img"
+                      class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
+                        color="#4583FF"
                         height="18"
-                        viewBox="0 0 18 18"
+                        viewBox="0 0 18 19"
                         width="18"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                          fill="#4583FF"
+                          d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                          fill="currentColor"
                         />
                       </svg>
                     </span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
               </div>
             </div>
           </div>
@@ -3307,32 +3329,29 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 for="uploadType"
                 title=""
               >
-                <span
-                  class="custom-icon-ellipse css-u3jcp4"
+                <svg
+                  class="custom-icon-ellipse"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
+                  <rect
+                    fill="#E8F3FF"
                     height="16"
-                    viewBox="0 0 16 16"
+                    rx="3"
                     width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="#E8F3FF"
-                      height="16"
-                      rx="3"
-                      width="16"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      fill="white"
-                      r="3"
-                      stroke="#4583FF"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </span>
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    fill="#fff"
+                    r="3"
+                    stroke="#4583FF"
+                    stroke-width="2"
+                  />
+                </svg>
                 <span>
                   选择SQL语句上传方式
                 </span>
@@ -3356,27 +3375,22 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -3388,7 +3402,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -3418,27 +3432,22 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -3449,7 +3458,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                           class="active-icon-wrapper"
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -3479,27 +3488,22 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -3511,7 +3515,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -3541,27 +3545,22 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -3573,7 +3572,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -3603,7 +3602,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -3638,7 +3637,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -3714,23 +3713,18 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                         <div
                           class="ant-upload-drag-container"
                         >
-                          <span
-                            class="custom-icon css-u3jcp4"
-                            role="img"
+                          <svg
+                            class="custom-icon"
+                            height="40"
+                            viewBox="0 0 40 40"
+                            width="40"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="40"
-                              viewBox="0 0 40 40"
-                              width="40"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M20 20.9767L27.0717 28.0467L24.7133 30.405L21.6667 27.3584V36.6667H18.3333V27.355L15.2867 30.405L12.9283 28.0467L20 20.9767ZM20 3.33337C22.8616 3.33351 25.6234 4.38523 27.7603 6.28857C29.8972 8.19191 31.2601 10.8141 31.59 13.6567C33.6638 14.2222 35.4729 15.4985 36.7011 17.2626C37.9293 19.0266 38.4986 21.1662 38.3094 23.3074C38.1201 25.4485 37.1845 27.4551 35.6659 28.9764C34.1474 30.4977 32.1425 31.437 30.0017 31.63V28.2734C30.7686 28.1638 31.5061 27.9026 32.171 27.505C32.8359 27.1074 33.4149 26.5812 33.8743 25.9574C34.3336 25.3335 34.6641 24.6244 34.8465 23.8714C35.0288 23.1185 35.0593 22.3367 34.9362 21.5718C34.8131 20.8069 34.5389 20.0742 34.1295 19.4165C33.7202 18.7587 33.1839 18.1891 32.552 17.7408C31.9201 17.2926 31.2053 16.9747 30.4492 16.8057C29.6931 16.6368 28.9109 16.6201 28.1483 16.7567C28.4094 15.5415 28.3952 14.2833 28.107 13.0743C27.8188 11.8653 27.2638 10.736 26.4827 9.76926C25.7015 8.8025 24.714 8.02272 23.5925 7.48703C22.4709 6.95135 21.2437 6.67332 20.0008 6.67332C18.7579 6.67332 17.5308 6.95135 16.4092 7.48703C15.2877 8.02272 14.3002 8.8025 13.519 9.76926C12.7379 10.736 12.1828 11.8653 11.8946 13.0743C11.6064 14.2833 11.5923 15.5415 11.8533 16.7567C10.3328 16.4712 8.76103 16.8014 7.48391 17.6746C6.20678 18.5479 5.32888 19.8928 5.04333 21.4134C4.75778 22.9339 5.08797 24.5057 5.96127 25.7828C6.83456 27.0599 8.17943 27.9378 9.7 28.2234L10 28.2734V31.63C7.85908 31.4373 5.85401 30.4982 4.33522 28.977C2.81644 27.4559 1.88054 25.4493 1.69112 23.3081C1.5017 21.1669 2.0708 19.0272 3.29895 17.263C4.5271 15.4988 6.33618 14.2224 8.41 13.6567C8.73951 10.814 10.1023 8.19156 12.2393 6.28815C14.3763 4.38474 17.1383 3.33315 20 3.33337Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="m20 20.977 7.072 7.07-2.359 2.358-3.046-3.047v9.309h-3.334v-9.312l-3.046 3.05-2.359-2.358zm0-17.644a11.67 11.67 0 0 1 11.59 10.324 9.166 9.166 0 0 1-1.588 17.973v-3.357a5.836 5.836 0 0 0 4.934-6.701 5.83 5.83 0 0 0-6.788-4.815 8.332 8.332 0 1 0-16.295 0A5.834 5.834 0 0 0 9.7 28.223l.3.05v3.357a9.166 9.166 0 0 1-1.59-17.973A11.666 11.666 0 0 1 20 3.333"
+                              fill="currentColor"
+                            />
+                          </svg>
                           <div
                             class="title"
                           >
@@ -3794,15 +3788,14 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                     class="ant-space-item"
                   >
                     <svg
-                      fill="none"
-                      height="14"
+                      height="16"
                       viewBox="0 0 14 14"
-                      width="14"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                        fill="#8A8F99"
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="#EDB054"
                       />
                     </svg>
                   </div>
@@ -3837,22 +3830,17 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -4042,22 +4030,17 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -4205,14 +4188,13 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -4246,21 +4228,25 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
+                aria-hidden="true"
+                class=""
                 fill="currentColor"
-                height="28"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -4420,19 +4406,18 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#4583FF"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M15.75 7.125V9.375C15.75 11.2387 12.7275 12.75 9 12.75C5.2725 12.75 2.25 11.2387 2.25 9.375V7.125C2.25 8.98875 5.2725 10.5 9 10.5C12.7275 10.5 15.75 8.98875 15.75 7.125ZM2.25 10.875C2.25 12.7387 5.2725 14.25 9 14.25C12.7275 14.25 15.75 12.7387 15.75 10.875V13.125C15.75 14.9887 12.7275 16.5 9 16.5C5.2725 16.5 2.25 14.9887 2.25 13.125V10.875ZM9 9C5.2725 9 2.25 7.48875 2.25 5.625C2.25 3.76125 5.2725 2.25 9 2.25C12.7275 2.25 15.75 3.76125 15.75 5.625C15.75 7.48875 12.7275 9 9 9Z"
-                                        fill="#4583FF"
+                                        d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -4551,19 +4536,18 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#15C7D4"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8.25 5.25V3C8.25 2.80109 8.32902 2.61032 8.46967 2.46967C8.61032 2.32902 8.80109 2.25 9 2.25H15.75C15.9489 2.25 16.1397 2.32902 16.2803 2.46967C16.421 2.61032 16.5 2.80109 16.5 3V15C16.5 15.1989 16.421 15.3897 16.2803 15.5303C16.1397 15.671 15.9489 15.75 15.75 15.75H2.25C2.05109 15.75 1.86032 15.671 1.71967 15.5303C1.57902 15.3897 1.5 15.1989 1.5 15V6C1.5 5.80109 1.57902 5.61032 1.71967 5.46967C1.86032 5.32902 2.05109 5.25 2.25 5.25H8.25ZM3.75 12V13.5H7.5V12H3.75ZM10.5 12V13.5H14.25V12H10.5ZM10.5 9.75V11.25H14.25V9.75H10.5ZM10.5 7.5V9H14.25V7.5H10.5ZM3.75 9.75V11.25H7.5V9.75H3.75Z"
-                                        fill="#15C7D4"
+                                        d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -4608,22 +4592,17 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -4642,29 +4621,63 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
                     <span
-                      class="custom-icon css-u3jcp4"
-                      role="img"
+                      class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
+                        color="#4583FF"
                         height="18"
-                        viewBox="0 0 18 18"
+                        viewBox="0 0 18 19"
                         width="18"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                          fill="#4583FF"
+                          d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                          fill="currentColor"
                         />
                       </svg>
                     </span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
               </div>
             </div>
           </div>
@@ -4684,32 +4697,29 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 for="uploadType"
                 title=""
               >
-                <span
-                  class="custom-icon-ellipse css-u3jcp4"
+                <svg
+                  class="custom-icon-ellipse"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
+                  <rect
+                    fill="#E8F3FF"
                     height="16"
-                    viewBox="0 0 16 16"
+                    rx="3"
                     width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="#E8F3FF"
-                      height="16"
-                      rx="3"
-                      width="16"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      fill="white"
-                      r="3"
-                      stroke="#4583FF"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </span>
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    fill="#fff"
+                    r="3"
+                    stroke="#4583FF"
+                    stroke-width="2"
+                  />
+                </svg>
                 <span>
                   选择SQL语句上传方式
                 </span>
@@ -4733,27 +4743,22 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -4765,7 +4770,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -4795,27 +4800,22 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -4827,7 +4827,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -4857,27 +4857,22 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -4888,7 +4883,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                           class="active-icon-wrapper"
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -4918,27 +4913,22 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -4950,7 +4940,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -4980,7 +4970,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -5015,7 +5005,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -5091,23 +5081,18 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                         <div
                           class="ant-upload-drag-container"
                         >
-                          <span
-                            class="custom-icon css-u3jcp4"
-                            role="img"
+                          <svg
+                            class="custom-icon"
+                            height="40"
+                            viewBox="0 0 40 40"
+                            width="40"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              fill="none"
-                              height="40"
-                              viewBox="0 0 40 40"
-                              width="40"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M20 20.9767L27.0717 28.0467L24.7133 30.405L21.6667 27.3584V36.6667H18.3333V27.355L15.2867 30.405L12.9283 28.0467L20 20.9767ZM20 3.33337C22.8616 3.33351 25.6234 4.38523 27.7603 6.28857C29.8972 8.19191 31.2601 10.8141 31.59 13.6567C33.6638 14.2222 35.4729 15.4985 36.7011 17.2626C37.9293 19.0266 38.4986 21.1662 38.3094 23.3074C38.1201 25.4485 37.1845 27.4551 35.6659 28.9764C34.1474 30.4977 32.1425 31.437 30.0017 31.63V28.2734C30.7686 28.1638 31.5061 27.9026 32.171 27.505C32.8359 27.1074 33.4149 26.5812 33.8743 25.9574C34.3336 25.3335 34.6641 24.6244 34.8465 23.8714C35.0288 23.1185 35.0593 22.3367 34.9362 21.5718C34.8131 20.8069 34.5389 20.0742 34.1295 19.4165C33.7202 18.7587 33.1839 18.1891 32.552 17.7408C31.9201 17.2926 31.2053 16.9747 30.4492 16.8057C29.6931 16.6368 28.9109 16.6201 28.1483 16.7567C28.4094 15.5415 28.3952 14.2833 28.107 13.0743C27.8188 11.8653 27.2638 10.736 26.4827 9.76926C25.7015 8.8025 24.714 8.02272 23.5925 7.48703C22.4709 6.95135 21.2437 6.67332 20.0008 6.67332C18.7579 6.67332 17.5308 6.95135 16.4092 7.48703C15.2877 8.02272 14.3002 8.8025 13.519 9.76926C12.7379 10.736 12.1828 11.8653 11.8946 13.0743C11.6064 14.2833 11.5923 15.5415 11.8533 16.7567C10.3328 16.4712 8.76103 16.8014 7.48391 17.6746C6.20678 18.5479 5.32888 19.8928 5.04333 21.4134C4.75778 22.9339 5.08797 24.5057 5.96127 25.7828C6.83456 27.0599 8.17943 27.9378 9.7 28.2234L10 28.2734V31.63C7.85908 31.4373 5.85401 30.4982 4.33522 28.977C2.81644 27.4559 1.88054 25.4493 1.69112 23.3081C1.5017 21.1669 2.0708 19.0272 3.29895 17.263C4.5271 15.4988 6.33618 14.2224 8.41 13.6567C8.73951 10.814 10.1023 8.19156 12.2393 6.28815C14.3763 4.38474 17.1383 3.33315 20 3.33337Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="m20 20.977 7.072 7.07-2.359 2.358-3.046-3.047v9.309h-3.334v-9.312l-3.046 3.05-2.359-2.358zm0-17.644a11.67 11.67 0 0 1 11.59 10.324 9.166 9.166 0 0 1-1.588 17.973v-3.357a5.836 5.836 0 0 0 4.934-6.701 5.83 5.83 0 0 0-6.788-4.815 8.332 8.332 0 1 0-16.295 0A5.834 5.834 0 0 0 9.7 28.223l.3.05v3.357a9.166 9.166 0 0 1-1.59-17.973A11.666 11.666 0 0 1 20 3.333"
+                              fill="currentColor"
+                            />
+                          </svg>
                           <div
                             class="title"
                           >
@@ -5171,15 +5156,14 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                     class="ant-space-item"
                   >
                     <svg
-                      fill="none"
-                      height="14"
+                      height="16"
                       viewBox="0 0 14 14"
-                      width="14"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                        fill="#8A8F99"
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="#EDB054"
                       />
                     </svg>
                   </div>
@@ -5214,22 +5198,17 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -5419,22 +5398,17 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -5582,14 +5556,13 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               class="ant-btn-icon"
             >
               <svg
-                fill="none"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M5.21863 7.33333H13.3333V8.66667H5.21863L8.79463 12.2427L7.85196 13.1853L2.66663 8L7.85196 2.81467L8.79463 3.75733L5.21863 7.33333Z"
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
                   fill="currentColor"
                 />
               </svg>
@@ -5623,21 +5596,25 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-y0jsrg css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
           >
             <span
-              class="custom-icon workflow-create-title-icon title-icon css-u3jcp4"
+              class="anticon title-icon"
+              role="img"
             >
               <svg
+                aria-hidden="true"
+                class=""
                 fill="currentColor"
-                height="28"
+                focusable="false"
+                height="1em"
                 viewBox="0 0 24 28"
-                width="24"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M4 3.33333V8.66666H20V3.33333H22.6755C23.4069 3.33333 24 3.9266 24 4.65786V26.0088C24 26.7403 23.4068 27.3333 22.6755 27.3333H1.32453C0.593013 27.3333 0 26.7401 0 26.0088V4.65786C0 3.92634 0.593267 3.33333 1.32453 3.33333H4ZM8 20.6667H5.33333V23.3333H8V20.6667ZM8 16.6667H5.33333V19.3333H8V16.6667ZM8 12.6667H5.33333V15.3333H8V12.6667ZM17.3333 0.666664V6H6.66667V0.666664H17.3333Z"
-                  fill="#c3c6cd"
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
                 />
               </svg>
             </span>
@@ -5797,19 +5774,18 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#4583FF"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M15.75 7.125V9.375C15.75 11.2387 12.7275 12.75 9 12.75C5.2725 12.75 2.25 11.2387 2.25 9.375V7.125C2.25 8.98875 5.2725 10.5 9 10.5C12.7275 10.5 15.75 8.98875 15.75 7.125ZM2.25 10.875C2.25 12.7387 5.2725 14.25 9 14.25C12.7275 14.25 15.75 12.7387 15.75 10.875V13.125C15.75 14.9887 12.7275 16.5 9 16.5C5.2725 16.5 2.25 14.9887 2.25 13.125V10.875ZM9 9C5.2725 9 2.25 7.48875 2.25 5.625C2.25 3.76125 5.2725 2.25 9 2.25C12.7275 2.25 15.75 3.76125 15.75 5.625C15.75 7.48875 12.7275 9 9 9Z"
-                                        fill="#4583FF"
+                                        d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -5928,19 +5904,18 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                                   class="custom-select-option-content-prefix"
                                 >
                                   <span
-                                    class="custom-icon css-u3jcp4"
-                                    role="img"
+                                    class="css-u3jcp4"
                                   >
                                     <svg
-                                      fill="none"
+                                      color="#15C7D4"
                                       height="18"
                                       viewBox="0 0 18 18"
                                       width="18"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M8.25 5.25V3C8.25 2.80109 8.32902 2.61032 8.46967 2.46967C8.61032 2.32902 8.80109 2.25 9 2.25H15.75C15.9489 2.25 16.1397 2.32902 16.2803 2.46967C16.421 2.61032 16.5 2.80109 16.5 3V15C16.5 15.1989 16.421 15.3897 16.2803 15.5303C16.1397 15.671 15.9489 15.75 15.75 15.75H2.25C2.05109 15.75 1.86032 15.671 1.71967 15.5303C1.57902 15.3897 1.5 15.1989 1.5 15V6C1.5 5.80109 1.57902 5.61032 1.71967 5.46967C1.86032 5.32902 2.05109 5.25 2.25 5.25H8.25ZM3.75 12V13.5H7.5V12H3.75ZM10.5 12V13.5H14.25V12H10.5ZM10.5 9.75V11.25H14.25V9.75H10.5ZM10.5 7.5V9H14.25V7.5H10.5ZM3.75 9.75V11.25H7.5V9.75H3.75Z"
-                                        fill="#15C7D4"
+                                        d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                        fill="currentColor"
                                       />
                                     </svg>
                                   </span>
@@ -5985,22 +5960,17 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <span
-                              class="custom-icon custom-icon-close css-u3jcp4"
-                              role="img"
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                fill="currentColor"
-                                height="14"
-                                viewBox="0 0 14 14"
-                                width="14"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -6019,29 +5989,63 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
                     <span
-                      class="custom-icon css-u3jcp4"
-                      role="img"
+                      class="ant-btn-icon"
                     >
                       <svg
-                        fill="none"
+                        color="#4583FF"
                         height="18"
-                        viewBox="0 0 18 18"
+                        viewBox="0 0 18 19"
                         width="18"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M15 16.5H3C2.80109 16.5 2.61032 16.421 2.46967 16.2803C2.32902 16.1397 2.25 15.9489 2.25 15.75V2.25C2.25 2.05109 2.32902 1.86032 2.46967 1.71967C2.61032 1.57902 2.80109 1.5 3 1.5H15C15.1989 1.5 15.3897 1.57902 15.5303 1.71967C15.671 1.86032 15.75 2.05109 15.75 2.25V15.75C15.75 15.9489 15.671 16.1397 15.5303 16.2803C15.3897 16.421 15.1989 16.5 15 16.5ZM6 5.25V6.75H12V5.25H6ZM6 8.25V9.75H12V8.25H6ZM6 11.25V12.75H9.75V11.25H6Z"
-                          fill="#4583FF"
+                          d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                          fill="currentColor"
                         />
                       </svg>
                     </span>
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            data-show="true"
+            role="alert"
+            style="margin-bottom: 16px;"
+          >
+            <span
+              aria-label="exclamation-circle"
+              class="anticon anticon-exclamation-circle ant-alert-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="exclamation-circle"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                />
+              </svg>
+            </span>
+            <div
+              class="ant-alert-content"
+            >
+              <div
+                class="ant-alert-message"
+              >
+                为了提高调优结果的准确度，系统将执行数据库分析操作
               </div>
             </div>
           </div>
@@ -6061,32 +6065,29 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 for="uploadType"
                 title=""
               >
-                <span
-                  class="custom-icon-ellipse css-u3jcp4"
+                <svg
+                  class="custom-icon-ellipse"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
+                  <rect
+                    fill="#E8F3FF"
                     height="16"
-                    viewBox="0 0 16 16"
+                    rx="3"
                     width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="#E8F3FF"
-                      height="16"
-                      rx="3"
-                      width="16"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      fill="white"
-                      r="3"
-                      stroke="#4583FF"
-                      stroke-width="2"
-                    />
-                  </svg>
-                </span>
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    fill="#fff"
+                    r="3"
+                    stroke="#4583FF"
+                    stroke-width="2"
+                  />
+                </svg>
                 <span>
                   选择SQL语句上传方式
                 </span>
@@ -6110,27 +6111,22 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="M15 7.5H3v6.75h12zM2.25 2.25h13.5a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75m1.5 2.25V6h1.5V4.5zm3 0V6h1.5V4.5zm-3 3.75H6V12H3.75z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15 7.5H3V14.25H15V7.5ZM2.25 2.25H15.75C16.1642 2.25 16.5 2.58579 16.5 3V15C16.5 15.4142 16.1642 15.75 15.75 15.75H2.25C1.83579 15.75 1.5 15.4142 1.5 15V3C1.5 2.58579 1.83579 2.25 2.25 2.25ZM3.75 4.5V6H5.25V4.5H3.75ZM6.75 4.5V6H8.25V4.5H6.75ZM3.75 8.25H6V12H3.75V8.25Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -6142,7 +6138,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -6172,27 +6168,22 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -6204,7 +6195,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -6234,27 +6225,22 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -6266,7 +6252,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -6296,27 +6282,22 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-1x7j8vu"
+                        class="actiontech-mode-switcher-item actiontech-mode-switcher-item-active css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
                         >
-                          <span
-                            class="custom-icon  css-u3jcp4"
+                          <svg
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
+                            <path
+                              d="m12 1.5 3.75 3.75v10.506a.745.745 0 0 1-.745.744H2.995a.75.75 0 0 1-.745-.744V2.244c0-.411.334-.744.745-.744zM9.75 9H12L9 6 6 9h2.25v3h1.5z"
                               fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 1.5L15.75 5.25V15.756C15.7498 15.9534 15.6712 16.1426 15.5316 16.2821C15.392 16.4216 15.2026 16.5 15.0052 16.5H2.99475C2.79778 16.4986 2.60926 16.4198 2.46991 16.2806C2.33056 16.1414 2.25157 15.953 2.25 15.756V2.244C2.25 1.833 2.58375 1.5 2.99475 1.5H12ZM9.75 9H12L9 6L6 9H8.25V12H9.75V9Z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </span>
+                            />
+                          </svg>
                         </span>
                         <span
                           class="actiontech-mode-switcher-item-text"
@@ -6327,7 +6308,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                           class="active-icon-wrapper"
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -6357,7 +6338,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
-                        class="actiontech-mode-switcher-item css-1x7j8vu"
+                        class="actiontech-mode-switcher-item css-klzra6"
                       >
                         <span
                           class="actiontech-mode-switcher-item-icon"
@@ -6392,7 +6373,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                           hidden=""
                         >
                           <span
-                            class="icon-mode-switcher-checked active-icon css-u3jcp4"
+                            class="icon-mode-switcher-checked active-icon"
                           >
                             <svg
                               fill="none"
@@ -6491,23 +6472,18 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                                   <div
                                     class="ant-upload-drag-container"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      class="custom-icon"
+                                      height="40"
+                                      viewBox="0 0 40 40"
+                                      width="40"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="40"
-                                        viewBox="0 0 40 40"
-                                        width="40"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M20 20.9767L27.0717 28.0467L24.7133 30.405L21.6667 27.3584V36.6667H18.3333V27.355L15.2867 30.405L12.9283 28.0467L20 20.9767ZM20 3.33337C22.8616 3.33351 25.6234 4.38523 27.7603 6.28857C29.8972 8.19191 31.2601 10.8141 31.59 13.6567C33.6638 14.2222 35.4729 15.4985 36.7011 17.2626C37.9293 19.0266 38.4986 21.1662 38.3094 23.3074C38.1201 25.4485 37.1845 27.4551 35.6659 28.9764C34.1474 30.4977 32.1425 31.437 30.0017 31.63V28.2734C30.7686 28.1638 31.5061 27.9026 32.171 27.505C32.8359 27.1074 33.4149 26.5812 33.8743 25.9574C34.3336 25.3335 34.6641 24.6244 34.8465 23.8714C35.0288 23.1185 35.0593 22.3367 34.9362 21.5718C34.8131 20.8069 34.5389 20.0742 34.1295 19.4165C33.7202 18.7587 33.1839 18.1891 32.552 17.7408C31.9201 17.2926 31.2053 16.9747 30.4492 16.8057C29.6931 16.6368 28.9109 16.6201 28.1483 16.7567C28.4094 15.5415 28.3952 14.2833 28.107 13.0743C27.8188 11.8653 27.2638 10.736 26.4827 9.76926C25.7015 8.8025 24.714 8.02272 23.5925 7.48703C22.4709 6.95135 21.2437 6.67332 20.0008 6.67332C18.7579 6.67332 17.5308 6.95135 16.4092 7.48703C15.2877 8.02272 14.3002 8.8025 13.519 9.76926C12.7379 10.736 12.1828 11.8653 11.8946 13.0743C11.6064 14.2833 11.5923 15.5415 11.8533 16.7567C10.3328 16.4712 8.76103 16.8014 7.48391 17.6746C6.20678 18.5479 5.32888 19.8928 5.04333 21.4134C4.75778 22.9339 5.08797 24.5057 5.96127 25.7828C6.83456 27.0599 8.17943 27.9378 9.7 28.2234L10 28.2734V31.63C7.85908 31.4373 5.85401 30.4982 4.33522 28.977C2.81644 27.4559 1.88054 25.4493 1.69112 23.3081C1.5017 21.1669 2.0708 19.0272 3.29895 17.263C4.5271 15.4988 6.33618 14.2224 8.41 13.6567C8.73951 10.814 10.1023 8.19156 12.2393 6.28815C14.3763 4.38474 17.1383 3.33315 20 3.33337Z"
-                                          fill="currentColor"
-                                        />
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="m20 20.977 7.072 7.07-2.359 2.358-3.046-3.047v9.309h-3.334v-9.312l-3.046 3.05-2.359-2.358zm0-17.644a11.67 11.67 0 0 1 11.59 10.324 9.166 9.166 0 0 1-1.588 17.973v-3.357a5.836 5.836 0 0 0 4.934-6.701 5.83 5.83 0 0 0-6.788-4.815 8.332 8.332 0 1 0-16.295 0A5.834 5.834 0 0 0 9.7 28.223l.3.05v3.357a9.166 9.166 0 0 1-1.59-17.973A11.666 11.666 0 0 1 20 3.333"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
                                     <div
                                       class="title"
                                     >
@@ -6576,15 +6552,14 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                     class="ant-space-item"
                   >
                     <svg
-                      fill="none"
-                      height="14"
+                      height="16"
                       viewBox="0 0 14 14"
-                      width="14"
+                      width="16"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.99999 12.8333C3.77824 12.8333 1.16666 10.2217 1.16666 6.99996C1.16666 3.77821 3.77824 1.16663 6.99999 1.16663C10.2217 1.16663 12.8333 3.77821 12.8333 6.99996C12.8333 10.2217 10.2217 12.8333 6.99999 12.8333ZM6.99999 11.6666C8.23767 11.6666 9.42465 11.175 10.2998 10.2998C11.175 9.42462 11.6667 8.23764 11.6667 6.99996C11.6667 5.76228 11.175 4.5753 10.2998 3.70013C9.42465 2.82496 8.23767 2.33329 6.99999 2.33329C5.76231 2.33329 4.57533 2.82496 3.70016 3.70013C2.82499 4.5753 2.33332 5.76228 2.33332 6.99996C2.33332 8.23764 2.82499 9.42462 3.70016 10.2998C4.57533 11.175 5.76231 11.6666 6.99999 11.6666ZM6.41666 4.08329H7.58332V5.24996H6.41666V4.08329ZM6.41666 6.41663H7.58332V9.91663H6.41666V6.41663Z"
-                        fill="#8A8F99"
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="#EDB054"
                       />
                     </svg>
                   </div>
@@ -6619,22 +6594,17 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>
@@ -6824,22 +6794,17 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               role="button"
               tabindex="-1"
             >
-              <span
-                class="custom-icon custom-icon-close css-u3jcp4"
-                role="img"
+              <svg
+                fill="currentColor"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  fill="currentColor"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.99993 6.17522L9.88743 3.28772L10.7123 4.11255L7.82476 7.00005L10.7123 9.88755L9.88743 10.7124L6.99993 7.82489L4.11243 10.7124L3.2876 9.88755L6.1751 7.00005L3.2876 4.11255L4.11243 3.28772L6.99993 6.17522Z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                />
+              </svg>
             </span>
           </span>
         </span>

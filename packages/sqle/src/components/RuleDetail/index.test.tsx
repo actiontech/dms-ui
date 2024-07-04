@@ -8,6 +8,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -30,6 +31,7 @@ describe('sqle/components/RuleDetail', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     useParamsMock.mockReturnValue({
       templateName: '',

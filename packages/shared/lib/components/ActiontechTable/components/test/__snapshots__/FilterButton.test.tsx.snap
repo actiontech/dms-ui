@@ -9,7 +9,7 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 1`] = `
       type="button"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
       >
         <div
           class="ant-space-item"
@@ -20,22 +20,19 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 1`] = `
         <div
           class="ant-space-item"
         >
-          <span
-            class="custom-icon custom-icon-arrow-up css-u3jcp4"
-            role="img"
+          <svg
+            color="currrentColor"
+            fill="none"
+            height="14"
+            viewBox="0 0 16 16"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
+            <path
+              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
               fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
-              />
-            </svg>
-          </span>
+            />
+          </svg>
         </div>
       </div>
     </button>
@@ -52,7 +49,7 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 2`] = `
       type="button"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
       >
         <div
           class="ant-space-item"
@@ -63,22 +60,19 @@ exports[`lib/ActiontechTable-FilterButton render click filter btn 2`] = `
         <div
           class="ant-space-item"
         >
-          <span
-            class="custom-icon custom-icon-arrow-up css-u3jcp4"
-            role="img"
+          <svg
+            color="currrentColor"
+            fill="none"
+            height="14"
+            viewBox="0 0 16 16"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
+            <path
+              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
               fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.99993 6.31629L4.11243 9.20379L3.2876 8.37896L6.99993 4.66663L10.7123 8.37896L9.88743 9.20379L6.99993 6.31629Z"
-              />
-            </svg>
-          </span>
+            />
+          </svg>
         </div>
       </div>
     </button>
@@ -96,7 +90,7 @@ exports[`lib/ActiontechTable-FilterButton render disabled filter button 1`] = `
       type="button"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
       >
         <div
           class="ant-space-item"
@@ -107,22 +101,18 @@ exports[`lib/ActiontechTable-FilterButton render disabled filter button 1`] = `
         <div
           class="ant-space-item"
         >
-          <span
-            class="custom-icon custom-icon-arrow-down css-u3jcp4"
-            role="img"
+          <svg
+            color="currrentColor"
+            height="14"
+            viewBox="0 0 16 16"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
               fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-              />
-            </svg>
-          </span>
+            />
+          </svg>
         </div>
       </div>
     </button>
@@ -139,7 +129,7 @@ exports[`lib/ActiontechTable-FilterButton render hasSelectedFilter 1`] = `
       type="button"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
       >
         <div
           class="ant-space-item"
@@ -150,22 +140,18 @@ exports[`lib/ActiontechTable-FilterButton render hasSelectedFilter 1`] = `
         <div
           class="ant-space-item"
         >
-          <span
-            class="custom-icon custom-icon-arrow-down css-u3jcp4"
-            role="img"
+          <svg
+            color="currrentColor"
+            height="14"
+            viewBox="0 0 16 16"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
               fill="currentColor"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.99999 7.68364L9.88749 4.79614L10.7123 5.62098L6.99999 9.33331L3.28766 5.62098L4.11249 4.79614L6.99999 7.68364Z"
-              />
-            </svg>
-          </span>
+            />
+          </svg>
         </div>
       </div>
     </button>

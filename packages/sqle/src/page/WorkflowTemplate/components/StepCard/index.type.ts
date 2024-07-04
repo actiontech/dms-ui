@@ -3,6 +3,7 @@ import {
   IWorkFlowStepTemplateResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IconTheme } from '../../../../theme/type';
 
 export interface IStepCardProps {
   stepCardKey?: string;
@@ -36,6 +37,7 @@ export interface IStepInfoProps {
   reviewStepData: IWorkFlowStepTemplateResV1[];
   execStepData: IWorkFlowStepTemplateResV1;
   usernameList: IUserTipResV1[];
+  theme?: IconTheme;
 }
 
 export interface IStepInfoDataProps extends IStepCardProps {

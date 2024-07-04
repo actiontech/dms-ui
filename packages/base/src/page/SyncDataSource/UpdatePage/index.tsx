@@ -5,8 +5,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { Empty, message, Space, Typography } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { IconLeftArrow } from '@actiontech/shared/lib/Icon/common';
-import { IconInstanceManager } from '../../../icon/sideMenu';
 
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { useForm } from 'antd/es/form/Form';
@@ -18,6 +16,8 @@ import { IUpdateDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/b
 
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
+import { LeftArrowOutlined, DatabaseFilled } from '@actiontech/icons';
+import Icon from '@ant-design/icons';
 
 const UpdateSyncTask: React.FC = () => {
   const { t } = useTranslation();
@@ -116,7 +116,7 @@ const UpdateSyncTask: React.FC = () => {
         fixed
         title={
           <Link to={`/project/${projectID}/sync-data-source`}>
-            <BasicButton icon={<IconLeftArrow />}>
+            <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsSyncDataSource.addSyncTask.backToList')}
             </BasicButton>
           </Link>
@@ -166,11 +166,7 @@ const UpdateSyncTask: React.FC = () => {
           projectName={projectName}
           title={
             <>
-              <IconInstanceManager
-                className="title-icon"
-                width={32}
-                height={32}
-              />
+              <Icon component={DatabaseFilled} className="title-icon" />
               <span>{t('dmsSyncDataSource.updateSyncTask.title')}</span>
             </>
           }

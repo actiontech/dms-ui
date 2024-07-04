@@ -46,6 +46,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "key": "projectImport",
         "path": "import",
       },
+      {
+        "element": <div>
+          projectBatchImportDataSource
+        </div>,
+        "key": "projectBatchImportDataSource",
+        "path": "batch-import",
+      },
     ],
     "key": "project",
     "path": "project",
@@ -81,6 +88,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
             </div>,
             "key": "dataSourceUpdate",
             "path": "update/:dbServiceUid",
+          },
+          {
+            "element": <div>
+              batchImportDataSource
+            </div>,
+            "key": "batchImportDataSource",
+            "path": "batch-import",
           },
         ],
         "element": <div
@@ -185,6 +199,20 @@ exports[`base/router-base-ee render base router when version is ce render router
   <div>
     <div>
       home
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router project render route batchImportDataSource 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="dataSource"
+    >
+      <div>
+        batchImportDataSource
+      </div>
     </div>
   </div>
 </body>
@@ -309,6 +337,16 @@ exports[`base/router-base-ee render base router when version is ee render route 
       <div>
         dataExportManagement
       </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route project render router batch projectBatchImportDataSource 1`] = `
+<body>
+  <div>
+    <div>
+      projectBatchImportDataSource
     </div>
   </div>
 </body>

@@ -1,8 +1,8 @@
 import { ModalProps } from 'antd';
 import { BasicModalStyleWrapper } from './style';
 import classNames from 'classnames';
-import { IconClose } from '../../Icon';
 import { useMemo } from 'react';
+import { CloseOutlined } from '@actiontech/icons';
 
 export type IBasicModal = ModalProps & { size?: 'small' | 'large' };
 
@@ -21,7 +21,7 @@ const BasicModal: React.FC<IBasicModal> = ({
   return (
     <BasicModalStyleWrapper
       className={classNames(className, 'basic-modal-wrapper')}
-      closeIcon={<IconClose width={16} height={16} />}
+      closeIcon={<CloseOutlined width={16} height={16} fill="currentColor" />}
       {...props}
       width={width}
     />

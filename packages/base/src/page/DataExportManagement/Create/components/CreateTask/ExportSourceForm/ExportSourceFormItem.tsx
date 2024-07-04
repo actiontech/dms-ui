@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next';
 import useDbService from '../../../../../../hooks/useDbService';
 import { useEffect, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
 import useInstanceSchema from 'sqle/src/hooks/useInstanceSchema';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { Form, SelectProps } from 'antd';
 import dayjs from 'dayjs';
+import { RingPieFilled } from '@actiontech/icons';
+import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 const ExportSourceFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'sourceForm' | 'baseForm'>
@@ -76,10 +77,10 @@ const ExportSourceFormItem: React.FC<
       <FormItemLabel
         label={
           <div className="label-cont-custom">
-            <div>
-              <IconEllipse />
-              <span>{t('dmsDataExport.create.form.source.dbService')}</span>
-            </div>
+            <CommonIconStyleWrapper className="custom-icon-ellipse">
+              <RingPieFilled />
+            </CommonIconStyleWrapper>
+            <span>{t('dmsDataExport.create.form.source.dbService')}</span>
           </div>
         }
         name="dbService"
@@ -105,10 +106,10 @@ const ExportSourceFormItem: React.FC<
       <FormItemLabel
         label={
           <div className="label-cont-custom">
-            <div>
-              <IconEllipse />
-              <span>{t('dmsDataExport.create.form.source.schema')}</span>
-            </div>
+            <CommonIconStyleWrapper className="custom-icon-ellipse">
+              <RingPieFilled />
+            </CommonIconStyleWrapper>
+            <span>{t('dmsDataExport.create.form.source.schema')}</span>
           </div>
         }
         name="schema"

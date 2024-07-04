@@ -3,29 +3,37 @@
 exports[`lib/BasicDatePicker render diff size date picker 1`] = `
 <div>
   <div
-    class="basic-date-picker-wrapper css-1d7co14"
+    class="basic-date-picker-wrapper css-1ockfja"
   >
-    <span
-      class="custom-icon prefix-icon css-u3jcp4"
+    <svg
+      class="prefix-icon"
+      fill="currentColor"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="time-fill"
-        >
-          <path
-            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
-            fill="#C3C6CD"
-            id="Vector"
-          />
-        </g>
-      </svg>
-    </span>
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="11"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#fff"
+        stroke-width="2"
+      />
+      <path
+        d="M12 7.5V12h3.5"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
     <div
       class="ant-picker ant-picker-large css-dev-only-do-not-override-1xo6ltj"
     >
@@ -43,27 +51,17 @@ exports[`lib/BasicDatePicker render diff size date picker 1`] = `
         <span
           class="ant-picker-suffix"
         >
-          <span
-            class="custom-icon css-u3jcp4"
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="arrow-m-down-line"
-              >
-                <path
-                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
-                  fill="#C3C6CD"
-                  id="Vector"
-                />
-              </g>
-            </svg>
-          </span>
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -74,29 +72,37 @@ exports[`lib/BasicDatePicker render diff size date picker 1`] = `
 exports[`lib/BasicDatePicker render diff size date picker 2`] = `
 <div>
   <div
-    class="basic-date-picker-wrapper css-1d7co14"
+    class="basic-date-picker-wrapper css-1ockfja"
   >
-    <span
-      class="custom-icon prefix-icon css-u3jcp4"
+    <svg
+      class="prefix-icon"
+      fill="currentColor"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="time-fill"
-        >
-          <path
-            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
-            fill="#C3C6CD"
-            id="Vector"
-          />
-        </g>
-      </svg>
-    </span>
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="11"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#fff"
+        stroke-width="2"
+      />
+      <path
+        d="M12 7.5V12h3.5"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
     <div
       class="ant-picker ant-picker-small css-dev-only-do-not-override-1xo6ltj"
     >
@@ -114,27 +120,17 @@ exports[`lib/BasicDatePicker render diff size date picker 2`] = `
         <span
           class="ant-picker-suffix"
         >
-          <span
-            class="custom-icon css-u3jcp4"
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="arrow-m-down-line"
-              >
-                <path
-                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
-                  fill="#C3C6CD"
-                  id="Vector"
-                />
-              </g>
-            </svg>
-          </span>
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -145,29 +141,37 @@ exports[`lib/BasicDatePicker render diff size date picker 2`] = `
 exports[`lib/BasicDatePicker render diff size date picker 3`] = `
 <div>
   <div
-    class="basic-date-picker-wrapper css-1d7co14"
+    class="basic-date-picker-wrapper css-1ockfja"
   >
-    <span
-      class="custom-icon prefix-icon css-u3jcp4"
+    <svg
+      class="prefix-icon"
+      fill="currentColor"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="time-fill"
-        >
-          <path
-            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
-            fill="#C3C6CD"
-            id="Vector"
-          />
-        </g>
-      </svg>
-    </span>
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="11"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#fff"
+        stroke-width="2"
+      />
+      <path
+        d="M12 7.5V12h3.5"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
     <div
       class="ant-picker ant-picker-middle css-dev-only-do-not-override-1xo6ltj"
     >
@@ -185,27 +189,17 @@ exports[`lib/BasicDatePicker render diff size date picker 3`] = `
         <span
           class="ant-picker-suffix"
         >
-          <span
-            class="custom-icon css-u3jcp4"
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="arrow-m-down-line"
-              >
-                <path
-                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
-                  fill="#C3C6CD"
-                  id="Vector"
-                />
-              </g>
-            </svg>
-          </span>
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -216,29 +210,37 @@ exports[`lib/BasicDatePicker render diff size date picker 3`] = `
 exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`] = `
 <div>
   <div
-    class="basic-date-picker-wrapper css-r62yr2"
+    class="basic-date-picker-wrapper css-7anblu"
   >
-    <span
-      class="custom-icon prefix-icon css-u3jcp4"
+    <svg
+      class="prefix-icon"
+      fill="currentColor"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="time-fill"
-        >
-          <path
-            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
-            fill="#C3C6CD"
-            id="Vector"
-          />
-        </g>
-      </svg>
-    </span>
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="11"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#fff"
+        stroke-width="2"
+      />
+      <path
+        d="M12 7.5V12h3.5"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
     <div
       class="ant-picker ant-picker-middle css-dev-only-do-not-override-1xo6ltj"
     >
@@ -255,27 +257,18 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`
         <span
           class="ant-picker-suffix"
         >
-          <span
-            class="custom-icon css-u3jcp4"
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="arrow-m-up-line"
-              >
-                <path
-                  d="M8.00048 7.21871L4.70048 10.5187L3.75781 9.57604L8.00048 5.33337L12.2431 9.57604L11.3005 10.5187L8.00048 7.21871Z"
-                  fill="#C3C6CD"
-                  id="Vector"
-                />
-              </g>
-            </svg>
-          </span>
+            <path
+              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -314,24 +307,18 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`
                   type="button"
                 >
                   <span
-                    class="custom-icon prev-icon css-u3jcp4"
+                    class="prev-icon"
                   >
                     <svg
-                      fill="none"
                       height="14"
                       viewBox="0 0 14 14"
                       width="14"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g
-                        id="arrow-m-left-line"
-                      >
-                        <path
-                          d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
-                          fill="#292C33"
-                          id="Vector"
-                        />
-                      </g>
+                      <path
+                        d="m6.316 7 2.888 2.888-.825.824L4.667 7l3.712-3.712.825.825z"
+                        fill="#292C33"
+                      />
                     </svg>
                   </span>
                 </button>
@@ -359,24 +346,17 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`
                   type="button"
                 >
                   <span
-                    class="custom-icon next-icon css-u3jcp4"
+                    class="next-icon"
                   >
                     <svg
-                      fill="none"
                       height="14"
                       viewBox="0 0 14 14"
                       width="14"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g
-                        id="arrow-m-right-line"
-                      >
-                        <path
-                          d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
-                          fill="#292C33"
-                          id="Vector"
-                        />
-                      </g>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
                     </svg>
                   </span>
                 </button>
@@ -878,29 +858,37 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon false 1`
 exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`] = `
 <div>
   <div
-    class="basic-date-picker-wrapper css-1d7co14"
+    class="basic-date-picker-wrapper css-1ockfja"
   >
-    <span
-      class="custom-icon prefix-icon css-u3jcp4"
+    <svg
+      class="prefix-icon"
+      fill="currentColor"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="time-fill"
-        >
-          <path
-            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
-            fill="#C3C6CD"
-            id="Vector"
-          />
-        </g>
-      </svg>
-    </span>
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="11"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#fff"
+        stroke-width="2"
+      />
+      <path
+        d="M12 7.5V12h3.5"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
     <div
       class="ant-picker ant-picker-middle css-dev-only-do-not-override-1xo6ltj"
     >
@@ -917,27 +905,18 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`]
         <span
           class="ant-picker-suffix"
         >
-          <span
-            class="custom-icon css-u3jcp4"
+          <svg
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="arrow-m-up-line"
-              >
-                <path
-                  d="M8.00048 7.21871L4.70048 10.5187L3.75781 9.57604L8.00048 5.33337L12.2431 9.57604L11.3005 10.5187L8.00048 7.21871Z"
-                  fill="#C3C6CD"
-                  id="Vector"
-                />
-              </g>
-            </svg>
-          </span>
+            <path
+              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
         </span>
       </div>
     </div>
@@ -976,24 +955,18 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`]
                   type="button"
                 >
                   <span
-                    class="custom-icon prev-icon css-u3jcp4"
+                    class="prev-icon"
                   >
                     <svg
-                      fill="none"
                       height="14"
                       viewBox="0 0 14 14"
                       width="14"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g
-                        id="arrow-m-left-line"
-                      >
-                        <path
-                          d="M6.31617 7.00005L9.20367 9.88755L8.37884 10.7124L4.6665 7.00005L8.37884 3.28772L9.20367 4.11255L6.31617 7.00005Z"
-                          fill="#292C33"
-                          id="Vector"
-                        />
-                      </g>
+                      <path
+                        d="m6.316 7 2.888 2.888-.825.824L4.667 7l3.712-3.712.825.825z"
+                        fill="#292C33"
+                      />
                     </svg>
                   </span>
                 </button>
@@ -1021,24 +994,17 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`]
                   type="button"
                 >
                   <span
-                    class="custom-icon next-icon css-u3jcp4"
+                    class="next-icon"
                   >
                     <svg
-                      fill="none"
                       height="14"
                       viewBox="0 0 14 14"
                       width="14"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <g
-                        id="arrow-m-right-line"
-                      >
-                        <path
-                          d="M7.68389 7.00005L4.79639 4.11255L5.62122 3.28772L9.33355 7.00005L5.62122 10.7124L4.79639 9.88755L7.68389 7.00005Z"
-                          fill="#292C33"
-                          id="Vector"
-                        />
-                      </g>
+                      <path
+                        d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                      />
                     </svg>
                   </span>
                 </button>
@@ -1540,29 +1506,37 @@ exports[`lib/BasicDatePicker render open date picker when hideSuperIcon true 1`]
 exports[`lib/BasicDatePicker render params hideSuperIcon val 1`] = `
 <div>
   <div
-    class="basic-date-picker-wrapper css-r62yr2"
+    class="basic-date-picker-wrapper css-7anblu"
   >
-    <span
-      class="custom-icon prefix-icon css-u3jcp4"
+    <svg
+      class="prefix-icon"
+      fill="currentColor"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        fill="none"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="time-fill"
-        >
-          <path
-            d="M9 16.5C4.85775 16.5 1.5 13.1423 1.5 9C1.5 4.85775 4.85775 1.5 9 1.5C13.1423 1.5 16.5 4.85775 16.5 9C16.5 13.1423 13.1423 16.5 9 16.5ZM9.75 9V5.25H8.25V10.5H12.75V9H9.75Z"
-            fill="#C3C6CD"
-            id="Vector"
-          />
-        </g>
-      </svg>
-    </span>
+      <circle
+        cx="12"
+        cy="12"
+        fill="currentColor"
+        r="11"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="#fff"
+        stroke-width="2"
+      />
+      <path
+        d="M12 7.5V12h3.5"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
     <div
       class="ant-picker css-dev-only-do-not-override-1xo6ltj"
     >
@@ -1580,27 +1554,17 @@ exports[`lib/BasicDatePicker render params hideSuperIcon val 1`] = `
         <span
           class="ant-picker-suffix"
         >
-          <span
-            class="custom-icon css-u3jcp4"
+          <svg
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="arrow-m-down-line"
-              >
-                <path
-                  d="M7.99999 8.78132L11.3 5.48132L12.2427 6.42399L7.99999 10.6667L3.75732 6.42399L4.69999 5.48132L7.99999 8.78132Z"
-                  fill="#C3C6CD"
-                  id="Vector"
-                />
-              </g>
-            </svg>
-          </span>
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
         </span>
       </div>
     </div>

@@ -19,7 +19,6 @@ import {
   NoBorderedPageHeaderStyleWrapper,
   TableTitleStyleWrapper
 } from '../CommonTable/style';
-import { IconMyOrderList } from '../../../icon/Dashboard';
 import { CustomToolbar } from '../CommonTable/CustomToolbar';
 import {
   useCurrentProject,
@@ -29,6 +28,7 @@ import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { MenuSquareFilled } from '@actiontech/icons';
 
 const DEVPanel: React.FC<IDEVPanelProps> = ({
   workflowStatistics,
@@ -81,7 +81,7 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
     <DashboardCommonListStyleWrapper>
       <NoBorderedPageHeaderStyleWrapper>
         <TableTitleStyleWrapper>
-          <IconMyOrderList />
+          <MenuSquareFilled width={20} height={20} className="custom-icon" />
           {t('dashboard.title.myOrderSituation')}
         </TableTitleStyleWrapper>
       </NoBorderedPageHeaderStyleWrapper>

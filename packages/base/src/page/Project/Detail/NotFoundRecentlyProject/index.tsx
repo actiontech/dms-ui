@@ -4,7 +4,7 @@ import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useMemo, useState } from 'react';
 import { SelectProps } from 'antd';
 import { ProjectSelectorLabelStyleWrapper } from '../../../Nav/SideMenu/ProjectSelector/style';
-import { IconProjectFlag } from '@actiontech/shared/lib/Icon/common';
+import { FlagFilled } from '@actiontech/icons';
 
 const NotFoundRecentlyProject: React.FC<{
   currentProjectID?: string;
@@ -49,7 +49,7 @@ const NotFoundRecentlyProject: React.FC<{
           value: v.project_id,
           label: (
             <ProjectSelectorLabelStyleWrapper>
-              <IconProjectFlag />
+              <FlagFilled width={18} height={18} />
               <span className="project-selector-label-text">
                 {v.project_name}
               </span>

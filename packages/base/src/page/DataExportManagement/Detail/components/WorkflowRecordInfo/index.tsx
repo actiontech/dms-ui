@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowStepsStyleWrapper } from './style';
-import { IconClose } from '@actiontech/shared/lib/Icon';
 import WorkflowBasicInfo from './WorkflowBasicInfo';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import WorkflowSteps from './WorkflowSteps';
 import useDataExportDetailReduxManage from '../../hooks/index.redux';
+import { CloseOutlined } from '@actiontech/icons';
 
 const WorkflowRecordInfo: React.FC = () => {
   const { t } = useTranslation();
@@ -21,7 +21,8 @@ const WorkflowRecordInfo: React.FC = () => {
         <span className="workflow-record-info-header-text">
           {t('dmsDataExport.detail.record.title')}
         </span>
-        <IconClose
+        <CloseOutlined
+          className="custom-icon-close"
           onClick={() => {
             updateWorkflowStepOpen(false);
           }}

@@ -29,22 +29,17 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-refresh css-u3jcp4"
-                    role="img"
+                  <svg
+                    class="custom-icon custom-icon-refresh"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    />
+                  </svg>
                 </span>
               </button>
             </div>
@@ -69,21 +64,15 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g
-                      id="login-box-line"
-                    >
-                      <path
-                        d="M2.66665 10.0002H3.99998V13.3335H12V2.66683H3.99998V6.00016H2.66665V2.00016C2.66665 1.82335 2.73688 1.65378 2.86191 1.52876C2.98693 1.40373 3.1565 1.3335 3.33331 1.3335H12.6666C12.8435 1.3335 13.013 1.40373 13.1381 1.52876C13.2631 1.65378 13.3333 1.82335 13.3333 2.00016V14.0002C13.3333 14.177 13.2631 14.3465 13.1381 14.4716C13.013 14.5966 12.8435 14.6668 12.6666 14.6668H3.33331C3.1565 14.6668 2.98693 14.5966 2.86191 14.4716C2.73688 14.3465 2.66665 14.177 2.66665 14.0002V10.0002ZM6.66665 7.3335V5.3335L9.99998 8.00016L6.66665 10.6668V8.66683H1.33331V7.3335H6.66665Z"
-                        fill="#292C33"
-                        id="Vector"
-                      />
-                    </g>
+                    <path
+                      d="M2.667 10H4v3.334h8V2.667H4V6H2.667V2a.667.667 0 0 1 .666-.667h9.334a.667.667 0 0 1 .666.667v12a.667.667 0 0 1-.666.667H3.333A.667.667 0 0 1 2.667 14zm4-2.666v-2L10 8l-3.333 2.667v-2H1.333V7.334z"
+                      fill="#292C33"
+                    />
                   </svg>
                 </span>
                 <span>
@@ -101,22 +90,21 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-add css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currentColor"
+                    fill="none"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m5.02.5-.012 9M.5 5h9"
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
                 </span>
                 <span>
                   创建规则模版
@@ -307,22 +295,17 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                 <span
                                   class="ant-input-suffix"
                                 >
-                                  <span
-                                    class="custom-icon custom-icon-search css-u3jcp4"
-                                    role="img"
+                                  <svg
+                                    class="custom-icon custom-icon-search"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    width="14"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      fill="currentColor"
-                                      height="14"
-                                      viewBox="0 0 14 14"
-                                      width="14"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M10.5181 9.69321L13.0165 12.191L12.1911 13.0165L9.69325 10.518C8.76385 11.2631 7.60783 11.6683 6.41667 11.6666C3.51867 11.6666 1.16667 9.31463 1.16667 6.41663C1.16667 3.51863 3.51867 1.16663 6.41667 1.16663C9.31467 1.16663 11.6667 3.51863 11.6667 6.41663C11.6684 7.60779 11.2631 8.76381 10.5181 9.69321ZM9.34792 9.26038C10.0882 8.49906 10.5017 7.47854 10.5 6.41663C10.5 4.16029 8.67242 2.33329 6.41667 2.33329C4.16033 2.33329 2.33333 4.16029 2.33333 6.41663C2.33333 8.67238 4.16033 10.5 6.41667 10.5C7.47858 10.5016 8.4991 10.0882 9.26042 9.34788L9.34792 9.26038Z"
-                                      />
-                                    </svg>
-                                  </span>
+                                    <path
+                                      d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                                    />
+                                  </svg>
                                 </span>
                               </span>
                             </div>
@@ -363,23 +346,17 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                             <div
                               class="level-icon"
                             >
-                              <span
-                                class="custom-icon custom-icon-level-notice css-u3jcp4"
-                                role="img"
+                              <svg
+                                height="19"
+                                viewBox="0 0 18 19"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  fill="none"
-                                  height="19"
-                                  viewBox="0 0 18 19"
-                                  width="18"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
-                                    fill="#6094FC"
-                                  />
-                                </svg>
-                              </span>
+                                <path
+                                  d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                                  fill="#6094FC"
+                                />
+                              </svg>
                               <span
                                 class="level-icon-text"
                               >
@@ -421,22 +398,18 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                         <span
                                           class="ant-btn-icon"
                                         >
-                                          <span
-                                            class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
-                                            role="img"
+                                          <svg
+                                            class="icon-edit custom-icon custom-icon-edit"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
                                           >
-                                            <svg
-                                              fill="currentColor"
-                                              height="16"
-                                              viewBox="0 0 16 16"
-                                              width="16"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                              <path
-                                                d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                              />
-                                            </svg>
-                                          </span>
+                                            <path
+                                              d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                              fill="#8A8F99"
+                                            />
+                                          </svg>
                                         </span>
                                       </button>
                                     </div>
@@ -446,25 +419,22 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span
                                       class="ant-btn-icon"
                                     >
                                       <svg
-                                        fill="none"
-                                        height="10"
-                                        viewBox="0 0 10 10"
-                                        width="10"
+                                        class="icon-disabled"
+                                        fill="currentColor"
+                                        height="16"
+                                        viewBox="0 0 14 14"
+                                        width="16"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
-                                          id="Vector"
-                                          stroke="#F66074"
-                                          stroke-linejoin="round"
-                                          stroke-width="1.5"
+                                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                         />
                                       </svg>
                                     </span>
@@ -480,23 +450,17 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                             <div
                               class="level-icon"
                             >
-                              <span
-                                class="custom-icon custom-icon-level-notice css-u3jcp4"
-                                role="img"
+                              <svg
+                                height="19"
+                                viewBox="0 0 18 19"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  fill="none"
-                                  height="19"
-                                  viewBox="0 0 18 19"
-                                  width="18"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M11.9513 2.37573L16.125 6.54946V12.452L11.9513 16.6257H6.04873L1.875 12.452V6.54946L6.04873 2.37573H11.9513ZM8.24948 11.7501V13.2501H9.74948V11.7501H8.24948ZM8.24948 5.75018V10.2501H9.74948V5.75018H8.24948Z"
-                                    fill="#6094FC"
-                                  />
-                                </svg>
-                              </span>
+                                <path
+                                  d="m11.951 2.376 4.174 4.173v5.903l-4.174 4.174H6.05l-4.174-4.174V6.549l4.174-4.173zM8.25 11.75v1.5h1.5v-1.5zm0-6v4.5h1.5v-4.5z"
+                                  fill="#6094FC"
+                                />
+                              </svg>
                               <span
                                 class="level-icon-text"
                               >
@@ -538,22 +502,18 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                         <span
                                           class="ant-btn-icon"
                                         >
-                                          <span
-                                            class="icon-edit custom-icon custom-icon-edit css-u3jcp4"
-                                            role="img"
+                                          <svg
+                                            class="icon-edit custom-icon custom-icon-edit"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
                                           >
-                                            <svg
-                                              fill="currentColor"
-                                              height="16"
-                                              viewBox="0 0 16 16"
-                                              width="16"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                              <path
-                                                d="M6.162 12.6667H14V14H2V11.1713L8.6 4.57133L11.428 7.40066L6.16133 12.6667H6.162ZM9.542 3.62933L10.9567 2.21466C11.0817 2.08968 11.2512 2.01947 11.428 2.01947C11.6048 2.01947 11.7743 2.08968 11.8993 2.21466L13.7853 4.10066C13.9103 4.22568 13.9805 4.39522 13.9805 4.57199C13.9805 4.74877 13.9103 4.91831 13.7853 5.04333L12.3707 6.45733L9.54267 3.62933H9.542Z"
-                                              />
-                                            </svg>
-                                          </span>
+                                            <path
+                                              d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                              fill="#8A8F99"
+                                            />
+                                          </svg>
                                         </span>
                                       </button>
                                     </div>
@@ -563,25 +523,22 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item custom-rule-item-operator basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span
                                       class="ant-btn-icon"
                                     >
                                       <svg
-                                        fill="none"
-                                        height="10"
-                                        viewBox="0 0 10 10"
-                                        width="10"
+                                        class="icon-disabled"
+                                        fill="currentColor"
+                                        height="16"
+                                        viewBox="0 0 14 14"
+                                        width="16"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
-                                          d="M1.5 1.5L8.5 8.5M1.5 8.5L8.5 1.5"
-                                          id="Vector"
-                                          stroke="#F66074"
-                                          stroke-linejoin="round"
-                                          stroke-width="1.5"
+                                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                         />
                                       </svg>
                                     </span>
@@ -639,22 +596,17 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-refresh css-u3jcp4"
-                    role="img"
+                  <svg
+                    class="custom-icon custom-icon-refresh"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.18677 2.58588C4.24526 1.66868 5.59943 1.16468 7.00002 1.16663C10.2218 1.16663 12.8334 3.77821 12.8334 6.99996C12.8334 8.24596 12.4425 9.40096 11.7775 10.3483L9.91669 6.99996H11.6667C11.6668 6.08508 11.3979 5.19035 10.8936 4.42703C10.3892 3.66371 9.67165 3.06547 8.83004 2.7067C7.98844 2.34793 7.05994 2.24446 6.15999 2.40914C5.26005 2.57383 4.42837 2.99941 3.76835 3.63296L3.18677 2.58588ZM10.8133 11.414C9.75478 12.3312 8.40061 12.8353 7.00002 12.8333C3.77827 12.8333 1.16669 10.2217 1.16669 6.99996C1.16669 5.75396 1.55752 4.59896 2.22252 3.65163L4.08335 6.99996H2.33335C2.33328 7.91485 2.60213 8.80958 3.10647 9.5729C3.61081 10.3362 4.32839 10.9345 5.17 11.2932C6.0116 11.652 6.9401 11.7555 7.84005 11.5908C8.73999 11.4261 9.57167 11.0005 10.2317 10.367L10.8133 11.414Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    />
+                  </svg>
                 </span>
               </button>
             </div>
@@ -678,21 +630,15 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                   class="ant-btn-icon"
                 >
                   <svg
-                    fill="none"
                     height="16"
                     viewBox="0 0 16 16"
                     width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <g
-                      id="login-box-line"
-                    >
-                      <path
-                        d="M2.66665 10.0002H3.99998V13.3335H12V2.66683H3.99998V6.00016H2.66665V2.00016C2.66665 1.82335 2.73688 1.65378 2.86191 1.52876C2.98693 1.40373 3.1565 1.3335 3.33331 1.3335H12.6666C12.8435 1.3335 13.013 1.40373 13.1381 1.52876C13.2631 1.65378 13.3333 1.82335 13.3333 2.00016V14.0002C13.3333 14.177 13.2631 14.3465 13.1381 14.4716C13.013 14.5966 12.8435 14.6668 12.6666 14.6668H3.33331C3.1565 14.6668 2.98693 14.5966 2.86191 14.4716C2.73688 14.3465 2.66665 14.177 2.66665 14.0002V10.0002ZM6.66665 7.3335V5.3335L9.99998 8.00016L6.66665 10.6668V8.66683H1.33331V7.3335H6.66665Z"
-                        fill="#292C33"
-                        id="Vector"
-                      />
-                    </g>
+                    <path
+                      d="M2.667 10H4v3.334h8V2.667H4V6H2.667V2a.667.667 0 0 1 .666-.667h9.334a.667.667 0 0 1 .666.667v12a.667.667 0 0 1-.666.667H3.333A.667.667 0 0 1 2.667 14zm4-2.666v-2L10 8l-3.333 2.667v-2H1.333V7.334z"
+                      fill="#292C33"
+                    />
                   </svg>
                 </span>
                 <span>
@@ -710,22 +656,21 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                 <span
                   class="ant-btn-icon"
                 >
-                  <span
-                    class="custom-icon custom-icon-add css-u3jcp4"
-                    role="img"
+                  <svg
+                    color="currentColor"
+                    fill="none"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      width="14"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.41663 6.41663V2.91663H7.58329V6.41663H11.0833V7.58329H7.58329V11.0833H6.41663V7.58329H2.91663V6.41663H6.41663Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      d="m5.02.5-.012 9M.5 5h9"
+                      stroke="currentColor"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                    />
+                  </svg>
                 </span>
                 <span>
                   创建规则模版
@@ -915,27 +860,17 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     class="ant-space-item"
                                     style="margin-right: 12px;"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 19"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <g
-                                          id="file-list-2-fill"
-                                        >
-                                          <path
-                                            d="M13.3333 14.6668H2.66667C2.48986 14.6668 2.32029 14.5966 2.19526 14.4716C2.07024 14.3465 2 14.177 2 14.0002V2.00016C2 1.82335 2.07024 1.65378 2.19526 1.52876C2.32029 1.40373 2.48986 1.3335 2.66667 1.3335H13.3333C13.5101 1.3335 13.6797 1.40373 13.8047 1.52876C13.9298 1.65378 14 1.82335 14 2.00016V14.0002C14 14.177 13.9298 14.3465 13.8047 14.4716C13.6797 14.5966 13.5101 14.6668 13.3333 14.6668ZM5.33333 4.66683V6.00016H10.6667V4.66683H5.33333ZM5.33333 7.3335V8.66683H10.6667V7.3335H5.33333ZM5.33333 10.0002V11.3335H8.66667V10.0002H5.33333Z"
-                                            fill="#C3C6CD"
-                                            id="Vector"
-                                          />
-                                        </g>
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                        fill="#C3C6CD"
+                                      />
+                                    </svg>
                                   </div>
                                   <div
                                     class="ant-space-item"
@@ -1084,22 +1019,18 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                   <span
                                     class="ant-btn-icon"
                                   >
-                                    <span
-                                      class="custom-icon custom-icon-more-fill css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
+                                      <path
+                                        d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
                                         fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M3.33333 6.66663C2.6 6.66663 2 7.26663 2 7.99996C2 8.73329 2.6 9.33329 3.33333 9.33329C4.06667 9.33329 4.66667 8.73329 4.66667 7.99996C4.66667 7.26663 4.06667 6.66663 3.33333 6.66663ZM12.6667 6.66663C11.9333 6.66663 11.3333 7.26663 11.3333 7.99996C11.3333 8.73329 11.9333 9.33329 12.6667 9.33329C13.4 9.33329 14 8.73329 14 7.99996C14 7.26663 13.4 6.66663 12.6667 6.66663ZM8 6.66663C7.26667 6.66663 6.66667 7.26663 6.66667 7.99996C6.66667 8.73329 7.26667 9.33329 8 9.33329C8.73333 9.33329 9.33333 8.73329 9.33333 7.99996C9.33333 7.26663 8.73333 6.66663 8 6.66663Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      />
+                                    </svg>
                                   </span>
                                 </button>
                               </div>
@@ -1122,27 +1053,17 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                     class="ant-space-item"
                                     style="margin-right: 12px;"
                                   >
-                                    <span
-                                      class="custom-icon css-u3jcp4"
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 19"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
-                                        fill="none"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <g
-                                          id="file-list-2-fill"
-                                        >
-                                          <path
-                                            d="M13.3333 14.6668H2.66667C2.48986 14.6668 2.32029 14.5966 2.19526 14.4716C2.07024 14.3465 2 14.177 2 14.0002V2.00016C2 1.82335 2.07024 1.65378 2.19526 1.52876C2.32029 1.40373 2.48986 1.3335 2.66667 1.3335H13.3333C13.5101 1.3335 13.6797 1.40373 13.8047 1.52876C13.9298 1.65378 14 1.82335 14 2.00016V14.0002C14 14.177 13.9298 14.3465 13.8047 14.4716C13.6797 14.5966 13.5101 14.6668 13.3333 14.6668ZM5.33333 4.66683V6.00016H10.6667V4.66683H5.33333ZM5.33333 7.3335V8.66683H10.6667V7.3335H5.33333ZM5.33333 10.0002V11.3335H8.66667V10.0002H5.33333Z"
-                                            fill="#C3C6CD"
-                                            id="Vector"
-                                          />
-                                        </g>
-                                      </svg>
-                                    </span>
+                                      <path
+                                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                        fill="#C3C6CD"
+                                      />
+                                    </svg>
                                   </div>
                                   <div
                                     class="ant-space-item"
@@ -1215,22 +1136,18 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                   <span
                                     class="ant-btn-icon"
                                   >
-                                    <span
-                                      class="custom-icon custom-icon-more-fill css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
+                                      <path
+                                        d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
                                         fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M3.33333 6.66663C2.6 6.66663 2 7.26663 2 7.99996C2 8.73329 2.6 9.33329 3.33333 9.33329C4.06667 9.33329 4.66667 8.73329 4.66667 7.99996C4.66667 7.26663 4.06667 6.66663 3.33333 6.66663ZM12.6667 6.66663C11.9333 6.66663 11.3333 7.26663 11.3333 7.99996C11.3333 8.73329 11.9333 9.33329 12.6667 9.33329C13.4 9.33329 14 8.73329 14 7.99996C14 7.26663 13.4 6.66663 12.6667 6.66663ZM8 6.66663C7.26667 6.66663 6.66667 7.26663 6.66667 7.99996C6.66667 8.73329 7.26667 9.33329 8 9.33329C8.73333 9.33329 9.33333 8.73329 9.33333 7.99996C9.33333 7.26663 8.73333 6.66663 8 6.66663Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      />
+                                    </svg>
                                   </span>
                                 </button>
                               </div>
@@ -1297,22 +1214,18 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                                   <span
                                     class="ant-btn-icon"
                                   >
-                                    <span
-                                      class="custom-icon custom-icon-more-fill css-u3jcp4"
-                                      role="img"
+                                    <svg
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
                                     >
-                                      <svg
+                                      <path
+                                        d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
                                         fill="currentColor"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                        width="16"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M3.33333 6.66663C2.6 6.66663 2 7.26663 2 7.99996C2 8.73329 2.6 9.33329 3.33333 9.33329C4.06667 9.33329 4.66667 8.73329 4.66667 7.99996C4.66667 7.26663 4.06667 6.66663 3.33333 6.66663ZM12.6667 6.66663C11.9333 6.66663 11.3333 7.26663 11.3333 7.99996C11.3333 8.73329 11.9333 9.33329 12.6667 9.33329C13.4 9.33329 14 8.73329 14 7.99996C14 7.26663 13.4 6.66663 12.6667 6.66663ZM8 6.66663C7.26667 6.66663 6.66667 7.26663 6.66667 7.99996C6.66667 8.73329 7.26667 9.33329 8 9.33329C8.73333 9.33329 9.33333 8.73329 9.33333 7.99996C9.33333 7.26663 8.73333 6.66663 8 6.66663Z"
-                                        />
-                                      </svg>
-                                    </span>
+                                      />
+                                    </svg>
                                   </span>
                                 </button>
                               </div>

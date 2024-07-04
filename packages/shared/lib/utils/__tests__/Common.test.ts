@@ -8,12 +8,15 @@ import {
   timeAddZero,
   getErrorMessage,
   getResponseErrorMessage,
+  getResponseCode,
+  isExportFileResponse,
   getFileFromUploadChangeEvent,
   jsonParse,
   translateTimeForRequest
 } from '../Common';
 import { act } from '@testing-library/react';
 import 'blob-polyfill';
+import { MIMETypeEnum } from '../../enum';
 
 describe('utils/Common', () => {
   test('should check params is a email address', () => {
@@ -129,7 +132,7 @@ describe('utils/Common', () => {
   test('should generate error string from Blob error', async () => {
     const blobError = {
       data: new Blob([JSON.stringify({ code: 7004, message: 'test Blob' })], {
-        type: 'application/json'
+        type: MIMETypeEnum.Application_Json
       }),
       status: 404,
       statusText: 'error',
@@ -145,6 +148,76 @@ describe('utils/Common', () => {
     getResponseErrorMessage(stringError).then((error) => {
       expect(error).toBe('123');
     });
+  });
+
+  test('should get response code', async () => {
+    const responseBlobData = {
+      data: new Blob([JSON.stringify({ code: 0, message: 'success' })], {
+        type: MIMETypeEnum.Application_Json
+      }),
+      status: 200,
+      statusText: 'success',
+      headers: '' as any,
+      config: 'config' as any
+    };
+
+    await act(async () => {
+      const code = await getResponseCode(responseBlobData);
+      expect(code).toBe(0);
+    });
+
+    const responseJsonData = {
+      data: { code: 0, message: 'success' },
+      status: 200,
+      statusText: 'success',
+      headers: '' as any,
+      config: 'config' as any
+    };
+
+    await act(async () => {
+      const code = await getResponseCode(responseJsonData);
+      expect(code).toBe(0);
+    });
+
+    const responseErrorData = {
+      data: new Blob([JSON.stringify({ code: 7004, message: 'test Blob' })], {
+        type: MIMETypeEnum.Application_Json
+      }),
+      status: 404,
+      statusText: 'error',
+      headers: '' as any,
+      config: 'config' as any
+    };
+
+    await act(async () => {
+      const code = await getResponseCode(responseErrorData);
+      expect(code).toBe(7004);
+    });
+  });
+
+  test('test isExportFileResponse', () => {
+    expect(
+      isExportFileResponse({
+        status: 200,
+        headers: {
+          'content-disposition':
+            'attachment; filename=import_db_services_problems.csv'
+        },
+        config: {},
+        statusText: '',
+        data: ''
+      })
+    ).toBe(true);
+
+    expect(
+      isExportFileResponse({
+        status: 200,
+        headers: {},
+        config: {},
+        statusText: '',
+        data: ''
+      })
+    ).toBe(false);
   });
 
   test('test jsonParse', () => {

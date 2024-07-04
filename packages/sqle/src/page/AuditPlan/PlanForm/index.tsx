@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import React, { useEffect, useRef, useState } from 'react';
 
 import Icon from '@ant-design/icons/lib/components/Icon';
-import { IconCreatedTitle } from '../../../icon/AuditPlan';
 
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import {
@@ -31,6 +30,7 @@ import useRuleTemplate from '../../../hooks/useRuleTemplate';
 
 import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
+import { PlanFilled } from '@actiontech/icons';
 
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
@@ -146,7 +146,7 @@ const PlanForm: React.FC<PlanFormProps> = ({
         <FormAreaLineStyleWrapper className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemBigTitle>
-              <Icon component={IconCreatedTitle} className="title-icon" />
+              <Icon component={PlanFilled} className="title-icon" />
               <span>{props.title}</span>
             </FormItemBigTitle>
             <FormItemNoLabel

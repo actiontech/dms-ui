@@ -4,13 +4,15 @@ import { guidanceTheme } from './guidance';
 import { systemTheme } from './system';
 import { dataExportTheme } from './dataExport';
 import { sqleDarkTheme } from 'sqle/src/theme/dark';
+import { iconTheme } from './icon';
 
 const darkTheme = createTheme({
   baseTheme: {
     sideMenu: sideMenuTheme,
     guidance: guidanceTheme,
     system: systemTheme,
-    dataExport: dataExportTheme
+    dataExport: dataExportTheme,
+    icon: iconTheme
   },
   sqleTheme: sqleDarkTheme
 });

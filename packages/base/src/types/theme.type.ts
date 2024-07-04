@@ -2,7 +2,8 @@ import {
   DataExportTheme,
   GuidanceTheme,
   SideMenuTheme,
-  SystemTheme
+  SystemTheme,
+  IconTheme
 } from '../theme/type';
 
 export interface BaseTheme {
@@ -10,6 +11,7 @@ export interface BaseTheme {
   guidance: GuidanceTheme;
   system: SystemTheme;
   dataExport: DataExportTheme;
+  icon: IconTheme;
 }
 
 interface ThemeCustom {

@@ -3,9 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useMemo, useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Space, message } from 'antd';
-import { IconTaskType } from '../../../icon/AuditPlan';
-import { IconArrowUp, IconArrowDown } from '@actiontech/shared/lib/Icon';
+import { message } from 'antd';
 import {
   useTableRequestError,
   TableToolbar,
@@ -15,7 +13,6 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import PlanListDrawer from './Drawer';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 
 import { ResponseCode } from '../../../data/common';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
@@ -38,6 +35,13 @@ import {
   updateAuditPlanModalStatus,
   updateSelectAuditPlan
 } from '../../../store/auditPlan';
+import {
+  PlusOutlined,
+  DownOutlined,
+  UpOutlined,
+  BookMarkTagFilled
+} from '@actiontech/icons';
+import { PlanListTaskTypeButtonStyleWrapper } from './style';
 
 const AuditPlanList = () => {
   const { t } = useTranslation();
@@ -217,7 +221,13 @@ const AuditPlanList = () => {
         title={t('auditPlan.pageTitle')}
         extra={
           <EmptyBox if={!projectArchive}>
-            <BasicButton type="primary" icon={<IconAdd />} onClick={onCreate}>
+            <BasicButton
+              type="primary"
+              icon={
+                <PlusOutlined width={10} height={10} color="currentColor" />
+              }
+              onClick={onCreate}
+            >
               {t('auditPlan.action.create')}
             </BasicButton>
           </EmptyBox>
@@ -231,11 +241,15 @@ const AuditPlanList = () => {
           {
             key: 'task-status-show-btn',
             text: (
-              <Space size={5} align="center">
-                <IconTaskType />
+              <PlanListTaskTypeButtonStyleWrapper size={5} align="center">
+                <BookMarkTagFilled color="currentColor" fill="none" />
                 {t('auditPlan.list.table.audit_plan_type')}
-                {taskTypeShowStatus ? <IconArrowUp /> : <IconArrowDown />}
-              </Space>
+                {taskTypeShowStatus ? (
+                  <UpOutlined color="currentColor" />
+                ) : (
+                  <DownOutlined color="currentColor" />
+                )}
+              </PlanListTaskTypeButtonStyleWrapper>
             ),
             buttonProps: {
               onClick: onChangeTaskTypeShow,

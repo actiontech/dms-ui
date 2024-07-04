@@ -15,7 +15,6 @@ import {
   EmptyBox,
   CustomSegmentedFilter
 } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { Space, message } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -40,11 +39,11 @@ import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/s
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { TableRowSelection } from 'antd/es/table/interface';
 import { SqlExecWorkflowListTableFilterParam } from './index.type';
-import { IconMinus } from '../../../icon/SqlExecWorkflow';
 import {
   execWorkflowStatusDictionary,
   translateDictionaryI18nLabel
 } from '../../../hooks/useStaticStatus/index.data';
+import { PlusOutlined, MinusCircleOutlined } from '@actiontech/icons';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -54,7 +53,7 @@ const SqlExecWorkflowList: React.FC = () => {
   const [filterStatus, setFilterStatus] =
     useState<getWorkflowsV1FilterStatusEnum>();
   const { usernameOptions, updateUsernameList } = useUsername();
-  const { instanceOptions, updateInstanceList } = useInstance();
+  const { instanceIDOptions, updateInstanceList } = useInstance();
   const { isAdmin, username } = useCurrentUser();
 
   const {
@@ -118,7 +117,7 @@ const SqlExecWorkflowList: React.FC = () => {
       [
         'instance_name',
         {
-          options: instanceOptions
+          options: instanceIDOptions
         }
       ],
       [
@@ -134,7 +133,7 @@ const SqlExecWorkflowList: React.FC = () => {
         }
       ]
     ]);
-  }, [instanceOptions, usernameOptions]);
+  }, [instanceIDOptions, usernameOptions]);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -218,7 +217,12 @@ const SqlExecWorkflowList: React.FC = () => {
 
             <EmptyBox if={!projectArchive}>
               <Link to={`/sqle/project/${projectID}/exec-workflow/create`}>
-                <BasicButton type="primary" icon={<IconAdd />}>
+                <BasicButton
+                  type="primary"
+                  icon={
+                    <PlusOutlined width={10} height={10} color="currentColor" />
+                  }
+                >
                   {t('execWorkflow.list.createButtonText')}
                 </BasicButton>
               </Link>
@@ -234,7 +238,7 @@ const SqlExecWorkflowList: React.FC = () => {
             key: 'close',
             text: t('execWorkflow.list.batchClose.buttonText'),
             buttonProps: {
-              icon: <IconMinus />,
+              icon: <MinusCircleOutlined fill="currentColor" />,
               disabled: selectedRowKeys?.length === 0
             },
             permissions: !!isAdmin,

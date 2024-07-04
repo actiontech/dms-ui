@@ -16,6 +16,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 const tasksData = [
   {
@@ -61,6 +62,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     execWorkflow.mockAllApi();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();

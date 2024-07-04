@@ -9,8 +9,8 @@ import {
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
-import { IconSqlLine } from '@actiontech/shared/lib/Icon/common';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { HorizontalTripleLineOutlined } from '@actiontech/icons';
 
 const useSQLExecPlan = () => {
   const { t } = useTranslation();
@@ -75,7 +75,10 @@ const useSQLExecPlan = () => {
             >
               <div className="line-wrapper">
                 <div className="line-left">
-                  <IconSqlLine className="icon-line" />
+                  <span className="icon-line">
+                    <HorizontalTripleLineOutlined width={14} height={12} />
+                  </span>
+
                   <div className="line-desc">
                     <h3>{t('sqlQuery.executePlan.affectRows')}</h3>
                     <p className="line-text">

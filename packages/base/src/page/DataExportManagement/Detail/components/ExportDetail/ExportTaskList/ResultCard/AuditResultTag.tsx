@@ -5,11 +5,11 @@ import { useMemo } from 'react';
 import { Space } from 'antd';
 import { IAuditSQLResult } from '@actiontech/shared/lib/api/base/service/common';
 import {
-  IconWorkflowAuditResultError,
-  IconWorkflowAuditResultNotice,
-  IconWorkflowAuditResultSuccess,
-  IconWorkflowAuditResultWarning
-} from 'sqle/src/icon/SqlExecWorkflow';
+  WarningFilled,
+  ExclamationHexagonFilled,
+  CloseCircleFilled,
+  CheckCircleFilled
+} from '@actiontech/icons';
 
 const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
   auditResult
@@ -39,7 +39,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
       <BasicTag
         color="green"
         size="large"
-        icon={<IconWorkflowAuditResultSuccess />}
+        icon={<CheckCircleFilled />}
         bordered={false}
       >
         {t('audit.auditSuccess')}
@@ -52,7 +52,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
           <BasicTag
             color="blue"
             size="large"
-            icon={<IconWorkflowAuditResultNotice />}
+            icon={<ExclamationHexagonFilled />}
             bordered={false}
           >
             {noticeResult.length}
@@ -62,7 +62,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
           <BasicTag
             color="orange"
             size="large"
-            icon={<IconWorkflowAuditResultWarning />}
+            icon={<WarningFilled />}
             bordered={false}
           >
             {warnResult.length}
@@ -72,7 +72,7 @@ const AuditResultTag: React.FC<{ auditResult?: IAuditSQLResult[] }> = ({
           <BasicTag
             color="red"
             size="large"
-            icon={<IconWorkflowAuditResultError />}
+            icon={<CloseCircleFilled />}
             bordered={false}
           >
             {errorResult.length}

@@ -2,11 +2,11 @@ import { t } from '../../../locale';
 import { EmptyBox } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IconOrderName } from '../../../icon/Dashboard';
 import { Link } from 'react-router-dom';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { BriefcaseFilled } from '@actiontech/icons';
 
 export const commonColumn: (
   projectID: string
@@ -21,7 +21,7 @@ export const commonColumn: (
         return (
           <EmptyBox if={!!text && !!record.project_name} defaultNode={text}>
             <TableColumnWithIconStyleWrapper>
-              <IconOrderName />
+              <BriefcaseFilled width={14} height={14} />
               <Link
                 to={`/sqle/project/${record.project_name}/exec-workflow/${record.workflow_id}`}
               >

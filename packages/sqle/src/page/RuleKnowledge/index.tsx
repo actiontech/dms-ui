@@ -9,7 +9,7 @@ import { EmptyBox, PageHeader } from '@actiontech/shared';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { RuleKnowledgeContentStyleWrapper } from './style';
-import { IconNextStep } from '../../icon/WorkflowTemplate';
+import { DownTriangleOutlined } from '@actiontech/icons';
 
 const RuleKnowledge: React.FC = () => {
   const { t } = useTranslation();
@@ -86,7 +86,7 @@ const RuleKnowledge: React.FC = () => {
           </Spin>
         </Card>
         <div className="next-icon-wrap">
-          <IconNextStep />
+          <DownTriangleOutlined width={18} height={18} />
         </div>
         <EmptyBox if={!!dbType}>
           <RuleUnderstand

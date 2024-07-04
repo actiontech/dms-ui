@@ -5,13 +5,18 @@ import {
   SQLStatementFormProps,
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
-import { IconEllipse } from '@actiontech/shared/lib/Icon/common';
-import { BasicInput, EmptyBox, ModeSwitcher } from '@actiontech/shared';
+import {
+  BasicInput,
+  BasicToolTips,
+  EmptyBox,
+  ModeSwitcher
+} from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
+import { RingPieFilled } from '@actiontech/icons';
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
@@ -40,7 +45,7 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
         name="uploadType"
         label={
           <>
-            <IconEllipse />
+            <RingPieFilled className="custom-icon-ellipse" />
             <span>{t('sqlAudit.create.sqlInfo.form.uploadType')}</span>
           </>
         }
@@ -69,7 +74,14 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
             }
           ]}
           {...formItemLayout.fullLine}
-          label={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
+          label={
+            <BasicToolTips
+              suffixIcon
+              title={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrlTips')}
+            >
+              {t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
+            </BasicToolTips>
+          }
         >
           <BasicInput
             disabled={submitLoading}

@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { message, Modal } from 'antd';
+import { message, Modal, Space } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { IconAdd } from '@actiontech/shared/lib/Icon';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import {
   useCurrentProject,
@@ -31,6 +30,7 @@ import {
   DataSourceListParamType,
   filterDataMaskOptions
 } from './columns';
+import { PlusOutlined } from '@actiontech/icons';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -263,11 +263,30 @@ const DataSourceList = () => {
             if={!projectArchive && actionPermission}
             key="add-dataSource"
           >
-            <Link to={`/project/${projectID}/db-services/create`}>
-              <BasicButton type="primary" icon={<IconAdd />}>
-                {t('dmsDataSource.addDatabase')}
-              </BasicButton>
-            </Link>
+            <Space>
+              {/* #if [ee] */}
+              <Link to={`/project/${projectID}/db-services/batch-import`}>
+                <BasicButton>
+                  {t('dmsDataSource.batchImportDataSource.buttonText')}
+                </BasicButton>
+              </Link>
+              {/* #endif */}
+              <Link to={`/project/${projectID}/db-services/create`}>
+                <BasicButton
+                  type="primary"
+                  icon={
+                    <PlusOutlined
+                      width={10}
+                      height={10}
+                      fill="currentColor"
+                      color="currentColor"
+                    />
+                  }
+                >
+                  {t('dmsDataSource.addDatabase')}
+                </BasicButton>
+              </Link>
+            </Space>
           </EmptyBox>
         ]}
       />

@@ -74,6 +74,73 @@ describe('page/ProjectOverview/SqlCount', () => {
     expect(screen.getByText('SQL统计')).toBeInTheDocument();
   });
 
+  it('render sql count when risk SQL rate is 0%', async () => {
+    const request = projectOverview.getStatisticsAuditedSQL();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          total_sql_count: 5000,
+          risk_sql_count: 1
+        }
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () =>
+      EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName
+    });
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('SQL统计')).toBeInTheDocument();
+  });
+
+  it('render sql count when risk sql count is 0', async () => {
+    const request = projectOverview.getStatisticsAuditedSQL();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          total_sql_count: 100,
+          risk_sql_count: 0
+        }
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () =>
+      EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName
+    });
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('SQL统计')).toBeInTheDocument();
+  });
+
+  it('render sql count when total sql count is 0', async () => {
+    const request = projectOverview.getStatisticsAuditedSQL();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          total_sql_count: 0,
+          risk_sql_count: 0
+        }
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () =>
+      EventEmitter.emit(EmitterKey.Refresh_Project_Overview)
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName
+    });
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('暂无数据')).toBeInTheDocument();
+    expect(screen.getByText('刷新')).toBeInTheDocument();
+  });
+
   it('render no data and refresh list', async () => {
     const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
     const request = projectOverview.getStatisticsAuditedSQL();

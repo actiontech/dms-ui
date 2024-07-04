@@ -1,9 +1,9 @@
 import { TableFilterButtonProps } from '../index.type';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IconArrowDown, IconArrowUp } from '../../../Icon/common';
 import BasicButton from '../../BasicButton';
-import { Space } from 'antd';
+import { DownOutlined, UpOutlined } from '@actiontech/icons';
+import { ColumnsSettingStyleWrapper } from './style';
 
 const FilterButton = <T extends Record<string, any>>({
   filterButtonMeta = new Map(),
@@ -27,13 +27,17 @@ const FilterButton = <T extends Record<string, any>>({
         padding: '0 6px 0 10px'
       }}
     >
-      <Space size={2}>
+      <ColumnsSettingStyleWrapper size={2} align="center">
         {hasSelectedFilter
           ? t('common.actiontechTable.filterButton.clearFilter')
           : t('common.actiontechTable.filterButton.filter')}
 
-        {hasSelectedFilter ? <IconArrowUp /> : <IconArrowDown />}
-      </Space>
+        {hasSelectedFilter ? (
+          <UpOutlined color="currrentColor" width={14} height={14} />
+        ) : (
+          <DownOutlined color="currrentColor" width={14} height={14} />
+        )}
+      </ColumnsSettingStyleWrapper>
     </BasicButton>
   );
 };

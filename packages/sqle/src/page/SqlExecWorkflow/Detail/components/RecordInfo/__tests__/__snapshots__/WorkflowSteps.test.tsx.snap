@@ -30,14 +30,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow exec_fai
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -110,14 +111,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow exec_fai
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -189,22 +191,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow exec_fai
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -273,22 +270,18 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow exec_fai
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  color="#edb054"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99998 14.6663C4.31798 14.6663 1.33331 11.6817 1.33331 7.99967C1.33331 4.31767 4.31798 1.33301 7.99998 1.33301C11.682 1.33301 14.6666 4.31767 14.6666 7.99967C14.6666 11.6817 11.682 14.6663 7.99998 14.6663ZM7.99998 7.05701L6.11465 5.17101L5.17131 6.11434L7.05731 7.99967L5.17131 9.88501L6.11465 10.8283L7.99998 8.94234L9.88531 10.8283L10.8286 9.88501L8.94265 7.99967L10.8286 6.11434L9.88531 5.17101L7.99998 7.05701Z"
-                      fill="#edb054"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                    fill="currentColor"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -443,14 +436,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow executin
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -523,14 +517,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow executin
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -602,22 +597,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow executin
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -687,14 +677,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow executin
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 20 20"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33525 10.6668L12.0486 5.95283L11.1059 5.01016L7.33525 8.7815L5.44925 6.8955L4.50659 7.83816L7.33525 10.6668Z"
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
                     fill="currentColor"
                   />
                 </svg>
@@ -834,14 +825,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow finished
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -914,14 +906,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow finished
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -993,22 +986,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow finished
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -1078,14 +1066,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow finished
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 20 20"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33525 10.6668L12.0486 5.95283L11.1059 5.01016L7.33525 8.7815L5.44925 6.8955L4.50659 7.83816L7.33525 10.6668Z"
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
                     fill="currentColor"
                   />
                 </svg>
@@ -1243,14 +1232,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -1323,14 +1313,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -1402,22 +1393,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -1486,22 +1472,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99998 14.6663C4.31798 14.6663 1.33331 11.6817 1.33331 7.99967C1.33331 4.31767 4.31798 1.33301 7.99998 1.33301C11.682 1.33301 14.6666 4.31767 14.6666 7.99967C14.6666 11.6817 11.682 14.6663 7.99998 14.6663ZM7.99998 7.05701L6.11465 5.17101L5.17131 6.11434L7.05731 7.99967L5.17131 9.88501L6.11465 10.8283L7.99998 8.94234L9.88531 10.8283L10.8286 9.88501L8.94265 7.99967L10.8286 6.11434L9.88531 5.17101L7.99998 7.05701Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                    fill="#F66074"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -1638,14 +1619,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -1718,14 +1700,15 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
                 class="ant-steps-icon"
               >
                 <svg
-                  fill="none"
+                  color="currentColor"
+                  fill="currentColor"
                   height="16"
                   viewBox="0 0 16 16"
                   width="16"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.99992 14.6668C4.31792 14.6668 1.33325 11.6822 1.33325 8.00016C1.33325 4.31816 4.31792 1.3335 7.99992 1.3335C11.6819 1.3335 14.6666 4.31816 14.6666 8.00016C14.6666 11.6822 11.6819 14.6668 7.99992 14.6668ZM7.33325 7.3335H4.66659V8.66683H7.33325V11.3335H8.66659V8.66683H11.3333V7.3335H8.66659V4.66683H7.33325V7.3335Z"
+                    d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
                     fill="currentColor"
                   />
                 </svg>
@@ -1797,22 +1780,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  fill="currentColor"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99992 14.6644C4.31802 14.6644 1.33325 11.6796 1.33325 7.99773C1.33325 4.31582 4.31802 1.33105 7.99992 1.33105C11.6818 1.33105 14.6666 4.31582 14.6666 7.99773C14.6666 11.6796 11.6818 14.6644 7.99992 14.6644ZM7.99992 13.3311C10.9455 13.3311 13.3333 10.9433 13.3333 7.99773C13.3333 5.0522 10.9455 2.66439 7.99992 2.66439C5.0544 2.66439 2.66659 5.0522 2.66659 7.99773C2.66659 10.9433 5.0544 13.3311 7.99992 13.3311ZM7.99992 11.9977V3.99772C10.2091 3.99772 11.9999 5.78858 11.9999 7.99773C11.9999 10.2069 10.2091 11.9977 7.99992 11.9977Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                  />
+                </svg>
               </span>
             </div>
             <div
@@ -1881,22 +1859,17 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowSteps render snap workflow rejected
               <span
                 class="ant-steps-icon"
               >
-                <span
-                  class="icon-failed-workflow-step css-u3jcp4"
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.99998 14.6663C4.31798 14.6663 1.33331 11.6817 1.33331 7.99967C1.33331 4.31767 4.31798 1.33301 7.99998 1.33301C11.682 1.33301 14.6666 4.31767 14.6666 7.99967C14.6666 11.6817 11.682 14.6663 7.99998 14.6663ZM7.99998 7.05701L6.11465 5.17101L5.17131 6.11434L7.05731 7.99967L5.17131 9.88501L6.11465 10.8283L7.99998 8.94234L9.88531 10.8283L10.8286 9.88501L8.94265 7.99967L10.8286 6.11434L9.88531 5.17101L7.99998 7.05701Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
+                  <path
+                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                    fill="#F66074"
+                  />
+                </svg>
               </span>
             </div>
             <div

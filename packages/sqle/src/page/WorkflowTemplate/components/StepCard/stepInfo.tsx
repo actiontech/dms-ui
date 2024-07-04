@@ -2,13 +2,6 @@ import {
   IUserTipResV1,
   IWorkFlowStepTemplateResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  IconAddFile,
-  IconAudit,
-  IconCircleAccount,
-  IconHonour,
-  IconSendPlane
-} from '../../../../icon/WorkflowTemplate';
 import { t } from '../../../../locale';
 import {
   IStepInfoDataProps,
@@ -18,17 +11,29 @@ import {
 } from './index.type';
 import { TemplateLevelStyleWrapper } from './style';
 import UserAvatar from '../UserAvatar';
+import {
+  PaperPlaneFilled,
+  HonourFilled,
+  StampFilled,
+  PlusFileFilled,
+  UserCircleFilled
+} from '@actiontech/icons';
 
 const renderReviewUser = (
   type: 'review' | 'exec',
   stepItem: IWorkFlowStepTemplateResV1,
-  userList: IUserTipResV1[]
+  userList: IUserTipResV1[],
+  theme: IStepInfoProps['theme']
 ) => {
   if (stepItem.assignee_user_id_list?.length === 0) {
     if (stepItem.approved_by_authorized && type === 'review') {
       return (
         <>
-          <IconCircleAccount />
+          <UserCircleFilled
+            color={theme?.workflowTemplate.userCircleFilled}
+            width={18}
+            height={18}
+          />
           <span className="review-exec-auth-text">
             {t(
               'workflowTemplate.progressConfig.review.reviewUserType.matchAudit'
@@ -39,7 +44,11 @@ const renderReviewUser = (
     } else if (stepItem.execute_by_authorized && type === 'exec') {
       return (
         <>
-          <IconCircleAccount />
+          <UserCircleFilled
+            color={theme?.workflowTemplate.userCircleFilled}
+            width={18}
+            height={18}
+          />
           <span className="review-exec-auth-text">
             {t(
               'workflowTemplate.progressConfig.exec.executeUserType.matchExecute'
@@ -75,7 +84,12 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
       disabled: !(props?.currentStep === 0),
       icon: (
         <span className="honour-icon">
-          <IconHonour />
+          <HonourFilled
+            fill="currentColor"
+            color={props.theme?.workflowTemplate.common}
+            width={14}
+            height={14}
+          />
         </span>
       ),
       arrow: StepInfoArrowEnum.none,
@@ -96,7 +110,12 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
         isUpdateMode && (!!props?.currentStep || props?.currentStep === 0),
       icon: (
         <span className="add-file-icon">
-          <IconAddFile />
+          <PlusFileFilled
+            fill="currentColor"
+            color={props.theme?.workflowTemplate.common}
+            width={14}
+            height={14}
+          />
         </span>
       ),
       arrow: StepInfoArrowEnum.double,
@@ -110,7 +129,12 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
       active: isUpdateMode && props?.currentStep === index + 1,
       icon: (
         <span className="audit-icon">
-          <IconAudit />
+          <StampFilled
+            fill="currentColor"
+            color={props.theme?.workflowTemplate.common}
+            width={14}
+            height={14}
+          />
         </span>
       ),
       arrow:
@@ -125,7 +149,12 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
       ),
       desc: stepItem.desc ?? '-',
       operatorTitle: t('workflowTemplate.form.label.reviewUser'),
-      operator: renderReviewUser('review', stepItem, props.usernameList)
+      operator: renderReviewUser(
+        'review',
+        stepItem,
+        props.usernameList,
+        props.theme
+      )
     })),
     {
       key: 'send-plane-step',
@@ -135,7 +164,12 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
         !(props.currentStep === props.reviewStepData.length + 1),
       icon: (
         <span className="send-plane-icon">
-          <IconSendPlane />
+          <PaperPlaneFilled
+            fill="currentColor"
+            color={props.theme?.workflowTemplate.common}
+            width={14}
+            height={14}
+          />
         </span>
       ),
       arrow: StepInfoArrowEnum.none,
@@ -145,7 +179,8 @@ export const stepInfo = (props: IStepInfoProps): IStepInfoDataProps[] => {
       operator: renderReviewUser(
         'exec',
         props?.execStepData,
-        props.usernameList
+        props.usernameList,
+        props.theme
       )
     }
   ];
