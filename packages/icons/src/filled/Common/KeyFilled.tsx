@@ -14,7 +14,9 @@ const KeyFilled = (props: SVGProps<SVGSVGElement>) => {
       />
       <path
         fill={props.color ? 'currentColor' : '#C3C6CD'}
+        fillRule="evenodd"
         d="M5.25 13.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9m0-3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"
+        clipRule="evenodd"
       />
     </svg>
   );
