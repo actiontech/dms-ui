@@ -39,7 +39,7 @@ import {
   PlusOutlined,
   DownOutlined,
   UpOutlined,
-  BookMarkTagFilled
+  BookMarkTagOutlined
 } from '@actiontech/icons';
 import { PlanListTaskTypeButtonStyleWrapper } from './style';
 
@@ -242,7 +242,7 @@ const AuditPlanList = () => {
             key: 'task-status-show-btn',
             text: (
               <PlanListTaskTypeButtonStyleWrapper size={5} align="center">
-                <BookMarkTagFilled color="currentColor" fill="none" />
+                <BookMarkTagOutlined width={14} height={14} />
                 {t('auditPlan.list.table.audit_plan_type')}
                 {taskTypeShowStatus ? (
                   <UpOutlined color="currentColor" />

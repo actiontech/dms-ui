@@ -1,4 +1,5 @@
 export { default as BookMarkOutlined } from './BookMarkOutlined';
+export { default as BookMarkTagOutlined } from './BookMarkTagOutlined';
 export { default as CalendarOutlined } from './CalendarOutlined';
 export { default as CheckStrongOutlined } from './CheckStrongOutlined';
 export { default as ClockCircleOutlined } from './ClockCircleOutlined';
