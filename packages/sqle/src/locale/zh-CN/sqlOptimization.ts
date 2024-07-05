@@ -33,7 +33,10 @@ export default {
       instanceSchema: '数据库',
       uploadType: '选择SQL语句上传方式',
       optimize: '调优',
-      tips: '为了提高调优结果的准确度，系统将执行数据库分析操作'
+      tips: '为了提高调优结果的准确度，系统将执行数据库分析操作',
+      format: 'SQL美化',
+      formatTips:
+        '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。'
     }
   },
   overview: {

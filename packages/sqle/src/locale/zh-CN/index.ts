@@ -1,7 +1,6 @@
 import audit from './audit';
 import dashboard from './dashboard';
 import menu from './menu';
-import order from './order';
 import rule from './rule';
 import ruleTemplate from './ruleTemplate';
 import whitelist from './whitelist';
@@ -20,6 +19,8 @@ import sqlAudit from './sqlAudit';
 import pluginAudit from './pluginAudit';
 import sqlOptimization from './sqlOptimization';
 import execWorkflow from './execWorkflow';
+import home from './home';
+import components from './components';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -28,7 +29,6 @@ export default {
     ruleTemplate,
     rule,
     audit,
-    order,
     dashboard,
     whitelist,
     workflowTemplate,
@@ -45,6 +45,8 @@ export default {
     sqlAudit,
     pluginAudit,
     sqlOptimization,
-    execWorkflow
+    execWorkflow,
+    home,
+    components
   }
 };

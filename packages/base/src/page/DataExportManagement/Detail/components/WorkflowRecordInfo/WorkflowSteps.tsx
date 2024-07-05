@@ -73,7 +73,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
         return t('dmsDataExport.detail.record.steps.execute');
       }
 
-      return t('order.operator.unknown');
+      return t('dmsDataExport.detail.operator.unknown');
     },
     [t]
   );
@@ -104,7 +104,7 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             if={!!step.operation_user?.name && !!step.operation_time}
             defaultNode={
               <div className="step-info-tips">
-                {t('order.operator.waitAudit')}
+                {t('dmsDataExport.detail.operator.waitAudit')}
               </div>
             }
           >
@@ -122,13 +122,13 @@ const WorkflowSteps: React.FC<WorkflowStepsProps> = ({
             }
           >
             <div className="step-info-rejected">
-              <span>{t('order.operator.alreadyRejected')}</span>
+              <span>{t('dmsDataExport.detail.operator.alreadyRejected')}</span>
             </div>
           </EmptyBox>
 
           <EmptyBox if={workflowStatus === WorkflowRecordStatusEnum.cancel}>
             <div className="step-info-rejected">
-              <span>{t('order.operator.alreadyClosed')}</span>
+              <span>{t('dmsDataExport.detail.operator.alreadyClosed')}</span>
             </div>
           </EmptyBox>
         </>
