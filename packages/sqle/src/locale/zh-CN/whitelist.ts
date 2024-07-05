@@ -32,6 +32,7 @@ export default {
     },
     update: {
       title: '更新白名单'
-    }
+    },
+    sql: 'SQL语句'
   }
 };

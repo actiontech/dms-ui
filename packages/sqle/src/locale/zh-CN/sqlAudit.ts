@@ -54,6 +54,10 @@ export default {
     },
     sqlInfo: {
       title: '审核SQL语句信息',
+      audit: '审核',
+      format: 'SQL美化',
+      formatTips:
+        '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。',
       form: {
         auditType: '审核方式',
         dbType: '数据库类型',

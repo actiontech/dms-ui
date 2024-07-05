@@ -34,7 +34,7 @@ export const workflowNameRule = (): FormValidatorRule => {
     }
     const reg = /^[\u4e00-\u9fa5_a-zA-Z0-9_-]*$/;
     if (!reg.test(value)) {
-      return Promise.reject(i18n.t('order.createOrder.workflowNameRule'));
+      return Promise.reject(i18n.t('common.form.rule.nameRule'));
     }
     return Promise.resolve();
   };
