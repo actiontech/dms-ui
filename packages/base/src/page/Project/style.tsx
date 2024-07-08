@@ -25,3 +25,18 @@ export const ImportProjectUploadFileWrapper = styled('div')`
     }
   }
 `;
+
+export const ProjectBusinessDescriptionStyleWrapper = styled('section')`
+  img {
+    width: 100%;
+  }
+
+  ul {
+    padding-left: 24px;
+
+    li {
+      padding: 0;
+      margin-bottom: 8px;
+    }
+  }
+`;

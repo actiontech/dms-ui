@@ -14,6 +14,7 @@ import { ProjectFormFields } from './ProjectForm';
 import { IAddProjectParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
 import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
+import BusinessDescription from './BusinessDescription';
 
 const AddProject: React.FC = () => {
   const { t } = useTranslation();
@@ -93,6 +94,7 @@ const AddProject: React.FC = () => {
       >
         {contextHolder}
         <ProjectForm form={form} />
+        <BusinessDescription />
       </BasicDrawer>
     </>
   );
