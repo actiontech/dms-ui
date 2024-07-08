@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import {
   auditStatusDictionary,
   execStatusDictionary,
-  orderStatusDictionary,
   ruleLevelDictionary,
   auditLevelDictionary
 } from './index.data';
@@ -16,7 +15,6 @@ import {
   getAuditTaskSQLsV2FilterExecStatusEnum,
   getAuditTaskSQLsV1FilterAuditStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { getGlobalWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 
 const useStaticStatus = () => {
   const { t } = useTranslation();
@@ -72,77 +70,6 @@ const useStaticStatus = () => {
             auditStatusDictionary[
               getAuditTaskSQLsV1FilterAuditStatusEnum.finished
             ]
-          )}
-        </Select.Option>
-      </>
-    );
-  }, [t]);
-
-  const generateOrderStatusSelectOption = React.useCallback(() => {
-    return (
-      <>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.wait_for_audit}
-          value={getGlobalWorkflowsV1FilterStatusEnum.wait_for_audit}
-        >
-          {t(
-            orderStatusDictionary[
-              getGlobalWorkflowsV1FilterStatusEnum.wait_for_audit
-            ]
-          )}
-        </Select.Option>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.wait_for_execution}
-          value={getGlobalWorkflowsV1FilterStatusEnum.wait_for_execution}
-        >
-          {t(
-            orderStatusDictionary[
-              getGlobalWorkflowsV1FilterStatusEnum.wait_for_execution
-            ]
-          )}
-        </Select.Option>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.executing}
-          value={getGlobalWorkflowsV1FilterStatusEnum.executing}
-        >
-          {t(
-            orderStatusDictionary[
-              getGlobalWorkflowsV1FilterStatusEnum.executing
-            ]
-          )}
-        </Select.Option>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.finished}
-          value={getGlobalWorkflowsV1FilterStatusEnum.finished}
-        >
-          {t(
-            orderStatusDictionary[getGlobalWorkflowsV1FilterStatusEnum.finished]
-          )}
-        </Select.Option>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.rejected}
-          value={getGlobalWorkflowsV1FilterStatusEnum.rejected}
-        >
-          {t(
-            orderStatusDictionary[getGlobalWorkflowsV1FilterStatusEnum.rejected]
-          )}
-        </Select.Option>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.exec_failed}
-          value={getGlobalWorkflowsV1FilterStatusEnum.exec_failed}
-        >
-          {t(
-            orderStatusDictionary[
-              getGlobalWorkflowsV1FilterStatusEnum.exec_failed
-            ]
-          )}
-        </Select.Option>
-        <Select.Option
-          key={getGlobalWorkflowsV1FilterStatusEnum.canceled}
-          value={getGlobalWorkflowsV1FilterStatusEnum.canceled}
-        >
-          {t(
-            orderStatusDictionary[getGlobalWorkflowsV1FilterStatusEnum.canceled]
           )}
         </Select.Option>
       </>
@@ -318,7 +245,6 @@ const useStaticStatus = () => {
   return {
     generateAuditStatusSelectOption,
     generateExecStatusSelectOption,
-    generateOrderStatusSelectOption,
     // generateSqlTaskStatusSelectOption,
     getRuleLevelStatusSelectOption,
     getAuditLevelStatusSelectOption,

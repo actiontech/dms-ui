@@ -49,19 +49,6 @@ export const auditStatusDictionary: StaticEnumDictionary<getAuditTaskSQLsV1Filte
       'audit.auditStatus.finished'
   };
 
-export const orderStatusDictionary: StaticEnumDictionary<getWorkflowsV1FilterStatusEnum> =
-  {
-    [getWorkflowsV1FilterStatusEnum.wait_for_audit]:
-      'order.status.wait_for_audit',
-    [getWorkflowsV1FilterStatusEnum.wait_for_execution]:
-      'order.status.wait_for_execution',
-    [getWorkflowsV1FilterStatusEnum.canceled]: 'order.status.canceled',
-    [getWorkflowsV1FilterStatusEnum.rejected]: 'order.status.reject',
-    [getWorkflowsV1FilterStatusEnum.exec_failed]: 'order.status.exec_failed',
-    [getWorkflowsV1FilterStatusEnum.finished]: 'order.status.finished',
-    [getWorkflowsV1FilterStatusEnum.executing]: 'order.status.executing'
-  };
-
 export const execWorkflowStatusDictionary: StaticEnumDictionary<getWorkflowsV1FilterStatusEnum> =
   {
     [getWorkflowsV1FilterStatusEnum.wait_for_audit]:

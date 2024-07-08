@@ -14,7 +14,7 @@ export const commonColumn: (
   const column: ActiontechTableColumn<IWorkflowDetailResV1> = [
     {
       dataIndex: 'workflow_name',
-      title: () => t('order.order.name'),
+      title: () => t('home.sqlExecWorkflow.name'),
       className: 'dashboard-common-list-table-name-column',
       width: '30%',
       render: (text, record) => {
@@ -34,7 +34,7 @@ export const commonColumn: (
     },
     {
       dataIndex: 'desc',
-      title: () => t('order.order.desc'),
+      title: () => t('home.sqlExecWorkflow.desc'),
       className: 'dashboard-common-list-table-desc-column',
       width: '45%',
       render: (desc: string, record: IWorkflowDetailResV1) =>
@@ -45,7 +45,7 @@ export const commonColumn: (
               route: `/sqle/project/${projectID}/exec-workflow/${
                 record.workflow_id ?? ''
               }`,
-              text: t('order.create.viewOrderDetail')
+              text: t('home.sqlExecWorkflow.viewDetail')
             }}
           />
         ) : (
@@ -54,7 +54,7 @@ export const commonColumn: (
     },
     {
       dataIndex: 'create_time',
-      title: () => t('order.order.createTime'),
+      title: () => t('home.sqlExecWorkflow.createTime'),
       width: '25%',
       render: (time) => {
         return formatTime(time, '-');
