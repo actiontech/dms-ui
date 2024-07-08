@@ -144,7 +144,8 @@ export default {
       portRange: '端口号范围为{{min}}-{{max}}',
       integer: '只能输入正整数',
       numberRange: '{{name}}范围是{{min}}-{{max}}间的正整数',
-      maxLength: '至多 {{max}} 个字符'
+      maxLength: '至多 {{max}} 个字符',
+      nameRule: '只能包含字母、数字、中文、中划线和下划线'
     }
   },
   cron: {

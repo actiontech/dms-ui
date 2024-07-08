@@ -68,11 +68,11 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
         </BasicButton>
         <Space hidden={uploadType !== UploadTypeEnum.sql}>
           <BasicButton onClick={formatSql} loading={submitLoading}>
-            {t('order.sqlInfo.format')}
+            {t('sqlOptimization.create.sqlInfo.format')}
           </BasicButton>
           <BasicToolTips
             prefixIcon={<InfoCircleOutlined />}
-            title={t('order.sqlInfo.formatTips', {
+            title={t('sqlOptimization.create.sqlInfo.formatTips', {
               supportType: Object.keys(FormatLanguageSupport).join('、')
             })}
           />

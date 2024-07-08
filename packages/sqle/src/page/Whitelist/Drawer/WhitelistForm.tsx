@@ -62,7 +62,7 @@ const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
 
       <Form.Item
         name="sql"
-        label={t('order.sqlInfo.sql')}
+        label={t('whitelist.modal.sql')}
         initialValue="/* input your sql */"
         rules={[
           {

@@ -141,15 +141,15 @@ const SQLInfoFormItem = ({
           type="primary"
           loading={submitLoading}
         >
-          {t('order.sqlInfo.audit')}
+          {t('sqlAudit.create.sqlInfo.audit')}
         </BasicButton>
         <Space hidden={uploadType !== UploadTypeEnum.sql}>
           <BasicButton onClick={formatSql} loading={submitLoading}>
-            {t('order.sqlInfo.format')}
+            {t('sqlAudit.create.sqlInfo.format')}
           </BasicButton>
           <BasicToolTips
             prefixIcon={<InfoCircleOutlined />}
-            title={t('order.sqlInfo.formatTips', {
+            title={t('sqlAudit.create.sqlInfo.formatTips', {
               supportType: Object.keys(FormatLanguageSupport).join('、')
             })}
           />
