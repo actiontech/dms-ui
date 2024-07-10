@@ -9,7 +9,11 @@ import {
   roleList,
   memberTips
 } from './data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import UserGroup from '@actiontech/shared/lib/api/base/service/UserGroup';
+import User from '@actiontech/shared/lib/api/base/service/User';
+import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
+import Role from '@actiontech/shared/lib/api/base/service/Role';
+import Member from '@actiontech/shared/lib/api/base/service/Member';
 
 class MockUserCenterApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -30,7 +34,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public getUserList() {
-    const spy = jest.spyOn(dms, 'ListUsers');
+    const spy = jest.spyOn(User, 'ListUsers');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: userList
@@ -40,7 +44,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public getMemberTips() {
-    const spy = jest.spyOn(dms, 'ListMemberTips');
+    const spy = jest.spyOn(Member, 'ListMemberTips');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: memberTips
@@ -50,7 +54,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public addUser() {
-    const spy = jest.spyOn(dms, 'AddUser');
+    const spy = jest.spyOn(User, 'AddUser');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         uid: '123123'
@@ -60,19 +64,19 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public updateUser() {
-    const spy = jest.spyOn(dms, 'UpdateUser');
+    const spy = jest.spyOn(User, 'UpdateUser');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public deleteUser() {
-    const spy = jest.spyOn(dms, 'DelUser');
+    const spy = jest.spyOn(User, 'DelUser');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getUserGroupList() {
-    const spy = jest.spyOn(dms, 'ListUserGroups');
+    const spy = jest.spyOn(UserGroup, 'ListUserGroups');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: userGroupList
@@ -82,7 +86,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public addUserGroup() {
-    const spy = jest.spyOn(dms, 'AddUserGroup');
+    const spy = jest.spyOn(UserGroup, 'AddUserGroup');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         user_groups: {
@@ -96,7 +100,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public updateUserGroup() {
-    const spy = jest.spyOn(dms, 'UpdateUserGroup');
+    const spy = jest.spyOn(UserGroup, 'UpdateUserGroup');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         user_group_uid: '1453',
@@ -111,7 +115,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public deleteUserGroup() {
-    const spy = jest.spyOn(dms, 'DelUserGroup');
+    const spy = jest.spyOn(UserGroup, 'DelUserGroup');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         user_group_uid: '1453'
@@ -121,7 +125,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public getRoleList() {
-    const spy = jest.spyOn(dms, 'ListRoles');
+    const spy = jest.spyOn(Role, 'ListRoles');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: roleList
@@ -131,7 +135,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public addRole() {
-    const spy = jest.spyOn(dms, 'AddRole');
+    const spy = jest.spyOn(Role, 'AddRole');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         uid: '70023'
@@ -140,18 +144,18 @@ class MockUserCenterApi implements MockSpyApy {
     return spy;
   }
   public updateRole() {
-    const spy = jest.spyOn(dms, 'UpdateRole');
+    const spy = jest.spyOn(Role, 'UpdateRole');
     spy.mockImplementation(() => createSpySuccessResponse(null));
     return spy;
   }
   public deleteRole() {
-    const spy = jest.spyOn(dms, 'DelRole');
+    const spy = jest.spyOn(Role, 'DelRole');
     spy.mockImplementation(() => createSpySuccessResponse(null));
     return spy;
   }
 
   public getOpPermissionsList() {
-    const spy = jest.spyOn(dms, 'ListOpPermissions');
+    const spy = jest.spyOn(OpPermission, 'ListOpPermissions');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: opPermissionList
@@ -161,7 +165,7 @@ class MockUserCenterApi implements MockSpyApy {
   }
 
   public updateCurrentUser() {
-    const spy = jest.spyOn(dms, 'UpdateCurrentUser');
+    const spy = jest.spyOn(User, 'UpdateCurrentUser');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

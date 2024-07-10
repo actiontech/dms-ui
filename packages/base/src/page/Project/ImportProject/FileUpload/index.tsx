@@ -2,7 +2,7 @@ import { Upload, UploadProps, Button } from 'antd';
 import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { ImportProjectUploadFileFieldWrapper } from '../../style';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
 
 const FileUpload: React.FC<UploadProps> = (props) => {
@@ -12,9 +12,9 @@ const FileUpload: React.FC<UploadProps> = (props) => {
 
   const onDownload = () => {
     setPending();
-    dms
-      .GetImportProjectsTemplate({ responseType: 'blob' })
-      .finally(() => setDone());
+    Project.GetImportProjectsTemplate({ responseType: 'blob' }).finally(() =>
+      setDone()
+    );
   };
 
   return (

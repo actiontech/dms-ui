@@ -14,10 +14,10 @@ import {
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IAddDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IAddDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/DatabaseSourceService/index.d';
 
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -58,8 +58,7 @@ const AddSyncTask: React.FC = () => {
       },
       project_uid: projectID
     };
-    dms
-      .AddDatabaseSourceService(params)
+    DatabaseSourceService.AddDatabaseSourceService(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           showResult();

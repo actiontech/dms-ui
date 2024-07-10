@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import useDbService from '../../../../hooks/useDbService';
 import { useRequest } from 'ahooks';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   ActiontechTable,
@@ -92,7 +92,7 @@ const DataSourceList = () => {
         tableFilterInfo.is_enable_masking as unknown as DataMaskingFilterTypeEnum
       );
       return handleTableRequestError(
-        dms.ListDBServices({
+        DBService.ListDBServices({
           ...tableFilterInfo,
           page_index: pagination.page_index,
           page_size: pagination.page_size,
@@ -123,11 +123,10 @@ const DataSourceList = () => {
         }),
         0
       );
-      dms
-        .DelDBService({
-          db_service_uid: dbServiceUid,
-          project_uid: projectID
-        })
+      DBService.DelDBService({
+        db_service_uid: dbServiceUid,
+        project_uid: projectID
+      })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             messageApi.success(
@@ -151,11 +150,10 @@ const DataSourceList = () => {
         t('common.testDatabaseConnectButton.testing'),
         0
       );
-      dms
-        .CheckDBServiceIsConnectableById({
-          db_service_uid: dbServiceUid,
-          project_uid: projectID
-        })
+      DBService.CheckDBServiceIsConnectableById({
+        db_service_uid: dbServiceUid,
+        project_uid: projectID
+      })
         .then((res) => {
           hide();
           if (res.data.code === ResponseCode.SUCCESS) {

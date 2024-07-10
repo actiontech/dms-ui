@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { updateSystemModalStatus } from '../../../store/system';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -34,13 +34,14 @@ const License = () => {
     loading,
     refresh: refreshLicenseList
   } = useRequest(() => {
-    return dms.GetLicense().then((res) => ({ list: res?.data?.license ?? [] }));
+    return Configuration.GetLicense().then((res) => ({
+      list: res?.data?.license ?? []
+    }));
   });
 
   const collectLicense = () => {
     startCollect();
-    dms
-      .GetLicenseInfo({ responseType: 'blob' })
+    Configuration.GetLicenseInfo({ responseType: 'blob' })
       .then((res) => {
         if (
           res.data instanceof Blob &&

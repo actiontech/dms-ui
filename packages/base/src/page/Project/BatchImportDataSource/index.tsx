@@ -7,7 +7,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import BatchImportDataSourceForm from './UploadForm';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from './hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
@@ -33,10 +33,9 @@ const BatchImportDataSource = () => {
   const onSubmit = async () => {
     await form.validateFields();
     setImportPending();
-    dms
-      .ImportDBServicesOfProjects({
-        db_services: dbServices
-      })
+    Project.ImportDBServicesOfProjects({
+      db_services: dbServices
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           showResult();
@@ -52,11 +51,10 @@ const BatchImportDataSource = () => {
   >(
     (option) => {
       setDBservices([]);
-      dms
-        .ImportDBServicesOfProjectsCheck(
-          { db_services_file: option.file },
-          { responseType: 'blob' }
-        )
+      Project.ImportDBServicesOfProjectsCheck(
+        { db_services_file: option.file },
+        { responseType: 'blob' }
+      )
         .then((res) => {
           importServicesCheck(res);
           option?.onSuccess?.(option?.file);

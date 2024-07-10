@@ -7,7 +7,7 @@ import OverviewList from './OverviewList';
 import ExportTaskList from './ExportTaskList';
 import DbServiceSegmentedLabel from '../../../Common/DbServiceSegmentedLabel';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean } from 'ahooks';
 import { PanelCardOutlined } from '@actiontech/icons';
@@ -43,7 +43,7 @@ const ExportDetail: React.FC = () => {
   const downloadSQLs = async () => {
     startDownloadSQLs();
     try {
-      await dms.DownloadDataExportTaskSQLs({
+      await DataExportTask.DownloadDataExportTaskSQLs({
         project_uid: projectID,
         data_export_task_uid: curTaskID ?? ''
       });

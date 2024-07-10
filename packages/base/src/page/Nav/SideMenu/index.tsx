@@ -11,7 +11,7 @@ import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelec
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';
 import MenuList from './MenuList';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { IBindProject } from './ProjectSelector/index.type';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -34,9 +34,9 @@ const SideMenu: React.FC = () => {
     refresh: refreshProjectList
   } = useRequest(
     () =>
-      dms
-        .ListProjects({ page_size: 9999 })
-        .then((res) => res?.data?.data ?? []),
+      Project.ListProjects({ page_size: 9999 }).then(
+        (res) => res?.data?.data ?? []
+      ),
     {
       refreshDeps: [currentProjectID],
       onSuccess: (res) => {

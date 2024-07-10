@@ -5,7 +5,7 @@ import { RejectWorkflowModalFormFields } from './index.type';
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { RejectWorkflowModalAlertStyleWrapper } from './style';
 import { useBoolean } from 'ahooks';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
@@ -40,14 +40,13 @@ const RejectWorkflowModal: React.FC = () => {
     values: RejectWorkflowModalFormFields
   ) => {
     startRejectWorkflow();
-    dms
-      .RejectDataExportWorkflow({
-        data_export_workflow_uid: workflowID,
-        project_uid: projectID,
-        payload: {
-          reason: values.reason
-        }
-      })
+    DataExportWorkflows.RejectDataExportWorkflow({
+      data_export_workflow_uid: workflowID,
+      project_uid: projectID,
+      payload: {
+        reason: values.reason
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

@@ -15,8 +15,8 @@ import {
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
-import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
+import Member from '@actiontech/shared/lib/api/base/service/Member';
 import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -64,7 +64,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
         ...pagination,
         project_uid: projectID
       };
-      return handleTableRequestError(dms.ListMembers(params));
+      return handleTableRequestError(Member.ListMembers(params));
     },
     {
       refreshDeps: [pagination, refreshFlag, projectID, activePage],
@@ -87,7 +87,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
 
   const onDeleteMember = useCallback(
     async (record?: IListMember) => {
-      const res = await dms.DelMember({
+      const res = await Member.DelMember({
         member_uid: record?.uid ?? '',
         project_uid: projectID
       });

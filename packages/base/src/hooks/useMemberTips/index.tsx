@@ -2,9 +2,9 @@ import { useBoolean } from 'ahooks';
 import React, { useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Select, Space, Typography } from 'antd';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Member from '@actiontech/shared/lib/api/base/service/Member';
 import { AvatarCom } from '@actiontech/shared';
-import { IListMemberTipsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IListMemberTipsParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import { IListMemberTipsItem } from '@actiontech/shared/lib/api/base/service/common';
 
 const useMemberTips = () => {
@@ -14,8 +14,7 @@ const useMemberTips = () => {
   const updateMemberTips = React.useCallback(
     (params: IListMemberTipsParams) => {
       setTrue();
-      dms
-        .ListMemberTips(params)
+      Member.ListMemberTips(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setMemberTips(res.data?.data ?? []);

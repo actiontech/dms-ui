@@ -8,7 +8,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 
 describe('sqle/Rule/hooks/useRuleListFilter', () => {
   let getProjectListSpy: jest.SpyInstance;
@@ -16,7 +16,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUserSpy = mockUseCurrentUser();
-    getProjectListSpy = jest.spyOn(dms, 'ListProjects');
+    getProjectListSpy = jest.spyOn(Project, 'ListProjects');
     getProjectListSpy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: 1,

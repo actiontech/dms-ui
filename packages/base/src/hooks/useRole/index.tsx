@@ -4,7 +4,7 @@ import { Select, Tooltip } from 'antd';
 import { EmptyBox } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const useRole = () => {
@@ -13,10 +13,9 @@ const useRole = () => {
 
   const updateRoleList = React.useCallback(() => {
     setTrue();
-    dms
-      .ListRoles({
-        page_size: 9999
-      })
+    Role.ListRoles({
+      page_size: 9999
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setRoleList(res.data?.data ?? []);

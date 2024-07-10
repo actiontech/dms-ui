@@ -3,15 +3,21 @@ import {
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
-  BasicInfo,
-  CompanyNotice,
+  BasicInfoMockData,
+  CompanyNoticeMockData,
   DBServicesList,
   GetUserPayload,
   oauth2Tips,
   UserInfo
 } from './data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import { mockProjectList } from '../project/data';
+import Session from '@actiontech/shared/lib/api/base/service/Session';
+import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
+import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
+import User from '@actiontech/shared/lib/api/base/service/User';
+import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 
 class MockDMSGlobalApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -34,7 +40,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public getCurrentUser() {
-    const spy = jest.spyOn(dms, 'GetUser');
+    const spy = jest.spyOn(User, 'GetUser');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: GetUserPayload
@@ -44,7 +50,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public addSession() {
-    const spy = jest.spyOn(dms, 'AddSession');
+    const spy = jest.spyOn(Session, 'AddSession');
     spy.mockImplementation(() => {
       return createSpySuccessResponse({
         data: {
@@ -57,13 +63,13 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public delSession() {
-    const spy = jest.spyOn(dms, 'DelSession');
+    const spy = jest.spyOn(Session, 'DelSession');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getUserBySession() {
-    const spy = jest.spyOn(dms, 'GetUserBySession');
+    const spy = jest.spyOn(Session, 'GetUserBySession');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         name: UserInfo.name,
@@ -74,7 +80,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public bindUser() {
-    const spy = jest.spyOn(dms, 'BindOauth2User');
+    const spy = jest.spyOn(OAuth2, 'BindOauth2User');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
@@ -86,7 +92,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public getOauth2Tips() {
-    const spy = jest.spyOn(dms, 'GetOauth2Tips');
+    const spy = jest.spyOn(OAuth2, 'GetOauth2Tips');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: oauth2Tips
@@ -96,31 +102,31 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public getBasicInfo() {
-    const spy = jest.spyOn(dms, 'GetBasicInfo');
+    const spy = jest.spyOn(BasicInfo, 'GetBasicInfo');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: BasicInfo
+        data: BasicInfoMockData
       })
     );
     return spy;
   }
 
   public getCompanyNotice() {
-    const spy = jest.spyOn(dms, 'GetCompanyNotice');
+    const spy = jest.spyOn(CompanyNotice, 'GetCompanyNotice');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({ data: CompanyNotice })
+      createSpySuccessResponse({ data: CompanyNoticeMockData })
     );
     return spy;
   }
 
   public updateCompanyNotice() {
-    const spy = jest.spyOn(dms, 'UpdateCompanyNotice');
+    const spy = jest.spyOn(CompanyNotice, 'UpdateCompanyNotice');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getListDBServiceDriverOption() {
-    const spy = jest.spyOn(dms, 'ListDBServiceDriverOption');
+    const spy = jest.spyOn(DBService, 'ListDBServiceDriverOption');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: [
@@ -136,7 +142,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public getListDBServices() {
-    const spy = jest.spyOn(dms, 'ListDBServices');
+    const spy = jest.spyOn(DBService, 'ListDBServices');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: DBServicesList.length,
@@ -147,31 +153,31 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public AddDBService() {
-    const spy = jest.spyOn(dms, 'AddDBService');
+    const spy = jest.spyOn(DBService, 'AddDBService');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public DelDBService() {
-    const spy = jest.spyOn(dms, 'DelDBService');
+    const spy = jest.spyOn(DBService, 'DelDBService');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public UpdateDBService() {
-    const spy = jest.spyOn(dms, 'UpdateDBService');
+    const spy = jest.spyOn(DBService, 'UpdateDBService');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public CheckDBServiceIsConnectable() {
-    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectableById');
+    const spy = jest.spyOn(DBService, 'CheckDBServiceIsConnectableById');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getProjectList() {
-    const spy = jest.spyOn(dms, 'ListProjects');
+    const spy = jest.spyOn(Project, 'ListProjects');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: mockProjectList.length,

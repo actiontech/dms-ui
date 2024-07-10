@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
@@ -36,11 +36,10 @@ const BatchImportDataSource = () => {
   const onSubmit = async () => {
     await form.validateFields();
     setImportPending();
-    dms
-      .ImportDBServicesOfOneProject({
-        db_services: dbServices,
-        project_uid: projectID
-      })
+    DBService.ImportDBServicesOfOneProject({
+      db_services: dbServices,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           showResult();
@@ -56,14 +55,13 @@ const BatchImportDataSource = () => {
   >(
     (option) => {
       setDBservices([]);
-      dms
-        .ImportDBServicesOfOneProjectCheck(
-          {
-            project_uid: projectID,
-            db_services_file: option.file
-          },
-          { responseType: 'blob' }
-        )
+      DBService.ImportDBServicesOfOneProjectCheck(
+        {
+          project_uid: projectID,
+          db_services_file: option.file
+        },
+        { responseType: 'blob' }
+      )
         .then((res) => {
           importServicesCheck(res);
           option?.onSuccess?.(option?.file);

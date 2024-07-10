@@ -4,7 +4,7 @@ import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { AccessTokenModalFormItemLabelStyleWrapper } from './style';
 
@@ -23,10 +23,9 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
     const values = await form.validateFields();
     startSubmit();
 
-    dms
-      .GenAccessToken({
-        expiration_days: values.expirationDays.toString()
-      })
+    User.GenAccessToken({
+      expiration_days: values.expirationDays.toString()
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           internalCloseHandle();
