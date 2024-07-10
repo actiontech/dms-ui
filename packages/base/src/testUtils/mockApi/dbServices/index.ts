@@ -1,4 +1,3 @@
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import {
   MockSpyApy,
@@ -6,6 +5,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { resolveThreeSecond } from 'sqle/src/testUtils/mockRequest';
 import { checkConnectableReply, dbServices, dbServicesTips } from './data';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -18,7 +18,7 @@ class MockDbServicesApi implements MockSpyApy {
   }
 
   public ListDBServices() {
-    const spy = jest.spyOn(dms, 'ListDBServices');
+    const spy = jest.spyOn(DBService, 'ListDBServices');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: dbServices
@@ -28,7 +28,7 @@ class MockDbServicesApi implements MockSpyApy {
   }
 
   public ListDBServicesTips() {
-    const spy = jest.spyOn(dms, 'ListDBServiceTips');
+    const spy = jest.spyOn(DBService, 'ListDBServiceTips');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: dbServicesTips
@@ -38,7 +38,7 @@ class MockDbServicesApi implements MockSpyApy {
   }
 
   public AddDBService() {
-    const spy = jest.spyOn(dms, 'AddDBService');
+    const spy = jest.spyOn(DBService, 'AddDBService');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         uid: '123123'
@@ -48,13 +48,13 @@ class MockDbServicesApi implements MockSpyApy {
   }
 
   public UpdateDBService() {
-    const spy = jest.spyOn(dms, 'UpdateDBService');
+    const spy = jest.spyOn(DBService, 'UpdateDBService');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public DelDBService() {
-    const spy = jest.spyOn(dms, 'DelDBService');
+    const spy = jest.spyOn(DBService, 'DelDBService');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
@@ -70,7 +70,7 @@ class MockDbServicesApi implements MockSpyApy {
   }
 
   public checkDbServiceIsConnectable() {
-    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectable');
+    const spy = jest.spyOn(DBService, 'CheckDBServiceIsConnectable');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: checkConnectableReply
@@ -80,7 +80,7 @@ class MockDbServicesApi implements MockSpyApy {
   }
 
   public checkDBServiceIsConnectableById() {
-    const spy = jest.spyOn(dms, 'CheckDBServiceIsConnectableById');
+    const spy = jest.spyOn(DBService, 'CheckDBServiceIsConnectableById');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: checkConnectableReply

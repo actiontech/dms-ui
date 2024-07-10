@@ -1,4 +1,4 @@
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
@@ -17,7 +17,7 @@ const useCreateRuleTemplatePermission = ({
   const { isAdmin, isProjectManager } = useCurrentUser();
 
   useRequest(
-    () => dms.ListProjects({ page_size: 10, filter_by_uid: projectID }),
+    () => Project.ListProjects({ page_size: 10, filter_by_uid: projectID }),
     {
       ready: !!showNotRuleTemplatePage && !!projectID,
       refreshDeps: [projectID],

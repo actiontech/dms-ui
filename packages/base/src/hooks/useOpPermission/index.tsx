@@ -1,9 +1,9 @@
 import { useCallback, useState, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
 import { Select } from 'antd';
 
 const useOpPermission = () => {
@@ -17,11 +17,10 @@ const useOpPermission = () => {
       filterBy: ListOpPermissionsFilterByTargetEnum = ListOpPermissionsFilterByTargetEnum.all
     ) => {
       setTrue();
-      dms
-        .ListOpPermissions({
-          page_size: 9999,
-          filter_by_target: filterBy
-        })
+      OpPermission.ListOpPermissions({
+        page_size: 9999,
+        filter_by_target: filterBy
+      })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setOpPermissionList(res.data?.data ?? []);

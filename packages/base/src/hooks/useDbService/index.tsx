@@ -5,8 +5,8 @@ import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IListDBServiceTipsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
+import { IListDBServiceTipsParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 
 const useDbService = () => {
   const [dbServiceList, setDbServiceList] = React.useState<
@@ -19,8 +19,7 @@ const useDbService = () => {
   const updateDbServiceList = React.useCallback(
     (params: IListDBServiceTipsParams) => {
       setTrue();
-      dms
-        .ListDBServiceTips(params)
+      DBService.ListDBServiceTips(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setDbServiceList(res.data?.data ?? []);

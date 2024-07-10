@@ -6,7 +6,7 @@ import { OauthLoginFormFields } from './index.type';
 import { updateToken } from '../../store/user';
 import { useNavigate } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from '../Login/components/LoginLayout';
 import { BasicButton, BasicInput } from '@actiontech/shared';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
@@ -57,12 +57,11 @@ const BindUser = () => {
       loginLock.current = false;
       return;
     }
-    dms
-      .BindOauth2User({
-        oauth2_token: oauth2Token,
-        user_name: values.username,
-        pwd: values.password
-      })
+    OAuth2.BindOauth2User({
+      oauth2_token: oauth2Token,
+      user_name: values.username,
+      pwd: values.password
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));

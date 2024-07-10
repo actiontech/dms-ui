@@ -11,8 +11,8 @@ import EventEmitter from '../../../utils/EventEmitter';
 import ProjectForm from './ProjectForm/ProjectForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ProjectFormFields } from './ProjectForm';
-import { IAddProjectParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IAddProjectParams } from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 
 const AddProject: React.FC = () => {
@@ -51,8 +51,7 @@ const AddProject: React.FC = () => {
       }
     };
     startSubmit();
-    dms
-      .AddProject(params)
+    Project.AddProject(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

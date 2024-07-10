@@ -12,7 +12,7 @@ import {
   updateUserUid
 } from '../../../../base/src/store/user';
 import { ResponseCode, SystemRole } from '../../enum';
-import dms from '../../api/base/service/dms';
+import User from '../../api/base/service/User';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../data/common';
 
 const useUserInfo = () => {
@@ -58,7 +58,7 @@ const useUserInfo = () => {
     refresh: updateUserInfo,
     data: userInfo
   } = useRequest(
-    (sessionUid?: string) => dms.GetUser({ user_uid: sessionUid ?? userId }),
+    (sessionUid?: string) => User.GetUser({ user_uid: sessionUid ?? userId }),
     {
       manual: true,
       onSuccess: (res) => {

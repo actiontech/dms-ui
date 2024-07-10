@@ -18,7 +18,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
@@ -70,8 +70,10 @@ const AddDataSource = () => {
       is_enable_masking: values.is_enable_masking
       // #endif
     };
-    return dms
-      .AddDBService({ db_service: dbService, project_uid: projectID })
+    return DBService.AddDBService({
+      db_service: dbService,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           showResult();

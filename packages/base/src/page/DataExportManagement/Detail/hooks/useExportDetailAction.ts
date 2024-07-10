@@ -1,4 +1,4 @@
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import EmitterKey from '../../../../data/EmitterKey';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -21,13 +21,12 @@ const useExportDetailAction = (messageApi: MessageInstance) => {
   ] = useBoolean();
   const closeWorkflow = (workflowID: string) => {
     startCloseWorkflow();
-    dms
-      .CancelDataExportWorkflow({
-        payload: {
-          data_export_workflow_uids: [workflowID]
-        },
-        project_uid: projectID
-      })
+    DataExportWorkflows.CancelDataExportWorkflow({
+      payload: {
+        data_export_workflow_uids: [workflowID]
+      },
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -48,11 +47,10 @@ const useExportDetailAction = (messageApi: MessageInstance) => {
 
   const approveWorkflow = (workflowID: string) => {
     startApproveWorkflow();
-    dms
-      .ApproveDataExportWorkflow({
-        data_export_workflow_uid: workflowID,
-        project_uid: projectID
-      })
+    DataExportWorkflows.ApproveDataExportWorkflow({
+      data_export_workflow_uid: workflowID,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -73,11 +71,10 @@ const useExportDetailAction = (messageApi: MessageInstance) => {
 
   const executeExport = (workflowID: string) => {
     startExecuteExport();
-    dms
-      .ExportDataExportWorkflow({
-        data_export_workflow_uid: workflowID,
-        project_uid: projectID
-      })
+    DataExportWorkflows.ExportDataExportWorkflow({
+      data_export_workflow_uid: workflowID,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

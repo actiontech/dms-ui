@@ -1,8 +1,8 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useState, useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IGetCBOperationLogTipsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
+import { IGetCBOperationLogTipsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 
 const useCBOperationTips = () => {
   const [operationTipsList, setOperationTipsList] = useState<string[]>([]);
@@ -11,8 +11,7 @@ const useCBOperationTips = () => {
   const updateCBOperationList = useCallback(
     (params: IGetCBOperationLogTipsParams) => {
       setTrue();
-      dms
-        .GetCBOperationLogTips(params)
+      CBOperationLogs.GetCBOperationLogTips(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setOperationTipsList(res.data?.data?.exec_result ?? []);

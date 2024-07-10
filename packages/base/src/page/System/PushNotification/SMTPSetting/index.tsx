@@ -18,7 +18,7 @@ import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigField from './components/ConfigField';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { InfoCircleOutlined } from '@actiontech/icons';
@@ -46,7 +46,8 @@ const SMTPSetting = () => {
     refresh: refreshSMTPInfo,
     loading
   } = useRequest(
-    () => dms.GetSMTPConfiguration().then((res) => res.data?.data ?? {}),
+    () =>
+      Configuration.GetSMTPConfiguration().then((res) => res.data?.data ?? {}),
     {
       onSuccess(res) {
         if (res) {
@@ -109,17 +110,16 @@ const SMTPSetting = () => {
 
   const submit = (values: SMTPSettingFormFields) => {
     startSubmit();
-    dms
-      .UpdateSMTPConfiguration({
-        smtp_configuration: {
-          enable_smtp_notify: values.enable,
-          is_skip_verify: values.isSkipVerify,
-          smtp_host: values.host,
-          smtp_password: values.password,
-          smtp_port: `${values.port}`,
-          smtp_username: values.username
-        }
-      })
+    Configuration.UpdateSMTPConfiguration({
+      smtp_configuration: {
+        enable_smtp_notify: values.enable,
+        is_skip_verify: values.isSkipVerify,
+        smtp_host: values.host,
+        smtp_password: values.password,
+        smtp_port: `${values.port}`,
+        smtp_username: values.username
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();
@@ -177,7 +177,7 @@ const SMTPSetting = () => {
     submitFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      dms.UpdateSMTPConfiguration({
+      Configuration.UpdateSMTPConfiguration({
         smtp_configuration: {
           ...smtpInfo,
           enable_smtp_notify: false

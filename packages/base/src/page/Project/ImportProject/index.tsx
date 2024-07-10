@@ -21,7 +21,7 @@ import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Commo
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useBoolean } from 'ahooks';
 import FileUpload from './FileUpload';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
 import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/common';
@@ -62,10 +62,9 @@ const ImportProject = () => {
       }
       return project;
     });
-    dms
-      .ImportProjects({
-        projects: projects
-      })
+    Project.ImportProjects({
+      projects: projects
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           showResult();
@@ -164,8 +163,7 @@ const ImportProject = () => {
                 }}
                 accept=".csv"
                 customRequest={(option) => {
-                  dms
-                    .PreviewImportProjects({ projects_file: option.file })
+                  Project.PreviewImportProjects({ projects_file: option.file })
                     .then((res) => {
                       if (res.data.code === ResponseCode.SUCCESS) {
                         option?.onSuccess?.(option.file);

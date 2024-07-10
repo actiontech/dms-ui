@@ -3,7 +3,7 @@ import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { PasswordFormFields } from '../index.type';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useDispatch } from 'react-redux';
 import { updateToken } from '../../../store/user';
@@ -24,13 +24,12 @@ export const UpdatePassword: React.FC<{
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
-    dms
-      .UpdateCurrentUser({
-        current_user: {
-          old_password: values.oldPassword,
-          password: values.newPassword
-        }
-      })
+    User.UpdateCurrentUser({
+      current_user: {
+        old_password: values.oldPassword,
+        password: values.newPassword
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: '' }));

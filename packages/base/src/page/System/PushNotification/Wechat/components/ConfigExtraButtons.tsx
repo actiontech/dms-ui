@@ -12,7 +12,7 @@ import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import { BasicInput } from '@actiontech/shared';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 
 export type typeConfigExtraButtons = {
   extraButtonsVisible: boolean;
@@ -45,12 +45,11 @@ const ConfigExtraButtons = ({
       t('dmsSystem.wechat.testing', { id: values.receiveId }),
       0
     );
-    dms
-      .TestWeChatConfiguration({
-        test_wechat_configuration: {
-          recipient_id: values.receiveId
-        }
-      })
+    Configuration.TestWeChatConfiguration({
+      test_wechat_configuration: {
+        recipient_id: values.receiveId
+      }
+    })
       .then((res) => {
         const resData = res.data?.data;
         if (resData?.is_wechat_send_normal) {
