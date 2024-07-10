@@ -14,7 +14,7 @@ import {
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
-import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBservice/index.enum';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 
 const projectID = '7200';
 

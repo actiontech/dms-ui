@@ -8,7 +8,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { useNavigate } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/dbService/index.enum';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import {
   getAllBySelector,

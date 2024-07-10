@@ -29,7 +29,7 @@ import useDbService from '../../../hooks/useDbService';
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
-import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBservice/index.enum';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import useMemberTips from '../../../hooks/useMemberTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

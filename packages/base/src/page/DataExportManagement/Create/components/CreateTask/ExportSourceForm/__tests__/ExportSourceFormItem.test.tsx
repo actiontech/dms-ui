@@ -13,7 +13,7 @@ import { useForm } from 'antd/es/form/Form';
 import { Form } from 'antd';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/dbService/index.enum';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
 import MockDate from 'mockdate';
 
