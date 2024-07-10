@@ -6,16 +6,16 @@
 import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
-import { IGetSQLQueryConfigurationReturn } from './index.d';
+import { IListMaskingRulesReturn } from './index.d';
 
-class CloudBeaverService extends ServiceBase {
-  public GetSQLQueryConfiguration(options?: AxiosRequestConfig) {
-    return this.get<IGetSQLQueryConfigurationReturn>(
-      '/v1/dms/configurations/sql_query',
+class MaskingService extends ServiceBase {
+  public ListMaskingRules(options?: AxiosRequestConfig) {
+    return this.get<IListMaskingRulesReturn>(
+      '/v1/dms/masking/rules',
       undefined,
       options
     );
   }
 }
 
-export default new CloudBeaverService();
+export default new MaskingService();
