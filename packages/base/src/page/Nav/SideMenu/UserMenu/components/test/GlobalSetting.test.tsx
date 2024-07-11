@@ -71,22 +71,19 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(navigateSpy).toHaveBeenCalledWith('/user-center');
   });
 
-   it('render snap when isCertainProjectManager is true', async () => {
-     const { baseElement } = customRender(false, true);
-     expect(baseElement).toMatchSnapshot();
+  it('render snap when isCertainProjectManager is true', async () => {
+    const { baseElement } = customRender(false, true);
+    expect(baseElement).toMatchSnapshot();
 
-     const iconSystem = getBySelector(
-       '.custom-icon-global-system',
-       baseElement
-     );
-     fireEvent.click(iconSystem);
-     await act(async () => jest.advanceTimersByTime(500));
-     expect(baseElement).toMatchSnapshot();
+    const iconSystem = getBySelector('.custom-icon-global-system', baseElement);
+    fireEvent.click(iconSystem);
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
 
-     expect(screen.getByText('数据源管理')).toBeInTheDocument();
-     expect(getAllBySelector('.content-item-text').length).toBe(2);
-     fireEvent.click(screen.getByText('数据源管理'));
-     await act(async () => jest.advanceTimersByTime(500));
-     expect(navigateSpy).toHaveBeenCalledWith('/global-data-source');
-   });
+    expect(screen.getByText('数据源管理')).toBeInTheDocument();
+    expect(getAllBySelector('.content-item-text').length).toBe(2);
+    fireEvent.click(screen.getByText('数据源管理'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(navigateSpy).toHaveBeenCalledWith('/global-data-source');
+  });
 });
