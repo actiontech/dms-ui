@@ -7,6 +7,7 @@ import {
   CompanyNoticeMockData,
   DBServicesList,
   GetUserPayload,
+  maskRuleData,
   oauth2Tips,
   UserInfo
 } from './data';
@@ -37,6 +38,7 @@ class MockDMSGlobalApi implements MockSpyApy {
     this.DelDBService();
     this.CheckDBServiceIsConnectable();
     this.getProjectList();
+    this.getMaskRuleList();
   }
 
   public getCurrentUser() {
@@ -182,6 +184,16 @@ class MockDMSGlobalApi implements MockSpyApy {
       createSpySuccessResponse({
         total_nums: mockProjectList.length,
         data: mockProjectList
+      })
+    );
+    return spy;
+  }
+
+  public getMaskRuleList() {
+    const spy = jest.spyOn(dms, 'ListMaskingRules');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: maskRuleData
       })
     );
     return spy;
