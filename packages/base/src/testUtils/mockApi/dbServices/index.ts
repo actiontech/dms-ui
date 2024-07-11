@@ -4,7 +4,12 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { resolveThreeSecond } from 'sqle/src/testUtils/mockRequest';
-import { checkConnectableReply, dbServices, dbServicesTips } from './data';
+import {
+  checkConnectableReply,
+  dbServices,
+  dbServicesTips,
+  globalDataSourceMockData
+} from './data';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 
 class MockDbServicesApi implements MockSpyApy {
@@ -15,6 +20,7 @@ class MockDbServicesApi implements MockSpyApy {
     this.DelDBService();
     this.checkDbServiceIsConnectable();
     this.checkDBServiceIsConnectableById();
+    this.listGlobalDBServices();
   }
 
   public ListDBServices() {
@@ -84,6 +90,17 @@ class MockDbServicesApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: checkConnectableReply
+      })
+    );
+    return spy;
+  }
+
+  public listGlobalDBServices() {
+    const spy = jest.spyOn(DBService, 'ListGlobalDBServices');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: globalDataSourceMockData,
+        total_nums: globalDataSourceMockData.length
       })
     );
     return spy;

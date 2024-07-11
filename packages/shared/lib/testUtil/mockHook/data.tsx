@@ -35,7 +35,12 @@ export const mockCurrentUserReturn = {
   role: SystemRole.admin,
   updateTheme: jest.fn(),
   useInfoFetched: true,
-  uid: '500300'
+  uid: '500300',
+  isCertainProjectManager: true,
+  userRoles: {
+    [SystemRole.admin]: true,
+    [SystemRole.certainProjectManager]: true
+  }
 };
 
 export const mockProjectInfo = {

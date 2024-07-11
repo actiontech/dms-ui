@@ -84,7 +84,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         key: 'globalDataSourceList',
         element: <GlobalDataSourceList />
       }
-    ]
+    ] as RouterConfigItem[]
   },
   // #if [ee]
   {
