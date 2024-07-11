@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { dataMaskRuleOverviewTableColumns } from './columns';
 import { PageHeader } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Masking from '@actiontech/shared/lib/api/base/service/Masking';
 import { Space } from 'antd';
 import {
   ActiontechTable,
@@ -21,7 +21,7 @@ const DataMaskRuleOverview = () => {
     loading,
     refresh
   } = useRequest(() => {
-    return handleTableRequestError(dms.ListMaskingRules());
+    return handleTableRequestError(Masking.ListMaskingRules());
   });
 
   return (

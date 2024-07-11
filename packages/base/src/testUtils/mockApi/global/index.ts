@@ -19,6 +19,7 @@ import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice
 import User from '@actiontech/shared/lib/api/base/service/User';
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
+import Masking from '@actiontech/shared/lib/api/base/service/Masking';
 
 class MockDMSGlobalApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -190,7 +191,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public getMaskRuleList() {
-    const spy = jest.spyOn(dms, 'ListMaskingRules');
+    const spy = jest.spyOn(Masking, 'ListMaskingRules');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: maskRuleData
