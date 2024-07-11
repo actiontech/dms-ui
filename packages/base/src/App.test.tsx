@@ -13,7 +13,7 @@ import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { ModalName } from './data/ModalName';
 import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
-import { BasicInfo } from './testUtils/mockApi/global/data';
+import { BasicInfoMockData } from './testUtils/mockApi/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 import { mockUseFeaturePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseFeaturePermission';
@@ -130,7 +130,7 @@ describe('App', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledTimes(1);
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledWith(
-      BasicInfo
+      BasicInfoMockData
     );
     expect(container).toMatchSnapshot();
   });

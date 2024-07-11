@@ -59,12 +59,29 @@ const AllIconDemo = () => {
     );
   }, [currentTheme, searchKey]);
 
-  const onCopy = (name: string) => {
-    if (navigator.clipboard) {
-      const text = `<${name} />`;
-      navigator.clipboard.writeText(text);
-      messageApi.success(`${text} copied`);
+  const copyTextByTextarea = (text: string) => {
+    const textarea = document.createElement('textarea');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    textarea.style.top = '-9999px';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.value = text;
+    textarea.select();
+    if (document.execCommand('copy')) {
+      document.execCommand('copy');
     }
+    document.body.removeChild(textarea);
+  };
+
+  const onCopy = (name: string) => {
+    const text = `<${name} />`;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text);
+    } else {
+      copyTextByTextarea(text);
+    }
+    messageApi.success(`${text} copied`);
   };
 
   return (

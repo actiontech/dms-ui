@@ -8,7 +8,7 @@ import { AxiosRequestConfig } from 'axios';
 
 import { IGetSQLQueryConfigurationReturn } from './index.d';
 
-class CloudbeaverService extends ServiceBase {
+class CloudBeaverService extends ServiceBase {
   public GetSQLQueryConfiguration(options?: AxiosRequestConfig) {
     return this.get<IGetSQLQueryConfigurationReturn>(
       '/v1/dms/configurations/sql_query',
@@ -18,4 +18,4 @@ class CloudbeaverService extends ServiceBase {
   }
 }
 
-export default new CloudbeaverService();
+export default new CloudBeaverService();

@@ -8,7 +8,7 @@ import {
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
 
 const useTaskSource = () => {
   const [taskSourceList, setTaskSourceList] = React.useState<IDatabaseSource[]>(
@@ -21,8 +21,9 @@ const useTaskSource = () => {
 
   const updateTaskSourceList = React.useCallback(() => {
     setTrue();
-    dms
-      .ListDatabaseSourceServiceTips({ project_uid: projectID })
+    DatabaseSourceService.ListDatabaseSourceServiceTips({
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setTaskSourceList(res.data?.data ?? []);

@@ -11,8 +11,8 @@ import { updateMemberModalStatus } from '../../../../store/member';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { IMemberFormFields } from '../index.type';
 import MemberForm from './MemberForm';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IAddMemberParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import Member from '@actiontech/shared/lib/api/base/service/Member';
+import { IAddMemberParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import { BasicButton } from '@actiontech/shared';
 import { MemberDrawerStyledWrapper } from '../../style';
 
@@ -45,8 +45,7 @@ const AddMember: React.FC = () => {
       project_uid: projectID
     };
     startSubmit();
-    dms
-      .AddMember(params)
+    Member.AddMember(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsMember.addMember.successTips'));

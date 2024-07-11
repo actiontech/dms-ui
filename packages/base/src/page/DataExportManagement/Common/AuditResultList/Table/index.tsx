@@ -8,7 +8,7 @@ import { useBoolean, useRequest } from 'ahooks';
 import { AuditResultForCreateOrderColumn } from './column';
 import { useState } from 'react';
 import AuditResultDrawer from './AuditResultDrawer';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
@@ -34,7 +34,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { data, loading } = useRequest(
     () =>
       handleTableRequestError(
-        dms.ListDataExportTaskSQLs({
+        DataExportTask.ListDataExportTaskSQLs({
           project_uid: projectID,
           data_export_task_uid: taskID!,
           page_index: pagination.page_index,

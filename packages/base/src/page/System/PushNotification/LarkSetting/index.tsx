@@ -14,7 +14,7 @@ import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import ConfigExtraButtons from './conponents/ConfigExtraButtons';
 import ConfigField from './conponents/ConfigField';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IFeishuConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { switchFieldName } from './index.data';
@@ -43,7 +43,10 @@ const LarkSetting: React.FC = () => {
     loading,
     refresh: refreshLarkInfo
   } = useRequest(
-    () => dms.GetFeishuConfiguration().then((res) => res.data?.data ?? {}),
+    () =>
+      Configuration.GetFeishuConfiguration().then(
+        (res) => res.data?.data ?? {}
+      ),
     {
       onSuccess(res) {
         if (res) {
@@ -80,14 +83,13 @@ const LarkSetting: React.FC = () => {
 
   const submitLarkConfig = (values: FormFields) => {
     startSubmit();
-    dms
-      .UpdateFeishuConfiguration({
-        update_feishu_configuration: {
-          is_feishu_notification_enabled: values.enabled,
-          app_id: values.appKey,
-          app_secret: values.appSecret
-        }
-      })
+    Configuration.UpdateFeishuConfiguration({
+      update_feishu_configuration: {
+        is_feishu_notification_enabled: values.enabled,
+        app_id: values.appKey,
+        app_secret: values.appSecret
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();
@@ -115,7 +117,7 @@ const LarkSetting: React.FC = () => {
     submitFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      dms.UpdateFeishuConfiguration({
+      Configuration.UpdateFeishuConfiguration({
         update_feishu_configuration: {
           ...larkInfo,
           is_feishu_notification_enabled: false

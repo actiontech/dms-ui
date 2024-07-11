@@ -1,5 +1,5 @@
 import { ConfigItem } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import {
   EditInput,
   LabelContent
@@ -21,19 +21,17 @@ const UserWechat: React.FC<UpdateComponentCommonProps> = ({
   ] = useBoolean(false);
 
   const onSubmit = (value: string) => {
-    dms
-      .UpdateCurrentUser({
-        current_user: {
-          wxid: value
-        }
-      })
-      .then(async (res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('dmsAccount.updateWechatSuccess'));
-          updateUserInfo();
-          hideWechatField();
-        }
-      });
+    User.UpdateCurrentUser({
+      current_user: {
+        wxid: value
+      }
+    }).then(async (res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        messageApi.success(t('dmsAccount.updateWechatSuccess'));
+        updateUserInfo();
+        hideWechatField();
+      }
+    });
   };
 
   return (

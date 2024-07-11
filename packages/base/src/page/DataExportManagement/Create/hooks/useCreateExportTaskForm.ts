@@ -1,4 +1,5 @@
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
+import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useForm } from 'antd/es/form/Form';
 import useCreateDataExportReduxManage from './index.redux';
@@ -22,14 +23,12 @@ const useCreateExportTaskForm = () => {
     const currentSQL = methodForm.getFieldValue('sql');
     const dbServiceID = sourceForm.getFieldValue('dbService');
     const getInstanceType = (id: string) => {
-      return dms
-        .ListDBServices({
-          project_uid: projectID,
-          page_size: 9999,
-          page_index: 1,
-          filter_by_uid: id
-        })
-        .then((res) => res.data.data?.[0]);
+      return DBService.ListDBServices({
+        project_uid: projectID,
+        page_size: 9999,
+        page_index: 1,
+        filter_by_uid: id
+      }).then((res) => res.data.data?.[0]);
     };
     if (dbServiceID) {
       getInstanceType(dbServiceID).then((res) => {
@@ -63,17 +62,16 @@ const useCreateExportTaskForm = () => {
 
     updateAuditLoading(true);
 
-    return dms
-      .AddDataExportTask({
-        project_uid: projectID,
-        data_export_tasks: [
-          {
-            database_name: sourceValues.schema,
-            db_service_uid: sourceValues.dbService,
-            export_sql: methodValues.sql
-          }
-        ]
-      })
+    return DataExportTask.AddDataExportTask({
+      project_uid: projectID,
+      data_export_tasks: [
+        {
+          database_name: sourceValues.schema,
+          db_service_uid: sourceValues.dbService,
+          export_sql: methodValues.sql
+        }
+      ]
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           updateFormValues({ baseValues, sourceValues, methodValues });

@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import DmsService from '@actiontech/shared/lib/api/base/service/dms';
+import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 
 const useVersionInfo = () => {
   const [dmsVersion, setDmsVersion] = useState<string | undefined>('');
@@ -20,7 +20,7 @@ const useVersionInfo = () => {
   };
 
   const updateVersionInfo = useCallback(() => {
-    DmsService.GetBasicInfo().then((res) => {
+    BasicInfo.GetBasicInfo().then((res) => {
       const dms = res.data.data?.components?.find(
         (i) => i.name === 'dms'
       )?.version;

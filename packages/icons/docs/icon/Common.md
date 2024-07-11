@@ -256,6 +256,13 @@ import { BookMarkOutlined } from '@actiontech/icons';
 export default () => <BookMarkOutlined width={32} height={32} />
 ```
 
+## BookMarkTagOutlined
+```jsx
+import { BookMarkTagOutlined } from '@actiontech/icons';
+
+export default () => <BookMarkTagOutlined width={32} height={32} />
+```
+
 ## CalendarOutlined
 ```jsx
 import { CalendarOutlined } from '@actiontech/icons';
