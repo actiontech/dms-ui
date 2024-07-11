@@ -3,7 +3,7 @@ import {
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { taskList, taskListTips } from './data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
 
 class MockTaskSourceApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -17,7 +17,7 @@ class MockTaskSourceApi implements MockSpyApy {
   }
 
   public getTaskSourceList() {
-    const spy = jest.spyOn(dms, 'ListDatabaseSourceServices');
+    const spy = jest.spyOn(DatabaseSourceService, 'ListDatabaseSourceServices');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: taskList.length,
@@ -28,7 +28,7 @@ class MockTaskSourceApi implements MockSpyApy {
   }
 
   public getTaskSource() {
-    const spy = jest.spyOn(dms, 'GetDatabaseSourceService');
+    const spy = jest.spyOn(DatabaseSourceService, 'GetDatabaseSourceService');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: taskList[0]
@@ -38,7 +38,7 @@ class MockTaskSourceApi implements MockSpyApy {
   }
 
   public addTaskSource() {
-    const spy = jest.spyOn(dms, 'AddDatabaseSourceService');
+    const spy = jest.spyOn(DatabaseSourceService, 'AddDatabaseSourceService');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         uid: '1001'
@@ -48,25 +48,34 @@ class MockTaskSourceApi implements MockSpyApy {
   }
 
   public updateTaskSource() {
-    const spy = jest.spyOn(dms, 'UpdateDatabaseSourceService');
+    const spy = jest.spyOn(
+      DatabaseSourceService,
+      'UpdateDatabaseSourceService'
+    );
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public deleteTaskSource() {
-    const spy = jest.spyOn(dms, 'DeleteDatabaseSourceService');
+    const spy = jest.spyOn(
+      DatabaseSourceService,
+      'DeleteDatabaseSourceService'
+    );
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public syncTaskSource() {
-    const spy = jest.spyOn(dms, 'SyncDatabaseSourceService');
+    const spy = jest.spyOn(DatabaseSourceService, 'SyncDatabaseSourceService');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getTaskSourceListTips() {
-    const spy = jest.spyOn(dms, 'ListDatabaseSourceServiceTips');
+    const spy = jest.spyOn(
+      DatabaseSourceService,
+      'ListDatabaseSourceServiceTips'
+    );
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: taskListTips

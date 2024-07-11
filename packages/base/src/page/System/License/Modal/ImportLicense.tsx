@@ -17,7 +17,7 @@ import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';
 import { updateSystemModalStatus } from '../../../../store/system';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ModalSize, ResponseCode } from '@actiontech/shared/lib/enum';
 import { ILicenseItem } from '@actiontech/shared/lib/api/sqle/service/common';
 
@@ -38,10 +38,9 @@ const ImportLicenseModal = () => {
 
   const fileChange = (currentFile: RcFile) => {
     startPrepare();
-    dms
-      .CheckLicense({
-        license_file: currentFile
-      })
+    Configuration.CheckLicense({
+      license_file: currentFile
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setLicenseData(res.data.license ?? []);
@@ -75,7 +74,7 @@ const ImportLicenseModal = () => {
     const values = await form.validateFields();
     startImport();
     try {
-      const res = await dms.SetLicense({
+      const res = await Configuration.SetLicense({
         license_file: values.file?.[0]
       });
       if (res.data.code === ResponseCode.SUCCESS) {

@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import { updateToken } from '../../store/user';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Session from '@actiontech/shared/lib/api/base/service/Session';
+import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from './components/LoginLayout';
 import { BasicInput, BasicButton } from '@actiontech/shared';
 import { LoginFormFieldValue } from './types';
@@ -49,13 +50,12 @@ const Login = () => {
     }
     // #endif
     setTrue();
-    dms
-      .AddSession({
-        session: {
-          username: formData.username,
-          password: formData.password
-        }
-      })
+    Session.AddSession({
+      session: {
+        username: formData.username,
+        password: formData.password
+      }
+    })
       .then((res) => {
         const token = res.data.data?.token
           ? `Bearer ${res.data.data.token}`
@@ -90,7 +90,7 @@ const Login = () => {
 
   const { run: getOauth2Tips, data: oauthConfig } = useRequest(
     () => {
-      return dms.GetOauth2Tips().then((res) => res.data?.data ?? {});
+      return OAuth2.GetOauth2Tips().then((res) => res.data?.data ?? {});
     },
     {
       manual: true

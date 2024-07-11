@@ -19,8 +19,8 @@ import {
   CBOperationListFilterParamType,
   CBOperationListColumns
 } from './column';
-import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
+import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
 import { useMemo, useEffect } from 'react';
 import useMemberTips from '../../../hooks/useMemberTips';
 import useDbService from '../../../hooks/useDbService';
@@ -77,7 +77,9 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
         project_uid: projectID,
         fuzzy_keyword: searchKeyword
       };
-      return handleTableRequestError(dms.ListCBOperationLogs(params));
+      return handleTableRequestError(
+        CBOperationLogs.ListCBOperationLogs(params)
+      );
     },
     {
       refreshDeps: [projectID, tableFilterInfo, pagination]
@@ -90,19 +92,17 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
       t('dmsCloudBeaver.operationList.exportTips'),
       0
     );
-    dms
-      .ExportCBOperationLogs(
-        {
-          project_uid: projectID,
-          fuzzy_keyword: searchKeyword,
-          ...tableFilterInfo
-        },
-        { responseType: 'blob' }
-      )
-      .finally(() => {
-        exportDone();
-        hideLoading();
-      });
+    CBOperationLogs.ExportCBOperationLogs(
+      {
+        project_uid: projectID,
+        fuzzy_keyword: searchKeyword,
+        ...tableFilterInfo
+      },
+      { responseType: 'blob' }
+    ).finally(() => {
+      exportDone();
+      hideLoading();
+    });
   };
 
   const tableSetting = useMemo<ColumnsSettingProps>(

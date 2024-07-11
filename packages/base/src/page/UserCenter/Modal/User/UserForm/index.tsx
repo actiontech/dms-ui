@@ -8,7 +8,7 @@ import { nameRule, phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
 import { BasicToolTips } from '@actiontech/shared';
 import useOpPermission from '../../../../../hooks/useOpPermission';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 
 const UserForm: React.FC<IUserFormProps> = (props) => {
   const { t } = useTranslation();

@@ -14,7 +14,7 @@ import { Space } from 'antd';
 import { ModalName } from '../../../../../data/ModalName';
 import BasicInfoWrapper from '../../../Common/BasicInfoWrapper';
 import AuditResultList from '../../../Common/AuditResultList';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { CreateDataExportPageEnum } from '../../../../../store/dataExport';
 
@@ -36,15 +36,14 @@ const SubmitExportWorkflow: React.FC = () => {
 
   const submit = () => {
     updateSubmitLoading(true);
-    dms
-      .AddDataExportWorkflow({
-        project_uid: projectID,
-        data_export_workflow: {
-          name: formValues?.baseValues.workflow_subject ?? '',
-          desc: formValues?.baseValues.desc,
-          tasks: taskIDs?.map((v) => ({ task_uid: v ?? '' })) ?? []
-        }
-      })
+    DataExportWorkflows.AddDataExportWorkflow({
+      project_uid: projectID,
+      data_export_workflow: {
+        name: formValues?.baseValues.workflow_subject ?? '',
+        desc: formValues?.baseValues.desc,
+        tasks: taskIDs?.map((v) => ({ task_uid: v ?? '' })) ?? []
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           updateWorkflowID(res.data.data?.export_data_workflow_uid ?? '');

@@ -19,10 +19,10 @@ import {
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import useSystemConfig from '../../../hooks/useSystemConfig';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/BasicInfo/index.d';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -49,7 +49,7 @@ const PersonalizeSetting: React.FC = () => {
     loading,
     refresh
   } = useRequest(() =>
-    dms.GetBasicInfo().then((res) => {
+    BasicInfo.GetBasicInfo().then((res) => {
       const basicInfoRes = res.data.data;
       if (basicInfoRes) syncWebTitleAndLogo(basicInfoRes);
 
@@ -69,17 +69,16 @@ const PersonalizeSetting: React.FC = () => {
     fieldName: keyof IPersonalizationParams
   ) => {
     startSubmit();
-    dms
-      .Personalization(
-        {
-          [fieldName]: value
-        },
-        {
-          headers: {
-            'content-type': 'multipart/form-data'
-          }
+    BasicInfo.Personalization(
+      {
+        [fieldName]: value
+      },
+      {
+        headers: {
+          'content-type': 'multipart/form-data'
         }
-      )
+      }
+    )
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           refresh();

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useRequest } from 'ahooks';
-import dms from '../../api/base/service/dms';
+import DBService from '../../api/base/service/DBService';
 import { ResponseCode } from '../../enum';
 import { useDispatch } from 'react-redux';
 import { updateDriverMeta } from '../../../../base/src/store/database';
@@ -21,7 +21,7 @@ const useDbServiceDriver = () => {
     loading,
     run: updateDriverList,
     runAsync: updateDriverListAsync
-  } = useRequest(() => dms.ListDBServiceDriverOption(), {
+  } = useRequest(() => DBService.ListDBServiceDriverOption(), {
     manual: true,
     onSuccess: (res) => {
       if (res.data.code === ResponseCode.SUCCESS) {

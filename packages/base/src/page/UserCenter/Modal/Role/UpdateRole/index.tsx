@@ -12,7 +12,7 @@ import EventEmitter from '../../../../../utils/EventEmitter';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 
@@ -48,15 +48,14 @@ const UpdateRole = () => {
   const updateRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
-    dms
-      .UpdateRole({
-        role_uid: currentRole?.uid ?? '',
-        role: {
-          desc: values.desc ?? '',
-          op_permission_uids: values.opPermissions ?? [],
-          is_disabled: values.isDisabled
-        }
-      })
+    Role.UpdateRole({
+      role_uid: currentRole?.uid ?? '',
+      role: {
+        desc: values.desc ?? '',
+        op_permission_uids: values.opPermissions ?? [],
+        is_disabled: values.isDisabled
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           onClose();

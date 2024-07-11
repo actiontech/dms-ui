@@ -6,13 +6,13 @@ import { Empty, message, Space, Typography } from 'antd';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
 import { useForm } from 'antd/es/form/Form';
 import SyncTaskForm, { SyncTaskFormFields } from '../Form';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IListDatabaseSourceService } from '@actiontech/shared/lib/api/base/service/common';
-import { IUpdateDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IUpdateDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/DatabaseSourceService/index.d';
 
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -57,8 +57,7 @@ const UpdateSyncTask: React.FC = () => {
       },
       project_uid: projectID
     };
-    dms
-      .UpdateDatabaseSourceService(params)
+    DatabaseSourceService.UpdateDatabaseSourceService(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -83,11 +82,10 @@ const UpdateSyncTask: React.FC = () => {
       return;
     }
     setTaskInfoLoading(true);
-    dms
-      .GetDatabaseSourceService({
-        database_source_service_uid: taskId,
-        project_uid: projectID
-      })
+    DatabaseSourceService.GetDatabaseSourceService({
+      database_source_service_uid: taskId,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setSyncInstanceTask(res.data?.data);
