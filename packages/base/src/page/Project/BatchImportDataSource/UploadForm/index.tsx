@@ -14,7 +14,7 @@ import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Commo
 import { BatchImportDataSourceFormType } from '../index.type';
 import FileUpload from './FileUpload';
 import { UploadProps, Space, Typography } from 'antd';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
 import { useState } from 'react';
 import { IDBServicesConnectionItem } from '@actiontech/shared/lib/api/base/service/common';
@@ -46,20 +46,19 @@ const BatchImportDataSourceForm: React.FC<{
   const onBatchTestConnection = async () => {
     await form.validateFields();
     setConnectionTesting();
-    dms
-      .DBServicesConnection({
-        db_services: dbServices?.map((i) => {
-          return {
-            additional_params: i.additional_params,
-            db_type: i.db_type ?? '',
-            host: i.host,
-            name: i.name,
-            password: i.password,
-            port: i.port,
-            user: i.user
-          };
-        })
+    Project.DBServicesConnection({
+      db_services: dbServices?.map((i) => {
+        return {
+          additional_params: i.additional_params,
+          db_type: i.db_type ?? '',
+          host: i.host,
+          name: i.name,
+          password: i.password,
+          port: i.port,
+          user: i.user
+        };
       })
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setConnectionTestResult(res.data.data);

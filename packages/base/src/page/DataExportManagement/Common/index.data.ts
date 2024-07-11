@@ -1,4 +1,4 @@
-import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import { t } from '../../../locale';
 
 export const DataExportStatusDictionary: Record<

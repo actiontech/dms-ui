@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from './index.test.data';
 import { createSpySuccessResponse } from '../../testUtil/mockApi';
 import { ignoreComponentAutoCreatedListNoKey } from '../../testUtil/common';
-import dms from '../../api/base/service/dms';
+import DBService from '../../api/base/service/DBService';
 
 jest.mock('react-redux', () => {
   return {
@@ -34,7 +34,7 @@ describe('hooks/useDatabaseType', () => {
         database: { driverMeta: driverMeta }
       });
     });
-    getDriversSpy = jest.spyOn(dms, 'ListDBServiceDriverOption');
+    getDriversSpy = jest.spyOn(DBService, 'ListDBServiceDriverOption');
     getDriversSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: driverMeta })
     );

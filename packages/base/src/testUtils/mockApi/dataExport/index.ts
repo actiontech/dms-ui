@@ -1,4 +1,3 @@
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import {
   MockSpyApy,
   createSpySuccessResponse
@@ -11,6 +10,8 @@ import {
   GetDataExportWorkflowResponseData,
   ListDataExportTaskSQLsResponseData
 } from './data';
+import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
+import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 
 class MockDataExportApi implements MockSpyApy {
   public mockAllApi() {
@@ -27,7 +28,7 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public ListDataExportWorkflows() {
-    const spy = jest.spyOn(dms, 'ListDataExportWorkflows');
+    const spy = jest.spyOn(DataExportWorkflows, 'ListDataExportWorkflows');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: DataExportWorkflowList
@@ -37,13 +38,13 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public batchCloseWorkflowAction() {
-    const spy = jest.spyOn(dms, 'CancelDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'CancelDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public AddDataExportTask() {
-    const spy = jest.spyOn(dms, 'AddDataExportTask');
+    const spy = jest.spyOn(DataExportTask, 'AddDataExportTask');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: AddDataExportTaskResponseData
@@ -53,7 +54,7 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public AddDataExportWorkflow() {
-    const spy = jest.spyOn(dms, 'AddDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'AddDataExportWorkflow');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: AddDataExportWorkflowResponseData
@@ -63,7 +64,7 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public BatchGetDataExportTask() {
-    const spy = jest.spyOn(dms, 'BatchGetDataExportTask');
+    const spy = jest.spyOn(DataExportTask, 'BatchGetDataExportTask');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: BatchGetDataExportTaskResponseData
@@ -73,7 +74,7 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public ListDataExportTaskSQLs() {
-    const spy = jest.spyOn(dms, 'ListDataExportTaskSQLs');
+    const spy = jest.spyOn(DataExportTask, 'ListDataExportTaskSQLs');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: ListDataExportTaskSQLsResponseData
@@ -83,25 +84,25 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public CancelDataExportWorkflow() {
-    const spy = jest.spyOn(dms, 'CancelDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'CancelDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public ApproveDataExportWorkflow() {
-    const spy = jest.spyOn(dms, 'ApproveDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'ApproveDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public ExportDataExportWorkflow() {
-    const spy = jest.spyOn(dms, 'ExportDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'ExportDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public GetDataExportWorkflow() {
-    const spy = jest.spyOn(dms, 'GetDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'GetDataExportWorkflow');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: GetDataExportWorkflowResponseData })
     );
@@ -109,19 +110,19 @@ class MockDataExportApi implements MockSpyApy {
   }
 
   public DownloadDataExportTask() {
-    const spy = jest.spyOn(dms, 'DownloadDataExportTask');
+    const spy = jest.spyOn(DataExportTask, 'DownloadDataExportTask');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public RejectDataExportWorkflow() {
-    const spy = jest.spyOn(dms, 'RejectDataExportWorkflow');
+    const spy = jest.spyOn(DataExportWorkflows, 'RejectDataExportWorkflow');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public DownloadDataExportTaskSQLs() {
-    const spy = jest.spyOn(dms, 'DownloadDataExportTaskSQLs');
+    const spy = jest.spyOn(DataExportTask, 'DownloadDataExportTaskSQLs');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

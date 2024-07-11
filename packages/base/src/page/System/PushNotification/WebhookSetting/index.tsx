@@ -15,7 +15,7 @@ import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
 import { WebhookFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -54,7 +54,8 @@ const WebHook: React.FC = () => {
     loading,
     refresh: refreshWebhookConfig
   } = useRequest(
-    () => dms.GetWebHookConfiguration().then((res) => res?.data?.data),
+    () =>
+      Configuration.GetWebHookConfiguration().then((res) => res?.data?.data),
     {
       onSuccess(res) {
         if (res) {
@@ -82,10 +83,9 @@ const WebHook: React.FC = () => {
       url: values.url
     };
 
-    dms
-      .UpdateWebHookConfiguration({
-        webhook_config: config
-      })
+    Configuration.UpdateWebHookConfiguration({
+      webhook_config: config
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();
@@ -140,7 +140,7 @@ const WebHook: React.FC = () => {
     submitFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      dms.UpdateWebHookConfiguration({
+      Configuration.UpdateWebHookConfiguration({
         webhook_config: {
           enable: false
         }

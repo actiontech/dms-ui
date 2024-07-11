@@ -6,10 +6,10 @@ import {
 import { PermissionListColumns } from './column';
 import { UserCenterListEnum } from '../../index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
 import { useRequest } from 'ahooks';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
-import { IListOpPermissionsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import { IListOpPermissionsParams } from '@actiontech/shared/lib/api/base/service/OpPermission/index.d';
 import { useEffect } from 'react';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -35,7 +35,7 @@ const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
         ...pagination,
         filter_by_target: ListOpPermissionsFilterByTargetEnum.all
       };
-      return handleTableRequestError(dms.ListOpPermissions(params));
+      return handleTableRequestError(OpPermission.ListOpPermissions(params));
     },
     {
       refreshDeps: [pagination, activePage],

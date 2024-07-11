@@ -15,11 +15,11 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { DataSourceFormField } from '../Form/index.type';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { UpdateDataSourceUrlParams } from './index.type';
-import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { LeftArrowOutlined } from '@actiontech/icons';
 
 const UpdateDataSource = () => {
@@ -80,8 +80,7 @@ const UpdateDataSource = () => {
       params.db_service.password = values.password;
     }
 
-    return dms
-      .UpdateDBService(params)
+    return DBService.UpdateDBService(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -106,13 +105,12 @@ const UpdateDataSource = () => {
 
   const getInstanceInfo = useCallback(() => {
     setRetryLoading(true);
-    dms
-      .ListDBServices({
-        filter_by_uid: urlParams.dbServiceUid ?? '',
-        page_size: 9999,
-        page_index: 1,
-        project_uid: projectID
-      })
+    DBService.ListDBServices({
+      filter_by_uid: urlParams.dbServiceUid ?? '',
+      page_size: 9999,
+      page_index: 1,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const instance = res.data.data?.[0];

@@ -12,7 +12,7 @@ import UserForm from '../UserForm';
 import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -42,17 +42,16 @@ const AddUser = () => {
   const addUser = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
-    dms
-      .AddUser({
-        user: {
-          name: values.username,
-          password: values.passwordConfirm,
-          email: values.email ?? '',
-          phone: values.phone ?? '',
-          wxid: values.wxid ?? '',
-          op_permission_uids: values.opPermissionUids ?? []
-        }
-      })
+    User.AddUser({
+      user: {
+        name: values.username,
+        password: values.passwordConfirm,
+        email: values.email ?? '',
+        phone: values.phone ?? '',
+        wxid: values.wxid ?? '',
+        op_permission_uids: values.opPermissionUids ?? []
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           onClose();

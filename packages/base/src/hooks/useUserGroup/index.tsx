@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import { useCallback, useState } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListUserGroup } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import UserGroup from '@actiontech/shared/lib/api/base/service/UserGroup';
 
 const useUserGroup = () => {
   const [userGroupList, setUserGroupList] = useState<IListUserGroup[]>([]);
@@ -10,10 +10,9 @@ const useUserGroup = () => {
 
   const updateUserGroupList = useCallback(() => {
     setTrue();
-    dms
-      .ListUserGroups({
-        page_size: 9999
-      })
+    UserGroup.ListUserGroups({
+      page_size: 9999
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setUserGroupList(res.data?.data ?? []);

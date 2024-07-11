@@ -8,7 +8,7 @@ import {
   CBOperationLogTipsMockData
 } from './data';
 import cloudbeaver from '@actiontech/shared/lib/api/base/service/cloudbeaver';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
 
 class MockCloudBeaverApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -29,7 +29,7 @@ class MockCloudBeaverApi implements MockSpyApy {
   }
 
   public listCBOperationLogs() {
-    const spy = jest.spyOn(dms, 'ListCBOperationLogs');
+    const spy = jest.spyOn(CBOperationLogs, 'ListCBOperationLogs');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         ...listCBOperationLogsMockReturnData
@@ -39,13 +39,13 @@ class MockCloudBeaverApi implements MockSpyApy {
   }
 
   public exportCBOperationLogs() {
-    const spy = jest.spyOn(dms, 'ExportCBOperationLogs');
+    const spy = jest.spyOn(CBOperationLogs, 'ExportCBOperationLogs');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getCBOperationLogTips() {
-    const spy = jest.spyOn(dms, 'GetCBOperationLogTips');
+    const spy = jest.spyOn(CBOperationLogs, 'GetCBOperationLogTips');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: CBOperationLogTipsMockData

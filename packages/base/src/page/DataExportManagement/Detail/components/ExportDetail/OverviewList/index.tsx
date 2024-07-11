@@ -2,7 +2,7 @@ import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTab
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { OverviewListAction, OverviewListColumn } from './column';
 import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import {
   useCurrentProject,
   useCurrentUser
@@ -26,17 +26,15 @@ const OverviewList: React.FC = () => {
   ] = useBoolean(false);
   const downloadAction = (taskID: string) => {
     startDownload();
-    dms
-      .DownloadDataExportTask(
-        {
-          project_uid: projectID,
-          data_export_task_uid: taskID
-        },
-        { responseType: 'blob' }
-      )
-      .finally(() => {
-        finishDownload();
-      });
+    DataExportTask.DownloadDataExportTask(
+      {
+        project_uid: projectID,
+        data_export_task_uid: taskID
+      },
+      { responseType: 'blob' }
+    ).finally(() => {
+      finishDownload();
+    });
   };
 
   return (

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { updateUserUid } from '../../store/user';
 import { useUserInfo } from '@actiontech/shared/lib/global';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Session from '@actiontech/shared/lib/api/base/service/Session';
 
 const useSessionUser = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const useSessionUser = () => {
     data: sessionUser,
     loading: getSessionUserLoading,
     run: getUserBySession
-  } = useRequest(dms.GetUserBySession.bind(dms), {
+  } = useRequest(Session.GetUserBySession.bind(Session), {
     manual: true,
     onSuccess: (res) => {
       if (res.data.code === ResponseCode.SUCCESS) {

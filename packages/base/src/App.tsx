@@ -27,7 +27,7 @@ import {
 } from '@ant-design/cssinjs';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/common';
 import { useRequest } from 'ahooks';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import useSystemConfig from './hooks/useSystemConfig';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
@@ -83,7 +83,7 @@ function App() {
   const { syncWebTitleAndLogo } = useSystemConfig();
   useRequest(
     () =>
-      dms.GetBasicInfo().then((res) => {
+      BasicInfo.GetBasicInfo().then((res) => {
         if (res.data.data) {
           syncWebTitleAndLogo(res.data.data);
         }

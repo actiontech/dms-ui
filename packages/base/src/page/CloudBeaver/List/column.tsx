@@ -2,7 +2,7 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';

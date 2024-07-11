@@ -15,8 +15,8 @@ import formatMemberRole from '../../Common/formatMemberRole';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { BasicButton } from '@actiontech/shared';
 import { MemberDrawerStyledWrapper } from '../../style';
-import { IUpdateMemberParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IUpdateMemberParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
+import Member from '@actiontech/shared/lib/api/base/service/Member';
 
 const UpdateMember: React.FC = () => {
   const { t } = useTranslation();
@@ -42,8 +42,7 @@ const UpdateMember: React.FC = () => {
       project_uid: projectID
     };
     startSubmit();
-    dms
-      .UpdateMember(params)
+    Member.UpdateMember(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

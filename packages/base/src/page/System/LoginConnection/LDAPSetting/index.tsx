@@ -15,7 +15,7 @@ import useConfigRender, {
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { LDAPFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ILDAPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
@@ -40,7 +40,7 @@ const LDAPSetting = () => {
     loading,
     refresh: refreshLdapSetting
   } = useRequest(
-    () => dms.GetLDAPConfiguration().then((res) => res.data.data),
+    () => Configuration.GetLDAPConfiguration().then((res) => res.data.data),
     {
       onSuccess(res) {
         if (res) {
@@ -74,12 +74,11 @@ const LDAPSetting = () => {
   ] = useBoolean();
   const handleSubmit = (values: LDAPFormFields) => {
     startUpdateLdap();
-    dms
-      .UpdateLDAPConfiguration({
-        ldap: {
-          ...values
-        }
-      })
+    Configuration.UpdateLDAPConfiguration({
+      ldap: {
+        ...values
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();
@@ -122,7 +121,7 @@ const LDAPSetting = () => {
     submitFinish: updateLdapFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      dms.UpdateLDAPConfiguration({
+      Configuration.UpdateLDAPConfiguration({
         ldap: {
           ...ldapSetting,
           enable_ldap: false

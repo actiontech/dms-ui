@@ -5,7 +5,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import userCenter from '../../../testUtils/mockApi/userCenter';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 
 jest.mock('react-redux', () => {
   return {

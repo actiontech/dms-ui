@@ -12,8 +12,8 @@ import EventEmitter from '../../../utils/EventEmitter';
 import { ProjectFormFields } from './ProjectForm';
 import ProjectForm from './ProjectForm/ProjectForm';
 import { updateProjectModalStatus } from '../../../store/project';
-import { IUpdateProjectParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IUpdateProjectParams } from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 
 const UpdateProject: React.FC = () => {
@@ -53,8 +53,7 @@ const UpdateProject: React.FC = () => {
       }
     };
     startSubmit();
-    dms
-      .UpdateProject(params)
+    Project.UpdateProject(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

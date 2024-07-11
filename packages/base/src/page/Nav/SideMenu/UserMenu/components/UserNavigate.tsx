@@ -11,7 +11,8 @@ import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserInfo } from '@actiontech/shared/lib/global';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Session from '@actiontech/shared/lib/api/base/service/Session';
+import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 // #if [ee]
@@ -38,8 +39,7 @@ const UserNavigate: React.FC<{
 
   const logout = () => {
     setLogoutLoading(true);
-    dms
-      .DelSession()
+    Session.DelSession()
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           clearUserInfo();
@@ -55,7 +55,7 @@ const UserNavigate: React.FC<{
   const dispatch = useDispatch();
   useRequest(
     () =>
-      dms.GetCompanyNotice().then((res) => {
+      CompanyNotice.GetCompanyNotice().then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const { read_by_current_user, notice_str } = res.data.data || {};
           if (notice_str && !read_by_current_user) {
