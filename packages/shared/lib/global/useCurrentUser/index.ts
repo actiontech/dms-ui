@@ -42,7 +42,7 @@ const useCurrentUser = () => {
   );
 
   const isCertainProjectManager = useMemo(() => {
-    return bindProjects.some((v) => v.is_manager);
+    return bindProjects?.some((v) => v.is_manager) ?? false;
   }, [bindProjects]);
 
   const userRoles: UserRolesType = {
