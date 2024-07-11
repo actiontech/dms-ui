@@ -56,7 +56,8 @@ export default {
     viewRule: '查看规则',
     ruleManage: '规则管理',
     system: '系统设置',
-    changeTheme: '模式切换'
+    changeTheme: '模式切换',
+    dataSource: '数据源管理'
   },
   copyRight: '© 2024 上海爱可生信息技术股份有限公司 版权所有'
 };

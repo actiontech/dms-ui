@@ -40,6 +40,10 @@ const DataSourceList = lazy(() => import('../page/DataSource/components/List'));
 const Member = lazy(() => import('../page/Member'));
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
+const GlobalDataSource = lazy(() => import('../page/GlobalDataSource'));
+const GlobalDataSourceList = lazy(
+  () => import('../page/GlobalDataSource/List')
+);
 const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
 const Account = lazy(() => import('../page/Account'));
@@ -68,6 +72,19 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     hideInMenu: true,
     key: 'account',
     element: <Account />
+  },
+  {
+    path: 'global-data-source',
+    key: 'globalDataSource',
+    element: <GlobalDataSource />,
+    role: [SystemRole.admin, SystemRole.certainProjectManager],
+    children: [
+      {
+        index: true,
+        key: 'globalDataSourceList',
+        element: <GlobalDataSourceList />
+      }
+    ]
   },
   // #if [ee]
   {

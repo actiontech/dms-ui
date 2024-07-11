@@ -90,7 +90,7 @@ const UpdateDataSource = () => {
           );
           const timeId = setTimeout(() => {
             clearTimeout(timeId);
-            navigate(`/project/${projectID}/db-services`, { replace: true });
+            navigate(-1);
           }, 600);
         }
       })
@@ -138,7 +138,7 @@ const UpdateDataSource = () => {
         fixed
         title={
           <BasicButton
-            onClick={() => navigate(`/project/${projectID}/db-services`)}
+            onClick={() => navigate(-1)}
             icon={<LeftArrowOutlined />}
           >
             {t('dmsDataSource.backDesc')}
