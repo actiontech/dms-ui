@@ -7,6 +7,8 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IListGlobalDBServicesParams,
+  IListGlobalDBServicesReturn,
   IListDBServiceDriverOptionReturn,
   IListDBServicesParams,
   IListDBServicesReturn,
@@ -28,6 +30,18 @@ import {
 } from './index.d';
 
 class DBServiceService extends ServiceBase {
+  public ListGlobalDBServices(
+    params: IListGlobalDBServicesParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IListGlobalDBServicesReturn>(
+      '/v1/dms/db_services',
+      paramsData,
+      options
+    );
+  }
+
   public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
     return this.get<IListDBServiceDriverOptionReturn>(
       '/v1/dms/db_services/driver_options',

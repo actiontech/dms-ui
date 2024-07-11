@@ -1192,6 +1192,52 @@ export interface IListDatabaseSourceServicesReply {
   message?: string;
 }
 
+export interface IListGlobalDBService {
+  additional_params?: IAdditionalParam[];
+
+  business?: string;
+
+  db_type?: string;
+
+  desc?: string;
+
+  host?: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  unfinished_workflow_num?: number;
+
+  user?: string;
+}
+
+export interface IListGlobalDBServicesReply {
+  code?: number;
+
+  data?: IListGlobalDBService[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListMaskingRulesData {
   description?: string;
 

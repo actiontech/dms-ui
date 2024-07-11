@@ -184,12 +184,7 @@ describe('page/DataSource/UpdateDataSource', () => {
 
     await act(async () => jest.advanceTimersByTime(800));
     expect(navigateSpy).toHaveBeenCalled();
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/db-services`,
-      {
-        replace: true
-      }
-    );
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
   });
 
   it('render get default val error', async () => {
@@ -216,8 +211,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     fireEvent.click(screen.getByText('返回数据源列表'));
     await act(async () => jest.advanceTimersByTime(800));
     expect(navigateSpy).toHaveBeenCalled();
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/db-services`
-    );
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
   });
 });

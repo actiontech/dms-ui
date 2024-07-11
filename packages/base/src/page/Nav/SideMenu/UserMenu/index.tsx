@@ -11,7 +11,8 @@ const UserMenu: React.FC<UserMenuProps> = ({
   username,
   updateTheme,
   isAdmin,
-  theme
+  theme,
+  isCertainProjectManager
 }) => {
   const [
     versionModalOpen,
@@ -29,6 +30,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           theme={theme}
           updateTheme={updateTheme}
           isAdmin={isAdmin}
+          isCertainProjectManager={isCertainProjectManager}
         />
       </div>
       <VersionModal
