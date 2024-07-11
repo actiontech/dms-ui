@@ -720,6 +720,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is not ad
         >
           <svg
             color="#ffffff"
+            fill="currentColor"
             height="24"
             viewBox="0 0 24 24"
             width="24"

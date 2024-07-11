@@ -12,7 +12,14 @@ import MenuList from './MenuList';
 import { FlagFilled } from '@actiontech/icons';
 
 const CESideMenu = () => {
-  const { username, theme, updateTheme, isAdmin, role } = useCurrentUser();
+  const {
+    username,
+    theme,
+    updateTheme,
+    isAdmin,
+    role,
+    isCertainProjectManager
+  } = useCurrentUser();
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
@@ -34,6 +41,7 @@ const CESideMenu = () => {
         updateTheme={updateTheme}
         isAdmin={isAdmin}
         theme={theme}
+        isCertainProjectManager={isCertainProjectManager}
       />
     </SideMenuStyleWrapper>
   );

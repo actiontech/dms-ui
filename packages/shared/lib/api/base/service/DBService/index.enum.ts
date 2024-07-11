@@ -1,5 +1,9 @@
 /* tslint:disable no-duplicate-string */
 
+export enum ListGlobalDBServicesOrderByEnum {
+  'name' = 'name'
+}
+
 export enum ListDBServicesOrderByEnum {
   'name' = 'name'
 }
