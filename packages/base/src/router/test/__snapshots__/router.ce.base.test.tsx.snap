@@ -34,6 +34,24 @@ exports[`base/router-base-ce render base route data snap 1`] = `
     "children": [
       {
         "element": <div>
+          globalDataSourceList
+        </div>,
+        "key": "globalDataSourceList",
+        "path": "",
+      },
+    ],
+    "element": <UNDEFINED />,
+    "key": "globalDataSource",
+    "path": "global-data-source",
+    "role": [
+      "admin",
+      "certainProjectManager",
+    ],
+  },
+  {
+    "children": [
+      {
+        "element": <div>
           member
         </div>,
         "key": "member",
