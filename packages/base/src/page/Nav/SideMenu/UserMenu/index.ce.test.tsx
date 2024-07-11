@@ -10,7 +10,10 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { SupportTheme } from 'sqle/src/theme';
 
 describe('base/Nav/SideMenu/UserMenu', () => {
-  const customRender = (isAdmin: boolean = true, isCertainProjectManager = true) => {
+  const customRender = (
+    isAdmin: boolean = true,
+    isCertainProjectManager = true
+  ) => {
     return superRender(
       <UserMenu
         isAdmin={isAdmin}
