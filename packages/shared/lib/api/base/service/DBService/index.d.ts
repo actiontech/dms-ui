@@ -1,4 +1,11 @@
 import {
+  ListGlobalDBServicesOrderByEnum,
+  ListDBServicesOrderByEnum,
+  ListDBServiceTipsFunctionalModuleEnum
+} from './index.enum';
+
+import {
+  IListGlobalDBServicesReply,
   IListDBServiceDriverOptionReply,
   IListDBServiceReply,
   IAddDBServiceReq,
@@ -11,10 +18,34 @@ import {
   IUpdateDBServiceReq
 } from '../common.d';
 
-import {
-  ListDBServicesOrderByEnum,
-  ListDBServiceTipsFunctionalModuleEnum
-} from './index.enum';
+export interface IListGlobalDBServicesParams {
+  page_size: number;
+
+  page_index?: number;
+
+  order_by?: ListGlobalDBServicesOrderByEnum;
+
+  filter_by_business?: string;
+
+  filter_by_host?: string;
+
+  filter_by_uid?: string;
+
+  filter_by_name?: string;
+
+  filter_by_port?: string;
+
+  filter_by_db_type?: string;
+
+  filter_by_project_uid?: string;
+
+  fuzzy_keyword?: string;
+
+  is_enable_masking?: boolean;
+}
+
+export interface IListGlobalDBServicesReturn
+  extends IListGlobalDBServicesReply {}
 
 export interface IListDBServiceDriverOptionReturn
   extends IListDBServiceDriverOptionReply {}
