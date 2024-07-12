@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '数据源管理',
+  pageTitle: '全局数据源',
   ceTips:
     '当您需要跨项目对数据源进行便捷管理时，可以使用全局数据源概览功能，高效了解实例在项目上的分布及配置情况。',
 

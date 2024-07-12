@@ -55,7 +55,7 @@ describe('page/GlobalDataSource/List', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('数据源管理')).toBeInTheDocument();
+    expect(screen.getByText('全局数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
     expect(
