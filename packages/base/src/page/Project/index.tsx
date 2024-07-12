@@ -32,7 +32,7 @@ const Project: React.FC = () => {
     return (
       isAdmin ||
       managementPermissions.some(
-        (v) => OpPermissionTypeUid['project_admin'] === (v?.uid ?? '')
+        (v) => OpPermissionTypeUid['create_project'] === (v?.uid ?? '')
       )
     );
   }, [isAdmin, managementPermissions]);

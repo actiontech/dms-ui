@@ -93,16 +93,13 @@ describe('test base/page/project', () => {
     jest.clearAllTimers();
 
     mockUseCurrentUser({
-      isAdmin: false,
-      managementPermissions: [
-        {
-          uid: OpPermissionTypeUid.project_admin,
-          name: '项目管理'
-        }
-      ]
+      isAdmin: false
     });
     superRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('创建项目')).toBeInTheDocument();
+    expect(screen.getByText('导 入')).toBeInTheDocument();
+    expect(screen.getByText('导 出')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建项目'));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
 
@@ -116,6 +113,8 @@ describe('test base/page/project', () => {
     });
     superRender(<Project />);
     expect(screen.queryByText('创建项目')).not.toBeInTheDocument();
+    expect(screen.queryByText('导 入')).not.toBeInTheDocument();
+    expect(screen.queryByText('导 出')).not.toBeInTheDocument();
   });
 
   it('render navigate to import page', async () => {
