@@ -48,7 +48,7 @@ const AuditResultMessage = ({
     const { level, message } = auditResult || {};
     if (message) return message;
     if (passStatusLevelData.includes(level ?? ''))
-      return t('auditPlan.report.status_pass_text');
+      return t('components.auditResultMessage.auditPassed');
     return '';
   }, [auditResult, t]);
 
@@ -58,7 +58,9 @@ const AuditResultMessage = ({
         <span className="icon-wrapper">
           <CheckCircleFilled width={20} height={20} />
         </span>
-        <span className="text-wrapper">{t('order.operator.sqlReview')}</span>
+        <span className="text-wrapper">
+          {t('components.auditResultMessage.auditPassed')}
+        </span>
       </AuditResultMessageStyleWrapper>
     );
 
@@ -71,7 +73,7 @@ const AuditResultMessage = ({
     >
       <EmptyBox if={isRuleDeleted}>
         <Tag color="volcano" className="message-rule-disabled">
-          {t('sqlAudit.result.deleteRuleTip')}
+          {t('components.auditResultMessage.ruleDeleted')}
         </Tag>
       </EmptyBox>
       <AuditResultMessageStyleWrapper onClick={() => set(!visible)}>

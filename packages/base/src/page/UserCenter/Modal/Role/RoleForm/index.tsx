@@ -4,7 +4,7 @@ import { Form, Switch } from 'antd';
 import { EmptyBox, BasicInput, BasicSelect } from '@actiontech/shared';
 import { roleNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { IRoleFormProps } from './index.type';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 
 const RoleForm: React.FC<IRoleFormProps> = (props) => {

@@ -1,0 +1,71 @@
+import { act, renderHook, cleanup } from '@testing-library/react';
+import useRole from '.';
+import project from '../../testUtils/mockApi/project';
+import { mockProjectList } from '../../testUtils/mockApi/project/data';
+import {
+  createSpyErrorResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
+
+describe('useProjects', () => {
+  let getProjectListSpy: jest.SpyInstance;
+  beforeEach(() => {
+    getProjectListSpy = project.getProjectList();
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    cleanup();
+  });
+
+  it('should get projects data from request', async () => {
+    const { result } = renderHook(() => useRole());
+    expect(result.current.loading).toBe(false);
+    expect(result.current.projectList).toEqual([]);
+
+    act(() => {
+      result.current.updateProjects();
+    });
+
+    expect(result.current.loading).toBeTruthy();
+    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.projectList).toEqual(mockProjectList);
+    expect(result.current.projectIDOptions).toEqual(
+      mockProjectList.map((project) => ({
+        label: project.name,
+        value: project.uid
+      }))
+    );
+    expect(result.current.loading).toBeFalsy();
+  });
+
+  it('should set list to empty array when response code is not equal success code', async () => {
+    getProjectListSpy.mockClear();
+    getProjectListSpy.mockImplementation(() =>
+      createSpyFailResponse({ total: 0, users: [] })
+    );
+    const { result } = renderHook(() => useRole());
+    act(() => {
+      result.current.updateProjects();
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.projectList).toEqual([]);
+    expect(result.current.projectIDOptions).toEqual([]);
+  });
+
+  it('should set list to empty array when response throw error', async () => {
+    getProjectListSpy.mockClear();
+    getProjectListSpy.mockImplementation(() =>
+      createSpyErrorResponse({ total: 0, users: [] })
+    );
+    const { result } = renderHook(() => useRole());
+    act(() => {
+      result.current.updateProjects();
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.projectList).toEqual([]);
+    expect(result.current.projectIDOptions).toEqual([]);
+  });
+});

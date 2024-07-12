@@ -26,13 +26,11 @@ import {
 import { TableRowSelection } from 'antd/es/table/interface';
 import WorkflowStatusFilter from './components/WorkflowStatusFilter';
 import useDbService from '../../../hooks/useDbService';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
+import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
-import {
-  ListDBServiceTipsFunctionalModuleEnum,
-  ListDataExportWorkflowsFilterByStatusEnum
-} from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
+import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.enum';
 import useMemberTips from '../../../hooks/useMemberTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
@@ -133,13 +131,12 @@ const ExportWorkflowList: React.FC = () => {
     if (canCancel) {
       setBatchCloseConfirmLoading(true);
 
-      dms
-        .CancelDataExportWorkflow({
-          payload: {
-            data_export_workflow_uids: selectedRowKeys
-          },
-          project_uid: projectID
-        })
+      DataExportWorkflows.CancelDataExportWorkflow({
+        payload: {
+          data_export_workflow_uids: selectedRowKeys
+        },
+        project_uid: projectID
+      })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setSelectedRowKeys([]);
@@ -181,7 +178,9 @@ const ExportWorkflowList: React.FC = () => {
         project_uid: projectID,
         fuzzy_keyword: searchKeyword
       };
-      return handleTableRequestError(dms.ListDataExportWorkflows(params));
+      return handleTableRequestError(
+        DataExportWorkflows.ListDataExportWorkflows(params)
+      );
     },
     {
       refreshDeps: [tableFilterInfo, pagination, filterStatus]

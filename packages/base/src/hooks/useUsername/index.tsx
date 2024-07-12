@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import React from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Select } from 'antd';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 
 const useUsername = () => {
@@ -11,10 +11,9 @@ const useUsername = () => {
 
   const updateUsernameList = React.useCallback(() => {
     setTrue();
-    dms
-      .ListUsers({
-        page_size: 9999
-      })
+    User.ListUsers({
+      page_size: 9999
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setUsernameList(res.data?.data ?? []);

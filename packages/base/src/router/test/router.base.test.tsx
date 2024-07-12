@@ -61,6 +61,13 @@ describe('base/router-base-ee', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('render router globalDataSource', async () => {
+      const { baseElement } = customRender(['/global-data-source']);
+
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(baseElement).toMatchSnapshot();
+    });
+
     describe('render router project', () => {
       it('render route member', async () => {
         const { baseElement } = customRender([`/project/${projectID}/member`]);

@@ -10,7 +10,7 @@ import {
 } from '@actiontech/shared';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
 import {
   ResponseCode,
   CompanyNoticeDisplayStatusEnum,
@@ -46,7 +46,7 @@ const CompanyNoticeModal: React.FC = () => {
 
   const { data, loading } = useRequest(
     () =>
-      dms.GetCompanyNotice().then((res) => {
+      CompanyNotice.GetCompanyNotice().then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setValue(res.data.data?.notice_str ?? '');
           return res.data.data?.notice_str ?? '';
@@ -81,8 +81,7 @@ const CompanyNoticeModal: React.FC = () => {
   const submit = () => {
     startSubmit();
 
-    dms
-      .UpdateCompanyNotice({ company_notice: { notice_str: value } })
+    CompanyNotice.UpdateCompanyNotice({ company_notice: { notice_str: value } })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsSystem.notification.successMessage'));

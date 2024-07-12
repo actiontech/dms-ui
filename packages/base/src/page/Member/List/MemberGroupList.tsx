@@ -14,8 +14,8 @@ import {
 } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common';
-import { IListMemberGroupsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IListMemberGroupsParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
+import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
 import { MemberGroupListColumns, MemberGroupListActions } from './column';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
@@ -62,7 +62,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
         ...pagination,
         project_uid: projectID
       };
-      return handleTableRequestError(dms.ListMemberGroups(params));
+      return handleTableRequestError(MemberGroup.ListMemberGroups(params));
     },
     {
       refreshDeps: [pagination, activePage],
@@ -85,7 +85,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
 
   const onDeleteMemberGroup = useCallback(
     async (record?: IListMemberGroup) => {
-      const res = await dms.DeleteMemberGroup({
+      const res = await MemberGroup.DeleteMemberGroup({
         member_group_uid: record?.uid ?? '',
         project_uid: projectID
       });

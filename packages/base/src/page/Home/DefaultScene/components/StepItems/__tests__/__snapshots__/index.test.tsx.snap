@@ -726,6 +726,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
         class="step-icon css-u3jcp4"
       >
         <svg
+          fill="currentColor"
           height="24"
           viewBox="0 0 24 24"
           width="24"

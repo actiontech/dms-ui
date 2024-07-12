@@ -5,7 +5,7 @@ import { message, Space } from 'antd';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ThunderBoltFilled } from '@actiontech/icons';
 
@@ -38,8 +38,7 @@ const ConfigExtraButtons = ({
       t('dmsSystem.webhook.testing', { url: msgUrl }),
       0
     );
-    dms
-      .TestWebHookConfiguration()
+    Configuration.TestWebHookConfiguration()
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const resData = res.data?.data;

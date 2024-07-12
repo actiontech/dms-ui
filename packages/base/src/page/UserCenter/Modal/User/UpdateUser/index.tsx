@@ -15,7 +15,7 @@ import {
   IListUser,
   IUpdateUser
 } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -62,11 +62,10 @@ const UpdateUser = () => {
     };
     setTrue();
 
-    dms
-      .UpdateUser({
-        user_uid: currentUser?.uid ?? '',
-        user: userParams
-      })
+    User.UpdateUser({
+      user_uid: currentUser?.uid ?? '',
+      user: userParams
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           onClose();

@@ -15,7 +15,7 @@ import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { TestFormFields } from '../index.type';
 import { TestFeishuConfigurationAccountTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
@@ -52,16 +52,15 @@ const ConfigExtraButtons = ({
     testing.current = true;
     toggleTestPopoverVisible(false);
     const hide = messageApi.loading(t('dmsSystem.lark.testing'), 0);
-    dms
-      .TestFeishuConfiguration({
-        test_feishu_configuration: {
-          account:
-            receiveType === TestFeishuConfigurationAccountTypeEnum.email
-              ? values.receiveEmail
-              : values.receivePhone,
-          account_type: values.receiveType
-        }
-      })
+    Configuration.TestFeishuConfiguration({
+      test_feishu_configuration: {
+        account:
+          receiveType === TestFeishuConfigurationAccountTypeEnum.email
+            ? values.receiveEmail
+            : values.receivePhone,
+        account_type: values.receiveType
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const resData = res.data?.data;

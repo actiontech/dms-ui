@@ -10,7 +10,7 @@ import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 export type typeConfigExtraButtons = {
@@ -58,12 +58,11 @@ const ConfigExtraButtons = ({
       }),
       0
     );
-    dms
-      .TestSMTPConfiguration({
-        test_smtp_configuration: {
-          recipient_addr: values.receiveEmail
-        }
-      })
+    Configuration.TestSMTPConfiguration({
+      test_smtp_configuration: {
+        recipient_addr: values.receiveEmail
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const resData = res.data?.data;

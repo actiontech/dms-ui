@@ -6,7 +6,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import 'blob-polyfill';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { AxiosResponse } from 'axios';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
@@ -80,7 +80,7 @@ describe('base/DataSource/BatchImportDataSource', () => {
 
   it('render check api return svg file', async () => {
     importDBServicesOfOneProjectCheckSpy.mockClear();
-    const spy = jest.spyOn(dms, 'ImportDBServicesOfOneProjectCheck');
+    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectCheck');
     spy.mockImplementation(() => {
       return new Promise<AxiosResponse<any>>((res) => {
         setTimeout(() => {

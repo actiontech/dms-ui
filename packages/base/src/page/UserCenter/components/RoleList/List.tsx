@@ -9,7 +9,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ModalName } from '../../../../data/ModalName';
 import { RoleListColumns, RoleListActions } from './column';
 import {
@@ -17,7 +17,7 @@ import {
   updateSelectRole
 } from '../../../../store/userCenter';
 import { UserCenterListEnum } from '../../index.enum';
-import { IListRolesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IListRolesParams } from '@actiontech/shared/lib/api/base/service/Role/index.d';
 import { useRequest } from 'ahooks';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -48,7 +48,7 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
       const params: IListRolesParams = {
         ...pagination
       };
-      return handleTableRequestError(dms.ListRoles(params));
+      return handleTableRequestError(Role.ListRoles(params));
     },
     {
       refreshDeps: [pagination, activePage],
@@ -71,20 +71,18 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
 
   const onDeleteRole = useCallback(
     (role?: IListRole) => {
-      dms
-        .DelRole({
-          role_uid: role?.uid || ''
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(
-              t('dmsUserCenter.role.deleteRole.deleteSuccessTips', {
-                name: role?.name
-              })
-            );
-            refresh();
-          }
-        });
+      Role.DelRole({
+        role_uid: role?.uid || ''
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t('dmsUserCenter.role.deleteRole.deleteSuccessTips', {
+              name: role?.name
+            })
+          );
+          refresh();
+        }
+      });
     },
     [refresh, t, messageApi]
   );
