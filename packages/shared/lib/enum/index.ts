@@ -21,8 +21,13 @@ export enum SupportTheme {
 }
 
 export enum SystemRole {
-  admin = 'admin'
+  admin = 'admin',
+  certainProjectManager = 'certainProjectManager'
 }
+
+export type UserRolesType = {
+  [key in SystemRole]: boolean;
+};
 
 export enum ModalSize {
   big = 1000,

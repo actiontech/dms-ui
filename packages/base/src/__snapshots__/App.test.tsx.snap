@@ -3245,6 +3245,7 @@ exports[`App render App when user role is not admin 1`] = `
             >
               <svg
                 color="#ffffff"
+                fill="currentColor"
                 height="24"
                 viewBox="0 0 24 24"
                 width="24"

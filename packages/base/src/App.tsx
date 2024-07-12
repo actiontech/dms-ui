@@ -11,7 +11,7 @@ import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
+import { SupportTheme, UserRolesType } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
@@ -74,7 +74,7 @@ function App() {
 
   const { getUserBySession } = useSessionUser();
 
-  const { useInfoFetched, theme, role } = useCurrentUser();
+  const { useInfoFetched, theme, userRoles } = useCurrentUser();
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
   const { updateFeaturePermission, featurePermissionFetched } =
     useFeaturePermission();
@@ -98,15 +98,16 @@ function App() {
   const AuthRouterConfigData = useMemo(() => {
     const filterRoutesByRole: (
       routes: RouterConfigItem[],
-      targetRole: SystemRole | '',
+      roles: UserRolesType,
       permissions: PermissionReduxState
-    ) => RouterConfigItem[] = (routes, targetRole, permissions) => {
+    ) => RouterConfigItem[] = (routes, roles, permissions) => {
       return routes.reduce(
         (filtered: RouterConfigItem[], route: RouterConfigItem) => {
           let currentRote: RouterConfigItem | undefined = undefined;
           if (
             (!route.permission && !route.role) ||
-            (Array.isArray(route.role) && route.role.includes(targetRole)) ||
+            (Array.isArray(route.role) &&
+              route.role.some((r) => r && roles[r])) ||
             (route.permission && route.permission.every((p) => permissions[p]))
           ) {
             currentRote = route;
@@ -121,11 +122,7 @@ function App() {
           ) {
             currentRote = {
               ...route,
-              children: filterRoutesByRole(
-                route.children,
-                targetRole,
-                permissions
-              )
+              children: filterRoutesByRole(route.children, roles, permissions)
             };
           }
           currentRote && filtered.push(currentRote);
@@ -135,8 +132,8 @@ function App() {
       );
     };
 
-    return filterRoutesByRole(AuthRouterConfig, role, currentPermissions);
-  }, [currentPermissions, role]);
+    return filterRoutesByRole(AuthRouterConfig, userRoles, currentPermissions);
+  }, [currentPermissions, userRoles]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();

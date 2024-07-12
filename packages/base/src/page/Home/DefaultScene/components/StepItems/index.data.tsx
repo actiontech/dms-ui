@@ -136,7 +136,12 @@ export const NormalUserDevopsSteps: (
     title: t('dmsHome.defaultScene.steps.queryAndModify.title'),
     icon: (
       <CommonIconStyleWrapper className="step-icon">
-        <SnippetsFilled color={iconColor} height={24} width={24} />
+        <SnippetsFilled
+          fill="currentColor"
+          color={iconColor}
+          height={24}
+          width={24}
+        />
       </CommonIconStyleWrapper>
     ),
     children: [

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { IReduxState } from '../../../../base/src/store';
-import { SupportTheme, SystemRole } from '../../enum';
+import { SupportTheme, SystemRole, UserRolesType } from '../../enum';
 import { updateTheme as _updateTheme } from '../../../../base/src/store/user';
 
 const useCurrentUser = () => {
@@ -41,6 +41,15 @@ const useCurrentUser = () => {
     [dispatch]
   );
 
+  const isCertainProjectManager = useMemo(() => {
+    return bindProjects?.some((v) => v.is_manager) ?? false;
+  }, [bindProjects]);
+
+  const userRoles: UserRolesType = {
+    [SystemRole.admin]: isAdmin,
+    [SystemRole.certainProjectManager]: isCertainProjectManager
+  };
+
   return {
     isAdmin,
     isProjectManager,
@@ -51,7 +60,9 @@ const useCurrentUser = () => {
     theme,
     updateTheme,
     useInfoFetched,
-    uid
+    uid,
+    isCertainProjectManager,
+    userRoles
   };
 };
 export default useCurrentUser;

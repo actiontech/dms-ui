@@ -18,12 +18,13 @@ jest.mock('react-router-dom', () => {
 
 describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   const navigateSpy = jest.fn();
-  const customRender = (isAdmin = false) => {
+  const customRender = (isAdmin = false, isCertainProjectManager = false) => {
     return superRender(
       <GlobalSetting
         updateTheme={jest.fn()}
         theme={SupportTheme.LIGHT}
         isAdmin={isAdmin}
+        isCertainProjectManager={isCertainProjectManager}
       />
     );
   };
@@ -64,9 +65,25 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('用户中心')).toBeInTheDocument();
-    expect(getAllBySelector('.content-item-text').length).toBe(5);
+    expect(getAllBySelector('.content-item-text').length).toBe(6);
     fireEvent.click(screen.getByText('用户中心'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(navigateSpy).toHaveBeenCalledWith('/user-center');
+  });
+
+  it('render snap when isCertainProjectManager is true', async () => {
+    const { baseElement } = customRender(false, true);
+    expect(baseElement).toMatchSnapshot();
+
+    const iconSystem = getBySelector('.custom-icon-global-system', baseElement);
+    fireEvent.click(iconSystem);
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+
+    expect(screen.getByText('全局数据源')).toBeInTheDocument();
+    expect(getAllBySelector('.content-item-text').length).toBe(2);
+    fireEvent.click(screen.getByText('全局数据源'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(navigateSpy).toHaveBeenCalledWith('/global-data-source');
   });
 });
