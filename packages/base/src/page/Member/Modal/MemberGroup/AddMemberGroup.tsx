@@ -11,8 +11,8 @@ import { IMemberGroupFormFields } from '../index.type';
 import MemberGroupForm from './MemberGroupForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { IAddMemberGroupParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IAddMemberGroupParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
+import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
 import { BasicButton } from '@actiontech/shared';
 import { MemberDrawerStyledWrapper } from '../../style';
 
@@ -41,8 +41,7 @@ const AddMemberGroup: React.FC = () => {
       project_uid: projectID
     };
     startSubmit();
-    dms
-      .AddMemberGroup(params)
+    MemberGroup.AddMemberGroup(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

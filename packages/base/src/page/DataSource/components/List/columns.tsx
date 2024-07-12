@@ -8,7 +8,7 @@ import {
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
-import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 
 /*

@@ -10,8 +10,8 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
-import { IListUsersParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IListUsersParams } from '@actiontech/shared/lib/api/base/service/User/index.d';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import { UserCenterListEnum } from '../../index.enum';
 import {
   updateSelectUser,
@@ -48,7 +48,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
       const params: IListUsersParams = {
         ...pagination
       };
-      return handleTableRequestError(dms.ListUsers(params));
+      return handleTableRequestError(User.ListUsers(params));
     },
     {
       refreshDeps: [pagination, activePage],
@@ -75,7 +75,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
 
   const onDeleteUser = useCallback(
     (record?: IListUser) => {
-      dms.DelUser({ user_uid: record?.uid ?? '' }).then((res) => {
+      User.DelUser({ user_uid: record?.uid ?? '' }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsUserCenter.user.deleteUser.deleteSuccess', {

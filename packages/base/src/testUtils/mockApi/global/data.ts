@@ -33,13 +33,13 @@ export const oauth2Tips: IGetOauth2TipsResData = {
   login_tip: 'Login With Oauth2'
 };
 
-export const BasicInfo: IBasicInfo = {
+export const BasicInfoMockData: IBasicInfo = {
   components: [],
   logo_url: '/v1/dms/personalization/logo',
   title: 'Actiontech'
 };
 
-export const CompanyNotice: ICompanyNotice = {
+export const CompanyNoticeMockData: ICompanyNotice = {
   notice_str: 'notice',
   read_by_current_user: false
 };

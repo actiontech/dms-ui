@@ -9,7 +9,7 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AvatarCom, BasicTypographyEllipsis } from '@actiontech/shared';
 import WorkflowStatus from '../Common/WorkflowStatus';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
-import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
 

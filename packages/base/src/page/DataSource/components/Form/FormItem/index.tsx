@@ -13,7 +13,7 @@ import {
   TestDatabaseConnectButton
 } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import {
   FormItemLabel,
   FormItemNoLabel
@@ -70,18 +70,17 @@ const DatabaseFormItem: React.FC<{
     }
 
     setLoadingTrue();
-    dms
-      .CheckDBServiceIsConnectable({
-        db_service: {
-          host: values.ip,
-          port: `${values.port}`,
-          user: values.user,
-          db_type: values.type,
-          password: values.password,
-          additional_params: values.asyncParams ?? []
-        },
-        project_uid: projectID
-      })
+    DBService.CheckDBServiceIsConnectable({
+      db_service: {
+        host: values.ip,
+        port: `${values.port}`,
+        user: values.user,
+        db_type: values.type,
+        password: values.password,
+        additional_params: values.asyncParams ?? []
+      },
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const connections = res.data.data ?? [];

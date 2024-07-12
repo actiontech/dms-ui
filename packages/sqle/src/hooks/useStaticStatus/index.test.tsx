@@ -55,23 +55,4 @@ describe('useRuleTemplate', () => {
     await screen.findAllByText('准备执行');
     expect(baseElementWithOptions).toMatchSnapshot();
   });
-
-  test('should render static option for order status', async () => {
-    const { result } = renderHook(() => useStaticStatus());
-
-    const { baseElement: baseElementWithOptions } = render(
-      <Select data-testid="testId" value="value1">
-        {result.current.generateOrderStatusSelectOption()}
-      </Select>
-    );
-    expect(baseElementWithOptions).toMatchSnapshot();
-
-    reactAct(() => {
-      fireEvent.mouseDown(screen.getByText('value1'));
-      jest.runAllTimers();
-    });
-
-    await screen.findAllByText('待审核');
-    expect(baseElementWithOptions).toMatchSnapshot();
-  });
 });

@@ -10,6 +10,7 @@ import {
   GearFilled,
   UserShieldFilled,
   CenterCircleHexagonFilled,
+  DatabaseFilled,
   // #if [sqle]
   ProfileSquareFilled,
   SignalFilled,
@@ -21,7 +22,8 @@ const GlobalSetting: React.FC<{
   updateTheme: (theme: SupportTheme) => void;
   theme: SupportTheme;
   isAdmin: boolean;
-}> = ({ updateTheme, theme, isAdmin }) => {
+  isCertainProjectManager: boolean;
+}> = ({ updateTheme, theme, isAdmin, isCertainProjectManager }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
   const [open, setOpen] = useState(false);
@@ -42,8 +44,20 @@ const GlobalSetting: React.FC<{
       content={
         <PopoverInnerStyleWrapper>
           <div className="header">{t('dmsMenu.globalSettings.title')}</div>
-          <EmptyBox if={!isAdmin}>
-            <div className="content">
+          <div className="content">
+            <EmptyBox if={isAdmin || isCertainProjectManager}>
+              <div
+                className="content-item"
+                onClick={() => handleClickItem(`/global-data-source`)}
+              >
+                <DatabaseFilled />
+                <span className="content-item-text">
+                  {' '}
+                  {t('dmsMenu.globalSettings.dataSource')}
+                </span>
+              </div>
+            </EmptyBox>
+            <EmptyBox if={!isAdmin}>
               {/* #if [sqle]*/}
               <div
                 className="content-item"
@@ -55,10 +69,8 @@ const GlobalSetting: React.FC<{
                 </span>
               </div>
               {/* #endif */}
-            </div>
-          </EmptyBox>
-          <EmptyBox if={isAdmin}>
-            <div className="content">
+            </EmptyBox>
+            <EmptyBox if={isAdmin}>
               <div
                 className="content-item"
                 onClick={() => handleClickItem('/user-center')}
@@ -106,8 +118,8 @@ const GlobalSetting: React.FC<{
                   {t('dmsMenu.globalSettings.system')}
                 </span>
               </div>
-            </div>
-          </EmptyBox>
+            </EmptyBox>
+          </div>
           {/* todo: hide theme change in
           <div className="footer">
             <span className="footer-text">

@@ -739,6 +739,7 @@ exports[`test base/home/DefaultScene should match snapshot when role is not admi
         >
           <svg
             color="#ffffff"
+            fill="currentColor"
             height="24"
             viewBox="0 0 24 24"
             width="24"

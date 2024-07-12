@@ -10,7 +10,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { renderWithThemeAndRedux } from '../../testUtils/customRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
@@ -89,7 +89,7 @@ describe('sqle/Rule', () => {
     getProjectRuleTemplateSpy = rule_template.getProjectRuleTemplate();
     getRuleTemplateSpy = rule_template.getRuleTemplate();
 
-    getProjectListSpy = jest.spyOn(dms, 'ListProjects');
+    getProjectListSpy = jest.spyOn(Project, 'ListProjects');
     getProjectListSpy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: 1,

@@ -3,7 +3,8 @@ import {
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { memberGroupList, memberList } from './data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
+import Member from '@actiontech/shared/lib/api/base/service/Member';
 
 class MockMemberApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -19,7 +20,7 @@ class MockMemberApi implements MockSpyApy {
   }
 
   public getMemberList() {
-    const spy = jest.spyOn(dms, 'ListMembers');
+    const spy = jest.spyOn(Member, 'ListMembers');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: memberList.length,
@@ -30,7 +31,7 @@ class MockMemberApi implements MockSpyApy {
   }
 
   public addMember() {
-    const spy = jest.spyOn(dms, 'AddMember');
+    const spy = jest.spyOn(Member, 'AddMember');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         uid: '10029382'
@@ -40,19 +41,19 @@ class MockMemberApi implements MockSpyApy {
   }
 
   public updateMember() {
-    const spy = jest.spyOn(dms, 'UpdateMember');
+    const spy = jest.spyOn(Member, 'UpdateMember');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public deleteMember() {
-    const spy = jest.spyOn(dms, 'DelMember');
+    const spy = jest.spyOn(Member, 'DelMember');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getMemberGroupList() {
-    const spy = jest.spyOn(dms, 'ListMemberGroups');
+    const spy = jest.spyOn(MemberGroup, 'ListMemberGroups');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: memberGroupList })
     );
@@ -60,7 +61,7 @@ class MockMemberApi implements MockSpyApy {
   }
 
   public addMemberGroup() {
-    const spy = jest.spyOn(dms, 'AddMemberGroup');
+    const spy = jest.spyOn(MemberGroup, 'AddMemberGroup');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: { id: '10023412' } })
     );
@@ -68,7 +69,7 @@ class MockMemberApi implements MockSpyApy {
   }
 
   public getMemberGroup() {
-    const spy = jest.spyOn(dms, 'GetMemberGroup');
+    const spy = jest.spyOn(MemberGroup, 'GetMemberGroup');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: memberGroupList[0] })
     );
@@ -76,13 +77,13 @@ class MockMemberApi implements MockSpyApy {
   }
 
   public updateMemberGroup() {
-    const spy = jest.spyOn(dms, 'UpdateMemberGroup');
+    const spy = jest.spyOn(MemberGroup, 'UpdateMemberGroup');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public deleteMemberGroup() {
-    const spy = jest.spyOn(dms, 'DeleteMemberGroup');
+    const spy = jest.spyOn(MemberGroup, 'DeleteMemberGroup');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

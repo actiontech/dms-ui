@@ -15,7 +15,7 @@ import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WechatFormFields } from './index.type';
 import { IWeChatConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
@@ -28,7 +28,7 @@ const Wechat = () => {
     loading,
     refresh: refreshWechatConfig
   } = useRequest(
-    () => dms.GetWeChatConfiguration().then((res) => res?.data?.data),
+    () => Configuration.GetWeChatConfiguration().then((res) => res?.data?.data),
     {
       onSuccess: (res) => {
         if (res) {
@@ -57,19 +57,18 @@ const Wechat = () => {
     useBoolean();
   const submit = (values: WechatFormFields) => {
     startSubmit();
-    dms
-      .UpdateWeChatConfiguration({
-        update_wechat_configuration: {
-          enable_wechat_notify: values.enable_wechat_notify,
-          corp_id: values.corp_id,
-          corp_secret: values.corp_secret,
-          agent_id: values.agent_id
-            ? Number.parseInt(values.agent_id ?? '0', 10)
-            : undefined,
-          safe_enabled: values.safe_enabled,
-          proxy_ip: values.proxy_ip
-        }
-      })
+    Configuration.UpdateWeChatConfiguration({
+      update_wechat_configuration: {
+        enable_wechat_notify: values.enable_wechat_notify,
+        corp_id: values.corp_id,
+        corp_secret: values.corp_secret,
+        agent_id: values.agent_id
+          ? Number.parseInt(values.agent_id ?? '0', 10)
+          : undefined,
+        safe_enabled: values.safe_enabled,
+        proxy_ip: values.proxy_ip
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();
@@ -125,7 +124,7 @@ const Wechat = () => {
     submitFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      dms.UpdateWeChatConfiguration({
+      Configuration.UpdateWeChatConfiguration({
         update_wechat_configuration: {
           ...wechatConfig,
           enable_wechat_notify: false

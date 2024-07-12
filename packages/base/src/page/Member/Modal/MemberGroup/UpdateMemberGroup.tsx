@@ -13,8 +13,8 @@ import MemberGroupForm from './MemberGroupForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import formatMemberRole from '../../Common/formatMemberRole';
-import { IUpdateMemberGroupParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import { IUpdateMemberGroupParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
+import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
 import { BasicButton } from '@actiontech/shared';
 import { MemberDrawerStyledWrapper } from '../../style';
 
@@ -49,8 +49,7 @@ const UpdateMemberGroup: React.FC = () => {
       project_uid: projectID
     };
     startSubmit();
-    dms
-      .UpdateMemberGroup(params)
+    MemberGroup.UpdateMemberGroup(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

@@ -15,8 +15,9 @@ import {
   successWechatTestReturn,
   successWebhookTestReturn
 } from './data';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
+import DMSConfiguration from '@actiontech/shared/lib/api/base/service/Configuration';
+import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 
 class MockSystemApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -56,7 +57,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public getLDAPConfig() {
-    const spy = jest.spyOn(dms, 'GetLDAPConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'GetLDAPConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: LDAPConfig
@@ -66,13 +67,13 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public updateLDAPConfig() {
-    const spy = jest.spyOn(dms, 'UpdateLDAPConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateLDAPConfiguration');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getOauth2Config() {
-    const spy = jest.spyOn(dms, 'GetOauth2Configuration');
+    const spy = jest.spyOn(DMSConfiguration, 'GetOauth2Configuration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: oauthConfig
@@ -82,13 +83,13 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public updateOauth2Config() {
-    const spy = jest.spyOn(dms, 'UpdateOauth2Configuration');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateOauth2Configuration');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getSMTPConfig() {
-    const spy = jest.spyOn(dms, 'GetSMTPConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'GetSMTPConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: SMTPConfig
@@ -98,13 +99,13 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public updateSMTPConfig() {
-    const spy = jest.spyOn(dms, 'UpdateSMTPConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateSMTPConfiguration');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public testSMTPConfigSuccess() {
-    const spy = jest.spyOn(dms, 'TestSMTPConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'TestSMTPConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: successSMTPTestReturn
@@ -114,7 +115,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public testSMTPConfigFail() {
-    const spy = jest.spyOn(dms, 'TestSMTPConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'TestSMTPConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: failSMTPTestReturn
@@ -124,7 +125,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public getWeChatConfig() {
-    const spy = jest.spyOn(dms, 'GetWeChatConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'GetWeChatConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: weChatConfig
@@ -134,13 +135,13 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public updateWeChatConfig() {
-    const spy = jest.spyOn(dms, 'UpdateWeChatConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateWeChatConfiguration');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public testWeChatConfig() {
-    const spy = jest.spyOn(dms, 'TestWeChatConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'TestWeChatConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: successWechatTestReturn
@@ -150,7 +151,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public getLarkConfig() {
-    const spy = jest.spyOn(dms, 'GetFeishuConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'GetFeishuConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: larkConfig
@@ -160,13 +161,13 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public updateLarkConfig() {
-    const spy = jest.spyOn(dms, 'UpdateFeishuConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateFeishuConfiguration');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public testLarkConfig() {
-    const spy = jest.spyOn(dms, 'TestFeishuConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'TestFeishuConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: successLarkTestReturn
@@ -176,7 +177,7 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public getWebhookConfig = () => {
-    const spy = jest.spyOn(dms, 'GetWebHookConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'GetWebHookConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: webhookConfig
@@ -186,13 +187,13 @@ class MockSystemApi implements MockSpyApy {
   };
 
   public updateWebhookConfig = () => {
-    const spy = jest.spyOn(dms, 'UpdateWebHookConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateWebHookConfiguration');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   };
 
   public testWebhookConfig = () => {
-    const spy = jest.spyOn(dms, 'TestWebHookConfiguration');
+    const spy = jest.spyOn(DMSConfiguration, 'TestWebHookConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: successWebhookTestReturn
@@ -202,7 +203,7 @@ class MockSystemApi implements MockSpyApy {
   };
 
   public updatePersonalizationConfig = () => {
-    const spy = jest.spyOn(dms, 'Personalization');
+    const spy = jest.spyOn(BasicInfo, 'Personalization');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   };
@@ -267,25 +268,25 @@ class MockSystemApi implements MockSpyApy {
   }
 
   public GetLicenseInfo() {
-    const spy = jest.spyOn(dms, 'GetLicenseInfo');
+    const spy = jest.spyOn(DMSConfiguration, 'GetLicenseInfo');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public GetLicense() {
-    const spy = jest.spyOn(dms, 'GetLicense');
+    const spy = jest.spyOn(DMSConfiguration, 'GetLicense');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public CheckLicense() {
-    const spy = jest.spyOn(dms, 'CheckLicense');
+    const spy = jest.spyOn(DMSConfiguration, 'CheckLicense');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public SetLicense() {
-    const spy = jest.spyOn(dms, 'SetLicense');
+    const spy = jest.spyOn(DMSConfiguration, 'SetLicense');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

@@ -76,5 +76,38 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.isProjectManager('test')).toBeFalsy();
     expect(result.current.isProjectManager('unknown')).toBeFalsy();
     expect(result.current.isProjectManager('default')).toBeTruthy();
+    expect(result.current.isCertainProjectManager).toBeTruthy();
+    expect(result.current.userRoles).toEqual({
+      [SystemRole.admin]: true,
+      [SystemRole.certainProjectManager]: true
+    });
+  });
+
+  test('when current user not admin or certain project manager', () => {
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        user: {
+          username: 'test',
+          role: '',
+          bindProjects: [
+            {
+              is_manager: false,
+              project_id: '700001',
+              project_name: 'default'
+            }
+          ],
+          managementPermissions: mockManagementPermissions,
+          theme: SupportTheme.LIGHT
+        }
+      });
+    });
+
+    const { result } = renderHook(() => useCurrentUser());
+    expect(result.current.isCertainProjectManager).toBeFalsy();
+    expect(result.current.isCertainProjectManager).toBeFalsy();
+    expect(result.current.userRoles).toEqual({
+      [SystemRole.admin]: false,
+      [SystemRole.certainProjectManager]: false
+    });
   });
 });

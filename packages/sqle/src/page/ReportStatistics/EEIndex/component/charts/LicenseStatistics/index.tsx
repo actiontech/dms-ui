@@ -8,8 +8,8 @@ import LicenseColumn from './licenseColumn';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { ILicenseUsageItem } from '@actiontech/shared/lib/api/sqle/service/common';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
-import { IGetLicenseUsageReturn } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
+import { IGetLicenseUsageReturn } from '@actiontech/shared/lib/api/base/service/Configuration/index.d';
 
 type typeDctItem = {
   type: string;
@@ -77,7 +77,7 @@ const LicenseStatistics = () => {
   };
 
   const { loading, errorMessage, getApiData } = usePanelCommonRequest(
-    () => dms.GetLicenseUsage(),
+    () => Configuration.GetLicenseUsage(),
     { onSuccess }
   );
 

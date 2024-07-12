@@ -44,6 +44,10 @@ export interface IAddDBServiceReply {
   message?: string;
 }
 
+export interface IAddDBServiceReq {
+  db_service?: IDBService;
+}
+
 export interface IAddDataExportTaskReply {
   code?: number;
 
@@ -52,6 +56,10 @@ export interface IAddDataExportTaskReply {
   };
 
   message?: string;
+}
+
+export interface IAddDataExportTaskReq {
+  data_export_tasks?: IDataExportTask[];
 }
 
 export interface IAddDataExportWorkflowReply {
@@ -64,6 +72,10 @@ export interface IAddDataExportWorkflowReply {
   message?: string;
 }
 
+export interface IAddDataExportWorkflowReq {
+  data_export_workflow?: IDataExportWorkflow;
+}
+
 export interface IAddDatabaseSourceServiceReply {
   code?: number;
 
@@ -72,6 +84,10 @@ export interface IAddDatabaseSourceServiceReply {
   };
 
   message?: string;
+}
+
+export interface IAddDatabaseSourceServiceReq {
+  database_source_service?: IDatabaseSourceService;
 }
 
 export interface IAddMemberGroupReply {
@@ -84,6 +100,10 @@ export interface IAddMemberGroupReply {
   message?: string;
 }
 
+export interface IAddMemberGroupReq {
+  member_group?: IMemberGroup;
+}
+
 export interface IAddMemberReply {
   code?: number;
 
@@ -92,6 +112,10 @@ export interface IAddMemberReply {
   };
 
   message?: string;
+}
+
+export interface IAddMemberReq {
+  member?: IMember;
 }
 
 export interface IAddProjectReply {
@@ -104,6 +128,10 @@ export interface IAddProjectReply {
   message?: string;
 }
 
+export interface IAddProjectReq {
+  project?: IProject;
+}
+
 export interface IAddRoleReply {
   code?: number;
 
@@ -112,6 +140,10 @@ export interface IAddRoleReply {
   };
 
   message?: string;
+}
+
+export interface IAddRoleReq {
+  role?: IRole;
 }
 
 export interface IAddSession {
@@ -130,6 +162,10 @@ export interface IAddSessionReply {
   message?: string;
 }
 
+export interface IAddSessionReq {
+  session?: IAddSession;
+}
+
 export interface IAddUserGroupReply {
   code?: number;
 
@@ -140,6 +176,10 @@ export interface IAddUserGroupReply {
   message?: string;
 }
 
+export interface IAddUserGroupReq {
+  user_group?: IUserGroup;
+}
+
 export interface IAddUserReply {
   code?: number;
 
@@ -148,6 +188,10 @@ export interface IAddUserReply {
   };
 
   message?: string;
+}
+
+export interface IAddUserReq {
+  user?: IUser;
 }
 
 export interface IAdditionalParam {
@@ -202,6 +246,14 @@ export interface IBindOauth2UserReply {
   message?: string;
 }
 
+export interface IBindOauth2UserReq {
+  oauth2_token?: string;
+
+  pwd?: string;
+
+  user_name?: string;
+}
+
 export interface IBindOauth2UserResData {
   token?: string;
 }
@@ -210,6 +262,12 @@ export interface IBusiness {
   id?: string;
 
   is_used?: boolean;
+
+  name?: string;
+}
+
+export interface IBusinessForUpdate {
+  id?: string;
 
   name?: string;
 }
@@ -246,6 +304,16 @@ export interface ICancelDataExportWorkflowPayload {
   data_export_workflow_uids: string[];
 }
 
+export interface ICancelDataExportWorkflowReq {
+  payload?: ICancelDataExportWorkflowPayload;
+}
+
+export interface ICheckDBServiceIsConnectableByIdReq {
+  db_service_uid?: string;
+
+  project_uid?: string;
+}
+
 export interface ICheckDBServiceIsConnectableReply {
   code?: number;
 
@@ -260,6 +328,10 @@ export interface ICheckDBServiceIsConnectableReplyItem {
   connect_error_message?: string;
 
   is_connectable?: boolean;
+}
+
+export interface ICheckDBServiceIsConnectableReq {
+  db_service?: ICheckDbConnectable;
 }
 
 export interface ICheckDbConnectable {
@@ -338,6 +410,10 @@ export interface IDBService {
   sqle_config?: ISQLEConfig;
 
   user: string;
+}
+
+export interface IDBServiceConnectionReq {
+  db_services?: ICheckDbsConnectable[];
 }
 
 export interface IDBServicesConnectionItem {
@@ -446,6 +522,18 @@ export interface IFeishuConfigurationResData {
   app_id?: string;
 
   is_feishu_notification_enabled?: boolean;
+}
+
+export interface IFileHeader {
+  Filename?: string;
+
+  Header?: IMIMEHeader;
+
+  Size?: number;
+}
+
+export interface IGenAccessToken {
+  expiration_days?: string;
 }
 
 export interface IGenAccessTokenReply {
@@ -836,12 +924,24 @@ export interface IImportDBServicesCheckReply {
   message?: string;
 }
 
+export interface IImportDBServicesOfOneProjectReq {
+  db_services?: IImportDBService[];
+}
+
+export interface IImportDBServicesOfProjectsReq {
+  db_services?: IImportDBService[];
+}
+
 export interface IImportProjects {
   business?: string[];
 
   desc?: string;
 
   name?: string;
+}
+
+export interface IImportProjectsReq {
+  projects?: IImportProjects[];
 }
 
 export interface ILDAPConfiguration {
@@ -1092,6 +1192,52 @@ export interface IListDatabaseSourceServicesReply {
   message?: string;
 }
 
+export interface IListGlobalDBService {
+  additional_params?: IAdditionalParam[];
+
+  business?: string;
+
+  db_type?: string;
+
+  desc?: string;
+
+  host?: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  unfinished_workflow_num?: number;
+
+  user?: string;
+}
+
+export interface IListGlobalDBServicesReply {
+  code?: number;
+
+  data?: IListGlobalDBService[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListMaskingRulesData {
   description?: string;
 
@@ -1318,6 +1464,10 @@ export interface IListUserReply {
   total_nums?: number;
 }
 
+export interface IMIMEHeader {
+  [key: string]: any;
+}
+
 export interface IMaintenanceTime {
   maintenance_start_time?: ITime;
 
@@ -1396,6 +1546,10 @@ export interface IOauth2Configuration {
   user_wechat_tag?: string;
 }
 
+export interface IOauth2ConfigurationReq {
+  oauth2?: IOauth2Configuration;
+}
+
 export interface IOpPermissionItem {
   op_permission_type?: OpPermissionItemOpPermissionTypeEnum;
 
@@ -1414,6 +1568,12 @@ export interface IOperation {
   operation_detail?: string;
 
   operation_type?: OperationOperationTypeEnum;
+}
+
+export interface IPersonalizationReq {
+  file?: IFileHeader;
+
+  title?: string;
 }
 
 export interface IPlugin {
@@ -1468,14 +1628,26 @@ export interface IRegisterDMSPluginReply {
   message?: string;
 }
 
+export interface IRegisterDMSPluginReq {
+  plugin?: IPlugin;
+}
+
 export interface IRegisterDMSProxyTargetReply {
   code?: number;
 
   message?: string;
 }
 
+export interface IRegisterDMSProxyTargetReq {
+  dms_proxy_target?: IDMSProxyTarget;
+}
+
 export interface IRejectDataExportWorkflowPayload {
   reason: string;
+}
+
+export interface IRejectDataExportWorkflowReq {
+  payload?: IRejectDataExportWorkflowPayload;
 }
 
 export interface IRole {
@@ -1516,6 +1688,12 @@ export interface ISQLQueryConfig {
   query_timeout_second?: number;
 }
 
+export interface ISyncDatabaseSourceServiceReq {
+  database_source_service_uid?: string;
+
+  project_uid?: string;
+}
+
 export interface ITask {
   task_uid?: string;
 }
@@ -1544,6 +1722,10 @@ export interface ITestFeishuConfigurationReply {
   message?: string;
 }
 
+export interface ITestFeishuConfigurationReq {
+  test_feishu_configuration?: ITestFeishuConfiguration;
+}
+
 export interface ITestFeishuConfigurationResData {
   error_message?: string;
 
@@ -1562,6 +1744,10 @@ export interface ITestSMTPConfigurationReply {
   message?: string;
 }
 
+export interface ITestSMTPConfigurationReq {
+  test_smtp_configuration?: ITestSMTPConfiguration;
+}
+
 export interface ITestSMTPConfigurationResData {
   is_smtp_send_normal?: boolean;
 
@@ -1578,6 +1764,10 @@ export interface ITestWeChatConfigurationReply {
   data?: ITestWeChatConfigurationResData;
 
   message?: string;
+}
+
+export interface ITestWeChatConfigurationReq {
+  test_wechat_configuration?: ITestWeChatConfiguration;
 }
 
 export interface ITestWeChatConfigurationResData {
@@ -1622,6 +1812,10 @@ export interface IUpdateCompanyNotice {
   notice_str?: string;
 }
 
+export interface IUpdateCompanyNoticeReq {
+  company_notice?: IUpdateCompanyNotice;
+}
+
 export interface IUpdateCurrentUser {
   email?: string;
 
@@ -1632,6 +1826,10 @@ export interface IUpdateCurrentUser {
   phone?: string;
 
   wxid?: string;
+}
+
+export interface IUpdateCurrentUserReq {
+  current_user?: IUpdateCurrentUser;
 }
 
 export interface IUpdateDBService {
@@ -1668,12 +1866,28 @@ export interface IUpdateDBServiceReply {
   message?: string;
 }
 
+export interface IUpdateDBServiceReq {
+  db_service?: IUpdateDBService;
+}
+
+export interface IUpdateDatabaseSourceServiceReq {
+  database_source_service?: IDatabaseSourceService;
+}
+
 export interface IUpdateFeishuConfiguration {
   app_id?: string;
 
   app_secret?: string;
 
   is_feishu_notification_enabled?: boolean;
+}
+
+export interface IUpdateFeishuConfigurationReq {
+  update_feishu_configuration?: IUpdateFeishuConfiguration;
+}
+
+export interface IUpdateLDAPConfigurationReq {
+  ldap?: ILDAPConfiguration;
 }
 
 export interface IUpdateMember {
@@ -1690,12 +1904,24 @@ export interface IUpdateMemberGroup {
   user_uids: string[];
 }
 
+export interface IUpdateMemberGroupReq {
+  member_group?: IUpdateMemberGroup;
+}
+
+export interface IUpdateMemberReq {
+  member?: IUpdateMember;
+}
+
 export interface IUpdateProject {
-  business?: IBusiness[];
+  business?: IBusinessForUpdate[];
 
   desc?: string;
 
   is_fixed_business?: boolean;
+}
+
+export interface IUpdateProjectReq {
+  project?: IUpdateProject;
 }
 
 export interface IUpdateRole {
@@ -1704,6 +1930,10 @@ export interface IUpdateRole {
   is_disabled?: boolean;
 
   op_permission_uids?: string[];
+}
+
+export interface IUpdateRoleReq {
+  role?: IUpdateRole;
 }
 
 export interface IUpdateSMTPConfiguration {
@@ -1718,6 +1948,10 @@ export interface IUpdateSMTPConfiguration {
   smtp_port?: string;
 
   smtp_username?: string;
+}
+
+export interface IUpdateSMTPConfigurationReq {
+  smtp_configuration?: IUpdateSMTPConfiguration;
 }
 
 export interface IUpdateUser {
@@ -1744,6 +1978,14 @@ export interface IUpdateUserGroup {
   user_uids?: string[];
 }
 
+export interface IUpdateUserGroupReq {
+  user_group?: IUpdateUserGroup;
+}
+
+export interface IUpdateUserReq {
+  user?: IUpdateUser;
+}
+
 export interface IUpdateWeChatConfiguration {
   agent_id?: number;
 
@@ -1756,6 +1998,14 @@ export interface IUpdateWeChatConfiguration {
   proxy_ip?: string;
 
   safe_enabled?: boolean;
+}
+
+export interface IUpdateWeChatConfigurationReq {
+  update_wechat_configuration?: IUpdateWeChatConfiguration;
+}
+
+export interface IUpdateWebHookConfigurationReq {
+  webhook_config?: IWebHookConfigurationData;
 }
 
 export interface IUser {
@@ -1824,6 +2074,10 @@ export interface IWebHookSendMessageReply {
   code?: number;
 
   message?: string;
+}
+
+export interface IWebHookSendMessageReq {
+  webhook_message?: IWebHooksMessage;
 }
 
 export interface IWebHooksMessage {

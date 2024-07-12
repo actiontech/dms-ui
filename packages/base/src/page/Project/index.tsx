@@ -13,7 +13,7 @@ import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useMemo } from 'react';
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import ProjectApi from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
 
 const Project: React.FC = () => {
@@ -32,7 +32,7 @@ const Project: React.FC = () => {
     return (
       isAdmin ||
       managementPermissions.some(
-        (v) => OpPermissionTypeUid['project_admin'] === (v?.uid ?? '')
+        (v) => OpPermissionTypeUid['create_project'] === (v?.uid ?? '')
       )
     );
   }, [isAdmin, managementPermissions]);
@@ -57,7 +57,7 @@ const Project: React.FC = () => {
       t('dmsProject.projectList.exportMessage'),
       0
     );
-    dms.ExportProjects({}, { responseType: 'blob' }).finally(() => {
+    ProjectApi.ExportProjects({}, { responseType: 'blob' }).finally(() => {
       exportFinish();
       hideLoading();
     });

@@ -1,7 +1,7 @@
 import { List, Result } from 'antd';
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { useRequest } from 'ahooks';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import {
   useTableRequestError,
   useTableRequestParams
@@ -22,7 +22,7 @@ const ExportTaskList: React.FC = () => {
   const { loading, data: taskInfo } = useRequest(
     () =>
       handleTableRequestError(
-        dms.ListDataExportTaskSQLs({
+        DataExportTask.ListDataExportTaskSQLs({
           project_uid: projectID,
           data_export_task_uid: curTaskID!,
           ...pagination

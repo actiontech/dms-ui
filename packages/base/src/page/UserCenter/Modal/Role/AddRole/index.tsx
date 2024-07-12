@@ -11,7 +11,7 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { updateUserManageModalStatus } from '../../../../../store/userCenter';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 
 const AddRole = () => {
@@ -42,14 +42,13 @@ const AddRole = () => {
   const addRole = useCallback(async () => {
     const values = await form.validateFields();
     setTrue();
-    dms
-      .AddRole({
-        role: {
-          name: values.name,
-          desc: values.desc ?? '',
-          op_permission_uids: values?.opPermissions ?? []
-        }
-      })
+    Role.AddRole({
+      role: {
+        name: values.name,
+        desc: values.desc ?? '',
+        op_permission_uids: values?.opPermissions ?? []
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           onClose();

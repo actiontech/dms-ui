@@ -1,5 +1,5 @@
 import { ConfigItem } from '@actiontech/shared';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import User from '@actiontech/shared/lib/api/base/service/User';
 import {
   EditInput,
   LabelContent
@@ -22,19 +22,17 @@ const UserEmail: React.FC<UpdateComponentCommonProps> = ({
   ] = useBoolean(false);
 
   const onSubmit = (value: string) => {
-    dms
-      .UpdateCurrentUser({
-        current_user: {
-          email: value
-        }
-      })
-      .then(async (res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('dmsAccount.updateEmailSuccess'));
-          updateUserInfo();
-          hideEmailField();
-        }
-      });
+    User.UpdateCurrentUser({
+      current_user: {
+        email: value
+      }
+    }).then(async (res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        messageApi.success(t('dmsAccount.updateEmailSuccess'));
+        updateUserInfo();
+        hideEmailField();
+      }
+    });
   };
   const emailValidator = (value: string): boolean => {
     if (value && !emailValidate(value)) {

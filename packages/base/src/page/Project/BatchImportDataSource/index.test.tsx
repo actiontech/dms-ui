@@ -5,7 +5,7 @@ import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { AxiosResponse } from 'axios';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
@@ -77,7 +77,7 @@ describe('base/Project/BatchImportDataSource', () => {
 
   it('render check api return svg file', async () => {
     importDBServicesOfProjectsCheckSpy.mockClear();
-    const spy = jest.spyOn(dms, 'ImportDBServicesOfProjectsCheck');
+    const spy = jest.spyOn(Project, 'ImportDBServicesOfProjectsCheck');
     spy.mockImplementation(() => {
       return new Promise<AxiosResponse<any>>((res) => {
         setTimeout(() => {

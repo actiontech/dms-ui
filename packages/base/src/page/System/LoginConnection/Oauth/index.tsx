@@ -20,14 +20,14 @@ import useConfigSwitch from '../../hooks/useConfigSwitch';
 
 import { switchFieldName } from './index.data';
 
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { OauthFormField } from './index.type';
 import {
   IGetOauth2ConfigurationResData,
   IOauth2Configuration
 } from '@actiontech/shared/lib/api/base/service/common';
-import { IUpdateOauth2ConfigurationParams } from '@actiontech/shared/lib/api/base/service/dms/index.d';
+import { IUpdateOauth2ConfigurationParams } from '@actiontech/shared/lib/api/base/service/Configuration/index.d';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
@@ -51,7 +51,10 @@ const Oauth = () => {
     data: oauthConfig,
     refresh: refreshOauthConfig
   } = useRequest(
-    () => dms.GetOauth2Configuration().then((res) => res.data?.data ?? {}),
+    () =>
+      Configuration.GetOauth2Configuration().then(
+        (res) => res.data?.data ?? {}
+      ),
     {
       onSuccess(res) {
         if (res) {
@@ -114,7 +117,7 @@ const Oauth = () => {
     };
 
     try {
-      const res = await dms.UpdateOauth2Configuration(params);
+      const res = await Configuration.UpdateOauth2Configuration(params);
       if (res.data.code === ResponseCode.SUCCESS) {
         modifyFinish();
         form.resetFields();
@@ -159,7 +162,7 @@ const Oauth = () => {
     submitFinish,
     handleClickModify,
     handleUpdateConfig: () =>
-      dms.UpdateOauth2Configuration({
+      Configuration.UpdateOauth2Configuration({
         oauth2: {
           ...oauthConfig,
           enable_oauth2: false

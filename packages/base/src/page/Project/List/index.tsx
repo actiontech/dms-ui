@@ -1,9 +1,9 @@
 import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import {
   IListProjectsReturn,
   IListProjectsParams
-} from '@actiontech/shared/lib/api/base/service/dms/index.d';
+} from '@actiontech/shared/lib/api/base/service/Project/index.d';
 import {
   ActiontechTable,
   useTableRequestError,
@@ -56,7 +56,7 @@ const ProjectList: React.FC = () => {
         ...pagination
       };
       return handleTableRequestError<IListProjectsReturn>(
-        dms.ListProjects(params)
+        Project.ListProjects(params)
       );
     },
     {
@@ -70,7 +70,7 @@ const ProjectList: React.FC = () => {
       if (!allowOperateProject(record?.name ?? '')) return;
 
       const { uid = '', name = '' } = record;
-      dms.DelProject({ project_uid: uid }).then((res) => {
+      Project.DelProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsProject.projectList.deleteSuccessTips', {
@@ -89,7 +89,7 @@ const ProjectList: React.FC = () => {
       if (!allowOperateProject(record?.name ?? '')) return;
 
       const { uid = '', name = '' } = record;
-      dms.ArchiveProject({ project_uid: uid }).then((res) => {
+      Project.ArchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsProject.projectList.archiveProjectSuccessTips', {
@@ -109,7 +109,7 @@ const ProjectList: React.FC = () => {
       if (!allowOperateProject(record?.name ?? '')) return;
 
       const { uid = '', name = '' } = record;
-      dms.UnarchiveProject({ project_uid: uid }).then((res) => {
+      Project.UnarchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsProject.projectList.unarchiveProjectSuccessTips', {

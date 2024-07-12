@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import useDbService from '../../../../../../hooks/useDbService';
 import { useEffect, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/dms/index.enum';
+import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 import useInstanceSchema from 'sqle/src/hooks/useInstanceSchema';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { Form, SelectProps } from 'antd';

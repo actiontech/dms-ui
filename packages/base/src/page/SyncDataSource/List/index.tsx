@@ -8,7 +8,7 @@ import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
-import dms from '@actiontech/shared/lib/api/base/service/dms';
+import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ActiontechTable,
@@ -35,11 +35,10 @@ const SyncTaskList: React.FC = () => {
     const hideLoading = messageApi.loading(
       t('dmsSyncDataSource.syncTaskList.syncTaskLoading')
     );
-    dms
-      .SyncDatabaseSourceService({
-        database_source_service_uid: taskId,
-        project_uid: projectID
-      })
+    DatabaseSourceService.SyncDatabaseSourceService({
+      database_source_service_uid: taskId,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -59,11 +58,10 @@ const SyncTaskList: React.FC = () => {
     const hideLoading = messageApi.loading(
       t('dmsSyncDataSource.syncTaskList.deleteTaskLoading')
     );
-    dms
-      .DeleteDatabaseSourceService({
-        database_source_service_uid: taskId,
-        project_uid: projectID
-      })
+    DatabaseSourceService.DeleteDatabaseSourceService({
+      database_source_service_uid: taskId,
+      project_uid: projectID
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -83,7 +81,7 @@ const SyncTaskList: React.FC = () => {
   const { loading, data, refresh } = useRequest(
     () =>
       handleTableRequestError(
-        dms.ListDatabaseSourceServices({
+        DatabaseSourceService.ListDatabaseSourceServices({
           project_uid: projectID
         })
       ),

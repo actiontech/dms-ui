@@ -158,6 +158,12 @@ export default {
         confirmTips:
           '当前操作将立即执行导出工单下的所有任务，是否确认立即执行导出?'
       }
+    },
+    operator: {
+      unknown: '未知步骤',
+      waitAudit: '等待审核人操作',
+      alreadyRejected: '工单已被驳回',
+      alreadyClosed: '工单已被关闭'
     }
   },
   common: {

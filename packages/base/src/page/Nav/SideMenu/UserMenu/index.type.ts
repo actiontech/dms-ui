@@ -6,6 +6,7 @@ export type UserMenuProps = {
   theme: SupportTheme;
   updateTheme: (theme: SupportTheme) => void;
   isAdmin: boolean;
+  isCertainProjectManager: boolean;
 };
 
 export type BasicVersionModalProps = {
