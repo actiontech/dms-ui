@@ -9,7 +9,7 @@ exports[`test base/GlobalDataSource ce should match snapshot 1`] = `
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
@@ -1071,7 +1071,7 @@ exports[`test base/GlobalDataSource ce should match snapshot 1`] = `
                   <p
                     class="cont-tip"
                   >
-                    数据源管理为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
+                    全局数据源为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                   </p>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
