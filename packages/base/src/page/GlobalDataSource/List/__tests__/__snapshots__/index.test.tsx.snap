@@ -9,7 +9,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
@@ -982,7 +982,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
@@ -1955,7 +1955,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
@@ -3050,7 +3050,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
@@ -3906,7 +3906,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
@@ -4762,7 +4762,7 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
       <div
         class="title"
       >
-        数据源管理
+        全局数据源
       </div>
       <div
         class="extra"
