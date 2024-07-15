@@ -30,7 +30,9 @@ const BatchImportDataSource = () => {
     resetAndHideResult,
     setDBservices,
     dbServices,
-    importServicesCheck
+    importServicesCheck,
+    uploadCheckStatus,
+    clearUploadCheckStatus
   } = useBatchImportDataSource();
 
   const onSubmit = async () => {
@@ -55,6 +57,7 @@ const BatchImportDataSource = () => {
   >(
     (option) => {
       setDBservices([]);
+      clearUploadCheckStatus();
       DBService.ImportDBServicesOfOneProjectCheck(
         {
           project_uid: projectID,
@@ -70,7 +73,7 @@ const BatchImportDataSource = () => {
           option?.onError?.(error);
         });
     },
-    [importServicesCheck, projectID, setDBservices]
+    [importServicesCheck, projectID, setDBservices, clearUploadCheckStatus]
   );
 
   return (
@@ -118,6 +121,8 @@ const BatchImportDataSource = () => {
           form={form}
           customRequest={onUploadCustomRequest}
           dbServices={dbServices}
+          uploadCheckStatus={uploadCheckStatus}
+          clearUploadCheckStatus={clearUploadCheckStatus}
         />
       </EmptyBox>
     </>
