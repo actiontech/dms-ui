@@ -7,6 +7,7 @@ import { BatchImportDataSourceFormValueType } from '../index.type';
 import { Form } from 'antd';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { mockBatchImportDBCheckData } from '../../../../testUtils/mockApi/project/data';
+import { FileUploadCheckStatusType } from '../index.type';
 
 describe('base/Project/BatchImportDataSourceForm', () => {
   let getImportDBServicesTemplateSpy: jest.SpyInstance;
@@ -21,7 +22,10 @@ describe('base/Project/BatchImportDataSourceForm', () => {
     cleanup();
   });
 
-  const customRender = (dbServices?: IDBService[]) => {
+  const customRender = (
+    dbServices?: IDBService[],
+    uploadCheckStatus: FileUploadCheckStatusType = { success: true }
+  ) => {
     const mockCustomRequest = jest.fn();
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<BatchImportDataSourceFormValueType>()
@@ -31,6 +35,8 @@ describe('base/Project/BatchImportDataSourceForm', () => {
         customRequest={mockCustomRequest}
         form={result.current[0]}
         dbServices={dbServices}
+        uploadCheckStatus={uploadCheckStatus}
+        clearUploadCheckStatus={jest.fn()}
       />
     );
   };
@@ -59,5 +65,9 @@ describe('base/Project/BatchImportDataSourceForm', () => {
     expect(
       screen.getByText('批量测试数据源连通性').closest('button')
     ).not.toBeDisabled();
+  });
+
+  test('render upload file error', async () => {
+    customRender([], { success: false, errorMessage: 'test error' });
   });
 });
