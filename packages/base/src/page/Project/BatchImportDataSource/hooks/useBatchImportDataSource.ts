@@ -1,14 +1,15 @@
 import { useBoolean } from 'ahooks';
 import { Form } from 'antd';
-import { BatchImportDataSourceFormValueType } from '../index.type';
+import {
+  BatchImportDataSourceFormValueType,
+  FileUploadCheckStatusType
+} from '../index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 import {
   MIMETypeEnum,
   ResponseBlobJsonType
 } from '@actiontech/shared/lib/enum';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { isExportFileResponse } from '@actiontech/shared/lib/utils/Common';
 import { AxiosResponse } from 'axios';
 import { useTranslation } from 'react-i18next';
@@ -27,6 +28,11 @@ const useBatchImportDataSource = () => {
 
   const [resultVisible, { setTrue: showResult, setFalse: hideResult }] =
     useBoolean(false);
+
+  const [uploadCheckStatus, setUploadCheckStatus] =
+    useState<FileUploadCheckStatusType>({
+      success: false
+    });
 
   const [form] = Form.useForm<BatchImportDataSourceFormValueType>();
 
@@ -48,12 +54,20 @@ const useBatchImportDataSource = () => {
           );
           if (json.code === ResponseCode.SUCCESS) {
             setDBservices(json.data);
+            setUploadCheckStatus({
+              success: true
+            });
+          } else {
+            setUploadCheckStatus({
+              success: false,
+              errorMessage: json.message
+            });
           }
         });
       } else if (isExportFileResponse(res)) {
-        eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
-          message: t('common.request.noticeFailTitle'),
-          description: t(
+        setUploadCheckStatus({
+          success: false,
+          errorMessage: t(
             'dmsProject.batchImportDataSource.requestAuditErrorMessage'
           )
         });
@@ -61,6 +75,12 @@ const useBatchImportDataSource = () => {
     },
     [t]
   );
+
+  const clearUploadCheckStatus = useCallback(() => {
+    setUploadCheckStatus({
+      success: false
+    });
+  }, []);
 
   return {
     importLoading,
@@ -73,7 +93,10 @@ const useBatchImportDataSource = () => {
     resetAndHideResult,
     dbServices,
     importServicesCheck,
-    setDBservices
+    setDBservices,
+    uploadCheckStatus,
+    setUploadCheckStatus,
+    clearUploadCheckStatus
   };
 };
 
