@@ -7,7 +7,7 @@ import {
   listCBOperationLogsMockReturnData,
   CBOperationLogTipsMockData
 } from './data';
-import cloudbeaver from '@actiontech/shared/lib/api/base/service/cloudbeaver';
+import CloudBeaver from '@actiontech/shared/lib/api/base/service/CloudBeaver';
 import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
 
 class MockCloudBeaverApi implements MockSpyApy {
@@ -19,7 +19,7 @@ class MockCloudBeaverApi implements MockSpyApy {
   }
 
   public getSqlQueryUrl() {
-    const spy = jest.spyOn(cloudbeaver, 'GetSQLQueryConfiguration');
+    const spy = jest.spyOn(CloudBeaver, 'GetSQLQueryConfiguration');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: disableSqlQueryUrlData
