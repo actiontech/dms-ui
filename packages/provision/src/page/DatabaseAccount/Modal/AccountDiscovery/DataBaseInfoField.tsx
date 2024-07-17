@@ -56,7 +56,7 @@ const DataBaseInfoField: React.FC<{
     serviceOptions,
     updateServiceList,
     loading: servicesLoading
-  } = useServiceOptions();
+  } = useServiceOptions(true);
 
   useEffect(() => {
     updateBusinessList();

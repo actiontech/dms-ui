@@ -143,9 +143,12 @@ export const DatabaseAccountListActions = (
   onSetLockedStatus: (lock: boolean, id?: string) => void,
   onSetManagedStatus: (managed: boolean, id?: string) => void,
   onDeleteAccount: (id?: string) => void,
-  onNavigateToUpdatePage: (id?: string) => void
+  onNavigateToUpdatePage: (id?: string) => void,
+  isHaveServicePermission: (serviceID?: string) => boolean
 ): {
-  moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
+  moreButtons: (
+    record: IListDBAccount
+  ) => InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
   buttons: ActiontechTableActionMeta<IListDBAccount>[];
 } => ({
   buttons: [
@@ -157,77 +160,88 @@ export const DatabaseAccountListActions = (
       })
     }
   ],
-  moreButtons: [
-    {
-      key: 'account_authorize',
-      text: t('databaseAccount.list.action.authorize'),
-      onClick: (record) =>
-        onOpenModal(ModalName.DatabaseAccountAuthorizeModal, record),
-      permissions: (record) => !!record?.platform_managed
-    },
-    {
-      key: 'modifyPassword',
-      text: t('databaseAccount.list.action.modifyPassword'),
-      onClick: (record) =>
-        onOpenModal(ModalName.DatabaseAccountModifyPasswordModal, record)
-    },
-    {
-      key: 'account_renewal',
-      text: t('databaseAccount.list.action.renewal'),
-      onClick: (record) =>
-        onOpenModal(ModalName.DatabaseAccountRenewalPasswordModal, record),
-      permissions: (record) => !!record?.expired_time
-    },
-    {
-      key: 'modify_permission',
-      text: t('databaseAccount.list.action.modifyPermission'),
-      onClick: (record) => onNavigateToUpdatePage(record?.db_account_uid)
-    },
-    {
-      key: 'account_disable',
-      text: t('databaseAccount.list.action.disable'),
-      onClick: (record) => onSetLockedStatus(true, record?.db_account_uid),
-      permissions: (record) => record?.status === ListDBAccountStatusEnum.unlock
-    },
-    {
-      key: 'account_enable',
-      text: t('databaseAccount.list.action.enable'),
-      onClick: (record) => onSetLockedStatus(false, record?.db_account_uid),
-      permissions: (record) => record?.status === ListDBAccountStatusEnum.lock
-    },
-    {
-      key: 'account_delete',
-      text: t('databaseAccount.list.action.delete'),
-      confirm: (record) => ({
-        title: t('databaseAccount.list.deleteConfirm', {
-          name: accountNameRender(record?.account_info)
-        }),
-        okText: t('common.ok'),
-        cancelText: t('common.cancel'),
-        onConfirm: () => {
-          onDeleteAccount(record?.db_account_uid);
-        }
-      })
-    },
-    {
-      key: 'account_manage',
-      text: t('databaseAccount.list.action.manage'),
-      onClick: (record) =>
-        onOpenModal(ModalName.DatabaseAccountManagePasswordModal, record),
-      permissions: (record) => !record?.platform_managed
-    },
-    {
-      key: 'account_cancelManage',
-      text: t('databaseAccount.list.action.cancelManage'),
-      confirm: (record) => ({
-        title: t('databaseAccount.list.cancelManage'),
-        okText: t('common.ok'),
-        cancelText: t('common.cancel'),
-        onConfirm: () => {
-          onSetManagedStatus(false, record?.db_account_uid);
-        }
-      }),
-      permissions: (record) => !!record?.platform_managed
-    }
-  ]
+  moreButtons: (columnRecord) => {
+    return isHaveServicePermission(columnRecord.db_service?.uid)
+      ? [
+          {
+            key: 'account_authorize',
+            text: t('databaseAccount.list.action.authorize'),
+            onClick: (record) =>
+              onOpenModal(ModalName.DatabaseAccountAuthorizeModal, record),
+            permissions: (record) => !!record?.platform_managed
+          },
+          {
+            key: 'modifyPassword',
+            text: t('databaseAccount.list.action.modifyPassword'),
+            onClick: (record) =>
+              onOpenModal(ModalName.DatabaseAccountModifyPasswordModal, record)
+          },
+          {
+            key: 'account_renewal',
+            text: t('databaseAccount.list.action.renewal'),
+            onClick: (record) =>
+              onOpenModal(
+                ModalName.DatabaseAccountRenewalPasswordModal,
+                record
+              ),
+            permissions: (record) => !!record?.expired_time
+          },
+          {
+            key: 'modify_permission',
+            text: t('databaseAccount.list.action.modifyPermission'),
+            onClick: (record) => onNavigateToUpdatePage(record?.db_account_uid)
+          },
+          {
+            key: 'account_disable',
+            text: t('databaseAccount.list.action.disable'),
+            onClick: (record) =>
+              onSetLockedStatus(true, record?.db_account_uid),
+            permissions: (record) =>
+              record?.status === ListDBAccountStatusEnum.unlock
+          },
+          {
+            key: 'account_enable',
+            text: t('databaseAccount.list.action.enable'),
+            onClick: (record) =>
+              onSetLockedStatus(false, record?.db_account_uid),
+            permissions: (record) =>
+              record?.status === ListDBAccountStatusEnum.lock
+          },
+          {
+            key: 'account_delete',
+            text: t('databaseAccount.list.action.delete'),
+            confirm: (record) => ({
+              title: t('databaseAccount.list.deleteConfirm', {
+                name: accountNameRender(record?.account_info)
+              }),
+              okText: t('common.ok'),
+              cancelText: t('common.cancel'),
+              onConfirm: () => {
+                onDeleteAccount(record?.db_account_uid);
+              }
+            })
+          },
+          {
+            key: 'account_manage',
+            text: t('databaseAccount.list.action.manage'),
+            onClick: (record) =>
+              onOpenModal(ModalName.DatabaseAccountManagePasswordModal, record),
+            permissions: (record) => !record?.platform_managed
+          },
+          {
+            key: 'account_cancelManage',
+            text: t('databaseAccount.list.action.cancelManage'),
+            confirm: (record) => ({
+              title: t('databaseAccount.list.cancelManage'),
+              okText: t('common.ok'),
+              cancelText: t('common.cancel'),
+              onConfirm: () => {
+                onSetManagedStatus(false, record?.db_account_uid);
+              }
+            }),
+            permissions: (record) => !!record?.platform_managed
+          }
+        ]
+      : [];
+  }
 });
