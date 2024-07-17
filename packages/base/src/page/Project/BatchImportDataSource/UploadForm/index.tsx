@@ -11,7 +11,10 @@ import {
 } from '@actiontech/shared/lib/components/FormCom';
 import Icon from '@ant-design/icons';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { BatchImportDataSourceFormType } from '../index.type';
+import {
+  BatchImportDataSourceFormType,
+  FileUploadCheckStatusType
+} from '../index.type';
 import FileUpload from './FileUpload';
 import { UploadProps, Space, Typography } from 'antd';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
@@ -32,7 +35,15 @@ const BatchImportDataSourceForm: React.FC<{
   form: BatchImportDataSourceFormType;
   customRequest: UploadProps['customRequest'];
   dbServices?: IDBService[];
-}> = ({ form, customRequest, dbServices }) => {
+  uploadCheckStatus: FileUploadCheckStatusType;
+  clearUploadCheckStatus: () => void;
+}> = ({
+  form,
+  customRequest,
+  dbServices,
+  uploadCheckStatus,
+  clearUploadCheckStatus
+}) => {
   const { t } = useTranslation();
 
   const [
@@ -104,54 +115,60 @@ const BatchImportDataSourceForm: React.FC<{
           <FileUpload
             maxCount={1}
             onRemove={() => {
-              form.setFieldsValue({
-                files: undefined
-              });
+              clearUploadCheckStatus();
               setConnectionTestResult(undefined);
             }}
             accept=".csv"
             customRequest={customRequest}
+            uploadCheckStatus={uploadCheckStatus}
           />
         </FormItemLabel>
-        <Space direction="vertical">
-          <BasicButton
-            disabled={!dbServices?.length}
-            type="primary"
-            onClick={onBatchTestConnection}
-            loading={connectionTesting}
-          >
-            {t('dmsProject.batchImportDataSource.testConnect')}
-          </BasicButton>
-          <EmptyBox if={!connectionTesting && !!connectionTestResult}>
-            <Space direction="vertical">
-              <EmptyBox if={!!connectionTestResult?.successful_num}>
-                <Space>
-                  <CommonIconStyleWrapper>
-                    <CheckCircleOutlined />
-                  </CommonIconStyleWrapper>
-                  <Typography.Text type="success">
-                    {t('dmsProject.batchImportDataSource.testConnectSuccess', {
-                      count: connectionTestResult?.successful_num
-                    })}
-                  </Typography.Text>
-                </Space>
-              </EmptyBox>
-              <EmptyBox if={!!connectionTestResult?.failed_num}>
-                <Space>
-                  <CommonIconStyleWrapper>
-                    <CloseCircleOutlined />
-                  </CommonIconStyleWrapper>
-                  <Typography.Text type="danger">
-                    {t('dmsProject.batchImportDataSource.testConnectFail', {
-                      count: connectionTestResult?.failed_num,
-                      name: connectionTestResult?.failed_names?.join(',')
-                    })}
-                  </Typography.Text>
-                </Space>
-              </EmptyBox>
-            </Space>
-          </EmptyBox>
-        </Space>
+        <FormItemLabel
+          label={t('dmsProject.batchImportDataSource.testConnectLabel')}
+        >
+          <Space direction="vertical">
+            <BasicButton
+              disabled={!dbServices?.length}
+              type="primary"
+              onClick={onBatchTestConnection}
+              loading={connectionTesting}
+            >
+              {t('dmsProject.batchImportDataSource.testConnect')}
+            </BasicButton>
+            <EmptyBox if={!connectionTesting && !!connectionTestResult}>
+              <Space direction="vertical">
+                <EmptyBox if={!!connectionTestResult?.successful_num}>
+                  <Space>
+                    <CommonIconStyleWrapper>
+                      <CheckCircleOutlined />
+                    </CommonIconStyleWrapper>
+                    <Typography.Text type="success">
+                      {t(
+                        'dmsProject.batchImportDataSource.testConnectSuccess',
+                        {
+                          count: connectionTestResult?.successful_num
+                        }
+                      )}
+                    </Typography.Text>
+                  </Space>
+                </EmptyBox>
+                <EmptyBox if={!!connectionTestResult?.failed_num}>
+                  <Space>
+                    <CommonIconStyleWrapper>
+                      <CloseCircleOutlined />
+                    </CommonIconStyleWrapper>
+                    <Typography.Text type="danger">
+                      {t('dmsProject.batchImportDataSource.testConnectFail', {
+                        count: connectionTestResult?.failed_num,
+                        name: connectionTestResult?.failed_names?.join(',')
+                      })}
+                    </Typography.Text>
+                  </Space>
+                </EmptyBox>
+              </Space>
+            </EmptyBox>
+          </Space>
+        </FormItemLabel>
       </FormStyleWrapper>
     </FormAreaBlockStyleWrapper>
   );

@@ -27,7 +27,9 @@ const BatchImportDataSource = () => {
     resetAndHideResult,
     dbServices,
     importServicesCheck,
-    setDBservices
+    setDBservices,
+    uploadCheckStatus,
+    clearUploadCheckStatus
   } = useBatchImportDataSource();
 
   const onSubmit = async () => {
@@ -51,6 +53,7 @@ const BatchImportDataSource = () => {
   >(
     (option) => {
       setDBservices([]);
+      clearUploadCheckStatus();
       Project.ImportDBServicesOfProjectsCheck(
         { db_services_file: option.file },
         { responseType: 'blob' }
@@ -63,7 +66,7 @@ const BatchImportDataSource = () => {
           option?.onError?.(error);
         });
     },
-    [importServicesCheck, setDBservices]
+    [importServicesCheck, setDBservices, clearUploadCheckStatus]
   );
 
   return (
@@ -111,6 +114,8 @@ const BatchImportDataSource = () => {
           form={form}
           customRequest={onUploadCustomRequest}
           dbServices={dbServices}
+          uploadCheckStatus={uploadCheckStatus}
+          clearUploadCheckStatus={clearUploadCheckStatus}
         />
       </EmptyBox>
     </>

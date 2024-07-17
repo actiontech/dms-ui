@@ -68,48 +68,96 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="css-18zq7vp"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                   >
-                    <span
-                      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
                     >
                       <div
-                        class="ant-upload ant-upload-select"
+                        class="css-18zq7vp"
                       >
                         <span
-                          class="ant-upload"
-                          role="button"
-                          tabindex="0"
+                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
                         >
-                          <input
-                            accept=".csv"
-                            aria-required="true"
-                            id="files"
-                            style="display: none;"
-                            type="file"
-                          />
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
+                          <div
+                            class="ant-upload ant-upload-select"
                           >
-                            <span>
-                              选择文件上传
+                            <span
+                              class="ant-upload"
+                              role="button"
+                              tabindex="0"
+                            >
+                              <input
+                                accept=".csv"
+                                aria-required="true"
+                                id="files"
+                                style="display: none;"
+                                type="file"
+                              />
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  选择文件上传
+                                </span>
+                              </button>
                             </span>
-                          </button>
+                          </div>
+                          <div
+                            class="ant-upload-list ant-upload-list-text"
+                          />
                         </span>
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          type="button"
+                        >
+                          <span>
+                            下载导入模板
+                          </span>
+                        </button>
                       </div>
-                      <div
-                        class="ant-upload-list ant-upload-list-text"
-                      />
-                    </span>
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
-                      type="button"
+                    </div>
+                    <div
+                      class="ant-space-item"
                     >
-                      <span>
-                        下载导入模板
-                      </span>
-                    </button>
+                      <section>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span
+                              class="css-u3jcp4"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                  fill="#1CB889"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+                            >
+                              校验通过
+                            </span>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -117,25 +165,55 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
         >
           <div
-            class="ant-space-item"
-            style="margin-bottom: 8px;"
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              disabled=""
-              type="button"
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
             >
-              <span>
-                批量测试数据源连通性
-              </span>
-            </button>
+              <label
+                class="ant-form-item-no-colon"
+                title="请测试数据源联通性"
+              >
+                请测试数据源联通性
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        disabled=""
+                        type="button"
+                      >
+                        <span>
+                          批量测试数据源连通性
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div
-            class="ant-space-item"
-          />
         </div>
       </form>
     </section>
