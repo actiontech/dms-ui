@@ -8,8 +8,6 @@ import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import 'blob-polyfill';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { AxiosResponse } from 'axios';
-import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
-import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
@@ -78,7 +76,7 @@ describe('base/DataSource/BatchImportDataSource', () => {
     expect(screen.queryByText('test.csv')).not.toBeInTheDocument();
   });
 
-  it('render check api return svg file', async () => {
+  it('render check api return csv file', async () => {
     importDBServicesOfOneProjectCheckSpy.mockClear();
     const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectCheck');
     spy.mockImplementation(() => {
@@ -97,7 +95,7 @@ describe('base/DataSource/BatchImportDataSource', () => {
         }, 3000);
       });
     });
-    const eventEmitterSpy = jest.spyOn(eventEmitter, 'emit');
+
     const { baseElement } = superRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
@@ -108,17 +106,12 @@ describe('base/DataSource/BatchImportDataSource', () => {
     expect(screen.getByText('test.csv')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(importDBServicesOfOneProjectCheckSpy).toHaveBeenCalledTimes(1);
-    expect(eventEmitterSpy).toHaveBeenCalledTimes(1);
-    expect(eventEmitterSpy).toHaveBeenNthCalledWith(
-      1,
-      EmitterKey.OPEN_GLOBAL_NOTIFICATION,
-      'error',
-      {
-        description:
-          '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入',
-        message: '请求错误'
-      }
-    );
+    expect(
+      screen.getByText(
+        '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入'
+      )
+    ).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render test connection', async () => {
