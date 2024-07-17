@@ -1193,8 +1193,6 @@ export interface IListDatabaseSourceServicesReply {
 }
 
 export interface IListGlobalDBService {
-  additional_params?: IAdditionalParam[];
-
   business?: string;
 
   db_type?: string;
@@ -1203,13 +1201,13 @@ export interface IListGlobalDBService {
 
   host?: string;
 
+  is_enable_audit?: boolean;
+
   is_enable_masking?: boolean;
 
   maintenance_times?: IMaintenanceTime[];
 
   name?: string;
-
-  password?: string;
 
   port?: string;
 
@@ -1219,13 +1217,13 @@ export interface IListGlobalDBService {
 
   source?: string;
 
-  sqle_config?: ISQLEConfig;
-
   uid?: string;
 
   unfinished_workflow_num?: number;
+}
 
-  user?: string;
+export interface IListGlobalDBServiceTips {
+  db_type?: string[];
 }
 
 export interface IListGlobalDBServicesReply {
@@ -1236,6 +1234,14 @@ export interface IListGlobalDBServicesReply {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IListGlobalDBServicesTipsReply {
+  code?: number;
+
+  data?: IListGlobalDBServiceTips;
+
+  message?: string;
 }
 
 export interface IListMaskingRulesData {

@@ -7,6 +7,7 @@ import {
 import {
   IListGlobalDBServicesReply,
   IListDBServiceDriverOptionReply,
+  IListGlobalDBServicesTipsReply,
   IListDBServiceReply,
   IAddDBServiceReq,
   IAddDBServiceReply,
@@ -39,9 +40,9 @@ export interface IListGlobalDBServicesParams {
 
   filter_by_project_uid?: string;
 
-  fuzzy_keyword?: string;
+  filter_by_is_enable_masking?: boolean;
 
-  is_enable_masking?: boolean;
+  fuzzy_keyword?: string;
 }
 
 export interface IListGlobalDBServicesReturn
@@ -49,6 +50,9 @@ export interface IListGlobalDBServicesReturn
 
 export interface IListDBServiceDriverOptionReturn
   extends IListDBServiceDriverOptionReply {}
+
+export interface IListGlobalDBServicesTipsReturn
+  extends IListGlobalDBServicesTipsReply {}
 
 export interface IListDBServicesParams {
   page_size: number;
