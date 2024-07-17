@@ -8,12 +8,14 @@ import DatabaseAccountModal from '.';
 import { cleanup, screen } from '@testing-library/react';
 import { DatabaseAccountModalStatus } from '../../../store/databaseAccount';
 import { ModalName } from '../../../data/enum';
+import user from '../../../testUtil/mockApi/user';
 
 describe('provision/DatabaseAccount/DatabaseAccountModal', () => {
   beforeEach(() => {
     dbAccountService.mockAllApi();
     passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentProject();
     mockUseDbServiceDriver();
     jest.useFakeTimers();

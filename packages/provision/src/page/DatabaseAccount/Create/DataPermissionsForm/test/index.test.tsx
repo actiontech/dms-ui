@@ -14,6 +14,7 @@ import auth from '../../../../../testUtil/mockApi/auth';
 import DataPermissionsForm from '../index';
 import { Form } from 'antd';
 import { CreateAccountFormType } from '../../../index.type';
+import user from '../../../../../testUtil/mockApi/user';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -31,6 +32,7 @@ describe('provision/DatabaseAccount/Create', () => {
     authListOperationSetsSpy = auth.listOperationSets();
     syncServiceSpy = auth.syncService();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
     jest.useFakeTimers();

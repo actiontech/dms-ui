@@ -17,6 +17,11 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import EventEmitter from '../../../utils/EventEmitter';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import user from '../../../testUtil/mockApi/user';
+import {
+  OpPermissionItemRangeTypeEnum,
+  OpPermissionItemOpPermissionTypeEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 
 describe('provision/DatabaseAccountPassword/ExpirationAccount', () => {
   let authListDBAccountSpy: jest.SpyInstance;
@@ -29,6 +34,7 @@ describe('provision/DatabaseAccountPassword/ExpirationAccount', () => {
     authListPasswordSecurityPoliciesSpy =
       passwordSecurityPolicy.authListPasswordSecurityPolicies();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
@@ -150,5 +156,33 @@ describe('provision/DatabaseAccountPassword/ExpirationAccount', () => {
       [ModalName.DatabaseAccountModifyPasswordModal]: false,
       [ModalName.DatabaseAccountRenewalPasswordModal]: true
     });
+  });
+
+  test('render table moreButtons', async () => {
+    const getUserOpPermissionSpy = user.getUserOpPermission();
+    getUserOpPermissionSpy.mockClear();
+    getUserOpPermissionSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_admin: false,
+          op_permission_list: [
+            {
+              range_uids: ['1793883708181188608'],
+              range_type: OpPermissionItemRangeTypeEnum.db_service,
+              op_permission_type:
+                OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+            }
+          ]
+        }
+      })
+    );
+    const { baseElement } = superRender(<ExpirationAccountList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(authListDBAccountSpy).toHaveBeenCalled();
+    expect(authListServicesSpy).toHaveBeenCalled();
+    expect(getUserOpPermissionSpy).toHaveBeenCalled();
+    expect(screen.queryAllByText('修改密码')).toHaveLength(2);
+    expect(screen.queryAllByText('续用当前密码')).toHaveLength(2);
   });
 });

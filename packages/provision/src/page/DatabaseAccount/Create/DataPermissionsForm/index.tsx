@@ -36,7 +36,7 @@ const DataPermissionsForm: React.FC<{ disabled?: boolean }> = ({
     serviceOptions,
     updateServiceList,
     loading: servicesLoading
-  } = useServiceOptions();
+  } = useServiceOptions(true);
 
   const onSyncService = () => {
     SyncService.run();

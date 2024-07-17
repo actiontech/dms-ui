@@ -21,6 +21,11 @@ import { EventEmitterKey, ModalName } from '../../../data/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import EventEmitter from '../../../utils/EventEmitter';
+import user from '../../../testUtil/mockApi/user';
+import {
+  OpPermissionItemRangeTypeEnum,
+  OpPermissionItemOpPermissionTypeEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -53,6 +58,7 @@ describe('provision/DatabaseAccount/List', () => {
     authListServicesSpy = auth.listServices();
     passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
@@ -475,5 +481,54 @@ describe('provision/DatabaseAccount/List', () => {
       [ModalName.DatabaseAccountBatchModifyPasswordModal]: false,
       [ModalName.DatabaseAccountManagePasswordModal]: true
     });
+  });
+
+  test('render create and discovery button', async () => {
+    const getUserOpPermissionSpy = user.getUserOpPermission();
+    getUserOpPermissionSpy.mockClear();
+    getUserOpPermissionSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: { is_admin: false } })
+    );
+    const { baseElement } = superRender(<DatabaseAccountList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(authListDBAccountSpy).toHaveBeenCalled();
+    expect(authGetAccountStaticsSpy).toHaveBeenCalled();
+    expect(authListServicesSpy).toHaveBeenCalled();
+    expect(getUserOpPermissionSpy).toHaveBeenCalled();
+    expect(screen.queryByText('账号发现')).not.toBeInTheDocument();
+    expect(screen.queryByText('创建账号')).not.toBeInTheDocument();
+  });
+
+  test('render table moreButtons', async () => {
+    const getUserOpPermissionSpy = user.getUserOpPermission();
+    getUserOpPermissionSpy.mockClear();
+    getUserOpPermissionSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_admin: false,
+          op_permission_list: [
+            {
+              range_uids: ['1793883708181188608'],
+              range_type: OpPermissionItemRangeTypeEnum.db_service,
+              op_permission_type:
+                OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+            }
+          ]
+        }
+      })
+    );
+    const { baseElement } = superRender(<DatabaseAccountList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(authListDBAccountSpy).toHaveBeenCalled();
+    expect(authGetAccountStaticsSpy).toHaveBeenCalled();
+    expect(authListServicesSpy).toHaveBeenCalled();
+    expect(getUserOpPermissionSpy).toHaveBeenCalled();
+    expect(screen.getByText('账号发现')).toBeInTheDocument();
+    expect(screen.getByText('创建账号')).toBeInTheDocument();
+    expect(
+      getAllBySelector('.actiontech-table-actions-more-button')
+    ).toHaveLength(2);
   });
 });

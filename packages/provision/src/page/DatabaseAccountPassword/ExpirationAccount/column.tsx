@@ -84,7 +84,8 @@ export const ExpirationAccountListColumns = (
 };
 
 export const ExpirationAccountListActions = (
-  onOpenModal: (name: ModalName, record?: IListDBAccount) => void
+  onOpenModal: (name: ModalName, record?: IListDBAccount) => void,
+  isHaveServicePermission: (serviceID?: string) => boolean
 ): {
   moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListDBAccount>[];
   buttons: ActiontechTableActionMeta<IListDBAccount>[];
@@ -96,7 +97,8 @@ export const ExpirationAccountListActions = (
       buttonProps: (record) => ({
         onClick: () =>
           onOpenModal(ModalName.DatabaseAccountModifyPasswordModal, record)
-      })
+      }),
+      permissions: (record) => isHaveServicePermission(record?.db_service?.uid)
     },
     {
       key: 'renewalPassword',
@@ -104,7 +106,8 @@ export const ExpirationAccountListActions = (
       buttonProps: (record) => ({
         onClick: () =>
           onOpenModal(ModalName.DatabaseAccountRenewalPasswordModal, record)
-      })
+      }),
+      permissions: (record) => isHaveServicePermission(record?.db_service?.uid)
     }
   ]
 });

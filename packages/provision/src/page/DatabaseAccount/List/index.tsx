@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { PageHeader, BasicButton } from '@actiontech/shared';
+import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
 import { Space, message, Spin } from 'antd';
 import {
   ActiontechTable,
@@ -44,6 +44,7 @@ import { useSetRecoilState } from 'recoil';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
 import AccountStatistics from '../components/AccountStatistics';
+import useUserOperationPermission from '../../../hooks/useUserOperationPermission';
 
 const DatabaseAccountList = () => {
   const { t } = useTranslation();
@@ -61,6 +62,12 @@ const DatabaseAccountList = () => {
   const { updateUserList, userIDOptions } = useProvisionUser();
 
   const { updateServiceList, serviceOptions } = useServiceOptions();
+
+  const {
+    isHaveServicePermission,
+    updateUserOperationPermission,
+    loading: updateUserOperationPermissionLoading
+  } = useUserOperationPermission();
 
   const { toggleModal, initModalStatus } = useModalStatus(
     DatabaseAccountModalStatus
@@ -266,14 +273,16 @@ const DatabaseAccountList = () => {
       onSetLockedStatus,
       onSetManagedStatus,
       onDeleteAccount,
-      onNavigateToUpdatePage
+      onNavigateToUpdatePage,
+      isHaveServicePermission
     );
   }, [
     onOpenModal,
     onSetLockedStatus,
     onSetManagedStatus,
     onDeleteAccount,
-    onNavigateToUpdatePage
+    onNavigateToUpdatePage,
+    isHaveServicePermission
   ]);
 
   const onBatchAction = (name: ModalName) => {
@@ -295,7 +304,8 @@ const DatabaseAccountList = () => {
   useEffect(() => {
     updateUserList();
     updateServiceList();
-  }, [updateUserList, updateServiceList]);
+    updateUserOperationPermission();
+  }, [updateUserList, updateServiceList, updateUserOperationPermission]);
 
   useEffect(() => {
     initModalStatus({
@@ -330,25 +340,33 @@ const DatabaseAccountList = () => {
       <PageHeader
         title={t('databaseAccount.list.title')}
         extra={
-          <Space>
-            <BasicButton
-              onClick={() =>
-                toggleModal(ModalName.DatabaseAccountDiscoveryModal, true)
-              }
-            >
-              {t('databaseAccount.list.findAccount')}
-            </BasicButton>
-            <Link
-              to={`/provision/project/${projectID}/database-account/create`}
-            >
-              <BasicButton type="primary">
-                {t('databaseAccount.list.createAccount')}
+          <EmptyBox if={isHaveServicePermission()}>
+            <Space>
+              <BasicButton
+                onClick={() =>
+                  toggleModal(ModalName.DatabaseAccountDiscoveryModal, true)
+                }
+              >
+                {t('databaseAccount.list.findAccount')}
               </BasicButton>
-            </Link>
-          </Space>
+              <Link
+                to={`/provision/project/${projectID}/database-account/create`}
+              >
+                <BasicButton type="primary">
+                  {t('databaseAccount.list.createAccount')}
+                </BasicButton>
+              </Link>
+            </Space>
+          </EmptyBox>
         }
       />
-      <Spin spinning={accountStaticLoading || loading}>
+      <Spin
+        spinning={
+          accountStaticLoading ||
+          loading ||
+          updateUserOperationPermissionLoading
+        }
+      >
         <AccountStatistics data={accountStatic} />
         <TableToolbar
           refreshButton={{ refresh: onRefresh, disabled: loading }}

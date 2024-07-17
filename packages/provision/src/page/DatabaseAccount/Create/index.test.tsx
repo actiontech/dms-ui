@@ -13,6 +13,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import auth from '../../../testUtil/mockApi/auth';
 import CreateDatabaseAccount from './index';
 import Password from '../../../utils/Password';
+import user from '../../../testUtil/mockApi/user';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -35,6 +36,7 @@ describe('provision/DatabaseAccount/Create', () => {
     authGetStatementSpy = dbAccountService.authGetStatement();
     authAddDBAccountSpy = dbAccountService.authAddDBAccount();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
     jest.useFakeTimers();

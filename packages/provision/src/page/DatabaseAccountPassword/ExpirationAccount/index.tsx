@@ -35,6 +35,7 @@ import RenewalPasswordModal from '../../DatabaseAccount/Modal/RenewalPassword';
 import { useSetRecoilState } from 'recoil';
 import useSecurityPolicy from '~/hooks/useSecurityPolicy';
 import dayjs from 'dayjs';
+import useUserOperationPermission from '../../../hooks/useUserOperationPermission';
 
 const ExpirationAccountList = () => {
   const { projectID } = useCurrentProject();
@@ -56,6 +57,12 @@ const ExpirationAccountList = () => {
     useTableRequestError();
 
   const {
+    isHaveServicePermission,
+    updateUserOperationPermission,
+    loading: updateUserOperationPermissionLoading
+  } = useUserOperationPermission();
+
+  const {
     tableFilterInfo,
     updateTableFilterInfo,
     tableChange,
@@ -68,7 +75,11 @@ const ExpirationAccountList = () => {
     ExpirationAccountListFilterParamType
   >();
 
-  const { data, loading, refresh } = useRequest(
+  const {
+    data,
+    loading: tableLoading,
+    refresh
+  } = useRequest(
     () => {
       const params: IAuthListDBAccountParams = {
         ...tableFilterInfo,
@@ -87,6 +98,11 @@ const ExpirationAccountList = () => {
     {
       refreshDeps: [projectID, tableFilterInfo, pagination, searchKeyword]
     }
+  );
+
+  const loading = useMemo(
+    () => updateUserOperationPermissionLoading || tableLoading,
+    [updateUserOperationPermissionLoading, tableLoading]
   );
 
   const tableSetting = useMemo<ColumnsSettingProps>(
@@ -146,7 +162,12 @@ const ExpirationAccountList = () => {
   useEffect(() => {
     updateServiceList();
     updateSecurityPolicyList();
-  }, [updateServiceList, updateSecurityPolicyList]);
+    updateUserOperationPermission();
+  }, [
+    updateServiceList,
+    updateSecurityPolicyList,
+    updateUserOperationPermission
+  ]);
 
   useEffect(() => {
     initModalStatus({
@@ -197,7 +218,10 @@ const ExpirationAccountList = () => {
         columns={columns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
-        actions={ExpirationAccountListActions(onOpenModal)}
+        actions={ExpirationAccountListActions(
+          onOpenModal,
+          isHaveServicePermission
+        )}
       />
       <ModifyPasswordModal />
       <RenewalPasswordModal />

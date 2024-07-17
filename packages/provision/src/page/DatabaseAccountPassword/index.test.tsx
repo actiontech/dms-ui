@@ -13,6 +13,7 @@ import { PasswordSecurityPolicyModalStatus } from '../../store/databaseAccountPa
 import { ModalName } from '../../data/enum';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import user from '../../testUtil/mockApi/user';
 
 describe('provision/DatabaseAccountPassword/DatabaseAccountPassword', () => {
   let authListDBAccountSpy: jest.SpyInstance;
@@ -25,6 +26,7 @@ describe('provision/DatabaseAccountPassword/DatabaseAccountPassword', () => {
     authListPasswordSecurityPoliciesSpy =
       passwordSecurityPolicy.authListPasswordSecurityPolicies();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
