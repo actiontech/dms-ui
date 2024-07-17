@@ -7,12 +7,14 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import DatabaseAccount from '..';
 import { cleanup, act } from '@testing-library/react';
+import user from '../../../testUtil/mockApi/user';
 
 describe('provision/DatabaseAccount/DatabaseAccount', () => {
   beforeEach(() => {
     dbAccountService.mockAllApi();
     passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseCurrentProject();
     mockUseDbServiceDriver();
     mockUseCurrentUser();

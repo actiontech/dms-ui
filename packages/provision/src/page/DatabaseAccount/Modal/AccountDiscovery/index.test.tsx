@@ -15,6 +15,7 @@ import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import { discoveryDBAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import user from '../../../../testUtil/mockApi/user';
 
 describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -28,6 +29,7 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
     authDiscoveryDBAccountsSpy = dbAccountService.authDiscoveryDBAccount();
     authSyncDBAccountSpy = dbAccountService.authSyncDBAccount();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
 

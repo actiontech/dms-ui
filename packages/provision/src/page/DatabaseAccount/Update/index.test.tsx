@@ -13,6 +13,7 @@ import auth from '../../../testUtil/mockApi/auth';
 import UpdateDatabaseAccount from './index';
 import { useParams } from 'react-router-dom';
 import { databaseAccountDetailMockData } from '../../../testUtil/mockApi/dbAccountService/data';
+import user from '../../../testUtil/mockApi/user';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -44,6 +45,7 @@ describe('provision/DatabaseAccount/Update', () => {
     authGetDBAccountSpy = dbAccountService.authGetDBAccount();
     authUpdateDBAccountSpy = dbAccountService.authUpdateDBAccount();
     auth.mockAllApi();
+    user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
     useParamsMock.mockReturnValue({
