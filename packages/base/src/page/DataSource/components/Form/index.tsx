@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance, Popconfirm, Space } from 'antd';
+import { FormInstance, Popconfirm, Space, Form } from 'antd';
 import { DataSourceFormField, IDataSourceFormProps } from './index.type';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -46,6 +46,7 @@ import classNames from 'classnames';
 import useProjectTips from '../../../../hooks/useProjectTips';
 import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
+import useProjects from '../../../../hooks/useProjects';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -69,6 +70,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { updateProjectTips, projectBusinessOption, isFixedBusiness } =
     useProjectTips();
 
+  const { updateProjects, projectIDOptions } = useProjects();
+
+  const { projectID } = useCurrentProject();
+
+  const project = Form.useWatch('project', props.form);
+
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
@@ -91,14 +98,20 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     useAsyncParams();
 
   // #if [sqle]
-  const { projectName, projectID } = useCurrentProject();
   const { data: ruleTemplateList = [], loading: ruleTemplateLoading } =
-    useRequest(() =>
-      rule_template
-        .getProjectRuleTemplateTipsV1({
-          project_name: projectName
-        })
-        .then((res) => res.data.data ?? [])
+    useRequest(
+      () => {
+        return rule_template
+          .getProjectRuleTemplateTipsV1({
+            project_name:
+              projectIDOptions.find((p) => p.value === project)?.label ?? ''
+          })
+          .then((res) => res.data.data ?? []);
+      },
+      {
+        refreshDeps: [project],
+        ready: !!project && !!projectIDOptions.length
+      }
     );
   const {
     data: globalRuleTemplateList = [],
@@ -241,13 +254,21 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   useEffect(() => {
     updateDriverList();
-  }, [updateDriverList]);
+    updateProjects();
+  }, [updateDriverList, updateProjects]);
 
   // #if [ee]
   useEffect(() => {
-    updateProjectTips();
-  }, [updateProjectTips]);
+    updateProjectTips(project);
+  }, [updateProjectTips, project]);
   // #endif
+
+  useEffect(() => {
+    if (projectID) {
+      props.form.setFieldValue('project', projectID);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projectID]);
 
   const hasBorder = () => {
     let border = false;
@@ -301,6 +322,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             {t('dmsDataSource.dataSourceForm.baseConfig')}
           </FormItemSubTitle>
           <FormItemLabel
+            label={t('dmsDataSource.dataSourceForm.project')}
+            name="project"
+            rules={[{ required: true }]}
+            className="has-required-style"
+          >
+            <BasicSelect options={projectIDOptions} disabled={!!projectID} />
+          </FormItemLabel>
+          <FormItemLabel
             label={t('dmsDataSource.dataSourceForm.describe')}
             name="describe"
             {...formItemLayout.spaceBetween}
@@ -329,7 +358,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 name="business"
                 rules={[{ required: true }]}
               >
-                <BasicInput />
+                <BasicInput disabled={!project} />
               </FormItemLabel>
             }
           >
@@ -339,7 +368,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
               name="business"
               rules={[{ required: true }]}
             >
-              <BasicSelect options={projectBusinessOption()} />
+              <BasicSelect
+                options={projectBusinessOption()}
+                disabled={!project}
+              />
             </FormItemLabel>
           </EmptyBox>
           <FormItemLabel
@@ -462,17 +494,19 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 <div>
                   {t('dmsDataSource.dataSourceForm.dataMaskConfigLabel')}
                 </div>
-                <div className="tip-content-box">
-                  <Space>
-                    {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
-                    <Link
-                      to={`/project/${projectID}/data-mask-rule-overview`}
-                      target="_blank"
-                    >
-                      {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
-                    </Link>
-                  </Space>
-                </div>
+                <EmptyBox if={!!project}>
+                  <div className="tip-content-box">
+                    <Space>
+                      {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
+                      <Link
+                        to={`/project/${project}/data-mask-rule-overview`}
+                        target="_blank"
+                      >
+                        {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
+                      </Link>
+                    </Space>
+                  </div>
+                </EmptyBox>
               </div>
             }
             name="is_enable_masking"

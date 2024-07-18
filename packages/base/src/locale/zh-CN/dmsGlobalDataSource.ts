@@ -27,5 +27,17 @@ export default {
     confirmMessage: '确认删除数据源 "{{name}}"?',
     deletingDatabase: '正在删除数据源 "{{name}}"...',
     deleteSuccessTips: '删除数据源"{{name}}"成功'
+  },
+
+  addDatabase: '添加数据源',
+  backToList: '返回全局数据源列表',
+  batchImportDataSource: {
+    buttonText: '批量导入数据源',
+    title: '批量导入数据源',
+    importFile: '导入',
+    successTitle: '批量导入数据源成功',
+    requestAuditErrorMessage:
+      '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入',
+    submitButton: '导入'
   }
 };
