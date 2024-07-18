@@ -1,0 +1,47 @@
+import React, { useMemo, useState } from 'react';
+import { useBoolean } from 'ahooks';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { DatabaseTypeLogo } from '@actiontech/shared';
+import DBService from '@actiontech/shared/lib/api/base/service/DBService';
+
+const useDBServiceTips = () => {
+  const [dbTypeList, setDBTypeList] = useState<string[]>([]);
+  const [loading, { setTrue, setFalse }] = useBoolean();
+  const { getLogoUrlByDbType } = useDbServiceDriver();
+
+  const updateDbTypeList = React.useCallback(() => {
+    setTrue();
+    DBService.ListGlobalDBServicesTips()
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setDBTypeList(res.data?.data?.db_type ?? []);
+        }
+      })
+      .catch(() => {
+        setDBTypeList([]);
+      })
+      .finally(() => {
+        setFalse();
+      });
+  }, [setFalse, setTrue]);
+
+  const dbTypeOptions = useMemo(() => {
+    return dbTypeList.map((item) => ({
+      value: item,
+      text: item,
+      label: (
+        <DatabaseTypeLogo dbType={item} logoUrl={getLogoUrlByDbType(item)} />
+      )
+    }));
+  }, [dbTypeList, getLogoUrlByDbType]);
+
+  return {
+    updateDbTypeList,
+    loading,
+    dbTypeList,
+    dbTypeOptions
+  };
+};
+
+export default useDBServiceTips;

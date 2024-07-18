@@ -24,6 +24,12 @@ const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 const BatchImportDataSource = lazy(
   () => import('../page/DataSource/components/BatchImportDataSource')
 );
+const GlobalBatchImportDataSource = lazy(
+  () => import('../page/GlobalDataSource/BatchImportDataSource')
+);
+const GlobalAddDataSource = lazy(
+  () => import('../page/DataSource/components/AddDataSource')
+);
 // #endif
 
 const Home = lazy(() => import('../page/Home'));
@@ -83,6 +89,16 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         index: true,
         key: 'globalDataSourceList',
         element: <GlobalDataSourceList />
+      },
+      {
+        path: 'batch-import',
+        key: 'globalBatchImportDataSource',
+        element: <GlobalBatchImportDataSource />
+      },
+      {
+        path: 'create',
+        element: <GlobalAddDataSource />,
+        key: 'globalDataSourceCreate'
       }
     ] as RouterConfigItem[]
   },
