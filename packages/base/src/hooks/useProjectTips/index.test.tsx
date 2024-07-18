@@ -45,6 +45,24 @@ describe('useProjectTips', () => {
     expect(result.current.loading).toBeFalsy();
   });
 
+  it('should get project tips from request when pass transfer projectId', async () => {
+    const { result } = renderHook(() => useProjectTips());
+    expect(result.current.loading).toBeFalsy();
+
+    act(() => {
+      result.current.updateProjectTips('123');
+    });
+    expect(result.current.loading).toBeTruthy();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getProjectTipsSpy).toHaveBeenCalledWith({ project_uid: '123' });
+    expect(result.current.isFixedBusiness).toEqual(
+      mockProjectTips[0].is_fixed_business
+    );
+    expect(result.current.projectBusiness).toEqual(mockProjectTips[0].business);
+    expect(result.current.loading).toBeFalsy();
+  });
+
   it('should set business to empty array when response code is not equal success code', async () => {
     getProjectTipsSpy.mockClear();
     getProjectTipsSpy.mockImplementation(() => createSpyFailResponse({}));

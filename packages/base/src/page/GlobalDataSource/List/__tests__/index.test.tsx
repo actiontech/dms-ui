@@ -29,6 +29,7 @@ describe('page/GlobalDataSource/List', () => {
   const navigateSpy = jest.fn();
   let listGlobalDBServicesSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
+  let listGlobalDBServicesTipsSpy: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<GlobalDataSourceList />);
@@ -39,6 +40,7 @@ describe('page/GlobalDataSource/List', () => {
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     listGlobalDBServicesSpy = dbServices.listGlobalDBServices();
+    listGlobalDBServicesTipsSpy = dbServices.listGlobalDBServicesTips();
     getProjectListSpy = project.getProjectList();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
@@ -55,6 +57,7 @@ describe('page/GlobalDataSource/List', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(1);
+    expect(listGlobalDBServicesTipsSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('全局数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 

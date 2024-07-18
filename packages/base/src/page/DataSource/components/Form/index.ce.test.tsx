@@ -11,6 +11,7 @@ import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import DataSourceForm from '.';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 describe('page/DataSource/DataSourceForm CE', () => {
   const submitFn = jest.fn();
@@ -48,6 +49,7 @@ describe('page/DataSource/DataSourceForm CE', () => {
   });
 
   it('render business field when getProjectTips api have not been called', async () => {
+    mockUseCurrentProject();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getProjectTipsSpy).not.toHaveBeenCalled();
