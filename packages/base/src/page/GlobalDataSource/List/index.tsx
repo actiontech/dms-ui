@@ -25,7 +25,7 @@ import {
 } from './columns';
 import useProjectTips from '../../../hooks/useProjectTips';
 import { PlusOutlined } from '@actiontech/icons';
-import useGlobalDbServiceTips from '../../../hooks/useGlobalDbServiceTips';
+import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ const GlobalDataSourceList = () => {
     updateDbTypeList,
     dbTypeOptions,
     loading: getDbTypeListLoading
-  } = useGlobalDbServiceTips();
+  } = useGlobalDataSourceType();
 
   const {
     projectIDOptions,

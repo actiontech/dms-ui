@@ -1,7 +1,7 @@
 import { act, renderHook, cleanup, render } from '@testing-library/react';
-import useGlobalDbServiceTips from '.';
-import dbServices from '../../testUtils/mockApi/dbServices';
-import { globalDBServicesTipsMockData } from '../../testUtils/mockApi/dbServices/data';
+import useGlobalDataSourceType from '.';
+import dbServices from '../../../../testUtils/mockApi/dbServices';
+import { globalDBServicesTipsMockData } from '../../../../testUtils/mockApi/dbServices/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse
@@ -9,7 +9,7 @@ import {
 import { Select } from 'antd';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 
-describe('useGlobalDbServiceTips', () => {
+describe('useGlobalDataSourceType', () => {
   let listGlobalDBServicesTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseDbServiceDriver();
@@ -23,7 +23,7 @@ describe('useGlobalDbServiceTips', () => {
   });
 
   it('should get database type list from request', async () => {
-    const { result } = renderHook(() => useGlobalDbServiceTips());
+    const { result } = renderHook(() => useGlobalDataSourceType());
     expect(result.current.loading).toBe(false);
     expect(result.current.dbTypeList).toEqual([]);
 
@@ -51,7 +51,7 @@ describe('useGlobalDbServiceTips', () => {
     listGlobalDBServicesTipsSpy.mockImplementation(() =>
       createSpyFailResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useGlobalDbServiceTips());
+    const { result } = renderHook(() => useGlobalDataSourceType());
     act(() => {
       result.current.updateDbTypeList();
     });
@@ -65,7 +65,7 @@ describe('useGlobalDbServiceTips', () => {
     listGlobalDBServicesTipsSpy.mockImplementation(() =>
       createSpyErrorResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useGlobalDbServiceTips());
+    const { result } = renderHook(() => useGlobalDataSourceType());
     act(() => {
       result.current.updateDbTypeList();
     });
