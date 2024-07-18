@@ -5,7 +5,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 
-const useDBServiceTips = () => {
+const useGlobalDbServiceTips = () => {
   const [dbTypeList, setDBTypeList] = useState<string[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDbServiceDriver();
@@ -44,4 +44,4 @@ const useDBServiceTips = () => {
   };
 };
 
-export default useDBServiceTips;
+export default useGlobalDbServiceTips;

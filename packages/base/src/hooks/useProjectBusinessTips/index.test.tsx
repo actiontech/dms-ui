@@ -8,7 +8,7 @@ import {
   fireEvent,
   screen
 } from '@testing-library/react';
-import useProjectTips from '.';
+import useProjectBusinessTips from '.';
 import { Select } from 'antd';
 import {
   createSpyErrorResponse,
@@ -16,7 +16,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
-describe('useProjectTips', () => {
+describe('useProjectBusinessTips', () => {
   let getProjectTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     getProjectTipsSpy = project.getProjectTips();
@@ -30,7 +30,7 @@ describe('useProjectTips', () => {
   });
 
   it('should get project tips from request', async () => {
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     expect(result.current.loading).toBeFalsy();
 
     act(() => {
@@ -46,7 +46,7 @@ describe('useProjectTips', () => {
   });
 
   it('should get project tips from request when pass transfer projectId', async () => {
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     expect(result.current.loading).toBeFalsy();
 
     act(() => {
@@ -66,7 +66,7 @@ describe('useProjectTips', () => {
   it('should set business to empty array when response code is not equal success code', async () => {
     getProjectTipsSpy.mockClear();
     getProjectTipsSpy.mockImplementation(() => createSpyFailResponse({}));
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     act(() => {
       result.current.updateProjectTips();
     });
@@ -77,7 +77,7 @@ describe('useProjectTips', () => {
   it('should set business to empty array when response throw error', async () => {
     getProjectTipsSpy.mockClear();
     getProjectTipsSpy.mockImplementation(() => createSpyErrorResponse({}));
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     act(() => {
       result.current.updateProjectTips();
     });
@@ -86,7 +86,7 @@ describe('useProjectTips', () => {
   });
 
   it('should return options when use projectBusinessOption', async () => {
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     const { baseElement: baseElementWithOptions } = render(
       <Select
         data-testid="testId"

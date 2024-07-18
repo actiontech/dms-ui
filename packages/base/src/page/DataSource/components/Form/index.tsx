@@ -43,10 +43,10 @@ import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateTo
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 // #endif
-import useProjectTips from '../../../../hooks/useProjectTips';
+import useProjectBusinessTips from '../../../../hooks/useProjectBusinessTips';
 import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
-import useProjects from '../../../../hooks/useProjects';
+import useProjectTips from '../../../../hooks/useProjectTips';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -68,9 +68,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   } = useDbServiceDriver();
 
   const { updateProjectTips, projectBusinessOption, isFixedBusiness } =
-    useProjectTips();
+    useProjectBusinessTips();
 
-  const { updateProjects, projectIDOptions } = useProjects();
+  const { updateProjects, projectIDOptions } = useProjectTips();
 
   const { projectID } = useCurrentProject();
 
