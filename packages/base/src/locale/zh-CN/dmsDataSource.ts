@@ -52,6 +52,7 @@ export default {
     user: '连接用户',
     password: '密码',
     role: '可访问的角色',
+    project: '所属项目',
     business: '所属业务',
     ruleTemplate: '审核规则模板',
     workflow: '应用的工作流',

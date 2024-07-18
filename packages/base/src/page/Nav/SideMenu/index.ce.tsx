@@ -27,7 +27,7 @@ const CESideMenu = () => {
         <ProjectTitle />
 
         <CEModeProjectWrapperStyleWrapper>
-          <FlagFilled width={18} height={18} />
+          <FlagFilled width={18} height={18} className="project-flag-icon" />
           <Typography.Text className="default-project-name">
             {DEFAULT_PROJECT_NAME}
           </Typography.Text>

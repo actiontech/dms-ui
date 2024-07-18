@@ -68,6 +68,26 @@ describe('base/router-base-ee', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('render route globalBatchImportDataSource', async () => {
+      const { baseElement } = customRender([
+        `/global-data-source/batch-import`
+      ]);
+
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(
+        screen.getByText('globalBatchImportDataSource')
+      ).toBeInTheDocument();
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('render route globalDataSourceCreate', async () => {
+      const { baseElement } = customRender([`/global-data-source/create`]);
+
+      await act(async () => jest.advanceTimersByTime(0));
+      expect(screen.getByText('globalDataSourceCreate')).toBeInTheDocument();
+      expect(baseElement).toMatchSnapshot();
+    });
+
     describe('render router project', () => {
       it('render route member', async () => {
         const { baseElement } = customRender([`/project/${projectID}/member`]);
