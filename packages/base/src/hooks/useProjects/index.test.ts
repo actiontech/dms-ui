@@ -1,5 +1,5 @@
 import { act, renderHook, cleanup } from '@testing-library/react';
-import useRole from '.';
+import useProjects from '.';
 import project from '../../testUtils/mockApi/project';
 import { mockProjectList } from '../../testUtils/mockApi/project/data';
 import {
@@ -20,7 +20,7 @@ describe('useProjects', () => {
   });
 
   it('should get projects data from request', async () => {
-    const { result } = renderHook(() => useRole());
+    const { result } = renderHook(() => useProjects());
     expect(result.current.loading).toBe(false);
     expect(result.current.projectList).toEqual([]);
 
@@ -46,7 +46,7 @@ describe('useProjects', () => {
     getProjectListSpy.mockImplementation(() =>
       createSpyFailResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useRole());
+    const { result } = renderHook(() => useProjects());
     act(() => {
       result.current.updateProjects();
     });
@@ -60,7 +60,7 @@ describe('useProjects', () => {
     getProjectListSpy.mockImplementation(() =>
       createSpyErrorResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useRole());
+    const { result } = renderHook(() => useProjects());
     act(() => {
       result.current.updateProjects();
     });

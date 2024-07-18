@@ -259,7 +259,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   // #if [ee]
   useEffect(() => {
-    updateProjectTips(project);
+    if (project) {
+      updateProjectTips(project);
+    }
   }, [updateProjectTips, project]);
   // #endif
 
