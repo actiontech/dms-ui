@@ -1,5 +1,5 @@
 import { act, renderHook, cleanup, render } from '@testing-library/react';
-import useDBServiceTips from '.';
+import useGlobalDbServiceTips from '.';
 import dbServices from '../../testUtils/mockApi/dbServices';
 import { globalDBServicesTipsMockData } from '../../testUtils/mockApi/dbServices/data';
 import {
@@ -9,7 +9,7 @@ import {
 import { Select } from 'antd';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 
-describe('useDBServiceTips', () => {
+describe('useGlobalDbServiceTips', () => {
   let listGlobalDBServicesTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseDbServiceDriver();
@@ -23,7 +23,7 @@ describe('useDBServiceTips', () => {
   });
 
   it('should get database type list from request', async () => {
-    const { result } = renderHook(() => useDBServiceTips());
+    const { result } = renderHook(() => useGlobalDbServiceTips());
     expect(result.current.loading).toBe(false);
     expect(result.current.dbTypeList).toEqual([]);
 
@@ -51,7 +51,7 @@ describe('useDBServiceTips', () => {
     listGlobalDBServicesTipsSpy.mockImplementation(() =>
       createSpyFailResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useDBServiceTips());
+    const { result } = renderHook(() => useGlobalDbServiceTips());
     act(() => {
       result.current.updateDbTypeList();
     });
@@ -65,7 +65,7 @@ describe('useDBServiceTips', () => {
     listGlobalDBServicesTipsSpy.mockImplementation(() =>
       createSpyErrorResponse({ total: 0, users: [] })
     );
-    const { result } = renderHook(() => useDBServiceTips());
+    const { result } = renderHook(() => useGlobalDbServiceTips());
     act(() => {
       result.current.updateDbTypeList();
     });

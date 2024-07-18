@@ -23,9 +23,9 @@ import {
   GlobalDataSourceListActions,
   GLobalDataSourceListParamType
 } from './columns';
-import useProjects from '../../../hooks/useProjects';
+import useProjectTips from '../../../hooks/useProjectTips';
 import { PlusOutlined } from '@actiontech/icons';
-import useDBServiceTips from '../../../hooks/useDBServiceTips';
+import useGlobalDbServiceTips from '../../../hooks/useGlobalDbServiceTips';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -42,13 +42,13 @@ const GlobalDataSourceList = () => {
     updateDbTypeList,
     dbTypeOptions,
     loading: getDbTypeListLoading
-  } = useDBServiceTips();
+  } = useGlobalDbServiceTips();
 
   const {
     projectIDOptions,
     updateProjects,
     loading: getProjectsLoading
-  } = useProjects();
+  } = useProjectTips();
 
   const {
     tableFilterInfo,
@@ -221,13 +221,11 @@ const GlobalDataSourceList = () => {
         title={t('dmsGlobalDataSource.pageTitle')}
         extra={
           <Space>
-            {/* #if [ee] */}
             <Link to={`/global-data-source/batch-import`}>
               <BasicButton>
                 {t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
               </BasicButton>
             </Link>
-            {/* #endif */}
             <Link to={`/global-data-source/create`}>
               <BasicButton
                 type="primary"
