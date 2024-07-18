@@ -13,12 +13,14 @@ import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 import DataSourceForm from '.';
 
 describe('page/DataSource/DataSourceForm', () => {
   const submitFn = jest.fn();
   let getProjectTipsSpy: jest.SpyInstance;
+  let getProjectListSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
     defaultData?: IListDBService;
@@ -41,8 +43,10 @@ describe('page/DataSource/DataSourceForm', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     getProjectTipsSpy = project.getProjectTips();
+    getProjectListSpy = project.getProjectList();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
+    mockUseCurrentProject();
   });
 
   afterEach(() => {
@@ -67,6 +71,41 @@ describe('page/DataSource/DataSourceForm', () => {
 
     expect(screen.getByText('添加数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render form snap when current projectID is undefined', async () => {
+    const requestRuleTemplateTip = ruleTemplate.getProjectRuleTemplateTips();
+    const requestProjectRuleTemplateTips = ruleTemplate.getRuleTemplateTips();
+    customRender();
+    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
+    expect(requestProjectRuleTemplateTips).toHaveBeenCalledTimes(1);
+    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
+    await act(async () => {
+      await jest.advanceTimersByTime(3000);
+    });
+    expect(requestRuleTemplateTip).toHaveBeenCalledTimes(1);
+    expect(getBySelector('#project')).toBeDisabled();
+
+    cleanup();
+    mockUseCurrentProject({ projectID: undefined });
+    const { baseElement } = customRender();
+    expect(getProjectListSpy).toHaveBeenCalledTimes(2);
+    expect(requestProjectRuleTemplateTips).toHaveBeenCalledTimes(2);
+    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
+    await act(async () => {
+      await jest.advanceTimersByTime(3000);
+    });
+    expect(requestRuleTemplateTip).toHaveBeenCalledTimes(1);
+    const projectEle = getBySelector('#project');
+    expect(projectEle).not.toBeDisabled();
+    expect(getBySelector('#business')).toBeDisabled();
+    fireEvent.mouseDown(projectEle, baseElement);
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(screen.getByText('test_project_1'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(getBySelector('#business')).not.toBeDisabled();
+    expect(getProjectTipsSpy).toHaveBeenCalledTimes(2);
+    expect(requestRuleTemplateTip).toHaveBeenCalledTimes(2);
   });
 
   it('render update form snap', async () => {
@@ -176,9 +215,10 @@ describe('page/DataSource/DataSourceForm', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(requestRuleTemplateTip).toHaveBeenCalled();
+    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
     expect(requestProjectRuleTemplateTips).toHaveBeenCalled();
-
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestRuleTemplateTip).toHaveBeenCalled();
     const ruleTemplateId = getBySelector('#ruleTemplateId', baseElement);
     expect(screen.getByText('custom_template_b')).toBeInTheDocument();
     expect(ruleTemplateId).toHaveAttribute(

@@ -1,0 +1,1764 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/GlobalDataSource/BatchImportDataSource render check api return csv file 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <a
+          href="/global-data-source"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回全局数据源列表
+            </span>
+          </button>
+        </a>
+      </div>
+      <div
+        class="extra"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          disabled=""
+          type="button"
+        >
+          <span>
+            导 入
+          </span>
+        </button>
+      </div>
+    </div>
+    <section
+      class="fix-header-padding css-bspaai"
+    >
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      >
+        <h3
+          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="anticon title-icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 18 18"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+          <span>
+            批量导入数据源
+          </span>
+        </h3>
+        <div
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required ant-form-item-no-colon"
+                for="files"
+                title="请选择导入文件"
+              >
+                请选择导入文件
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <div
+                        class="css-18zq7vp"
+                      >
+                        <span
+                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-upload ant-upload-select"
+                          >
+                            <span
+                              class="ant-upload"
+                              role="button"
+                              tabindex="0"
+                            >
+                              <input
+                                accept=".csv"
+                                aria-required="true"
+                                id="files"
+                                style="display: none;"
+                                type="file"
+                              />
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  选择文件上传
+                                </span>
+                              </button>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-upload-list ant-upload-list-text"
+                          >
+                            <div
+                              class="ant-upload-list-item-container"
+                            >
+                              <div
+                                class="ant-upload-list-item ant-upload-list-item-done"
+                              >
+                                <div
+                                  class="ant-upload-icon"
+                                >
+                                  <span
+                                    aria-label="paper-clip"
+                                    class="anticon anticon-paper-clip"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="paper-clip"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M779.3 196.6c-94.2-94.2-247.6-94.2-341.7 0l-261 260.8c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l261-260.8c32.4-32.4 75.5-50.2 121.3-50.2s88.9 17.8 121.2 50.2c32.4 32.4 50.2 75.5 50.2 121.2 0 45.8-17.8 88.8-50.2 121.2l-266 265.9-43.1 43.1c-40.3 40.3-105.8 40.3-146.1 0-19.5-19.5-30.2-45.4-30.2-73s10.7-53.5 30.2-73l263.9-263.8c6.7-6.6 15.5-10.3 24.9-10.3h.1c9.4 0 18.1 3.7 24.7 10.3 6.7 6.7 10.3 15.5 10.3 24.9 0 9.3-3.7 18.1-10.3 24.7L372.4 653c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l215.6-215.6c19.9-19.9 30.8-46.3 30.8-74.4s-11-54.6-30.8-74.4c-41.1-41.1-107.9-41-149 0L463 364 224.8 602.1A172.22 172.22 0 00174 724.8c0 46.3 18.1 89.8 50.8 122.5 33.9 33.8 78.3 50.7 122.7 50.7 44.4 0 88.8-16.9 122.6-50.7l309.2-309C824.8 492.7 850 432 850 367.5c.1-64.6-25.1-125.3-70.7-170.9z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  class="ant-upload-list-item-name"
+                                  title="test.csv"
+                                >
+                                  test.csv
+                                </span>
+                                <span
+                                  class="ant-upload-list-item-actions"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                    title="Remove file"
+                                    type="button"
+                                  >
+                                    <span
+                                      class="ant-btn-icon"
+                                    >
+                                      <span
+                                        aria-label="delete"
+                                        class="anticon anticon-delete"
+                                        role="img"
+                                        tabindex="-1"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="delete"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </span>
+                                  </button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </span>
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          type="button"
+                        >
+                          <span>
+                            下载导入模板
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <section>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span
+                              class="css-u3jcp4"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                            >
+                              当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入
+                            </span>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title="请测试数据源联通性"
+              >
+                请测试数据源联通性
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        disabled=""
+                        type="button"
+                      >
+                        <span>
+                          批量测试数据源连通性
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`base/GlobalDataSource/BatchImportDataSource render delete file 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <a
+          href="/global-data-source"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回全局数据源列表
+            </span>
+          </button>
+        </a>
+      </div>
+      <div
+        class="extra"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          disabled=""
+          type="button"
+        >
+          <span>
+            导 入
+          </span>
+        </button>
+      </div>
+    </div>
+    <section
+      class="fix-header-padding css-bspaai"
+    >
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      >
+        <h3
+          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="anticon title-icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 18 18"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+          <span>
+            批量导入数据源
+          </span>
+        </h3>
+        <div
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required ant-form-item-no-colon"
+                for="files"
+                title="请选择导入文件"
+              >
+                请选择导入文件
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <div
+                        class="css-18zq7vp"
+                      >
+                        <span
+                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-upload ant-upload-select"
+                          >
+                            <span
+                              class="ant-upload"
+                              role="button"
+                              tabindex="0"
+                            >
+                              <input
+                                accept=".csv"
+                                aria-required="true"
+                                id="files"
+                                style="display: none;"
+                                type="file"
+                              />
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  选择文件上传
+                                </span>
+                              </button>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-upload-list ant-upload-list-text"
+                          >
+                            <div
+                              class="ant-upload-list-item-container"
+                            >
+                              <div
+                                class="ant-upload-list-item ant-upload-list-item-uploading"
+                              >
+                                <div
+                                  class="ant-upload-icon"
+                                >
+                                  <span
+                                    aria-label="loading"
+                                    class="anticon anticon-loading anticon-spin"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="loading"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="0 0 1024 1024"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  class="ant-upload-list-item-name"
+                                  title="test.csv"
+                                >
+                                  test.csv
+                                </span>
+                                <span
+                                  class="ant-upload-list-item-actions"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                    title="Remove file"
+                                    type="button"
+                                  >
+                                    <span
+                                      class="ant-btn-icon"
+                                    >
+                                      <span
+                                        aria-label="delete"
+                                        class="anticon anticon-delete"
+                                        role="img"
+                                        tabindex="-1"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="delete"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </span>
+                                  </button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </span>
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          type="button"
+                        >
+                          <span>
+                            下载导入模板
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <section />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title="请测试数据源联通性"
+              >
+                请测试数据源联通性
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        disabled=""
+                        type="button"
+                      >
+                        <span>
+                          批量测试数据源连通性
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`base/GlobalDataSource/BatchImportDataSource render init snap 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <a
+          href="/global-data-source"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回全局数据源列表
+            </span>
+          </button>
+        </a>
+      </div>
+      <div
+        class="extra"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          disabled=""
+          type="button"
+        >
+          <span>
+            导 入
+          </span>
+        </button>
+      </div>
+    </div>
+    <section
+      class="fix-header-padding css-bspaai"
+    >
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      >
+        <h3
+          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="anticon title-icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 18 18"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+          <span>
+            批量导入数据源
+          </span>
+        </h3>
+        <div
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required ant-form-item-no-colon"
+                for="files"
+                title="请选择导入文件"
+              >
+                请选择导入文件
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <div
+                        class="css-18zq7vp"
+                      >
+                        <span
+                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-upload ant-upload-select"
+                          >
+                            <span
+                              class="ant-upload"
+                              role="button"
+                              tabindex="0"
+                            >
+                              <input
+                                accept=".csv"
+                                aria-required="true"
+                                id="files"
+                                style="display: none;"
+                                type="file"
+                              />
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  选择文件上传
+                                </span>
+                              </button>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-upload-list ant-upload-list-text"
+                          />
+                        </span>
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          type="button"
+                        >
+                          <span>
+                            下载导入模板
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <section />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title="请测试数据源联通性"
+              >
+                请测试数据源联通性
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        disabled=""
+                        type="button"
+                      >
+                        <span>
+                          批量测试数据源连通性
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`base/GlobalDataSource/BatchImportDataSource render test connection 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <a
+          href="/global-data-source"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回全局数据源列表
+            </span>
+          </button>
+        </a>
+      </div>
+      <div
+        class="extra"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span>
+            导 入
+          </span>
+        </button>
+      </div>
+    </div>
+    <section
+      class="fix-header-padding css-bspaai"
+    >
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      >
+        <h3
+          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="anticon title-icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              class=""
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 18 18"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+          </span>
+          <span>
+            批量导入数据源
+          </span>
+        </h3>
+        <div
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required ant-form-item-no-colon"
+                for="files"
+                title="请选择导入文件"
+              >
+                请选择导入文件
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <div
+                        class="css-18zq7vp"
+                      >
+                        <span
+                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-upload ant-upload-select"
+                          >
+                            <span
+                              class="ant-upload"
+                              role="button"
+                              tabindex="0"
+                            >
+                              <input
+                                accept=".csv"
+                                aria-required="true"
+                                id="files"
+                                style="display: none;"
+                                type="file"
+                              />
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  选择文件上传
+                                </span>
+                              </button>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-upload-list ant-upload-list-text"
+                          >
+                            <div
+                              class="ant-upload-list-item-container"
+                            >
+                              <div
+                                class="ant-upload-list-item ant-upload-list-item-done"
+                              >
+                                <div
+                                  class="ant-upload-icon"
+                                >
+                                  <span
+                                    aria-label="paper-clip"
+                                    class="anticon anticon-paper-clip"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="paper-clip"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M779.3 196.6c-94.2-94.2-247.6-94.2-341.7 0l-261 260.8c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l261-260.8c32.4-32.4 75.5-50.2 121.3-50.2s88.9 17.8 121.2 50.2c32.4 32.4 50.2 75.5 50.2 121.2 0 45.8-17.8 88.8-50.2 121.2l-266 265.9-43.1 43.1c-40.3 40.3-105.8 40.3-146.1 0-19.5-19.5-30.2-45.4-30.2-73s10.7-53.5 30.2-73l263.9-263.8c6.7-6.6 15.5-10.3 24.9-10.3h.1c9.4 0 18.1 3.7 24.7 10.3 6.7 6.7 10.3 15.5 10.3 24.9 0 9.3-3.7 18.1-10.3 24.7L372.4 653c-1.7 1.7-2.6 4-2.6 6.4s.9 4.7 2.6 6.4l36.9 36.9a9 9 0 0012.7 0l215.6-215.6c19.9-19.9 30.8-46.3 30.8-74.4s-11-54.6-30.8-74.4c-41.1-41.1-107.9-41-149 0L463 364 224.8 602.1A172.22 172.22 0 00174 724.8c0 46.3 18.1 89.8 50.8 122.5 33.9 33.8 78.3 50.7 122.7 50.7 44.4 0 88.8-16.9 122.6-50.7l309.2-309C824.8 492.7 850 432 850 367.5c.1-64.6-25.1-125.3-70.7-170.9z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <span
+                                  class="ant-upload-list-item-name"
+                                  title="test.csv"
+                                >
+                                  test.csv
+                                </span>
+                                <span
+                                  class="ant-upload-list-item-actions"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                    title="Remove file"
+                                    type="button"
+                                  >
+                                    <span
+                                      class="ant-btn-icon"
+                                    >
+                                      <span
+                                        aria-label="delete"
+                                        class="anticon anticon-delete"
+                                        role="img"
+                                        tabindex="-1"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          data-icon="delete"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height="1em"
+                                          viewBox="64 64 896 896"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </span>
+                                  </button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </span>
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          type="button"
+                        >
+                          <span>
+                            下载导入模板
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <section>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span
+                              class="css-u3jcp4"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                  fill="#1CB889"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+                            >
+                              校验通过
+                            </span>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title="请测试数据源联通性"
+              >
+                请测试数据源联通性
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          批量测试数据源连通性
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span
+                                class="css-u3jcp4"
+                              >
+                                <svg
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                    fill="#1CB889"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+                              >
+                                测试连通性成功1个
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <span
+                                class="css-u3jcp4"
+                              >
+                                <svg
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                    fill="#F66074"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <span
+                                class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                              >
+                                测试连通性失败1个，数据源为mysql_1
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`base/GlobalDataSource/BatchImportDataSource render upload file 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <a
+          href="/global-data-source"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回全局数据源列表
+            </span>
+          </button>
+        </a>
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <section
+      class="basic-result-wrapper css-7vto1s"
+    >
+      <div
+        class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-result-icon"
+        >
+          <svg
+            fill="none"
+            height="160"
+            viewBox="0 0 160 160"
+            width="160"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              filter="url(#filter0_d_3998_2816)"
+            >
+              <rect
+                fill="white"
+                height="100"
+                rx="6"
+                width="128"
+                x="15"
+                y="30"
+              />
+              <rect
+                height="99"
+                rx="5.5"
+                stroke="#F2F1F0"
+                width="127"
+                x="15.5"
+                y="30.5"
+              />
+            </g>
+            <circle
+              cx="21.5"
+              cy="36.5"
+              fill="#F66074"
+              r="1.5"
+            />
+            <circle
+              cx="27.5"
+              cy="36.5"
+              fill="#EDB054"
+              r="1.5"
+            />
+            <circle
+              cx="33.5"
+              cy="36.5"
+              fill="#1CB889"
+              r="1.5"
+            />
+            <rect
+              fill="#EBEAE7"
+              height="5"
+              rx="2"
+              width="37"
+              x="27"
+              y="52"
+            />
+            <rect
+              fill="#EBEAE7"
+              height="4"
+              rx="2"
+              width="17"
+              x="27"
+              y="62"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="19"
+              x="70"
+              y="78"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="40"
+              x="27"
+              y="78"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="47"
+              x="42"
+              y="87"
+            />
+            <rect
+              fill="#F66074"
+              height="4"
+              rx="2"
+              width="12"
+              x="27"
+              y="87"
+            />
+            <rect
+              fill="#F66074"
+              height="4"
+              rx="2"
+              width="10"
+              x="79"
+              y="96"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="13"
+              x="63"
+              y="96"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="33"
+              x="27"
+              y="96"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="34"
+              x="55"
+              y="105"
+            />
+            <rect
+              fill="#F66074"
+              height="4"
+              rx="2"
+              width="25"
+              x="27"
+              y="105"
+            />
+            <rect
+              fill="#F2F1EF"
+              height="4"
+              rx="2"
+              width="49"
+              x="27"
+              y="114"
+            />
+            <rect
+              fill="#F7F6F4"
+              height="72"
+              rx="3"
+              width="32"
+              x="99"
+              y="48"
+            />
+            <rect
+              fill="white"
+              height="6"
+              rx="1"
+              stroke="#E8E7E6"
+              width="24"
+              x="103"
+              y="52"
+            />
+            <rect
+              fill="white"
+              height="6"
+              rx="1"
+              stroke="#E8E7E6"
+              width="24"
+              x="103"
+              y="76"
+            />
+            <g
+              filter="url(#filter1_d_3998_2816)"
+            >
+              <rect
+                fill="#4583FF"
+                height="8"
+                rx="2"
+                width="26"
+                x="102"
+                y="63"
+              />
+            </g>
+            <rect
+              fill="white"
+              height="6"
+              rx="1"
+              stroke="#E8E7E6"
+              width="24"
+              x="103"
+              y="87"
+            />
+            <rect
+              fill="white"
+              height="6"
+              rx="1"
+              stroke="#E8E7E6"
+              width="24"
+              x="103"
+              y="98"
+            />
+            <rect
+              fill="white"
+              height="6"
+              rx="1"
+              stroke="#E8E7E6"
+              width="24"
+              x="103"
+              y="109"
+            />
+            <g
+              filter="url(#filter2_d_3998_2816)"
+            >
+              <path
+                d="M134 136C138.418 136 142.418 134.209 145.314 131.314C148.209 128.418 150 124.418 150 120C150 115.582 148.209 111.582 145.314 108.686C142.418 105.791 138.418 104 134 104C129.582 104 125.582 105.791 122.686 108.686C119.791 111.582 118 115.582 118 120C118 124.418 119.791 128.418 122.686 131.314C125.582 134.209 129.582 136 134 136Z"
+                fill="#1CB889"
+              />
+            </g>
+            <path
+              d="M128.4 120L132.6 124.2L141 115.8"
+              stroke="white"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+            <rect
+              fill="url(#paint0_linear_3998_2816)"
+              height="50"
+              width="37"
+              x="27"
+              y="73"
+            />
+            <rect
+              fill="#15C7D4"
+              height="50"
+              width="2"
+              x="62"
+              y="73"
+            />
+            <defs>
+              <filter
+                color-interpolation-filters="sRGB"
+                filterUnits="userSpaceOnUse"
+                height="110"
+                id="filter0_d_3998_2816"
+                width="138"
+                x="10"
+                y="27"
+              >
+                <feflood
+                  flood-opacity="0"
+                  result="BackgroundImageFix"
+                />
+                <fecolormatrix
+                  in="SourceAlpha"
+                  result="hardAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                />
+                <feoffset
+                  dy="2"
+                />
+                <fegaussianblur
+                  stdDeviation="2.5"
+                />
+                <fecomposite
+                  in2="hardAlpha"
+                  operator="out"
+                />
+                <fecolormatrix
+                  type="matrix"
+                  values="0 0 0 0 0.2 0 0 0 0 0.173333 0 0 0 0 0.12 0 0 0 0.1 0"
+                />
+                <feblend
+                  in2="BackgroundImageFix"
+                  mode="normal"
+                  result="effect1_dropShadow_3998_2816"
+                />
+                <feblend
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_3998_2816"
+                  mode="normal"
+                  result="shape"
+                />
+              </filter>
+              <filter
+                color-interpolation-filters="sRGB"
+                filterUnits="userSpaceOnUse"
+                height="16"
+                id="filter1_d_3998_2816"
+                width="34"
+                x="98"
+                y="60"
+              >
+                <feflood
+                  flood-opacity="0"
+                  result="BackgroundImageFix"
+                />
+                <fecolormatrix
+                  in="SourceAlpha"
+                  result="hardAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                />
+                <feoffset
+                  dy="1"
+                />
+                <fegaussianblur
+                  stdDeviation="2"
+                />
+                <fecomposite
+                  in2="hardAlpha"
+                  operator="out"
+                />
+                <fecolormatrix
+                  type="matrix"
+                  values="0 0 0 0 0.270588 0 0 0 0 0.513726 0 0 0 0 1 0 0 0 0.4 0"
+                />
+                <feblend
+                  in2="BackgroundImageFix"
+                  mode="normal"
+                  result="effect1_dropShadow_3998_2816"
+                />
+                <feblend
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_3998_2816"
+                  mode="normal"
+                  result="shape"
+                />
+              </filter>
+              <filter
+                color-interpolation-filters="sRGB"
+                filterUnits="userSpaceOnUse"
+                height="44"
+                id="filter2_d_3998_2816"
+                width="44"
+                x="112"
+                y="100"
+              >
+                <feflood
+                  flood-opacity="0"
+                  result="BackgroundImageFix"
+                />
+                <fecolormatrix
+                  in="SourceAlpha"
+                  result="hardAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                />
+                <feoffset
+                  dy="2"
+                />
+                <fegaussianblur
+                  stdDeviation="3"
+                />
+                <fecomposite
+                  in2="hardAlpha"
+                  operator="out"
+                />
+                <fecolormatrix
+                  type="matrix"
+                  values="0 0 0 0 0.109804 0 0 0 0 0.721569 0 0 0 0 0.537255 0 0 0 0.4 0"
+                />
+                <feblend
+                  in2="BackgroundImageFix"
+                  mode="normal"
+                  result="effect1_dropShadow_3998_2816"
+                />
+                <feblend
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_3998_2816"
+                  mode="normal"
+                  result="shape"
+                />
+              </filter>
+              <lineargradient
+                gradientUnits="userSpaceOnUse"
+                id="paint0_linear_3998_2816"
+                x1="64"
+                x2="27"
+                y1="73"
+                y2="73"
+              >
+                <stop
+                  stop-color="#1ACEDB"
+                  stop-opacity="0.3"
+                />
+                <stop
+                  offset="1"
+                  stop-color="white"
+                  stop-opacity="0"
+                />
+              </lineargradient>
+            </defs>
+          </svg>
+        </div>
+        <div
+          class="ant-result-title"
+        >
+          批量导入数据源成功
+        </div>
+        <div
+          class="ant-result-extra"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              关闭并重置表单
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

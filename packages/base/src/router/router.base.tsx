@@ -24,6 +24,15 @@ const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 const BatchImportDataSource = lazy(
   () => import('../page/DataSource/components/BatchImportDataSource')
 );
+const GlobalDataSourceList = lazy(
+  () => import('../page/GlobalDataSource/List')
+);
+const GlobalBatchImportDataSource = lazy(
+  () => import('../page/GlobalDataSource/BatchImportDataSource')
+);
+const GlobalAddDataSource = lazy(
+  () => import('../page/DataSource/components/AddDataSource')
+);
 // #endif
 
 const Home = lazy(() => import('../page/Home'));
@@ -41,9 +50,7 @@ const Member = lazy(() => import('../page/Member'));
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
 const GlobalDataSource = lazy(() => import('../page/GlobalDataSource'));
-const GlobalDataSourceList = lazy(
-  () => import('../page/GlobalDataSource/List')
-);
+
 const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
 const Account = lazy(() => import('../page/Account'));
@@ -78,13 +85,25 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     key: 'globalDataSource',
     element: <GlobalDataSource />,
     role: [SystemRole.admin, SystemRole.certainProjectManager],
+    // #if [ee]
     children: [
       {
         index: true,
         key: 'globalDataSourceList',
         element: <GlobalDataSourceList />
+      },
+      {
+        path: 'batch-import',
+        key: 'globalBatchImportDataSource',
+        element: <GlobalBatchImportDataSource />
+      },
+      {
+        path: 'create',
+        element: <GlobalAddDataSource />,
+        key: 'globalDataSourceCreate'
       }
     ] as RouterConfigItem[]
+    // #endif
   },
   // #if [ee]
   {

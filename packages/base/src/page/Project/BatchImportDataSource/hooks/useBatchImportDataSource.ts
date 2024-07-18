@@ -38,6 +38,7 @@ const useBatchImportDataSource = () => {
 
   const resetAndHideResult = () => {
     form.resetFields();
+    clearUploadCheckStatus();
     hideResult();
     setDBservices([]);
   };

@@ -28,6 +28,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
         class="css-2f3ey2"
       >
         <svg
+          class="project-flag-icon"
           height="18"
           viewBox="0 0 18 18"
           width="18"
