@@ -587,14 +587,14 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "account",
   },
   {
+    "element": <div>
+      dataSourceManagement
+    </div>,
+    "key": "dataSourceManagement",
+    "path": "data-source-management",
+  },
+  {
     "children": [
-      {
-        "element": <div>
-          globalDataSourceList
-        </div>,
-        "key": "globalDataSourceList",
-        "path": "",
-      },
       {
         "element": <div>
           globalBatchImportDataSource
@@ -610,12 +610,34 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "path": "create",
       },
     ],
-    "element": <UNDEFINED />,
     "key": "globalDataSource",
     "path": "global-data-source",
     "role": [
       "admin",
       "certainProjectManager",
+    ],
+  },
+  {
+    "children": [
+      {
+        "element": <div>
+          syncDataSourceCreate
+        </div>,
+        "key": "syncDataSourceCreate",
+        "path": "create",
+      },
+      {
+        "element": <div>
+          syncDataSourceUpdate
+        </div>,
+        "key": "syncDataSourceUpdate",
+        "path": "update/:taskId",
+      },
+    ],
+    "key": "syncDataSource",
+    "path": "sync-data-source",
+    "role": [
+      "admin",
     ],
   },
   {
@@ -692,38 +714,6 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "dataSource",
         "path": ":projectID/db-services",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              syncDataSourceList
-            </div>,
-            "key": "syncDataSourceList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              syncDataSourceCreate
-            </div>,
-            "key": "syncDataSourceCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              syncDataSourceUpdate
-            </div>,
-            "key": "syncDataSourceUpdate",
-            "path": "update/:taskId",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="syncDataSource"
-        >
-          <Outlet />
-        </div>,
-        "key": "syncDataSource",
-        "path": ":projectID/sync-data-source",
       },
       {
         "children": [

@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { message, Modal } from 'antd';
-import { PageHeader } from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
@@ -229,7 +228,6 @@ const GlobalDataSourceList = () => {
     <>
       {modalContextHolder}
       {messageContextHolder}
-      <PageHeader title={t('dmsGlobalDataSource.pageTitle')} />
       <TableToolbar
         filterButton={{
           filterButtonMeta,

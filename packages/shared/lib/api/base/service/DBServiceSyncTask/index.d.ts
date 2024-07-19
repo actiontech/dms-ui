@@ -1,19 +1,19 @@
 import {
   IListDBServiceSyncTasksReply,
-  IDBServiceSyncTask,
-  IAddDBServiceSyncTaskReply,
+  IAddDBServiceSyncTaskReq,
+  IAddDBServiceReply,
   IListDBServiceSyncTaskTipsReply,
   IGetDBServiceSyncTaskReply,
+  IUpdateDBServiceSyncTaskReq,
   IGenericResp
 } from '../common.d';
 
 export interface IListDBServiceSyncTasksReturn
   extends IListDBServiceSyncTasksReply {}
 
-export interface IAddDBServiceSyncTaskParams extends IDBServiceSyncTask {}
+export interface IAddDBServiceSyncTaskParams extends IAddDBServiceSyncTaskReq {}
 
-export interface IAddDBServiceSyncTaskReturn
-  extends IAddDBServiceSyncTaskReply {}
+export interface IAddDBServiceSyncTaskReturn extends IAddDBServiceReply {}
 
 export interface IListDBServiceSyncTaskTipsReturn
   extends IListDBServiceSyncTaskTipsReply {}
@@ -25,7 +25,8 @@ export interface IGetDBServiceSyncTaskParams {
 export interface IGetDBServiceSyncTaskReturn
   extends IGetDBServiceSyncTaskReply {}
 
-export interface IUpdateDBServiceSyncTaskParams extends IDBServiceSyncTask {
+export interface IUpdateDBServiceSyncTaskParams
+  extends IUpdateDBServiceSyncTaskReq {
   db_service_sync_task_uid: string;
 }
 

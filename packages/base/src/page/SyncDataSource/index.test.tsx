@@ -1,10 +1,9 @@
 import SyncDataSource from '.';
-import { superRender } from '../../testUtils/customRender';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 describe('base/page/SyncDataSource-ee', () => {
   it('render index page', () => {
-    const { baseElement } = superRender(<SyncDataSource />);
-
-    expect(baseElement).toMatchSnapshot();
+    expect(toJson(shallow(<SyncDataSource />))).toMatchSnapshot();
   });
 });

@@ -126,7 +126,9 @@ const DataSourceManagement: React.FC = () => {
         title={
           <Space>
             {t('dmsMenu.globalSettings.instanceManager')}
+            {/* #if [ee] */}
             <TableRefreshButton refresh={onRefresh} />
+            {/* #endif */}
           </Space>
         }
         // #if [ee]

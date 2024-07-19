@@ -56,12 +56,9 @@ const SyncTaskList: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
-            t('dmsSyncDataSource.syncTaskList.deleteTaskSuccessTips'),
-            3,
-            () => {
-              refresh();
-            }
+            t('dmsSyncDataSource.syncTaskList.deleteTaskSuccessTips')
           );
+          refresh();
         }
       })
       .finally(() => {
