@@ -22,8 +22,13 @@ export default {
   permissionGroup: '权限组',
   permissionTemplate: '权限模板',
   authList: '授权清单',
+  databaseAccount: '账号管理',
+  databaseAccountPassword: '账号密码管理',
+  dataMaskRuleOverview: '脱敏规则',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
+  monitorSourceConfig: '监控源配置',
+  diagnosisList: '巡检列表',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
@@ -37,7 +42,8 @@ export default {
     SQLDev: 'SQL开发',
     SQLManagement: 'SQL管控',
     projectConfigure: '项目配置',
-    operateAndAudit: '操作与审计'
+    operateAndAudit: '操作与审计',
+    dataSecurity: '数据安全'
   },
 
   userNavigate: {
