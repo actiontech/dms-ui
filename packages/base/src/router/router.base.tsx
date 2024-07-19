@@ -99,7 +99,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         element: <GlobalAddDataSource />,
         key: 'globalDataSourceCreate'
       }
-    ]
+    ] as RouterConfigItem[]
   },
   {
     path: `sync-data-source`,
@@ -116,7 +116,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         element: <UpdateSyncTask />,
         key: 'syncDataSourceUpdate'
       }
-    ]
+    ] as RouterConfigItem[]
   },
   {
     path: 'project',
