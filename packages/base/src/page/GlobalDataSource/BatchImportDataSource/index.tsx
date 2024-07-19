@@ -2,10 +2,10 @@ import {
   BasicButton,
   PageHeader,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  BackButton
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import BatchImportDataSourceForm from '../../Project/BatchImportDataSource/UploadForm';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -73,11 +73,9 @@ const GlobalBatchImportDataSource = () => {
     <>
       <PageHeader
         title={
-          <Link to={`/global-data-source`}>
-            <BasicButton icon={<LeftArrowOutlined />}>
-              {t('dmsGlobalDataSource.backToList')}
-            </BasicButton>
-          </Link>
+          <BackButton icon={<LeftArrowOutlined />}>
+            {t('dmsGlobalDataSource.backToList')}
+          </BackButton>
         }
         extra={
           <EmptyBox if={!resultVisible}>

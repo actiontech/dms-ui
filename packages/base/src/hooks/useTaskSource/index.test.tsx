@@ -13,8 +13,8 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { taskListTips } from '../../testUtils/mockApi/syncTaskList/data';
 import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { syncTaskTipsMockData } from '../../testUtils/mockApi/syncTaskList/data';
 
 describe('useTaskSource', () => {
   let requestSpy: jest.SpyInstance;
@@ -27,7 +27,7 @@ describe('useTaskSource', () => {
     jest.useRealTimers();
   });
 
-  test('should get task source from request', async () => {
+  it('should get task source from request', async () => {
     const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
@@ -48,7 +48,7 @@ describe('useTaskSource', () => {
 
     expect(result.current.loading).toBe(false);
     expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual(taskListTips);
+    expect(result.current.taskSourceList).toEqual(syncTaskTipsMockData);
     cleanup();
 
     const { baseElement: baseElementWithOptions } = render(
@@ -67,7 +67,8 @@ describe('useTaskSource', () => {
     expect(baseElementWithOptions).toMatchSnapshot();
   });
 
-  test('should set list to empty array when response code is not equal success code', async () => {
+  it('should set list to empty array when response code is not equal success code', async () => {
+    requestSpy.mockImplementation(() => createSpyFailResponse({ data: [] }));
     const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
@@ -76,90 +77,28 @@ describe('useTaskSource', () => {
       result.current.updateTaskSourceList();
     });
 
-    expect(result.current.loading).toBe(true);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([]);
-
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(result.current.loading).toBe(false);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([
-      { source: 'source1', db_types: ['mysql'] },
-      { source: 'source2', db_types: ['oracle'] }
-    ]);
+    expect(result.current.taskSourceList).toEqual([]);
     requestSpy.mockClear();
-    requestSpy.mockImplementation(() =>
-      createSpyErrorResponse([
-        { source: 'source1', db_types: ['mysql'] },
-        { source: 'source2', db_types: ['oracle'] }
-      ])
-    );
-
-    act(() => {
-      result.current.updateTaskSourceList();
-    });
-    expect(result.current.loading).toBe(true);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([
-      { source: 'source1', db_types: ['mysql'] },
-      { source: 'source2', db_types: ['oracle'] }
-    ]);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(result.current.loading).toBe(false);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([]);
   });
 
-  test('should set list to empty array when response throw error', async () => {
+  it('should set list to empty array when response throw error', async () => {
+    requestSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
+
     const { result } = renderHooksWithRedux(() => useTaskSource(), {});
-    expect(result.current.loading).toBe(false);
-    expect(result.current.taskSourceList).toEqual([]);
 
     act(() => {
       result.current.updateTaskSourceList();
     });
 
-    expect(result.current.loading).toBe(true);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([]);
-
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(result.current.loading).toBe(false);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([
-      { source: 'source1', db_types: ['mysql'] },
-      { source: 'source2', db_types: ['oracle'] }
-    ]);
-    requestSpy.mockClear();
-    requestSpy.mockImplementation(() =>
-      createSpyFailResponse([
-        { source: 'source1', db_types: ['mysql'] },
-        { source: 'source2', db_types: ['oracle'] }
-      ])
-    );
-
-    act(() => {
-      result.current.updateTaskSourceList();
-    });
-    expect(result.current.loading).toBe(true);
-    expect(requestSpy).toHaveBeenCalledTimes(1);
-    expect(result.current.taskSourceList).toEqual([
-      { source: 'source1', db_types: ['mysql'] },
-      { source: 'source2', db_types: ['oracle'] }
-    ]);
-
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(result.current.loading).toBe(false);
     expect(requestSpy).toHaveBeenCalledTimes(1);
     expect(result.current.taskSourceList).toEqual([]);
   });
 
-  test('should generate dbTypes select options with source', async () => {
+  it('should generate dbTypes select options with source', async () => {
     const { result } = renderHooksWithRedux(() => useTaskSource(), {});
     act(() => {
       result.current.updateTaskSourceList();

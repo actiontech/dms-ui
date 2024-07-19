@@ -637,49 +637,34 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
             role="group"
           >
             <li
-              class="ant-menu-submenu ant-menu-submenu-inline"
-              role="none"
-              structkey="instance-management"
+              class="ant-menu-item"
+              data-menu-id="rc-menu-uuid-test-project/projectID/db-services"
+              role="menuitem"
+              structkey="instance"
+              style="padding-left: 24px;"
+              tabindex="-1"
             >
-              <div
-                aria-controls="rc-menu-uuid-test-instance-management-popup"
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="ant-menu-submenu-title"
-                data-menu-id="rc-menu-uuid-test-instance-management"
-                role="menuitem"
-                style="padding-left: 24px;"
-                tabindex="-1"
+              <svg
+                class="ant-menu-item-icon"
+                height="18"
+                viewBox="0 0 18 18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  class="ant-menu-item-icon"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
+                <path
+                  d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                  fill="#C3C6CD"
+                />
+              </svg>
+              <span
+                class="ant-menu-title-content"
+              >
+                <a
+                  href="/project/700300/db-services"
                 >
-                  <path
-                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
-                    fill="#C3C6CD"
-                  />
-                </svg>
-                <span
-                  class="ant-menu-title-content"
-                >
-                  数据源管理
-                </span>
-                <svg
-                  height="18"
-                  viewBox="0 0 16 16"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                    fill="#C3C6CD"
-                  />
-                </svg>
-              </div>
+                  数据源
+                </a>
+              </span>
             </li>
             <li
               class="ant-menu-item"

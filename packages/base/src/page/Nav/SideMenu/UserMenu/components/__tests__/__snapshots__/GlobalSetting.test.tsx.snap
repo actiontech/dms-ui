@@ -123,8 +123,7 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                   <span
                     class="content-item-text"
                   >
-                     
-                    全局数据源
+                    数据源管理
                   </span>
                 </div>
                 <div
@@ -436,8 +435,7 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when isCertainProjectM
                   <span
                     class="content-item-text"
                   >
-                     
-                    全局数据源
+                    数据源管理
                   </span>
                 </div>
                 <div
