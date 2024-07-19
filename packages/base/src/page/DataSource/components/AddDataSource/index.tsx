@@ -1,35 +1,29 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback } from 'react';
-
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'antd/es/form/Form';
-import { Space } from 'antd';
+import { Space, Typography } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   BasicButton,
   PageHeader,
   BasicResult,
-  EmptyBox
+  EmptyBox,
+  BackButton
 } from '@actiontech/shared';
 import DataSourceForm from '../Form';
-
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
-import { LeftArrowOutlined } from '@actiontech/icons';
 
 const AddDataSource = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
-
-  const { projectID } = useCurrentProject();
 
   const [form] = useForm<DataSourceFormField>();
 
@@ -72,7 +66,7 @@ const AddDataSource = () => {
     };
     return DBService.AddDBService({
       db_service: dbService,
-      project_uid: projectID
+      project_uid: values.project
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -102,14 +96,7 @@ const AddDataSource = () => {
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
         fixed
-        title={
-          <BasicButton
-            onClick={() => navigate(`/project/${projectID}/db-services`)}
-            icon={<LeftArrowOutlined />}
-          >
-            {t('dmsDataSource.backDesc')}
-          </BasicButton>
-        }
+        title={<BackButton>{t('dmsDataSource.backDesc')}</BackButton>}
         extra={
           <Space hidden={resultVisible}>
             <BasicButton onClick={onReset}>{t('common.reset')}</BasicButton>
@@ -131,9 +118,9 @@ const AddDataSource = () => {
           status="success"
           title={t('dmsDataSource.addDatabaseSuccess')}
           subTitle={
-            <Link to={`/project/${projectID}/db-services`}>
+            <Typography.Link onClick={() => navigate(-1)}>
               {t('dmsDataSource.addDatabaseSuccessGuide')} {'>'}
-            </Link>
+            </Typography.Link>
           }
           extra={[
             <BasicButton

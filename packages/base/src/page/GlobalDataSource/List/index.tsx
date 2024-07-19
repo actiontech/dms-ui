@@ -23,9 +23,10 @@ import {
   GlobalDataSourceListActions,
   GLobalDataSourceListParamType
 } from './columns';
-import useProjects from '../../../hooks/useProjects';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import useProjectTips from '../../../hooks/useProjectTips';
+import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -36,18 +37,19 @@ const GlobalDataSourceList = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
+  const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
+
   const {
-    dbDriverOptions,
-    getLogoUrlByDbType,
-    loading: getDriveOptionsLoading,
-    updateDriverList
-  } = useDbServiceDriver();
+    updateDbTypeList,
+    dbTypeOptions,
+    loading: getDbTypeListLoading
+  } = useGlobalDataSourceType();
 
   const {
     projectIDOptions,
     updateProjects,
     loading: getProjectsLoading
-  } = useProjects();
+  } = useProjectTips();
 
   const {
     tableFilterInfo,
@@ -184,18 +186,15 @@ const GlobalDataSourceList = () => {
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListGlobalDBService, FilterCustomProps>([
-      [
-        'db_type',
-        { options: dbDriverOptions, loading: getDriveOptionsLoading }
-      ],
+      ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
       [
         'project_name',
         { options: projectIDOptions, loading: getProjectsLoading }
       ]
     ]);
   }, [
-    dbDriverOptions,
-    getDriveOptionsLoading,
+    dbTypeOptions,
+    getDbTypeListLoading,
     projectIDOptions,
     getProjectsLoading
   ]);
@@ -211,6 +210,7 @@ const GlobalDataSourceList = () => {
   useEffect(() => {
     updateDriverList();
     updateProjects();
+    updateDbTypeList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -229,8 +229,8 @@ const GlobalDataSourceList = () => {
     <>
       {modalContextHolder}
       {messageContextHolder}
+      <PageHeader title={t('dmsGlobalDataSource.pageTitle')} />
       <TableToolbar
-        // refreshButton={{ refresh, disabled: loading }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem

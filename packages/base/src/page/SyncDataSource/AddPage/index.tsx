@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback, useEffect } from 'react';
-
-import { Link } from 'react-router-dom';
 import { Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import SyncTaskForm, { SyncTaskFormFields } from '../Form';
 import {
+  BackButton,
   BasicButton,
   BasicResult,
   EmptyBox,
@@ -17,9 +16,8 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
-import { LeftArrowOutlined, DatabaseFilled } from '@actiontech/icons';
+import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
-import { DataSourceManagerSegmentedKey } from '../../DataSourceManagement/index.type';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 import { IAddDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask/index.d';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
@@ -94,13 +92,9 @@ const AddSyncTask: React.FC = () => {
       <PageHeader
         fixed
         title={
-          <Link
-            to={`/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`}
-          >
-            <BasicButton icon={<LeftArrowOutlined />}>
-              {t('dmsSyncDataSource.addSyncTask.backToList')}
-            </BasicButton>
-          </Link>
+          <BackButton>
+            {t('dmsSyncDataSource.addSyncTask.backToList')}
+          </BackButton>
         }
         extra={
           <EmptyBox if={!submitResultVisibility}>
@@ -152,13 +146,9 @@ const AddSyncTask: React.FC = () => {
             >
               {t('common.resetAndClose')}
             </BasicButton>,
-            <BasicButton type="primary" key="view-sync-task">
-              <Link
-                to={`/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`}
-              >
-                {t('dmsSyncDataSource.addSyncTask.successGuide')}
-              </Link>
-            </BasicButton>
+            <BackButton icon={null} type="primary" key="view-sync-task">
+              {t('dmsSyncDataSource.addSyncTask.successGuide')}
+            </BackButton>
           ]}
         />
       </LazyLoadComponent>
