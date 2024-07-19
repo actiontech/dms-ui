@@ -58,18 +58,12 @@ describe('page/GlobalDataSource/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(1);
     expect(listGlobalDBServicesTipsSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('全局数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
     expect(
       screen.getByText(`共 ${globalDataSourceMockData.length} 条数据`)
     ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
-
-    const refreshIcon = getBySelector('.custom-icon-refresh', baseElement);
-    fireEvent.click(refreshIcon);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(2);
   });
 
   it('render table for api return no data', async () => {

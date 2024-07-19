@@ -58,6 +58,10 @@ export interface IAddDBServiceSyncTaskReply {
   message?: string;
 }
 
+export interface IAddDBServiceSyncTaskReq {
+  db_service_sync_task?: IDBServiceSyncTask;
+}
+
 export interface IAddDataExportTaskReply {
   code?: number;
 
@@ -1986,6 +1990,10 @@ export interface IUpdateDBServiceReply {
 
 export interface IUpdateDBServiceReq {
   db_service?: IUpdateDBService;
+}
+
+export interface IUpdateDBServiceSyncTaskReq {
+  db_service_sync_task?: IDBServiceSyncTask;
 }
 
 export interface IUpdateDatabaseSourceServiceReq {

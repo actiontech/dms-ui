@@ -9,33 +9,29 @@ exports[`base/GlobalDataSource/BatchImportDataSource render check api return csv
       <div
         class="title"
       >
-        <a
-          href="/global-data-source"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-            type="button"
+          <span
+            class="ant-btn-icon"
           >
-            <span
-              class="ant-btn-icon"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span>
-              返回全局数据源列表
-            </span>
-          </button>
-        </a>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回全局数据源列表
+          </span>
+        </button>
       </div>
       <div
         class="extra"
@@ -349,33 +345,29 @@ exports[`base/GlobalDataSource/BatchImportDataSource render delete file 1`] = `
       <div
         class="title"
       >
-        <a
-          href="/global-data-source"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-            type="button"
+          <span
+            class="ant-btn-icon"
           >
-            <span
-              class="ant-btn-icon"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span>
-              返回全局数据源列表
-            </span>
-          </button>
-        </a>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回全局数据源列表
+          </span>
+        </button>
       </div>
       <div
         class="extra"
@@ -655,33 +647,29 @@ exports[`base/GlobalDataSource/BatchImportDataSource render init snap 1`] = `
       <div
         class="title"
       >
-        <a
-          href="/global-data-source"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-            type="button"
+          <span
+            class="ant-btn-icon"
           >
-            <span
-              class="ant-btn-icon"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span>
-              返回全局数据源列表
-            </span>
-          </button>
-        </a>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回全局数据源列表
+          </span>
+        </button>
       </div>
       <div
         class="extra"
@@ -889,33 +877,29 @@ exports[`base/GlobalDataSource/BatchImportDataSource render test connection 1`] 
       <div
         class="title"
       >
-        <a
-          href="/global-data-source"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-            type="button"
+          <span
+            class="ant-btn-icon"
           >
-            <span
-              class="ant-btn-icon"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span>
-              返回全局数据源列表
-            </span>
-          </button>
-        </a>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回全局数据源列表
+          </span>
+        </button>
       </div>
       <div
         class="extra"
@@ -1307,33 +1291,29 @@ exports[`base/GlobalDataSource/BatchImportDataSource render upload file 1`] = `
       <div
         class="title"
       >
-        <a
-          href="/global-data-source"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-            type="button"
+          <span
+            class="ant-btn-icon"
           >
-            <span
-              class="ant-btn-icon"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span>
-              返回全局数据源列表
-            </span>
-          </button>
-        </a>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回全局数据源列表
+          </span>
+        </button>
       </div>
       <div
         class="extra"

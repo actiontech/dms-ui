@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import { useCallback, useEffect } from 'react';
 import { Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import SyncTaskForm, { SyncTaskFormFields } from '../Form';
+import SyncTaskForm from '../Form';
 import {
   BackButton,
   BasicButton,
@@ -22,6 +22,7 @@ import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DB
 import { IAddDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask/index.d';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import useTaskSource from '../../../hooks/useTaskSource';
+import { SyncTaskFormFields } from '../Form/index.type';
 
 const AddSyncTask: React.FC = () => {
   const { t } = useTranslation();
@@ -41,31 +42,33 @@ const AddSyncTask: React.FC = () => {
     const values = await form.validateFields();
     startSubmit();
 
-    const formParams = taskSourceTips.generateTaskSourceAdditionalParams(
+    const additionalParams = taskSourceTips.generateTaskSourceAdditionalParams(
       values.source
     );
 
     const params: IAddDBServiceSyncTaskParams = {
-      name: values.name,
-      db_type: values.instanceType,
-      source: values.source,
-      // #if [sqle]
-      sqle_config: {
-        rule_template_id: values.ruleTemplateId,
-        rule_template_name: values.ruleTemplateName,
-        sql_query_config: {
-          audit_enabled: values.needAuditForSqlQuery,
-          allow_query_when_less_than_audit_level:
-            values.allowQueryWhenLessThanAuditLevel
-        }
-      },
-      // #endif
-      cron_express: values.syncInterval,
-      url: values.url,
-      additional_params: mergeFromValueIntoParams(
-        values.params,
-        formParams ?? []
-      )
+      db_service_sync_task: {
+        name: values.name,
+        db_type: values.instanceType,
+        source: values.source,
+        // #if [sqle]
+        sqle_config: {
+          rule_template_id: values.ruleTemplateId,
+          rule_template_name: values.ruleTemplateName,
+          sql_query_config: {
+            audit_enabled: values.needAuditForSqlQuery,
+            allow_query_when_less_than_audit_level:
+              values.allowQueryWhenLessThanAuditLevel
+          }
+        },
+        // #endif
+        cron_express: values.syncInterval,
+        url: values.url,
+        additional_params: mergeFromValueIntoParams(
+          values.params,
+          additionalParams ?? []
+        )
+      }
     };
     DBServiceSyncTaskService.AddDBServiceSyncTask(params)
       .then((res) => {
