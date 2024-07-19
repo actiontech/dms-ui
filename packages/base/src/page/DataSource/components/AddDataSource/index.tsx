@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'antd/es/form/Form';
 import { Space, Typography } from 'antd';
@@ -10,18 +9,16 @@ import {
   BasicButton,
   PageHeader,
   BasicResult,
-  EmptyBox
+  EmptyBox,
+  BackButton
 } from '@actiontech/shared';
 import DataSourceForm from '../Form';
-
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
-import { LeftArrowOutlined } from '@actiontech/icons';
 
 const AddDataSource = () => {
   const { t } = useTranslation();
@@ -99,14 +96,7 @@ const AddDataSource = () => {
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
         fixed
-        title={
-          <BasicButton
-            onClick={() => navigate(-1)}
-            icon={<LeftArrowOutlined />}
-          >
-            {t('dmsDataSource.backDesc')}
-          </BasicButton>
-        }
+        title={<BackButton>{t('dmsDataSource.backDesc')}</BackButton>}
         extra={
           <Space hidden={resultVisible}>
             <BasicButton onClick={onReset}>{t('common.reset')}</BasicButton>

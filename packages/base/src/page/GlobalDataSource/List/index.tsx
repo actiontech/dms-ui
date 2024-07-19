@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, Link } from 'react-router-dom';
-import { message, Modal, Space } from 'antd';
-import { PageHeader, BasicButton } from '@actiontech/shared';
+import { useNavigate } from 'react-router-dom';
+import { message, Modal } from 'antd';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
@@ -23,8 +22,9 @@ import {
   GlobalDataSourceListActions,
   GLobalDataSourceListParamType
 } from './columns';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 import useProjectTips from '../../../hooks/useProjectTips';
-import { PlusOutlined } from '@actiontech/icons';
 import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 
 const GlobalDataSourceList = () => {
@@ -213,39 +213,22 @@ const GlobalDataSourceList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.DMS_Refresh_Global_Data_Source,
+      refresh
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [refresh]);
+
   return (
     <>
       {modalContextHolder}
       {messageContextHolder}
-      <PageHeader
-        title={t('dmsGlobalDataSource.pageTitle')}
-        extra={
-          <Space>
-            <Link to={`/global-data-source/batch-import`}>
-              <BasicButton>
-                {t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
-              </BasicButton>
-            </Link>
-            <Link to={`/global-data-source/create`}>
-              <BasicButton
-                type="primary"
-                icon={
-                  <PlusOutlined
-                    width={10}
-                    height={10}
-                    fill="currentColor"
-                    color="currentColor"
-                  />
-                }
-              >
-                {t('dmsGlobalDataSource.addDatabase')}
-              </BasicButton>
-            </Link>
-          </Space>
-        }
-      />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem

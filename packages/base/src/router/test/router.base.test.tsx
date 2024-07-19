@@ -4,6 +4,7 @@ import { act, screen, cleanup } from '@testing-library/react';
 import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { DataSourceManagerSegmentedKey } from '../../page/DataSourceManagement/index.type';
 
 describe('base/router-base-ee', () => {
   const projectID = mockProjectInfo.projectID;
@@ -62,7 +63,7 @@ describe('base/router-base-ee', () => {
     });
 
     it('render router globalDataSource', async () => {
-      const { baseElement } = customRender(['/global-data-source']);
+      const { baseElement } = customRender(['/data-source-management']);
 
       await act(async () => jest.advanceTimersByTime(0));
       expect(baseElement).toMatchSnapshot();
@@ -176,7 +177,7 @@ describe('base/router-base-ee', () => {
     describe('render route syncDataSource', () => {
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([
-          `/project/${projectID}/sync-data-source`
+          `/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`
         ]);
 
         await act(async () => jest.advanceTimersByTime(0));
@@ -184,9 +185,7 @@ describe('base/router-base-ee', () => {
       });
 
       it('render route syncDataSourceList', async () => {
-        const { baseElement } = customRender([
-          `/project/${projectID}/sync-data-source/create`
-        ]);
+        const { baseElement } = customRender([`/sync-data-source/create`]);
 
         await act(async () => jest.advanceTimersByTime(0));
         expect(baseElement).toMatchSnapshot();
@@ -195,7 +194,7 @@ describe('base/router-base-ee', () => {
 
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([
-          `/project/${projectID}/sync-data-source/update/taskId`
+          `/sync-data-source/update/taskId`
         ]);
 
         await act(async () => jest.advanceTimersByTime(0));

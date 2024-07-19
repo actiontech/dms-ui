@@ -289,8 +289,7 @@ exports[`base/Nav/SideMenu/UserMenu render snap when click system icon 1`] = `
                   <span
                     class="content-item-text"
                   >
-                     
-                    全局数据源
+                    数据源管理
                   </span>
                 </div>
                 <div

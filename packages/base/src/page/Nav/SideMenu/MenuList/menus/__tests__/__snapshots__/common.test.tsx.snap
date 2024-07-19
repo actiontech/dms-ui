@@ -56,32 +56,17 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
   {
     "children": [
       {
-        "children": [
-          {
-            "key": "project/projectID/db-services",
-            "label": <Link
-              to="/project/600300/db-services"
-            >
-              数据源
-            </Link>,
-          },
-          {
-            "key": "project/projectID/sync-data-source",
-            "label": <Link
-              to="/project/600300/sync-data-source"
-            >
-              外部数据源
-            </Link>,
-          },
-        ],
-        "expandIcon": [Function],
         "icon": <DatabaseFilled
           height={18}
           width={18}
         />,
-        "key": "instance-management",
-        "label": "数据源管理",
-        "structKey": "instance-management",
+        "key": "project/projectID/db-services",
+        "label": <Link
+          to="/project/600300/db-services"
+        >
+          数据源
+        </Link>,
+        "structKey": "instance",
       },
       null,
       null,
@@ -160,32 +145,17 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
   {
     "children": [
       {
-        "children": [
-          {
-            "key": "project/projectID/db-services",
-            "label": <Link
-              to="/project/600300/db-services"
-            >
-              数据源
-            </Link>,
-          },
-          {
-            "key": "project/projectID/sync-data-source",
-            "label": <Link
-              to="/project/600300/sync-data-source"
-            >
-              外部数据源
-            </Link>,
-          },
-        ],
-        "expandIcon": [Function],
         "icon": <DatabaseFilled
           height={18}
           width={18}
         />,
-        "key": "instance-management",
-        "label": "数据源管理",
-        "structKey": "instance-management",
+        "key": "project/projectID/db-services",
+        "label": <Link
+          to="/project/600300/db-services"
+        >
+          数据源
+        </Link>,
+        "structKey": "instance",
       },
       null,
       null,
@@ -380,32 +350,17 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
   {
     "children": [
       {
-        "children": [
-          {
-            "key": "project/projectID/db-services",
-            "label": <Link
-              to="/project/600300/db-services"
-            >
-              数据源
-            </Link>,
-          },
-          {
-            "key": "project/projectID/sync-data-source",
-            "label": <Link
-              to="/project/600300/sync-data-source"
-            >
-              外部数据源
-            </Link>,
-          },
-        ],
-        "expandIcon": [Function],
         "icon": <DatabaseFilled
           height={18}
           width={18}
         />,
-        "key": "instance-management",
-        "label": "数据源管理",
-        "structKey": "instance-management",
+        "key": "project/projectID/db-services",
+        "label": <Link
+          to="/project/600300/db-services"
+        >
+          数据源
+        </Link>,
+        "structKey": "instance",
       },
       {
         "icon": <ProfileSquareFilled
@@ -637,32 +592,17 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
   {
     "children": [
       {
-        "children": [
-          {
-            "key": "project/projectID/db-services",
-            "label": <Link
-              to="/project/600300/db-services"
-            >
-              数据源
-            </Link>,
-          },
-          {
-            "key": "project/projectID/sync-data-source",
-            "label": <Link
-              to="/project/600300/sync-data-source"
-            >
-              外部数据源
-            </Link>,
-          },
-        ],
-        "expandIcon": [Function],
         "icon": <DatabaseFilled
           height={18}
           width={18}
         />,
-        "key": "instance-management",
-        "label": "数据源管理",
-        "structKey": "instance-management",
+        "key": "project/projectID/db-services",
+        "label": <Link
+          to="/project/600300/db-services"
+        >
+          数据源
+        </Link>,
+        "structKey": "instance",
       },
       {
         "icon": <ProfileSquareFilled

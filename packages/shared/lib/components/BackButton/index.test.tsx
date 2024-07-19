@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import BackButton from '.';
 import useBack from '../../hooks/useBack';
+import { renderWithTheme } from '../../testUtil/customRender';
 
 jest.mock('../../hooks/useBack', () => {
   const goBack = jest.fn();
@@ -17,13 +18,13 @@ describe('BackButton', () => {
   });
 
   test('should render a button', () => {
-    const { container } = render(<BackButton />);
+    const { container } = renderWithTheme(<BackButton />);
     expect(container).toMatchSnapshot();
   });
 
   test('should call goBack function when click the button', () => {
-    render(<BackButton />);
-    fireEvent.click(screen.getByText('返 回'));
+    renderWithTheme(<BackButton>back</BackButton>);
+    fireEvent.click(screen.getByText('back'));
 
     expect(goBack).toHaveBeenCalledTimes(1);
   });

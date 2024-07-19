@@ -48,6 +48,20 @@ export interface IAddDBServiceReq {
   db_service?: IDBService;
 }
 
+export interface IAddDBServiceSyncTaskReply {
+  code?: number;
+
+  data?: {
+    uid?: string;
+  };
+
+  message?: string;
+}
+
+export interface IAddDBServiceSyncTaskReq {
+  db_service_sync_task?: IDBServiceSyncTask;
+}
+
 export interface IAddDataExportTaskReply {
   code?: number;
 
@@ -416,6 +430,32 @@ export interface IDBServiceConnectionReq {
   db_services?: ICheckDbsConnectable[];
 }
 
+export interface IDBServiceSyncTask {
+  additional_params?: IParams;
+
+  cron_express: string;
+
+  db_type: string;
+
+  name: string;
+
+  source: string;
+
+  sqle_config?: ISQLEConfig;
+
+  url: string;
+}
+
+export interface IDBServiceSyncTaskTip {
+  db_type?: string[];
+
+  description?: string;
+
+  params?: IParams;
+
+  service_source_name?: string;
+}
+
 export interface IDBServicesConnectionItem {
   failed_names?: string[];
 
@@ -570,6 +610,32 @@ export interface IGetCompanyNoticeReply {
   code?: number;
 
   data?: ICompanyNotice;
+
+  message?: string;
+}
+
+export interface IGetDBServiceSyncTask {
+  additional_params?: IParams;
+
+  cron_express: string;
+
+  db_type: string;
+
+  name: string;
+
+  source: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  url: string;
+}
+
+export interface IGetDBServiceSyncTaskReply {
+  code?: number;
+
+  data?: IGetDBServiceSyncTask;
 
   message?: string;
 }
@@ -1076,6 +1142,44 @@ export interface IListDBServiceReply {
   total_nums?: number;
 }
 
+export interface IListDBServiceSyncTask {
+  additional_params?: IParams;
+
+  cron_express: string;
+
+  db_type: string;
+
+  last_sync_err?: string;
+
+  last_sync_success_time?: string;
+
+  name: string;
+
+  source: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  url: string;
+}
+
+export interface IListDBServiceSyncTaskTipsReply {
+  code?: number;
+
+  data?: IDBServiceSyncTaskTip[];
+
+  message?: string;
+}
+
+export interface IListDBServiceSyncTasksReply {
+  code?: number;
+
+  data?: IListDBServiceSyncTask[];
+
+  message?: string;
+}
+
 export interface IListDBServiceTipItem {
   db_type?: string;
 
@@ -1576,6 +1680,18 @@ export interface IOperation {
   operation_type?: OperationOperationTypeEnum;
 }
 
+export interface IParam {
+  desc?: string;
+
+  key?: string;
+
+  type?: string;
+
+  value?: string;
+}
+
+export type IParams = IParam[];
+
 export interface IPersonalizationReq {
   file?: IFileHeader;
 
@@ -1874,6 +1990,10 @@ export interface IUpdateDBServiceReply {
 
 export interface IUpdateDBServiceReq {
   db_service?: IUpdateDBService;
+}
+
+export interface IUpdateDBServiceSyncTaskReq {
+  db_service_sync_task?: IDBServiceSyncTask;
 }
 
 export interface IUpdateDatabaseSourceServiceReq {
