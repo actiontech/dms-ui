@@ -1,6 +1,6 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { IListDatabaseSourceService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
@@ -14,30 +14,22 @@ export const SyncTaskListActions: (params: {
   navigate: NavigateFunction;
   syncAction: (taskId: string) => void;
   deleteAction: (taskId: string) => void;
-  projectID: string;
-  isArchive: boolean;
   actionPermission: boolean;
-}) => ActiontechTableActionMeta<IListDatabaseSourceService>[] = ({
+}) => ActiontechTableActionMeta<IListDBServiceSyncTask>[] = ({
   navigate,
   syncAction,
   deleteAction,
-  projectID,
-  isArchive,
   actionPermission
 }) => {
   return [
     {
       key: 'edit',
       text: t('common.edit'),
-      permissions: () => !isArchive && actionPermission,
+      permissions: () => actionPermission,
       buttonProps: (record) => {
         return {
           onClick: () =>
-            navigate(
-              `/project/${projectID}/sync-data-source/update/${
-                record?.uid ?? ''
-              }`
-            )
+            navigate(`/sync-data-source/update/${record?.uid ?? ''}`)
         };
       }
     },
@@ -54,7 +46,7 @@ export const SyncTaskListActions: (params: {
     {
       key: 'delete',
       text: t('common.delete'),
-      permissions: () => !isArchive && actionPermission,
+      permissions: () => actionPermission,
       buttonProps: () => {
         return {
           danger: true
@@ -70,7 +62,7 @@ export const SyncTaskListActions: (params: {
   ];
 };
 
-export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDatabaseSourceService> =
+export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDBServiceSyncTask> =
   () => {
     const { getLogoUrlByDbType } = useDbServiceDriver();
     return [
@@ -83,10 +75,6 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
         title: () => t('dmsSyncDataSource.syncTaskList.columns.source')
       },
       {
-        dataIndex: 'version',
-        title: () => t('dmsSyncDataSource.syncTaskList.columns.version')
-      },
-      {
         dataIndex: 'url',
         title: () => t('dmsSyncDataSource.syncTaskList.columns.url')
       },
@@ -95,7 +83,7 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
         title: () => t('dmsSyncDataSource.syncTaskList.columns.instanceType'),
         render(type: string) {
           if (!type) {
-            return '--';
+            return '-';
           }
 
           return (
@@ -109,16 +97,23 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDa
       {
         dataIndex: 'last_sync_err',
         title: () => t('dmsSyncDataSource.syncTaskList.columns.lastSyncResult'),
-        render: (lastSyncErr) => {
-          return !lastSyncErr ? (
-            <Space>
-              <BasicTag color="green">{t('common.success')}</BasicTag>
-            </Space>
-          ) : (
-            <BasicToolTips title={lastSyncErr}>
-              <BasicTag color="red">{t('common.fail')}</BasicTag>
-            </BasicToolTips>
-          );
+        render: (lastSyncErr, record) => {
+          if (lastSyncErr) {
+            return (
+              <BasicToolTips title={lastSyncErr}>
+                <BasicTag color="red">{t('common.fail')}</BasicTag>
+              </BasicToolTips>
+            );
+          }
+
+          if (!lastSyncErr && !!record.last_sync_success_time)
+            return (
+              <Space>
+                <BasicTag color="green">{t('common.success')}</BasicTag>
+              </Space>
+            );
+
+          return '-';
         }
       },
       {

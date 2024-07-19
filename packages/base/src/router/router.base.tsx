@@ -2,6 +2,8 @@ import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
+import { DataSourceManagerSegmentedKey } from '../page/DataSourceManagement/index.type';
 
 // #if [ee]
 const Project = lazy(() => import('../page/Project'));
@@ -48,6 +50,7 @@ const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
 const Account = lazy(() => import('../page/Account'));
 const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
+const DataSourceManagement = lazy(() => import('../page/DataSourceManagement'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
   {
@@ -74,17 +77,41 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     element: <Account />
   },
   {
-    path: 'global-data-source',
-    key: 'globalDataSource',
-    element: <GlobalDataSource />,
+    path: 'data-source-management',
+    key: 'dataSourceManagement',
     role: [SystemRole.admin, SystemRole.certainProjectManager],
+    element: <DataSourceManagement />
+  },
+  // {
+  //   path: 'global-data-source',
+  //   key: 'globalDataSource',
+  //   role: [SystemRole.admin, SystemRole.certainProjectManager],
+  //   children: [
+  //     {
+  //       index: true,
+  //       key: 'globalDataSourceList',
+  //       element: <GlobalDataSourceList />
+  //     }
+  //   ]
+  // },
+  {
+    path: `sync-data-source`,
+    key: 'syncDataSource',
+    role: [SystemRole.admin],
+    // #if [ee]
     children: [
       {
-        index: true,
-        key: 'globalDataSourceList',
-        element: <GlobalDataSourceList />
+        path: 'create',
+        element: <AddSyncTask />,
+        key: 'syncDataSourceCreate'
+      },
+      {
+        path: 'update/:taskId',
+        element: <UpdateSyncTask />,
+        key: 'syncDataSourceUpdate'
       }
-    ] as RouterConfigItem[]
+    ]
+    // #endif
   },
   // #if [ee]
   {
@@ -147,31 +174,6 @@ export const BaseRouterConfig: RouterConfigItem[] = [
           }
           // #endif
         ]
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/sync-data-source`,
-        label: 'menu.syncDataSource',
-        key: 'syncDataSource',
-        element: <SyncDataSource />,
-        // #if [ee]
-        children: [
-          {
-            index: true,
-            element: <SyncTaskList />,
-            key: 'syncDataSourceList'
-          },
-          {
-            path: 'create',
-            element: <AddSyncTask />,
-            key: 'syncDataSourceCreate'
-          },
-          {
-            path: 'update/:taskId',
-            element: <UpdateSyncTask />,
-            key: 'syncDataSourceUpdate'
-          }
-        ]
-        // #endif
       },
       {
         path: `${PROJECT_ROUTER_PARAM}/data/export`,

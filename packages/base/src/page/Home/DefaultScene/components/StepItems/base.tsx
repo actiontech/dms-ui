@@ -1,4 +1,5 @@
 import { t } from '../../../../../locale';
+import { DataSourceManagerSegmentedKey } from '../../../../DataSourceManagement/index.type';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
 import { MemberFilled, DatabaseFilled } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -54,7 +55,10 @@ export const getDatabaseManagerSteps: (
             label: t(
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_0'
             ),
-            action: () => navigate(`/project/${projectID}/sync-data-source`)
+            action: () =>
+              navigate(
+                `/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`
+              )
           },
           // #if [ee]
           {
@@ -62,8 +66,7 @@ export const getDatabaseManagerSteps: (
             label: t(
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_1'
             ),
-            action: () =>
-              navigate(`/project/${projectID}/sync-data-source/create`)
+            action: () => navigate(`/sync-data-source/create`)
           }
           // #endif
         ]

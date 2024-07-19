@@ -24,6 +24,8 @@ import {
   GLobalDataSourceListParamType
 } from './columns';
 import useProjects from '../../../hooks/useProjects';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -212,13 +214,23 @@ const GlobalDataSourceList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.DMS_Refresh_Global_Data_Source,
+      refresh
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [refresh]);
+
   return (
     <>
       {modalContextHolder}
       {messageContextHolder}
-      <PageHeader title={t('dmsGlobalDataSource.pageTitle')} />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
+        // refreshButton={{ refresh, disabled: loading }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem

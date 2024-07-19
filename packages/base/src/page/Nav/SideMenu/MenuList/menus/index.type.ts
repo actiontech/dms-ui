@@ -17,7 +17,7 @@ export type MenuStructTreeType = Array<
 export type GenerateMenuItemType = (projectID: string) => CustomMenuItemType;
 
 export type MenuStructTreeKey =
-  | 'instance-management'
+  | 'instance'
   | 'member'
   | 'cloud-beaver'
   | 'data-export'

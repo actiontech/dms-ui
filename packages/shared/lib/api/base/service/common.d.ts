@@ -48,6 +48,16 @@ export interface IAddDBServiceReq {
   db_service?: IDBService;
 }
 
+export interface IAddDBServiceSyncTaskReply {
+  code?: number;
+
+  data?: {
+    uid?: string;
+  };
+
+  message?: string;
+}
+
 export interface IAddDataExportTaskReply {
   code?: number;
 
@@ -416,6 +426,32 @@ export interface IDBServiceConnectionReq {
   db_services?: ICheckDbsConnectable[];
 }
 
+export interface IDBServiceSyncTask {
+  additional_params?: IParams;
+
+  cron_express: string;
+
+  db_type: string;
+
+  name: string;
+
+  source: string;
+
+  sqle_config?: ISQLEConfig;
+
+  url: string;
+}
+
+export interface IDBServiceSyncTaskTip {
+  db_type?: string[];
+
+  description?: string;
+
+  params?: IParams;
+
+  service_source_name?: string;
+}
+
 export interface IDBServicesConnectionItem {
   failed_names?: string[];
 
@@ -570,6 +606,32 @@ export interface IGetCompanyNoticeReply {
   code?: number;
 
   data?: ICompanyNotice;
+
+  message?: string;
+}
+
+export interface IGetDBServiceSyncTask {
+  additional_params?: IParams;
+
+  cron_express: string;
+
+  db_type: string;
+
+  name: string;
+
+  source: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  url: string;
+}
+
+export interface IGetDBServiceSyncTaskReply {
+  code?: number;
+
+  data?: IGetDBServiceSyncTask;
 
   message?: string;
 }
@@ -1076,6 +1138,44 @@ export interface IListDBServiceReply {
   total_nums?: number;
 }
 
+export interface IListDBServiceSyncTask {
+  additional_params?: IParams;
+
+  cron_express: string;
+
+  db_type: string;
+
+  last_sync_err?: string;
+
+  last_sync_success_time?: string;
+
+  name: string;
+
+  source: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  url: string;
+}
+
+export interface IListDBServiceSyncTaskTipsReply {
+  code?: number;
+
+  data?: IDBServiceSyncTaskTip[];
+
+  message?: string;
+}
+
+export interface IListDBServiceSyncTasksReply {
+  code?: number;
+
+  data?: IListDBServiceSyncTask[];
+
+  message?: string;
+}
+
 export interface IListDBServiceTipItem {
   db_type?: string;
 
@@ -1193,8 +1293,6 @@ export interface IListDatabaseSourceServicesReply {
 }
 
 export interface IListGlobalDBService {
-  additional_params?: IAdditionalParam[];
-
   business?: string;
 
   db_type?: string;
@@ -1203,13 +1301,13 @@ export interface IListGlobalDBService {
 
   host?: string;
 
+  is_enable_audit?: boolean;
+
   is_enable_masking?: boolean;
 
   maintenance_times?: IMaintenanceTime[];
 
   name?: string;
-
-  password?: string;
 
   port?: string;
 
@@ -1219,13 +1317,13 @@ export interface IListGlobalDBService {
 
   source?: string;
 
-  sqle_config?: ISQLEConfig;
-
   uid?: string;
 
   unfinished_workflow_num?: number;
+}
 
-  user?: string;
+export interface IListGlobalDBServiceTips {
+  db_type?: string[];
 }
 
 export interface IListGlobalDBServicesReply {
@@ -1236,6 +1334,14 @@ export interface IListGlobalDBServicesReply {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IListGlobalDBServicesTipsReply {
+  code?: number;
+
+  data?: IListGlobalDBServiceTips;
+
+  message?: string;
 }
 
 export interface IListMaskingRulesData {
@@ -1569,6 +1675,18 @@ export interface IOperation {
 
   operation_type?: OperationOperationTypeEnum;
 }
+
+export interface IParam {
+  desc?: string;
+
+  key?: string;
+
+  type?: string;
+
+  value?: string;
+}
+
+export type IParams = IParam[];
 
 export interface IPersonalizationReq {
   file?: IFileHeader;

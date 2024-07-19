@@ -10,6 +10,7 @@ import {
   IListGlobalDBServicesParams,
   IListGlobalDBServicesReturn,
   IListDBServiceDriverOptionReturn,
+  IListGlobalDBServicesTipsReturn,
   IListDBServicesParams,
   IListDBServicesReturn,
   IAddDBServiceParams,
@@ -45,6 +46,14 @@ class DBServiceService extends ServiceBase {
   public ListDBServiceDriverOption(options?: AxiosRequestConfig) {
     return this.get<IListDBServiceDriverOptionReturn>(
       '/v1/dms/db_services/driver_options',
+      undefined,
+      options
+    );
+  }
+
+  public ListGlobalDBServicesTips(options?: AxiosRequestConfig) {
+    return this.get<IListGlobalDBServicesTipsReturn>(
+      '/v1/dms/db_services/tips',
       undefined,
       options
     );

@@ -1,9 +1,13 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { Link } from 'react-router-dom';
-import { Alert, FormInstance, Popconfirm, Spin } from 'antd';
-import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
+import { Alert, Form, Popconfirm, Select, Spin } from 'antd';
+import {
+  BasicInput,
+  BasicSelect,
+  BasicSwitch,
+  EmptyBox
+} from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
@@ -19,9 +23,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import CronInputCom from '@actiontech/shared/lib/components/CronInput';
-
-import { SyncTaskFormFields, SyncTaskFormProps } from '.';
-import useTaskSource from '../../../hooks/useTaskSource';
+import { SyncTaskFormProps } from '.';
 import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmitterKey from '../../../data/EmitterKey';
@@ -29,8 +31,10 @@ import EventEmitter from '../../../utils/EventEmitter';
 
 // #if [sqle]
 import useGlobalRuleTemplate from 'sqle/src/hooks/useGlobalRuleTemplate';
-import useRuleTemplate from 'sqle/src/hooks/useRuleTemplate';
 import useSqlReviewTemplateToggle from '../../../hooks/useSqlReviewTemplateToggle';
+import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
+import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 // #endif
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
@@ -38,34 +42,51 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   defaultValue,
   loading = false,
   title,
-  projectName
+  taskSourceTips
 }) => {
   const { t } = useTranslation();
-
   const isUpdate = useMemo<boolean>(() => !!defaultValue, [defaultValue]);
-  const [dbType, setDbType] = useState('');
-  const [source, setSource] = useState('');
+  const source = Form.useWatch('source', form);
+  const auditEnabled = Form.useWatch('needAuditForSqlQuery', form);
+
+  const { generateFormValueByParams } = useAsyncParams();
+
   const {
     loading: getTaskSourceListLoading,
-    updateTaskSourceList,
     generateTaskSourceSelectOption,
-    generateTaskSourceDbTypesSelectOption
-  } = useTaskSource();
+    generateTaskSourceDbTypesSelectOption,
+    generateTaskSourceAdditionalParams
+  } = taskSourceTips;
 
-  const dbTypeChange = (type: string) => {
-    setDbType(type);
+  const formParams = generateTaskSourceAdditionalParams(source);
+
+  const handleChangeInstanceType = (type: string) => {
     // #if [sqle]
     form.setFieldsValue({
       ruleTemplateId: undefined,
       ruleTemplateName: undefined
     });
-    updateGlobalRuleTemplateList(dbType);
-    updateRuleTemplateList(projectName, dbType);
+    updateGlobalRuleTemplateList(type);
     // #endif
   };
 
-  const sourceChange = (data: string) => {
-    setSource(data);
+  const handleChangeAuditEnabled = (check: boolean) => {
+    if (!check) {
+      form.setFieldsValue({
+        allowQueryWhenLessThanAuditLevel: undefined
+      });
+    } else {
+      if (defaultValue) {
+        form.setFieldsValue({
+          allowQueryWhenLessThanAuditLevel:
+            defaultValue.sqle_config?.sql_query_config
+              ?.allow_query_when_less_than_audit_level
+        });
+      }
+    }
+  };
+
+  const handleChangeSource = () => {
     form.setFieldsValue({
       instanceType: undefined
     });
@@ -78,19 +99,21 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     globalRuleTemplateList
   } = useGlobalRuleTemplate();
 
-  const {
-    loading: getRuleTemplateListLoading,
-    updateRuleTemplateList,
-    ruleTemplateList
-  } = useRuleTemplate();
-
-  const changeRuleTemplate = (templateName: string) => {
+  const handleChangeRuleTemplate = (templateName: string) => {
     form.setFieldsValue({
-      ruleTemplateId: [...ruleTemplateList, ...globalRuleTemplateList].find(
+      ruleTemplateId: globalRuleTemplateList.find(
         (v) => v.rule_template_name === templateName
       )?.rule_template_id
     });
   };
+
+  const updateGlobalRuleTemplateByInstanceType = useCallback(() => {
+    if (!defaultValue?.db_type) {
+      updateGlobalRuleTemplateList();
+    } else {
+      updateGlobalRuleTemplateList(defaultValue.db_type);
+    }
+  }, [defaultValue?.db_type, updateGlobalRuleTemplateList]);
 
   const {
     auditRequired,
@@ -98,20 +121,17 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     onAuditRequiredPopupOpenChange,
     clearRuleTemplate,
     changeAuditRequired
-  } = useSqlReviewTemplateToggle<FormInstance<SyncTaskFormFields>>(form);
+  } = useSqlReviewTemplateToggle(form);
   // #endif
 
   useEffect(() => {
-    updateTaskSourceList();
     // #if [sqle]
-    updateGlobalRuleTemplateList();
-    updateRuleTemplateList(projectName);
+    updateGlobalRuleTemplateByInstanceType();
     // #endif
 
     const resetForm = () => {
       if (isUpdate) {
         form.resetFields([
-          'version',
           'url',
           // #if [sqle]
           'ruleTemplateId',
@@ -127,11 +147,8 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
         });
         // #endif
       }
-      setDbType('');
-      setSource('');
       // #if [sqle]
-      updateGlobalRuleTemplateList();
-      updateRuleTemplateList(projectName);
+      updateGlobalRuleTemplateByInstanceType();
       // #endif
     };
 
@@ -140,32 +157,27 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
     return () => {
       EventEmitter.unsubscribe(EmitterKey.DMS_SYNC_TASK_RESET_FORM, resetForm);
     };
-  }, [
-    dbType,
-    form,
-    isUpdate,
-    projectName,
-    // #if [sqle]
-    updateGlobalRuleTemplateList,
-    updateRuleTemplateList,
-    // #endif
-    updateTaskSourceList
-  ]);
+  }, [form, isUpdate, updateGlobalRuleTemplateByInstanceType]);
 
   useEffect(() => {
     if (!!defaultValue) {
       form.setFieldsValue({
         name: defaultValue.name,
         source: defaultValue.source,
-        version: defaultValue.version,
         url: defaultValue.url,
         instanceType: defaultValue.db_type,
         // #if [sqle]
         needSqlAuditService: !!defaultValue.sqle_config?.rule_template_id,
         ruleTemplateId: defaultValue.sqle_config?.rule_template_id ?? '',
         ruleTemplateName: defaultValue.sqle_config?.rule_template_name ?? '',
+        needAuditForSqlQuery:
+          !!defaultValue.sqle_config?.sql_query_config?.audit_enabled,
+        allowQueryWhenLessThanAuditLevel:
+          defaultValue.sqle_config?.sql_query_config
+            ?.allow_query_when_less_than_audit_level,
         // #endif
-        syncInterval: defaultValue.cron_express
+        syncInterval: defaultValue.cron_express,
+        params: generateFormValueByParams(defaultValue.additional_params ?? [])
       });
     } else {
       // #if [sqle]
@@ -174,6 +186,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
       });
       // #endif
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultValue, form]);
 
   return (
@@ -240,36 +253,15 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 placeholder={t('common.form.placeholder.select', {
                   name: t('dmsSyncDataSource.syncTaskForm.source')
                 })}
-                onChange={sourceChange}
+                onChange={handleChangeSource}
               >
                 {generateTaskSourceSelectOption()}
               </BasicSelect>
             </FormItemLabel>
 
-            <FormItemLabel
-              className="has-required-style  has-label-tip"
-              name="version"
-              label={
-                <CustomLabelContent
-                  title={t('dmsSyncDataSource.syncTaskForm.version')}
-                  tips={t('dmsSyncDataSource.syncTaskForm.versionTips')}
-                />
-              }
-              rules={[
-                {
-                  required: true,
-                  message: t('common.form.placeholder.input', {
-                    name: t('dmsSyncDataSource.syncTaskForm.version')
-                  })
-                }
-              ]}
-            >
-              <BasicInput
-                placeholder={t('common.form.placeholder.input', {
-                  name: t('dmsSyncDataSource.syncTaskForm.version')
-                })}
-              />
-            </FormItemLabel>
+            <EmptyBox if={!!formParams}>
+              <AutoCreatedFormItemByApi params={formParams ?? []} />
+            </EmptyBox>
 
             <FormItemLabel
               className="has-required-style has-label-tip"
@@ -313,7 +305,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
                 disabled={isUpdate}
                 allowClear
                 loading={getTaskSourceListLoading}
-                onChange={dbTypeChange}
+                onChange={handleChangeInstanceType}
                 placeholder={t('common.form.placeholder.select', {
                   name: t('dmsSyncDataSource.syncTaskForm.instanceType')
                 })}
@@ -378,21 +370,43 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             >
               <BasicSelect
                 allowClear
-                loading={
-                  getGlobalRuleTemplateListLoading || getRuleTemplateListLoading
-                }
+                loading={getGlobalRuleTemplateListLoading}
                 placeholder={t('common.form.placeholder.select', {
                   name: t('dmsSyncDataSource.syncTaskForm.ruleTemplateName')
                 })}
-                onChange={changeRuleTemplate}
-                options={[...ruleTemplateList, ...globalRuleTemplateList].map(
-                  (v) => ({
-                    key: v.rule_template_id,
-                    label: v.rule_template_name,
-                    value: v.rule_template_name
-                  })
-                )}
+                onChange={handleChangeRuleTemplate}
+                options={globalRuleTemplateList.map((v) => ({
+                  key: v.rule_template_id,
+                  label: v.rule_template_name,
+                  value: v.rule_template_name
+                }))}
               />
+            </FormItemLabel>
+            <FormItemLabel
+              label={t('dmsDataSource.dataSourceForm.needAuditForSqlQuery')}
+              name="needAuditForSqlQuery"
+              valuePropName="checked"
+            >
+              <BasicSwitch onChange={handleChangeAuditEnabled} />
+            </FormItemLabel>
+            <FormItemLabel
+              hidden={!auditEnabled}
+              label={t(
+                'dmsDataSource.dataSourceForm.allowQueryWhenLessThanAuditLevel'
+              )}
+              name="allowQueryWhenLessThanAuditLevel"
+            >
+              <BasicSelect>
+                {Object.values(
+                  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
+                ).map((v) => {
+                  return (
+                    <Select.Option key={v} value={v}>
+                      {v}
+                    </Select.Option>
+                  );
+                })}
+              </BasicSelect>
             </FormItemLabel>
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>
