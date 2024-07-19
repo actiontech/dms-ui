@@ -228,12 +228,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
             <FormItemLabel
               className="has-required-style has-label-tip"
               name="source"
-              label={
-                <CustomLabelContent
-                  title={t('dmsSyncDataSource.syncTaskForm.source')}
-                  tips={t('dmsSyncDataSource.syncTaskForm.sourceTips')}
-                />
-              }
+              label={t('dmsSyncDataSource.syncTaskForm.source')}
               rules={[
                 {
                   required: true,

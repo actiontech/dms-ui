@@ -166,20 +166,9 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -1856,20 +1845,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -3381,20 +3359,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -5028,20 +4995,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -7006,20 +6962,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="source"
-                      title=""
+                      title="来源"
                     >
-                      <div
-                        class="label-cont-custom"
-                      >
-                        <div>
-                          来源
-                        </div>
-                        <div
-                          class="tip-content-box"
-                        >
-                          支持同步ActionDMP平台
-                        </div>
-                      </div>
+                      来源
                     </label>
                   </div>
                   <div
