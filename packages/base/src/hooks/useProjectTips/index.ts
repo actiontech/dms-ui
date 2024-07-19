@@ -1,53 +1,43 @@
-import { useState, useCallback } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
 
 const useProjectTips = () => {
-  const [projectBusiness, setProjectBusiness] = useState<string[]>([]);
-  const [isFixedBusiness, setIsFixedBusiness] = useState<boolean>(false);
+  const [projectList, setProjectList] = useState<IListProject[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
-  const { projectID } = useCurrentProject();
 
-  const updateProjectTips = useCallback(() => {
+  const updateProjects = useCallback(() => {
     setTrue();
-    Project.GetProjectTips({
-      project_uid: projectID
-    })
+    Project.ListProjects({ page_size: 9999 })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          const currentProject = res.data?.data?.[0] ?? {};
-          setProjectBusiness(currentProject?.business ?? []);
-          setIsFixedBusiness(currentProject?.is_fixed_business ?? false);
-        } else {
-          setProjectBusiness([]);
-          setIsFixedBusiness(false);
+          setProjectList(res.data.data ?? []);
         }
       })
       .catch(() => {
-        setProjectBusiness([]);
+        setProjectList([]);
       })
       .finally(() => {
         setFalse();
       });
-  }, [setFalse, setTrue, projectID]);
+  }, [setFalse, setTrue]);
 
-  const projectBusinessOption = useCallback(() => {
-    return projectBusiness.map((business) => {
+  const projectIDOptions = useMemo(() => {
+    return projectList.map((project) => {
       return {
-        value: business,
-        label: business
+        value: project.uid,
+        label: project.name
       };
     });
-  }, [projectBusiness]);
+  }, [projectList]);
 
   return {
-    projectBusiness,
+    projectIDOptions,
     loading,
-    updateProjectTips,
-    projectBusinessOption,
-    isFixedBusiness
+    updateProjects,
+    projectList
   };
 };
 

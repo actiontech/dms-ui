@@ -39,6 +39,20 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "key": "globalDataSourceList",
         "path": "",
       },
+      {
+        "element": <div>
+          globalBatchImportDataSource
+        </div>,
+        "key": "globalBatchImportDataSource",
+        "path": "batch-import",
+      },
+      {
+        "element": <div>
+          globalDataSourceCreate
+        </div>,
+        "key": "globalDataSourceCreate",
+        "path": "create",
+      },
     ],
     "element": <UNDEFINED />,
     "key": "globalDataSource",
@@ -200,6 +214,30 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "path": "project/*",
   },
 ]
+`;
+
+exports[`base/router-base-ee render base router when version is ce render route globalBatchImportDataSource 1`] = `
+<body>
+  <div>
+    <section>
+      <div>
+        globalBatchImportDataSource
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render route globalDataSourceCreate 1`] = `
+<body>
+  <div>
+    <section>
+      <div>
+        globalDataSourceCreate
+      </div>
+    </section>
+  </div>
+</body>
 `;
 
 exports[`base/router-base-ee render base router when version is ce render router account 1`] = `

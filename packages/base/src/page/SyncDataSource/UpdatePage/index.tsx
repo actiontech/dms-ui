@@ -1,9 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import { Empty, message, Space, Typography } from 'antd';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import {
+  BackButton,
+  BasicButton,
+  EmptyBox,
+  PageHeader
+} from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useForm } from 'antd/es/form/Form';
 import SyncTaskForm, { SyncTaskFormFields } from '../Form';
@@ -11,7 +16,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IGetDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
-import { LeftArrowOutlined, DatabaseFilled } from '@actiontech/icons';
+import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import { DataSourceManagerSegmentedKey } from '../../DataSourceManagement/index.type';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
@@ -121,13 +126,9 @@ const UpdateSyncTask: React.FC = () => {
       <PageHeader
         fixed
         title={
-          <Link
-            to={`/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`}
-          >
-            <BasicButton icon={<LeftArrowOutlined />}>
-              {t('dmsSyncDataSource.addSyncTask.backToList')}
-            </BasicButton>
-          </Link>
+          <BackButton>
+            {t('dmsSyncDataSource.addSyncTask.backToList')}
+          </BackButton>
         }
         extra={
           <Space>

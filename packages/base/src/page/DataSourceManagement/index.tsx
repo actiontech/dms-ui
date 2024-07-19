@@ -7,7 +7,12 @@ import {
 } from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams
+} from 'react-router-dom';
 import { Space } from 'antd';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
@@ -27,6 +32,8 @@ const DataSourceManagement: React.FC = () => {
   const { isAdmin, isCertainProjectManager } = useCurrentUser();
 
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const onRefresh = () => {
     if (activeKey === DataSourceManagerSegmentedKey.GlobalDataSource) {
@@ -62,6 +69,7 @@ const DataSourceManagement: React.FC = () => {
     return [];
   }, [isAdmin, isCertainProjectManager, t]);
 
+  // #if [ee]
   const renderExtra = () => {
     if (activeKey === DataSourceManagerSegmentedKey.SyncDataSource) {
       return (
@@ -79,7 +87,32 @@ const DataSourceManagement: React.FC = () => {
         </EmptyBox>
       );
     }
+
+    if (activeKey === DataSourceManagerSegmentedKey.GlobalDataSource) {
+      return (
+        <EmptyBox if={isAdmin || isCertainProjectManager}>
+          <Space>
+            <Link to={`/global-data-source/batch-import`}>
+              <BasicButton>
+                {t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
+              </BasicButton>
+            </Link>
+            <Link to={`/global-data-source/create`}>
+              <BasicButton
+                type="primary"
+                icon={
+                  <PlusOutlined width={10} height={10} color="currentColor" />
+                }
+              >
+                {t('dmsGlobalDataSource.addDatabase')}
+              </BasicButton>
+            </Link>
+          </Space>
+        </EmptyBox>
+      );
+    }
   };
+  // #endif
 
   useEffect(() => {
     if (searchParams && searchParams.has('active')) {
@@ -96,12 +129,25 @@ const DataSourceManagement: React.FC = () => {
             <TableRefreshButton refresh={onRefresh} />
           </Space>
         }
+        // #if [ee]
         extra={renderExtra()}
+        // #endif
       />
 
       <SegmentedTabs
         activeKey={activeKey}
-        onChange={setActiveKey}
+        onChange={(key) => {
+          setActiveKey(key);
+          navigate(
+            {
+              pathname: location.pathname,
+              search: `active=${key}`
+            },
+            {
+              replace: true
+            }
+          );
+        }}
         items={tabItems}
       />
     </article>
