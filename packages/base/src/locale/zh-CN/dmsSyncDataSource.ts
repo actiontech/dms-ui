@@ -39,7 +39,6 @@ export default {
   syncTaskForm: {
     name: '同步任务名称',
     source: '来源',
-    sourceTips: '支持同步ActionDMP平台',
     url: '地址',
     urlTips: '第三方平台地址',
     instanceType: '数据源类型',
