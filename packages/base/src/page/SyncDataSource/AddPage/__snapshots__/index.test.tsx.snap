@@ -139,20 +139,9 @@ exports[`page/SyncDataSource/AddPage render add submit for success 1`] = `
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
                           for="source"
-                          title=""
+                          title="来源"
                         >
-                          <div
-                            class="label-cont-custom"
-                          >
-                            <div>
-                              来源
-                            </div>
-                            <div
-                              class="tip-content-box"
-                            >
-                              支持同步ActionDMP平台
-                            </div>
-                          </div>
+                          来源
                         </label>
                       </div>
                       <div
@@ -2657,20 +2646,9 @@ exports[`page/SyncDataSource/AddPage render add sync task snap 1`] = `
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
                           for="source"
-                          title=""
+                          title="来源"
                         >
-                          <div
-                            class="label-cont-custom"
-                          >
-                            <div>
-                              来源
-                            </div>
-                            <div
-                              class="tip-content-box"
-                            >
-                              支持同步ActionDMP平台
-                            </div>
-                          </div>
+                          来源
                         </label>
                       </div>
                       <div
@@ -4185,20 +4163,9 @@ exports[`page/SyncDataSource/AddPage render form item for prepare api 1`] = `
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
                           for="source"
-                          title=""
+                          title="来源"
                         >
-                          <div
-                            class="label-cont-custom"
-                          >
-                            <div>
-                              来源
-                            </div>
-                            <div
-                              class="tip-content-box"
-                            >
-                              支持同步ActionDMP平台
-                            </div>
-                          </div>
+                          来源
                         </label>
                       </div>
                       <div
