@@ -223,5 +223,33 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
         expect(elementResult).toMatchSnapshot();
       });
     });
+
+    it('render moreButtons when it is a function', async () => {
+      const { result } = renderHooksWithTheme(() => useTableAction());
+      await act(async () => {
+        const elementResult = result.current.renderActionInTable({
+          buttons: [
+            {
+              key: 'add-btn',
+              text: <span>增加</span>
+            }
+          ],
+          moreButtons: () => {
+            return [
+              {
+                key: 'delete-btn2',
+                text: <span>函数moreButtons</span>,
+                icon: <></>,
+                onClick: (record) => {
+                  jest.fn();
+                }
+              }
+            ];
+          }
+        });
+        expect(elementResult).toMatchSnapshot();
+        expect(elementResult?.render?.(1, {}, 1)).toMatchSnapshot();
+      });
+    });
   });
 });
