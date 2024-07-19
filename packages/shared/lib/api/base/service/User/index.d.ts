@@ -62,6 +62,8 @@ export interface IDelUserReturn extends IGenericResp {}
 
 export interface IGetUserOpPermissionParams extends IUserOpPermission {
   user_uid: string;
+
+  project_uid?: string;
 }
 
 export interface IGetUserOpPermissionReturn extends IGetUserOpPermissionReply {}

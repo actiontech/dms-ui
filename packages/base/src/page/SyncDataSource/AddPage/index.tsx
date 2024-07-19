@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 import { Space } from 'antd';
@@ -10,25 +10,25 @@ import {
   BasicButton,
   BasicResult,
   EmptyBox,
+  LazyLoadComponent,
   PageHeader
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-
-import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IAddDatabaseSourceServiceParams } from '@actiontech/shared/lib/api/base/service/DatabaseSourceService/index.d';
-
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import { LeftArrowOutlined, DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
+import { DataSourceManagerSegmentedKey } from '../../DataSourceManagement/index.type';
+import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
+import { IAddDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask/index.d';
+import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
+import useTaskSource from '../../../hooks/useTaskSource';
 
 const AddSyncTask: React.FC = () => {
   const { t } = useTranslation();
-
-  const { projectID, projectName } = useCurrentProject();
   const [form] = useForm<SyncTaskFormFields>();
+  const { mergeFromValueIntoParams } = useAsyncParams();
 
   const [
     submitResultVisibility,
@@ -37,28 +37,39 @@ const AddSyncTask: React.FC = () => {
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
 
+  const { updateTaskSourceList, ...taskSourceTips } = useTaskSource();
+
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
 
-    const params: IAddDatabaseSourceServiceParams = {
-      database_source_service: {
-        name: values.name,
-        db_type: values.instanceType,
-        source: values.source,
-        // #if [sqle]
-        sqle_config: {
-          rule_template_id: values.ruleTemplateId,
-          rule_template_name: values.ruleTemplateName
-        },
-        // #endif
-        cron_express: values.syncInterval,
-        url: values.url,
-        version: values.version
+    const formParams = taskSourceTips.generateTaskSourceAdditionalParams(
+      values.source
+    );
+
+    const params: IAddDBServiceSyncTaskParams = {
+      name: values.name,
+      db_type: values.instanceType,
+      source: values.source,
+      // #if [sqle]
+      sqle_config: {
+        rule_template_id: values.ruleTemplateId,
+        rule_template_name: values.ruleTemplateName,
+        sql_query_config: {
+          audit_enabled: values.needAuditForSqlQuery,
+          allow_query_when_less_than_audit_level:
+            values.allowQueryWhenLessThanAuditLevel
+        }
       },
-      project_uid: projectID
+      // #endif
+      cron_express: values.syncInterval,
+      url: values.url,
+      additional_params: mergeFromValueIntoParams(
+        values.params,
+        formParams ?? []
+      )
     };
-    DatabaseSourceService.AddDatabaseSourceService(params)
+    DBServiceSyncTaskService.AddDBServiceSyncTask(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           showResult();
@@ -74,12 +85,18 @@ const AddSyncTask: React.FC = () => {
     EventEmitter.emit(EmitterKey.DMS_SYNC_TASK_RESET_FORM);
   }, [hiddenResult]);
 
+  useEffect(() => {
+    updateTaskSourceList();
+  }, [updateTaskSourceList]);
+
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       <PageHeader
         fixed
         title={
-          <Link to={`/project/${projectID}/sync-data-source`}>
+          <Link
+            to={`/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`}
+          >
             <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsSyncDataSource.addSyncTask.backToList')}
             </BasicButton>
@@ -105,22 +122,22 @@ const AddSyncTask: React.FC = () => {
           </EmptyBox>
         }
       />
-      <EmptyBox
-        if={submitResultVisibility}
-        defaultNode={
-          <SyncTaskForm
-            projectName={projectName}
-            loading={submitLoading}
-            form={form}
-            title={
-              <>
-                <Icon component={DatabaseFilled} className="title-icon" />
-                <span>{t('dmsSyncDataSource.addSyncTask.title')}</span>
-              </>
-            }
-          />
-        }
-      >
+
+      <LazyLoadComponent open={!submitResultVisibility} animation={false}>
+        <SyncTaskForm
+          taskSourceTips={taskSourceTips}
+          form={form}
+          loading={submitLoading}
+          title={
+            <>
+              <Icon component={DatabaseFilled} className="title-icon" />
+              <span>{t('dmsSyncDataSource.addSyncTask.title')}</span>
+            </>
+          }
+        />
+      </LazyLoadComponent>
+
+      <LazyLoadComponent open={submitResultVisibility} animation={false}>
         <BasicResult
           status="success"
           title={t('dmsSyncDataSource.addSyncTask.successTips')}
@@ -136,13 +153,15 @@ const AddSyncTask: React.FC = () => {
               {t('common.resetAndClose')}
             </BasicButton>,
             <BasicButton type="primary" key="view-sync-task">
-              <Link to={`/project/${projectID}/sync-data-source`}>
+              <Link
+                to={`/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`}
+              >
                 {t('dmsSyncDataSource.addSyncTask.successGuide')}
               </Link>
             </BasicButton>
           ]}
         />
-      </EmptyBox>
+      </LazyLoadComponent>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };

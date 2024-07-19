@@ -29,15 +29,7 @@ export default {
     title: '编辑数据源',
     getDatabaseInfoError: '获取数据源信息失败了',
     updateDatabase: '更新数据源',
-    updateDatabaseSuccess: '数据源"{{name}}"更新成功',
-    dictionaryInfo: '字典信息'
-  },
-
-  dictionaryForm: {
-    lastSyncDataResult: '最后一次同步字典结果',
-    lastSyncDataTime: '最后一次同步字典时间',
-    syncDictionary: '立即触发同步字典',
-    syncDictionarySuccess: '同步字典数据成功!'
+    updateDatabaseSuccess: '数据源"{{name}}"更新成功'
   },
 
   dataSourceForm: {

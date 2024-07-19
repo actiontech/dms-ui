@@ -54,7 +54,7 @@ export const sideMenuData = (
       type: 'group',
       label: t('dmsMenu.groupLabel.projectConfigure'),
       group: [
-        'instance-management',
+        'instance',
         'rule-template',
         'whitelist',
         'workflow-template',
