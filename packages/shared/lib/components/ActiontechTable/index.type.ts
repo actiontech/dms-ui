@@ -355,7 +355,9 @@ export interface ActiontechTableProps<
   actions?:
     | {
         title?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['title'];
-        moreButtons?: InlineActiontechTableMoreActionsButtonMeta<T>[];
+        moreButtons?:
+          | InlineActiontechTableMoreActionsButtonMeta<T>[]
+          | ((record: T) => InlineActiontechTableMoreActionsButtonMeta<T>[]);
         buttons: ActiontechTableActionMeta<T>[];
         fixed?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['fixed'];
         width?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['width'];
