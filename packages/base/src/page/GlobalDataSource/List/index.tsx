@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { message, Modal } from 'antd';
-import { PageHeader } from '@actiontech/shared';
+import { useNavigate, Link } from 'react-router-dom';
+import { message, Modal, Space } from 'antd';
+import { PageHeader, BasicButton } from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
@@ -23,7 +23,9 @@ import {
   GlobalDataSourceListActions,
   GLobalDataSourceListParamType
 } from './columns';
-import useProjects from '../../../hooks/useProjects';
+import useProjectTips from '../../../hooks/useProjectTips';
+import { PlusOutlined } from '@actiontech/icons';
+import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -34,18 +36,19 @@ const GlobalDataSourceList = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
+  const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
+
   const {
-    dbDriverOptions,
-    getLogoUrlByDbType,
-    loading: getDriveOptionsLoading,
-    updateDriverList
-  } = useDbServiceDriver();
+    updateDbTypeList,
+    dbTypeOptions,
+    loading: getDbTypeListLoading
+  } = useGlobalDataSourceType();
 
   const {
     projectIDOptions,
     updateProjects,
     loading: getProjectsLoading
-  } = useProjects();
+  } = useProjectTips();
 
   const {
     tableFilterInfo,
@@ -182,18 +185,15 @@ const GlobalDataSourceList = () => {
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListGlobalDBService, FilterCustomProps>([
-      [
-        'db_type',
-        { options: dbDriverOptions, loading: getDriveOptionsLoading }
-      ],
+      ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
       [
         'project_name',
         { options: projectIDOptions, loading: getProjectsLoading }
       ]
     ]);
   }, [
-    dbDriverOptions,
-    getDriveOptionsLoading,
+    dbTypeOptions,
+    getDbTypeListLoading,
     projectIDOptions,
     getProjectsLoading
   ]);
@@ -209,6 +209,7 @@ const GlobalDataSourceList = () => {
   useEffect(() => {
     updateDriverList();
     updateProjects();
+    updateDbTypeList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -216,7 +217,33 @@ const GlobalDataSourceList = () => {
     <>
       {modalContextHolder}
       {messageContextHolder}
-      <PageHeader title={t('dmsGlobalDataSource.pageTitle')} />
+      <PageHeader
+        title={t('dmsGlobalDataSource.pageTitle')}
+        extra={
+          <Space>
+            <Link to={`/global-data-source/batch-import`}>
+              <BasicButton>
+                {t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
+              </BasicButton>
+            </Link>
+            <Link to={`/global-data-source/create`}>
+              <BasicButton
+                type="primary"
+                icon={
+                  <PlusOutlined
+                    width={10}
+                    height={10}
+                    fill="currentColor"
+                    color="currentColor"
+                  />
+                }
+              >
+                {t('dmsGlobalDataSource.addDatabase')}
+              </BasicButton>
+            </Link>
+          </Space>
+        }
+      />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         filterButton={{

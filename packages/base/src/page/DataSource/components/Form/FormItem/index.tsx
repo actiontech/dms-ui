@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance } from 'antd';
+import { FormInstance, Form } from 'antd';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
@@ -19,7 +19,6 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/FormCom';
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { FormItem } from 'sqle/src/components/BackendForm';
@@ -34,7 +33,7 @@ const DatabaseFormItem: React.FC<{
   isExternalInstance?: boolean;
 }> = (props) => {
   const { t } = useTranslation();
-  const { projectID } = useCurrentProject();
+  const projectID = Form.useWatch('project', props.form);
 
   const [loading, { setTrue: setLoadingTrue, setFalse: setLoadingFalse }] =
     useBoolean();

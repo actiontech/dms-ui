@@ -3,7 +3,7 @@ import { Card, Space, Typography, Spin } from 'antd';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
-import cloudBeaver from '@actiontech/shared/lib/api/base/service/cloudbeaver';
+import cloudBeaver from '@actiontech/shared/lib/api/base/service/CloudBeaver';
 import {
   PageHeader,
   EnterpriseFeatureDisplay,

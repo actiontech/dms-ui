@@ -31,22 +31,11 @@ exports[`base/router-base-ce render base route data snap 1`] = `
     "path": "account",
   },
   {
-    "children": [
-      {
-        "element": <div>
-          globalDataSourceList
-        </div>,
-        "key": "globalDataSourceList",
-        "path": "",
-      },
-    ],
-    "element": <UNDEFINED />,
+    "element": <div>
+      globalDataSource
+    </div>,
     "key": "globalDataSource",
     "path": "global-data-source",
-    "role": [
-      "admin",
-      "certainProjectManager",
-    ],
   },
   {
     "children": [

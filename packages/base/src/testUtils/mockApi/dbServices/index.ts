@@ -8,7 +8,8 @@ import {
   checkConnectableReply,
   dbServices,
   dbServicesTips,
-  globalDataSourceMockData
+  globalDataSourceMockData,
+  globalDBServicesTipsMockData
 } from './data';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
@@ -22,6 +23,7 @@ class MockDbServicesApi implements MockSpyApy {
     this.checkDbServiceIsConnectable();
     this.checkDBServiceIsConnectableById();
     this.listGlobalDBServices();
+    this.listGlobalDBServicesTips();
   }
 
   public ListDBServices() {
@@ -107,6 +109,16 @@ class MockDbServicesApi implements MockSpyApy {
       createSpySuccessResponse({
         data: globalDataSourceMockData,
         total_nums: globalDataSourceMockData.length
+      })
+    );
+    return spy;
+  }
+
+  public listGlobalDBServicesTips() {
+    const spy = jest.spyOn(DBService, 'ListGlobalDBServicesTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: globalDBServicesTipsMockData
       })
     );
     return spy;

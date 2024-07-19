@@ -6,19 +6,16 @@ import {
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import DBService from '@actiontech/shared/lib/api/base/service/DBService';
+import BatchImportDataSourceForm from '../../Project/BatchImportDataSource/UploadForm';
+import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
+import useBatchImportDataSource from '../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
 
-const BatchImportDataSource = () => {
+const GlobalBatchImportDataSource = () => {
   const { t } = useTranslation();
-
-  const { projectID } = useCurrentProject();
 
   const {
     importLoading,
@@ -28,9 +25,9 @@ const BatchImportDataSource = () => {
     showResult,
     form,
     resetAndHideResult,
-    setDBservices,
     dbServices,
     importServicesCheck,
+    setDBservices,
     uploadCheckStatus,
     clearUploadCheckStatus
   } = useBatchImportDataSource();
@@ -38,9 +35,8 @@ const BatchImportDataSource = () => {
   const onSubmit = async () => {
     await form.validateFields();
     setImportPending();
-    DBService.ImportDBServicesOfOneProject({
-      db_services: dbServices,
-      project_uid: projectID
+    Project.ImportDBServicesOfProjects({
+      db_services: dbServices
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -58,11 +54,8 @@ const BatchImportDataSource = () => {
     (option) => {
       setDBservices([]);
       clearUploadCheckStatus();
-      DBService.ImportDBServicesOfOneProjectCheck(
-        {
-          project_uid: projectID,
-          db_services_file: option.file
-        },
+      Project.ImportDBServicesOfProjectsCheck(
+        { db_services_file: option.file },
         { responseType: 'blob' }
       )
         .then((res) => {
@@ -73,16 +66,16 @@ const BatchImportDataSource = () => {
           option?.onError?.(error);
         });
     },
-    [importServicesCheck, projectID, setDBservices, clearUploadCheckStatus]
+    [importServicesCheck, setDBservices, clearUploadCheckStatus]
   );
 
   return (
     <>
       <PageHeader
         title={
-          <Link to={`/project/${projectID}/db-services`}>
+          <Link to={`/global-data-source`}>
             <BasicButton icon={<LeftArrowOutlined />}>
-              {t('dmsDataSource.backDesc')}
+              {t('dmsGlobalDataSource.backToList')}
             </BasicButton>
           </Link>
         }
@@ -94,7 +87,7 @@ const BatchImportDataSource = () => {
               loading={importLoading}
               disabled={!dbServices?.length}
             >
-              {t('dmsDataSource.batchImportDataSource.importFile')}
+              {t('dmsGlobalDataSource.batchImportDataSource.submitButton')}
             </BasicButton>
           </EmptyBox>
         }
@@ -104,7 +97,7 @@ const BatchImportDataSource = () => {
         defaultNode={
           <BasicResult
             status="success"
-            title={t('dmsDataSource.batchImportDataSource.successTitle')}
+            title={t('dmsGlobalDataSource.batchImportDataSource.successTitle')}
             extra={[
               <BasicButton
                 type="primary"
@@ -129,4 +122,4 @@ const BatchImportDataSource = () => {
   );
 };
 
-export default BatchImportDataSource;
+export default GlobalBatchImportDataSource;
