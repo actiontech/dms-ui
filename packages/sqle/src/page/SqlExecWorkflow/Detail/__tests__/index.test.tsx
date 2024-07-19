@@ -410,4 +410,32 @@ describe('sqle/ExecWorkflow/Detail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalled();
   });
+
+  it('render polling request when workflow status is executing', async () => {
+    requestWorkflowInfo.mockClear();
+    requestWorkflowInfo.mockImplementation(() =>
+      createSpySuccessResponse({ data: workflowsDetailExecutingData })
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestWorkflowInfo).toHaveBeenCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestWorkflowInfo).toHaveBeenCalledTimes(2);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('render polling request when workflow status is not executing', async () => {
+    requestWorkflowInfo.mockClear();
+    requestWorkflowInfo.mockImplementation(() =>
+      createSpySuccessResponse({ data: workflowsDetailWaitForAuditData })
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestWorkflowInfo).toHaveBeenCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestWorkflowInfo).toHaveBeenCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+  });
 });

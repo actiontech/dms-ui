@@ -8,10 +8,13 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.type';
 import { TasksStatusCount } from '../index.type';
+import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const WORKFLOW_OVERVIEW_TAB_KEY = 'WORKFLOW_OVERVIEW_TAB_KEY';
 
-const useAuditExecResultPanelSetup = () => {
+const useAuditExecResultPanelSetup = (
+  workflowStatus?: WorkflowRecordResV2StatusEnum
+) => {
   const urlParams = useParams<{ workflowId: string }>();
   const { projectName } = useCurrentProject();
   const [activeTabKey, changeActiveTabKey] = useState(
@@ -68,7 +71,8 @@ const useAuditExecResultPanelSetup = () => {
   const {
     loading: getOverviewLoading,
     data: overviewList,
-    refresh: refreshOverviewAction
+    refresh: refreshOverviewAction,
+    cancel
   } = useRequest(
     () =>
       handleTableRequestError(
@@ -82,7 +86,12 @@ const useAuditExecResultPanelSetup = () => {
         !!urlParams.workflowId && activeTabKey === WORKFLOW_OVERVIEW_TAB_KEY,
       onSuccess: ({ list }) => {
         getOverviewListSuccessHandle?.(list ?? []);
-      }
+        if (workflowStatus !== WorkflowRecordResV2StatusEnum.executing) {
+          cancel();
+        }
+      },
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3
     }
   );
 
