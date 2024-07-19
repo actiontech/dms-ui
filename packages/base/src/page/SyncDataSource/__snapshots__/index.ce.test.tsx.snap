@@ -4,18 +4,6 @@ exports[`base/page/SyncDataSource-ce render index page 1`] = `
 <body>
   <div>
     <article>
-      <div
-        class="actiontech-page-header-namespace css-1xspr0w"
-      >
-        <div
-          class="title"
-        >
-          同步任务列表
-        </div>
-        <div
-          class="extra"
-        />
-      </div>
       <section
         class="css-vops52"
       >

@@ -3,18 +3,6 @@
 exports[`test base/GlobalDataSource ce should match snapshot 1`] = `
 <div>
   <section>
-    <div
-      class="actiontech-page-header-namespace css-1xspr0w"
-    >
-      <div
-        class="title"
-      >
-        全局数据源
-      </div>
-      <div
-        class="extra"
-      />
-    </div>
     <section
       class="css-vops52"
     >

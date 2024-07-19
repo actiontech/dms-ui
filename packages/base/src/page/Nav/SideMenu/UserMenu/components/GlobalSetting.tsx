@@ -59,12 +59,11 @@ const GlobalSetting: React.FC<{
             <EmptyBox if={isAdmin || isCertainProjectManager}>
               <div
                 className="content-item"
-                onClick={() => handleClickItem(`/global-data-source`)}
+                onClick={() => handleClickItem(`/data-source-management`)}
               >
                 <DatabaseFilled />
                 <span className="content-item-text">
-                  {' '}
-                  {t('dmsMenu.globalSettings.dataSource')}
+                  {t('dmsMenu.globalSettings.instanceManager')}
                 </span>
               </div>
             </EmptyBox>

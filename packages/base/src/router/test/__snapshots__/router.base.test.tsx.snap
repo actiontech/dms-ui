@@ -31,14 +31,14 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "path": "account",
   },
   {
+    "element": <div>
+      dataSourceManagement
+    </div>,
+    "key": "dataSourceManagement",
+    "path": "data-source-management",
+  },
+  {
     "children": [
-      {
-        "element": <div>
-          globalDataSourceList
-        </div>,
-        "key": "globalDataSourceList",
-        "path": "",
-      },
       {
         "element": <div>
           globalBatchImportDataSource
@@ -54,12 +54,34 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "path": "create",
       },
     ],
-    "element": <UNDEFINED />,
     "key": "globalDataSource",
     "path": "global-data-source",
     "role": [
       "admin",
       "certainProjectManager",
+    ],
+  },
+  {
+    "children": [
+      {
+        "element": <div>
+          syncDataSourceCreate
+        </div>,
+        "key": "syncDataSourceCreate",
+        "path": "create",
+      },
+      {
+        "element": <div>
+          syncDataSourceUpdate
+        </div>,
+        "key": "syncDataSourceUpdate",
+        "path": "update/:taskId",
+      },
+    ],
+    "key": "syncDataSource",
+    "path": "sync-data-source",
+    "role": [
+      "admin",
     ],
   },
   {
@@ -141,38 +163,6 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         "children": [
           {
             "element": <div>
-              syncDataSourceList
-            </div>,
-            "key": "syncDataSourceList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              syncDataSourceCreate
-            </div>,
-            "key": "syncDataSourceCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              syncDataSourceUpdate
-            </div>,
-            "key": "syncDataSourceUpdate",
-            "path": "update/:taskId",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="syncDataSource"
-        >
-          <Outlet />
-        </div>,
-        "key": "syncDataSource",
-        "path": ":projectID/sync-data-source",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
               dataExportManagement
             </div>,
             "key": "dataExportManagement",
@@ -219,11 +209,9 @@ exports[`base/router-base-ee render base route data snap 1`] = `
 exports[`base/router-base-ee render base router when version is ce render route globalBatchImportDataSource 1`] = `
 <body>
   <div>
-    <section>
-      <div>
-        globalBatchImportDataSource
-      </div>
-    </section>
+    <div>
+      globalBatchImportDataSource
+    </div>
   </div>
 </body>
 `;
@@ -231,11 +219,9 @@ exports[`base/router-base-ee render base router when version is ce render route 
 exports[`base/router-base-ee render base router when version is ce render route globalDataSourceCreate 1`] = `
 <body>
   <div>
-    <section>
-      <div>
-        globalDataSourceCreate
-      </div>
-    </section>
+    <div>
+      globalDataSourceCreate
+    </div>
   </div>
 </body>
 `;
@@ -253,11 +239,9 @@ exports[`base/router-base-ee render base router when version is ce render router
 exports[`base/router-base-ee render base router when version is ce render router globalDataSource 1`] = `
 <body>
   <div>
-    <section>
-      <div>
-        globalDataSourceList
-      </div>
-    </section>
+    <div>
+      dataSourceManagement
+    </div>
   </div>
 </body>
 `;
@@ -443,12 +427,8 @@ exports[`base/router-base-ee render base router when version is ee render route 
 exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 1`] = `
 <body>
   <div>
-    <div
-      data-test-parent-id="syncDataSource"
-    >
-      <div>
-        syncDataSourceList
-      </div>
+    <div>
+      dataSourceManagement
     </div>
   </div>
 </body>
@@ -457,12 +437,8 @@ exports[`base/router-base-ee render base router when version is ee render route 
 exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 2`] = `
 <body>
   <div>
-    <div
-      data-test-parent-id="syncDataSource"
-    >
-      <div>
-        syncDataSourceCreate
-      </div>
+    <div>
+      syncDataSourceCreate
     </div>
   </div>
 </body>
@@ -471,12 +447,8 @@ exports[`base/router-base-ee render base router when version is ee render route 
 exports[`base/router-base-ee render base router when version is ee render route syncDataSource render route syncDataSourceList 3`] = `
 <body>
   <div>
-    <div
-      data-test-parent-id="syncDataSource"
-    >
-      <div>
-        syncDataSourceUpdate
-      </div>
+    <div>
+      syncDataSourceUpdate
     </div>
   </div>
 </body>

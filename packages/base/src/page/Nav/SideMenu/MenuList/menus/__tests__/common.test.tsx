@@ -1,7 +1,7 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../../locale';
 import {
-  dbServiceManagementMenuItem,
+  dbServiceMenuItem,
   memberManagementMenItem,
   cloudBeaverMenuItem,
   dataExportMenuItem
@@ -53,7 +53,7 @@ const menuStruct: MenuStructTreeType = [
     type: 'group',
     label: t('dmsMenu.groupLabel.projectConfigure'),
     group: [
-      'instance-management',
+      'instance',
       'rule-template',
       'whitelist',
       'workflow-template',
@@ -77,7 +77,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [
-          dbServiceManagementMenuItem,
+          dbServiceMenuItem,
           memberManagementMenItem,
           cloudBeaverMenuItem,
           dataExportMenuItem
@@ -91,7 +91,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [
-          dbServiceManagementMenuItem,
+          dbServiceMenuItem,
           memberManagementMenItem,
           cloudBeaverMenuItem,
           dataExportMenuItem
@@ -105,7 +105,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [
-          dbServiceManagementMenuItem,
+          dbServiceMenuItem,
           memberManagementMenItem,
           cloudBeaverMenuItem,
           dataExportMenuItem
@@ -119,7 +119,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [
-          dbServiceManagementMenuItem,
+          dbServiceMenuItem,
           memberManagementMenItem,
           cloudBeaverMenuItem,
           dataExportMenuItem
@@ -133,7 +133,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [
-          dbServiceManagementMenuItem,
+          dbServiceMenuItem,
           memberManagementMenItem,
           cloudBeaverMenuItem,
           dataExportMenuItem,
@@ -159,7 +159,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [
-          dbServiceManagementMenuItem,
+          dbServiceMenuItem,
           memberManagementMenItem,
           cloudBeaverMenuItem,
           dataExportMenuItem,

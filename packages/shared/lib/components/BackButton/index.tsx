@@ -1,16 +1,18 @@
-import { Button, ButtonProps } from 'antd';
-import { useTranslation } from 'react-i18next';
+import { ButtonProps } from 'antd';
 import useBack from '../../hooks/useBack';
+import BasicButton from '../BasicButton';
+import { LeftArrowOutlined } from '@actiontech/icons';
 
 const BackButton: React.FC<ButtonProps> = (props) => {
-  const { t } = useTranslation();
-
   const { goBack } = useBack();
 
   return (
-    <Button onClick={goBack} key="goBack" type="primary" {...props}>
-      {t('common.back')}
-    </Button>
+    <BasicButton
+      icon={<LeftArrowOutlined />}
+      onClick={goBack}
+      key="goBack"
+      {...props}
+    />
   );
 };
 

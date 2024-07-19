@@ -3,6 +3,7 @@ import StepItems from '..';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { AdminUserDevopsSteps, NormalUserDevopsSteps } from '../index.data';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
+import { DataSourceManagerSegmentedKey } from '../../../../../DataSourceManagement/index.type';
 
 describe('test base/Home/StepItems', () => {
   it('should match snapshot', () => {
@@ -33,14 +34,12 @@ describe('test base/Home/StepItems', () => {
     fireEvent.click(screen.getAllByText('查看列表')[1]);
     expect(navigateSpy).toHaveBeenCalledTimes(3);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/sync-data-source`
+      `/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`
     );
 
     fireEvent.click(screen.getByText('新建同步任务'));
     expect(navigateSpy).toHaveBeenCalledTimes(4);
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/project/${projectID}/sync-data-source/create`
-    );
+    expect(navigateSpy).toHaveBeenCalledWith(`/sync-data-source/create`);
 
     fireEvent.click(screen.getByText('查看成员'));
     expect(navigateSpy).toHaveBeenCalledTimes(5);
