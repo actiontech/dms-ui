@@ -103,20 +103,9 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="source"
-                      title=""
+                      title="来源"
                     >
-                      <div
-                        class="label-cont-custom"
-                      >
-                        <div>
-                          来源
-                        </div>
-                        <div
-                          class="tip-content-box"
-                        >
-                          支持同步ActionDMP平台
-                        </div>
-                      </div>
+                      来源
                     </label>
                   </div>
                   <div
@@ -1552,20 +1541,9 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="source"
-                      title=""
+                      title="来源"
                     >
-                      <div
-                        class="label-cont-custom"
-                      >
-                        <div>
-                          来源
-                        </div>
-                        <div
-                          class="tip-content-box"
-                        >
-                          支持同步ActionDMP平台
-                        </div>
-                      </div>
+                      来源
                     </label>
                   </div>
                   <div
@@ -3001,20 +2979,9 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="source"
-                      title=""
+                      title="来源"
                     >
-                      <div
-                        class="label-cont-custom"
-                      >
-                        <div>
-                          来源
-                        </div>
-                        <div
-                          class="tip-content-box"
-                        >
-                          支持同步ActionDMP平台
-                        </div>
-                      </div>
+                      来源
                     </label>
                   </div>
                   <div
@@ -4437,20 +4404,9 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="source"
-                      title=""
+                      title="来源"
                     >
-                      <div
-                        class="label-cont-custom"
-                      >
-                        <div>
-                          来源
-                        </div>
-                        <div
-                          class="tip-content-box"
-                        >
-                          支持同步ActionDMP平台
-                        </div>
-                      </div>
+                      来源
                     </label>
                   </div>
                   <div
@@ -5884,20 +5840,9 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="source"
-                      title=""
+                      title="来源"
                     >
-                      <div
-                        class="label-cont-custom"
-                      >
-                        <div>
-                          来源
-                        </div>
-                        <div
-                          class="tip-content-box"
-                        >
-                          支持同步ActionDMP平台
-                        </div>
-                      </div>
+                      来源
                     </label>
                   </div>
                   <div
