@@ -5,11 +5,22 @@ import {
   ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
-import { DatabaseTypeLogo } from '@actiontech/shared';
-import { Typography } from 'antd';
+import {
+  BasicButton,
+  BasicTag,
+  BasicToolTips,
+  DatabaseTypeLogo
+} from '@actiontech/shared';
+import { Space, Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IAuditPlanTypeResBase,
+  IInstanceAuditPlanResV1
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { DashOutlined } from '@actiontech/icons';
+import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
@@ -41,8 +52,13 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'instance_name',
       title: () => t('managementConf.list.table.column.dbName'),
-      render: (dbName: string) => {
-        return <Link to={`/project/${projectID}/db-services`}>{dbName}</Link>;
+      render: (instanceName: string, record) => {
+        return (
+          <Link to={`${record.instance_audit_plan_id}`}>
+            {instanceName ||
+              t('managementConf.list.table.column.staticScanType')}
+          </Link>
+        );
       }
     },
     {
@@ -64,19 +80,64 @@ export const SqlManagementConfColumns: (
     },
     {
       dataIndex: 'audit_plan_types',
-      title: () => t('managementConf.list.table.column.enabledScanTypes')
+      title: () => t('managementConf.list.table.column.enabledScanTypes'),
+      render: (scanTypes: IAuditPlanTypeResBase[]) => {
+        if (scanTypes && scanTypes.length > 0) {
+          if (scanTypes.length <= 2)
+            return (
+              <Space>
+                {scanTypes.map((item) => (
+                  <BasicTag key={item.type}>{item.desc}</BasicTag>
+                ))}
+              </Space>
+            );
+
+          return (
+            <Space size={0}>
+              {scanTypes.slice(0, 2).map((item) => (
+                <BasicTag key={item.type}>{item.desc}</BasicTag>
+              ))}
+              <BasicToolTips
+                trigger={'click'}
+                title={
+                  <Space wrap>
+                    {scanTypes.map((item) => (
+                      <BasicTag key={item.type}>{item.desc}</BasicTag>
+                    ))}
+                  </Space>
+                }
+              >
+                <BasicButton
+                  size="small"
+                  className="table-row-scan-types-more-button"
+                  icon={<DashOutlined />}
+                />
+              </BasicToolTips>
+            </Space>
+          );
+        }
+        return '-';
+      }
     },
     {
       dataIndex: 'active_status',
-      title: () => t('managementConf.list.table.column.dbTaskStatus')
+      title: () => t('managementConf.list.table.column.dbTaskStatus'),
+      render: (status: InstanceAuditPlanResV1ActiveStatusEnum) => {
+        if (status === InstanceAuditPlanResV1ActiveStatusEnum.disabled) {
+          return t('managementConf.list.table.column.taskStatus.disabled');
+        }
+        if (status === InstanceAuditPlanResV1ActiveStatusEnum.normal) {
+          return t('managementConf.list.table.column.taskStatus.normal');
+        }
+        return t('common.unknownStatus');
+      }
     },
-    // {
-    //   dataIndex: 'active_status',
-    //   title: () => t('managementConf.list.table.column.scanStatus')
-    // },
     {
       dataIndex: 'create_time',
-      title: () => t('managementConf.list.table.column.createdAt')
+      title: () => t('managementConf.list.table.column.createdAt'),
+      render: (time: string) => {
+        return formatTime(time, '-');
+      }
     },
     {
       dataIndex: 'creator',
@@ -91,17 +152,17 @@ export const SqlManagementConfColumnAction: (params: {
   deleteAction: (id: string) => void;
   isAdmin: boolean;
   isProjectManager: boolean;
-  userID: string;
+  username: string;
 }) => ActiontechTableProps<IInstanceAuditPlanResV1>['actions'] = ({
   editAction,
   stopAction,
   deleteAction,
   isAdmin,
   isProjectManager,
-  userID
+  username
 }) => {
-  const hasPermission = (record: any) => {
-    return isAdmin || isProjectManager || record?.create_user_id === userID;
+  const hasPermission = (record?: IInstanceAuditPlanResV1) => {
+    return isAdmin || isProjectManager || record?.creator === username;
   };
   return {
     buttons: [
@@ -111,7 +172,7 @@ export const SqlManagementConfColumnAction: (params: {
         buttonProps: (record) => {
           return {
             onClick: () => {
-              editAction(record?.instance_audit_plan_id ?? '');
+              editAction(record?.instance_audit_plan_id?.toString() ?? '');
             }
           };
         },
@@ -126,11 +187,16 @@ export const SqlManagementConfColumnAction: (params: {
           return {
             title: t('managementConf.list.table.action.inactive.confirmTips'),
             onConfirm: () => {
-              stopAction(record?.instance_audit_plan_id ?? '');
+              stopAction(record?.instance_audit_plan_id?.toString() ?? '');
             }
           };
         },
-        permissions: hasPermission
+        permissions: (record) =>
+          hasPermission(record) &&
+          !!(
+            record?.active_status ===
+            InstanceAuditPlanResV1ActiveStatusEnum.normal
+          )
       },
       {
         key: 'delete',
@@ -141,7 +207,7 @@ export const SqlManagementConfColumnAction: (params: {
           return {
             title: t('managementConf.list.table.action.delete.confirmTips'),
             onConfirm: () => {
-              deleteAction(record?.instance_audit_plan_id ?? '');
+              deleteAction(record?.instance_audit_plan_id?.toString() ?? '');
             }
           };
         },

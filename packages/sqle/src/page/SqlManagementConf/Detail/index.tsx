@@ -3,53 +3,101 @@ import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import ConfDetailOverview from './Overview';
-import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
+import {
+  TableRefreshButton,
+  useTableRequestError
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import { useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
-
-const OVERVIEW_TAB_KEY = 'OVERVIEW_TAB_KEY';
+import { useRequest } from 'ahooks';
+import { useParams } from 'react-router-dom';
+import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { Result } from 'antd';
+import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
+import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
 
-  const [activeKey, setActiveKey] = useState(OVERVIEW_TAB_KEY);
+  const { id } = useParams<{ id: string }>();
+  const { projectName } = useCurrentProject();
+
+  const [activeKey, setActiveKey] = useState(
+    SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
+  );
+
+  const { data, error } = useRequest(() =>
+    instance_audit_plan
+      .getInstanceAuditPlanV1({
+        project_name: projectName,
+        instance_audit_plan_id: id ?? ''
+      })
+      .then((res) => {
+        return res.data.data;
+      })
+  );
 
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
-      value: OVERVIEW_TAB_KEY,
+      value: SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY,
       children: (
         <ConfDetailOverview
           activeTabKey={activeKey}
           handleChangeTab={setActiveKey}
+          instanceAuditPlanId={id ?? ''}
         />
       )
     },
-    {
-      label: '库表元数据',
-      value: '1',
-      children: <ScanTypeSqlCollection />
-    },
-    {
-      label: '慢日志',
-      value: '2',
-      children: <ScanTypeSqlCollection />
-    }
+    ...(data?.audit_plans?.map<SegmentedTabsProps['items'][0]>((v) => ({
+      label: v.audit_plan_type?.desc,
+      value: v.audit_plan_type?.type ?? '',
+      children: (
+        <ScanTypeSqlCollection
+          instanceAuditPlanId={id ?? ''}
+          auditPlanType={v.audit_plan_type?.type ?? ''}
+          activeTabKey={activeKey}
+          instanceType={data.instance_type ?? ''}
+        />
+      )
+    })) ?? [])
   ];
+
+  const onRefresh = () => {
+    if (activeKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY) {
+      eventEmitter.emit(EmitterKey.Refresh_Sql_Management_Conf_Overview_List);
+    } else {
+      eventEmitter.emit(EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List);
+    }
+  };
 
   return (
     <>
       <PageHeader
-        title={t('managementConf.detail.title', { dbName: 'mysql-1' })}
+        title={t('managementConf.detail.title', {
+          instanceName:
+            data?.instance_name ?? t('managementConf.detail.staticScanTypes')
+        })}
         extra={<BackToConf />}
       />
-      <SegmentedTabs
-        activeKey={activeKey}
-        onChange={setActiveKey}
-        items={items}
-        segmentedRowClassName="flex-space-between"
-        segmentedRowExtraContent={<TableRefreshButton />}
-      />
+      {error ? (
+        <Result
+          status="error"
+          title={t('common.request.noticeFailTitle')}
+          subTitle={getErrorMessage(error)}
+        />
+      ) : (
+        <SegmentedTabs
+          activeKey={activeKey}
+          onChange={setActiveKey}
+          items={items}
+          segmentedRowClassName="flex-space-between"
+          segmentedRowExtraContent={<TableRefreshButton refresh={onRefresh} />}
+        />
+      )}
     </>
   );
 };

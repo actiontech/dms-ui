@@ -30,6 +30,7 @@ export const SqlStatusFilterContainerStyleWrapper = styled('div')`
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         .sql-status-filter-number {
           font-weight: 900;
           font-size: 16px;

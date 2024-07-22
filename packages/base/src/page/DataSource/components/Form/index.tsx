@@ -6,7 +6,8 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
   useCurrentProject,
-  useDbServiceDriver
+  useDbServiceDriver,
+  useProjectBusinessTips
 } from '@actiontech/shared/lib/global';
 import {
   BasicInput,
@@ -43,7 +44,6 @@ import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateTo
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 // #endif
-import useProjectTips from '../../../../hooks/useProjectTips';
 import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 
@@ -66,8 +66,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     generateDriverSelectOptions
   } = useDbServiceDriver();
 
-  const { updateProjectTips, projectBusinessOption, isFixedBusiness } =
-    useProjectTips();
+  const { updateProjectBusinessTips, projectBusinessOption, isFixedBusiness } =
+    useProjectBusinessTips();
 
   const databaseTypeChange = useCallback(
     (value: string) => {
@@ -245,8 +245,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   // #if [ee]
   useEffect(() => {
-    updateProjectTips();
-  }, [updateProjectTips]);
+    updateProjectBusinessTips();
+  }, [updateProjectBusinessTips]);
   // #endif
 
   const hasBorder = () => {

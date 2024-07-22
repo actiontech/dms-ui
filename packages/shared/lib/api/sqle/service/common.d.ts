@@ -16,6 +16,8 @@ import {
   DirectAuditFileReqV1SqlTypeEnum,
   DirectAuditReqV1SqlTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
+  InstanceAuditPlanInfoActiveStatusEnum,
+  InstanceAuditPlanResV1ActiveStatusEnum,
   OperationRecordListStatusEnum,
   RecordSourceNameEnum,
   RuleParamResV1TypeEnum,
@@ -26,8 +28,10 @@ import {
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
+  UpdateAuditPlanStatusReqV1ActiveEnum,
   UpdateAuditWhitelistReqV1MatchTypeEnum,
   UpdateCustomRuleReqV1LevelEnum,
+  UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
@@ -66,13 +70,13 @@ export interface IAuditFileResp {
 }
 
 export interface IAuditPlan {
-  audit_plan_cron?: string;
-
   audit_plan_params?: IAuditPlanParamReqV1[];
 
   audit_plan_type?: string;
 
   rule_template_name?: string;
+
+  schema_name?: string;
 }
 
 export interface IAuditPlanCount {
@@ -102,6 +106,8 @@ export interface IAuditPlanParamReqV1 {
 export interface IAuditPlanParamResV1 {
   desc?: string;
 
+  enums_value?: string[];
+
   key?: string;
 
   type?: AuditPlanParamResV1TypeEnum;
@@ -129,6 +135,16 @@ export interface IAuditPlanReportSQLResV1 {
   number?: number;
 }
 
+export interface IAuditPlanRes {
+  audit_plan_params?: IAuditPlanParamResV1[];
+
+  audit_plan_type?: IAuditPlanTypeResBase;
+
+  rule_template_name?: string;
+
+  schema_name?: string;
+}
+
 export interface IAuditPlanResV1 {
   audit_plan_cron?: string;
 
@@ -150,7 +166,7 @@ export interface IAuditPlanResV1 {
 export interface IAuditPlanSQLHeadV1 {
   desc?: string;
 
-  name?: string;
+  field_name?: string;
 
   type?: AuditPlanSQLHeadV1TypeEnum;
 }
@@ -183,6 +199,12 @@ export interface IAuditPlanSQLResV1 {
   rows?: Array<{
     [key: string]: string;
   }>;
+}
+
+export interface IAuditPlanTypeResBase {
+  desc?: string;
+
+  type?: string;
 }
 
 export interface IAuditPlanTypesV1 {
@@ -811,10 +833,18 @@ export interface IGetFeishuAuditConfigurationResV1 {
   message?: string;
 }
 
-export interface IGetInstanceAuditPlanInfoResV1 {
+export interface IGetInstanceAuditPlanDetailResV1 {
   code?: number;
 
-  data?: IInstanceAuditPlanInfoResV1[];
+  data?: IInstanceAuditPlanDetailResV1;
+
+  message?: string;
+}
+
+export interface IGetInstanceAuditPlanOverviewResV1 {
+  code?: number;
+
+  data?: IInstanceAuditPlanInfo[];
 
   message?: string;
 }
@@ -1377,24 +1407,46 @@ export interface IInstanceAdditionalParamResV1 {
   value?: string;
 }
 
-export interface IInstanceAuditPlanInfoResV1 {
-  audit_plan_db_type?: string;
+export interface IInstanceAuditPlanDetailResV1 {
+  audit_plans?: IAuditPlanRes[];
 
-  audit_plan_instance_database?: string;
+  business?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  static_audit?: boolean;
+}
+
+export interface IInstanceAuditPlanInfo {
+  active_status?: InstanceAuditPlanInfoActiveStatusEnum;
+
+  audit_plan_db_type?: string;
 
   audit_plan_instance_name?: string;
 
-  audit_plan_name?: string;
+  audit_plan_instance_schema_name?: string;
 
-  audit_plan_token?: string;
+  audit_plan_rule_template_name?: string;
 
-  id?: string;
+  audit_plan_type?: IAuditPlanTypeResBase;
+
+  exec_cmd?: string;
+
+  id?: number;
+
+  last_collection_time?: string;
+
+  total_sql_nums?: number;
+
+  unsolved_sql_nums?: number;
 }
 
 export interface IInstanceAuditPlanResV1 {
-  active_status?: boolean;
+  active_status?: InstanceAuditPlanResV1ActiveStatusEnum;
 
-  audit_plan_types?: string[];
+  audit_plan_types?: IAuditPlanTypeResBase[];
 
   business?: string;
 
@@ -1402,7 +1454,7 @@ export interface IInstanceAuditPlanResV1 {
 
   creator?: string;
 
-  instance_audit_plan_id?: string;
+  instance_audit_plan_id?: number;
 
   instance_name?: string;
 
@@ -2233,6 +2285,10 @@ export interface IUpdateAuditPlanReqV1 {
   rule_template_name?: string;
 }
 
+export interface IUpdateAuditPlanStatusReqV1 {
+  active?: UpdateAuditPlanStatusReqV1ActiveEnum;
+}
+
 export interface IUpdateAuditTaskSQLsReqV1 {
   description?: string;
 }
@@ -2279,6 +2335,10 @@ export interface IUpdateFeishuConfigurationReqV1 {
 
 export interface IUpdateInstanceAuditPlanReqV1 {
   audit_plans?: IAuditPlan[];
+}
+
+export interface IUpdateInstanceAuditPlanStatusReqV1 {
+  active?: UpdateInstanceAuditPlanStatusReqV1ActiveEnum;
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {

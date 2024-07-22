@@ -20,7 +20,7 @@ const useTableAction = ({
   const { t } = useTranslation();
   const navigate = useNavigate();
   const editAction = (id: string) => {
-    navigate(`/sqle/project/${projectID}/sql-management-conf/${id}}`);
+    navigate(`/sqle/project/${projectID}/sql-management-conf/update/${id}`);
   };
 
   const stopAction = (id: string) => {

@@ -2,35 +2,25 @@ import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { groupBy } from 'lodash';
-import { Spin } from 'antd';
 import { TableTaskTypeFilterStyleWrapper } from './style';
 import {
   FilterButtonStyleWrapper,
   FilterButtonLabelStyleWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
 import { AuditPlanTypesV1InstanceTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import useAuditPlanTypes from '../../../../hooks/useAuditPlanTypes';
 import { IAuditPlanTypesV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TableTaskTypeFilterProps } from './index.type';
 import { ComputedEnabledTypeEnum, PageDefaultEnum } from './index.enum';
 
 const TableTaskTypeFilter = (props: TableTaskTypeFilterProps) => {
   const { t } = useTranslation();
-  const { updateParams } = props;
+  const { updateParams, auditPlanTypes } = props;
   const [dataSourceType, setDataSourceType] = useState<
     string | typeof PageDefaultEnum.allTypeVal
   >(PageDefaultEnum.allTypeVal);
   const [taskType, setTaskType] = useState<
     string | typeof PageDefaultEnum.allTypeVal
   >(PageDefaultEnum.allTypeVal);
-
-  const { loading, auditPlanTypes, updateAuditPlanTypes } = useAuditPlanTypes();
-
-  useEffect(() => {
-    if (props.show) {
-      updateAuditPlanTypes();
-    }
-  }, [props.show, updateAuditPlanTypes]);
 
   const { allDataSource, allTaskType, relationalData } = useMemo(() => {
     if (!auditPlanTypes.length) {
@@ -214,20 +204,18 @@ const TableTaskTypeFilter = (props: TableTaskTypeFilterProps) => {
 
   return (
     <TableTaskTypeFilterStyleWrapper>
-      <Spin spinning={loading} delay={300}>
-        <section className="type-filter-line">
-          <FilterButtonLabelStyleWrapper>
-            {t('managementConf.list.table.filter.taskType.allDataSource')}
-          </FilterButtonLabelStyleWrapper>
-          {renderDataSourceItem()}
-        </section>
-        <section className="type-filter-line">
-          <FilterButtonLabelStyleWrapper>
-            {t('managementConf.list.table.filter.taskType.allTaskType')}
-          </FilterButtonLabelStyleWrapper>
-          {renderTaskTypeItem()}
-        </section>
-      </Spin>
+      <section className="type-filter-line">
+        <FilterButtonLabelStyleWrapper>
+          {t('managementConf.list.table.filter.taskType.allDataSource')}
+        </FilterButtonLabelStyleWrapper>
+        {renderDataSourceItem()}
+      </section>
+      <section className="type-filter-line">
+        <FilterButtonLabelStyleWrapper>
+          {t('managementConf.list.table.filter.taskType.allTaskType')}
+        </FilterButtonLabelStyleWrapper>
+        {renderTaskTypeItem()}
+      </section>
     </TableTaskTypeFilterStyleWrapper>
   );
 };

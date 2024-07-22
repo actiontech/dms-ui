@@ -3,21 +3,37 @@ import {
   FormAreaLineStyleWrapper
 } from '@actiontech/shared/lib/components/FormCom/style';
 import { useTranslation } from 'react-i18next';
-import { ConfFormProps } from './index.type';
 import DataSourceSelection from './DataSourceSelection';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
-import Icon from '@ant-design/icons';
-import { IconCreatedTitle } from '../../../../icon/AuditPlan';
 import ScanTypesSelection from './ScanTypesSelection';
+import { PlanFilled } from '@actiontech/icons';
+import ScanTypesParams from './ScanTypesParams';
+import { useContext, useEffect } from 'react';
+import { ConfFormContext } from './context';
+import { Form } from 'antd';
+import { SqlManagementConfFormFields } from './index.type';
 
-const ConfForm: React.FC<ConfFormProps> = ({ submitLoading, defaultValue }) => {
+const ConfForm: React.FC = () => {
   const { t } = useTranslation();
+  const form = Form.useFormInstance<SqlManagementConfFormFields>();
+
+  const defaultValue = useContext(ConfFormContext)?.defaultValue;
+
+  useEffect(() => {
+    if (!!defaultValue) {
+      form.setFieldsValue({
+        ...defaultValue,
+        instanceName: defaultValue.instanceName || undefined
+      });
+    }
+  }, [defaultValue, form]);
+
   return (
     <>
       <FormAreaLineStyleWrapper className="has-border">
         <FormAreaBlockStyleWrapper>
           <FormItemBigTitle>
-            <Icon component={IconCreatedTitle} className="title-icon" />
+            <PlanFilled width={42} height={40} className="title-icon" />
             <span>{t('managementConf.create.title')}</span>
           </FormItemBigTitle>
 
@@ -26,6 +42,8 @@ const ConfForm: React.FC<ConfFormProps> = ({ submitLoading, defaultValue }) => {
           <ScanTypesSelection />
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
+
+      <ScanTypesParams />
     </>
   );
 };

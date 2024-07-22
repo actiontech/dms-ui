@@ -1,24 +1,29 @@
 import classNames from 'classnames';
-import { ToggleTokensProps } from './index.type';
+import { ToggleTokensOptionsType, ToggleTokensProps } from './index.type';
 import { ToggleTokensStyleWrapper } from './style';
 import BasicButton from '../BasicButton';
 import { useControllableValue } from 'ahooks';
 import EmptyBox from '../EmptyBox';
-import { IconCheckoutCircle } from '../../Icon/common';
-import { useMemo } from 'react';
+import { ForwardedRef, forwardRef, useMemo } from 'react';
+import { CheckCircleFilled } from '@ant-design/icons';
+import { extractTextFromReactNode } from '../ActiontechTable/utils';
 
-const ToggleTokens = <V extends string | number | null = string>({
-  className,
-  options,
-  value,
-  onChange,
-  multiple,
-  withCheckbox,
-  noStyle,
-  labelDictionary,
-  defaultValue,
-  ...props
-}: ToggleTokensProps<V>) => {
+const ToggleTokens = <V extends string | number | null = string>(
+  {
+    className,
+    options,
+    value,
+    onChange,
+    multiple,
+    withCheckbox,
+    noStyle,
+    labelDictionary,
+    defaultValue,
+    disabled,
+    ...props
+  }: ToggleTokensProps<V>,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
   // #if [DEV]
   if (multiple && typeof value !== 'undefined' && !Array.isArray(value)) {
     throw new Error(
@@ -55,7 +60,7 @@ const ToggleTokens = <V extends string | number | null = string>({
     }
   };
 
-  const transformOptions = useMemo(() => {
+  const transformOptions = useMemo<ToggleTokensOptionsType>(() => {
     return options.map((item) => {
       if (labelDictionary) {
         if (typeof item === 'string') {
@@ -71,7 +76,8 @@ const ToggleTokens = <V extends string | number | null = string>({
               ? labelDictionary[item.label] ?? item.label
               : item.label,
           value: item.value,
-          className: item.className
+          className: item.className,
+          onClick: item.onClick
         };
       }
 
@@ -85,7 +91,8 @@ const ToggleTokens = <V extends string | number | null = string>({
       return {
         label: item.label,
         value: item.value,
-        className: item.className
+        className: item.className,
+        onClick: item.onClick
       };
     });
   }, [labelDictionary, options]);
@@ -93,6 +100,7 @@ const ToggleTokens = <V extends string | number | null = string>({
   return (
     <ToggleTokensStyleWrapper
       className={classNames(className, 'actiontech-toggle-tokens')}
+      ref={ref}
       {...props}
     >
       {transformOptions.map((item) => {
@@ -118,11 +126,16 @@ const ToggleTokens = <V extends string | number | null = string>({
             <BasicButton
               className={classNames(
                 commonCls,
-                'toggle-token-item-button-style'
+                'toggle-token-item-button-style',
+                {
+                  'toggle-token-item-button-disabled': disabled
+                }
               )}
+              disabled={disabled}
               type={checked ? 'primary' : undefined}
               onClick={() => {
                 handleClick(itemValue as V);
+                item.onClick?.(!checked);
               }}
             >
               {renderChildren()}
@@ -133,9 +146,15 @@ const ToggleTokens = <V extends string | number | null = string>({
         const renderTokenWithNoStyle = () => {
           return (
             <div
-              className={classNames(commonCls, 'toggle-token-item-no-style')}
+              className={classNames(commonCls, 'toggle-token-item-no-style', {
+                'toggle-token-item-no-style-disabled': disabled
+              })}
               onClick={() => {
+                if (disabled) {
+                  return;
+                }
                 handleClick(itemValue as V);
+                item.onClick?.(!checked);
               }}
             >
               {renderChildren()}
@@ -148,12 +167,26 @@ const ToggleTokens = <V extends string | number | null = string>({
           if (withCheckbox && checked) {
             return (
               <div className="toggle-token-item-with-checkbox-children">
-                <IconCheckoutCircle />
-                <span className={labelCls}>{label}</span>
+                <CheckCircleFilled />
+                <span
+                  title={extractTextFromReactNode(label)}
+                  aria-label={extractTextFromReactNode(label)}
+                  className={labelCls}
+                >
+                  {label}
+                </span>
               </div>
             );
           }
-          return <span className={labelCls}>{label}</span>;
+          return (
+            <span
+              title={extractTextFromReactNode(label)}
+              aria-label={extractTextFromReactNode(label)}
+              className={labelCls}
+            >
+              {label}
+            </span>
+          );
         };
 
         return (
@@ -170,4 +203,11 @@ const ToggleTokens = <V extends string | number | null = string>({
   );
 };
 
-export default ToggleTokens;
+ToggleTokens.displayName = 'ToggleTokens';
+
+export default forwardRef(ToggleTokens) as unknown as <
+  V extends string | number | null = string
+>(
+  props: React.PropsWithChildren<ToggleTokensProps<V>> &
+    React.RefAttributes<HTMLDivElement>
+) => React.ReactElement;

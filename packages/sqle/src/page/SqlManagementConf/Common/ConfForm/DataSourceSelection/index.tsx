@@ -1,59 +1,85 @@
 import {
-  CustomLabelContent,
-  FormItemBigTitle,
   FormItemLabel,
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
-import Icon from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { IconCreatedTitle } from '../../../../../icon/AuditPlan';
 import {
   BasicInput,
   BasicSelect,
   BasicSwitch,
+  EmptyBox,
   LazyLoadComponent
 } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useProjectBusinessTips
+} from '@actiontech/shared/lib/global';
 import { Form } from 'antd';
 import useInstance from '../../../../../hooks/useInstance';
-import useInstanceSchema from '../../../../../hooks/useInstanceSchema';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import useDatabaseType from '../../../../../hooks/useDatabaseType';
+import { ConfFormContext } from '../context';
+import { SqlManagementConfFormFields } from '../index.type';
 
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
 
-  // const { updateProjectTips, projectBusinessOption, isFixedBusiness } =
-  // useProjectTips();
+  const submitLoading = !!useContext(ConfFormContext)?.submitLoading;
+  const defaultValue = useContext(ConfFormContext)?.defaultValue;
 
-  const form = Form.useFormInstance();
+  const { updateProjectBusinessTips, projectBusinessOption, isFixedBusiness } =
+    useProjectBusinessTips();
+
+  const form = Form.useFormInstance<SqlManagementConfFormFields>();
   const needConnectDataSource = Form.useWatch('needConnectDataSource', form);
-  const dbName = Form.useWatch('dbName', form);
 
   const {
     instanceOptions,
     updateInstanceList,
-    loading: getInstanceLoading
+    loading: getInstanceLoading,
+    instanceList
   } = useInstance();
-  const {
-    generateInstanceSchemaSelectOption,
-    loading: getInstanceSchemaLoading,
-    updateSchemaList
-  } = useInstanceSchema(projectName, dbName);
 
-  const handleChangeDbName = (name?: string) => {
+  const {
+    loading: getDriverMetaLoading,
+    updateDriverNameList,
+    generateDriverSelectOptions
+  } = useDatabaseType();
+
+  const handleChangeInstance = (name?: string) => {
     if (name) {
-      updateSchemaList();
+      const instanceInfo = instanceList.find((v) => v.instance_name === name);
+      form.setFieldValue('instanceType', instanceInfo?.instance_type ?? null);
     }
-    form.setFieldValue('schema', undefined);
   };
 
-  useEffect(() => {
-    if (needConnectDataSource) {
+  const handleChangeNeedConnectDataSource = (checked: boolean) => {
+    if (checked) {
       updateInstanceList({ project_name: projectName });
     }
-  }, [needConnectDataSource, projectName, updateInstanceList]);
+    form.resetFields(['instanceName', 'instanceSchema', 'scanTypes']);
+  };
+
+  const handleChangeInstanceType = (type: string) => {
+    form.resetFields(['scanTypes']);
+    if (needConnectDataSource) {
+      form.resetFields(['instanceName']);
+      updateInstanceList({ project_name: projectName, filter_db_type: type });
+    }
+  };
+
+  const formItemDisabled = submitLoading || !!defaultValue;
+
+  useEffect(() => {
+    updateDriverNameList();
+  }, [updateDriverNameList]);
+
+  // #if [ee]
+  useEffect(() => {
+    updateProjectBusinessTips();
+  }, [updateProjectBusinessTips]);
+  // #endif
 
   return (
     <>
@@ -67,45 +93,72 @@ const DataSourceSelection: React.FC = () => {
         label={t('managementConf.create.dataSourceNeedsAudit')}
         valuePropName="checked"
       >
-        <BasicSwitch />
+        <BasicSwitch
+          disabled={formItemDisabled}
+          onChange={handleChangeNeedConnectDataSource}
+        />
       </FormItemLabel>
 
-      <FormItemLabel
-        name="businessScope"
-        rules={[{ required: true }]}
-        label={t('managementConf.create.businessScope')}
-        className="has-required-style"
+      <EmptyBox
+        if={isFixedBusiness}
+        defaultNode={
+          <FormItemLabel
+            className="has-required-style"
+            label={t('dmsDataSource.dataSourceForm.business')}
+            name="businessScope"
+            rules={[{ required: true }]}
+          >
+            <BasicInput disabled={formItemDisabled} />
+          </FormItemLabel>
+        }
       >
-        <BasicInput />
+        <FormItemLabel
+          className="has-required-style"
+          label={t('dmsDataSource.dataSourceForm.business')}
+          name="businessScope"
+          rules={[{ required: true }]}
+        >
+          <BasicSelect
+            disabled={formItemDisabled}
+            options={projectBusinessOption()}
+          />
+        </FormItemLabel>
+      </EmptyBox>
+
+      <FormItemLabel
+        className="has-required-style"
+        label={t('auditPlan.planForm.dataSource.dbType')}
+        name="instanceType"
+        rules={[
+          {
+            required: true
+          }
+        ]}
+      >
+        <BasicSelect
+          disabled={formItemDisabled}
+          placeholder={t('common.form.placeholder.select')}
+          onChange={handleChangeInstanceType}
+          allowClear
+          loading={getDriverMetaLoading}
+        >
+          {generateDriverSelectOptions()}
+        </BasicSelect>
       </FormItemLabel>
 
       <LazyLoadComponent open={needConnectDataSource} animation={false}>
         <FormItemLabel
-          name="dbName"
+          name="instanceName"
           rules={[{ required: true }]}
-          label={t('managementConf.create.dbName')}
+          label={t('managementConf.create.instanceName')}
           className="has-required-style"
         >
           <BasicSelect
+            disabled={formItemDisabled}
             loading={getInstanceLoading}
             options={instanceOptions}
-            onChange={handleChangeDbName}
+            onChange={handleChangeInstance}
           />
-        </FormItemLabel>
-
-        <FormItemLabel
-          name="schema"
-          className="has-label-tip"
-          label={
-            <CustomLabelContent
-              title={t('managementConf.create.schema')}
-              tips={t('managementConf.create.schemaTips')}
-            />
-          }
-        >
-          <BasicSelect loading={getInstanceSchemaLoading} disabled={!dbName}>
-            {generateInstanceSchemaSelectOption()}
-          </BasicSelect>
         </FormItemLabel>
       </LazyLoadComponent>
     </>

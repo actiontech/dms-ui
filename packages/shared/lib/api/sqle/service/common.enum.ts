@@ -166,6 +166,18 @@ export enum GetWorkflowTasksItemV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum InstanceAuditPlanInfoActiveStatusEnum {
+  'normal' = 'normal',
+
+  'disabled' = 'disabled'
+}
+
+export enum InstanceAuditPlanResV1ActiveStatusEnum {
+  'normal' = 'normal',
+
+  'disabled' = 'disabled'
+}
+
 export enum OperationRecordListStatusEnum {
   'succeeded' = 'succeeded',
 
@@ -242,6 +254,12 @@ export enum UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum {
   'error' = 'error'
 }
 
+export enum UpdateAuditPlanStatusReqV1ActiveEnum {
+  'normal' = 'normal',
+
+  'disabled' = 'disabled'
+}
+
 export enum UpdateAuditWhitelistReqV1MatchTypeEnum {
   'exact_match' = 'exact_match',
 
@@ -256,6 +274,12 @@ export enum UpdateCustomRuleReqV1LevelEnum {
   'warn' = 'warn',
 
   'error' = 'error'
+}
+
+export enum UpdateInstanceAuditPlanStatusReqV1ActiveEnum {
+  'normal' = 'normal',
+
+  'disabled' = 'disabled'
 }
 
 export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {

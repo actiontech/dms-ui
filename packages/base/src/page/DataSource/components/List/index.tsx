@@ -115,6 +115,8 @@ const DataSourceList = () => {
     [projectID]
   );
 
+  // const navigate
+
   const deleteDatabase = useCallback(
     (dbServiceUid: string, dvServiceName: string) => {
       const hideLoading = messageApi.loading(
