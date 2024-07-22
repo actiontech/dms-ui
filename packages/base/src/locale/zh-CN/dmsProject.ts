@@ -69,6 +69,8 @@ export default {
     buttonText: '批量导入数据源',
     title: '批量导入数据源',
     successTitle: '批量导入数据源成功',
+    checkSuccess: '校验通过',
+    testConnectLabel: '请测试数据源联通性',
     testConnect: '批量测试数据源连通性',
     testConnectSuccess: '测试连通性成功{{count}}个',
     testConnectFail: '测试连通性失败{{count}}个，数据源为{{name}}',

@@ -1,9 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`base/page/SyncDataSource-ee render index page 1`] = `
-<body>
-  <div>
-    <article />
-  </div>
-</body>
+<article>
+  <EnterpriseFeatureDisplay
+    eeFeatureDescription={
+      <ForwardRef
+        className="paragraph"
+      >
+        当用户在其他平台上添加了数据源后，如果想要对这些数据源进行 SQL 质量监控，可以使用 SQLE 平台的外部数据源同步功能，将外部平台的数据源同步至 SQLE。
+由此可避免在两个平台上重复添加数据源，降低管理难度。
+      </ForwardRef>
+    }
+    featureName="外部数据源同步"
+  >
+    <SyncTaskList />
+  </EnterpriseFeatureDisplay>
+</article>
 `;

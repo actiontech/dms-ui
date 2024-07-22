@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { message, Modal } from 'antd';
-import { PageHeader } from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
@@ -23,7 +22,10 @@ import {
   GlobalDataSourceListActions,
   GLobalDataSourceListParamType
 } from './columns';
-import useProjects from '../../../hooks/useProjects';
+import eventEmitter from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
+import useProjectTips from '../../../hooks/useProjectTips';
+import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -34,18 +36,19 @@ const GlobalDataSourceList = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
+  const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
+
   const {
-    dbDriverOptions,
-    getLogoUrlByDbType,
-    loading: getDriveOptionsLoading,
-    updateDriverList
-  } = useDbServiceDriver();
+    updateDbTypeList,
+    dbTypeOptions,
+    loading: getDbTypeListLoading
+  } = useGlobalDataSourceType();
 
   const {
     projectIDOptions,
     updateProjects,
     loading: getProjectsLoading
-  } = useProjects();
+  } = useProjectTips();
 
   const {
     tableFilterInfo,
@@ -182,18 +185,15 @@ const GlobalDataSourceList = () => {
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IListGlobalDBService, FilterCustomProps>([
-      [
-        'db_type',
-        { options: dbDriverOptions, loading: getDriveOptionsLoading }
-      ],
+      ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
       [
         'project_name',
         { options: projectIDOptions, loading: getProjectsLoading }
       ]
     ]);
   }, [
-    dbDriverOptions,
-    getDriveOptionsLoading,
+    dbTypeOptions,
+    getDbTypeListLoading,
     projectIDOptions,
     getProjectsLoading
   ]);
@@ -209,16 +209,26 @@ const GlobalDataSourceList = () => {
   useEffect(() => {
     updateDriverList();
     updateProjects();
+    updateDbTypeList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.DMS_Refresh_Global_Data_Source,
+      refresh
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [refresh]);
 
   return (
     <>
       {modalContextHolder}
       {messageContextHolder}
-      <PageHeader title={t('dmsGlobalDataSource.pageTitle')} />
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem

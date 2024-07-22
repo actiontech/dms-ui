@@ -84,6 +84,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(getAllBySelector('.content-item-text').length).toBe(2);
     fireEvent.click(screen.getByText('数据源管理'));
     await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toHaveBeenCalledWith('/global-data-source');
+    expect(navigateSpy).toHaveBeenCalledWith('/data-source-management');
   });
 });

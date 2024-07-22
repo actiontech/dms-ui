@@ -1,17 +1,13 @@
-import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Typography } from 'antd';
-import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
+import SyncTaskList from './List';
 
 const SyncDataSource: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <article>
-      {/* #if [ce] */}
-      <PageHeader title={t('dmsSyncDataSource.syncTaskList.title')} />
-      {/* #endif */}
-
       <EnterpriseFeatureDisplay
         featureName={t('dmsSyncDataSource.pageTitle')}
         eeFeatureDescription={
@@ -20,7 +16,7 @@ const SyncDataSource: React.FC = () => {
           </Typography.Paragraph>
         }
       >
-        <Outlet />
+        <SyncTaskList />
       </EnterpriseFeatureDisplay>
     </article>
   );

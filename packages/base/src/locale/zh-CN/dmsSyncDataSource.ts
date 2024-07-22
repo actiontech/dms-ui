@@ -28,7 +28,7 @@ export default {
   addSyncTask: {
     title: '添加同步任务',
     successTips: '添加同步任务成功',
-    successGuide: '到同步任务列表查看看看添加的同步任务',
+    successGuide: '到同步任务列表查看添加的同步任务',
     backToList: '返回同步任务列表'
   },
   updateSyncTask: {
@@ -39,11 +39,8 @@ export default {
   syncTaskForm: {
     name: '同步任务名称',
     source: '来源',
-    sourceTips: '支持同步ActionDMP平台',
-    version: '版本',
-    versionTips: '支持DMP5.23.04.0及以上版本',
     url: '地址',
-    urlTips: '填写DMP平台地址，默认格式为 http(s)://ip:port',
+    urlTips: '第三方平台地址',
     instanceType: '数据源类型',
     ruleTemplateName: '审核规则模板',
     syncInterval: '同步间隔',

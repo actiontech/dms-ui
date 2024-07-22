@@ -2,8 +2,12 @@ import {
   createSpySuccessResponse,
   MockSpyApy
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { taskList, taskListTips } from './data';
-import DatabaseSourceService from '@actiontech/shared/lib/api/base/service/DatabaseSourceService';
+import {
+  syncTaskDetailMockData,
+  syncTaskListMockData,
+  syncTaskTipsMockData
+} from './data';
+import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 
 class MockTaskSourceApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -17,28 +21,28 @@ class MockTaskSourceApi implements MockSpyApy {
   }
 
   public getTaskSourceList() {
-    const spy = jest.spyOn(DatabaseSourceService, 'ListDatabaseSourceServices');
+    const spy = jest.spyOn(DBServiceSyncTaskService, 'ListDBServiceSyncTasks');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        total_nums: taskList.length,
-        data: taskList
+        total_nums: syncTaskListMockData.length,
+        data: syncTaskListMockData
       })
     );
     return spy;
   }
 
   public getTaskSource() {
-    const spy = jest.spyOn(DatabaseSourceService, 'GetDatabaseSourceService');
+    const spy = jest.spyOn(DBServiceSyncTaskService, 'GetDBServiceSyncTask');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: taskList[0]
+        data: syncTaskDetailMockData
       })
     );
     return spy;
   }
 
   public addTaskSource() {
-    const spy = jest.spyOn(DatabaseSourceService, 'AddDatabaseSourceService');
+    const spy = jest.spyOn(DBServiceSyncTaskService, 'AddDBServiceSyncTask');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         uid: '1001'
@@ -48,37 +52,31 @@ class MockTaskSourceApi implements MockSpyApy {
   }
 
   public updateTaskSource() {
-    const spy = jest.spyOn(
-      DatabaseSourceService,
-      'UpdateDatabaseSourceService'
-    );
+    const spy = jest.spyOn(DBServiceSyncTaskService, 'UpdateDBServiceSyncTask');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public deleteTaskSource() {
-    const spy = jest.spyOn(
-      DatabaseSourceService,
-      'DeleteDatabaseSourceService'
-    );
+    const spy = jest.spyOn(DBServiceSyncTaskService, 'DeleteDBServiceSyncTask');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public syncTaskSource() {
-    const spy = jest.spyOn(DatabaseSourceService, 'SyncDatabaseSourceService');
+    const spy = jest.spyOn(DBServiceSyncTaskService, 'SyncDBServices');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 
   public getTaskSourceListTips() {
     const spy = jest.spyOn(
-      DatabaseSourceService,
-      'ListDatabaseSourceServiceTips'
+      DBServiceSyncTaskService,
+      'ListDBServiceSyncTaskTips'
     );
     spy.mockImplementation(() =>
       createSpySuccessResponse({
-        data: taskListTips
+        data: syncTaskTipsMockData
       })
     );
     return spy;

@@ -2,9 +2,7 @@
 export default {
   projectOverview: '项目概览',
   todoList: '待关注清单',
-  instanceManager: '数据源管理',
   instance: '数据源',
-  externalInstance: '外部数据源',
   memberAndPermissions: '成员与权限',
   authAudit: '授权审计',
   templateAudit: '权限模版审计',
@@ -58,7 +56,7 @@ export default {
     ruleManage: '规则管理',
     system: '系统设置',
     changeTheme: '模式切换',
-    dataSource: '数据源管理'
+    instanceManager: '数据源管理'
   },
-  copyRight: '© 2024 上海爱可生信息技术股份有限公司 版权所有'
+  copyRight: '© {{year}} 上海爱可生信息技术股份有限公司 版权所有'
 };
