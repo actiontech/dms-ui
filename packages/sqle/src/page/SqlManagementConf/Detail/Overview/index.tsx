@@ -1,26 +1,37 @@
 import {
   ActiontechTable,
   ColumnsSettingProps,
-  TableFilterContainer,
-  TableToolbar,
-  useTableFilterContainer,
-  useTableRequestParams
+  useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useEffect, useMemo } from 'react';
 import {
   ConfDetailOverviewColumnActions,
   ConfDetailOverviewColumns
 } from './column';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import { ConfDetailOverviewProps } from './index.type';
+import { useRequest } from 'ahooks';
+import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from '../index.data';
+import { useTableAction } from './useTableAction';
+import { Spin, message } from 'antd';
+import { useTranslation } from 'react-i18next';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import eventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
-  handleChangeTab
+  handleChangeTab,
+  instanceAuditPlanId
 }) => {
   const { t } = useTranslation();
   const { username } = useCurrentUser();
+  const { projectName } = useCurrentProject();
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const columns = ConfDetailOverviewColumns();
 
@@ -32,38 +43,49 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
     [username]
   );
 
-  const { tableFilterInfo, tableChange, pagination, updateTableFilterInfo } =
-    useTableRequestParams<any, any>();
+  const { requestErrorMessage, handleTableRequestError } =
+    useTableRequestError();
 
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo);
+  const { disabledAction, disabledActionPending } = useTableAction();
+
+  const { data, loading, refresh } = useRequest(
+    () =>
+      handleTableRequestError(
+        instance_audit_plan.getInstanceAuditPlanOverviewV1({
+          project_name: projectName,
+          instance_audit_plan_id: instanceAuditPlanId
+        })
+      ),
+    {
+      ready: activeTabKey === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
+    }
+  );
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EmitterKey.Refresh_Sql_Management_Conf_Overview_List,
+      refresh
+    );
+
+    return () => {
+      unsubscribe();
+    };
+  }, [refresh]);
 
   return (
-    <>
-      <TableToolbar
-        setting={tableSetting}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-      >
-        <TableFilterContainer
-          filterContainerMeta={filterContainerMeta}
-          updateTableFilterInfo={updateTableFilterInfo}
-          inlineToolbar
-          // disabled={loading}
-          // filterCustomProps={filterCustomProps}
-        />
-      </TableToolbar>
+    <Spin spinning={loading} delay={300}>
+      {messageContextHolder}
 
       <ActiontechTable
+        className="table-row-cursor"
+        dataSource={data?.list}
+        errorMessage={requestErrorMessage}
         columns={columns}
         setting={tableSetting}
-        onChange={tableChange}
         onRow={(record) => {
           return {
             onClick: () => {
-              handleChangeTab(record.id);
+              handleChangeTab(record.audit_plan_type?.type ?? '');
             }
           };
         }}
@@ -71,12 +93,22 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
           () => {
             console.log('enabledAction');
           },
-          () => {
-            console.log('enabledAction');
-          }
+          (id, type) => {
+            return disabledAction(id, type).then((res) => {
+              if (res.data.code === ResponseCode.SUCCESS) {
+                messageApi.success(
+                  t(
+                    'managementConf.detail.overview.actions.disabledSuccessTips'
+                  )
+                );
+                refresh();
+              }
+            });
+          },
+          disabledActionPending
         )}
       />
-    </>
+    </Spin>
   );
 };
 

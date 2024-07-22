@@ -166,7 +166,7 @@ export const sqlManagementConf: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.sqlManagementConf')}
     </Link>
   ),
-  icon: <Icon component={IconWhitelist} />,
+  icon: <ResolveFileFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-conf`,
   structKey: 'sql-management-conf'
 });

@@ -1,7 +1,10 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
-import { Tag } from 'antd';
+import { Space, Tag } from 'antd';
 import { t } from '../../../../locale';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IAuditPlanTypeResBase,
+  IListDBService
+} from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn,
@@ -9,7 +12,13 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicTag,
+  BasicToolTips,
+  DatabaseTypeLogo
+} from '@actiontech/shared';
+import { DashOutlined } from '@actiontech/icons';
 
 /*
  *PS：
@@ -73,10 +82,54 @@ export const DataSourceColumns = (
         );
       }
     },
+    // #if [sqle]
+    {
+      dataIndex: 'audit_plan_types',
+      title: () => t('dmsDataSource.databaseList.enabledScanTypes'),
+      render: (scanTypes: IAuditPlanTypeResBase[]) => {
+        if (scanTypes && scanTypes.length > 0) {
+          if (scanTypes.length <= 2)
+            return (
+              <Space>
+                {scanTypes.map((item) => (
+                  <BasicTag key={item.type}>{item.desc}</BasicTag>
+                ))}
+              </Space>
+            );
+
+          return (
+            <Space size={0}>
+              {scanTypes.slice(0, 2).map((item) => (
+                <BasicTag key={item.type}>{item.desc}</BasicTag>
+              ))}
+              <BasicToolTips
+                trigger={'click'}
+                title={
+                  <Space wrap>
+                    {scanTypes.map((item) => (
+                      <BasicTag key={item.type}>{item.desc}</BasicTag>
+                    ))}
+                  </Space>
+                }
+              >
+                <BasicButton
+                  size="small"
+                  className="table-row-scan-types-more-button"
+                  icon={<DashOutlined />}
+                />
+              </BasicToolTips>
+            </Space>
+          );
+        }
+        return '-';
+      }
+    },
+    // #endif
     {
       dataIndex: 'business',
       title: () => t('dmsDataSource.databaseList.business')
     },
+
     // #if [dms]
     {
       dataIndex: 'is_enable_masking',
@@ -148,7 +201,14 @@ export const DataSourceListActions = (
             text: t('common.testDatabaseConnectButton.testDatabaseConnection'),
             onClick: (record) =>
               onTestConnection(record?.uid ?? '', record?.name ?? '')
+          },
+          // #if [sqle]
+          {
+            key: 'enabled-audit-plan',
+            text: t('dmsDataSource.enabledAuditPlan.text')
+            // onClick: (record) => {}
           }
+          // #endif
         ]
       }
     : {

@@ -176,6 +176,9 @@ const SqlManagementConfList = React.lazy(
 const CreateSqlManagementConf = React.lazy(
   () => import('../page/SqlManagementConf/Create')
 );
+const UpdateSqlManagementConf = React.lazy(
+  () => import('../page/SqlManagementConf/Update')
+);
 const SqlManagementConfDetail = React.lazy(
   () => import('../page/SqlManagementConf/Detail')
 );
@@ -275,7 +278,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'CreateSqlManagementConf',
         path: 'create'
       },
-
+      {
+        element: <UpdateSqlManagementConf />,
+        key: 'UpdateSqlManagementConf',
+        path: 'update/:id'
+      },
       {
         element: <SqlManagementConfDetail />,
         key: 'SqlManagementConfDetail',

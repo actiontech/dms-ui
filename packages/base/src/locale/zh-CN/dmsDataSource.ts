@@ -12,6 +12,7 @@ export default {
     describe: '描述',
     role: '角色',
     type: '数据源类型',
+    enabledScanTypes: '启用的扫描类型',
     ruleTemplate: '模版',
     workflow: '工作流',
     maintenanceTime: '运维时间',
@@ -29,15 +30,7 @@ export default {
     title: '编辑数据源',
     getDatabaseInfoError: '获取数据源信息失败了',
     updateDatabase: '更新数据源',
-    updateDatabaseSuccess: '数据源"{{name}}"更新成功',
-    dictionaryInfo: '字典信息'
-  },
-
-  dictionaryForm: {
-    lastSyncDataResult: '最后一次同步字典结果',
-    lastSyncDataTime: '最后一次同步字典时间',
-    syncDictionary: '立即触发同步字典',
-    syncDictionarySuccess: '同步字典数据成功!'
+    updateDatabaseSuccess: '数据源"{{name}}"更新成功'
   },
 
   dataSourceForm: {
@@ -82,6 +75,10 @@ export default {
     confirmMessage: '确认删除数据源 "{{name}}"?',
     deletingDatabase: '正在删除数据源 "{{name}}"...',
     deleteSuccessTips: '删除数据源"{{name}}"成功'
+  },
+
+  enabledAuditPlan: {
+    text: '为数据源开启智能扫描'
   },
 
   batchImportDataSource: {

@@ -3,56 +3,77 @@ import {
   ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../locale';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import {
+  IAuditPlanTypeResBase,
+  IInstanceAuditPlanInfo
+} from '@actiontech/shared/lib/api/sqle/service/common';
+import { TokenCom } from '@actiontech/shared';
+import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-export const ConfDetailOverviewColumns: () => ActiontechTableColumn<any> =
+export const ConfDetailOverviewColumns: () => ActiontechTableColumn<IInstanceAuditPlanInfo> =
   () => {
     return [
       {
-        dataIndex: 'auditPlanType',
+        dataIndex: 'audit_plan_type',
         title: () => t('managementConf.detail.overview.column.auditPlanType'),
         filterCustomType: 'select',
-        filterKey: 'filter_audit_plan_type'
+        filterKey: 'filter_audit_plan_type',
+        render: (data: IAuditPlanTypeResBase) => {
+          return data.desc ?? '-';
+        }
       },
       {
-        dataIndex: 'auditRuleTemplate',
+        dataIndex: 'audit_plan_rule_template_name',
         title: () =>
           t('managementConf.detail.overview.column.auditRuleTemplate')
       },
       {
-        dataIndex: 'scanType',
-        title: () => t('managementConf.detail.overview.column.scanType')
+        dataIndex: 'exec_cmd',
+        title: () => t('managementConf.detail.overview.column.connectionInfo'),
+        render: (text) => {
+          if (!text) return '-';
+          return <TokenCom text={text} />;
+        }
       },
       {
-        dataIndex: 'connectionInfo',
-        title: () => t('managementConf.detail.overview.column.connectionInfo')
-      },
-      {
-        dataIndex: 'collectedSqlCount',
+        dataIndex: 'total_sql_nums',
         title: () =>
           t('managementConf.detail.overview.column.collectedSqlCount')
       },
+      // #if [ee]
       {
-        dataIndex: 'problematicSqlCount',
+        dataIndex: 'unsolved_sql_nums',
         title: () =>
           t('managementConf.detail.overview.column.problematicSqlCount')
       },
+      // #endif
       {
-        dataIndex: 'lastCollectionTime',
+        dataIndex: 'last_collection_time',
         title: () =>
-          t('managementConf.detail.overview.column.lastCollectionTime')
+          t('managementConf.detail.overview.column.lastCollectionTime'),
+        render: (time: string) => formatTime(time, '-')
       }
     ];
   };
 
 export const ConfDetailOverviewColumnActions: (
   enabledAction: () => void,
-  disabledAction: () => void
-) => ActiontechTableProps<any>['actions'] = (enabledAction, disabledAction) => {
+  disabledAction: (id: string, auditPlanType: string) => Promise<void>,
+  disabledActionPending: boolean
+) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = (
+  enabledAction,
+  disabledAction,
+  disabledActionPending
+) => {
   return {
     buttons: [
       {
         key: 'enable',
         text: t('managementConf.detail.overview.actions.enabled'),
+        permissions: (record) =>
+          record?.active_status ===
+          InstanceAuditPlanInfoActiveStatusEnum.disabled,
         buttonProps: () => {
           return {
             onClick: enabledAction
@@ -62,9 +83,21 @@ export const ConfDetailOverviewColumnActions: (
       {
         key: 'disable',
         text: t('managementConf.detail.overview.actions.disabled'),
-        buttonProps: () => {
+        permissions: (record) =>
+          record?.active_status ===
+          InstanceAuditPlanInfoActiveStatusEnum.normal,
+        confirm: (record) => {
           return {
-            onClick: disabledAction
+            disabled: disabledActionPending,
+            title: t(
+              'managementConf.detail.overview.actions.disabledConfirmTips'
+            ),
+            onConfirm: () => {
+              disabledAction(
+                record?.id?.toString() ?? '',
+                record?.audit_plan_type?.type ?? ''
+              );
+            }
           };
         }
       }

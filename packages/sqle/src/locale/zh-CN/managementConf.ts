@@ -21,11 +21,16 @@ export default {
         }
       },
       column: {
+        staticScanType: '静态扫描',
         dbName: '数据源名称',
         dbType: '数据源类型',
         business: '所属业务',
         enabledScanTypes: '启用的扫描类型',
         dbTaskStatus: '数据源任务状态',
+        taskStatus: {
+          disabled: '停用',
+          normal: '启用'
+        },
         scanStatus: '采集状态',
         notificationMethod: '推送方式',
         createdAt: '创建时间',
@@ -49,23 +54,44 @@ export default {
     dataSourceSelection: '选择数据源',
     dataSourceNeedsAudit: '是否需要连接数据源审核',
     businessScope: '所属业务',
-    dbName: '数据源名称',
+    instanceName: '数据源名称',
     schema: '数据库',
     schemaTips: '如果选择了数据库，只会采集该数据库对应的SQL',
     scanTypesSelection: '选择扫描类型',
     scanType: '扫描类型',
     scanTypeTips: '选择您需要扫描的SQL对象',
+    emptyScanTypeTips: '选择数据源类型后获取对应的扫描任务类型',
+
+    scanTypeParams: {
+      title: '编辑扫描详情·{{typeName}}',
+      auditTemplate: {
+        ruleTemplate: {
+          label: '审核规则模版',
+          tip: '如果未指定此项会优先使用数据源绑定的模板'
+        }
+      }
+    },
+
+    defaultScanTypes: {
+      sqlFile: 'SQL文件',
+      myBatisFile: 'MyBatis文件',
+      allAppExtract: '应用程序SQL抓取',
+      default: '自定义'
+    },
 
     result: {
-      title: '创建智能扫描成功',
-      clone: '克隆扫描任务',
+      title: '创建SQL管控配置成功',
+      clone: '克隆配置',
       reset: '重置表单',
-      jumpToDetail: '查看扫描任务详情'
+      jumpToDetail: '查看配置详情'
     }
   },
+  update: {
+    successTips: '更新智能扫描配置成功！'
+  },
   detail: {
-    title: '{{dbName}} 智能扫描详情',
-
+    title: '{{instanceName}} 智能扫描详情',
+    staticScanTypes: '静态扫描',
     overview: {
       title: '概览',
       column: {
@@ -79,7 +105,10 @@ export default {
       },
       actions: {
         enabled: '启用',
-        disabled: '停用'
+        disabled: '停用',
+        disabledSuccessTips: '停用成功！',
+        disabledConfirmTips:
+          '停用后，将不再扫描该类型的SQL，当前数据会被保留，是否确认停用？'
       }
     },
     scanTypeSqlCollection: {
@@ -105,6 +134,7 @@ export default {
           text: '说明',
           operator: '添加说明'
         },
+        sqlAuditResultReportTitle: 'SQL审核结果',
         action: {
           analysis: '分析'
         }

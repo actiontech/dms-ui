@@ -3,6 +3,7 @@ export type FormItem = {
   key?: string;
   type?: string;
   value?: string;
+  enums_value?: string[];
 };
 
 export type BackendFormRequestParams = {

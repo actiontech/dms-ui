@@ -19,6 +19,8 @@ import {
   IDeleteInstanceAuditPlanV1Return,
   IStopInstanceAuditPlanV1Params,
   IStopInstanceAuditPlanV1Return,
+  IGetInstanceAuditPlanOverviewV1Params,
+  IGetInstanceAuditPlanOverviewV1Return,
   IStopAuditPlanV1Params,
   IStopAuditPlanV1Return,
   IDeleteInstanceAuditPlanByTypeV1Params,
@@ -70,7 +72,7 @@ class InstanceAuditPlanService extends ServiceBase {
     delete paramsData.instance_audit_plan_id;
 
     return this.get<IGetInstanceAuditPlanV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/`,
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}`,
       paramsData,
       options
     );
@@ -125,6 +127,24 @@ class InstanceAuditPlanService extends ServiceBase {
 
     return this.patch<IStopInstanceAuditPlanV1Return>(
       `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlanOverviewV1(
+    params: IGetInstanceAuditPlanOverviewV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    return this.get<IGetInstanceAuditPlanOverviewV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans`,
       paramsData,
       options
     );

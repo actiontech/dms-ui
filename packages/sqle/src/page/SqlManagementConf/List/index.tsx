@@ -4,10 +4,7 @@ import {
   LazyLoadComponent,
   PageHeader
 } from '@actiontech/shared';
-import {
-  IAuditPlanResV2,
-  IInstanceAuditPlanResV1
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
   ColumnsSettingProps,
@@ -23,7 +20,7 @@ import {
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   ExtraFilterMeta,
@@ -31,21 +28,28 @@ import {
   SqlManagementConfColumns
 } from './column';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { Space, message } from 'antd';
-import { IconArrowDown, IconArrowUp } from '@actiontech/shared/lib/Icon/common';
-import { IconTaskType } from '../../../icon/AuditPlan';
+import { Spin, message } from 'antd';
 import TableTaskTypeFilter from './TableTaskTypeFilter';
 import { Link } from 'react-router-dom';
-import { SqlManagementConfPageStyleWrapper } from './style';
+import {
+  PlanListTaskTypeButtonStyleWrapper,
+  SqlManagementConfPageStyleWrapper
+} from './style';
 import { IGetInstanceAuditPlansV1Params } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
 import useTableFilter from './hooks/useTableFilter';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import useTableAction from './hooks/useTableAction';
+import {
+  DownOutlined,
+  UpOutlined,
+  BookMarkTagOutlined
+} from '@actiontech/icons';
+import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
 
-const ConfList: React.FC = () => {
+const List: React.FC = () => {
   const { t } = useTranslation();
   const { projectArchive, projectName, projectID } = useCurrentProject();
-  const { username, isAdmin, isProjectManager, uid } = useCurrentUser();
+  const { username, isAdmin, isProjectManager } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
@@ -98,8 +102,14 @@ const ConfList: React.FC = () => {
   );
 
   const {
+    loading: getTaskTypesLoading,
+    auditPlanTypes,
+    updateAuditPlanTypes
+  } = useAuditPlanTypes();
+
+  const {
     data: planList,
-    loading,
+    loading: getTableDataLoading,
     refresh: onRefresh
   } = useRequest(
     () => {
@@ -129,94 +139,105 @@ const ConfList: React.FC = () => {
     messageApi
   });
 
-  return (
-    <SqlManagementConfPageStyleWrapper>
-      <PageHeader
-        title={t('managementConf.list.pageTitle')}
-        extra={
-          <EmptyBox if={!projectArchive}>
-            <Link to={`/sqle/project/${projectID}/sql-management-conf/create`}>
-              <BasicButton type="primary">
-                {t('managementConf.list.pageAction.enableAuditPlan')}
-              </BasicButton>
-            </Link>
-          </EmptyBox>
-        }
-      />
-      <TableToolbar
-        refreshButton={{ refresh: onRefresh, disabled: loading }}
-        loading={loading}
-        setting={tableSetting}
-        actions={[
-          {
-            key: 'task-status-show-btn',
-            text: (
-              <Space size={5} align="center">
-                <IconTaskType />
-                {t('managementConf.list.pageAction.planType')}
-                {taskTypeShowStatus ? <IconArrowUp /> : <IconArrowDown />}
-              </Space>
-            ),
-            buttonProps: {
-              onClick: onChangeTaskTypeShow,
-              className: 'actiontech-table-setting-namespace'
-            }
-          }
-        ]}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
+  useEffect(() => {
+    if (taskTypeShowStatus) {
+      updateAuditPlanTypes();
+    }
+  }, [taskTypeShowStatus, updateAuditPlanTypes]);
 
-      <LazyLoadComponent open={taskTypeShowStatus} animation={false}>
-        <TableTaskTypeFilter
-          show={taskTypeShowStatus}
-          updateParams={(data) =>
-            setFilterCustomData({
-              filter_by_db_type: data.dataSourceType,
-              filter_by_audit_plan_type: data.taskType
-            })
+  return (
+    <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
+      <SqlManagementConfPageStyleWrapper>
+        <PageHeader
+          title={t('managementConf.list.pageTitle')}
+          extra={
+            <EmptyBox if={!projectArchive}>
+              <Link
+                to={`/sqle/project/${projectID}/sql-management-conf/create`}
+              >
+                <BasicButton type="primary">
+                  {t('managementConf.list.pageAction.enableAuditPlan')}
+                </BasicButton>
+              </Link>
+            </EmptyBox>
           }
         />
-      </LazyLoadComponent>
-      {contextMessageHolder}
-      <ActiontechTable
-        setting={tableSetting}
-        loading={loading}
-        dataSource={planList?.list ?? []}
-        rowKey={(record) => {
-          return `${record?.instance_audit_plan_id}`;
-        }}
-        pagination={{
-          total: planList?.total ?? 0
-        }}
-        columns={columns}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        actions={SqlManagementConfColumnAction({
-          editAction,
-          deleteAction,
-          stopAction,
-          userID: uid,
-          isAdmin,
-          isProjectManager: isProjectManager(projectName)
-        })}
-      />
-    </SqlManagementConfPageStyleWrapper>
+        <TableToolbar
+          refreshButton={{ refresh: onRefresh, disabled: getTableDataLoading }}
+          setting={tableSetting}
+          actions={[
+            {
+              key: 'task-status-show-btn',
+              text: (
+                <PlanListTaskTypeButtonStyleWrapper size={5} align="center">
+                  <BookMarkTagOutlined width={14} height={14} />
+                  <span>{t('managementConf.list.pageAction.planType')}</span>
+                  {taskTypeShowStatus ? (
+                    <UpOutlined color="currentColor" />
+                  ) : (
+                    <DownOutlined color="currentColor" />
+                  )}
+                </PlanListTaskTypeButtonStyleWrapper>
+              ),
+              buttonProps: {
+                onClick: onChangeTaskTypeShow,
+                className: 'actiontech-table-setting-namespace'
+              }
+            }
+          ]}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          filterCustomProps={filterCustomProps}
+        />
+
+        <LazyLoadComponent open={taskTypeShowStatus} animation={false}>
+          <TableTaskTypeFilter
+            auditPlanTypes={auditPlanTypes}
+            updateParams={(data) =>
+              setFilterCustomData({
+                filter_by_db_type: data.dataSourceType,
+                filter_by_audit_plan_type: data.taskType
+              })
+            }
+          />
+        </LazyLoadComponent>
+        {contextMessageHolder}
+        <ActiontechTable
+          setting={tableSetting}
+          dataSource={planList?.list ?? []}
+          rowKey={(record) => {
+            return `${record?.instance_audit_plan_id}`;
+          }}
+          pagination={{
+            total: planList?.total ?? 0
+          }}
+          columns={columns}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          actions={SqlManagementConfColumnAction({
+            editAction,
+            deleteAction,
+            stopAction,
+            username,
+            isAdmin,
+            isProjectManager: isProjectManager(projectName)
+          })}
+        />
+      </SqlManagementConfPageStyleWrapper>
+    </Spin>
   );
 };
 
-export default ConfList;
+export default List;

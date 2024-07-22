@@ -1,5 +1,3 @@
-import project from '../../testUtils/mockApi/project';
-import { mockProjectTips } from '../../testUtils/mockApi/project/data';
 import {
   cleanup,
   renderHook,
@@ -8,15 +6,17 @@ import {
   fireEvent,
   screen
 } from '@testing-library/react';
-import useProjectTips from '.';
+import useProjectBusinessTips from '.';
 import { Select } from 'antd';
+import project from '../../../../base/src/testUtils/mockApi/project';
+import { mockProjectTips } from '../../../../base/src/testUtils/mockApi/project/data';
+import { mockUseCurrentProject } from '../../testUtil/mockHook/mockUseCurrentProject';
 import {
-  createSpyErrorResponse,
-  createSpyFailResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+  createSpyFailResponse,
+  createSpyErrorResponse
+} from '../../testUtil/mockApi';
 
-describe('useProjectTips', () => {
+describe('useProjectBusinessTips', () => {
   let getProjectTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     getProjectTipsSpy = project.getProjectTips();
@@ -30,11 +30,11 @@ describe('useProjectTips', () => {
   });
 
   it('should get project tips from request', async () => {
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     expect(result.current.loading).toBeFalsy();
 
     act(() => {
-      result.current.updateProjectTips();
+      result.current.updateProjectBusinessTips();
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -48,9 +48,9 @@ describe('useProjectTips', () => {
   it('should set business to empty array when response code is not equal success code', async () => {
     getProjectTipsSpy.mockClear();
     getProjectTipsSpy.mockImplementation(() => createSpyFailResponse({}));
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     act(() => {
-      result.current.updateProjectTips();
+      result.current.updateProjectBusinessTips();
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.projectBusiness).toEqual([]);
@@ -59,16 +59,16 @@ describe('useProjectTips', () => {
   it('should set business to empty array when response throw error', async () => {
     getProjectTipsSpy.mockClear();
     getProjectTipsSpy.mockImplementation(() => createSpyErrorResponse({}));
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     act(() => {
-      result.current.updateProjectTips();
+      result.current.updateProjectBusinessTips();
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.projectBusiness).toEqual([]);
   });
 
   it('should return options when use projectBusinessOption', async () => {
-    const { result } = renderHook(() => useProjectTips());
+    const { result } = renderHook(() => useProjectBusinessTips());
     const { baseElement: baseElementWithOptions } = render(
       <Select
         data-testid="testId"
