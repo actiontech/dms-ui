@@ -45,15 +45,25 @@ const GlobalSetting: React.FC<{
         <PopoverInnerStyleWrapper>
           <div className="header">{t('dmsMenu.globalSettings.title')}</div>
           <div className="content">
+            <EmptyBox if={isAdmin}>
+              <div
+                className="content-item"
+                onClick={() => handleClickItem('/user-center')}
+              >
+                <UserShieldFilled />
+                <span className="content-item-text">
+                  {t('dmsMenu.globalSettings.userCenter')}
+                </span>
+              </div>
+            </EmptyBox>
             <EmptyBox if={isAdmin || isCertainProjectManager}>
               <div
                 className="content-item"
-                onClick={() => handleClickItem(`/global-data-source`)}
+                onClick={() => handleClickItem(`/data-source-management`)}
               >
                 <DatabaseFilled />
                 <span className="content-item-text">
-                  {' '}
-                  {t('dmsMenu.globalSettings.dataSource')}
+                  {t('dmsMenu.globalSettings.instanceManager')}
                 </span>
               </div>
             </EmptyBox>
@@ -71,15 +81,6 @@ const GlobalSetting: React.FC<{
               {/* #endif */}
             </EmptyBox>
             <EmptyBox if={isAdmin}>
-              <div
-                className="content-item"
-                onClick={() => handleClickItem('/user-center')}
-              >
-                <UserShieldFilled />
-                <span className="content-item-text">
-                  {t('dmsMenu.globalSettings.userCenter')}
-                </span>
-              </div>
               {/* #if [sqle] */}
               <div
                 className="content-item"

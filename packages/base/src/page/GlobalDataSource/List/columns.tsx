@@ -95,12 +95,10 @@ export const GlobalDataSourceColumns = (
       title: t('dmsGlobalDataSource.list.unfinishedWorkflowNum')
     },
     {
-      dataIndex: 'sqle_config',
+      dataIndex: 'is_enable_audit',
       title: t('dmsGlobalDataSource.list.workbenchQueryAudit'),
-      render: (value: IListGlobalDBService['sqle_config']) => {
-        return value?.sql_query_config?.audit_enabled
-          ? t('common.opened')
-          : t('common.notOpen');
+      render: (value: IListGlobalDBService['is_enable_audit']) => {
+        return value ? t('common.opened') : t('common.notOpen');
       }
     }
   ];

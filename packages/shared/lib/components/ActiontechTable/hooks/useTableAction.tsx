@@ -155,12 +155,22 @@ const useTableAction = () => {
               }}
             >
               {renderAction(actions?.buttons, record)}
-              {!!(actions?.moreButtons ?? []).length && (
+              {actions?.moreButtons &&
+                Array.isArray(actions.moreButtons) &&
+                actions.moreButtons.length && (
+                  <MoreButtons
+                    moreButtons={actions?.moreButtons ?? []}
+                    record={record}
+                  />
+                )}
+              {actions?.moreButtons &&
+              typeof actions.moreButtons === 'function' &&
+              actions?.moreButtons(record).length ? (
                 <MoreButtons
-                  moreButtons={actions?.moreButtons ?? []}
+                  moreButtons={actions.moreButtons(record)}
                   record={record}
                 />
-              )}
+              ) : null}
             </InlineTableActionButtonsStyleWrapper>
           );
         }

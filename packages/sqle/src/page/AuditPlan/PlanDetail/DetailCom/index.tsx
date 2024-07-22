@@ -66,7 +66,7 @@ const DetailCom = () => {
         setColumns(
           (head as IAuditPlanSQLHeadV1[]).map((item) => ({
             title: item.desc,
-            dataIndex: item.name,
+            dataIndex: item.field_name,
             width: item.type === AuditPlanSQLHeadV1TypeEnum.sql ? 500 : 'auto',
             render: (text) => {
               if (item.type === AuditPlanSQLHeadV1TypeEnum.sql) {
@@ -76,7 +76,7 @@ const DetailCom = () => {
                   </div>
                 );
               }
-              if (item.name === 'last_receive_timestamp') {
+              if (item.field_name === 'last_receive_timestamp') {
                 return formatTime(text);
               }
               return text;

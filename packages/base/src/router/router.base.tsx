@@ -18,11 +18,17 @@ const ExportTaskDetail = lazy(
   () => import('../page/DataExportManagement/Detail')
 );
 
-const SyncTaskList = lazy(() => import('../page/SyncDataSource/List'));
 const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
 const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
 const BatchImportDataSource = lazy(
   () => import('../page/DataSource/components/BatchImportDataSource')
+);
+
+const GlobalBatchImportDataSource = lazy(
+  () => import('../page/GlobalDataSource/BatchImportDataSource')
+);
+const GlobalAddDataSource = lazy(
+  () => import('../page/DataSource/components/AddDataSource')
 );
 // #endif
 
@@ -40,14 +46,11 @@ const DataSourceList = lazy(() => import('../page/DataSource/components/List'));
 const Member = lazy(() => import('../page/Member'));
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 const System = lazy(() => import('../page/System'));
-const GlobalDataSource = lazy(() => import('../page/GlobalDataSource'));
-const GlobalDataSourceList = lazy(
-  () => import('../page/GlobalDataSource/List')
-);
+
 const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
-const SyncDataSource = lazy(() => import('../page/SyncDataSource'));
 const Account = lazy(() => import('../page/Account'));
 const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
+const DataSourceManagement = lazy(() => import('../page/DataSourceManagement'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
   {
@@ -74,19 +77,47 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     element: <Account />
   },
   {
+    path: 'data-source-management',
+    key: 'dataSourceManagement',
+    role: [SystemRole.admin, SystemRole.certainProjectManager],
+    element: <DataSourceManagement />
+  },
+
+  // #if [ee]
+  {
     path: 'global-data-source',
     key: 'globalDataSource',
-    element: <GlobalDataSource />,
     role: [SystemRole.admin, SystemRole.certainProjectManager],
     children: [
       {
-        index: true,
-        key: 'globalDataSourceList',
-        element: <GlobalDataSourceList />
+        path: 'batch-import',
+        key: 'globalBatchImportDataSource',
+        element: <GlobalBatchImportDataSource />
+      },
+      {
+        path: 'create',
+        element: <GlobalAddDataSource />,
+        key: 'globalDataSourceCreate'
       }
     ] as RouterConfigItem[]
   },
-  // #if [ee]
+  {
+    path: `sync-data-source`,
+    key: 'syncDataSource',
+    role: [SystemRole.admin],
+    children: [
+      {
+        path: 'create',
+        element: <AddSyncTask />,
+        key: 'syncDataSourceCreate'
+      },
+      {
+        path: 'update/:taskId',
+        element: <UpdateSyncTask />,
+        key: 'syncDataSourceUpdate'
+      }
+    ] as RouterConfigItem[]
+  },
   {
     path: 'project',
     key: 'project',
@@ -109,6 +140,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     ]
   },
   // #endif
+
   {
     key: 'projectDetail',
     path: 'project/*',
@@ -147,31 +179,6 @@ export const BaseRouterConfig: RouterConfigItem[] = [
           }
           // #endif
         ]
-      },
-      {
-        path: `${PROJECT_ROUTER_PARAM}/sync-data-source`,
-        label: 'menu.syncDataSource',
-        key: 'syncDataSource',
-        element: <SyncDataSource />,
-        // #if [ee]
-        children: [
-          {
-            index: true,
-            element: <SyncTaskList />,
-            key: 'syncDataSourceList'
-          },
-          {
-            path: 'create',
-            element: <AddSyncTask />,
-            key: 'syncDataSourceCreate'
-          },
-          {
-            path: 'update/:taskId',
-            element: <UpdateSyncTask />,
-            key: 'syncDataSourceUpdate'
-          }
-        ]
-        // #endif
       },
       {
         path: `${PROJECT_ROUTER_PARAM}/data/export`,

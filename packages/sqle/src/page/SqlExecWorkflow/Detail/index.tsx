@@ -42,7 +42,7 @@ const SqlWorkflowDetail: React.FC = () => {
     overviewList,
     getOverviewLoading,
     requestErrorMessage: overviewTableErrorMessage
-  } = useAuditExecResultPanelSetup();
+  } = useAuditExecResultPanelSetup(workflowInfo?.record?.status);
 
   const {
     taskInfos: modifiedTasks,

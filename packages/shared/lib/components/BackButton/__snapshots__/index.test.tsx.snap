@@ -3,11 +3,23 @@
 exports[`BackButton should render a button 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary"
+    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
     type="button"
   >
-    <span>
-      返 回
+    <span
+      class="ant-btn-icon"
+    >
+      <svg
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+          fill="currentColor"
+        />
+      </svg>
     </span>
   </button>
 </div>

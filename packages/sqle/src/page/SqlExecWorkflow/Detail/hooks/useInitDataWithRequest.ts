@@ -6,6 +6,7 @@ import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common'
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const useInitDataWithRequest = () => {
   const urlParams = useParams<{ workflowId: string }>();
@@ -19,14 +20,25 @@ const useInitDataWithRequest = () => {
   const {
     data: workflowInfo,
     refresh: refreshWorkflowInfo,
-    loading: getWorkflowLoading
-  } = useRequest(() =>
-    workflow
-      .getWorkflowV2({
-        project_name: projectName,
-        workflow_id: urlParams.workflowId ?? ''
-      })
-      .then((res) => res.data.data)
+    loading: getWorkflowLoading,
+    cancel
+  } = useRequest(
+    () =>
+      workflow
+        .getWorkflowV2({
+          project_name: projectName,
+          workflow_id: urlParams.workflowId ?? ''
+        })
+        .then((res) => res.data.data),
+    {
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onSuccess: (res) => {
+        if (res?.record?.status !== WorkflowRecordResV2StatusEnum.executing) {
+          cancel();
+        }
+      }
+    }
   );
 
   const refreshTask = useCallback(() => {

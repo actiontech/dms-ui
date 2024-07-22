@@ -12,33 +12,29 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -77,32 +73,8 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
-        <div>
-          <div
-            aria-busy="true"
-            aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-          >
-            <span
-              class="ant-spin-dot ant-spin-dot-spin"
-            >
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-container ant-spin-blur"
+          class="ant-spin-container"
         >
           <form
             class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
@@ -194,20 +166,9 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -287,56 +248,6 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style  has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
-                >
-                  <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                  >
-                    <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="version"
-                        title=""
-                      >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            版本
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持DMP5.23.04.0及以上版本
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <input
-                            aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                            id="version"
-                            placeholder="请输入版本"
-                            type="text"
-                            value=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
                   class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -359,7 +270,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                           <div
                             class="tip-content-box"
                           >
-                            填写DMP平台地址，默认格式为 http(s)://ip:port
+                            第三方平台地址
                           </div>
                         </div>
                       </label>
@@ -689,6 +600,149 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="needAuditForSqlQuery"
+                        title="SQL查询是否需要审核"
+                      >
+                        SQL查询是否需要审核
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="needAuditForSqlQuery"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="allowQueryWhenLessThanAuditLevel"
+                        title="运行查询的最高审核等级"
+                      >
+                        运行查询的最高审核等级
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
             </section>
             <section
@@ -703,7 +757,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                   自定义任务同步周期
                 </h1>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-is-validating"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -748,7 +802,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                               style="padding-left: 4px; padding-right: 4px; flex-basis: auto;"
                             >
                               <input
-                                class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input ant-input-status-validating css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                                 placeholder="请输入审核时间"
                                 style="text-align: center;"
                                 type="text"
@@ -1471,33 +1525,29 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -1535,6 +1585,7 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 2`] = `
       </div>
       <div
         class="css-dev-only-do-not-override-txh9fw ant-empty"
+        style="margin-top: 160px;"
       >
         <div
           class="ant-empty-image"
@@ -1640,33 +1691,29 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -1705,32 +1752,8 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
-        <div>
-          <div
-            aria-busy="true"
-            aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-          >
-            <span
-              class="ant-spin-dot ant-spin-dot-spin"
-            >
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-container ant-spin-blur"
+          class="ant-spin-container"
         >
           <form
             class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
@@ -1822,20 +1845,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -1915,56 +1927,6 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style  has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
-                >
-                  <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                  >
-                    <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="version"
-                        title=""
-                      >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            版本
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持DMP5.23.04.0及以上版本
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <input
-                            aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                            id="version"
-                            placeholder="请输入版本"
-                            type="text"
-                            value=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
                   class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -1987,7 +1949,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                           <div
                             class="tip-content-box"
                           >
-                            填写DMP平台地址，默认格式为 http(s)://ip:port
+                            第三方平台地址
                           </div>
                         </div>
                       </label>
@@ -2317,6 +2279,149 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="needAuditForSqlQuery"
+                        title="SQL查询是否需要审核"
+                      >
+                        SQL查询是否需要审核
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="needAuditForSqlQuery"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="allowQueryWhenLessThanAuditLevel"
+                        title="运行查询的最高审核等级"
+                      >
+                        运行查询的最高审核等级
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
             </section>
             <section
@@ -2331,7 +2436,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                   自定义任务同步周期
                 </h1>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-is-validating"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2376,7 +2481,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                               style="padding-left: 4px; padding-right: 4px; flex-basis: auto;"
                             >
                               <input
-                                class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input ant-input-status-validating css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                                 placeholder="请输入审核时间"
                                 style="text-align: center;"
                                 type="text"
@@ -3099,33 +3204,29 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -3234,7 +3335,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                             id="name"
                             placeholder="请输入同步任务名称"
                             type="text"
-                            value="test-mysql-1"
+                            value="sync_task_name"
                           />
                         </div>
                       </div>
@@ -3258,20 +3359,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -3353,7 +3443,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style  has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3362,20 +3452,20 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="version"
+                        class="ant-form-item-no-colon"
+                        for="params_key1"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            版本
+                            动态字段1
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            支持DMP5.23.04.0及以上版本
+                            这是一段描述
                           </div>
                         </div>
                       </label>
@@ -3390,12 +3480,60 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            aria-required="true"
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                            id="version"
-                            placeholder="请输入版本"
+                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            id="params_key1"
+                            placeholder="请输入{{name}}"
                             type="text"
-                            value="4.2.2.0"
+                            value="param1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="params_key2"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            动态字段2
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            这是一段描述
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            id="params_key2"
+                            placeholder="请输入{{name}}"
+                            type="text"
+                            value=""
                           />
                         </div>
                       </div>
@@ -3425,7 +3563,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                           <div
                             class="tip-content-box"
                           >
-                            填写DMP平台地址，默认格式为 http(s)://ip:port
+                            第三方平台地址
                           </div>
                         </div>
                       </label>
@@ -3510,9 +3648,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="mysql"
+                                title="MySQL"
                               >
-                                mysql
+                                MySQL
                               </span>
                             </div>
                             <span
@@ -3657,7 +3795,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                             id="ruleTemplateId"
                             placeholder="请输入{{name}}"
                             type="text"
-                            value="01"
+                            value="9"
                           />
                         </div>
                       </div>
@@ -3721,9 +3859,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                               </span>
                               <span
                                 class="ant-select-selection-item"
-                                title="global_rule_template_name1"
+                                title="custom_template"
                               >
-                                global_rule_template_name1
+                                custom_template
                               </span>
                             </div>
                             <span
@@ -3769,6 +3907,150 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                   d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
                                 />
                               </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="needAuditForSqlQuery"
+                        title="SQL查询是否需要审核"
+                      >
+                        SQL查询是否需要审核
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="needAuditForSqlQuery"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="allowQueryWhenLessThanAuditLevel"
+                        title="运行查询的最高审核等级"
+                      >
+                        运行查询的最高审核等级
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="notice"
+                              >
+                                notice
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
                             </span>
                           </div>
                         </div>
@@ -3839,7 +4121,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 placeholder="请输入审核时间"
                                 style="text-align: center;"
                                 type="text"
-                                value="0 0 * * *"
+                                value="1 1 * 1 2"
                               />
                             </div>
                             <div
@@ -3886,7 +4168,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex: 0 0 94px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3899,7 +4181,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3912,7 +4194,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3938,7 +4220,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3951,7 +4233,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3964,7 +4246,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3977,7 +4259,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -4011,13 +4293,13 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                   class="btn-wrapper"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     0
                                   </button>
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     1
@@ -4168,13 +4450,13 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                                   class="btn-wrapper"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     0
                                   </button>
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     1
@@ -4558,33 +4840,29 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -4623,32 +4901,8 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
-        <div>
-          <div
-            aria-busy="true"
-            aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-          >
-            <span
-              class="ant-spin-dot ant-spin-dot-spin"
-            >
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-container ant-spin-blur"
+          class="ant-spin-container"
         >
           <form
             class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
@@ -4687,7 +4941,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   </span>
                 </h3>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4712,11 +4966,12 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                            class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                            disabled=""
                             id="name"
                             placeholder="请输入同步任务名称"
                             type="text"
-                            value=""
+                            value="sync_task_name"
                           />
                         </div>
                       </div>
@@ -4729,7 +4984,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   基础配置
                 </h1>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4740,20 +4995,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="source"
-                        title=""
+                        title="来源"
                       >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            来源
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            支持同步ActionDMP平台
-                          </div>
-                        </div>
+                        来源
                       </label>
                     </div>
                     <div
@@ -4767,7 +5011,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -4785,6 +5029,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                   aria-required="true"
                                   autocomplete="off"
                                   class="ant-select-selection-search-input"
+                                  disabled=""
                                   id="source"
                                   readonly=""
                                   role="combobox"
@@ -4795,33 +5040,34 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 />
                               </span>
                               <span
-                                class="ant-select-selection-placeholder"
+                                class="ant-select-selection-item"
+                                title="source1"
                               >
-                                请选择来源
+                                source1
                               </span>
                             </div>
                             <span
                               aria-hidden="true"
-                              class="ant-select-arrow ant-select-arrow-loading"
+                              class="ant-select-arrow"
                               style="user-select: none;"
                               unselectable="on"
                             >
                               <span
-                                aria-label="loading"
-                                class="anticon anticon-loading anticon-spin"
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
                                 role="img"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  data-icon="loading"
+                                  data-icon="down"
                                   fill="currentColor"
                                   focusable="false"
                                   height="1em"
-                                  viewBox="0 0 1024 1024"
+                                  viewBox="64 64 896 896"
                                   width="1em"
                                 >
                                   <path
-                                    d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
                                   />
                                 </svg>
                               </span>
@@ -4833,7 +5079,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style  has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4842,20 +5088,20 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-required ant-form-item-no-colon"
-                        for="version"
+                        class="ant-form-item-no-colon"
+                        for="params_key1"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            版本
+                            动态字段1
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            支持DMP5.23.04.0及以上版本
+                            这是一段描述
                           </div>
                         </div>
                       </label>
@@ -4870,10 +5116,58 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                            id="version"
-                            placeholder="请输入版本"
+                            id="params_key1"
+                            placeholder="请输入{{name}}"
+                            type="text"
+                            value="param1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="params_key2"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            动态字段2
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            这是一段描述
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            id="params_key2"
+                            placeholder="请输入{{name}}"
                             type="text"
                             value=""
                           />
@@ -4883,7 +5177,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4905,7 +5199,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                           <div
                             class="tip-content-box"
                           >
-                            填写DMP平台地址，默认格式为 http(s)://ip:port
+                            第三方平台地址
                           </div>
                         </div>
                       </label>
@@ -4921,11 +5215,11 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="url"
                             placeholder="请输入地址"
                             type="text"
-                            value=""
+                            value="http://192.168.1.1:3000"
                           />
                         </div>
                       </div>
@@ -4933,7 +5227,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4960,7 +5254,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                           >
                             <div
                               class="ant-select-selector"
@@ -4978,6 +5272,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                   aria-required="true"
                                   autocomplete="off"
                                   class="ant-select-selection-search-input"
+                                  disabled=""
                                   id="instanceType"
                                   readonly=""
                                   role="combobox"
@@ -4988,33 +5283,34 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 />
                               </span>
                               <span
-                                class="ant-select-selection-placeholder"
+                                class="ant-select-selection-item"
+                                title="MySQL"
                               >
-                                请选择数据源类型
+                                MySQL
                               </span>
                             </div>
                             <span
                               aria-hidden="true"
-                              class="ant-select-arrow ant-select-arrow-loading"
+                              class="ant-select-arrow"
                               style="user-select: none;"
                               unselectable="on"
                             >
                               <span
-                                aria-label="loading"
-                                class="anticon anticon-loading anticon-spin"
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
                                 role="img"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  data-icon="loading"
+                                  data-icon="down"
                                   fill="currentColor"
                                   focusable="false"
                                   height="1em"
-                                  viewBox="0 0 1024 1024"
+                                  viewBox="64 64 896 896"
                                   width="1em"
                                 >
                                   <path
-                                    d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
                                   />
                                 </svg>
                               </span>
@@ -5116,7 +5412,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -5131,11 +5427,11 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ruleTemplateId"
                             placeholder="请输入{{name}}"
                             type="text"
-                            value=""
+                            value="9"
                           />
                         </div>
                       </div>
@@ -5143,7 +5439,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -5170,7 +5466,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -5198,33 +5494,196 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 />
                               </span>
                               <span
-                                class="ant-select-selection-placeholder"
+                                class="ant-select-selection-item"
+                                title="custom_template"
                               >
-                                请选择审核规则模板
+                                custom_template
                               </span>
                             </div>
                             <span
                               aria-hidden="true"
-                              class="ant-select-arrow ant-select-arrow-loading"
+                              class="ant-select-arrow"
                               style="user-select: none;"
                               unselectable="on"
                             >
                               <span
-                                aria-label="loading"
-                                class="anticon anticon-loading anticon-spin"
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
                                 role="img"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  data-icon="loading"
+                                  data-icon="down"
                                   fill="currentColor"
                                   focusable="false"
                                   height="1em"
-                                  viewBox="0 0 1024 1024"
+                                  viewBox="64 64 896 896"
                                   width="1em"
                                 >
                                   <path
-                                    d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-clear"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <svg
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="needAuditForSqlQuery"
+                        title="SQL查询是否需要审核"
+                      >
+                        SQL查询是否需要审核
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="needAuditForSqlQuery"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="allowQueryWhenLessThanAuditLevel"
+                        title="运行查询的最高审核等级"
+                      >
+                        运行查询的最高审核等级
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="notice"
+                              >
+                                notice
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
                                   />
                                 </svg>
                               </span>
@@ -5298,7 +5757,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 placeholder="请输入审核时间"
                                 style="text-align: center;"
                                 type="text"
-                                value="0 0 * * *"
+                                value="1 1 * 1 2"
                               />
                             </div>
                             <div
@@ -5345,7 +5804,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex: 0 0 94px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5358,7 +5817,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5371,7 +5830,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5397,7 +5856,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5410,7 +5869,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5423,7 +5882,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5436,7 +5895,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                 style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -5470,13 +5929,13 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                   class="btn-wrapper"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     0
                                   </button>
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     1
@@ -5627,13 +6086,13 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                                   class="btn-wrapper"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     0
                                   </button>
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     1
@@ -6017,33 +6476,29 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -6081,6 +6536,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 1`] = `
       </div>
       <div
         class="css-dev-only-do-not-override-txh9fw ant-empty"
+        style="margin-top: 160px;"
       >
         <div
           class="ant-empty-image"
@@ -6186,33 +6642,29 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
         <div
           class="title"
         >
-          <a
-            href="/project/700300/sync-data-source"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <span
+              class="ant-btn-icon"
             >
-              <span
-                class="ant-btn-icon"
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回同步任务列表
-              </span>
-            </button>
-          </a>
+                <path
+                  d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              返回同步任务列表
+            </span>
+          </button>
         </div>
         <div
           class="extra"
@@ -6250,6 +6702,7 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
       </div>
       <div
         class="css-dev-only-do-not-override-txh9fw ant-empty"
+        style="margin-top: 160px;"
       >
         <div
           class="ant-empty-image"
@@ -6341,4 +6794,1638 @@ exports[`page/SyncDataSource/UpdateSyncTask render taskId is null 2`] = `
     </section>
   </div>
 </body>
+`;
+
+exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
+<div>
+  <section
+    class="css-doq0dk"
+  >
+    <div
+      class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span
+            class="ant-btn-icon"
+          >
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回同步任务列表
+          </span>
+        </button>
+      </div>
+      <div
+        class="extra"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                重 置
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                提 交
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <form
+          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+        >
+          <section
+            class="has-border css-1114g56"
+          >
+            <section
+              class="css-bspaai"
+            >
+              <h3
+                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+              >
+                <span
+                  class="anticon title-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class=""
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="0 0 18 18"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                      fill="#C3C6CD"
+                    />
+                  </svg>
+                </span>
+                <span>
+                  编辑同步任务
+                </span>
+              </h3>
+              <div
+                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="name"
+                      title=""
+                    />
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          aria-required="true"
+                          class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                          disabled=""
+                          id="name"
+                          placeholder="请输入同步任务名称"
+                          type="text"
+                          value="sync_task_name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h1
+                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              >
+                基础配置
+              </h1>
+              <div
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="source"
+                      title="来源"
+                    >
+                      来源
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="source_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="source_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="source_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                disabled=""
+                                id="source"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="source1"
+                            >
+                              source1
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="params_key1"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          动态字段1
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          这是一段描述
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          id="params_key1"
+                          placeholder="请输入{{name}}"
+                          type="text"
+                          value="param1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="params_key2"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          动态字段2
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          这是一段描述
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          id="params_key2"
+                          placeholder="请输入{{name}}"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="url"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          地址
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          第三方平台地址
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          aria-required="true"
+                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          id="url"
+                          placeholder="请输入地址"
+                          type="text"
+                          value="http://192.168.1.1:3000"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="instanceType"
+                      title="数据源类型"
+                    >
+                      数据源类型
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="instanceType_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="instanceType_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="instanceType_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                disabled=""
+                                id="instanceType"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="MySQL"
+                            >
+                              MySQL
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                data-show="true"
+                role="alert"
+              >
+                <div
+                  class="ant-alert-content"
+                >
+                  <div
+                    class="ant-alert-message"
+                  >
+                    <div
+                      style="font-size: 12px;"
+                    >
+                      创建同步任务前后，用户必须去数据来源平台进行配置，更多使用说明请参考
+                      <a
+                        href="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        外部数据源同步
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section
+            class="has-border css-1114g56"
+          >
+            <section
+              class="css-bspaai"
+            >
+              <h1
+                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              >
+                SQL审核配置
+              </h1>
+              <div
+                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="needSqlAuditService"
+                      title="是否开启SQL审核业务"
+                    >
+                      是否开启SQL审核业务
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="true"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <input
+                          class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          id="ruleTemplateId"
+                          placeholder="请输入{{name}}"
+                          type="text"
+                          value="9"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="ruleTemplateName"
+                      title="审核规则模板"
+                    >
+                      审核规则模板
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="ruleTemplateName_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="ruleTemplateName_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="ruleTemplateName_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="ruleTemplateName"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="custom_template"
+                            >
+                              custom_template
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-clear"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <svg
+                              fill="currentColor"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="needAuditForSqlQuery"
+                      title="SQL查询是否需要审核"
+                    >
+                      SQL查询是否需要审核
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <button
+                          aria-checked="true"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          id="needAuditForSqlQuery"
+                          role="switch"
+                          type="button"
+                        >
+                          <div
+                            class="ant-switch-handle"
+                          />
+                          <span
+                            class="ant-switch-inner"
+                          >
+                            <span
+                              class="ant-switch-inner-checked"
+                            />
+                            <span
+                              class="ant-switch-inner-unchecked"
+                            />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-no-colon"
+                      for="allowQueryWhenLessThanAuditLevel"
+                      title="运行查询的最高审核等级"
+                    >
+                      运行查询的最高审核等级
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="allowQueryWhenLessThanAuditLevel"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="notice"
+                            >
+                              notice
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section
+            class="css-1114g56"
+          >
+            <section
+              class="css-bspaai"
+            >
+              <h1
+                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              >
+                自定义任务同步周期
+              </h1>
+              <div
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="syncInterval"
+                      title=""
+                    >
+                      <div
+                        class="label-cont-custom"
+                      >
+                        <div>
+                          同步间隔
+                        </div>
+                        <div
+                          class="tip-content-box"
+                        >
+                          手动输入Crontab格式时间，或点击右侧按钮开启可视化选择
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          class="ant-row css-dev-only-do-not-override-txh9fw"
+                          style="margin-left: -4px; margin-right: -4px;"
+                        >
+                          <div
+                            class="ant-col css-dev-only-do-not-override-txh9fw"
+                            style="padding-left: 4px; padding-right: 4px; flex-basis: auto;"
+                          >
+                            <input
+                              class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              placeholder="请输入审核时间"
+                              style="text-align: center;"
+                              type="text"
+                              value="1 1 * 1 2"
+                            />
+                          </div>
+                          <div
+                            class="ant-col css-dev-only-do-not-override-txh9fw"
+                            style="padding-left: 4px; padding-right: 4px; flex: 0 0 36px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="custom-icon custom-icon-date"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.75.75v1.5h4.5V.75h1.5v1.5h3a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V3a.75.75 0 0 1 .75-.75h3V.75zM15 8.25H3v6h12zm-6.75 1.5v3H4.5v-3zm-3-6H3v3h12v-3h-2.25v1.5h-1.5v-1.5h-4.5v1.5h-1.5z"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                        <section
+                          class=" css-17jkxu1"
+                          hidden=""
+                        >
+                          <div
+                            class="header"
+                          >
+                            审核频率
+                          </div>
+                          <div
+                            class="ant-row week-wrapper css-dev-only-do-not-override-txh9fw"
+                            style="margin-left: -8px; margin-right: -8px;"
+                          >
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex: 0 0 94px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  每 天
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期日
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期一
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期二
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期三
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期四
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期五
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="padding-left: 8px; padding-right: 8px; flex-basis: auto;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-block basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  星期六
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            role="separator"
+                            style="margin: 20px 0px;"
+                          />
+                          <div
+                            class="header"
+                          >
+                            时间点
+                          </div>
+                          <section
+                            class="hour-minute-wrapper"
+                          >
+                            <section
+                              class="hour-wrapper"
+                            >
+                              <div
+                                class="sub-title"
+                              >
+                                小时
+                              </div>
+                              <div
+                                class="btn-wrapper"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  0
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  1
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  2
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  3
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  4
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  5
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  6
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  7
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  8
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  9
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  10
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  11
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  12
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  13
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  14
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  15
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  16
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  17
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  18
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  19
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  20
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  21
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  22
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  23
+                                </button>
+                              </div>
+                            </section>
+                            <section
+                              class="minute-wrapper"
+                            >
+                              <div
+                                class="sub-title"
+                              >
+                                分钟
+                              </div>
+                              <div
+                                class="btn-wrapper"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  0
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  1
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  2
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  3
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  4
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  5
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  6
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  7
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  8
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  9
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  10
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  11
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  12
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  13
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  14
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  15
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  16
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  17
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  18
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  19
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  20
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  21
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  22
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  23
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  24
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  25
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  26
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  27
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  28
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  29
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  30
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  31
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  32
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  33
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  34
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  35
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  36
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  37
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  38
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  39
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  40
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  41
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  42
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  43
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  44
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  45
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  46
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  47
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  48
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  49
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  50
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  51
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  52
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  53
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  54
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  55
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  56
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  57
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  58
+                                </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default number-btn basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  59
+                                </button>
+                              </div>
+                            </section>
+                          </section>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
 `;

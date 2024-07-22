@@ -15,6 +15,7 @@ export type DataSourceFormField = {
   port: number;
   user: string;
   password: string;
+  project: string;
   business: string;
   maintenanceTime: MaintenanceTimeValue[];
   needSqlAuditService?: boolean;
