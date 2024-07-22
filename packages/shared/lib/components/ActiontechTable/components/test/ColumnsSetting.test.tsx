@@ -107,6 +107,7 @@ describe('lib/ActiontechTable-ColumnsSetting', () => {
       expect(eventEmitSpy).toHaveBeenCalledWith(
         EmitterKey.UPDATE_LOCAL_COLUMNS,
         {
+          ...mockUseTableSettingsData.localColumns,
           workflow_id: {
             ...mockUseTableSettingsData.localColumns.workflow_id,
             show: false
