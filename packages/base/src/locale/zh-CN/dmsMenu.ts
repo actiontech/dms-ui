@@ -24,6 +24,7 @@ export default {
   authList: '授权清单',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
+  sqlManagementConf: 'SQL管控配置',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',

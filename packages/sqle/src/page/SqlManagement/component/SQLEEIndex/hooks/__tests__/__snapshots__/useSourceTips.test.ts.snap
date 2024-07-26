@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test useSourceTips should math snapshot with  1`] = `
+[
+  {
+    "label": "SQL审核",
+    "value": "sql_audit_record",
+  },
+  {
+    "label": "智能扫描",
+    "options": [
+      {
+        "label": "自定义",
+        "value": "default",
+      },
+      {
+        "label": "慢日志",
+        "value": "mysql_slow_log",
+      },
+      {
+        "label": "Mybatis 扫描",
+        "value": "mysql_mybatis",
+      },
+      {
+        "label": "库表元数据",
+        "value": "mysql_schema_meta",
+      },
+      {
+        "label": "阿里RDS MySQL慢日志",
+        "value": "ali_rds_mysql_slow_log",
+      },
+      {
+        "label": "阿里RDS MySQL审计日志",
+        "value": "ali_rds_mysql_audit_log",
+      },
+      {
+        "label": "Oracle TOP SQL",
+        "value": "oracle_top_sql",
+      },
+      {
+        "label": "应用程序SQL抓取",
+        "value": "all_app_extract",
+      },
+      {
+        "label": "TiDB审计日志",
+        "value": "tidb_audit_log",
+      },
+      {
+        "label": "Mybatis 扫描",
+        "value": "ocean_base_for_mysql_mybatis",
+      },
+      {
+        "label": "Top SQL",
+        "value": "ocean_base_for_mysql_top_sql",
+      },
+    ],
+  },
+]
+`;

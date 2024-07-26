@@ -185,7 +185,7 @@ export const InlineTableActionButtonsStyleWrapper = styled('div')`
 `;
 
 export const InlineTableActionMoreButtonPopoverStyleWrapper = styled('div')`
-  width: 160px;
+  min-width: 160px;
   padding: 6px;
   border-radius: 8px;
   background-color: ${({ theme }) =>

@@ -10,7 +10,7 @@ import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 
-export const dbServiceMenuItem: GenerateMenuItemType = (projectID) => ({
+const dbServiceMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/project/${projectID}/db-services`}>
       {t('dmsMenu.instance')}
@@ -21,7 +21,7 @@ export const dbServiceMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'instance'
 });
 
-export const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
+const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/project/${projectID}/member`}>
       {t('dmsMenu.memberAndPermissions')}
@@ -32,7 +32,7 @@ export const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'member'
 });
 
-export const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
+const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/project/${projectID}/cloud-beaver`}>
       {t('dmsMenu.SQLWorkbench')}
@@ -43,7 +43,7 @@ export const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'cloud-beaver'
 });
 
-export const dataExportMenuItem: GenerateMenuItemType = (projectID) => ({
+const dataExportMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/project/${projectID}/data/export`}>
       {t('dmsMenu.dataExportManagement')}

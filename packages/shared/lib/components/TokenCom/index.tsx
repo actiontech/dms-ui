@@ -29,7 +29,10 @@ const TokenCom = (props: typeTokenCom) => {
       >
         <TokenRectStyleWrapper
           className="rect-border-wrapper"
-          onClick={onChangeShowToken}
+          onClick={(e) => {
+            e.stopPropagation();
+            onChangeShowToken();
+          }}
         >
           {showToken ? (
             <Typography.Text

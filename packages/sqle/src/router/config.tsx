@@ -16,37 +16,6 @@ const Whitelist = React.lazy(
   () => import(/* webpackChunkName: "Whitelist" */ '../page/Whitelist')
 );
 
-const AuditPlanList = React.lazy(
-  () =>
-    import(/* webpackChunkName: "AuditPlanList" */ '../page/AuditPlan/PlanList')
-);
-
-const CreateAuditPlan = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "CreateAuditPlan" */ '../page/AuditPlan/CreatePlan'
-    )
-);
-
-const UpdateAuditPlan = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "AuditPlanList" */ '../page/AuditPlan/UpdatePlan'
-    )
-);
-
-const AuditPlanDetail = React.lazy(
-  () =>
-    import(/* webpackChunkName: "PlanDetail" */ '../page/AuditPlan/PlanDetail')
-);
-
-const AuditPlanReport = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "AuditPlanReport" */ '../page/AuditPlan/PlanDetail/DetailReport'
-    )
-);
-
 const ProjectOverview = React.lazy(
   () =>
     import(/* webpackChunkName: "ProjectOverview" */ '../page/ProjectOverview')
@@ -98,7 +67,7 @@ const WorkflowTemplateDetail = React.lazy(
       /* webpackChunkName: "WorkflowTemplateDetail" */ '../page/WorkflowTemplate/WorkflowTemplateDetail'
     )
 );
-const SQLManagement = React.lazy(
+const SqlManagement = React.lazy(
   () => import(/* webpackChunkName: "SqlManagement" */ '../page/SqlManagement')
 );
 
@@ -132,14 +101,10 @@ const WorkflowSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/Workflow')
 );
 
-const AuditPlanSqlAnalyze = React.lazy(
-  () => import('../page/SqlAnalyze/AuditPlan')
-);
-
 // #if [ee]
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 
-const SQLManagementAnalyze = React.lazy(
+const SqlManagementAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/SqlManage')
 );
 
@@ -162,11 +127,25 @@ const SqlWorkflowDetail = React.lazy(
   () => import('../page/SqlExecWorkflow/Detail')
 );
 
-const WorkflowSQLFileStatementOverview = React.lazy(
+const WorkflowSqlFileStatementOverview = React.lazy(
   () =>
     import(
       '../page/SqlExecWorkflow/Detail/components/AuditExecResultPanel/TaskResultList/SqlFileStatementOverview'
     )
+);
+
+// sql management configuration
+const SqlManagementConfList = React.lazy(
+  () => import('../page/SqlManagementConf/List')
+);
+const CreateSqlManagementConf = React.lazy(
+  () => import('../page/SqlManagementConf/Create')
+);
+const UpdateSqlManagementConf = React.lazy(
+  () => import('../page/SqlManagementConf/Update')
+);
+const SqlManagementConfDetail = React.lazy(
+  () => import('../page/SqlManagementConf/Detail')
 );
 
 //sqle global page
@@ -224,8 +203,8 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       {
         path: ':taskId/files/:fileId/sqls',
-        element: <WorkflowSQLFileStatementOverview />,
-        key: 'workflowSQLFileStatementOverview'
+        element: <WorkflowSqlFileStatementOverview />,
+        key: 'workflowSqlFileStatementOverview'
       }
     ]
   },
@@ -251,45 +230,54 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/dashboard`,
-    element: <Home />,
-    key: 'dashboard'
-  },
-  {
-    key: 'plane',
-    path: `${PROJECT_ROUTER_PARAM}/audit-plan`,
+    path: `${PROJECT_ROUTER_PARAM}/sql-management-conf`,
+    key: 'sqlManagementConf',
     children: [
       {
         index: true,
-        element: <AuditPlanList />,
-        key: 'auditPlanList'
+        element: <SqlManagementConfList />,
+        key: 'SqlManagementConfList'
       },
       {
-        path: 'create',
-        element: <CreateAuditPlan />,
-        key: 'auditPlanCreate'
+        element: <CreateSqlManagementConf />,
+        key: 'CreateSqlManagementConf',
+        path: 'create'
       },
       {
-        path: 'update/:auditPlanName',
-        element: <UpdateAuditPlan />,
-        key: 'auditPlanUpdate'
+        element: <UpdateSqlManagementConf />,
+        key: 'UpdateSqlManagementConf',
+        path: 'update/:id'
       },
       {
-        path: 'detail/:auditPlanName',
-        key: 'auditPlanDetail',
-        element: <AuditPlanDetail />
-      },
-      {
-        path: 'detail/:auditPlanName/report/:reportId',
-        key: 'auditPlanDetailReport',
-        element: <AuditPlanReport />
-      },
-      {
-        path: ':reportId/:sqlNum/:auditPlanName/analyze',
-        key: 'auditPlanDetailAnalyze',
-        element: <AuditPlanSqlAnalyze />
+        element: <SqlManagementConfDetail />,
+        key: 'SqlManagementConfDetail',
+        path: ':id'
       }
     ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sql-management`,
+    key: 'sqlManagement',
+    children: [
+      {
+        index: true,
+        element: <SqlManagement />,
+        key: 'SqlManagement'
+      },
+      // #if [ee]
+      {
+        path: ':sqlManageId/analyze',
+        hideInSliderMenu: true,
+        element: <SqlManagementAnalyze />,
+        key: 'SqlManagementAnalyze'
+      }
+      // #endif
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/dashboard`,
+    element: <Home />,
+    key: 'dashboard'
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/rule/template`,
@@ -357,25 +345,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     element: <OperationRecord />,
     role: [SystemRole.admin]
   },
-  {
-    path: `${PROJECT_ROUTER_PARAM}/sql-management`,
-    key: 'sqlManagement',
-    children: [
-      {
-        index: true,
-        element: <SQLManagement />,
-        key: 'SQLManagement'
-      },
-      // #if [ee]
-      {
-        path: ':sqlManageId/analyze',
-        hideInSliderMenu: true,
-        element: <SQLManagementAnalyze />,
-        key: 'SQLManagementAnalyze'
-      }
-      // #endif
-    ]
-  },
+
   {
     path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
     key: 'pluginAudit',

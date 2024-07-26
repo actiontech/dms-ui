@@ -10,7 +10,7 @@ const FilterContainer = <
 >({
   filterContainerMeta = [],
   updateTableFilterInfo,
-  filterCustomProps = new Map(),
+  filterCustomProps,
   style,
   className
 }: TableFilterContainerProps<T, F>) => {
@@ -45,7 +45,10 @@ const FilterContainer = <
             return generateSelectFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<keyof T, FilterCustomProps<'select'>>
+              (filterCustomProps as Map<
+                keyof T,
+                FilterCustomProps<'select'>
+              >) ?? new Map()
             );
           }
 
@@ -53,7 +56,10 @@ const FilterContainer = <
             return generateDataRangeFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<keyof T, FilterCustomProps<'date-range'>>
+              (filterCustomProps as Map<
+                keyof T,
+                FilterCustomProps<'date-range'>
+              >) ?? new Map()
             );
           }
 
@@ -61,7 +67,8 @@ const FilterContainer = <
             return generateInputFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<keyof T, FilterCustomProps<'input'>>
+              (filterCustomProps as Map<keyof T, FilterCustomProps<'input'>>) ??
+                new Map()
             );
           }
 
@@ -69,10 +76,10 @@ const FilterContainer = <
             return generateSearchInputFilter(
               value,
               updateTableFilterInfo,
-              filterCustomProps as Map<
+              (filterCustomProps as Map<
                 keyof T,
                 FilterCustomProps<'search-input'>
-              >
+              >) ?? new Map()
             );
           }
 

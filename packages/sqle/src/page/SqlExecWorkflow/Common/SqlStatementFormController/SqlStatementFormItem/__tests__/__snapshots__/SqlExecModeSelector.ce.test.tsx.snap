@@ -100,6 +100,8 @@ exports[`test SqlExecModeSelector should not trigger SQL file order method fetch
             >
               <div
                 class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                data-testid="exec-mode-selector"
+                id="prefix_exec_mode"
                 style="margin-left: -5px; margin-right: -5px;"
               >
                 <div

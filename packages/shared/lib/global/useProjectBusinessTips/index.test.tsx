@@ -1,5 +1,3 @@
-import project from '../../testUtils/mockApi/project';
-import { mockProjectTips } from '../../testUtils/mockApi/project/data';
 import {
   cleanup,
   renderHook,
@@ -10,11 +8,13 @@ import {
 } from '@testing-library/react';
 import useProjectBusinessTips from '.';
 import { Select } from 'antd';
+import project from '../../../../base/src/testUtils/mockApi/project';
+import { mockProjectTips } from '../../../../base/src/testUtils/mockApi/project/data';
+import { mockUseCurrentProject } from '../../testUtil/mockHook/mockUseCurrentProject';
 import {
-  createSpyErrorResponse,
-  createSpyFailResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+  createSpyFailResponse,
+  createSpyErrorResponse
+} from '../../testUtil/mockApi';
 
 describe('useProjectBusinessTips', () => {
   let getProjectTipsSpy: jest.SpyInstance;
@@ -34,7 +34,7 @@ describe('useProjectBusinessTips', () => {
     expect(result.current.loading).toBeFalsy();
 
     act(() => {
-      result.current.updateProjectTips();
+      result.current.updateProjectBusinessTips();
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -50,7 +50,7 @@ describe('useProjectBusinessTips', () => {
     expect(result.current.loading).toBeFalsy();
 
     act(() => {
-      result.current.updateProjectTips('123');
+      result.current.updateProjectBusinessTips('123');
     });
     expect(result.current.loading).toBeTruthy();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -68,7 +68,7 @@ describe('useProjectBusinessTips', () => {
     getProjectTipsSpy.mockImplementation(() => createSpyFailResponse({}));
     const { result } = renderHook(() => useProjectBusinessTips());
     act(() => {
-      result.current.updateProjectTips();
+      result.current.updateProjectBusinessTips();
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.projectBusiness).toEqual([]);
@@ -79,7 +79,7 @@ describe('useProjectBusinessTips', () => {
     getProjectTipsSpy.mockImplementation(() => createSpyErrorResponse({}));
     const { result } = renderHook(() => useProjectBusinessTips());
     act(() => {
-      result.current.updateProjectTips();
+      result.current.updateProjectBusinessTips();
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.projectBusiness).toEqual([]);

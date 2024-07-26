@@ -171,6 +171,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -1041,6 +1042,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -1905,6 +1907,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -3033,6 +3036,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div

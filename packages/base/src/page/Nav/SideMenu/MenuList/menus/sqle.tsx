@@ -8,7 +8,6 @@ import {
   RingOutlined,
   WorkflowFilled,
   MenuFilled,
-  PlanFilled,
   OverviewOutlined,
   RiseSquareOutlined,
   ResolveFileFilled,
@@ -19,7 +18,7 @@ import {
   BriefcaseFilled
 } from '@actiontech/icons';
 
-export const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
+const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/overview`}>
       {t('dmsMenu.projectOverview')}
@@ -30,7 +29,7 @@ export const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'project-overview'
 });
 
-export const dashboardMenuItem: GenerateMenuItemType = (projectID) => ({
+const dashboardMenuItem: GenerateMenuItemType = (projectID) => ({
   className: 'menu-todo-list-item',
   label: (
     <>
@@ -45,7 +44,7 @@ export const dashboardMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'dashboard'
 });
 
-export const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
+const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/sql-audit`}>
       {t('dmsMenu.sqlAudit')}
@@ -56,7 +55,7 @@ export const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'sql-audit'
 });
 
-export const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
+const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/plugin-audit`}>
       {t('dmsMenu.pluginAudit')}
@@ -67,7 +66,7 @@ export const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'plugin-audit'
 });
 
-export const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
+const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/sql-optimization`}>
       {t('dmsMenu.sqlOptimization')}
@@ -78,7 +77,7 @@ export const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'sql-optimization'
 });
 
-export const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
+const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/exec-workflow`}>
       {t('dmsMenu.sqlWorkflow')}
@@ -89,7 +88,7 @@ export const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'exec-workflow'
 });
 
-export const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
+const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/sql-management`}>
       {t('dmsMenu.sqlManagement')}
@@ -100,20 +99,7 @@ export const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'sql-management'
 });
 
-export const auditPlanMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <Link to={`/sqle/project/${projectID}/audit-plan`}>
-      {t('dmsMenu.auditPlan')}
-    </Link>
-  ),
-  icon: <PlanFilled width={18} height={18} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit-plan`,
-  structKey: 'audit-plane'
-});
-
-export const projectRuleTemplateMenuItem: GenerateMenuItemType = (
-  projectID
-) => ({
+const projectRuleTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/rule/template`}>
       {t('dmsMenu.ruleTemplate')}
@@ -124,7 +110,7 @@ export const projectRuleTemplateMenuItem: GenerateMenuItemType = (
   structKey: 'rule-template'
 });
 
-export const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
+const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/whitelist`}>
       {t('dmsMenu.whitelist')}
@@ -135,7 +121,7 @@ export const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'whitelist'
 });
 
-export const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
+const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/progress`}>
       {t('dmsMenu.workflowTemplate')}
@@ -146,9 +132,7 @@ export const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'workflow-template'
 });
 
-export const sqleOperationRecordMenuItem: GenerateMenuItemType = (
-  projectID
-) => ({
+const sqleOperationRecordMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/operation-record`}>
       {t('dmsMenu.SQLEOperateRecord')}
@@ -160,6 +144,17 @@ export const sqleOperationRecordMenuItem: GenerateMenuItemType = (
   role: [SystemRole.admin]
 });
 
+const sqlManagementConf: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/sql-management-conf`}>
+      {t('dmsMenu.sqlManagementConf')}
+    </Link>
+  ),
+  icon: <ResolveFileFilled width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-conf`,
+  structKey: 'sql-management-conf'
+});
+
 const sqleMenusCollection = [
   projectOverviewMenuItem,
   dashboardMenuItem,
@@ -168,12 +163,12 @@ const sqleMenusCollection = [
   sqlOptimizationMenuItem,
   sqlExecWorkflowMenuItem,
   sqlManagementMenuItem,
-  auditPlanMenuItem,
   projectRuleTemplateMenuItem,
   whiteListMenuItem,
   workflowTemplateMenuItem,
   workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem
+  sqleOperationRecordMenuItem,
+  sqlManagementConf
 ];
 
 export default sqleMenusCollection;

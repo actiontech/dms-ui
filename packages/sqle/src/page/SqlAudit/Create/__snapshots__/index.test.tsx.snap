@@ -747,7 +747,9 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -2105,7 +2107,9 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -3431,7 +3435,9 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -4585,7 +4591,9 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -5851,7 +5859,9 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
@@ -7117,7 +7127,9 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
+                    aria-required="true"
                     class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div

@@ -1,22 +1,34 @@
-import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { FilterCustomProps } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useEffect, useMemo } from 'react';
 import useStaticStatus from './useStaticStatus';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useProjectBusinessTips
+} from '@actiontech/shared/lib/global';
 import useInstance from '../../../../../hooks/useInstance';
 import useRuleTips from './useRuleTips';
+import { ExtraFilterMetaType } from '../column';
+import useSourceTips from './useSourceTips';
 
 const useGetTableFilterInfo = () => {
   const { projectName } = useCurrentProject();
 
-  const { generateAuditLevelSelectOptions, generateSourceSelectOptions } =
-    useStaticStatus();
+  const { generateAuditLevelSelectOptions } = useStaticStatus();
+
+  const { generateSourceSelectOptions, loading: getSourceTipsLoading } =
+    useSourceTips();
 
   const {
     instanceOptions,
     updateInstanceList,
     loading: getInstanceLoading
   } = useInstance();
+
+  const {
+    updateProjectBusinessTips,
+    projectBusinessOption,
+    loading: getProjectBusinessLoading
+  } = useProjectBusinessTips();
 
   const {
     generateRuleTipsSelectOptions,
@@ -27,24 +39,27 @@ const useGetTableFilterInfo = () => {
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
     updateRuleTips(projectName);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projectName]);
+    updateProjectBusinessTips();
+  }, [
+    projectName,
+    updateInstanceList,
+    updateProjectBusinessTips,
+    updateRuleTips
+  ]);
 
   const filterCustomProps = useMemo(() => {
-    return new Map<
-      keyof (ISqlManage & {
-        filter_source: string;
-        filter_instance_name: string;
-        filter_audit_level: string;
-        time: string;
-        filter_rule_name: string;
-      }),
-      FilterCustomProps
-    >([
-      ['filter_source', { options: generateSourceSelectOptions }],
+    return new Map<keyof ExtraFilterMetaType, FilterCustomProps>([
+      [
+        'filter_business',
+        { options: projectBusinessOption(), loading: getProjectBusinessLoading }
+      ],
       [
         'filter_instance_name',
         { options: instanceOptions, loading: getInstanceLoading }
+      ],
+      [
+        'filter_source',
+        { options: generateSourceSelectOptions, loading: getSourceTipsLoading }
       ],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
       ['time', { showTime: true }],
@@ -58,9 +73,12 @@ const useGetTableFilterInfo = () => {
       ]
     ]);
   }, [
-    getInstanceLoading,
+    projectBusinessOption,
+    getProjectBusinessLoading,
     instanceOptions,
+    getInstanceLoading,
     generateSourceSelectOptions,
+    getSourceTipsLoading,
     generateAuditLevelSelectOptions,
     generateRuleTipsSelectOptions,
     getRuleTipsLoading

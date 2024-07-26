@@ -1,7 +1,10 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { Tag } from 'antd';
 import { t } from '../../../../locale';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  IAuditPlanTypeResBase,
+  IListDBService
+} from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn,
@@ -10,6 +13,7 @@ import {
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { DatabaseTypeLogo } from '@actiontech/shared';
+import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 
 /*
  *PS：
@@ -73,10 +77,25 @@ export const DataSourceColumns = (
         );
       }
     },
+    // #if [sqle]
+    {
+      dataIndex: 'audit_plan_types',
+      title: () => t('dmsDataSource.databaseList.enabledScanTypes'),
+      render: (scanTypes: IAuditPlanTypeResBase[], record) => {
+        return (
+          <ScanTypeTagsCell
+            scanTypes={scanTypes}
+            instanceAuditPlanId={record.instance_audit_plan_id ?? ''}
+          />
+        );
+      }
+    },
+    // #endif
     {
       dataIndex: 'business',
       title: () => t('dmsDataSource.databaseList.business')
     },
+
     // #if [dms]
     {
       dataIndex: 'is_enable_masking',
@@ -109,6 +128,11 @@ export const DataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string) => void,
   onDeleteDataSource: (uid: string, name: string) => void,
   onTestConnection: (uid: string, name: string) => void,
+  navigateToSqlManagementConf: (
+    name: string,
+    business: string,
+    instanceAuditPlanId?: string
+  ) => void,
   isArchive: boolean,
   actionPermission: boolean
 ): {
@@ -148,7 +172,20 @@ export const DataSourceListActions = (
             text: t('common.testDatabaseConnectButton.testDatabaseConnection'),
             onClick: (record) =>
               onTestConnection(record?.uid ?? '', record?.name ?? '')
+          },
+          // #if [sqle]
+          {
+            key: 'enabled-audit-plan',
+            text: t('dmsDataSource.enabledAuditPlan.text'),
+            onClick: (record) => {
+              navigateToSqlManagementConf(
+                record?.name ?? '',
+                record?.business ?? '',
+                record?.instance_audit_plan_id
+              );
+            }
           }
+          // #endif
         ]
       }
     : {
