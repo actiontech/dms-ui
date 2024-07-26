@@ -216,22 +216,6 @@ export type ProjectOverviewTheme = {
   };
 };
 
-export type AuditPlanTheme = {
-  detail: {
-    tag: {
-      default: {
-        background: string;
-      };
-      primary: {
-        background: string;
-      };
-      icon: {
-        color: string;
-      };
-    };
-  };
-};
-
 export type WorkflowTemplateTheme = {
   progress: {
     normal: string;
