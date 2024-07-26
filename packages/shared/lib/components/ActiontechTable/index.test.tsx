@@ -63,7 +63,7 @@ describe('lib/ActiontechTable', () => {
           },
           {
             dataIndex: 'b',
-            title: '年龄'
+            title: () => '年龄'
           }
         ]
       });

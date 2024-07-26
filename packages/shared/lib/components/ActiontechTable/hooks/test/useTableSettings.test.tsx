@@ -6,6 +6,7 @@ import EmitterKey from '../../../../data/EmitterKey';
 
 describe('lib/ActiontechTable-hooks-useTableSettings', () => {
   const tableName = 'tableList';
+  const hashedTableName = `${tableName}_111`;
   const username = 'admin';
   const tableData = {
     [username]: {
@@ -52,12 +53,16 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
 
     const { result } = renderHook(() => useTableSettings(tableName, username));
     await act(async () => {
-      const res = result.current.catchDefaultColumnsInfo([
-        {
-          dataIndex: 'sex',
-          title: '性别'
-        }
-      ]);
+      const res = result.current.catchDefaultColumnsInfo(
+        [
+          {
+            dataIndex: 'sex',
+            title: '性别'
+          }
+        ],
+        tableName,
+        hashedTableName
+      );
       expect(res).toEqual(undefined);
     });
   });
@@ -70,15 +75,19 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
 
     const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
     await act(async () => {
-      result.current.catchDefaultColumnsInfo([
-        {
-          dataIndex: 'sex',
-          title: '性别'
-        }
-      ]);
-      expect(LocalStorageWrapperSet).toHaveBeenCalledTimes(2);
-      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
+      result.current.catchDefaultColumnsInfo(
+        [
+          {
+            dataIndex: 'sex',
+            title: '性别'
+          }
+        ],
         tableName,
+        hashedTableName
+      );
+      expect(LocalStorageWrapperSet).toHaveBeenCalledTimes(1);
+      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
+        hashedTableName,
         JSON.stringify({
           [username]: {
             sex: {
@@ -100,7 +109,7 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
             title: '性别'
           }
         },
-        tableName,
+        hashedTableName,
         username
       );
     });

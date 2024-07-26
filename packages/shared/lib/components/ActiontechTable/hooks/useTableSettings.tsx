@@ -50,7 +50,6 @@ const useTableSettings = <
           const localStr = LocalStorageWrapper.get(_tableName);
           const localData = localStr ? JSON.parse(localStr) : undefined;
           if (localData?.[username]) {
-            setLocalColumns(localData?.[username]);
             return;
           }
           LocalStorageWrapper.removeStartWith(tableNamePrefix);
