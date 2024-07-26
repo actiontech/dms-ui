@@ -19,6 +19,7 @@ import sqlAudit from './sqlAudit';
 import pluginAudit from './pluginAudit';
 import sqlOptimization from './sqlOptimization';
 import execWorkflow from './execWorkflow';
+import managementConf from './managementConf';
 import home from './home';
 import components from './components';
 
@@ -46,6 +47,7 @@ export default {
     pluginAudit,
     sqlOptimization,
     execWorkflow,
+    managementConf,
     home,
     components
   }

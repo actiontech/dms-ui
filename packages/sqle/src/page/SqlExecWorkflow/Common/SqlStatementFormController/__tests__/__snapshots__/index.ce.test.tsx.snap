@@ -85,6 +85,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
             >
               <div
                 class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                id="0_currentUploadType"
                 style="margin-left: -6px; margin-right: -6px;"
               >
                 <div

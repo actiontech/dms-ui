@@ -12,6 +12,7 @@ export default {
     describe: '描述',
     role: '角色',
     type: '数据源类型',
+    enabledScanTypes: '启用的扫描类型',
     ruleTemplate: '模版',
     workflow: '工作流',
     maintenanceTime: '运维时间',
@@ -75,6 +76,10 @@ export default {
     confirmMessage: '确认删除数据源 "{{name}}"?',
     deletingDatabase: '正在删除数据源 "{{name}}"...',
     deleteSuccessTips: '删除数据源"{{name}}"成功'
+  },
+
+  enabledAuditPlan: {
+    text: '为数据源开启扫描任务'
   },
 
   batchImportDataSource: {

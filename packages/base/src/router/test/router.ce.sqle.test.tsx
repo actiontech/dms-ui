@@ -3,7 +3,6 @@
  */
 import { MemoryRouterProps } from 'react-router-dom';
 import { act, screen, cleanup } from '@testing-library/react';
-
 import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -179,7 +178,7 @@ describe('base/router-sqle-ce', () => {
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
           expect(
-            screen.getByText('workflowSQLFileStatementOverview')
+            screen.getByText('workflowSqlFileStatementOverview')
           ).toBeInTheDocument();
         });
       });
@@ -249,7 +248,7 @@ describe('base/router-sqle-ce', () => {
       describe('render route plan', () => {
         it('render route auditPlanList', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan`
+            `/sqle/project/${projectID}/sql-management-conf`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
@@ -258,37 +257,35 @@ describe('base/router-sqle-ce', () => {
 
         it('render route auditPlanCreate', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/create`
+            `/sqle/project/${projectID}/sql-management-conf/create`
           ]);
 
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanCreate')).toBeInTheDocument();
+          expect(
+            screen.getByText('CreateSqlManagementConf')
+          ).toBeInTheDocument();
         });
 
         it('render route auditPlanUpdate', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/update/auditPlanName`
+            `/sqle/project/${projectID}/sql-management-conf/update/1`
           ]);
 
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanUpdate')).toBeInTheDocument();
+          expect(
+            screen.getByText('UpdateSqlManagementConf')
+          ).toBeInTheDocument();
         });
 
         it('render route auditPlanDetail', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/detail/auditPlanName`
+            `/sqle/project/${projectID}/sql-management-conf/1e`
           ]);
 
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanDetail')).toBeInTheDocument();
-        });
-        it('render route auditPlanDetailReport', () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/detail/auditPlanName/report/reportId`
-          ]);
-
-          expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanDetailReport')).toBeInTheDocument();
+          expect(
+            screen.getByText('SqlManagementConfDetail')
+          ).toBeInTheDocument();
         });
       });
 
@@ -397,15 +394,6 @@ describe('base/router-sqle-ce', () => {
 
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('workflowAnalyze')).toBeInTheDocument();
-      });
-
-      it('render route auditPlanDetail', () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/audit-plan/reportId/sqlNum/:auditPlanName/analyze`
-        ]);
-
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('auditPlanDetailAnalyze')).toBeInTheDocument();
       });
     });
   });

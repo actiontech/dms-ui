@@ -39,7 +39,7 @@ import SqlManagementColumn, {
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { message } from 'antd';
+import { Spin, message } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -220,7 +220,8 @@ const SQLEEIndex = () => {
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
-      tableName: 'sql_management_list',
+      // todo 暂时通过更新 tableName 的方式解决表格列的缓存问题，等问题解决后移出。
+      tableName: 'sql_management_list_v2',
       username: username
     }),
     [username]
@@ -321,7 +322,7 @@ const SQLEEIndex = () => {
   };
 
   return (
-    <>
+    <Spin spinning={getListLoading} delay={300}>
       {messageContextHolder}
       <PageHeader
         title={t('sqlManagement.pageTitle')}
@@ -339,8 +340,8 @@ const SQLEEIndex = () => {
       {/* page - total */}
       <SQLStatistics
         data={SQLNum}
-        loading={getListLoading}
         errorMessage={getListError}
+        loading={getListLoading}
       />
       {/* table  */}
       <TableToolbar
@@ -357,7 +358,6 @@ const SQLEEIndex = () => {
             refreshBySearchKeyword();
           }
         }}
-        loading={getListLoading}
       >
         <StatusFilter status={filterStatus} onChange={setFilterStatus} />
       </TableToolbar>
@@ -379,7 +379,6 @@ const SQLEEIndex = () => {
           total: SQLNum.SQLTotalNum,
           current: pagination.page_index
         }}
-        loading={getListLoading}
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
@@ -387,7 +386,7 @@ const SQLEEIndex = () => {
       />
       {/* modal & drawer */}
       <SqlManagementModal />
-    </>
+    </Spin>
   );
 };
 

@@ -98,8 +98,7 @@ describe('test ConfirmationSettingForm', () => {
     expect(setSubmitButtonDisabled).not.toHaveBeenCalled();
 
     expect(getScheduledTaskDefaultOptionSpy).toHaveBeenCalled();
-
-    expect(screen.getByText('飞书').parentNode).toHaveClass(
+    expect(screen.getByText('飞 书').parentNode).toHaveClass(
       'toggle-token-item-checked'
     );
     expect(screen.getByText('企业微信').parentNode).not.toHaveClass(
@@ -148,7 +147,7 @@ describe('test ConfirmationSettingForm', () => {
 
     expect(getScheduledTaskDefaultOptionSpy).toHaveBeenCalled();
 
-    expect(screen.getByText('飞书').parentNode).not.toHaveClass(
+    expect(screen.getByText('飞 书').parentNode).not.toHaveClass(
       'toggle-token-item-checked'
     );
   });

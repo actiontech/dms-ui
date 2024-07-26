@@ -1,20 +1,29 @@
 import classNames from 'classnames';
-import { ToggleTokensProps } from './index.type';
+import { ToggleTokensOptionsType, ToggleTokensProps } from './index.type';
 import { ToggleTokensStyleWrapper } from './style';
 import BasicButton from '../BasicButton';
 import { useControllableValue } from 'ahooks';
-import { Checkbox } from 'antd';
 import EmptyBox from '../EmptyBox';
+import { ForwardedRef, forwardRef, useMemo } from 'react';
+import { CheckCircleFilled } from '@ant-design/icons';
+import { extractTextFromReactNode } from '../ActiontechTable/utils';
 
-const ToggleTokens = <V extends string | number | null = string>({
-  className,
-  options,
-  value,
-  onChange,
-  multiple,
-  withCheckbox,
-  ...props
-}: ToggleTokensProps<V>) => {
+const ToggleTokens = <V extends string | number | null = string>(
+  {
+    className,
+    options,
+    value,
+    onChange,
+    multiple,
+    withCheckbox,
+    noStyle,
+    labelDictionary,
+    defaultValue,
+    disabled,
+    ...props
+  }: ToggleTokensProps<V>,
+  ref: ForwardedRef<HTMLDivElement>
+) => {
   // #if [DEV]
   if (multiple && typeof value !== 'undefined' && !Array.isArray(value)) {
     throw new Error(
@@ -27,10 +36,12 @@ const ToggleTokens = <V extends string | number | null = string>({
     typeof value !== 'undefined' && onChange
       ? {
           value,
-          onChange
+          onChange,
+          defaultValue
         }
       : {
-          onChange
+          onChange,
+          defaultValue
         }
   );
 
@@ -49,14 +60,52 @@ const ToggleTokens = <V extends string | number | null = string>({
     }
   };
 
+  const transformOptions = useMemo<ToggleTokensOptionsType>(() => {
+    return options.map((item) => {
+      if (labelDictionary) {
+        if (typeof item === 'string') {
+          return {
+            label: labelDictionary[item] ?? item,
+            value: item
+          };
+        }
+
+        return {
+          label:
+            typeof item.label === 'string'
+              ? labelDictionary[item.label] ?? item.label
+              : item.label,
+          value: item.value,
+          className: item.className,
+          onClick: item.onClick
+        };
+      }
+
+      if (typeof item === 'string') {
+        return {
+          label: item,
+          value: item
+        };
+      }
+
+      return {
+        label: item.label,
+        value: item.value,
+        className: item.className,
+        onClick: item.onClick
+      };
+    });
+  }, [labelDictionary, options]);
+
   return (
     <ToggleTokensStyleWrapper
       className={classNames(className, 'actiontech-toggle-tokens')}
+      ref={ref}
       {...props}
     >
-      {options.map((item) => {
-        const label = typeof item === 'string' ? item : item.label;
-        const itemValue = typeof item === 'string' ? item : item.value;
+      {transformOptions.map((item) => {
+        const label = item.label;
+        const itemValue = item.value;
 
         let checked = false;
 
@@ -67,27 +116,98 @@ const ToggleTokens = <V extends string | number | null = string>({
           checked = internalValue === itemValue;
         }
 
+        const commonCls = classNames('toggle-token-item', {
+          'toggle-token-item-with-checkbox': withCheckbox,
+          'toggle-token-item-checked': checked
+        });
+
+        const renderTokenWithButtonStyle = () => {
+          return (
+            <BasicButton
+              className={classNames(
+                commonCls,
+                'toggle-token-item-button-style',
+                {
+                  'toggle-token-item-button-disabled': disabled
+                }
+              )}
+              disabled={disabled}
+              type={checked ? 'primary' : undefined}
+              onClick={() => {
+                handleClick(itemValue as V);
+                item.onClick?.(!checked);
+              }}
+            >
+              {renderChildren()}
+            </BasicButton>
+          );
+        };
+
+        const renderTokenWithNoStyle = () => {
+          return (
+            <div
+              className={classNames(commonCls, 'toggle-token-item-no-style', {
+                'toggle-token-item-no-style-disabled': disabled
+              })}
+              onClick={() => {
+                if (disabled) {
+                  return;
+                }
+                handleClick(itemValue as V);
+                item.onClick?.(!checked);
+              }}
+            >
+              {renderChildren()}
+            </div>
+          );
+        };
+
+        const renderChildren = () => {
+          const labelCls = classNames('toggle-token-item-label');
+          if (withCheckbox && checked) {
+            return (
+              <div className="toggle-token-item-with-checkbox-children">
+                <CheckCircleFilled />
+                <span
+                  title={extractTextFromReactNode(label)}
+                  aria-label={extractTextFromReactNode(label)}
+                  className={labelCls}
+                >
+                  {label}
+                </span>
+              </div>
+            );
+          }
+          return (
+            <span
+              title={extractTextFromReactNode(label)}
+              aria-label={extractTextFromReactNode(label)}
+              className={labelCls}
+            >
+              {label}
+            </span>
+          );
+        };
+
         return (
-          <BasicButton
-            className={classNames('toggle-token-item', {
-              'toggle-token-item-with-checkbox': withCheckbox,
-              'toggle-token-item-checked': checked
-            })}
-            type={checked ? 'primary' : undefined}
+          <EmptyBox
             key={itemValue as string}
-            onClick={() => {
-              handleClick(itemValue as V);
-            }}
+            if={!noStyle}
+            defaultNode={renderTokenWithNoStyle()}
           >
-            <EmptyBox if={withCheckbox}>
-              <Checkbox checked={checked} />
-            </EmptyBox>
-            <span>{label}</span>
-          </BasicButton>
+            {renderTokenWithButtonStyle()}
+          </EmptyBox>
         );
       })}
     </ToggleTokensStyleWrapper>
   );
 };
 
-export default ToggleTokens;
+ToggleTokens.displayName = 'ToggleTokens';
+
+export default forwardRef(ToggleTokens) as unknown as <
+  V extends string | number | null = string
+>(
+  props: React.PropsWithChildren<ToggleTokensProps<V>> &
+    React.RefAttributes<HTMLDivElement>
+) => React.ReactElement;

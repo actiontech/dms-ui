@@ -46,23 +46,23 @@ export const sqlManageListData = {
       assignees: ['test'],
       status: 'unhandled',
       remark: 'this is remark text',
-      endpoints: ['12']
+      endpoints: '12'
     },
     {
       id: 248,
       sql_fingerprint:
         'CREATE TABLE `plugins` (\n  `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
-        type: 'audit_plan',
-        audit_plan_name: 'audit-plan-task1',
-        sql_audit_record_ids: null
+        sql_source_type: 'mysql_slow_log',
+        sql_source_desc: '慢日志',
+        sql_source_id: '123'
       },
       first_appear_timestamp: '',
       last_receive_timestamp: '',
       fp_count: 0,
       assignees: ['test', 'admin'],
       remark: '',
-      endpoints: []
+      endpoints: null
     },
     {
       id: 247,
@@ -70,9 +70,9 @@ export const sqlManageListData = {
         'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
-        type: 'sql_audit_record',
-        audit_plan_name: 'audit-record-task1',
-        sql_audit_record_ids: ['14311234']
+        sql_source_type: 'mysql_slow_log',
+        sql_source_desc: '慢日志',
+        sql_source_id: '123'
       },
       instance_name: 'mysql',
       schema_name: 'dms',
@@ -97,9 +97,9 @@ export const sqlManageListData = {
         'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
       source: {
-        type: 'sql_audit_record',
-        audit_plan_name: 'audit-record-task1',
-        sql_audit_record_ids: ['14311234']
+        sql_source_type: 'mysql_slow_log',
+        sql_source_desc: '慢日志',
+        sql_source_id: '123'
       },
       instance_name: 'mysql',
       schema_name: 'dms',
@@ -116,7 +116,7 @@ export const sqlManageListData = {
       assignees: null,
       status: 'unhandled',
       remark: '',
-      endpoints: ['12', '34', '56']
+      endpoints: '34'
     }
   ],
   sql_manage_bad_num: 1,

@@ -62,7 +62,10 @@ export default {
         ignored: '已忽略',
         manual_audited: '已人工审核'
       },
+      business: '业务',
+      instanceName: '数据源',
       source: {
+        label: '来源',
         auditPlan: '智能扫描',
         apiAudit: 'SQL审核'
       },

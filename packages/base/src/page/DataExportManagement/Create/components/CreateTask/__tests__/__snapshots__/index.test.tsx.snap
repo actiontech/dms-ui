@@ -512,6 +512,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                     >
                       <div
                         class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                        id="exportMethod"
                       >
                         <div
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
@@ -1213,6 +1214,7 @@ exports[`test base/DataExport/Create/CreateExportTask should match snapshot when
                     >
                       <div
                         class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                        id="exportMethod"
                       >
                         <div
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"

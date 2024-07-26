@@ -43,15 +43,6 @@ export const statusDictionary: StaticEnumDictionary<GetSqlManageListV2FilterStat
 const useStaticStatus = () => {
   const { t } = useTranslation();
 
-  const generateSourceSelectOptions: SelectProps['options'] = useMemo(() => {
-    return Object.keys(sourceDictionary).map((key) => ({
-      label: t(
-        sourceDictionary[key as keyof typeof GetSqlManageListV2FilterSourceEnum]
-      ),
-      value: key
-    }));
-  }, [t]);
-
   const generateAuditLevelSelectOptions: SelectProps['options'] =
     useMemo(() => {
       return Object.keys(auditLevelDictionary).map((key) => ({
@@ -65,7 +56,6 @@ const useStaticStatus = () => {
     }, [t]);
 
   return {
-    generateSourceSelectOptions,
     generateAuditLevelSelectOptions
   };
 };

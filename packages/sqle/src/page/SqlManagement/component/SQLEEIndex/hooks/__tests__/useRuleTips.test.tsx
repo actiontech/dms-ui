@@ -1,11 +1,11 @@
-import useRuleTips from './useRuleTips';
-import sqlManage from '../../../../../testUtils/mockApi/sqlManage';
+import useRuleTips from '../useRuleTips';
+import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { ruleTipsData } from '../../../../../testUtils/mockApi/sqlManage/data';
+import { ruleTipsData } from '../../../../../../testUtils/mockApi/sqlManage/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useSelector } from 'react-redux';
-import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
+import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 
 jest.mock('react-redux', () => {
   return {

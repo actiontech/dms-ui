@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent } from '@testing-library/react';
 import { superRender } from '../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { Form } from 'antd';
-import { IListDatabaseSourceService } from '@actiontech/shared/lib/api/base/service/common';
+import { IGetDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import SyncTaskForm from '.';
 import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
@@ -14,7 +14,7 @@ import { SyncTaskFormFields } from './index.type';
 describe('page/SyncDataSource/SyncTaskForm', () => {
   const customRender = (params?: {
     loading?: boolean;
-    defaultValue?: IListDatabaseSourceService;
+    defaultValue?: IGetDBServiceSyncTask;
   }) => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<SyncTaskFormFields>()

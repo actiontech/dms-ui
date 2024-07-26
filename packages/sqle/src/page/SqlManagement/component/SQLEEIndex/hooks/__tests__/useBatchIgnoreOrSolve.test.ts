@@ -1,8 +1,8 @@
-import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
-import useBatchIgnoreOrSolve from './useBatchIgnoreOrSolve';
+import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import useBatchIgnoreOrSolve from '../useBatchIgnoreOrSolve';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import sqlManage from '../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 

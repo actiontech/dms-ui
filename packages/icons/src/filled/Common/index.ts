@@ -2,6 +2,7 @@ export { default as BookMarkTagFilled } from './BookMarkTagFilled';
 export { default as BriefcaseFilled } from './BriefcaseFilled';
 export { default as CenterCircleHexagonFilled } from './CenterCircleHexagonFilled';
 export { default as CheckboxMultipleBlankFilled } from './CheckboxMultipleBlankFilled';
+export { default as CheckoutCircleFilled } from './CheckoutCircleFilled';
 export { default as ClockCircleFilled } from './ClockCircleFilled';
 export { default as CloseCircleFilled } from './CloseCircleFilled';
 export { default as ComputerFilled } from './ComputerFilled';

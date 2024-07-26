@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Card, Spin } from 'antd';
+import { Card } from 'antd';
 import { SQLStatisticsWrapper } from './style';
 import { useMemo } from 'react';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
@@ -13,7 +13,6 @@ export interface ISQLStatisticsProps {
 const errorDefaultVal = '-';
 
 const SQLStatistics = (props: ISQLStatisticsProps) => {
-  const { loading } = props;
   const { t } = useTranslation();
 
   const { totalNum, problemNum, optimizedNum } = useMemo(() => {
@@ -34,30 +33,28 @@ const SQLStatistics = (props: ISQLStatisticsProps) => {
 
   return (
     <SQLStatisticsWrapper>
-      <Spin spinning={loading}>
-        <Card className="card-wrapper">
-          <div className="cont-item">
-            <strong className="num total">{totalNum}</strong>
-            <span className="desc">
-              {t('sqlManagement.statistics.SQLTotalNum')}
+      <Card className="card-wrapper">
+        <div className="cont-item">
+          <strong className="num total">{totalNum}</strong>
+          <span className="desc">
+            {t('sqlManagement.statistics.SQLTotalNum')}
+          </span>
+        </div>
+        <div className="cont-item">
+          <div>
+            <strong className="num problem">{problemNum}</strong>
+            <span className="desc problemSQlNum">
+              {t('sqlManagement.statistics.problemSQlNum')}
             </span>
           </div>
-          <div className="cont-item">
-            <div>
-              <strong className="num problem">{problemNum}</strong>
-              <span className="desc problemSQlNum">
-                {t('sqlManagement.statistics.problemSQlNum')}
-              </span>
-            </div>
-          </div>
-          <div className="cont-item">
-            <strong className="num optimized">{optimizedNum}</strong>
-            <span className="desc">
-              {t('sqlManagement.statistics.optimizedSQLNum')}
-            </span>
-          </div>
-        </Card>
-      </Spin>
+        </div>
+        <div className="cont-item">
+          <strong className="num optimized">{optimizedNum}</strong>
+          <span className="desc">
+            {t('sqlManagement.statistics.optimizedSQLNum')}
+          </span>
+        </div>
+      </Card>
     </SQLStatisticsWrapper>
   );
 };

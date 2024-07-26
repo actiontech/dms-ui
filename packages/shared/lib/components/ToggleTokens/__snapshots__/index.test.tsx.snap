@@ -3,17 +3,21 @@
 exports[`test ToggleTokens/multiple render snapshot with Array<object> type options 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -23,10 +27,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -35,10 +43,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -50,17 +62,21 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
 exports[`test ToggleTokens/multiple render snapshot with Array<object> type options 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -70,10 +86,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -82,10 +102,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -97,17 +121,21 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
 exports[`test ToggleTokens/multiple render snapshot with Array<object> type options and control 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -117,10 +145,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -129,10 +161,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -145,17 +181,21 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
 exports[`test ToggleTokens/multiple render snapshot with Array<object> type options and control 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -165,10 +205,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -177,10 +221,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -192,32 +240,21 @@ exports[`test ToggleTokens/multiple render snapshot with Array<object> type opti
 exports[`test ToggleTokens/multiple render snapshot with Array<string> type options 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <label
-          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        <span
+          aria-label="key1"
+          class="toggle-token-item-label"
+          title="key1"
         >
-          <span
-            class="ant-checkbox css-dev-only-do-not-override-674gwq"
-          >
-            <input
-              class="ant-checkbox-input"
-              type="checkbox"
-            />
-            <span
-              class="ant-checkbox-inner"
-            />
-          </span>
-        </label>
-        <span>
           key1
         </span>
       </button>
@@ -227,25 +264,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<string> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <label
-          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        <span
+          aria-label="key2"
+          class="toggle-token-item-label"
+          title="key2"
         >
-          <span
-            class="ant-checkbox css-dev-only-do-not-override-674gwq"
-          >
-            <input
-              class="ant-checkbox-input"
-              type="checkbox"
-            />
-            <span
-              class="ant-checkbox-inner"
-            />
-          </span>
-        </label>
-        <span>
           key2
         </span>
       </button>
@@ -254,25 +280,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<string> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <label
-          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        <span
+          aria-label="key3"
+          class="toggle-token-item-label"
+          title="key3"
         >
-          <span
-            class="ant-checkbox css-dev-only-do-not-override-674gwq"
-          >
-            <input
-              class="ant-checkbox-input"
-              type="checkbox"
-            />
-            <span
-              class="ant-checkbox-inner"
-            />
-          </span>
-        </label>
-        <span>
           key3
         </span>
       </button>
@@ -284,34 +299,46 @@ exports[`test ToggleTokens/multiple render snapshot with Array<string> type opti
 exports[`test ToggleTokens/multiple render snapshot with Array<string> type options 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <label
-          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked css-dev-only-do-not-override-674gwq"
+        <div
+          class="toggle-token-item-with-checkbox-children"
         >
           <span
-            class="ant-checkbox css-dev-only-do-not-override-674gwq ant-checkbox-checked"
+            aria-label="check-circle"
+            class="anticon anticon-check-circle"
+            role="img"
           >
-            <input
-              class="ant-checkbox-input"
-              type="checkbox"
-            />
-            <span
-              class="ant-checkbox-inner"
-            />
+            <svg
+              aria-hidden="true"
+              data-icon="check-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+              />
+            </svg>
           </span>
-        </label>
-        <span>
-          key1
-        </span>
+          <span
+            aria-label="key1"
+            class="toggle-token-item-label"
+            title="key1"
+          >
+            key1
+          </span>
+        </div>
       </button>
     </div>
     <div
@@ -319,25 +346,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<string> type opti
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <label
-          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        <span
+          aria-label="key2"
+          class="toggle-token-item-label"
+          title="key2"
         >
-          <span
-            class="ant-checkbox css-dev-only-do-not-override-674gwq"
-          >
-            <input
-              class="ant-checkbox-input"
-              type="checkbox"
-            />
-            <span
-              class="ant-checkbox-inner"
-            />
-          </span>
-        </label>
-        <span>
           key2
         </span>
       </button>
@@ -346,25 +362,14 @@ exports[`test ToggleTokens/multiple render snapshot with Array<string> type opti
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-with-checkbox toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <label
-          class="ant-checkbox-wrapper css-dev-only-do-not-override-674gwq"
+        <span
+          aria-label="key3"
+          class="toggle-token-item-label"
+          title="key3"
         >
-          <span
-            class="ant-checkbox css-dev-only-do-not-override-674gwq"
-          >
-            <input
-              class="ant-checkbox-input"
-              type="checkbox"
-            />
-            <span
-              class="ant-checkbox-inner"
-            />
-          </span>
-        </label>
-        <span>
           key3
         </span>
       </button>
@@ -376,17 +381,21 @@ exports[`test ToggleTokens/multiple render snapshot with Array<string> type opti
 exports[`test ToggleTokens/single render snapshot with Array<object> type options 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -396,10 +405,14 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -408,10 +421,14 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -423,17 +440,21 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
 exports[`test ToggleTokens/single render snapshot with Array<object> type options 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -443,10 +464,14 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -455,10 +480,14 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -470,17 +499,21 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
 exports[`test ToggleTokens/single render snapshot with Array<object> type options and control 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label1"
+          class="toggle-token-item-label"
+          title="label1"
+        >
           label1
         </span>
       </button>
@@ -490,10 +523,14 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label2"
+          class="toggle-token-item-label"
+          title="label2"
+        >
           label2
         </span>
       </button>
@@ -502,10 +539,14 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="label3"
+          class="toggle-token-item-label"
+          title="label3"
+        >
           label3
         </span>
       </button>
@@ -518,17 +559,21 @@ exports[`test ToggleTokens/single render snapshot with Array<object> type option
 exports[`test ToggleTokens/single render snapshot with Array<string> type options 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="key1"
+          class="toggle-token-item-label"
+          title="key1"
+        >
           key1
         </span>
       </button>
@@ -538,10 +583,14 @@ exports[`test ToggleTokens/single render snapshot with Array<string> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="key2"
+          class="toggle-token-item-label"
+          title="key2"
+        >
           key2
         </span>
       </button>
@@ -550,10 +599,14 @@ exports[`test ToggleTokens/single render snapshot with Array<string> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="key3"
+          class="toggle-token-item-label"
+          title="key3"
+        >
           key3
         </span>
       </button>
@@ -565,17 +618,21 @@ exports[`test ToggleTokens/single render snapshot with Array<string> type option
 exports[`test ToggleTokens/single render snapshot with Array<string> type options 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-e8wfcg"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="key1"
+          class="toggle-token-item-label"
+          title="key1"
+        >
           key1
         </span>
       </button>
@@ -585,10 +642,14 @@ exports[`test ToggleTokens/single render snapshot with Array<string> type option
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="key2"
+          class="toggle-token-item-label"
+          title="key2"
+        >
           key2
         </span>
       </button>
@@ -597,14 +658,360 @@ exports[`test ToggleTokens/single render snapshot with Array<string> type option
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
         type="button"
       >
-        <span>
+        <span
+          aria-label="key3"
+          class="toggle-token-item-label"
+          title="key3"
+        >
           key3
         </span>
       </button>
     </div>
   </div>
 </div>
+`;
+
+exports[`test ToggleTokens/single render snapshot with disabled props is equal true 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+            disabled=""
+            type="button"
+          >
+            <span
+              aria-label="key1"
+              class="toggle-token-item-label"
+              title="key1"
+            >
+              key1
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+            disabled=""
+            type="button"
+          >
+            <span
+              aria-label="key2"
+              class="toggle-token-item-label"
+              title="key2"
+            >
+              key2
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+            disabled=""
+            type="button"
+          >
+            <span
+              aria-label="key3"
+              class="toggle-token-item-label"
+              title="key3"
+            >
+              key3
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+          disabled=""
+          type="button"
+        >
+          <span
+            aria-label="key1"
+            class="toggle-token-item-label"
+            title="key1"
+          >
+            key1
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+          disabled=""
+          type="button"
+        >
+          <span
+            aria-label="key2"
+            class="toggle-token-item-label"
+            title="key2"
+          >
+            key2
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style toggle-token-item-button-disabled basic-button-wrapper css-geipcv"
+          disabled=""
+          type="button"
+        >
+          <span
+            aria-label="key3"
+            class="toggle-token-item-label"
+            title="key3"
+          >
+            key3
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`test ToggleTokens/single render snapshot with disabled props is equal true 2`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="toggle-token-item toggle-token-item-no-style toggle-token-item-no-style-disabled"
+          >
+            <span
+              aria-label="label1"
+              class="toggle-token-item-label"
+              title="label1"
+            >
+              label1
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="toggle-token-item toggle-token-item-no-style toggle-token-item-no-style-disabled"
+          >
+            <span
+              aria-label="label2"
+              class="toggle-token-item-label"
+              title="label2"
+            >
+              label2
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="toggle-token-item toggle-token-item-no-style toggle-token-item-no-style-disabled"
+          >
+            <span
+              aria-label="label3"
+              class="toggle-token-item-label"
+              title="label3"
+            >
+              label3
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-toggle-tokens css-inle2o"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <div
+          class="toggle-token-item toggle-token-item-no-style toggle-token-item-no-style-disabled"
+        >
+          <span
+            aria-label="label1"
+            class="toggle-token-item-label"
+            title="label1"
+          >
+            label1
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <div
+          class="toggle-token-item toggle-token-item-no-style toggle-token-item-no-style-disabled"
+        >
+          <span
+            aria-label="label2"
+            class="toggle-token-item-label"
+            title="label2"
+          >
+            label2
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="toggle-token-item toggle-token-item-no-style toggle-token-item-no-style-disabled"
+        >
+          <span
+            aria-label="label3"
+            class="toggle-token-item-label"
+            title="label3"
+          >
+            label3
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;

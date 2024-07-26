@@ -6,7 +6,8 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
   useCurrentProject,
-  useDbServiceDriver
+  useDbServiceDriver,
+  useProjectBusinessTips
 } from '@actiontech/shared/lib/global';
 import {
   BasicInput,
@@ -43,7 +44,6 @@ import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateTo
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 // #endif
-import useProjectBusinessTips from '../../../../hooks/useProjectBusinessTips';
 import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useProjectTips from '../../../../hooks/useProjectTips';
@@ -67,7 +67,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     generateDriverSelectOptions
   } = useDbServiceDriver();
 
-  const { updateProjectTips, projectBusinessOption, isFixedBusiness } =
+  const { updateProjectBusinessTips, projectBusinessOption, isFixedBusiness } =
     useProjectBusinessTips();
 
   const { updateProjects, projectIDOptions } = useProjectTips();
@@ -260,9 +260,9 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   // #if [ee]
   useEffect(() => {
     if (project) {
-      updateProjectTips(project);
+      updateProjectBusinessTips(project);
     }
-  }, [updateProjectTips, project]);
+  }, [updateProjectBusinessTips, project]);
   // #endif
 
   useEffect(() => {

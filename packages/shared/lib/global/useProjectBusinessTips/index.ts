@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import useCurrentProject from '../useCurrentProject';
+import Project from '../../api/base/service/Project';
+import { ResponseCode } from '../../enum';
 
 const useProjectBusinessTips = () => {
   const [projectBusiness, setProjectBusiness] = useState<string[]>([]);
@@ -10,7 +10,7 @@ const useProjectBusinessTips = () => {
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { projectID } = useCurrentProject();
 
-  const updateProjectTips = useCallback(
+  const updateProjectBusinessTips = useCallback(
     (queryByProjectID?: string) => {
       setTrue();
       Project.GetProjectTips({
@@ -48,7 +48,7 @@ const useProjectBusinessTips = () => {
   return {
     projectBusiness,
     loading,
-    updateProjectTips,
+    updateProjectBusinessTips,
     projectBusinessOption,
     isFixedBusiness
   };
