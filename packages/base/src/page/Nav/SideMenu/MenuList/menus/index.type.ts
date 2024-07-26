@@ -32,4 +32,12 @@ export type MenuStructTreeKey =
   | 'whitelist'
   | 'workflow-template'
   | 'sqle-log'
-  | 'sql-management-conf';
+  | 'sql-management-conf'
+  | 'permission-group'
+  | 'permission-template'
+  | 'auth-list'
+  | 'data-mask-rule'
+  | 'auth-audit'
+  | 'template-audit'
+  | 'account-management'
+  | 'password-management';
