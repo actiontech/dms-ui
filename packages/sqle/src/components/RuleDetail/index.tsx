@@ -3,10 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { useEffect, useMemo, useState } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
-
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-
 import { Spin } from 'antd';
 import {
   PageHeader,
@@ -14,10 +12,10 @@ import {
   BasicResult,
   EmptyBox
 } from '@actiontech/shared';
-import { DetailComStyleWrapper } from '../../page/AuditPlan/PlanDetail/DetailCom/style';
 import { RuleStatus, RuleTypes, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
 import {
+  DetailComStyleWrapper,
   HeaderSpaceTagStyleWrapper,
   RuleTemplateDetailStyleWrapper
 } from './style';
