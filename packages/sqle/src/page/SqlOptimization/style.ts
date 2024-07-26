@@ -131,7 +131,7 @@ export const DetailComStyleWrapper = styled('section')`
           ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
         margin-right: 8px;
         background-color: ${({ theme }) =>
-          theme.sqleTheme.auditPlan.detail.tag.default.background} !important;
+          theme.sharedTheme.basic.colorWhite} !important;
 
         div {
           font-size: 13px;
