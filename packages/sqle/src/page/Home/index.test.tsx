@@ -29,7 +29,7 @@ describe('page/Home', () => {
     expect(screen.getByText('工作台')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
-    expect(getAllBySelector('.ant-btn').length).toBe(3);
+    expect(getAllBySelector('.ant-btn').length).toBe(2);
     fireEvent.click(getAllBySelector('.ant-btn')?.[0]);
     expect(request).toHaveBeenCalled();
     expect(staticsRequest).toHaveBeenCalled();
