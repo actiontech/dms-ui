@@ -3013,7 +3013,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                             >
                               <div
                                 aria-required="true"
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-e8wfcg"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                                 id="confirmation_method"
                               >
                                 <div
@@ -3021,10 +3021,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                                   style="margin-bottom: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
-                                    <span>
+                                    <span
+                                      aria-label="企业微信"
+                                      class="toggle-token-item-label"
+                                      title="企业微信"
+                                    >
                                       企业微信
                                     </span>
                                   </button>
@@ -3033,11 +3037,15 @@ exports[`sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal should render notificat
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked basic-button-wrapper css-geipcv"
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
-                                    <span>
-                                      飞书
+                                    <span
+                                      aria-label="飞书"
+                                      class="toggle-token-item-label"
+                                      title="飞书"
+                                    >
+                                      飞 书
                                     </span>
                                   </button>
                                 </div>

@@ -487,6 +487,7 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
                     >
                       <div
                         class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                        id="exportMethod"
                       >
                         <div
                           class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"

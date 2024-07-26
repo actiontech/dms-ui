@@ -85,6 +85,7 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
             >
               <div
                 class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                id="1_currentUploadType"
                 style="margin-left: -6px; margin-right: -6px;"
               >
                 <div
@@ -478,6 +479,8 @@ exports[`test SqlStatementFormItem renders SqlStatementFormItem component 1`] = 
             >
               <div
                 class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                data-testid="exec-mode-selector"
+                id="1_exec_mode"
                 style="margin-left: -5px; margin-right: -5px;"
               >
                 <div
