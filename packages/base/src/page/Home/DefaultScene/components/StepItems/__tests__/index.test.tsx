@@ -63,10 +63,10 @@ describe('test base/Home/StepItems', () => {
       `/sqle/project/${projectID}/rule/template`
     );
 
-    fireEvent.click(screen.getByText('查看智能扫描'));
+    fireEvent.click(screen.getByText('查看SQL管控配置'));
     expect(navigateSpy).toHaveBeenCalledTimes(9);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${projectID}/audit-plan`
+      `/sqle/project/${projectID}/sql-management-conf`
     );
 
     fireEvent.click(screen.getByText('新建SQL审核'));

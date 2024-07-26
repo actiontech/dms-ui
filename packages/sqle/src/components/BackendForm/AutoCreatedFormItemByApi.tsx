@@ -47,27 +47,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-        if (item.type === 'int') {
-          return (
-            <FormItemLabel
-              key={item.key}
-              className={classNames({
-                'has-label-tip': !!labelTip
-              })}
-              label={<CustomLabelContent tips={labelTip} title={label} />}
-              {...formItemLayoutVal}
-              name={[paramsKey, item.key ?? '']}
-              rules={[
-                {
-                  pattern: /^\d+$/,
-                  message: t('ruleTemplate.editModal.ruleValueTypeOnlyNumber')
-                }
-              ]}
-            >
-              <BasicInput disabled={props.disabled} />
-            </FormItemLabel>
-          );
-        }
+
         if (item.type === 'password') {
           return (
             <FormItemLabel
@@ -99,12 +79,38 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
               name={[paramsKey, item.key ?? '']}
             >
               <BasicSelect
-                options={item.enums_value.map((v) => ({ label: v, value: v }))}
+                options={item.enums_value.map((v) => ({
+                  label: v.desc,
+                  value: v.value
+                }))}
                 disabled={props.disabled}
               />
             </FormItemLabel>
           );
         }
+
+        if (item.type === 'int') {
+          return (
+            <FormItemLabel
+              key={item.key}
+              className={classNames({
+                'has-label-tip': !!labelTip
+              })}
+              label={<CustomLabelContent tips={labelTip} title={label} />}
+              {...formItemLayoutVal}
+              name={[paramsKey, item.key ?? '']}
+              rules={[
+                {
+                  pattern: /^\d+$/,
+                  message: t('ruleTemplate.editModal.ruleValueTypeOnlyNumber')
+                }
+              ]}
+            >
+              <BasicInput disabled={props.disabled} />
+            </FormItemLabel>
+          );
+        }
+
         return (
           <FormItemLabel
             key={item.key}

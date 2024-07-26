@@ -114,7 +114,7 @@ export default defineConfig((config) => {
       open: true,
       proxy: {
         '^(/v|/sqle/v)': {
-          target: 'http://10.186.58.166:10003/'
+          target: 'http://10.186.62.13:11000/'
         },
         '^/provision/v': {
           target: 'http://10.186.62.13:11000/'

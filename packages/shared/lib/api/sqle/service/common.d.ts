@@ -24,7 +24,6 @@ import {
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
-  SourceTypeEnum,
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
@@ -57,6 +56,12 @@ export interface IBaseRes {
   code?: number;
 
   message?: string;
+}
+
+export interface IEnumsValue {
+  desc?: string;
+
+  value?: string;
 }
 
 export interface IAffectRows {
@@ -106,7 +111,7 @@ export interface IAuditPlanParamReqV1 {
 export interface IAuditPlanParamResV1 {
   desc?: string;
 
-  enums_value?: string[];
+  enums_value?: IEnumsValue[];
 
   key?: string;
 
@@ -161,6 +166,12 @@ export interface IAuditPlanResV1 {
   audit_plan_token?: string;
 
   rule_template_name?: string;
+}
+
+export interface IAuditPlanRuleTemplate {
+  is_global_rule_template?: boolean;
+
+  name?: string;
 }
 
 export interface IAuditPlanSQLHeadV1 {
@@ -383,6 +394,18 @@ export interface ICloneRuleTemplateReqV1 {
 
 export interface ICompanyNotice {
   notice_str?: string;
+}
+
+export interface ICreatInstanceAuditPlanRes {
+  instance_audit_plan_id?: string;
+}
+
+export interface ICreatInstanceAuditPlanResV1 {
+  code?: number;
+
+  data?: ICreatInstanceAuditPlanRes;
+
+  message?: string;
 }
 
 export interface ICreateAuditPlanReqV1 {
@@ -1428,7 +1451,7 @@ export interface IInstanceAuditPlanInfo {
 
   audit_plan_instance_schema_name?: string;
 
-  audit_plan_rule_template_name?: string;
+  audit_plan_rule_template?: IAuditPlanRuleTemplate;
 
   audit_plan_type?: IAuditPlanTypeResBase;
 
@@ -1996,11 +2019,11 @@ export interface IScheduledTaskDefaultOptionV1Rsp {
 }
 
 export interface ISource {
-  audit_plan_name?: string;
+  sql_source_desc?: string;
 
-  sql_audit_record_ids?: string[];
+  sql_source_id?: string;
 
-  type?: SourceTypeEnum;
+  sql_source_type?: string;
 }
 
 export interface ISqlAnalysis {
@@ -2072,7 +2095,7 @@ export interface ISqlManage {
 
   audit_result?: IAuditResult[];
 
-  endpoints?: string[];
+  endpoints?: string;
 
   first_appear_timestamp?: string;
 
@@ -3003,6 +3026,10 @@ export interface IUpdateWorkflowScheduleReqV2 {
   notify_type?: UpdateWorkflowScheduleReqV2NotifyTypeEnum;
 
   schedule_time?: string;
+}
+
+export interface IUploadInstanceAuditPlanSQLsReqV2 {
+  audit_plan_sql_list?: IAuditPlanSQLReqV2[];
 }
 
 export interface IWorkflowRecordResV2 {

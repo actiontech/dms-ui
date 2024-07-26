@@ -4,7 +4,6 @@ import { Form } from 'antd';
 import { SqlManagementConfFormFields } from './index.type';
 import { SelectScanTypeParamsType } from './context';
 import { useMemo } from 'react';
-import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export const useSqlManagementConfFormSharedStates = () => {
   const [form] = Form.useForm<SqlManagementConfFormFields>();
@@ -33,13 +32,11 @@ export const useSqlManagementConfFormSharedStates = () => {
       scanTypeMetas
         ?.filter((v) => scanTypes?.includes(v.audit_plan_type ?? ''))
         .map((v) => {
-          const params: SelectScanTypeParamsType[0] = new Map<
-            string,
-            IAuditPlanParamResV1[] | undefined
-          >();
-          params.set(v.audit_plan_type ?? '', v.audit_plan_params);
+          const param: SelectScanTypeParamsType[0] = {
+            [v.audit_plan_type ?? '']: v.audit_plan_params ?? []
+          };
 
-          return params;
+          return param;
         }) ?? []
     );
   }, [scanTypeMetas, scanTypes]);

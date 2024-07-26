@@ -7,7 +7,7 @@ import DataSourceSelection from './DataSourceSelection';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import ScanTypesSelection from './ScanTypesSelection';
 import { PlanFilled } from '@actiontech/icons';
-import ScanTypesParams from './ScanTypesParams';
+import ScanTypesDynamicParams from './ScanTypesDynamicParams';
 import { useContext, useEffect } from 'react';
 import { ConfFormContext } from './context';
 import { Form } from 'antd';
@@ -43,7 +43,7 @@ const ConfForm: React.FC = () => {
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
 
-      <ScanTypesParams />
+      <ScanTypesDynamicParams />
     </>
   );
 };

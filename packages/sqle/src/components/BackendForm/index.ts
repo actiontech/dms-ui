@@ -1,9 +1,11 @@
+import { IEnumsValue } from '@actiontech/shared/lib/api/sqle/service/common';
+
 export type FormItem = {
   desc?: string;
   key?: string;
   type?: string;
   value?: string;
-  enums_value?: string[];
+  enums_value?: IEnumsValue[];
 };
 
 export type BackendFormRequestParams = {

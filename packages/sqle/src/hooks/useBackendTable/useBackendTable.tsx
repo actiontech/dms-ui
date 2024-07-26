@@ -34,15 +34,23 @@ const useBackendTable = () => {
       customRender?: (
         text: string,
         record: DataSourceItem,
+        fieldName: string,
         type?: string
       ) => React.ReactNode;
     }
   ): ColumnType<DataSourceItem>[] => {
     return head.map((item) => {
-      const renderMethod =
-        ((text: string, record: DataSourceItem) =>
-          options?.customRender?.(text, record, item.type)) ??
-        tableCellRenderWithEllipsisAndTooltipAndCopyable;
+      const renderMethod = (text: string, record: DataSourceItem) => {
+        if (options?.customRender) {
+          return options?.customRender?.(
+            text,
+            record,
+            item.field_name ?? '',
+            item.type
+          );
+        }
+        return tableCellRenderWithEllipsisAndTooltipAndCopyable(text);
+      };
 
       const cls =
         typeof options?.columnClassName === 'function'

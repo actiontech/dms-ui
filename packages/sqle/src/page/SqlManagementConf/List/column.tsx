@@ -5,13 +5,8 @@ import {
   ActiontechTableProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
-import {
-  BasicButton,
-  BasicTag,
-  BasicToolTips,
-  DatabaseTypeLogo
-} from '@actiontech/shared';
-import { Space, Typography } from 'antd';
+import { DatabaseTypeLogo } from '@actiontech/shared';
+import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import {
   IAuditPlanTypeResBase,
@@ -19,8 +14,14 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { DashOutlined } from '@actiontech/icons';
+import {
+  CheckCircleOutlined,
+  CloseHexagonOutlined,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
 import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import ScanTypeTagsCell from './ScanTypeTagsCell';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
@@ -81,42 +82,15 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'audit_plan_types',
       title: () => t('managementConf.list.table.column.enabledScanTypes'),
-      render: (scanTypes: IAuditPlanTypeResBase[]) => {
-        if (scanTypes && scanTypes.length > 0) {
-          if (scanTypes.length <= 2)
-            return (
-              <Space>
-                {scanTypes.map((item) => (
-                  <BasicTag key={item.type}>{item.desc}</BasicTag>
-                ))}
-              </Space>
-            );
-
-          return (
-            <Space size={0}>
-              {scanTypes.slice(0, 2).map((item) => (
-                <BasicTag key={item.type}>{item.desc}</BasicTag>
-              ))}
-              <BasicToolTips
-                trigger={'click'}
-                title={
-                  <Space wrap>
-                    {scanTypes.map((item) => (
-                      <BasicTag key={item.type}>{item.desc}</BasicTag>
-                    ))}
-                  </Space>
-                }
-              >
-                <BasicButton
-                  size="small"
-                  className="table-row-scan-types-more-button"
-                  icon={<DashOutlined />}
-                />
-              </BasicToolTips>
-            </Space>
-          );
-        }
-        return '-';
+      render: (scanTypes: IAuditPlanTypeResBase[], record) => {
+        return (
+          <ScanTypeTagsCell
+            instanceAuditPlanId={
+              record.instance_audit_plan_id?.toString() ?? ''
+            }
+            scanTypes={scanTypes}
+          />
+        );
       }
     },
     {
@@ -124,12 +98,31 @@ export const SqlManagementConfColumns: (
       title: () => t('managementConf.list.table.column.dbTaskStatus'),
       render: (status: InstanceAuditPlanResV1ActiveStatusEnum) => {
         if (status === InstanceAuditPlanResV1ActiveStatusEnum.disabled) {
-          return t('managementConf.list.table.column.taskStatus.disabled');
+          return (
+            <TableColumnWithIconStyleWrapper>
+              <CloseHexagonOutlined />
+              <span>
+                {t('managementConf.list.table.column.taskStatus.disabled')}
+              </span>
+            </TableColumnWithIconStyleWrapper>
+          );
         }
         if (status === InstanceAuditPlanResV1ActiveStatusEnum.normal) {
-          return t('managementConf.list.table.column.taskStatus.normal');
+          return (
+            <TableColumnWithIconStyleWrapper>
+              <CheckCircleOutlined />
+              <span>
+                {t('managementConf.list.table.column.taskStatus.normal')}
+              </span>
+            </TableColumnWithIconStyleWrapper>
+          );
         }
-        return t('common.unknownStatus');
+        return (
+          <TableColumnWithIconStyleWrapper>
+            <InfoHexagonOutlined />
+            <span>{t('common.unknownStatus')}</span>
+          </TableColumnWithIconStyleWrapper>
+        );
       }
     },
     {
@@ -148,14 +141,16 @@ export const SqlManagementConfColumns: (
 
 export const SqlManagementConfColumnAction: (params: {
   editAction: (id: string) => void;
-  stopAction: (id: string) => void;
+  disabledAction: (id: string) => void;
+  enabledAction: (id: string) => void;
   deleteAction: (id: string) => void;
   isAdmin: boolean;
   isProjectManager: boolean;
   username: string;
 }) => ActiontechTableProps<IInstanceAuditPlanResV1>['actions'] = ({
   editAction,
-  stopAction,
+  disabledAction,
+  enabledAction,
   deleteAction,
   isAdmin,
   isProjectManager,
@@ -181,22 +176,31 @@ export const SqlManagementConfColumnAction: (params: {
     ],
     moreButtons: [
       {
-        key: 'inactive',
-        text: t('managementConf.list.table.action.inactive.text'),
+        key: 'disabled',
+        text: t('managementConf.list.table.action.disabled.text'),
         confirm: (record) => {
           return {
-            title: t('managementConf.list.table.action.inactive.confirmTips'),
+            title: t('managementConf.list.table.action.disabled.confirmTips'),
             onConfirm: () => {
-              stopAction(record?.instance_audit_plan_id?.toString() ?? '');
+              disabledAction(record?.instance_audit_plan_id?.toString() ?? '');
             }
           };
         },
         permissions: (record) =>
           hasPermission(record) &&
-          !!(
-            record?.active_status ===
+          record?.active_status ===
             InstanceAuditPlanResV1ActiveStatusEnum.normal
-          )
+      },
+      {
+        key: 'enabled',
+        text: t('managementConf.list.table.action.enabled.text'),
+        onClick: (record) => {
+          enabledAction(record?.instance_audit_plan_id?.toString() ?? '');
+        },
+        permissions: (record) =>
+          hasPermission(record) &&
+          record?.active_status !==
+            InstanceAuditPlanResV1ActiveStatusEnum.normal
       },
       {
         key: 'delete',

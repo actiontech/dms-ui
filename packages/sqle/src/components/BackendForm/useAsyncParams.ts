@@ -1,5 +1,6 @@
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BackendFormRequestParams, BackendFormValues, FormItem } from '.';
+import { useCallback } from 'react';
 
 const useAsyncParams = () => {
   //todo: 临时处理，后需待优化
@@ -44,23 +45,24 @@ const useAsyncParams = () => {
       return temp;
     });
   };
-  const generateFormValueByParams = <
-    T extends { key?: string; value?: string; type?: string }
-  >(
-    params: T[]
-  ): BackendFormValues => {
-    const value: BackendFormValues = {};
-    params.forEach((item) => {
-      if (item.key) {
-        if (item.type === AuditPlanParamResV1TypeEnum.bool) {
-          value[item.key] = item.value === 'true' ? true : false;
-        } else {
-          value[item.key] = item.value ?? '';
+  const generateFormValueByParams = useCallback(
+    <T extends { key?: string; value?: string; type?: string }>(
+      params: T[]
+    ): BackendFormValues => {
+      const value: BackendFormValues = {};
+      params.forEach((item) => {
+        if (item.key) {
+          if (item.type === AuditPlanParamResV1TypeEnum.bool) {
+            value[item.key] = item.value === 'true' ? true : false;
+          } else {
+            value[item.key] = item.value ?? '';
+          }
         }
-      }
-    });
-    return value;
-  };
+      });
+      return value;
+    },
+    []
+  );
 
   return {
     mergeFromValueIntoParams,

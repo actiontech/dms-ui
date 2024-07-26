@@ -130,76 +130,6 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanCreate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanCreate
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetail 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanDetail
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanDetailReport 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanDetailReport
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanList 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanList
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route plan render route auditPlanUpdate 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanUpdate
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route pluginAuditList 1`] = `
 <body>
   <div>
@@ -385,7 +315,63 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
       data-test-parent-id="sqlManagement"
     >
       <div>
-        SQLManagement
+        SqlManagement
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagementConf render route auditPlanDetail 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagementConf"
+    >
+      <div>
+        SqlManagementConfDetail
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagementConf render route create 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagementConf"
+    >
+      <div>
+        CreateSqlManagementConf
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagementConf render route list 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagementConf"
+    >
+      <div>
+        SqlManagementConfList
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagementConf render route update 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagementConf"
+    >
+      <div>
+        UpdateSqlManagementConf
       </div>
     </div>
   </div>
@@ -455,7 +441,7 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
       data-test-parent-id="sqlExecWorkflow"
     >
       <div>
-        workflowSQLFileStatementOverview
+        workflowSqlFileStatementOverview
       </div>
     </div>
   </div>
@@ -514,28 +500,14 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render SQLManagementAnalyze 1`] = `
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render SqlManagementAnalyze 1`] = `
 <body>
   <div>
     <div
       data-test-parent-id="sqlManagement"
     >
       <div>
-        SQLManagementAnalyze
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ee render route auditPlanDetail 1`] = `
-<body>
-  <div>
-    <div
-      data-test-parent-id="plane"
-    >
-      <div>
-        auditPlanDetailAnalyze
+        SqlManagementAnalyze
       </div>
     </div>
   </div>
@@ -879,9 +851,9 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
           },
           {
             "element": <div>
-              workflowSQLFileStatementOverview
+              workflowSqlFileStatementOverview
             </div>,
-            "key": "workflowSQLFileStatementOverview",
+            "key": "workflowSqlFileStatementOverview",
             "path": ":taskId/files/:fileId/sqls",
           },
         ],
@@ -926,64 +898,75 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "path": ":projectID/sql-audit",
       },
       {
-        "element": <div>
-          dashboard
+        "children": [
+          {
+            "element": <div>
+              SqlManagementConfList
+            </div>,
+            "key": "SqlManagementConfList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              CreateSqlManagementConf
+            </div>,
+            "key": "CreateSqlManagementConf",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              UpdateSqlManagementConf
+            </div>,
+            "key": "UpdateSqlManagementConf",
+            "path": "update/:id",
+          },
+          {
+            "element": <div>
+              SqlManagementConfDetail
+            </div>,
+            "key": "SqlManagementConfDetail",
+            "path": ":id",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <Outlet />
         </div>,
-        "key": "dashboard",
-        "path": ":projectID/dashboard",
+        "key": "sqlManagementConf",
+        "path": ":projectID/sql-management-conf",
       },
       {
         "children": [
           {
             "element": <div>
-              auditPlanList
+              SqlManagement
             </div>,
-            "key": "auditPlanList",
+            "key": "SqlManagement",
             "path": "",
           },
           {
             "element": <div>
-              auditPlanCreate
+              SqlManagementAnalyze
             </div>,
-            "key": "auditPlanCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              auditPlanUpdate
-            </div>,
-            "key": "auditPlanUpdate",
-            "path": "update/:auditPlanName",
-          },
-          {
-            "element": <div>
-              auditPlanDetail
-            </div>,
-            "key": "auditPlanDetail",
-            "path": "detail/:auditPlanName",
-          },
-          {
-            "element": <div>
-              auditPlanDetailReport
-            </div>,
-            "key": "auditPlanDetailReport",
-            "path": "detail/:auditPlanName/report/:reportId",
-          },
-          {
-            "element": <div>
-              auditPlanDetailAnalyze
-            </div>,
-            "key": "auditPlanDetailAnalyze",
-            "path": ":reportId/:sqlNum/:auditPlanName/analyze",
+            "key": "SqlManagementAnalyze",
+            "path": ":sqlManageId/analyze",
           },
         ],
         "element": <div
-          data-test-parent-id="plane"
+          data-test-parent-id="sqlManagement"
         >
           <Outlet />
         </div>,
-        "key": "plane",
-        "path": ":projectID/audit-plan",
+        "key": "sqlManagement",
+        "path": ":projectID/sql-management",
+      },
+      {
+        "element": <div>
+          dashboard
+        </div>,
+        "key": "dashboard",
+        "path": ":projectID/dashboard",
       },
       {
         "children": [
@@ -1076,31 +1059,6 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "operationRecord",
         "path": ":projectID/operation-record",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              SQLManagement
-            </div>,
-            "key": "SQLManagement",
-            "path": "",
-          },
-          {
-            "element": <div>
-              SQLManagementAnalyze
-            </div>,
-            "key": "SQLManagementAnalyze",
-            "path": ":sqlManageId/analyze",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="sqlManagement"
-        >
-          <Outlet />
-        </div>,
-        "key": "sqlManagement",
-        "path": ":projectID/sql-management",
       },
       {
         "children": [

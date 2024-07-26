@@ -3,14 +3,11 @@ import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import ConfDetailOverview from './Overview';
-import {
-  TableRefreshButton,
-  useTableRequestError
-} from '@actiontech/shared/lib/components/ActiontechTable';
+import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useRequest } from 'ahooks';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Result } from 'antd';
@@ -23,6 +20,8 @@ const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
 
   const { id } = useParams<{ id: string }>();
+  const [searchParams] = useSearchParams();
+
   const { projectName } = useCurrentProject();
 
   const [activeKey, setActiveKey] = useState(
@@ -31,11 +30,14 @@ const ConfDetail: React.FC = () => {
 
   const { data, error } = useRequest(() =>
     instance_audit_plan
-      .getInstanceAuditPlanV1({
+      .getInstanceAuditPlanDetailV1({
         project_name: projectName,
         instance_audit_plan_id: id ?? ''
       })
       .then((res) => {
+        if (searchParams.has('active')) {
+          setActiveKey(searchParams.get('active') as string);
+        }
         return res.data.data;
       })
   );

@@ -111,11 +111,6 @@ export type TableFilterContainerProps<
    * 用于禁用筛选组件的输入, 一般在表格 loading 时禁用
    */
   disabled?: boolean;
-
-  /**
-   * 当与 toolbar 位于同一行时，开启该 props 后可以自适应样式
-   */
-  inlineToolbar?: boolean;
 } & ComponentBaseType;
 
 export type FilterCustomProps<C = TypeFilterElement> = C extends 'select'

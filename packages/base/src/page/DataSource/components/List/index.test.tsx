@@ -5,13 +5,11 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-
 import dms from '../../../../testUtils/mockApi/global';
 import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-
 import DataSourceList from '.';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
 
@@ -314,6 +312,39 @@ describe('page/DataSource/DataSourceList', () => {
       );
     });
 
+    it('render table for enabled audit plan action', async () => {
+      const requestTableList = dms.getListDBServices();
+      requestTableList.mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          total_nums: 1,
+          data: DBServicesList
+        })
+      );
+
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      fireEvent.click(
+        getAllBySelector('.actiontech-table-actions-more-button')[0]
+      );
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getAllByText('为数据源开启扫描任务')[0]);
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenCalledWith(
+        `/sqle/project/${projectID}/sql-management-conf/update/${DBServicesList[0].instance_audit_plan_id}`
+      );
+
+      fireEvent.click(
+        getAllBySelector('.actiontech-table-actions-more-button')[1]
+      );
+      fireEvent.click(screen.getAllByText('为数据源开启扫描任务')[1]);
+      expect(navigateSpy).toHaveBeenCalledTimes(2);
+      expect(navigateSpy).toHaveBeenCalledWith(
+        `/sqle/project/${projectID}/sql-management-conf/create?instance_name=${DBServicesList[1].name}&business=${DBServicesList[1].business}`
+      );
+    });
+
     it('render table for del action', async () => {
       const requestDelDBService = dms.DelDBService();
       const requestTableList = dms.getListDBServices();
@@ -325,23 +356,23 @@ describe('page/DataSource/DataSourceList', () => {
       );
 
       const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(9300));
+      await act(async () => jest.advanceTimersByTime(3000));
 
       const actionBtn = getAllBySelector(
         '.actiontech-table-actions-button',
         baseElement
       );
       fireEvent.click(actionBtn[1]);
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(screen.getByText(`确认删除数据源 "${DBServicesList[0].name}"?`));
       fireEvent.click(screen.getByText('确 认'));
-      await act(async () => jest.advanceTimersByTime(3300));
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(requestDelDBService).toHaveBeenCalled();
       expect(requestDelDBService).toHaveBeenCalledWith({
         db_service_uid: DBServicesList[0].uid,
         project_uid: projectID
       });
-      await act(async () => jest.advanceTimersByTime(3300));
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(requestTableList).toHaveBeenCalled();
     });
 
@@ -360,14 +391,14 @@ describe('page/DataSource/DataSourceList', () => {
         })
       );
 
-      const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(9300));
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(screen.getByText('测试数据源连通性')).toBeInTheDocument();
       fireEvent.click(screen.getByText('测试数据源连通性'));
-      await act(async () => jest.advanceTimersByTime(300));
+      await act(async () => jest.advanceTimersByTime(0));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestTestConnect).toHaveBeenCalled();
@@ -390,7 +421,7 @@ describe('page/DataSource/DataSourceList', () => {
       );
 
       const { baseElement } = customRender();
-      await act(async () => jest.advanceTimersByTime(9300));
+      await act(async () => jest.advanceTimersByTime(3000));
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
       await act(async () => jest.advanceTimersByTime(300));

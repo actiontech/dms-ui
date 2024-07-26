@@ -36,14 +36,23 @@ const AuditTemplate = (props: IAuditTemplateProps) => {
         }
         {...formItemLayout.spaceBetween}
         name={[prefixPath, 'ruleTemplateName']}
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t(
+                'managementConf.create.scanTypeParams.auditTemplate.ruleTemplate.label'
+              )
+            })
+          }
+        ]}
       >
         <BasicSelect
           disabled={!!submitLoading}
           options={ruleTemplateOptions}
           allowClear
           loading={loading}
-        ></BasicSelect>
+        />
       </FormItemLabel>
     </>
   );

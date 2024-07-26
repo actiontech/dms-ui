@@ -67,7 +67,9 @@ export const DBServicesList: IListDBService[] = [
         audit_enabled: false
       }
     },
-    is_enable_masking: true
+    is_enable_masking: true,
+    instance_audit_plan_id: '1232',
+    audit_plan_types: [{ type: 'mysql_slow_log', desc: '慢日志' }]
   },
   {
     uid: '1739531942258282496',

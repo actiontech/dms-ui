@@ -47,7 +47,7 @@ export const sideMenuData = (
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLManagement'),
-      group: ['sql-management', 'audit-plane', 'sql-management-conf']
+      group: ['sql-management', 'sql-management-conf']
     },
     { type: 'divider' },
     {

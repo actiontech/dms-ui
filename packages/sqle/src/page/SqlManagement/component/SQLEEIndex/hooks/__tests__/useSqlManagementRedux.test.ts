@@ -1,9 +1,9 @@
-import useSqlManagementRedux from './useSqlManagementRedux';
+import useSqlManagementRedux from '../useSqlManagementRedux';
 import { act, cleanup } from '@testing-library/react';
-import { sqlManageListData } from '../../../../../testUtils/mockApi/sqlManage/data';
+import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useDispatch, useSelector } from 'react-redux';
-import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
+import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

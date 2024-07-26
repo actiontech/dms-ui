@@ -15,12 +15,16 @@ const useInstance = () => {
   const { getLogoUrlByDbType } = useDatabaseType();
 
   const updateInstanceList = useCallback(
-    (params: IGetInstanceTipListV1Params) => {
+    (
+      params: IGetInstanceTipListV1Params,
+      options?: { onSuccess?: (data: IInstanceTipResV1[]) => void }
+    ) => {
       setTrue();
       instance
         .getInstanceTipListV1(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
+            options?.onSuccess?.(res.data.data ?? []);
             setInstanceList(res.data?.data ?? []);
           } else {
             setInstanceList([]);

@@ -111,11 +111,23 @@ const DataSourceList = () => {
     (dbServiceUid: string) => {
       navigate(`/project/${projectID}/db-services/update/${dbServiceUid}`);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [projectID]
+    [navigate, projectID]
   );
 
-  // const navigate
+  const navigateToSqlManagementConf = useCallback(
+    (name: string, business: string, instanceAuditPlanId?: string) => {
+      if (instanceAuditPlanId) {
+        navigate(
+          `/sqle/project/${projectID}/sql-management-conf/update/${instanceAuditPlanId}`
+        );
+      } else {
+        navigate(
+          `/sqle/project/${projectID}/sql-management-conf/create?instance_name=${name}&business=${business}`
+        );
+      }
+    },
+    [navigate, projectID]
+  );
 
   const deleteDatabase = useCallback(
     (dbServiceUid: string, dvServiceName: string) => {
@@ -233,6 +245,7 @@ const DataSourceList = () => {
       navigateToUpdatePage,
       deleteDatabase,
       testDatabaseConnection,
+      navigateToSqlManagementConf,
       projectArchive,
       actionPermission
     );
@@ -240,6 +253,7 @@ const DataSourceList = () => {
     navigateToUpdatePage,
     deleteDatabase,
     testDatabaseConnection,
+    navigateToSqlManagementConf,
     projectArchive,
     actionPermission
   ]);

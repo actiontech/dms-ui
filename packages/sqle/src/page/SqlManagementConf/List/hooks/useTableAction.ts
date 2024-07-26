@@ -1,3 +1,4 @@
+import { UpdateInstanceAuditPlanStatusReqV1ActiveEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { MessageInstance } from 'antd/es/message/interface';
@@ -23,17 +24,35 @@ const useTableAction = ({
     navigate(`/sqle/project/${projectID}/sql-management-conf/update/${id}`);
   };
 
-  const stopAction = (id: string) => {
+  const disabledAction = (id: string) => {
     instance_audit_plan
-      .stopInstanceAuditPlanV1({
+      .updateInstanceAuditPlanStatusV1({
         project_name: projectName,
-        instance_audit_plan_id: id
+        instance_audit_plan_id: id,
+        active: UpdateInstanceAuditPlanStatusReqV1ActiveEnum.disabled
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           refresh();
           messageApi.success(
-            t('managementConf.list.table.action.inactive.successTips')
+            t('managementConf.list.table.action.disabled.successTips')
+          );
+        }
+      });
+  };
+
+  const enabledAction = (id: string) => {
+    instance_audit_plan
+      .updateInstanceAuditPlanStatusV1({
+        project_name: projectName,
+        instance_audit_plan_id: id,
+        active: UpdateInstanceAuditPlanStatusReqV1ActiveEnum.normal
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          refresh();
+          messageApi.success(
+            t('managementConf.list.table.action.enabled.successTips')
           );
         }
       });
@@ -57,7 +76,8 @@ const useTableAction = ({
 
   return {
     editAction,
-    stopAction,
+    disabledAction,
+    enabledAction,
     deleteAction
   };
 };

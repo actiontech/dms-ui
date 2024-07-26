@@ -79,7 +79,7 @@ export default {
   },
 
   enabledAuditPlan: {
-    text: '为数据源开启智能扫描'
+    text: '为数据源开启扫描任务'
   },
 
   batchImportDataSource: {

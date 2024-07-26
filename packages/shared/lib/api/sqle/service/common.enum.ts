@@ -222,12 +222,6 @@ export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
   'feishu' = 'feishu'
 }
 
-export enum SourceTypeEnum {
-  'audit_plan' = 'audit_plan',
-
-  'sql_audit_record' = 'sql_audit_record'
-}
-
 export enum SqlManageStatusEnum {
   'unhandled' = 'unhandled',
 

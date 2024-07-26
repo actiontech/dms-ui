@@ -1,5 +1,5 @@
-import { renderHooksWithRedux } from '../../../../../testUtils/customRender';
-import useStaticStatus from './useStaticStatus';
+import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import useStaticStatus from '../useStaticStatus';
 import {
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterSourceEnum
@@ -8,11 +8,6 @@ import {
 describe('SqlManagement/useStaticStatus', () => {
   it('render select options', async () => {
     const { result } = renderHooksWithRedux(() => useStaticStatus());
-    expect(result.current.generateSourceSelectOptions.length).toBe(2);
-    expect(result.current.generateSourceSelectOptions[0].value).toBe(
-      GetSqlManageListV2FilterSourceEnum.sql_audit_record
-    );
-    expect(result.current.generateSourceSelectOptions[0].label).toBe('SQL审核');
     expect(result.current.generateAuditLevelSelectOptions.length).toBe(4);
     expect(result.current.generateAuditLevelSelectOptions[0].value).toBe(
       GetSqlManageListV2FilterAuditLevelEnum.normal

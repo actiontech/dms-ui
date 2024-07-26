@@ -6,7 +6,8 @@ import { SqlManagementConfCreationResultProps } from './index.type';
 
 const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
   cloneForm,
-  resetForm
+  resetForm,
+  id
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -24,7 +25,7 @@ const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
           </BasicButton>,
           <Link
             key="jump-to-detail"
-            to={`/sqle/project/${projectID}/sql-management-conf`}
+            to={`/sqle/project/${projectID}/sql-management-conf/${id}`}
           >
             <BasicButton type="primary">
               {t('managementConf.create.result.jumpToDetail')}

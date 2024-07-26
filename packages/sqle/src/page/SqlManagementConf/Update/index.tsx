@@ -13,10 +13,14 @@ import {
 } from '@actiontech/shared/lib/components/FormCom/style';
 import ConfForm from '../Common/ConfForm';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { ScanTypeParams } from '../Common/ConfForm/index.type';
+import {
+  ScanTypeParams,
+  SqlManagementConfFormFields
+} from '../Common/ConfForm/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
+import { useMemo } from 'react';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();
@@ -49,13 +53,12 @@ const Update: React.FC = () => {
         project_name: projectName,
         instance_audit_plan_id: id ?? '',
         audit_plans: values.scanTypes.map((item) => {
-          const { ruleTemplateName, instanceSchema, ...paramValues } = values[
+          const { ruleTemplateName, ...paramValues } = values[
             item
           ] as ScanTypeParams;
           return {
             audit_plan_type: item,
             rule_template_name: ruleTemplateName,
-            schema_name: instanceSchema,
             audit_plan_params: mergeFromValueIntoParams(
               paramValues,
               scanTypeMetas?.find((v) => v.audit_plan_type === item)
@@ -77,7 +80,7 @@ const Update: React.FC = () => {
 
   const { data: auditPlanDetail, loading: getDetailLoading } = useRequest(() =>
     instance_audit_plan
-      .getInstanceAuditPlanV1({
+      .getInstanceAuditPlanDetailV1({
         project_name: projectName,
         instance_audit_plan_id: id ?? ''
       })
@@ -86,32 +89,42 @@ const Update: React.FC = () => {
       })
   );
 
+  const defaultValue = useMemo<SqlManagementConfFormFields>(() => {
+    return {
+      needConnectDataSource: !auditPlanDetail?.static_audit,
+      businessScope: auditPlanDetail?.business ?? '',
+      instanceName: auditPlanDetail?.instance_name ?? '',
+      instanceType: auditPlanDetail?.instance_type ?? '',
+      scanTypes:
+        auditPlanDetail?.audit_plans?.map(
+          (v) => v.audit_plan_type?.type ?? ''
+        ) ?? [],
+      ...(auditPlanDetail?.audit_plans ?? []).reduce<{
+        [key: string]: string | boolean | string[] | ScanTypeParams;
+      }>((acc, cur) => {
+        const params: ScanTypeParams = {
+          ruleTemplateName: cur.rule_template_name ?? '',
+          ...generateFormValueByParams(cur.audit_plan_params ?? [])
+        };
+        return { ...acc, [cur.audit_plan_type?.type!]: params };
+      }, {})
+    };
+  }, [
+    auditPlanDetail?.audit_plans,
+    auditPlanDetail?.business,
+    auditPlanDetail?.instance_name,
+    auditPlanDetail?.instance_type,
+    auditPlanDetail?.static_audit,
+    generateFormValueByParams
+  ]);
+
   return (
     <ConfFormContextProvide
       value={{
         getScanTypeMetaPending,
         submitLoading,
         selectedScanTypeParams,
-        defaultValue: {
-          needConnectDataSource: !auditPlanDetail?.static_audit,
-          businessScope: auditPlanDetail?.business ?? '',
-          instanceName: auditPlanDetail?.instance_name ?? '',
-          instanceType: auditPlanDetail?.instance_type ?? '',
-          scanTypes:
-            auditPlanDetail?.audit_plans?.map(
-              (v) => v.audit_plan_type?.type ?? ''
-            ) ?? [],
-          ...(auditPlanDetail?.audit_plans ?? []).reduce<{
-            [key: string]: string | boolean | string[] | ScanTypeParams;
-          }>((acc, cur) => {
-            const params: ScanTypeParams = {
-              ruleTemplateName: cur.rule_template_name ?? '',
-              instanceSchema: cur.schema_name ?? '',
-              ...generateFormValueByParams(cur.audit_plan_params ?? [])
-            };
-            return { ...acc, [cur.audit_plan_type?.type!]: params };
-          }, {})
-        },
+        defaultValue,
         scanTypeMetas: scanTypeMetas ?? null
       }}
     >

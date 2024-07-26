@@ -25,7 +25,9 @@ export const dbServices: IListDBService[] = [
           SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum.notice,
         audit_enabled: true
       }
-    }
+    },
+    instance_audit_plan_id: '1232',
+    audit_plan_types: [{ type: 'mysql_slow_log', desc: '慢日志' }]
   },
   {
     business: 'business',

@@ -30,10 +30,10 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
 }) => {
   const { t } = useTranslation();
   const { username } = useCurrentUser();
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const columns = ConfDetailOverviewColumns();
+  const columns = ConfDetailOverviewColumns(projectID);
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
@@ -46,7 +46,12 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const { disabledAction, disabledActionPending } = useTableAction();
+  const {
+    disabledAction,
+    disabledActionPending,
+    enabledAction,
+    enabledActionPending
+  } = useTableAction();
 
   const { data, loading, refresh } = useRequest(
     () =>
@@ -90,11 +95,18 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
           };
         }}
         actions={ConfDetailOverviewColumnActions(
-          () => {
-            console.log('enabledAction');
+          (type) => {
+            enabledAction(instanceAuditPlanId, type).then((res) => {
+              if (res.data.code === ResponseCode.SUCCESS) {
+                messageApi.success(
+                  t('managementConf.detail.overview.actions.enabledSuccessTips')
+                );
+                refresh();
+              }
+            });
           },
-          (id, type) => {
-            return disabledAction(id, type).then((res) => {
+          (type) => {
+            disabledAction(instanceAuditPlanId, type).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
                   t(
@@ -105,7 +117,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
-          disabledActionPending
+          disabledActionPending,
+          enabledActionPending
         )}
       />
     </Spin>
