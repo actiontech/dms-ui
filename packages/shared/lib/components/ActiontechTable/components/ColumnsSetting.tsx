@@ -27,6 +27,7 @@ import {
 import ColumnsItems, { typeFixed } from './ColumnsItems';
 import { DownOutlined, UpOutlined, SettingOutlined } from '@actiontech/icons';
 import { ColumnsSettingStyleWrapper } from './style';
+import LocalStorageWrapper from '../../../utils/LocalStorageWrapper';
 
 /**
  * todo:
@@ -41,10 +42,11 @@ const ColumnsSetting = <
   props: ColumnsSettingProps
 ) => {
   const { tableName, username } = props;
+
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const { localColumns } = useTableSettings<T, F, OtherColumnKeys>(
-    tableName,
+    LocalStorageWrapper.getKeyStartWith(tableName) ?? tableName,
     username
   );
 
@@ -59,7 +61,7 @@ const ColumnsSetting = <
     eventEmitter.emit<[CatchTableColumnValueType<T>, string, string]>(
       EmitterKey.UPDATE_LOCAL_COLUMNS,
       columnsInfo,
-      tableName,
+      LocalStorageWrapper.getKeyStartWith(tableName) ?? tableName,
       username
     );
   };
@@ -223,7 +225,7 @@ const ColumnsSetting = <
         getFixedData(cloneLocalData).fixedColumnsKeys,
         cloneLocalData
       ),
-      tableName,
+      LocalStorageWrapper.getKeyStartWith(tableName) ?? tableName,
       username
     );
   };
@@ -252,7 +254,7 @@ const ColumnsSetting = <
       eventEmitter.emit<[CatchTableColumnValueType<T>, string, string]>(
         EmitterKey.UPDATE_LOCAL_COLUMNS,
         updateColumnSorter(updateColumnKeysData, cloneLocalData),
-        tableName,
+        LocalStorageWrapper.getKeyStartWith(tableName) ?? tableName,
         username
       );
     }

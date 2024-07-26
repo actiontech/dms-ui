@@ -6,8 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { ActiontechTableStyleWrapper, tableToken } from './style';
 import useTableAction from './hooks/useTableAction';
 import classnames from 'classnames';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import useTableSettings from './hooks/useTableSettings';
+import { getStringHashCode } from '../../utils/Common';
 
 const ActiontechTable = <
   T extends Record<string, any>,
@@ -27,12 +28,14 @@ const ActiontechTable = <
   const setting = props.setting ?? (toolbar && toolbar.setting);
   const { tableName = '', username = '' } = setting || {};
 
+  const [hashedTableName, setHashedTableName] = useState<string>(tableName);
+
   const { renderActionInTable } = useTableAction();
   const { catchDefaultColumnsInfo, localColumns } = useTableSettings<
     T,
     F,
     OtherColumnKeys
-  >(tableName, username);
+  >(hashedTableName, username);
 
   const mergerColumns = useMemo(() => {
     const operatorColumn = renderActionInTable<T>(props.actions);
@@ -56,7 +59,21 @@ const ActiontechTable = <
 
   useEffect(() => {
     if (tableName && username) {
-      catchDefaultColumnsInfo(mergerColumns);
+      const hashName = `${tableName}_${getStringHashCode(
+        JSON.stringify(
+          mergerColumns.map((column) => {
+            return {
+              dataIndex: column.dataIndex,
+              title:
+                typeof column.title === 'function'
+                  ? column.title({})
+                  : column.title
+            };
+          })
+        )
+      )}`;
+      setHashedTableName(hashName);
+      catchDefaultColumnsInfo(mergerColumns, tableName, hashName);
     }
   }, [catchDefaultColumnsInfo, mergerColumns, tableName, username]);
   return (

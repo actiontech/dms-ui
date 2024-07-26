@@ -20,7 +20,10 @@ const useTableSettings = <
   const [localColumns, setLocalColumns] = useState<
     CatchTableColumnsType<T>[string]
   >(() => {
-    const data = LocalStorageWrapper.getOrDefault(tableName, '{}');
+    const data = LocalStorageWrapper.getOrDefault(
+      LocalStorageWrapper.getKeyStartWith(tableName) ?? tableName,
+      '{}'
+    );
     try {
       return JSON.parse(data)[username];
     } catch (error) {
@@ -28,16 +31,29 @@ const useTableSettings = <
     }
   });
 
-  const catchDefaultColumnsInfo = useCallback(
-    (defaultColumns: ActiontechTableColumn<T, F, OtherColumnKeys>) => {
-      if (tableName && username) {
-        try {
-          const localStr = LocalStorageWrapper.get(tableName);
-          const localData = localStr ? JSON.parse(localStr) : undefined;
+  useEffect(() => {
+    const localStr = LocalStorageWrapper.get(tableName);
+    const localData = localStr ? JSON.parse(localStr) : undefined;
+    if (localData?.[username]) {
+      setLocalColumns(localData?.[username]);
+    }
+  }, [tableName, username]);
 
+  const catchDefaultColumnsInfo = useCallback(
+    (
+      defaultColumns: ActiontechTableColumn<T, F, OtherColumnKeys>,
+      tableNamePrefix: string,
+      _tableName: string
+    ) => {
+      if (username) {
+        try {
+          const localStr = LocalStorageWrapper.get(_tableName);
+          const localData = localStr ? JSON.parse(localStr) : undefined;
           if (localData?.[username]) {
+            setLocalColumns(localData?.[username]);
             return;
           }
+          LocalStorageWrapper.removeStartWith(tableNamePrefix);
           const columnsInfo: CatchTableColumnValueType<T, OtherColumnKeys> =
             defaultColumns.reduce<
               CatchTableColumnValueType<T, OtherColumnKeys>
@@ -57,11 +73,11 @@ const useTableSettings = <
             ? { ...localData, [username]: columnsInfo }
             : { [username]: columnsInfo };
 
-          LocalStorageWrapper.set(tableName, JSON.stringify(data));
+          LocalStorageWrapper.set(_tableName, JSON.stringify(data));
           eventEmitter.emit(
             EmitterKey.UPDATE_LOCAL_COLUMNS,
             data[username],
-            tableName,
+            _tableName,
             username
           );
         } catch (error) {
@@ -70,7 +86,7 @@ const useTableSettings = <
         }
       }
     },
-    [tableName, username]
+    [username]
   );
 
   const updateCatchColumnsInfo = useCallback(
