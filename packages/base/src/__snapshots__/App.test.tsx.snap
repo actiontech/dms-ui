@@ -502,9 +502,9 @@ exports[`App render App when token is existed 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management-conf"
                 role="menuitem"
-                structkey="audit-plane"
+                structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
               >
@@ -515,22 +515,27 @@ exports[`App render App when token is existed 1`] = `
                   width="18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
-                    fill="#C3C6CD"
-                  />
-                  <path
-                    d="M1.5 8.25h15v1.5h-15z"
-                    fill="#8A8F99"
-                  />
+                  <g
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                  >
+                    <path
+                      d="M15.75 5.25 12 1.5H2.995a.745.745 0 0 0-.745.744v13.512a.75.75 0 0 0 .745.744h6.607a4.5 4.5 0 0 1 6.148-6.148zm-5.159-.402L13.243 7.5l-2.652 2.652-1.06-1.061L11.12 7.5l-1.59-1.591zm-3.182 5.304L4.757 7.5 7.41 4.848l1.06 1.061L6.88 7.5l1.59 1.591z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M13.5 17.25a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-2.25-3 1.875 1.875L15.75 13.5l-.75-.75-1.875 1.875L12 13.5z"
+                      fill="#8A8F99"
+                    />
+                  </g>
                 </svg>
                 <span
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/sqle/project//audit-plan"
+                    href="/sqle/project//sql-management-conf"
                   >
-                    智能扫描
+                    SQL管控配置
                   </a>
                 </span>
               </li>
@@ -838,24 +843,39 @@ exports[`App render App when token is existed 1`] = `
                   <a
                     href="/sqle/project//progress"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                           查看SQL管控配置
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="padding-bottom: 8px;"
+                    审批流程模板
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/member"
+                role="menuitem"
+                structkey="member"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//member"
                   >
                     成员与权限
                   </a>
@@ -1432,7 +1452,7 @@ exports[`App render App when token is existed 1`] = `
                         <div
                           class="ant-space-item"
                         >
-                           查看智能扫描
+                           查看SQL管控配置
                         </div>
                       </div>
                     </button>
@@ -2659,9 +2679,9 @@ exports[`App render App when user role is not admin 1`] = `
               </li>
               <li
                 class="ant-menu-item"
-                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/audit-plan"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management-conf"
                 role="menuitem"
-                structkey="audit-plane"
+                structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
               >
@@ -2672,22 +2692,27 @@ exports[`App render App when user role is not admin 1`] = `
                   width="18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
-                    fill="#C3C6CD"
-                  />
-                  <path
-                    d="M1.5 8.25h15v1.5h-15z"
-                    fill="#8A8F99"
-                  />
+                  <g
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                  >
+                    <path
+                      d="M15.75 5.25 12 1.5H2.995a.745.745 0 0 0-.745.744v13.512a.75.75 0 0 0 .745.744h6.607a4.5 4.5 0 0 1 6.148-6.148zm-5.159-.402L13.243 7.5l-2.652 2.652-1.06-1.061L11.12 7.5l-1.59-1.591zm-3.182 5.304L4.757 7.5 7.41 4.848l1.06 1.061L6.88 7.5l1.59 1.591z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M13.5 17.25a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-2.25-3 1.875 1.875L15.75 13.5l-.75-.75-1.875 1.875L12 13.5z"
+                      fill="#8A8F99"
+                    />
+                  </g>
                 </svg>
                 <span
                   class="ant-menu-title-content"
                 >
                   <a
-                    href="/sqle/project//audit-plan"
+                    href="/sqle/project//sql-management-conf"
                   >
-                    智能扫描
+                    SQL管控配置
                   </a>
                 </span>
               </li>
