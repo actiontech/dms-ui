@@ -867,6 +867,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           >
                             <div
                               class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                              id="0_currentUploadType"
                               style="margin-left: -6px; margin-right: -6px;"
                             >
                               <div
@@ -3204,6 +3205,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           >
                             <div
                               class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                              id="0_currentUploadType"
                               style="margin-left: -6px; margin-right: -6px;"
                             >
                               <div
@@ -5551,6 +5553,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                                  id="0_currentUploadType"
                                   style="margin-left: -6px; margin-right: -6px;"
                                 >
                                   <div
@@ -6750,6 +6753,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                           >
                             <div
                               class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                              id="0_currentUploadType"
                               style="margin-left: -6px; margin-right: -6px;"
                             >
                               <div
@@ -9592,6 +9596,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                                  id="0_currentUploadType"
                                   style="margin-left: -6px; margin-right: -6px;"
                                 >
                                   <div
@@ -10057,6 +10062,8 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               >
                                 <div
                                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                                  data-testid="exec-mode-selector"
+                                  id="0_exec_mode"
                                   style="margin-left: -5px; margin-right: -5px;"
                                 >
                                   <div
@@ -11049,6 +11056,7 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -12289,6 +12297,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -13832,6 +13841,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -15379,6 +15389,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -17369,6 +17380,7 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -18572,6 +18584,7 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
@@ -19037,6 +19050,8 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                         >
                           <div
                             class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            data-testid="exec-mode-selector"
+                            id="0_exec_mode"
                             style="margin-left: -5px; margin-right: -5px;"
                           >
                             <div

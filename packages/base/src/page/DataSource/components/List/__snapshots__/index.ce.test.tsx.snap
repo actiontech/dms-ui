@@ -233,6 +233,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -270,6 +271,12 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                         scope="col"
                       >
                         数据源类型
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        启用的扫描类型
                       </th>
                       <th
                         class="ant-table-cell"
@@ -387,13 +394,22 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="9"
+                        colspan="10"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"

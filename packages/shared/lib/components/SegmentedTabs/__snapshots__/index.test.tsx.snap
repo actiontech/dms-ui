@@ -104,6 +104,11 @@ exports[`lib/BasicSegmentedPage should match snapshot with no controlled 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+      >
+        test1-children
+      </div>
     </div>
   </div>
 </body>
