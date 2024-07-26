@@ -596,21 +596,6 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
 
 exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
 {
-  "auditPlan": {
-    "detail": {
-      "tag": {
-        "default": {
-          "background": "#fff",
-        },
-        "icon": {
-          "color": "#7453da1a",
-        },
-        "primary": {
-          "background": "#6094fc1a",
-        },
-      },
-    },
-  },
   "execWorkflow": {
     "common": {
       "auditResultFilter": {
