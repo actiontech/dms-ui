@@ -10,7 +10,9 @@ const CustomLabelContent: React.FC<CustomLabelContentProps> = (props) => {
   return (
     <div className="label-cont-custom">
       <div>{title}</div>
-      <div className="tip-content-box">{tips}</div>
+      <div hidden={!tips} className="tip-content-box">
+        {tips}
+      </div>
     </div>
   );
 };

@@ -368,7 +368,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                     <div
                       class="ant-space-item"
                     >
-                       查看智能扫描
+                       查看SQL管控配置
                     </div>
                   </div>
                 </button>

@@ -1047,6 +1047,8 @@ export interface IListDBService {
 
   host?: string;
 
+  instance_audit_plan_id?: string;
+
   is_enable_masking?: boolean;
 
   maintenance_times?: IMaintenanceTime[];

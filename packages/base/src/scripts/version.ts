@@ -1,1 +1,1 @@
-export const UI_VERSION = 'feature/sql-manage-config   c1947444';
+export const UI_VERSION = 'feature/add-make-command   ba9c9c5';

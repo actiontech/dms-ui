@@ -1,13 +1,15 @@
 import {
   IGetInstanceAuditPlansResV1,
   ICreateInstanceAuditPlanReqV1,
-  IBaseRes,
+  ICreatInstanceAuditPlanResV1,
   IGetInstanceAuditPlanDetailResV1,
   IUpdateInstanceAuditPlanReqV1,
+  IBaseRes,
   IUpdateInstanceAuditPlanStatusReqV1,
   IGetInstanceAuditPlanOverviewResV1,
   IUpdateAuditPlanStatusReqV1,
-  IGetAuditPlanSQLsResV1
+  IGetAuditPlanSQLsResV1,
+  IUploadInstanceAuditPlanSQLsReqV2
 } from '../common.d';
 
 export interface IGetInstanceAuditPlansV1Params {
@@ -38,15 +40,16 @@ export interface ICreateInstanceAuditPlanV1Params
   project_name: string;
 }
 
-export interface ICreateInstanceAuditPlanV1Return extends IBaseRes {}
+export interface ICreateInstanceAuditPlanV1Return
+  extends ICreatInstanceAuditPlanResV1 {}
 
-export interface IGetInstanceAuditPlanV1Params {
+export interface IGetInstanceAuditPlanDetailV1Params {
   project_name: string;
 
   instance_audit_plan_id: string;
 }
 
-export interface IGetInstanceAuditPlanV1Return
+export interface IGetInstanceAuditPlanDetailV1Return
   extends IGetInstanceAuditPlanDetailResV1 {}
 
 export interface IUpdateInstanceAuditPlanV1Params
@@ -66,14 +69,14 @@ export interface IDeleteInstanceAuditPlanV1Params {
 
 export interface IDeleteInstanceAuditPlanV1Return extends IBaseRes {}
 
-export interface IStopInstanceAuditPlanV1Params
+export interface IUpdateInstanceAuditPlanStatusV1Params
   extends IUpdateInstanceAuditPlanStatusReqV1 {
   project_name: string;
 
   instance_audit_plan_id: string;
 }
 
-export interface IStopInstanceAuditPlanV1Return extends IBaseRes {}
+export interface IUpdateInstanceAuditPlanStatusV1Return extends IBaseRes {}
 
 export interface IGetInstanceAuditPlanOverviewV1Params {
   project_name: string;
@@ -84,7 +87,8 @@ export interface IGetInstanceAuditPlanOverviewV1Params {
 export interface IGetInstanceAuditPlanOverviewV1Return
   extends IGetInstanceAuditPlanOverviewResV1 {}
 
-export interface IStopAuditPlanV1Params extends IUpdateAuditPlanStatusReqV1 {
+export interface IUpdateAuditPlanStatusV1Params
+  extends IUpdateAuditPlanStatusReqV1 {
   project_name: string;
 
   instance_audit_plan_id: string;
@@ -92,9 +96,9 @@ export interface IStopAuditPlanV1Params extends IUpdateAuditPlanStatusReqV1 {
   audit_plan_type: string;
 }
 
-export interface IStopAuditPlanV1Return extends IBaseRes {}
+export interface IUpdateAuditPlanStatusV1Return extends IBaseRes {}
 
-export interface IDeleteInstanceAuditPlanByTypeV1Params {
+export interface IDeleteAuditPlanByTypeV1Params {
   project_name: string;
 
   instance_audit_plan_id: string;
@@ -102,7 +106,7 @@ export interface IDeleteInstanceAuditPlanByTypeV1Params {
   audit_plan_type: string;
 }
 
-export interface IDeleteInstanceAuditPlanByTypeV1Return extends IBaseRes {}
+export interface IDeleteAuditPlanByTypeV1Return extends IBaseRes {}
 
 export interface IGetInstanceAuditPlanSQLsV1Params {
   project_name: string;
@@ -118,3 +122,14 @@ export interface IGetInstanceAuditPlanSQLsV1Params {
 
 export interface IGetInstanceAuditPlanSQLsV1Return
   extends IGetAuditPlanSQLsResV1 {}
+
+export interface IUploadInstanceAuditPlanSQLsV2Params
+  extends IUploadInstanceAuditPlanSQLsReqV2 {
+  project_name: string;
+
+  instance_audit_plan_id: number;
+
+  audit_plan_type: string;
+}
+
+export interface IUploadInstanceAuditPlanSQLsV2Return extends IBaseRes {}

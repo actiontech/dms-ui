@@ -6,7 +6,7 @@ export default {
   list: {
     pageTitle: 'SQL管控配置',
     pageAction: {
-      enableAuditPlan: '为数据源开启智能扫描',
+      enableAuditPlan: '为数据源开启扫描任务',
       planType: '任务类型'
     },
     table: {
@@ -37,10 +37,14 @@ export default {
         creator: '创建人'
       },
       action: {
-        inactive: {
+        disabled: {
           text: '停用',
           confirmTips: '禁用后所有数据将不再更新，是否确认停用？',
           successTips: '停用成功'
+        },
+        enabled: {
+          text: '启用',
+          successTips: '启用成功'
         },
         delete: {
           confirmTips: '删除后所有数据将不再保留，是否确认删除？',
@@ -55,10 +59,12 @@ export default {
     dataSourceNeedsAudit: '是否需要连接数据源审核',
     businessScope: '所属业务',
     instanceName: '数据源名称',
+    instanceNameTips: '请选择所属业务来获取对应的数据源',
     schema: '数据库',
     schemaTips: '如果选择了数据库，只会采集该数据库对应的SQL',
     scanTypesSelection: '选择扫描类型',
     scanType: '扫描类型',
+    scanTypeRequiredMessage: '请选择一项扫描任务',
     scanTypeTips: '选择您需要扫描的SQL对象',
     emptyScanTypeTips: '选择数据源类型后获取对应的扫描任务类型',
 
@@ -97,6 +103,7 @@ export default {
       column: {
         auditPlanType: '智能扫描类型',
         auditRuleTemplate: '审核规则模板',
+        status: '任务状态',
         scanType: '采集方式',
         connectionInfo: '连接信息',
         collectedSqlCount: '采集到的SQL数',
@@ -105,6 +112,7 @@ export default {
       },
       actions: {
         enabled: '启用',
+        enabledSuccessTips: '启用成功！',
         disabled: '停用',
         disabledSuccessTips: '停用成功！',
         disabledConfirmTips:

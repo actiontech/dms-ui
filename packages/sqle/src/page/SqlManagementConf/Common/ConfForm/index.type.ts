@@ -1,6 +1,5 @@
 export type ScanTypeParams = {
   ruleTemplateName: string;
-  instanceSchema: string;
   [key: string]: string | boolean;
 };
 

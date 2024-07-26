@@ -187,7 +187,7 @@ describe('base/router-sqle-ee', () => {
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
           expect(
-            screen.getByText('workflowSQLFileStatementOverview')
+            screen.getByText('workflowSqlFileStatementOverview')
           ).toBeInTheDocument();
         });
       });
@@ -288,49 +288,47 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('dashboard')).toBeInTheDocument();
       });
 
-      describe('render route plan', () => {
-        it('render route auditPlanList', async () => {
+      describe('render route sqlManagementConf', () => {
+        it('render route list', async () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan`
+            `/sqle/project/${projectID}/sql-management-conf`
           ]);
 
           await act(async () => jest.advanceTimersByTime(300));
           expect(baseElement).toMatchSnapshot();
         });
 
-        it('render route auditPlanCreate', () => {
+        it('render route create', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/create`
+            `/sqle/project/${projectID}/sql-management-conf/create`
           ]);
 
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanCreate')).toBeInTheDocument();
+          expect(
+            screen.getByText('CreateSqlManagementConf')
+          ).toBeInTheDocument();
         });
 
-        it('render route auditPlanUpdate', () => {
+        it('render route update', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/update/auditPlanName`
+            `/sqle/project/${projectID}/sql-management-conf/update/1`
           ]);
 
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanUpdate')).toBeInTheDocument();
+          expect(
+            screen.getByText('UpdateSqlManagementConf')
+          ).toBeInTheDocument();
         });
 
         it('render route auditPlanDetail', () => {
           const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/detail/auditPlanName`
+            `/sqle/project/${projectID}/sql-management-conf/1`
           ]);
 
           expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanDetail')).toBeInTheDocument();
-        });
-        it('render route auditPlanDetailReport', () => {
-          const { baseElement } = customRender([
-            `/sqle/project/${projectID}/audit-plan/detail/auditPlanName/report/reportId`
-          ]);
-
-          expect(baseElement).toMatchSnapshot();
-          expect(screen.getByText('auditPlanDetailReport')).toBeInTheDocument();
+          expect(
+            screen.getByText('SqlManagementConfDetail')
+          ).toBeInTheDocument();
         });
       });
 
@@ -451,23 +449,14 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('workflowAnalyze')).toBeInTheDocument();
       });
 
-      it('render route auditPlanDetail', () => {
-        const { baseElement } = customRender([
-          `/sqle/project/${projectID}/audit-plan/reportId/sqlNum/:auditPlanName/analyze`
-        ]);
-
-        expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('auditPlanDetailAnalyze')).toBeInTheDocument();
-      });
-
-      it('render SQLManagementAnalyze', async () => {
+      it('render SqlManagementAnalyze', async () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/sql-management/sqlManageId/analyze`
         ]);
 
         await act(async () => jest.advanceTimersByTime(300));
         expect(baseElement).toMatchSnapshot();
-        expect(screen.getByText('SQLManagementAnalyze')).toBeInTheDocument();
+        expect(screen.getByText('SqlManagementAnalyze')).toBeInTheDocument();
       });
     });
   });

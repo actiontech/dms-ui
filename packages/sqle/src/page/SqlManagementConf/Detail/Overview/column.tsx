@@ -5,78 +5,130 @@ import {
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import {
+  IAuditPlanRuleTemplate,
   IAuditPlanTypeResBase,
   IInstanceAuditPlanInfo
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TokenCom } from '@actiontech/shared';
 import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { Link } from 'react-router-dom';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import {
+  CheckCircleOutlined,
+  CloseHexagonOutlined,
+  InfoHexagonOutlined
+} from '@actiontech/icons';
 
-export const ConfDetailOverviewColumns: () => ActiontechTableColumn<IInstanceAuditPlanInfo> =
-  () => {
-    return [
-      {
-        dataIndex: 'audit_plan_type',
-        title: () => t('managementConf.detail.overview.column.auditPlanType'),
-        filterCustomType: 'select',
-        filterKey: 'filter_audit_plan_type',
-        render: (data: IAuditPlanTypeResBase) => {
-          return data.desc ?? '-';
-        }
-      },
-      {
-        dataIndex: 'audit_plan_rule_template_name',
-        title: () =>
-          t('managementConf.detail.overview.column.auditRuleTemplate')
-      },
-      {
-        dataIndex: 'exec_cmd',
-        title: () => t('managementConf.detail.overview.column.connectionInfo'),
-        render: (text) => {
-          if (!text) return '-';
-          return <TokenCom text={text} />;
-        }
-      },
-      {
-        dataIndex: 'total_sql_nums',
-        title: () =>
-          t('managementConf.detail.overview.column.collectedSqlCount')
-      },
-      // #if [ee]
-      {
-        dataIndex: 'unsolved_sql_nums',
-        title: () =>
-          t('managementConf.detail.overview.column.problematicSqlCount')
-      },
-      // #endif
-      {
-        dataIndex: 'last_collection_time',
-        title: () =>
-          t('managementConf.detail.overview.column.lastCollectionTime'),
-        render: (time: string) => formatTime(time, '-')
+export const ConfDetailOverviewColumns: (
+  projectID: string
+) => ActiontechTableColumn<IInstanceAuditPlanInfo> = (projectID) => {
+  return [
+    {
+      dataIndex: 'audit_plan_type',
+      title: () => t('managementConf.detail.overview.column.auditPlanType'),
+      filterCustomType: 'select',
+      filterKey: 'filter_audit_plan_type',
+      render: (data: IAuditPlanTypeResBase) => {
+        return data.desc ?? '-';
       }
-    ];
-  };
+    },
+    {
+      dataIndex: 'audit_plan_rule_template',
+      title: () => t('managementConf.detail.overview.column.auditRuleTemplate'),
+      render: (ruleTemplate: IAuditPlanRuleTemplate, record) => {
+        const path = ruleTemplate.is_global_rule_template
+          ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
+          : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
+
+        return <Link to={path}>{ruleTemplate.name}</Link>;
+      }
+    },
+    {
+      dataIndex: 'active_status',
+      title: () => t('managementConf.detail.overview.column.status'),
+      render: (status: InstanceAuditPlanInfoActiveStatusEnum) => {
+        if (status === InstanceAuditPlanInfoActiveStatusEnum.disabled) {
+          return (
+            <TableColumnWithIconStyleWrapper>
+              <CloseHexagonOutlined />
+              <span>
+                {t('managementConf.list.table.column.taskStatus.disabled')}
+              </span>
+            </TableColumnWithIconStyleWrapper>
+          );
+        }
+        if (status === InstanceAuditPlanInfoActiveStatusEnum.normal) {
+          return (
+            <TableColumnWithIconStyleWrapper>
+              <CheckCircleOutlined />
+              <span>
+                {t('managementConf.list.table.column.taskStatus.normal')}
+              </span>
+            </TableColumnWithIconStyleWrapper>
+          );
+        }
+        return (
+          <TableColumnWithIconStyleWrapper>
+            <InfoHexagonOutlined />
+            <span>{t('common.unknownStatus')}</span>
+          </TableColumnWithIconStyleWrapper>
+        );
+      }
+    },
+    {
+      dataIndex: 'exec_cmd',
+      title: () => t('managementConf.detail.overview.column.connectionInfo'),
+      render: (text) => {
+        if (!text) return '-';
+        return <TokenCom text={text} />;
+      }
+    },
+    {
+      dataIndex: 'total_sql_nums',
+      title: () => t('managementConf.detail.overview.column.collectedSqlCount')
+    },
+    // #if [ee]
+    {
+      dataIndex: 'unsolved_sql_nums',
+      title: () =>
+        t('managementConf.detail.overview.column.problematicSqlCount')
+    },
+    // #endif
+    {
+      dataIndex: 'last_collection_time',
+      title: () =>
+        t('managementConf.detail.overview.column.lastCollectionTime'),
+      render: (time: string) => formatTime(time, '-')
+    }
+  ];
+};
 
 export const ConfDetailOverviewColumnActions: (
-  enabledAction: () => void,
-  disabledAction: (id: string, auditPlanType: string) => Promise<void>,
-  disabledActionPending: boolean
+  enabledAction: (auditPlanType: string) => void,
+  disabledAction: (auditPlanType: string) => void,
+  disabledActionPending: boolean,
+  enabledActionPending: boolean
 ) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = (
   enabledAction,
   disabledAction,
-  disabledActionPending
+  disabledActionPending,
+  enabledActionPending
 ) => {
   return {
     buttons: [
       {
         key: 'enable',
         text: t('managementConf.detail.overview.actions.enabled'),
+
         permissions: (record) =>
           record?.active_status ===
           InstanceAuditPlanInfoActiveStatusEnum.disabled,
-        buttonProps: () => {
+        buttonProps: (record) => {
           return {
-            onClick: enabledAction
+            disabled: enabledActionPending,
+            onClick: () => {
+              enabledAction(record?.audit_plan_type?.type ?? '');
+            }
           };
         }
       },
@@ -93,10 +145,7 @@ export const ConfDetailOverviewColumnActions: (
               'managementConf.detail.overview.actions.disabledConfirmTips'
             ),
             onConfirm: () => {
-              disabledAction(
-                record?.id?.toString() ?? '',
-                record?.audit_plan_type?.type ?? ''
-              );
+              disabledAction(record?.audit_plan_type?.type ?? '');
             }
           };
         }

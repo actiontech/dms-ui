@@ -39,11 +39,11 @@ export const getAuditManageStep: (
         action: () => navigate(`/sqle/project/${projectID}/rule/template`)
       },
       {
-        key: 'audit-plan-list',
+        key: 'sql-management-conf',
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_2'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/audit-plan`)
+        action: () => navigate(`/sqle/project/${projectID}/sql-management-conf`)
       },
       {
         key: 'create-sql-audit',

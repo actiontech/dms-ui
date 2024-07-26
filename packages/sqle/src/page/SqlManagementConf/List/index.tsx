@@ -132,12 +132,13 @@ const List: React.FC = () => {
     }
   );
 
-  const { editAction, stopAction, deleteAction } = useTableAction({
-    refresh: onRefresh,
-    projectID,
-    projectName,
-    messageApi
-  });
+  const { editAction, disabledAction, enabledAction, deleteAction } =
+    useTableAction({
+      refresh: onRefresh,
+      projectID,
+      projectName,
+      messageApi
+    });
 
   useEffect(() => {
     if (taskTypeShowStatus) {
@@ -229,7 +230,8 @@ const List: React.FC = () => {
           actions={SqlManagementConfColumnAction({
             editAction,
             deleteAction,
-            stopAction,
+            disabledAction,
+            enabledAction,
             username,
             isAdmin,
             isProjectManager: isProjectManager(projectName)

@@ -1,27 +1,9 @@
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../../locale';
-import {
-  dbServiceMenuItem,
-  memberManagementMenItem,
-  cloudBeaverMenuItem,
-  dataExportMenuItem
-} from '../base';
+import baseMenusCollection from '../base';
 import { genMenuItemsWithMenuStructTree } from '../common';
 import { MenuStructTreeType } from '../index.type';
-import {
-  projectOverviewMenuItem,
-  dashboardMenuItem,
-  sqlAuditMenuItem,
-  pluginAuditMenuItem,
-  sqlOptimizationMenuItem,
-  sqlExecWorkflowMenuItem,
-  sqlManagementMenuItem,
-  auditPlanMenuItem,
-  projectRuleTemplateMenuItem,
-  whiteListMenuItem,
-  workflowTemplateMenuItem,
-  sqleOperationRecordMenuItem
-} from '../sqle';
+import sqleMenusCollection from '../sqle';
 
 const menuStruct: MenuStructTreeType = [
   'project-overview',
@@ -46,7 +28,7 @@ const menuStruct: MenuStructTreeType = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLManagement'),
-    group: ['sql-management', 'audit-plane']
+    group: ['sql-management', 'sql-management-conf']
   },
   { type: 'divider' },
   {
@@ -74,42 +56,17 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree('600300', [], [], '')
     ).toMatchSnapshot();
     expect(
-      genMenuItemsWithMenuStructTree(
-        '600300',
-        [
-          dbServiceMenuItem,
-          memberManagementMenItem,
-          cloudBeaverMenuItem,
-          dataExportMenuItem
-        ],
-        [],
-        ''
-      )
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], '')
+    ).toMatchSnapshot();
+
+    expect(
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], '')
     ).toMatchSnapshot();
 
     expect(
       genMenuItemsWithMenuStructTree(
         '600300',
-        [
-          dbServiceMenuItem,
-          memberManagementMenItem,
-          cloudBeaverMenuItem,
-          dataExportMenuItem
-        ],
-        [],
-        ''
-      )
-    ).toMatchSnapshot();
-
-    expect(
-      genMenuItemsWithMenuStructTree(
-        '600300',
-        [
-          dbServiceMenuItem,
-          memberManagementMenItem,
-          cloudBeaverMenuItem,
-          dataExportMenuItem
-        ],
+        baseMenusCollection,
         menuStruct,
         ''
       )
@@ -118,12 +75,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
     expect(
       genMenuItemsWithMenuStructTree(
         '600300',
-        [
-          dbServiceMenuItem,
-          memberManagementMenItem,
-          cloudBeaverMenuItem,
-          dataExportMenuItem
-        ],
+        baseMenusCollection,
         menuStruct,
         SystemRole.admin
       )
@@ -132,24 +84,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
     expect(
       genMenuItemsWithMenuStructTree(
         '600300',
-        [
-          dbServiceMenuItem,
-          memberManagementMenItem,
-          cloudBeaverMenuItem,
-          dataExportMenuItem,
-          projectOverviewMenuItem,
-          dashboardMenuItem,
-          sqlAuditMenuItem,
-          pluginAuditMenuItem,
-          sqlOptimizationMenuItem,
-          sqlExecWorkflowMenuItem,
-          sqlManagementMenuItem,
-          auditPlanMenuItem,
-          projectRuleTemplateMenuItem,
-          whiteListMenuItem,
-          workflowTemplateMenuItem,
-          sqleOperationRecordMenuItem
-        ],
+        [...baseMenusCollection, ...sqleMenusCollection],
         menuStruct,
         ''
       )
@@ -158,24 +93,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
     expect(
       genMenuItemsWithMenuStructTree(
         '600300',
-        [
-          dbServiceMenuItem,
-          memberManagementMenItem,
-          cloudBeaverMenuItem,
-          dataExportMenuItem,
-          projectOverviewMenuItem,
-          dashboardMenuItem,
-          sqlAuditMenuItem,
-          pluginAuditMenuItem,
-          sqlOptimizationMenuItem,
-          sqlExecWorkflowMenuItem,
-          sqlManagementMenuItem,
-          auditPlanMenuItem,
-          projectRuleTemplateMenuItem,
-          whiteListMenuItem,
-          workflowTemplateMenuItem,
-          sqleOperationRecordMenuItem
-        ],
+        [...baseMenusCollection, ...sqleMenusCollection],
         menuStruct,
         SystemRole.admin
       )

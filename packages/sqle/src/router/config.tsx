@@ -16,37 +16,6 @@ const Whitelist = React.lazy(
   () => import(/* webpackChunkName: "Whitelist" */ '../page/Whitelist')
 );
 
-const AuditPlanList = React.lazy(
-  () =>
-    import(/* webpackChunkName: "AuditPlanList" */ '../page/AuditPlan/PlanList')
-);
-
-const CreateAuditPlan = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "CreateAuditPlan" */ '../page/AuditPlan/CreatePlan'
-    )
-);
-
-const UpdateAuditPlan = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "AuditPlanList" */ '../page/AuditPlan/UpdatePlan'
-    )
-);
-
-const AuditPlanDetail = React.lazy(
-  () =>
-    import(/* webpackChunkName: "PlanDetail" */ '../page/AuditPlan/PlanDetail')
-);
-
-const AuditPlanReport = React.lazy(
-  () =>
-    import(
-      /* webpackChunkName: "AuditPlanReport" */ '../page/AuditPlan/PlanDetail/DetailReport'
-    )
-);
-
 const ProjectOverview = React.lazy(
   () =>
     import(/* webpackChunkName: "ProjectOverview" */ '../page/ProjectOverview')
@@ -130,10 +99,6 @@ const SqlAuditDetail = React.lazy(() => import('../page/SqlAudit/Detail'));
 
 const WorkflowSqlAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/Workflow')
-);
-
-const AuditPlanSqlAnalyze = React.lazy(
-  () => import('../page/SqlAnalyze/AuditPlan')
 );
 
 // #if [ee]
@@ -313,42 +278,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/dashboard`,
     element: <Home />,
     key: 'dashboard'
-  },
-  {
-    key: 'plane',
-    path: `${PROJECT_ROUTER_PARAM}/audit-plan`,
-    children: [
-      {
-        index: true,
-        element: <AuditPlanList />,
-        key: 'auditPlanList'
-      },
-      {
-        path: 'create',
-        element: <CreateAuditPlan />,
-        key: 'auditPlanCreate'
-      },
-      {
-        path: 'update/:auditPlanName',
-        element: <UpdateAuditPlan />,
-        key: 'auditPlanUpdate'
-      },
-      {
-        path: 'detail/:auditPlanName',
-        key: 'auditPlanDetail',
-        element: <AuditPlanDetail />
-      },
-      {
-        path: 'detail/:auditPlanName/report/:reportId',
-        key: 'auditPlanDetailReport',
-        element: <AuditPlanReport />
-      },
-      {
-        path: ':reportId/:sqlNum/:auditPlanName/analyze',
-        key: 'auditPlanDetailAnalyze',
-        element: <AuditPlanSqlAnalyze />
-      }
-    ]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/rule/template`,

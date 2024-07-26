@@ -21,10 +21,14 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
+import { useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
+  const [searchParams] = useSearchParams();
+  const instanceAuditPlanCreatedId = useRef<string>();
 
   const { mergeFromValueIntoParams } = useAsyncParams();
   const {
@@ -59,13 +63,12 @@ const Create: React.FC = () => {
         instance_name: values.instanceName,
         instance_type: values.instanceType,
         audit_plans: values.scanTypes.map((item) => {
-          const { ruleTemplateName, instanceSchema, ...paramValues } = values[
+          const { ruleTemplateName, ...paramValues } = values[
             item
           ] as ScanTypeParams;
           return {
             audit_plan_type: item,
             rule_template_name: ruleTemplateName,
-            schema_name: instanceSchema,
             audit_plan_params: mergeFromValueIntoParams(
               paramValues,
               scanTypeMetas?.find((v) => v.audit_plan_type === item)
@@ -77,12 +80,23 @@ const Create: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           successfulSubmit();
+          instanceAuditPlanCreatedId.current = '1';
         }
       })
       .finally(() => {
         finishSubmit();
       });
   };
+
+  useEffect(() => {
+    const defaultInstanceName = searchParams?.get('instance_name');
+    if (defaultInstanceName) {
+      form.setFieldsValue({
+        needConnectDataSource: true,
+        instanceName: defaultInstanceName
+      });
+    }
+  }, [form, searchParams]);
 
   return (
     <ConfFormContextProvide
@@ -130,6 +144,7 @@ const Create: React.FC = () => {
 
         <LazyLoadComponent open={submitSuccessStatus} animation={false}>
           <CreationResult
+            id={instanceAuditPlanCreatedId.current ?? ''}
             resetForm={() => {
               onReset();
               backToForm();

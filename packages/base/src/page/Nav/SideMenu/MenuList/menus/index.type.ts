@@ -28,7 +28,6 @@ export type MenuStructTreeKey =
   | 'sql-optimization'
   | 'exec-workflow'
   | 'sql-management'
-  | 'audit-plane'
   | 'rule-template'
   | 'whitelist'
   | 'workflow-template'

@@ -12,8 +12,7 @@ const FilterContainer = <
   updateTableFilterInfo,
   filterCustomProps,
   style,
-  className,
-  inlineToolbar = false
+  className
 }: TableFilterContainerProps<T, F>) => {
   const {
     generateSelectFilter,
@@ -35,10 +34,7 @@ const FilterContainer = <
         align="center"
         className={classNames(
           className,
-          'actiontech-table-filter-container-namespace full-width-element',
-          {
-            'actiontech-table-filter-container-inline': inlineToolbar
-          }
+          'actiontech-table-filter-container-namespace full-width-element'
         )}
         wrap
         hidden={filterContainerMeta.length === 0}

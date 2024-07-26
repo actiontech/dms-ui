@@ -5,9 +5,7 @@ import {
 import { createContext } from 'react';
 import { SqlManagementConfFormFields } from './index.type';
 
-type SelectScanTypeParamsType = Array<
-  Map<string, IAuditPlanParamResV1[] | undefined>
->;
+type SelectScanTypeParamsType = Array<Record<string, IAuditPlanParamResV1[]>>;
 
 type ConfFormContextType = {
   submitLoading: boolean | null;
