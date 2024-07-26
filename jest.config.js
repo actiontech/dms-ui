@@ -39,7 +39,6 @@ module.exports = {
     'packages/shared/api/common/**',
     '!packages/**/index.type.ts',
     '!packages/**/index.enum.ts',
-    '!packages/sqle/src/page/AuditPlan/**',
     '!packages/sqle/src/page/SqlAnalyze/SqlAnalyze/ProcessListCom/**',
     '!packages/shared/lib/hooks/usePrompt/index.tsx'
   ],
