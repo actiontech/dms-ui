@@ -71,7 +71,7 @@ exports[`sqle/components/RuleDetail click return button 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
@@ -365,7 +365,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
           class="ant-spin-container"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
@@ -683,7 +683,7 @@ exports[`sqle/components/RuleDetail render snap 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
@@ -977,7 +977,7 @@ exports[`sqle/components/RuleDetail render snap 2`] = `
           class="ant-spin-container"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
@@ -1271,7 +1271,7 @@ exports[`sqle/components/RuleDetail render snap when has params 1`] = `
           class="ant-spin-container"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
@@ -1621,7 +1621,7 @@ exports[`sqle/components/RuleDetail render snap when input fuzzy test 1`] = `
           class="ant-spin-container"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
@@ -1939,7 +1939,7 @@ exports[`sqle/components/RuleDetail send global request when not select project 
           class="ant-spin-container ant-spin-blur"
         >
           <section
-            class="css-1eidhie"
+            class="css-5opede"
           >
             <section
               class="header-wrapper"
