@@ -2,7 +2,6 @@ import {
   ReportStatisticsTheme,
   StatisticsTheme,
   ProjectOverviewTheme,
-  AuditPlanTheme,
   WorkflowTemplateTheme,
   ExecWorkflowTheme,
   IconTheme
@@ -12,7 +11,6 @@ export interface SqleTheme {
   statistics: StatisticsTheme;
   reportStatistics: ReportStatisticsTheme;
   projectOverview: ProjectOverviewTheme;
-  auditPlan: AuditPlanTheme;
   workflowTemplate: WorkflowTemplateTheme;
   execWorkflow: ExecWorkflowTheme;
   icon: IconTheme;
