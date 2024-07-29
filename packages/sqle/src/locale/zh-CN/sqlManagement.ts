@@ -66,7 +66,8 @@ export default {
       instanceName: '数据源',
       source: {
         label: '来源',
-        auditPlan: '智能扫描',
+        auditPlan: '扫描任务',
+        defaultAuditPlan: '扫描任务默认类型',
         apiAudit: 'SQL审核'
       },
       auditLevel: {
