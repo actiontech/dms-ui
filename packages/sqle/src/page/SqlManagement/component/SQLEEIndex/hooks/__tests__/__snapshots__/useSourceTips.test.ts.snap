@@ -7,12 +7,29 @@ exports[`test useSourceTips should math snapshot with  1`] = `
     "value": "sql_audit_record",
   },
   {
-    "label": "智能扫描",
+    "label": "扫描任务默认类型",
     "options": [
       {
         "label": "自定义",
         "value": "default",
       },
+      {
+        "label": "应用程序SQL抓取",
+        "value": "all_app_extract",
+      },
+      {
+        "label": "Mybatis 扫描",
+        "value": "ocean_base_for_mysql_mybatis",
+      },
+      {
+        "label": "Top SQL",
+        "value": "ocean_base_for_mysql_top_sql",
+      },
+    ],
+  },
+  {
+    "label": "扫描任务-MySQL",
+    "options": [
       {
         "label": "慢日志",
         "value": "mysql_slow_log",
@@ -33,25 +50,23 @@ exports[`test useSourceTips should math snapshot with  1`] = `
         "label": "阿里RDS MySQL审计日志",
         "value": "ali_rds_mysql_audit_log",
       },
+    ],
+  },
+  {
+    "label": "扫描任务-Oracle",
+    "options": [
       {
         "label": "Oracle TOP SQL",
         "value": "oracle_top_sql",
       },
-      {
-        "label": "应用程序SQL抓取",
-        "value": "all_app_extract",
-      },
+    ],
+  },
+  {
+    "label": "扫描任务-TiDB",
+    "options": [
       {
         "label": "TiDB审计日志",
         "value": "tidb_audit_log",
-      },
-      {
-        "label": "Mybatis 扫描",
-        "value": "ocean_base_for_mysql_mybatis",
-      },
-      {
-        "label": "Top SQL",
-        "value": "ocean_base_for_mysql_top_sql",
       },
     ],
   },
