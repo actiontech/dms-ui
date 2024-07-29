@@ -27,6 +27,7 @@ export default {
   dataMaskRuleOverview: '脱敏规则',
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
+  sqlManagementConf: 'SQL管控配置',
   monitorSourceConfig: '监控源配置',
   diagnosisList: '巡检列表',
 

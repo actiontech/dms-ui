@@ -139,6 +139,8 @@ export interface IGetSqlManageListV2Params {
 
   filter_db_type?: string;
 
+  filter_business?: string;
+
   fuzzy_search_endpoint?: string;
 
   fuzzy_search_schema_name?: string;

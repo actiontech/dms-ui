@@ -328,17 +328,17 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "sql-management",
       },
       {
-        "icon": <PlanFilled
+        "icon": <ResolveFileFilled
           height={18}
           width={18}
         />,
-        "key": "sqle/project/projectID/audit-plan",
+        "key": "sqle/project/projectID/sql-management-conf",
         "label": <Link
-          to="/sqle/project/600300/audit-plan"
+          to="/sqle/project/600300/sql-management-conf"
         >
-          智能扫描
+          SQL管控配置
         </Link>,
-        "structKey": "audit-plane",
+        "structKey": "sql-management-conf",
       },
     ],
     "label": "SQL管控",
@@ -570,17 +570,17 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "sql-management",
       },
       {
-        "icon": <PlanFilled
+        "icon": <ResolveFileFilled
           height={18}
           width={18}
         />,
-        "key": "sqle/project/projectID/audit-plan",
+        "key": "sqle/project/projectID/sql-management-conf",
         "label": <Link
-          to="/sqle/project/600300/audit-plan"
+          to="/sqle/project/600300/sql-management-conf"
         >
-          智能扫描
+          SQL管控配置
         </Link>,
-        "structKey": "audit-plane",
+        "structKey": "sql-management-conf",
       },
     ],
     "label": "SQL管控",

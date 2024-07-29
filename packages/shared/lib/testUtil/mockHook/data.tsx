@@ -114,3 +114,11 @@ export const mockFeaturePermissionData = {
 export const mockCurrentPermissionData = {
   sqlOptimizationIsSupported: true
 };
+
+export const mockUseProjectBusinessTipsData = {
+  projectBusiness: ['business1', 'business2'],
+  loading: false,
+  updateProjectBusinessTips: jest.fn(),
+  projectBusinessOption: jest.fn(),
+  isFixedBusiness: true
+};

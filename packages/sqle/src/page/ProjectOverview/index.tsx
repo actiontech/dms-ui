@@ -2,17 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { ConfigProvider, Space, Row, Col } from 'antd';
 import { PageHeader, EmptyBox } from '@actiontech/shared';
 import { SyncOutlined } from '@ant-design/icons';
-
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { OverviewStyleWrapper } from './style';
-
 import ProjectScore from './component/ProjectScore';
 import SqlCount from './component/SqlCount';
 import DataSourceCount from './component/DataSourceCount';
 import OrderStatus from './component/OrderStatus';
 import OrderRiskList from './component/OrderRiskList';
-import ScanRiskList from './component/ScanRiskList';
-import ScanTask from './component/ScanTask';
 import DataSourcePerformance from './component/DataSourcePerformance';
 import OptimizationDistribution from './component/OptimizationDistribution';
 
@@ -65,7 +61,7 @@ const Overview = () => {
           gutter={20}
           className="chart-area-overview"
         >
-          <Col span={6}>
+          <Col span={12}>
             <Row>
               <Col span={24}>
                 <div className="item-wrapper height344 project-score">
@@ -97,9 +93,10 @@ const Overview = () => {
               </Col>
             </Row>
           </Col>
+          {/* todo 智能扫描重构 先隐藏  
           <Col span={6} className="right-chart">
             <ScanTask />
-          </Col>
+          </Col> */}
           <EmptyBox if={sqlOptimizationIsSupported}>
             <Col span={24}>
               <Row className="marginTop20" gutter={20}>
@@ -118,16 +115,17 @@ const Overview = () => {
           </EmptyBox>
           <Col span={24}>
             <Row className="marginTop20" gutter={20}>
-              <Col span={12}>
+              <Col span={24}>
                 <div className="item-wrapper height668 order-risk">
                   <OrderRiskList />
                 </div>
               </Col>
+              {/* todo 智能扫描重构 先隐藏 
               <Col span={12}>
                 <div className="item-wrapper height668 scan-risk">
                   <ScanRiskList />
                 </div>
-              </Col>
+              </Col> */}
             </Row>
           </Col>
         </Row>

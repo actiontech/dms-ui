@@ -4,16 +4,22 @@ import { ModeSwitcherItemStyleWrapper } from './style';
 import classNames from 'classnames';
 import { Col, Row } from 'antd';
 import EmptyBox from '../EmptyBox';
+import { forwardRef } from 'react';
 
-const ModeSwitcher = <V extends string | number = string>({
-  className,
-  options,
-  value,
-  onChange,
-  rowProps,
-  disabled,
-  defaultValue
-}: ModeSwitcherProps<V>) => {
+// forwardRef: https://ant.design/components/tooltip-cn#%E4%B8%BA%E4%BD%95%E5%9C%A8%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E4%B8%AD%E6%9C%89%E6%97%B6%E5%80%99%E4%BC%9A%E5%87%BA%E7%8E%B0-finddomnode-is-deprecated-%E8%BF%99%E4%B8%AA%E8%AD%A6%E5%91%8A
+const ModeSwitcher = <V extends string | number = string>(
+  {
+    className,
+    options,
+    value,
+    onChange,
+    rowProps,
+    disabled,
+    defaultValue,
+    ...props
+  }: ModeSwitcherProps<V>,
+  ref: React.ForwardedRef<HTMLDivElement>
+) => {
   const [internalValue, setInternalValue] = useControllableValue<V>(
     typeof value !== 'undefined' && onChange
       ? {
@@ -29,7 +35,10 @@ const ModeSwitcher = <V extends string | number = string>({
 
   return (
     <Row
+      ref={ref}
       {...rowProps}
+      // https://github.com/ant-design/ant-design/issues/15909 为了保证能在 tooltip 下正常工作，需要透传额外的 props
+      {...props}
       className={classNames(
         'actiontech-mode-switcher',
         className,
@@ -50,9 +59,11 @@ const ModeSwitcher = <V extends string | number = string>({
                 'actiontech-mode-switcher-item-disabled': disabled
               })}
               onClick={() => {
-                if (!disabled) {
-                  setInternalValue(itemValue);
+                if (disabled) {
+                  return;
                 }
+
+                setInternalValue(itemValue);
               }}
             >
               <EmptyBox if={!!icon}>
@@ -101,4 +112,11 @@ const ModeSwitcher = <V extends string | number = string>({
   );
 };
 
-export default ModeSwitcher;
+ModeSwitcher.displayName = 'ModeSwitcher';
+
+export default forwardRef(ModeSwitcher) as unknown as <
+  V extends string | number = string
+>(
+  props: React.PropsWithChildren<ModeSwitcherProps<V>> &
+    React.RefAttributes<HTMLDivElement>
+) => React.ReactElement;

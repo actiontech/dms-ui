@@ -90,20 +90,6 @@ export interface IAddDataExportWorkflowReq {
   data_export_workflow?: IDataExportWorkflow;
 }
 
-export interface IAddDatabaseSourceServiceReply {
-  code?: number;
-
-  data?: {
-    uid?: string;
-  };
-
-  message?: string;
-}
-
-export interface IAddDatabaseSourceServiceReq {
-  database_source_service?: IDatabaseSourceService;
-}
-
 export interface IAddMemberGroupReply {
   code?: number;
 
@@ -216,6 +202,12 @@ export interface IAdditionalParam {
   type?: string;
 
   value?: string;
+}
+
+export interface IAuditPlanTypeResBase {
+  desc?: string;
+
+  type?: string;
 }
 
 export interface IAuditSQLResult {
@@ -518,28 +510,6 @@ export interface IDatabaseDriverOption {
   params?: IDatabaseDriverAdditionalParam[];
 }
 
-export interface IDatabaseSource {
-  db_types?: string[];
-
-  source?: string;
-}
-
-export interface IDatabaseSourceService {
-  cron_express: string;
-
-  db_type: string;
-
-  name: string;
-
-  source: string;
-
-  sqle_config?: ISQLEConfig;
-
-  url: string;
-
-  version: string;
-}
-
 export interface IDelDBServicePreCheckReply {
   code?: number;
 
@@ -680,34 +650,6 @@ export interface IGetDataExportWorkflowReply {
   code?: number;
 
   data?: IGetDataExportWorkflow;
-
-  message?: string;
-}
-
-export interface IGetDatabaseSourceService {
-  cron_express: string;
-
-  db_type: string;
-
-  name: string;
-
-  project_uid?: string;
-
-  source: string;
-
-  sqle_config?: ISQLEConfig;
-
-  uid?: string;
-
-  url: string;
-
-  version: string;
-}
-
-export interface IGetDatabaseSourceServiceReply {
-  code?: number;
-
-  data?: IGetDatabaseSourceService;
 
   message?: string;
 }
@@ -1095,6 +1037,8 @@ export interface IListCBOperationLogsReply {
 export interface IListDBService {
   additional_params?: IAdditionalParam[];
 
+  audit_plan_types?: IAuditPlanTypeResBase[];
+
   business?: string;
 
   db_type?: string;
@@ -1102,6 +1046,8 @@ export interface IListDBService {
   desc?: string;
 
   host?: string;
+
+  instance_audit_plan_id?: string;
 
   is_enable_masking?: boolean;
 
@@ -1254,46 +1200,6 @@ export interface IListDataExportWorkflowsReply {
   message?: string;
 
   total_nums?: number;
-}
-
-export interface IListDatabaseSourceService {
-  cron_express: string;
-
-  db_type: string;
-
-  last_sync_err?: string;
-
-  last_sync_success_time?: string;
-
-  name: string;
-
-  project_uid?: string;
-
-  source: string;
-
-  sqle_config?: ISQLEConfig;
-
-  uid?: string;
-
-  url: string;
-
-  version: string;
-}
-
-export interface IListDatabaseSourceServiceTipsReply {
-  code?: number;
-
-  data?: IDatabaseSource[];
-
-  message?: string;
-}
-
-export interface IListDatabaseSourceServicesReply {
-  code?: number;
-
-  data?: IListDatabaseSourceService[];
-
-  message?: string;
 }
 
 export interface IListGlobalDBService {
@@ -1810,12 +1716,6 @@ export interface ISQLQueryConfig {
   query_timeout_second?: number;
 }
 
-export interface ISyncDatabaseSourceServiceReq {
-  database_source_service_uid?: string;
-
-  project_uid?: string;
-}
-
 export interface ITask {
   task_uid?: string;
 }
@@ -1994,10 +1894,6 @@ export interface IUpdateDBServiceReq {
 
 export interface IUpdateDBServiceSyncTaskReq {
   db_service_sync_task?: IDBServiceSyncTask;
-}
-
-export interface IUpdateDatabaseSourceServiceReq {
-  database_source_service?: IDatabaseSourceService;
 }
 
 export interface IUpdateFeishuConfiguration {

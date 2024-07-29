@@ -48,7 +48,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
           />
         </div>
         <section
-          class="css-kowdew"
+          class="css-xq3xuo"
         >
           <section
             class="header-wrapper"
@@ -690,7 +690,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
           />
         </div>
         <section
-          class="css-kowdew"
+          class="css-xq3xuo"
         >
           <section
             class="header-wrapper"
@@ -1271,7 +1271,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
           />
         </div>
         <section
-          class="css-kowdew"
+          class="css-xq3xuo"
         >
           <section
             class="header-wrapper"
@@ -1974,7 +1974,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
           />
         </div>
         <section
-          class="css-kowdew"
+          class="css-xq3xuo"
         >
           <section
             class="header-wrapper"

@@ -290,7 +290,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('企业微信'));
-    fireEvent.click(screen.getByText('飞书'));
+    fireEvent.click(screen.getByText('飞 书'));
 
     const submitBtn = screen.getAllByText('定时上线')[1];
     expect(submitBtn.closest('button')).not.toBeDisabled();

@@ -126,6 +126,7 @@ exports[`test SqlStatementFormController matches snapshot with different SQL mod
               >
                 <div
                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                  id="1_currentUploadType"
                   style="margin-left: -6px; margin-right: -6px;"
                 >
                   <div
@@ -521,6 +522,7 @@ exports[`test SqlStatementFormController matches snapshot with different SQL mod
               >
                 <div
                   class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                  id="2_currentUploadType"
                   style="margin-left: -6px; margin-right: -6px;"
                 >
                   <div
@@ -978,6 +980,7 @@ exports[`test SqlStatementFormController matches snapshot with same SQL mode ena
             >
               <div
                 class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                id="0_currentUploadType"
                 style="margin-left: -6px; margin-right: -6px;"
               >
                 <div

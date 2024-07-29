@@ -15,26 +15,13 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../components/AuditResultMessage';
-import {
-  SourceTypeEnum,
-  SqlManageStatusEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
-import { sourceDictionary } from './hooks/useStaticStatus';
 import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-import { Avatar, Space } from 'antd';
+import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
-import {
-  SQLAuditRecordIDValuesSplit,
-  SQLAuditRecordListUrlParamsKey
-} from './index.data';
-import {
-  BasicTag,
-  BasicToolTips,
-  BasicTypographyEllipsis
-} from '@actiontech/shared';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
@@ -42,32 +29,29 @@ export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
 >;
 
+export type ExtraFilterMetaType = ISqlManage & {
+  filter_business?: string;
+  filter_source?: string;
+  filter_instance_name?: string;
+  filter_audit_level?: string;
+  filter_rule_name?: string;
+  time?: string;
+};
+
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
-  ISqlManage & {
-    filter_source?: string;
-    filter_instance_name?: string;
-    filter_audit_level?: string;
-    filter_rule_name?: string;
-    time?: string;
-  },
+  ExtraFilterMetaType,
   SqlManagementTableFilterParamType
 > = () => {
   return new Map<
-    keyof (ISqlManage & {
-      filter_source?: string;
-      filter_instance_name?: string;
-      filter_audit_level?: string;
-      filter_rule_name?: string;
-      time?: string;
-    }),
+    keyof ExtraFilterMetaType,
     ActiontechTableFilterMetaValue<SqlManagementTableFilterParamType>
   >([
     [
-      'filter_source',
+      'filter_business',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_source',
-        filterLabel: t('sqlManagement.table.column.source'),
+        filterKey: 'filter_business',
+        filterLabel: t('sqlManagement.table.filter.business'),
         checked: false
       }
     ],
@@ -76,7 +60,16 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       {
         filterCustomType: 'select',
         filterKey: 'filter_instance_name',
-        filterLabel: t('sqlManagement.table.column.instanceName'),
+        filterLabel: t('sqlManagement.table.filter.instanceName'),
+        checked: false
+      }
+    ],
+    [
+      'filter_source',
+      {
+        filterCustomType: 'select',
+        filterKey: 'filter_source',
+        filterLabel: t('sqlManagement.table.filter.source.label'),
         checked: false
       }
     ],
@@ -185,6 +178,7 @@ const SqlManagementColumn: (
             onClick={() =>
               openModal(ModalName.View_Audit_Result_Drawer, record)
             }
+            tooltip={false}
             sql={sql_fingerprint}
             rows={2}
             showCopyIcon
@@ -215,29 +209,13 @@ const SqlManagementColumn: (
       dataIndex: 'source',
       title: () => t('sqlManagement.table.column.source'),
       render: (source: ISource) => {
-        if (source.type && source.type === SourceTypeEnum.audit_plan) {
+        //todo 本期只支持跳转至 sql管控配置，后续调整
+        if (source && source.sql_source_id && source.sql_source_type) {
           return (
             <Link
-              to={`/sqle/project/${projectID}/audit-plan/detail/${source.audit_plan_name}`}
+              to={`/sqle/project/${projectID}/sql-management-conf/${source.sql_source_id}?active=${source.sql_source_type}`}
             >
-              {t(sourceDictionary[source.type])}
-            </Link>
-          );
-        } else if (
-          source.type &&
-          source.type === SourceTypeEnum.sql_audit_record
-        ) {
-          return (
-            <Link
-              to={`/sqle/project/${projectID}/sql-audit?${
-                SQLAuditRecordListUrlParamsKey.SQLAuditRecordID
-              }=${
-                source.sql_audit_record_ids?.join(
-                  SQLAuditRecordIDValuesSplit
-                ) ?? ''
-              }`}
-            >
-              {t(sourceDictionary[source.type])}
+              {source.sql_source_desc ?? source.sql_source_type}
             </Link>
           );
         }
@@ -287,31 +265,31 @@ const SqlManagementColumn: (
         return schemaName || '-';
       }
     },
-    {
-      dataIndex: 'first_appear_timestamp',
-      title: () => t('sqlManagement.table.column.firstOccurrence'),
-      render: (value) => {
-        return formatTime(value, '-');
-      },
-      sorter: true,
-      sortDirections: ['descend', 'ascend']
-    },
-    {
-      dataIndex: 'last_receive_timestamp',
-      title: () => t('sqlManagement.table.column.lastOccurrence'),
-      render: (value) => {
-        return formatTime(value, '-');
-      },
-      sorter: true,
-      sortDirections: ['descend', 'ascend']
-    },
-    {
-      dataIndex: 'fp_count',
-      align: 'right',
-      title: () => t('sqlManagement.table.column.occurrenceCount'),
-      sorter: true,
-      sortDirections: ['descend', 'ascend']
-    },
+    // {
+    //   dataIndex: 'first_appear_timestamp',
+    //   title: () => t('sqlManagement.table.column.firstOccurrence'),
+    //   render: (value) => {
+    //     return formatTime(value, '-');
+    //   },
+    //   sorter: true,
+    //   sortDirections: ['descend', 'ascend']
+    // },
+    // {
+    //   dataIndex: 'last_receive_timestamp',
+    //   title: () => t('sqlManagement.table.column.lastOccurrence'),
+    //   render: (value) => {
+    //     return formatTime(value, '-');
+    //   },
+    //   sorter: true,
+    //   sortDirections: ['descend', 'ascend']
+    // },
+    // {
+    //   dataIndex: 'fp_count',
+    //   align: 'right',
+    //   title: () => t('sqlManagement.table.column.occurrenceCount'),
+    //   sorter: true,
+    //   sortDirections: ['descend', 'ascend']
+    // },
     {
       dataIndex: 'assignees',
       title: () => t('sqlManagement.table.column.personInCharge'),
@@ -336,26 +314,11 @@ const SqlManagementColumn: (
       dataIndex: 'endpoints',
       title: () => t('sqlManagement.table.column.endpoints'),
       render: (endpoints: ISqlManage['endpoints']) => {
-        if (!Array.isArray(endpoints) || endpoints.length === 0) {
+        if (!endpoints) {
           return '-';
         }
-
-        return (
-          <BasicToolTips
-            title={
-              endpoints.length > 1 ? (
-                <Space wrap>
-                  {endpoints.map((v) => (
-                    <BasicTag key={v}>{v}</BasicTag>
-                  ))}
-                </Space>
-              ) : null
-            }
-          >
-            <BasicTag style={{ marginRight: 0 }}>{endpoints[0]}</BasicTag>
-            {endpoints.length > 1 ? '...' : null}
-          </BasicToolTips>
-        );
+        // todo 暂时调整成 string
+        return <BasicTag style={{ marginRight: 0 }}>{endpoints}</BasicTag>;
       }
     },
     {

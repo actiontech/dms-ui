@@ -10,7 +10,7 @@ exports[`provision/DatabaseAccount/List render authorize 1`] = `
     class="ant-popover-inner-content"
   >
     <div
-      class="css-ycz71o"
+      class="css-1vlcj9c"
     >
       <div
         class="more-button-item"
@@ -111,7 +111,7 @@ exports[`provision/DatabaseAccount/List render cancel managed 1`] = `
     class="ant-popover-inner-content"
   >
     <div
-      class="css-ycz71o"
+      class="css-1vlcj9c"
     >
       <div
         class="more-button-item"
@@ -2503,7 +2503,7 @@ exports[`provision/DatabaseAccount/List render lock account 1`] = `
     class="ant-popover-inner-content"
   >
     <div
-      class="css-ycz71o"
+      class="css-1vlcj9c"
     >
       <div
         class="more-button-item"
@@ -2604,7 +2604,7 @@ exports[`provision/DatabaseAccount/List render manage account 1`] = `
     class="ant-popover-inner-content"
   >
     <div
-      class="css-ycz71o"
+      class="css-1vlcj9c"
     >
       <div
         class="more-button-item"
@@ -3866,7 +3866,7 @@ exports[`provision/DatabaseAccount/List render unlock account 1`] = `
     class="ant-popover-inner-content"
   >
     <div
-      class="css-ycz71o"
+      class="css-1vlcj9c"
     >
       <div
         class="more-button-item"

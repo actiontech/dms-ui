@@ -2,11 +2,14 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import {
+  CustomLabelContent,
+  FormItemLabel
+} from '@actiontech/shared/lib/components/FormCom';
 
 import { BackendFormProps } from '.';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { BasicInput, BasicSwitch } from '@actiontech/shared';
+import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import useRuleParams from './useRuleParams';
 import FormPasswordWithPlaceholder from './FormPasswordWithPlaceholder';
 
@@ -35,14 +38,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
               className={classNames({
                 'has-label-tip': !!labelTip
               })}
-              label={
-                <div className="label-cont-custom">
-                  <div>{label}</div>
-                  <div hidden={!labelTip} className="tip-content-box">
-                    {labelTip}
-                  </div>
-                </div>
-              }
+              label={<CustomLabelContent tips={labelTip} title={label} />}
               {...formItemLayoutVal}
               name={[paramsKey, item.key ?? '']}
               valuePropName="checked"
@@ -51,6 +47,48 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
+
+        if (item.type === 'password') {
+          return (
+            <FormItemLabel
+              key={item.key}
+              className={classNames({
+                'has-label-tip': !!labelTip
+              })}
+              label={<CustomLabelContent tips={labelTip} title={label} />}
+              {...formItemLayoutVal}
+              name={[paramsKey, item.key ?? '']}
+            >
+              <FormPasswordWithPlaceholder
+                enabled={props.formMode === 'update'}
+                disabled={props.disabled}
+              />
+            </FormItemLabel>
+          );
+        }
+
+        if (item.enums_value && item.enums_value.length > 0) {
+          return (
+            <FormItemLabel
+              key={item.key}
+              className={classNames({
+                'has-label-tip': !!labelTip
+              })}
+              label={<CustomLabelContent tips={labelTip} title={label} />}
+              {...formItemLayoutVal}
+              name={[paramsKey, item.key ?? '']}
+            >
+              <BasicSelect
+                options={item.enums_value.map((v) => ({
+                  label: v.desc,
+                  value: v.value
+                }))}
+                disabled={props.disabled}
+              />
+            </FormItemLabel>
+          );
+        }
+
         if (item.type === 'int') {
           return (
             <FormItemLabel
@@ -58,14 +96,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
               className={classNames({
                 'has-label-tip': !!labelTip
               })}
-              label={
-                <div className="label-cont-custom">
-                  <div>{label}</div>
-                  <div hidden={!labelTip} className="tip-content-box">
-                    {labelTip}
-                  </div>
-                </div>
-              }
+              label={<CustomLabelContent tips={labelTip} title={label} />}
               {...formItemLayoutVal}
               name={[paramsKey, item.key ?? '']}
               rules={[
@@ -79,45 +110,14 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
             </FormItemLabel>
           );
         }
-        if (item.type === 'password') {
-          return (
-            <FormItemLabel
-              key={item.key}
-              className={classNames({
-                'has-label-tip': !!labelTip
-              })}
-              label={
-                <div className="label-cont-custom">
-                  <div>{label}</div>
-                  <div hidden={!labelTip} className="tip-content-box">
-                    {labelTip}
-                  </div>
-                </div>
-              }
-              {...formItemLayoutVal}
-              name={[paramsKey, item.key ?? '']}
-            >
-              <FormPasswordWithPlaceholder
-                enabled={props.formMode === 'update'}
-                disabled={props.disabled}
-              />
-            </FormItemLabel>
-          );
-        }
+
         return (
           <FormItemLabel
             key={item.key}
             className={classNames({
               'has-label-tip': !!labelTip
             })}
-            label={
-              <div className="label-cont-custom">
-                <div>{label}</div>
-                <div hidden={!labelTip} className="tip-content-box">
-                  {labelTip}
-                </div>
-              </div>
-            }
+            label={<CustomLabelContent tips={labelTip} title={label} />}
             {...formItemLayoutVal}
             name={[paramsKey, item.key ?? '']}
           >

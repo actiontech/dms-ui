@@ -7,62 +7,54 @@ exports[`page/SqlManagement/SQLStatistics render statics data 1`] = `
       class="css-wl13ms"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
       >
         <div
-          class="ant-spin-container"
+          class="ant-card-body"
         >
           <div
-            class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+            class="cont-item"
           >
-            <div
-              class="ant-card-body"
+            <strong
+              class="num total"
             >
-              <div
-                class="cont-item"
+              0
+            </strong>
+            <span
+              class="desc"
+            >
+              SQL总数
+            </span>
+          </div>
+          <div
+            class="cont-item"
+          >
+            <div>
+              <strong
+                class="num problem"
               >
-                <strong
-                  class="num total"
-                >
-                  0
-                </strong>
-                <span
-                  class="desc"
-                >
-                  SQL总数
-                </span>
-              </div>
-              <div
-                class="cont-item"
+                0
+              </strong>
+              <span
+                class="desc problemSQlNum"
               >
-                <div>
-                  <strong
-                    class="num problem"
-                  >
-                    0
-                  </strong>
-                  <span
-                    class="desc problemSQlNum"
-                  >
-                    问题SQL数
-                  </span>
-                </div>
-              </div>
-              <div
-                class="cont-item"
-              >
-                <strong
-                  class="num optimized"
-                >
-                  0
-                </strong>
-                <span
-                  class="desc"
-                >
-                  已优化SQL数
-                </span>
-              </div>
+                问题SQL数
+              </span>
             </div>
+          </div>
+          <div
+            class="cont-item"
+          >
+            <strong
+              class="num optimized"
+            >
+              0
+            </strong>
+            <span
+              class="desc"
+            >
+              已优化SQL数
+            </span>
           </div>
         </div>
       </div>
@@ -78,62 +70,54 @@ exports[`page/SqlManagement/SQLStatistics render when has error message 1`] = `
       class="css-wl13ms"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
       >
         <div
-          class="ant-spin-container"
+          class="ant-card-body"
         >
           <div
-            class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+            class="cont-item"
           >
-            <div
-              class="ant-card-body"
+            <strong
+              class="num total"
             >
-              <div
-                class="cont-item"
+              -
+            </strong>
+            <span
+              class="desc"
+            >
+              SQL总数
+            </span>
+          </div>
+          <div
+            class="cont-item"
+          >
+            <div>
+              <strong
+                class="num problem"
               >
-                <strong
-                  class="num total"
-                >
-                  -
-                </strong>
-                <span
-                  class="desc"
-                >
-                  SQL总数
-                </span>
-              </div>
-              <div
-                class="cont-item"
+                -
+              </strong>
+              <span
+                class="desc problemSQlNum"
               >
-                <div>
-                  <strong
-                    class="num problem"
-                  >
-                    -
-                  </strong>
-                  <span
-                    class="desc problemSQlNum"
-                  >
-                    问题SQL数
-                  </span>
-                </div>
-              </div>
-              <div
-                class="cont-item"
-              >
-                <strong
-                  class="num optimized"
-                >
-                  -
-                </strong>
-                <span
-                  class="desc"
-                >
-                  已优化SQL数
-                </span>
-              </div>
+                问题SQL数
+              </span>
             </div>
+          </div>
+          <div
+            class="cont-item"
+          >
+            <strong
+              class="num optimized"
+            >
+              -
+            </strong>
+            <span
+              class="desc"
+            >
+              已优化SQL数
+            </span>
           </div>
         </div>
       </div>
@@ -149,86 +133,54 @@ exports[`page/SqlManagement/SQLStatistics render when still loading 1`] = `
       class="css-wl13ms"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
       >
-        <div>
-          <div
-            aria-busy="true"
-            aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-          >
-            <span
-              class="ant-spin-dot ant-spin-dot-spin"
-            >
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-container ant-spin-blur"
+          class="ant-card-body"
         >
           <div
-            class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+            class="cont-item"
           >
-            <div
-              class="ant-card-body"
+            <strong
+              class="num total"
             >
-              <div
-                class="cont-item"
+              0
+            </strong>
+            <span
+              class="desc"
+            >
+              SQL总数
+            </span>
+          </div>
+          <div
+            class="cont-item"
+          >
+            <div>
+              <strong
+                class="num problem"
               >
-                <strong
-                  class="num total"
-                >
-                  0
-                </strong>
-                <span
-                  class="desc"
-                >
-                  SQL总数
-                </span>
-              </div>
-              <div
-                class="cont-item"
+                0
+              </strong>
+              <span
+                class="desc problemSQlNum"
               >
-                <div>
-                  <strong
-                    class="num problem"
-                  >
-                    0
-                  </strong>
-                  <span
-                    class="desc problemSQlNum"
-                  >
-                    问题SQL数
-                  </span>
-                </div>
-              </div>
-              <div
-                class="cont-item"
-              >
-                <strong
-                  class="num optimized"
-                >
-                  0
-                </strong>
-                <span
-                  class="desc"
-                >
-                  已优化SQL数
-                </span>
-              </div>
+                问题SQL数
+              </span>
             </div>
+          </div>
+          <div
+            class="cont-item"
+          >
+            <strong
+              class="num optimized"
+            >
+              0
+            </strong>
+            <span
+              class="desc"
+            >
+              已优化SQL数
+            </span>
           </div>
         </div>
       </div>

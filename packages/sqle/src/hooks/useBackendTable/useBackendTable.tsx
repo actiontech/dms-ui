@@ -25,21 +25,43 @@ const useBackendTable = () => {
     T extends Array<{
       desc?: string;
       field_name?: string;
+      type?: string;
     }>
   >(
     head: T,
     options?: {
-      customRender?: (text: string) => React.ReactNode;
+      columnClassName?: string | ((type?: string) => string | undefined);
+      customRender?: (
+        text: string,
+        record: DataSourceItem,
+        fieldName: string,
+        type?: string
+      ) => React.ReactNode;
     }
   ): ColumnType<DataSourceItem>[] => {
-    return head.map((v) => {
-      const renderMethod =
-        options?.customRender ??
-        tableCellRenderWithEllipsisAndTooltipAndCopyable;
+    return head.map((item) => {
+      const renderMethod = (text: string, record: DataSourceItem) => {
+        if (options?.customRender) {
+          return options?.customRender?.(
+            text,
+            record,
+            item.field_name ?? '',
+            item.type
+          );
+        }
+        return tableCellRenderWithEllipsisAndTooltipAndCopyable(text);
+      };
+
+      const cls =
+        typeof options?.columnClassName === 'function'
+          ? options.columnClassName(item.type)
+          : options?.columnClassName;
+
       return {
-        dataIndex: v.field_name ?? '',
-        title: (v.desc || v.field_name) ?? '',
-        render: renderMethod
+        dataIndex: item.field_name ?? '',
+        title: (item.desc || item.field_name) ?? '',
+        render: renderMethod,
+        className: cls
       };
     });
   };
