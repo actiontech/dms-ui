@@ -87,6 +87,16 @@ export interface IGetInstanceAuditPlanOverviewV1Params {
 export interface IGetInstanceAuditPlanOverviewV1Return
   extends IGetInstanceAuditPlanOverviewResV1 {}
 
+export interface IDeleteAuditPlanByTypeV1Params {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_type: string;
+}
+
+export interface IDeleteAuditPlanByTypeV1Return extends IBaseRes {}
+
 export interface IUpdateAuditPlanStatusV1Params
   extends IUpdateAuditPlanStatusReqV1 {
   project_name: string;
@@ -97,16 +107,6 @@ export interface IUpdateAuditPlanStatusV1Params
 }
 
 export interface IUpdateAuditPlanStatusV1Return extends IBaseRes {}
-
-export interface IDeleteAuditPlanByTypeV1Params {
-  project_name: string;
-
-  instance_audit_plan_id: string;
-
-  audit_plan_type: string;
-}
-
-export interface IDeleteAuditPlanByTypeV1Return extends IBaseRes {}
 
 export interface IGetInstanceAuditPlanSQLsV1Params {
   project_name: string;
