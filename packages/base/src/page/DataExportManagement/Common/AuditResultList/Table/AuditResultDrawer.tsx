@@ -8,7 +8,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   open,
   auditResultRecord
 }) => {
-  const { auditResultRuleInfo } = useAuditResultRuleInfo(
+  const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     auditResultRecord?.audit_sql_result ?? [],
     auditResultRecord?.audit_sql_result?.[0].db_type
   );
@@ -29,6 +29,7 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
         </AuditResultDrawerTitleStyleWrapper>
       }
       showAnnotation
+      loading={loading}
     />
   );
 };
