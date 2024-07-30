@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test sqle/SqlManagementConf/TableTaskTypeFilter render filter by database type 1`] = `
+<body>
+  <div>
+    <section
+      class="css-rhv26"
+    >
+      <section
+        class="type-filter-line"
+      >
+        <span
+          class="css-12k4una"
+        >
+          全部数据源
+        </span>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn checked-item basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            MySQL
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Oracle
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            TiDB
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            OceanBase For MySQL
+          </span>
+        </button>
+      </section>
+      <section
+        class="type-filter-line"
+      >
+        <span
+          class="css-12k4una"
+        >
+          全部任务类型
+        </span>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            自定义
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            慢日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Mybatis 扫描
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            库表元数据
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            阿里RDS MySQL慢日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            阿里RDS MySQL审计日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          disabled=""
+          type="button"
+        >
+          <span>
+            Top SQL
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            应用程序SQL抓取
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          disabled=""
+          type="button"
+        >
+          <span>
+            TiDB审计日志
+          </span>
+        </button>
+      </section>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`test sqle/SqlManagementConf/TableTaskTypeFilter render filter by task type 1`] = `
+<body>
+  <div>
+    <section
+      class="css-rhv26"
+    >
+      <section
+        class="type-filter-line"
+      >
+        <span
+          class="css-12k4una"
+        >
+          全部数据源
+        </span>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          disabled=""
+          type="button"
+        >
+          <span>
+            MySQL
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Oracle
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          disabled=""
+          type="button"
+        >
+          <span>
+            TiDB
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            OceanBase For MySQL
+          </span>
+        </button>
+      </section>
+      <section
+        class="type-filter-line"
+      >
+        <span
+          class="css-12k4una"
+        >
+          全部任务类型
+        </span>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            自定义
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            慢日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Mybatis 扫描
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            库表元数据
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            阿里RDS MySQL慢日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            阿里RDS MySQL审计日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn checked-item basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Top SQL
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            应用程序SQL抓取
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            TiDB审计日志
+          </span>
+        </button>
+      </section>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`test sqle/SqlManagementConf/TableTaskTypeFilter render init snap shot 1`] = `
+<body>
+  <div>
+    <section
+      class="css-rhv26"
+    >
+      <section
+        class="type-filter-line"
+      >
+        <span
+          class="css-12k4una"
+        >
+          全部数据源
+        </span>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            MySQL
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Oracle
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            TiDB
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            OceanBase For MySQL
+          </span>
+        </button>
+      </section>
+      <section
+        class="type-filter-line"
+      >
+        <span
+          class="css-12k4una"
+        >
+          全部任务类型
+        </span>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            自定义
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            慢日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Mybatis 扫描
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            库表元数据
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            阿里RDS MySQL慢日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            阿里RDS MySQL审计日志
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            Top SQL
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            应用程序SQL抓取
+          </span>
+        </button>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+          type="button"
+        >
+          <span>
+            TiDB审计日志
+          </span>
+        </button>
+      </section>
+    </section>
+  </div>
+</body>
+`;
