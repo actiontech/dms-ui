@@ -1519,6 +1519,8 @@ export interface IInstanceAuditPlanDetailResV1 {
 
   business?: string;
 
+  instance_id?: string;
+
   instance_name?: string;
 
   instance_type?: string;
