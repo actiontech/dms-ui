@@ -21,10 +21,15 @@ import {
   IUpdateInstanceAuditPlanStatusV1Return,
   IGetInstanceAuditPlanOverviewV1Params,
   IGetInstanceAuditPlanOverviewV1Return,
-  IUpdateAuditPlanStatusV1Params,
-  IUpdateAuditPlanStatusV1Return,
   IDeleteAuditPlanByTypeV1Params,
   IDeleteAuditPlanByTypeV1Return,
+  IUpdateAuditPlanStatusV1Params,
+  IUpdateAuditPlanStatusV1Return,
+  IGetInstanceAuditPlanSQLDataV1Params,
+  IGetInstanceAuditPlanSQLDataV1Return,
+  IGetInstanceAuditPlanSQLExportV1Params,
+  IGetInstanceAuditPlanSQLMetaV1Params,
+  IGetInstanceAuditPlanSQLMetaV1Return,
   IGetInstanceAuditPlanSQLsV1Params,
   IGetInstanceAuditPlanSQLsV1Return,
   IUploadInstanceAuditPlanSQLsV2Params,
@@ -152,27 +157,6 @@ class InstanceAuditPlanService extends ServiceBase {
     );
   }
 
-  public updateAuditPlanStatusV1(
-    params: IUpdateAuditPlanStatusV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
-    delete paramsData.instance_audit_plan_id;
-
-    const audit_plan_type = paramsData.audit_plan_type;
-    delete paramsData.audit_plan_type;
-
-    return this.patch<IUpdateAuditPlanStatusV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}`,
-      paramsData,
-      options
-    );
-  }
-
   public deleteAuditPlanByTypeV1(
     params: IDeleteAuditPlanByTypeV1Params,
     options?: AxiosRequestConfig
@@ -189,6 +173,90 @@ class InstanceAuditPlanService extends ServiceBase {
 
     return this.delete<IDeleteAuditPlanByTypeV1Return>(
       `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public updateAuditPlanStatusV1(
+    params: IUpdateAuditPlanStatusV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_type = paramsData.audit_plan_type;
+    delete paramsData.audit_plan_type;
+
+    return this.patch<IUpdateAuditPlanStatusV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlanSQLDataV1(
+    params: IGetInstanceAuditPlanSQLDataV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_type = paramsData.audit_plan_type;
+    delete paramsData.audit_plan_type;
+
+    return this.post<IGetInstanceAuditPlanSQLDataV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/sql_data`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlanSQLExportV1(
+    params: IGetInstanceAuditPlanSQLExportV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_type = paramsData.audit_plan_type;
+    delete paramsData.audit_plan_type;
+
+    return this.post<any>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/sql_export`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlanSQLMetaV1(
+    params: IGetInstanceAuditPlanSQLMetaV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_type = paramsData.audit_plan_type;
+    delete paramsData.audit_plan_type;
+
+    return this.get<IGetInstanceAuditPlanSQLMetaV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/sql_meta`,
       paramsData,
       options
     );

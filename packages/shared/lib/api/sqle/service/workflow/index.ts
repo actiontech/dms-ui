@@ -21,6 +21,7 @@ import {
   IBatchCompleteWorkflowsV1Params,
   IBatchCompleteWorkflowsV1Return,
   IExportWorkflowV1Params,
+  IGetWorkflowAttachmentParams,
   ITerminateMultipleTaskByWorkflowV1Params,
   ITerminateMultipleTaskByWorkflowV1Return,
   ITerminateSingleTaskByWorkflowV1Params,
@@ -45,6 +46,8 @@ import {
   IUpdateWorkflowScheduleV1Return,
   IGetGlobalWorkflowsV1Params,
   IGetGlobalWorkflowsV1Return,
+  IGetWorkflowStatisticOfInstancesParams,
+  IGetWorkflowStatisticOfInstancesReturn,
   ICreateWorkflowV2Params,
   ICreateWorkflowV2Return,
   IBatchCancelWorkflowsV2Params,
@@ -180,6 +183,24 @@ class WorkflowService extends ServiceBase {
 
     return this.get<any>(
       `/v1/projects/${project_name}/workflows/exports`,
+      paramsData,
+      options
+    );
+  }
+
+  public getWorkflowAttachment(
+    params: IGetWorkflowAttachmentParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    return this.get<any>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/attachment`,
       paramsData,
       options
     );
@@ -405,6 +426,18 @@ class WorkflowService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IGetGlobalWorkflowsV1Return>(
       '/v1/workflows',
+      paramsData,
+      options
+    );
+  }
+
+  public GetWorkflowStatisticOfInstances(
+    params: IGetWorkflowStatisticOfInstancesParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetWorkflowStatisticOfInstancesReturn>(
+      '/v1/workflows/statistic_of_instances',
       paramsData,
       options
     );
