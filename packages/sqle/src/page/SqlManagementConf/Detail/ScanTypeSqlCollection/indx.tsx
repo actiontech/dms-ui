@@ -71,10 +71,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     }
   }, [currentAuditResultRecord]);
 
-  const { auditResultRuleInfo } = useAuditResultRuleInfo(
-    recordAuditResult,
-    instanceType
-  );
+  const { auditResultRuleInfo, loading: auditResultInfoLoading } =
+    useAuditResultRuleInfo(recordAuditResult, instanceType);
 
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(
@@ -165,6 +163,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         }}
         open={reportDrawerVisible}
         onClose={closeReportDrawer}
+        loading={auditResultInfoLoading}
       />
     </ScanTypeSqlCollectionStyleWrapper>
   );
