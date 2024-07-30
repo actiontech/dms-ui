@@ -11,7 +11,6 @@ const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
-
   return (
     <>
       <BasicResult
