@@ -20,4 +20,5 @@ export interface DetailReportDrawerProps {
   onClose: () => void;
   showAnnotation?: boolean;
   showSourceFile?: boolean;
+  loading?: boolean;
 }
