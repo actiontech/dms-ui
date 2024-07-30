@@ -33,8 +33,11 @@ const DataSourceSelection: React.FC = () => {
   const submitLoading = !!useContext(ConfFormContext)?.submitLoading;
   const defaultValue = useContext(ConfFormContext)?.defaultValue;
 
-  const { updateProjectBusinessTips, projectBusinessOption } =
-    useProjectBusinessTips();
+  const {
+    updateProjectBusinessTips,
+    projectBusinessOption,
+    loading: getProjectBusinessTipsLoading
+  } = useProjectBusinessTips();
 
   const form = Form.useFormInstance<SqlManagementConfFormFields>();
   const needConnectDataSource = Form.useWatch('needConnectDataSource', form);
@@ -152,6 +155,7 @@ const DataSourceSelection: React.FC = () => {
         rules={[{ required: true }]}
       >
         <BasicSelect
+          loading={getProjectBusinessTipsLoading}
           disabled={formItemDisabled}
           options={projectBusinessOption()}
           onChange={handleChangeBusiness}
