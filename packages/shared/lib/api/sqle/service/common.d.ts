@@ -15,6 +15,8 @@ import {
   CustomRuleResV1LevelEnum,
   DirectAuditFileReqV1SqlTypeEnum,
   DirectAuditReqV1SqlTypeEnum,
+  FilterMetaFilterInputTypeEnum,
+  FilterMetaFilterOpTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
@@ -80,8 +82,6 @@ export interface IAuditPlan {
   audit_plan_type?: string;
 
   rule_template_name?: string;
-
-  schema_name?: string;
 }
 
 export interface IAuditPlanCount {
@@ -146,8 +146,6 @@ export interface IAuditPlanRes {
   audit_plan_type?: IAuditPlanTypeResBase;
 
   rule_template_name?: string;
-
-  schema_name?: string;
 }
 
 export interface IAuditPlanResV1 {
@@ -174,12 +172,26 @@ export interface IAuditPlanRuleTemplate {
   name?: string;
 }
 
+export interface IAuditPlanSQLDataResV1 {
+  rows?: Array<{
+    [key: string]: string;
+  }>;
+}
+
 export interface IAuditPlanSQLHeadV1 {
   desc?: string;
 
   field_name?: string;
 
+  sortable?: boolean;
+
   type?: AuditPlanSQLHeadV1TypeEnum;
+}
+
+export interface IAuditPlanSQLMetaResV1 {
+  filter_meta_list?: IFilterMeta[];
+
+  head?: IAuditPlanSQLHeadV1[];
 }
 
 export interface IAuditPlanSQLReqV1 {
@@ -650,6 +662,40 @@ export interface IFileToSort {
   new_index?: number;
 }
 
+export interface IFilter {
+  filter_between_value?: IFilterBetweenValue;
+
+  filter_compare_value?: string;
+
+  filter_name?: string;
+}
+
+export interface IFilterBetweenValue {
+  from?: string;
+
+  to?: string;
+}
+
+export interface IFilterMeta {
+  desc?: string;
+
+  filter_input_type?: FilterMetaFilterInputTypeEnum;
+
+  filter_name?: string;
+
+  filter_op_type?: FilterMetaFilterOpTypeEnum;
+
+  filter_tip_list?: IFilterTip[];
+}
+
+export interface IFilterTip {
+  desc?: string;
+
+  group?: string;
+
+  value?: string;
+}
+
 export interface IFullSyncAuditPlanSQLsReqV1 {
   audit_plan_sql_list?: IAuditPlanSQLReqV1[];
 }
@@ -726,6 +772,36 @@ export interface IGetAuditPlanResV1 {
   data?: IAuditPlanResV1;
 
   message?: string;
+}
+
+export interface IGetAuditPlanSQLDataReqV1 {
+  filter_list?: IFilter[];
+
+  is_asc?: boolean;
+
+  order_by?: string;
+
+  page_index?: number;
+
+  page_size?: number;
+}
+
+export interface IGetAuditPlanSQLDataResV1 {
+  code?: number;
+
+  data?: IAuditPlanSQLDataResV1;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetAuditPlanSQLExportReqV1 {
+  filter_list?: IFilter[];
+
+  is_asc?: boolean;
+
+  order_by?: string;
 }
 
 export interface IGetAuditPlanSQLsResV1 {
@@ -1362,6 +1438,14 @@ export interface IGetWorkflowResV1 {
   message?: string;
 }
 
+export interface IGetWorkflowStatisticOfInstancesResV1 {
+  code?: number;
+
+  data?: IWorkflowStatisticOfInstance[];
+
+  message?: string;
+}
+
 export interface IGetWorkflowStatusCountResV1 {
   code?: number;
 
@@ -1448,8 +1532,6 @@ export interface IInstanceAuditPlanInfo {
   audit_plan_db_type?: string;
 
   audit_plan_instance_name?: string;
-
-  audit_plan_instance_schema_name?: string;
 
   audit_plan_rule_template?: IAuditPlanRuleTemplate;
 
@@ -2564,6 +2646,12 @@ export interface IWorkflowResV1 {
 
 export interface IWorkflowStageDuration {
   minutes?: number;
+}
+
+export interface IWorkflowStatisticOfInstance {
+  instance_id?: number;
+
+  unfinished_count?: number;
 }
 
 export interface IWorkflowStatisticsResV1 {
