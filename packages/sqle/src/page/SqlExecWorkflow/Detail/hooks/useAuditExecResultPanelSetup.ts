@@ -4,17 +4,15 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import { useEffect, useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.type';
 import { TasksStatusCount } from '../index.type';
-import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useBoolean } from 'ahooks';
 
 export const WORKFLOW_OVERVIEW_TAB_KEY = 'WORKFLOW_OVERVIEW_TAB_KEY';
 
-const useAuditExecResultPanelSetup = (
-  workflowStatus?: WorkflowRecordResV2StatusEnum
-) => {
+const useAuditExecResultPanelSetup = () => {
   const urlParams = useParams<{ workflowId: string }>();
   const { projectName } = useCurrentProject();
   const [activeTabKey, changeActiveTabKey] = useState(
@@ -25,6 +23,9 @@ const useAuditExecResultPanelSetup = (
   const [maintenanceTimeInfo, setMaintenanceTimeInfo] =
     useState<MaintenanceTimeInfoType>([]);
   const [canRejectWorkflow, setCanRejectWorkflow] = useState(false);
+
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
 
   const getOverviewListSuccessHandle = (list: IGetWorkflowTasksItemV2[]) => {
     setMaintenanceTimeInfo?.(
@@ -69,7 +70,7 @@ const useAuditExecResultPanelSetup = (
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
-    loading: getOverviewLoading,
+    loading: overviewLoading,
     data: overviewList,
     refresh: refreshOverviewAction,
     cancel
@@ -86,8 +87,15 @@ const useAuditExecResultPanelSetup = (
         !!urlParams.workflowId && activeTabKey === WORKFLOW_OVERVIEW_TAB_KEY,
       onSuccess: ({ list }) => {
         getOverviewListSuccessHandle?.(list ?? []);
-        if (workflowStatus !== WorkflowRecordResV2StatusEnum.executing) {
+        if (
+          list?.every(
+            (task) => task.status !== GetWorkflowTasksItemV2StatusEnum.executing
+          )
+        ) {
           cancel();
+          finishPollRequest();
+        } else {
+          startPollRequest();
         }
       },
       pollingInterval: 1000,
@@ -95,12 +103,10 @@ const useAuditExecResultPanelSetup = (
     }
   );
 
-  useEffect(() => {
-    if (workflowStatus === WorkflowRecordResV2StatusEnum.executing) {
-      refreshOverviewAction();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [workflowStatus]);
+  const getOverviewLoading = useMemo(
+    () => (polling ? false : overviewLoading),
+    [overviewLoading, polling]
+  );
 
   return {
     maintenanceTimeInfo,
