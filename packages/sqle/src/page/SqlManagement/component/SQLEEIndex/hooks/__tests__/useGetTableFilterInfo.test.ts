@@ -7,6 +7,7 @@ import instance from '../../../../../../testUtils/mockApi/instance';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
 import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 import { useSelector } from 'react-redux';
+import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
 
 jest.mock('react-redux', () => {
   return {
@@ -21,6 +22,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     instance.mockAllApi();
     sqlManage.mockAllApi();
     jest.useFakeTimers();
+    mockUseAuditPlanTypes();
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         database: { driverMeta: [] }
@@ -72,14 +74,15 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
         ) as CustomSelectProps
       )?.loading
     ).toBe(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(
       (
         result.current.filterCustomProps.get(
           'filter_source'
         ) as CustomSelectProps
       )?.options?.length
-    ).toBe(2);
-    await act(async () => jest.advanceTimersByTime(3000));
+    ).toBe(5);
     expect(
       (
         result.current.filterCustomProps.get(
