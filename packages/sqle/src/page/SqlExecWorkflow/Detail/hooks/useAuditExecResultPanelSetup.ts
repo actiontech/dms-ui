@@ -4,7 +4,7 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.type';
 import { TasksStatusCount } from '../index.type';
@@ -94,6 +94,13 @@ const useAuditExecResultPanelSetup = (
       pollingErrorRetryCount: 3
     }
   );
+
+  useEffect(() => {
+    if (workflowStatus === WorkflowRecordResV2StatusEnum.executing) {
+      refreshOverviewAction();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [workflowStatus]);
 
   return {
     maintenanceTimeInfo,
