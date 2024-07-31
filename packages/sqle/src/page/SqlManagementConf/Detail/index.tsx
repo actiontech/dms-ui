@@ -81,7 +81,7 @@ const ConfDetail: React.FC = () => {
       <PageHeader
         title={t('managementConf.detail.title', {
           instanceName:
-            data?.instance_name ?? t('managementConf.detail.staticScanTypes')
+            data?.instance_name || t('managementConf.detail.staticScanTypes')
         })}
         extra={<BackToConf />}
       />

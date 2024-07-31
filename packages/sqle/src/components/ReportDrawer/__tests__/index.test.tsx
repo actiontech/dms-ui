@@ -90,6 +90,33 @@ describe('sqle/components/ReportDrawer', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('render snap when loading is true', () => {
+    const { baseElement } = customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      showSourceFile: true,
+      data: {
+        sql: 'select 1',
+        sqlSourceFile:
+          'file_source/file_1/file_2/file_3/file_4/file_5/source.sql',
+        sqlStartLine: 3,
+        auditResult: [
+          {
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'level',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      onClose: jest.fn(),
+      loading: true
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
   it('render snap when has delete rule', () => {
     const { baseElement } = customRender({
       open: true,

@@ -34,13 +34,14 @@ const useAuditResultRuleInfo = (
         return {
           ...findData,
           ...item,
-          isRuleDeleted: item.rule_name
-            ? JSON.stringify(findData) === '{}'
-            : false
+          isRuleDeleted:
+            item.rule_name && !loading
+              ? JSON.stringify(findData) === '{}'
+              : false
         };
       }) ?? []
     );
-  }, [ruleInfo, auditResult]);
+  }, [ruleInfo, auditResult, loading]);
 
   return { ruleInfo, loading, auditResultRuleInfo };
 };
