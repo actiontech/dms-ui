@@ -105,13 +105,15 @@ const DataSourceSelection: React.FC = () => {
         { project_name: projectName },
         {
           onSuccess: (list) => {
+            const instance = list.find(
+              (v) => v.instance_name === instanceNameByUrlSearchParams
+            );
             form.setFieldsValue({
               needConnectDataSource: true,
               businessScope: businessByUrlSearchParams,
               instanceName: instanceNameByUrlSearchParams,
-              instanceType: list.find(
-                (v) => v.instance_name === instanceNameByUrlSearchParams
-              )?.instance_type
+              instanceId: instance?.instance_id,
+              instanceType: instance?.instance_type
             });
           }
         }
