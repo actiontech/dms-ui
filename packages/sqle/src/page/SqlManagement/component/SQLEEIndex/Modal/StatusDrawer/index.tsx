@@ -14,7 +14,7 @@ const StatusDrawer = () => {
     updateModalStatus
   } = useSqlManagementRedux(ModalName.View_Audit_Result_Drawer);
 
-  const { auditResultRuleInfo } = useAuditResultRuleInfo(
+  const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     selectedData?.audit_result ?? []
   );
 
@@ -33,6 +33,7 @@ const StatusDrawer = () => {
       }}
       onClose={closeModal}
       showAnnotation
+      loading={loading}
     />
   );
 };

@@ -150,6 +150,20 @@ export enum DirectAuditReqV1SqlTypeEnum {
   'UNKNOWN' = ''
 }
 
+export enum FilterMetaFilterInputTypeEnum {
+  'int' = 'int',
+
+  'string' = 'string',
+
+  'date_time' = 'date_time'
+}
+
+export enum FilterMetaFilterOpTypeEnum {
+  'equal' = 'equal',
+
+  'between' = 'between'
+}
+
 export enum GetWorkflowTasksItemV1StatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 

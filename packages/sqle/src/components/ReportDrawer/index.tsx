@@ -14,6 +14,7 @@ import AuditResultMessage from '../AuditResultMessage';
 import { Typography, Space } from 'antd';
 import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
+import { Spin } from 'antd';
 
 const ReportDrawer = ({
   open,
@@ -21,7 +22,8 @@ const ReportDrawer = ({
   data,
   onClose,
   showAnnotation,
-  showSourceFile
+  showSourceFile,
+  loading
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
 
@@ -49,17 +51,32 @@ const ReportDrawer = ({
         size="large"
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
-          <section className="wrapper-item">
-            <Typography.Title level={3}>
-              {t('auditPlan.report.drawer.subTitle.result')}
-            </Typography.Title>
-            <div className="wrapper-cont">
-              {resultDataIsEmpty ? (
-                <AuditResultMessage styleClass="result-item" />
-              ) : (
-                (data?.auditResult ?? [])?.map(
-                  (item: IAuditResultItem, index: number) => {
-                    if (!showAnnotation || item.isRuleDeleted) {
+          <Spin spinning={loading}>
+            <section className="wrapper-item">
+              <Typography.Title level={3}>
+                {t('auditPlan.report.drawer.subTitle.result')}
+              </Typography.Title>
+              <div className="wrapper-cont">
+                {resultDataIsEmpty ? (
+                  <AuditResultMessage styleClass="result-item" />
+                ) : (
+                  (data?.auditResult ?? [])?.map(
+                    (item: IAuditResultItem, index: number) => {
+                      if (!showAnnotation || item.isRuleDeleted) {
+                        return (
+                          <AuditResultMessage
+                            styleClass="result-item"
+                            key={`${item.rule_name ?? ''}${
+                              item.message ?? ''
+                            }-${index}`}
+                            auditResult={{
+                              level: item?.level ?? '',
+                              message: item?.message ?? ''
+                            }}
+                            isRuleDeleted={item.isRuleDeleted}
+                          />
+                        );
+                      }
                       return (
                         <AuditResultMessage
                           styleClass="result-item"
@@ -68,36 +85,23 @@ const ReportDrawer = ({
                           }-${index}`}
                           auditResult={{
                             level: item?.level ?? '',
-                            message: item?.message ?? ''
+                            message: item?.message ?? '',
+                            annotation: item.annotation ?? ''
                           }}
-                          isRuleDeleted={item.isRuleDeleted}
+                          showAnnotation
+                          moreBtnLink={
+                            item?.rule_name && item?.db_type
+                              ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
+                              : ''
+                          }
                         />
                       );
                     }
-                    return (
-                      <AuditResultMessage
-                        styleClass="result-item"
-                        key={`${item.rule_name ?? ''}${
-                          item.message ?? ''
-                        }-${index}`}
-                        auditResult={{
-                          level: item?.level ?? '',
-                          message: item?.message ?? '',
-                          annotation: item.annotation ?? ''
-                        }}
-                        showAnnotation
-                        moreBtnLink={
-                          item?.rule_name && item?.db_type
-                            ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
-                            : ''
-                        }
-                      />
-                    );
-                  }
-                )
-              )}
-            </div>
-          </section>
+                  )
+                )}
+              </div>
+            </section>
+          </Spin>
           <section className="wrapper-item">
             <div className="title-wrap">
               <Typography.Title level={3}>

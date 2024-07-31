@@ -44,7 +44,7 @@ const AuditDetailDrawer = () => {
     );
   }, [dispatch]);
 
-  const { auditResultRuleInfo } = useAuditResultRuleInfo(
+  const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     pluginAuditRecord?.audit_result ?? []
   );
 
@@ -58,6 +58,7 @@ const AuditDetailDrawer = () => {
       }}
       onClose={closeModal}
       showAnnotation
+      loading={loading}
     />
   );
 };

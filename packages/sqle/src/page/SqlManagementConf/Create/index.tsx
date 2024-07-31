@@ -23,12 +23,13 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [searchParams] = useSearchParams();
-  const instanceAuditPlanCreatedId = useRef<string>();
+  const instanceAuditPlanCreatedId = useRef<string>('');
 
   const { mergeFromValueIntoParams } = useAsyncParams();
   const {
@@ -62,25 +63,28 @@ const Create: React.FC = () => {
         static_audit: !values.needConnectDataSource,
         instance_name: values.instanceName,
         instance_type: values.instanceType,
-        audit_plans: values.scanTypes.map((item) => {
-          const { ruleTemplateName, ...paramValues } = values[
-            item
-          ] as ScanTypeParams;
-          return {
-            audit_plan_type: item,
-            rule_template_name: ruleTemplateName,
-            audit_plan_params: mergeFromValueIntoParams(
-              paramValues,
-              scanTypeMetas?.find((v) => v.audit_plan_type === item)
-                ?.audit_plan_params ?? []
-            )
-          };
-        })
+        audit_plans: values.scanTypes
+          .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
+          .map((item) => {
+            const { ruleTemplateName, ...paramValues } = values[
+              item
+            ] as ScanTypeParams;
+            return {
+              audit_plan_type: item,
+              rule_template_name: ruleTemplateName,
+              audit_plan_params: mergeFromValueIntoParams(
+                paramValues,
+                scanTypeMetas?.find((v) => v.audit_plan_type === item)
+                  ?.audit_plan_params ?? []
+              )
+            };
+          })
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           successfulSubmit();
-          instanceAuditPlanCreatedId.current = '1';
+          instanceAuditPlanCreatedId.current =
+            res.data.data?.instance_audit_plan_id ?? '';
         }
       })
       .finally(() => {
@@ -144,7 +148,7 @@ const Create: React.FC = () => {
 
         <LazyLoadComponent open={submitSuccessStatus} animation={false}>
           <CreationResult
-            id={instanceAuditPlanCreatedId.current ?? ''}
+            id={instanceAuditPlanCreatedId.current}
             resetForm={() => {
               onReset();
               backToForm();

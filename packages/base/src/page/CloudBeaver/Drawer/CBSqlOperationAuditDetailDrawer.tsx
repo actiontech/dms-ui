@@ -47,7 +47,7 @@ const CBSqlOperationAuditDetailDrawer = () => {
     );
   }, [dispatch]);
 
-  const { auditResultRuleInfo } = useAuditResultRuleInfo(
+  const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     cloudBeaverSqlOperationRecord?.audit_result ?? []
   );
 
@@ -61,6 +61,7 @@ const CBSqlOperationAuditDetailDrawer = () => {
       }}
       onClose={closeModal}
       showAnnotation
+      loading={loading}
     />
   );
 };

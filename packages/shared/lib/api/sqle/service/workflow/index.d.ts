@@ -12,6 +12,7 @@ import {
   IRejectWorkflowReqV1,
   IGetWorkflowTasksResV1,
   IUpdateWorkflowScheduleReqV1,
+  IGetWorkflowStatisticOfInstancesResV1,
   ICreateWorkflowReqV2,
   ICreateWorkflowResV2,
   IBatchCancelWorkflowsReqV2,
@@ -124,6 +125,12 @@ export interface IExportWorkflowV1Params {
   project_name: string;
 
   fuzzy_keyword?: string;
+}
+
+export interface IGetWorkflowAttachmentParams {
+  project_name: string;
+
+  workflow_id: string;
 }
 
 export interface ITerminateMultipleTaskByWorkflowV1Params {
@@ -251,6 +258,13 @@ export interface IGetGlobalWorkflowsV1Params {
 }
 
 export interface IGetGlobalWorkflowsV1Return extends IGetWorkflowsResV1 {}
+
+export interface IGetWorkflowStatisticOfInstancesParams {
+  instance_id: string;
+}
+
+export interface IGetWorkflowStatisticOfInstancesReturn
+  extends IGetWorkflowStatisticOfInstancesResV1 {}
 
 export interface ICreateWorkflowV2Params extends ICreateWorkflowReqV2 {
   project_name: string;

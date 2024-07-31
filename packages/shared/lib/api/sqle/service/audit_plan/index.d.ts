@@ -26,6 +26,8 @@ import {
 
 export interface IGetAuditPlanMetasV1Params {
   filter_instance_type?: string;
+
+  filter_instance_id?: string;
 }
 
 export interface IGetAuditPlanMetasV1Return extends IGetAuditPlanMetasResV1 {}

@@ -21,8 +21,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useAsyncParams from '../../../../../components/BackendForm/useAsyncParams';
 import { IAuditPlanParamResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-
-const SCAN_TYPE_ALL_OPTION_VALUE = 'all';
+import { SCAN_TYPE_ALL_OPTION_VALUE } from './index.data';
 
 const ScanTypesSelection: React.FC = () => {
   const { t } = useTranslation();

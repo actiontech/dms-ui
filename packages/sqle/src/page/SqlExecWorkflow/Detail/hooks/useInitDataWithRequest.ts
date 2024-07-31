@@ -17,6 +17,9 @@ const useInitDataWithRequest = () => {
     { setFalse: finishGetTaskInfos, setTrue: startGetTaskInfos }
   ] = useBoolean();
 
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
+
   const {
     data: workflowInfo,
     refresh: refreshWorkflowInfo,
@@ -36,6 +39,9 @@ const useInitDataWithRequest = () => {
       onSuccess: (res) => {
         if (res?.record?.status !== WorkflowRecordResV2StatusEnum.executing) {
           cancel();
+          finishPollRequest();
+        } else {
+          startPollRequest();
         }
       }
     }
@@ -64,8 +70,8 @@ const useInitDataWithRequest = () => {
   }, [finishGetTaskInfos, workflowInfo, startGetTaskInfos]);
 
   const initLoading = useMemo(
-    () => getTaskInfosLoading || getWorkflowLoading,
-    [getTaskInfosLoading, getWorkflowLoading]
+    () => (polling ? false : getTaskInfosLoading || getWorkflowLoading),
+    [getTaskInfosLoading, getWorkflowLoading, polling]
   );
 
   useEffect(() => {
