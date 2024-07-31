@@ -45,6 +45,7 @@ const DataSourceSelection: React.FC = () => {
   const instanceType = Form.useWatch('instanceType', form);
 
   const {
+    instanceIDOptions,
     instanceOptions,
     updateInstanceList,
     loading: getInstanceLoading,
@@ -61,6 +62,7 @@ const DataSourceSelection: React.FC = () => {
     if (name) {
       const instanceInfo = instanceList.find((v) => v.instance_name === name);
       form.setFieldValue('instanceType', instanceInfo?.instance_type ?? null);
+      form.setFieldValue('instanceId', instanceInfo?.instance_id ?? null);
     }
   };
 
@@ -106,13 +108,15 @@ const DataSourceSelection: React.FC = () => {
         { project_name: projectName },
         {
           onSuccess: (list) => {
+            const instance = list.find(
+              (v) => v.instance_name === instanceNameByUrlSearchParams
+            );
             form.setFieldsValue({
               needConnectDataSource: true,
               businessScope: businessByUrlSearchParams,
               instanceName: instanceNameByUrlSearchParams,
-              instanceType: list.find(
-                (v) => v.instance_name === instanceNameByUrlSearchParams
-              )?.instance_type
+              instanceId: instance?.instance_id,
+              instanceType: instance?.instance_type
             });
           }
         }
@@ -200,6 +204,14 @@ const DataSourceSelection: React.FC = () => {
             loading={getInstanceLoading}
             options={instanceOptions}
             onChange={handleChangeInstance}
+          />
+        </FormItemLabel>
+
+        <FormItemLabel hidden={true} name="instanceId">
+          <BasicSelect
+            disabled={formItemDisabled}
+            loading={getInstanceLoading}
+            options={instanceIDOptions}
           />
         </FormItemLabel>
       </EmptyBox>

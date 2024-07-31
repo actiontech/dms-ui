@@ -7,6 +7,7 @@ export type SqlManagementConfFormFields = {
   needConnectDataSource: boolean;
   businessScope: string;
   instanceName: string;
+  instanceId: string;
   instanceType: string;
   scanTypes: string[];
   [key: string]: string | boolean | string[] | ScanTypeParams;
