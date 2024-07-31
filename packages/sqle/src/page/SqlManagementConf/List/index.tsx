@@ -57,8 +57,8 @@ const List: React.FC = () => {
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
   const columns = useMemo(
-    () => SqlManagementConfColumns(projectID, getLogoUrlByDbType),
-    [getLogoUrlByDbType, projectID]
+    () => SqlManagementConfColumns(getLogoUrlByDbType),
+    [getLogoUrlByDbType]
   );
 
   const {

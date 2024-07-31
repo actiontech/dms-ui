@@ -225,6 +225,8 @@ export interface IAuditPlanSQLResV1 {
 }
 
 export interface IAuditPlanTypeResBase {
+  audit_plan_id?: number;
+
   desc?: string;
 
   type?: string;
@@ -491,13 +493,7 @@ export interface ICreateCustomRuleReqV1 {
 export interface ICreateInstanceAuditPlanReqV1 {
   audit_plans?: IAuditPlan[];
 
-  business?: string;
-
-  instance_name?: string;
-
-  instance_type?: string;
-
-  static_audit?: boolean;
+  instance_id?: string;
 }
 
 export interface ICreateProjectRuleTemplateReqV1 {
@@ -1524,8 +1520,6 @@ export interface IInstanceAuditPlanDetailResV1 {
   instance_name?: string;
 
   instance_type?: string;
-
-  static_audit?: boolean;
 }
 
 export interface IInstanceAuditPlanInfo {

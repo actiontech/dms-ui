@@ -43,12 +43,11 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 };
 
 export const SqlManagementConfColumns: (
-  projectID: string,
   getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<
   IInstanceAuditPlanResV1,
   InstanceAuditPlanTableFilterParamType
-> = (projectID, getLogoUrlByDbType) => {
+> = (getLogoUrlByDbType) => {
   return [
     {
       dataIndex: 'instance_name',

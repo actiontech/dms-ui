@@ -1,6 +1,6 @@
 export type ScanTypeSqlCollectionProps = {
   instanceAuditPlanId: string;
-  auditPlanType: string;
+  auditPlanId: string;
   activeTabKey: string;
   instanceType: string;
 };

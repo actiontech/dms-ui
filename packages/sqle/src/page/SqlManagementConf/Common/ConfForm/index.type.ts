@@ -4,10 +4,9 @@ export type ScanTypeParams = {
 };
 
 export type SqlManagementConfFormFields = {
-  needConnectDataSource: boolean;
   businessScope: string;
-  instanceName: string;
   instanceId: string;
+  instanceName: string;
   instanceType: string;
   scanTypes: string[];
   [key: string]: string | boolean | string[] | ScanTypeParams;
