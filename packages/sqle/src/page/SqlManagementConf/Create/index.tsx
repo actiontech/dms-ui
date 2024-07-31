@@ -59,10 +59,7 @@ const Create: React.FC = () => {
     instance_audit_plan
       .createInstanceAuditPlanV1({
         project_name: projectName,
-        business: values.businessScope,
-        static_audit: !values.needConnectDataSource,
-        instance_name: values.instanceName,
-        instance_type: values.instanceType,
+        instance_id: values.instanceId,
         audit_plans: values.scanTypes
           .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
           .map((item) => {
@@ -91,16 +88,6 @@ const Create: React.FC = () => {
         finishSubmit();
       });
   };
-
-  useEffect(() => {
-    const defaultInstanceName = searchParams?.get('instance_name');
-    if (defaultInstanceName) {
-      form.setFieldsValue({
-        needConnectDataSource: true,
-        instanceName: defaultInstanceName
-      });
-    }
-  }, [form, searchParams]);
 
   return (
     <ConfFormContextProvide

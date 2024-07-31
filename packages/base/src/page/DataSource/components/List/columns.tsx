@@ -2,7 +2,7 @@ import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { Tag } from 'antd';
 import { t } from '../../../../locale';
 import {
-  IAuditPlanTypeResBase,
+  IAuditPlanTypes,
   IListDBService
 } from '@actiontech/shared/lib/api/base/service/common';
 import {
@@ -81,11 +81,13 @@ export const DataSourceColumns = (
     {
       dataIndex: 'audit_plan_types',
       title: () => t('dmsDataSource.databaseList.enabledScanTypes'),
-      render: (scanTypes: IAuditPlanTypeResBase[], record) => {
+      render: (scanTypes: IAuditPlanTypes[], record) => {
         return (
           <ScanTypeTagsCell
             scanTypes={scanTypes}
-            instanceAuditPlanId={record.instance_audit_plan_id ?? ''}
+            instanceAuditPlanId={
+              record.instance_audit_plan_id?.toString() ?? ''
+            }
           />
         );
       }
@@ -179,9 +181,9 @@ export const DataSourceListActions = (
             text: t('dmsDataSource.enabledAuditPlan.text'),
             onClick: (record) => {
               navigateToSqlManagementConf(
-                record?.name ?? '',
+                record?.uid ?? '',
                 record?.business ?? '',
-                record?.instance_audit_plan_id
+                record?.instance_audit_plan_id?.toString()
               );
             }
           }
