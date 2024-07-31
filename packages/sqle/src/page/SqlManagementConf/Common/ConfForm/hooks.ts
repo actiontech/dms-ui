@@ -15,16 +15,21 @@ export const useSqlManagementConfFormSharedStates = () => {
   ] = useBoolean(false);
 
   const selectedInstanceType = Form.useWatch('instanceType', form);
+  const selectedInstanceId = Form.useWatch('instanceId', form);
   const scanTypes = Form.useWatch('scanTypes', form);
 
   const { data: scanTypeMetas, loading: getScanTypeMetaPending } = useRequest(
     () =>
       audit_plan
         .getAuditPlanMetasV1({
-          filter_instance_type: selectedInstanceType
+          filter_instance_type: selectedInstanceType,
+          filter_instance_id: selectedInstanceId
         })
         .then((res) => res.data.data),
-    { ready: !!selectedInstanceType, refreshDeps: [selectedInstanceType] }
+    {
+      ready: !!selectedInstanceType,
+      refreshDeps: [selectedInstanceType, selectedInstanceId]
+    }
   );
 
   const selectedScanTypeParams: SelectScanTypeParamsType = useMemo(() => {

@@ -95,6 +95,7 @@ const Update: React.FC = () => {
       businessScope: auditPlanDetail?.business ?? '',
       instanceName: auditPlanDetail?.instance_name ?? '',
       instanceType: auditPlanDetail?.instance_type ?? '',
+      instanceId: auditPlanDetail?.instance_id ?? '',
       scanTypes:
         auditPlanDetail?.audit_plans?.map(
           (v) => v.audit_plan_type?.type ?? ''
@@ -112,6 +113,7 @@ const Update: React.FC = () => {
   }, [
     auditPlanDetail?.audit_plans,
     auditPlanDetail?.business,
+    auditPlanDetail?.instance_id,
     auditPlanDetail?.instance_name,
     auditPlanDetail?.instance_type,
     auditPlanDetail?.static_audit,
