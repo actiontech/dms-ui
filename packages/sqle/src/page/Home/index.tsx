@@ -3,13 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@actiontech/shared';
 import DBAPanel from './DBAPanel';
 import DEVPanel from './DEVPanel';
-import AuditPlanRiskList from './AuditPlanRiskList';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import dashboard from '@actiontech/shared/lib/api/sqle/service/dashboard';
 
 const Home = () => {
   const { t } = useTranslation();
-  const { projectName, projectID } = useCurrentProject();
+  const { projectName } = useCurrentProject();
 
   const { data: workflowStatistics, refresh: getWorkflowStatistics } =
     useRequest(
