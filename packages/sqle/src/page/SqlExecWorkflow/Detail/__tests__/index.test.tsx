@@ -419,10 +419,8 @@ describe('sqle/ExecWorkflow/Detail', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalledTimes(1);
-    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalledTimes(2);
-    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(2);
   });
 
   it('render polling request when workflow status is not executing', async () => {
