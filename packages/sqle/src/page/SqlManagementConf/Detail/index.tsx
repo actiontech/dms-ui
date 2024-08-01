@@ -35,8 +35,8 @@ const ConfDetail: React.FC = () => {
         instance_audit_plan_id: id ?? ''
       })
       .then((res) => {
-        if (searchParams.has('active')) {
-          setActiveKey(searchParams.get('active') as string);
+        if (searchParams.has('active_audit_plan_id')) {
+          setActiveKey(searchParams.get('active_audit_plan_id') as string);
         }
         return res.data.data;
       })
@@ -56,11 +56,11 @@ const ConfDetail: React.FC = () => {
     },
     ...(data?.audit_plans?.map<SegmentedTabsProps['items'][0]>((v) => ({
       label: v.audit_plan_type?.desc,
-      value: v.audit_plan_type?.type ?? '',
+      value: v.audit_plan_type?.audit_plan_id?.toString() ?? '',
       children: (
         <ScanTypeSqlCollection
           instanceAuditPlanId={id ?? ''}
-          auditPlanType={v.audit_plan_type?.type ?? ''}
+          auditPlanId={v.audit_plan_type?.audit_plan_id?.toString() ?? ''}
           activeTabKey={activeKey}
           instanceType={data.instance_type ?? ''}
         />
