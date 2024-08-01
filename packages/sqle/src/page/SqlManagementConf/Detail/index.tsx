@@ -28,7 +28,11 @@ const ConfDetail: React.FC = () => {
     SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
   );
 
-  const { data, error } = useRequest(() =>
+  const {
+    data,
+    error,
+    refresh: refreshAuditPlanDetail
+  } = useRequest(() =>
     instance_audit_plan
       .getInstanceAuditPlanDetailV1({
         project_name: projectName,
@@ -51,6 +55,7 @@ const ConfDetail: React.FC = () => {
           activeTabKey={activeKey}
           handleChangeTab={setActiveKey}
           instanceAuditPlanId={id ?? ''}
+          refreshAuditPlanDetail={refreshAuditPlanDetail}
         />
       )
     },
