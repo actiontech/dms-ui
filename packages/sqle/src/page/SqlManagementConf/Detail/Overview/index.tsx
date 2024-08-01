@@ -26,7 +26,8 @@ import EmitterKey from '../../../../data/EmitterKey';
 const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
   handleChangeTab,
-  instanceAuditPlanId
+  instanceAuditPlanId,
+  refreshAuditPlanDetail
 }) => {
   const { t } = useTranslation();
   const { username } = useCurrentUser();
@@ -127,6 +128,7 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
                 messageApi.success(
                   t('managementConf.detail.overview.actions.deleteSuccessTips')
                 );
+                refreshAuditPlanDetail();
                 refresh();
               }
             });
