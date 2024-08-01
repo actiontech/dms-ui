@@ -411,10 +411,26 @@ describe('sqle/ExecWorkflow/Detail', () => {
     expect(requestWorkflowInfo).toHaveBeenCalled();
   });
 
-  it('render polling request when workflow status is executing', async () => {
+  it('render polling request when workflow status is executing or some task status is executing', async () => {
     requestWorkflowInfo.mockClear();
     requestWorkflowInfo.mockImplementation(() =>
       createSpySuccessResponse({ data: workflowsDetailExecutingData })
+    );
+    getSummaryOfInstanceTasksSpy.mockClear();
+    getSummaryOfInstanceTasksSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            ...WorkflowTasksItemData[0],
+            status: GetWorkflowTasksItemV2StatusEnum.wait_for_audit
+          },
+          {
+            ...WorkflowTasksItemData[0],
+            task_id: 3,
+            status: GetWorkflowTasksItemV2StatusEnum.executing
+          }
+        ]
+      })
     );
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -425,7 +441,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
     expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(2);
   });
 
-  it('render polling request when workflow status is not executing', async () => {
+  it('render polling request when workflow status is not executing or all of task status is not executing', async () => {
     requestWorkflowInfo.mockClear();
     requestWorkflowInfo.mockImplementation(() =>
       createSpySuccessResponse({ data: workflowsDetailWaitForAuditData })

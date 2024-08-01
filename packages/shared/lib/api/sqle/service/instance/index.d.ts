@@ -17,6 +17,8 @@ export interface IGetInstanceTipListV1Params {
 
   filter_db_type?: string;
 
+  filter_by_business?: string;
+
   filter_workflow_template_id?: string;
 
   functional_module?: getInstanceTipListV1FunctionalModuleEnum;

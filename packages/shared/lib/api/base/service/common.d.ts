@@ -204,7 +204,9 @@ export interface IAdditionalParam {
   value?: string;
 }
 
-export interface IAuditPlanTypeResBase {
+export interface IAuditPlanTypes {
+  audit_plan_id?: number;
+
   desc?: string;
 
   type?: string;
@@ -1037,7 +1039,7 @@ export interface IListCBOperationLogsReply {
 export interface IListDBService {
   additional_params?: IAdditionalParam[];
 
-  audit_plan_types?: IAuditPlanTypeResBase[];
+  audit_plan_types?: IAuditPlanTypes[];
 
   business?: string;
 
@@ -1047,7 +1049,7 @@ export interface IListDBService {
 
   host?: string;
 
-  instance_audit_plan_id?: string;
+  instance_audit_plan_id?: number;
 
   is_enable_masking?: boolean;
 

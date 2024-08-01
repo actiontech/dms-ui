@@ -115,14 +115,14 @@ const DataSourceList = () => {
   );
 
   const navigateToSqlManagementConf = useCallback(
-    (name: string, business: string, instanceAuditPlanId?: string) => {
+    (uid: string, business: string, instanceAuditPlanId?: string) => {
       if (instanceAuditPlanId) {
         navigate(
           `/sqle/project/${projectID}/sql-management-conf/update/${instanceAuditPlanId}`
         );
       } else {
         navigate(
-          `/sqle/project/${projectID}/sql-management-conf/create?instance_name=${name}&business=${business}`
+          `/sqle/project/${projectID}/sql-management-conf/create?instance_id=${uid}&business=${business}`
         );
       }
     },

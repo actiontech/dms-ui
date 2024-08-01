@@ -25,13 +25,13 @@ import {
   IDeleteAuditPlanByTypeV1Return,
   IUpdateAuditPlanStatusV1Params,
   IUpdateAuditPlanStatusV1Return,
+  IGetInstanceAuditPlanSQLsV1Params,
+  IGetInstanceAuditPlanSQLsV1Return,
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLDataV1Return,
   IGetInstanceAuditPlanSQLExportV1Params,
   IGetInstanceAuditPlanSQLMetaV1Params,
   IGetInstanceAuditPlanSQLMetaV1Return,
-  IGetInstanceAuditPlanSQLsV1Params,
-  IGetInstanceAuditPlanSQLsV1Return,
   IUploadInstanceAuditPlanSQLsV2Params,
   IUploadInstanceAuditPlanSQLsV2Return
 } from './index.d';
@@ -168,11 +168,11 @@ class InstanceAuditPlanService extends ServiceBase {
     const instance_audit_plan_id = paramsData.instance_audit_plan_id;
     delete paramsData.instance_audit_plan_id;
 
-    const audit_plan_type = paramsData.audit_plan_type;
-    delete paramsData.audit_plan_type;
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
 
     return this.delete<IDeleteAuditPlanByTypeV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/`,
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/`,
       paramsData,
       options
     );
@@ -189,11 +189,32 @@ class InstanceAuditPlanService extends ServiceBase {
     const instance_audit_plan_id = paramsData.instance_audit_plan_id;
     delete paramsData.instance_audit_plan_id;
 
-    const audit_plan_type = paramsData.audit_plan_type;
-    delete paramsData.audit_plan_type;
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
 
     return this.patch<IUpdateAuditPlanStatusV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/`,
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlanSQLsV1(
+    params: IGetInstanceAuditPlanSQLsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
+
+    return this.get<IGetInstanceAuditPlanSQLsV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/sqls`,
       paramsData,
       options
     );
@@ -262,27 +283,6 @@ class InstanceAuditPlanService extends ServiceBase {
     );
   }
 
-  public getInstanceAuditPlanSQLsV1(
-    params: IGetInstanceAuditPlanSQLsV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
-    delete paramsData.instance_audit_plan_id;
-
-    const audit_plan_type = paramsData.audit_plan_type;
-    delete paramsData.audit_plan_type;
-
-    return this.get<IGetInstanceAuditPlanSQLsV1Return>(
-      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_type}/sqls`,
-      paramsData,
-      options
-    );
-  }
-
   public UploadInstanceAuditPlanSQLsV2(
     params: IUploadInstanceAuditPlanSQLsV2Params,
     options?: AxiosRequestConfig
@@ -291,14 +291,11 @@ class InstanceAuditPlanService extends ServiceBase {
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
-    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
-    delete paramsData.instance_audit_plan_id;
-
-    const audit_plan_type = paramsData.audit_plan_type;
-    delete paramsData.audit_plan_type;
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
 
     return this.post<IUploadInstanceAuditPlanSQLsV2Return>(
-      `/v2/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plan_type/${audit_plan_type}/sqls/upload`,
+      `/v2/projects/${project_name}/audit_plans/${audit_plan_id}/sqls/upload`,
       paramsData,
       options
     );

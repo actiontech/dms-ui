@@ -21,7 +21,7 @@ const ScanTypeTagsCell: React.FC<Props> = ({
     return (
       <Link
         key={scanType.type}
-        to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}?active=${scanType.type}`}
+        to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}?active_audit_plan_id=${scanType.audit_plan_id}`}
       >
         <BasicTag className="pointer">{scanType.desc}</BasicTag>
       </Link>
