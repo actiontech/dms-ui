@@ -4,9 +4,12 @@ import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import useInstance from '../../../../hooks/useInstance';
 
 const useInstanceAuditPlanFilter = () => {
   const { t } = useTranslation();
+
+  const { updateInstanceList, instanceIDOptions } = useInstance();
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IInstanceAuditPlanResV1, FilterCustomProps>([
@@ -24,9 +27,15 @@ const useInstanceAuditPlanFilter = () => {
             }
           ]
         }
+      ],
+      [
+        'instance_name',
+        {
+          options: instanceIDOptions
+        }
       ]
     ]);
-  }, [t]);
+  }, [t, instanceIDOptions]);
 
   const [filterCustomData, setFilterCustomData] = useState<
     Pick<
@@ -54,7 +63,8 @@ const useInstanceAuditPlanFilter = () => {
     transformStatus,
     filterCustomProps,
     filterCustomData,
-    setFilterCustomData
+    setFilterCustomData,
+    updateInstanceList
   };
 };
 

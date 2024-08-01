@@ -80,7 +80,11 @@ const DataSourceSelection: React.FC = () => {
     form.resetFields(['scanTypes']);
     form.resetFields(['instanceId']);
     if (businessScope) {
-      updateInstanceList({ project_name: projectName, filter_db_type: type });
+      updateInstanceList({
+        project_name: projectName,
+        filter_db_type: type,
+        filter_by_business: businessScope
+      });
     }
   };
 
@@ -164,7 +168,7 @@ const DataSourceSelection: React.FC = () => {
         </BasicSelect>
       </FormItemLabel>
 
-      <FormItemLabel name="instanceName">
+      <FormItemLabel name="instanceName" hidden>
         <BasicSelect options={instanceOptions} />
       </FormItemLabel>
 

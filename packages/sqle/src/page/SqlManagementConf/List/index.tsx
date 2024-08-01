@@ -81,7 +81,8 @@ const List: React.FC = () => {
     transformStatus,
     filterCustomData,
     filterCustomProps,
-    setFilterCustomData
+    setFilterCustomData,
+    updateInstanceList
   } = useTableFilter();
 
   const [
@@ -120,6 +121,7 @@ const List: React.FC = () => {
         filter_by_active_status: transformStatus(
           tableFilterInfo.filter_by_active_status
         ),
+        filter_by_instance_id: tableFilterInfo.filter_by_instance_id,
         fuzzy_search: searchKeyword,
         project_name: projectName
       };
@@ -145,6 +147,10 @@ const List: React.FC = () => {
       updateAuditPlanTypes();
     }
   }, [taskTypeShowStatus, updateAuditPlanTypes]);
+
+  useEffect(() => {
+    updateInstanceList({ project_name: projectName });
+  }, [updateInstanceList, projectName]);
 
   return (
     <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>

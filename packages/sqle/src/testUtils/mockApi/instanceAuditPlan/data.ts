@@ -15,6 +15,7 @@ export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
     instance_type: 'MySQL',
     audit_plan_types: [
       {
+        audit_plan_id: 1,
         type: 'sql_file',
         desc: 'SQL文件'
       }
@@ -30,14 +31,17 @@ export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
     instance_type: '',
     audit_plan_types: [
       {
+        audit_plan_id: 1,
         type: 'sql_file',
         desc: 'SQL文件'
       },
       {
+        audit_plan_id: 2,
         type: 'mysql_schema_meta',
         desc: 'MySQL库表元数据'
       },
       {
+        audit_plan_id: 3,
         type: 'all_app_extract',
         desc: '应用程序SQL抓取'
       }

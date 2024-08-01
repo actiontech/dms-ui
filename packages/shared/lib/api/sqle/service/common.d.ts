@@ -800,6 +800,14 @@ export interface IGetAuditPlanSQLExportReqV1 {
   order_by?: string;
 }
 
+export interface IGetAuditPlanSQLMetaResV1 {
+  code?: number;
+
+  data?: IAuditPlanSQLMetaResV1;
+
+  message?: string;
+}
+
 export interface IGetAuditPlanSQLsResV1 {
   code?: number;
 

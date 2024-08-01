@@ -291,14 +291,11 @@ class InstanceAuditPlanService extends ServiceBase {
     const project_name = paramsData.project_name;
     delete paramsData.project_name;
 
-    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
-    delete paramsData.instance_audit_plan_id;
-
-    const audit_plan_type = paramsData.audit_plan_type;
-    delete paramsData.audit_plan_type;
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
 
     return this.post<IUploadInstanceAuditPlanSQLsV2Return>(
-      `/v2/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plan_type/${audit_plan_type}/sqls/upload`,
+      `/v2/projects/${project_name}/audit_plans/${audit_plan_id}/sqls/upload`,
       paramsData,
       options
     );
