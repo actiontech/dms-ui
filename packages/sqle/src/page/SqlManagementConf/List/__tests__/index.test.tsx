@@ -17,6 +17,7 @@ import {
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   InstanceAuditPlanResV1ActiveStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import instance from '../../../../testUtils/mockApi/instance';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -28,6 +29,7 @@ describe('test sqle/SqlManagementConf/List', () => {
   let deleteInstanceAuditPlan: jest.SpyInstance;
   let getAuditPlanTypesSpy: jest.SpyInstance;
   let updateInstanceAuditPlanStatus: jest.SpyInstance;
+  let getInstanceTipListSpy: jest.SpyInstance;
   const navigateSpy = jest.fn();
 
   beforeEach(() => {
@@ -36,6 +38,7 @@ describe('test sqle/SqlManagementConf/List', () => {
     getAuditPlanTypesSpy = instanceAuditPlan.getAuditPlanTypes();
     updateInstanceAuditPlanStatus =
       instanceAuditPlan.updateInstanceAuditPlanStatus();
+    getInstanceTipListSpy = instance.getInstanceTipList();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
@@ -56,6 +59,7 @@ describe('test sqle/SqlManagementConf/List', () => {
     expect(screen.getByText('为数据源开启扫描任务')).toBeInTheDocument();
     expect(getInstanceAuditPlansSpy).toHaveBeenCalled();
     expect(getAuditPlanTypesSpy).toHaveBeenCalled();
+    expect(getInstanceTipListSpy).toHaveBeenCalled();
   });
 
   it('render create button when project is archived', async () => {
@@ -168,9 +172,12 @@ describe('test sqle/SqlManagementConf/List', () => {
     );
     expect(filterContainer).toBeVisible();
     expect(getAllBySelector('.ant-space-item', filterContainer)).toHaveLength(
-      1
+      2
     );
-    fireEvent.mouseDown(getBySelector('.ant-select-selection-search-input'));
+    const taskStatusTarget = getAllBySelector(
+      '.ant-select-selection-search-input'
+    )[1];
+    fireEvent.mouseDown(taskStatusTarget);
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('停用'));
     await act(async () => jest.advanceTimersByTime(3000));

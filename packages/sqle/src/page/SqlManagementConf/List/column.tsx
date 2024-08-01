@@ -59,7 +59,9 @@ export const SqlManagementConfColumns: (
               t('managementConf.list.table.column.staticScanType')}
           </Link>
         );
-      }
+      },
+      filterCustomType: 'select',
+      filterKey: 'filter_by_instance_id'
     },
     {
       dataIndex: 'instance_type',

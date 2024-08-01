@@ -21,14 +21,12 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
-import { useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const [searchParams] = useSearchParams();
   const instanceAuditPlanCreatedId = useRef<string>('');
 
   const { mergeFromValueIntoParams } = useAsyncParams();

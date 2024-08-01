@@ -12,7 +12,7 @@ import {
   IGetAuditPlanSQLDataReqV1,
   IGetAuditPlanSQLDataResV1,
   IGetAuditPlanSQLExportReqV1,
-  IAuditPlanSQLMetaResV1,
+  IGetAuditPlanSQLMetaResV1,
   IUploadInstanceAuditPlanSQLsReqV2
 } from '../common.d';
 
@@ -23,7 +23,7 @@ export interface IGetInstanceAuditPlansV1Params {
 
   filter_by_db_type?: string;
 
-  filter_by_instance_name?: string;
+  filter_by_instance_id?: string;
 
   filter_by_audit_plan_type?: string;
 
@@ -157,15 +157,13 @@ export interface IGetInstanceAuditPlanSQLMetaV1Params {
 }
 
 export interface IGetInstanceAuditPlanSQLMetaV1Return
-  extends IAuditPlanSQLMetaResV1 {}
+  extends IGetAuditPlanSQLMetaResV1 {}
 
 export interface IUploadInstanceAuditPlanSQLsV2Params
   extends IUploadInstanceAuditPlanSQLsReqV2 {
   project_name: string;
 
-  instance_audit_plan_id: number;
-
-  audit_plan_type: string;
+  audit_plan_id: string;
 }
 
 export interface IUploadInstanceAuditPlanSQLsV2Return extends IBaseRes {}
