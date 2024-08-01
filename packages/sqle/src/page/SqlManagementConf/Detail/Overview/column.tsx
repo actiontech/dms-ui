@@ -104,8 +104,8 @@ export const ConfDetailOverviewColumns: (
 };
 
 export const ConfDetailOverviewColumnActions: (
-  enabledAction: (auditPlanType: string) => void,
-  disabledAction: (auditPlanType: string) => void,
+  enabledAction: (auditPlanId: string) => void,
+  disabledAction: (auditPlanId: string) => void,
   disabledActionPending: boolean,
   enabledActionPending: boolean
 ) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = (
@@ -127,7 +127,9 @@ export const ConfDetailOverviewColumnActions: (
           return {
             disabled: enabledActionPending,
             onClick: () => {
-              enabledAction(record?.audit_plan_type?.type ?? '');
+              enabledAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }
@@ -145,7 +147,9 @@ export const ConfDetailOverviewColumnActions: (
               'managementConf.detail.overview.actions.disabledConfirmTips'
             ),
             onConfirm: () => {
-              disabledAction(record?.audit_plan_type?.type ?? '');
+              disabledAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }
