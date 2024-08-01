@@ -61,7 +61,6 @@ const DataSourceSelection: React.FC = () => {
     if (id) {
       const instanceInfo = instanceList.find((v) => v.instance_id === id);
       form.setFieldValue('instanceType', instanceInfo?.instance_type ?? null);
-      form.setFieldValue('instanceId', instanceInfo?.instance_id ?? null);
       form.setFieldValue('instanceName', instanceInfo?.instance_name ?? null);
     }
   };
@@ -77,8 +76,7 @@ const DataSourceSelection: React.FC = () => {
   };
 
   const handleChangeInstanceType = (type: string) => {
-    form.resetFields(['scanTypes']);
-    form.resetFields(['instanceId']);
+    form.resetFields(['scanTypes', 'instanceId']);
     if (businessScope) {
       updateInstanceList({
         project_name: projectName,
