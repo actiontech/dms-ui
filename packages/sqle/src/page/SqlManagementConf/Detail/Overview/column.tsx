@@ -40,7 +40,11 @@ export const ConfDetailOverviewColumns: (
           ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
           : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
-        return <Link to={path}>{ruleTemplate.name}</Link>;
+        return (
+          <Link target="_blank" to={path}>
+            {ruleTemplate.name}
+          </Link>
+        );
       }
     },
     {
@@ -103,17 +107,21 @@ export const ConfDetailOverviewColumns: (
   ];
 };
 
-export const ConfDetailOverviewColumnActions: (
-  enabledAction: (auditPlanId: string) => void,
-  disabledAction: (auditPlanId: string) => void,
-  disabledActionPending: boolean,
-  enabledActionPending: boolean
-) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = (
+export const ConfDetailOverviewColumnActions: (params: {
+  enabledAction: (auditPlanId: string) => void;
+  disabledAction: (auditPlanId: string) => void;
+  deleteAction: (auditPlanId: string) => void;
+  disabledActionPending: boolean;
+  enabledActionPending: boolean;
+  deleteActionPending: boolean;
+}) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = ({
   enabledAction,
   disabledAction,
+  deleteAction,
   disabledActionPending,
-  enabledActionPending
-) => {
+  enabledActionPending,
+  deleteActionPending
+}) => {
   return {
     buttons: [
       {
@@ -148,6 +156,28 @@ export const ConfDetailOverviewColumnActions: (
             ),
             onConfirm: () => {
               disabledAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
+            }
+          };
+        }
+      },
+      {
+        key: 'delete',
+        text: t('managementConf.detail.overview.actions.delete'),
+        buttonProps: () => {
+          return {
+            danger: true
+          };
+        },
+        confirm: (record) => {
+          return {
+            disabled: deleteActionPending,
+            title: t(
+              'managementConf.detail.overview.actions.deleteConfirmTips'
+            ),
+            onConfirm: () => {
+              deleteAction(
                 record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
               );
             }
