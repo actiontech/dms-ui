@@ -7513,7 +7513,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                                     <div
                                       class="title"
                                     >
-                                      点击选择ZIP文件或将文件拖拽到此区域
+                                      点击选择ZIP文件或将文件拖拽到此区域，当前仅支持对ZIP文件中的.xml文件及.sql文件做SQL审核
                                     </div>
                                   </div>
                                 </span>
