@@ -19,7 +19,7 @@ const useGetTableFilterInfo = () => {
     useSourceTips();
 
   const {
-    instanceOptions,
+    instanceIDOptions,
     updateInstanceList,
     loading: getInstanceLoading
   } = useInstance();
@@ -54,8 +54,8 @@ const useGetTableFilterInfo = () => {
         { options: projectBusinessOption(), loading: getProjectBusinessLoading }
       ],
       [
-        'filter_instance_name',
-        { options: instanceOptions, loading: getInstanceLoading }
+        'filter_instance_id',
+        { options: instanceIDOptions, loading: getInstanceLoading }
       ],
       [
         'filter_source',
@@ -75,7 +75,7 @@ const useGetTableFilterInfo = () => {
   }, [
     projectBusinessOption,
     getProjectBusinessLoading,
-    instanceOptions,
+    instanceIDOptions,
     getInstanceLoading,
     generateSourceSelectOptions,
     getSourceTipsLoading,

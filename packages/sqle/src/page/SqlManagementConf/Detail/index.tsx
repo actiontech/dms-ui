@@ -4,10 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import ConfDetailOverview from './Overview';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useRequest } from 'ahooks';
-import { useParams, useSearchParams } from 'react-router-dom';
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams
+} from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Result } from 'antd';
@@ -21,7 +26,8 @@ const ConfDetail: React.FC = () => {
 
   const { id } = useParams<{ id: string }>();
   const [searchParams] = useSearchParams();
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const { projectName } = useCurrentProject();
 
   const [activeKey, setActiveKey] = useState(
@@ -46,6 +52,24 @@ const ConfDetail: React.FC = () => {
       })
   );
 
+  const handleChangeTable = useCallback(
+    (tab: string) => {
+      setActiveKey(tab);
+      if (tab === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY) {
+        navigate(location.pathname, { replace: true });
+      } else if (searchParams.has('active_audit_plan_id')) {
+        navigate(
+          {
+            pathname: location.pathname,
+            search: `active_audit_plan_id=${tab}`
+          },
+          { replace: true }
+        );
+      }
+    },
+    [location.pathname, navigate, searchParams]
+  );
+
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
@@ -53,7 +77,7 @@ const ConfDetail: React.FC = () => {
       children: (
         <ConfDetailOverview
           activeTabKey={activeKey}
-          handleChangeTab={setActiveKey}
+          handleChangeTab={handleChangeTable}
           instanceAuditPlanId={id ?? ''}
           refreshAuditPlanDetail={refreshAuditPlanDetail}
         />
@@ -99,7 +123,7 @@ const ConfDetail: React.FC = () => {
       ) : (
         <SegmentedTabs
           activeKey={activeKey}
-          onChange={setActiveKey}
+          onChange={handleChangeTable}
           items={items}
           segmentedRowClassName="flex-space-between"
           segmentedRowExtraContent={<TableRefreshButton refresh={onRefresh} />}

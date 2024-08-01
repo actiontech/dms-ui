@@ -49,14 +49,14 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     expect(
       (
         result.current.filterCustomProps.get(
-          'filter_instance_name'
+          'filter_instance_id'
         ) as CustomSelectProps
       )?.options?.length
     ).toBe(0);
     expect(
       (
         result.current.filterCustomProps.get(
-          'filter_instance_name'
+          'filter_instance_id'
         ) as CustomSelectProps
       )?.loading
     ).toBe(true);
@@ -86,14 +86,14 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     expect(
       (
         result.current.filterCustomProps.get(
-          'filter_instance_name'
+          'filter_instance_id'
         ) as CustomSelectProps
       )?.options?.length
     ).toBe(2);
     expect(
       (
         result.current.filterCustomProps.get(
-          'filter_instance_name'
+          'filter_instance_id'
         ) as CustomSelectProps
       )?.loading
     ).toBe(false);

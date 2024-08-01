@@ -8,11 +8,11 @@ import {
   IUpdateInstanceAuditPlanStatusReqV1,
   IGetInstanceAuditPlanOverviewResV1,
   IUpdateAuditPlanStatusReqV1,
-  IGetAuditPlanSQLsResV1,
   IGetAuditPlanSQLDataReqV1,
   IGetAuditPlanSQLDataResV1,
   IGetAuditPlanSQLExportReqV1,
   IGetAuditPlanSQLMetaResV1,
+  IGetAuditPlanSQLsResV1,
   IUploadInstanceAuditPlanSQLsReqV2
 } from '../common.d';
 
@@ -27,7 +27,7 @@ export interface IGetInstanceAuditPlansV1Params {
 
   filter_by_audit_plan_type?: string;
 
-  filter_by_active_status?: boolean;
+  filter_by_active_status?: string;
 
   fuzzy_search?: string;
 
@@ -112,6 +112,38 @@ export interface IUpdateAuditPlanStatusV1Params
 
 export interface IUpdateAuditPlanStatusV1Return extends IBaseRes {}
 
+export interface IGetInstanceAuditPlanSQLDataV1Params
+  extends IGetAuditPlanSQLDataReqV1 {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+}
+
+export interface IGetInstanceAuditPlanSQLDataV1Return
+  extends IGetAuditPlanSQLDataResV1 {}
+
+export interface IGetInstanceAuditPlanSQLExportV1Params
+  extends IGetAuditPlanSQLExportReqV1 {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+}
+
+export interface IGetInstanceAuditPlanSQLMetaV1Params {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+}
+
+export interface IGetInstanceAuditPlanSQLMetaV1Return
+  extends IGetAuditPlanSQLMetaResV1 {}
+
 export interface IGetInstanceAuditPlanSQLsV1Params {
   project_name: string;
 
@@ -126,38 +158,6 @@ export interface IGetInstanceAuditPlanSQLsV1Params {
 
 export interface IGetInstanceAuditPlanSQLsV1Return
   extends IGetAuditPlanSQLsResV1 {}
-
-export interface IGetInstanceAuditPlanSQLDataV1Params
-  extends IGetAuditPlanSQLDataReqV1 {
-  project_name: string;
-
-  instance_audit_plan_id: string;
-
-  audit_plan_type: string;
-}
-
-export interface IGetInstanceAuditPlanSQLDataV1Return
-  extends IGetAuditPlanSQLDataResV1 {}
-
-export interface IGetInstanceAuditPlanSQLExportV1Params
-  extends IGetAuditPlanSQLExportReqV1 {
-  project_name: string;
-
-  instance_audit_plan_id: string;
-
-  audit_plan_type: string;
-}
-
-export interface IGetInstanceAuditPlanSQLMetaV1Params {
-  project_name: string;
-
-  instance_audit_plan_id: string;
-
-  audit_plan_type: string;
-}
-
-export interface IGetInstanceAuditPlanSQLMetaV1Return
-  extends IGetAuditPlanSQLMetaResV1 {}
 
 export interface IUploadInstanceAuditPlanSQLsV2Params
   extends IUploadInstanceAuditPlanSQLsReqV2 {
