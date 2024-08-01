@@ -27,7 +27,9 @@ export const dbServices: IListDBService[] = [
       }
     },
     instance_audit_plan_id: 1232,
-    audit_plan_types: [{ type: 'mysql_slow_log', desc: '慢日志' }]
+    audit_plan_types: [
+      { type: 'mysql_slow_log', desc: '慢日志', audit_plan_id: 1 }
+    ]
   },
   {
     business: 'business',
