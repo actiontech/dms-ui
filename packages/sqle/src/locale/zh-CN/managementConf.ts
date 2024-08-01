@@ -87,7 +87,6 @@ export default {
 
     result: {
       title: '创建SQL管控配置成功',
-      clone: '克隆配置',
       reset: '重置表单',
       jumpToDetail: '查看配置详情'
     }
