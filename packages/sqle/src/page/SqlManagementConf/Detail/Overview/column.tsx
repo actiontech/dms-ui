@@ -40,7 +40,11 @@ export const ConfDetailOverviewColumns: (
           ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
           : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
-        return <Link to={path}>{ruleTemplate.name}</Link>;
+        return (
+          <Link target="_blank" to={path}>
+            {ruleTemplate.name}
+          </Link>
+        );
       }
     },
     {

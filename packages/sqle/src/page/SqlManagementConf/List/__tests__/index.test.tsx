@@ -18,6 +18,7 @@ import {
   InstanceAuditPlanResV1ActiveStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import instance from '../../../../testUtils/mockApi/instance';
+import { InstanceAuditPlanStatusEnum } from '../index.enum';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -183,7 +184,7 @@ describe('test sqle/SqlManagementConf/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceAuditPlansSpy).toHaveBeenCalledTimes(3);
     expect(getInstanceAuditPlansSpy).toHaveBeenNthCalledWith(3, {
-      filter_by_active_status: false,
+      filter_by_active_status: InstanceAuditPlanStatusEnum.disabled,
       filter_by_audit_plan_type: '',
       fuzzy_search: '',
       filter_by_db_type: '',
