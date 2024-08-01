@@ -78,7 +78,8 @@ export default {
         mybatisFile: 'Mybatis的XML文件',
         mybatisFileTips: '点击选择XML文件或将文件拖拽到此区域',
         zipFile: 'zip文件',
-        zipFileTips: '点击选择zip文件或将文件拖拽到此区域',
+        zipFileTips:
+          '点击选择zip文件或将文件拖拽到此区域，当前仅支持对ZIP文件中的.xml文件及.sql文件做SQL审核',
 
         addInstanceTips: '请添加数据源',
         addInstance: '添加数据源',

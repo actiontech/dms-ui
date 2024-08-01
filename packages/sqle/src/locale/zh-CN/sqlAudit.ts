@@ -86,7 +86,8 @@ export default {
       uploadFileTip: {
         sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
         mybatisFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
-        zipFile: '点击选择ZIP文件或将文件拖拽到此区域'
+        zipFile:
+          '点击选择ZIP文件或将文件拖拽到此区域，当前仅支持对ZIP文件中的.xml文件及.sql文件做SQL审核'
       }
     }
   },
