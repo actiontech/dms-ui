@@ -103,17 +103,21 @@ export const ConfDetailOverviewColumns: (
   ];
 };
 
-export const ConfDetailOverviewColumnActions: (
-  enabledAction: (auditPlanType: string) => void,
-  disabledAction: (auditPlanType: string) => void,
-  disabledActionPending: boolean,
-  enabledActionPending: boolean
-) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = (
+export const ConfDetailOverviewColumnActions: (params: {
+  enabledAction: (auditPlanType: string) => void;
+  disabledAction: (auditPlanType: string) => void;
+  deleteAction: (auditPlanType: string) => void;
+  disabledActionPending: boolean;
+  enabledActionPending: boolean;
+  deleteActionPending: boolean;
+}) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = ({
   enabledAction,
   disabledAction,
+  deleteAction,
   disabledActionPending,
-  enabledActionPending
-) => {
+  enabledActionPending,
+  deleteActionPending
+}) => {
   return {
     buttons: [
       {
@@ -146,6 +150,26 @@ export const ConfDetailOverviewColumnActions: (
             ),
             onConfirm: () => {
               disabledAction(record?.audit_plan_type?.type ?? '');
+            }
+          };
+        }
+      },
+      {
+        key: 'delete',
+        text: t('managementConf.detail.overview.actions.delete'),
+        buttonProps: () => {
+          return {
+            danger: true
+          };
+        },
+        confirm: (record) => {
+          return {
+            disabled: deleteActionPending,
+            title: t(
+              'managementConf.detail.overview.actions.deleteConfirmTips'
+            ),
+            onConfirm: () => {
+              deleteAction(record?.audit_plan_type?.type ?? '');
             }
           };
         }
