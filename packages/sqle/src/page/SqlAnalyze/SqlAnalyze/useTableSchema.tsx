@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TableSchemaItem, UseTableSchemaOption } from '.';
 import { ResponseCode } from '../../../data/common';
-import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
+import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import {
   EmptyBox,
