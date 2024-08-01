@@ -8,11 +8,11 @@ import {
   IUpdateInstanceAuditPlanStatusReqV1,
   IGetInstanceAuditPlanOverviewResV1,
   IUpdateAuditPlanStatusReqV1,
+  IGetAuditPlanSQLsResV1,
   IGetAuditPlanSQLDataReqV1,
   IGetAuditPlanSQLDataResV1,
   IGetAuditPlanSQLExportReqV1,
-  IAuditPlanSQLMetaResV1,
-  IGetAuditPlanSQLsResV1,
+  IGetAuditPlanSQLMetaResV1,
   IUploadInstanceAuditPlanSQLsReqV2
 } from '../common.d';
 
@@ -23,7 +23,7 @@ export interface IGetInstanceAuditPlansV1Params {
 
   filter_by_db_type?: string;
 
-  filter_by_instance_name?: string;
+  filter_by_instance_id?: string;
 
   filter_by_audit_plan_type?: string;
 
@@ -96,7 +96,7 @@ export interface IDeleteAuditPlanByTypeV1Params {
 
   instance_audit_plan_id: string;
 
-  audit_plan_type: string;
+  audit_plan_id: string;
 }
 
 export interface IDeleteAuditPlanByTypeV1Return extends IBaseRes {}
@@ -107,10 +107,25 @@ export interface IUpdateAuditPlanStatusV1Params
 
   instance_audit_plan_id: string;
 
-  audit_plan_type: string;
+  audit_plan_id: string;
 }
 
 export interface IUpdateAuditPlanStatusV1Return extends IBaseRes {}
+
+export interface IGetInstanceAuditPlanSQLsV1Params {
+  project_name: string;
+
+  instance_audit_plan_id: string;
+
+  audit_plan_id: string;
+
+  page_index: number;
+
+  page_size: number;
+}
+
+export interface IGetInstanceAuditPlanSQLsV1Return
+  extends IGetAuditPlanSQLsResV1 {}
 
 export interface IGetInstanceAuditPlanSQLDataV1Params
   extends IGetAuditPlanSQLDataReqV1 {
@@ -142,30 +157,13 @@ export interface IGetInstanceAuditPlanSQLMetaV1Params {
 }
 
 export interface IGetInstanceAuditPlanSQLMetaV1Return
-  extends IAuditPlanSQLMetaResV1 {}
-
-export interface IGetInstanceAuditPlanSQLsV1Params {
-  project_name: string;
-
-  instance_audit_plan_id: string;
-
-  audit_plan_type: string;
-
-  page_index: number;
-
-  page_size: number;
-}
-
-export interface IGetInstanceAuditPlanSQLsV1Return
-  extends IGetAuditPlanSQLsResV1 {}
+  extends IGetAuditPlanSQLMetaResV1 {}
 
 export interface IUploadInstanceAuditPlanSQLsV2Params
   extends IUploadInstanceAuditPlanSQLsReqV2 {
   project_name: string;
 
-  instance_audit_plan_id: number;
-
-  audit_plan_type: string;
+  audit_plan_id: string;
 }
 
 export interface IUploadInstanceAuditPlanSQLsV2Return extends IBaseRes {}

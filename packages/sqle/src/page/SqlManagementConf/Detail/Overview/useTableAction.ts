@@ -8,11 +8,11 @@ export const useTableAction = () => {
 
   const { runAsync: disabledAction, loading: disabledActionPending } =
     useRequest(
-      (id: string, auditPlanType: string) =>
+      (id: string, auditPlanId: string) =>
         instance_audit_plan.updateAuditPlanStatusV1({
           project_name: projectName,
           instance_audit_plan_id: id,
-          audit_plan_type: auditPlanType,
+          audit_plan_id: auditPlanId,
           active: UpdateAuditPlanStatusReqV1ActiveEnum.disabled
         }),
       {
@@ -21,11 +21,11 @@ export const useTableAction = () => {
     );
 
   const { runAsync: enabledAction, loading: enabledActionPending } = useRequest(
-    (id: string, auditPlanType: string) =>
+    (id: string, auditPlanId: string) =>
       instance_audit_plan.updateAuditPlanStatusV1({
         project_name: projectName,
         instance_audit_plan_id: id,
-        audit_plan_type: auditPlanType,
+        audit_plan_id: auditPlanId,
         active: UpdateAuditPlanStatusReqV1ActiveEnum.normal
       }),
     {
@@ -34,11 +34,11 @@ export const useTableAction = () => {
   );
 
   const { runAsync: deleteAction, loading: deleteActionPending } = useRequest(
-    (id: string, auditPlanType: string) =>
+    (id: string, auditPlanId: string) =>
       instance_audit_plan.deleteAuditPlanByTypeV1({
         project_name: projectName,
         instance_audit_plan_id: id,
-        audit_plan_type: auditPlanType
+        audit_plan_id: auditPlanId
       }),
     {
       manual: true

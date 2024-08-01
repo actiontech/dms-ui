@@ -22,8 +22,7 @@ const ConfForm: React.FC = () => {
   useEffect(() => {
     if (!!defaultValue) {
       form.setFieldsValue({
-        ...defaultValue,
-        instanceName: defaultValue.instanceName || undefined
+        ...defaultValue
       });
     }
   }, [defaultValue, form]);

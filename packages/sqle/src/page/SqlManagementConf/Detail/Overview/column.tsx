@@ -104,9 +104,9 @@ export const ConfDetailOverviewColumns: (
 };
 
 export const ConfDetailOverviewColumnActions: (params: {
-  enabledAction: (auditPlanType: string) => void;
-  disabledAction: (auditPlanType: string) => void;
-  deleteAction: (auditPlanType: string) => void;
+  enabledAction: (auditPlanId: string) => void;
+  disabledAction: (auditPlanId: string) => void;
+  deleteAction: (auditPlanId: string) => void;
   disabledActionPending: boolean;
   enabledActionPending: boolean;
   deleteActionPending: boolean;
@@ -131,7 +131,9 @@ export const ConfDetailOverviewColumnActions: (params: {
           return {
             disabled: enabledActionPending,
             onClick: () => {
-              enabledAction(record?.audit_plan_type?.type ?? '');
+              enabledAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }
@@ -149,7 +151,9 @@ export const ConfDetailOverviewColumnActions: (params: {
               'managementConf.detail.overview.actions.disabledConfirmTips'
             ),
             onConfirm: () => {
-              disabledAction(record?.audit_plan_type?.type ?? '');
+              disabledAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }
@@ -169,7 +173,9 @@ export const ConfDetailOverviewColumnActions: (params: {
               'managementConf.detail.overview.actions.deleteConfirmTips'
             ),
             onConfirm: () => {
-              deleteAction(record?.audit_plan_type?.type ?? '');
+              deleteAction(
+                record?.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }

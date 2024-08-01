@@ -22,7 +22,7 @@ import AuditResultMessage from '../../../../components/AuditResultMessage';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
-  auditPlanType,
+  auditPlanId,
   activeTabKey,
   instanceType
 }) => {
@@ -50,14 +50,14 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         .getInstanceAuditPlanSQLsV1({
           project_name: projectName,
           instance_audit_plan_id: instanceAuditPlanId,
-          audit_plan_type: auditPlanType,
+          audit_plan_id: auditPlanId,
           page_index: pagination.page_index,
           page_size: pagination.page_size
         })
         .then((res) => res.data),
     {
       refreshDeps: [pagination],
-      ready: activeTabKey === auditPlanType
+      ready: activeTabKey === auditPlanId
     }
   );
 

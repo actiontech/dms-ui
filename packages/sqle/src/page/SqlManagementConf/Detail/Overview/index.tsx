@@ -92,13 +92,15 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
         onRow={(record) => {
           return {
             onClick: () => {
-              handleChangeTab(record.audit_plan_type?.type ?? '');
+              handleChangeTab(
+                record.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }}
         actions={ConfDetailOverviewColumnActions({
-          enabledAction: (type) => {
-            enabledAction(instanceAuditPlanId, type).then((res) => {
+          enabledAction: (auditPlanId) => {
+            enabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
                   t('managementConf.detail.overview.actions.enabledSuccessTips')
@@ -107,8 +109,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
-          disabledAction: (type) => {
-            disabledAction(instanceAuditPlanId, type).then((res) => {
+          disabledAction: (auditPlanId) => {
+            disabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
                   t(
@@ -119,8 +121,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
-          deleteAction: (type) => {
-            deleteAction(instanceAuditPlanId, type).then((res) => {
+          deleteAction: (auditPlanId) => {
+            deleteAction(instanceAuditPlanId, auditPlanId).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
                   t('managementConf.detail.overview.actions.deleteSuccessTips')
