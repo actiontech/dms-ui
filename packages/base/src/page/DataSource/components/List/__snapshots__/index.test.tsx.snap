@@ -1459,7 +1459,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
@@ -2451,7 +2451,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
@@ -3206,7 +3206,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
@@ -3950,7 +3950,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
@@ -4780,7 +4780,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
@@ -5610,7 +5610,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
@@ -6447,7 +6447,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                           class="css-bwn97z"
                         >
                           <a
-                            href="/sqle/project/700300/sql-management-conf/1232?active=mysql_slow_log"
+                            href="/sqle/project/700300/sql-management-conf/1232?active_audit_plan_id=1"
                           >
                             <span
                               class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"

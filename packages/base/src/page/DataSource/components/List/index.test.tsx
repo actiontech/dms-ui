@@ -340,8 +340,9 @@ describe('page/DataSource/DataSourceList', () => {
       );
       fireEvent.click(screen.getAllByText('为数据源开启扫描任务')[1]);
       expect(navigateSpy).toHaveBeenCalledTimes(2);
-      expect(navigateSpy).toHaveBeenCalledWith(
-        `/sqle/project/${projectID}/sql-management-conf/create?instance_name=${DBServicesList[1].name}&business=${DBServicesList[1].business}`
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        2,
+        `/sqle/project/${projectID}/sql-management-conf/create?instance_id=${DBServicesList[1].uid}&business=${DBServicesList[1].business}`
       );
     });
 
