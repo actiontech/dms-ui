@@ -78,7 +78,6 @@ const List: React.FC = () => {
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
 
   const {
-    transformStatus,
     filterCustomData,
     filterCustomProps,
     setFilterCustomData,
@@ -118,9 +117,7 @@ const List: React.FC = () => {
         ...pagination,
         filter_by_db_type: filterCustomData.filter_by_db_type,
         filter_by_audit_plan_type: filterCustomData.filter_by_audit_plan_type,
-        filter_by_active_status: transformStatus(
-          tableFilterInfo.filter_by_active_status
-        ),
+        filter_by_active_status: tableFilterInfo.filter_by_active_status,
         filter_by_instance_id: tableFilterInfo.filter_by_instance_id,
         fuzzy_search: searchKeyword,
         project_name: projectName
