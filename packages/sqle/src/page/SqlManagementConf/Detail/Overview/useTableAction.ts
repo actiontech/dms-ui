@@ -33,10 +33,24 @@ export const useTableAction = () => {
     }
   );
 
+  const { runAsync: deleteAction, loading: deleteActionPending } = useRequest(
+    (id: string, auditPlanType: string) =>
+      instance_audit_plan.deleteAuditPlanByTypeV1({
+        project_name: projectName,
+        instance_audit_plan_id: id,
+        audit_plan_type: auditPlanType
+      }),
+    {
+      manual: true
+    }
+  );
+
   return {
     disabledAction,
     enabledAction,
     enabledActionPending,
-    disabledActionPending
+    disabledActionPending,
+    deleteAction,
+    deleteActionPending
   };
 };

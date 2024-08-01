@@ -50,7 +50,9 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
     disabledAction,
     disabledActionPending,
     enabledAction,
-    enabledActionPending
+    enabledActionPending,
+    deleteAction,
+    deleteActionPending
   } = useTableAction();
 
   const { data, loading, refresh } = useRequest(
@@ -94,8 +96,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
             }
           };
         }}
-        actions={ConfDetailOverviewColumnActions(
-          (type) => {
+        actions={ConfDetailOverviewColumnActions({
+          enabledAction: (type) => {
             enabledAction(instanceAuditPlanId, type).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
@@ -105,7 +107,7 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
-          (type) => {
+          disabledAction: (type) => {
             disabledAction(instanceAuditPlanId, type).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
@@ -117,9 +119,20 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
+          deleteAction: (type) => {
+            deleteAction(instanceAuditPlanId, type).then((res) => {
+              if (res.data.code === ResponseCode.SUCCESS) {
+                messageApi.success(
+                  t('managementConf.detail.overview.actions.deleteSuccessTips')
+                );
+                refresh();
+              }
+            });
+          },
           disabledActionPending,
-          enabledActionPending
-        )}
+          enabledActionPending,
+          deleteActionPending
+        })}
       />
     </Spin>
   );
