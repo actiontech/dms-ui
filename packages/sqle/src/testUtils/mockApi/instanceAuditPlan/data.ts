@@ -1,10 +1,12 @@
 import {
   IInstanceAuditPlanResV1,
-  IAuditPlanTypesV1
+  IAuditPlanTypesV1,
+  IAuditPlanMetaV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   InstanceAuditPlanResV1ActiveStatusEnum,
-  AuditPlanTypesV1InstanceTypeEnum
+  AuditPlanTypesV1InstanceTypeEnum,
+  AuditPlanParamResV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
@@ -116,5 +118,108 @@ export const mockAuditPlanTypesData: IAuditPlanTypesV1[] = [
     type: 'ocean_base_for_mysql_top_sql',
     desc: 'Top SQL',
     instance_type: AuditPlanTypesV1InstanceTypeEnum['OceanBase For MySQL']
+  }
+];
+
+export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
+  {
+    audit_plan_type: 'default',
+    audit_plan_type_desc: '自定义',
+    instance_type: ''
+  },
+  {
+    audit_plan_type: 'mysql_mybatis',
+    audit_plan_type_desc: 'Mybatis 扫描',
+    instance_type: ''
+  },
+  {
+    audit_plan_type: 'mysql_schema_meta',
+    audit_plan_type_desc: 'MySQL库表元数据',
+    instance_type: 'MySQL',
+    audit_plan_params: [
+      {
+        key: 'collect_interval_minute',
+        desc: '采集周期（分钟）',
+        value: '60',
+        type: AuditPlanParamResV1TypeEnum.int
+      },
+      {
+        key: 'collect_view',
+        desc: '是否采集视图信息',
+        value: '0',
+        type: AuditPlanParamResV1TypeEnum.bool
+      }
+    ]
+  },
+  {
+    audit_plan_type: 'ali_rds_mysql_slow_log',
+    audit_plan_type_desc: '阿里RDS MySQL慢日志',
+    instance_type: 'MySQL',
+    audit_plan_params: [
+      {
+        key: 'db_instance_id',
+        desc: '实例ID',
+        value: '',
+        type: AuditPlanParamResV1TypeEnum.string
+      },
+      {
+        key: 'access_key_id',
+        desc: 'Access Key ID',
+        value: '',
+        type: AuditPlanParamResV1TypeEnum.password
+      },
+      {
+        key: 'access_key_secret',
+        desc: 'Access Key Secret',
+        value: '',
+        type: AuditPlanParamResV1TypeEnum.password
+      },
+      {
+        key: 'first_sqls_scrapped_in_last_period_hours',
+        desc: '启动任务时拉取慢日志时间范围(单位:小时,最大31天)',
+        value: '',
+        type: AuditPlanParamResV1TypeEnum.int
+      },
+      {
+        key: 'audit_sqls_scrapped_in_last_period_minute',
+        desc: '审核过去时间段内抓取的SQL（分钟）',
+        value: '0',
+        type: AuditPlanParamResV1TypeEnum.int
+      },
+      {
+        key: 'rds_path',
+        desc: 'RDS Open API地址',
+        value: 'rds.aliyuncs.com',
+        type: AuditPlanParamResV1TypeEnum.string
+      }
+    ]
+  },
+  {
+    audit_plan_type: 'sql_file',
+    audit_plan_type_desc: 'SQL文件',
+    instance_type: ''
+  },
+  // test data
+  {
+    audit_plan_type: 'custom_plan',
+    audit_plan_type_desc: '测试扫描类型',
+    instance_type: 'MySQL',
+    audit_plan_params: [
+      {
+        key: 'custom_plan_ENV',
+        desc: '扫描环境',
+        value: 'DEV',
+        enums_value: [
+          {
+            desc: 'DEV',
+            value: 'DEV'
+          },
+          {
+            desc: 'PROD',
+            value: 'PROD'
+          }
+        ]
+      }
+    ]
   }
 ];
