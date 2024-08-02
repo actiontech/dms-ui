@@ -75,6 +75,8 @@ export interface IExportSqlManageV1Params {
 
   filter_assignee?: string;
 
+  filter_business?: string;
+
   filter_instance_id?: string;
 
   filter_source?: exportSqlManageV1FilterSourceEnum;
