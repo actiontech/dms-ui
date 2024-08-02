@@ -97,6 +97,8 @@ export default {
   detail: {
     title: '{{instanceName}} 智能扫描详情',
     staticScanTypes: '静态扫描',
+    export: '导出',
+    exportTips: '正在导出扫描任务详情',
     overview: {
       title: '概览',
       column: {
