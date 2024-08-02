@@ -78,13 +78,6 @@ const ScanTypesSelection: React.FC = () => {
     }
   );
 
-  const realInstanceInfo = useMemo(() => {
-    if (!instanceName) {
-      return undefined;
-    }
-    return instanceInfo;
-  }, [instanceInfo, instanceName]);
-
   const options = useMemo<ToggleTokensOptionsType>(() => {
     const allItem: ToggleTokensOptionsType[0] = {
       label: t('common.all'),
@@ -101,7 +94,7 @@ const ScanTypesSelection: React.FC = () => {
                 return {
                   ...acc,
                   [cur.audit_plan_type ?? '']: {
-                    ruleTemplateName: realInstanceInfo?.rule_template?.name,
+                    ruleTemplateName: instanceInfo?.rule_template?.name,
                     ...generateFormValueByParams(cur.audit_plan_params ?? [])
                   } as ScanTypeParams
                 };
@@ -130,7 +123,7 @@ const ScanTypesSelection: React.FC = () => {
       if (checked) {
         form.setFieldsValue({
           [scanType]: {
-            ruleTemplateName: realInstanceInfo?.rule_template?.name,
+            ruleTemplateName: instanceInfo?.rule_template?.name,
             ...generateFormValueByParams(scanParams)
           } as ScanTypeParams
         });

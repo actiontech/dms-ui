@@ -75,7 +75,7 @@ export interface IExportSqlManageV1Params {
 
   filter_assignee?: string;
 
-  filter_instance_name?: string;
+  filter_instance_id?: string;
 
   filter_source?: exportSqlManageV1FilterSourceEnum;
 
@@ -123,7 +123,7 @@ export interface IGetSqlManageListV2Params {
 
   filter_assignee?: string;
 
-  filter_instance_name?: string;
+  filter_instance_id?: string;
 
   filter_source?: GetSqlManageListV2FilterSourceEnum;
 

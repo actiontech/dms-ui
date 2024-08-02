@@ -87,7 +87,6 @@ export default {
 
     result: {
       title: '创建SQL管控配置成功',
-      clone: '克隆配置',
       reset: '重置表单',
       jumpToDetail: '查看配置详情'
     }
@@ -116,7 +115,11 @@ export default {
         disabled: '停用',
         disabledSuccessTips: '停用成功！',
         disabledConfirmTips:
-          '停用后，将不再扫描该类型的SQL，当前数据会被保留，是否确认停用？'
+          '停用后，将不再扫描该类型的SQL，当前数据会被保留，是否确认停用？',
+        delete: '删除',
+        deleteSuccessTips: '删除成功',
+        deleteConfirmTips:
+          '删除后该类型智能扫描数据将不再被保留，是否确认删除？'
       }
     },
     scanTypeSqlCollection: {

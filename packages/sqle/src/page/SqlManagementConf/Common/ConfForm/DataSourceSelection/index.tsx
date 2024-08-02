@@ -4,7 +4,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
-import { BasicSelect, BasicSwitch, EmptyBox } from '@actiontech/shared';
+import { BasicSelect } from '@actiontech/shared';
 import {
   useCurrentProject,
   useProjectBusinessTips
@@ -22,10 +22,10 @@ const DataSourceSelection: React.FC = () => {
   const { projectName } = useCurrentProject();
   const [searchParams] = useSearchParams();
 
-  const { instanceNameByUrlSearchParams, businessByUrlSearchParams } =
+  const { instanceIdByUrlSearchParams, businessByUrlSearchParams } =
     useMemo(() => {
       return {
-        instanceNameByUrlSearchParams: searchParams.get('instance_name'),
+        instanceIdByUrlSearchParams: searchParams.get('instance_id'),
         businessByUrlSearchParams: searchParams.get('business')
       };
     }, [searchParams]);
@@ -40,13 +40,12 @@ const DataSourceSelection: React.FC = () => {
   } = useProjectBusinessTips();
 
   const form = Form.useFormInstance<SqlManagementConfFormFields>();
-  const needConnectDataSource = Form.useWatch('needConnectDataSource', form);
   const businessScope = Form.useWatch('businessScope', form);
   const instanceType = Form.useWatch('instanceType', form);
 
   const {
-    instanceIDOptions,
     instanceOptions,
+    instanceIDOptions,
     updateInstanceList,
     loading: getInstanceLoading,
     instanceList
@@ -58,65 +57,57 @@ const DataSourceSelection: React.FC = () => {
     generateDriverSelectOptions
   } = useDatabaseType();
 
-  const handleChangeInstance = (name?: string) => {
-    if (name) {
-      const instanceInfo = instanceList.find((v) => v.instance_name === name);
+  const handleChangeInstance = (id?: string) => {
+    if (id) {
+      const instanceInfo = instanceList.find((v) => v.instance_id === id);
       form.setFieldValue('instanceType', instanceInfo?.instance_type ?? null);
-      form.setFieldValue('instanceId', instanceInfo?.instance_id ?? null);
+      form.setFieldValue('instanceName', instanceInfo?.instance_name ?? null);
     }
-  };
-
-  const handleChangeNeedConnectDataSource = (checked: boolean) => {
-    if (checked && !!businessScope) {
-      updateInstanceList({
-        project_name: projectName,
-        filter_db_type: instanceType
-      });
-    }
-    form.resetFields(['instanceName']);
   };
 
   const handleChangeBusiness = (business: string) => {
-    if (business && needConnectDataSource) {
+    if (business) {
       updateInstanceList({
         project_name: projectName,
-        filter_db_type: instanceType
+        filter_db_type: instanceType,
+        filter_by_business: business
       });
     }
   };
 
   const handleChangeInstanceType = (type: string) => {
-    form.resetFields(['scanTypes']);
-    if (needConnectDataSource) {
-      form.resetFields(['instanceName']);
-      if (businessScope) {
-        updateInstanceList({ project_name: projectName, filter_db_type: type });
-      }
+    form.resetFields(['scanTypes', 'instanceId']);
+    if (businessScope) {
+      updateInstanceList({
+        project_name: projectName,
+        filter_db_type: type,
+        filter_by_business: businessScope
+      });
     }
   };
 
   const formItemDisabled =
-    submitLoading || !!defaultValue || !!instanceNameByUrlSearchParams;
+    submitLoading || !!defaultValue || !!instanceIdByUrlSearchParams;
 
   useEffect(() => {
     updateDriverNameList();
   }, [updateDriverNameList]);
 
   useEffect(() => {
-    if (!!instanceNameByUrlSearchParams && !!businessByUrlSearchParams) {
+    if (!!instanceIdByUrlSearchParams && !!businessByUrlSearchParams) {
       updateInstanceList(
         { project_name: projectName },
         {
           onSuccess: (list) => {
             const instance = list.find(
-              (v) => v.instance_name === instanceNameByUrlSearchParams
+              (v) => v.instance_id === instanceIdByUrlSearchParams
             );
             form.setFieldsValue({
               needConnectDataSource: true,
               businessScope: businessByUrlSearchParams,
-              instanceName: instanceNameByUrlSearchParams,
-              instanceId: instance?.instance_id,
-              instanceType: instance?.instance_type
+              instanceId: instanceIdByUrlSearchParams,
+              instanceType: instance?.instance_type,
+              instanceName: instance?.instance_name
             });
           }
         }
@@ -125,7 +116,7 @@ const DataSourceSelection: React.FC = () => {
   }, [
     businessByUrlSearchParams,
     form,
-    instanceNameByUrlSearchParams,
+    instanceIdByUrlSearchParams,
     projectName,
     updateInstanceList
   ]);
@@ -139,18 +130,6 @@ const DataSourceSelection: React.FC = () => {
       <FormItemSubTitle>
         {t('managementConf.create.dataSourceSelection')}
       </FormItemSubTitle>
-
-      <FormItemLabel
-        initialValue={false}
-        name="needConnectDataSource"
-        label={t('managementConf.create.dataSourceNeedsAudit')}
-        valuePropName="checked"
-      >
-        <BasicSwitch
-          disabled={formItemDisabled}
-          onChange={handleChangeNeedConnectDataSource}
-        />
-      </FormItemLabel>
 
       <FormItemLabel
         className="has-required-style"
@@ -187,34 +166,28 @@ const DataSourceSelection: React.FC = () => {
         </BasicSelect>
       </FormItemLabel>
 
-      <EmptyBox if={needConnectDataSource}>
-        <FormItemLabel
-          name="instanceName"
-          rules={[{ required: true }]}
-          label={
-            <CustomLabelContent
-              title={t('managementConf.create.instanceName')}
-              tips={t('managementConf.create.instanceNameTips')}
-            />
-          }
-          className="has-required-style has-label-tip"
-        >
-          <BasicSelect
-            disabled={formItemDisabled}
-            loading={getInstanceLoading}
-            options={instanceOptions}
-            onChange={handleChangeInstance}
-          />
-        </FormItemLabel>
+      <FormItemLabel name="instanceName" hidden>
+        <BasicSelect options={instanceOptions} />
+      </FormItemLabel>
 
-        <FormItemLabel hidden={true} name="instanceId">
-          <BasicSelect
-            disabled={formItemDisabled}
-            loading={getInstanceLoading}
-            options={instanceIDOptions}
+      <FormItemLabel
+        name="instanceId"
+        rules={[{ required: true }]}
+        label={
+          <CustomLabelContent
+            title={t('managementConf.create.instanceName')}
+            tips={t('managementConf.create.instanceNameTips')}
           />
-        </FormItemLabel>
-      </EmptyBox>
+        }
+        className="has-required-style has-label-tip"
+      >
+        <BasicSelect
+          disabled={formItemDisabled}
+          loading={getInstanceLoading}
+          options={instanceIDOptions}
+          onChange={handleChangeInstance}
+        />
+      </FormItemLabel>
     </>
   );
 };

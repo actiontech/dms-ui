@@ -91,10 +91,9 @@ const Update: React.FC = () => {
 
   const defaultValue = useMemo<SqlManagementConfFormFields>(() => {
     return {
-      needConnectDataSource: !auditPlanDetail?.static_audit,
       businessScope: auditPlanDetail?.business ?? '',
-      instanceName: auditPlanDetail?.instance_name ?? '',
       instanceType: auditPlanDetail?.instance_type ?? '',
+      instanceName: auditPlanDetail?.instance_name ?? '',
       instanceId: auditPlanDetail?.instance_id ?? '',
       scanTypes:
         auditPlanDetail?.audit_plans?.map(
@@ -116,7 +115,6 @@ const Update: React.FC = () => {
     auditPlanDetail?.instance_id,
     auditPlanDetail?.instance_name,
     auditPlanDetail?.instance_type,
-    auditPlanDetail?.static_audit,
     generateFormValueByParams
   ]);
 

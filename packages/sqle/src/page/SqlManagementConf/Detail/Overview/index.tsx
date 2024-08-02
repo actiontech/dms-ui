@@ -26,7 +26,8 @@ import EmitterKey from '../../../../data/EmitterKey';
 const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
   handleChangeTab,
-  instanceAuditPlanId
+  instanceAuditPlanId,
+  refreshAuditPlanDetail
 }) => {
   const { t } = useTranslation();
   const { username } = useCurrentUser();
@@ -50,7 +51,9 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
     disabledAction,
     disabledActionPending,
     enabledAction,
-    enabledActionPending
+    enabledActionPending,
+    deleteAction,
+    deleteActionPending
   } = useTableAction();
 
   const { data, loading, refresh } = useRequest(
@@ -90,13 +93,15 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
         onRow={(record) => {
           return {
             onClick: () => {
-              handleChangeTab(record.audit_plan_type?.type ?? '');
+              handleChangeTab(
+                record.audit_plan_type?.audit_plan_id?.toString() ?? ''
+              );
             }
           };
         }}
-        actions={ConfDetailOverviewColumnActions(
-          (type) => {
-            enabledAction(instanceAuditPlanId, type).then((res) => {
+        actions={ConfDetailOverviewColumnActions({
+          enabledAction: (auditPlanId) => {
+            enabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
                   t('managementConf.detail.overview.actions.enabledSuccessTips')
@@ -105,8 +110,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
-          (type) => {
-            disabledAction(instanceAuditPlanId, type).then((res) => {
+          disabledAction: (auditPlanId) => {
+            disabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
               if (res.data.code === ResponseCode.SUCCESS) {
                 messageApi.success(
                   t(
@@ -117,9 +122,21 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
               }
             });
           },
+          deleteAction: (auditPlanId) => {
+            deleteAction(instanceAuditPlanId, auditPlanId).then((res) => {
+              if (res.data.code === ResponseCode.SUCCESS) {
+                messageApi.success(
+                  t('managementConf.detail.overview.actions.deleteSuccessTips')
+                );
+                refreshAuditPlanDetail();
+                refresh();
+              }
+            });
+          },
           disabledActionPending,
-          enabledActionPending
-        )}
+          enabledActionPending,
+          deleteActionPending
+        })}
       />
     </Spin>
   );

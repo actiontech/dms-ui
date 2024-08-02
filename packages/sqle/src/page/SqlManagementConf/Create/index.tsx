@@ -21,14 +21,12 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
-import { useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const [searchParams] = useSearchParams();
   const instanceAuditPlanCreatedId = useRef<string>('');
 
   const { mergeFromValueIntoParams } = useAsyncParams();
@@ -49,20 +47,13 @@ const Create: React.FC = () => {
     form.resetFields();
   };
 
-  const cloneForm = () => {
-    backToForm();
-  };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
     instance_audit_plan
       .createInstanceAuditPlanV1({
         project_name: projectName,
-        business: values.businessScope,
-        static_audit: !values.needConnectDataSource,
-        instance_name: values.instanceName,
-        instance_type: values.instanceType,
+        instance_id: values.instanceId,
         audit_plans: values.scanTypes
           .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
           .map((item) => {
@@ -91,16 +82,6 @@ const Create: React.FC = () => {
         finishSubmit();
       });
   };
-
-  useEffect(() => {
-    const defaultInstanceName = searchParams?.get('instance_name');
-    if (defaultInstanceName) {
-      form.setFieldsValue({
-        needConnectDataSource: true,
-        instanceName: defaultInstanceName
-      });
-    }
-  }, [form, searchParams]);
 
   return (
     <ConfFormContextProvide
@@ -148,12 +129,11 @@ const Create: React.FC = () => {
 
         <LazyLoadComponent open={submitSuccessStatus} animation={false}>
           <CreationResult
-            id={instanceAuditPlanCreatedId.current}
+            instanceAuditPlanId={instanceAuditPlanCreatedId.current}
             resetForm={() => {
               onReset();
               backToForm();
             }}
-            cloneForm={cloneForm}
           />
         </LazyLoadComponent>
       </PageLayoutHasFixedHeaderStyleWrapper>

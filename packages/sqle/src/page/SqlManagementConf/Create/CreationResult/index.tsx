@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import { SqlManagementConfCreationResultProps } from './index.type';
 
 const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
-  cloneForm,
   resetForm,
-  id
+  instanceAuditPlanId
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -16,15 +15,12 @@ const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
       <BasicResult
         title={t('managementConf.create.result.title')}
         extra={[
-          <BasicButton key="clone" onClick={cloneForm}>
-            {t('managementConf.create.result.clone')}
-          </BasicButton>,
           <BasicButton key="reset" onClick={resetForm}>
             {t('managementConf.create.result.reset')}
           </BasicButton>,
           <Link
             key="jump-to-detail"
-            to={`/sqle/project/${projectID}/sql-management-conf/${id}`}
+            to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}`}
           >
             <BasicButton type="primary">
               {t('managementConf.create.result.jumpToDetail')}
