@@ -9,7 +9,7 @@ import {
 } from '../index.type';
 import { getColumnsLabel } from '../utils';
 
-const mergeFilterButtonMeta = <
+export const mergeFilterButtonMeta = <
   T extends Record<string, any>,
   F extends Record<string, any>,
   OtherKeys extends string = ''
@@ -124,7 +124,8 @@ const useTableFilterContainer = <
   return {
     filterButtonMeta,
     filterContainerMeta,
-    updateAllSelectedFilterItem
+    updateAllSelectedFilterItem,
+    updateFilterButtonMeta: setFilterButtonMeta
   };
 };
 

@@ -25,18 +25,28 @@ import {
   IFilter
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import useAuditResultRuleInfo from '../../../../components/ReportDrawer/useAuditResultRuleInfo';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import {
+  formatTime,
+  getErrorMessage
+} from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../components/AuditResultMessage';
+import { IGetInstanceAuditPlanSQLDataV1Params } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
+import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
-  auditPlanType,
+  auditPlanId,
   activeTabKey,
   instanceType
 }) => {
   const { t } = useTranslation();
+  const { sortableTableColumnFactory, tableFilterMetaFactory } =
+    useBackendTable();
 
+  const [dynamicTableFilterMeta, setDynamicTableFilterMeta] =
+    useState<ReturnType<typeof tableFilterMetaFactory>>();
   const { projectName } = useCurrentProject();
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
@@ -46,10 +56,20 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     pagination,
     tableFilterInfo,
     sortInfo,
-    updateTableFilterInfo
+    updateTableFilterInfo,
+    createSortParams
   } = useTableRequestParams();
-  const { sortableTableColumnFactory, tableFilterMetaFactory } =
-    useBackendTable();
+
+  const {
+    filterButtonMeta,
+    filterContainerMeta,
+    updateAllSelectedFilterItem,
+    updateFilterButtonMeta
+  } = useTableFilterContainer(
+    [],
+    updateTableFilterInfo,
+    dynamicTableFilterMeta?.extraTableFilterMeta
+  );
 
   const [
     reportDrawerVisible,
@@ -65,36 +85,58 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     data: tableMetas,
     loading: getFilterMetaListLoading,
     refresh: refreshFilterMetaList
-  } = useRequest(() =>
-    instance_audit_plan
-      .getInstanceAuditPlanSQLMetaV1({
-        project_name: projectName,
-        instance_audit_plan_id: instanceAuditPlanId,
-        audit_plan_type: auditPlanType
-      })
-      .then((res) => res.data)
+  } = useRequest(
+    () =>
+      instance_audit_plan
+        .getInstanceAuditPlanSQLMetaV1({
+          project_name: projectName,
+          instance_audit_plan_id: instanceAuditPlanId,
+          audit_plan_id: auditPlanId
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            const { tableFilterCustomProps, extraTableFilterMeta } =
+              tableFilterMetaFactory(res.data.data?.filter_meta_list ?? []);
+            setDynamicTableFilterMeta({
+              tableFilterCustomProps,
+              extraTableFilterMeta
+            });
+            updateFilterButtonMeta(
+              mergeFilterButtonMeta([], extraTableFilterMeta)
+            );
+            return res.data.data;
+          }
+        }),
+    {
+      ready: activeTabKey === auditPlanId
+    }
   );
-  const [extraTableFilterMeta, tableFilterCustomProps] = tableFilterMetaFactory(
-    tableMetas?.filter_meta_list ?? []
-  );
-
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer([], updateTableFilterInfo, extraTableFilterMeta);
-
   const {
-    data: tableData,
-    loading: getTableDataLoading,
-    refresh: refreshTableData
-  } = useRequest(() =>
-    instance_audit_plan
-      .getInstanceAuditPlanSQLDataV1({
+    data: tableRows,
+    loading: getTableRowLoading,
+    refresh: refreshTableRows,
+    error: getTableRowError
+  } = useRequest(
+    () => {
+      const cleanEmptyFilterKey = (obj: Record<string, any>) => {
+        return Object.keys(obj)
+          .filter((key) => obj[key] !== undefined)
+          .reduce<Record<string, any>>((acc, key) => {
+            acc[key] = obj[key];
+            return acc;
+          }, {});
+      };
+
+      const params: IGetInstanceAuditPlanSQLDataV1Params = {
         project_name: projectName,
         instance_audit_plan_id: instanceAuditPlanId,
-        audit_plan_type: auditPlanType,
+        audit_plan_id: auditPlanId,
         page_index: pagination.page_index,
         page_size: pagination.page_size,
-        filter_list: Object.keys(tableFilterInfo).map<IFilter>((key) => {
-          const value = tableFilterInfo[key];
+        filter_list: Object.keys(
+          cleanEmptyFilterKey(tableFilterInfo)
+        ).map<IFilter>((key) => {
+          const value = cleanEmptyFilterKey(tableFilterInfo)[key];
           if (Array.isArray(value) && value.length === 2) {
             return {
               filter_name: key,
@@ -109,8 +151,20 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             filter_compare_value: value
           };
         })
-      })
-      .then((res) => res.data)
+      };
+      createSortParams(params);
+      return instance_audit_plan
+        .getInstanceAuditPlanSQLDataV1(params)
+        .then((res) => ({
+          data: res.data.data?.rows,
+          total: res.data.total_nums ?? 0
+        }));
+    },
+
+    {
+      refreshDeps: [pagination, tableFilterInfo, sortInfo],
+      ready: activeTabKey === auditPlanId
+    }
   );
 
   const recordAuditResult = useMemo<IAuditResult[]>(() => {
@@ -129,7 +183,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   useEffect(() => {
     const refresh = () => {
       refreshFilterMetaList();
-      refreshTableData();
+      refreshTableRows();
     };
     const { unsubscribe } = eventEmitter.subscribe(
       EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List,
@@ -139,23 +193,29 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     return () => {
       unsubscribe();
     };
-  }, [refreshFilterMetaList, refreshTableData]);
+  }, [refreshFilterMetaList, refreshTableRows]);
 
   return (
     <ScanTypeSqlCollectionStyleWrapper>
-      <TableToolbar
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        filterCustomProps={tableFilterCustomProps}
-      />
+      {tableMetas?.filter_meta_list?.length && (
+        <TableToolbar
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+        >
+          <TableFilterContainer
+            className="inline-toolbar-table-filter-container"
+            filterContainerMeta={filterContainerMeta}
+            updateTableFilterInfo={updateTableFilterInfo}
+            filterCustomProps={dynamicTableFilterMeta?.tableFilterCustomProps}
+          />
+        </TableToolbar>
+      )}
+
       <ActiontechTable
-        loading={getFilterMetaListLoading || getTableDataLoading}
+        errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
+        loading={getFilterMetaListLoading || getTableRowLoading}
         columns={sortableTableColumnFactory(tableMetas?.head ?? [], {
           columnClassName: (type) =>
             type === 'sql' ? 'ellipsis-column-large-width' : undefined,
@@ -212,10 +272,10 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             return text;
           }
         })}
-        dataSource={tableData?.data?.rows}
+        dataSource={tableRows?.data}
         onChange={tableChange}
         pagination={{
-          total: tableData?.total_nums
+          total: tableRows?.total
         }}
       />
 
