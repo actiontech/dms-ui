@@ -11,3 +11,5 @@ export type SqlManagementConfFormFields = {
   scanTypes: string[];
   [key: string]: string | boolean | string[] | ScanTypeParams;
 };
+
+export type FreezingFormFields = Array<keyof SqlManagementConfFormFields>;
