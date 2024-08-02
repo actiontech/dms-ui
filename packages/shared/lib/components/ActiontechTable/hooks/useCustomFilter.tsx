@@ -141,14 +141,20 @@ const useCustomFilter = () => {
       props?.onChange?.(values, formatString);
       const formTime = values?.[0]?.format('YYYY-MM-DDTHH:mm:ssZ');
       const toTime = values?.[1]?.format('YYYY-MM-DDTHH:mm:ssZ');
-      if (Array.isArray(meta.filterKey)) {
-        if (meta.filterKey.length === 2) {
-          const fromKey = meta.filterKey[0];
-          const toKey = meta.filterKey[1];
-          updateTableFilterInfo((filterInfo: F) => {
-            return { ...filterInfo, [fromKey]: formTime, [toKey]: toTime };
-          });
-        }
+      if (Array.isArray(meta.filterKey) && meta.filterKey.length === 2) {
+        const fromKey = meta.filterKey[0];
+        const toKey = meta.filterKey[1];
+        updateTableFilterInfo((filterInfo: F) => {
+          return { ...filterInfo, [fromKey]: formTime, [toKey]: toTime };
+        });
+      } else if (typeof meta.filterKey === 'string') {
+        const key = meta.filterKey;
+        updateTableFilterInfo((filterInfo: F) => {
+          return {
+            ...filterInfo,
+            [key]: [formTime, toTime]
+          };
+        });
       }
     };
 
