@@ -223,3 +223,43 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
     ]
   }
 ];
+
+export const mockAuditPlanDetailData = {
+  business: 'business1',
+  instance_type: 'MySQL',
+  instance_name: 'mysql-1',
+  instance_id: '1739531854064652288',
+  audit_plans: [
+    {
+      audit_plan_params: [],
+      audit_plan_type: {
+        audit_plan_id: 9,
+        type: 'default',
+        desc: '自定义'
+      },
+      rule_template_name: 'default_MySQL1'
+    },
+    {
+      audit_plan_params: [
+        {
+          key: 'collect_interval_minute',
+          desc: '采集周期（分钟）',
+          value: '61',
+          type: AuditPlanParamResV1TypeEnum.int
+        },
+        {
+          key: 'collect_view',
+          desc: '是否采集视图信息',
+          value: 'true',
+          type: AuditPlanParamResV1TypeEnum.bool
+        }
+      ],
+      audit_plan_type: {
+        audit_plan_id: 10,
+        type: 'mysql_schema_meta',
+        desc: 'MySQL库表元数据'
+      },
+      rule_template_name: 'default_MySQL'
+    }
+  ]
+};

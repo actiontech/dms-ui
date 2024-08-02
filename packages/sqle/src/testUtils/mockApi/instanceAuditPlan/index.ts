@@ -6,7 +6,8 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import {
   mockInstanceAuditPlanListData,
   mockAuditPlanTypesData,
-  mockAuditPlanMetaData
+  mockAuditPlanMetaData,
+  mockAuditPlanDetailData
 } from './data';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 
@@ -18,6 +19,8 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     this.deleteInstanceAuditPlan();
     this.createInstanceAuditPlan();
     this.getAuditPlanMeta();
+    this.getInstanceAuditPlanDetail();
+    this.updateInstanceAuditPlan();
   }
 
   public getInstanceAuditPlans() {
@@ -69,6 +72,22 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
         data: mockAuditPlanMetaData
       })
     );
+    return spy;
+  }
+
+  public getInstanceAuditPlanDetail() {
+    const spy = jest.spyOn(instance_audit_plan, 'getInstanceAuditPlanDetailV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockAuditPlanDetailData
+      })
+    );
+    return spy;
+  }
+
+  public updateInstanceAuditPlan() {
+    const spy = jest.spyOn(instance_audit_plan, 'updateInstanceAuditPlanV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }
