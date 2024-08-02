@@ -32,7 +32,7 @@ export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
 export type ExtraFilterMetaType = ISqlManage & {
   filter_business?: string;
   filter_source?: string;
-  filter_instance_name?: string;
+  filter_instance_id?: string;
   filter_audit_level?: string;
   filter_rule_name?: string;
   time?: string;
@@ -56,10 +56,10 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       }
     ],
     [
-      'filter_instance_name',
+      'filter_instance_id',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_instance_name',
+        filterKey: 'filter_instance_id',
         filterLabel: t('sqlManagement.table.filter.instanceName'),
         checked: false
       }
