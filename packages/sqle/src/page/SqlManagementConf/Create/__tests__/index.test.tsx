@@ -399,5 +399,10 @@ describe('test sqle/SqlManagementConf/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('创建SQL管控配置成功')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('重置表单'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('重 置'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('business2')).toBeInTheDocument();
   });
 });
