@@ -23,11 +23,13 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
+import { useSearchParams } from 'react-router-dom';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const instanceAuditPlanCreatedId = useRef<string>('');
+  const [searchParams] = useSearchParams();
 
   const { mergeFromValueIntoParams } = useAsyncParams();
   const {
@@ -40,11 +42,16 @@ const Create: React.FC = () => {
     scanTypeMetas,
     submitSuccessStatus,
     successfulSubmit,
-    backToForm
+    backToForm,
+    resetFormExceptFreezingFields
   } = useSqlManagementConfFormSharedStates();
 
   const onReset = () => {
-    form.resetFields();
+    if (!!searchParams.get('instance_id') && !!searchParams.get('business')) {
+      resetFormExceptFreezingFields();
+    } else {
+      form.resetFields();
+    }
   };
 
   const onSubmit = async () => {

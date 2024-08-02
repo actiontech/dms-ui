@@ -38,12 +38,9 @@ const Update: React.FC = () => {
     startSubmit,
     finishSubmit,
     selectedScanTypeParams,
-    scanTypeMetas
+    scanTypeMetas,
+    resetFormExceptFreezingFields
   } = useSqlManagementConfFormSharedStates();
-
-  const onReset = () => {
-    form.resetFields();
-  };
 
   const onSubmit = async () => {
     const values = await form.validateFields();
@@ -136,7 +133,10 @@ const Update: React.FC = () => {
             title={<BackToConf />}
             extra={
               <Space>
-                <BasicButton onClick={onReset} disabled={submitLoading}>
+                <BasicButton
+                  onClick={resetFormExceptFreezingFields}
+                  disabled={submitLoading}
+                >
                   {t('common.reset')}
                 </BasicButton>
                 <BasicButton
