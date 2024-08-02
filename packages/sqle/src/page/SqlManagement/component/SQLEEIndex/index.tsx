@@ -262,6 +262,7 @@ const SQLEEIndex = () => {
       t('sqlManagement.pageHeader.action.exporting')
     );
     const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
+
     const params = {
       ...otherTableFilterInfo,
       filter_status:
