@@ -1,4 +1,9 @@
-import { PageHeader, SegmentedTabs } from '@actiontech/shared';
+import {
+  BasicButton,
+  EmptyBox,
+  PageHeader,
+  SegmentedTabs
+} from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
@@ -6,7 +11,7 @@ import ConfDetailOverview from './Overview';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
-import { useRequest } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import {
   useLocation,
   useNavigate,
@@ -15,7 +20,7 @@ import {
 } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { Result } from 'antd';
+import { Result, Space } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';
 import eventEmitter from '../../../utils/EventEmitter';
@@ -33,6 +38,8 @@ const ConfDetail: React.FC = () => {
   const [activeKey, setActiveKey] = useState(
     SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY
   );
+  const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
+    useBoolean();
 
   const {
     data,
@@ -92,6 +99,8 @@ const ConfDetail: React.FC = () => {
           auditPlanId={v.audit_plan_type?.audit_plan_id?.toString() ?? ''}
           activeTabKey={activeKey}
           instanceType={data.instance_type ?? ''}
+          exportPending={exportPending}
+          exportDone={exportDone}
         />
       )
     })) ?? [])
@@ -105,6 +114,10 @@ const ConfDetail: React.FC = () => {
     }
   };
 
+  const exportScanTypeSqlDetail = () => {
+    eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Sql_List);
+  };
+
   return (
     <>
       <PageHeader
@@ -112,7 +125,20 @@ const ConfDetail: React.FC = () => {
           instanceName:
             data?.instance_name || t('managementConf.detail.staticScanTypes')
         })}
-        extra={<BackToConf />}
+        extra={
+          <Space>
+            <BackToConf />
+            <EmptyBox if={activeKey !== SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}>
+              <BasicButton
+                disabled={exporting}
+                onClick={exportScanTypeSqlDetail}
+                type="primary"
+              >
+                {t('managementConf.detail.export')}
+              </BasicButton>
+            </EmptyBox>
+          </Space>
+        }
       />
       {error ? (
         <Result

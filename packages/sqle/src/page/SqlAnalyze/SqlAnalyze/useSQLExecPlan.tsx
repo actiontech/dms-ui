@@ -6,7 +6,7 @@ import {
   BasicResult,
   SQLRenderer
 } from '@actiontech/shared';
-import useBackendTable from '../../../hooks/useBackendTable/useBackendTable1';
+import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
 import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';

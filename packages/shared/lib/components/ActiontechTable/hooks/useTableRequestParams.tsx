@@ -89,27 +89,26 @@ const useTableRequestParams = <
     params.fuzzy_keyword = search;
   };
 
-  const createSortParams = <
-    T extends { order_by?: string; is_asc?: boolean } & F
-  >(
-    params: T
-  ) => {
-    if (isEmpty(sortInfo)) return;
-    if (Array.isArray(sortInfo)) {
-      const _sortInfo = sortInfo[0];
-      if (!!_sortInfo.order && !!_sortInfo.field) {
-        params.order_by = Array.isArray(_sortInfo.field)
-          ? _sortInfo.field[0]
-          : _sortInfo.field;
-        params.is_asc = _sortInfo.order === 'ascend';
+  const createSortParams = useCallback(
+    <T extends { order_by?: string; is_asc?: boolean } & F>(params: T) => {
+      if (isEmpty(sortInfo)) return;
+      if (Array.isArray(sortInfo)) {
+        const _sortInfo = sortInfo[0];
+        if (!!_sortInfo.order && !!_sortInfo.field) {
+          params.order_by = Array.isArray(_sortInfo.field)
+            ? _sortInfo.field[0]
+            : _sortInfo.field;
+          params.is_asc = _sortInfo.order === 'ascend';
+        }
+      } else if (!!sortInfo.order && !!sortInfo.field) {
+        params.order_by = Array.isArray(sortInfo.field)
+          ? sortInfo.field[0]
+          : sortInfo.field;
+        params.is_asc = sortInfo.order === 'ascend';
       }
-    } else if (!!sortInfo.order && !!sortInfo.field) {
-      params.order_by = Array.isArray(sortInfo.field)
-        ? sortInfo.field[0]
-        : sortInfo.field;
-      params.is_asc = sortInfo.order === 'ascend';
-    }
-  };
+    },
+    [sortInfo]
+  );
 
   const tableChange = useCallback<Required<TableProps<R>>['onChange']>(
     (newPagination, _, sort) => {
