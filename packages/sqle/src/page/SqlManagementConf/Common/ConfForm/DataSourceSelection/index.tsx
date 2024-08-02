@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import { Form } from 'antd';
 import useInstance from '../../../../../hooks/useInstance';
-import { useContext, useEffect, useMemo } from 'react';
+import { useContext, useEffect, useMemo, useCallback } from 'react';
 import useDatabaseType from '../../../../../hooks/useDatabaseType';
 import { ConfFormContext } from '../context';
 import { SqlManagementConfFormFields } from '../index.type';
@@ -93,32 +93,40 @@ const DataSourceSelection: React.FC = () => {
     updateDriverNameList();
   }, [updateDriverNameList]);
 
-  useEffect(() => {
-    if (!!instanceIdByUrlSearchParams && !!businessByUrlSearchParams) {
+  const updateInstanceListByProjectName = useCallback(
+    (id: string) => {
       updateInstanceList(
         { project_name: projectName },
         {
           onSuccess: (list) => {
-            const instance = list.find(
-              (v) => v.instance_id === instanceIdByUrlSearchParams
-            );
+            const instance = list.find((v) => v.instance_id === id);
             form.setFieldsValue({
-              needConnectDataSource: true,
-              businessScope: businessByUrlSearchParams,
-              instanceId: instanceIdByUrlSearchParams,
-              instanceType: instance?.instance_type,
-              instanceName: instance?.instance_name
+              instanceName: instance?.instance_name,
+              instanceType: instance?.instance_type
             });
           }
         }
       );
+    },
+    [form, projectName, updateInstanceList]
+  );
+
+  useEffect(() => {
+    if (!!instanceIdByUrlSearchParams && !!businessByUrlSearchParams) {
+      form.setFieldsValue({
+        businessScope: businessByUrlSearchParams,
+        instanceId: instanceIdByUrlSearchParams
+      });
+      updateInstanceListByProjectName(instanceIdByUrlSearchParams);
+    } else if (!!defaultValue) {
+      updateInstanceListByProjectName(defaultValue.instanceId as string);
     }
   }, [
     businessByUrlSearchParams,
-    form,
     instanceIdByUrlSearchParams,
-    projectName,
-    updateInstanceList
+    defaultValue,
+    updateInstanceListByProjectName,
+    form
   ]);
 
   useEffect(() => {

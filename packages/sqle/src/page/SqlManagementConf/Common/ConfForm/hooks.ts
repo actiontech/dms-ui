@@ -1,9 +1,16 @@
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form } from 'antd';
-import { SqlManagementConfFormFields } from './index.type';
+import { SqlManagementConfFormFields, FreezingFormFields } from './index.type';
 import { SelectScanTypeParamsType } from './context';
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
+
+const freezingFormFields: FreezingFormFields = [
+  'instanceId',
+  'instanceName',
+  'businessScope',
+  'instanceType'
+];
 
 export const useSqlManagementConfFormSharedStates = () => {
   const [form] = Form.useForm<SqlManagementConfFormFields>();
@@ -46,6 +53,14 @@ export const useSqlManagementConfFormSharedStates = () => {
     );
   }, [scanTypeMetas, scanTypes]);
 
+  const resetFormExceptFreezingFields = useCallback(() => {
+    form.resetFields(
+      Object.keys(form.getFieldsValue()).filter(
+        (key) => !freezingFormFields.includes(key)
+      )
+    );
+  }, [form]);
+
   return {
     form,
     getScanTypeMetaPending,
@@ -57,6 +72,8 @@ export const useSqlManagementConfFormSharedStates = () => {
     scanTypeMetas,
     submitSuccessStatus,
     successfulSubmit,
-    backToForm
+    backToForm,
+    freezingFormFields,
+    resetFormExceptFreezingFields
   };
 };
