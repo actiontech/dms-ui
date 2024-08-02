@@ -34,6 +34,7 @@ const exportParams = {
   filter_db_type: undefined,
   filter_rule_name: undefined,
   project_name: mockProjectInfo.projectName,
+  filter_business: undefined,
   fuzzy_search_sql_fingerprint: '',
   filter_status: 'unhandled'
 };
