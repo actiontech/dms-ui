@@ -119,6 +119,15 @@ export const mockUseProjectBusinessTipsData = {
   projectBusiness: ['business1', 'business2'],
   loading: false,
   updateProjectBusinessTips: jest.fn(),
-  projectBusinessOption: jest.fn(),
+  projectBusinessOption: () => [
+    {
+      label: 'business1',
+      value: 'business1'
+    },
+    {
+      label: 'business2',
+      value: 'business2'
+    }
+  ],
   isFixedBusiness: true
 };
