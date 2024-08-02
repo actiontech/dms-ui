@@ -41,7 +41,13 @@ export const ConfDetailOverviewColumns: (
           : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
         return (
-          <Link target="_blank" to={path}>
+          <Link
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            target="_blank"
+            to={path}
+          >
             {ruleTemplate.name}
           </Link>
         );
@@ -127,7 +133,6 @@ export const ConfDetailOverviewColumnActions: (params: {
       {
         key: 'enable',
         text: t('managementConf.detail.overview.actions.enabled'),
-
         permissions: (record) =>
           record?.active_status ===
           InstanceAuditPlanInfoActiveStatusEnum.disabled,

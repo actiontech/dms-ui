@@ -2,7 +2,6 @@ import {
   IFilterMeta,
   IFilterTip
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { FilterMetaFilterOpTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { FilterMetaFilterInputTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
@@ -135,7 +134,8 @@ const useBackendTable = () => {
 
   const tableFilterMetaFactory = useCallback(
     (
-      filterMetaList: IFilterMeta[]
+      filterMetaList: IFilterMeta[],
+      autoSelectAllFilters?: boolean
     ): {
       extraTableFilterMeta: ActiontechTableFilterMeta;
       tableFilterCustomProps: TableFilterContainerProps['filterCustomProps'];
@@ -200,7 +200,7 @@ const useBackendTable = () => {
             ),
             filterKey: meta.filter_name,
             filterLabel: meta.desc,
-            checked: false
+            checked: !!autoSelectAllFilters
           });
         }
       });
