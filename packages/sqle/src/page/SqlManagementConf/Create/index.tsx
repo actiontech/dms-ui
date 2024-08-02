@@ -47,10 +47,6 @@ const Create: React.FC = () => {
     form.resetFields();
   };
 
-  const cloneForm = () => {
-    backToForm();
-  };
-
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
@@ -133,12 +129,11 @@ const Create: React.FC = () => {
 
         <LazyLoadComponent open={submitSuccessStatus} animation={false}>
           <CreationResult
-            id={instanceAuditPlanCreatedId.current}
+            instanceAuditPlanId={instanceAuditPlanCreatedId.current}
             resetForm={() => {
               onReset();
               backToForm();
             }}
-            cloneForm={cloneForm}
           />
         </LazyLoadComponent>
       </PageLayoutHasFixedHeaderStyleWrapper>
