@@ -1,0 +1,885 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SqlManagementConf/ScanTypesSelection render init snap shot 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            选择扫描类型
+          </h1>
+          <div
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class=""
+                  for="scanTypes"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      扫描类型
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择您需要扫描的SQL对象
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <span
+                      class="css-qly0fu"
+                      id="scanTypes"
+                    >
+                      选择数据源类型后获取对应的扫描任务类型
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`test SqlManagementConf/ScanTypesSelection render scan type field when selectedScanTypeParams is not empty 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            选择扫描类型
+          </h1>
+          <div
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class=""
+                  for="scanTypes"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      扫描类型
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择您需要扫描的SQL对象
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                      id="scanTypes"
+                      style="flex-wrap: wrap; margin-bottom: -8px;"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label="全部"
+                            class="toggle-token-item-label"
+                            title="全部"
+                          >
+                            全部
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              自定义
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              Mybatis 扫描
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              MySQL库表元数据
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              阿里RDS MySQL慢日志
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              SQL文件
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              测试扫描类型
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            选择扫描类型
+          </h1>
+          <div
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class=""
+                  for="scanTypes"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      扫描类型
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择您需要扫描的SQL对象
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                      id="scanTypes"
+                      style="flex-wrap: wrap; margin-bottom: -8px;"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label="全部"
+                              class="toggle-token-item-label"
+                              title="全部"
+                            >
+                              全部
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                自定义
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                Mybatis 扫描
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                MySQL库表元数据
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                阿里RDS MySQL慢日志
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                SQL文件
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                测试扫描类型
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            选择扫描类型
+          </h1>
+          <div
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class=""
+                  for="scanTypes"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      扫描类型
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择您需要扫描的SQL对象
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                      id="scanTypes"
+                      style="flex-wrap: wrap; margin-bottom: -8px;"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label="全部"
+                            class="toggle-token-item-label"
+                            title="全部"
+                          >
+                            全部
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              自定义
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              Mybatis 扫描
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-checked toggle-token-item-no-style"
+                        >
+                          <div
+                            class="toggle-token-item-with-checkbox-children"
+                          >
+                            <span
+                              aria-label="check-circle"
+                              class="anticon anticon-check-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="check-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              aria-label=""
+                              class="toggle-token-item-label"
+                              title=""
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                MySQL库表元数据
+                              </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              阿里RDS MySQL慢日志
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px; padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              SQL文件
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="padding-bottom: 8px;"
+                      >
+                        <div
+                          class="toggle-token-item toggle-token-item-with-checkbox toggle-token-item-no-style"
+                        >
+                          <span
+                            aria-label=""
+                            class="toggle-token-item-label"
+                            title=""
+                          >
+                            <div
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                            >
+                              测试扫描类型
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
