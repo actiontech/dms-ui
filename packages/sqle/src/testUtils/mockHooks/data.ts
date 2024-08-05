@@ -1,6 +1,7 @@
+import useDatabaseType from '../../hooks/useDatabaseType';
 import { driverMeta } from '../../hooks/useDatabaseType/index.test.data';
 
-export const mockUseDatabaseType = {
+export const mockUseDatabaseType: ReturnType<typeof useDatabaseType> = {
   loading: false,
   driverNameList: [],
   updateDriverNameList: jest.fn(),

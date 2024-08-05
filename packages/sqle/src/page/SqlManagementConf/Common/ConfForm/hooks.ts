@@ -32,13 +32,14 @@ export const useSqlManagementConfFormSharedStates = () => {
           filter_instance_type: selectedInstanceType,
           filter_instance_id: selectedInstanceId
         })
-        .then((res) => res.data.data),
+        .then((res) => {
+          return res.data.data;
+        }),
     {
       ready: !!selectedInstanceType,
       refreshDeps: [selectedInstanceType, selectedInstanceId]
     }
   );
-
   const selectedScanTypeParams: SelectScanTypeParamsType = useMemo(() => {
     return (
       scanTypeMetas
