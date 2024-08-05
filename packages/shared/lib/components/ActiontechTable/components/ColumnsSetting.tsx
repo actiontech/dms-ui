@@ -50,6 +50,7 @@ const ColumnsSetting = <
 
   const switchChangeHandle = (dataIndex: keyof T, checked: boolean) => {
     const columnsInfo = {
+      ...cloneDeep(localColumns),
       [dataIndex]: {
         ...localColumns[dataIndex],
         show: checked
