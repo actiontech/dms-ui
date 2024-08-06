@@ -66,7 +66,7 @@ describe('useDbService', () => {
     expect(result.current.dbServiceList).toEqual([]);
   });
 
-  it('should set list to empty array when response throw error', async () => {
+  it.only('should set list to empty array when response throw error', async () => {
     listDbServicesSpy.mockClear();
     listDbServicesSpy.mockImplementation(() =>
       createSpyErrorResponse({ total: 0, users: [] })

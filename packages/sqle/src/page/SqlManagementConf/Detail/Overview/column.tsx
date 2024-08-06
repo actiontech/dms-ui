@@ -153,6 +153,11 @@ export const ConfDetailOverviewColumnActions: (params: {
         permissions: (record) =>
           record?.active_status ===
           InstanceAuditPlanInfoActiveStatusEnum.normal,
+        buttonProps: () => {
+          return {
+            disabled: disabledActionPending
+          };
+        },
         confirm: (record) => {
           return {
             disabled: disabledActionPending,
@@ -172,6 +177,7 @@ export const ConfDetailOverviewColumnActions: (params: {
         text: t('managementConf.detail.overview.actions.delete'),
         buttonProps: () => {
           return {
+            disabled: deleteActionPending,
             danger: true
           };
         },
