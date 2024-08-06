@@ -28,7 +28,6 @@ import EmitterKey from '../../../data/EmitterKey';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
-
   const { id } = useParams<{ id: string }>();
   const [searchParams] = useSearchParams();
   const location = useLocation();
