@@ -1,10 +1,13 @@
 import { superRender } from '../../../../../../../testUtils/customRender';
 import BaseInfoFormItem from '../BaseInfoFormItem';
-import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { Form } from 'antd';
 
 describe('test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem', () => {
-  ignoreInvalidValueForCSSStyleProperty();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
 
   it('should match snapshot with slot', () => {
     const { container: containerWithSlot } = superRender(

@@ -7,6 +7,16 @@ import EmitterKey from '../../../../data/EmitterKey';
 describe('lib/ActiontechTable-hooks-useTableSettings', () => {
   const tableName = 'tableList';
   const username = 'admin';
+  const mockColumns = [
+    {
+      dataIndex: 'id',
+      title: 'id'
+    },
+    {
+      dataIndex: 'name',
+      title: 'name'
+    }
+  ];
   const tableData = {
     [username]: {
       id: {
@@ -50,15 +60,72 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
       .spyOn(LocalStorageWrapper, 'get')
       .mockReturnValue(JSON.stringify(tableData));
 
-    const { result } = renderHook(() => useTableSettings(tableName, username));
+    // add columns
+    const { result: addColumnsResult } = renderHook(() =>
+      useTableSettings(tableName, username)
+    );
     await act(async () => {
-      const res = result.current.catchDefaultColumnsInfo([
+      addColumnsResult.current.catchDefaultColumnsInfo([
+        ...mockColumns,
         {
           dataIndex: 'sex',
           title: '性别'
         }
       ]);
-      expect(res).toEqual(undefined);
+    });
+
+    expect(addColumnsResult.current.localColumns).toEqual({
+      ...tableData[username],
+      sex: {
+        order: 3,
+        title: '性别',
+        fixed: undefined,
+        show: true
+      }
+    });
+    cleanup();
+
+    // update column title
+    const { result: updateColumnTitleResult } = renderHook(() =>
+      useTableSettings(tableName, username)
+    );
+    await act(async () => {
+      updateColumnTitleResult.current.catchDefaultColumnsInfo([
+        mockColumns[0],
+        {
+          ...mockColumns[1],
+          title: 'update name'
+        }
+      ]);
+    });
+
+    expect(updateColumnTitleResult.current.localColumns).toEqual({
+      ...tableData[username],
+      name: {
+        ...tableData[username].name,
+        title: 'update name'
+      }
+    });
+    cleanup();
+
+    // update&delete columns
+    const { result } = renderHook(() => useTableSettings(tableName, username));
+    await act(async () => {
+      result.current.catchDefaultColumnsInfo([
+        {
+          dataIndex: 'sex',
+          title: '性别'
+        }
+      ]);
+    });
+
+    expect(result.current.localColumns).toEqual({
+      sex: {
+        order: 1,
+        title: '性别',
+        fixed: undefined,
+        show: true
+      }
     });
   });
 
@@ -76,7 +143,7 @@ describe('lib/ActiontechTable-hooks-useTableSettings', () => {
           title: '性别'
         }
       ]);
-      expect(LocalStorageWrapperSet).toHaveBeenCalledTimes(2);
+      expect(LocalStorageWrapperSet).toHaveBeenCalledTimes(1);
       expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
         tableName,
         JSON.stringify({

@@ -6,14 +6,19 @@ import { renderWithTheme } from '../../../../testUtil/customRender';
 import { TypeFilterElement } from '../../index.type';
 import FilterContainer from '../FilterContainer';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { ignoreComponentWarnExpDatePickChooseElement } from '../../../../testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '../../../../testUtil/common';
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/mk';
 import MockDate from 'mockdate';
 
 describe('lib/ActiontechTable-FilterContainer', () => {
-  ignoreComponentWarnExpDatePickChooseElement();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INPUT_DATE_FORMAT_MISMATCH
+  ]);
 
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-12').valueOf());

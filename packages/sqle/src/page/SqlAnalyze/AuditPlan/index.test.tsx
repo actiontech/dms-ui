@@ -9,7 +9,10 @@ import { AuditPlanSqlAnalyzeData } from '../__testData__';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router', () => {
   return {
@@ -21,7 +24,7 @@ jest.mock('react-router', () => {
 const projectName = 'default';
 
 describe('SqlAnalyze/AuditPlan', () => {
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 

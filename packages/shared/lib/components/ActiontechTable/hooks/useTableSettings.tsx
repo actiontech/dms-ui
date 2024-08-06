@@ -8,6 +8,7 @@ import { eventEmitter } from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { getColumnsLabel } from '../utils';
 import LocalStorageWrapper from '../../../utils/LocalStorageWrapper';
+import { isEqual } from 'lodash';
 
 const useTableSettings = <
   T extends Record<string, any>,
@@ -34,8 +35,46 @@ const useTableSettings = <
         try {
           const localStr = LocalStorageWrapper.get(tableName);
           const localData = localStr ? JSON.parse(localStr) : undefined;
-
           if (localData?.[username]) {
+            const localColumnsRecord = localData?.[username];
+            const newColumnsRecord = defaultColumns.reduce(
+              (acc, cur, index) => {
+                if (localColumnsRecord[cur.dataIndex]) {
+                  return {
+                    ...acc,
+                    [cur.dataIndex]: {
+                      ...localColumnsRecord[cur.dataIndex],
+                      title: getColumnsLabel(cur.title)
+                    }
+                  };
+                }
+                return {
+                  ...acc,
+                  [cur.dataIndex]: {
+                    order: index + 1,
+                    show: cur.show ?? true,
+                    fixed: cur?.fixed,
+                    title: getColumnsLabel(cur.title)
+                  }
+                };
+              },
+              {} as CatchTableColumnValueType<T, OtherColumnKeys>
+            );
+
+            if (isEqual(newColumnsRecord, localColumnsRecord)) {
+              return;
+            }
+            const data: CatchTableColumnsType<T> = {
+              ...localData,
+              [username]: newColumnsRecord
+            };
+
+            eventEmitter.emit(
+              EmitterKey.UPDATE_LOCAL_COLUMNS,
+              data[username],
+              tableName,
+              username
+            );
             return;
           }
           const columnsInfo: CatchTableColumnValueType<T, OtherColumnKeys> =
@@ -57,7 +96,6 @@ const useTableSettings = <
             ? { ...localData, [username]: columnsInfo }
             : { [username]: columnsInfo };
 
-          LocalStorageWrapper.set(tableName, JSON.stringify(data));
           eventEmitter.emit(
             EmitterKey.UPDATE_LOCAL_COLUMNS,
             data[username],
@@ -84,12 +122,11 @@ const useTableSettings = <
         const localData = localStr ? JSON.parse(localStr) : undefined;
 
         if (_tableName === tableName && _username === username) {
-          const columnsInfo = { ...localColumns, ...value };
-          setLocalColumns(columnsInfo);
+          setLocalColumns(value);
 
           const data: CatchTableColumnsType<T> = localData
-            ? { ...localData, [username]: columnsInfo }
-            : { [username]: columnsInfo };
+            ? { ...localData, [username]: value }
+            : { [username]: value };
 
           LocalStorageWrapper.set(tableName, JSON.stringify(data));
         }
@@ -98,7 +135,7 @@ const useTableSettings = <
         console.error(error);
       }
     },
-    [localColumns, tableName, username]
+    [tableName, username]
   );
 
   useEffect(() => {

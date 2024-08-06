@@ -344,10 +344,6 @@ export interface ActiontechTableProps<
   F = Record<string, any>,
   OtherColumnKeys extends string = ''
 > extends Omit<TableProps<T>, 'columns'> {
-  /**
-   * todo 需要解决的问题: 在什么时候更新缓存数据
-   * 当设置 setting 后, 如果后续对 表格的 columns 有变更, 需要更新下存在 localeStorage 里对应的 columns 数据, 否则表格列可能不会更新
-   */
   setting?: ColumnsSettingProps | false;
   /**
    * 生成表格操作列
