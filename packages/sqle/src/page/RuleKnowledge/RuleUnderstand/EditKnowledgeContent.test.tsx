@@ -3,12 +3,15 @@ import { superRender } from '../../../testUtils/customRender';
 import EditKnowledgeContent from './EditKnowledgeContent';
 import { EditKnowledgeContentProps } from './index.type';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('rehype-sanitize', () => () => jest.fn());
 
 describe('page/RuleKnowledge/EditKnowledgeContent', () => {
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   const mockChange = jest.fn();
   const mockSetHasDirtyData = jest.fn();

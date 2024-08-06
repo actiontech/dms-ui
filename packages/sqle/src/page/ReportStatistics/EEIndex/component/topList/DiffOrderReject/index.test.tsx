@@ -9,10 +9,13 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 import DiffOrderReject from '.';
-import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('ReportStatistics/topList/DiffOrderReject', () => {
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
   const customRender = () => {
     return renderWithTheme(<DiffOrderReject />);
   };

@@ -12,7 +12,10 @@ import { superRender } from '../../../../../../testUtils/customRender';
 import UpdateInfoDrawer from '.';
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { useForm } from 'antd/es/form/Form';
-import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../data/ModalName';
 import MockDate from 'mockdate';
@@ -20,7 +23,7 @@ import dayjs from 'dayjs';
 import dbServices from '../../../../../../testUtils/mockApi/dbServices';
 
 describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
-  ignoreInvalidValueForCSSStyleProperty();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
 
   const customRender = (
     mockCreateExportTaskForm?: Parameters<
