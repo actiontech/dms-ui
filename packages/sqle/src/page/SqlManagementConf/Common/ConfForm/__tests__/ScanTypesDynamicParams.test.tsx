@@ -1,24 +1,21 @@
-import ScanTypesDynamicParams from '../';
+import ScanTypesDynamicParams from '../ScanTypesDynamicParams';
 import {
   superRender,
   renderHooksWithTheme
-} from '../../../../../../testUtils/customRender';
-import {
-  ConfFormContextProvide,
-  SelectScanTypeParamsType
-} from '../../context';
+} from '../../../../../testUtils/customRender';
+import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
 import {
   mockAuditPlanMetaData,
   mockAuditPlanDetailData
-} from '../../../../../../testUtils/mockApi/instanceAuditPlan/data';
+} from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup, act } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import rule_template from '../../../../../../testUtils/mockApi/rule_template';
-import { SqlManagementConfFormFields } from '../../index.type';
+import rule_template from '../../../../../testUtils/mockApi/rule_template';
+import { SqlManagementConfFormFields } from '../index.type';
 
 describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
   let getProjectRuleTemplateTipSpy: jest.SpyInstance;

@@ -1,15 +1,12 @@
-import ScanTypesSelection from '../';
+import ScanTypesSelection from '../ScanTypesSelection';
 import {
   superRender,
   renderHooksWithTheme
-} from '../../../../../../testUtils/customRender';
-import {
-  ConfFormContextProvide,
-  SelectScanTypeParamsType
-} from '../../context';
+} from '../../../../../testUtils/customRender';
+import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
-import instance from '../../../../../../testUtils/mockApi/instance';
-import { mockAuditPlanMetaData } from '../../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import instance from '../../../../../testUtils/mockApi/instance';
+import { mockAuditPlanMetaData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
