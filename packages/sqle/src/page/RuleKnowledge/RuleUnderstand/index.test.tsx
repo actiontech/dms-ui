@@ -10,12 +10,15 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act, fireEvent, screen } from '@testing-library/react';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('rehype-sanitize', () => () => jest.fn());
 
 describe('page/RuleUnderstand', () => {
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   const mockRefresh = jest.fn();
 

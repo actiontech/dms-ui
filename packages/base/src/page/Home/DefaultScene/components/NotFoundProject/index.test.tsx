@@ -3,7 +3,10 @@ import NotFoundProject from '.';
 import { superRender } from '../../../../../testUtils/customRender';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { useNavigate } from 'react-router-dom';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 
@@ -19,7 +22,7 @@ describe('test base/home/NotFoundProject', () => {
   const updateRecentlyProjectSpy = jest.fn();
   const navigateSpy = jest.fn();
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);

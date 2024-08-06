@@ -3,10 +3,13 @@ import { superRender } from '../../../../../testUtils/customRender';
 import ProjectSelectorModal from '../ProjectSelectorModal';
 import { ProjectSelectorModalProps } from '../index.type';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorModal', () => {
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   const param: ProjectSelectorModalProps = {
     onModalCancel: jest.fn(),

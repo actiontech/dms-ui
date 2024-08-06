@@ -4,7 +4,10 @@
 
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { ScheduleTimeModalProps } from '../index.type';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import MockDate from 'mockdate';
 import ScheduleTimeModal from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -15,7 +18,7 @@ describe('test ScheduleTimeModal ce', () => {
   const closeScheduleModalFn = jest.fn();
   const submitFn = jest.fn();
   let getWechatAuditConfigSpy: jest.SpyInstance;
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     getWechatAuditConfigSpy = configuration.getWechatAuditConfiguration();

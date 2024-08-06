@@ -10,7 +10,10 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
 import { DBHealthEnum } from './index.enum';
 import { SqleTheme } from '../../../../types/theme.type';
@@ -24,7 +27,9 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/ProjectOverview/DataSourceCount', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
 
   const navigateSpy = jest.fn();
 

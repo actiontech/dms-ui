@@ -4,7 +4,10 @@ import {
   renderWithThemeAndRedux
 } from '../../../../testUtils/customRender';
 import sqlOptimization from '../../../../testUtils/mockApi/sqlOptimization';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { mockThemeStyleData } from '../../../../testUtils/mockHooks/mockThemeStyleData';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -52,7 +55,9 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('ProjectOverview/DataSourcePerformance', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
   let getDBPerformanceImproveOverviewSpy: jest.SpyInstance;
   const customRender = () => {
     return renderWithThemeAndRedux(<DataSourcePerformance />);

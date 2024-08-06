@@ -6,7 +6,10 @@ import {
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 import DatabaseSourceOrder, {
@@ -48,7 +51,9 @@ jest.mock('@ant-design/plots', () => {
 const themeData = ThemeData[SupportTheme.LIGHT];
 
 describe('ReportStatistics/DatabaseSourceOrder', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
     return renderWithThemeAndRedux(<DatabaseSourceOrder />);

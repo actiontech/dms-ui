@@ -3,7 +3,10 @@ import BasicDatePicker, { IBasicDatePicker } from '.';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import { getBySelector } from '../../testUtil/customQuery';
 import { renderWithTheme } from '../../testUtil/customRender';
-import { ignoreComponentCustomAttr } from '../../testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '../../testUtil/common';
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/mk';
@@ -13,7 +16,7 @@ import MockDate from 'mockdate';
 dayjs.extend(customParseFormat);
 
 describe('lib/BasicDatePicker', () => {
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     MockDate.set(dayjs('2023-12-04').valueOf());

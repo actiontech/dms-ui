@@ -1,4 +1,7 @@
-import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import CreateDataExport from '..';
 import { CreateDataExportPageEnum } from '../../../../store/dataExport';
 import { superRender } from '../../../../testUtils/customRender';
@@ -6,7 +9,7 @@ import { mockUseCreateDataExportReduxManage } from '../testUtils/mockUseCreateDa
 import { cleanup } from '@testing-library/react';
 
 describe('first', () => {
-  ignoreInvalidValueForCSSStyleProperty();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
 
   it('should match snapshot when pageState is equal CREATE_TASK', () => {
     mockUseCreateDataExportReduxManage();
