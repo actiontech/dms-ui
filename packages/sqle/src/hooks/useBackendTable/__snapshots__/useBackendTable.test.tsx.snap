@@ -1,5 +1,421 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`useBackendTable should create table filter meta and custom props based on filter meta list 1`] = `
+{
+  "extraTableFilterMeta": Map {
+    "sql" => {
+      "checked": false,
+      "filterCustomType": "input",
+      "filterKey": "sql",
+      "filterLabel": "SQL",
+    },
+    "rule_name" => {
+      "checked": false,
+      "filterCustomType": "select",
+      "filterKey": "rule_name",
+      "filterLabel": "审核规则",
+    },
+    "db_user" => {
+      "checked": false,
+      "filterCustomType": "select",
+      "filterKey": "db_user",
+      "filterLabel": "用户",
+    },
+    "schema_name" => {
+      "checked": false,
+      "filterCustomType": "select",
+      "filterKey": "schema_name",
+      "filterLabel": "schema",
+    },
+    "counter" => {
+      "checked": false,
+      "filterCustomType": "input",
+      "filterKey": "counter",
+      "filterLabel": "出现次数 > ",
+    },
+    "query_time_avg" => {
+      "checked": false,
+      "filterCustomType": "input",
+      "filterKey": "query_time_avg",
+      "filterLabel": "平均执行时间 > ",
+    },
+    "row_examined_avg" => {
+      "checked": false,
+      "filterCustomType": "input",
+      "filterKey": "row_examined_avg",
+      "filterLabel": "平均扫描行数 > ",
+    },
+    "last_receive_timestamp" => {
+      "checked": false,
+      "filterCustomType": "date-range",
+      "filterKey": "last_receive_timestamp",
+      "filterLabel": "最后匹配时间",
+    },
+  },
+  "tableFilterCustomProps": Map {
+    "sql" => undefined,
+    "rule_name" => {
+      "options": [
+        {
+          "label": "MySQL",
+          "options": [
+            {
+              "label": "禁止使用没有WHERE条件或者WHERE条件恒为TRUE的SQL",
+              "value": "all_check_where_is_invalid",
+            },
+            {
+              "label": "禁止char, varchar类型字段字符长度总和超过阈值",
+              "value": "ddl_check_char_length",
+            },
+            {
+              "label": "TIMESTAMP 类型的列必须添加默认值",
+              "value": "ddl_check_column_timestamp_without_default",
+            },
+            {
+              "label": "除了自增列及大字段列之外，每个列都必须添加默认值",
+              "value": "ddl_check_column_without_default",
+            },
+            {
+              "label": "新建表建议加入 IF NOT EXISTS，保证重复执行不报错",
+              "value": "ddl_check_table_without_if_not_exists",
+            },
+            {
+              "label": "禁止使用全模糊搜索或左模糊搜索",
+              "value": "dml_check_fuzzy_search",
+            },
+            {
+              "label": "JOIN字段必须包含索引",
+              "value": "dml_check_join_field_use_index",
+            },
+            {
+              "label": "禁止对索引列进行数学运算和使用函数",
+              "value": "dml_check_math_computation_or_func_on_index",
+            },
+          ],
+        },
+      ],
+    },
+    "db_user" => {
+      "options": [
+        {
+          "label": "",
+          "value": "",
+        },
+      ],
+    },
+    "schema_name" => {
+      "options": [
+        {
+          "label": "test123",
+          "value": "test123",
+        },
+        {
+          "label": "",
+          "value": "",
+        },
+        {
+          "label": "sqle",
+          "value": "sqle",
+        },
+        {
+          "label": "test",
+          "value": "test",
+        },
+      ],
+    },
+    "counter" => undefined,
+    "query_time_avg" => undefined,
+    "row_examined_avg" => undefined,
+    "last_receive_timestamp" => {
+      "showTime": true,
+    },
+  },
+}
+`;
+
+exports[`useBackendTable should create table filter meta and custom props based on filter meta list 2`] = `
+{
+  "extraTableFilterMeta": Map {
+    "sql" => {
+      "checked": true,
+      "filterCustomType": "input",
+      "filterKey": "sql",
+      "filterLabel": "SQL",
+    },
+    "rule_name" => {
+      "checked": true,
+      "filterCustomType": "select",
+      "filterKey": "rule_name",
+      "filterLabel": "审核规则",
+    },
+    "db_user" => {
+      "checked": true,
+      "filterCustomType": "select",
+      "filterKey": "db_user",
+      "filterLabel": "用户",
+    },
+    "schema_name" => {
+      "checked": true,
+      "filterCustomType": "select",
+      "filterKey": "schema_name",
+      "filterLabel": "schema",
+    },
+    "counter" => {
+      "checked": true,
+      "filterCustomType": "input",
+      "filterKey": "counter",
+      "filterLabel": "出现次数 > ",
+    },
+    "query_time_avg" => {
+      "checked": true,
+      "filterCustomType": "input",
+      "filterKey": "query_time_avg",
+      "filterLabel": "平均执行时间 > ",
+    },
+    "row_examined_avg" => {
+      "checked": true,
+      "filterCustomType": "input",
+      "filterKey": "row_examined_avg",
+      "filterLabel": "平均扫描行数 > ",
+    },
+    "last_receive_timestamp" => {
+      "checked": true,
+      "filterCustomType": "date-range",
+      "filterKey": "last_receive_timestamp",
+      "filterLabel": "最后匹配时间",
+    },
+  },
+  "tableFilterCustomProps": Map {
+    "sql" => undefined,
+    "rule_name" => {
+      "options": [
+        {
+          "label": "MySQL",
+          "options": [
+            {
+              "label": "禁止使用没有WHERE条件或者WHERE条件恒为TRUE的SQL",
+              "value": "all_check_where_is_invalid",
+            },
+            {
+              "label": "禁止char, varchar类型字段字符长度总和超过阈值",
+              "value": "ddl_check_char_length",
+            },
+            {
+              "label": "TIMESTAMP 类型的列必须添加默认值",
+              "value": "ddl_check_column_timestamp_without_default",
+            },
+            {
+              "label": "除了自增列及大字段列之外，每个列都必须添加默认值",
+              "value": "ddl_check_column_without_default",
+            },
+            {
+              "label": "新建表建议加入 IF NOT EXISTS，保证重复执行不报错",
+              "value": "ddl_check_table_without_if_not_exists",
+            },
+            {
+              "label": "禁止使用全模糊搜索或左模糊搜索",
+              "value": "dml_check_fuzzy_search",
+            },
+            {
+              "label": "JOIN字段必须包含索引",
+              "value": "dml_check_join_field_use_index",
+            },
+            {
+              "label": "禁止对索引列进行数学运算和使用函数",
+              "value": "dml_check_math_computation_or_func_on_index",
+            },
+          ],
+        },
+      ],
+    },
+    "db_user" => {
+      "options": [
+        {
+          "label": "",
+          "value": "",
+        },
+      ],
+    },
+    "schema_name" => {
+      "options": [
+        {
+          "label": "test123",
+          "value": "test123",
+        },
+        {
+          "label": "",
+          "value": "",
+        },
+        {
+          "label": "sqle",
+          "value": "sqle",
+        },
+        {
+          "label": "test",
+          "value": "test",
+        },
+      ],
+    },
+    "counter" => undefined,
+    "query_time_avg" => undefined,
+    "row_examined_avg" => undefined,
+    "last_receive_timestamp" => {
+      "showTime": true,
+    },
+  },
+}
+`;
+
+exports[`useBackendTable should generate sortable table columns with custom class names and render options 1`] = `
+[
+  {
+    "className": "test-cls",
+    "dataIndex": "fingerprint",
+    "render": [Function],
+    "sorter": false,
+    "title": "SQL指纹",
+  },
+  {
+    "className": "test-cls",
+    "dataIndex": "sql",
+    "render": [Function],
+    "sorter": false,
+    "title": "SQL",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "audit_results",
+    "render": [Function],
+    "sorter": false,
+    "title": "审核结果",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "counter",
+    "render": [Function],
+    "sorter": true,
+    "title": "出现次数",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "last_receive_timestamp",
+    "render": [Function],
+    "sorter": true,
+    "title": "最后匹配时间",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "query_time_avg",
+    "render": [Function],
+    "sorter": true,
+    "title": "平均执行时间",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "query_time_max",
+    "render": [Function],
+    "sorter": true,
+    "title": "最长执行时间",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "row_examined_avg",
+    "render": [Function],
+    "sorter": true,
+    "title": "平均扫描行数",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "db_user",
+    "render": [Function],
+    "sorter": false,
+    "title": "用户",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "schema_name",
+    "render": [Function],
+    "sorter": false,
+    "title": "Schema",
+  },
+]
+`;
+
+exports[`useBackendTable should generate sortable table columns with custom class names and render options 2`] = `
+[
+  {
+    "className": undefined,
+    "dataIndex": "fingerprint",
+    "render": [Function],
+    "sorter": false,
+    "title": "SQL指纹",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "sql",
+    "render": [Function],
+    "sorter": false,
+    "title": "SQL",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "audit_results",
+    "render": [Function],
+    "sorter": false,
+    "title": "审核结果",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "counter",
+    "render": [Function],
+    "sorter": true,
+    "title": "出现次数",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "last_receive_timestamp",
+    "render": [Function],
+    "sorter": true,
+    "title": "最后匹配时间",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "query_time_avg",
+    "render": [Function],
+    "sorter": true,
+    "title": "平均执行时间",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "query_time_max",
+    "render": [Function],
+    "sorter": true,
+    "title": "最长执行时间",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "row_examined_avg",
+    "render": [Function],
+    "sorter": true,
+    "title": "平均扫描行数",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "db_user",
+    "render": [Function],
+    "sorter": false,
+    "title": "用户",
+  },
+  {
+    "className": undefined,
+    "dataIndex": "schema_name",
+    "render": [Function],
+    "sorter": false,
+    "title": "Schema",
+  },
+]
+`;
+
 exports[`useBackendTable should render table by "head" fields 1`] = `
 <div>
   <div
