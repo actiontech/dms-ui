@@ -4,7 +4,10 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { statisticAuditPlanData } from '../../../../../../testUtils/mockApi/projectOverview/data';
 import TaskList, { ITaskList } from './index';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import {
   barChartLabelContent,
   barChartStateActive,
@@ -14,7 +17,9 @@ import { SqleTheme } from '../../../../../../types/theme.type';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 
 describe('page/ProjectOverview/TaskList', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
 
   const mockRefresh = jest.fn();
   const taskListProps = {

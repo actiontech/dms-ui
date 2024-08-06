@@ -6,7 +6,10 @@ import SideMenu from '..';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { act, fireEvent, screen } from '@testing-library/react';
 import EmitterKey from '../../../../data/EmitterKey';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { useDispatch } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
@@ -43,7 +46,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     is_manager: false
   }));
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
   beforeEach(() => {
     subscribeSpy = jest
       .spyOn(eventEmitter, 'subscribe')

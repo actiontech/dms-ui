@@ -11,12 +11,15 @@ import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/common
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { ModalName } from './data/ModalName';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
 import { BasicInfoMockData } from './testUtils/mockApi/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 import { mockUseFeaturePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseFeaturePermission';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -37,7 +40,7 @@ describe('App', () => {
   const scopeDispatch = jest.fn();
   const navigateSpy = jest.fn();
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     mockUseDbServiceDriver();

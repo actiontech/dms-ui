@@ -3,7 +3,10 @@ import { ScheduleTimeModalProps } from '../index.type';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import MockDate from 'mockdate';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { superRender } from '../../../../../../../../testUtils/customRender';
@@ -28,7 +31,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
     );
   };
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     getWechatAuditConfigSpy = configuration.getWechatAuditConfiguration();

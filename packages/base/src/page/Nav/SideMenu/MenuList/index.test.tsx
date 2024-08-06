@@ -3,7 +3,10 @@ import MenuList from '.';
 import { superRender } from '../../../../testUtils/customRender';
 import { useNavigate } from 'react-router-dom';
 import { SystemRole } from '@actiontech/shared/lib/enum';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 const projectID = '700300';
 
@@ -23,7 +26,7 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
     return superRender(<MenuList projectID={projectID} role={role} />);
   };
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     jest.useFakeTimers();

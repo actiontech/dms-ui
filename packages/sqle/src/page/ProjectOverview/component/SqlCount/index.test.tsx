@@ -10,7 +10,10 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { RingProgressConfig } from '@ant-design/plots';
 
 jest.mock('@ant-design/plots', () => {
@@ -38,7 +41,9 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/ProjectOverview/SqlCount', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
 
   const navigateSpy = jest.fn();
 

@@ -1,7 +1,10 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import NotFoundRecentlyProject from '..';
 import { superRender } from '../../../../../testUtils/customRender';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
@@ -30,7 +33,7 @@ describe('test base/page/project/detail/notFoundRecentlyProject', () => {
   };
   const navigateSpy = jest.fn();
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     jest.useFakeTimers();

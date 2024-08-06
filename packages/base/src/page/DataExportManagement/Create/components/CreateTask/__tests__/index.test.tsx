@@ -10,12 +10,15 @@ import { mockUseCreateExportTaskForm } from '../../../testUtils/mockUseCreateExp
 import { superRender } from '../../../../../../testUtils/customRender';
 import CreateExportTask from '..';
 import { useForm } from 'antd/es/form/Form';
-import { ignoreInvalidValueForCSSStyleProperty } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { CreateDataExportPageEnum } from '../../../../../../store/dataExport';
 import dbServices from '../../../../../../testUtils/mockApi/dbServices';
 
 describe('test base/DataExport/Create/CreateExportTask', () => {
-  ignoreInvalidValueForCSSStyleProperty();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
 
   const customRender = (
     mockCreateExportTaskForm?: Parameters<

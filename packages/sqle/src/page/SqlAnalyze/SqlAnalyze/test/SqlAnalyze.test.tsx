@@ -1,10 +1,13 @@
-import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import SqlAnalyze from '../SqlAnalyze';
 import { SQLManageSqlAnalyzeData } from '../../__testData__';
 
 describe('SqlAnalyze/Global-SqlAnalyze', () => {
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   beforeEach(() => {
     jest.useFakeTimers();

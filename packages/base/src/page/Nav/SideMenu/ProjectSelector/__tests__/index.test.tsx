@@ -4,7 +4,10 @@ import { ProjectSelectorProps } from '../index.type';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 const mockBindProjects = [
   {
@@ -53,7 +56,7 @@ describe('base/page/Nav/SideMenu/ProjectSelector', () => {
     );
   };
 
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     jest.useFakeTimers();
