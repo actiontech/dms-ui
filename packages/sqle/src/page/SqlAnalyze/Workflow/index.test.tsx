@@ -3,7 +3,10 @@ import { useParams } from 'react-router-dom';
 
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import {
   resolveErrorThreeSecond,
   resolveThreeSecond
@@ -22,7 +25,7 @@ jest.mock('react-router', () => {
 });
 
 describe('SqlAnalyze/Workflow', () => {
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 

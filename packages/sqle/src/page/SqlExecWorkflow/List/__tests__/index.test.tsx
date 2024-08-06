@@ -17,7 +17,10 @@ import user from '../../../../testUtils/mockApi/user';
 import instance from '../../../../testUtils/mockApi/instance';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
-import { ignoreComponentAutoCreatedListNoKey } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -39,7 +42,7 @@ describe('sqle/Workflow/List', () => {
   const customRender = () => {
     return superRender(<WorkflowList />);
   };
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();

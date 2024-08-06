@@ -2,11 +2,14 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
 import { superRender } from '../../../../testUtils/customRender';
 import EEIndexProjectDetail from '../index.ee';
-import { ignoreComponentCustomAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { cleanup, screen } from '@testing-library/react';
 
 describe('test base/page/project/detail/ee', () => {
-  ignoreComponentCustomAttr();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   afterEach(() => {
     jest.clearAllMocks();
