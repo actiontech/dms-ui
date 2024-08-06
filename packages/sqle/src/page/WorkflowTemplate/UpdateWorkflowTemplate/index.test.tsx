@@ -15,7 +15,10 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { cloneDeep } from 'lodash';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { ignoreAntdUseFormNotConnectedError } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import user from '../../../testUtils/mockApi/user';
 
 jest.mock('react-router-dom', () => ({
@@ -24,7 +27,9 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
-  ignoreAntdUseFormNotConnectedError();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNCONNECTED_FORM_COMPONENT
+  ]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 

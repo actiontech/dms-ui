@@ -11,7 +11,10 @@ import useDatabaseType from '.';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from './index.test.data';
 import { createSpySuccessResponse } from '../../testUtil/mockApi';
-import { ignoreComponentAutoCreatedListNoKey } from '../../testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '../../testUtil/common';
 import DBService from '../../api/base/service/DBService';
 
 jest.mock('react-redux', () => {
@@ -23,7 +26,7 @@ jest.mock('react-redux', () => {
 });
 
 describe('hooks/useDatabaseType', () => {
-  ignoreComponentAutoCreatedListNoKey();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
   const mockDispatch = jest.fn();
   let getDriversSpy: jest.SpyInstance;
 

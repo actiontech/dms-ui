@@ -3,7 +3,10 @@ import ScanTask from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { useNavigate } from 'react-router-dom';
 import projectOverview from '../../../../testUtils/mockApi/projectOverview';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -20,7 +23,9 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('page/ProjectOverview/ScanTask', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
 
   const navigateSpy = jest.fn();
 

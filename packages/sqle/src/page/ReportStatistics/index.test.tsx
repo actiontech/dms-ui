@@ -4,7 +4,10 @@ import { mockThemeStyleData } from '../../testUtils/mockHooks/mockThemeStyleData
 
 import ReportStatistics from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import statistic from '../../testUtils/mockApi/statistic';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
@@ -17,7 +20,9 @@ jest.mock('react-router-dom', () => {
 });
 
 describe('sqle/ReportStatistics', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
   beforeEach(() => {
     statistic.mockAllApi();
     jest.useFakeTimers();

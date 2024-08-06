@@ -2,7 +2,10 @@ import { cleanup, act } from '@testing-library/react';
 import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
-import { ignoreAntdPlotsAttr } from '@actiontech/shared/lib/testUtil/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -12,7 +15,9 @@ import LicenseStatistics from '.';
 jest.mock('./licenseColumn.tsx', () => () => <div>mock licenseColumn</div>);
 
 describe('ReportStatistics/LicenseStatistics', () => {
-  ignoreAntdPlotsAttr();
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.PARENT_COMPONENT_PROP_ERROR
+  ]);
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
     return renderWithThemeAndRedux(<LicenseStatistics />);
