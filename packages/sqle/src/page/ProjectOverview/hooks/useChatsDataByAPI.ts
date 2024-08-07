@@ -5,7 +5,6 @@ import { useEffect, useState, useCallback } from 'react';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const useChatsDataByAPI = <
   T extends {
@@ -17,7 +16,6 @@ const useChatsDataByAPI = <
   { onSuccess }: { onSuccess: (res: AxiosResponse<T>) => void }
 ) => {
   const { t } = useTranslation();
-  const { projectID } = useCurrentProject();
   const [loading, { setFalse: finishGetData, setTrue: startGetData }] =
     useBoolean(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -47,7 +45,7 @@ const useChatsDataByAPI = <
       getData
     );
     return unsubscribe;
-  }, [projectID, getData]);
+  }, [getData]);
 
   return {
     loading,
