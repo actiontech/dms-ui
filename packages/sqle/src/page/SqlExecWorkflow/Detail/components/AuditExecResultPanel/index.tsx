@@ -193,7 +193,8 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
           pagination={pagination}
           tableChange={tableChange}
           executeMode={
-            resetProps.workflowInfo?.exec_mode ?? WorkflowResV2ExecModeEnum.sqls
+            (currentTask?.exec_mode as WorkflowResV2ExecModeEnum) ??
+            WorkflowResV2ExecModeEnum.sqls
           }
         />
       </EmptyBox>

@@ -127,12 +127,6 @@ export interface IExportWorkflowV1Params {
   fuzzy_keyword?: string;
 }
 
-export interface IGetWorkflowAttachmentParams {
-  project_name: string;
-
-  workflow_id: string;
-}
-
 export interface ITerminateMultipleTaskByWorkflowV1Params {
   workflow_id: string;
 
@@ -140,6 +134,14 @@ export interface ITerminateMultipleTaskByWorkflowV1Params {
 }
 
 export interface ITerminateMultipleTaskByWorkflowV1Return extends IBaseRes {}
+
+export interface IGetWorkflowAttachmentParams {
+  project_name: string;
+
+  workflow_id: string;
+
+  task_id: string;
+}
 
 export interface ITerminateSingleTaskByWorkflowV1Params {
   workflow_id: string;

@@ -18,6 +18,17 @@ import {
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import instance from '../../../../testUtils/mockApi/instance';
+import { useSelector } from 'react-redux';
+import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import {
+  AuditTaskResV1SqlSourceEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('sqle/SqlExecWorkflow/Create ce', () => {
   const customRender = () => {
@@ -36,6 +47,7 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
     mockUseCurrentUser();
     execWorkflow.mockAllApi();
     instance.getInstanceTipList();
+    (useSelector as jest.Mock).mockImplementation(() => jest.fn());
   });
 
   afterEach(() => {

@@ -10,6 +10,7 @@ import {
   getResponseErrorMessage,
   getResponseCode,
   isExportFileResponse,
+  isFileStreamResponse,
   getFileFromUploadChangeEvent,
   jsonParse,
   translateTimeForRequest
@@ -211,6 +212,30 @@ describe('utils/Common', () => {
 
     expect(
       isExportFileResponse({
+        status: 200,
+        headers: {},
+        config: {},
+        statusText: '',
+        data: ''
+      })
+    ).toBe(false);
+  });
+
+  test('test isFileStreamResponse', () => {
+    expect(
+      isFileStreamResponse({
+        status: 200,
+        headers: {
+          'content-disposition': 'inline'
+        },
+        config: {},
+        statusText: '',
+        data: ''
+      })
+    ).toBe(true);
+
+    expect(
+      isFileStreamResponse({
         status: 200,
         headers: {},
         config: {},

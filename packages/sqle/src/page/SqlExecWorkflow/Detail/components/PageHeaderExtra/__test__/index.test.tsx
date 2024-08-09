@@ -10,6 +10,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import workflow from '../../../../../../testUtils/mockApi/workflowTemplate';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 
 type paramsType = Pick<
   WorkflowDetailPageHeaderExtraProps,
@@ -21,7 +22,6 @@ type paramsType = Pick<
 
 describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   const showWorkflowSteps = jest.fn();
-
   const customRender = (params: paramsType) => {
     return superRender(
       <WorkflowDetailPageHeaderExtra
@@ -31,6 +31,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
         executingAction={jest.fn(() => Promise.resolve())}
         completeAction={jest.fn(() => Promise.resolve())}
         terminateAction={jest.fn(() => Promise.resolve())}
+        executeInOtherInstanceAction={jest.fn(() => Promise.resolve())}
         showWorkflowSteps={showWorkflowSteps}
         {...params}
       />
@@ -374,6 +375,38 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
     ).toBeInTheDocument();
     await act(async () => {
       fireEvent.click(screen.getByText('确 认'));
+      await jest.advanceTimersByTime(100);
+    });
+  });
+
+  it('render execute in other instance button', async () => {
+    mockUseCurrentProject({ projectArchive: false });
+    mockUseCurrentUser({
+      isProjectManager: jest.fn(() => true)
+    });
+    const { baseElement } = customRender({
+      workflowStepsVisibility: true
+    });
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('上线到其他实例')).toBeVisible();
+
+    cleanup();
+    mockUseCurrentProject({ projectArchive: false });
+    mockUseCurrentUser({
+      managementPermissions: [
+        {
+          uid: OpPermissionTypeUid.create_workflow,
+          name: '创建工单'
+        }
+      ]
+    });
+    customRender({
+      workflowStepsVisibility: true
+    });
+    expect(screen.getByText('上线到其他实例')).toBeVisible();
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('上线到其他实例'));
       await jest.advanceTimersByTime(100);
     });
   });

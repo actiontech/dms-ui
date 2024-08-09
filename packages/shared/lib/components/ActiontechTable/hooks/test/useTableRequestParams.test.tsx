@@ -1,5 +1,6 @@
 import { renderHook, act, cleanup } from '@testing-library/react';
 import useTableRequestParams from '../useTableRequestParams';
+import { PaginationProps } from 'antd';
 
 describe('lib/ActiontechTable-hooks-useTableRequestParams', () => {
   beforeEach(() => {
@@ -37,16 +38,66 @@ describe('lib/ActiontechTable-hooks-useTableRequestParams', () => {
 
   it('render use createSortParams', async () => {
     const { result } = renderHook(() => useTableRequestParams());
-    await act(async () => {
-      const sortInfo = result.current.sortInfo;
-      expect(sortInfo).toEqual({});
+    const params: { order_by?: string; is_asc?: boolean } = {};
+    result.current.createSortParams(params);
+    expect(params).toEqual({});
 
-      result.current.createSortParams({
-        order_by: 'aa',
-        field: 'aa',
-        is_asc: true
-      });
-      expect(sortInfo).toEqual({});
+    await act(async () => {
+      result.current.tableChange(
+        {} as PaginationProps,
+        {} as Record<string, null>,
+        {
+          column: {
+            dataIndex: 'query_time_max',
+            title: '最长执行时间',
+            sorter: true
+          },
+          order: 'ascend',
+          field: 'query_time_max'
+        },
+        {} as any
+      );
+    });
+
+    expect(result.current.sortInfo).toEqual({
+      column: {
+        dataIndex: 'query_time_max',
+        title: '最长执行时间',
+        sorter: true
+      },
+      order: 'ascend',
+      field: 'query_time_max'
+    });
+
+    result.current.createSortParams(params);
+    expect(params).toEqual({
+      is_asc: true,
+      order_by: 'query_time_max'
+    });
+
+    await act(async () => {
+      result.current.tableChange(
+        {} as PaginationProps,
+        {} as Record<string, null>,
+        [
+          {
+            column: {
+              dataIndex: 'last_receive_timestamp',
+              title: '最后匹配时间',
+              sorter: true
+            },
+            order: 'descend',
+            field: 'last_receive_timestamp'
+          }
+        ],
+        {} as any
+      );
+    });
+
+    result.current.createSortParams(params);
+    expect(params).toEqual({
+      is_asc: false,
+      order_by: 'last_receive_timestamp'
     });
   });
 
