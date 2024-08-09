@@ -13,6 +13,7 @@ import {
   AuditTaskResData
 } from './data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { AxiosResponse } from 'axios';
 
 class MockWorkflowApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -39,6 +40,7 @@ class MockWorkflowApi implements MockSpyApy {
     this.approveWorkflow();
     this.rejectWorkflow();
     this.executeTasksOnWorkflow();
+    this.getWorkflowAttachment();
   }
 
   public getWorkflows() {
@@ -268,6 +270,24 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
         }
       })
     );
+    return spy;
+  }
+
+  public getWorkflowAttachment() {
+    const spy = jest.spyOn(workflow, 'getWorkflowAttachment');
+    spy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(['test file content'])
+          });
+        }, 3000);
+      });
+    });
     return spy;
   }
 }

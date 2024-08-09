@@ -14,7 +14,7 @@ exports[`test BaseInfoForm should match snapshot 1`] = `
         创建工单
       </span>
     </FormItemBigTitle>
-    <BaseInfoFormItem />
+    <ForwardRef />
   </Styled(section)>
 </Styled(section)>
 `;
