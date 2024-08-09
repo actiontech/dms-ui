@@ -119,7 +119,7 @@ export default {
         disabledConfirmTips:
           '停用后，将不再扫描该类型的SQL，当前数据会被保留，是否确认停用？',
         delete: '删除',
-        deleteSuccessTips: '删除成功',
+        deleteSuccessTips: '删除成功！',
         deleteConfirmTips:
           '删除后该类型智能扫描数据将不再被保留，是否确认删除？'
       }

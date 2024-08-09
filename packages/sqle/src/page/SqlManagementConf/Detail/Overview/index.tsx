@@ -85,6 +85,7 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
       {messageContextHolder}
 
       <ActiontechTable
+        rowKey={(record) => record.audit_plan_type?.audit_plan_id!}
         className="table-row-cursor"
         dataSource={data?.list}
         errorMessage={requestErrorMessage}

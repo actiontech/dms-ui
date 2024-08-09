@@ -176,7 +176,6 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
           total: res.data.total_nums ?? 0
         }));
     },
-
     {
       refreshDeps: [pagination, tableFilterInfo, sortInfo],
       ready: activeTabKey === auditPlanId
@@ -265,6 +264,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       {messageContextHolder}
 
       <ActiontechTable
+        rowKey={(record) => record.sql}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
         loading={getFilterMetaListLoading || getTableRowLoading}
         columns={sortableTableColumnFactory(tableMetas?.head ?? [], {
@@ -279,7 +279,10 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
                 results = [];
               }
               return (
-                <div onClick={() => onClickAuditResult(record)}>
+                <div
+                  data-testid="trigger-open-report-drawer"
+                  onClick={() => onClickAuditResult(record)}
+                >
                   {results?.length > 1 ? (
                     <ResultIconRender
                       iconLevels={results.map((item) => {
