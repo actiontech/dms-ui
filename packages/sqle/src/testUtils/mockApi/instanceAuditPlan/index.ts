@@ -7,7 +7,10 @@ import {
   mockInstanceAuditPlanListData,
   mockAuditPlanTypesData,
   mockAuditPlanMetaData,
-  mockAuditPlanDetailData
+  mockAuditPlanDetailData,
+  mockInstanceAuditPlanInfo,
+  mockAuditPlanSQLMeta,
+  mockAuditPlanSQLData
 } from './data';
 import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 
@@ -21,6 +24,12 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     this.getAuditPlanMeta();
     this.getInstanceAuditPlanDetail();
     this.updateInstanceAuditPlan();
+    this.getInstanceAuditPlanOverview();
+    this.getInstanceAuditPlanSQLMeta();
+    this.getInstanceAuditPlanSQLData();
+    this.getInstanceAuditPlanSQLExport();
+    this.deleteAuditPlanByType();
+    this.updateAuditPlanStatus();
   }
 
   public getInstanceAuditPlans() {
@@ -87,6 +96,67 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
 
   public updateInstanceAuditPlan() {
     const spy = jest.spyOn(instance_audit_plan, 'updateInstanceAuditPlanV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getInstanceAuditPlanOverview() {
+    const spy = jest.spyOn(
+      instance_audit_plan,
+      'getInstanceAuditPlanOverviewV1'
+    );
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockInstanceAuditPlanInfo
+      })
+    );
+    return spy;
+  }
+
+  public getInstanceAuditPlanSQLMeta() {
+    const spy = jest.spyOn(
+      instance_audit_plan,
+      'getInstanceAuditPlanSQLMetaV1'
+    );
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockAuditPlanSQLMeta
+      })
+    );
+    return spy;
+  }
+
+  public getInstanceAuditPlanSQLData() {
+    const spy = jest.spyOn(
+      instance_audit_plan,
+      'getInstanceAuditPlanSQLDataV1'
+    );
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockAuditPlanSQLData,
+        total_nums: mockAuditPlanSQLData.rows?.length
+      })
+    );
+    return spy;
+  }
+
+  public getInstanceAuditPlanSQLExport() {
+    const spy = jest.spyOn(
+      instance_audit_plan,
+      'getInstanceAuditPlanSQLExportV1'
+    );
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateAuditPlanStatus() {
+    const spy = jest.spyOn(instance_audit_plan, 'updateAuditPlanStatusV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public deleteAuditPlanByType() {
+    const spy = jest.spyOn(instance_audit_plan, 'deleteAuditPlanByTypeV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
