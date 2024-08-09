@@ -5,8 +5,13 @@ import { useBoolean } from 'ahooks';
 import { WorkflowPageHeaderExtraStyleWrapper } from './style';
 import { WorkflowDetailPageHeaderExtraProps } from './index.type';
 import useWorkflowDetailAction from './hooks/useWorkflowDetailAction';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import RejectWorkflowModal from './RejectWorkflowModal';
+import { useMemo } from 'react';
+import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 
 const WorkflowDetailPageHeaderExtra: React.FC<
   WorkflowDetailPageHeaderExtraProps
@@ -14,6 +19,17 @@ const WorkflowDetailPageHeaderExtra: React.FC<
   const { t } = useTranslation();
 
   const { projectArchive, projectName } = useCurrentProject();
+
+  const { managementPermissions, isProjectManager } = useCurrentUser();
+
+  const isAllowExecuteInOtherInstance = useMemo(() => {
+    return (
+      isProjectManager(projectName) ||
+      managementPermissions.some(
+        (v) => OpPermissionTypeUid['create_workflow'] === (v?.uid ?? '')
+      )
+    );
+  }, [managementPermissions, isProjectManager, projectName]);
 
   const [
     rejectModalVisible,
@@ -27,7 +43,8 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     rejectWorkflowButtonMeta,
     batchExecutingWorkflowButtonMeta,
     manualExecuteWorkflowButtonMeta,
-    terminateWorkflowButtonMeta
+    terminateWorkflowButtonMeta,
+    executeInOtherInstanceMeta
   } = useWorkflowDetailAction({ projectName, ...props });
 
   return (
@@ -51,6 +68,14 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       </div>
 
       <EmptyBox if={!projectArchive}>
+        <EmptyBox if={isAllowExecuteInOtherInstance}>
+          <BasicButton
+            onClick={() => executeInOtherInstanceMeta.action()}
+            loading={executeInOtherInstanceMeta.loading}
+          >
+            {t('execWorkflow.detail.operator.cloneExecWorkflow')}
+          </BasicButton>
+        </EmptyBox>
         <BasicButton
           hidden={rejectWorkflowButtonMeta.hidden}
           onClick={openRejectModal}

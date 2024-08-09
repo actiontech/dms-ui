@@ -13,6 +13,10 @@ import {
   getSystemModuleStatusModuleNameEnum
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import useThemeStyleData from '../../../../../../../../../hooks/useThemeStyleData';
+import useCreationMode from '../../../../../../hooks/useCreationMode';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../../../../../../store';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
@@ -24,6 +28,29 @@ const useRenderDatabaseSelectionItems = ({
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();
+
+  const { isCloneMode } = useCreationMode();
+
+  const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
+    return {
+      clonedExecWorkflowSqlAuditInfo:
+        state.sqlExecWorkflow.clonedExecWorkflowSqlAuditInfo
+    };
+  });
+
+  useEffect(() => {
+    if (isCloneMode) {
+      sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo?.databaseInfo?.forEach(
+        (database, index) => {
+          const key = `${index}`;
+          handleInstanceChange(key, database.instanceName);
+          handleInstanceSchemaChange(key, database.instanceSchema);
+        }
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const updateSchemaList = async (key: string, instanceName: string) => {
     instance
       .getInstanceSchemasV1({
@@ -87,7 +114,7 @@ const useRenderDatabaseSelectionItems = ({
         ruleTemplate: undefined,
         dbType: undefined,
         testConnectResult: undefined,
-        isSupportFileModeExecuteSql: false
+        isSupportFileModeExecuteSql: true
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);

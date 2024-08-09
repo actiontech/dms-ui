@@ -9,7 +9,7 @@ import CreateResultStep from './components/CreateResultStep';
 import FormStep from './components/FormStep';
 import useSharedStepDetail from './hooks/useSharedStepDetail';
 import useAuditWorkflow from './hooks/useAuditWorkflow';
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useEffect } from 'react';
 import AuditResultStep from './components/AuditResultStep';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +19,9 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ICreateWorkflowV2Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import useCheckTaskAuditSqlCount from './hooks/useCheckTaskAuditSqlCount';
 import { LazyLoadComponent } from '@actiontech/shared';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../store';
+import useCreationMode from './hooks/useCreationMode';
 
 const CreateSqlExecWorkflow: React.FC = () => {
   const { t } = useTranslation();
@@ -29,6 +32,39 @@ const CreateSqlExecWorkflow: React.FC = () => {
   const createdWorkflowID = useRef('');
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
+
+  const { isCloneMode } = useCreationMode();
+
+  const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
+    return {
+      clonedExecWorkflowSqlAuditInfo:
+        state.sqlExecWorkflow.clonedExecWorkflowSqlAuditInfo,
+      clonedExecWorkflowBaseInfo:
+        state.sqlExecWorkflow.clonedExecWorkflowBaseInfo
+    };
+  });
+
+  useEffect(() => {
+    if (isCloneMode) {
+      baseInfoForm.setFieldsValue({
+        workflow_subject:
+          sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo
+            ?.workflow_subject ?? '',
+        desc: sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo?.desc ?? ''
+      });
+      if (sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo) {
+        Object.keys(
+          sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo
+        ).forEach((key) => {
+          sqlAuditInfoForm.setFieldsValue({
+            [key]:
+              sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo?.[key]
+          });
+        });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const {
     isAtFormStep,

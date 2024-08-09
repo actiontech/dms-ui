@@ -138,6 +138,10 @@ export const isExportFileResponse = (res: AxiosResponse<any, any>): boolean => {
   return res.headers?.['content-disposition']?.includes('attachment') ?? false;
 };
 
+export const isFileStreamResponse = (res: AxiosResponse<any, any>): boolean => {
+  return res.headers?.['content-disposition']?.includes('inline') ?? false;
+};
+
 export const jsonParse = <T>(str: string, defaultVal: any = {}): T => {
   let val: any;
   try {
