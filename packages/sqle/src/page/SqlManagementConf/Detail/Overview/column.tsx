@@ -18,6 +18,7 @@ import {
   CloseHexagonOutlined,
   InfoHexagonOutlined
 } from '@actiontech/icons';
+import { Typography } from 'antd';
 
 export const ConfDetailOverviewColumns: (
   projectID: string
@@ -29,7 +30,7 @@ export const ConfDetailOverviewColumns: (
       filterCustomType: 'select',
       filterKey: 'filter_audit_plan_type',
       render: (data: IAuditPlanTypeResBase) => {
-        return data.desc ?? '-';
+        return data.desc ? <Typography.Link>{data.desc}</Typography.Link> : '-';
       }
     },
     {
