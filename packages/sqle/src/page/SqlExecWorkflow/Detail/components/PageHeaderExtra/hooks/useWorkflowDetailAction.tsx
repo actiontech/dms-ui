@@ -26,7 +26,8 @@ const useWorkflowDetailAction = ({
   executingAction,
   terminateAction,
   completeAction,
-  maintenanceTimeInfo
+  maintenanceTimeInfo,
+  executeInOtherInstanceAction
 }: WorkflowDetailPageHeaderExtraProps & {
   projectName: string;
 }): {
@@ -37,6 +38,7 @@ const useWorkflowDetailAction = ({
   batchExecutingWorkflowButtonMeta: WorkflowDetailActionMeta;
   manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta;
   terminateWorkflowButtonMeta: WorkflowDetailActionMeta;
+  executeInOtherInstanceMeta: WorkflowDetailActionMeta;
 } => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -245,6 +247,19 @@ const useWorkflowDetailAction = ({
     return terminateAction().finally(terminateFinish);
   };
 
+  const [
+    executeInOtherInstanceLoading,
+    {
+      setTrue: executeInOtherInstanceStart,
+      setFalse: executeInOtherInstanceFinish
+    }
+  ] = useBoolean();
+
+  const executeInOtherInstance = () => {
+    executeInOtherInstanceStart();
+    return executeInOtherInstanceAction().finally(executeInOtherInstanceFinish);
+  };
+
   return {
     messageContextHolder,
 
@@ -277,6 +292,11 @@ const useWorkflowDetailAction = ({
       action: terminateWorkflow,
       loading: terminateLoading,
       hidden: !terminateButtonVisibility
+    },
+    executeInOtherInstanceMeta: {
+      action: executeInOtherInstance,
+      loading: executeInOtherInstanceLoading,
+      hidden: false
     }
   };
 };

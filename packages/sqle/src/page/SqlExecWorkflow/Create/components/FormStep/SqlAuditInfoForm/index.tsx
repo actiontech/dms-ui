@@ -3,17 +3,20 @@ import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/For
 import { useTranslation } from 'react-i18next';
 import SqlAuditInfoFormItem from './SqlAuditInfoFormItem';
 import { SqlAuditInfoFormProps } from './index.type';
+import { forwardRef } from 'react';
 
-const SqlAuditInfoForm: React.FC<SqlAuditInfoFormProps> = (props) => {
-  const { t } = useTranslation();
-  return (
-    <FormAreaBlockStyleWrapper>
-      <FormItemSubTitle>
-        {t('execWorkflow.create.form.sqlInfo.title')}
-      </FormItemSubTitle>
-      <SqlAuditInfoFormItem {...props} />
-    </FormAreaBlockStyleWrapper>
-  );
-};
+const SqlAuditInfoForm = forwardRef<HTMLElement, SqlAuditInfoFormProps>(
+  (props, ref) => {
+    const { t } = useTranslation();
+    return (
+      <FormAreaBlockStyleWrapper>
+        <FormItemSubTitle>
+          {t('execWorkflow.create.form.sqlInfo.title')}
+        </FormItemSubTitle>
+        <SqlAuditInfoFormItem {...props} ref={ref} />
+      </FormAreaBlockStyleWrapper>
+    );
+  }
+);
 
 export default SqlAuditInfoForm;

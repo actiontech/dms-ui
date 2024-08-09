@@ -4,9 +4,13 @@ import { renderHook } from '@testing-library/react';
 import { useForm } from 'antd/es/form/Form';
 import { MockSharedStepDetail } from '../../../hooks/mockData';
 import toJson from 'enzyme-to-json';
+import * as useCreationMode from '../../../hooks/useCreationMode';
 
 describe('test FormStep', () => {
   it('should match snapshot', () => {
+    jest
+      .spyOn(useCreationMode, 'default')
+      .mockImplementation(() => ({ isCloneMode: false }));
     const { result: baseInfoFormResult } = renderHook(() => useForm());
     const { result: sqlAuditInfoFormResult } = renderHook(() => useForm());
     const wrapper = shallow(

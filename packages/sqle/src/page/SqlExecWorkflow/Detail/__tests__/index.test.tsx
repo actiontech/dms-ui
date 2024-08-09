@@ -83,6 +83,9 @@ describe('sqle/ExecWorkflow/Detail', () => {
   };
 
   it('render snap detail', async () => {
+    mockUseCurrentUser({
+      isProjectManager: jest.fn(() => true)
+    });
     getAuditTaskSpy
       .mockImplementationOnce(() =>
         createSpySuccessResponse({

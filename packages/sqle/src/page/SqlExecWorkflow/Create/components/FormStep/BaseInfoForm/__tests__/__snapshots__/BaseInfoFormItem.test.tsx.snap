@@ -2,28 +2,30 @@
 
 exports[`test BaseInfoFormItem should match snapshot 1`] = `
 <Fragment>
-  <FormItemNoLabel
-    name="workflow_subject"
-    rules={
-      [
-        {
-          "message": "请输入工单名称",
-          "required": true,
-        },
-        {
-          "validator": [Function],
-        },
-        {
-          "max": 59,
-        },
-      ]
-    }
-  >
-    <FormInputBotBorder
-      className="workflow-name-input-wrapper"
-      placeholder="请输入工单名称"
-    />
-  </FormItemNoLabel>
+  <section>
+    <FormItemNoLabel
+      name="workflow_subject"
+      rules={
+        [
+          {
+            "message": "请输入工单名称",
+            "required": true,
+          },
+          {
+            "validator": [Function],
+          },
+          {
+            "max": 59,
+          },
+        ]
+      }
+    >
+      <FormInputBotBorder
+        className="workflow-name-input-wrapper"
+        placeholder="请输入工单名称"
+      />
+    </FormItemNoLabel>
+  </section>
   <FormItemLabel
     className="workflow-base-info-desc-form-item"
     label="工单描述"
@@ -46,28 +48,30 @@ exports[`test BaseInfoFormItem should match snapshot 1`] = `
 
 exports[`test BaseInfoFormItem should match snapshot with slot 1`] = `
 <Fragment>
-  <FormItemNoLabel
-    name="workflow_subject"
-    rules={
-      [
-        {
-          "message": "请输入工单名称",
-          "required": true,
-        },
-        {
-          "validator": [Function],
-        },
-        {
-          "max": 59,
-        },
-      ]
-    }
-  >
-    <FormInputBotBorder
-      className="workflow-name-input-wrapper"
-      placeholder="请输入工单名称"
-    />
-  </FormItemNoLabel>
+  <section>
+    <FormItemNoLabel
+      name="workflow_subject"
+      rules={
+        [
+          {
+            "message": "请输入工单名称",
+            "required": true,
+          },
+          {
+            "validator": [Function],
+          },
+          {
+            "max": 59,
+          },
+        ]
+      }
+    >
+      <FormInputBotBorder
+        className="workflow-name-input-wrapper"
+        placeholder="请输入工单名称"
+      />
+    </FormItemNoLabel>
+  </section>
   <div>
      slot 
   </div>
