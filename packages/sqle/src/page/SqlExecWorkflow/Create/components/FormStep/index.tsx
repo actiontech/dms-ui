@@ -2,13 +2,17 @@ import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/styl
 import BaseInfoForm from './BaseInfoForm';
 import { CreateWorkflowFormStepProps } from './index.type';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import SqlAuditInfoForm from './SqlAuditInfoForm';
 import { SqlAuditInfoFormStyleWrapper } from './style';
 import { useCallback } from 'react';
 import dayjs from 'dayjs';
 import BackToList from '../../../Common/BackToList';
+import { Tour } from 'antd';
+import type { TourProps } from 'antd';
+import { useState, useRef, useMemo } from 'react';
+import useCreationMode from '../../hooks/useCreationMode';
 
 const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
   baseInfoForm,
@@ -17,6 +21,27 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
   ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
+
+  const [open, setOpen] = useState<boolean>(true);
+
+  const { isCloneMode } = useCreationMode();
+
+  const workflowNameFieldRef = useRef<HTMLElement>(null);
+  const dataSourceFieldRef = useRef<HTMLElement>(null);
+
+  const tourSteps: TourProps['steps'] = useMemo(
+    () => [
+      {
+        title: t('execWorkflow.create.form.tour.modifyName'),
+        target: () => workflowNameFieldRef.current!
+      },
+      {
+        title: t('execWorkflow.create.form.tour.modifyDataSource'),
+        target: () => dataSourceFieldRef.current!
+      }
+    ],
+    [t]
+  );
 
   const resetAllForm = () => {
     baseInfoForm.resetFields();
@@ -56,9 +81,8 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
         layout="vertical"
         labelAlign="left"
       >
-        <BaseInfoForm />
+        <BaseInfoForm ref={workflowNameFieldRef} />
       </FormStyleWrapper>
-
       <SqlAuditInfoFormStyleWrapper
         form={sqlAuditInfoForm}
         colon={false}
@@ -68,8 +92,12 @@ const FormStep: React.FC<CreateWorkflowFormStepProps> = ({
           handleInstanceNameChange={handleInstanceNameChange}
           auditAction={auditAction}
           {...sharedStepDetail}
+          ref={dataSourceFieldRef}
         />
       </SqlAuditInfoFormStyleWrapper>
+      <EmptyBox if={isCloneMode}>
+        <Tour open={open} onClose={() => setOpen(false)} steps={tourSteps} />
+      </EmptyBox>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };

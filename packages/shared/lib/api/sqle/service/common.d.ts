@@ -291,7 +291,11 @@ export interface IAuditTaskResV1 {
 
   exec_end_time?: string;
 
+  exec_mode?: string;
+
   exec_start_time?: string;
+
+  file_order_method?: string;
 
   instance_db_type?: string;
 

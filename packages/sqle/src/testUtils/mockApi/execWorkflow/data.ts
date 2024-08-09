@@ -95,7 +95,8 @@ export const AuditTaskResData: IAuditTaskResV1[] = [
     score: 30,
     sql_source: AuditTaskResV1SqlSourceEnum.form_data,
     status: AuditTaskResV1StatusEnum.exec_failed,
-    task_id: 1
+    task_id: 1,
+    exec_mode: 'sqls'
   },
   {
     audit_level: AuditTaskResV1AuditLevelEnum.warn,
@@ -108,7 +109,8 @@ export const AuditTaskResData: IAuditTaskResV1[] = [
     score: 40,
     sql_source: AuditTaskResV1SqlSourceEnum.form_data,
     status: AuditTaskResV1StatusEnum.exec_failed,
-    task_id: 2
+    task_id: 2,
+    exec_mode: 'sqls'
   }
 ];
 

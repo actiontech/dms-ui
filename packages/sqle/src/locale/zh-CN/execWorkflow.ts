@@ -103,6 +103,10 @@ export default {
         executeSqlMode: 'SQL模式',
         executeFileMode: '文件模式',
         selectFileSortMethod: '选择文件排序方式'
+      },
+      tour: {
+        modifyName: '修改工单名称',
+        modifyDataSource: '修改数据源'
       }
     },
 
@@ -201,7 +205,8 @@ export default {
       stepNumberIsUndefined: '当前节点的步骤数未定义!',
       closeWorkflow: '关闭工单',
       closeConfirm: '您确认关闭当前工单？',
-      closeWorkflowSuccessTips: '工单关闭成功'
+      closeWorkflowSuccessTips: '工单关闭成功',
+      cloneExecWorkflow: '上线到其他实例'
     },
 
     paginationDisplay: '分页展示',
