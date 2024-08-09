@@ -15,6 +15,7 @@ describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
   const completeFn = jest.fn();
   const terminateFn = jest.fn();
   const showWorkflowStepsFn = jest.fn();
+  const executeInOtherInstanceFn = jest.fn();
 
   const customRender = (
     params: Partial<
@@ -40,6 +41,7 @@ describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
         completeAction: completeFn,
         terminateAction: terminateFn,
         showWorkflowSteps: showWorkflowStepsFn,
+        executeInOtherInstanceAction: executeInOtherInstanceFn,
         maintenanceTimeInfo: [
           {
             instanceName: 'instance name',

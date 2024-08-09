@@ -50,7 +50,7 @@ exports[`test UpdateFormDrawer should match snapshot 1`] = `
       <Styled(div)>
         工单基本信息
       </Styled(div)>
-      <BaseInfoFormItem
+      <ForwardRef
         slot={<BaseInfoTag />}
       />
     </Styled(Form)>
@@ -94,7 +94,7 @@ exports[`test UpdateFormDrawer should match snapshot 1`] = `
       <Styled(div)>
         审核SQL语句信息
       </Styled(div)>
-      <SqlAuditInfoFormItem
+      <ForwardRef
         auditAction={[Function]}
         dbSourceInfoCollection={
           {
