@@ -723,7 +723,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              库表元数据
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                              >
+                                库表元数据
+                              </a>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -827,7 +831,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              慢日志
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                              >
+                                慢日志
+                              </a>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -996,7 +1004,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              processlist 列表
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                              >
+                                processlist 列表
+                              </a>
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1100,7 +1112,11 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              自定义
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                              >
+                                自定义
+                              </a>
                             </td>
                             <td
                               class="ant-table-cell"
