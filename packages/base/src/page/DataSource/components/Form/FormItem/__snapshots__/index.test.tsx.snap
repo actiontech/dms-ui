@@ -368,26 +368,14 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -704,26 +692,14 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -1092,26 +1068,14 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -1480,26 +1444,14 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -1828,26 +1780,14 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -2176,26 +2116,14 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -2524,26 +2452,14 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
               <div
                 class="ant-form-item-control-input-content"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                      type="button"
-                    >
-                      <span>
-                        测试数据源连通性
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  />
-                </div>
+                  <span>
+                    测试数据源连通性
+                  </span>
+                </button>
               </div>
             </div>
           </div>

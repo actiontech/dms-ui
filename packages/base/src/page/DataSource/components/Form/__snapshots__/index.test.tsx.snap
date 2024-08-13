@@ -626,26 +626,14 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1973,26 +1961,14 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3240,26 +3216,14 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -4388,26 +4352,14 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -5537,26 +5489,14 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -6757,26 +6697,14 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -7830,26 +7758,14 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -8915,26 +8831,14 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -10000,26 +9904,14 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -11126,26 +11018,14 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>

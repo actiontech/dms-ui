@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, ReminderInformation } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import {
   FormAreaBlockStyleWrapper,
@@ -16,7 +16,7 @@ import {
   FileUploadCheckStatusType
 } from '../index.type';
 import FileUpload from './FileUpload';
-import { UploadProps, Space, Typography } from 'antd';
+import { UploadProps, Space } from 'antd';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
 import { useState } from 'react';
@@ -24,12 +24,7 @@ import { IDBServicesConnectionItem } from '@actiontech/shared/lib/api/base/servi
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { useEffect } from 'react';
-import {
-  CloseCircleOutlined,
-  CheckCircleOutlined,
-  OverviewOutlined
-} from '@actiontech/icons';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { OverviewOutlined } from '@actiontech/icons';
 
 const BatchImportDataSourceForm: React.FC<{
   form: BatchImportDataSourceFormType;
@@ -135,38 +130,26 @@ const BatchImportDataSourceForm: React.FC<{
             >
               {t('dmsProject.batchImportDataSource.testConnect')}
             </BasicButton>
-            <EmptyBox if={!connectionTesting && !!connectionTestResult}>
-              <Space direction="vertical">
-                <EmptyBox if={!!connectionTestResult?.successful_num}>
-                  <Space>
-                    <CommonIconStyleWrapper>
-                      <CheckCircleOutlined />
-                    </CommonIconStyleWrapper>
-                    <Typography.Text type="success">
-                      {t(
-                        'dmsProject.batchImportDataSource.testConnectSuccess',
-                        {
-                          count: connectionTestResult?.successful_num
-                        }
-                      )}
-                    </Typography.Text>
-                  </Space>
-                </EmptyBox>
-                <EmptyBox if={!!connectionTestResult?.failed_num}>
-                  <Space>
-                    <CommonIconStyleWrapper>
-                      <CloseCircleOutlined />
-                    </CommonIconStyleWrapper>
-                    <Typography.Text type="danger">
-                      {t('dmsProject.batchImportDataSource.testConnectFail', {
-                        count: connectionTestResult?.failed_num,
-                        name: connectionTestResult?.failed_names?.join(',')
-                      })}
-                    </Typography.Text>
-                  </Space>
-                </EmptyBox>
-              </Space>
-            </EmptyBox>
+            <ReminderInformation
+              show={
+                !connectionTesting && !!connectionTestResult?.successful_num
+              }
+              status="success"
+              message={t(
+                'dmsProject.batchImportDataSource.testConnectSuccess',
+                {
+                  count: connectionTestResult?.successful_num
+                }
+              )}
+            />
+            <ReminderInformation
+              show={!connectionTesting && !!connectionTestResult?.failed_num}
+              status="error"
+              message={t('dmsProject.batchImportDataSource.testConnectFail', {
+                count: connectionTestResult?.failed_num,
+                name: connectionTestResult?.failed_names?.join(',')
+              })}
+            />
           </Space>
         </FormItemLabel>
       </FormStyleWrapper>

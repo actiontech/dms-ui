@@ -1,12 +1,10 @@
-import { Upload, UploadProps, Button, Space, Typography } from 'antd';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { Upload, UploadProps, Button, Space } from 'antd';
+import { BasicButton, ReminderInformation } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { ImportProjectUploadFileFieldWrapper } from '../../style';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
 import { FileUploadCheckStatusType } from '../index.type';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { CloseCircleOutlined, CheckCircleOutlined } from '@actiontech/icons';
 
 const FileUpload: React.FC<
   UploadProps & { uploadCheckStatus: FileUploadCheckStatusType }
@@ -32,28 +30,16 @@ const FileUpload: React.FC<
           {t('dmsProject.importProject.downloadTemplate')}
         </Button>
       </ImportProjectUploadFileFieldWrapper>
-      <section>
-        <EmptyBox if={uploadCheckStatus.success}>
-          <Space>
-            <CommonIconStyleWrapper>
-              <CheckCircleOutlined />
-            </CommonIconStyleWrapper>
-            <Typography.Text type="success">
-              {t('dmsProject.batchImportDataSource.checkSuccess')}
-            </Typography.Text>
-          </Space>
-        </EmptyBox>
-        <EmptyBox if={!!uploadCheckStatus.errorMessage}>
-          <Space align="start">
-            <CommonIconStyleWrapper>
-              <CloseCircleOutlined />
-            </CommonIconStyleWrapper>
-            <Typography.Text type="danger">
-              {uploadCheckStatus.errorMessage}
-            </Typography.Text>
-          </Space>
-        </EmptyBox>
-      </section>
+      <ReminderInformation
+        show={!!uploadCheckStatus.success}
+        status="success"
+        message={t('dmsProject.batchImportDataSource.checkSuccess')}
+      />
+      <ReminderInformation
+        show={!!uploadCheckStatus.errorMessage}
+        status="error"
+        message={uploadCheckStatus.errorMessage ?? ''}
+      />
     </Space>
   );
 };
