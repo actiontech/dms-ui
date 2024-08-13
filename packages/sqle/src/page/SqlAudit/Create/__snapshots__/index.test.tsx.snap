@@ -254,7 +254,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                         />
                       </span>
                       <span>
-                        静态审核
+                        离线审核
                       </span>
                     </label>
                     <label
@@ -274,7 +274,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                         />
                       </span>
                       <span>
-                        动态审核
+                        在线审核
                       </span>
                     </label>
                   </div>
@@ -1626,7 +1626,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                         />
                       </span>
                       <span>
-                        静态审核
+                        离线审核
                       </span>
                     </label>
                     <label
@@ -1646,7 +1646,7 @@ exports[`sqle/SqlAudit/Create enter default content to create sql audit 1`] = `
                         />
                       </span>
                       <span>
-                        动态审核
+                        在线审核
                       </span>
                     </label>
                   </div>
@@ -2954,7 +2954,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                         />
                       </span>
                       <span>
-                        静态审核
+                        离线审核
                       </span>
                     </label>
                     <label
@@ -2974,7 +2974,7 @@ exports[`sqle/SqlAudit/Create select static audit type 1`] = `
                         />
                       </span>
                       <span>
-                        动态审核
+                        在线审核
                       </span>
                     </label>
                   </div>
@@ -4098,7 +4098,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                         />
                       </span>
                       <span>
-                        静态审核
+                        离线审核
                       </span>
                     </label>
                     <label
@@ -4118,7 +4118,7 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                         />
                       </span>
                       <span>
-                        动态审核
+                        在线审核
                       </span>
                     </label>
                   </div>
@@ -5366,7 +5366,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                         />
                       </span>
                       <span>
-                        静态审核
+                        离线审核
                       </span>
                     </label>
                     <label
@@ -5386,7 +5386,7 @@ exports[`sqle/SqlAudit/Create upload xml file 1`] = `
                         />
                       </span>
                       <span>
-                        动态审核
+                        在线审核
                       </span>
                     </label>
                   </div>
@@ -6634,7 +6634,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                         />
                       </span>
                       <span>
-                        静态审核
+                        离线审核
                       </span>
                     </label>
                     <label
@@ -6654,7 +6654,7 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                         />
                       </span>
                       <span>
-                        动态审核
+                        在线审核
                       </span>
                     </label>
                   </div>
