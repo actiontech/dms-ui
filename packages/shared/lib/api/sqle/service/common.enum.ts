@@ -202,6 +202,18 @@ export enum RecordSourceNameEnum {
   'ide_plugin' = 'ide_plugin'
 }
 
+export enum ReportPushConfigListPushUserTypeEnum {
+  'fixed' = 'fixed',
+
+  'permission_match' = 'permission_match'
+}
+
+export enum ReportPushConfigListTriggerTypeEnum {
+  'immediately' = 'immediately',
+
+  'timing' = 'timing'
+}
+
 export enum RuleParamResV1TypeEnum {
   'string' = 'string',
 
@@ -288,6 +300,18 @@ export enum UpdateInstanceAuditPlanStatusReqV1ActiveEnum {
   'normal' = 'normal',
 
   'disabled' = 'disabled'
+}
+
+export enum UpdateReportPushConfigReqV1PushUserTypeEnum {
+  'fixed' = 'fixed',
+
+  'permission_match' = 'permission_match'
+}
+
+export enum UpdateReportPushConfigReqV1TriggerTypeEnum {
+  'immediately' = 'immediately',
+
+  'timing' = 'timing'
 }
 
 export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {

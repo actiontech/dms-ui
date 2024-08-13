@@ -15,7 +15,9 @@ import {
   ProfileSquareFilled,
   CodeOutlined,
   OperateAuditFilled,
-  BriefcaseFilled
+  BriefcaseFilled,
+  PlanFilled,
+  GearFilled
 } from '@actiontech/icons';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -150,9 +152,20 @@ const sqlManagementConf: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.sqlManagementConf')}
     </Link>
   ),
-  icon: <ResolveFileFilled width={18} height={18} />,
+  icon: <PlanFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-conf`,
   structKey: 'sql-management-conf'
+});
+
+const pushRuleConfiguration: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/push-rule`}>
+      {t('dmsMenu.pushRuleConfiguration')}
+    </Link>
+  ),
+  icon: <GearFilled width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/push-rule`,
+  structKey: 'push-rule-configuration'
 });
 
 const sqleMenusCollection = [
@@ -168,7 +181,8 @@ const sqleMenusCollection = [
   workflowTemplateMenuItem,
   workflowTemplateMenuItem,
   sqleOperationRecordMenuItem,
-  sqlManagementConf
+  sqlManagementConf,
+  pushRuleConfiguration
 ];
 
 export default sqleMenusCollection;

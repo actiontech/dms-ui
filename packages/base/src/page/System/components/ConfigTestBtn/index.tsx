@@ -10,6 +10,11 @@ interface ConfigTestBtnParams {
   popoverForm: React.ReactNode;
   testingRef: MutableRefObject<boolean>;
 }
+
+/**
+ * @deprecated
+ * 使用 shared 中 ConfigTestBtn 替换
+ */
 const ConfigTestBtn: React.FC<ConfigTestBtnParams> = ({
   popoverOpen,
   onPopoverOpenChange,

@@ -22,6 +22,7 @@ import execWorkflow from './execWorkflow';
 import managementConf from './managementConf';
 import home from './home';
 import components from './components';
+import pushRule from './pushRule';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -49,6 +50,7 @@ export default {
     execWorkflow,
     managementConf,
     home,
-    components
+    components,
+    pushRule
   }
 };
