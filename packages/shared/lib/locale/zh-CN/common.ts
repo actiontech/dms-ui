@@ -170,9 +170,9 @@ export default {
       limit:
         '您的表达式中包含不合法的数值范围， minute(0-59), hour(0-23), day(1,31), month(1-12), week(0-6)'
     },
-    placeholder: '请输入审核时间',
+    placeholder: '请输入时间',
     subTitle: {
-      auditsFrequency: '审核频率',
+      auditsFrequency: '频率',
       timerPoint: '时间点'
     },
     week: {
