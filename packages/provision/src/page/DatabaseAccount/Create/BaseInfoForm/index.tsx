@@ -72,8 +72,15 @@ const BaseInfoForm: React.FC<{ disabled?: boolean }> = ({
       </FormItemLabel>
       <FormItemLabel
         name="hostname"
-        className="has-required-style"
-        label={t('databaseAccount.create.form.hostname')}
+        className="has-required-style has-label-tip"
+        label={
+          <div className="label-cont-custom">
+            <div>{t('databaseAccount.create.form.hostname')}</div>
+            <div className="tip-content-box">
+              {t('databaseAccount.create.form.hostnameDesc')}
+            </div>
+          </div>
+        }
         rules={[{ required: true }]}
       >
         <BasicInput disabled={disabled} />

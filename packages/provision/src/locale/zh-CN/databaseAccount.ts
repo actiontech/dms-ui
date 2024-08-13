@@ -87,7 +87,8 @@ export default {
     form: {
       username: '连接账号名',
       usernameExtra: '账号名检测通过',
-      hostname: '连接域',
+      hostname: '主机名(host)',
+      hostnameDesc: '用来指定允许连接的IP地址或主机名',
       hostnameTips: 'MySQL/OB必填参数',
       password: '连接密码',
       confirm_password: '确认连接密码',

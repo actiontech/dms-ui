@@ -164,7 +164,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -175,9 +175,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      主机名(host)
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      用来指定允许连接的IP地址或主机名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -2431,7 +2442,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2442,9 +2453,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      主机名(host)
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      用来指定允许连接的IP地址或主机名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -4661,7 +4683,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4672,9 +4694,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="hostname"
-                  title="连接域"
+                  title=""
                 >
-                  连接域
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      主机名(host)
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      用来指定允许连接的IP地址或主机名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
