@@ -35,6 +35,7 @@ export { default as CustomSegmentedFilter } from './components/CustomSegmentedFi
 export { default as LazyLoadComponent } from './components/LazyLoadComponent';
 export { default as SegmentedTabs } from './components/SegmentedTabs';
 export { default as SpinIndicator } from './components/SpinIndicator';
+export { default as ReminderInformation } from './components/ReminderInformation';
 
 export { default as Copy } from './utils/Copy';
 export { default as Download } from './utils/Download';

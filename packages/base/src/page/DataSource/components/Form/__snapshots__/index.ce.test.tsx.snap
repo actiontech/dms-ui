@@ -512,26 +512,14 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            测试数据源连通性
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      />
-                    </div>
+                      <span>
+                        测试数据源连通性
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
