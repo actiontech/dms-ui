@@ -91,9 +91,16 @@ const SQLInfoFormItem = ({
   return (
     <>
       <FormItemLabel
-        className="has-required-style"
+        className="has-required-style has-label-tip"
         name="auditType"
-        label={t('sqlAudit.create.sqlInfo.form.auditType')}
+        label={
+          <div className="label-cont-custom">
+            <div>{t('sqlAudit.create.sqlInfo.form.auditType')}</div>
+            <div className="tip-content-box">
+              {t('sqlAudit.create.sqlInfo.form.auditTypeDesc')}
+            </div>
+          </div>
+        }
         {...formItemLayout.spaceBetween}
         required={true}
         rules={[
