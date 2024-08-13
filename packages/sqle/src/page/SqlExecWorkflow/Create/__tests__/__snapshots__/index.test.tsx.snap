@@ -1242,7 +1242,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     type="button"
                   >
                     <span>
-                      编辑工单信息
+                      修改工单
                     </span>
                   </button>
                 </div>
@@ -3584,7 +3584,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     type="button"
                   >
                     <span>
-                      编辑工单信息
+                      修改工单
                     </span>
                   </button>
                 </div>
@@ -7140,7 +7140,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                     type="button"
                   >
                     <span>
-                      编辑工单信息
+                      修改工单
                     </span>
                   </button>
                 </div>
@@ -15799,7 +15799,7 @@ from
                     type="button"
                   >
                     <span>
-                      编辑工单信息
+                      修改工单
                     </span>
                   </button>
                 </div>

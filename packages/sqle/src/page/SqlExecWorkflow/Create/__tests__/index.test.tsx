@@ -406,7 +406,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(baseElement).toMatchSnapshot();
 
     // 编辑工单信息
-    fireEvent.click(screen.getByText('编辑工单信息'));
+    fireEvent.click(screen.getByText('修改工单'));
     await act(async () => jest.advanceTimersByTime(400));
     expect(baseElement).toMatchSnapshot();
 
