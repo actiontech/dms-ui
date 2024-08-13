@@ -32,4 +32,5 @@ export type MenuStructTreeKey =
   | 'whitelist'
   | 'workflow-template'
   | 'sqle-log'
-  | 'sql-management-conf';
+  | 'sql-management-conf'
+  | 'push-rule-configuration';

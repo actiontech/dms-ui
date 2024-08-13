@@ -19,6 +19,10 @@ export type ReadOnlyConfigColumnsType<T> = Array<
   } & Omit<DescriptionsItemProps, 'children'>
 >;
 
+/**
+ * @deprecated
+ * 使用 shared 中 renderReadOnlyModeConfig 替换
+ */
 export function renderReadOnlyModeConfig<T>(
   params: RenderReadOnlyElementConfig<T>
 ) {
@@ -46,6 +50,10 @@ export function renderReadOnlyModeConfig<T>(
   );
 }
 
+/**
+ * @deprecated
+ * 使用 shared 中 useConfigRender 替换
+ */
 function useConditionalConfig<T>({
   switchFieldName,
   switchFieldLabel
