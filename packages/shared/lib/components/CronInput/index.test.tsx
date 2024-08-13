@@ -1,16 +1,8 @@
-import {
-  fireEvent,
-  act,
-  cleanup,
-  screen,
-  renderHook
-} from '@testing-library/react';
+import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../testUtil/customRender';
 import { getBySelector, getAllBySelector } from '../../testUtil/customQuery';
-
 import { CronInputProps, CronMode } from './index.type';
 import CronInputCom from '.';
-import { useState } from 'react';
 
 describe('lib/CronInputCom', () => {
   beforeEach(() => {
