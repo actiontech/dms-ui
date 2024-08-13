@@ -35,10 +35,11 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
 
   const disabledSqlFileExecMode =
     !isSupportFileModeExecuteSql ||
-    ![
-      AuditTaskResV1SqlSourceEnum.sql_file,
-      AuditTaskResV1SqlSourceEnum.zip_file
-    ].includes(currentSqlUploadType);
+    (!!currentSqlUploadType &&
+      ![
+        AuditTaskResV1SqlSourceEnum.sql_file,
+        AuditTaskResV1SqlSourceEnum.zip_file
+      ].includes(currentSqlUploadType));
 
   // #if [ee]
   const isSupportsFileSortUpload =

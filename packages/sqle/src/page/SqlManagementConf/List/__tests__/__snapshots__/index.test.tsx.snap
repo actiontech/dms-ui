@@ -3,40 +3,40 @@
 exports[`test sqle/SqlManagementConf/List render close task type filter field 1`] = `
 <body>
   <div>
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    <section
+      class="css-0"
     >
       <div
-        class="ant-spin-container"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
-        <section
-          class="css-0"
+        <div
+          class="title"
         >
-          <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+          SQL管控配置
+        </div>
+        <div
+          class="extra"
+        >
+          <a
+            href="/sqle/project/700300/sql-management-conf/create"
           >
-            <div
-              class="title"
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
             >
-              SQL管控配置
-            </div>
-            <div
-              class="extra"
-            >
-              <a
-                href="/sqle/project/700300/sql-management-conf/create"
-              >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                  type="button"
-                >
-                  <span>
-                    为数据源开启扫描任务
-                  </span>
-                </button>
-              </a>
-            </div>
-          </div>
+              <span>
+                为数据源开启扫描任务
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
           >
@@ -1141,9 +1141,9 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 `;
@@ -1151,27 +1151,27 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
 exports[`test sqle/SqlManagementConf/List render create button when project is archived 1`] = `
 <body>
   <div>
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    <section
+      class="css-0"
     >
       <div
-        class="ant-spin-container"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
-        <section
-          class="css-0"
+        <div
+          class="title"
         >
-          <div
-            class="actiontech-page-header-namespace css-1xspr0w"
-          >
-            <div
-              class="title"
-            >
-              SQL管控配置
-            </div>
-            <div
-              class="extra"
-            />
-          </div>
+          SQL管控配置
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
           >
@@ -1630,9 +1630,9 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 `;
@@ -1640,40 +1640,40 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
 exports[`test sqle/SqlManagementConf/List render filter list data by active status 1`] = `
 <body>
   <div>
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    <section
+      class="css-0"
     >
       <div
-        class="ant-spin-container"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
-        <section
-          class="css-0"
+        <div
+          class="title"
         >
-          <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+          SQL管控配置
+        </div>
+        <div
+          class="extra"
+        >
+          <a
+            href="/sqle/project/700300/sql-management-conf/create"
           >
-            <div
-              class="title"
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
             >
-              SQL管控配置
-            </div>
-            <div
-              class="extra"
-            >
-              <a
-                href="/sqle/project/700300/sql-management-conf/create"
-              >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                  type="button"
-                >
-                  <span>
-                    为数据源开启扫描任务
-                  </span>
-                </button>
-              </a>
-            </div>
-          </div>
+              <span>
+                为数据源开启扫描任务
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
           >
@@ -2357,9 +2357,9 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 `;
@@ -2367,40 +2367,40 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
 exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
 <body>
   <div>
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    <section
+      class="css-0"
     >
       <div
-        class="ant-spin-container"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
-        <section
-          class="css-0"
+        <div
+          class="title"
         >
-          <div
-            class="actiontech-page-header-namespace css-1xspr0w"
+          SQL管控配置
+        </div>
+        <div
+          class="extra"
+        >
+          <a
+            href="/sqle/project/700300/sql-management-conf/create"
           >
-            <div
-              class="title"
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
             >
-              SQL管控配置
-            </div>
-            <div
-              class="extra"
-            >
-              <a
-                href="/sqle/project/700300/sql-management-conf/create"
-              >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                  type="button"
-                >
-                  <span>
-                    为数据源开启扫描任务
-                  </span>
-                </button>
-              </a>
-            </div>
-          </div>
+              <span>
+                为数据源开启扫描任务
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
           >
@@ -3506,9 +3506,9 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 `;

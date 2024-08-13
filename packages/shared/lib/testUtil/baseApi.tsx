@@ -9,7 +9,8 @@ class MockBaseApi implements MockApi {
       this.downloadFileByEnName(),
       this.response500(),
       this.responseToken(),
-      this.mockLoginWithoutToken()
+      this.mockLoginWithoutToken(),
+      this.responseFileStream()
     ];
   }
 
@@ -87,6 +88,16 @@ class MockBaseApi implements MockApi {
           token,
           msg: 'error message'
         })
+      );
+    });
+  }
+
+  private responseFileStream() {
+    return rest.post('/file/stream', (_, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.set('content-disposition', `inline`),
+        ctx.body(new Blob(['use aaa']))
       );
     });
   }

@@ -6,7 +6,8 @@ import store from '../../../../../base/src/store';
 import {
   getResponseErrorMessage,
   getResponseCode,
-  isExportFileResponse
+  isExportFileResponse,
+  isFileStreamResponse
 } from '../../../utils/Common';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
@@ -34,7 +35,9 @@ class ApiBase {
         Download.downloadByCreateElementA(res.data, filename);
         return res;
       } else if (
-        (res.status === 200 && code !== ResponseCode.SUCCESS) ||
+        (res.status === 200 &&
+          code !== ResponseCode.SUCCESS &&
+          !isFileStreamResponse(res)) ||
         res.status !== 200
       ) {
         const message = await getResponseErrorMessage(res);

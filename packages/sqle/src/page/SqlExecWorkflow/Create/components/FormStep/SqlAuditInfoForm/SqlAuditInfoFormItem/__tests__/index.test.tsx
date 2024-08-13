@@ -8,6 +8,12 @@ import { Form } from 'antd';
 import { act, renderHook } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import { useSelector } from 'react-redux';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test sqle/SqlAuditInfoForm', () => {
   const customRender = (params: SharedStepDetails) => {
@@ -29,6 +35,7 @@ describe('test sqle/SqlAuditInfoForm', () => {
     mockUseCurrentUser();
     mockUseCurrentProject();
     mockUseDbServiceDriver();
+    (useSelector as jest.Mock).mockImplementation(() => jest.fn());
   });
   afterEach(() => {
     jest.useRealTimers();
