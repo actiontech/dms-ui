@@ -4,6 +4,7 @@ import axios from 'axios';
 import TestMockApi from '../../../testUtil/mockApi';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import 'blob-polyfill';
 
 const downloadSpy = jest.spyOn(Download, 'downloadByCreateElementA');
 const emitSpy = jest.spyOn(eventEmitter, 'emit');
@@ -129,6 +130,19 @@ describe('Api', () => {
       token = res.data.token;
     } finally {
       expect(token).toBe('');
+    }
+  });
+
+  test('should return file stream when request header includes content-disposition and inline', async () => {
+    let res;
+
+    try {
+      res = await apiInstance.post('/file/stream');
+    } finally {
+      expect(downloadSpy).not.toHaveBeenCalled();
+      res?.data.text().then((res: string) => {
+        expect(res).toBe('use aaa');
+      });
     }
   });
 });

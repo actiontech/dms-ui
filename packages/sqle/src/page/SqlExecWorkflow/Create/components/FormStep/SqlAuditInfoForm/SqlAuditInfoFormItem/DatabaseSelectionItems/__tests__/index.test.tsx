@@ -13,6 +13,12 @@ import { instanceTipsMockData } from '../../../../../../../../../testUtils/mockA
 import { mockDatabaseType } from '../../../../../../../../../testUtils/mockHooks/mockDatabaseType';
 import { Form } from 'antd';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useSelector } from 'react-redux';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test DatabaseSelectionItems', () => {
   beforeEach(() => {
@@ -24,6 +30,7 @@ describe('test DatabaseSelectionItems', () => {
     instance.getInstanceTipList();
     system.getSystemModuleStatus();
     mockDatabaseType();
+    (useSelector as jest.Mock).mockImplementation(() => jest.fn());
   });
   afterEach(() => {
     jest.useRealTimers();

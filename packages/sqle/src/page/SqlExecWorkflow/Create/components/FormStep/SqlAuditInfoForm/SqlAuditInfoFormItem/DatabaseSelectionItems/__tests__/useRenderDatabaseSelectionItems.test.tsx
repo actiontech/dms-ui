@@ -12,12 +12,40 @@ import system from '../../../../../../../../../testUtils/mockApi/system';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { superRender } from '../../../../../../../../../testUtils/customRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useSelector } from 'react-redux';
+import * as useCreationMode from '../../../../../../hooks/useCreationMode';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test useRenderDatabaseSelectionItems', () => {
   beforeEach(() => {
     mockUseCurrentUser();
     jest.useFakeTimers();
     mockUseCurrentProject();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        sqlExecWorkflow: {
+          clonedExecWorkflowSqlAuditInfo: {
+            databaseInfo: [
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              },
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              }
+            ]
+          }
+        }
+      })
+    );
+    jest
+      .spyOn(useCreationMode, 'default')
+      .mockImplementation(() => ({ isCloneMode: false }));
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -66,7 +94,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       ruleTemplate: undefined,
       dbType: undefined,
       testConnectResult: undefined,
-      isSupportFileModeExecuteSql: false
+      isSupportFileModeExecuteSql: true
     });
 
     await act(() => jest.advanceTimersByTime(3000));
@@ -312,5 +340,23 @@ describe('test useRenderDatabaseSelectionItems', () => {
     expect(getByText('添加数据源').closest('button')).toBeDisabled();
     fireEvent.click(getByText('添加数据源')!);
     expect(handleClickSpy).not.toHaveBeenCalled();
+  });
+
+  it('should get instance info when isCloneMode is true', async () => {
+    const mockGetInstanceSchemas = instance.getInstanceSchemas();
+    const mockGetInstance = instance.getInstance();
+    const mockGetSystemModuleStatus = system.getSystemModuleStatus();
+    const spy = jest.spyOn(useCreationMode, 'default');
+    spy.mockImplementation(() => ({ isCloneMode: true }));
+    renderHook(() =>
+      useRenderDatabaseSelectionItems({
+        dbSourceInfoCollection: MockSharedStepDetail.dbSourceInfoCollection,
+        sqlStatementTabActiveKey: MockSharedStepDetail.sqlStatementTabActiveKey
+      })
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(2);
+    expect(mockGetInstance).toHaveBeenCalledTimes(2);
+    expect(mockGetSystemModuleStatus).toHaveBeenCalledTimes(2);
   });
 });

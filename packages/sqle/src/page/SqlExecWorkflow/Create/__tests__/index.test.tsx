@@ -24,6 +24,18 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { useSelector } from 'react-redux';
+import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import {
+  AuditTaskResV1SqlSourceEnum,
+  CreateAuditTasksGroupReqV1ExecModeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn(),
+  useSelector: jest.fn()
+}));
 
 describe('sqle/SqlExecWorkflow/Create', () => {
   const projectName = mockProjectInfo.projectName;
@@ -38,6 +50,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let auditTaskGroupId: jest.SpyInstance;
   let requestGetModalStatus: jest.SpyInstance;
   let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
+  let getSqlFileOrderMethodV1Spy: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<CreateSqlExecWorkflow />);
@@ -65,8 +78,52 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     getAuditTaskSQLsSpy = task.getAuditTaskSQLs();
     auditTaskGroupId = execWorkflow.auditTaskGroupId();
     requestGetModalStatus = system.getSystemModuleStatus();
+    getSqlFileOrderMethodV1Spy = task.getSqlFileOrderMethod();
     batchCheckInstanceIsConnectableByName =
       instance.batchCheckInstanceIsConnectableByName();
+
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        sqlExecWorkflow: {
+          clonedExecWorkflowSqlAuditInfo: {
+            isSameSqlForAll: false,
+            databaseInfo: [
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              },
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              },
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              }
+            ],
+            '0': {
+              currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
+              form_data: 'SELECT * '
+            },
+            '1': {
+              currentUploadType: AuditTaskResV1SqlSourceEnum.sql_file,
+              sql_file: [new File(['test file content'], 'test.sql')],
+              exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls
+            },
+            '2': {
+              currentUploadType: AuditTaskResV1SqlSourceEnum.zip_file,
+              zip_file: [new File(['test file content'], 'test.zip')],
+              exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sql_file,
+              file_sort_method: 'file_order_method_suffix_num_asc'
+            }
+          },
+          clonedExecWorkflowBaseInfo: {
+            workflow_subject: 'workflow-name-test',
+            desc: 'test desc'
+          }
+        }
+      })
+    );
   });
 
   afterEach(() => {
@@ -85,6 +142,31 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(screen.getByText('工单描述')).toBeInTheDocument();
     expect(screen.getByText('审核SQL语句信息')).toBeInTheDocument();
 
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should snapshot render initial workflow creation UI when current is clone workflow mode', async () => {
+    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/sqle/project/700300/exec-workflow/create?${SOURCE_WORKFLOW_PATH_KEY}=123456`
+        ]
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getBySelector('#workflow_subject', baseElement)).toHaveValue(
+      'workflow-name-test'
+    );
+
+    expect(getBySelector('#desc', baseElement)).toHaveValue('test desc');
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllBySelector('.ant-segmented-item', baseElement)).toHaveLength(
+      3
+    );
+    expect(requestInstanceSchemas).toHaveBeenCalledTimes(3);
+    expect(requestInstance).toHaveBeenCalledTimes(3);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(3);
+    expect(getSqlFileOrderMethodV1Spy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 

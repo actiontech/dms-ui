@@ -21,9 +21,9 @@ import {
   IBatchCompleteWorkflowsV1Params,
   IBatchCompleteWorkflowsV1Return,
   IExportWorkflowV1Params,
-  IGetWorkflowAttachmentParams,
   ITerminateMultipleTaskByWorkflowV1Params,
   ITerminateMultipleTaskByWorkflowV1Return,
+  IGetWorkflowAttachmentParams,
   ITerminateSingleTaskByWorkflowV1Params,
   ITerminateSingleTaskByWorkflowV1Return,
   IGetWorkflowV1Params,
@@ -188,24 +188,6 @@ class WorkflowService extends ServiceBase {
     );
   }
 
-  public getWorkflowAttachment(
-    params: IGetWorkflowAttachmentParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const workflow_id = paramsData.workflow_id;
-    delete paramsData.workflow_id;
-
-    return this.get<any>(
-      `/v1/projects/${project_name}/workflows/${workflow_id}/attachment`,
-      paramsData,
-      options
-    );
-  }
-
   public terminateMultipleTaskByWorkflowV1(
     params: ITerminateMultipleTaskByWorkflowV1Params,
     options?: AxiosRequestConfig
@@ -219,6 +201,27 @@ class WorkflowService extends ServiceBase {
 
     return this.post<ITerminateMultipleTaskByWorkflowV1Return>(
       `/v1/projects/${project_name}/workflows/${workflow_id}/tasks/terminate`,
+      paramsData,
+      options
+    );
+  }
+
+  public getWorkflowAttachment(
+    params: IGetWorkflowAttachmentParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.get<any>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/tasks/${task_id}/attachment`,
       paramsData,
       options
     );

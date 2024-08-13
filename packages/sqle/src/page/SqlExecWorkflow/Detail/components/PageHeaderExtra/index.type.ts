@@ -20,6 +20,7 @@ export type WorkflowDetailPageHeaderExtraProps = {
   canRejectWorkflow?: boolean;
   showWorkflowSteps: () => void;
   workflowStepsVisibility: boolean;
+  executeInOtherInstanceAction: () => Promise<void>;
 };
 
 export type WorkflowDetailActionMeta = {

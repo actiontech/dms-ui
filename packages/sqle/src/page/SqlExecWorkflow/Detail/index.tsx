@@ -61,11 +61,14 @@ const SqlWorkflowDetail: React.FC = () => {
 
     completeAction,
     terminateAction,
-    messageContextHolder
+    messageContextHolder,
+    executeInOtherInstanceAction
   } = useGenerateWorkflowStepsProps({
     workflowId: workflowInfo?.workflow_id ?? '',
     refreshWorkflowInfo,
-    refreshOverviewAction
+    refreshOverviewAction,
+    taskInfos,
+    workflowInfo
   });
   const currentRejectedStep = useMemo(() => {
     return workflowInfo?.record?.workflow_step_list?.find(
@@ -99,6 +102,7 @@ const SqlWorkflowDetail: React.FC = () => {
                 maintenanceTimeInfo={maintenanceTimeInfo}
                 workflowStepsVisibility={workflowStepsVisibility}
                 showWorkflowSteps={showWorkflowSteps}
+                executeInOtherInstanceAction={executeInOtherInstanceAction}
               />
             }
           />

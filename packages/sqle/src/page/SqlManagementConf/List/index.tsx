@@ -150,22 +150,20 @@ const List: React.FC = () => {
   }, [updateInstanceList, projectName]);
 
   return (
-    <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
-      <SqlManagementConfPageStyleWrapper>
-        <PageHeader
-          title={t('managementConf.list.pageTitle')}
-          extra={
-            <EmptyBox if={!projectArchive}>
-              <Link
-                to={`/sqle/project/${projectID}/sql-management-conf/create`}
-              >
-                <BasicButton type="primary">
-                  {t('managementConf.list.pageAction.enableAuditPlan')}
-                </BasicButton>
-              </Link>
-            </EmptyBox>
-          }
-        />
+    <SqlManagementConfPageStyleWrapper>
+      <PageHeader
+        title={t('managementConf.list.pageTitle')}
+        extra={
+          <EmptyBox if={!projectArchive}>
+            <Link to={`/sqle/project/${projectID}/sql-management-conf/create`}>
+              <BasicButton type="primary">
+                {t('managementConf.list.pageAction.enableAuditPlan')}
+              </BasicButton>
+            </Link>
+          </EmptyBox>
+        }
+      />
+      <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
         <TableToolbar
           refreshButton={{ refresh: onRefresh, disabled: getTableDataLoading }}
           setting={tableSetting}
@@ -240,8 +238,8 @@ const List: React.FC = () => {
             isProjectManager: isProjectManager(projectName)
           })}
         />
-      </SqlManagementConfPageStyleWrapper>
-    </Spin>
+      </Spin>
+    </SqlManagementConfPageStyleWrapper>
   );
 };
 

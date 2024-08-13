@@ -50,7 +50,7 @@ exports[`test FormStep should match snapshot 1`] = `
     labelAlign="left"
     layout="vertical"
   >
-    <BaseInfoForm />
+    <ForwardRef />
   </Styled(Form)>
   <Styled(Styled(Form))
     colon={false}
@@ -82,7 +82,7 @@ exports[`test FormStep should match snapshot 1`] = `
     }
     labelAlign="left"
   >
-    <SqlAuditInfoForm
+    <ForwardRef
       auditAction={[MockFunction]}
       dbSourceInfoCollection={
         {
@@ -120,5 +120,25 @@ exports[`test FormStep should match snapshot 1`] = `
       }
     />
   </Styled(Styled(Form))>
+  <EmptyBox
+    if={false}
+  >
+    <Tour
+      onClose={[Function]}
+      open={true}
+      steps={
+        [
+          {
+            "target": [Function],
+            "title": "修改工单名称",
+          },
+          {
+            "target": [Function],
+            "title": "修改数据源",
+          },
+        ]
+      }
+    />
+  </EmptyBox>
 </Styled(section)>
 `;

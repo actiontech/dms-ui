@@ -18,6 +18,7 @@ import {
   CloseHexagonOutlined,
   InfoHexagonOutlined
 } from '@actiontech/icons';
+import { Typography } from 'antd';
 
 export const ConfDetailOverviewColumns: (
   projectID: string
@@ -29,7 +30,7 @@ export const ConfDetailOverviewColumns: (
       filterCustomType: 'select',
       filterKey: 'filter_audit_plan_type',
       render: (data: IAuditPlanTypeResBase) => {
-        return data.desc ?? '-';
+        return data.desc ? <Typography.Link>{data.desc}</Typography.Link> : '-';
       }
     },
     {
@@ -153,6 +154,11 @@ export const ConfDetailOverviewColumnActions: (params: {
         permissions: (record) =>
           record?.active_status ===
           InstanceAuditPlanInfoActiveStatusEnum.normal,
+        buttonProps: () => {
+          return {
+            disabled: disabledActionPending
+          };
+        },
         confirm: (record) => {
           return {
             disabled: disabledActionPending,
@@ -172,6 +178,7 @@ export const ConfDetailOverviewColumnActions: (params: {
         text: t('managementConf.detail.overview.actions.delete'),
         buttonProps: () => {
           return {
+            disabled: deleteActionPending,
             danger: true
           };
         },

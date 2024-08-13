@@ -73,6 +73,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                   </div>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      上线到其他实例
+                    </span>
+                  </button>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -589,6 +597,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       role="separator"
                     />
                   </div>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      上线到其他实例
+                    </span>
+                  </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
@@ -1377,6 +1393,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       role="separator"
                     />
                   </div>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      上线到其他实例
+                    </span>
+                  </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""

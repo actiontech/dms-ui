@@ -4,21 +4,35 @@ import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '../../../../data/common';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  IWorkflowResV2,
+  IAuditTaskResV1
+} from '@actiontech/shared/lib/api/sqle/service/common';
+import useCloneExecWorkflowInfo from './useCloneExecWorkflowInfo';
 
 type HooksParamType = {
   workflowId: string;
   refreshWorkflowInfo: () => void;
   refreshOverviewAction: (value?: boolean | undefined) => void;
+  taskInfos: IAuditTaskResV1[];
+  workflowInfo?: IWorkflowResV2;
 };
 
 const useGenerateWorkflowStepsProps = ({
   workflowId,
   refreshWorkflowInfo,
-  refreshOverviewAction
+  refreshOverviewAction,
+  taskInfos,
+  workflowInfo
 }: HooksParamType) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
+
+  const { executeInOtherInstance } = useCloneExecWorkflowInfo(
+    taskInfos,
+    workflowInfo
+  );
 
   const passAction = useCallback(
     async (stepId: number) => {
@@ -153,7 +167,8 @@ const useGenerateWorkflowStepsProps = ({
     rejectAction,
     completeAction,
     terminateAction,
-    messageContextHolder
+    messageContextHolder,
+    executeInOtherInstanceAction: executeInOtherInstance
   };
 };
 

@@ -5,7 +5,7 @@ exports[`test SqlAuditInfoForm should match snapshot 1`] = `
   <FormItemSubTitle>
     审核SQL语句信息
   </FormItemSubTitle>
-  <SqlAuditInfoFormItem
+  <ForwardRef
     auditAction={[MockFunction]}
     dbSourceInfoCollection={
       {
