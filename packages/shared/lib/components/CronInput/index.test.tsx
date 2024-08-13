@@ -1,9 +1,16 @@
-import { fireEvent, act, cleanup, screen } from '@testing-library/react';
+import {
+  fireEvent,
+  act,
+  cleanup,
+  screen,
+  renderHook
+} from '@testing-library/react';
 import { renderWithTheme } from '../../testUtil/customRender';
 import { getBySelector, getAllBySelector } from '../../testUtil/customQuery';
 
 import { CronInputProps, CronMode } from './index.type';
 import CronInputCom from '.';
+import { useState } from 'react';
 
 describe('lib/CronInputCom', () => {
   beforeEach(() => {
@@ -40,34 +47,27 @@ describe('lib/CronInputCom', () => {
   });
 
   it('render change mode for cron', async () => {
+    const modeChangeSpy = jest.fn();
     const { baseElement } = customRender({
       mode: CronMode.Manual,
+      modeChange: modeChangeSpy,
       value: '0 0 * * *'
     });
 
-    const btnChangeModeEle = getBySelector(
-      '.ant-col .ant-btn .custom-icon-date',
-      baseElement
-    );
-    const inputEle = getBySelector('.ant-col .ant-input', baseElement);
-    await act(async () => {
-      fireEvent.change(inputEle, {
-        target: {
-          value: '0 0 0 * *'
-        }
-      });
-      await jest.advanceTimersByTime(300);
+    const btnChangeModeEle = getBySelector('.button-element', baseElement);
+    const inputEle = getBySelector('.input-element', baseElement);
+    fireEvent.change(inputEle, {
+      target: {
+        value: '0 0 0 * *'
+      }
     });
-    await act(async () => {
-      fireEvent.click(btnChangeModeEle);
-      await jest.advanceTimersByTime(300);
-    });
-    await screen.findByText('审核频率');
+    await act(async () => jest.advanceTimersByTime(500));
 
-    await act(async () => {
-      fireEvent.click(btnChangeModeEle);
-      await jest.advanceTimersByTime(300);
-    });
+    fireEvent.click(btnChangeModeEle);
+    await act(async () => jest.advanceTimersByTime(500));
+
+    expect(modeChangeSpy).toHaveBeenCalledTimes(1);
+    expect(modeChangeSpy).toHaveBeenCalledWith(CronMode.Select);
   });
 
   it('render change mode for cron when mode prop is null', async () => {
@@ -76,14 +76,14 @@ describe('lib/CronInputCom', () => {
     });
 
     const btnChangeModeEle = getBySelector(
-      '.ant-col .ant-btn .custom-icon-date',
+      '.button-element .custom-icon-date',
       baseElement
     );
     await act(async () => {
       fireEvent.click(btnChangeModeEle);
       await jest.advanceTimersByTime(300);
     });
-    await screen.findByText('审核频率');
+    await screen.findByText('频率');
 
     await act(async () => {
       fireEvent.click(btnChangeModeEle);
@@ -96,9 +96,9 @@ describe('lib/CronInputCom', () => {
       mode: CronMode.Select,
       value: '0 0 * * *'
     });
-    const inputEle = getBySelector('.ant-col .ant-input', baseElement);
+    const inputEle = getBySelector('.input-element', baseElement);
     const btnChangeModeEle = getBySelector(
-      '.ant-col .ant-btn .custom-icon-date',
+      '.button-element .custom-icon-date',
       baseElement
     );
     await act(async () => {
@@ -117,7 +117,7 @@ describe('lib/CronInputCom', () => {
       mode: CronMode.Select,
       value: '0 0 0 0 0'
     });
-    const inputEle = getBySelector('.ant-col .ant-input', baseElement);
+    const inputEle = getBySelector('.input-element', baseElement);
     const everyDayBtn = screen.getByText('每 天');
     await act(async () => {
       fireEvent.click(everyDayBtn);
@@ -132,9 +132,9 @@ describe('lib/CronInputCom', () => {
       mode: CronMode.Select,
       value: '0 0 * * *'
     });
-    const inputEle = getBySelector('.ant-col .ant-input', baseElement);
+    const inputEle = getBySelector('.input-element', baseElement);
     const btnChangeModeEle = getBySelector(
-      '.ant-col .ant-btn .custom-icon-date',
+      '.button-element .custom-icon-date',
       baseElement
     );
     await act(async () => {
@@ -161,9 +161,9 @@ describe('lib/CronInputCom', () => {
       mode: CronMode.Select,
       value: '0 0 * * *'
     });
-    const inputEle = getBySelector('.ant-col .ant-input', baseElement);
+    const inputEle = getBySelector('.input-element', baseElement);
     const btnChangeModeEle = getBySelector(
-      '.ant-col .ant-btn .custom-icon-date',
+      '.button-element .custom-icon-date',
       baseElement
     );
     await act(async () => {
@@ -193,10 +193,10 @@ describe('lib/CronInputCom', () => {
       updateErrorMessage: updateErrorMessageSpy
     });
     const btnChangeModeEle = getBySelector(
-      '.ant-col .ant-btn .custom-icon-date',
+      '.button-element .custom-icon-date',
       baseElement
     );
-    const inputEle = getBySelector('.ant-col .ant-input', baseElement);
+    const inputEle = getBySelector('.input-element', baseElement);
     await act(async () => {
       fireEvent.change(inputEle, {
         target: {

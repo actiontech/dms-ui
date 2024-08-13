@@ -56,7 +56,7 @@ describe('base/System/components/ConfigSwitch', () => {
 
   it('render snap when confirm popover', async () => {
     customRender({
-      title: 'title',
+      title: '是否确认关闭当前配置？',
       submitLoading: false,
       popoverVisible: true
     });

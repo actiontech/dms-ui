@@ -328,7 +328,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "structKey": "sql-management",
       },
       {
-        "icon": <ResolveFileFilled
+        "icon": <PlanFilled
           height={18}
           width={18}
         />,
@@ -570,7 +570,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "structKey": "sql-management",
       },
       {
-        "icon": <ResolveFileFilled
+        "icon": <PlanFilled
           height={18}
           width={18}
         />,

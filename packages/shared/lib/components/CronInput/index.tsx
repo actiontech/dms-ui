@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ReactNode, useEffect, useMemo, useState } from 'react';
+import { ReactNode, useEffect, useMemo } from 'react';
 import { Col, Divider, Popover, Row } from 'antd';
 import BasicInput from '../BasicInput';
 import BasicButton from '../BasicButton';
@@ -14,10 +14,11 @@ import {
   typeHourMinute
 } from './index.type';
 import { CronInputComStyleWrapper, CronSelectStyleWrapper } from './style';
-import { CronInputProps, CronMode, typeCronMode } from './index.type';
+import { CronInputProps, CronMode } from './index.type';
 import useCron from './useCron';
 import classNames from 'classnames';
 import { CalendarOutlined } from '@actiontech/icons';
+import { useControllableValue } from 'ahooks';
 
 const CronInputCom = (props: CronInputProps) => {
   const {
@@ -34,35 +35,33 @@ const CronInputCom = (props: CronInputProps) => {
 
   const { t } = useTranslation();
 
-  const [cronMode, setCronMode] = useState<typeCronMode>(CronMode.Manual);
+  const [cronMode, setCronMode] = useControllableValue(
+    typeof props.mode !== 'undefined'
+      ? {
+          value: props.mode,
+          onChange: props.modeChange,
+          defaultValue: CronMode.Manual
+        }
+      : {
+          onChange: props.modeChange,
+          defaultValue: CronMode.Manual
+        }
+  );
+
   const { isSelect, isManual } = useMemo(() => {
-    if (props.mode !== undefined) {
-      return {
-        isSelect: props.mode === CronMode.Select,
-        isManual: props.mode === CronMode.Manual
-      };
-    }
     return {
       isSelect: cronMode === CronMode.Select,
       isManual: cronMode === CronMode.Manual
     };
-  }, [cronMode, props.mode]);
+  }, [cronMode]);
 
   const currentButtonType: ButtonType = useMemo(() => {
     return isManual ? 'default' : 'primary'; // default primary
   }, [isManual]);
 
-  const updateCronMode = (mode: CronMode) => {
-    if (props.mode !== undefined) {
-      props.modeChange?.(mode);
-    } else {
-      setCronMode(mode);
-    }
-  };
-
   const onChangeCronMode = () => {
     const modeVal = isManual ? CronMode.Select : CronMode.Manual;
-    updateCronMode(modeVal);
+    setCronMode(modeVal);
   };
 
   // week
@@ -140,7 +139,6 @@ const CronInputCom = (props: CronInputProps) => {
     }
     return nodeData;
   };
-
   useEffect(() => {
     if (!!props.value && props.value !== value) {
       updateCron(props.value);
@@ -175,10 +173,13 @@ const CronInputCom = (props: CronInputProps) => {
         value={value}
       />
       <Popover
+        open={isSelect}
         overlayInnerStyle={{ padding: 0 }}
         placement="bottom"
         onOpenChange={(open) => {
-          setCronMode(open ? CronMode.Select : CronMode.Manual);
+          if (!open) {
+            setCronMode(CronMode.Manual);
+          }
         }}
         trigger={['click']}
         arrow={false}
