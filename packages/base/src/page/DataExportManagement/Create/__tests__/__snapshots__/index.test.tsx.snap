@@ -1143,7 +1143,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
             type="button"
           >
             <span>
-              编辑工单信息
+              修改工单
             </span>
           </button>
         </div>

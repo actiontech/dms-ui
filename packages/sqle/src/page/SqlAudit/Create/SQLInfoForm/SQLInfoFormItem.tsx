@@ -8,7 +8,10 @@ import {
 } from './index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import {
+  FormItemLabel,
+  CustomLabelContent
+} from '@actiontech/shared/lib/components/FormCom';
 
 import { Form, Radio, RadioGroupProps, Space } from 'antd';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
@@ -91,9 +94,14 @@ const SQLInfoFormItem = ({
   return (
     <>
       <FormItemLabel
-        className="has-required-style"
+        className="has-required-style has-label-tip"
         name="auditType"
-        label={t('sqlAudit.create.sqlInfo.form.auditType')}
+        label={
+          <CustomLabelContent
+            title={t('sqlAudit.create.sqlInfo.form.auditType')}
+            tips={t('sqlAudit.create.sqlInfo.form.auditTypeDesc')}
+          />
+        }
         {...formItemLayout.spaceBetween}
         required={true}
         rules={[
