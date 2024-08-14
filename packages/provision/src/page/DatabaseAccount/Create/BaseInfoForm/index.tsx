@@ -1,6 +1,7 @@
 import {
   FormItemLabel,
-  FormItemSubTitle
+  FormItemSubTitle,
+  CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -72,8 +73,13 @@ const BaseInfoForm: React.FC<{ disabled?: boolean }> = ({
       </FormItemLabel>
       <FormItemLabel
         name="hostname"
-        className="has-required-style"
-        label={t('databaseAccount.create.form.hostname')}
+        className="has-required-style has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.hostname')}
+            tips={t('databaseAccount.create.form.hostnameDesc')}
+          />
+        }
         rules={[{ required: true }]}
       >
         <BasicInput disabled={disabled} />
