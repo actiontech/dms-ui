@@ -3,11 +3,11 @@
 exports[`TestDatabaseConnectButton controlled mode should call onClickTestButton when click the test button 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -28,11 +28,11 @@ exports[`TestDatabaseConnectButton controlled mode should call onClickTestButton
 exports[`TestDatabaseConnectButton controlled mode should call onClickTestButton when click the test button 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -53,11 +53,11 @@ exports[`TestDatabaseConnectButton controlled mode should call onClickTestButton
 exports[`TestDatabaseConnectButton controlled mode should render message by initHide 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -78,11 +78,11 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
 exports[`TestDatabaseConnectButton controlled mode should render message by initHide 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-loading basic-button-wrapper css-geipcv"
@@ -126,11 +126,11 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
 exports[`TestDatabaseConnectButton controlled mode should render message by initHide 3`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-loading basic-button-wrapper css-geipcv"
@@ -180,11 +180,11 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
 exports[`TestDatabaseConnectButton controlled mode should render message by initHide 4`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -199,21 +199,40 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
       class="ant-space-item"
     >
       <div
-        class="css-analyi"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
       >
-        <svg
-          class="custom-icon"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
-          <path
-            d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-            fill="#1CB889"
-          />
-        </svg>
-        数据源连通性测试成功
+          <span
+            class="css-u3jcp4"
+          >
+            <svg
+              class="custom-icon"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                fill="#1CB889"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+          >
+            <pre>
+              数据源连通性测试成功
+            </pre>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -223,11 +242,11 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
 exports[`TestDatabaseConnectButton controlled mode should render message by initHide 5`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -242,13 +261,14 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
       class="ant-space-item"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
       >
         <div
           class="ant-space-item"
+          style="margin-right: 8px;"
         >
-          <div
-            class="css-dgcbul"
+          <span
+            class="css-u3jcp4"
           >
             <svg
               class="custom-icon"
@@ -262,8 +282,18 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
                 fill="#F66074"
               />
             </svg>
-            未能成功链接到数据源
-          </div>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+          >
+            <pre>
+              disable reason
+            </pre>
+          </span>
         </div>
       </div>
     </div>
@@ -274,11 +304,11 @@ exports[`TestDatabaseConnectButton controlled mode should render message by init
 exports[`TestDatabaseConnectButton uncontrolled mode should render message by initHide 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-loading basic-button-wrapper css-geipcv"
@@ -322,11 +352,11 @@ exports[`TestDatabaseConnectButton uncontrolled mode should render message by in
 exports[`TestDatabaseConnectButton uncontrolled mode should render message by initHide 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -347,11 +377,11 @@ exports[`TestDatabaseConnectButton uncontrolled mode should render message by in
 exports[`TestDatabaseConnectButton uncontrolled mode should show connect result when click the test button 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -372,11 +402,11 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
 exports[`TestDatabaseConnectButton uncontrolled mode should show connect result when click the test button 2`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -391,21 +421,40 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
       class="ant-space-item"
     >
       <div
-        class="css-analyi"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
       >
-        <svg
-          class="custom-icon"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
-          <path
-            d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-            fill="#1CB889"
-          />
-        </svg>
-        数据源连通性测试成功
+          <span
+            class="css-u3jcp4"
+          >
+            <svg
+              class="custom-icon"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                fill="#1CB889"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+          >
+            <pre>
+              数据源连通性测试成功
+            </pre>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -415,11 +464,11 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
 exports[`TestDatabaseConnectButton uncontrolled mode should show connect result when click the test button 3`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -440,11 +489,11 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
 exports[`TestDatabaseConnectButton uncontrolled mode should show connect result when click the test button 4`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
   >
     <div
       class="ant-space-item"
-      style="margin-right: 8px;"
+      style="margin-bottom: 8px;"
     >
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -459,21 +508,40 @@ exports[`TestDatabaseConnectButton uncontrolled mode should show connect result 
       class="ant-space-item"
     >
       <div
-        class="css-analyi"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
       >
-        <svg
-          class="custom-icon"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
-          <path
-            d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-            fill="#1CB889"
-          />
-        </svg>
-        数据源连通性测试成功
+          <span
+            class="css-u3jcp4"
+          >
+            <svg
+              class="custom-icon"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                fill="#1CB889"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <span
+            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+          >
+            <pre>
+              数据源连通性测试成功
+            </pre>
+          </span>
+        </div>
       </div>
     </div>
   </div>

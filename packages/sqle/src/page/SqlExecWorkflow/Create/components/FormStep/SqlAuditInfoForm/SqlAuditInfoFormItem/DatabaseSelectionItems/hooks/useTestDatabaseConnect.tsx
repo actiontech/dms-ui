@@ -1,4 +1,4 @@
-import { ReminderInformation } from '@actiontech/shared';
+import { ReminderInformation, EmptyBox } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -75,18 +75,22 @@ const useTestDatabaseConnect = ({
 
       return (
         <>
-          <ReminderInformation
-            show={!!result.is_instance_connectable}
-            status="success"
-            message={t('common.testDatabaseConnectButton.testSuccess')}
-          />
-          <ReminderInformation
-            show={
+          <EmptyBox if={!!result.is_instance_connectable}>
+            <ReminderInformation
+              status="success"
+              message={t('common.testDatabaseConnectButton.testSuccess')}
+            />
+          </EmptyBox>
+          <EmptyBox
+            if={
               !result.is_instance_connectable && !!result.connect_error_message
             }
-            status="error"
-            message={result.connect_error_message ?? ''}
-          />
+          >
+            <ReminderInformation
+              status="error"
+              message={result.connect_error_message ?? ''}
+            />
+          </EmptyBox>
         </>
       );
     },

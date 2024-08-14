@@ -10,8 +10,7 @@ import {
   BasicSelect,
   BasicSwitch,
   EmptyBox,
-  BasicButton,
-  ReminderInformation
+  TestDatabaseConnectButton
 } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
@@ -40,6 +39,8 @@ const DatabaseFormItem: React.FC<{
     useBoolean();
   const [connectAble, setConnectAble] = useState(false);
   const [connectErrorMessage, setConnectErrorMessage] = useState('');
+  const [initHide, { setFalse: setInitHideFalse, setTrue: setInitHideTrue }] =
+    useBoolean(true);
 
   const [needUpdatePassword, setNeedUpdatePassword] = useState(false);
   const changeNeedUpdatePassword = (check: boolean) => {
@@ -102,14 +103,14 @@ const DatabaseFormItem: React.FC<{
         }
       })
       .finally(() => {
+        setInitHideFalse();
         setLoadingFalse();
       });
   };
 
   useEffect(() => {
     const resetConnectAbleStatus = () => {
-      setConnectAble(false);
-      setConnectErrorMessage('');
+      setInitHideTrue();
     };
     EventEmitter.subscribe(
       EmitterKey.Reset_Test_Data_Source_Connect,
@@ -255,18 +256,12 @@ const DatabaseFormItem: React.FC<{
       </EmptyBox>
 
       <FormItemNoLabel>
-        <BasicButton onClick={testDatabaseConnect} loading={loading}>
-          {t('common.testDatabaseConnectButton.testDatabaseConnection')}
-        </BasicButton>
-        <ReminderInformation
-          show={!loading && connectAble}
-          status="success"
-          message={t('common.testDatabaseConnectButton.testSuccess')}
-        />
-        <ReminderInformation
-          show={!loading && !connectAble && !!connectErrorMessage}
-          status="error"
-          message={connectErrorMessage}
+        <TestDatabaseConnectButton
+          initHide={initHide}
+          onClickTestButton={testDatabaseConnect}
+          loading={loading}
+          connectAble={connectAble}
+          connectDisableReason={connectErrorMessage}
         />
       </FormItemNoLabel>
     </>

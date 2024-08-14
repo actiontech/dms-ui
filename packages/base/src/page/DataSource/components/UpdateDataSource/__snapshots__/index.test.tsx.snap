@@ -680,48 +680,61 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
-                          >
-                            <span>
-                              测试数据源连通性
-                            </span>
-                          </button>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                           >
                             <div
                               class="ant-space-item"
-                              style="margin-right: 8px;"
+                              style="margin-bottom: 8px;"
                             >
-                              <span
-                                class="css-u3jcp4"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <svg
-                                  class="custom-icon"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
+                                <span>
+                                  测试数据源连通性
+                                </span>
+                              </button>
                             </div>
                             <div
                               class="ant-space-item"
                             >
-                              <span
-                                class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
                               >
-                                <pre>
-                                  provision: 链接失败 
-                                </pre>
-                              </span>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <span
+                                    class="css-u3jcp4"
+                                  >
+                                    <svg
+                                      class="custom-icon"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                        fill="#F66074"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                                  >
+                                    <pre>
+                                      provision: 链接失败 
+                                    </pre>
+                                  </span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2049,48 +2062,61 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
-                          >
-                            <span>
-                              测试数据源连通性
-                            </span>
-                          </button>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                           >
                             <div
                               class="ant-space-item"
-                              style="margin-right: 8px;"
+                              style="margin-bottom: 8px;"
                             >
-                              <span
-                                class="css-u3jcp4"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <svg
-                                  class="custom-icon"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
+                                <span>
+                                  测试数据源连通性
+                                </span>
+                              </button>
                             </div>
                             <div
                               class="ant-space-item"
                             >
-                              <span
-                                class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
                               >
-                                <pre>
-                                  provision: 链接失败 
-                                </pre>
-                              </span>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <span
+                                    class="css-u3jcp4"
+                                  >
+                                    <svg
+                                      class="custom-icon"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                        fill="#F66074"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                                  >
+                                    <pre>
+                                      provision: 链接失败 
+                                    </pre>
+                                  </span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3441,14 +3467,26 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                           >
-                            <span>
-                              测试数据源连通性
-                            </span>
-                          </button>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  测试数据源连通性
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -4819,14 +4857,26 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                           >
-                            <span>
-                              测试数据源连通性
-                            </span>
-                          </button>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  测试数据源连通性
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -6302,14 +6352,26 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                           >
-                            <span>
-                              测试数据源连通性
-                            </span>
-                          </button>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  测试数据源连通性
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -7546,14 +7608,26 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                            type="button"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                           >
-                            <span>
-                              测试数据源连通性
-                            </span>
-                          </button>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  测试数据源连通性
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
