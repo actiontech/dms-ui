@@ -51,7 +51,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
             type="button"
           >
             <span>
-              编辑工单信息
+              修改工单
             </span>
           </button>
         </div>
