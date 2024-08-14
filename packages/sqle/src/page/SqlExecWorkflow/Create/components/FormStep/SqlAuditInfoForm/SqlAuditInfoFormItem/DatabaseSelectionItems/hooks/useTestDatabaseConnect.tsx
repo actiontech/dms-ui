@@ -88,7 +88,7 @@ const useTestDatabaseConnect = ({
           >
             <ReminderInformation
               status="error"
-              message={result.connect_error_message ?? ''}
+              message={result.connect_error_message ?? t('common.unknownError')}
             />
           </EmptyBox>
         </>
