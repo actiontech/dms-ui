@@ -39,8 +39,10 @@ const DatabaseFormItem: React.FC<{
     useBoolean();
   const [connectAble, setConnectAble] = useState(false);
   const [connectErrorMessage, setConnectErrorMessage] = useState('');
-  const [initHide, { setFalse: setInitHideFalse, setTrue: setInitHideTrue }] =
-    useBoolean(true);
+  const [
+    hideConnectionInfo,
+    { setFalse: setConnectionInfoShow, setTrue: setConnectionInfoHide }
+  ] = useBoolean(true);
 
   const [needUpdatePassword, setNeedUpdatePassword] = useState(false);
   const changeNeedUpdatePassword = (check: boolean) => {
@@ -103,14 +105,14 @@ const DatabaseFormItem: React.FC<{
         }
       })
       .finally(() => {
-        setInitHideFalse();
+        setConnectionInfoShow();
         setLoadingFalse();
       });
   };
 
   useEffect(() => {
     const resetConnectAbleStatus = () => {
-      setInitHideTrue();
+      setConnectionInfoHide();
     };
     EventEmitter.subscribe(
       EmitterKey.Reset_Test_Data_Source_Connect,
@@ -257,7 +259,7 @@ const DatabaseFormItem: React.FC<{
 
       <FormItemNoLabel>
         <TestDatabaseConnectButton
-          initHide={initHide}
+          initHide={hideConnectionInfo}
           onClickTestButton={testDatabaseConnect}
           loading={loading}
           connectAble={connectAble}

@@ -39,7 +39,7 @@ const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
         {!props.loading && !props.connectAble && (
           <ReminderInformation
             status="error"
-            message={props.connectDisableReason ?? ''}
+            message={props.connectDisableReason ?? t('common.unknownError')}
           />
         )}
       </EmptyBox>
