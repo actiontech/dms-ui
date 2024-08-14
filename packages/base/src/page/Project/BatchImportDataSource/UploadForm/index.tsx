@@ -1,4 +1,4 @@
-import { BasicButton, ReminderInformation } from '@actiontech/shared';
+import { BasicButton, ReminderInformation, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import {
   FormAreaBlockStyleWrapper,
@@ -130,26 +130,30 @@ const BatchImportDataSourceForm: React.FC<{
             >
               {t('dmsProject.batchImportDataSource.testConnect')}
             </BasicButton>
-            <ReminderInformation
-              show={
-                !connectionTesting && !!connectionTestResult?.successful_num
-              }
-              status="success"
-              message={t(
-                'dmsProject.batchImportDataSource.testConnectSuccess',
-                {
-                  count: connectionTestResult?.successful_num
-                }
-              )}
-            />
-            <ReminderInformation
-              show={!connectionTesting && !!connectionTestResult?.failed_num}
-              status="error"
-              message={t('dmsProject.batchImportDataSource.testConnectFail', {
-                count: connectionTestResult?.failed_num,
-                name: connectionTestResult?.failed_names?.join(',')
-              })}
-            />
+            <EmptyBox
+              if={!connectionTesting && !!connectionTestResult?.successful_num}
+            >
+              <ReminderInformation
+                status="success"
+                message={t(
+                  'dmsProject.batchImportDataSource.testConnectSuccess',
+                  {
+                    count: connectionTestResult?.successful_num
+                  }
+                )}
+              />
+            </EmptyBox>
+            <EmptyBox
+              if={!connectionTesting && !!connectionTestResult?.failed_num}
+            >
+              <ReminderInformation
+                status="error"
+                message={t('dmsProject.batchImportDataSource.testConnectFail', {
+                  count: connectionTestResult?.failed_num,
+                  name: connectionTestResult?.failed_names?.join(',')
+                })}
+              />
+            </EmptyBox>
           </Space>
         </FormItemLabel>
       </FormStyleWrapper>

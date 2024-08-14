@@ -1,5 +1,5 @@
 import { Upload, UploadProps, Button, Space } from 'antd';
-import { BasicButton, ReminderInformation } from '@actiontech/shared';
+import { BasicButton, ReminderInformation, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { ImportProjectUploadFileFieldWrapper } from '../../style';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
@@ -30,16 +30,18 @@ const FileUpload: React.FC<
           {t('dmsProject.importProject.downloadTemplate')}
         </Button>
       </ImportProjectUploadFileFieldWrapper>
-      <ReminderInformation
-        show={!!uploadCheckStatus.success}
-        status="success"
-        message={t('dmsProject.batchImportDataSource.checkSuccess')}
-      />
-      <ReminderInformation
-        show={!!uploadCheckStatus.errorMessage}
-        status="error"
-        message={uploadCheckStatus.errorMessage ?? ''}
-      />
+      <EmptyBox if={!!uploadCheckStatus.success}>
+        <ReminderInformation
+          status="success"
+          message={t('dmsProject.batchImportDataSource.checkSuccess')}
+        />
+      </EmptyBox>
+      <EmptyBox if={!!uploadCheckStatus.errorMessage}>
+        <ReminderInformation
+          status="error"
+          message={uploadCheckStatus.errorMessage ?? ''}
+        />
+      </EmptyBox>
     </Space>
   );
 };
