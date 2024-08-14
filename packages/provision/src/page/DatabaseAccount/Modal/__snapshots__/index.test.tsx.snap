@@ -111,7 +111,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountModal render account detail mo
                         <div
                           class="audit-info-item-label"
                         >
-                          连接域
+                          主机名(host)
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
