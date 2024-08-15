@@ -25,6 +25,8 @@ import {
   IDeleteAuditPlanByTypeV1Return,
   IUpdateAuditPlanStatusV1Params,
   IUpdateAuditPlanStatusV1Return,
+  IAuditPlanTriggerSqlAuditV1Params,
+  IAuditPlanTriggerSqlAuditV1Return,
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLDataV1Return,
   IGetInstanceAuditPlanSQLExportV1Params,
@@ -32,6 +34,8 @@ import {
   IGetInstanceAuditPlanSQLMetaV1Return,
   IGetInstanceAuditPlanSQLsV1Params,
   IGetInstanceAuditPlanSQLsV1Return,
+  IGetAuditPlanSqlAnalysisDataV1Params,
+  IGetAuditPlanSqlAnalysisDataV1Return,
   IUploadInstanceAuditPlanSQLsV2Params,
   IUploadInstanceAuditPlanSQLsV2Return
 } from './index.d';
@@ -199,6 +203,27 @@ class InstanceAuditPlanService extends ServiceBase {
     );
   }
 
+  public auditPlanTriggerSqlAuditV1(
+    params: IAuditPlanTriggerSqlAuditV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const audit_plan_id = paramsData.audit_plan_id;
+    delete paramsData.audit_plan_id;
+
+    return this.post<IAuditPlanTriggerSqlAuditV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/audit`,
+      paramsData,
+      options
+    );
+  }
+
   public getInstanceAuditPlanSQLDataV1(
     params: IGetInstanceAuditPlanSQLDataV1Params,
     options?: AxiosRequestConfig
@@ -278,6 +303,27 @@ class InstanceAuditPlanService extends ServiceBase {
 
     return this.get<IGetInstanceAuditPlanSQLsV1Return>(
       `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/audit_plans/${audit_plan_id}/sqls`,
+      paramsData,
+      options
+    );
+  }
+
+  public getAuditPlanSqlAnalysisDataV1(
+    params: IGetAuditPlanSqlAnalysisDataV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    const id = paramsData.id;
+    delete paramsData.id;
+
+    return this.get<IGetAuditPlanSqlAnalysisDataV1Return>(
+      `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/sqls/${id}/analysis`,
       paramsData,
       options
     );
