@@ -627,11 +627,11 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1974,11 +1974,11 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -3241,11 +3241,11 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -4389,11 +4389,11 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -5538,11 +5538,11 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -6758,11 +6758,11 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -7831,11 +7831,11 @@ exports[`page/DataSource/DataSourceForm render form snap when isFixedBusiness is
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -8916,11 +8916,11 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -10001,11 +10001,11 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -11127,11 +11127,11 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"

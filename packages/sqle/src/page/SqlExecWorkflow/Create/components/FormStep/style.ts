@@ -32,4 +32,14 @@ export const SqlAuditInfoFormStyleWrapper = styled(FormStyleWrapper)`
     height: 36px !important;
     width: 36px !important;
   }
+
+  .database-list-item {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    .database-connection-info {
+      min-height: 24px;
+    }
+  }
 `;

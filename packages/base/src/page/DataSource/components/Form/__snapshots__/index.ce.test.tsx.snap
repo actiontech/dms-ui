@@ -513,11 +513,11 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
-                        style="margin-right: 8px;"
+                        style="margin-bottom: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
