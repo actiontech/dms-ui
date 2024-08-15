@@ -515,19 +515,14 @@ exports[`App render App when token is existed 1`] = `
                   width="18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
-                  >
-                    <path
-                      d="M15.75 5.25 12 1.5H2.995a.745.745 0 0 0-.745.744v13.512a.75.75 0 0 0 .745.744h6.607a4.5 4.5 0 0 1 6.148-6.148zm-5.159-.402L13.243 7.5l-2.652 2.652-1.06-1.061L11.12 7.5l-1.59-1.591zm-3.182 5.304L4.757 7.5 7.41 4.848l1.06 1.061L6.88 7.5l1.59 1.591z"
-                      fill="#C3C6CD"
-                    />
-                    <path
-                      d="M13.5 17.25a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-2.25-3 1.875 1.875L15.75 13.5l-.75-.75-1.875 1.875L12 13.5z"
-                      fill="#8A8F99"
-                    />
-                  </g>
+                  <path
+                    d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M1.5 8.25h15v1.5h-15z"
+                    fill="#8A8F99"
+                  />
                 </svg>
                 <span
                   class="ant-menu-title-content"
@@ -878,6 +873,36 @@ exports[`App render App when token is existed 1`] = `
                     href="/project//member"
                   >
                     成员与权限
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/push-rule"
+                role="menuitem"
+                structkey="push-rule-configuration"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.636 1.473a6.7 6.7 0 0 1 2.727-.001 2.66 2.66 0 0 0 2.436 2.258c.399.03.8-.03 1.172-.176a6.7 6.7 0 0 1 1.362 2.363 2.66 2.66 0 0 0-1 2.083c0 .843.39 1.594 1.001 2.083a6.7 6.7 0 0 1-1.364 2.362 2.664 2.664 0 0 0-3.606 2.08c-.9.19-1.828.19-2.728.003a2.66 2.66 0 0 0-2.435-2.26c-.4-.03-.8.03-1.173.177a6.7 6.7 0 0 1-1.362-2.364 2.66 2.66 0 0 0 .737-3.237 2.7 2.7 0 0 0-.738-.927 6.7 6.7 0 0 1 1.364-2.362 2.66 2.66 0 0 0 3.173-.98c.225-.33.374-.706.434-1.101M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//push-rule"
+                  >
+                    推送规则
                   </a>
                 </span>
               </li>
@@ -2692,19 +2717,14 @@ exports[`App render App when user role is not admin 1`] = `
                   width="18"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
-                  >
-                    <path
-                      d="M15.75 5.25 12 1.5H2.995a.745.745 0 0 0-.745.744v13.512a.75.75 0 0 0 .745.744h6.607a4.5 4.5 0 0 1 6.148-6.148zm-5.159-.402L13.243 7.5l-2.652 2.652-1.06-1.061L11.12 7.5l-1.59-1.591zm-3.182 5.304L4.757 7.5 7.41 4.848l1.06 1.061L6.88 7.5l1.59 1.591z"
-                      fill="#C3C6CD"
-                    />
-                    <path
-                      d="M13.5 17.25a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-2.25-3 1.875 1.875L15.75 13.5l-.75-.75-1.875 1.875L12 13.5z"
-                      fill="#8A8F99"
-                    />
-                  </g>
+                  <path
+                    d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M1.5 8.25h15v1.5h-15z"
+                    fill="#8A8F99"
+                  />
                 </svg>
                 <span
                   class="ant-menu-title-content"
@@ -3055,6 +3075,36 @@ exports[`App render App when user role is not admin 1`] = `
                     href="/project//member"
                   >
                     成员与权限
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/push-rule"
+                role="menuitem"
+                structkey="push-rule-configuration"
+                style="padding-left: 24px;"
+                tabindex="-1"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.636 1.473a6.7 6.7 0 0 1 2.727-.001 2.66 2.66 0 0 0 2.436 2.258c.399.03.8-.03 1.172-.176a6.7 6.7 0 0 1 1.362 2.363 2.66 2.66 0 0 0-1 2.083c0 .843.39 1.594 1.001 2.083a6.7 6.7 0 0 1-1.364 2.362 2.664 2.664 0 0 0-3.606 2.08c-.9.19-1.828.19-2.728.003a2.66 2.66 0 0 0-2.435-2.26c-.4-.03-.8.03-1.173.177a6.7 6.7 0 0 1-1.362-2.364 2.66 2.66 0 0 0 .737-3.237 2.7 2.7 0 0 0-.738-.927 6.7 6.7 0 0 1 1.364-2.362 2.66 2.66 0 0 0 3.173-.98c.225-.33.374-.706.434-1.101M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//push-rule"
+                  >
+                    推送规则
                   </a>
                 </span>
               </li>
