@@ -240,42 +240,47 @@ exports[`base/Project/BatchImportDataSource render check api return csv file 1`]
                     </div>
                     <div
                       class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
                     >
-                      <section>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                      >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
+                          <span
+                            class="css-u3jcp4"
                           >
-                            <span
-                              class="css-u3jcp4"
+                            <svg
+                              class="custom-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
-                                  fill="#F66074"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <span
-                              class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
-                            >
-                              当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入
-                            </span>
-                          </div>
+                              <path
+                                d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                fill="#F66074"
+                              />
+                            </svg>
+                          </span>
                         </div>
-                      </section>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                          >
+                            <pre>
+                              当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入
+                            </pre>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -325,6 +330,10 @@ exports[`base/Project/BatchImportDataSource render check api return csv file 1`]
                         </span>
                       </button>
                     </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    />
                     <div
                       class="ant-space-item"
                     />
@@ -580,9 +589,11 @@ exports[`base/Project/BatchImportDataSource render delete file 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
-                    >
-                      <section />
-                    </div>
+                      style="margin-bottom: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
               </div>
@@ -631,6 +642,10 @@ exports[`base/Project/BatchImportDataSource render delete file 1`] = `
                         </span>
                       </button>
                     </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    />
                     <div
                       class="ant-space-item"
                     />
@@ -814,9 +829,11 @@ exports[`base/Project/BatchImportDataSource render init snap 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
-                    >
-                      <section />
-                    </div>
+                      style="margin-bottom: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
               </div>
@@ -865,6 +882,10 @@ exports[`base/Project/BatchImportDataSource render init snap 1`] = `
                         </span>
                       </button>
                     </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    />
                     <div
                       class="ant-space-item"
                     />
@@ -1119,43 +1140,48 @@ exports[`base/Project/BatchImportDataSource render test connection 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
+                      style="margin-bottom: 8px;"
                     >
-                      <section>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                      >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
+                          <span
+                            class="css-u3jcp4"
                           >
-                            <span
-                              class="css-u3jcp4"
+                            <svg
+                              class="custom-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-                                  fill="#1CB889"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <span
-                              class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
-                            >
-                              校验通过
-                            </span>
-                          </div>
+                              <path
+                                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                fill="#1CB889"
+                              />
+                            </svg>
+                          </span>
                         </div>
-                      </section>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+                          >
+                            <pre>
+                              校验通过
+                            </pre>
+                          </span>
+                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
               </div>
@@ -1205,84 +1231,82 @@ exports[`base/Project/BatchImportDataSource render test connection 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
+                      style="margin-bottom: 8px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
                       >
                         <div
                           class="ant-space-item"
-                          style="margin-bottom: 8px;"
+                          style="margin-right: 8px;"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          <span
+                            class="css-u3jcp4"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
+                            <svg
+                              class="custom-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <span
-                                class="css-u3jcp4"
-                              >
-                                <svg
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-                                    fill="#1CB889"
-                                  />
-                                </svg>
-                              </span>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <span
-                                class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
-                              >
-                                测试连通性成功1个
-                              </span>
-                            </div>
-                          </div>
+                              <path
+                                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                fill="#1CB889"
+                              />
+                            </svg>
+                          </span>
                         </div>
                         <div
                           class="ant-space-item"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          <span
+                            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
+                            <pre>
+                              测试连通性成功1个
+                            </pre>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          <span
+                            class="css-u3jcp4"
+                          >
+                            <svg
+                              class="custom-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <span
-                                class="css-u3jcp4"
-                              >
-                                <svg
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <span
-                                class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
-                              >
-                                测试连通性失败1个，数据源为mysql_1
-                              </span>
-                            </div>
-                          </div>
+                              <path
+                                d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                                fill="#F66074"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                          >
+                            <pre>
+                              测试连通性失败1个，数据源为mysql_1
+                            </pre>
+                          </span>
                         </div>
                       </div>
                     </div>

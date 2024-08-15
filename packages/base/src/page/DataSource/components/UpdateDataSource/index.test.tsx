@@ -155,14 +155,15 @@ describe('page/DataSource/UpdateDataSource', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryByText('未能成功链接到数据源')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.queryByText('provision: 链接失败')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
     expect(checkDBServiceIsConnectableSpy).toHaveBeenCalled();
     await act(async () => {
       EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(screen.queryByText('未能成功链接到数据源')).not.toBeInTheDocument();
+    expect(screen.queryByText('provision: 链接失败')).not.toBeInTheDocument();
     // business
     fireEvent.mouseDown(getBySelector('#business', baseElement));
     await act(async () => jest.advanceTimersByTime(300));

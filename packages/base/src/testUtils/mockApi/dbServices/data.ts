@@ -68,7 +68,8 @@ export const checkConnectableReply: ICheckDBServiceIsConnectableReplyItem[] = [
   },
   {
     component: 'provision',
-    is_connectable: false
+    is_connectable: false,
+    connect_error_message: '链接失败'
   }
 ];
 

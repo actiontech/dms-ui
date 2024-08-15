@@ -49,6 +49,7 @@ const ReportDrawer = ({
         onClose={closeModal}
         noBodyPadding
         size="large"
+        maskClosable
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
           <Spin spinning={loading}>
