@@ -41,7 +41,7 @@ export const SqlOptimizationListColumns: (
     {
       dataIndex: 'db_type',
       title: () => t('sqlOptimization.table.dbType'),
-      render: (dbType: string) => {
+      render: (dbType) => {
         if (!dbType) return '-';
 
         return (
@@ -56,6 +56,9 @@ export const SqlOptimizationListColumns: (
       dataIndex: 'performance_gain',
       title: () => t('sqlOptimization.table.performanceGain'),
       render: (performance) => {
+        if (!performance) {
+          return '-';
+        }
         return isNaN(performance) ? '-' : `${floatToPercent(performance)}%`;
       }
     },
@@ -69,8 +72,13 @@ export const SqlOptimizationListColumns: (
     {
       dataIndex: 'status',
       title: () => t('sqlOptimization.table.status'),
-      render: (status: SqlOptimizationStatusEnum) => {
-        return <OptimizationStatus status={status} />;
+      render: (status) => {
+        if (!status) {
+          return '-';
+        }
+        return (
+          <OptimizationStatus status={status as SqlOptimizationStatusEnum} />
+        );
       }
     },
     {

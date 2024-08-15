@@ -4,7 +4,9 @@ import ToolBar from './components/Toolbar';
 import FilterContainer from './components/FilterContainer';
 import { useTranslation } from 'react-i18next';
 import { ActiontechTableStyleWrapper, tableToken } from './style';
-import useTableAction from './hooks/useTableAction';
+import useTableAction, {
+  ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
+} from './hooks/useTableAction';
 import classnames from 'classnames';
 import { useEffect, useMemo } from 'react';
 import useTableSettings from './hooks/useTableSettings';
@@ -31,7 +33,7 @@ const ActiontechTable = <
   const { catchDefaultColumnsInfo, localColumns } = useTableSettings<
     T,
     F,
-    OtherColumnKeys
+    OtherColumnKeys | typeof ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
   >(tableName, username);
 
   const mergerColumns = useMemo(() => {

@@ -11,13 +11,13 @@ export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjec
       dataIndex: 'name',
       className: 'ellipsis-column-small-width',
       title: () => t('dmsProject.importProject.table.project'),
-      render: (value: string) => value || '-'
+      render: (value) => value || '-'
     },
     {
       dataIndex: 'desc',
       className: 'ellipsis-column-small-width',
       title: () => t('dmsProject.importProject.table.desc'),
-      render: (desc: string) => {
+      render: (desc) => {
         return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
       }
     },
@@ -25,7 +25,7 @@ export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjec
       dataIndex: 'business',
       className: 'ellipsis-column-width',
       title: () => t('dmsProject.importProject.table.business'),
-      render: (business: IPreviewImportProjects['business']) => {
+      render: (business) => {
         // 判断是否全为'' 因为后端会把文件中的空列解析为[''] 所以加此判断
         if (!business || !business.length || business.every((i) => i === '')) {
           return '-';
