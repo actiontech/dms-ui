@@ -22,6 +22,8 @@ import {
   InstanceAuditPlanResV1ActiveStatusEnum,
   OperationRecordListStatusEnum,
   RecordSourceNameEnum,
+  ReportPushConfigListPushUserTypeEnum,
+  ReportPushConfigListTriggerTypeEnum,
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
@@ -33,6 +35,8 @@ import {
   UpdateAuditWhitelistReqV1MatchTypeEnum,
   UpdateCustomRuleReqV1LevelEnum,
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
+  UpdateReportPushConfigReqV1PushUserTypeEnum,
+  UpdateReportPushConfigReqV1TriggerTypeEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
@@ -1158,6 +1162,14 @@ export interface IGetProjectStatisticsResV1 {
   message?: string;
 }
 
+export interface IGetReportPushConfigsListResV1 {
+  code?: number;
+
+  data?: IReportPushConfigList[];
+
+  message?: string;
+}
+
 export interface IGetRiskAuditPlanResV1 {
   code?: number;
 
@@ -1892,6 +1904,24 @@ export interface IRejectWorkflowReqV1 {
   reason?: string;
 }
 
+export interface IReportPushConfigList {
+  enabled?: boolean;
+
+  last_push_time?: string;
+
+  push_frequency_cron?: string;
+
+  push_user_Type?: ReportPushConfigListPushUserTypeEnum;
+
+  push_user_list?: string[];
+
+  report_push_config_id?: string;
+
+  trigger_type?: ReportPushConfigListTriggerTypeEnum;
+
+  type?: string;
+}
+
 export interface IRewriteRule {
   message?: string;
 
@@ -2197,6 +2227,8 @@ export interface ISqlManage {
 
   last_receive_timestamp?: string;
 
+  priority?: string;
+
   remark?: string;
 
   schema_name?: string;
@@ -2458,6 +2490,18 @@ export interface IUpdateProjectRuleTemplateReqV1 {
   desc?: string;
 
   rule_list?: IRuleReqV1[];
+}
+
+export interface IUpdateReportPushConfigReqV1 {
+  enabled?: boolean;
+
+  push_frequency_cron?: string;
+
+  push_user_Type?: UpdateReportPushConfigReqV1PushUserTypeEnum;
+
+  push_user_list?: string[];
+
+  trigger_type?: UpdateReportPushConfigReqV1TriggerTypeEnum;
 }
 
 export interface IUpdateRuleKnowledgeReq {
