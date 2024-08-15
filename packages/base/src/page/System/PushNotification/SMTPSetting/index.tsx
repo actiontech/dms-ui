@@ -2,22 +2,17 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useMemo } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form, Spin } from 'antd';
-
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import { SMTPSettingFormFields } from './index.type';
 import { switchFieldName } from './index.data';
-
 import { ISMTPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { BasicToolTips } from '@actiontech/shared';
-
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import ConfigSwitch from '../../components/ConfigSwitch';
-
 import ConfigField from './components/ConfigField';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';

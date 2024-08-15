@@ -3,6 +3,10 @@ import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { EditFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
+/**
+ * @deprecated
+ * 使用 shared 中 ConfigModifyBtn 替换
+ */
 const ConfigModifyBtn: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const { t } = useTranslation();
   const { baseTheme } = useThemeStyleData();

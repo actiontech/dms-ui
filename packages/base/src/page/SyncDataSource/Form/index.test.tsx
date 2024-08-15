@@ -92,7 +92,7 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
     await act(async () => jest.advanceTimersByTime(1000));
 
     const syncIntervalEle = getBySelector(
-      'input.ant-input[placeholder="请输入审核时间"]',
+      'input.ant-input[placeholder="请输入时间"]',
       baseElement
     );
     fireEvent.change(syncIntervalEle, {
