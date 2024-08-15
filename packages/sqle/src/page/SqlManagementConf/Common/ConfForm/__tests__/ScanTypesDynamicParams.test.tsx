@@ -106,7 +106,9 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
       mysql_schema_meta: {
         collect_interval_minute: '61',
         collect_view: false,
-        ruleTemplateName: 'default_MySQL'
+        ruleTemplateName: 'default_MySQL',
+        markHighPrioritySql: false,
+        prioritySqlConditions: {}
       }
     });
     await act(async () => jest.advanceTimersByTime(3000));

@@ -24,6 +24,9 @@ import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import { useSearchParams } from 'react-router-dom';
+import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
+import { BackendFormValues } from '../../../components/BackendForm';
+import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
@@ -32,6 +35,8 @@ const Create: React.FC = () => {
   const [searchParams] = useSearchParams();
 
   const { mergeFromValueIntoParams } = useAsyncParams();
+  const { generateSubmitDataWithFormValues } = usePriorityConditionsParams();
+
   const {
     form,
     getScanTypeMetaPending,
@@ -63,15 +68,22 @@ const Create: React.FC = () => {
         instance_id: values.instanceId,
         audit_plans: values.scanTypes
           .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
-          .map((item) => {
-            const { ruleTemplateName, ...paramValues } = values[
-              item
-            ] as ScanTypeParams;
+          .map<IAuditPlan>((item) => {
+            const {
+              ruleTemplateName,
+              markHighPrioritySql,
+              prioritySqlConditions,
+              ...paramValues
+            } = values[item] as ScanTypeParams;
             return {
               audit_plan_type: item,
               rule_template_name: ruleTemplateName,
+              mark_high_priority_sql: markHighPrioritySql,
+              high_priority_conditions: markHighPrioritySql
+                ? generateSubmitDataWithFormValues(prioritySqlConditions)
+                : undefined,
               audit_plan_params: mergeFromValueIntoParams(
-                paramValues,
+                paramValues as BackendFormValues,
                 scanTypeMetas?.find((v) => v.audit_plan_type === item)
                   ?.audit_plan_params ?? []
               )

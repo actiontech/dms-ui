@@ -180,6 +180,24 @@ export enum GetWorkflowTasksItemV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum HighPriorityConditionTypeEnum {
+  'string' = 'string',
+
+  'int' = 'int',
+
+  'bool' = 'bool',
+
+  'password' = 'password'
+}
+
+export enum HighPriorityConditionReqBooleanOperatorEnum {
+  '>' = '>',
+
+  '=' = '=',
+
+  '<' = '<'
+}
+
 export enum InstanceAuditPlanInfoActiveStatusEnum {
   'normal' = 'normal',
 
@@ -200,6 +218,18 @@ export enum OperationRecordListStatusEnum {
 
 export enum RecordSourceNameEnum {
   'ide_plugin' = 'ide_plugin'
+}
+
+export enum ReportPushConfigListPushUserTypeEnum {
+  'fixed' = 'fixed',
+
+  'permission_match' = 'permission_match'
+}
+
+export enum ReportPushConfigListTriggerTypeEnum {
+  'immediately' = 'immediately',
+
+  'timing' = 'timing'
 }
 
 export enum RuleParamResV1TypeEnum {
@@ -288,6 +318,18 @@ export enum UpdateInstanceAuditPlanStatusReqV1ActiveEnum {
   'normal' = 'normal',
 
   'disabled' = 'disabled'
+}
+
+export enum UpdateReportPushConfigReqV1PushUserTypeEnum {
+  'fixed' = 'fixed',
+
+  'permission_match' = 'permission_match'
+}
+
+export enum UpdateReportPushConfigReqV1TriggerTypeEnum {
+  'immediately' = 'immediately',
+
+  'timing' = 'timing'
 }
 
 export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {

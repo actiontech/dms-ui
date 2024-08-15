@@ -21,6 +21,10 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
+import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
+import { BackendFormValues } from '../../../components/BackendForm';
+import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
+import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();
@@ -31,6 +35,11 @@ const Update: React.FC = () => {
 
   const { mergeFromValueIntoParams, generateFormValueByParams } =
     useAsyncParams();
+
+  const {
+    generateFormValuesWithAPIResponse,
+    generateSubmitDataWithFormValues
+  } = usePriorityConditionsParams();
   const {
     form,
     getScanTypeMetaPending,
@@ -49,20 +58,29 @@ const Update: React.FC = () => {
       .updateInstanceAuditPlanV1({
         project_name: projectName,
         instance_audit_plan_id: id ?? '',
-        audit_plans: values.scanTypes.map((item) => {
-          const { ruleTemplateName, ...paramValues } = values[
-            item
-          ] as ScanTypeParams;
-          return {
-            audit_plan_type: item,
-            rule_template_name: ruleTemplateName,
-            audit_plan_params: mergeFromValueIntoParams(
-              paramValues,
-              scanTypeMetas?.find((v) => v.audit_plan_type === item)
-                ?.audit_plan_params ?? []
-            )
-          };
-        })
+        audit_plans: values.scanTypes
+          .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
+          .map<IAuditPlan>((item) => {
+            const {
+              ruleTemplateName,
+              markHighPrioritySql,
+              prioritySqlConditions,
+              ...paramValues
+            } = values[item] as ScanTypeParams;
+            return {
+              audit_plan_type: item,
+              rule_template_name: ruleTemplateName,
+              mark_high_priority_sql: markHighPrioritySql,
+              high_priority_conditions: markHighPrioritySql
+                ? generateSubmitDataWithFormValues(prioritySqlConditions)
+                : undefined,
+              audit_plan_params: mergeFromValueIntoParams(
+                paramValues as BackendFormValues,
+                scanTypeMetas?.find((v) => v.audit_plan_type === item)
+                  ?.audit_plan_params ?? []
+              )
+            };
+          })
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -101,6 +119,13 @@ const Update: React.FC = () => {
       }>((acc, cur) => {
         const params: ScanTypeParams = {
           ruleTemplateName: cur.rule_template_name ?? '',
+          markHighPrioritySql: !!cur.mark_high_priority_sql,
+          prioritySqlConditions: generateFormValuesWithAPIResponse(
+            cur.high_priority_conditions ?? [],
+            scanTypeMetas?.find(
+              (v) => v.audit_plan_type === cur.audit_plan_type?.type
+            )?.high_priority_conditions ?? []
+          ),
           ...generateFormValueByParams(cur.audit_plan_params ?? [])
         };
         return { ...acc, [cur.audit_plan_type?.type!]: params };
@@ -112,7 +137,9 @@ const Update: React.FC = () => {
     auditPlanDetail?.instance_id,
     auditPlanDetail?.instance_name,
     auditPlanDetail?.instance_type,
-    generateFormValueByParams
+    generateFormValueByParams,
+    generateFormValuesWithAPIResponse,
+    scanTypeMetas
   ]);
 
   return (
