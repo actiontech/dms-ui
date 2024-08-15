@@ -1,12 +1,26 @@
 import { styled } from '@mui/material/styles';
 
+export const CronInputComStyleWrapper = styled('div')`
+  display: inline-flex;
+  width: 100%;
+
+  .input-element {
+    flex: 1;
+    text-align: center;
+    margin-right: 8px !important;
+  }
+
+  .button-element {
+    width: 36px;
+  }
+`;
+
 export const CronSelectStyleWrapper = styled('section')`
   border: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
   border-radius: 8px;
   padding: 20px;
-  margin-top: 16px;
 
   &.error-style {
     border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};

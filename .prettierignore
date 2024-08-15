@@ -1,1 +1,2 @@
-packages/**/src/pages/**/__test__/__snapshots__/*
+*.snap
+*.md

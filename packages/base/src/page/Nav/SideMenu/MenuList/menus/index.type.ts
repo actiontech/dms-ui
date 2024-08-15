@@ -33,6 +33,7 @@ export type MenuStructTreeKey =
   | 'workflow-template'
   | 'sqle-log'
   | 'sql-management-conf'
+  | 'push-rule-configuration'
   | 'permission-group'
   | 'permission-template'
   | 'auth-list'

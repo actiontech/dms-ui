@@ -7,6 +7,11 @@ interface ConfigTestPopoverFormProps {
   handleCancel: () => void;
   children: React.ReactNode;
 }
+
+/**
+ * @deprecated
+ * 使用 shared 中 ConfigTestPopoverForm 替换
+ */
 const ConfigTestPopoverForm: React.FC<ConfigTestPopoverFormProps> = (props) => {
   const { t } = useTranslation();
   const { handleTest, handleCancel, children } = props;

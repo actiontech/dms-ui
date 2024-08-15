@@ -28,6 +28,7 @@ export default {
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
   sqlManagementConf: 'SQL管控配置',
+  pushRuleConfiguration: '推送规则',
   monitorSourceConfig: '监控源配置',
   diagnosisList: '巡检列表',
 
