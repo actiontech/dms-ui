@@ -14,7 +14,7 @@ export const AuditPlanRiskColumns: (
     {
       dataIndex: 'audit_plan_report_timestamp',
       title: t('dashboard.auditPlanRisk.tableColumn.name'),
-      render(time: string, record: IRiskAuditPlan) {
+      render(time, record) {
         const text = `${t('auditPlan.record.generateTime')} ${formatTime(
           time,
           '-'
@@ -36,7 +36,7 @@ export const AuditPlanRiskColumns: (
       dataIndex: 'audit_plan_name',
       title: t('dashboard.auditPlanRisk.tableColumn.source'),
       width: '20%',
-      render(name: string) {
+      render(name) {
         if (!name) {
           return '-';
         }
@@ -52,14 +52,14 @@ export const AuditPlanRiskColumns: (
       width: '10%',
       dataIndex: 'risk_sql_count',
       title: t('dashboard.auditPlanRisk.tableColumn.count'),
-      render(count: number) {
+      render(count) {
         return <Typography.Text strong>{count}</Typography.Text>;
       }
     },
     {
       dataIndex: 'audit_plan_report_timestamp',
       title: t('dashboard.auditPlanRisk.tableColumn.time'),
-      render(time: string) {
+      render(time) {
         return formatTime(time, '-');
       }
     }

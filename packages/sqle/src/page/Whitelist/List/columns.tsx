@@ -12,7 +12,7 @@ export const WhitelistColumn =
         dataIndex: 'value',
         title: () => t('whitelist.table.sql'),
         className: 'ellipsis-column-width',
-        render: (sql?: string) => {
+        render: (sql) => {
           if (!!sql) {
             return <SQLRenderer.Snippet sql={sql} rows={2} showCopyIcon />;
           }
@@ -23,7 +23,7 @@ export const WhitelistColumn =
         dataIndex: 'desc',
         title: () => t('whitelist.table.desc'),
         className: 'ellipsis-column-width',
-        render: (desc?: string) => {
+        render: (desc) => {
           if (!desc) return '-';
           return <BasicTypographyEllipsis textCont={desc} />;
         }
@@ -31,8 +31,14 @@ export const WhitelistColumn =
       {
         dataIndex: 'match_type',
         title: () => t('whitelist.table.matchType'),
-        render: (matchType?: CreateAuditWhitelistReqV1MatchTypeEnum) => {
-          return matchType ? t(WhitelistMatchTypeLabel[matchType]) : null;
+        render: (matchType) => {
+          return matchType
+            ? t(
+                WhitelistMatchTypeLabel[
+                  matchType as CreateAuditWhitelistReqV1MatchTypeEnum
+                ]
+              )
+            : null;
         }
       }
     ];

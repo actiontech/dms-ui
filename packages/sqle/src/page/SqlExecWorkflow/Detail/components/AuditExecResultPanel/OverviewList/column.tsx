@@ -224,9 +224,7 @@ export const auditResultOverviewColumn: () => ActiontechTableColumn<IGetWorkflow
       {
         dataIndex: 'status',
         title: () => t('execWorkflow.detail.overview.table.status'),
-        render: (status: GetWorkflowTasksItemV2StatusEnum) => (
-          <InstanceTasksStatus status={status} />
-        )
+        render: (status) => <InstanceTasksStatus status={status} />
       },
       {
         dataIndex: 'task_pass_rate',
@@ -242,7 +240,7 @@ export const auditResultOverviewColumn: () => ActiontechTableColumn<IGetWorkflow
       {
         dataIndex: 'current_step_assignee_user_name_list',
         title: () => t('execWorkflow.detail.overview.table.assigneeUserName'),
-        render: (list: string[]) => {
+        render: (list) => {
           return list?.map((v) => {
             return <AvatarCom key={v} name={v} />;
           });

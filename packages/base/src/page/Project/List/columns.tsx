@@ -1,10 +1,6 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import {
-  IListProject,
-  IUidWithName,
-  IBusiness
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
 import { Link } from 'react-router-dom';
 import {
   ActiontechTableColumn,
@@ -23,7 +19,7 @@ export const ProjectListTableColumnFactory =
       {
         dataIndex: 'name',
         title: () => t('dmsProject.projectForm.name'),
-        render(name: string, record) {
+        render(name, record) {
           return (
             <Link to={`/sqle/project/${record.uid}/overview`}>{name}</Link>
           );
@@ -32,7 +28,7 @@ export const ProjectListTableColumnFactory =
       {
         dataIndex: 'business',
         title: () => t('dmsProject.projectForm.business'),
-        render: (business: IBusiness[]) => {
+        render: (business) => {
           if (!business || !business.length) {
             return '-';
           }
@@ -63,14 +59,14 @@ export const ProjectListTableColumnFactory =
         ellipsis: true,
         title: () => t('dmsProject.projectForm.desc'),
         className: 'ellipsis-column-width',
-        render: (desc: string) => {
+        render: (desc) => {
           return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
         }
       },
       {
         dataIndex: 'archived',
         title: () => t('dmsProject.projectList.columns.status'),
-        render(archived: boolean) {
+        render(archived) {
           return (
             <TableColumnWithIconStyleWrapper>
               {archived ? (
@@ -100,7 +96,7 @@ export const ProjectListTableColumnFactory =
         dataIndex: 'create_user',
         ellipsis: true,
         title: () => t('dmsProject.projectList.columns.createUser'),
-        render: (userInfo: IUidWithName) => {
+        render: (userInfo) => {
           return userInfo?.name ?? '';
         }
       }
