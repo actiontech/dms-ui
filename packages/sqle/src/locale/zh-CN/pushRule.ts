@@ -21,6 +21,8 @@ export default {
       closedConfirmTitle: '当前操作将关闭配置，是否继续？'
     },
     sqlManagementIssuePush: {
+      CETips:
+        '如果您已配置高优先级SQL标准，并想及时跟进这些潜在的问题SQL，避免引发更大的事故时，可以开启SQL管控推送能力，平台将及时暴露您关注的问题SQL。',
       label: 'SQL管控问题推送',
       labelTips: '当SQL管控中出现有问题的SQL时，会自动推送给指定的成员',
       pushFrequency: '推送频率',
