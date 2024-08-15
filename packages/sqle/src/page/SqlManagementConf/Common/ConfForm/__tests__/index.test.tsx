@@ -123,7 +123,9 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
         mysql_schema_meta: {
           collect_interval_minute: '61',
           collect_view: false,
-          ruleTemplateName: 'default_MySQL'
+          ruleTemplateName: 'default_MySQL',
+          prioritySqlConditions: {},
+          markHighPrioritySql: false
         }
       }
     );

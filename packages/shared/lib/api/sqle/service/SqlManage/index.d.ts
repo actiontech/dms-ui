@@ -4,6 +4,7 @@ import {
   GetSqlManageListFilterStatusEnum,
   GetSqlManageListSortFieldEnum,
   GetSqlManageListSortOrderEnum,
+  exportSqlManageV1FilterPriorityEnum,
   exportSqlManageV1FilterSourceEnum,
   exportSqlManageV1FilterAuditLevelEnum,
   exportSqlManageV1FilterStatusEnum,
@@ -12,6 +13,7 @@ import {
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterStatusEnum,
+  GetSqlManageListV2FilterPriorityEnum,
   GetSqlManageListV2SortFieldEnum,
   GetSqlManageListV2SortOrderEnum
 } from './index.enum';
@@ -76,6 +78,8 @@ export interface IExportSqlManageV1Params {
   filter_assignee?: string;
 
   filter_business?: string;
+
+  filter_priority?: exportSqlManageV1FilterPriorityEnum;
 
   filter_instance_id?: string;
 
@@ -142,6 +146,8 @@ export interface IGetSqlManageListV2Params {
   filter_db_type?: string;
 
   filter_business?: string;
+
+  filter_priority?: GetSqlManageListV2FilterPriorityEnum;
 
   fuzzy_search_endpoint?: string;
 

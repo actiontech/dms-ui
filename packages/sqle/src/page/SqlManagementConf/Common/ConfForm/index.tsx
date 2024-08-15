@@ -12,6 +12,7 @@ import { useContext, useEffect } from 'react';
 import { ConfFormContext } from './context';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields } from './index.type';
+import { SqlManagementConfFormStyleWrapper } from './style';
 
 const ConfForm: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +29,7 @@ const ConfForm: React.FC = () => {
   }, [defaultValue, form]);
 
   return (
-    <>
+    <SqlManagementConfFormStyleWrapper>
       <FormAreaLineStyleWrapper className="has-border">
         <FormAreaBlockStyleWrapper>
           <FormItemBigTitle>
@@ -43,7 +44,7 @@ const ConfForm: React.FC = () => {
       </FormAreaLineStyleWrapper>
 
       <ScanTypesDynamicParams />
-    </>
+    </SqlManagementConfFormStyleWrapper>
   );
 };
 

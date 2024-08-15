@@ -40,6 +40,12 @@ export enum GetSqlManageListSortOrderEnum {
   'desc' = 'desc'
 }
 
+export enum exportSqlManageV1FilterPriorityEnum {
+  'hight' = 'hight',
+
+  'low' = 'low'
+}
+
 export enum exportSqlManageV1FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 
@@ -104,6 +110,12 @@ export enum GetSqlManageListV2FilterStatusEnum {
   'ignored' = 'ignored',
 
   'manual_audited' = 'manual_audited'
+}
+
+export enum GetSqlManageListV2FilterPriorityEnum {
+  'hight' = 'hight',
+
+  'low' = 'low'
 }
 
 export enum GetSqlManageListV2SortFieldEnum {

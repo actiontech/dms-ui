@@ -46,7 +46,8 @@ export const sqlManageListData = {
       assignees: ['test'],
       status: 'unhandled',
       remark: 'this is remark text',
-      endpoints: '12'
+      endpoints: '12',
+      priority: 'high'
     },
     {
       id: 248,
@@ -62,7 +63,8 @@ export const sqlManageListData = {
       fp_count: 0,
       assignees: ['test', 'admin'],
       remark: '',
-      endpoints: null
+      endpoints: null,
+      priority: 'low'
     },
     {
       id: 247,
