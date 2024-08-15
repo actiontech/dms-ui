@@ -14,6 +14,10 @@ export interface ConfigSwitchParams {
   onSwitchPopoverOpen: (open: boolean) => void;
 }
 
+/**
+ * @deprecated
+ * 使用 shared 中 ConfigSwitch 替换
+ */
 const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
   switchFieldName,
   switchOpen,

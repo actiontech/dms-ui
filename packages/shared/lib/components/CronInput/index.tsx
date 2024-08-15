@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { ReactNode, useEffect, useMemo, useState } from 'react';
-import { Col, Divider, Row } from 'antd';
+import { ReactNode, useEffect, useMemo } from 'react';
+import { Col, Divider, Popover, Row } from 'antd';
 import BasicInput from '../BasicInput';
 import BasicButton from '../BasicButton';
 import { ButtonType } from 'antd/es/button';
@@ -13,11 +13,12 @@ import {
   enumHourMinute,
   typeHourMinute
 } from './index.type';
-import { CronSelectStyleWrapper } from './style';
-import { CronInputProps, CronMode, typeCronMode } from './index.type';
+import { CronInputComStyleWrapper, CronSelectStyleWrapper } from './style';
+import { CronInputProps, CronMode } from './index.type';
 import useCron from './useCron';
 import classNames from 'classnames';
 import { CalendarOutlined } from '@actiontech/icons';
+import { useControllableValue } from 'ahooks';
 
 const CronInputCom = (props: CronInputProps) => {
   const {
@@ -34,35 +35,33 @@ const CronInputCom = (props: CronInputProps) => {
 
   const { t } = useTranslation();
 
-  const [cronMode, setCronMode] = useState<typeCronMode>(CronMode.Manual);
+  const [cronMode, setCronMode] = useControllableValue(
+    typeof props.mode !== 'undefined'
+      ? {
+          value: props.mode,
+          onChange: props.modeChange,
+          defaultValue: CronMode.Manual
+        }
+      : {
+          onChange: props.modeChange,
+          defaultValue: CronMode.Manual
+        }
+  );
+
   const { isSelect, isManual } = useMemo(() => {
-    if (props.mode !== undefined) {
-      return {
-        isSelect: props.mode === CronMode.Select,
-        isManual: props.mode === CronMode.Manual
-      };
-    }
     return {
       isSelect: cronMode === CronMode.Select,
       isManual: cronMode === CronMode.Manual
     };
-  }, [cronMode, props.mode]);
+  }, [cronMode]);
 
   const currentButtonType: ButtonType = useMemo(() => {
     return isManual ? 'default' : 'primary'; // default primary
   }, [isManual]);
 
-  const updateCronMode = (mode: CronMode) => {
-    if (props.mode !== undefined) {
-      props.modeChange?.(mode);
-    } else {
-      setCronMode(mode);
-    }
-  };
-
   const onChangeCronMode = () => {
     const modeVal = isManual ? CronMode.Select : CronMode.Manual;
-    updateCronMode(modeVal);
+    setCronMode(modeVal);
   };
 
   // week
@@ -140,7 +139,6 @@ const CronInputCom = (props: CronInputProps) => {
     }
     return nodeData;
   };
-
   useEffect(() => {
     if (!!props.value && props.value !== value) {
       updateCron(props.value);
@@ -166,72 +164,81 @@ const CronInputCom = (props: CronInputProps) => {
   }, [error]);
 
   return (
-    <>
-      <Row gutter={8}>
-        <Col flex="auto">
-          <BasicInput
-            disabled={props.disabled ?? isSelect}
-            placeholder={t('common.cron.placeholder')}
-            style={{ textAlign: 'center' }}
-            onChange={(e) => updateCron(e.target.value)}
-            value={value}
-          ></BasicInput>
-        </Col>
-        <Col flex="36px">
-          <BasicButton
-            size="large"
-            type={currentButtonType}
-            disabled={props.disabled ?? false}
-            icon={
-              <CalendarOutlined
-                className="custom-icon custom-icon-date"
-                width={18}
-                height={18}
-                viewBox={`0 0 18 18`}
-              />
-            }
-            onClick={onChangeCronMode}
-          ></BasicButton>
-        </Col>
-      </Row>
-      <CronSelectStyleWrapper
-        hidden={isManual}
-        className={classNames({ 'error-style': hasError })}
+    <CronInputComStyleWrapper>
+      <BasicInput
+        className="input-element"
+        disabled={props.disabled ?? isSelect}
+        placeholder={t('common.cron.placeholder')}
+        onChange={(e) => updateCron(e.target.value)}
+        value={value}
+      />
+      <Popover
+        open={isSelect}
+        overlayInnerStyle={{ padding: 0 }}
+        placement="bottom"
+        onOpenChange={(open) => {
+          if (!open) {
+            setCronMode(CronMode.Manual);
+          }
+        }}
+        trigger={['click']}
+        arrow={false}
+        content={
+          <CronSelectStyleWrapper
+            className={classNames({ 'error-style': hasError })}
+          >
+            <div className="header">
+              {t('common.cron.subTitle.auditsFrequency')}
+            </div>
+            <Row gutter={16} className="week-wrapper">
+              <Col flex="94px">
+                <BasicButton
+                  block
+                  disabled={props.disabled ?? false}
+                  onClick={() => onChangeWeekDay('all')}
+                  type={isEveryWeekDay ? 'primary' : 'default'}
+                >
+                  {t('common.time.everyDay')}
+                </BasicButton>
+              </Col>
+              {renderWeekItem()}
+            </Row>
+            <Divider style={{ margin: '20px 0' }} />
+            <div className="header">{t('common.cron.subTitle.timerPoint')}</div>
+            <section className="hour-minute-wrapper">
+              <section className="hour-wrapper">
+                <div className="sub-title">{t('common.time.hour')}</div>
+                <div className="btn-wrapper">
+                  {renderHourOrMinute(enumHourMinute.hour)}
+                </div>
+              </section>
+              <section className="minute-wrapper">
+                <div className="sub-title">{t('common.time.minute')}</div>
+                <div className="btn-wrapper">
+                  {renderHourOrMinute(enumHourMinute.minute)}
+                </div>
+              </section>
+            </section>
+          </CronSelectStyleWrapper>
+        }
       >
-        <div className="header">
-          {t('common.cron.subTitle.auditsFrequency')}
-        </div>
-        <Row gutter={16} className="week-wrapper">
-          <Col flex="94px">
-            <BasicButton
-              block
-              disabled={props.disabled ?? false}
-              onClick={() => onChangeWeekDay('all')}
-              type={isEveryWeekDay ? 'primary' : 'default'}
-            >
-              {t('common.time.everyDay')}
-            </BasicButton>
-          </Col>
-          {renderWeekItem()}
-        </Row>
-        <Divider style={{ margin: '20px 0' }} />
-        <div className="header">{t('common.cron.subTitle.timerPoint')}</div>
-        <section className="hour-minute-wrapper">
-          <section className="hour-wrapper">
-            <div className="sub-title">{t('common.time.hour')}</div>
-            <div className="btn-wrapper">
-              {renderHourOrMinute(enumHourMinute.hour)}
-            </div>
-          </section>
-          <section className="minute-wrapper">
-            <div className="sub-title">{t('common.time.minute')}</div>
-            <div className="btn-wrapper">
-              {renderHourOrMinute(enumHourMinute.minute)}
-            </div>
-          </section>
-        </section>
-      </CronSelectStyleWrapper>
-    </>
+        <BasicButton
+          className="button-element"
+          size="large"
+          type={currentButtonType}
+          disabled={props.disabled ?? false}
+          icon={
+            <CalendarOutlined
+              className="custom-icon custom-icon-date"
+              width={18}
+              height={18}
+              viewBox={`0 0 18 18`}
+            />
+          }
+          onClick={onChangeCronMode}
+        />
+      </Popover>
+    </CronInputComStyleWrapper>
   );
 };
 

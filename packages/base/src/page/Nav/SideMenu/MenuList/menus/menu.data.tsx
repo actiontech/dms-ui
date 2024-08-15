@@ -58,7 +58,8 @@ export const sideMenuData = (
         'rule-template',
         'whitelist',
         'workflow-template',
-        'member'
+        'member',
+        'push-rule-configuration'
       ]
     },
     { type: 'divider' },

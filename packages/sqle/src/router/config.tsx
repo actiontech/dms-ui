@@ -171,6 +171,10 @@ const UpdateCustomRule = React.lazy(
 );
 const ReportStatistics = React.lazy(() => import('../page/ReportStatistics'));
 
+const PushRuleConfiguration = React.lazy(
+  () => import('../page/PushRuleConfiguration')
+);
+
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     key: 'projectOverview',
@@ -345,7 +349,6 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     element: <OperationRecord />,
     role: [SystemRole.admin]
   },
-
   {
     path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
     key: 'pluginAudit',
@@ -386,6 +389,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       }
     ]
     // #endif
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/push-rule`,
+    key: 'pushRuleConfiguration',
+    element: <PushRuleConfiguration />
   },
   {
     path: '*',

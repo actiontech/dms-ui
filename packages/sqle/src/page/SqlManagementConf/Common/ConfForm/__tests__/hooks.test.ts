@@ -5,25 +5,18 @@ import { mockAuditPlanMetaData } from '../../../../../testUtils/mockApi/instance
 import { act, renderHook } from '@testing-library/react';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-jest.mock('antd', () => ({
-  ...jest.requireActual('antd'),
-  Form: {
-    useForm: jest.fn(),
-    useWatch: jest.fn()
-  }
-}));
-
 describe('test SqlManagementConf/common/ConfForm/hooks', () => {
   let getAuditPlanMetasSpy: jest.SpyInstance;
+
   let resetFieldsSpy = jest.fn();
   let getFieldsValueSpy = jest.fn();
   beforeEach(() => {
     getAuditPlanMetasSpy = instanceAuditPlan.getAuditPlanMeta();
-    (Form.useForm as jest.Mock).mockReturnValue([
+    jest.spyOn(Form, 'useForm').mockReturnValue([
       {
         resetFields: resetFieldsSpy,
         getFieldsValue: getFieldsValueSpy
-      }
+      } as any
     ]);
     jest.useFakeTimers();
   });
@@ -34,14 +27,15 @@ describe('test SqlManagementConf/common/ConfForm/hooks', () => {
   });
 
   it('should not fetch scan type metas when ready is equal false', async () => {
-    (Form.useWatch as jest.Mock).mockReturnValue(undefined);
+    jest.spyOn(Form, 'useWatch').mockReturnValue(undefined);
     renderHook(() => useSqlManagementConfFormSharedStates());
 
     expect(getAuditPlanMetasSpy).toHaveBeenCalledTimes(0);
   });
 
   it('should fetch scan type metas data correctly based on selected instance type and id', async () => {
-    (Form.useWatch as jest.Mock)
+    jest
+      .spyOn(Form, 'useWatch')
       .mockReturnValueOnce('MySQL')
       .mockReturnValueOnce('123')
       .mockReturnValueOnce([])
@@ -102,7 +96,8 @@ describe('test SqlManagementConf/common/ConfForm/hooks', () => {
   });
 
   it('should compute selected scan type params based on scan type metas and selected types', async () => {
-    (Form.useWatch as jest.Mock)
+    jest
+      .spyOn(Form, 'useWatch')
       .mockReturnValueOnce('MySQL')
       .mockReturnValueOnce('123')
       .mockReturnValueOnce(['mysql_mybatis', 'ali_rds_mysql_slow_log'])

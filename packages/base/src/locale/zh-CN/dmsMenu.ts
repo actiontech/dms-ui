@@ -25,6 +25,7 @@ export default {
   permissionOrder: '权限工单',
   dataExportManagement: '数据导出',
   sqlManagementConf: 'SQL管控配置',
+  pushRuleConfiguration: '推送规则',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
