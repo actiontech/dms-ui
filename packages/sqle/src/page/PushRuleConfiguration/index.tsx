@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { PushRuleConfigurationStyleWrapper } from './style';
-import { PageHeader } from '@actiontech/shared';
+import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import ReportPushConfigService from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
 import {
   useCurrentProject,
   useCurrentUser
 } from '@actiontech/shared/lib/global';
-import { Spin } from 'antd';
+import { Spin, Typography } from 'antd';
 import WorkflowUpdateNotifier from './components/WorkflowUpdateNotifier';
 import SqlManagementIssuePush from './components/SqlManagementIssuePush';
 
@@ -48,13 +48,21 @@ const PushRuleConfiguration: React.FC = () => {
             config={workflowUpdateNotifierConfig}
             permission={permission}
           />
-          {/* #if [ee] */}
-          <SqlManagementIssuePush
-            refetch={refresh}
-            config={sqlManagementIssuePushConfig}
-            permission={permission}
-          />
-          {/* #endif */}
+          <EnterpriseFeatureDisplay
+            featureName={t('pushRule.pushRule.sqlManagementIssuePush.label')}
+            eeFeatureDescription={
+              <Typography.Paragraph className="paragraph">
+                {t('pushRule.pushRule.sqlManagementIssuePush.CETips')}
+              </Typography.Paragraph>
+            }
+            isConfigPage={true}
+          >
+            <SqlManagementIssuePush
+              refetch={refresh}
+              config={sqlManagementIssuePushConfig}
+              permission={permission}
+            />
+          </EnterpriseFeatureDisplay>
         </div>
       </Spin>
     </PushRuleConfigurationStyleWrapper>
