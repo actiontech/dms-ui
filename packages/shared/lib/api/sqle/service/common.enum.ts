@@ -180,6 +180,24 @@ export enum GetWorkflowTasksItemV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum HighPriorityConditionTypeEnum {
+  'string' = 'string',
+
+  'int' = 'int',
+
+  'bool' = 'bool',
+
+  'password' = 'password'
+}
+
+export enum HighPriorityConditionReqOperatorEnum {
+  '>' = '>',
+
+  '=' = '=',
+
+  '<' = '<'
+}
+
 export enum InstanceAuditPlanInfoActiveStatusEnum {
   'normal' = 'normal',
 

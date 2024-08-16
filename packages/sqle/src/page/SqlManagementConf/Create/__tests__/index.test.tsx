@@ -60,6 +60,8 @@ describe('test sqle/SqlManagementConf/Create', () => {
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
     cleanup();
   });
 
@@ -89,11 +91,10 @@ describe('test sqle/SqlManagementConf/Create', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#businessScope'));
-    await act(async () => jest.advanceTimersByTime(100));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="business1"]'));
-      await jest.advanceTimersByTime(100);
-    });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(getBySelector('div[title="business1"]'));
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(1, {
@@ -102,11 +103,10 @@ describe('test sqle/SqlManagementConf/Create', () => {
     });
 
     fireEvent.mouseDown(getBySelector('#instanceType'));
-    await act(async () => jest.advanceTimersByTime(100));
-    await act(async () => {
-      fireEvent.click(getBySelector('span[title="mysql"]'));
-      await jest.advanceTimersByTime(3000);
-    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('span[title="mysql"]'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(2);
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
@@ -118,16 +118,15 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getAuditPlanMetaSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.mouseDown(getBySelector('#instanceId'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     const instance = instanceTipsMockData[0];
-    await act(async () => {
-      fireEvent.click(
-        getBySelector(
-          `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
-        )
-      );
-      await jest.advanceTimersByTime(3000);
-    });
+    fireEvent.click(
+      getBySelector(
+        `div[title="${instance.instance_name}(${instance.host}:${instance.port})"]`
+      )
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(getProjectRuleTemplateTipSpy).toHaveBeenCalledTimes(3);
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalledTimes(3);
     expect(getAuditPlanMetaSpy).toHaveBeenCalledTimes(2);
@@ -139,10 +138,10 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getInstanceSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
 
-    await act(async () => {
-      fireEvent.click(screen.getByText('全部'));
-      await jest.advanceTimersByTime(100);
-    });
+    await act(async () => fireEvent.click(screen.getByText('全部')));
+
+    await act(async () => jest.advanceTimersByTime(0));
+
     expect(baseElement).toMatchSnapshot();
     expect(
       screen.getByText(
@@ -156,11 +155,12 @@ describe('test sqle/SqlManagementConf/Create', () => {
         `#${mockAuditPlanMetaData[0].audit_plan_type}_ruleTemplateName`
       )
     );
-    await act(async () => jest.advanceTimersByTime(100));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
-      await jest.advanceTimersByTime(100);
-    });
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () =>
+      fireEvent.click(getBySelector('div[title="default_MySQL1"]'))
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+
     // MySQL库表元数据
     const schemaMetaParamIntTarget = getBySelector(
       `#${mockAuditPlanMetaData[2].audit_plan_type}_${mockAuditPlanMetaData[2]?.audit_plan_params?.[0]?.key}`
@@ -172,23 +172,48 @@ describe('test sqle/SqlManagementConf/Create', () => {
       fireEvent.input(schemaMetaParamIntTarget, {
         target: { value: '61' }
       });
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
     const schemaMetaParamBoolTarget = getBySelector(
       `#${mockAuditPlanMetaData[2].audit_plan_type}_${mockAuditPlanMetaData[2]?.audit_plan_params?.[1]?.key}`
     );
     expect(schemaMetaParamBoolTarget).not.toBeChecked();
-    await act(async () => {
-      fireEvent.click(schemaMetaParamBoolTarget);
-      await jest.advanceTimersByTime(100);
-    });
+    await act(async () => fireEvent.click(schemaMetaParamBoolTarget));
+
+    await act(async () => jest.advanceTimersByTime(0));
+
     expect(schemaMetaParamBoolTarget).toBeChecked();
+
+    expect(screen.getAllByText('标记高优先级SQL')[0]).toBeInTheDocument();
+    fireEvent.click(screen.getAllByText('标记高优先级SQL')[0]);
+    expect(
+      screen.getByTestId(
+        `${mockAuditPlanMetaData[3]?.high_priority_conditions?.[0].key}_switch`
+      )
+    ).toBeChecked();
+    expect(
+      screen.getByTestId(
+        `${mockAuditPlanMetaData[3]?.high_priority_conditions?.[1].key}_switch`
+      )
+    ).toBeChecked();
+    expect(
+      screen.getByTestId(
+        `${mockAuditPlanMetaData[3]?.high_priority_conditions?.[2].key}_switch`
+      )
+    ).toBeChecked();
+
+    fireEvent.click(
+      screen.getByTestId(
+        `${mockAuditPlanMetaData[3]?.high_priority_conditions?.[0].key}_switch`
+      )
+    );
+
     expect(screen.getByText('编辑扫描详情·测试扫描类型')).toBeInTheDocument();
     fireEvent.mouseDown(getBySelector('#custom_plan_custom_plan_ENV'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     await act(async () => {
       fireEvent.click(getBySelector('div[title="PROD"]'));
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -248,6 +273,19 @@ describe('test sqle/SqlManagementConf/Create', () => {
               value: 'rds.aliyuncs.com'
             }
           ],
+          high_priority_conditions: [
+            {
+              operator: '>',
+              key: 'row_examined_avg',
+              value: '100'
+            },
+            {
+              operator: '>',
+              key: 'audit_level',
+              value: 'warn'
+            }
+          ],
+          need_mark_high_priority_sql: true,
           audit_plan_type: 'ali_rds_mysql_slow_log',
           rule_template_name: 'default_MySQL'
         },
@@ -272,12 +310,12 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('创建SQL管控配置成功')).toBeInTheDocument();
     fireEvent.click(screen.getByText('重置表单'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('重 置'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
   });
 
-  it('test create audit plan when current url has params', async () => {
+  it('create audit plan when current url has params', async () => {
     const instanceId = instanceTipsMockData[0].instance_id;
     const { baseElement } = superRender(
       <CreateSqlManagementConf />,
@@ -305,7 +343,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getBySelector('#instanceType')).toBeDisabled();
     expect(getBySelector('#instanceId')).toBeDisabled();
     fireEvent.click(screen.getByText('自定义'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     const defaultType = mockAuditPlanMetaData[0];
     expect(
       screen.getByText(`编辑扫描详情·${defaultType.audit_plan_type_desc}`)
@@ -313,18 +351,18 @@ describe('test sqle/SqlManagementConf/Create', () => {
     fireEvent.mouseDown(
       getBySelector(`#${defaultType.audit_plan_type}_ruleTemplateName`)
     );
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     await act(async () => {
       fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
     fireEvent.click(screen.getByText('自定义'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(
       screen.queryByText(`编辑扫描详情·${defaultType.audit_plan_type_desc}`)
     ).not.toBeInTheDocument();
     fireEvent.click(screen.getByText('阿里RDS MySQL慢日志'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(
       screen.getByText(`编辑扫描详情·阿里RDS MySQL慢日志`)
     ).toBeInTheDocument();
@@ -337,24 +375,24 @@ describe('test sqle/SqlManagementConf/Create', () => {
           target: { value: 'test' }
         }
       );
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
     await act(async () => {
       fireEvent.input(getAllBySelector('input[type="password"]')[0], {
         target: { value: '123' }
       });
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
     await act(async () => {
       fireEvent.input(getAllBySelector('input[type="password"]')[1], {
         target: { value: '456' }
       });
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
     fireEvent.mouseDown(getBySelector(`#${planType}_ruleTemplateName`));
     await act(async () => {
       fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
-      await jest.advanceTimersByTime(100);
+      await jest.advanceTimersByTime(0);
     });
 
     fireEvent.click(screen.getByText('提 交'));
@@ -400,9 +438,9 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('创建SQL管控配置成功')).toBeInTheDocument();
     fireEvent.click(screen.getByText('重置表单'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('重 置'));
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('business2')).toBeInTheDocument();
   });
 });

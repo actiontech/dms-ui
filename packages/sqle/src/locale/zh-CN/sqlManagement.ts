@@ -45,6 +45,9 @@ export default {
       SQLFingerprint: 'SQL指纹',
       source: '来源',
       instanceName: '数据源',
+      priority: '优先级',
+      highPriority: '高优先',
+      lowPriority: '低优先',
       auditResult: '审核结果',
       firstOccurrence: '初次出现时间',
       lastOccurrence: '最后一次出现时间',
@@ -78,6 +81,7 @@ export default {
         notice: '提示'
       },
       assignee: '与我相关',
+      viewHighPrioritySql: '查看高优先级SQL',
       rule: '审核规则'
     },
     statusReport: {

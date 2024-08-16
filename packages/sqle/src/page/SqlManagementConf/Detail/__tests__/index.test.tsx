@@ -92,7 +92,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
         project_name: mockProjectInfo.projectName,
         instance_audit_plan_id: instanceAuditPlanId,
         audit_plan_id:
-          mockAuditPlanDetailData.audit_plans[0].audit_plan_type.audit_plan_id.toString(),
+          mockAuditPlanDetailData?.audit_plans?.[0]?.audit_plan_type?.audit_plan_id?.toString(),
         filter_list: []
       },
       { responseType: 'blob' }
@@ -108,7 +108,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
       project_name: mockProjectInfo.projectName,
       instance_audit_plan_id: instanceAuditPlanId ?? '',
       audit_plan_id:
-        mockAuditPlanDetailData.audit_plans[0].audit_plan_type.audit_plan_id.toString()
+        mockAuditPlanDetailData?.audit_plans?.[0]?.audit_plan_type?.audit_plan_id?.toString()
     });
 
     expect(getByText('立即审核').closest('button')).toHaveClass(

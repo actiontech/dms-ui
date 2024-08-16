@@ -7,13 +7,14 @@ import {
 import { useTranslation } from 'react-i18next';
 import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
 import AutoCreatedFormItemByApi from '../../../../../components/BackendForm';
-import { LazyLoadComponent } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/shared';
 import AuditTemplate from './AuditTemplate';
 import useGlobalRuleTemplate from '../../../../../hooks/useGlobalRuleTemplate';
 import useRuleTemplate from '../../../../../hooks/useRuleTemplate';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields } from '../index.type';
+import HightPriorityConditions from './HighPriorityConditions';
 
 const ScanTypesDynamicParams: React.FC = () => {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ const ScanTypesDynamicParams: React.FC = () => {
   const scanTypeMetas = contextValue?.scanTypeMetas ?? [];
 
   const submitLoading = !!contextValue?.submitLoading;
-  const defaultValue = !!contextValue?.defaultValue;
+  const defaultValue = contextValue?.defaultValue;
 
   const {
     loading: getGlobalRuleTemplateLoading,
@@ -61,9 +62,12 @@ const ScanTypesDynamicParams: React.FC = () => {
         return null;
       }
 
+      const currentScanTypeMeta = scanTypeMetas.find(
+        (meta) => meta.audit_plan_type === key
+      );
+
       const title = t('managementConf.create.scanTypeParams.title', {
-        typeName: scanTypeMetas.find((meta) => meta.audit_plan_type === key)
-          ?.audit_plan_type_desc
+        typeName: currentScanTypeMeta?.audit_plan_type_desc
       });
 
       const params = item[key];
@@ -72,16 +76,21 @@ const ScanTypesDynamicParams: React.FC = () => {
         <FormAreaLineStyleWrapper key={key} className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemSubTitle>{title}</FormItemSubTitle>
-
-            <LazyLoadComponent open={!!params?.length} animation={false}>
+            <EmptyBox if={!!params?.length}>
               <AutoCreatedFormItemByApi
                 formMode={!!defaultValue ? 'update' : 'create'}
                 paramsKey={key}
                 params={params ?? []}
                 disabled={submitLoading}
               />
-            </LazyLoadComponent>
-
+            </EmptyBox>
+            <EmptyBox if={!!currentScanTypeMeta?.high_priority_conditions}>
+              <HightPriorityConditions
+                prefixPath={key}
+                conditions={currentScanTypeMeta?.high_priority_conditions ?? []}
+                submitLoading={submitLoading}
+              />
+            </EmptyBox>
             <AuditTemplate
               submitLoading={submitLoading}
               prefixPath={key}
