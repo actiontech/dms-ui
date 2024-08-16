@@ -322,6 +322,20 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagementConf render route SqlManagementConfAnalyze 1`] = `
+<body>
+  <div>
+    <div
+      data-test-parent-id="sqlManagementConf"
+    >
+      <div>
+        SqlManagementConfAnalyze
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route sqlManagementConf render route auditPlanDetail 1`] = `
 <body>
   <div>
@@ -933,6 +947,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
             </div>,
             "key": "SqlManagementConfDetail",
             "path": ":id",
+          },
+          {
+            "element": <div>
+              SqlManagementConfAnalyze
+            </div>,
+            "key": "SqlManagementConfAnalyze",
+            "path": ":instanceAuditPlanId/analyze/:id",
           },
         ],
         "element": <div
