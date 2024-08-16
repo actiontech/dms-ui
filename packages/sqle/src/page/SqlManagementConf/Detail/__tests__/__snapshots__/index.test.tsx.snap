@@ -13,45 +13,33 @@ exports[`test SqlManagementConf/Detail/index.tsx should display error message wh
     <div
       class="extra"
     >
-      <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      <a
+        href="/sqle/project/700300/sql-management-conf"
       >
-        <div
-          class="ant-space-item"
-          style="margin-right: 8px;"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <a
-            href="/sqle/project/700300/sql-management-conf"
+          <span
+            class="ant-btn-icon"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span
-                class="ant-btn-icon"
-              >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回智能扫描配置
-              </span>
-            </button>
-          </a>
-        </div>
-        <div
-          class="ant-space-item"
-        />
-      </div>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回智能扫描配置
+          </span>
+        </button>
+      </a>
     </div>
   </div>
   <div
@@ -107,45 +95,33 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
     <div
       class="extra"
     >
-      <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      <a
+        href="/sqle/project/700300/sql-management-conf"
       >
-        <div
-          class="ant-space-item"
-          style="margin-right: 8px;"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <a
-            href="/sqle/project/700300/sql-management-conf"
+          <span
+            class="ant-btn-icon"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span
-                class="ant-btn-icon"
-              >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回智能扫描配置
-              </span>
-            </button>
-          </a>
-        </div>
-        <div
-          class="ant-space-item"
-        />
-      </div>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回智能扫描配置
+          </span>
+        </button>
+      </a>
     </div>
   </div>
   <div
@@ -177,26 +153,38 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
           </label>
         </div>
       </div>
-      <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-        type="button"
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
       >
-        <span
-          class="ant-btn-icon"
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        />
+        <div
+          class="ant-space-item"
         >
-          <svg
-            class="custom-icon custom-icon-refresh"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <path
-              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-            />
-          </svg>
-        </span>
-      </button>
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                class="custom-icon custom-icon-refresh"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <div
       class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
@@ -418,45 +406,33 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
     <div
       class="extra"
     >
-      <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      <a
+        href="/sqle/project/700300/sql-management-conf"
       >
-        <div
-          class="ant-space-item"
-          style="margin-right: 8px;"
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          type="button"
         >
-          <a
-            href="/sqle/project/700300/sql-management-conf"
+          <span
+            class="ant-btn-icon"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span
-                class="ant-btn-icon"
-              >
-                <svg
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <span>
-                返回智能扫描配置
-              </span>
-            </button>
-          </a>
-        </div>
-        <div
-          class="ant-space-item"
-        />
-      </div>
+              <path
+                d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>
+            返回智能扫描配置
+          </span>
+        </button>
+      </a>
     </div>
   </div>
   <div
@@ -530,26 +506,38 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
           </label>
         </div>
       </div>
-      <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-        type="button"
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
       >
-        <span
-          class="ant-btn-icon"
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        />
+        <div
+          class="ant-space-item"
         >
-          <svg
-            class="custom-icon custom-icon-refresh"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <path
-              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-            />
-          </svg>
-        </span>
-      </button>
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                class="custom-icon custom-icon-refresh"
+                height="14"
+                viewBox="0 0 14 14"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
     <div
       class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
