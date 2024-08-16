@@ -115,10 +115,10 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
         }
       ],
       {
-        businessScope: mockAuditPlanDetailData.business,
-        instanceType: mockAuditPlanDetailData.instance_type,
-        instanceName: mockAuditPlanDetailData.instance_name,
-        instanceId: mockAuditPlanDetailData.instance_id,
+        businessScope: mockAuditPlanDetailData.business!,
+        instanceType: mockAuditPlanDetailData.instance_type!,
+        instanceName: mockAuditPlanDetailData.instance_name!,
+        instanceId: mockAuditPlanDetailData.instance_id!,
         scanTypes: ['mysql_schema_meta'],
         mysql_schema_meta: {
           collect_interval_minute: '61',
