@@ -727,6 +727,18 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                   </div>
                 </div>
               </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    分 析
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="ant-drawer-body"
