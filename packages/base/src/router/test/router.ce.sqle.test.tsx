@@ -287,6 +287,17 @@ describe('base/router-sqle-ce', () => {
             screen.getByText('SqlManagementConfDetail')
           ).toBeInTheDocument();
         });
+
+        it('render route SqlManagementConfAnalyze', () => {
+          const { baseElement } = customRender([
+            `/sqle/project/${projectID}/sql-management-conf/1/analyze/:id`
+          ]);
+
+          expect(baseElement).toMatchSnapshot();
+          expect(
+            screen.getByText('SqlManagementConfAnalyze')
+          ).toBeInTheDocument();
+        });
       });
 
       describe('render route ruleTemplate', () => {
