@@ -24,9 +24,11 @@ import {
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
+  GetSqlManageListV2FilterPriorityEnum,
   GetSqlManageListV2FilterStatusEnum,
   GetSqlManageListV2SortFieldEnum,
   GetSqlManageListV2SortOrderEnum,
+  exportSqlManageV1FilterPriorityEnum,
   exportSqlManageV1FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
@@ -64,6 +66,7 @@ const SQLEEIndex = () => {
     useSqlManagementRedux();
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
+  const [isHighPriority, setIsHighPriority] = useState(false);
   const {
     tableFilterInfo,
     updateTableFilterInfo,
@@ -122,7 +125,10 @@ const SQLEEIndex = () => {
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
-        filter_assignee: isAssigneeSelf ? uid : undefined // filter_assignee 需要用 id
+        filter_assignee: isAssigneeSelf ? uid : undefined, // filter_assignee 需要用 id
+        filter_priority: isHighPriority
+          ? GetSqlManageListV2FilterPriorityEnum.high
+          : undefined
       };
       return handleTableRequestError(SqlManage.GetSqlManageListV2(params));
     },
@@ -132,6 +138,7 @@ const SQLEEIndex = () => {
         projectName,
         filterStatus,
         isAssigneeSelf,
+        isHighPriority,
         tableFilterInfo,
         sortInfo
       ],
@@ -218,8 +225,7 @@ const SQLEEIndex = () => {
 
   const tableSetting = useMemo<ColumnsSettingProps>(
     () => ({
-      // todo 暂时通过更新 tableName 的方式解决表格列的缓存问题，等问题解决后移出。
-      tableName: 'sql_management_list_v2',
+      tableName: 'sql_management_list',
       username: username
     }),
     [username]
@@ -272,6 +278,9 @@ const SQLEEIndex = () => {
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
       filter_assignee: isAssigneeSelf ? uid : undefined,
+      filter_priority: isHighPriority
+        ? exportSqlManageV1FilterPriorityEnum.high
+        : undefined,
       filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
       filter_rule_name: filter_rule_name?.split(
         DB_TYPE_RULE_NAME_SEPARATOR
@@ -306,7 +315,12 @@ const SQLEEIndex = () => {
   };
 
   const getTableActions = () => {
-    const defaultButton = defaultActionButton(isAssigneeSelf, setAssigneeSelf);
+    const defaultButton = defaultActionButton({
+      isAssigneeSelf,
+      isHighPriority,
+      setAssigneeSelf,
+      setIsHighPriority
+    });
     const actionButton = actionsButtonData(
       selectedRowKeys?.length === 0,
       batchSolveLoading,

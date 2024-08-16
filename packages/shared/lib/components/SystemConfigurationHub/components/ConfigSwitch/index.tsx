@@ -1,8 +1,10 @@
 import { Popconfirm } from 'antd';
 import { FormItemLabel } from '../../../FormCom';
 import { BasicSwitch } from '../../../..';
+import { IBasicSwitch } from '../../../BasicSwitch';
+import classNames from 'classnames';
 
-export interface ConfigSwitchParams {
+export interface ConfigSwitchParams extends Omit<IBasicSwitch, 'onChange'> {
   title: string;
   switchFieldName: string;
   submitLoading: boolean;
@@ -19,7 +21,8 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
   popoverVisible,
   onConfirm,
   onSwitchChange,
-  onSwitchPopoverOpen
+  onSwitchPopoverOpen,
+  ...switchProps
 }) => {
   return (
     <Popconfirm
@@ -30,8 +33,9 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
     >
       <FormItemLabel name={switchFieldName} valuePropName="checked">
         <BasicSwitch
-          className="system-config-switch"
-          disabled={submitLoading}
+          {...switchProps}
+          className={classNames('system-config-switch', switchProps.className)}
+          disabled={submitLoading || switchProps.disabled}
           onChange={onSwitchChange}
         />
       </FormItemLabel>

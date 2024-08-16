@@ -149,4 +149,29 @@ describe('sqle/components/ReportDrawer', () => {
     });
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render snap when has extra', () => {
+    const { baseElement } = customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      data: {
+        sql: 'select 1',
+        sqlSourceFile: 'file_source',
+        sqlStartLine: 3,
+        auditResult: [
+          {
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'level',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      onClose: jest.fn(),
+      extra: <div>extra</div>
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
 });

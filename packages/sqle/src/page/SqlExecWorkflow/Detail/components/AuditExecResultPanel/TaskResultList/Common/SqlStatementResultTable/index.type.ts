@@ -11,4 +11,4 @@ export type SqlStatementResultTableProps = Pick<
   | 'loading'
   | 'isPaginationFixed'
   | 'className'
->;
+> & { taskId?: string };

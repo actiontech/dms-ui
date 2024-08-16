@@ -31,7 +31,7 @@ const useTableSettings = <
 
   const catchDefaultColumnsInfo = useCallback(
     (defaultColumns: ActiontechTableColumn<T, F, OtherColumnKeys>) => {
-      if (tableName && username) {
+      if (tableName && username && !!defaultColumns.length) {
         try {
           const localStr = LocalStorageWrapper.get(tableName);
           const localData = localStr ? JSON.parse(localStr) : undefined;
