@@ -41,7 +41,7 @@ export enum GetSqlManageListSortOrderEnum {
 }
 
 export enum exportSqlManageV1FilterPriorityEnum {
-  'hight' = 'hight',
+  'high' = 'high',
 
   'low' = 'low'
 }
@@ -113,7 +113,7 @@ export enum GetSqlManageListV2FilterStatusEnum {
 }
 
 export enum GetSqlManageListV2FilterPriorityEnum {
-  'hight' = 'hight',
+  'high' = 'high',
 
   'low' = 'low'
 }
