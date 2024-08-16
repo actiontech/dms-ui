@@ -17,6 +17,7 @@ import { PopoverTooltipStyleWrapper } from '../../../../components/ChartCom/Char
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { floor } from 'lodash';
+import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 
 const SqlCount = () => {
   const { t } = useTranslation();
@@ -105,7 +106,7 @@ const SqlCount = () => {
           textAlign: 'center'
         },
         customHtml: (container, view, datum) => {
-          return datum?.percent ? `${datum.percent * 100}%` : '0%';
+          return datum?.percent ? `${floatToPercent(datum.percent, 3)}%` : '0%';
         }
       },
       content: {

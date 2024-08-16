@@ -1119,6 +1119,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       },
       {
         "element": <div>
+          pushRuleConfiguration
+        </div>,
+        "key": "pushRuleConfiguration",
+        "path": ":projectID/push-rule",
+      },
+      {
+        "element": <div>
           projectRedirect
         </div>,
         "key": "projectRedirect",

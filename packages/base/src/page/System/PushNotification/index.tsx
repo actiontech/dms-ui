@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-
 import SystemBasicTitle from '../components/BasicTitle';
 import SMTPSetting from './SMTPSetting';
 import Wechat from './Wechat';

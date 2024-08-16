@@ -49,7 +49,7 @@ export default {
       baseTitle: '工单基本信息',
       sourceTitle: '工单导出对象',
       methodTitle: '导出方式',
-      updateInfoAction: '编辑工单信息',
+      updateInfoAction: '修改工单',
       submitAction: '提交工单',
       submitTips: '仅支持对DQL语句创建导出工单'
     },

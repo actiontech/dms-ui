@@ -88,106 +88,117 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
               {fields.map((field, index) => {
                 const fieldKey = field.key.toString();
                 return (
-                  <Space key={field.key} align="start" size={12}>
-                    <FormItemNoLabel
-                      extra={renderTestDatabasesConnectInfo(
+                  <Space
+                    className="database-list-item"
+                    key={field.key}
+                    direction="vertical"
+                    size={0}
+                  >
+                    <Space align="start" size={12}>
+                      <FormItemNoLabel
+                        name={[field.name, 'instanceName']}
+                        rules={[
+                          {
+                            required: true,
+                            message: t('common.form.placeholder.input', {
+                              name: t(
+                                'execWorkflow.create.form.sqlInfo.instanceName'
+                              )
+                            })
+                          }
+                        ]}
+                      >
+                        <CustomSelect
+                          allowClear={false}
+                          popupMatchSelectWidth
+                          className="data-source-row-select"
+                          prefix={
+                            <CommonIconStyleWrapper>
+                              <DatabaseFilled width={18} height={18} />
+                            </CommonIconStyleWrapper>
+                          }
+                          valuePrefix={
+                            <CommonIconStyleWrapper>
+                              <DatabaseFilled
+                                width={18}
+                                height={18}
+                                color={
+                                  sqleTheme.icon.execWorkFlow.databaseFilled
+                                }
+                              />
+                            </CommonIconStyleWrapper>
+                          }
+                          size="middle"
+                          loading={instanceTipsLoading}
+                          options={instanceOptions}
+                          onChange={(name) => {
+                            form.setFieldValue(
+                              ['databaseInfo', field.name, 'instanceSchema'],
+                              undefined
+                            );
+                            handleInstanceNameChange?.(name);
+                            handleInstanceChange(fieldKey, name);
+                          }}
+                        />
+                      </FormItemNoLabel>
+
+                      <FormItemNoLabel name={[field.name, 'instanceSchema']}>
+                        <CustomSelect
+                          className="data-source-row-select"
+                          disabled={
+                            !form.getFieldValue('databaseInfo')?.[index]
+                              ?.instanceName
+                          }
+                          onChange={(value) =>
+                            handleInstanceSchemaChange(fieldKey, value)
+                          }
+                          prefix={
+                            <CommonIconStyleWrapper>
+                              <DatabaseSchemaFilled width={18} height={18} />
+                            </CommonIconStyleWrapper>
+                          }
+                          valuePrefix={
+                            <CommonIconStyleWrapper>
+                              <DatabaseSchemaFilled
+                                width={18}
+                                height={18}
+                                color={sqleTheme.icon.execWorkFlow.schemaFilled}
+                              />
+                            </CommonIconStyleWrapper>
+                          }
+                          size="middle"
+                          options={getInstanceSchemaOptions(fieldKey)}
+                          placeholder={t(
+                            'execWorkflow.create.form.sqlInfo.schemaPlaceholder'
+                          )}
+                          loading={!!getInstanceSchemaLoading(fieldKey)}
+                        />
+                      </FormItemNoLabel>
+
+                      <Divider
+                        className="data-source-row-divider"
+                        type="vertical"
+                      />
+
+                      {renderRuleTemplateDisplay(fieldKey)}
+
+                      {/* #if [ee] */}
+                      {renderDeleteItemButton(
+                        fields,
+                        fieldKey,
+                        remove.bind(null, field.name)
+                      )}
+                      {/* #endif */}
+                    </Space>
+                    <section className="database-connection-info">
+                      {renderTestDatabasesConnectInfo(
                         form.getFieldValue([
                           'databaseInfo',
                           field.name,
                           'instanceName'
                         ])
                       )}
-                      name={[field.name, 'instanceName']}
-                      rules={[
-                        {
-                          required: true,
-                          message: t('common.form.placeholder.input', {
-                            name: t(
-                              'execWorkflow.create.form.sqlInfo.instanceName'
-                            )
-                          })
-                        }
-                      ]}
-                    >
-                      <CustomSelect
-                        allowClear={false}
-                        popupMatchSelectWidth
-                        className="data-source-row-select"
-                        prefix={
-                          <CommonIconStyleWrapper>
-                            <DatabaseFilled width={18} height={18} />
-                          </CommonIconStyleWrapper>
-                        }
-                        valuePrefix={
-                          <CommonIconStyleWrapper>
-                            <DatabaseFilled
-                              width={18}
-                              height={18}
-                              color={sqleTheme.icon.execWorkFlow.databaseFilled}
-                            />
-                          </CommonIconStyleWrapper>
-                        }
-                        size="middle"
-                        loading={instanceTipsLoading}
-                        options={instanceOptions}
-                        onChange={(name) => {
-                          form.setFieldValue(
-                            ['databaseInfo', field.name, 'instanceSchema'],
-                            undefined
-                          );
-                          handleInstanceNameChange?.(name);
-                          handleInstanceChange(fieldKey, name);
-                        }}
-                      />
-                    </FormItemNoLabel>
-
-                    <FormItemNoLabel name={[field.name, 'instanceSchema']}>
-                      <CustomSelect
-                        className="data-source-row-select"
-                        disabled={
-                          !form.getFieldValue('databaseInfo')?.[index]
-                            ?.instanceName
-                        }
-                        onChange={(value) =>
-                          handleInstanceSchemaChange(fieldKey, value)
-                        }
-                        prefix={
-                          <CommonIconStyleWrapper>
-                            <DatabaseSchemaFilled width={18} height={18} />
-                          </CommonIconStyleWrapper>
-                        }
-                        valuePrefix={
-                          <CommonIconStyleWrapper>
-                            <DatabaseSchemaFilled
-                              width={18}
-                              height={18}
-                              color={sqleTheme.icon.execWorkFlow.schemaFilled}
-                            />
-                          </CommonIconStyleWrapper>
-                        }
-                        size="middle"
-                        options={getInstanceSchemaOptions(fieldKey)}
-                        placeholder={t(
-                          'execWorkflow.create.form.sqlInfo.schemaPlaceholder'
-                        )}
-                        loading={!!getInstanceSchemaLoading(fieldKey)}
-                      />
-                    </FormItemNoLabel>
-
-                    <Divider
-                      className="data-source-row-divider"
-                      type="vertical"
-                    />
-
-                    {renderRuleTemplateDisplay(fieldKey)}
-
-                    {/* #if [ee] */}
-                    {renderDeleteItemButton(
-                      fields,
-                      fieldKey,
-                      remove.bind(null, field.name)
-                    )}
-                    {/* #endif */}
+                    </section>
                   </Space>
                 );
               })}

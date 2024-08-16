@@ -60,11 +60,13 @@ export default {
         '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。',
       form: {
         auditType: '审核方式',
+        auditTypeDesc:
+          '在线审核时，平台审核将根据所选数据源的实际库表结构给出建议；离线审核时，平台审核将不会连接数据源。',
         dbType: '数据库类型',
         instanceName: '数据源',
         instanceSchema: '数据库',
-        staticAudit: '静态审核',
-        dynamicAudit: '动态审核',
+        staticAudit: '离线审核',
+        dynamicAudit: '在线审核',
         uploadType: '选择SQL语句上传方式'
       },
       uploadTypeEnum: {

@@ -9,6 +9,10 @@ interface ConfigSubmitButtonFieldProps {
   handleClickCancel: () => void;
 }
 
+/**
+ * @deprecated
+ * 使用 shared 中 ConfigSubmitButtonField 替换
+ */
 const ConfigSubmitButtonField = ({
   submitLoading,
   handleClickCancel

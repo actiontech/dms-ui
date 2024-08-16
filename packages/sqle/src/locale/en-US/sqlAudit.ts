@@ -59,8 +59,8 @@ export default {
         dbType: '数据库类型',
         instanceName: '数据源',
         instanceSchema: '数据库',
-        staticAudit: '静态审核',
-        dynamicAudit: '动态审核',
+        staticAudit: '离线审核',
+        dynamicAudit: '在线审核',
         uploadType: '选择SQL语句上传方式'
       },
       uploadTypeEnum: {

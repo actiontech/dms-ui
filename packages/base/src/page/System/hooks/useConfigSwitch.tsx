@@ -17,6 +17,10 @@ interface IUseConfigSwitchProps {
   handleToggleSwitch: (open: boolean) => void;
 }
 
+/**
+ * @deprecated
+ * 使用 useSwitchControls 替换
+ */
 const useConfigSwitch = (props: IUseConfigSwitchProps) => {
   const {
     isConfigClosed,

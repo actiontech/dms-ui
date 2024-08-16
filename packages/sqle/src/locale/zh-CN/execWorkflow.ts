@@ -114,7 +114,7 @@ export default {
       clearDuplicate: '数据去重',
       allLevel: '全部等级',
       submit: '提交工单',
-      updateInfo: '编辑工单信息',
+      updateInfo: '修改工单',
       disabledOperatorWorkflowBtnTips:
         '项目 {{currentProject}} 创建工单时最高只能允许有 {{allowAuditLevel}} 等级的审核错误，但是当前审核结果中最高包含 {{currentAuditLevel}} 等级的审核结果。',
       mustHaveAuditResultTips: '不能对审核结果为空的SQL进行创建工单',
