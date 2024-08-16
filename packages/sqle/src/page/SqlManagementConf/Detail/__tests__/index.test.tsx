@@ -36,6 +36,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
   const instanceAuditPlanId = '1';
   const pathname = '/sql-management-conf/1';
   let getInstanceAuditPlanDetailSpy: jest.SpyInstance;
+  let auditPlanTriggerSqlAuditSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
@@ -43,6 +44,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     instanceAuditPlan.mockAllApi();
     getInstanceAuditPlanDetailSpy =
       instanceAuditPlan.getInstanceAuditPlanDetail();
+    auditPlanTriggerSqlAuditSpy = instanceAuditPlan.auditPlanTriggerSqlAudit();
     mockUseLocation.mockReturnValue({
       pathname
     });
@@ -76,10 +78,12 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(queryByText('导出')).not.toBeInTheDocument();
-
+    expect(queryByText('立即审核')).not.toBeInTheDocument();
     fireEvent.click(getAllByText('自定义')[0]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(queryByText('导 出')).toBeInTheDocument();
+    expect(queryByText('立即审核')).toBeInTheDocument();
+
     fireEvent.click(getByText('导 出'));
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenNthCalledWith(
@@ -97,6 +101,24 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getByText('导 出').closest('button')).not.toBeDisabled();
+
+    fireEvent.click(getByText('立即审核'));
+    expect(auditPlanTriggerSqlAuditSpy).toHaveBeenCalledTimes(1);
+    expect(auditPlanTriggerSqlAuditSpy).toHaveBeenNthCalledWith(1, {
+      project_name: mockProjectInfo.projectName,
+      instance_audit_plan_id: instanceAuditPlanId ?? '',
+      audit_plan_id:
+        mockAuditPlanDetailData.audit_plans[0].audit_plan_type.audit_plan_id.toString()
+    });
+
+    expect(getByText('立即审核').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getByText('立即审核').closest('button')).not.toHaveClass(
+      'ant-btn-loading'
+    );
   });
 
   it('should display error message when data request fails', async () => {

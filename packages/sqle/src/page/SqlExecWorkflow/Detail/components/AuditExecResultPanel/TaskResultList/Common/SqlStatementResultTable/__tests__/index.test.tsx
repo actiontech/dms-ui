@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import SqlStatementResultTable from '..';
 import {
   getAllBySelector,
@@ -18,10 +18,13 @@ describe('test TaskResultList/SQLStatementResultTable', () => {
   });
 
   it('should match snapshot', async () => {
+    const openSpy = jest.spyOn(window, 'open');
+    openSpy.mockImplementation(jest.fn());
     rule_template.getRuleList();
     jest.useFakeTimers();
     const { baseElement } = superRender(
       <SqlStatementResultTable
+        taskId="1"
         dataSource={[
           {
             number: 1,
@@ -69,6 +72,12 @@ describe('test TaskResultList/SQLStatementResultTable', () => {
     fireEvent.click(getBySelector('.audit-result-wrapper'));
 
     expect(baseElement).toMatchSnapshot();
+
+    expect(screen.getByText('分 析')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('分 析'));
+
+    expect(openSpy).toHaveBeenCalledTimes(1);
 
     jest.useRealTimers();
   });

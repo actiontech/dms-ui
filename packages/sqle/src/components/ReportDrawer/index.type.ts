@@ -21,4 +21,5 @@ export interface DetailReportDrawerProps {
   showAnnotation?: boolean;
   showSourceFile?: boolean;
   loading?: boolean;
+  extra?: ReactNode;
 }

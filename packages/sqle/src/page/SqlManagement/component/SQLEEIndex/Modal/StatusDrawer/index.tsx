@@ -3,9 +3,14 @@ import { ModalName } from '../../../../../../data/ModalName';
 import ReportDrawer from '../../../../../../components/ReportDrawer';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 import useAuditResultRuleInfo from '../../../../../../components/ReportDrawer/useAuditResultRuleInfo';
+import { Link } from 'react-router-dom';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { BasicButton } from '@actiontech/shared';
 
 const StatusDrawer = () => {
   const { t } = useTranslation();
+
+  const { projectID } = useCurrentProject();
 
   const {
     open: visible,
@@ -34,6 +39,14 @@ const StatusDrawer = () => {
       onClose={closeModal}
       showAnnotation
       loading={loading}
+      extra={
+        <Link
+          to={`/sqle/project/${projectID}/sql-management/${selectedData?.id}/analyze`}
+          target="blank"
+        >
+          <BasicButton>{t('sqlManagement.table.action.analyze')}</BasicButton>
+        </Link>
+      }
     />
   );
 };

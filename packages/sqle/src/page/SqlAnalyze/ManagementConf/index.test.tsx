@@ -1,18 +1,18 @@
 import { act, fireEvent } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
-import AuditPlanSqlAnalyze from '.';
+import ManagementConfAnalyze from '.';
 import {
   resolveErrorThreeSecond,
   resolveThreeSecond
 } from '../../../testUtils/mockRequest';
 import { AuditPlanSqlAnalyzeData } from '../__testData__';
-import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 
 jest.mock('react-router', () => {
   return {
@@ -23,7 +23,7 @@ jest.mock('react-router', () => {
 
 const projectName = 'default';
 
-describe('SqlAnalyze/AuditPlan', () => {
+describe('SqlAnalyze/ManagementConfAnalyze', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
@@ -31,10 +31,9 @@ describe('SqlAnalyze/AuditPlan', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     useParamsMock.mockReturnValue({
-      reportId: 'reportId1',
-      sqlNum: '123',
-      projectName,
-      auditPlanName: 'api_test_1'
+      instanceAuditPlanId: '1',
+      id: '2',
+      projectName
     });
   });
 
@@ -45,7 +44,10 @@ describe('SqlAnalyze/AuditPlan', () => {
   });
 
   const mockGetAnalyzeData = () => {
-    const spy = jest.spyOn(audit_plan, 'getAuditPlantAnalysisDataV2');
+    const spy = jest.spyOn(
+      instance_audit_plan,
+      'getAuditPlanSqlAnalysisDataV1'
+    );
     spy.mockImplementation(() => resolveThreeSecond(AuditPlanSqlAnalyzeData));
     return spy;
   };
@@ -53,7 +55,7 @@ describe('SqlAnalyze/AuditPlan', () => {
   test('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
     const { container, baseElement } = renderWithReduxAndTheme(
-      <AuditPlanSqlAnalyze />,
+      <ManagementConfAnalyze />,
       undefined,
       {
         user: {
@@ -69,9 +71,8 @@ describe('SqlAnalyze/AuditPlan', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
-      audit_plan_report_id: 'reportId1',
-      number: '123',
-      audit_plan_name: 'api_test_1'
+      instance_audit_plan_id: '1',
+      id: '2'
     });
     expect(container).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3500));
@@ -93,7 +94,7 @@ describe('SqlAnalyze/AuditPlan', () => {
       })
     );
     const { container } = renderWithReduxAndTheme(
-      <AuditPlanSqlAnalyze />,
+      <ManagementConfAnalyze />,
       undefined,
       {
         user: {
@@ -121,7 +122,7 @@ describe('SqlAnalyze/AuditPlan', () => {
       })
     );
     const { container } = renderWithReduxAndTheme(
-      <AuditPlanSqlAnalyze />,
+      <ManagementConfAnalyze />,
       undefined,
       {
         user: {

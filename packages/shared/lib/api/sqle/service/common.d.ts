@@ -2227,6 +2227,8 @@ export interface ISqlManage {
 
   last_receive_timestamp?: string;
 
+  priority?: string;
+
   remark?: string;
 
   schema_name?: string;
