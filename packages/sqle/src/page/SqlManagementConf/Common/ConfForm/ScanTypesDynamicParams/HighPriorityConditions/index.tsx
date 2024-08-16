@@ -2,7 +2,7 @@ import {
   BasicInput,
   BasicSelect,
   BasicSwitch,
-  BasicTag,
+  BasicTypographyEllipsis,
   EmptyBox
 } from '@actiontech/shared';
 import { IHighPriorityCondition } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -18,6 +18,8 @@ import {
   PrioritySqlConditionsParams,
   SqlManagementConfFormFields
 } from '../../index.type';
+import { MenuSquareFilled } from '@actiontech/icons';
+import { HighPriorityConditionDescTagStyleWrapper } from './style';
 
 type Props = {
   prefixPath: string;
@@ -71,9 +73,17 @@ const HighPriorityConditions: React.FC<Props> = ({
           return (
             <Row gutter={12} key={item.key}>
               <Col span={5} offset={9}>
-                <BasicTag color="blue" style={{ height: 36 }}>
-                  {item.desc}
-                </BasicTag>
+                <HighPriorityConditionDescTagStyleWrapper
+                  icon={<MenuSquareFilled />}
+                  bordered={false}
+                  color="blue"
+                >
+                  <BasicTypographyEllipsis
+                    tooltipsMaxWidth={200}
+                    copyable={false}
+                    textCont={item.desc ?? ''}
+                  />
+                </HighPriorityConditionDescTagStyleWrapper>
               </Col>
               <Col span={3}>
                 <FormItemNoLabel
@@ -97,6 +107,7 @@ const HighPriorityConditions: React.FC<Props> = ({
                 >
                   {item.boolean_operator?.boolean_operator_enums_value ? (
                     <BasicSelect
+                      data-testid={`${item.key}_operator`}
                       options={item.boolean_operator.boolean_operator_enums_value.map(
                         (v) => ({ label: v.value, value: v.value })
                       )}
@@ -107,6 +118,7 @@ const HighPriorityConditions: React.FC<Props> = ({
                     />
                   ) : (
                     <BasicInput
+                      data-testid={`${item.key}_operator`}
                       disabled={
                         !getEnabledStatusByKey(item.key!) || submitLoading
                       }
@@ -134,6 +146,7 @@ const HighPriorityConditions: React.FC<Props> = ({
                 >
                   {item.enums_value ? (
                     <BasicSelect
+                      data-testid={`${item.key}_value`}
                       disabled={
                         !getEnabledStatusByKey(item.key!) || submitLoading
                       }
@@ -149,6 +162,7 @@ const HighPriorityConditions: React.FC<Props> = ({
                     />
                   ) : (
                     <BasicInput
+                      data-testid={`${item.key}_value`}
                       disabled={!getEnabledStatusByKey(item.key!)}
                       placeholder={t('common.form.placeholder.input', {
                         name: t(
@@ -173,6 +187,7 @@ const HighPriorityConditions: React.FC<Props> = ({
                 initialValue={true}
               >
                 <BasicSwitch
+                  data-testid={`${item.key}_switch`}
                   disabled={submitLoading}
                   size="small"
                   onChange={(open) => {

@@ -76,7 +76,6 @@ const ScanTypesDynamicParams: React.FC = () => {
         <FormAreaLineStyleWrapper key={key} className="has-border">
           <FormAreaBlockStyleWrapper>
             <FormItemSubTitle>{title}</FormItemSubTitle>
-
             <EmptyBox if={!!params?.length}>
               <AutoCreatedFormItemByApi
                 formMode={!!defaultValue ? 'update' : 'create'}
@@ -85,7 +84,6 @@ const ScanTypesDynamicParams: React.FC = () => {
                 disabled={submitLoading}
               />
             </EmptyBox>
-
             <EmptyBox if={!!currentScanTypeMeta?.high_priority_conditions}>
               <HightPriorityConditions
                 prefixPath={key}
@@ -93,7 +91,6 @@ const ScanTypesDynamicParams: React.FC = () => {
                 submitLoading={submitLoading}
               />
             </EmptyBox>
-
             <AuditTemplate
               submitLoading={submitLoading}
               prefixPath={key}

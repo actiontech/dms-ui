@@ -4,7 +4,8 @@ import {
   IAuditPlanMetaV1,
   IInstanceAuditPlanInfo,
   IAuditPlanSQLDataResV1,
-  IAuditPlanSQLMetaResV1
+  IAuditPlanSQLMetaResV1,
+  IInstanceAuditPlanDetailResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   InstanceAuditPlanResV1ActiveStatusEnum,
@@ -13,7 +14,8 @@ import {
   InstanceAuditPlanInfoActiveStatusEnum,
   AuditPlanSQLHeadV1TypeEnum,
   FilterMetaFilterInputTypeEnum,
-  FilterMetaFilterOpTypeEnum
+  FilterMetaFilterOpTypeEnum,
+  HighPriorityConditionTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
@@ -199,6 +201,93 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
         value: 'rds.aliyuncs.com',
         type: AuditPlanParamResV1TypeEnum.string
       }
+    ],
+    high_priority_conditions: [
+      {
+        key: 'query_time_avg',
+        desc: '平均查询时间',
+        value: '10',
+        type: HighPriorityConditionTypeEnum.int,
+        enums_value: undefined,
+        boolean_operator: {
+          boolean_operator_value: '\u003e',
+          boolean_operator_enums_value: [
+            {
+              value: '\u003e',
+              desc: '大于'
+            },
+            {
+              value: '=',
+              desc: '等于'
+            },
+            {
+              value: '\u003c',
+              desc: '小于'
+            }
+          ]
+        }
+      },
+      {
+        key: 'row_examined_avg',
+        desc: '平均扫描行数',
+        value: '100',
+        type: HighPriorityConditionTypeEnum.int,
+        enums_value: undefined,
+        boolean_operator: {
+          boolean_operator_value: '\u003e',
+          boolean_operator_enums_value: [
+            {
+              value: '\u003e',
+              desc: '大于'
+            },
+            {
+              value: '=',
+              desc: '等于'
+            },
+            {
+              value: '\u003c',
+              desc: '小于'
+            }
+          ]
+        }
+      },
+      {
+        key: 'audit_level',
+        desc: '告警级别',
+        value: 'warn',
+        type: HighPriorityConditionTypeEnum.string,
+        enums_value: [
+          {
+            value: 'info',
+            desc: '提示'
+          },
+          {
+            value: 'warn',
+            desc: '告警'
+          },
+          {
+            value: 'error',
+            desc: '错误'
+          }
+        ],
+        boolean_operator: {
+          boolean_operator_value: '\u003e',
+          boolean_operator_enums_value: [
+            {
+              value: '\u003e',
+              desc: '大于'
+            },
+            {
+              value: '=',
+              desc: '等于'
+            },
+            {
+              value: '\u003c',
+              desc: '小于'
+            }
+          ]
+        }
+      }
     ]
   },
   {
@@ -231,7 +320,7 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
   }
 ];
 
-export const mockAuditPlanDetailData = {
+export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
   business: 'business1',
   instance_type: 'MySQL',
   instance_name: 'mysql-1',
@@ -267,6 +356,103 @@ export const mockAuditPlanDetailData = {
         desc: 'MySQL库表元数据'
       },
       rule_template_name: 'default_MySQL'
+    },
+    {
+      audit_plan_params: [
+        {
+          key: 'db_instance_id',
+          desc: '实例ID',
+          value: '1',
+          type: AuditPlanParamResV1TypeEnum.string
+        },
+        {
+          key: 'access_key_id',
+          desc: 'Access Key ID',
+          value: '1',
+          type: AuditPlanParamResV1TypeEnum.password
+        },
+        {
+          key: 'access_key_secret',
+          desc: 'Access Key Secret',
+          value: '1',
+          type: AuditPlanParamResV1TypeEnum.password
+        },
+        {
+          key: 'first_sqls_scrapped_in_last_period_hours',
+          desc: '启动任务时拉取慢日志时间范围(单位:小时,最大31天)',
+          value: '1',
+          type: AuditPlanParamResV1TypeEnum.int
+        },
+        {
+          key: 'audit_sqls_scrapped_in_last_period_minute',
+          desc: '审核过去时间段内抓取的SQL（分钟）',
+          value: '0',
+          type: AuditPlanParamResV1TypeEnum.int
+        },
+        {
+          key: 'rds_path',
+          desc: 'RDS Open API地址',
+          value: 'rds.aliyuncs.com',
+          type: AuditPlanParamResV1TypeEnum.string
+        }
+      ],
+      mark_high_priority_sql: true,
+      high_priority_conditions: [
+        {
+          key: 'query_time_avg',
+          desc: '平均查询时间',
+          value: '0.3',
+          type: HighPriorityConditionTypeEnum.int,
+          enums_value: undefined,
+          boolean_operator: {
+            boolean_operator_value: '\u003e',
+            boolean_operator_enums_value: [
+              {
+                value: '\u003e',
+                desc: '大于'
+              },
+              {
+                value: '=',
+                desc: '等于'
+              },
+              {
+                value: '\u003c',
+                desc: '小于'
+              }
+            ]
+          }
+        },
+        {
+          key: 'row_examined_avg',
+          desc: '平均扫描行数',
+          value: '0.5',
+          type: HighPriorityConditionTypeEnum.int,
+          enums_value: undefined,
+          boolean_operator: {
+            boolean_operator_value: '\u003e',
+            boolean_operator_enums_value: [
+              {
+                value: '\u003e',
+                desc: '大于'
+              },
+              {
+                value: '=',
+                desc: '等于'
+              },
+              {
+                value: '\u003c',
+                desc: '小于'
+              }
+            ]
+          }
+        }
+      ],
+      rule_template_name: 'default_MySQL',
+      audit_plan_type: {
+        audit_plan_id: 11,
+        type: 'ali_rds_mysql_slow_log',
+        desc: '阿里RDS MySQL慢日志'
+      }
     }
   ]
 };
