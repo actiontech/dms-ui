@@ -67,10 +67,11 @@ const Update: React.FC = () => {
               prioritySqlConditions,
               ...paramValues
             } = values[item] as ScanTypeParams;
-            return {
+
+            const params: IAuditPlan = {
               audit_plan_type: item,
               rule_template_name: ruleTemplateName,
-              mark_high_priority_sql: markHighPrioritySql,
+              need_mark_high_priority_sql: markHighPrioritySql,
               high_priority_conditions: markHighPrioritySql
                 ? generateSubmitDataWithFormValues(prioritySqlConditions)
                 : undefined,
@@ -80,6 +81,7 @@ const Update: React.FC = () => {
                   ?.audit_plan_params ?? []
               )
             };
+            return params;
           })
       })
       .then((res) => {
@@ -119,7 +121,7 @@ const Update: React.FC = () => {
       }>((acc, cur) => {
         const params: ScanTypeParams = {
           ruleTemplateName: cur.rule_template_name ?? '',
-          markHighPrioritySql: !!cur.mark_high_priority_sql,
+          markHighPrioritySql: !!cur.need_mark_high_priority_sql,
           prioritySqlConditions: generateFormValuesWithAPIResponse(
             cur.high_priority_conditions ?? [],
             scanTypeMetas?.find(

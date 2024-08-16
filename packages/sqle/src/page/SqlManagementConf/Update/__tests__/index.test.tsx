@@ -244,15 +244,15 @@ describe('test sqle/SqlManagementConf/Update', () => {
               value: 'test.com'
             }
           ],
-          mark_high_priority_sql: true,
+          need_mark_high_priority_sql: true,
           high_priority_conditions: [
             {
-              boolean_operator: '>',
+              operator: '>',
               key: 'query_time_avg',
               value: '0.3'
             },
             {
-              boolean_operator: '>',
+              operator: '>',
               key: 'audit_level',
               value: 'warn'
             }

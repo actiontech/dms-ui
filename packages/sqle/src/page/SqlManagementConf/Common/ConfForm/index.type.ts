@@ -1,4 +1,4 @@
-import { HighPriorityConditionReqBooleanOperatorEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { HighPriorityConditionReqOperatorEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type ScanTypeParams = {
   ruleTemplateName: string;
@@ -8,7 +8,7 @@ export type ScanTypeParams = {
 };
 
 export type HighPriorityConditionParams = {
-  booleanOperator: HighPriorityConditionReqBooleanOperatorEnum;
+  operator: HighPriorityConditionReqOperatorEnum;
   value: string;
   checked: boolean;
 };

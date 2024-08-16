@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCallback } from 'react';
 import { PrioritySqlConditionsParams } from '../../index.type';
-import { HighPriorityConditionReqBooleanOperatorEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { HighPriorityConditionReqOperatorEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const usePriorityConditionsParams = () => {
   const generateSubmitDataWithFormValues = useCallback(
@@ -18,7 +18,7 @@ const usePriorityConditionsParams = () => {
         if (item.checked) {
           conditions.push({
             key,
-            boolean_operator: item.booleanOperator,
+            operator: item.operator,
             value: item.value
           });
         }
@@ -43,8 +43,8 @@ const usePriorityConditionsParams = () => {
           return {
             ...acc,
             [cur.key!]: {
-              booleanOperator: cur.boolean_operator
-                ?.boolean_operator_value as HighPriorityConditionReqBooleanOperatorEnum,
+              operator: cur.operator
+                ?.operator_value as HighPriorityConditionReqOperatorEnum,
               value: cur.value ?? '',
               checked: false
             }
@@ -53,8 +53,8 @@ const usePriorityConditionsParams = () => {
         return {
           ...acc,
           [conditions.key!]: {
-            booleanOperator: conditions.boolean_operator
-              ?.boolean_operator_value as HighPriorityConditionReqBooleanOperatorEnum,
+            operator: conditions.operator
+              ?.operator_value as HighPriorityConditionReqOperatorEnum,
             value: conditions.value ?? '',
             checked: true
           }

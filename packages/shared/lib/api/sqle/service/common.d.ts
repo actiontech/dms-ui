@@ -19,7 +19,7 @@ import {
   FilterMetaFilterOpTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
   HighPriorityConditionTypeEnum,
-  HighPriorityConditionReqBooleanOperatorEnum,
+  HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   OperationRecordListStatusEnum,
@@ -89,7 +89,7 @@ export interface IAuditPlan {
 
   high_priority_conditions?: IHighPriorityConditionReq[];
 
-  mark_high_priority_sql?: boolean;
+  need_mark_high_priority_sql?: boolean;
 
   rule_template_name?: string;
 }
@@ -159,7 +159,7 @@ export interface IAuditPlanRes {
 
   high_priority_conditions?: IHighPriorityCondition[];
 
-  mark_high_priority_sql?: boolean;
+  need_mark_high_priority_sql?: boolean;
 
   rule_template_name?: string;
 }
@@ -402,12 +402,6 @@ export interface IBatchUpdateSqlManageReq {
   sql_manage_id_list?: number[];
 
   status?: BatchUpdateSqlManageReqStatusEnum;
-}
-
-export interface IBooleanOperator {
-  boolean_operator_enums_value?: IEnumsValue[];
-
-  boolean_operator_value?: string;
 }
 
 export interface ICheckLicenseResV1 {
@@ -1543,13 +1537,13 @@ export interface IGetWorkflowsResV1 {
 }
 
 export interface IHighPriorityCondition {
-  boolean_operator?: IBooleanOperator;
-
   desc?: string;
 
   enums_value?: IEnumsValue[];
 
   key?: string;
+
+  operator?: IOperator;
 
   type?: HighPriorityConditionTypeEnum;
 
@@ -1557,9 +1551,9 @@ export interface IHighPriorityCondition {
 }
 
 export interface IHighPriorityConditionReq {
-  boolean_operator?: HighPriorityConditionReqBooleanOperatorEnum;
-
   key?: string;
+
+  operator?: HighPriorityConditionReqOperatorEnum;
 
   value?: string;
 }
@@ -1780,6 +1774,12 @@ export interface IOperationUser {
   ip?: string;
 
   user_name?: string;
+}
+
+export interface IOperator {
+  operator_enums_value?: IEnumsValue[];
+
+  operator_value?: string;
 }
 
 export interface IOptimizationDetail {

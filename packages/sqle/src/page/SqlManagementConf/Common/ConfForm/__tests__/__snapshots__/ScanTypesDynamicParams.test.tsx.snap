@@ -595,7 +595,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -647,16 +647,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -796,7 +796,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -848,16 +848,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -997,7 +997,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -1049,16 +1049,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -2009,7 +2009,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -2061,16 +2061,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -2210,7 +2210,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -2262,16 +2262,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -2411,7 +2411,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -2463,16 +2463,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -3444,7 +3444,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -3496,16 +3496,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -3646,7 +3646,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -3698,16 +3698,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
@@ -3848,7 +3848,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
               >
                 <svg
                   height="16"
@@ -3900,16 +3900,16 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list_0"
+                                aria-activedescendant="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list"
+                                aria-controls="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator_list"
+                                aria-owns="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
                                 disabled=""
-                                id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_booleanOperator"
+                                id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_operator"
                                 readonly=""
                                 role="combobox"
                                 style="opacity: 0;"
