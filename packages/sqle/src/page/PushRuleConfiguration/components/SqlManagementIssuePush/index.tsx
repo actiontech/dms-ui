@@ -142,7 +142,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
                     const name = usernameList.find(
                       (v) => v.user_id === id
                     )?.user_name;
-                    return <AvatarCom key={id} name={name} />;
+                    return <AvatarCom size="small" key={id} name={name} />;
                   })}
                 </Space>
               );
