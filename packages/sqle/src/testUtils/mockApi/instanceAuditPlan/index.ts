@@ -30,6 +30,7 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     this.getInstanceAuditPlanSQLExport();
     this.deleteAuditPlanByType();
     this.updateAuditPlanStatus();
+    this.auditPlanTriggerSqlAudit();
   }
 
   public getInstanceAuditPlans() {
@@ -157,6 +158,12 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
 
   public deleteAuditPlanByType() {
     const spy = jest.spyOn(instance_audit_plan, 'deleteAuditPlanByTypeV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public auditPlanTriggerSqlAudit() {
+    const spy = jest.spyOn(instance_audit_plan, 'auditPlanTriggerSqlAuditV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

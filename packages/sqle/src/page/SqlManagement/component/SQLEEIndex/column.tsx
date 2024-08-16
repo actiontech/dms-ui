@@ -260,6 +260,20 @@ const SqlManagementColumn: (
         return schemaName || '-';
       }
     },
+    {
+      dataIndex: 'priority',
+      title: () => t('sqlManagement.table.column.priority'),
+      render: (priority: ISqlManage['priority']) => {
+        if (priority === 'high') {
+          return t('sqlManagement.table.column.highPriority');
+        }
+        if (priority === 'low') {
+          return t('sqlManagement.table.column.lowPriority');
+        }
+
+        return '-';
+      }
+    },
     // {
     //   dataIndex: 'first_appear_timestamp',
     //   title: () => t('sqlManagement.table.column.firstOccurrence'),

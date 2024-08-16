@@ -25,6 +25,8 @@ import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { message } from 'antd';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -39,6 +41,11 @@ const ConfDetail: React.FC = () => {
   );
   const [exporting, { setTrue: exportPending, setFalse: exportDone }] =
     useBoolean();
+
+  const [auditing, { setTrue: auditPending, setFalse: auditDone }] =
+    useBoolean();
+
+  const [messageApi, contextMessageHolder] = message.useMessage();
 
   const {
     data,
@@ -96,6 +103,7 @@ const ConfDetail: React.FC = () => {
         <ScanTypeSqlCollection
           instanceAuditPlanId={id ?? ''}
           auditPlanId={v.audit_plan_type?.audit_plan_id?.toString() ?? ''}
+          auditPlanType={v.audit_plan_type?.type ?? ''}
           activeTabKey={activeKey}
           instanceType={data.instance_type ?? ''}
           exportPending={exportPending}
@@ -117,27 +125,38 @@ const ConfDetail: React.FC = () => {
     eventEmitter.emit(EmitterKey.Export_Sql_Management_Conf_Detail_Sql_List);
   };
 
+  const onAuditImmediately = () => {
+    auditPending();
+    instance_audit_plan
+      .auditPlanTriggerSqlAuditV1({
+        project_name: projectName,
+        instance_audit_plan_id: id ?? '',
+        audit_plan_id: activeKey
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t('managementConf.detail.auditImmediatelySuccessTips')
+          );
+          eventEmitter.emit(
+            EmitterKey.Refresh_Sql_Management_Conf_Detail_Sql_List
+          );
+        }
+      })
+      .finally(() => {
+        auditDone();
+      });
+  };
+
   return (
     <>
+      {contextMessageHolder}
       <PageHeader
         title={t('managementConf.detail.title', {
           instanceName:
             data?.instance_name || t('managementConf.detail.staticScanTypes')
         })}
-        extra={
-          <Space>
-            <BackToConf />
-            <EmptyBox if={activeKey !== SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}>
-              <BasicButton
-                disabled={exporting}
-                onClick={exportScanTypeSqlDetail}
-                type="primary"
-              >
-                {t('managementConf.detail.export')}
-              </BasicButton>
-            </EmptyBox>
-          </Space>
-        }
+        extra={<BackToConf />}
       />
       {error ? (
         <Result
@@ -151,7 +170,28 @@ const ConfDetail: React.FC = () => {
           onChange={handleChangeTable}
           items={items}
           segmentedRowClassName="flex-space-between"
-          segmentedRowExtraContent={<TableRefreshButton refresh={onRefresh} />}
+          segmentedRowExtraContent={
+            <Space>
+              <EmptyBox if={activeKey !== SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}>
+                <Space>
+                  <BasicButton
+                    disabled={exporting}
+                    onClick={exportScanTypeSqlDetail}
+                  >
+                    {t('managementConf.detail.export')}
+                  </BasicButton>
+                  <BasicButton
+                    loading={auditing}
+                    onClick={onAuditImmediately}
+                    type="primary"
+                  >
+                    {t('managementConf.detail.auditImmediately')}
+                  </BasicButton>
+                </Space>
+              </EmptyBox>
+              <TableRefreshButton refresh={onRefresh} />
+            </Space>
+          }
         />
       )}
     </>

@@ -1,8 +1,22 @@
+import { HighPriorityConditionReqOperatorEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 export type ScanTypeParams = {
   ruleTemplateName: string;
-  [key: string]: string | boolean;
+  markHighPrioritySql: boolean;
+  prioritySqlConditions: PrioritySqlConditionsParams;
+  [key: string]: string | boolean | PrioritySqlConditionsParams;
 };
 
+export type HighPriorityConditionParams = {
+  operator: HighPriorityConditionReqOperatorEnum;
+  value: string;
+  checked: boolean;
+};
+
+export type PrioritySqlConditionsParams = Record<
+  string,
+  HighPriorityConditionParams
+>;
 export type SqlManagementConfFormFields = {
   businessScope: string;
   instanceId: string;
