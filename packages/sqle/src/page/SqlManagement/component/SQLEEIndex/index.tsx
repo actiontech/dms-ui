@@ -127,7 +127,7 @@ const SQLEEIndex = () => {
         project_name: projectName,
         filter_assignee: isAssigneeSelf ? uid : undefined, // filter_assignee 需要用 id
         filter_priority: isHighPriority
-          ? GetSqlManageListV2FilterPriorityEnum.hight
+          ? GetSqlManageListV2FilterPriorityEnum.high
           : undefined
       };
       return handleTableRequestError(SqlManage.GetSqlManageListV2(params));
@@ -279,7 +279,7 @@ const SQLEEIndex = () => {
       project_name: projectName,
       filter_assignee: isAssigneeSelf ? uid : undefined,
       filter_priority: isHighPriority
-        ? exportSqlManageV1FilterPriorityEnum.hight
+        ? exportSqlManageV1FilterPriorityEnum.high
         : undefined,
       filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
       filter_rule_name: filter_rule_name?.split(
