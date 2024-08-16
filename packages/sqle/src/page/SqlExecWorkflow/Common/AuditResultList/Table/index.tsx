@@ -125,6 +125,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         onClose={closeAuditResultDrawer}
         auditResultRecord={currentAuditResultRecord}
         dbType={dbType}
+        clickAnalyze={handleClickAnalyze}
       />
     </>
   );

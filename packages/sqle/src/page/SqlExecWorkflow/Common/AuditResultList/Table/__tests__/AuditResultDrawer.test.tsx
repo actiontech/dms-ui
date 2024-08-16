@@ -1,15 +1,24 @@
 import AuditResultDrawer from '../AuditResultDrawer';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { fireEvent, act, cleanup } from '@testing-library/react';
+import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { AuditResultDrawerProps } from '../index.type';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
   const onCloseFn = jest.fn();
+  const clickAnalyzeFn = jest.fn();
 
-  const customRender = (params: Omit<AuditResultDrawerProps, 'onClose'>) => {
-    return superRender(<AuditResultDrawer onClose={onCloseFn} {...params} />);
+  const customRender = (
+    params: Omit<AuditResultDrawerProps, 'onClose' | 'clickAnalyze'>
+  ) => {
+    return superRender(
+      <AuditResultDrawer
+        onClose={onCloseFn}
+        clickAnalyze={clickAnalyzeFn}
+        {...params}
+      />
+    );
   };
 
   beforeEach(() => {
@@ -58,5 +67,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
       }
     });
     expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('分 析'));
+    expect(clickAnalyzeFn).toHaveBeenCalledTimes(1);
   });
 });

@@ -41,6 +41,23 @@ exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] =
                   SQL审核结果
                 </div>
               </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <a
+                  href="/sqle/project//sql-management/249/analyze"
+                  target="blank"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      分 析
+                    </span>
+                  </button>
+                </a>
+              </div>
             </div>
             <div
               class="ant-drawer-body"
@@ -240,6 +257,23 @@ exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
                   SQL审核结果
                 </div>
               </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <a
+                  href="/sqle/project//sql-management/248/analyze"
+                  target="blank"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      分 析
+                    </span>
+                  </button>
+                </a>
+              </div>
             </div>
             <div
               class="ant-drawer-body"
@@ -402,6 +436,23 @@ exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
                 >
                   SQL审核结果
                 </div>
+              </div>
+              <div
+                class="ant-drawer-extra"
+              >
+                <a
+                  href="/sqle/project//sql-management/249/analyze"
+                  target="blank"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      分 析
+                    </span>
+                  </button>
+                </a>
               </div>
             </div>
             <div

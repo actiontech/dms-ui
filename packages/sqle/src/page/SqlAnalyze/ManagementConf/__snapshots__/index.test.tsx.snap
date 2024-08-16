@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
+exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -257,7 +257,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 1`] = `
 </div>
 `;
 
-exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
+exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 2`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -5954,7 +5954,7 @@ exports[`SqlAnalyze/AuditPlan should get analyze data from origin 2`] = `
 </div>
 `;
 
-exports[`SqlAnalyze/AuditPlan should render error result of type "error" when response code is not 8001 1`] = `
+exports[`SqlAnalyze/ManagementConfAnalyze should render error result of type "error" when response code is not 8001 1`] = `
 <div>
   <section
     class="css-doq0dk"
@@ -6055,7 +6055,7 @@ exports[`SqlAnalyze/AuditPlan should render error result of type "error" when re
 </div>
 `;
 
-exports[`SqlAnalyze/AuditPlan should render error result of type "info" when response code is 8001 1`] = `
+exports[`SqlAnalyze/ManagementConfAnalyze should render error result of type "info" when response code is 8001 1`] = `
 <div>
   <section
     class="css-doq0dk"
