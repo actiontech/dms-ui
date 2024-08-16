@@ -66,6 +66,7 @@ const DataSourceSelection: React.FC = () => {
   };
 
   const handleChangeBusiness = (business: string) => {
+    form.resetFields(['instanceName', 'instanceId']);
     if (business) {
       updateInstanceList({
         project_name: projectName,
@@ -101,8 +102,8 @@ const DataSourceSelection: React.FC = () => {
           onSuccess: (list) => {
             const instance = list.find((v) => v.instance_id === id);
             form.setFieldsValue({
-              instanceName: instance?.instance_name,
-              instanceType: instance?.instance_type
+              instanceName: instance?.instance_name ?? '',
+              instanceType: instance?.instance_type ?? ''
             });
           }
         }

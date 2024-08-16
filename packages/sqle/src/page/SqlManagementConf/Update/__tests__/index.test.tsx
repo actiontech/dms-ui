@@ -82,6 +82,8 @@ describe('test sqle/SqlManagementConf/Update', () => {
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
     cleanup();
   });
 
@@ -129,12 +131,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
     fireEvent.click(screen.getByText('自定义'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.queryByText('编辑扫描详情·自定义')).not.toBeInTheDocument();
-    // select ali_rds_mysql_slow_log
-    fireEvent.click(screen.getByText('阿里RDS MySQL慢日志'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(
-      screen.getByText(`编辑扫描详情·阿里RDS MySQL慢日志`)
-    ).toBeInTheDocument();
+
     const aliMysqlLog = mockAuditPlanMetaData[3];
     const planType = aliMysqlLog.audit_plan_type;
     await act(async () => {
@@ -190,6 +187,14 @@ describe('test sqle/SqlManagementConf/Update', () => {
       fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
       await jest.advanceTimersByTime(100);
     });
+
+    expect(screen.getByTestId('audit_level_switch')).not.toBeChecked();
+    expect(screen.getByTestId('row_examined_avg_switch')).toBeChecked();
+    expect(screen.getByTestId('query_time_avg_switch')).toBeChecked();
+
+    fireEvent.click(screen.getByTestId('row_examined_avg_switch'));
+    fireEvent.click(screen.getByTestId('audit_level_switch'));
+
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -237,6 +242,19 @@ describe('test sqle/SqlManagementConf/Update', () => {
             {
               key: 'rds_path',
               value: 'test.com'
+            }
+          ],
+          need_mark_high_priority_sql: true,
+          high_priority_conditions: [
+            {
+              operator: '>',
+              key: 'query_time_avg',
+              value: '0.3'
+            },
+            {
+              operator: '>',
+              key: 'audit_level',
+              value: 'warn'
             }
           ],
           audit_plan_type: 'ali_rds_mysql_slow_log',

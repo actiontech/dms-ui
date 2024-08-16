@@ -18,6 +18,8 @@ import {
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
+  HighPriorityConditionTypeEnum,
+  HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   OperationRecordListStatusEnum,
@@ -85,6 +87,10 @@ export interface IAuditPlan {
 
   audit_plan_type?: string;
 
+  high_priority_conditions?: IHighPriorityConditionReq[];
+
+  need_mark_high_priority_sql?: boolean;
+
   rule_template_name?: string;
 }
 
@@ -102,6 +108,8 @@ export interface IAuditPlanMetaV1 {
   audit_plan_type?: string;
 
   audit_plan_type_desc?: string;
+
+  high_priority_conditions?: IHighPriorityCondition[];
 
   instance_type?: string;
 }
@@ -148,6 +156,10 @@ export interface IAuditPlanRes {
   audit_plan_params?: IAuditPlanParamResV1[];
 
   audit_plan_type?: IAuditPlanTypeResBase;
+
+  high_priority_conditions?: IHighPriorityCondition[];
+
+  need_mark_high_priority_sql?: boolean;
 
   rule_template_name?: string;
 }
@@ -1524,6 +1536,28 @@ export interface IGetWorkflowsResV1 {
   total_nums?: number;
 }
 
+export interface IHighPriorityCondition {
+  desc?: string;
+
+  enums_value?: IEnumsValue[];
+
+  key?: string;
+
+  operator?: IOperator;
+
+  type?: HighPriorityConditionTypeEnum;
+
+  value?: string;
+}
+
+export interface IHighPriorityConditionReq {
+  key?: string;
+
+  operator?: HighPriorityConditionReqOperatorEnum;
+
+  value?: string;
+}
+
 export interface IInstanceAdditionalParamResV1 {
   description?: string;
 
@@ -1740,6 +1774,12 @@ export interface IOperationUser {
   ip?: string;
 
   user_name?: string;
+}
+
+export interface IOperator {
+  operator_enums_value?: IEnumsValue[];
+
+  operator_value?: string;
 }
 
 export interface IOptimizationDetail {

@@ -70,6 +70,12 @@ export default {
 
     scanTypeParams: {
       title: '编辑扫描详情·{{typeName}}',
+      hightPriorityConditions: {
+        mark: '标记高优先级SQL',
+        standard: '标准',
+        threshold: '阈值',
+        operator: '运算符'
+      },
       auditTemplate: {
         ruleTemplate: {
           label: '审核规则模版',

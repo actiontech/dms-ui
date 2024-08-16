@@ -490,6 +490,20 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
               MySQL库表元数据
             </div>
           </label>
+          <label
+            class="ant-segmented-item"
+          >
+            <input
+              class="ant-segmented-item-input"
+              type="radio"
+            />
+            <div
+              class="ant-segmented-item-label"
+              title="阿里RDS MySQL慢日志"
+            >
+              阿里RDS MySQL慢日志
+            </div>
+          </label>
         </div>
       </div>
       <div
