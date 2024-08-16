@@ -160,7 +160,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledWith({
       ...requestParams,
-      filter_priority: GetSqlManageListV2FilterPriorityEnum.hight
+      filter_priority: GetSqlManageListV2FilterPriorityEnum.high
     });
   });
 
@@ -232,7 +232,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       {
         ...exportParams,
         filter_assignee: mockCurrentUserReturn.uid,
-        filter_priority: exportSqlManageV1FilterPriorityEnum.hight
+        filter_priority: exportSqlManageV1FilterPriorityEnum.high
       },
       {
         responseType: 'blob'
