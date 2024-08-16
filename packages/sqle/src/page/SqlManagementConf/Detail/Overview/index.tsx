@@ -1,17 +1,13 @@
 import {
   ActiontechTable,
-  ColumnsSettingProps,
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import {
   ConfDetailOverviewColumnActions,
   ConfDetailOverviewColumns
 } from './column';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ConfDetailOverviewProps } from './index.type';
 import { useRequest } from 'ahooks';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
@@ -30,19 +26,10 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   refreshAuditPlanDetail
 }) => {
   const { t } = useTranslation();
-  const { username } = useCurrentUser();
   const { projectName, projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
 
   const columns = ConfDetailOverviewColumns(projectID);
-
-  const tableSetting = useMemo<ColumnsSettingProps>(
-    () => ({
-      tableName: 'sql_management_conf_detail_overview',
-      username
-    }),
-    [username]
-  );
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -90,7 +77,6 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
         dataSource={data?.list}
         errorMessage={requestErrorMessage}
         columns={columns}
-        setting={tableSetting}
         onRow={(record) => {
           return {
             onClick: () => {

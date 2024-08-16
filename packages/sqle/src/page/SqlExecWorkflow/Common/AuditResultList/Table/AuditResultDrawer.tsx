@@ -2,13 +2,17 @@ import ReportDrawer from '../../../../../components/ReportDrawer';
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { AuditResultDrawerProps } from './index.type';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
+import { BasicButton } from '@actiontech/shared';
+import { useTranslation } from 'react-i18next';
 
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,
   open,
   auditResultRecord,
-  dbType
+  dbType,
+  clickAnalyze
 }) => {
+  const { t } = useTranslation();
   const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     auditResultRecord?.audit_result ?? [],
     dbType ?? ''
@@ -34,6 +38,11 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       }
       showAnnotation
       loading={loading}
+      extra={
+        <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
+          {t('execWorkflow.audit.table.analyze')}
+        </BasicButton>
+      }
     />
   );
 };

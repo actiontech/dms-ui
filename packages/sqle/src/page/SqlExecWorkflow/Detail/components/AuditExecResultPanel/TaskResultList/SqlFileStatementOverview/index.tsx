@@ -167,6 +167,7 @@ const SqlFileStatementOverview: React.FC = () => {
           current: pagination.page_index
         }}
         onChange={tableChange}
+        taskId={taskId}
         isPaginationFixed
       />
     </SqlFileStatementOverviewStyleWrapper>

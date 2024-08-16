@@ -2,7 +2,9 @@ import {
   ActiontechTable,
   TableFilterContainer,
   useTableFilterContainer,
-  useTableRequestParams
+  useTableRequestParams,
+  ColumnsSettingProps,
+  TableToolbar
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
 import ReportDrawer from '../../../../components/ReportDrawer';
@@ -10,13 +12,16 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { ScanTypeSqlCollectionStyleWrapper } from './style';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import {
   ScanTypeSqlCollectionProps,
   ScanTypeSqlTableDataSourceItem
 } from './index.type';
 import useBackendTable from '../../../../hooks/useBackendTable';
-import { SQLRenderer } from '@actiontech/shared';
+import { BasicButton, SQLRenderer } from '@actiontech/shared';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
@@ -37,10 +42,12 @@ import {
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
+import { Link } from 'react-router-dom';
 
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
   auditPlanId,
+  auditPlanType,
   activeTabKey,
   instanceType,
   exportDone,
@@ -52,7 +59,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 
   const [dynamicTableFilterMeta, setDynamicTableFilterMeta] =
     useState<ReturnType<typeof tableFilterMetaFactory>>();
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
+  const { username } = useCurrentUser();
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -252,19 +260,29 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     t
   ]);
 
+  const tableSetting = useMemo<ColumnsSettingProps>(() => {
+    return {
+      tableName: `sql_management_conf_${auditPlanType}`,
+      username: username
+    };
+  }, [username, auditPlanType]);
+
   return (
     <ScanTypeSqlCollectionStyleWrapper>
-      {tableMetas?.filter_meta_list?.length && (
-        <TableFilterContainer
-          filterContainerMeta={filterContainerMeta}
-          updateTableFilterInfo={updateTableFilterInfo}
-          filterCustomProps={dynamicTableFilterMeta?.tableFilterCustomProps}
-        />
-      )}
-      {messageContextHolder}
+      <TableToolbar setting={tableSetting}>
+        {tableMetas?.filter_meta_list?.length && (
+          <TableFilterContainer
+            filterContainerMeta={filterContainerMeta}
+            updateTableFilterInfo={updateTableFilterInfo}
+            filterCustomProps={dynamicTableFilterMeta?.tableFilterCustomProps}
+          />
+        )}
+      </TableToolbar>
 
+      {messageContextHolder}
       <ActiontechTable
         rowKey={(record) => record.sql}
+        setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
         loading={getFilterMetaListLoading || getTableRowLoading}
         columns={sortableTableColumnFactory(tableMetas?.head ?? [], {
@@ -332,7 +350,6 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
           total: tableRows?.total
         }}
       />
-
       <ReportDrawer
         title={t(
           'managementConf.detail.scanTypeSqlCollection.column.sqlAuditResultReportTitle'
@@ -344,6 +361,18 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         open={reportDrawerVisible}
         onClose={closeReportDrawer}
         loading={auditResultInfoLoading}
+        extra={
+          <Link
+            to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}/analyze/${currentAuditResultRecord?.['id']}`}
+            target="blank"
+          >
+            <BasicButton>
+              {t(
+                'managementConf.detail.scanTypeSqlCollection.column.action.analysis'
+              )}
+            </BasicButton>
+          </Link>
+        }
       />
     </ScanTypeSqlCollectionStyleWrapper>
   );

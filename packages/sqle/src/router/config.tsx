@@ -147,6 +147,9 @@ const UpdateSqlManagementConf = React.lazy(
 const SqlManagementConfDetail = React.lazy(
   () => import('../page/SqlManagementConf/Detail')
 );
+const SqlManagementConfAnalyze = React.lazy(
+  () => import('../page/SqlAnalyze/ManagementConf')
+);
 
 //sqle global page
 const Rule = React.lazy(() => import('../page/Rule'));
@@ -252,6 +255,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <SqlManagementConfDetail />,
         key: 'SqlManagementConfDetail',
         path: ':id'
+      },
+      {
+        element: <SqlManagementConfAnalyze />,
+        key: 'SqlManagementConfAnalyze',
+        path: ':instanceAuditPlanId/analyze/:id'
       }
     ]
   },

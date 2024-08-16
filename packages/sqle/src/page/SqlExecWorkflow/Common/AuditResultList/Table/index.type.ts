@@ -15,4 +15,5 @@ export type AuditResultDrawerProps = {
   onClose: () => void;
   auditResultRecord?: IAuditTaskSQLResV2;
   dbType?: string;
+  clickAnalyze: (sqlNum?: number) => void;
 };

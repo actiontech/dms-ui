@@ -42,9 +42,9 @@ const ScanTypesSelection: React.FC = () => {
 
   const getScanTypeMetaPending = !!contextValue?.getScanTypeMetaPending;
   const submitLoading = !!contextValue?.submitLoading;
+  const defaultValue = useContext(ConfFormContext)?.defaultValue;
 
   const instanceName = Form.useWatch('instanceName', form);
-
   const { data: instanceInfo } = useRequest(
     () => {
       return instance
@@ -55,7 +55,8 @@ const ScanTypesSelection: React.FC = () => {
         .then((res) => {
           if (
             selectedScanTypeParams.length > 0 &&
-            res.data.code === ResponseCode.SUCCESS
+            res.data.code === ResponseCode.SUCCESS &&
+            !defaultValue
           ) {
             form.setFieldsValue(
               selectedScanTypeParams.reduce<Record<string, ScanTypeParams>>(
