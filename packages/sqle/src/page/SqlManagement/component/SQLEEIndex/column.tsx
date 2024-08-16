@@ -263,7 +263,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'priority',
       title: () => t('sqlManagement.table.column.priority'),
-      render: (priority: ISqlManage['priority']) => {
+      render: (priority) => {
         if (priority === 'high') {
           return t('sqlManagement.table.column.highPriority');
         }

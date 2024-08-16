@@ -16,14 +16,10 @@ export const PermissionListColumns: () => ActiontechTableColumn<IListOpPermissio
     {
       dataIndex: 'range_type',
       title: () => t('dmsUserCenter.role.opPermissionList.columns.range'),
-      render: (rangeType) => {
-        if (!rangeType) {
-          return '-';
-        }
-        return getOpRangeTypeName(
-          rangeType as unknown as ListMemberRoleWithOpRangeOpRangeTypeEnum
-        );
-      }
+      render: (rangeType) =>
+        getOpRangeTypeName(
+          rangeType as ListMemberRoleWithOpRangeOpRangeTypeEnum | undefined
+        )
     },
     {
       dataIndex: 'description',
