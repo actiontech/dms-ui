@@ -369,11 +369,11 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -705,11 +705,11 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1093,11 +1093,11 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1481,11 +1481,11 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1829,11 +1829,11 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -2177,11 +2177,11 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -2525,11 +2525,11 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
+                    style="margin-bottom: 8px;"
                   >
                     <button
                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"

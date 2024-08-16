@@ -164,7 +164,7 @@ describe('sqle/SqlAudit/Create', () => {
   it('select static audit type', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
@@ -211,7 +211,7 @@ describe('sqle/SqlAudit/Create', () => {
   it('upload sql file', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -265,7 +265,7 @@ describe('sqle/SqlAudit/Create', () => {
   it('upload xml file', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -303,7 +303,7 @@ describe('sqle/SqlAudit/Create', () => {
   it('upload zip file', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -341,7 +341,7 @@ describe('sqle/SqlAudit/Create', () => {
   it('configure git repository', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -389,7 +389,7 @@ describe('sqle/SqlAudit/Create', () => {
   it('reset form values', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -463,7 +463,7 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.click(screen.getByText('新增业务标签'));
 
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('静态审核'));
+    fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('数据库类型')).toBeInTheDocument();

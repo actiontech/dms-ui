@@ -48,7 +48,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
 
   it('should execute updateModalStatus when clicked edit button', () => {
     superRender(<SubmitExportWorkflow />);
-    fireEvent.click(screen.getByText('编辑工单信息'));
+    fireEvent.click(screen.getByText('修改工单'));
     expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledTimes(
       1
     );
@@ -62,7 +62,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     mockUseCreateDataExportReduxManage({ submitLoading: true });
     superRender(<SubmitExportWorkflow />);
 
-    expect(screen.getByText('编辑工单信息').closest('button')).toBeDisabled();
+    expect(screen.getByText('修改工单').closest('button')).toBeDisabled();
     expect(screen.getByText('提交工单').closest('button')).toBeDisabled();
   });
 

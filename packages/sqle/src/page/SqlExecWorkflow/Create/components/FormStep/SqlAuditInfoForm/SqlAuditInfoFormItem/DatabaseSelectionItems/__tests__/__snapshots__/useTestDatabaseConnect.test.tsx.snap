@@ -1,52 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test useTestDatabaseConnect should render test database connect info correctly with connect failed  1`] = `
-<div>
-  <div
-    class="css-dgcbul"
-  >
-    <div
-      class="css-dgcbul"
-    >
-      <svg
-        class="custom-icon"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
-          fill="#F66074"
-        />
-      </svg>
-      未能成功链接到数据源
-    </div>
-  </div>
-</div>
-`;
+exports[`test useTestDatabaseConnect should render test database connect info correctly with connect failed  1`] = `<div />`;
 
 exports[`test useTestDatabaseConnect should render test database connect info correctly with connect succeed  1`] = `
 <div>
   <div
-    class="css-analyi"
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
   >
     <div
-      class="css-analyi"
+      class="ant-space-item"
+      style="margin-right: 8px;"
     >
-      <svg
-        class="custom-icon"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="css-u3jcp4"
       >
-        <path
-          d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-          fill="#1CB889"
-        />
-      </svg>
-      数据源连通性测试成功
+        <svg
+          class="custom-icon"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+            fill="#1CB889"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <span
+        class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+      >
+        <pre>
+          数据源连通性测试成功
+        </pre>
+      </span>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { isString } from 'lodash';
+import { parseExpression } from 'cron-parser';
 
 export const CronErrorMessage: { [key: string]: string } = {
   invalid: 'common.cron.errorMessage.invalid',
@@ -292,4 +293,26 @@ export const parseToCronItemFromNumber = (
     res += `-${prev}`;
   }
   return res;
+};
+
+export const getNextExecutionTimesByCronExpression = (
+  cronExpression: string,
+  currentDate = new Date(),
+  count = 1
+): Array<Date> => {
+  try {
+    const interval = parseExpression(cronExpression, {
+      currentDate
+    });
+
+    const executionTimes: Date[] = [];
+
+    for (let i = 0; i < count; i++) {
+      executionTimes.push(interval.next().toDate());
+    }
+
+    return executionTimes;
+  } catch (error) {
+    throw new Error(`Invalid cron expression: ${error}`);
+  }
 };

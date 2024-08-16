@@ -121,43 +121,48 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
+                      style="margin-bottom: 8px;"
                     >
-                      <section>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                      >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
+                          <span
+                            class="css-u3jcp4"
                           >
-                            <span
-                              class="css-u3jcp4"
+                            <svg
+                              class="custom-icon"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <svg
-                                height="16"
-                                viewBox="0 0 16 16"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
-                                  fill="#1CB889"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <span
-                              class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
-                            >
-                              校验通过
-                            </span>
-                          </div>
+                              <path
+                                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                fill="#1CB889"
+                              />
+                            </svg>
+                          </span>
                         </div>
-                      </section>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+                          >
+                            <pre>
+                              校验通过
+                            </pre>
+                          </span>
+                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
               </div>
@@ -206,6 +211,10 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                         </span>
                       </button>
                     </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    />
                     <div
                       class="ant-space-item"
                     />

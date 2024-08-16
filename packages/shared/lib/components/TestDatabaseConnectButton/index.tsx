@@ -4,12 +4,7 @@ import { useTranslation } from 'react-i18next';
 import EmptyBox from '../EmptyBox';
 import { TestDatabaseConnectButtonProps } from './index.type';
 import BasicButton from '../BasicButton';
-import {
-  TestConnectDisableReasonStyleWrapper,
-  TestConnectResultStyleWrapper
-} from './style';
-import BasicToolTips from '../BasicToolTips';
-import { CloseCircleOutlined, CheckCircleOutlined } from '@actiontech/icons';
+import ReminderInformation from '../ReminderInformation';
 
 const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
   props
@@ -25,7 +20,7 @@ const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
   };
 
   return (
-    <Space>
+    <Space direction="vertical">
       <BasicButton onClick={handleClick} loading={props.loading}>
         {t('common.testDatabaseConnectButton.testDatabaseConnection')}
       </BasicButton>
@@ -36,24 +31,16 @@ const TestDatabaseConnectButton: React.FC<TestDatabaseConnectButtonProps> = (
           </Typography.Link>
         )}
         {!props.loading && props.connectAble && (
-          <TestConnectResultStyleWrapper success>
-            <CheckCircleOutlined className="custom-icon" />
-            {t('common.testDatabaseConnectButton.testSuccess')}
-          </TestConnectResultStyleWrapper>
+          <ReminderInformation
+            status="success"
+            message={t('common.testDatabaseConnectButton.testSuccess')}
+          />
         )}
         {!props.loading && !props.connectAble && (
-          <BasicToolTips
-            title={
-              <TestConnectDisableReasonStyleWrapper>
-                {props.connectDisableReason}
-              </TestConnectDisableReasonStyleWrapper>
-            }
-          >
-            <TestConnectResultStyleWrapper success={false}>
-              <CloseCircleOutlined className="custom-icon" />
-              {t('common.testDatabaseConnectButton.testFailed')}
-            </TestConnectResultStyleWrapper>
-          </BasicToolTips>
+          <ReminderInformation
+            status="error"
+            message={props.connectDisableReason ?? t('common.unknownError')}
+          />
         )}
       </EmptyBox>
     </Space>
