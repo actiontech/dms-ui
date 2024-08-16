@@ -37,10 +37,10 @@ export const ConfDetailOverviewColumns: (
       dataIndex: 'audit_plan_rule_template',
       title: () => t('managementConf.detail.overview.column.auditRuleTemplate'),
       render: (ruleTemplate, record) => {
-        if (!ruleTemplate?.is_global_rule_template || !ruleTemplate.name) {
+        if (!ruleTemplate?.name) {
           return '-';
         }
-        const path = ruleTemplate.is_global_rule_template
+        const path = ruleTemplate?.is_global_rule_template
           ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
           : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
