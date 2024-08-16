@@ -33,7 +33,7 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
     cleanup();
   });
 
-  const selectedScanTypeParamsMock = [
+  const selectedScanTypeParamsMock: SelectScanTypeParamsType = [
     {
       mysql_schema_meta: [
         {
@@ -47,6 +47,46 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
           key: 'collect_view',
           type: AuditPlanParamResV1TypeEnum.bool,
           value: '0'
+        }
+      ]
+    },
+    {
+      ali_rds_mysql_slow_log: [
+        {
+          key: 'db_instance_id',
+          desc: '实例ID',
+          value: '',
+          type: AuditPlanParamResV1TypeEnum.string
+        },
+        {
+          key: 'access_key_id',
+          desc: 'Access Key ID',
+          value: '',
+          type: AuditPlanParamResV1TypeEnum.password
+        },
+        {
+          key: 'access_key_secret',
+          desc: 'Access Key Secret',
+          value: '',
+          type: AuditPlanParamResV1TypeEnum.password
+        },
+        {
+          key: 'first_sqls_scrapped_in_last_period_hours',
+          desc: '启动任务时拉取慢日志时间范围(单位:小时,最大31天)',
+          value: '',
+          type: AuditPlanParamResV1TypeEnum.int
+        },
+        {
+          key: 'audit_sqls_scrapped_in_last_period_minute',
+          desc: '审核过去时间段内抓取的SQL（分钟）',
+          value: '0',
+          type: AuditPlanParamResV1TypeEnum.int
+        },
+        {
+          key: 'rds_path',
+          desc: 'RDS Open API地址',
+          value: 'rds.aliyuncs.com',
+          type: AuditPlanParamResV1TypeEnum.string
         }
       ]
     }
@@ -98,10 +138,10 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
 
   it('render defaultValue is defined', async () => {
     const { baseElement } = customRender(false, selectedScanTypeParamsMock, {
-      businessScope: mockAuditPlanDetailData.business,
-      instanceType: mockAuditPlanDetailData.instance_type,
-      instanceName: mockAuditPlanDetailData.instance_name,
-      instanceId: mockAuditPlanDetailData.instance_id,
+      businessScope: mockAuditPlanDetailData.business!,
+      instanceType: mockAuditPlanDetailData.instance_type!,
+      instanceName: mockAuditPlanDetailData.instance_name!,
+      instanceId: mockAuditPlanDetailData.instance_id!,
       scanTypes: ['mysql_schema_meta'],
       mysql_schema_meta: {
         collect_interval_minute: '61',
