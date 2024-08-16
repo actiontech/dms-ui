@@ -23,7 +23,8 @@ const ReportDrawer = ({
   onClose,
   showAnnotation,
   showSourceFile,
-  loading
+  loading,
+  extra
 }: DetailReportDrawerProps) => {
   const { t } = useTranslation();
 
@@ -50,6 +51,7 @@ const ReportDrawer = ({
         noBodyPadding
         size="large"
         maskClosable
+        extra={extra}
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
           <Spin spinning={loading}>

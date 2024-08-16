@@ -11,9 +11,9 @@ import {
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
+import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 
-const AuditPlanSqlAnalyze = () => {
+const ManagementConfAnalyze = () => {
   const urlParams = useParams<AuditPlanReportSqlAnalyzeUrlParams>();
   const { projectName } = useCurrentProject();
   const [errorMessage, setErrorMessage] = useState<string>('');
@@ -32,11 +32,10 @@ const AuditPlanSqlAnalyze = () => {
   const getSqlAnalyze = useCallback(async () => {
     startGetSqlAnalyze();
     try {
-      const res = await audit_plan.getAuditPlantAnalysisDataV2({
+      const res = await instance_audit_plan.getAuditPlanSqlAnalysisDataV1({
         project_name: projectName,
-        audit_plan_report_id: urlParams.reportId ?? '',
-        number: urlParams.sqlNum ?? '',
-        audit_plan_name: urlParams.auditPlanName ?? ''
+        instance_audit_plan_id: urlParams.instanceAuditPlanId ?? '',
+        id: urlParams.id ?? ''
       });
       if (res.data.code === ResponseCode.SUCCESS) {
         setErrorMessage('');
@@ -57,9 +56,8 @@ const AuditPlanSqlAnalyze = () => {
   }, [
     startGetSqlAnalyze,
     projectName,
-    urlParams.reportId,
-    urlParams.sqlNum,
-    urlParams.auditPlanName,
+    urlParams.instanceAuditPlanId,
+    urlParams.id,
     getSqlAnalyzeFinish
   ]);
 
@@ -79,4 +77,4 @@ const AuditPlanSqlAnalyze = () => {
   );
 };
 
-export default AuditPlanSqlAnalyze;
+export default ManagementConfAnalyze;
