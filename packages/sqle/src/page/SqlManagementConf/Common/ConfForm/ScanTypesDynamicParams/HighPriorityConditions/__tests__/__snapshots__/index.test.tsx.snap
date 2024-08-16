@@ -127,7 +127,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         style="padding-left: 6px; padding-right: 6px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
         >
           <svg
             height="16"
@@ -180,16 +180,16 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                         class="ant-select-selection-search"
                       >
                         <input
-                          aria-activedescendant="prefixPath_prioritySqlConditions_audit_level_booleanOperator_list_0"
+                          aria-activedescendant="prefixPath_prioritySqlConditions_audit_level_operator_list_0"
                           aria-autocomplete="list"
-                          aria-controls="prefixPath_prioritySqlConditions_audit_level_booleanOperator_list"
+                          aria-controls="prefixPath_prioritySqlConditions_audit_level_operator_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="prefixPath_prioritySqlConditions_audit_level_booleanOperator_list"
+                          aria-owns="prefixPath_prioritySqlConditions_audit_level_operator_list"
                           aria-required="true"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
-                          id="prefixPath_prioritySqlConditions_audit_level_booleanOperator"
+                          id="prefixPath_prioritySqlConditions_audit_level_operator"
                           readonly=""
                           role="combobox"
                           style="opacity: 0;"
@@ -384,7 +384,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         style="padding-left: 6px; padding-right: 6px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-1k63323 css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
         >
           <svg
             height="16"
@@ -429,7 +429,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                     aria-required="true"
                     class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                     data-testid="audit_time_operator"
-                    id="prefixPath_prioritySqlConditions_audit_time_booleanOperator"
+                    id="prefixPath_prioritySqlConditions_audit_time_operator"
                     placeholder=""
                     type="text"
                     value=">"

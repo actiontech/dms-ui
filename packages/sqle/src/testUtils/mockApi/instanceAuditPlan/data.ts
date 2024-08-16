@@ -209,9 +209,9 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
         value: '10',
         type: HighPriorityConditionTypeEnum.int,
         enums_value: undefined,
-        boolean_operator: {
-          boolean_operator_value: '\u003e',
-          boolean_operator_enums_value: [
+        operator: {
+          operator_value: '\u003e',
+          operator_enums_value: [
             {
               value: '\u003e',
               desc: '大于'
@@ -233,9 +233,9 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
         value: '100',
         type: HighPriorityConditionTypeEnum.int,
         enums_value: undefined,
-        boolean_operator: {
-          boolean_operator_value: '\u003e',
-          boolean_operator_enums_value: [
+        operator: {
+          operator_value: '\u003e',
+          operator_enums_value: [
             {
               value: '\u003e',
               desc: '大于'
@@ -270,9 +270,9 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
             desc: '错误'
           }
         ],
-        boolean_operator: {
-          boolean_operator_value: '\u003e',
-          boolean_operator_enums_value: [
+        operator: {
+          operator_value: '\u003e',
+          operator_enums_value: [
             {
               value: '\u003e',
               desc: '大于'
@@ -396,7 +396,7 @@ export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
           type: AuditPlanParamResV1TypeEnum.string
         }
       ],
-      mark_high_priority_sql: true,
+      need_mark_high_priority_sql: true,
       high_priority_conditions: [
         {
           key: 'query_time_avg',
@@ -404,9 +404,9 @@ export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
           value: '0.3',
           type: HighPriorityConditionTypeEnum.int,
           enums_value: undefined,
-          boolean_operator: {
-            boolean_operator_value: '\u003e',
-            boolean_operator_enums_value: [
+          operator: {
+            operator_value: '\u003e',
+            operator_enums_value: [
               {
                 value: '\u003e',
                 desc: '大于'
@@ -428,9 +428,9 @@ export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
           value: '0.5',
           type: HighPriorityConditionTypeEnum.int,
           enums_value: undefined,
-          boolean_operator: {
-            boolean_operator_value: '\u003e',
-            boolean_operator_enums_value: [
+          operator: {
+            operator_value: '\u003e',
+            operator_enums_value: [
               {
                 value: '\u003e',
                 desc: '大于'

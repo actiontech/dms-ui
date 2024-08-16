@@ -89,11 +89,11 @@ const HighPriorityConditions: React.FC<Props> = ({
                 <FormItemNoLabel
                   name={generatePriorityConditionsFieldName(
                     item.key!,
-                    'booleanOperator'
+                    'operator'
                   )}
                   {...formItemLayout.fullLine}
                   label=""
-                  initialValue={item.boolean_operator?.boolean_operator_value}
+                  initialValue={item.operator?.operator_value}
                   rules={[
                     {
                       required: getEnabledStatusByKey(item.key!),
@@ -105,12 +105,13 @@ const HighPriorityConditions: React.FC<Props> = ({
                     }
                   ]}
                 >
-                  {item.boolean_operator?.boolean_operator_enums_value ? (
+                  {item.operator?.operator_enums_value ? (
                     <BasicSelect
                       data-testid={`${item.key}_operator`}
-                      options={item.boolean_operator.boolean_operator_enums_value.map(
-                        (v) => ({ label: v.value, value: v.value })
-                      )}
+                      options={item.operator.operator_enums_value.map((v) => ({
+                        label: v.value,
+                        value: v.value
+                      }))}
                       disabled={
                         !getEnabledStatusByKey(item.key!) || submitLoading
                       }
@@ -195,7 +196,7 @@ const HighPriorityConditions: React.FC<Props> = ({
                       form.setFieldValue(
                         generatePriorityConditionsFieldName(
                           item.key!,
-                          'booleanOperator'
+                          'operator'
                         ),
                         undefined
                       );
@@ -207,9 +208,9 @@ const HighPriorityConditions: React.FC<Props> = ({
                       form.setFieldValue(
                         generatePriorityConditionsFieldName(
                           item.key!,
-                          'booleanOperator'
+                          'operator'
                         ),
-                        item.boolean_operator?.boolean_operator_value
+                        item.operator?.operator_value
                       );
                       form.setFieldValue(
                         generatePriorityConditionsFieldName(item.key!, 'value'),

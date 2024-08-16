@@ -8,8 +8,8 @@ describe('test HighPriorityConditions', () => {
   const prefixPath = 'prefixPath';
   const conditionsValue: IHighPriorityCondition[] = [
     {
-      boolean_operator: {
-        boolean_operator_enums_value: [
+      operator: {
+        operator_enums_value: [
           { desc: '大于', value: '>' },
           {
             desc: '等于',
@@ -20,7 +20,7 @@ describe('test HighPriorityConditions', () => {
             value: '<'
           }
         ],
-        boolean_operator_value: '>'
+        operator_value: '>'
       },
       desc: '审核等级',
       enums_value: [
@@ -31,9 +31,9 @@ describe('test HighPriorityConditions', () => {
       value: 'warn'
     },
     {
-      boolean_operator: {
-        boolean_operator_enums_value: undefined,
-        boolean_operator_value: '>'
+      operator: {
+        operator_enums_value: undefined,
+        operator_value: '>'
       },
       desc: '审核时间',
       enums_value: undefined,

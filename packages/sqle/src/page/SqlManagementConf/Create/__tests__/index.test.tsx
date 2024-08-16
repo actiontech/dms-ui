@@ -275,17 +275,17 @@ describe('test sqle/SqlManagementConf/Create', () => {
           ],
           high_priority_conditions: [
             {
-              boolean_operator: '>',
+              operator: '>',
               key: 'row_examined_avg',
               value: '100'
             },
             {
-              boolean_operator: '>',
+              operator: '>',
               key: 'audit_level',
               value: 'warn'
             }
           ],
-          mark_high_priority_sql: true,
+          need_mark_high_priority_sql: true,
           audit_plan_type: 'ali_rds_mysql_slow_log',
           rule_template_name: 'default_MySQL'
         },

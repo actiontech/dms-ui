@@ -190,7 +190,7 @@ export enum HighPriorityConditionTypeEnum {
   'password' = 'password'
 }
 
-export enum HighPriorityConditionReqBooleanOperatorEnum {
+export enum HighPriorityConditionReqOperatorEnum {
   '>' = '>',
 
   '=' = '=',
