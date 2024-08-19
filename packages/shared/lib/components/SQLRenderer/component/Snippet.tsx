@@ -19,7 +19,8 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
   highlightSyntax = true,
   sql,
   onCopyComplete,
-  copyIconClassName
+  copyIconClassName,
+  maxLength
 }) => {
   const { renderSQLTemplateContent } = useRenderSQLTemplate({
     showLineNumbers: false,
@@ -34,7 +35,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
     onCopyComplete,
     copyIconClassName
   });
-
+  const slicedSql = sql ? sql.slice(0, maxLength) : '';
   const render = () => {
     const content = (
       <SQLRendererStyleWrapper
@@ -47,7 +48,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
         )}
         onClick={onClick}
       >
-        {sql ? (
+        {slicedSql ? (
           <Typography.Paragraph
             ellipsis={{
               expandable: false,
@@ -64,7 +65,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
           >
             <span
               dangerouslySetInnerHTML={{
-                __html: HighlightCode.highlightSql(sql)
+                __html: HighlightCode.highlightSql(slicedSql)
               }}
             />
           </Typography.Paragraph>

@@ -599,6 +599,109 @@ exports[`test SQLRenderer.Snippet render snap when loading is not undefined 2`] 
 </div>
 `;
 
+exports[`test SQLRenderer.Snippet render snap when maxLength is 200 1`] = `
+<div>
+  <div
+    class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+  >
+    <div
+      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+    >
+      <span>
+        <span
+          class="hljs-keyword"
+        >
+          CREATE
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          TABLE
+        </span>
+         IF 
+        <span
+          class="hljs-keyword"
+        >
+          NOT
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          EXISTS
+        </span>
+        
+    task (
+      id 
+        <span
+          class="hljs-type"
+        >
+          BIGINT
+        </span>
+         UNSIGNED AUTO_INCREMENT 
+        <span
+          class="hljs-keyword"
+        >
+          PRIMARY
+        </span>
+         KEY,
+      title 
+        <span
+          class="hljs-type"
+        >
+          VARCHAR
+        </span>
+        (
+        <span
+          class="hljs-number"
+        >
+          255
+        </span>
+        ) 
+        <span
+          class="hljs-keyword"
+        >
+          NOT
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          NULL
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          DEFAULT
+        </span>
+         
+        <span
+          class="hljs-string"
+        >
+          ''
+        </span>
+        ,
+      description TEXT,
+      status ENUM(
+        <span
+          class="hljs-string"
+        >
+          'pending'
+        </span>
+        , 
+        <span
+          class="hljs-string"
+        >
+          'completed
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`test SQLRenderer.Snippet render snap when tooltip is equal false 1`] = `
 <div>
   <div

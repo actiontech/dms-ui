@@ -14,7 +14,14 @@ export const WhitelistColumn =
         className: 'ellipsis-column-width',
         render: (sql?: string) => {
           if (!!sql) {
-            return <SQLRenderer.Snippet sql={sql} rows={2} showCopyIcon />;
+            return (
+              <SQLRenderer.Snippet
+                sql={sql}
+                rows={2}
+                showCopyIcon
+                maxLength={200}
+              />
+            );
           }
           return null;
         }

@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { SQLRendererProps } from '../index.type';
 import { useCallback } from 'react';
 import CopyIcon from '../../CopyIcon';
+import Copy from '../../../utils/Copy';
 
 const useRenderCopyIcon = (
   params: Pick<
@@ -15,14 +16,23 @@ const useRenderCopyIcon = (
       return null;
     }
 
+    const onCopyExecSql = () => {
+      try {
+        navigator.clipboard.writeText(sql);
+      } catch (err) {
+        Copy.copyTextByTextarea(sql);
+      }
+    };
+
     return (
       <CopyIcon
         text={sql}
-        onCopy={onCopyComplete}
+        onCopyComplete={onCopyComplete}
         className={classNames(
           copyIconClassName,
           'actiontech-sql-renderer-copy-icon'
         )}
+        onCustomCopy={onCopyExecSql}
       />
     );
   }, [copyIconClassName, onCopyComplete, showCopyIcon, sql]);

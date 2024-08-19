@@ -100,6 +100,11 @@ export type SQLSnippetRendererProps = Omit<
    * 继承 antd 的 paragraph
    */
   paragraph?: ParagraphProps;
+  /**
+   * 最大展示长度
+   * default value: 200
+   */
+  maxLength?: number;
 };
 
 export type SQLViewOnlyEditorRendererProps = {

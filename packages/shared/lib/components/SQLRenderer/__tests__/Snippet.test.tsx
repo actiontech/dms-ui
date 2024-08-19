@@ -62,4 +62,9 @@ describe('test SQLRenderer.Snippet', () => {
       customRender({ sql: '', emptySqlContent: 'empty' }).container
     ).toMatchSnapshot();
   });
+
+  it('render snap when maxLength is 200', () => {
+    const { container } = customRender({ maxLength: 200 });
+    expect(container).toMatchSnapshot();
+  });
 });

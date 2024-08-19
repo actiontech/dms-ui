@@ -3,6 +3,7 @@ import { getBySelector, queryBySelector } from '../../../testUtil/customQuery';
 import { superRender } from '../../../testUtil/customRender';
 import SQLRenderer from '../SQLRenderer';
 import { SQLRendererProps } from '../index.type';
+import { act } from '@testing-library/react';
 
 describe('test SQLRenderer', () => {
   const customRender = (params?: Partial<SQLRendererProps>) => {
@@ -21,7 +22,7 @@ describe('test SQLRenderer', () => {
       />
     );
   };
-  it('render showCopyIcon is equal true', () => {
+  it('render showCopyIcon is equal true', async () => {
     document.execCommand = jest.fn();
     const onCopyComplete = jest.fn();
     customRender({
@@ -36,9 +37,30 @@ describe('test SQLRenderer', () => {
 
     expect(getBySelector('.custom-copy-icon')).toBeInTheDocument();
 
-    fireEvent.click(getBySelector('.custom-copy-icon'));
+    await act(async () => {
+      fireEvent.click(getBySelector('.custom-copy-icon'));
+    });
 
     expect(onCopyComplete).toHaveBeenCalledTimes(1);
+
+    const writeText = jest.fn();
+
+    Object.assign(navigator, {
+      clipboard: {
+        writeText
+      }
+    });
+
+    await act(async () => {
+      fireEvent.click(getBySelector('.custom-copy-icon'));
+    });
+
+    expect(writeText).toHaveBeenCalledTimes(1);
+    expect(onCopyComplete).toHaveBeenCalledTimes(2);
+
+    Object.assign(navigator, {
+      clipboard: undefined
+    });
   });
 
   it('render showCopyIcon is equal hover', () => {
