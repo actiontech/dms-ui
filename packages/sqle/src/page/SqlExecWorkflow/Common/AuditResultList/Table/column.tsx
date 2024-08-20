@@ -1,7 +1,4 @@
-import {
-  IAuditResult,
-  IAuditTaskSQLResV2
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
@@ -43,7 +40,7 @@ export const AuditResultForCreateWorkflowColumn = (
       dataIndex: 'audit_result',
       title: () => t('execWorkflow.audit.table.auditResult'),
       className: 'audit-result-column',
-      render: (result: IAuditResult[], record) => {
+      render: (result = [], record) => {
         return (
           <div onClick={() => onClickAuditResult(record)}>
             {result?.length > 1 ? (
@@ -67,7 +64,7 @@ export const AuditResultForCreateWorkflowColumn = (
       dataIndex: 'description',
       title: () => t('execWorkflow.audit.table.describe'),
       className: 'audit-result-describe-column',
-      render: (description: string, record) => {
+      render: (description, record) => {
         return (
           <EditText
             editButtonProps={{
@@ -88,7 +85,7 @@ export const AuditResultForCreateWorkflowColumn = (
               },
               rows: 1
             }}
-            value={description}
+            value={description ?? ''}
           />
         );
       }

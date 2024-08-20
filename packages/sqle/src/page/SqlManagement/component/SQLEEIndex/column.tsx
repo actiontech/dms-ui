@@ -8,14 +8,9 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
-import {
-  IAuditResult,
-  ISource,
-  ISqlManage
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../components/AuditResultMessage';
-import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
 import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
@@ -210,7 +205,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'source',
       title: () => t('sqlManagement.table.column.source'),
-      render: (source: ISource) => {
+      render: (source) => {
         //todo 本期只支持跳转至 sql管控配置，后续调整
         if (source && source.sql_source_id && source.sql_source_type) {
           return (
@@ -228,7 +223,7 @@ const SqlManagementColumn: (
       dataIndex: 'audit_result',
       width: 200,
       title: () => t('sqlManagement.table.column.auditResult'),
-      render: (result: IAuditResult[], record) => {
+      render: (result = [], record) => {
         return (
           <div
             onClick={() =>
@@ -270,7 +265,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'priority',
       title: () => t('sqlManagement.table.column.priority'),
-      render: (priority: ISqlManage['priority']) => {
+      render: (priority) => {
         if (priority === 'high') {
           return t('sqlManagement.table.column.highPriority');
         }
@@ -310,7 +305,7 @@ const SqlManagementColumn: (
       dataIndex: 'assignees',
       title: () => t('sqlManagement.table.column.personInCharge'),
       width: 200,
-      render: (assignees: string[]) => {
+      render: (assignees) => {
         if (!Array.isArray(assignees)) {
           return '-';
         }
@@ -329,7 +324,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'endpoints',
       title: () => t('sqlManagement.table.column.endpoints'),
-      render: (endpoints: ISqlManage['endpoints']) => {
+      render: (endpoints) => {
         if (!endpoints) {
           return '-';
         }
@@ -340,7 +335,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'status',
       title: () => t('sqlManagement.table.column.status'),
-      render: (status: SqlManageStatusEnum) => {
+      render: (status) => {
         if (!status) return '-';
         return <StatusTag status={status} />;
       }
@@ -349,12 +344,12 @@ const SqlManagementColumn: (
       dataIndex: 'remark',
       title: () => t('sqlManagement.table.column.comment'),
       className: 'ellipsis-column-width',
-      render: (remark: string, record) => {
+      render: (remark, record) => {
         if (!hasPermissionAndNotArchive)
           return remark ? <BasicTypographyEllipsis textCont={remark} /> : '-';
         return (
           <EditText
-            value={remark}
+            value={remark ?? ''}
             editable={{
               autoSize: true,
               onEnd: (val) => {

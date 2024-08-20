@@ -328,15 +328,29 @@ export type InlineActiontechTableMoreActionsButtonMeta<
  * 表格 columns props, 当配置 filterCustomType 和 filterKey 启用该列的筛选功能, 通过 useTableFilterContainer 来生成 筛选项的元数据
  * 当需要添加表格列以外的筛选列时, 可以使用 useTableFilterContainer 的第三个参数: extraFilterMeta
  */
+type ExcludeSymbol<T> = T extends symbol ? never : T;
 export type ActiontechTableColumn<
   T = Record<string, any>,
   F = Record<string, any>,
-  OtherColumnKeys extends string = ''
+  OtherColumnKeys extends string = never
 > = Array<
-  (ColumnGroupType<T> | ColumnType<T>) & {
-    dataIndex: keyof T | OtherColumnKeys;
-    show?: boolean;
-  } & Pick<ActiontechTableFilterMetaValue<F>, 'filterCustomType' | 'filterKey'>
+  Omit<ColumnGroupType<T> | ColumnType<T>, 'render' | 'dataIndex'> &
+    {
+      [K in keyof Required<T>]: {
+        show?: boolean;
+        dataIndex: ExcludeSymbol<K | OtherColumnKeys>;
+        render?: (
+          value: K | OtherColumnKeys extends keyof T ? T[K] : never,
+          record: T,
+          index: number
+        ) => ColumnType<T>['render'] extends (...args: any) => infer R
+          ? R
+          : React.ReactNode;
+      } & Pick<
+        ActiontechTableFilterMetaValue<F>,
+        'filterCustomType' | 'filterKey'
+      >;
+    }[keyof Required<T>]
 >;
 
 export interface ActiontechTableProps<

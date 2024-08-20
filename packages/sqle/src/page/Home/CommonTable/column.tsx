@@ -37,7 +37,7 @@ export const commonColumn: (
       title: () => t('home.sqlExecWorkflow.desc'),
       className: 'dashboard-common-list-table-desc-column',
       width: '45%',
-      render: (desc: string, record: IWorkflowDetailResV1) =>
+      render: (desc, record) =>
         desc ? (
           <BasicTypographyEllipsis
             textCont={desc}

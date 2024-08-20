@@ -2,10 +2,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../../../../locale';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
-import {
-  IAuditSQLResult,
-  IListDataExportTaskSQL
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import { SQLRenderer } from '@actiontech/shared';
 
 export const AuditResultForCreateOrderColumn = (
@@ -37,13 +34,13 @@ export const AuditResultForCreateOrderColumn = (
     {
       dataIndex: 'export_sql_type',
       title: () => t('dmsDataExport.common.auditResult.column.sqlType'),
-      render: (type: string) => type || '-'
+      render: (type) => type || '-'
     },
     {
       dataIndex: 'audit_sql_result',
       title: () => t('dmsDataExport.common.auditResult.column.auditResult'),
       className: 'audit-result-column',
-      render: (result: IAuditSQLResult[], record) => {
+      render: (result = [], record) => {
         return (
           <div onClick={() => onClickAuditResult(record)}>
             {result?.length > 1 ? (

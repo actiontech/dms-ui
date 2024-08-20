@@ -1,8 +1,5 @@
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
-import {
-  IListOpPermission,
-  IUidWithName
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import { t } from '../../../../locale';
 import { getOpRangeTypeName } from '../../../../hooks/useOpPermission/index.data';
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
@@ -12,15 +9,17 @@ export const PermissionListColumns: () => ActiontechTableColumn<IListOpPermissio
     {
       dataIndex: 'op_permission',
       title: () => t('dmsUserCenter.role.opPermissionList.columns.name'),
-      render: (opPermission: IUidWithName) => {
+      render: (opPermission) => {
         return opPermission?.name ?? '';
       }
     },
     {
       dataIndex: 'range_type',
       title: () => t('dmsUserCenter.role.opPermissionList.columns.range'),
-      render: (rangeType: ListMemberRoleWithOpRangeOpRangeTypeEnum) =>
-        getOpRangeTypeName(rangeType)
+      render: (rangeType) =>
+        getOpRangeTypeName(
+          rangeType as ListMemberRoleWithOpRangeOpRangeTypeEnum | undefined
+        )
     },
     {
       dataIndex: 'description',

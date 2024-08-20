@@ -118,7 +118,7 @@ export const RuleTemplateTableColumn: (
     {
       dataIndex: 'rule_template_name',
       title: () => t('ruleTemplate.ruleTemplateList.table.templateName'),
-      render(name: string, record) {
+      render(name, record) {
         if (!name) {
           return '';
         }
@@ -141,7 +141,7 @@ export const RuleTemplateTableColumn: (
       dataIndex: 'desc',
       title: () => t('ruleTemplate.ruleTemplateList.table.desc'),
       className: 'ellipsis-column-width',
-      render: (desc: string) => {
+      render: (desc) => {
         if (!desc) return '-';
         return <BasicTypographyEllipsis textCont={desc} />;
       }
@@ -149,7 +149,7 @@ export const RuleTemplateTableColumn: (
     {
       dataIndex: 'db_type',
       title: () => t('ruleTemplate.ruleTemplateList.table.dbType'),
-      render(type: string) {
+      render(type) {
         if (!type) {
           return '-';
         }

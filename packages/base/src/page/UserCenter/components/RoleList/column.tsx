@@ -1,7 +1,4 @@
-import {
-  IListRole,
-  IUidWithName
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
@@ -24,14 +21,14 @@ export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
     dataIndex: 'desc',
     title: () => t('dmsUserCenter.role.roleForm.desc'),
     className: 'ellipsis-column-width',
-    render: (desc: string) => {
+    render: (desc) => {
       return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
     }
   },
   {
     dataIndex: 'stat',
     title: () => t('common.status'),
-    render: (stat: ListRoleStatEnum) => {
+    render: (stat) => {
       return (
         <TableColumnWithIconStyleWrapper>
           {stat === ListRoleStatEnum.被禁用 ? (
@@ -47,7 +44,7 @@ export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
   {
     dataIndex: 'op_permissions',
     title: () => t('dmsUserCenter.role.roleForm.opPermissions'),
-    render: (list: IUidWithName[]) => {
+    render: (list) => {
       if (!Array.isArray(list)) {
         return '-';
       }

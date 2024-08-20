@@ -105,7 +105,13 @@ const useTableAction = () => {
   const renderActionInTable = useCallback(
     <T extends Record<string, any>>(
       actions: ActiontechTableProps<T>['actions']
-    ): ActiontechTableColumn<T>[0] | undefined => {
+    ):
+      | ActiontechTableColumn<
+          T,
+          Record<string, any>,
+          typeof ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
+        >[0]
+      | undefined => {
       if (Array.isArray(actions)) {
         if (actions.length === 0) {
           return;
