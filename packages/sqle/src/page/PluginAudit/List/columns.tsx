@@ -2,10 +2,7 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import {
-  ISqlDEVRecord,
-  IAuditResult
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetSqlDEVRecordListParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
 import { t } from '../../../locale';
 import ResultIconRender from '../../../components/AuditResultMessage/ResultIconRender';
@@ -76,7 +73,7 @@ export const PluginAuditListColumns: (
       dataIndex: 'audit_result',
       title: () => t('pluginAudit.table.result'),
       width: 300,
-      render: (result: IAuditResult[], record) => {
+      render: (result = [], record) => {
         return (
           <div
             onClick={() => onOpenDrawer(record)}

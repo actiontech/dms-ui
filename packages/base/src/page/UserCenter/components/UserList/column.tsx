@@ -1,7 +1,4 @@
-import {
-  IListUser,
-  IUidWithName
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableColumn,
   ActiontechTableActionMeta
@@ -21,21 +18,21 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
     dataIndex: 'email',
     title: () => t('dmsUserCenter.user.userForm.email'),
-    render: (text: string) => {
+    render: (text) => {
       return text || '-';
     }
   },
   {
     dataIndex: 'phone',
     title: () => t('dmsUserCenter.user.userForm.phone'),
-    render: (text: string) => {
+    render: (text) => {
       return text || '-';
     }
   },
   {
     dataIndex: 'stat',
     title: () => t('dmsUserCenter.user.userList.columns.status'),
-    render: (status: ListUserStatEnum) => {
+    render: (status) => {
       return (
         <TableColumnWithIconStyleWrapper>
           {status === ListUserStatEnum.被禁用 ? (
@@ -55,7 +52,7 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
     dataIndex: 'op_permissions',
     title: () => t('dmsUserCenter.user.userForm.opPermissions'),
-    render: (list: IUidWithName[]) => {
+    render: (list) => {
       if (!Array.isArray(list)) {
         return '-';
       }

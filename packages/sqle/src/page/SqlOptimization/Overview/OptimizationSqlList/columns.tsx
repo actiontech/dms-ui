@@ -65,6 +65,9 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
         title: () =>
           t('sqlOptimization.overview.sqlTable.performanceImprovement'),
         render: (performance) => {
+          if (!performance) {
+            return '-';
+          }
           return isNaN(performance) ? '-' : `${floatToPercent(performance)}%`;
         }
       },

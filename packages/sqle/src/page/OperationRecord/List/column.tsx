@@ -1,9 +1,5 @@
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import {
-  IOperationRecordList,
-  IOperationUser
-} from '@actiontech/shared/lib/api/sqle/service/common';
-import { OperationRecordListStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IOperationRecordList } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
@@ -34,7 +30,10 @@ export const OperationRecordListColumn: ActiontechTableColumn<
   {
     dataIndex: 'operation_user',
     title: () => t('operationRecord.list.column.operator'),
-    render: (userInfo: IOperationUser) => {
+    render: (userInfo) => {
+      if (!userInfo) {
+        return '-';
+      }
       return `${userInfo.user_name ?? ''}  ${userInfo.ip ?? ''}`;
     },
     width: 300
@@ -67,7 +66,10 @@ export const OperationRecordListColumn: ActiontechTableColumn<
   {
     dataIndex: 'status',
     title: () => t('operationRecord.list.column.status'),
-    render: (status: OperationRecordListStatusEnum) => {
+    render: (status) => {
+      if (!status) {
+        return '-';
+      }
       return <OperationStatus status={status} />;
     },
     width: 180

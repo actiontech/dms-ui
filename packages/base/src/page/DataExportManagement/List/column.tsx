@@ -53,7 +53,7 @@ export const ExportWorkflowListColumn: (
       dataIndex: 'workflow_uid',
       title: () => t('dmsDataExport.list.column.id'),
       className: 'ellipsis-column-width',
-      render: (id: string) => {
+      render: (id) => {
         return (
           <TableColumnWithIconStyleWrapper>
             <BriefcaseFilled width={14} height={14} />
@@ -67,7 +67,7 @@ export const ExportWorkflowListColumn: (
       dataIndex: 'workflow_name',
       title: () => t('dmsDataExport.list.column.name'),
       className: 'ellipsis-column-width',
-      render: (name: string) => {
+      render: (name) => {
         return name ? (
           <BasicTypographyEllipsis copyable={false} textCont={name} />
         ) : (
@@ -79,7 +79,7 @@ export const ExportWorkflowListColumn: (
       dataIndex: 'desc',
       title: () => t('dmsDataExport.list.column.desc'),
       className: 'ellipsis-column-width-large',
-      render: (desc: string, record: IListDataExportWorkflow) =>
+      render: (desc, record) =>
         desc ? (
           <BasicTypographyEllipsis
             textCont={desc}
@@ -106,7 +106,7 @@ export const ExportWorkflowListColumn: (
     {
       dataIndex: 'creater',
       title: () => t('dmsDataExport.list.column.createUser'),
-      render: (user: IListDataExportWorkflow['creater']) => {
+      render: (user) => {
         return user?.name ?? '-';
       },
       filterCustomType: 'select',
@@ -115,7 +115,7 @@ export const ExportWorkflowListColumn: (
     {
       dataIndex: 'status',
       title: () => t('dmsDataExport.list.column.status'),
-      render: (status: IListDataExportWorkflow['status']) => {
+      render: (status) => {
         return <WorkflowStatus status={status} />;
       }
     },
@@ -124,9 +124,7 @@ export const ExportWorkflowListColumn: (
       title: () => t('dmsDataExport.list.column.assignee'),
       filterCustomType: 'select',
       filterKey: 'filter_current_step_assignee_user_uid',
-      render: (
-        list: IListDataExportWorkflow['current_step_assignee_user_list']
-      ) => {
+      render: (list) => {
         if (!list || list.length === 0) {
           return '-';
         }

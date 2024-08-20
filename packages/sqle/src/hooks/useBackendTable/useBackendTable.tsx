@@ -87,8 +87,10 @@ const useBackendTable = () => {
           type?: string
         ) => React.ReactNode;
       }
-    ): ActiontechTableColumn<DataSourceItem> => {
-      return head.map<ActiontechTableColumn<DataSourceItem>[0]>((cell) => {
+    ): ActiontechTableColumn<DataSourceItem, Record<string, any>, string> => {
+      return head.map<
+        ActiontechTableColumn<DataSourceItem, Record<string, any>, string>[0]
+      >((cell) => {
         const renderMethod = (text: string, record: DataSourceItem) => {
           if (options?.customRender) {
             return options?.customRender?.(
@@ -105,7 +107,6 @@ const useBackendTable = () => {
           typeof options?.columnClassName === 'function'
             ? options.columnClassName(cell.type)
             : options?.columnClassName;
-
         return {
           dataIndex: cell.field_name ?? '',
           title: (cell.desc || cell.field_name) ?? '',
