@@ -723,6 +723,7 @@ export const mockAuditPlanSQLMeta: IAuditPlanSQLMetaResV1 = {
 export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
   rows: [
     {
+      id: '1',
       audit_results: 'null',
       counter: '598',
       db_user: '',
@@ -735,6 +736,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
       sql: '/* ApplicationName=DBeaver 24.1.2 - SQLEditor \u003cConsole\u003e */ select 1,SLEEP(11)\nLIMIT 0, 200'
     },
     {
+      id: '12',
       audit_results: 'null',
       counter: '299',
       db_user: '',
@@ -747,6 +749,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
       sql: '/* ApplicationName=DBeaver 24.1.2 - SQLEditor \u003cConsole\u003e */ select 1,1,1,1,1,SLEEP(11)\nLIMIT 0, 200'
     },
     {
+      id: '123',
       audit_results: 'null',
       counter: '299',
       db_user: '',
@@ -759,6 +762,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
       sql: '/* ApplicationName=DBeaver 24.1.2 - SQLEditor \u003cConsole\u003e */ SELECT SLEEP(11) \nLIMIT 0, 200'
     },
     {
+      id: '1234',
       audit_results:
         '[{"level": "warn", "message": "语法错误或者解析器不支持，请人工确认SQL正确性", "rule_name": ""}]',
       counter: '2388',
@@ -772,6 +776,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
       sql: 'Prepare'
     },
     {
+      id: '12345',
       audit_results: 'null',
       counter: '8559',
       db_user: '',
@@ -784,6 +789,7 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
       sql: 'COMMIT'
     },
     {
+      id: '123456',
       audit_results: 'null',
       counter: '299',
       db_user: '',
