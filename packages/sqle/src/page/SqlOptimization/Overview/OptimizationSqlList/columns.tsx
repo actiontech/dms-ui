@@ -27,7 +27,7 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
               showCopyIcon
               sql={original_sql}
               rows={1}
-              maxLength={200}
+              cuttingLength={200}
             />
           );
         }

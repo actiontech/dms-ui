@@ -182,7 +182,7 @@ const SqlManagementColumn: (
             sql={sql_fingerprint}
             rows={2}
             showCopyIcon
-            maxLength={200}
+            cuttingLength={200}
           />
         );
       }
@@ -202,7 +202,7 @@ const SqlManagementColumn: (
             sql={sql}
             rows={2}
             showCopyIcon
-            maxLength={200}
+            cuttingLength={200}
           />
         );
       }

@@ -66,7 +66,7 @@ export const CBOperationListColumns = (
               rows={1}
               tooltip={false}
               showCopyIcon
-              maxLength={200}
+              cuttingLength={200}
             />
           );
         }

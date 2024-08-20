@@ -31,7 +31,7 @@ export const SQLStatementResultColumns = (
             rows={1}
             tooltip={false}
             onClick={() => onClickAuditResult(record)}
-            maxLength={200}
+            cuttingLength={200}
           />
         );
       }

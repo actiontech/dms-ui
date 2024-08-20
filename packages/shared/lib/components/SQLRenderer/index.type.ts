@@ -101,10 +101,9 @@ export type SQLSnippetRendererProps = Omit<
    */
   paragraph?: ParagraphProps;
   /**
-   * 最大展示长度
-   * default value: 200
+   * 需要截取的切片长度
    */
-  maxLength?: number;
+  cuttingLength?: number;
 };
 
 export type SQLViewOnlyEditorRendererProps = {

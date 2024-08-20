@@ -63,8 +63,8 @@ describe('test SQLRenderer.Snippet', () => {
     ).toMatchSnapshot();
   });
 
-  it('render snap when maxLength is 200', () => {
-    const { container } = customRender({ maxLength: 200 });
+  it('render snap when cuttingLength is 200', () => {
+    const { container } = customRender({ cuttingLength: 200 });
     expect(container).toMatchSnapshot();
   });
 });
