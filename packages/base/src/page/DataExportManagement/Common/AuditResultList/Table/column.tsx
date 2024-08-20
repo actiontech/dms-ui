@@ -29,6 +29,7 @@ export const AuditResultForCreateOrderColumn = (
             tooltip={false}
             onClick={() => onClickAuditResult(record)}
             showCopyIcon
+            cuttingLength={200}
           />
         );
       }
