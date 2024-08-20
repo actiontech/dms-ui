@@ -6,6 +6,8 @@ import { SQLRendererStyleWrapper } from '../style';
 import { Spin, Typography } from 'antd';
 import { tooltipsCommonProps } from '../../BasicToolTips';
 import HighlightCode from '../../../utils/HighlightCode';
+import { useMemo } from 'react';
+import { isNumber } from 'lodash';
 
 const Snippet: React.FC<SQLSnippetRendererProps> = ({
   rows = 10,
@@ -35,7 +37,14 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
     onCopyComplete,
     copyIconClassName
   });
-  const slicedSql = sql && cuttingLength ? sql.slice(0, cuttingLength) : sql;
+
+  const slicedSql = useMemo(() => {
+    if (isNumber(cuttingLength)) {
+      return sql?.slice(0, cuttingLength);
+    }
+    return sql;
+  }, [cuttingLength, sql]);
+
   const render = () => {
     const content = (
       <SQLRendererStyleWrapper
