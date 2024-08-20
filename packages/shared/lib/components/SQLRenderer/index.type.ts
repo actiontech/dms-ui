@@ -100,6 +100,10 @@ export type SQLSnippetRendererProps = Omit<
    * 继承 antd 的 paragraph
    */
   paragraph?: ParagraphProps;
+  /**
+   * 需要截取的切片长度
+   */
+  cuttingLength?: number;
 };
 
 export type SQLViewOnlyEditorRendererProps = {

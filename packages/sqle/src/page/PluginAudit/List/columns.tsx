@@ -36,6 +36,7 @@ export const PluginAuditListColumns: (
             sql={sql_fingerprint}
             rows={2}
             showCopyIcon
+            cuttingLength={200}
           />
         );
       }
@@ -53,6 +54,7 @@ export const PluginAuditListColumns: (
             rows={2}
             tooltip={false}
             showCopyIcon
+            cuttingLength={200}
           />
         );
       }

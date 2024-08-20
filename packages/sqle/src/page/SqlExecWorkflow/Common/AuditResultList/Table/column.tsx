@@ -34,6 +34,7 @@ export const AuditResultForCreateWorkflowColumn = (
             tooltip={false}
             onClick={() => onClickAuditResult(record)}
             showCopyIcon
+            cuttingLength={200}
           />
         );
       }

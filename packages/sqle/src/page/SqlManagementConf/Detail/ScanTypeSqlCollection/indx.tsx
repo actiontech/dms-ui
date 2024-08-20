@@ -337,6 +337,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
                   sql={text}
                   rows={1}
                   showCopyIcon
+                  cuttingLength={200}
                 />
               );
             }
