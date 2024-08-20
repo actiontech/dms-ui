@@ -20,7 +20,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
   sql,
   onCopyComplete,
   copyIconClassName,
-  maxLength
+  cuttingLength
 }) => {
   const { renderSQLTemplateContent } = useRenderSQLTemplate({
     showLineNumbers: false,
@@ -35,7 +35,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
     onCopyComplete,
     copyIconClassName
   });
-  const slicedSql = sql ? sql.slice(0, maxLength) : '';
+  const slicedSql = sql && cuttingLength ? sql.slice(0, cuttingLength) : sql;
   const render = () => {
     const content = (
       <SQLRendererStyleWrapper

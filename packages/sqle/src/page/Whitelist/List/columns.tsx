@@ -19,7 +19,7 @@ export const WhitelistColumn =
                 sql={sql}
                 rows={2}
                 showCopyIcon
-                maxLength={200}
+                cuttingLength={200}
               />
             );
           }
