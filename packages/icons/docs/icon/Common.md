@@ -32,6 +32,13 @@ import { CheckboxMultipleBlankFilled } from '@actiontech/icons';
 export default () => <CheckboxMultipleBlankFilled width={32} height={32} />
 ```
 
+## CheckoutCircleFilled
+```jsx
+import { CheckoutCircleFilled } from '@actiontech/icons';
+
+export default () => <CheckoutCircleFilled width={32} height={32} />
+```
+
 ## ClockCircleFilled
 ```jsx
 import { ClockCircleFilled } from '@actiontech/icons';
