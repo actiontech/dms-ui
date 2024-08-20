@@ -5,12 +5,17 @@ import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { EmptyBox, HeaderProgress, SpinIndicator } from '@actiontech/shared';
-import zhCN from 'antd/locale/zh_CN';
+import antd_zh_CN from 'antd/locale/zh_CN';
+import antd_en_US from 'antd/locale/en_US';
 import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import { SupportTheme, UserRolesType } from '@actiontech/shared/lib/enum';
+import {
+  SupportLanguage,
+  SupportTheme,
+  UserRolesType
+} from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
@@ -34,6 +39,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
 import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
+import i18n, { getPreferredLanguages } from './locale';
 
 import './index.less';
 
@@ -68,6 +74,15 @@ function App() {
   const { token } = useSelector((state: IReduxState) => ({
     token: state.user.token
   }));
+
+  const { currentLanguage, antdLanguage } = useMemo(() => {
+    const lang = getPreferredLanguages()?.[0] ?? SupportLanguage.zhCN;
+
+    return {
+      currentLanguage: lang,
+      antdLanguage: lang === SupportLanguage.enUS ? antd_en_US : antd_zh_CN
+    };
+  }, []);
 
   const { notificationContextHolder } = useNotificationContext();
 
@@ -161,6 +176,10 @@ function App() {
     }
   }, [getUserBySession, token, updateDriverList, updateFeaturePermission]);
 
+  useEffect(() => {
+    i18n.changeLanguage(currentLanguage);
+  }, [currentLanguage]);
+
   return (
     <Wrapper>
       <StyleProvider
@@ -168,7 +187,7 @@ function App() {
         transformers={[legacyLogicalPropertiesTransformer]}
       >
         <ConfigProvider
-          locale={zhCN}
+          locale={antdLanguage}
           theme={{
             algorithm:
               theme === SupportTheme.DARK
