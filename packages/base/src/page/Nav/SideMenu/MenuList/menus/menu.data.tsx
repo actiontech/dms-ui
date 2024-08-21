@@ -57,6 +57,7 @@ export const sideMenuData = (
         'instance',
         'rule-template',
         'whitelist',
+        'sql-management-exception',
         'workflow-template',
         'member',
         'push-rule-configuration'

@@ -39,7 +39,8 @@ export default {
           signalUpdateStatusSuccessTips: '更新SQL状态成功'
         }
       },
-      analyze: '分析'
+      analyze: '分析',
+      createSqlManagementException: '添加为SQL管控例外'
     },
     column: {
       SQLFingerprint: 'SQL指纹',

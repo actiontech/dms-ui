@@ -104,7 +104,8 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
   jumpToAnalyze: (sqlManageID: string) => void,
-  operationPermission: boolean
+  operationPermission: boolean,
+  openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void
 ): ActiontechTableProps<ISqlManage>['actions'] => {
   return {
     width: operationPermission
@@ -134,18 +135,25 @@ export const SqlManagementRowAction = (
           };
         },
         permissions: () => operationPermission
-      },
+      }
+    ],
+    moreButtons: [
       {
         text: t('sqlManagement.table.action.analyze'),
         key: 'analyze-sql',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              jumpToAnalyze(record?.id?.toString() ?? '');
-            }
-          };
+        onClick: (record) => {
+          jumpToAnalyze(record?.id?.toString() ?? '');
+        }
+      },
+      // #if [ee]
+      {
+        text: t('sqlManagement.table.action.createSqlManagementException'),
+        key: 'analyze-sql',
+        onClick: (record) => {
+          openCreateSqlManagementExceptionModal(record);
         }
       }
+      // #endif
     ]
   };
 };

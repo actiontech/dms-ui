@@ -49,6 +49,7 @@ import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
 import { actionsButtonData, defaultActionButton } from './index.data';
 import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
+import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -64,6 +65,11 @@ const SQLEEIndex = () => {
 
   const { setSelectData, setBatchSelectData, updateModalStatus } =
     useSqlManagementRedux();
+
+  const {
+    openCreateSqlManagementExceptionModal,
+    updateSelectSqlManagementExceptionRecord
+  } = useSqlManagementExceptionRedux();
 
   const [isAssigneeSelf, setAssigneeSelf] = useState(false);
   const [isHighPriority, setIsHighPriority] = useState(false);
@@ -170,13 +176,34 @@ const SQLEEIndex = () => {
     [projectID]
   );
 
+  const createSqlManagementException = useCallback(
+    (record?: ISqlManage) => {
+      openCreateSqlManagementExceptionModal();
+      updateSelectSqlManagementExceptionRecord({
+        content: record?.sql
+      });
+    },
+    [
+      openCreateSqlManagementExceptionModal,
+      updateSelectSqlManagementExceptionRecord
+    ]
+  );
+
   const actions = useMemo(() => {
     return SqlManagementRowAction(
       openModal,
       jumpToAnalyze,
-      isAdmin || isProjectManager(projectName)
+      isAdmin || isProjectManager(projectName),
+      createSqlManagementException
     );
-  }, [isAdmin, isProjectManager, jumpToAnalyze, openModal, projectName]);
+  }, [
+    isAdmin,
+    isProjectManager,
+    jumpToAnalyze,
+    openModal,
+    projectName,
+    createSqlManagementException
+  ]);
 
   const actionPermission = useMemo(() => {
     return isAdmin || isProjectManager(projectName);
