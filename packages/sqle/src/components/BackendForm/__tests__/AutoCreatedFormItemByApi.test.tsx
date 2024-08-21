@@ -159,5 +159,21 @@ describe('sqle/components/BackendForm', () => {
       });
       expect(baseElement).toMatchSnapshot();
     });
+
+    it('render hidden is true', () => {
+      const { baseElement } = customRender({
+        params: [
+          {
+            hidden: true,
+            value: '1',
+            key: 'input1',
+            type: 'string',
+            desc: 'desc 。desc1'
+          }
+        ]
+      });
+
+      expect(baseElement).toMatchSnapshot();
+    });
   });
 });
