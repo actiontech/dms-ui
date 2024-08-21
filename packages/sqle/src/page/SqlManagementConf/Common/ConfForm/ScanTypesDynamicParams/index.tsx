@@ -6,7 +6,9 @@ import {
 } from '@actiontech/shared/lib/components/FormCom/style';
 import { useTranslation } from 'react-i18next';
 import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
-import AutoCreatedFormItemByApi from '../../../../../components/BackendForm';
+import AutoCreatedFormItemByApi, {
+  FormItem
+} from '../../../../../components/BackendForm';
 import { EmptyBox } from '@actiontech/shared';
 import AuditTemplate from './AuditTemplate';
 import useGlobalRuleTemplate from '../../../../../hooks/useGlobalRuleTemplate';
@@ -23,11 +25,14 @@ const ScanTypesDynamicParams: React.FC = () => {
   const form = Form.useFormInstance<SqlManagementConfFormFields>();
 
   const selectedInstanceType = Form.useWatch('instanceType', form);
+  const collectInputValue = Form.useWatch(
+    ['mysql_slow_log', 'slow_log_collect_input'],
+    form
+  );
 
   const { projectName } = useCurrentProject();
 
   const selectedScanTypeParams = contextValue?.selectedScanTypeParams;
-
   const scanTypeMetas = contextValue?.scanTypeMetas ?? [];
 
   const submitLoading = !!contextValue?.submitLoading;
@@ -70,7 +75,19 @@ const ScanTypesDynamicParams: React.FC = () => {
         typeName: currentScanTypeMeta?.audit_plan_type_desc
       });
 
-      const params = item[key];
+      const params: FormItem[] = item[key].map((v) => {
+        //特殊处理慢日志动态表单的条件渲染。暂时没确定好使用更合理的方案来处理
+        if (key === 'mysql_slow_log') {
+          if (
+            collectInputValue === '0' &&
+            (v.key === 'collect_interval_minute' ||
+              v.key === 'first_sqls_scrapped_in_last_period_hours')
+          ) {
+            return { ...v, hidden: true };
+          }
+        }
+        return v;
+      });
 
       return (
         <FormAreaLineStyleWrapper key={key} className="has-border">

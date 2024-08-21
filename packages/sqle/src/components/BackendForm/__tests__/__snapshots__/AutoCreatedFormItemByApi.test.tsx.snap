@@ -221,6 +221,66 @@ exports[`sqle/components/BackendForm render type is bool render layout is spaceB
 </body>
 `;
 
+exports[`sqle/components/BackendForm render type is input render hidden is true 1`] = `
+<body>
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="params_input1"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  desc 
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  desc1
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="params_input1"
+                  placeholder="请输入{{name}}"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
 exports[`sqle/components/BackendForm render type is input render layout is fullLine 1`] = `
 <body>
   <div>
