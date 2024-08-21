@@ -11,6 +11,7 @@ import {
   OverviewOutlined,
   RiseSquareOutlined,
   ResolveFileFilled,
+  ExceptionFileOutlined,
   MagnifierFilled,
   ProfileSquareFilled,
   CodeOutlined,
@@ -123,6 +124,17 @@ const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'whitelist'
 });
 
+const SqlManagementException: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/sql-management-exception`}>
+      {t('dmsMenu.sqlManagementExcept')}
+    </Link>
+  ),
+  icon: <ExceptionFileOutlined width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-exception`,
+  structKey: 'sql-management-exception'
+});
+
 const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/progress`}>
@@ -182,7 +194,8 @@ const sqleMenusCollection = [
   workflowTemplateMenuItem,
   sqleOperationRecordMenuItem,
   sqlManagementConf,
-  pushRuleConfiguration
+  pushRuleConfiguration,
+  SqlManagementException
 ];
 
 export default sqleMenusCollection;
