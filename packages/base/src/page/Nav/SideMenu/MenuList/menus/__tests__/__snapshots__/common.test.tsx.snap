@@ -71,6 +71,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
       null,
       null,
       null,
+      null,
       {
         "icon": <MemberFilled
           height={18}
@@ -157,6 +158,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
         </Link>,
         "structKey": "instance",
       },
+      null,
       null,
       null,
       null,
@@ -385,9 +387,22 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         "label": <Link
           to="/sqle/project/600300/whitelist"
         >
-          白名单
+          审核SQL例外
         </Link>,
         "structKey": "whitelist",
+      },
+      {
+        "icon": <ExceptionFileOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/sql-management-exception",
+        "label": <Link
+          to="/sqle/project/600300/sql-management-exception"
+        >
+          管控SQL例外
+        </Link>,
+        "structKey": "sql-management-exception",
       },
       {
         "icon": <WorkflowFilled
@@ -627,9 +642,22 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         "label": <Link
           to="/sqle/project/600300/whitelist"
         >
-          白名单
+          审核SQL例外
         </Link>,
         "structKey": "whitelist",
+      },
+      {
+        "icon": <ExceptionFileOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/sql-management-exception",
+        "label": <Link
+          to="/sqle/project/600300/sql-management-exception"
+        >
+          管控SQL例外
+        </Link>,
+        "structKey": "sql-management-exception",
       },
       {
         "icon": <WorkflowFilled

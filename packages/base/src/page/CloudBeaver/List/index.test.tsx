@@ -17,6 +17,7 @@ import { driverMeta } from 'sqle/src/hooks/useDatabaseType/index.test.data';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { listCBOperationLogsMockData } from '../../../testUtils/mockApi/cloudBeaver/data';
 import { ModalName } from '../../../data/ModalName';
+import { ModalName as SqleModalName } from 'sqle/src/data/ModalName';
 
 jest.mock('react-redux', () => {
   return {
@@ -50,7 +51,8 @@ describe('test base/CloudBeaver/List', () => {
         database: { driverMeta: driverMeta },
         cloudBeaver: {
           modalStatus: {}
-        }
+        },
+        whitelist: { modalStatus: {} }
       });
     });
   });
@@ -172,6 +174,24 @@ describe('test base/CloudBeaver/List', () => {
       payload: {
         cbSqlOperationRecord: listCBOperationLogsMockData[0]
       }
+    });
+  });
+
+  it('render create whitelist', async () => {
+    superRender(<CBOperationLogsList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryAllByText('添加为审核SQL例外')[0]).toBeInTheDocument();
+    fireEvent.click(screen.queryAllByText('添加为审核SQL例外')[0]);
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(mockDispatch).toHaveBeenCalledTimes(4);
+    expect(mockDispatch).toHaveBeenNthCalledWith(3, {
+      payload: { modalName: SqleModalName.Add_Whitelist, status: true },
+      type: 'whitelist/updateModalStatus'
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
+      payload: { selectRow: { value: 'SELECT 1;' } },
+      type: 'whitelist/updateSelectWhitelist'
     });
   });
 });

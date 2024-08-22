@@ -69,6 +69,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         database: { driverMeta: driverMeta },
         sqlManagement: {
           modalStatus: {}
+        },
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        sqlManagementException: {
+          modalStatus: { [ModalName.Create_Sql_Management_Exception]: false }
         }
       });
     });
@@ -253,15 +257,15 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('批量指派').closest('button')).not.toBeDisabled();
     fireEvent.click(screen.getByText('批量指派'));
-    expect(mockDispatch).toHaveBeenCalledTimes(3);
-    expect(mockDispatch).toHaveBeenNthCalledWith(2, {
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
       type: 'sqlManagement/updateModalStatus',
       payload: {
         modalName: ModalName.Assignment_Member_Batch,
         status: true
       }
     });
-    expect(mockDispatch).toHaveBeenNthCalledWith(3, {
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
       type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: [sqlManageListData.data[0]]
     });
@@ -281,7 +285,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     fireEvent.click(screen.getByText('批量解决'));
     await screen.findByText('是否确认将所选SQL设为已解决?');
     fireEvent.click(screen.getByText('确 认'));
-    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
     expect(batchRequest).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
       status: 'solved',
@@ -369,8 +373,9 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getAllByText('分 析').length).toBe(1);
-    fireEvent.click(screen.getAllByText('分 析')[0]);
+    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('分析'));
     expect(openSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockProjectInfo.projectID}/sql-management/${sqlManageListData.data[0].id}/analyze`,
       '_blank'
@@ -389,6 +394,46 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(mockDispatch).toHaveBeenCalledWith({
       type: 'sqlManagement/setSqlManagementSelectData',
       payload: sqlManageListData.data[0]
+    });
+  });
+
+  it('render create sql management exception', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('添加为管控SQL例外'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
+      payload: { modalName: ModalName.Create_Sql_Management_Exception, status: true },
+      type: 'sqlManagementException/updateModalStatus'
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
+      payload: { selectRow: { content: undefined } },
+      type: 'sqlManagementException/updateSelectSqlManagementException'
+    });
+  });
+
+  it('render create whitelist', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('添加为审核SQL例外'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
+      payload: { modalName: ModalName.Add_Whitelist, status: true },
+      type: 'whitelist/updateModalStatus'
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
+      payload: { selectRow: { value: undefined } },
+      type: 'whitelist/updateSelectWhitelist'
     });
   });
 
