@@ -105,7 +105,7 @@ describe('sqle/SqlAudit/List', () => {
     );
     const { baseElement } = renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('SQL审核')).toBeInTheDocument();
+    expect(screen.getByText('快捷审核')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 

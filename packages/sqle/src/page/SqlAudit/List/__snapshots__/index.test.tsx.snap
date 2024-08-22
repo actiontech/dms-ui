@@ -9,7 +9,7 @@ exports[`sqle/SqlAudit/List render action when filter item show 1`] = `
       <div
         class="title"
       >
-        SQL审核
+        快捷审核
       </div>
       <div
         class="extra"
@@ -1094,7 +1094,7 @@ exports[`sqle/SqlAudit/List render sql audit record table when request return da
       <div
         class="title"
       >
-        SQL审核
+        快捷审核
       </div>
       <div
         class="extra"
@@ -2051,7 +2051,7 @@ exports[`sqle/SqlAudit/List render table when request return error 1`] = `
       <div
         class="title"
       >
-        SQL审核
+        快捷审核
       </div>
       <div
         class="extra"
