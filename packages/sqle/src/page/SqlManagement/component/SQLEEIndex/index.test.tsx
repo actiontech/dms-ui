@@ -422,6 +422,27 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
   });
 
+  it('change single priority when click row button', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getAllByText('变更优先级').length).toBe(1);
+    fireEvent.click(screen.getAllByText('变更优先级')[0]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.Change_SQL_Priority,
+        status: true
+      }
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlManagement/setSqlManagementSelectData',
+      payload: sqlManageListData.data[0]
+    });
+  });
+
   it('click sql fingerprint and open sql audit result', async () => {
     const selectRecord = {
       ...sqlManageListData.data[0],

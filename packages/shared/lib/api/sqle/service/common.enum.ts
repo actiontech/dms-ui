@@ -88,12 +88,32 @@ export enum AuditTaskResV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum BatchUpdateSqlManageReqPriorityEnum {
+  'UNKNOWN' = '',
+
+  'high' = 'high'
+}
+
 export enum BatchUpdateSqlManageReqStatusEnum {
   'solved' = 'solved',
 
   'ignored' = 'ignored',
 
   'manual_audited' = 'manual_audited'
+}
+
+export enum BlacklistResV1TypeEnum {
+  'sql' = 'sql',
+
+  'fp_sql' = 'fp_sql',
+
+  'ip' = 'ip',
+
+  'cidr' = 'cidr',
+
+  'host' = 'host',
+
+  'instance' = 'instance'
 }
 
 export enum CreateAuditTaskReqV1ExecModeEnum {
@@ -112,6 +132,20 @@ export enum CreateAuditWhitelistReqV1MatchTypeEnum {
   'exact_match' = 'exact_match',
 
   'fp_match' = 'fp_match'
+}
+
+export enum CreateBlacklistReqV1TypeEnum {
+  'sql' = 'sql',
+
+  'fp_sql' = 'fp_sql',
+
+  'ip' = 'ip',
+
+  'cidr' = 'cidr',
+
+  'host' = 'host',
+
+  'instance' = 'instance'
 }
 
 export enum CreateCustomRuleReqV1LevelEnum {
@@ -302,6 +336,20 @@ export enum UpdateAuditWhitelistReqV1MatchTypeEnum {
   'exact_match' = 'exact_match',
 
   'fp_match' = 'fp_match'
+}
+
+export enum UpdateBlacklistReqV1TypeEnum {
+  'sql' = 'sql',
+
+  'fp_sql' = 'fp_sql',
+
+  'ip' = 'ip',
+
+  'cidr' = 'cidr',
+
+  'host' = 'host',
+
+  'instance' = 'instance'
 }
 
 export enum UpdateCustomRuleReqV1LevelEnum {
