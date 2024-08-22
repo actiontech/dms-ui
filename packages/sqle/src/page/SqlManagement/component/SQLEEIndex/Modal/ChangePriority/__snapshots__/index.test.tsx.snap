@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
+exports[`page/SqlManagement/ChangePriority change priority and submit data 1`] = `
 <body>
   <div />
   <div>
@@ -36,7 +36,7 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                 class="ant-modal-title"
                 id="test-id"
               >
-                变更状态
+                变更优先级
               </div>
             </div>
             <div
@@ -56,10 +56,10 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                     >
                       <label
                         class="ant-form-item-required"
-                        for="status"
-                        title="变更状态为"
+                        for="priority"
+                        title="变更优先级为"
                       >
-                        变更状态为
+                        变更优先级为
                       </label>
                     </div>
                     <div
@@ -74,7 +74,7 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                           <div
                             aria-required="true"
                             class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
-                            id="status"
+                            id="priority"
                           >
                             <div
                               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
@@ -90,41 +90,16 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                                     class="ant-radio ant-radio-checked"
                                   >
                                     <input
-                                      checked=""
                                       class="ant-radio-input"
                                       type="radio"
-                                      value="solved"
+                                      value="high"
                                     />
                                     <span
                                       class="ant-radio-inner"
                                     />
                                   </span>
                                   <span>
-                                    解决
-                                  </span>
-                                </label>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-bottom: 8px;"
-                              >
-                                <label
-                                  class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
-                                >
-                                  <span
-                                    class="ant-radio"
-                                  >
-                                    <input
-                                      class="ant-radio-input"
-                                      type="radio"
-                                      value="ignored"
-                                    />
-                                    <span
-                                      class="ant-radio-inner"
-                                    />
-                                  </span>
-                                  <span>
-                                    忽略
+                                    高优先
                                   </span>
                                 </label>
                               </div>
@@ -140,14 +115,14 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                                     <input
                                       class="ant-radio-input"
                                       type="radio"
-                                      value="manual_audited"
+                                      value="low"
                                     />
                                     <span
                                       class="ant-radio-inner"
                                     />
                                   </span>
                                   <span>
-                                    人工审核
+                                    低优先
                                   </span>
                                 </label>
                               </div>
@@ -206,7 +181,7 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
 </body>
 `;
 
-exports[`page/SqlManagement/ChangeStatus render modal when not open 1`] = `
+exports[`page/SqlManagement/ChangePriority render modal when not open 1`] = `
 <body>
   <div />
 </body>

@@ -8,6 +8,10 @@ import {
 export interface IGetAuditWhitelistV1Params {
   project_name: string;
 
+  fuzzy_search_value?: string;
+
+  filter_match_type?: string;
+
   page_index: string;
 
   page_size: string;

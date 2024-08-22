@@ -7,10 +7,13 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  BatchUpdateSqlManageReqPriorityEnum,
   BatchUpdateSqlManageReqStatusEnum,
+  BlacklistResV1TypeEnum,
   CreateAuditTaskReqV1ExecModeEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum,
   CreateAuditWhitelistReqV1MatchTypeEnum,
+  CreateBlacklistReqV1TypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
   DirectAuditFileReqV1SqlTypeEnum,
@@ -35,6 +38,7 @@ import {
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum,
   UpdateAuditWhitelistReqV1MatchTypeEnum,
+  UpdateBlacklistReqV1TypeEnum,
   UpdateCustomRuleReqV1LevelEnum,
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   UpdateReportPushConfigReqV1PushUserTypeEnum,
@@ -363,7 +367,11 @@ export interface IAuditWhitelistResV1 {
 
   desc?: string;
 
+  last_match_time?: string;
+
   match_type?: string;
+
+  matched_count?: number;
 
   value?: string;
 }
@@ -397,11 +405,27 @@ export interface IBatchGetInstanceConnectionsResV1 {
 export interface IBatchUpdateSqlManageReq {
   assignees?: string[];
 
+  priority?: BatchUpdateSqlManageReqPriorityEnum;
+
   remark?: string;
 
   sql_manage_id_list?: number[];
 
   status?: BatchUpdateSqlManageReqStatusEnum;
+}
+
+export interface IBlacklistResV1 {
+  blacklist_id?: number;
+
+  content?: string;
+
+  desc?: string;
+
+  last_match_time?: string;
+
+  matched_count?: number;
+
+  type?: BlacklistResV1TypeEnum;
 }
 
 export interface ICheckLicenseResV1 {
@@ -494,6 +518,14 @@ export interface ICreateAuditWhitelistReqV1 {
   match_type?: CreateAuditWhitelistReqV1MatchTypeEnum;
 
   value?: string;
+}
+
+export interface ICreateBlacklistReqV1 {
+  content?: string;
+
+  desc?: string;
+
+  type?: CreateBlacklistReqV1TypeEnum;
 }
 
 export interface ICreateCustomRuleReqV1 {
@@ -886,6 +918,16 @@ export interface IGetAuditWhitelistResV1 {
   code?: number;
 
   data?: IAuditWhitelistResV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetBlacklistResV1 {
+  code?: number;
+
+  data?: IBlacklistResV1[];
 
   message?: string;
 
@@ -1614,6 +1656,8 @@ export interface IInstanceAuditPlanResV1 {
   creator?: string;
 
   instance_audit_plan_id?: number;
+
+  instance_id?: number;
 
   instance_name?: string;
 
@@ -2484,6 +2528,14 @@ export interface IUpdateAuditWhitelistReqV1 {
   match_type?: UpdateAuditWhitelistReqV1MatchTypeEnum;
 
   value?: string;
+}
+
+export interface IUpdateBlacklistReqV1 {
+  content?: string;
+
+  desc?: string;
+
+  type?: UpdateBlacklistReqV1TypeEnum;
 }
 
 export interface IUpdateCompanyNoticeReq {
