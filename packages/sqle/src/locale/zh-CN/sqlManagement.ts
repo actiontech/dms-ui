@@ -30,9 +30,16 @@ export default {
       single: {
         assignment: '指派负责人',
         assignmentSuccessTips: '指派负责人成功',
+        updatePriority: {
+          triggerText: '变更优先级',
+          successTips: '变更SQL优先级成功',
+          label: '变更优先级为',
+          high: '高优先',
+          low: '低优先'
+        },
         updateStatus: {
           triggerText: '变更状态',
-          label: '当前SQL状态',
+          label: '变更状态为',
           solve: '解决',
           ignore: '忽略',
           manualAudit: '人工审核',
