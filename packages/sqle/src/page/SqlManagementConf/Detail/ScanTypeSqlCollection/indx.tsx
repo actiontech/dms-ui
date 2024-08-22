@@ -281,7 +281,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 
       {messageContextHolder}
       <ActiontechTable
-        rowKey={(record) => record.sql}
+        rowKey="id"
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
         loading={getFilterMetaListLoading || getTableRowLoading}

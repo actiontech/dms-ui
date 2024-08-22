@@ -34,6 +34,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
         if (item.type === 'bool') {
           return (
             <FormItemLabel
+              hidden={!!item.hidden}
               key={item.key}
               className={classNames({
                 'has-label-tip': !!labelTip
@@ -51,6 +52,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
         if (item.type === 'password') {
           return (
             <FormItemLabel
+              hidden={!!item.hidden}
               key={item.key}
               className={classNames({
                 'has-label-tip': !!labelTip
@@ -70,6 +72,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
         if (item.enums_value && item.enums_value.length > 0) {
           return (
             <FormItemLabel
+              hidden={!!item.hidden}
               key={item.key}
               className={classNames({
                 'has-label-tip': !!labelTip
@@ -92,6 +95,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
         if (item.type === 'int') {
           return (
             <FormItemLabel
+              hidden={!!item.hidden}
               key={item.key}
               className={classNames({
                 'has-label-tip': !!labelTip
@@ -113,6 +117,7 @@ const AutoCreatedFormItemByApi = (props: BackendFormProps) => {
 
         return (
           <FormItemLabel
+            hidden={!!item.hidden}
             key={item.key}
             className={classNames({
               'has-label-tip': !!labelTip

@@ -7,6 +7,7 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  BatchUpdateSqlManageReqPriorityEnum,
   BatchUpdateSqlManageReqStatusEnum,
   BlacklistResV1TypeEnum,
   CreateAuditTaskReqV1ExecModeEnum,
@@ -403,6 +404,8 @@ export interface IBatchGetInstanceConnectionsResV1 {
 
 export interface IBatchUpdateSqlManageReq {
   assignees?: string[];
+
+  priority?: BatchUpdateSqlManageReqPriorityEnum;
 
   remark?: string;
 

@@ -20,12 +20,15 @@ import { SqlManagementConfFormFields } from '../index.type';
 describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
   let getProjectRuleTemplateTipSpy: jest.SpyInstance;
   let getGlobalRuleTemplateTipSpy: jest.SpyInstance;
+  const formWatchSpy = jest.spyOn(Form, 'useWatch');
+
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
     getProjectRuleTemplateTipSpy = rule_template.getProjectRuleTemplateTips();
     getGlobalRuleTemplateTipSpy = rule_template.getRuleTemplateTips();
+    formWatchSpy.mockImplementation(() => 'MySQL');
   });
 
   afterEach(() => {
@@ -97,8 +100,6 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
     selectedScanTypeParams: SelectScanTypeParamsType = selectedScanTypeParamsMock,
     defaultValue?: SqlManagementConfFormFields
   ) => {
-    const formWatchSpy = jest.spyOn(Form, 'useWatch');
-    formWatchSpy.mockImplementation(() => 'MySQL');
     const { result } = renderHooksWithTheme(() => Form.useForm());
     return superRender(
       <ConfFormContextProvide
@@ -170,5 +171,108 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
     ]);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render mysql_slow_log params', async () => {
+    formWatchSpy
+      .mockImplementation(() => 'MySQL')
+      .mockImplementation(() => '0');
+    customRender(false, [
+      {
+        mysql_slow_log: [
+          {
+            key: 'collect_interval_minute',
+            desc: '采集周期（分钟，仅对 mysql.slow_log 有效）',
+            value: '60',
+            type: AuditPlanParamResV1TypeEnum.int,
+            enums_value: undefined
+          },
+          {
+            key: 'slow_log_collect_input',
+            desc: '采集来源',
+            value: '0',
+            type: AuditPlanParamResV1TypeEnum.int,
+            enums_value: [
+              {
+                value: '0',
+                desc: '从slow.log 文件采集,需要适配scanner'
+              },
+              {
+                value: '1',
+                desc: '从mysql.slow_log 表采集'
+              }
+            ]
+          },
+          {
+            key: 'first_sqls_scrapped_in_last_period_hours',
+            desc: '启动任务时拉取慢日志时间范围(单位:小时，仅对 mysql.slow_log 有效)',
+            value: '1',
+            type: AuditPlanParamResV1TypeEnum.int
+          }
+        ]
+      }
+    ]);
+
+    expect(
+      getBySelector('#mysql_slow_log_collect_interval_minute').parentElement
+        ?.parentElement?.parentElement?.parentElement?.parentElement
+    ).toHaveClass('ant-form-item-hidden');
+    expect(
+      getBySelector('#mysql_slow_log_first_sqls_scrapped_in_last_period_hours')
+        .parentElement?.parentElement?.parentElement?.parentElement
+        ?.parentElement
+    ).toHaveClass('ant-form-item-hidden');
+
+    cleanup();
+
+    formWatchSpy
+      .mockImplementation(() => 'MySQL')
+      .mockImplementation(() => '1');
+
+    customRender(false, [
+      {
+        mysql_slow_log: [
+          {
+            key: 'collect_interval_minute',
+            desc: '采集周期（分钟，仅对 mysql.slow_log 有效）',
+            value: '60',
+            type: AuditPlanParamResV1TypeEnum.int,
+            enums_value: undefined
+          },
+          {
+            key: 'slow_log_collect_input',
+            desc: '采集来源',
+            value: '0',
+            type: AuditPlanParamResV1TypeEnum.int,
+            enums_value: [
+              {
+                value: '0',
+                desc: '从slow.log 文件采集,需要适配scanner'
+              },
+              {
+                value: '1',
+                desc: '从mysql.slow_log 表采集'
+              }
+            ]
+          },
+          {
+            key: 'first_sqls_scrapped_in_last_period_hours',
+            desc: '启动任务时拉取慢日志时间范围(单位:小时，仅对 mysql.slow_log 有效)',
+            value: '1',
+            type: AuditPlanParamResV1TypeEnum.int
+          }
+        ]
+      }
+    ]);
+
+    expect(
+      getBySelector('#mysql_slow_log_collect_interval_minute').parentElement
+        ?.parentElement?.parentElement?.parentElement?.parentElement
+    ).not.toHaveClass('ant-form-item-hidden');
+    expect(
+      getBySelector('#mysql_slow_log_first_sqls_scrapped_in_last_period_hours')
+        .parentElement?.parentElement?.parentElement?.parentElement
+        ?.parentElement
+    ).not.toHaveClass('ant-form-item-hidden');
   });
 });

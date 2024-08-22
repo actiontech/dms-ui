@@ -6,6 +6,7 @@ export type FormItem = {
   type?: string;
   value?: string;
   enums_value?: IEnumsValue[];
+  hidden?: boolean;
 };
 
 export type BackendFormRequestParams = {

@@ -88,6 +88,12 @@ export enum AuditTaskResV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum BatchUpdateSqlManageReqPriorityEnum {
+  'UNKNOWN' = '',
+
+  'high' = 'high'
+}
+
 export enum BatchUpdateSqlManageReqStatusEnum {
   'solved' = 'solved',
 
