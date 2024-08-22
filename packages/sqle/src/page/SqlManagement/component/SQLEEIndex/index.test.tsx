@@ -408,7 +408,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(mockDispatch).toHaveBeenCalledTimes(5);
     expect(mockDispatch).toHaveBeenNthCalledWith(4, {
-      payload: { modalName: ModalName.Create_Sql_Management_Exception, status: true },
+      payload: {
+        modalName: ModalName.Create_Sql_Management_Exception,
+        status: true
+      },
       type: 'sqlManagementException/updateModalStatus'
     });
     expect(mockDispatch).toHaveBeenNthCalledWith(5, {
@@ -472,6 +475,8 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+    await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getAllByText('变更优先级').length).toBe(1);
     fireEvent.click(screen.getAllByText('变更优先级')[0]);
     await act(async () => jest.advanceTimersByTime(300));
