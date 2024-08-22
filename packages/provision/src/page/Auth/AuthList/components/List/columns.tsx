@@ -35,7 +35,7 @@ export const AuthTableColumns = (
     {
       dataIndex: 'permission_user',
       title: () => <>{t('auth.columns.permissionUser')}</>,
-      render: (user: string, record) => (
+      render: (user, record) => (
         <Space className="auth-action-column">
           <Typography.Link onClick={() => navigate('/userCenter')}>
             {user}
@@ -64,7 +64,7 @@ export const AuthTableColumns = (
     {
       dataIndex: 'data_permission_template_names',
       title: t('auth.columns.template'),
-      render: (names: string[], record: IListAuthorization) => (
+      render: (names = [], record) => (
         <Space className="auth-action-column">
           {names.map((name) => (
             <BasicTag
@@ -142,7 +142,10 @@ export const AuthTableColumns = (
       dataIndex: 'status',
       title: () => <>{t('auth.columns.status')}</>,
       width: 90,
-      render: (status: ListAuthorizationStatusEnum, record) => {
+      render: (status, record) => {
+        if (!status) {
+          return '-';
+        }
         const time =
           record.expiration === -1
             ? t('auth.columns.permanent')

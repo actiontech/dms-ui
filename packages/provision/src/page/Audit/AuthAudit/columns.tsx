@@ -3,10 +3,7 @@ import {
   PageInfoWithoutIndexAndSize,
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import {
-  IListAuthorizationEvent,
-  IDataPermissionTemplateReply
-} from '@actiontech/shared/lib/api/provision/service/common';
+import { IListAuthorizationEvent } from '@actiontech/shared/lib/api/provision/service/common';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListAuthorizationEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
@@ -23,7 +20,7 @@ export type AuthAuditTableFilterParamType = PageInfoWithoutIndexAndSize<
   }
 >;
 
-const commonUserRender = (value: string) => {
+const commonUserRender = (value?: string) => {
   return <AvatarCom name={value} />;
 };
 
@@ -34,7 +31,7 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'generated_time',
     title: t('provisionAudit.authAudit.columns.time'),
-    render: (time: string) => formatTime(time),
+    render: (time) => formatTime(time, '-'),
     filterCustomType: 'date-range',
     filterKey: [
       'filter_by_generated_time_start',
@@ -56,7 +53,7 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'data_permission_templates',
     title: t('provisionAudit.authAudit.columns.template'),
-    render: (templates: IDataPermissionTemplateReply[]) => {
+    render: (templates = []) => {
       return (
         <Space>
           {templates.map((template) => (
@@ -76,11 +73,12 @@ export const AuthAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'event_type',
     title: t('provisionAudit.authAudit.columns.actionType'),
-    render: (val: AuthAuditEventTypeEnum) => {
+    render: (val) => {
+      const key = val as AuthAuditEventTypeEnum;
       return (
         <TableColumnWithIconStyleWrapper>
-          <AuditActionIcon value={AuthAuditEventTypeEnum[val]} />
-          <span>{t(AuthAuditEventDictionary[val]) ?? '-'}</span>
+          <AuditActionIcon value={AuthAuditEventTypeEnum[key]} />
+          <span>{t(AuthAuditEventDictionary[key]) ?? '-'}</span>
         </TableColumnWithIconStyleWrapper>
       );
     },

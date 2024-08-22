@@ -21,7 +21,7 @@ export const ServiceAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'generated_time',
     title: t('provisionAudit.authAudit.columns.time'),
-    render: (time: string) => formatTime(time, '-'),
+    render: (time) => formatTime(time, '-'),
     filterCustomType: 'date-range',
     filterKey: [
       'filter_by_generated_time_start',

@@ -56,7 +56,7 @@ export const operationTableColumns = (): ActiontechTableColumn<
       dataIndex: 'name',
       title: () => <>{t('operation.tableColumns.name')}</>,
       width: 180,
-      render: (name: string) => (
+      render: (name) => (
         <Typography.Text className="consolidated-column">
           {name}
         </Typography.Text>

@@ -3,7 +3,7 @@ import {
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../../locale';
-import { IScopeReply, IViewRoleReply } from '../../../../api/common';
+import { IViewRoleReply } from '../../../../api/common';
 import { BasicTag } from '@actiontech/shared';
 import { Space } from 'antd';
 import { AdminRole } from '../../../../data/enum';
@@ -25,7 +25,7 @@ export const RoleListColumns = (
     dataIndex: 'scopes',
     width: 450,
     title: () => t('userManagement.role.operationPermission'),
-    render: (scope: IScopeReply[], record: IViewRoleReply) => {
+    render: (scope = [], record: IViewRoleReply) => {
       return (
         <Space wrap>
           {scope.slice(0, 3).map((item) => (

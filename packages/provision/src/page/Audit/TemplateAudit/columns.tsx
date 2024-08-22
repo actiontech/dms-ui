@@ -24,7 +24,7 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'generated_time',
     title: t('provisionAudit.authAudit.columns.time'),
-    render: (time: string) => {
+    render: (time) => {
       return formatTime(time, '-');
     },
     filterCustomType: 'date-range',
@@ -73,7 +73,7 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
   {
     dataIndex: 'executing_user_name',
     title: t('provisionAudit.authAudit.columns.actionUser'),
-    render: (value: string) => {
+    render: (value) => {
       return <AvatarCom name={value} />;
     },
     filterCustomType: 'select',
