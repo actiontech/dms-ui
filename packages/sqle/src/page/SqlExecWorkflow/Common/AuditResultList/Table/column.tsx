@@ -94,7 +94,9 @@ export const AuditResultForCreateWorkflowColumn = (
 };
 
 export const AuditResultForCreateWorkflowActions = (
-  clickAnalyze: (sqlNum?: number) => void
+  clickAnalyze: (sqlNum?: number) => void,
+  onCreateWhitelist: (record?: IAuditTaskSQLResV2) => void,
+  actionPermission: boolean
 ): ActiontechTableActionMeta<IAuditTaskSQLResV2>[] => {
   return [
     {
@@ -108,6 +110,21 @@ export const AuditResultForCreateWorkflowActions = (
           }
         };
       }
+    },
+    // #if [ee]
+    {
+      key: 'create-exception',
+      text: t('execWorkflow.audit.table.createWhitelist'),
+      buttonProps: (record) => {
+        return {
+          onClick: (e) => {
+            e.stopPropagation();
+            onCreateWhitelist(record);
+          }
+        };
+      },
+      permissions: () => actionPermission
     }
+    // #endif
   ];
 };

@@ -32,7 +32,8 @@ const useSqlManagementExceptionRedux = () => {
 
   return {
     openCreateSqlManagementExceptionModal,
-    updateSelectSqlManagementExceptionRecord
+    updateSelectSqlManagementExceptionRecord,
+    dispatch
   };
 };
 

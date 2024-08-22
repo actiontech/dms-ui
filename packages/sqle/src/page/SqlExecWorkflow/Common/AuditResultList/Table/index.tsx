@@ -14,6 +14,8 @@ import {
   AuditResultForCreateWorkflowColumn
 } from './column';
 import AuditResultDrawer from './AuditResultDrawer';
+import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
+import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
@@ -32,6 +34,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { pagination, tableChange, setPagination } = useTableRequestParams();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+
+  const {
+    openCreateWhitelistModal,
+    updateSelectWhitelistRecord,
+    actionPermission
+  } = useWhitelistRedux();
 
   const handleClickAnalyze = (sqlNum?: number) => {
     if (typeof sqlNum === 'undefined') {
@@ -102,6 +110,13 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditLevelFilterValue, noDuplicate]);
 
+  const onCreateWhitelist = (record?: IAuditTaskSQLResV2) => {
+    openCreateWhitelistModal();
+    updateSelectWhitelistRecord({
+      value: record?.exec_sql
+    });
+  };
+
   return (
     <>
       <ActiontechTable
@@ -118,7 +133,11 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
           total: data?.total ?? 0,
           current: pagination.page_index ?? 1
         }}
-        actions={AuditResultForCreateWorkflowActions(handleClickAnalyze)}
+        actions={AuditResultForCreateWorkflowActions(
+          handleClickAnalyze,
+          onCreateWhitelist,
+          actionPermission
+        )}
       />
       <AuditResultDrawer
         open={auditResultDrawerVisibility}
@@ -127,6 +146,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         dbType={dbType}
         clickAnalyze={handleClickAnalyze}
       />
+      <AddWhitelistModal onCreated={refresh} />
     </>
   );
 };

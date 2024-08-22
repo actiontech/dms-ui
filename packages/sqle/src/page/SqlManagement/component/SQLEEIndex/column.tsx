@@ -105,7 +105,8 @@ export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
   jumpToAnalyze: (sqlManageID: string) => void,
   operationPermission: boolean,
-  openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void
+  openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
+  onCreateWhitelist: (record?: ISqlManage) => void
 ): ActiontechTableProps<ISqlManage>['actions'] => {
   return {
     width: operationPermission
@@ -145,15 +146,22 @@ export const SqlManagementRowAction = (
           jumpToAnalyze(record?.id?.toString() ?? '');
         }
       },
-      // #if [ee]
       {
         text: t('sqlManagement.table.action.createSqlManagementException'),
-        key: 'analyze-sql',
+        key: 'create-exception',
         onClick: (record) => {
           openCreateSqlManagementExceptionModal(record);
-        }
+        },
+        permissions: () => operationPermission
+      },
+      {
+        text: t('sqlManagement.table.action.createWhitelist'),
+        key: 'create-whitelist',
+        onClick: (record) => {
+          onCreateWhitelist(record);
+        },
+        permissions: () => operationPermission
       }
-      // #endif
     ]
   };
 };

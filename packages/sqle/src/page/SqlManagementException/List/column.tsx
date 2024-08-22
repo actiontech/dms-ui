@@ -9,6 +9,7 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SqlManagementExceptionMatchTypeDirection } from '../index.data';
 
 export type SqlManagementExceptionTableFilterParamType =
   PageInfoWithoutIndexAndSize<
@@ -27,6 +28,7 @@ export const SqlManagementExceptionListColumns: () => ActiontechTableColumn<
     {
       dataIndex: 'content',
       title: () => t('sqlManagementException.table.content'),
+      className: 'ellipsis-column-width',
       render: (value, record) => {
         if (
           record.type === BlacklistResV1TypeEnum.sql ||
@@ -57,7 +59,7 @@ export const SqlManagementExceptionListColumns: () => ActiontechTableColumn<
       dataIndex: 'type',
       title: () => t('sqlManagementException.table.matchType'),
       render: (type, record) => {
-        return type;
+        return type ? SqlManagementExceptionMatchTypeDirection[type] : '-';
       },
       filterCustomType: 'select',
       filterKey: 'filter_type'
