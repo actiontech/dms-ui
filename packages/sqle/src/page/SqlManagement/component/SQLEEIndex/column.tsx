@@ -136,6 +136,18 @@ export const SqlManagementRowAction = (
         permissions: () => operationPermission
       },
       {
+        text: t('sqlManagement.table.action.single.updatePriority.triggerText'),
+        key: 'change-priority-single',
+        buttonProps: (record) => {
+          return {
+            onClick: () => {
+              openModal(ModalName.Change_SQL_Priority, record);
+            }
+          };
+        },
+        permissions: () => operationPermission
+      },
+      {
         text: t('sqlManagement.table.action.analyze'),
         key: 'analyze-sql',
         buttonProps: (record) => {

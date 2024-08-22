@@ -48,7 +48,8 @@ describe('test init sql manage modal', () => {
           [ModalName.Assignment_Member_Single]: false,
           [ModalName.Assignment_Member_Batch]: false,
           [ModalName.Change_Status_Single]: false,
-          [ModalName.View_Audit_Result_Drawer]: false
+          [ModalName.View_Audit_Result_Drawer]: false,
+          [ModalName.Change_SQL_Priority]: false
         }
       },
       type: 'sqlManagement/initModalStatus'
