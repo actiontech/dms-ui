@@ -430,7 +430,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
                             >
                               <div
                                 class="ant-select-selector"
@@ -450,11 +450,8 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                                     class="ant-select-selection-search-input"
                                     disabled=""
                                     id="instanceId"
-                                    readonly=""
                                     role="combobox"
-                                    style="opacity: 0;"
                                     type="search"
-                                    unselectable="on"
                                     value=""
                                   />
                                 </span>
@@ -2722,7 +2719,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                           >
                             <div
                               aria-required="true"
-                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
                             >
                               <div
                                 class="ant-select-selector"
@@ -2742,11 +2739,8 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                                     class="ant-select-selection-search-input"
                                     disabled=""
                                     id="instanceId"
-                                    readonly=""
                                     role="combobox"
-                                    style="opacity: 0;"
                                     type="search"
-                                    unselectable="on"
                                     value=""
                                   />
                                 </span>
