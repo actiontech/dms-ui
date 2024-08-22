@@ -52,14 +52,14 @@ describe('slqe/Whitelist/UpdateWhitelist', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByLabelText('字符串匹配')).toBeChecked();
-    expect(screen.getByLabelText('白名单描述')).toHaveValue(
+    expect(screen.getByLabelText('描述')).toHaveValue(
       mockSelectWhitelist.desc
     );
     expect(screen.getByLabelText('SQL语句')).toHaveValue(
       mockSelectWhitelist.value
     );
     fireEvent.click(screen.getByText('SQL指纹匹配'));
-    fireEvent.input(screen.getByLabelText('白名单描述'), {
+    fireEvent.input(screen.getByLabelText('描述'), {
       target: { value: 'test desc' }
     });
     fireEvent.input(screen.getByLabelText('SQL语句'), {

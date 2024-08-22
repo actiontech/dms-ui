@@ -50,7 +50,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('添加白名单')).toBeInTheDocument();
+    expect(screen.getByText('添加审核SQL例外')).toBeInTheDocument();
     expect(
       getBySelector('.custom-icon-refresh', baseElement)
     ).toBeInTheDocument();
@@ -123,8 +123,8 @@ describe('slqe/Whitelist/WhitelistList', () => {
       getBySelector('.ant-btn-primary.basic-button-wrapper', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toHaveBeenCalledTimes(2);
-    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
       type: 'whitelist/updateModalStatus',
       payload: {
         modalName: ModalName.Add_Whitelist,
@@ -146,7 +146,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
     expect(whitelistSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText('确认删除这条白名单么？')).toBeInTheDocument();
+    expect(screen.getByText('确认删除这条审核SQL例外么？')).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
     expect(deleteAuthWhitelistSpy).toHaveBeenCalledTimes(1);
@@ -154,7 +154,7 @@ describe('slqe/Whitelist/WhitelistList', () => {
       audit_whitelist_id: `${auditWhiteListMockData[1].audit_whitelist_id}`,
       project_name: mockProjectInfo.projectName
     });
-    expect(screen.getByText('删除白名单语句成功')).toBeInTheDocument();
+    expect(screen.getByText('删除审核SQL例外语句成功')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(whitelistSpy).toHaveBeenCalled();
   });
@@ -180,14 +180,14 @@ describe('slqe/Whitelist/WhitelistList', () => {
     });
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(dispatchSpy).toHaveBeenCalledTimes(3);
-    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+    expect(dispatchSpy).toHaveBeenCalledTimes(4);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
       type: 'whitelist/updateSelectWhitelist',
       payload: {
         selectRow: auditWhiteListMockData[1]
       }
     });
-    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+    expect(dispatchSpy).toHaveBeenNthCalledWith(4, {
       type: 'whitelist/updateModalStatus',
       payload: {
         modalName: ModalName.Update_Whitelist,

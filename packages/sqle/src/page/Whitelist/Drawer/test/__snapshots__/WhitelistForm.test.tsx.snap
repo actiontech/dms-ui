@@ -19,9 +19,9 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
             <label
               class=""
               for="matchType"
-              title="匹配模式"
+              title="匹配类型"
             >
-              匹配模式
+              匹配类型
             </label>
           </div>
           <div
@@ -94,9 +94,9 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
             <label
               class=""
               for="desc"
-              title="白名单描述"
+              title="描述"
             >
-              白名单描述
+              描述
             </label>
           </div>
           <div

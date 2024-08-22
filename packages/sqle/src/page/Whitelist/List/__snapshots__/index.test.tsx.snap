@@ -9,40 +9,7 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
       <div
         class="title"
       >
-        <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-        >
-          <div
-            class="ant-space-item"
-            style="margin-right: 8px;"
-          >
-            白名单
-          </div>
-          <div
-            class="ant-space-item"
-          >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-              type="button"
-            >
-              <span
-                class="ant-btn-icon"
-              >
-                <svg
-                  class="custom-icon custom-icon-refresh"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  width="14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
+        审核SQL例外
       </div>
       <div
         class="extra"
@@ -71,9 +38,131 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
             </svg>
           </span>
           <span>
-            添加白名单
+            添加审核SQL例外
           </span>
         </button>
+      </div>
+    </div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                >
+                  <input
+                    class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
+                    >
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currrentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -101,6 +190,8 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
+                    <col />
                     <col
                       style="width: 164px;"
                     />
@@ -113,19 +204,31 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
-                        SQL语句
+                        内容
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"
                         scope="col"
                       >
-                        白名单描述
+                        描述
                       </th>
                       <th
                         class="ant-table-cell"
                         scope="col"
                       >
-                        匹配模式
+                        匹配类型
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        匹配次数
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        最近一次匹配时间
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -276,6 +379,16 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         class="ant-table-cell"
                       >
                         字符串匹配
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2024-08-22 11:04:29
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -455,6 +568,16 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         SQL指纹匹配
                       </td>
                       <td
+                        class="ant-table-cell"
+                      >
+                        10
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
+                      <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
@@ -632,6 +755,16 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                         字符串匹配
                       </td>
                       <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
+                      <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
@@ -760,6 +893,14 @@ exports[`slqe/Whitelist/WhitelistList should render whitelist list 1`] = `
                       <td
                         class="ant-table-cell"
                       />
+                      <td
+                        class="ant-table-cell"
+                      />
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"

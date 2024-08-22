@@ -39,7 +39,7 @@ describe('slqe/Whitelist', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(whiteListSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByText('添加白名单')).toBeInTheDocument();
+    expect(screen.getByText('添加审核SQL例外')).toBeInTheDocument();
     expect(
       getBySelector('.custom-icon-refresh', baseElement)
     ).toBeInTheDocument();

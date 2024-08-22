@@ -33,7 +33,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -261,6 +261,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -268,6 +269,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -486,7 +499,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -714,6 +727,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -721,6 +735,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -939,7 +965,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when data is 
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1115,7 +1141,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1267,7 +1293,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1473,6 +1499,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -1480,6 +1507,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -1682,7 +1721,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -1850,7 +1889,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2060,6 +2099,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2067,6 +2107,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -2181,6 +2233,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2188,6 +2241,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -2406,7 +2471,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead
@@ -2616,6 +2681,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2623,6 +2689,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>
@@ -2737,6 +2815,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                           >
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2744,6 +2823,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   分 析
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
                                 </span>
                               </button>
                             </div>

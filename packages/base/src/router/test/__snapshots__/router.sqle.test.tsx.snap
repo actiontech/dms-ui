@@ -504,6 +504,16 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render sqlManagementException 1`] = `
+<body>
+  <div>
+    <div>
+      sqlManagementException
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
 <body>
   <div>
@@ -1073,6 +1083,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "Whitelist",
         "path": ":projectID/whitelist",
+      },
+      {
+        "element": <div>
+          sqlManagementException
+        </div>,
+        "key": "sqlManagementException",
+        "path": ":projectID/sql-management-exception",
       },
       {
         "element": <div>

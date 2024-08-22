@@ -329,7 +329,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                           <col />
                           <col />
                           <col
-                            style="width: 82px;"
+                            style="width: 164px;"
                           />
                         </colgroup>
                         <thead
@@ -595,6 +595,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                 >
                                   <div
                                     class="ant-space-item"
+                                    style="margin-right: 8px;"
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -602,6 +603,18 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     >
                                       <span>
                                         分 析
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        添加为审核SQL例外
                                       </span>
                                     </button>
                                   </div>

@@ -12,10 +12,21 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import rule_template from '../../../../../..//testUtils/mockApi/rule_template';
 import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useDispatch, useSelector } from 'react-redux';
+import { ModalName } from '../../../../../../data/ModalName';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn()
+  };
+});
 
 describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   let requestUpdateAuditTaskSQLs: jest.SpyInstance;
   let requestGetAuditTaskSQLs: jest.SpyInstance;
+  const dispatchSpy = jest.fn();
 
   const customRender = (params: AuditResultTableProps) => {
     return superRender(<AuditResultTable {...params} />);
@@ -28,6 +39,12 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
     execWorkflow.mockAllApi();
     rule_template.getRuleList();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+      })
+    );
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
   });
 
   afterEach(() => {
@@ -241,5 +258,29 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     expect(getBySelector('.ant-drawer-content-wrapper')).not.toHaveClass(
       'ant-drawer-content-wrapper-hidden'
     );
+  });
+
+  it('render create whitelist', async () => {
+    customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('添加为审核SQL例外')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('添加为审核SQL例外'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      payload: { modalName: ModalName.Add_Whitelist, status: true },
+      type: 'whitelist/updateModalStatus'
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      payload: { selectRow: { value: 'SELECT * ' } },
+      type: 'whitelist/updateSelectWhitelist'
+    });
   });
 });

@@ -202,17 +202,16 @@ exports[`sqle/PluginAudit render table data 1`] = `
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-scroll-horizontal"
+              class="ant-table ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
               >
                 <div
                   class="ant-table-content"
-                  style="overflow-x: auto; overflow-y: hidden;"
                 >
                   <table
-                    style="min-width: 100%; table-layout: auto;"
+                    style="table-layout: auto;"
                   >
                     <colgroup>
                       <col />
@@ -221,6 +220,13 @@ exports[`sqle/PluginAudit render table data 1`] = `
                       <col />
                       <col
                         style="width: 300px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -281,98 +287,18 @@ exports[`sqle/PluginAudit render table data 1`] = `
                         >
                           创建人
                         </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
                       </tr>
                     </thead>
                     <tbody
                       class="ant-table-tbody"
                     >
-                      <tr
-                        aria-hidden="true"
-                        class="ant-table-measure-row"
-                        style="height: 0px; font-size: 0px;"
-                      >
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                        <td
-                          style="padding: 0px; border: 0px; height: 0px;"
-                        >
-                          <div
-                            style="height: 0px; overflow: hidden;"
-                          >
-                             
-                          </div>
-                        </td>
-                      </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
                         data-row-key="1"
@@ -559,6 +485,31 @@ exports[`sqle/PluginAudit render table data 1`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -736,6 +687,31 @@ exports[`sqle/PluginAudit render table data 1`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -806,6 +782,31 @@ exports[`sqle/PluginAudit render table data 1`] = `
                           class="ant-table-cell"
                         >
                           -
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
                         </td>
                       </tr>
                     </tbody>

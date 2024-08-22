@@ -5,6 +5,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import { driverMeta } from '../../hooks/useDatabaseType/index.test.data';
+import { ModalName } from '../../data/ModalName';
 
 jest.mock('react-redux', () => {
   return {
@@ -22,6 +23,10 @@ describe('page/SqlManagement', () => {
         database: { driverMeta: driverMeta },
         sqlManagement: {
           modalStatus: {}
+        },
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        sqlManagementException: {
+          modalStatus: { [ModalName.Create_Sql_Management_Exception]: false }
         }
       });
     });

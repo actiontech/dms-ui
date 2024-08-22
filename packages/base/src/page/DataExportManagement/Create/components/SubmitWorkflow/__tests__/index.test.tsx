@@ -18,14 +18,33 @@ import {
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
+import { ModalName as SqleModalName } from 'sqle/src/data/ModalName';
+import { useDispatch, useSelector } from 'react-redux';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn()
+  };
+});
 
 describe('test base/DataExport/Create/SubmitWorkflow', () => {
+  const dispatchSpy = jest.fn();
   beforeEach(() => {
     dataExport.BatchGetDataExportTask();
     dataExport.ListDataExportTaskSQLs();
     jest.useFakeTimers();
     mockUseCurrentProject();
+    mockUseCurrentUser();
     mockUseCreateDataExportReduxManage();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [SqleModalName.Add_Whitelist]: false } }
+      })
+    );
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
   });
   afterEach(() => {
     jest.clearAllMocks();
