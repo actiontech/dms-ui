@@ -1077,8 +1077,7 @@ exports[`test ScanTypeSqlCollection should match snapshot 2`] = `
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,SLEEP(11)
-LIMIT 0, 200"
+                      data-row-key="1"
                     >
                       <td
                         class="ant-table-cell ellipsis-column-large-width"
@@ -1266,8 +1265,7 @@ LIMIT
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,1,1,1,1,SLEEP(11)
-LIMIT 0, 200"
+                      data-row-key="12"
                     >
                       <td
                         class="ant-table-cell ellipsis-column-large-width"
@@ -1479,8 +1477,7 @@ LIMIT
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ SELECT SLEEP(11) 
-LIMIT 0, 200"
+                      data-row-key="123"
                     >
                       <td
                         class="ant-table-cell ellipsis-column-large-width"
@@ -1662,7 +1659,7 @@ LIMIT
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="Prepare"
+                      data-row-key="1234"
                     >
                       <td
                         class="ant-table-cell ellipsis-column-large-width"
@@ -1823,7 +1820,7 @@ LIMIT
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="COMMIT"
+                      data-row-key="12345"
                     >
                       <td
                         class="ant-table-cell ellipsis-column-large-width"
@@ -1979,7 +1976,7 @@ LIMIT
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="INSERT INTO \`audit_plan_sqls_v2\` (\`audit_plan_id\`,\`fingerprint_md5\`, \`fingerprint\`, \`sql_content\`, \`info\`, \`schema\`) VALUES (3, 'a62860c563df5399c2acb800673ae715', 'CREATE TABLE \`audit_files\` (\\n  \`id\` int(10) unsigned NOT NULL AUTO_INCREMENT,\\n  \`created_at\` datetime DEFAULT CURRENT_TIMESTAMP,\\n  \`updated_at\` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\\n  \`deleted_at\` datetime DEFAULT NULL,\\n  \`task_id\` int(10) unsigned DEFAULT NULL,\\n  \`unique_name\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  \`file_host\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  \`file_name\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  PRIMARY KEY (\`id\`)"
+                      data-row-key="123456"
                     >
                       <td
                         class="ant-table-cell ellipsis-column-large-width"
@@ -3230,8 +3227,7 @@ exports[`test ScanTypeSqlCollection should open report drawer and set current au
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
-                        data-row-key="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,SLEEP(11)
-LIMIT 0, 200"
+                        data-row-key="1"
                       >
                         <td
                           class="ant-table-cell ellipsis-column-large-width"
@@ -3419,8 +3415,7 @@ LIMIT
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
-                        data-row-key="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,1,1,1,1,SLEEP(11)
-LIMIT 0, 200"
+                        data-row-key="12"
                       >
                         <td
                           class="ant-table-cell ellipsis-column-large-width"
@@ -3632,8 +3627,7 @@ LIMIT
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
-                        data-row-key="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ SELECT SLEEP(11) 
-LIMIT 0, 200"
+                        data-row-key="123"
                       >
                         <td
                           class="ant-table-cell ellipsis-column-large-width"
@@ -3815,7 +3809,7 @@ LIMIT
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
-                        data-row-key="Prepare"
+                        data-row-key="1234"
                       >
                         <td
                           class="ant-table-cell ellipsis-column-large-width"
@@ -3976,7 +3970,7 @@ LIMIT
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
-                        data-row-key="COMMIT"
+                        data-row-key="12345"
                       >
                         <td
                           class="ant-table-cell ellipsis-column-large-width"
@@ -4132,7 +4126,7 @@ LIMIT
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
-                        data-row-key="INSERT INTO \`audit_plan_sqls_v2\` (\`audit_plan_id\`,\`fingerprint_md5\`, \`fingerprint\`, \`sql_content\`, \`info\`, \`schema\`) VALUES (3, 'a62860c563df5399c2acb800673ae715', 'CREATE TABLE \`audit_files\` (\\n  \`id\` int(10) unsigned NOT NULL AUTO_INCREMENT,\\n  \`created_at\` datetime DEFAULT CURRENT_TIMESTAMP,\\n  \`updated_at\` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\\n  \`deleted_at\` datetime DEFAULT NULL,\\n  \`task_id\` int(10) unsigned DEFAULT NULL,\\n  \`unique_name\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  \`file_host\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  \`file_name\` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  PRIMARY KEY (\`id\`)"
+                        data-row-key="123456"
                       >
                         <td
                           class="ant-table-cell ellipsis-column-large-width"
@@ -4531,7 +4525,7 @@ LIMIT
                 class="ant-drawer-extra"
               >
                 <a
-                  href="/sqle/project/700300/sql-management-conf/1/analyze/undefined"
+                  href="/sqle/project/700300/sql-management-conf/1/analyze/1"
                   target="blank"
                 >
                   <button
