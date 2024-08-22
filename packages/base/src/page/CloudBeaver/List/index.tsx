@@ -17,7 +17,8 @@ import {
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import {
   CBOperationListFilterParamType,
-  CBOperationListColumns
+  CBOperationListColumns,
+  CBOperationListAction
 } from './column';
 import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
@@ -35,6 +36,8 @@ import {
 import { ModalName } from '../../../data/ModalName';
 import { CloudBeaverOperationLogsListStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
+import CreateWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
+import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
 
 const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   const { t } = useTranslation();
@@ -58,6 +61,12 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
+
+  const {
+    openCreateWhitelistModal,
+    updateSelectWhitelistRecord,
+    actionPermission
+  } = useWhitelistRedux();
 
   const {
     tableFilterInfo,
@@ -161,6 +170,13 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
 
+  const onCreateWhitelist = (record?: ICBOperationLog) => {
+    openCreateWhitelistModal();
+    updateSelectWhitelistRecord({
+      value: record?.operation?.operation_detail
+    });
+  };
+
   useEffect(() => {
     updateDbServiceList({
       project_uid: projectID
@@ -170,59 +186,67 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   }, [projectID, updateDbServiceList, updateMemberTips, updateCBOperationList]);
 
   return (
-    <CloudBeaverOperationLogsListStyleWrapper>
-      {contextHolder}
-      <Spin spinning={loading}>
-        <OperationStatistics
-          total={data?.otherData?.exec_sql_total}
-          succeedRate={data?.otherData?.exec_success_rate}
-          interceptedTotal={data?.otherData?.audit_intercepted_sql_count}
-          failedTotal={data?.otherData?.exec_failed_sql_count}
-        />
-        <TableToolbar
-          refreshButton={{ refresh }}
-          actions={[
-            {
-              key: 'modifyPassword',
-              text: t('dmsCloudBeaver.operationList.exportButton'),
-              buttonProps: {
-                onClick: onExport,
-                loading: exporting
+    <>
+      <CloudBeaverOperationLogsListStyleWrapper>
+        {contextHolder}
+        <Spin spinning={loading}>
+          <OperationStatistics
+            total={data?.otherData?.exec_sql_total}
+            succeedRate={data?.otherData?.exec_success_rate}
+            interceptedTotal={data?.otherData?.audit_intercepted_sql_count}
+            failedTotal={data?.otherData?.exec_failed_sql_count}
+          />
+          <TableToolbar
+            refreshButton={{ refresh }}
+            actions={[
+              {
+                key: 'modifyPassword',
+                text: t('dmsCloudBeaver.operationList.exportButton'),
+                buttonProps: {
+                  onClick: onExport,
+                  loading: exporting
+                }
               }
+            ]}
+            filterButton={{
+              filterButtonMeta,
+              updateAllSelectedFilterItem
+            }}
+            setting={tableSetting}
+            searchInput={{
+              onChange: setSearchKeyword,
+              onSearch: () => {
+                refreshBySearchKeyword();
+              }
+            }}
+          />
+          <TableFilterContainer
+            filterContainerMeta={filterContainerMeta}
+            updateTableFilterInfo={updateTableFilterInfo}
+            disabled={loading}
+            filterCustomProps={filterCustomProps}
+          />
+          <ActiontechTable
+            rowKey="uid"
+            setting={tableSetting}
+            dataSource={data?.list ?? []}
+            pagination={{
+              total: data?.total || 0
+            }}
+            columns={columns}
+            onChange={tableChange}
+            errorMessage={requestErrorMessage}
+            actions={
+              actionPermission
+                ? CBOperationListAction(onCreateWhitelist)
+                : undefined
             }
-          ]}
-          filterButton={{
-            filterButtonMeta,
-            updateAllSelectedFilterItem
-          }}
-          setting={tableSetting}
-          searchInput={{
-            onChange: setSearchKeyword,
-            onSearch: () => {
-              refreshBySearchKeyword();
-            }
-          }}
-        />
-        <TableFilterContainer
-          filterContainerMeta={filterContainerMeta}
-          updateTableFilterInfo={updateTableFilterInfo}
-          disabled={loading}
-          filterCustomProps={filterCustomProps}
-        />
-        <ActiontechTable
-          rowKey="uid"
-          setting={tableSetting}
-          dataSource={data?.list ?? []}
-          pagination={{
-            total: data?.total || 0
-          }}
-          columns={columns}
-          onChange={tableChange}
-          errorMessage={requestErrorMessage}
-        />
-        <CBSqlOperationAuditDetailDrawer />
-      </Spin>
-    </CloudBeaverOperationLogsListStyleWrapper>
+          />
+          <CBSqlOperationAuditDetailDrawer />
+        </Spin>
+      </CloudBeaverOperationLogsListStyleWrapper>
+      <CreateWhitelistModal onCreated={refresh} />
+    </>
   );
 };
 export default CBOperationLogsList;

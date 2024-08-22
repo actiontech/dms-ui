@@ -1,10 +1,9 @@
 import { useCallback, useEffect } from 'react';
 import { useBoolean } from 'ahooks';
-import { useForm } from 'antd/es/form/Form';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
-import { Space } from 'antd';
+import { Space, message, Form } from 'antd';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -13,7 +12,6 @@ import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';
 import {
   updateSqlManagementExceptModalStatus,
-  initSqlManagementExceptModalStatus,
   updateSelectSqlManagementException
 } from '../../../../store/sqlManagementException';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -25,11 +23,14 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { SqlManagementExceptionFormFieldType } from '../../index.type';
 import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const UpdateSqlManagementException = () => {
   const { t } = useTranslation();
 
-  const [form] = useForm<SqlManagementExceptionFormFieldType>();
+  const [messageApi, messageContextHolder] = message.useMessage();
+
+  const [form] = Form.useForm<SqlManagementExceptionFormFieldType>();
 
   const visible = useSelector<IReduxState, boolean>(
     (state) =>
@@ -54,7 +55,7 @@ const UpdateSqlManagementException = () => {
     form.resetFields();
     dispatch(
       updateSqlManagementExceptModalStatus({
-        modalName: ModalName.Create_Sql_Management_Exception,
+        modalName: ModalName.Update_Sql_Management_Exception,
         status: false
       })
     );
@@ -87,8 +88,9 @@ const UpdateSqlManagementException = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          EventEmitter.emit(EmitterKey.Refresh_Whitelist_List);
+          EventEmitter.emit(EmitterKey.Refresh_Sql_management_Exception_List);
           closeModal();
+          messageApi.success(t('sqlManagementException.modal.update.success'));
         }
       })
       .finally(() => {
@@ -100,7 +102,9 @@ const UpdateSqlManagementException = () => {
     currentSqlManagementExceptionRecord,
     form,
     projectName,
-    startCreate
+    startCreate,
+    messageApi,
+    t
   ]);
 
   useEffect(() => {
@@ -109,7 +113,16 @@ const UpdateSqlManagementException = () => {
         desc: currentSqlManagementExceptionRecord?.desc,
         type: currentSqlManagementExceptionRecord?.type as ICreateBlacklistReqV1['type']
       });
-      if (currentSqlManagementExceptionRecord?.type) {
+      if (
+        currentSqlManagementExceptionRecord?.type ===
+          BlacklistResV1TypeEnum.sql ||
+        currentSqlManagementExceptionRecord?.type ===
+          BlacklistResV1TypeEnum.fp_sql
+      ) {
+        form.setFieldsValue({
+          sql: currentSqlManagementExceptionRecord?.content
+        });
+      } else if (currentSqlManagementExceptionRecord?.type) {
         form.setFieldsValue({
           [currentSqlManagementExceptionRecord.type]:
             currentSqlManagementExceptionRecord?.content
@@ -119,32 +132,32 @@ const UpdateSqlManagementException = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visible]);
 
-  useEffect(() => {
-    const modalStatus = {
-      [ModalName.Update_Sql_Management_Exception]: false
-    };
-    dispatch(initSqlManagementExceptModalStatus({ modalStatus }));
-  }, [dispatch]);
-
   return (
-    <BasicDrawer
-      size="large"
-      title={t('sqlManagementException.modal.update.title')}
-      open={visible}
-      onClose={closeModal}
-      footer={
-        <Space>
-          <BasicButton onClick={closeModal} disabled={createLoading}>
-            {t('common.close')}
-          </BasicButton>
-          <BasicButton type="primary" onClick={submit} loading={createLoading}>
-            {t('common.submit')}
-          </BasicButton>
-        </Space>
-      }
-    >
-      <SqlManagementExceptionForm form={form} />
-    </BasicDrawer>
+    <>
+      {messageContextHolder}
+      <BasicDrawer
+        size="large"
+        title={t('sqlManagementException.modal.update.title')}
+        open={visible}
+        onClose={closeModal}
+        footer={
+          <Space>
+            <BasicButton onClick={closeModal} disabled={createLoading}>
+              {t('common.close')}
+            </BasicButton>
+            <BasicButton
+              type="primary"
+              onClick={submit}
+              loading={createLoading}
+            >
+              {t('common.submit')}
+            </BasicButton>
+          </Space>
+        }
+      >
+        <SqlManagementExceptionForm form={form} />
+      </BasicDrawer>
+    </>
   );
 };
 

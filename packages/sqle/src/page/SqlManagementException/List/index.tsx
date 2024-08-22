@@ -6,7 +6,6 @@ import {
 } from '@actiontech/shared/lib/global';
 import { useMemo, useEffect } from 'react';
 import { PlusOutlined } from '@actiontech/icons';
-import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import { updateSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
 import { ModalName } from '../../../data/ModalName';
@@ -41,8 +40,6 @@ const SqlManagementExceptionList = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const dispatch = useDispatch();
-
   const { projectName, projectArchive } = useCurrentProject();
 
   const { isAdmin, isProjectManager } = useCurrentUser();
@@ -53,7 +50,8 @@ const SqlManagementExceptionList = () => {
 
   const {
     openCreateSqlManagementExceptionModal,
-    updateSelectSqlManagementExceptionRecord
+    updateSelectSqlManagementExceptionRecord,
+    dispatch
   } = useSqlManagementExceptionRedux();
 
   const {

@@ -40,7 +40,8 @@ export default {
         }
       },
       analyze: '分析',
-      createSqlManagementException: '添加为SQL管控例外'
+      createSqlManagementException: '添加为管控SQL例外',
+      createWhitelist: '添加为审核SQL例外'
     },
     column: {
       SQLFingerprint: 'SQL指纹',
