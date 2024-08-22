@@ -9,7 +9,7 @@ exports[`sqle/SqlAudit should match snap shot 1`] = `
       <div
         class="title"
       >
-        SQL审核
+        快捷审核
       </div>
       <div
         class="extra"
