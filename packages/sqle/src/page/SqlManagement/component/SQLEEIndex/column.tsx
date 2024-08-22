@@ -142,12 +142,8 @@ export const SqlManagementRowAction = (
       {
         text: t('sqlManagement.table.action.single.updatePriority.triggerText'),
         key: 'change-priority-single',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              openModal(ModalName.Change_SQL_Priority, record);
-            }
-          };
+        onClick: (record) => {
+          openModal(ModalName.Change_SQL_Priority, record);
         },
         permissions: () => operationPermission
       },

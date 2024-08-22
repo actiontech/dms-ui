@@ -124,7 +124,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
           clonedExecWorkflowBaseInfo: {
             workflow_subject: 'workflow-name-test',
             desc: 'test desc'
-          },
+          }
         }
       })
     );
