@@ -4,10 +4,12 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { Dictionary } from '@actiontech/shared/lib/types/common.type';
 import sqlManagement from '../store/sqlManagement';
+import sqlManagementException from '../store/sqlManagementException';
 
 const reducers = combineReducers({
   whitelist,
-  sqlManagement
+  sqlManagement,
+  sqlManagementException
 });
 
 export const storeFactory = (initStore: Dictionary = {}) => {
