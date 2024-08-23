@@ -17,6 +17,7 @@ import { ConfFormContext } from '../context';
 import { SqlManagementConfFormFields } from '../index.type';
 import { useSearchParams } from 'react-router-dom';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
@@ -72,7 +73,9 @@ const DataSourceSelection: React.FC = () => {
       updateInstanceList({
         project_name: projectName,
         filter_db_type: instanceType,
-        filter_by_business: business
+        filter_by_business: business,
+        functional_module:
+          getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
       });
     }
   };
@@ -83,7 +86,9 @@ const DataSourceSelection: React.FC = () => {
       updateInstanceList({
         project_name: projectName,
         filter_db_type: type,
-        filter_by_business: businessScope
+        filter_by_business: businessScope,
+        functional_module:
+          getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
       });
     }
   };
@@ -98,7 +103,11 @@ const DataSourceSelection: React.FC = () => {
   const updateInstanceListByProjectName = useCallback(
     (id: string) => {
       updateInstanceList(
-        { project_name: projectName },
+        {
+          project_name: projectName,
+          functional_module:
+            getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
+        },
         {
           onSuccess: (list) => {
             const instance = list.find((v) => v.instance_id === id);

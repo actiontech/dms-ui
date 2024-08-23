@@ -1657,7 +1657,7 @@ export interface IInstanceAuditPlanResV1 {
 
   instance_audit_plan_id?: number;
 
-  instance_id?: number;
+  instance_id?: string;
 
   instance_name?: string;
 
