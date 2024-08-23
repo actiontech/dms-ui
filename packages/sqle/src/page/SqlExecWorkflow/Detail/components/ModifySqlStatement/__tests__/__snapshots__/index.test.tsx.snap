@@ -742,7 +742,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                             <col />
                             <col />
                             <col
-                              style="width: 82px;"
+                              style="width: 164px;"
                             />
                           </colgroup>
                           <thead
@@ -1613,7 +1613,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                             <col />
                             <col />
                             <col
-                              style="width: 82px;"
+                              style="width: 164px;"
                             />
                           </colgroup>
                           <thead
@@ -2479,7 +2479,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                             <col />
                             <col />
                             <col
-                              style="width: 82px;"
+                              style="width: 164px;"
                             />
                           </colgroup>
                           <thead
@@ -2685,6 +2685,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                   >
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2692,6 +2693,18 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       >
                                         <span>
                                           分 析
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span>
+                                          添加为审核SQL例外
                                         </span>
                                       </button>
                                     </div>
@@ -3607,7 +3620,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                             <col />
                             <col />
                             <col
-                              style="width: 82px;"
+                              style="width: 164px;"
                             />
                           </colgroup>
                           <thead
@@ -3813,6 +3826,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   >
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -3820,6 +3834,18 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                       >
                                         <span>
                                           分 析
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span>
+                                          添加为审核SQL例外
                                         </span>
                                       </button>
                                     </div>
