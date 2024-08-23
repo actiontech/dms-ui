@@ -223,48 +223,6 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 1`] =
                                   DEFAULT
                                 </span>
                                  
-                                <span
-                                  class="hljs-built_in"
-                                >
-                                  CURRENT_TIMESTAMP
-                                </span>
-                                ,  updated_at 
-                                <span
-                                  class="hljs-type"
-                                >
-                                  TIMESTAMP
-                                </span>
-                                 
-                                <span
-                                  class="hljs-keyword"
-                                >
-                                  DEFAULT
-                                </span>
-                                 
-                                <span
-                                  class="hljs-built_in"
-                                >
-                                  CURRENT_TIMESTAMP
-                                </span>
-                                 
-                                <span
-                                  class="hljs-keyword"
-                                >
-                                  ON
-                                </span>
-                                 
-                                <span
-                                  class="hljs-keyword"
-                                >
-                                  UPDATE
-                                </span>
-                                 
-                                <span
-                                  class="hljs-built_in"
-                                >
-                                  CURRENT_TIMESTAMP
-                                </span>
-                                );
                               </span>
                             </div>
                             <div
@@ -565,48 +523,6 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                                   DEFAULT
                                 </span>
                                  
-                                <span
-                                  class="hljs-built_in"
-                                >
-                                  CURRENT_TIMESTAMP
-                                </span>
-                                ,  updated_at 
-                                <span
-                                  class="hljs-type"
-                                >
-                                  TIMESTAMP
-                                </span>
-                                 
-                                <span
-                                  class="hljs-keyword"
-                                >
-                                  DEFAULT
-                                </span>
-                                 
-                                <span
-                                  class="hljs-built_in"
-                                >
-                                  CURRENT_TIMESTAMP
-                                </span>
-                                 
-                                <span
-                                  class="hljs-keyword"
-                                >
-                                  ON
-                                </span>
-                                 
-                                <span
-                                  class="hljs-keyword"
-                                >
-                                  UPDATE
-                                </span>
-                                 
-                                <span
-                                  class="hljs-built_in"
-                                >
-                                  CURRENT_TIMESTAMP
-                                </span>
-                                );
                               </span>
                             </div>
                             <div

@@ -4,11 +4,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import {
-  IAuditPlanRuleTemplate,
-  IAuditPlanTypeResBase,
-  IInstanceAuditPlanInfo
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TokenCom } from '@actiontech/shared';
 import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Link } from 'react-router-dom';
@@ -29,15 +25,22 @@ export const ConfDetailOverviewColumns: (
       title: () => t('managementConf.detail.overview.column.auditPlanType'),
       filterCustomType: 'select',
       filterKey: 'filter_audit_plan_type',
-      render: (data: IAuditPlanTypeResBase) => {
-        return data.desc ? <Typography.Link>{data.desc}</Typography.Link> : '-';
+      render: (data) => {
+        return data?.desc ? (
+          <Typography.Link>{data.desc}</Typography.Link>
+        ) : (
+          '-'
+        );
       }
     },
     {
       dataIndex: 'audit_plan_rule_template',
       title: () => t('managementConf.detail.overview.column.auditRuleTemplate'),
-      render: (ruleTemplate: IAuditPlanRuleTemplate, record) => {
-        const path = ruleTemplate.is_global_rule_template
+      render: (ruleTemplate, record) => {
+        if (!ruleTemplate?.name) {
+          return '-';
+        }
+        const path = ruleTemplate?.is_global_rule_template
           ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
           : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
 
@@ -57,7 +60,7 @@ export const ConfDetailOverviewColumns: (
     {
       dataIndex: 'active_status',
       title: () => t('managementConf.detail.overview.column.status'),
-      render: (status: InstanceAuditPlanInfoActiveStatusEnum) => {
+      render: (status) => {
         if (status === InstanceAuditPlanInfoActiveStatusEnum.disabled) {
           return (
             <TableColumnWithIconStyleWrapper>
@@ -109,7 +112,7 @@ export const ConfDetailOverviewColumns: (
       dataIndex: 'last_collection_time',
       title: () =>
         t('managementConf.detail.overview.column.lastCollectionTime'),
-      render: (time: string) => formatTime(time, '-')
+      render: (time) => formatTime(time, '-')
     }
   ];
 };

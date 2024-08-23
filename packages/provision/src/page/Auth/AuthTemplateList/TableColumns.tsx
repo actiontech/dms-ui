@@ -17,7 +17,7 @@ export const AuthTemplateListTableColumns: (
   {
     title: t('auth.template.columns.name'),
     dataIndex: 'name',
-    render: (name: string) => {
+    render: (name) => {
       return (
         <TableColumnWithIconStyleWrapper>
           <BriefcaseFilled width={14} height={14} />
@@ -29,7 +29,7 @@ export const AuthTemplateListTableColumns: (
   {
     title: t('auth.template.columns.authorization_purpose'),
     dataIndex: 'authorization_purpose',
-    render: (purpose: string[]) => {
+    render: (purpose) => {
       return (
         purpose?.map((item) => (
           <Space key={item}>

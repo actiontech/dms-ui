@@ -23,7 +23,12 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
         render: (original_sql) => {
           if (!original_sql) return null;
           return (
-            <SQLRenderer.Snippet showCopyIcon sql={original_sql} rows={1} />
+            <SQLRenderer.Snippet
+              showCopyIcon
+              sql={original_sql}
+              rows={1}
+              cuttingLength={200}
+            />
           );
         }
       },
@@ -60,6 +65,9 @@ export const SqlOptimizationListColumns: () => ActiontechTableColumn<IOptimizati
         title: () =>
           t('sqlOptimization.overview.sqlTable.performanceImprovement'),
         render: (performance) => {
+          if (!performance) {
+            return '-';
+          }
           return isNaN(performance) ? '-' : `${floatToPercent(performance)}%`;
         }
       },

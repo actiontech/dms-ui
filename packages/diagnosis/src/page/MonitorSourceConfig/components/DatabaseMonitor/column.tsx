@@ -57,7 +57,7 @@ export const DatabaseMonitorColumns = (
   {
     dataIndex: 'status',
     title: t('common.status'),
-    render: (status: ViewDatabaseReplyStatusEnum) => {
+    render: (status) => {
       if (!status) return '-';
       return databaseMonitorStatusDictionary[status];
     }

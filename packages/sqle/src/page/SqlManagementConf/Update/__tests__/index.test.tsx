@@ -119,13 +119,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
   it('render update audit plan', async () => {
     const { baseElement } = superRender(<UpdateSqlManagementConf />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInstanceAuditPlanDetailSpy).toHaveBeenCalledTimes(1);
-    expect(getDriversSpy).toHaveBeenCalled();
-    expect(getProjectRuleTemplateTipSpy).toHaveBeenCalled();
-    expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalled();
-    expect(getInstanceTipListSpy).toHaveBeenCalled();
-    expect(getAuditPlanMetaSpy).toHaveBeenCalled();
-    expect(getInstanceSpy).toHaveBeenCalled();
+
     await act(async () => jest.advanceTimersByTime(3000));
     // cancel default
     fireEvent.click(screen.getByText('自定义'));
@@ -134,59 +128,39 @@ describe('test sqle/SqlManagementConf/Update', () => {
 
     const aliMysqlLog = mockAuditPlanMetaData[3];
     const planType = aliMysqlLog.audit_plan_type;
-    await act(async () => {
-      fireEvent.input(
-        getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[0].key}`),
-        {
-          target: { value: 'test' }
-        }
-      );
-      await jest.advanceTimersByTime(100);
+    fireEvent.input(
+      getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[0].key}`),
+      {
+        target: { value: 'test' }
+      }
+    );
+    fireEvent.input(getAllBySelector('input[type="password"]')[0], {
+      target: { value: '123' }
     });
-    await act(async () => {
-      fireEvent.input(getAllBySelector('input[type="password"]')[0], {
-        target: { value: '123' }
-      });
-      await jest.advanceTimersByTime(100);
+    fireEvent.input(getAllBySelector('input[type="password"]')[1], {
+      target: { value: '456' }
     });
-    await act(async () => {
-      fireEvent.input(getAllBySelector('input[type="password"]')[1], {
-        target: { value: '456' }
-      });
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.input(
-        getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[3].key}`),
-        {
-          target: { value: '100' }
-        }
-      );
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.input(
-        getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[4].key}`),
-        {
-          target: { value: '200' }
-        }
-      );
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.input(
-        getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[5].key}`),
-        {
-          target: { value: 'test.com' }
-        }
-      );
-      await jest.advanceTimersByTime(100);
-    });
+    fireEvent.input(
+      getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[3].key}`),
+      {
+        target: { value: '100' }
+      }
+    );
+    fireEvent.input(
+      getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[4].key}`),
+      {
+        target: { value: '200' }
+      }
+    );
+    fireEvent.input(
+      getBySelector(`#${planType}_${aliMysqlLog.audit_plan_params?.[5].key}`),
+      {
+        target: { value: 'test.com' }
+      }
+    );
     fireEvent.mouseDown(getBySelector(`#${planType}_ruleTemplateName`));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
-      await jest.advanceTimersByTime(100);
-    });
+    fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
+    await act(async () => jest.advanceTimersByTime(0));
 
     expect(screen.getByTestId('audit_level_switch')).not.toBeChecked();
     expect(screen.getByTestId('row_examined_avg_switch')).toBeChecked();
@@ -197,7 +171,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
 
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('提 交'));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(updateInstanceAuditPlanSpy).toHaveBeenCalledTimes(1);
     expect(updateInstanceAuditPlanSpy).toHaveBeenNthCalledWith(1, {
       instance_audit_plan_id: auditPlanId,

@@ -11,8 +11,9 @@ const CopyIcon: React.FC<CopyIconProps> = ({
   text,
   children,
   tooltips = true,
-  onCopy,
-  className
+  onCopyComplete,
+  className,
+  onCustomCopy
 }) => {
   const { t } = useTranslation();
   const [copied, setCopied] = React.useState(false);
@@ -24,12 +25,15 @@ const CopyIcon: React.FC<CopyIconProps> = ({
 
   React.useEffect(() => cleanCopyId, []);
 
-  const onCopyClick = (e?: React.MouseEvent<HTMLDivElement>) => {
+  const onCopyClick = async (e?: React.MouseEvent<HTMLDivElement>) => {
     e?.preventDefault();
     e?.stopPropagation();
 
-    Copy.copyTextByTextarea(text || (children && String(children)) || '');
-
+    if (!!onCustomCopy) {
+      await onCustomCopy();
+    } else {
+      Copy.copyTextByTextarea(text || (children && String(children)) || '');
+    }
     setCopied(true);
 
     cleanCopyId();
@@ -37,7 +41,7 @@ const CopyIcon: React.FC<CopyIconProps> = ({
       setCopied(false);
     }, 3000);
 
-    onCopy?.(e);
+    onCopyComplete?.(e);
   };
 
   const tooltipsTitle = React.useMemo(() => {

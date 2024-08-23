@@ -8,10 +8,7 @@ import { t } from '../../../locale';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import {
-  IAuditPlanTypeResBase,
-  IInstanceAuditPlanResV1
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import {
@@ -52,7 +49,7 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'instance_name',
       title: () => t('managementConf.list.table.column.dbName'),
-      render: (instanceName: string, record) => {
+      render: (instanceName, record) => {
         return (
           <Link to={`${record.instance_audit_plan_id}`}>
             {instanceName ||
@@ -66,7 +63,7 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'instance_type',
       title: () => t('managementConf.list.table.column.dbType'),
-      render(type: string) {
+      render(type) {
         if (!type) {
           return '-';
         }
@@ -83,13 +80,13 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'audit_plan_types',
       title: () => t('managementConf.list.table.column.enabledScanTypes'),
-      render: (scanTypes: IAuditPlanTypeResBase[], record) => {
+      render: (scanTypes, record) => {
         return (
           <ScanTypeTagsCell
             instanceAuditPlanId={
               record.instance_audit_plan_id?.toString() ?? ''
             }
-            scanTypes={scanTypes}
+            scanTypes={scanTypes ?? []}
           />
         );
       }
@@ -97,7 +94,7 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'active_status',
       title: () => t('managementConf.list.table.column.dbTaskStatus'),
-      render: (status: InstanceAuditPlanResV1ActiveStatusEnum) => {
+      render: (status) => {
         if (status === InstanceAuditPlanResV1ActiveStatusEnum.disabled) {
           return (
             <TableColumnWithIconStyleWrapper>
@@ -129,7 +126,7 @@ export const SqlManagementConfColumns: (
     {
       dataIndex: 'create_time',
       title: () => t('managementConf.list.table.column.createdAt'),
-      render: (time: string) => {
+      render: (time) => {
         return formatTime(time, '-');
       }
     },

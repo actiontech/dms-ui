@@ -7,7 +7,6 @@ import { t } from '../../../locale';
 import {
   IListMember,
   IListMemberRoleWithOpRange,
-  IUidWithName,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
 import renderRolesInfo from '../Common/renderRolesInfo';
@@ -49,7 +48,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     dataIndex: 'user',
     title: t('common.username'),
     width: '25%',
-    render: (user: IUidWithName) => {
+    render: (user) => {
       return user?.name ?? '-';
     }
   },
@@ -73,7 +72,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
         </BasicToolTips>
       );
     },
-    render: (roles: IListMemberRoleWithOpRange[], record: IListMember) => {
+    render: (roles = [], record: IListMember) => {
       return commonRoleOperateRangesRender(roles, record);
     }
   },
@@ -81,7 +80,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     dataIndex: 'is_project_admin',
     title: t('dmsMember.memberList.columns.isProjectAdmin'),
     width: '20%',
-    render: (isAdmin: boolean) => {
+    render: (isAdmin) => {
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');
       }
@@ -135,7 +134,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   {
     dataIndex: 'users',
     title: t('dmsMember.memberGroupList.columns.users'),
-    render(users: IUidWithName[]) {
+    render(users) {
       if (!Array.isArray(users)) {
         return null;
       }
@@ -165,14 +164,14 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
         </BasicToolTips>
       );
     },
-    render: (roles: IListMemberRoleWithOpRange[], record: IListMemberGroup) => {
+    render: (roles = [], record: IListMemberGroup) => {
       return commonRoleOperateRangesRender(roles, record);
     }
   },
   {
     dataIndex: 'is_project_admin',
     title: t('dmsMember.memberList.columns.isProjectAdmin'),
-    render: (isAdmin: boolean) => {
+    render: (isAdmin) => {
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');
       }
