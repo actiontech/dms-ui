@@ -1294,6 +1294,19 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                                 </div>
                                 <div
                                   class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      变更优先级
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
                                   <button
                                     class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -3335,6 +3348,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                                 <div
                                   class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      变更优先级
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
                                   <button
                                     class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -3654,6 +3680,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   >
                                     <span>
                                       变更状态
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      变更优先级
                                     </span>
                                   </button>
                                 </div>
@@ -4011,6 +4050,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                 </div>
                                 <div
                                   class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      变更优先级
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
                                 >
                                   <button
                                     class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -4363,6 +4415,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                   >
                                     <span>
                                       变更状态
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      变更优先级
                                     </span>
                                   </button>
                                 </div>
@@ -5438,6 +5503,10 @@ exports[`page/SqlManagement/SQLEEIndex render table for not admin 1`] = `
                               <div
                                 class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                />
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"

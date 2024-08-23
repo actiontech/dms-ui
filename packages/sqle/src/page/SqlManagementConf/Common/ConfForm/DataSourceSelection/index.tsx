@@ -16,6 +16,7 @@ import useDatabaseType from '../../../../../hooks/useDatabaseType';
 import { ConfFormContext } from '../context';
 import { SqlManagementConfFormFields } from '../index.type';
 import { useSearchParams } from 'react-router-dom';
+import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
@@ -191,6 +192,8 @@ const DataSourceSelection: React.FC = () => {
         className="has-required-style has-label-tip"
       >
         <BasicSelect
+          showSearch
+          filterOption={filterOptionByLabel}
           disabled={formItemDisabled}
           loading={getInstanceLoading}
           options={instanceIDOptions}

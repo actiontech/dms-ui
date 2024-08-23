@@ -1,6 +1,6 @@
 import { StorageKey, SupportLanguage } from '@actiontech/shared/lib/enum';
 import { initReactI18next } from 'react-i18next';
-import i18n from 'sqle/src/locale';
+import i18n from 'i18next';
 import sqleZhCN from 'sqle/src/locale/zh-CN';
 import sqleEnUS from 'sqle/src/locale/en-US';
 import provisionZhCN from 'provision/src/locale/zh-CN';
@@ -35,7 +35,7 @@ if (en_dupKeys.length > 0) {
     `DMS EnUS_Locale error: The same key exists: ${en_dupKeys.toString()}`
   );
 }
-// endif
+// #endif
 
 const allZhCN = {
   translation: {
@@ -74,10 +74,17 @@ const initReactI18n = () => {
   });
 };
 
+const getPreferredLanguages = () => {
+  if (navigator.languages && navigator.languages.length) {
+    return Array.from(navigator.languages);
+  }
+  return [navigator.language];
+};
+
 const t = (key: I18nKey, opts: TOptions = {}) => {
   return i18n.t(key, opts);
 };
 
-export { t, initReactI18n };
+export { t, initReactI18n, getPreferredLanguages };
 
 export default i18n;
