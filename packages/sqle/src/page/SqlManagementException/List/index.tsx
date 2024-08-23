@@ -200,7 +200,11 @@ const SqlManagementExceptionList = () => {
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={SqlManagementExceptionActions(onUpdate, onDelete)}
+        actions={
+          actionPermission && !projectArchive
+            ? SqlManagementExceptionActions(onUpdate, onDelete)
+            : undefined
+        }
       />
       <SqlManagementExceptionModal />
     </>
