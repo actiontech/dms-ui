@@ -1,4 +1,7 @@
-import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
+import {
+  ActiontechTableColumn,
+  ActiontechTableActionMeta
+} from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../../locale';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
@@ -58,6 +61,25 @@ export const AuditResultForCreateOrderColumn = (
             )}
           </div>
         );
+      }
+    }
+  ];
+};
+
+export const AuditResultForCreateOrderActions = (
+  onCreateWhitelist: (record?: IListDataExportTaskSQL) => void
+): ActiontechTableActionMeta<IListDataExportTaskSQL>[] => {
+  return [
+    {
+      key: 'create-exception',
+      text: t('dmsDataExport.common.auditResult.column.createWhitelist'),
+      buttonProps: (record) => {
+        return {
+          onClick: (e) => {
+            e.stopPropagation();
+            onCreateWhitelist(record);
+          }
+        };
       }
     }
   ];

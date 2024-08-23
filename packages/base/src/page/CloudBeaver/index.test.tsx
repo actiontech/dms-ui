@@ -40,7 +40,8 @@ describe('test base/page/CloudBeaver', () => {
         database: { driverMeta: driverMeta },
         cloudBeaver: {
           modalStatus: {}
-        }
+        },
+        whitelist: { modalStatus: {} }
       });
     });
   });

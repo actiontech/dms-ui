@@ -6,19 +6,10 @@ import {
   useMonacoEditor,
   MonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
-import { I18nKey } from '../../../locale';
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
 import { BasicInput } from '@actiontech/shared';
-
-export const WhitelistMatchTypeLabel: {
-  [key in CreateAuditWhitelistReqV1MatchTypeEnum]: I18nKey;
-} = {
-  [CreateAuditWhitelistReqV1MatchTypeEnum.fp_match]:
-    'whitelist.matchType.fingerPrint',
-  [CreateAuditWhitelistReqV1MatchTypeEnum.exact_match]:
-    'whitelist.matchType.exact'
-};
+import { whitelistMatchTypeOptions } from '../index.data';
 
 const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
   const { t } = useTranslation();
@@ -32,22 +23,7 @@ const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
         name="matchType"
         initialValue={CreateAuditWhitelistReqV1MatchTypeEnum.exact_match}
       >
-        <Radio.Group>
-          <Radio value={CreateAuditWhitelistReqV1MatchTypeEnum.exact_match}>
-            {t(
-              WhitelistMatchTypeLabel[
-                CreateAuditWhitelistReqV1MatchTypeEnum.exact_match
-              ]
-            )}
-          </Radio>
-          <Radio value={CreateAuditWhitelistReqV1MatchTypeEnum.fp_match}>
-            {t(
-              WhitelistMatchTypeLabel[
-                CreateAuditWhitelistReqV1MatchTypeEnum.fp_match
-              ]
-            )}
-          </Radio>
-        </Radio.Group>
+        <Radio.Group options={whitelistMatchTypeOptions} />
       </Form.Item>
       <Form.Item label={t('whitelist.table.desc')} name="desc">
         <BasicInput.TextArea

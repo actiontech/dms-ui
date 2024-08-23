@@ -17,7 +17,8 @@ export default {
     count: '出现次数',
     firstAppearTime: '最早出现时间',
     lastReceiveTime: '最近一次出现时间',
-    creator: '创建人'
+    creator: '创建人',
+    createWhitelist: '添加为审核SQL例外'
   },
   drawerTitle: 'IDE审核结果'
 };

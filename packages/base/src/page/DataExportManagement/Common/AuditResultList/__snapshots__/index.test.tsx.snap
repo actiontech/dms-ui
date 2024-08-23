@@ -27,7 +27,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 1`] = `
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-empty ant-table-scroll-horizontal"
+              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
@@ -42,6 +42,12 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 1`] = `
                     <colgroup>
                       <col
                         style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -71,6 +77,13 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 1`] = `
                           scope="col"
                         >
                           审核结果
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
                         </th>
                       </tr>
                     </thead>
@@ -118,13 +131,22 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 1`] = `
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="4"
+                          colspan="5"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
@@ -198,7 +220,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 2`] = `
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-empty ant-table-scroll-horizontal"
+              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
@@ -213,6 +235,12 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 2`] = `
                     <colgroup>
                       <col
                         style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -242,6 +270,13 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 2`] = `
                           scope="col"
                         >
                           审核结果
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
                         </th>
                       </tr>
                     </thead>
@@ -289,13 +324,22 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 2`] = `
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="4"
+                          colspan="5"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
@@ -369,7 +413,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-scroll-horizontal"
+              class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
@@ -384,6 +428,12 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                     <colgroup>
                       <col
                         style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -414,6 +464,13 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         >
                           审核结果
                         </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
                       </tr>
                     </thead>
                     <tbody
@@ -424,6 +481,15 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                         class="ant-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                         <td
                           style="padding: 0px; border: 0px; height: 0px;"
                         >
@@ -554,6 +620,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -645,6 +736,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                               >
                                 审核通过
                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -742,6 +858,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -833,6 +974,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                               >
                                 审核通过
                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -930,6 +1096,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -1021,6 +1212,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                               >
                                 审核通过
                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -1241,7 +1457,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
             class="ant-spin-container"
           >
             <div
-              class="ant-table ant-table-scroll-horizontal"
+              class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
             >
               <div
                 class="ant-table-container"
@@ -1256,6 +1472,12 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                     <colgroup>
                       <col
                         style="width: 100px;"
+                      />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -1286,6 +1508,13 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         >
                           审核结果
                         </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
                       </tr>
                     </thead>
                     <tbody
@@ -1296,6 +1525,15 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                         class="ant-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                         <td
                           style="padding: 0px; border: 0px; height: 0px;"
                         >
@@ -1426,6 +1664,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -1517,6 +1780,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                               >
                                 审核通过
                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -1614,6 +1902,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -1705,6 +2018,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                               >
                                 审核通过
                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -1802,6 +2140,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                             </div>
                           </div>
                         </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-row ant-table-row-level-0"
@@ -1893,6 +2256,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                               >
                                 审核通过
                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          style="position: sticky; right: 0px;"
+                        >
+                          <div
+                            class="css-new95e"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </td>
@@ -2271,7 +2659,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-scroll-horizontal"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -2286,6 +2674,12 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -2316,6 +2710,13 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                       >
                         审核结果
                       </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -2326,6 +2727,15 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -2424,6 +2834,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                           </div>
                         </div>
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -2509,6 +2944,31 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                                   fill="#F66074"
                                 />
                               </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -2752,7 +3212,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-scroll-horizontal"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -2767,6 +3227,12 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -2797,6 +3263,13 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       >
                         审核结果
                       </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -2807,6 +3280,15 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -2937,6 +3419,31 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                           </div>
                         </div>
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -3028,6 +3535,31 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                             >
                               审核通过
                             </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -3125,6 +3657,31 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                           </div>
                         </div>
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -3216,6 +3773,31 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                             >
                               审核通过
                             </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -3313,6 +3895,31 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                           </div>
                         </div>
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -3404,6 +4011,31 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                             >
                               审核通过
                             </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>
