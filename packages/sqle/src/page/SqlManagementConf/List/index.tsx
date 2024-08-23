@@ -17,7 +17,8 @@ import {
 import {
   useCurrentProject,
   useCurrentUser,
-  useDbServiceDriver
+  useDbServiceDriver,
+  useUserOperationPermission
 } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useMemo } from 'react';
@@ -45,11 +46,12 @@ import {
   BookMarkTagOutlined
 } from '@actiontech/icons';
 import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const List: React.FC = () => {
   const { t } = useTranslation();
   const { projectArchive, projectName, projectID } = useCurrentProject();
-  const { username, isAdmin, isProjectManager } = useCurrentUser();
+  const { username } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
@@ -73,6 +75,12 @@ const List: React.FC = () => {
     IInstanceAuditPlanResV1,
     InstanceAuditPlanTableFilterParamType
   >();
+
+  const {
+    updateUserOperationPermission,
+    loading: getUserOperationPermissionLoading,
+    isHaveServicePermission
+  } = useUserOperationPermission();
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
@@ -147,14 +155,22 @@ const List: React.FC = () => {
 
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
-  }, [updateInstanceList, projectName]);
+    updateUserOperationPermission();
+  }, [updateInstanceList, projectName, updateUserOperationPermission]);
 
   return (
     <SqlManagementConfPageStyleWrapper>
       <PageHeader
         title={t('managementConf.list.pageTitle')}
         extra={
-          <EmptyBox if={!projectArchive}>
+          <EmptyBox
+            if={
+              !projectArchive &&
+              isHaveServicePermission(
+                OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+              )
+            }
+          >
             <Link to={`/sqle/project/${projectID}/sql-management-conf/create`}>
               <BasicButton type="primary">
                 {t('managementConf.list.pageAction.enableAuditPlan')}
@@ -163,7 +179,14 @@ const List: React.FC = () => {
           </EmptyBox>
         }
       />
-      <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
+      <Spin
+        spinning={
+          getTaskTypesLoading ||
+          getTableDataLoading ||
+          getUserOperationPermissionLoading
+        }
+        delay={300}
+      >
         <TableToolbar
           refreshButton={{ refresh: onRefresh, disabled: getTableDataLoading }}
           setting={tableSetting}
@@ -233,9 +256,7 @@ const List: React.FC = () => {
             deleteAction,
             disabledAction,
             enabledAction,
-            username,
-            isAdmin,
-            isProjectManager: isProjectManager(projectName)
+            isHaveServicePermission
           })}
         />
       </Spin>

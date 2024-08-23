@@ -1,6 +1,8 @@
 import {
   GetUserAuthenticationTypeEnum,
-  GetUserStatEnum
+  GetUserStatEnum,
+  OpPermissionItemOpPermissionTypeEnum,
+  OpPermissionItemRangeTypeEnum
 } from '../../api/base/service/common.enum';
 import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
 import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
@@ -130,4 +132,20 @@ export const mockUseProjectBusinessTipsData = {
     }
   ],
   isFixedBusiness: true
+};
+
+export const mockUseUserOperationPermissionData = {
+  userOperationPermission: {
+    is_admin: true,
+    op_permission_list: [
+      {
+        range_uids: ['700300'],
+        range_type: OpPermissionItemRangeTypeEnum.project,
+        op_permission_type: OpPermissionItemOpPermissionTypeEnum.project_admin
+      }
+    ]
+  },
+  loading: false,
+  updateUserOperationPermission: jest.fn(),
+  isHaveServicePermission: jest.fn()
 };
