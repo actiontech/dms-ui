@@ -19,6 +19,7 @@ import {
 import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ScanTypeTagsCell from './ScanTypeTagsCell';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
@@ -142,21 +143,17 @@ export const SqlManagementConfColumnAction: (params: {
   disabledAction: (id: string) => void;
   enabledAction: (id: string) => void;
   deleteAction: (id: string) => void;
-  isAdmin: boolean;
-  isProjectManager: boolean;
-  username: string;
+  isHaveServicePermission: (
+    opPermissionType: OpPermissionItemOpPermissionTypeEnum,
+    serviceID?: string
+  ) => boolean;
 }) => ActiontechTableProps<IInstanceAuditPlanResV1>['actions'] = ({
   editAction,
   disabledAction,
   enabledAction,
   deleteAction,
-  isAdmin,
-  isProjectManager,
-  username
+  isHaveServicePermission
 }) => {
-  const hasPermission = (record?: IInstanceAuditPlanResV1) => {
-    return isAdmin || isProjectManager || record?.creator === username;
-  };
   return {
     buttons: [
       {
@@ -169,52 +166,69 @@ export const SqlManagementConfColumnAction: (params: {
             }
           };
         },
-        permissions: hasPermission
+        permissions: (record) =>
+          isHaveServicePermission(
+            OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
+            record?.instance_id
+          )
       }
     ],
-    moreButtons: [
-      {
-        key: 'disabled',
-        text: t('managementConf.list.table.action.disabled.text'),
-        confirm: (record) => {
-          return {
-            title: t('managementConf.list.table.action.disabled.confirmTips'),
-            onConfirm: () => {
-              disabledAction(record?.instance_audit_plan_id?.toString() ?? '');
+    moreButtons: (record) =>
+      isHaveServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
+        record?.instance_id
+      )
+        ? [
+            {
+              key: 'disabled',
+              text: t('managementConf.list.table.action.disabled.text'),
+              confirm: () => {
+                return {
+                  title: t(
+                    'managementConf.list.table.action.disabled.confirmTips'
+                  ),
+                  onConfirm: () => {
+                    disabledAction(
+                      record?.instance_audit_plan_id?.toString() ?? ''
+                    );
+                  }
+                };
+              },
+              permissions: () =>
+                record?.active_status ===
+                InstanceAuditPlanResV1ActiveStatusEnum.normal
+            },
+            {
+              key: 'enabled',
+              text: t('managementConf.list.table.action.enabled.text'),
+              onClick: () => {
+                enabledAction(record?.instance_audit_plan_id?.toString() ?? '');
+              },
+              permissions: () =>
+                record?.active_status !==
+                InstanceAuditPlanResV1ActiveStatusEnum.normal
+            },
+            {
+              key: 'delete',
+              text: (
+                <Typography.Text type="danger">
+                  {t('common.delete')}
+                </Typography.Text>
+              ),
+              confirm: () => {
+                return {
+                  title: t(
+                    'managementConf.list.table.action.delete.confirmTips'
+                  ),
+                  onConfirm: () => {
+                    deleteAction(
+                      record?.instance_audit_plan_id?.toString() ?? ''
+                    );
+                  }
+                };
+              }
             }
-          };
-        },
-        permissions: (record) =>
-          hasPermission(record) &&
-          record?.active_status ===
-            InstanceAuditPlanResV1ActiveStatusEnum.normal
-      },
-      {
-        key: 'enabled',
-        text: t('managementConf.list.table.action.enabled.text'),
-        onClick: (record) => {
-          enabledAction(record?.instance_audit_plan_id?.toString() ?? '');
-        },
-        permissions: (record) =>
-          hasPermission(record) &&
-          record?.active_status !==
-            InstanceAuditPlanResV1ActiveStatusEnum.normal
-      },
-      {
-        key: 'delete',
-        text: (
-          <Typography.Text type="danger">{t('common.delete')}</Typography.Text>
-        ),
-        confirm: (record) => {
-          return {
-            title: t('managementConf.list.table.action.delete.confirmTips'),
-            onConfirm: () => {
-              deleteAction(record?.instance_audit_plan_id?.toString() ?? '');
-            }
-          };
-        },
-        permissions: hasPermission
-      }
-    ]
+          ]
+        : []
   };
 };

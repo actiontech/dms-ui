@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import ConfDetailOverview from './Overview';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
 import {
@@ -19,7 +19,10 @@ import {
   useSearchParams
 } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useUserOperationPermission
+} from '@actiontech/shared/lib/global';
 import { Result, Space } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';
@@ -27,6 +30,7 @@ import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -46,6 +50,12 @@ const ConfDetail: React.FC = () => {
     useBoolean();
 
   const [messageApi, contextMessageHolder] = message.useMessage();
+
+  const {
+    updateUserOperationPermission,
+    loading: getUserOperationPermissionLoading,
+    isHaveServicePermission
+  } = useUserOperationPermission();
 
   const {
     data,
@@ -83,6 +93,13 @@ const ConfDetail: React.FC = () => {
     [location.pathname, navigate, searchParams]
   );
 
+  const hasOpPermission = useMemo(() => {
+    return isHaveServicePermission(
+      OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
+      data?.instance_id
+    );
+  }, [data?.instance_id, isHaveServicePermission]);
+
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
@@ -93,6 +110,8 @@ const ConfDetail: React.FC = () => {
           handleChangeTab={handleChangeTable}
           instanceAuditPlanId={id ?? ''}
           refreshAuditPlanDetail={refreshAuditPlanDetail}
+          hasOpPermission={hasOpPermission}
+          getUserOperationPermissionLoading={getUserOperationPermissionLoading}
         />
       )
     },
@@ -148,6 +167,10 @@ const ConfDetail: React.FC = () => {
       });
   };
 
+  useEffect(() => {
+    updateUserOperationPermission();
+  }, [updateUserOperationPermission]);
+
   return (
     <>
       {contextMessageHolder}
@@ -180,13 +203,15 @@ const ConfDetail: React.FC = () => {
                   >
                     {t('managementConf.detail.export')}
                   </BasicButton>
-                  <BasicButton
-                    loading={auditing}
-                    onClick={onAuditImmediately}
-                    type="primary"
-                  >
-                    {t('managementConf.detail.auditImmediately')}
-                  </BasicButton>
+                  {hasOpPermission && (
+                    <BasicButton
+                      loading={auditing}
+                      onClick={onAuditImmediately}
+                      type="primary"
+                    >
+                      {t('managementConf.detail.auditImmediately')}
+                    </BasicButton>
+                  )}
                 </Space>
               </EmptyBox>
               <TableRefreshButton refresh={onRefresh} />
