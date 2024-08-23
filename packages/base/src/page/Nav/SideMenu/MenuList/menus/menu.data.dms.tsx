@@ -87,10 +87,11 @@ export const dmsSideMenuData = (
       group: [
         'instance',
         'rule-template',
-        'whitelist',
         'workflow-template',
         'member',
-        'push-rule-configuration'
+        'push-rule-configuration',
+        'whitelist',
+        'sql-management-exception'
       ]
     },
     { type: 'divider' },
