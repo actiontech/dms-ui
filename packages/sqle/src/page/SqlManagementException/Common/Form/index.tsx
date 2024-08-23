@@ -69,13 +69,13 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
             },
             ...whiteSpaceSql()
           ]}
+          initialValue="/* input your sql */"
         >
           <MonacoEditor
             width="100%"
             height="500px"
             language="sql"
             onMount={editorDidMount}
-            defaultValue="/* input your sql */"
           />
         </Form.Item>
       </EmptyBox>
