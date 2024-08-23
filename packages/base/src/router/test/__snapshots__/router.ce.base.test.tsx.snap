@@ -92,6 +92,13 @@ exports[`base/router-base-ce render base route data snap 1`] = `
         "key": "cloudBeaver",
         "path": ":projectID/cloud-beaver",
       },
+      {
+        "element": <div>
+          dataMaskRuleOverview
+        </div>,
+        "key": "dataMaskRuleOverview",
+        "path": ":projectID/data-mask-rule-overview",
+      },
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",

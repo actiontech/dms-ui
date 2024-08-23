@@ -8,8 +8,13 @@ import { mockSystemConfig } from '../../../../testUtils/mockHooks/mockSystemConf
 import CESideMenu from '../index.ce';
 import { act } from '@testing-library/react';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test base/Nav/SideMenu/index.ce', () => {
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
   beforeEach(() => {
     mockSystemConfig();
     mockUseCurrentUser();
