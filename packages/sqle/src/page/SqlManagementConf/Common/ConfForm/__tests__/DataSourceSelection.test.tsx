@@ -104,7 +104,8 @@ describe('test SqlManagementConf/common/ConfForm/DataSourceSelection', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipsSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipsSpy).toHaveBeenNthCalledWith(1, {
-      project_name: mockProjectInfo.projectName
+      project_name: mockProjectInfo.projectName,
+      functional_module: 'create_audit_plan'
     });
   });
 
@@ -120,7 +121,8 @@ describe('test SqlManagementConf/common/ConfForm/DataSourceSelection', () => {
     expect(getInstanceTipsSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
       filter_db_type: undefined,
-      filter_by_business: 'business1'
+      filter_by_business: 'business1',
+      functional_module: 'create_audit_plan'
     });
   });
 
@@ -140,7 +142,8 @@ describe('test SqlManagementConf/common/ConfForm/DataSourceSelection', () => {
     expect(getInstanceTipsSpy).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
       filter_db_type: 'mysql',
-      filter_by_business: 'business1'
+      filter_by_business: 'business1',
+      functional_module: 'create_audit_plan'
     });
   });
 
@@ -158,7 +161,8 @@ describe('test SqlManagementConf/common/ConfForm/DataSourceSelection', () => {
     expect(getBySelector('#instanceId')).toBeDisabled();
     expect(getInstanceTipsSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipsSpy).toHaveBeenNthCalledWith(1, {
-      project_name: mockProjectInfo.projectName
+      project_name: mockProjectInfo.projectName,
+      functional_module: 'create_audit_plan'
     });
 
     await act(async () => jest.advanceTimersByTime(3000));

@@ -15,6 +15,7 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 import { Typography } from 'antd';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const ConfDetailOverviewColumns: (
   projectID: string
@@ -124,13 +125,15 @@ export const ConfDetailOverviewColumnActions: (params: {
   disabledActionPending: boolean;
   enabledActionPending: boolean;
   deleteActionPending: boolean;
+  hasOpPermission: boolean;
 }) => ActiontechTableProps<IInstanceAuditPlanInfo>['actions'] = ({
   enabledAction,
   disabledAction,
   deleteAction,
   disabledActionPending,
   enabledActionPending,
-  deleteActionPending
+  deleteActionPending,
+  hasOpPermission
 }) => {
   return {
     buttons: [
@@ -139,7 +142,7 @@ export const ConfDetailOverviewColumnActions: (params: {
         text: t('managementConf.detail.overview.actions.enabled'),
         permissions: (record) =>
           record?.active_status ===
-          InstanceAuditPlanInfoActiveStatusEnum.disabled,
+            InstanceAuditPlanInfoActiveStatusEnum.disabled && hasOpPermission,
         buttonProps: (record) => {
           return {
             disabled: enabledActionPending,
@@ -156,7 +159,7 @@ export const ConfDetailOverviewColumnActions: (params: {
         text: t('managementConf.detail.overview.actions.disabled'),
         permissions: (record) =>
           record?.active_status ===
-          InstanceAuditPlanInfoActiveStatusEnum.normal,
+            InstanceAuditPlanInfoActiveStatusEnum.normal && hasOpPermission,
         buttonProps: () => {
           return {
             disabled: disabledActionPending
@@ -185,6 +188,7 @@ export const ConfDetailOverviewColumnActions: (params: {
             danger: true
           };
         },
+        permissions: () => hasOpPermission,
         confirm: (record) => {
           return {
             disabled: deleteActionPending,

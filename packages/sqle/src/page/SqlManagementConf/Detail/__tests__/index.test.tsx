@@ -10,7 +10,11 @@ import ConfDetail from '..';
 import { act, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
+import {
+  mockProjectInfo,
+  mockUseUserOperationPermissionData
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockAuditPlanDetailData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
 import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -41,6 +45,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseUserOperationPermission();
     instanceAuditPlan.mockAllApi();
     getInstanceAuditPlanDetailSpy =
       instanceAuditPlan.getInstanceAuditPlanDetail();
@@ -51,6 +56,9 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     mockUseParams.mockReturnValue({ id: instanceAuditPlanId });
     mockUseNavigate.mockReturnValue(navigateSpy);
     mockUseSearchParams.mockReturnValue([new URLSearchParams()]);
+    mockUseUserOperationPermissionData.isHaveServicePermission.mockReturnValue(
+      true
+    );
   });
   afterEach(() => {
     jest.useRealTimers();

@@ -23,7 +23,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
   handleChangeTab,
   instanceAuditPlanId,
-  refreshAuditPlanDetail
+  refreshAuditPlanDetail,
+  hasOpPermission
 }) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
@@ -122,7 +123,8 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
           },
           disabledActionPending,
           enabledActionPending,
-          deleteActionPending
+          deleteActionPending,
+          hasOpPermission
         })}
       />
     </Spin>
