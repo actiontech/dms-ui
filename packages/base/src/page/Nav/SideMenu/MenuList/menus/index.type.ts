@@ -30,6 +30,7 @@ export type MenuStructTreeKey =
   | 'sql-management'
   | 'rule-template'
   | 'whitelist'
+  | 'sql-management-exception'
   | 'workflow-template'
   | 'sqle-log'
   | 'sql-management-conf'

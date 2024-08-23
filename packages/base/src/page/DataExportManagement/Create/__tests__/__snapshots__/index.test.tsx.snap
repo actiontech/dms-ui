@@ -18,7 +18,7 @@ exports[`first should match snapshot when pageState is equal CREATE_TASK 1`] = `
             class="title"
           >
             <a
-              href="/project//data/export"
+              href="/project/700300/data/export"
             >
               <button
                 class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1073,7 +1073,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_RESULT 1`] =
         class="ant-result-extra"
       >
         <a
-          href="/project//data/export/123"
+          href="/project/700300/data/export/123"
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -1101,7 +1101,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
       class="title"
     >
       <a
-        href="/project//data/export"
+        href="/project/700300/data/export"
       >
         <button
           class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
@@ -1200,7 +1200,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-empty ant-table-scroll-horizontal"
+            class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -1215,6 +1215,12 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                   <colgroup>
                     <col
                       style="width: 100px;"
+                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -1244,6 +1250,13 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                         scope="col"
                       >
                         审核结果
+                      </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
                       </th>
                     </tr>
                   </thead>
@@ -1291,13 +1304,22 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="4"
+                        colspan="5"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"

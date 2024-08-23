@@ -7,10 +7,10 @@ import { sqlDEVRecordListMockData } from './data';
 
 class SqlDEVRecord implements MockSpyApy {
   public mockAllApi(): void {
-    this.getAuditWhitelist();
+    this.getSqlDEVRecordList();
   }
 
-  public getAuditWhitelist() {
+  public getSqlDEVRecordList() {
     const spy = jest.spyOn(sqlDEVRecord, 'GetSqlDEVRecordList');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
