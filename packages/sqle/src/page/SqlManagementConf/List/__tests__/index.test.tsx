@@ -3,7 +3,10 @@ import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockProjectInfo,
+  mockUseUserOperationPermissionData
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
 import { mockInstanceAuditPlanListData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
 import { superRender } from '../../../../testUtils/customRender';
@@ -19,6 +22,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import instance from '../../../../testUtils/mockApi/instance';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
+import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -45,6 +49,10 @@ describe('test sqle/SqlManagementConf/List', () => {
     mockUseDbServiceDriver();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
+    mockUseUserOperationPermission();
+    mockUseUserOperationPermissionData.isHaveServicePermission.mockReturnValue(
+      true
+    );
   });
 
   afterEach(() => {

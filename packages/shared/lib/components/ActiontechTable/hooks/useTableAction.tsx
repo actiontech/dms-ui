@@ -32,9 +32,9 @@ const useTableAction = () => {
 
   const renderAction = useCallback(
     <T extends Record<string, any>>(
-      actions:
-        | ActiontechTableActionMeta<T>[]
-        | ActiontechTableToolbarActionMeta[] = [],
+      actions: Array<
+        ActiontechTableActionMeta<T> | ActiontechTableToolbarActionMeta
+      > = [],
       record?: T
     ) => {
       return (
