@@ -24,6 +24,10 @@ describe('test init sql manage modal', () => {
       return selector({
         sqlManagement: {
           modalStatus: {}
+        },
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        sqlManagementException: {
+          modalStatus: { [ModalName.Create_Sql_Management_Exception]: false }
         }
       });
     });
@@ -41,7 +45,7 @@ describe('test init sql manage modal', () => {
     const { container } = superRender(<SqlManagementModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
-    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledTimes(3);
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         modalStatus: {

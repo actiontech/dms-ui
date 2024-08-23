@@ -28,6 +28,7 @@ export default {
       execResult: '执行结果',
       execTime: '执行时间（毫秒）',
       rowCount: '结果集返回行数'
-    }
+    },
+    createWhitelist: '添加为审核SQL例外'
   }
 };

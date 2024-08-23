@@ -18,5 +18,9 @@ export enum ModalName {
   Change_SQL_Priority = 'Change_SQL_Priority',
 
   // IDE plugin audit
-  View_Plugin_Audit_Result_Drawer = 'View_Plugin_Audit_Result_Drawer'
+  View_Plugin_Audit_Result_Drawer = 'View_Plugin_Audit_Result_Drawer',
+
+  //
+  Create_Sql_Management_Exception = 'Create_Sql_Management_Exception',
+  Update_Sql_Management_Exception = 'Update_Sql_Management_Exception'
 }

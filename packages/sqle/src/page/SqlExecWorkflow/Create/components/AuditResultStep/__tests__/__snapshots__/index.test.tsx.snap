@@ -374,7 +374,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 164px;"
                     />
                   </colgroup>
                   <thead

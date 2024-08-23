@@ -38,6 +38,7 @@ const menuStruct: MenuStructTreeType = [
       'instance',
       'rule-template',
       'whitelist',
+      'sql-management-exception',
       'workflow-template',
       'member'
     ]

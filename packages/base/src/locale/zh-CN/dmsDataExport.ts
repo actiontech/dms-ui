@@ -172,7 +172,8 @@ export default {
         number: '序号',
         execSql: '执行语句',
         sqlType: '语句类型',
-        auditResult: '审核结果'
+        auditResult: '审核结果',
+        createWhitelist: '添加为审核SQL例外'
       }
     }
   }

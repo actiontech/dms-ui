@@ -9,7 +9,8 @@ import {
 } from '@actiontech/shared/lib/global';
 import {
   PluginAuditListColumns,
-  PluginAuditListTableFilterParamType
+  PluginAuditListTableFilterParamType,
+  PluginAuditListActions
 } from './columns';
 import useInstance from '../../../hooks/useInstance';
 import useUsername from '../../../hooks/useUsername';
@@ -32,6 +33,8 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '../../../data/common';
+import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
+import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
 
 const PluginAuditList = () => {
   const dispatch = useDispatch();
@@ -40,6 +43,12 @@ const PluginAuditList = () => {
   const { username } = useCurrentUser();
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceOptions, updateInstanceList } = useInstance();
+
+  const {
+    openCreateWhitelistModal,
+    updateSelectWhitelistRecord,
+    actionPermission
+  } = useWhitelistRedux();
 
   const {
     tableFilterInfo,
@@ -97,6 +106,13 @@ const PluginAuditList = () => {
     }),
     [username]
   );
+
+  const onCreateWhitelist = (record?: ISqlDEVRecord) => {
+    openCreateWhitelistModal();
+    updateSelectWhitelistRecord({
+      value: record?.sql
+    });
+  };
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof ISqlDEVRecord, FilterCustomProps>([
@@ -184,8 +200,15 @@ const PluginAuditList = () => {
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
+          actions={
+            actionPermission
+              ? PluginAuditListActions(onCreateWhitelist)
+              : undefined
+          }
+          scroll={{}}
         />
         <AuditResultDrawer />
+        <AddWhitelistModal onCreated={refresh} />
       </>
     </EmptyBox>
   );

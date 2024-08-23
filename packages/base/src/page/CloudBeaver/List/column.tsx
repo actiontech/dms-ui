@@ -1,6 +1,7 @@
 import {
   ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize
+  PageInfoWithoutIndexAndSize,
+  ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
@@ -147,6 +148,27 @@ export const CBOperationListColumns = (
       render: (value: ICBOperationLog['result_set_row_count']) => {
         return value ?? '-';
       }
+    }
+  ];
+};
+
+export const CBOperationListAction = (
+  onCreateWhitelist: (record?: ICBOperationLog) => void
+): ActiontechTableActionMeta<ICBOperationLog>[] => {
+  return [
+    {
+      key: 'create-exception',
+      text: t('dmsCloudBeaver.operationList.createWhitelist'),
+      buttonProps: (record) => {
+        return {
+          onClick: (e) => {
+            e.stopPropagation();
+            onCreateWhitelist(record);
+          }
+        };
+      },
+      permissions: (record) =>
+        record?.operation?.operation_type === OperationOperationTypeEnum.SQL
     }
   ];
 };

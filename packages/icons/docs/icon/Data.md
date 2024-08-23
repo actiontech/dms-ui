@@ -137,6 +137,13 @@ import { DoubleDatabaseOutlined } from '@actiontech/icons';
 export default () => <DoubleDatabaseOutlined width={32} height={32} />
 ```
 
+## ExceptionFileOutlined
+```jsx
+import { ExceptionFileOutlined } from '@actiontech/icons';
+
+export default () => <ExceptionFileOutlined width={32} height={32} />
+```
+
 ## HorizontalTripleLineOutlined
 ```jsx
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';

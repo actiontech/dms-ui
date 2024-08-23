@@ -23,6 +23,7 @@ import managementConf from './managementConf';
 import home from './home';
 import components from './components';
 import pushRule from './pushRule';
+import sqlManagementException from './sqlManagementException';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -51,6 +52,7 @@ export default {
     managementConf,
     home,
     components,
-    pushRule
+    pushRule,
+    sqlManagementException
   }
 };

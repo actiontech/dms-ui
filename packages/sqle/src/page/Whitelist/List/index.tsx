@@ -1,19 +1,12 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
-import { WhitelistColumn } from './columns';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { WhitelistColumn, WhitelistTableFilterParamType } from './columns';
 import { ModalName } from '../../../data/ModalName';
-import { Space, message } from 'antd';
+import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import {
-  updateSelectWhitelist,
-  updateWhitelistModalStatus
-} from '../../../store/whitelist';
+import { updateWhitelistModalStatus } from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
@@ -23,36 +16,44 @@ import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/serv
 import audit_whitelist from '@actiontech/shared/lib/api/sqle/service/audit_whitelist';
 import {
   ActiontechTable,
-  ActiontechTableActionMeta,
-  ColumnsSettingProps,
-  TableRefreshButton,
   useTableRequestError,
-  useTableRequestParams
+  useTableRequestParams,
+  TableToolbar,
+  TableFilterContainer,
+  useTableFilterContainer,
+  FilterCustomProps,
+  ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { PlusOutlined } from '@actiontech/icons';
+import { whitelistMatchTypeOptions } from '../index.data';
+import useWhitelistRedux from '../hooks/useWhitelistRedux';
 
 const WhitelistList = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { projectName, projectArchive } = useCurrentProject();
-  const { isAdmin, isProjectManager, username } = useCurrentUser();
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
+  const { projectName } = useCurrentProject();
 
-  const { tableChange, pagination } =
-    useTableRequestParams<IAuditWhitelistResV1>();
+  const {
+    dispatch,
+    updateSelectWhitelistRecord,
+    openCreateWhitelistModal,
+    actionPermission
+  } = useWhitelistRedux();
+
+  const {
+    tableFilterInfo,
+    updateTableFilterInfo,
+    tableChange,
+    pagination,
+    searchKeyword,
+    setSearchKeyword,
+    refreshBySearchKeyword
+  } = useTableRequestParams<
+    IAuditWhitelistResV1,
+    WhitelistTableFilterParamType
+  >();
 
   const columns = useMemo(() => WhitelistColumn(), []);
-
-  const tableSetting = useMemo<ColumnsSettingProps>(
-    () => ({
-      tableName: 'whitelist_list',
-      username: username
-    }),
-    [username]
-  );
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -64,9 +65,11 @@ const WhitelistList = () => {
   } = useRequest(
     () => {
       const params: IGetAuditWhitelistV1Params = {
+        ...tableFilterInfo,
         page_index: String(pagination.page_index),
         page_size: String(pagination.page_size),
-        project_name: projectName
+        project_name: projectName,
+        fuzzy_search_value: searchKeyword
       };
 
       return handleTableRequestError(
@@ -74,26 +77,13 @@ const WhitelistList = () => {
       );
     },
     {
-      refreshDeps: [pagination]
+      refreshDeps: [pagination, tableFilterInfo]
     }
   );
 
-  const openAddWhitelistModal = useCallback(() => {
-    dispatch(
-      updateWhitelistModalStatus({
-        modalName: ModalName.Add_Whitelist,
-        status: true
-      })
-    );
-  }, [dispatch]);
-
   const openUpdateWhitelistModal = useCallback(
     (selectRow: IAuditWhitelistResV1) => {
-      dispatch(
-        updateSelectWhitelist({
-          selectRow
-        })
-      );
+      updateSelectWhitelistRecord(selectRow);
       dispatch(
         updateWhitelistModalStatus({
           modalName: ModalName.Update_Whitelist,
@@ -101,7 +91,7 @@ const WhitelistList = () => {
         })
       );
     },
-    [dispatch]
+    [dispatch, updateSelectWhitelistRecord]
   );
 
   const removeWhitelist = useCallback(
@@ -148,6 +138,15 @@ const WhitelistList = () => {
     ]
   };
 
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IAuditWhitelistResV1, FilterCustomProps>([
+      ['match_type', { options: whitelistMatchTypeOptions }]
+    ]);
+  }, []);
+
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo);
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Whitelist_List,
@@ -160,33 +159,42 @@ const WhitelistList = () => {
     <>
       {messageContextHolder}
       <PageHeader
-        title={
-          <Space>
-            {t('whitelist.pageTitle')}
-
-            <TableRefreshButton refresh={refresh} />
-          </Space>
-        }
+        title={t('whitelist.pageTitle')}
         extra={[
-          <EmptyBox
-            if={actionPermission && !projectArchive}
-            key="add-whitelist"
-          >
+          <EmptyBox if={actionPermission} key="add-whitelist">
             <BasicButton
               type="primary"
               icon={
                 <PlusOutlined width={10} height={10} color="currentColor" />
               }
-              onClick={openAddWhitelistModal}
+              onClick={openCreateWhitelistModal}
             >
               {t('whitelist.operate.addWhitelist')}
             </BasicButton>
           </EmptyBox>
         ]}
       />
-
+      <TableToolbar
+        refreshButton={{ refresh, disabled: loading }}
+        filterButton={{
+          filterButtonMeta,
+          updateAllSelectedFilterItem
+        }}
+        searchInput={{
+          onChange: setSearchKeyword,
+          onSearch: () => {
+            refreshBySearchKeyword();
+          }
+        }}
+        loading={loading}
+      />
+      <TableFilterContainer
+        filterContainerMeta={filterContainerMeta}
+        updateTableFilterInfo={updateTableFilterInfo}
+        disabled={loading}
+        filterCustomProps={filterCustomProps}
+      />
       <ActiontechTable
-        setting={tableSetting}
         dataSource={whitelistList?.list}
         rowKey={(record: IAuditWhitelistResV1) => {
           return `${record?.audit_whitelist_id}`;
@@ -196,11 +204,7 @@ const WhitelistList = () => {
         }}
         loading={loading}
         columns={columns}
-        actions={
-          !projectArchive && actionPermission
-            ? whitelistActionsInTable
-            : undefined
-        }
+        actions={actionPermission ? whitelistActionsInTable : undefined}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         scroll={{}}

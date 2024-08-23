@@ -5,11 +5,16 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { AuditResultTableProps } from './index.type';
 import { useBoolean, useRequest } from 'ahooks';
-import { AuditResultForCreateOrderColumn } from './column';
+import {
+  AuditResultForCreateOrderColumn,
+  AuditResultForCreateOrderActions
+} from './column';
 import { useState } from 'react';
 import AuditResultDrawer from './AuditResultDrawer';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
+import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
+import AddWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   taskID,
@@ -26,12 +31,18 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
+  const {
+    openCreateWhitelistModal,
+    updateSelectWhitelistRecord,
+    actionPermission
+  } = useWhitelistRedux();
+
   const onClickAuditResult = (record: IListDataExportTaskSQL) => {
     openAuditResultDrawer();
     setCurrentAuditResultRecord(record);
   };
 
-  const { data, loading } = useRequest(
+  const { data, loading, refresh } = useRequest(
     () =>
       handleTableRequestError(
         DataExportTask.ListDataExportTaskSQLs({
@@ -55,6 +66,13 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     }
   );
 
+  const onCreateWhitelist = (record?: IListDataExportTaskSQL) => {
+    openCreateWhitelistModal();
+    updateSelectWhitelistRecord({
+      value: record?.sql
+    });
+  };
+
   return (
     <>
       <ActiontechTable
@@ -68,12 +86,18 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
           total: data?.total ?? 0,
           current: pagination.page_index
         }}
+        actions={
+          actionPermission
+            ? AuditResultForCreateOrderActions(onCreateWhitelist)
+            : undefined
+        }
       />
       <AuditResultDrawer
         open={auditResultDrawerVisibility}
         onClose={closeAuditResultDrawer}
         auditResultRecord={currentAuditResultRecord}
       />
+      <AddWhitelistModal onCreated={refresh} />
     </>
   );
 };
