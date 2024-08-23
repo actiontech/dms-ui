@@ -11,7 +11,8 @@ import {
 import { useRequest } from 'ahooks';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  useUserOperationPermission
 } from '@actiontech/shared/lib/global';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
@@ -35,7 +36,7 @@ import RenewalPasswordModal from '../../DatabaseAccount/Modal/RenewalPassword';
 import { useSetRecoilState } from 'recoil';
 import useSecurityPolicy from '~/hooks/useSecurityPolicy';
 import dayjs from 'dayjs';
-import useUserOperationPermission from '../../../hooks/useUserOperationPermission';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const ExpirationAccountList = () => {
   const { projectID } = useCurrentProject();
@@ -218,9 +219,10 @@ const ExpirationAccountList = () => {
         columns={columns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
-        actions={ExpirationAccountListActions(
-          onOpenModal,
-          isHaveServicePermission
+        actions={ExpirationAccountListActions(onOpenModal, () =>
+          isHaveServicePermission(
+            OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+          )
         )}
       />
       <ModifyPasswordModal />
