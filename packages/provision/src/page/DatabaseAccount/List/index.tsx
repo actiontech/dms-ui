@@ -275,9 +275,10 @@ const DatabaseAccountList = () => {
       onSetManagedStatus,
       onDeleteAccount,
       onNavigateToUpdatePage,
-      () =>
+      (dbServiceId) =>
         isHaveServicePermission(
-          OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+          OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+          dbServiceId
         )
     );
   }, [

@@ -219,9 +219,10 @@ const ExpirationAccountList = () => {
         columns={columns}
         onChange={tableChange}
         errorMessage={requestErrorMessage}
-        actions={ExpirationAccountListActions(onOpenModal, () =>
+        actions={ExpirationAccountListActions(onOpenModal, (dbServiceId) =>
           isHaveServicePermission(
-            OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+            OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+            dbServiceId
           )
         )}
       />
