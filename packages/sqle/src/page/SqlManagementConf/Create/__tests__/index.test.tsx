@@ -99,7 +99,8 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
-      filter_by_business: 'business1'
+      filter_by_business: 'business1',
+      functional_module: 'create_audit_plan'
     });
 
     fireEvent.mouseDown(getBySelector('#instanceType'));
@@ -111,7 +112,8 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
       filter_by_business: 'business1',
-      filter_db_type: 'mysql'
+      filter_db_type: 'mysql',
+      functional_module: 'create_audit_plan'
     });
     expect(getProjectRuleTemplateTipSpy).toHaveBeenCalledTimes(2);
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalledTimes(2);
@@ -335,7 +337,8 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalledTimes(2);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(1, {
-      project_name: mockProjectInfo.projectName
+      project_name: mockProjectInfo.projectName,
+      functional_module: 'create_audit_plan'
     });
     expect(getAuditPlanMetaSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));

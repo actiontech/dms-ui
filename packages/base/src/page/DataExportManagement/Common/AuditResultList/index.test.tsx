@@ -15,17 +15,38 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ModalName } from 'sqle/src/data/ModalName';
+import { useDispatch, useSelector } from 'react-redux';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn()
+  };
+});
 
 describe('test DataExport/Common/AuditResultList', () => {
   let batchGetTaskSpy: jest.SpyInstance;
   let getTaskSQLsSpy: jest.SpyInstance;
   const taskIDs = ['1233234654', '324234234'];
   const projectID = '400300';
+  const dispatchSpy = jest.fn();
 
   beforeEach(() => {
     jest.useFakeTimers();
     batchGetTaskSpy = dataExport.BatchGetDataExportTask();
     getTaskSQLsSpy = dataExport.ListDataExportTaskSQLs();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+      })
+    );
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    mockUseCurrentProject();
+    mockUseCurrentUser();
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -79,6 +100,30 @@ describe('test DataExport/Common/AuditResultList', () => {
     expect(getBySelector('.ant-drawer-content-wrapper')).not.toHaveClass(
       'ant-drawer-content-wrapper-hidden'
     );
+  });
+
+  it('render create whitelist', async () => {
+    getTaskSQLsSpy.mockClear();
+    getTaskSQLsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [ListDataExportTaskSQLsResponseData[0]]
+      })
+    );
+    superRender(<AuditResultList taskIDs={taskIDs} projectID={projectID} />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('添加为审核SQL例外')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('添加为审核SQL例外'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      payload: { modalName: ModalName.Add_Whitelist, status: true },
+      type: 'whitelist/updateModalStatus'
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      payload: { selectRow: { value: 'SELECT 1;' } },
+      type: 'whitelist/updateSelectWhitelist'
+    });
   });
 
   it('should match snapshot when data is null', async () => {

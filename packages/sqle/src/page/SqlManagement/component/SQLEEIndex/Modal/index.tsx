@@ -5,6 +5,10 @@ import ChangeStatus from './ChangeStatus';
 import StatusDrawer from './StatusDrawer';
 import useSqlManagementRedux from '../hooks/useSqlManagementRedux';
 import { ModalName } from '../../../../../data/ModalName';
+import CreateSqlManagementException from '../../../../SqlManagementException/Modal/Create';
+import EventEmitter from '../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../data/EmitterKey';
+import AddWhitelist from '../../../../Whitelist/Drawer/AddWhitelist';
 import ChangePriority from './ChangePriority';
 
 const SqlManagementModal = () => {
@@ -21,12 +25,18 @@ const SqlManagementModal = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const onCreated = () => {
+    EventEmitter.emit(EmitterKey.Refresh_SQL_Management);
+  };
+
   return (
     <>
       <AssignmentSingle />
       <StatusDrawer />
       <AssignmentBatch />
       <ChangeStatus />
+      <CreateSqlManagementException onCreated={onCreated} />
+      <AddWhitelist onCreated={onCreated} />
       <ChangePriority />
     </>
   );

@@ -16,6 +16,13 @@ const Whitelist = React.lazy(
   () => import(/* webpackChunkName: "Whitelist" */ '../page/Whitelist')
 );
 
+const SqlManagementException = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "SqlManagementException" */ '../page/SqlManagementException'
+    )
+);
+
 const ProjectOverview = React.lazy(
   () =>
     import(/* webpackChunkName: "ProjectOverview" */ '../page/ProjectOverview')
@@ -350,6 +357,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/whitelist`,
     key: 'Whitelist',
     element: <Whitelist />
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/sql-management-exception`,
+    key: 'sqlManagementException',
+    element: <SqlManagementException />
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/operation-record`,

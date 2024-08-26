@@ -1,29 +1,49 @@
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
 import { act, cleanup } from '@testing-library/react';
+import { mockUseCurrentProject } from '../../testUtil/mockHook/mockUseCurrentProject';
+import { mockUseCurrentUser } from '../../testUtil/mockHook/mockUseCurrentUser';
+import User from '../../api/base/service/User';
 import {
   createSpyFailResponse,
   createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+} from '../../testUtil/mockApi';
+import { IGetUserOpPermissionReply } from '../../api/base/service/common';
+import {
+  OpPermissionItemOpPermissionTypeEnum,
+  OpPermissionItemRangeTypeEnum
+} from '../../api/base/service/common.enum';
+import { renderHooksWithRedux } from '../../testUtil/customRender';
 import useUserOperationPermission from '.';
-import user from '../../testUtil/mockApi/user';
-import { userOperationPermissionMockData } from '../../testUtil/mockApi/user/data';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {
   mockCurrentUserReturn,
   mockProjectInfo
-} from '@actiontech/shared/lib/testUtil/mockHook/data';
-import {
-  OpPermissionItemRangeTypeEnum,
-  OpPermissionItemOpPermissionTypeEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+} from '../../testUtil/mockHook/data';
 
-describe('provision/hooks/useUserOperationPermission', () => {
+const userOperationPermissionMockData: IGetUserOpPermissionReply['data'] = {
+  is_admin: true,
+  op_permission_list: [
+    {
+      range_uids: ['700300'],
+      range_type: OpPermissionItemRangeTypeEnum.project,
+      op_permission_type: OpPermissionItemOpPermissionTypeEnum.project_admin
+    }
+  ]
+};
+
+describe('global/hooks/useUserOperationPermission', () => {
+  const getUserOpPermission = () => {
+    const spy = jest.spyOn(User, 'GetUserOpPermission');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: userOperationPermissionMockData
+      })
+    );
+    return spy;
+  };
   let getUserOpPermissionSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
-    getUserOpPermissionSpy = user.getUserOpPermission();
+    getUserOpPermissionSpy = getUserOpPermission();
     jest.useFakeTimers();
   });
 
@@ -37,7 +57,11 @@ describe('provision/hooks/useUserOperationPermission', () => {
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.userOperationPermission).toBeUndefined();
-    expect(result.current.isHaveServicePermission()).toBeFalsy();
+    expect(
+      result.current.isHaveServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+      )
+    ).toBeFalsy();
 
     act(() => {
       result.current.updateUserOperationPermission();
@@ -56,7 +80,11 @@ describe('provision/hooks/useUserOperationPermission', () => {
     expect(result.current.userOperationPermission).toEqual(
       userOperationPermissionMockData
     );
-    expect(result.current.isHaveServicePermission()).toBeTruthy();
+    expect(
+      result.current.isHaveServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+      )
+    ).toBeTruthy();
   });
 
   it('isHaveServicePermission should return true when user is project manager', async () => {
@@ -86,7 +114,11 @@ describe('provision/hooks/useUserOperationPermission', () => {
     });
 
     expect(result.current.loading).toBeFalsy();
-    expect(result.current.isHaveServicePermission()).toBeTruthy();
+    expect(
+      result.current.isHaveServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+      )
+    ).toBeTruthy();
   });
 
   it('isHaveServicePermission should return true when user have service permission', async () => {
@@ -116,7 +148,12 @@ describe('provision/hooks/useUserOperationPermission', () => {
     });
 
     expect(result.current.loading).toBeFalsy();
-    expect(result.current.isHaveServicePermission('123')).toBeTruthy();
+    expect(
+      result.current.isHaveServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+        '123'
+      )
+    ).toBeTruthy();
   });
 
   it('when response code is not equal success code', async () => {
@@ -133,6 +170,10 @@ describe('provision/hooks/useUserOperationPermission', () => {
     });
 
     expect(result.current.loading).toBeFalsy();
-    expect(result.current.isHaveServicePermission()).toBeFalsy();
+    expect(
+      result.current.isHaveServicePermission(
+        OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+      )
+    ).toBeFalsy();
   });
 });

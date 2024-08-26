@@ -104,7 +104,9 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
   jumpToAnalyze: (sqlManageID: string) => void,
-  operationPermission: boolean
+  operationPermission: boolean,
+  openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
+  onCreateWhitelist: (record?: ISqlManage) => void
 ): ActiontechTableProps<ISqlManage>['actions'] => {
   return {
     width: operationPermission
@@ -134,29 +136,39 @@ export const SqlManagementRowAction = (
           };
         },
         permissions: () => operationPermission
-      },
+      }
+    ],
+    moreButtons: [
       {
         text: t('sqlManagement.table.action.single.updatePriority.triggerText'),
         key: 'change-priority-single',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              openModal(ModalName.Change_SQL_Priority, record);
-            }
-          };
+        onClick: (record) => {
+          openModal(ModalName.Change_SQL_Priority, record);
         },
         permissions: () => operationPermission
       },
       {
         text: t('sqlManagement.table.action.analyze'),
         key: 'analyze-sql',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              jumpToAnalyze(record?.id?.toString() ?? '');
-            }
-          };
+        onClick: (record) => {
+          jumpToAnalyze(record?.id?.toString() ?? '');
         }
+      },
+      {
+        text: t('sqlManagement.table.action.createSqlManagementException'),
+        key: 'create-exception',
+        onClick: (record) => {
+          openCreateSqlManagementExceptionModal(record);
+        },
+        permissions: () => operationPermission
+      },
+      {
+        text: t('sqlManagement.table.action.createWhitelist'),
+        key: 'create-whitelist',
+        onClick: (record) => {
+          onCreateWhitelist(record);
+        },
+        permissions: () => operationPermission
       }
     ]
   };

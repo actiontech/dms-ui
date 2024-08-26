@@ -376,6 +376,15 @@ describe('base/router-sqle-ce', () => {
         expect(screen.getByText('Whitelist')).toBeInTheDocument();
       });
 
+      it('render sqlManagementException', () => {
+        const { baseElement } = customRender([
+          `/sqle/project/${projectID}/sql-management-exception`
+        ]);
+
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('sqlManagementException')).toBeInTheDocument();
+      });
+
       it('render operationRecord', () => {
         const { baseElement } = customRender([
           `/sqle/project/${projectID}/operation-record`

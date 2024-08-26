@@ -1,6 +1,7 @@
 import {
   useCurrentProject,
-  useDbServiceDriver
+  useDbServiceDriver,
+  useUserOperationPermission
 } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useMemo, useCallback, useState, useEffect } from 'react';
@@ -8,7 +9,7 @@ import { IListService } from '@actiontech/shared/lib/api/provision/service/commo
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import useUserOperationPermission from '../useUserOperationPermission';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
   const { projectID } = useCurrentProject();
@@ -54,7 +55,12 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
       return Array.from(
         new Set(
           serviceList
-            .filter((i) => isHaveServicePermission(i.uid))
+            .filter((i) =>
+              isHaveServicePermission(
+                OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+                i.uid
+              )
+            )
             .map((v) => v.db_type ?? '')
         )
       );
@@ -67,7 +73,11 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
       const optionSource = serviceList.filter((service) => {
         if (isNeedFilterByOperationPermission) {
           return (
-            service.db_type === type && isHaveServicePermission(service.uid)
+            service.db_type === type &&
+            isHaveServicePermission(
+              OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+              service.uid
+            )
           );
         }
         return service.db_type === type;

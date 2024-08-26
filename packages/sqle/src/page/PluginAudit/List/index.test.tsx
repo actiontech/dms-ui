@@ -30,7 +30,7 @@ jest.mock('react-redux', () => {
 
 describe('sqle/PluginAudit/List', () => {
   const mockDispatch = jest.fn();
-  let getAuditWhitelistSpy: jest.SpyInstance;
+  let getSqlDEVRecordListSpy: jest.SpyInstance;
   let getUserTipListSpy: jest.SpyInstance;
   let getInstanceTipListSpy: jest.SpyInstance;
 
@@ -44,10 +44,11 @@ describe('sqle/PluginAudit/List', () => {
         database: { driverMeta: driverMeta },
         pluginAudit: {
           modalStatus: {}
-        }
+        },
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
       });
     });
-    getAuditWhitelistSpy = sqlDEVRecord.getAuditWhitelist();
+    getSqlDEVRecordListSpy = sqlDEVRecord.getSqlDEVRecordList();
     getUserTipListSpy = user.getUserTipList();
     getInstanceTipListSpy = instance.getInstanceTipList();
     jest.useFakeTimers();
@@ -63,7 +64,7 @@ describe('sqle/PluginAudit/List', () => {
 
   it('render table data', async () => {
     const { baseElement } = superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     expect(getUserTipListSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -71,30 +72,30 @@ describe('sqle/PluginAudit/List', () => {
   });
 
   it('render empty prompt when request return empty', async () => {
-    getAuditWhitelistSpy.mockClear();
-    getAuditWhitelistSpy.mockImplementation(() =>
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [] })
     );
     const { baseElement } = superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render empty prompt when request failed', async () => {
-    getAuditWhitelistSpy.mockClear();
-    getAuditWhitelistSpy.mockImplementation(() =>
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpyFailResponse({ data: [] })
     );
     const { baseElement } = superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('filter data with search', async () => {
     superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
     fireEvent.change(inputEle, {
@@ -110,7 +111,7 @@ describe('sqle/PluginAudit/List', () => {
       await jest.advanceTimersByTime(300);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAuditWhitelistSpy).toHaveBeenCalledWith({
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalledWith({
       fuzzy_search_sql_fingerprint: searchText,
       page_index: 1,
       page_size: 20,
@@ -119,12 +120,12 @@ describe('sqle/PluginAudit/List', () => {
   });
 
   it('click sql fingerprint and open ide audit result', async () => {
-    getAuditWhitelistSpy.mockClear();
-    getAuditWhitelistSpy.mockImplementation(() =>
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
     const { baseElement } = superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT').length).toBe(2);
     fireEvent.click(screen.getAllByText('SELECT')[0]);
@@ -146,12 +147,12 @@ describe('sqle/PluginAudit/List', () => {
   });
 
   it('click sql and open ide audit result', async () => {
-    getAuditWhitelistSpy.mockClear();
-    getAuditWhitelistSpy.mockImplementation(() =>
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
     superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT').length).toBe(2);
     fireEvent.click(screen.getAllByText('SELECT')[1]);
@@ -172,12 +173,12 @@ describe('sqle/PluginAudit/List', () => {
   });
 
   it('click audit result and open ide audit result', async () => {
-    getAuditWhitelistSpy.mockClear();
-    getAuditWhitelistSpy.mockImplementation(() =>
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
     superRender(<PluginAuditList />);
-    expect(getAuditWhitelistSpy).toHaveBeenCalled();
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllBySelector('.audit-result-wrapper').length).toBe(1);
     fireEvent.click(getAllBySelector('.audit-result-wrapper')[0]);
@@ -194,6 +195,30 @@ describe('sqle/PluginAudit/List', () => {
       payload: {
         pluginAuditRecord: sqlDEVRecordListMockData[0]
       }
+    });
+  });
+
+  it('render create whitelist', async () => {
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
+    );
+    superRender(<PluginAuditList />);
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('添加为审核SQL例外')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('添加为审核SQL例外'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(mockDispatch).toHaveBeenCalledTimes(4);
+    expect(mockDispatch).toHaveBeenNthCalledWith(3, {
+      payload: { modalName: ModalName.Add_Whitelist, status: true },
+      type: 'whitelist/updateModalStatus'
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
+      payload: { selectRow: { value: 'SELECT 1;' } },
+      type: 'whitelist/updateSelectWhitelist'
     });
   });
 });

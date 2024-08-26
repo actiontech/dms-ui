@@ -1,15 +1,13 @@
-import User from '@actiontech/shared/lib/api/base/service/User';
-import {
-  OpPermissionItemRangeTypeEnum,
-  OpPermissionItemOpPermissionTypeEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
-import {
-  useCurrentUser,
-  useCurrentProject
-} from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCallback } from 'react';
+import useCurrentUser from '../useCurrentUser';
+import useCurrentProject from '../useCurrentProject';
+import User from '../../api/base/service/User';
+import { ResponseCode } from '../../enum';
+import {
+  OpPermissionItemOpPermissionTypeEnum,
+  OpPermissionItemRangeTypeEnum
+} from '../../api/base/service/common.enum';
 
 const useUserOperationPermission = () => {
   const { uid } = useCurrentUser();
@@ -35,7 +33,10 @@ const useUserOperationPermission = () => {
   );
 
   const isHaveServicePermission = useCallback(
-    (serviceID?: string) => {
+    (
+      opPermissionType: OpPermissionItemOpPermissionTypeEnum,
+      serviceID?: string
+    ) => {
       if (userOperationPermission) {
         const { is_admin, op_permission_list } = userOperationPermission;
         const haveProjectPermission = op_permission_list?.some((permission) => {
@@ -57,8 +58,7 @@ const useUserOperationPermission = () => {
             (serviceID
               ? permission.range_uids?.includes(serviceID)
               : !!permission.range_uids?.length) &&
-            permission.op_permission_type ===
-              OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+            permission.op_permission_type === opPermissionType
           ) {
             return true;
           }

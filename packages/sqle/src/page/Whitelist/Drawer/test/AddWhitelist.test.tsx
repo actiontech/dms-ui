@@ -42,12 +42,15 @@ describe('slqe/Whitelist/AddWhitelist', () => {
   });
 
   it('should send add whitelist request when click submit button', async () => {
+    const mockCreated = jest.fn();
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(<AddWhitelist />);
+    const { baseElement } = renderWithReduxAndTheme(
+      <AddWhitelist onCreated={mockCreated} />
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('SQL指纹匹配'));
-    fireEvent.input(screen.getByLabelText('白名单描述'), {
+    fireEvent.input(screen.getByLabelText('描述'), {
       target: { value: 'test desc' }
     });
     fireEvent.input(screen.getByLabelText('SQL语句'), {
@@ -65,7 +68,7 @@ describe('slqe/Whitelist/AddWhitelist', () => {
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/updateModalStatus',
       payload: {
@@ -77,6 +80,7 @@ describe('slqe/Whitelist/AddWhitelist', () => {
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.Refresh_Whitelist_List
     );
+    expect(mockCreated).toHaveBeenCalledTimes(1);
     expect(screen.getByText('提 交').parentNode).not.toHaveClass(
       'ant-btn-loading'
     );
@@ -89,7 +93,7 @@ describe('slqe/Whitelist/AddWhitelist', () => {
     const { baseElement } = renderWithReduxAndTheme(<AddWhitelist />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/updateModalStatus',
       payload: {

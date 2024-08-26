@@ -24,12 +24,13 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { ModalName } from '../../../../data/ModalName';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -51,6 +52,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let requestGetModalStatus: jest.SpyInstance;
   let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
   let getSqlFileOrderMethodV1Spy: jest.SpyInstance;
+  const dispatchSpy = jest.fn();
 
   const customRender = () => {
     return superRender(<CreateSqlExecWorkflow />);
@@ -82,8 +84,10 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     batchCheckInstanceIsConnectableByName =
       instance.batchCheckInstanceIsConnectableByName();
 
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
         sqlExecWorkflow: {
           clonedExecWorkflowSqlAuditInfo: {
             isSameSqlForAll: false,

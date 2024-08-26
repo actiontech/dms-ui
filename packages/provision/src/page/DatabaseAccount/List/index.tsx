@@ -14,7 +14,8 @@ import {
 import { useRequest } from 'ahooks';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  useUserOperationPermission
 } from '@actiontech/shared/lib/global';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
@@ -44,7 +45,7 @@ import { useSetRecoilState } from 'recoil';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
 import AccountStatistics from '../components/AccountStatistics';
-import useUserOperationPermission from '../../../hooks/useUserOperationPermission';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const DatabaseAccountList = () => {
   const { t } = useTranslation();
@@ -274,7 +275,11 @@ const DatabaseAccountList = () => {
       onSetManagedStatus,
       onDeleteAccount,
       onNavigateToUpdatePage,
-      isHaveServicePermission
+      (dbServiceId) =>
+        isHaveServicePermission(
+          OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
+          dbServiceId
+        )
     );
   }, [
     onOpenModal,
@@ -340,7 +345,11 @@ const DatabaseAccountList = () => {
       <PageHeader
         title={t('databaseAccount.list.title')}
         extra={
-          <EmptyBox if={isHaveServicePermission()}>
+          <EmptyBox
+            if={isHaveServicePermission(
+              OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+            )}
+          >
             <Space>
               <BasicButton
                 onClick={() =>

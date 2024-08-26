@@ -581,7 +581,7 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-scroll-horizontal"
+                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -593,7 +593,21 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                       <table
                         style="min-width: 100%; table-layout: auto;"
                       >
-                        <colgroup />
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col
+                            style="width: 82px;"
+                          />
+                        </colgroup>
                         <thead
                           class="ant-table-thead"
                         >
@@ -658,6 +672,13 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                             >
                               结果集返回行数
                             </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -668,6 +689,15 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -981,6 +1011,31 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                             >
                               2
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        添加为审核SQL例外
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1194,6 +1249,31 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                             >
                               2
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        添加为审核SQL例外
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1341,6 +1421,22 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                             >
                               2
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  />
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1402,6 +1498,22 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               class="ant-table-cell"
                             >
                               -
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  />
+                                </div>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
@@ -1906,7 +2018,7 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-scroll-horizontal"
+                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -1918,7 +2030,21 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                       <table
                         style="min-width: 100%; table-layout: auto;"
                       >
-                        <colgroup />
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col
+                            style="width: 82px;"
+                          />
+                        </colgroup>
                         <thead
                           class="ant-table-thead"
                         >
@@ -1983,6 +2109,13 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                             >
                               结果集返回行数
                             </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -1993,6 +2126,15 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -2306,6 +2448,31 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                             >
                               2
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        添加为审核SQL例外
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -2519,6 +2686,31 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                             >
                               2
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        添加为审核SQL例外
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -2666,6 +2858,22 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                             >
                               2
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  />
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -2727,6 +2935,22 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               class="ant-table-cell"
                             >
                               -
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  />
+                                </div>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
@@ -3231,7 +3455,7 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-empty ant-table-scroll-horizontal"
+                  class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -3243,7 +3467,21 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                       <table
                         style="min-width: 100%; table-layout: auto;"
                       >
-                        <colgroup />
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col
+                            style="width: 82px;"
+                          />
+                        </colgroup>
                         <thead
                           class="ant-table-thead"
                         >
@@ -3307,6 +3545,13 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                               scope="col"
                             >
                               结果集返回行数
+                            </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
                             </th>
                           </tr>
                         </thead>
@@ -3408,13 +3653,22 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                                  
                               </div>
                             </td>
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-placeholder"
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="10"
+                              colspan="11"
                             >
                               <div
                                 class="ant-table-expanded-row-fixed"

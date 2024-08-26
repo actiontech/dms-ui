@@ -1,6 +1,5 @@
 import { useCallback, useEffect } from 'react';
 import { useBoolean } from 'ahooks';
-import { useForm } from 'antd/es/form/Form';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -9,7 +8,7 @@ import {
   CreateAuditWhitelistReqV1MatchTypeEnum,
   UpdateAuditWhitelistReqV1MatchTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { Space } from 'antd';
+import { Space, Form, message } from 'antd';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -23,7 +22,9 @@ import WhitelistForm from './WhitelistForm';
 
 const UpdateWhitelist = () => {
   const { t } = useTranslation();
-  const [form] = useForm<WhitelistFormFields>();
+  const [messageApi, messageContextHolder] = message.useMessage();
+
+  const [form] = Form.useForm<WhitelistFormFields>();
   const visible = useSelector<IReduxState, boolean>(
     (state) => !!state.whitelist.modalStatus[ModalName.Update_Whitelist]
   );
@@ -63,6 +64,7 @@ const UpdateWhitelist = () => {
         if (res.data.code === ResponseCode.SUCCESS) {
           EventEmitter.emit(EmitterKey.Refresh_Whitelist_List);
           closeModal();
+          messageApi.success(t('whitelist.modal.update.success'));
         }
       })
       .finally(() => {
@@ -74,7 +76,9 @@ const UpdateWhitelist = () => {
     currentWhitelist?.audit_whitelist_id,
     form,
     projectName,
-    startCreate
+    startCreate,
+    messageApi,
+    t
   ]);
 
   useEffect(() => {
@@ -90,24 +94,31 @@ const UpdateWhitelist = () => {
   }, [visible]);
 
   return (
-    <BasicDrawer
-      size="large"
-      title={t('whitelist.modal.update.title')}
-      open={visible}
-      onClose={closeModal}
-      footer={
-        <Space>
-          <BasicButton onClick={closeModal} disabled={createLoading}>
-            {t('common.close')}
-          </BasicButton>
-          <BasicButton type="primary" onClick={submit} loading={createLoading}>
-            {t('common.submit')}
-          </BasicButton>
-        </Space>
-      }
-    >
-      <WhitelistForm form={form} />
-    </BasicDrawer>
+    <>
+      {messageContextHolder}
+      <BasicDrawer
+        size="large"
+        title={t('whitelist.modal.update.title')}
+        open={visible}
+        onClose={closeModal}
+        footer={
+          <Space>
+            <BasicButton onClick={closeModal} disabled={createLoading}>
+              {t('common.close')}
+            </BasicButton>
+            <BasicButton
+              type="primary"
+              onClick={submit}
+              loading={createLoading}
+            >
+              {t('common.submit')}
+            </BasicButton>
+          </Space>
+        }
+      >
+        <WhitelistForm form={form} />
+      </BasicDrawer>
+    </>
   );
 };
 

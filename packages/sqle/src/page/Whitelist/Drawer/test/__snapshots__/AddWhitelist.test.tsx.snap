@@ -38,7 +38,7 @@ exports[`slqe/Whitelist/AddWhitelist should send add whitelist request when clic
                 <div
                   class="ant-drawer-title"
                 >
-                  添加白名单
+                  添加审核SQL例外
                 </div>
               </div>
             </div>
@@ -83,9 +83,9 @@ exports[`slqe/Whitelist/AddWhitelist should send add whitelist request when clic
                       <label
                         class=""
                         for="matchType"
-                        title="匹配模式"
+                        title="匹配类型"
                       >
-                        匹配模式
+                        匹配类型
                       </label>
                     </div>
                     <div
@@ -158,9 +158,9 @@ exports[`slqe/Whitelist/AddWhitelist should send add whitelist request when clic
                       <label
                         class=""
                         for="desc"
-                        title="白名单描述"
+                        title="描述"
                       >
-                        白名单描述
+                        描述
                       </label>
                     </div>
                     <div
