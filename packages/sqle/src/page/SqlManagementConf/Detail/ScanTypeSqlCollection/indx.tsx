@@ -36,7 +36,7 @@ import {
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import AuditResultMessage from '../../../../components/AuditResultMessage';
 import {
-  IGetInstanceAuditPlanSQLDataV1Params,
+  IGetAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
 } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
@@ -98,9 +98,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   } = useRequest(
     () =>
       instance_audit_plan
-        .getInstanceAuditPlanSQLMetaV1({
+        .getAuditPlanSQLMetaV1({
           project_name: projectName,
-          instance_audit_plan_id: instanceAuditPlanId,
           audit_plan_id: auditPlanId
         })
         .then((res) => {
@@ -168,21 +167,18 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     error: getTableRowError
   } = useRequest(
     () => {
-      const params: IGetInstanceAuditPlanSQLDataV1Params = {
+      const params: IGetAuditPlanSQLDataV1Params = {
         project_name: projectName,
-        instance_audit_plan_id: instanceAuditPlanId,
         audit_plan_id: auditPlanId,
         page_index: pagination.page_index,
         page_size: pagination.page_size,
         filter_list: getFilterListByTableFilterInfo()
       };
       createSortParams(params);
-      return instance_audit_plan
-        .getInstanceAuditPlanSQLDataV1(params)
-        .then((res) => ({
-          data: res.data.data?.rows,
-          total: res.data.total_nums ?? 0
-        }));
+      return instance_audit_plan.getAuditPlanSQLDataV1(params).then((res) => ({
+        data: res.data.data?.rows,
+        total: res.data.total_nums ?? 0
+      }));
     },
     {
       refreshDeps: [pagination, tableFilterInfo, sortInfo],
