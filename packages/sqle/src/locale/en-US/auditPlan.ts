@@ -1,210 +1,213 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '智能扫描',
+  pageTitle: 'Smart scan',
   pageDesc:
-    '您可以使用智能扫描功能生成扫描任务报告，以便监测和评估 SQL 的质量。',
+    'You can use the smart scan feature to generate scan task reports to monitor and evaluate the quality of sql.',
 
   list: {
-    title: '扫描任务列表',
+    title: 'Scan task list',
     filter: {
       all: {
-        dataSource: '全部数据源',
-        taskType: '全部任务类型'
+        dataSource: 'All DB instances',
+        taskType: 'All task types'
       }
     },
     tip: {
       token: {
-        show: '再次单击隐藏',
-        hide: '已加密，单击查看详情，再次单击隐藏'
+        show: 'Click again to hide',
+        hide: 'Encrypted, click to view details, click again to hide'
       }
     },
     table: {
-      audit_plan_cron: '审核周期',
-      audit_plan_db_type: '数据库类型',
-      audit_plan_instance_database: '审核的数据库',
-      audit_plan_instance_name: '数据源名称',
-      audit_plan_name: '任务名称',
-      audit_plan_token: '访问凭证',
-      audit_plan_token_tips: '用于审核任务上传凭证',
-      audit_plan_type: '任务类型',
-      audit_rule_template: '审核规则模板'
+      audit_plan_cron: 'Audit cycle',
+      audit_plan_db_type: 'Database type',
+      audit_plan_instance_database: 'Audited database',
+      audit_plan_instance_name: 'DB instance name',
+      audit_plan_name: 'Task name',
+      audit_plan_token: 'Access credential',
+      audit_plan_token_tips: 'Used to upload credentials for audit tasks',
+      audit_plan_type: 'Task type',
+      audit_rule_template: 'Audit rule template'
     },
     operator: {
-      notice: '订阅审核失败消息'
+      notice: 'Subscribe to audit failure messages'
     }
   },
 
   action: {
-    create: '创建扫描任务',
-    backButton: '返回扫描任务列表',
-    backDetail: '返回扫描任务详情'
+    create: 'Create scan task',
+    backButton: 'Back to scan task list',
+    backDetail: 'Back to scan task details'
   },
 
   remove: {
-    confirm: '您确认要移除扫描任务 {{name}} 么?',
-    loading: '正在移除扫描任务{{name}}...',
-    successTips: '移除扫描任务 {{name}} 成功'
+    confirm: 'Are you sure you want to remove scan task {{name}}?',
+    loading: 'Removing scan task {{name}}...',
+    successTips: 'Removed scan task {{name}} successfully'
   },
 
   create: {
-    title: '创建扫描任务',
+    title: 'Create scan task',
     form: {
-      name: '扫描任务名称'
+      name: 'Scan task name'
     },
     subTitle: {
-      dataSource: '选择数据源',
-      editTaskDetail: '编辑任务详情',
-      chooseAuditTemplate: '选择审核模板',
-      customTaskAuditCycle: '自定义任务审核周期'
+      dataSource: 'Select DB instance',
+      editTaskDetail: 'Edit task details',
+      chooseAuditTemplate: 'Select audit template',
+      customTaskAuditCycle: 'Custom task audit cycle'
     },
-    successTitle: '创建扫描任务成功',
-    successGuide: '查看扫描任务详情',
-    clonePlan: '克隆扫描任务'
+    successTitle: 'Scan task created successfully',
+    successGuide: 'View scan task details',
+    clonePlan: 'Clone scan task'
   },
 
   update: {
-    title: '更新扫描任务 {{name}}',
-    successTitle: '更新扫描任务{{name}}成功',
-    successGuide: '返回扫描任务列表'
+    title: 'Update scan task {{name}}',
+    successTitle: 'Updated scan task {{name}} successfully',
+    successGuide: 'Back to scan task list'
   },
 
   planForm: {
     dataSource: {
-      dbType: '数据源类型',
+      dbType: 'DB instance type',
       databaseName: {
-        label: '数据源名称',
-        tip: '如果您没有指定数据源，那么该扫描任务将使用您所选择的数据库类型的默认规则模版进行静态审核'
+        label: 'DB instance name',
+        tip: 'If you do not specify a DB instance, the scan task will use the default rule template of the database type you selected for static auditing'
       },
-      schema: '数据库'
+      schema: 'Database'
     },
     taskDetail: {
-      taskType: '任务类型'
+      taskType: 'Task type'
     },
     auditTemplate: {
       ruleTemplateName: {
-        label: '审核规则模版',
-        tip: '如果未指定此项会优先使用数据源绑定的模板'
+        label: 'Audit rule template',
+        tip: 'If this is not specified, the template bound to the DB instance will be used preferentially'
       }
     },
     cronName: {
-      label: '任务审核周期',
-      tip: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择'
+      label: 'Task audit cycle',
+      tip: 'Manually enter the crontab formatted time, or click the button on the right to enable visual selection'
     }
   },
 
   detail: {
     action: {
-      audit: '立即审核'
+      audit: 'Audit now'
     },
     tip: {
-      rate: '审核结果评分'
+      rate: 'Audit result score'
     }
   },
 
   detailPage: {
-    pageTitle: '任务名称: {{name}}',
-    auditTaskType: '任务类型: {{type}}',
+    pageTitle: 'Task name: {{name}}',
+    auditTaskType: 'Task type: {{type}}',
     pageDesc:
-      '您可以在这里查看当前智能扫描任务的SQL统计信息，以及当前任务的审核记录'
+      'You can view the sql statistics of the current smart scan task and the audit records of the current task here'
   },
 
   sqlPool: {
-    title: 'SQL统计信息',
+    title: 'Sql statistics',
 
     table: {
-      fingerprint: 'SQL指纹',
-      lastReceiveText: '最后一次匹配到该指纹的语句',
-      lastReceiveTime: '最后一次匹配到该指纹的时间',
-      count: '匹配到该指纹的语句数量'
+      fingerprint: 'Sql fingerprint',
+      lastReceiveText: 'Last statement matched to this fingerprint',
+      lastReceiveTime: 'Last time matched to this fingerprint',
+      count: 'Number of statements matched to this fingerprint'
     },
 
     action: {
-      trigger: '立即审核',
+      trigger: 'Audit now',
 
-      loading: '正在触发审核...',
-      triggerSuccess: '审核触发成功'
+      loading: 'Triggering audit...',
+      triggerSuccess: 'Audit triggered successfully'
     }
   },
 
   record: {
-    generateTime: '生成时间',
-    highRuleLevel: '审核中出现的最高错误等级'
+    generateTime: 'Generation time',
+    highRuleLevel: 'Highest error level encountered in audit'
   },
 
   planTaskRecord: {
-    title: '审核记录',
-    passRage: '审核通过率 '
+    title: 'Audit record',
+    passRage: 'Audit pass rate'
   },
 
   report: {
-    time: '报告生成时间: {{time}}',
-    sourceLabel: '审核报告评分',
-    passRageLabel: '审核通过率',
-    rule_template: '规则模板: {{name}}',
-    status_pass_text: '审核通过',
+    time: 'Report generation time: {{time}}',
+    sourceLabel: 'Audit report score',
+    passRageLabel: 'Audit pass rate',
+    rule_template: 'Rule template: {{name}}',
+    status_pass_text: 'Audit passed',
     drawer: {
-      title: 'SQL 审核结果',
-      action: '分析语句',
+      title: 'Sql audit results',
+      action: 'Analyze statement',
       subTitle: {
-        result: '审核结果',
-        sql: 'SQL语句'
+        result: 'Audit result',
+        sql: 'Sql statement'
       },
-      source: '所在文件',
-      sourceTip: '当前仅支持查看ZIP/GIT文件中的SQL来源',
-      fileLine: '所在行'
+      source: 'Source file',
+      sourceTip: 'Currently only supports viewing sql sources in zip/git files',
+      fileLine: 'Line number'
     },
-    exportBtnText: '下载扫描任务报告',
+    exportBtnText: 'Download scan task report',
 
     table: {
-      sql: 'SQL语句',
-      result: '审核结果',
-      analyze: '分析'
+      sql: 'Sql statement',
+      result: 'Audit result',
+      analyze: 'Analyze'
     }
   },
 
   subscribeNotice: {
-    title: '订阅审核失败消息',
+    title: 'Subscribe to audit failure messages',
 
     form: {
-      interval: '推送间隔(分钟)',
+      interval: 'Notification interval (minutes)',
       intervalTips:
-        '推送间隔指的是两次推送之间的最短时间间隔，在推送过一次之后的“间隔时间”之内即使审核出现了错误也不会进行推送。直到间隔时间过了之后触发了新的错误之后才会进行下一次推送。如果你想接收所有推送可以将该间隔设置为0',
+        'Notification interval refers to the minimum time interval between two pushes. even if an error occurs in the audit within the "interval time" after a push, no notification will be made. until the interval time has passed and a new error has been triggered, the next notification will be made. if you want to receive all pushes, you can set this interval to 0',
 
-      level: '告警等级阈值',
-      levelTips: '只有审核结果中包含高于或等于选择的告警等级的错误才会触发推送',
+      level: 'Alert level threshold',
+      levelTips:
+        'Only errors with an alert level higher than or equal to the selected alert level in the audit result will trigger a push',
 
-      emailEnable: '启用邮件推送',
-      emailEnableTips: '邮件会发送给扫描任务创建人',
+      emailEnable: 'Enable email notification',
+      emailEnableTips: 'Emails will be sent to the scan task creator',
 
-      webhooksEnable: '启用Webhooks推送',
-      webhooksEnableCe: 'Webhooks推送为企业版功能',
+      webhooksEnable: 'Enable webhooks notification',
+      webhooksEnableCe: 'Webhooks notification is a enterprise edition feature',
       webhooksUrl: 'Webhooks url',
-      webhooksTemplate: 'webhooks模版(json)',
+      webhooksTemplate: 'Webhooks template (json)',
 
       webhooksTemplateHelp: {
-        title: '填写模版请遵循以下规则',
+        title: 'Please follow these rules when filling in the template',
         rule1:
-          '请填写正确的json格式的模版, 理论上不限制字段名，字段个数等规则。只需要保证json格式的正确性即可。',
-        rule2: '推送时会自动替换模版中的变量,变更请参考下方的变量说明',
+          'Please fill in the template in the correct json format. in theory, there are no restrictions on the field name, number of fields, etc. you only need to ensure that the json format is correct.',
+        rule2:
+          'Variables in the template will be automatically replaced during push, for changes, please refer to the variable description below',
 
-        supportVariable: '目前支持的变量',
+        supportVariable: 'Supported variables',
         table: {
-          desc: '变量描述',
-          variable: '变量'
+          desc: 'Variable description',
+          variable: 'Variable'
         },
         variable: {
-          subject: '告警标题',
-          body: '告警内容'
+          subject: 'Alert title',
+          body: 'Alert content'
         },
 
-        reset: '重置模版为默认模版'
+        reset: 'Reset template to default template'
       },
 
-      test: '发送测试消息',
-      testTips: '请先提交配置再进行测试',
-      testLoading: '正在向扫描任务{{name}}的订阅配置发送测试消息...',
-      testSuccess: '测试消息发送成功',
-      subscribeNoticeSuccess: '订阅成功'
+      test: 'Send test message',
+      testTips: 'Please submit the configuration first before testing',
+      testLoading:
+        'Sending test message to the subscription configuration of scan task {{name}}...',
+      testSuccess: 'Test message sent successfully',
+      subscribeNoticeSuccess: 'Subscription successful'
     }
   }
 };

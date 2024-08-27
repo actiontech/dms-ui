@@ -1,41 +1,95 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '项目管理',
+  pageTitle: 'Project management',
   pageDesc:
-    '从项目维度组织管理DMS平台的资源和功能，以项目为入口支持各种审核功能，不同项目之间资源隔离。',
+    'Organize and manage DMS platform resources and functions from the project dimension, support various audit functions through the project entry, and isolate resources between different projects.',
   projectList: {
-    title: '项目列表',
-    deleteSuccessTips: '删除项目{{name}}成功',
-    archiveProjectSuccessTips: '冻结项目"{{name}}"成功',
-    unarchiveProjectSuccessTips: '启用项目"{{name}}"成功',
+    title: 'Project list',
+    deleteSuccessTips: 'Delete project "{{name}}" successfully',
+    archiveProjectSuccessTips: 'Archive project "{{name}}" successfully',
+    unarchiveProjectSuccessTips: 'Unarchive project "{{name}}" successfully',
+    exportMessage: 'Exporting project',
     columns: {
-      status: '项目状态',
-      available: '可用',
-      unavailable: '不可用',
-      createTime: '创建时间',
-      createUser: '创建人',
-      deleteProjectTips: '确认要删除项目"{{name}}"么?',
-      archive: '冻结',
-      unarchive: '启用',
-      archiveProjectTips: '确认要冻结项目"{{name}}"么?',
-      unarchiveProjectTips: '确认要启用项目"{{name}}"么?'
+      status: 'Project status',
+      available: 'Available',
+      unavailable: 'Unavailable',
+      createTime: 'Create time',
+      createUser: 'Creator',
+      deleteProjectTips: 'Are you sure you want to delete project "{{name}}"?',
+      archive: 'Archive',
+      unarchive: 'Unarchive',
+      archiveProjectTips:
+        'Are you sure you want to archive project "{{name}}"?',
+      unarchiveProjectTips:
+        'Are you sure you want to unarchive project "{{name}}"?'
     }
   },
   projectForm: {
-    name: '项目名称',
-    desc: '项目描述'
+    name: 'Project name',
+    desc: 'Project description',
+    business: 'Available business',
+    addBusiness: 'Add business',
+    deleteTip:
+      'The current business is already associated with resources and cannot be deleted',
+    fixedBusiness: 'Fix selectable business tags',
+    fixedBusinessExtra:
+      'If enabled, the business tags available in the project will be fixed and can only be managed by the administrator',
+    businessName: 'Business name'
   },
   createProject: {
-    modalTitle: '创建项目',
-    createSuccessTips: '创建项目{{name}}成功'
+    modalTitle: 'Create project',
+    createSuccessTips: 'Create project {{name}} successfully'
   },
   updateProject: {
-    modalTitle: '编辑项目',
-    updateSuccessTips: '更新项目{{name}}成功'
+    modalTitle: 'Edit project',
+    updateSuccessTips: 'Update project {{name}} successfully'
   },
   detail: {
-    modalTitle: '选择项目',
-    modalTips: ' 暂无最近打开的项目, 请选择一个项目!',
-    projectSelectorDropdownSlot: '项目列表'
+    modalTitle: 'Select project',
+    modalTips: 'No recently opened projects, please select a project!',
+    projectSelectorDropdownSlot: 'Project list'
+  },
+  exportProject: {
+    buttonText: 'Export'
+  },
+  importProject: {
+    buttonText: 'Import',
+    title: 'Import project and business',
+    selectFile: 'Select import file',
+    submitText: 'Import',
+    fileRequireTips: 'No file selected',
+    successTitle: 'Import project and business successfully',
+    successTips: 'Go to the project list to view the imported project',
+    importingFile: 'Importing file...',
+    downloadTemplate: 'Download import template',
+    table: {
+      project: 'Project',
+      desc: 'Description',
+      business: 'Business'
+    }
+  },
+  batchImportDataSource: {
+    buttonText: 'Batch import data source',
+    title: 'Batch import data source',
+    successTitle: 'Batch import data source successfully',
+    checkSuccess: 'Validation passed',
+    testConnectLabel: 'Test data source connectivity',
+    testConnect: 'Batch test data source connectivity',
+    testConnectSuccess: 'Test connectivity success {{count}}',
+    testConnectFail:
+      'Test connectivity failed {{count}}, data source is {{name}}',
+    requestAuditErrorMessage:
+      'The current import information has validation failures, please modify it according to the hints in the downloaded file, and import again'
+  },
+  backToList: 'Back to project list',
+  businessDescription: {
+    title:
+      'Our platform uses a hierarchical structure of project-business-data source to provide you with a clear and orderly data resource management method.',
+    project:
+      'Project: each project represents an independent product environment, serving as a unit for resource isolation to ensure data security and product independence. at the project level, you can aggregate and manage related business modules.',
+    business:
+      'Business: based on the project, business acts as a sub-project or a tag for a specific business domain, helping you further organize and refine data resources. the business layer enables you to centrally manage and operate data for specific needs.',
+    dataSource:
+      'Data source: data source is the actual operation object built on the basis of business. you can perform specific data operations at the data source level, such as querying, updating, and managing data.'
   }
 };
