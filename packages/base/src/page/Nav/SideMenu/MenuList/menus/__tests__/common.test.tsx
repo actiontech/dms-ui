@@ -27,6 +27,11 @@ const menuStruct: MenuStructTreeType = [
   },
   {
     type: 'group',
+    label: t('dmsMenu.groupLabel.CICDIntegration'),
+    group: ['pipeline-configuration']
+  },
+  {
+    type: 'group',
     label: t('dmsMenu.groupLabel.SQLManagement'),
     group: ['sql-management', 'sql-management-conf']
   },
