@@ -468,6 +468,42 @@ export enum WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum {
   'error' = 'error'
 }
 
+export enum pipelineNodeBaseAuditMethodEnum {
+  'offline' = 'offline',
+
+  'online' = 'online'
+}
+
+export enum pipelineNodeBaseObjectTypeEnum {
+  'sql' = 'sql',
+
+  'mybatis' = 'mybatis'
+}
+
+export enum pipelineNodeBaseTypeEnum {
+  'audit' = 'audit',
+
+  'release' = 'release'
+}
+
+export enum pipelineNodeDetailAuditMethodEnum {
+  'offline' = 'offline',
+
+  'online' = 'online'
+}
+
+export enum pipelineNodeDetailObjectTypeEnum {
+  'sql' = 'sql',
+
+  'mybatis' = 'mybatis'
+}
+
+export enum pipelineNodeDetailTypeEnum {
+  'audit' = 'audit',
+
+  'release' = 'release'
+}
+
 export enum AuditResDataV2AuditLevelEnum {
   'normal' = 'normal',
 

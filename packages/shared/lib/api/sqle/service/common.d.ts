@@ -52,6 +52,12 @@ import {
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum,
   WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum,
+  pipelineNodeBaseAuditMethodEnum,
+  pipelineNodeBaseObjectTypeEnum,
+  pipelineNodeBaseTypeEnum,
+  pipelineNodeDetailAuditMethodEnum,
+  pipelineNodeDetailObjectTypeEnum,
+  pipelineNodeDetailTypeEnum,
   AuditResDataV2AuditLevelEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -546,6 +552,16 @@ export interface ICreateInstanceAuditPlanReqV1 {
   audit_plans?: IAuditPlan[];
 
   instance_id?: string;
+}
+
+export interface ICreatePipelineReqV1 {
+  address?: string;
+
+  description?: string;
+
+  name?: string;
+
+  nodes?: IPipelineNodeBase[];
 }
 
 export interface ICreateProjectRuleTemplateReqV1 {
@@ -1162,6 +1178,34 @@ export interface IGetOptimizationSQLsRes {
   code?: number;
 
   data?: IOptimizationSQL[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetPipelineDetailResV1 {
+  address?: string;
+
+  code?: number;
+
+  description?: string;
+
+  id?: string;
+
+  message?: string;
+
+  name?: string;
+
+  node_count?: number;
+
+  nodes?: IPipelineNodeDetail[];
+}
+
+export interface IGetPipelinesResV1 {
+  code?: number;
+
+  data?: IPipelineDetail[];
 
   message?: string;
 
@@ -2578,6 +2622,16 @@ export interface IUpdateInstanceAuditPlanStatusReqV1 {
   active?: UpdateInstanceAuditPlanStatusReqV1ActiveEnum;
 }
 
+export interface IUpdatePipelineReqV1 {
+  address?: string;
+
+  description?: string;
+
+  name?: string;
+
+  nodes?: IPipelineNodeDetail[];
+}
+
 export interface IUpdateProjectRuleTemplateReqV1 {
   desc?: string;
 
@@ -2862,6 +2916,52 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_step_template_list?: IWorkFlowStepTemplateResV1[];
 
   workflow_template_name?: string;
+}
+
+export interface IPipelineDetail {
+  address?: string;
+
+  description?: string;
+
+  id?: string;
+
+  name?: string;
+
+  node_count?: number;
+}
+
+export interface IPipelineNodeBase {
+  audit_method?: pipelineNodeBaseAuditMethodEnum;
+
+  instance_name?: string;
+
+  name?: string;
+
+  object_path?: string;
+
+  object_type?: pipelineNodeBaseObjectTypeEnum;
+
+  rule_template_name?: string;
+
+  type?: pipelineNodeBaseTypeEnum;
+}
+
+export interface IPipelineNodeDetail {
+  audit_method?: pipelineNodeDetailAuditMethodEnum;
+
+  id?: string;
+
+  instance_name?: string;
+
+  name?: string;
+
+  object_path?: string;
+
+  object_type?: pipelineNodeDetailObjectTypeEnum;
+
+  rule_template_name?: string;
+
+  type?: pipelineNodeDetailTypeEnum;
 }
 
 export interface IAuditFileExecStatistic {
