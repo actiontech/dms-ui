@@ -40,7 +40,9 @@ export default {
           signalUpdateStatusSuccessTips: 'Updated SQL status successfully'
         }
       },
-      analyze: 'Analyze'
+      analyze: 'Analyze',
+      createSqlManagementException: 'Add to SQL management whitelist',
+      createWhitelist: 'Add to audit whitelist'
     },
     column: {
       SQLFingerprint: 'SQL fingerprint',

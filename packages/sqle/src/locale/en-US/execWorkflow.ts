@@ -270,7 +270,8 @@ export default {
       rollbackTips: 'Only prompt, does not support rollback execution',
       describe: 'Description',
       analyze: 'Analysis',
-      addDescribe: 'Add description'
+      addDescribe: 'Add description',
+      createWhitelist: 'Add to SQL management whitelist'
     },
 
     filterForm: {

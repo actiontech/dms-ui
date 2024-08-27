@@ -31,6 +31,7 @@ export default {
       execResult: 'Execution result',
       execTime: 'Execution time (ms)',
       rowCount: 'Result set row count'
-    }
+    },
+    createWhitelist: 'Add to audit whitelist'
   }
 };

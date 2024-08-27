@@ -16,7 +16,7 @@ export default {
   order: 'Workflow',
   orderList: 'Workflow list',
   orderDetail: 'Workflow detail',
-  whitelist: 'Whitelist',
+  whitelist: 'Audit whitelist',
   auditPlane: 'Smart scan',
   auditPlaneList: 'Scan task list',
   sqlQuery: 'SQL workbench',

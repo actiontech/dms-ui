@@ -173,7 +173,8 @@ export default {
         number: 'No.',
         execSql: 'Execute statement',
         sqlType: 'Statement type',
-        auditResult: 'Audit result'
+        auditResult: 'Audit result',
+        createWhitelist: 'Add to audit whitelist'
       }
     }
   }
