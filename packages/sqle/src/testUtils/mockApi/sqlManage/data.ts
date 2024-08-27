@@ -56,7 +56,7 @@ export const sqlManageListData = {
       source: {
         sql_source_type: 'mysql_slow_log',
         sql_source_desc: '慢日志',
-        sql_source_id: '123'
+        sql_source_ids: ['123']
       },
       first_appear_timestamp: '',
       last_receive_timestamp: '',
@@ -74,7 +74,7 @@ export const sqlManageListData = {
       source: {
         sql_source_type: 'mysql_slow_log',
         sql_source_desc: '慢日志',
-        sql_source_id: '123'
+        sql_source_ids: ['123']
       },
       instance_name: 'mysql',
       schema_name: 'dms',
@@ -101,7 +101,7 @@ export const sqlManageListData = {
       source: {
         sql_source_type: 'mysql_slow_log',
         sql_source_desc: '慢日志',
-        sql_source_id: '123'
+        sql_source_ids: ['123']
       },
       instance_name: 'mysql',
       schema_name: 'dms',
@@ -119,6 +119,33 @@ export const sqlManageListData = {
       status: 'unhandled',
       remark: '',
       endpoints: '34'
+    },
+    {
+      id: 1150087,
+      sql_fingerprint: 'SELECT ?',
+      sql: 'SELECT 1;',
+      source: {
+        sql_source_type: 'sql_audit_record',
+        sql_source_desc: 'SQL审核',
+        sql_source_ids: ['123']
+      },
+      instance_name: 'MYSQL_3307',
+      schema_name: 'db1',
+      audit_result: [
+        {
+          level: 'normal',
+          message: '白名单',
+          rule_name: ''
+        }
+      ],
+      first_appear_timestamp: '',
+      last_receive_timestamp: '',
+      fp_count: 0,
+      assignees: ['t3', 't2'],
+      status: 'unhandled',
+      remark: '',
+      endpoints: '',
+      priority: ''
     }
   ],
   sql_manage_bad_num: 1,
