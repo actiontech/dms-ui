@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: 'Members',
-  pageDesc:
-    'You can add members and configure member permissions in members',
+  pageDesc: 'You can add members and configure member permissions in members',
   memberList: {
     title: 'Member list',
     deleteConfirmTitle: 'Confirm to delete member: {{name}}?',
