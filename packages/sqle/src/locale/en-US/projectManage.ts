@@ -1,140 +1,156 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '项目管理',
+  pageTitle: 'Project management',
   pageDescribe:
-    '从项目维度组织管理SQLe平台的资源和功能，以项目为入口支持各种审核功能，不同项目之间资源隔离。',
+    'Organize and manage resources and functions of sqle platform from project perspective. support various audit functions with project as entry point. resources are isolated between different projects.',
 
   projectList: {
-    title: '项目列表',
-    deleteSuccessTips: '删除项目{{name}}成功',
-    createProject: '创建项目',
-    archiveProjectSuccessTips: '冻结项目"{{name}}"成功',
-    unarchiveProjectSuccessTips: '启用项目"{{name}}"成功',
+    title: 'Project list',
+    deleteSuccessTips: 'Delete project "{{name}}" successfully',
+    createProject: 'Create project',
+    archiveProjectSuccessTips: 'Archive project "{{name}}" successfully',
+    unarchiveProjectSuccessTips: 'Unarchive project "{{name}}" successfully',
     column: {
-      name: '项目名称',
-      desc: '项目描述',
-      status: '项目状态',
-      createTime: '创建时间',
-      createUser: '创建人',
-      available: '可用',
-      unavailable: '不可用',
-      deleteProjectTips: '确认要删除项目"{{name}}"么?',
-      archive: '冻结',
-      unarchive: '启用',
-      archiveProjectTips: '确认要冻结项目"{{name}}"么?',
-      unarchiveProjectTips: '确认要启用项目"{{name}}"么?'
+      name: 'Project name',
+      desc: 'Project description',
+      status: 'Project status',
+      createTime: 'Create time',
+      createUser: 'Creator',
+      available: 'Available',
+      unavailable: 'Unavailable',
+      deleteProjectTips: 'Are you sure you want to delete project "{{name}}"?',
+      archive: 'Archive',
+      unarchive: 'Unarchive',
+      archiveProjectTips:
+        'Are you sure you want to archive project "{{name}}"?',
+      unarchiveProjectTips:
+        'Are you sure you want to unarchive project "{{name}}"?'
     },
-    allProject: '查看所有项目',
+    allProject: 'View all projects',
 
     searchProject: {
-      placeholder: '搜索您的项目',
-      recentlyOpenedProjects: '最近打开的项目',
-      notSearched: '未搜索到符合条件的项目',
-      notRecentlyOpenedProjects: '暂无最近打开的项目'
+      placeholder: 'Search your project',
+      recentlyOpenedProjects: 'Recently opened projects',
+      notSearched: 'No projects found',
+      notRecentlyOpenedProjects: 'No recently opened projects'
     }
   },
   createProject: {
-    modalTitle: '创建项目',
-    createSuccessTips: '创建项目{{name}}成功'
+    modalTitle: 'Create project',
+    createSuccessTips: 'Create project "{{name}}" successfully'
   },
   updateProject: {
-    modalTitle: '编辑项目',
-    updateSuccessTips: '更新项目{{name}}成功'
+    modalTitle: 'Edit project',
+    updateSuccessTips: 'Update project "{{name}}" successfully'
   },
 
   projectForm: {
-    projectName: '项目名称',
-    projectDesc: '项目描述'
+    projectName: 'Project name',
+    projectDesc: 'Project description'
   },
 
   projectInfoBox: {
-    name: '项目名称: {{name}}',
-    desc: '项目描述: {{desc}}',
-    createTime: '创建时间: {{time}}',
-    createUser: '创建人: {{user}}'
+    name: 'Project name: {{name}}',
+    desc: 'Project description: {{desc}}',
+    createTime: 'Create time: {{time}}',
+    createUser: 'Creator: {{user}}'
   },
 
   projectDetail: {
-    notice: '提示',
-    unboundProjectTips: '当前用户暂未绑定项目, 请联系项目管理员'
+    notice: 'Notice',
+    unboundProjectTips:
+      'The current user is not bound to any project. please contact the project administrator.'
   },
 
   projectOverview: {
-    pageTitle: '项目概览',
+    pageTitle: 'Project overview',
     projectScore: {
-      title: '项目评分',
-      newScore: '最新评分',
+      title: 'Project score',
+      newScore: 'Latest score',
       level: {
-        dangerous: '危险',
-        warning: '告警',
-        good: '良好',
-        excellent: '优秀'
+        dangerous: 'Dangerous',
+        warning: 'Warning',
+        good: 'Good',
+        excellent: 'Excellent'
       }
     },
     sqlCount: {
-      title: 'SQL统计',
-      riskRate: '风险率',
-      SQLCount: 'SQL总数',
-      riskSQL: '风险SQL',
-      riskSQLNumber: '风险SQL数量'
+      title: 'SQL statistics',
+      riskRate: 'Risk rate',
+      SQLCount: 'Total SQL',
+      riskSQL: 'Risk SQL',
+      riskSQLNumber: 'Risk SQL number'
     },
     dataSourceCount: {
-      title: '数据源',
-      health: '健康实例',
-      risk: '风险实例',
-      tips: '当实例上存在工单上线失败/被驳回、扫描任务最新报告评分<60时，该实例为风险实例',
-      riskNum: '风险实例 {{num}} 个',
-      healthNum: '健康实例 {{num}} 个'
+      title: 'DB instance',
+      health: 'Healthy instance',
+      risk: 'Risk instance',
+      tips: 'When an instance has failed/rejected online workflows, or the latest scan task report score is less than 60, the instance is considered a risk instance',
+      riskNum: 'Risk instances {{num}}',
+      healthNum: 'Healthy instances {{num}}'
     },
     orderClassification: {
-      title: '工单',
-      button: '创建工单',
-      total: '工单总计',
-      closed: '已关闭',
-      executing: '正在上线',
-      executionSuccess: '上线成功',
-      executionFailed: '上线失败',
-      rejected: '被驳回',
-      waitingForAudit: '待审核',
-      waitingForExecution: '待上线'
+      title: 'Order',
+      button: 'Create workflow',
+      total: 'Total workflows',
+      closed: 'Closed',
+      executing: 'Going online',
+      executionSuccess: 'Online success',
+      executionFailed: 'Online failed',
+      rejected: 'Rejected',
+      waitingForAudit: 'Pending audit',
+      waitingForExecution: 'Pending online'
     },
     orderRisk: {
-      title: '工单潜在风险',
+      title: 'Potential risk of workflow',
       tableColumn: {
-        name: '工单',
-        status: '状态',
-        time: '时间',
-        createUser: '创建人'
+        name: 'Order',
+        status: 'Status',
+        time: 'Time',
+        createUser: 'Creator'
       }
     },
     auditPlanClassification: {
-      title: '扫描任务',
-      button: '创建扫描任务',
-      detailTitle: '扫描任务详情',
-      taskTotal: '扫描任务总数',
-      dataSourceType: '数据源类型'
+      title: 'Scan task',
+      button: 'Create scan task',
+      detailTitle: 'Scan task details',
+      taskTotal: 'Total scan tasks',
+      dataSourceType: 'DB instance type'
     },
     auditPlanRisk: {
-      title: '扫描任务潜在风险',
+      title: 'Potential risk of scan task',
       tableColumn: {
-        name: '扫描任务报告',
-        source: '来源',
-        time: '时间',
-        count: '风险SQL'
+        name: 'Scan task report',
+        source: 'Source',
+        time: 'Time',
+        count: 'Risk SQL'
       }
     },
     memberInfo: {
-      title: '成员',
-      count: '成员数量',
-      action: '编辑成员'
+      title: 'Member',
+      count: 'Number of members',
+      action: 'Edit member'
     },
     approvalProcess: {
-      title: '审批流程',
-      action: '编辑当前审批流程模板',
-      createStep: '工单发起',
-      review: '工单审批',
-      exec: '工单上线',
-      match: '匹配权限'
+      title: 'Approval process',
+      action: 'Edit current approval process template',
+      createStep: 'Order initiation',
+      review: 'Order approval',
+      exec: 'Order online',
+      match: 'Match permissions'
+    },
+    optimizationDistribution: {
+      title: 'Optimization query distribution',
+      timeLabel: 'Time period',
+      toolTip: {
+        label: 'Add optimization'
+      }
+    },
+    dataSourcePerformance: {
+      title: 'DB instance performance improvement',
+      toolTip: {
+        label: 'Performance improvement'
+      }
     }
   }
 };

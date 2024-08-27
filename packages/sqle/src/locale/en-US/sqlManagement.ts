@@ -1,81 +1,92 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: 'SQL管控',
+  pageTitle: 'SQL management',
   pageHeader: {
     action: {
-      export: '导出',
-      exporting: '正在导出文件',
-      exportSuccessTips: '导出文件成功'
+      export: 'Export',
+      exporting: 'Exporting file',
+      exportSuccessTips: 'Export file successfully'
     }
   },
   statistics: {
-    SQLTotalNum: 'SQL总数',
-    problemSQlNum: '问题SQL数',
-    optimizedSQLNum: '已优化SQL数'
+    SQLTotalNum: 'SQL total',
+    problemSQlNum: 'Problem SQL',
+    optimizedSQLNum: 'Optimized SQL'
   },
   ceTips:
-    'SQL管控为用户提供SQL全生命周期监控，面板将整合所有的业务SQL，用户可以在该面板中查看项目中采集并审核的所有SQL，暴露其中的问题SQL，同时支持用户解决问题SQL。',
+    'SQL management provides full lifecycle monitoring for users. The panel integrates all business SQLs, where users can view all SQLs collected and audited in the project, expose the problem SQLs, and support users to solve them.',
   table: {
     action: {
       batch: {
-        assignment: '批量指派',
-        assignmentSuccessTips: '批量指派负责人成功',
-        solve: '批量解决',
-        solveTips: '是否确认将所选SQL设为已解决?',
-        solveSuccessTips: '批量解决SQL成功',
-        ignore: '批量忽略',
-        ignoreTips: '是否确认将所选SQL设为已忽略?',
-        ignoreSuccessTips: '批量忽略SQL成功'
+        assignment: 'Assign in batch',
+        assignmentSuccessTips:
+          'Assigned person in charge successfully in batch',
+        solve: 'Solve in batch',
+        solveTips: 'Are you sure to set the selected SQLs as solved?',
+        solveSuccessTips: 'Solved SQLs successfully in batch',
+        ignore: 'Ignore in batch',
+        ignoreTips: 'Are you sure to set the selected SQLs as ignored?',
+        ignoreSuccessTips: 'Ignored SQLs successfully in batch'
       },
       single: {
-        assignment: '指派负责人',
-        assignmentSuccessTips: '指派负责人成功',
+        assignment: 'Assign person in charge',
+        assignmentSuccessTips: 'Assigned person in charge successfully',
         updateStatus: {
-          triggerText: '变更状态',
-          label: '当前SQL状态',
-          solve: '解决',
-          ignore: '忽略',
-          manualAudit: '人工审核',
-          signalUpdateStatusSuccessTips: '更新SQL状态成功'
+          triggerText: 'Change status',
+          label: 'Current SQL status',
+          solve: 'Solve',
+          ignore: 'Ignore',
+          manualAudit: 'Manual audit',
+          signalUpdateStatusSuccessTips: 'Updated SQL status successfully'
         }
-      }
+      },
+      analyze: 'Analyze'
     },
     column: {
-      SQLFingerprint: 'SQL指纹',
-      source: '来源',
-      instanceName: '数据源',
-      auditResult: '审核结果',
-      firstOccurrence: '初次出现时间',
-      lastOccurrence: '最后一次出现时间',
-      occurrenceCount: '出现数量',
-      personInCharge: '负责人',
-      status: '状态',
-      comment: '备注',
-      endpoints: '端点信息'
+      SQLFingerprint: 'SQL fingerprint',
+      source: 'Source',
+      instanceName: 'DB instance',
+      priority: 'Priority',
+      highPriority: 'High priority',
+      lowPriority: 'Low priority',
+      auditResult: 'Audit result',
+      firstOccurrence: 'First occurrence time',
+      lastOccurrence: 'Last occurrence time',
+      occurrenceCount: 'Occurrence count',
+      personInCharge: 'Person in charge',
+      status: 'Status',
+      comment: 'Comment',
+      endpoints: 'Endpoint info'
     },
     filter: {
-      time: '时间范围',
+      time: 'Time range',
       status: {
-        unhandled: '未处理',
-        solved: '已解决',
-        ignored: '已忽略',
-        manual_audited: '已人工审核'
+        unhandled: 'Unhandled',
+        solved: 'Solved',
+        ignored: 'Ignored',
+        manual_audited: 'Manual audited'
       },
+      business: 'Business',
+      instanceName: 'DB instance',
       source: {
-        auditPlan: '智能扫描',
-        apiAudit: 'SQL审核'
+        label: 'Source',
+        auditPlan: 'Scan task',
+        defaultAuditPlan: 'Scan task default type',
+        apiAudit: 'SQL audit'
       },
       auditLevel: {
-        label: '最低审核等级',
-        normal: '普通',
-        error: '错误',
-        warn: '告警',
-        notice: '提示'
+        label: 'Minimum audit level',
+        normal: 'Normal',
+        error: 'Error',
+        warn: 'Warning',
+        notice: 'Notice'
       },
-      assignee: '与我相关'
+      assignee: 'Related to me',
+      viewHighPrioritySql: 'View high priority SQL',
+      rule: 'Audit rule'
     },
     statusReport: {
-      title: 'SQL审核结果'
+      title: 'SQL audit result'
     }
   }
 };

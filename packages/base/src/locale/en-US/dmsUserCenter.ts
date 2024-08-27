@@ -1,110 +1,113 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '用户中心',
-  pageDesc: '您可以在用户中心管理平台用户、用户组，并配置平台角色权限。',
-  tabTitleUser: '用户管理',
-  tabTitleRole: '角色管理',
+  pageTitle: 'User center',
+  pageDesc:
+    'You can manage platform users, user groups in user center, and configure platform role permissions.',
+  tabTitleUser: 'User management',
+  tabTitleRole: 'Role management',
 
   user: {
     userList: {
-      title: '用户列表',
-      addUserButton: '添加用户',
+      title: 'User list',
+      addUserButton: 'Add user',
       columns: {
-        status: '状态',
-        authenticationType: '用户认证类型'
+        status: 'Status',
+        authenticationType: 'User authentication type'
       }
     },
     userForm: {
-      username: '用户名',
-      needUpdatePassWord: '是否需要更新密码',
-      passwordConfirm: '确认密码',
-      passwordConfirmPlaceholder: '请保持两次密码输入一致',
-      email: '邮箱',
-      phone: '手机',
-      wxid: '微信ID',
-      userGroups: '所属用户组',
-      opPermissions: '平台管理权限',
-      isDisabled: '是否禁用',
-      disabledTips: '当用户被禁用，该用户将无法登录'
+      username: 'Username',
+      needUpdatePassWord: 'Need update password',
+      passwordConfirm: 'Confirm password',
+      passwordConfirmPlaceholder:
+        'Please keep the two password inputs consistent',
+      email: 'Email',
+      phone: 'Phone',
+      wxid: 'Wechat id',
+      userGroups: 'User group',
+      opPermissions: 'Platform management permissions',
+      isDisabled: 'Disabled',
+      disabledTips:
+        'When the user is disabled, the user will not be able to log in'
     },
     createUser: {
-      createSuccessTips: '添加用户 "{{name}}" 成功'
+      createSuccessTips: 'Add user "{{name}}" successfully'
     },
     updateUser: {
-      title: '编辑用户',
-      updateSuccessTips: '编辑用户 "{{name}}" 成功'
+      title: 'Edit user',
+      updateSuccessTips: 'Edit user "{{name}}" successfully'
     },
     deleteUser: {
-      confirmTitle: '确认要删除用户: "{{username}}"?',
-      deleting: '正在删除用户: "{{username}}..."',
-      deleteSuccess: '删除用户 "{{username}}" 成功'
+      confirmTitle: 'Confirm to delete user: "{{username}}"?',
+      deleting: 'Deleting user: "{{username}}..."',
+      deleteSuccess: 'Delete user "{{username}}" successfully'
     },
     userGroupList: {
-      title: '用户组列表',
-      addUserGroupButton: '添加用户组'
+      title: 'User group list',
+      addUserGroupButton: 'Add user group'
     },
     userGroupForm: {
-      name: '用户组名称',
-      desc: '描述',
-      bindUsers: '绑定用户',
-      isDisabled: '是否禁用',
+      name: 'User group name',
+      desc: 'Description',
+      bindUsers: 'Bind users',
+      isDisabled: 'Disabled',
       isDisabledTips:
-        '当用户组被禁用，组内用户不会被禁用，但会失去该用户组所关联的数据源及对应角色权限'
+        'When the user group is disabled, users in the group will not be disabled, but will lose the data source and corresponding role permissions associated with the user group'
     },
     createUserGroup: {
-      title: '添加用户组',
-      successTips: '添加用户组 "{{name}}" 成功'
+      title: 'Add user group',
+      successTips: 'Add user group "{{name}}" successfully'
     },
     updateUserGroup: {
-      title: '编辑用户组',
-      successTips: '编辑用户组 "{{name}}" 成功'
+      title: 'Edit user group',
+      successTips: 'Edit user group "{{name}}" successfully'
     },
     deleteUserGroup: {
-      confirm: '确认要删除用户组: "{{name}}"？',
-      deleting: '正在删除用户组: "{{name}}"...',
-      deleteSuccess: '删除用户组: "{{name}}"成功'
+      confirm: 'Confirm to delete user group: "{{name}}"?',
+      deleting: 'Deleting user group: "{{name}}"...',
+      deleteSuccess: 'Delete user group: "{{name}}" successfully'
     }
   },
   role: {
     roleList: {
-      title: '角色列表',
+      title: 'Role list',
       columns: {
-        opPermissions: '平台操作权限'
+        opPermissions: 'Platform operation permissions'
       }
     },
     roleForm: {
-      name: '角色名',
-      desc: '描述',
-      opPermissions: '操作权限',
-      isDisabled: '是否禁用'
+      name: 'Role name',
+      desc: 'Description',
+      opPermissions: 'Operation permissions',
+      isDisabled: 'Disabled'
     },
     createRole: {
-      button: '添加角色',
-      modalTitle: '添加角色',
-      createSuccessTips: '添加角色 "{{name}}" 成功'
+      button: 'Add role',
+      modalTitle: 'Add role',
+      createSuccessTips: 'Add role "{{name}}" successfully'
     },
 
     updateRole: {
-      modalTitle: '编辑角色',
-      updateSuccessTips: '编辑角色 "{{name}}" 成功'
+      modalTitle: 'Edit role',
+      updateSuccessTips: 'Edit role "{{name}}" successfully'
     },
 
     deleteRole: {
-      deleteTips: '确认要删除角色 "{{name}}"?',
-      deleting: '正在删除角色 "{{name}}"...',
-      deleteSuccessTips: '删除角色 "{{name}}" 成功'
+      deleteTips: 'Confirm to delete role "{{name}}"?',
+      deleting: 'Deleting role "{{name}}"...',
+      deleteSuccessTips: 'Delete role "{{name}}" successfully'
     },
     opPermissionList: {
-      title: '操作权限列表',
+      title: 'Operation permission list',
       columns: {
-        name: '操作权限名称',
-        range: '操作范围粒度',
-        desc: '描述'
+        name: 'Operation permission name',
+        range: 'Operation scope granularity',
+        desc: 'Description'
       },
       rangeTypeDictionary: {
-        global: '全局',
-        namespace: '空间',
-        dbService: '数据源'
+        global: 'Global',
+        project: 'Project',
+        dbService: 'DB instance'
       }
     }
   }

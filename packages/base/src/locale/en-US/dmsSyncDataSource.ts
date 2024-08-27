@@ -1,56 +1,56 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  pageTitle: '外部数据源同步',
+  pageTitle: 'External DB instance sync',
   pageDesc:
-    '您可以在这里添加外部数据源管理平台配置, SQLE 会定期从外部平台将数据源同步过来。',
+    'You can add external DB instances platform configuration here, SQLE will periodically synchronize data sources from external platforms.',
   ceTips:
-    '当用户在其他平台上添加了数据源后，如果想要对这些数据源进行 SQL 质量监控，可以使用 SQLE 平台的外部数据源同步功能，将外部平台的数据源同步至 SQLE。\n由此可避免在两个平台上重复添加数据源，降低管理难度。',
+    'When users add data sources on other platforms, if they want to monitor the SQL quality of these data sources, they can use the external data source synchronization function of the SQLE platform to synchronize the data sources of the external platform to SQLE.\nthis can avoid the duplication of adding data sources on two platforms, reducing management difficulty.',
   syncTaskList: {
-    title: '同步任务列表',
-    addSyncTask: '添加同步任务',
-    syncTaskLoading: '正在同步任务...',
-    syncTaskSuccessTips: '同步任务成功',
-    deleteTaskLoading: '正在删除任务...',
-    deleteTaskSuccessTips: '删除任务成功',
+    title: 'Sync task list',
+    addSyncTask: 'Add sync task',
+    syncTaskLoading: 'Syncing task...',
+    syncTaskSuccessTips: 'Sync task success',
+    deleteTaskLoading: 'Deleting task...',
+    deleteTaskSuccessTips: 'Delete task success',
     columns: {
-      name: '同步任务名',
-      source: '来源',
-      version: '版本',
-      url: '地址',
-      instanceType: '数据源类型',
-      lastSyncResult: '最后一次同步结果',
-      lastSyncSuccessTime: '最近一次同步成功时间',
-      sync: '同步',
-      deleteConfirmTitle: '确定要删除当前同步任务?'
+      name: 'Sync task name',
+      source: 'Source',
+      version: 'Version',
+      url: 'Address',
+      instanceType: 'DB instance type',
+      lastSyncResult: 'Last sync result',
+      lastSyncSuccessTime: 'Last successful sync time',
+      sync: 'Sync',
+      deleteConfirmTitle:
+        'Are you sure you want to delete the current sync task?'
     }
   },
 
   addSyncTask: {
-    title: '添加同步任务',
-    successTips: '添加同步任务成功',
-    successGuide: '到同步任务列表查看看看添加的同步任务',
-    backToList: '返回同步任务列表'
+    title: 'Add sync task',
+    successTips: 'Add sync task success',
+    successGuide: 'Go to sync task list to view added sync task',
+    backToList: 'Back to sync task list'
   },
   updateSyncTask: {
-    title: '编辑同步任务',
-    successTips: '同步任务编辑成功',
-    getSyncInstanceTaskError: '获取同步任务数据失败'
+    title: 'Edit sync task',
+    successTips: 'Sync task edit success',
+    getSyncInstanceTaskError: 'Failed to get sync task data'
   },
   syncTaskForm: {
-    name: '同步任务名称',
-    source: '来源',
-    version: '版本',
-    versionTips: '支持DMP5.23.04.0及以上版本',
-    url: '地址',
-    urlTips: '填写DMP平台地址，默认格式为 http(s)://ip:port',
-    instanceType: '数据源类型',
-    ruleTemplateName: '审核规则模板',
-    syncInterval: '同步间隔',
-    baseConfig: '基础配置',
-    sqlConfig: 'SQL审核配置',
-    cronConfig: '自定义任务同步周期',
-    cronTips: '手动输入Crontab格式时间，或点击右侧按钮开启可视化选择',
+    name: 'Sync task name',
+    source: 'Source',
+    url: 'Address',
+    urlTips: 'Third-party platform address',
+    instanceType: 'DB instance type',
+    ruleTemplateName: 'Audit rule template',
+    syncInterval: 'Sync interval',
+    baseConfig: 'Basic configuration',
+    sqlConfig: 'SQL audit configuration',
+    cronConfig: 'Custom task sync cycle',
+    cronTips:
+      'Manually enter Crontab format time, or click the button on the right to enable visual selection',
     helpTips:
-      '创建同步任务前后，用户必须去数据来源平台进行配置，更多使用说明请参考'
+      'Before and after creating a sync task, users must configure it on the data source platform. for more usage instructions, please refer to'
   }
 };

@@ -1,23 +1,24 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: 'IDE审核',
+  pageTitle: 'IDE audit',
   ceTips:
-    '当您需要在开发过程中自主检验SQL质量时，可以配置SQLE提供的IDE审核插件。此外，当您需要复盘在IDE中审核的SQL时，可以使用SQLE提供的记录功能，查看使用情况及相关统计信息。',
-  promptTitle: '暂未生成审核记录',
+    'When you need to verify SQL quality independently during development, you can configure the IDE audit plugin provided by SQLE. In addition, when you need to review the SQL audited in the IDE, you can use the recording function provided by SQLE to view usage and related statistics.',
+  promptTitle: 'No audit records generated yet',
   promptDesc:
-    '通过查看IDE审核记录，支持复盘在IDE中审核的SQL，并获取相关统计信息',
-  promptStep: '使用IDE审核，获得审核结果\n平台实时生成使用记录',
-  userBook: '用户手册',
+    'By viewing the IDE audit records, you can review the SQL audited in the IDE and obtain related statistics',
+  promptStep:
+    'Use IDE audit to get audit results\nPlatform generates usage records in real time',
+  userBook: 'User manual',
   table: {
     sql: 'SQL',
-    sqlFingerprint: 'SQL指纹',
-    source: '数据源',
+    sqlFingerprint: 'SQL fingerprint',
+    source: 'DB instance',
     schema: 'Schema',
-    result: '审核结果',
-    count: '出现次数',
-    firstAppearTime: '最早出现时间',
-    lastReceiveTime: '最近一次出现时间',
-    creator: '创建人'
+    result: 'Audit result',
+    count: 'Occurrences',
+    firstAppearTime: 'First appearance time',
+    lastReceiveTime: 'Last appearance time',
+    creator: 'Creator'
   },
-  drawerTitle: 'IDE审核结果'
+  drawerTitle: 'IDE audit result'
 };

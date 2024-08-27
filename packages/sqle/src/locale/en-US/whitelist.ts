@@ -1,42 +1,38 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '审核SQL例外',
+  pageTitle: 'Whitelist',
   pageDesc:
-    '您可以在这里添加一些SQL语句，这些SQL语句在进行审核的时候不会触发任何审核规则。',
+    'You can add some SQL statements here, which will not trigger any audit rules during auditing.',
 
   ceTips:
-    '如果用户开启了某条规则，但在实际使用中又想临时规避某些规则的触发，可以启用平台的审核SQL例外功能。\n目前支持按字符串匹配或按照SQL指纹匹配，添加在SQL审核审核SQL例外中的语句，在提交工单申请时，将不受审核规则的约束。',
-  allWhitelist: '所有审核SQL例外语句',
+    "If a user enables a rule but wants to temporarily bypass the triggering of certain rules in actual use, they can enable the platform'S whitelist feature.\nCurrently, it supports string matching or SQL fingerprint matching. Statements added to the SQL audit whitelist will not be subject to audit rules when creating a workflow request.",
+  allWhitelist: 'All whitelist statements',
   table: {
-    sql: '内容',
-    desc: '描述',
-    matchType: '匹配类型',
-    matchCount: '匹配次数',
-    lastMatchedTime: '最后一次匹配时间'
+    sql: 'SQL statement',
+    desc: 'Whitelist description',
+    matchType: 'Match mode'
   },
 
   matchType: {
-    exact: '字符串匹配',
-    fingerPrint: 'SQL指纹匹配'
+    exact: 'String matching',
+    fingerPrint: 'SQL fingerprint matching'
   },
 
   operate: {
-    addWhitelist: '添加审核SQL例外',
+    addWhitelist: 'Add whitelist',
 
-    deleting: '正在删除审核SQL例外语句...',
-    deleteSuccess: '删除审核SQL例外语句成功',
-    confirmDelete: '确认删除这条审核SQL例外么？'
+    deleting: 'Deleting whitelist statement...',
+    deleteSuccess: 'Successfully deleted whitelist statement',
+    confirmDelete: 'Confirm deleting this whitelist?'
   },
 
   modal: {
     add: {
-      title: '添加审核SQL例外',
-      success: '添加审核SQL例外成功'
+      title: 'Add whitelist'
     },
     update: {
-      title: '更新审核SQL例外',
-      success: '更新审核SQL例外成功'
+      title: 'Update whitelist'
     },
-    sql: 'SQL语句'
+    sql: 'SQL statement'
   }
 };

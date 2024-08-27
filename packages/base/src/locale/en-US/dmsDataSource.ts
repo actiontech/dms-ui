@@ -1,87 +1,97 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '数据源',
+  pageTitle: 'DB instance',
   pageDesc:
-    '你可以在这里注册需要进行SQL审核的数据源, 并选择是否为该数据源开通各项功能。',
+    'You can register DB instances that need sql audit here, and choose whether to enable various functions for the DB instance.',
 
-  databaseListTitle: '数据源列表',
+  databaseListTitle: 'DB instances list',
 
   databaseList: {
-    instanceName: '数据源名',
-    address: '地址',
-    describe: '描述',
-    role: '角色',
-    type: '数据源类型',
-    ruleTemplate: '模版',
-    workflow: '工作流',
-    maintenanceTime: '运维时间',
-    source: '来源',
-    business: '所属业务',
-    dataMask: '数据查询脱敏'
+    instanceName: 'DB instance name',
+    address: 'Address',
+    describe: 'Describe',
+    role: 'Role',
+    type: 'DB instance type',
+    enabledScanTypes: 'Enabled scan types',
+    ruleTemplate: 'Template',
+    workflow: 'Workflow',
+    maintenanceTime: 'Maintenance time',
+    source: 'Source',
+    business: 'Business',
+    dataMask: 'Data mask'
   },
 
-  backDesc: '返回数据源列表',
-  addDatabase: '添加数据源',
-  addDatabaseSuccess: '添加数据源成功',
-  addDatabaseSuccessGuide: '到数据源列表查看刚刚添加的数据源',
+  backDesc: 'Back to DB instances list',
+  addDatabase: 'Add DB instance',
+  addDatabaseSuccess: 'Add DB instance successfully',
+  addDatabaseSuccessGuide:
+    'Go to DB instances list to view the newly added DB instance',
 
   updateDatabase: {
-    title: '编辑数据源',
-    getDatabaseInfoError: '获取数据源信息失败了',
-    updateDatabase: '更新数据源',
-    updateDatabaseSuccess: '数据源"{{name}}"更新成功'
+    title: 'Edit DB instance',
+    getDatabaseInfoError: 'Failed to get DB instance information',
+    updateDatabase: 'Update DB instance',
+    updateDatabaseSuccess: 'DB instance "{{name}}" updated successfully'
   },
 
   dataSourceForm: {
-    baseConfig: '基础配置',
-    sqlConfig: 'SQL审核配置',
-    name: '数据源名称',
-    describe: '数据源描述',
-    type: '数据源类型',
-    ip: '数据源地址',
-    ipTips: '数据源IP或域名',
-    port: '数据源端口',
-    user: '连接用户',
-    password: '密码',
-    role: '可访问的角色',
-    business: '所属业务',
-    ruleTemplate: '审核规则模板',
-    workflow: '应用的工作流',
-    maxPreQueryRows: 'SQL查询返回条数',
-    queryTimeoutSecond: 'SQL超时限制(s)',
-    maintenanceTime: '运维时间',
-    maintenanceTimeTips: '设置运维时间后，仅能在此运维时间段内上线工单',
-    needAuditSqlService: '是否开启SQL审核业务',
+    baseConfig: 'Base configuration',
+    sqlConfig: 'SQL audit configuration',
+    name: 'DB instance name',
+    describe: 'DB instance describe',
+    type: 'DB instance type',
+    ip: 'DB instance address',
+    ipTips: 'DB instance IP or domain name',
+    port: 'DB instance port',
+    user: 'Connection user',
+    password: 'Password',
+    role: 'Accessible roles',
+    project: 'Project',
+    business: 'Business',
+    ruleTemplate: 'Audit rule template',
+    workflow: 'Applied workflow',
+    maxPreQueryRows: 'SQL query return rows',
+    queryTimeoutSecond: 'SQL timeout limit(s)',
+    maintenanceTime: 'Maintenance time',
+    maintenanceTimeTips:
+      'After setting the maintenance time, workflows can only be executed during this maintenance time period',
+    needAuditSqlService: 'Enable SQL audit service',
     closeAuditSqlServiceTips:
-      '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？',
-    needAuditForSqlQuery: 'SQL查询是否需要审核',
-    allowQueryWhenLessThanAuditLevel: '运行查询的最高审核等级',
+      'If you do not enable the SQL audit service, the DB instance cannot be used in SQL audit related services, are you sure to close it?',
+    needAuditForSqlQuery: 'Whether SQL query needs audit',
+    allowQueryWhenLessThanAuditLevel: 'Highest audit level for running queries',
     passwordTips:
-      '这里不会显示您已经配置的当前数据源密码，提交时如果您没有填写密码，那么将不会对数据源密码进行变更。',
-    needUpdatePassword: '是否更新密码',
-    updatePassword: '更新连接密码',
-    dataMaskConfig: '数据脱敏配置',
-    dataMaskConfigLabel: 'SQL工作台是否开启脱敏配置',
-    dataMaskConfigTips: '开启后，将对SQL工作台的查询结果进行脱敏',
-    checkDataMaskButton: '查看脱敏规则'
+      'The current DB instance password you have configured will not be displayed here. if you do not fill in the password when submitting, the DB instance password will not be changed.',
+    needUpdatePassword: 'Update password',
+    updatePassword: 'Update connection password',
+    dataMaskConfig: 'Data mask configuration',
+    dataMaskConfigLabel:
+      'Whether to enable data mask configuration for SQL workbench',
+    dataMaskConfigTips:
+      'After enabling, the query results of the SQL workbench will be masked',
+    checkDataMaskButton: 'View data mask rule'
   },
 
   testConnectModal: {
-    errorTitle: '数据源{{instanceName}}连通性测试失败'
+    errorTitle: 'DB instance {{instanceName}} connectivity test failed'
   },
 
   deleteDatabase: {
-    confirmMessage: '确认删除数据源 "{{name}}"?',
-    deletingDatabase: '正在删除数据源 "{{name}}"...',
-    deleteSuccessTips: '删除数据源"{{name}}"成功'
+    confirmMessage: 'Confirm to delete DB instance "{{name}}"?',
+    deletingDatabase: 'Deleting DB instance "{{name}}"...',
+    deleteSuccessTips: 'DB instance "{{name}}" deleted successfully'
+  },
+
+  enabledAuditPlan: {
+    text: 'Enable scan task for DB instance'
   },
 
   batchImportDataSource: {
-    buttonText: '批量导入数据源',
-    title: '批量导入数据源',
-    importFile: '导入',
-    successTitle: '批量导入数据源成功',
+    buttonText: 'Batch import DB instances',
+    title: 'Batch import DB instances',
+    importFile: 'Import',
+    successTitle: 'Batch import DB instances successfully',
     requestAuditErrorMessage:
-      '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入'
+      'There are validation failures in the current import information, please modify it based on the prompts in the downloaded file and import it again'
   }
 };

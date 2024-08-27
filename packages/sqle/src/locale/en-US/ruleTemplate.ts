@@ -1,86 +1,141 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: 'Audit Rule Template',
+  pageTitle: 'Audit rule template',
   pageDescribe:
-    'The database will apply the rules of all the rule templates bound to it for SQL audit',
+    'Sql audit will apply the rule template bound to the DB instance',
 
-  ruleTemplateListTitle: 'Template List',
-  globalRuleTemplateListTitle: '公共规则模板',
-
+  ruleTemplateListTitle: 'Project rule template list',
+  globalRuleTemplateListTitle: 'Public rule template list',
   ruleTemplateTitle: {
-    project: '项目规则模版',
-    common: '公共规则模板'
+    project: 'Project rule template',
+    common: 'Public rule template'
   },
 
-  backToList: 'Back to Template List',
+  backToList: 'Back to rule template list',
 
   ruleTemplateList: {
-    descEmpty: 'Empty',
+    descEmpty: 'None',
 
-    clone: '克隆',
-    export: '导出',
+    instance: 'Applied database',
+    instanceEmpty: 'No DB instance bound',
 
-    instance: 'Instances',
-    instanceEmpty: 'Empty',
+    clone: 'Clone',
+    export: 'Export',
 
     table: {
-      templateName: '模版名称',
-      desc: '描述',
-      dbType: '可应用的数据库类型',
-      dataSource: '绑定的数据源'
+      templateName: 'Template name',
+      desc: 'Description',
+      dbType: 'Applicable database type',
+      dataSource: 'Bound DB instance'
     }
   },
 
   detail: {
-    project: '项目',
-    dbType: '数据源类型',
-    error: '获取规则详细信息异常',
-    auditCapability: '审核能力',
-    rewriteCapability: '重写能力'
+    project: 'Project',
+    dbType: 'DB instance type',
+    error: 'Error getting rule details',
+    auditCapability: 'Audit capability',
+    rewriteCapability: 'Rewrite capability'
   },
 
   deleteRuleTemplate: {
-    tips: 'Are you sure delete this template "{{name}}"?',
+    tips: 'Confirm to delete rule template "{{name}}"?',
     deleting: 'Deleting template "{{name}}"...',
     deleteSuccessTips: 'Delete template "{{name}}" successfully'
   },
 
   ruleTemplateForm: {
     placeholder: {
-      templateDesc: '点此添加模板描述'
+      templateDesc: 'Click to add template description'
     },
-    baseInfoTitle: 'Base info',
-    baseInfoDesc: 'Set Template name, describe and something others',
+    baseInfoTitle: 'Basic info',
+    baseInfoDesc: 'Set basic information such as template name and description',
 
     ruleTitle: 'Rule',
-    ruleDesc: 'Select the rule that need to be enable',
+    ruleDesc: 'Select rules to enable',
 
     result: 'Result',
-    resultDesc: 'Operate Result',
+    resultDesc: 'Change result',
 
-    templateName: 'Template Name',
-    templateDesc: 'Template Describe',
+    templateName: 'Template name',
+    templateDesc: 'Template description',
+    databaseType: 'Database type',
 
-    activeRuleTitle: 'Enable Rule',
-    activeRule: 'Enable',
-    activeAllRules: 'Enable All Rule',
-    disableRuleTitle: 'Disable Rule',
-    disableAllRules: 'Disable All Rule',
-    disableRule: 'Disable',
+    activeRuleTitle: 'Enabled rules',
+    activeRule: 'Enable this rule',
+    activeAllRules: 'Enable all rules',
+    disableRuleTitle: 'Disabled rules',
+    disableAllRules: 'Disable all rules',
+    disableRule: 'Disable this rule',
+    editRule: 'Edit this rule',
 
-    emptyRule: 'Empty',
-    ruleValue: 'Rule value'
+    emptyRule: 'No matching rule found',
+    ruleValue: 'Rule value',
+
+    activeAnchorTitle: 'Enabled',
+    disableAnchorTitle: 'Disabled'
   },
 
   createRuleTemplate: {
-    button: 'Create audit rule template',
-    title: 'Create Audit Rule Template',
+    button: 'Create rule template',
+    title: 'Create audit rule template',
     successTitle: 'Create audit rule template successfully',
-    createNew: 'Create new audit rule template again >'
+    createNew: 'Create another new audit rule template >', // DELETE
+    reCreateNew: 'Create another new audit rule template'
+  },
+
+  importRuleTemplate: {
+    button: 'Import rule template',
+    title: 'Import audit rule template',
+    selectFile: 'Select import file',
+    submitText: 'Import',
+    fileRequireTips: 'No file selected',
+    successTitle: 'Import audit rule template successfully',
+    importNew: 'Import another new audit rule template >',
+    importingFile: 'Importing file...'
+  },
+
+  exportRuleTemplate: {
+    button: 'Export rule template',
+    exporting: 'Exporting template "{{name}}"...',
+    exportSuccessTips: 'Export template "{{name}}" successfully'
   },
 
   updateRuleTemplate: {
-    title: 'Update Audit Rule Template',
-    successTitle: 'Update audit rule template successfully'
+    title: 'Update audit rule template',
+    successTitle: 'Update audit rule template ({{name}}) successfully'
+  },
+
+  editModal: {
+    title: 'Edit rule',
+    ruleLevelLabel: 'Rule level',
+    ruleLevelValue: 'Preset value',
+    ruleLevelLabelPlace: 'Select the level corresponding to the rule',
+
+    ruleLevelValuePlace: 'Please fill in the default value of the rule',
+    ruleDescLabel: 'Rule description',
+    ruleTypeLabel: 'Rule category',
+    ruleNameLabel: 'Rule name',
+    ruleDbType: 'Database type',
+    rule: 'Rule',
+    annotation: 'Description',
+    ruleValueTypeOnlyNumber: 'The current rule value type can only be a number'
+  },
+
+  cloneRuleTemplate: {
+    button: 'Clone rule template',
+    title: 'Clone rule template',
+    cloneDesc:
+      'The cloned rule template will only inherit all enabled rules of the source template, as well as the changed rule level and threshold. the basic information of the new rule template cloned, such as the template name, needs to be filled in manually.',
+    currentTemplateTips: 'Cloning audit rule template',
+    successTips: 'Clone rule template "{{name}}" successfully'
+  },
+
+  ruleLevel: {
+    normal: 'Normal',
+    error: 'Error',
+    warn: 'Warning',
+    notice: 'Notice',
+    unknown: 'Unknown'
   }
 };
