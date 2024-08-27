@@ -18,7 +18,8 @@ export default {
     count: 'Occurrences',
     firstAppearTime: 'First appearance time',
     lastReceiveTime: 'Last appearance time',
-    creator: 'Creator'
+    creator: 'Creator',
+    createWhitelist: 'Add to SQL management whitelist'
   },
   drawerTitle: 'IDE audit result'
 };
