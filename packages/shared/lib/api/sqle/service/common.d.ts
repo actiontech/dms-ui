@@ -2225,7 +2225,7 @@ export interface IScheduledTaskDefaultOptionV1Rsp {
 export interface ISource {
   sql_source_desc?: string;
 
-  sql_source_id?: string;
+  sql_source_ids?: string[];
 
   sql_source_type?: string;
 }
