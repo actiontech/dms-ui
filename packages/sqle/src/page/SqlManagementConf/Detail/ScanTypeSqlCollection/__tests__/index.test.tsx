@@ -9,15 +9,17 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../../../testUtils/mockApi/rule_template';
 
 describe('test ScanTypeSqlCollection', () => {
-  let getAuditPlanSQLMetaSpy: jest.SpyInstance;
-  let getAuditPlanSQLDataSpy: jest.SpyInstance;
+  let getInstanceAuditPlanSQLMetaSpy: jest.SpyInstance;
+  let getInstanceAuditPlanSQLDataSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
     instanceAuditPlan.mockAllApi();
-    getAuditPlanSQLMetaSpy = instanceAuditPlan.getAuditPlanSQLMeta();
-    getAuditPlanSQLDataSpy = instanceAuditPlan.getAuditPlanSQLData();
+    getInstanceAuditPlanSQLMetaSpy =
+      instanceAuditPlan.getInstanceAuditPlanSQLMeta();
+    getInstanceAuditPlanSQLDataSpy =
+      instanceAuditPlan.getInstanceAuditPlanSQLData();
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -45,14 +47,16 @@ describe('test ScanTypeSqlCollection', () => {
   it('should match snapshot', async () => {
     const { container } = customRender();
 
-    expect(getAuditPlanSQLMetaSpy).toHaveBeenCalledTimes(1);
-    expect(getAuditPlanSQLMetaSpy).toHaveBeenNthCalledWith(1, {
+    expect(getInstanceAuditPlanSQLMetaSpy).toHaveBeenCalledTimes(1);
+    expect(getInstanceAuditPlanSQLMetaSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
+      instance_audit_plan_id: instanceAuditPlanId,
       audit_plan_id: auditPlanId
     });
-    expect(getAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
-    expect(getAuditPlanSQLDataSpy).toHaveBeenNthCalledWith(1, {
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
+      instance_audit_plan_id: instanceAuditPlanId,
       audit_plan_id: auditPlanId,
       page_index: 1,
       page_size: 20,
@@ -82,9 +86,10 @@ describe('test ScanTypeSqlCollection', () => {
       keyCode: 13
     });
 
-    expect(getAuditPlanSQLDataSpy).toHaveBeenCalledTimes(2);
-    expect(getAuditPlanSQLDataSpy).toHaveBeenNthCalledWith(2, {
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(2);
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
+      instance_audit_plan_id: instanceAuditPlanId,
       audit_plan_id: auditPlanId,
       page_index: 1,
       page_size: 20,
@@ -105,9 +110,10 @@ describe('test ScanTypeSqlCollection', () => {
       keyCode: 13
     });
 
-    expect(getAuditPlanSQLDataSpy).toHaveBeenCalledTimes(3);
-    expect(getAuditPlanSQLDataSpy).toHaveBeenNthCalledWith(3, {
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(3);
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenNthCalledWith(3, {
       project_name: mockProjectInfo.projectName,
+      instance_audit_plan_id: instanceAuditPlanId,
       audit_plan_id: auditPlanId,
       page_index: 1,
       page_size: 20,
