@@ -15,5 +15,6 @@ describe('test UpdateFormDrawer', () => {
     const wrapper = shallow(<BaseInfoTag />);
 
     expect(toJson(wrapper)).toMatchSnapshot();
+    MockDate.reset();
   });
 });

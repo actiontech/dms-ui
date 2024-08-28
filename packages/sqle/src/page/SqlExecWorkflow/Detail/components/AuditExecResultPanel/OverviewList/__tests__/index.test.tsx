@@ -16,7 +16,6 @@ import execWorkflow from '../../../../../../../testUtils/mockApi/execWorkflow';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act, cleanup } from '@testing-library/react';
 import MockDate from 'mockdate';
-import dayjs from 'dayjs';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -52,8 +51,8 @@ describe('test OverviewList', () => {
   };
 
   beforeEach(() => {
-    MockDate.set(dayjs('2023-12-18 12:00:00').valueOf());
     jest.useFakeTimers();
+    MockDate.set('2023-12-18 12:00:00');
     mockUseCurrentProject();
     mockUseCurrentUser();
     executeOneTaskOnWorkflowSpy = execWorkflow.executeOneTaskOnWorkflow();
@@ -66,11 +65,11 @@ describe('test OverviewList', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
+    MockDate.reset();
   });
 
   it('matches the snapshot for the default task result setup', () => {
     const { container } = customRender();
-
     expect(container).toMatchSnapshot();
   });
 
