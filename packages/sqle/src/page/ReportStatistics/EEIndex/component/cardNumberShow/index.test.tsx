@@ -27,6 +27,7 @@ describe('ReportStatistics/CardNumberShow', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
     cleanup();
+    MockDate.reset();
   });
 
   it('render snap loading', async () => {

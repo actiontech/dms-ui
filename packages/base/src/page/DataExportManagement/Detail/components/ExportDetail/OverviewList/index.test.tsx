@@ -14,8 +14,8 @@ import MockDate from 'mockdate';
 
 describe('test base/DataExport/Detail/OverviewList', () => {
   beforeEach(() => {
+    jest.useFakeTimers();
     MockDate.set('2024-01-30 10:00:00');
-    jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     mockUseCurrentUser({
       uid: mockDataExportDetailRedux.workflowInfo.create_user?.uid

@@ -59,6 +59,7 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   afterEach(() => {
     jest.clearAllMocks();
     jest.clearAllTimers();
+    MockDate.reset();
   });
 
   it('should match snapshot', () => {
