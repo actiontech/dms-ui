@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import sqleZhCN from 'sqle/src/locale/zh-CN';
 import sqleEnUS from 'sqle/src/locale/en-US';
+import provisionZhCN from 'provision/src/locale/zh-CN';
 import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
 import commonEnUS from '@actiontech/shared/lib/locale/en-US';
 import zhCN from './zh-CN';
@@ -39,6 +40,7 @@ if (en_dupKeys.length > 0) {
 const allZhCN = {
   translation: {
     ...sqleZhCN.translation,
+    ...provisionZhCN.translation,
     ...commonZhCN.translation,
     ...zhCN.translation
   }
