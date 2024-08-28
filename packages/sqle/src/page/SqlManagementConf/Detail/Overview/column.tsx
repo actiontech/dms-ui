@@ -15,7 +15,6 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 import { Typography } from 'antd';
-import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const ConfDetailOverviewColumns: (
   projectID: string

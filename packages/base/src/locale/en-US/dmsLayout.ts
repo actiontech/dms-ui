@@ -2,12 +2,12 @@
 export default {
   header: {
     moreAction: {
-      userCenter: '用户中心',
-      system: '系统设置',
-      logout: '退出登录'
+      userCenter: 'User center',
+      system: 'System settings',
+      logout: 'Log out'
     },
     spaceSelector: {
-      label: '空间：'
+      label: 'Project:'
     },
     logo: {
       title: 'DMS'

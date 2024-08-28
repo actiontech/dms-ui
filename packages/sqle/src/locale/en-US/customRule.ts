@@ -1,59 +1,60 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  title: '自定义规则',
+  title: 'Custom rule',
   ceTips:
-    '当用户基于业务需求，需要新建审核规则时，可以使用平台的自定义规则功能，通过平台快速开发，降低用户规则开发门槛',
-  backToList: '返回自定义规则列表',
+    'When users need to create audit rules based on business needs, they can use the platform’s custom rule function, which can be quickly developed through the platform to reduce the user’s rule development threshold',
+  backToList: 'Back to custom rule list',
 
   filterForm: {
-    databaseType: '数据源类型',
-    ruleName: '规则名称',
-    add: '新建'
+    databaseType: 'DB instance type',
+    ruleName: 'Rule name',
+    add: 'Create'
   },
 
-  editRule: '编辑该规则',
-  deleteRule: '删除该规则',
-  deleteSuccessTips: '规则 {{desc}} 删除成功',
-  deleteConfirm: '是否确认删除该规则？',
+  editRule: 'Edit this rule',
+  deleteRule: 'Delete this rule',
+  deleteSuccessTips: 'Rule {{desc}} deleted successfully',
+  deleteConfirm: 'Are you sure you want to delete this rule?',
 
   addCustomRule: {
-    title: '创建自定义审核规则',
-    successTitle: '提交成功',
-    backToList: '查看创建的自定义规则',
+    title: 'Create custom audit rule',
+    successTitle: 'Submission successful',
+    backToList: 'View created custom rules',
     successTips:
-      '如果您需要应用创建的自定义规则，请及时在规则模板中开启相应的规则'
+      'If you need to apply the created custom rules, please enable the corresponding rules in the rule template in time'
   },
 
   editCustomRule: {
-    title: '编辑自定义审核规则',
-    successTitle: '提交成功',
-    backToList: '查看创建的自定义规则'
+    title: 'Edit custom audit rule',
+    successTitle: 'Submission successful',
+    backToList: 'View created custom rules'
   },
 
   customRuleForm: {
-    baseInfoTitle: '基本信息',
-    baseInfoDesc: '填写规则基本信息',
+    baseInfoTitle: 'Basic information',
+    baseInfoDesc: 'Fill in the basic rule information',
 
-    editRuleTitle: '编写规则',
-    editRuleDesc: '填写规则脚本',
+    editRuleTitle: 'Write rule',
+    editRuleDesc: 'Fill in the rule script',
 
-    submit: '提交',
-    submitCustomRule: '提交自定义规则'
+    submit: 'Submit',
+    submitCustomRule: 'Submit custom rule'
   },
 
   baseInfoForm: {
-    ruleID: '规则ID',
-    ruleName: '规则名称',
-    ruleDesc: '规则说明',
-    dbType: '适用数据源类型',
-    ruleType: '规则分类',
-    level: '默认告警等级',
-    addExtraRuleType: '新增规则分类',
-    addExtraRuleTypePlaceholder: '请输入需要新增的规则分类名称'
+    ruleID: 'Rule id',
+    ruleName: 'Rule name',
+    ruleDesc: 'Rule description',
+    dbType: 'Applicable DB instance type',
+    ruleType: 'Rule classification',
+    level: 'Default alert level',
+    addExtraRuleType: 'Add rule classification',
+    addExtraRuleTypePlaceholder:
+      'Please enter the name of the rule classification you need to add'
   },
 
   editScriptForm: {
-    inputRuleScript: '规则脚本',
-    placeholder: '请在此处输入正则表达式'
+    inputRuleScript: 'Rule script',
+    placeholder: 'Please enter the regular expression here'
   }
 };

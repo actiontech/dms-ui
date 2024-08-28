@@ -1,26 +1,26 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  username: 'username',
-  password: 'password',
+  username: 'Username',
+  password: 'Password',
 
-  unknownError: 'Unknown Error',
-  unknownStatus: 'Unknown Status',
+  unknownError: 'Unknown error...',
+  unknownStatus: 'Unknown status...',
   unknown: 'Unknown',
-  status: 'status',
+  status: 'Status',
 
-  all: '全部',
-  enabled: '已启用',
-  notEnabled: '未启用',
-  disabled: '已禁用',
+  all: 'All',
+  enabled: 'Enabled',
+  notEnabled: 'Not enabled',
+  disabled: 'Disabled',
 
-  opened: '已开启',
-  notOpen: '未开启',
+  opened: 'Opened',
+  notOpen: 'Not opened',
 
-  copied: '复制成功',
-  true: 'true',
-  false: 'false',
-  refresh: 'refresh',
-  ok: 'Ok',
+  copied: 'Copied successfully',
+  true: 'Yes',
+  false: 'No',
+  refresh: 'Refresh',
+  ok: 'Confirm',
   cancel: 'Cancel',
   submit: 'Submit',
   close: 'Close',
@@ -28,223 +28,243 @@ export default {
   modify: 'Modify',
   manage: 'Manage',
   delete: 'Delete',
+  add: 'Add',
+  clear: 'Clear',
+  activate: 'Activate',
   reset: 'Reset',
+  resetAll: 'Reset all',
   search: 'Search',
   retry: 'Retry',
   back: 'Back',
   more: 'More',
-  upload: 'Upload',
-  resetAndClose: 'Reset Form And Close',
-  operateSuccess: 'Operate successfully',
+  upload: 'Upload file',
+  resetAndClose: 'Close and reset form',
+  operateSuccess: 'Operation successful',
   operate: 'Operate',
+  tips: 'Notice',
+  hide: 'Hide',
+  wait: 'Please wait',
+  save: 'Save',
+  open: 'Open',
   alreadyUsed: 'Already used',
   userNumber: 'User number',
-  tips: '注意',
-  hide: '隐藏',
-  wait: '请稍后',
-  save: '保存',
-  open: '开启',
-  generate: '生成',
-  generatePasswordSuccess: '已生成16位密码并复制在剪贴板中',
+  generate: 'Generate',
+  generatePasswordSuccess:
+    'Generated a 16-digit password and copied it to the clipboard',
   test: 'Test',
+  download: 'Download',
+  uploadAndUpdate: 'Upload and update',
 
-  prevStep: 'Prev',
-  nextStep: 'Next',
+  prevStep: 'Previous step',
+  nextStep: 'Next step',
 
   expansion: 'Expand',
   collapse: 'Collapse',
 
-  showAll: 'Show All',
-  showDetail: 'Show Detail',
-  showMore: 'Show More',
+  showAll: 'Show all',
+  showDetail: 'View details',
+  showMore: 'Show more',
 
-  in: '在',
-  on: '的',
-  and: '且',
-  at: '中',
-  preview: '预览',
+  in: 'In',
+  on: 'On',
+  and: 'And',
+  at: 'In',
+  preview: 'Preview',
 
-  success: '成功',
-  fail: '失败',
+  success: 'Success',
+  fail: 'Fail',
 
   theme: {
-    light: 'Light Theme',
-    dark: 'Dark Theme'
+    light: 'Light mode',
+    dark: 'Dark mode'
   },
 
-  logout: 'Logout',
-  account: 'Account',
+  logout: 'Log out',
+  account: 'Personal center',
 
-  copySuccess: '复制成功',
-  clickHere: '点击此处',
+  copySuccess: 'Copied successfully',
+  clickHere: 'Click here',
 
   request: {
-    noticeFailTitle: 'Request Failed'
+    noticeFailTitle: 'Request error'
   },
   tip: {
-    net_error: '数据链接异常，请检查网络',
-    no_data: '暂无数据'
+    net_error: 'Data link exception, please check network',
+    no_data: 'No data',
+    no_rule_data: 'No more rules',
+    selectFile: 'Please select a file'
   },
 
   time: {
-    hour: '小时',
-    year: '年',
-    month: '月',
-    day: '天',
-    week: '星期',
-    minute: '分钟',
-    everyDay: '每天',
-    everyWeek: '每周',
-    permanent: '永久',
-    oneYear: '一年',
-    oneMonth: '一个月',
-    oneWeek: '一个星期',
-    per: '每'
+    hour: 'Hour',
+    year: 'Year',
+    month: 'Month',
+    day: 'Day',
+    week: 'Week',
+    minute: 'Minute',
+    everyDay: 'Every day',
+    everyWeek: 'Every week',
+    permanent: 'Permanent',
+    oneYear: 'One year',
+    oneMonth: 'One month',
+    oneWeek: 'One week',
+    per: 'Per'
   },
 
   week: {
-    monday: '每周一',
-    tuesday: '每周二',
-    wednesday: '每周三',
-    thursday: '每周四',
-    friday: '每周五',
-    saturday: '每周六',
-    sunday: '每周日'
+    monday: 'Monday',
+    tuesday: 'Tuesday',
+    wednesday: 'Wednesday',
+    thursday: 'Thursday',
+    friday: 'Friday',
+    saturday: 'Saturday',
+    sunday: 'Sunday'
   },
 
   form: {
     placeholder: {
-      input: 'Please input {{name}}',
+      input: 'Please enter {{name}}',
       select: 'Please select {{name}}',
-      upload: 'Please upload{{name}}',
-      searchInput: 'Input the {{name}} to search',
-      searchSelect: 'Select the {{name}} to search'
+      upload: 'Please upload {{name}}',
+      searchInput: 'Please enter the {{name}} you want to search',
+      searchSelect: 'Please select the {{name}} you want to search'
     },
     rule: {
-      require: 'Please input {{name}}',
-      selectFile: '必须选择一个文件',
-      passwordNotMatch: 'The two passwords that you entered do not match!',
-      passwordConfirmTips: '请确保两次输入的密码一致',
-      email: 'The input is not valid E-mail!',
-      phone: 'The input is not valid cellphone',
-      startWithLetter: '必须要以字母开头',
-      onlyLetterAndNumber: '只能包含字母、数字、中划线和下划线',
-      startWithWords: '必须要以字母、中文开头',
-      onlyWordsAndNumber: '只能包含汉字、字母、数字、中划线和下划线',
-      cidr: '请输入有效的ipv4以及掩码',
-      onlyNumber: '只能包含数字',
-      portRange: '端口号范围为{{min}}-{{max}}',
-      integer: '只能输入正整数',
-      numberRange: '{{name}}范围是{{min}}-{{max}}间的正整数',
-      maxLength: '至多 {{max}} 个字符'
+      require: '{{name}} must be filled in',
+      selectFile: 'You must select a file',
+      passwordNotMatch: 'The two passwords entered do not match',
+      passwordConfirmTips:
+        'Please make sure that the two passwords entered are consistent',
+      email: 'Please enter a valid email address',
+      phone: 'Please enter a valid mobile number',
+      startWithLetter: 'Must start with a letter',
+      onlyLetterAndNumber:
+        'Can only contain letters, numbers, hyphens and underscores',
+      startWithWords: 'Must start with a letter or Chinese',
+      onlyWordsAndNumber:
+        'Can only contain Chinese characters, letters, numbers, hyphens and underscores',
+      cidr: 'Please enter a valid ipv4 and mask',
+      onlyNumber: 'Can only contain numbers',
+      portRange: 'The port range is {{min}}-{{max}}',
+      integer: 'Can only enter positive integers',
+      numberRange:
+        'The range of {{name}} is a positive integer between {{min}}-{{max}}',
+      maxLength: 'At most {{max}} characters',
+      nameRule:
+        'Can only contain letters, numbers, Chinese, hyphens and underscores'
     }
   },
-
   cron: {
     mode: {
-      select: '可视化选择',
-      manual: '手工填写'
+      select: 'Visual selection',
+      manual: 'Manual input'
     },
     label: {
-      interval: '频率',
-      point: '时间点'
+      interval: 'Frequency',
+      point: 'Time point'
     },
     time: {
-      everyDay: '每天',
-      everyWeek: '每周'
+      everyDay: 'Every day',
+      everyWeek: 'Every week'
     },
     errorMessage: {
-      invalid: '无效的cron表达式',
-      mustBeString: 'cron表达式必须是一个字符串',
-      mustBeArray: '变更的值必须是一个数组',
-      lenMustBeFive: 'cron表达式必须只包含（分钟 小时 日期 月份 星期）5个元素',
-      onlyHaveValidChar: 'cron表达式只能包含数字中划线(-),斜线(/),和逗号(,)',
+      invalid: 'Invalid cron expression',
+      mustBeString: 'Cron expression must be a string',
+      mustBeArray: 'The changed value must be an array',
+      lenMustBeFive:
+        'Cron expression must only contain (minute hour date month week) 5 elements',
+      onlyHaveValidChar:
+        'Cron expression can only contain numbers hyphens (-), slashes (/), and commas (,)',
       limit:
-        '您的表达式中包含不合法的数值范围， minute(0-59), hour(0-23), day(1,31), month(1-12), week(0-6)'
+        'Your expression contains invalid numerical ranges, minute(0-59), hour(0-23), day(1,31), month(1-12), week(0-6)'
     },
-    placeholder: '请输入审核时间',
+    placeholder: 'Please enter the time',
     subTitle: {
-      auditsFrequency: '审核频率',
-      timerPoint: '时间点'
+      auditsFrequency: 'Frequency',
+      timerPoint: 'Time point'
     },
     week: {
-      Sun: '星期日',
-      Mon: '星期一',
-      Tue: '星期二',
-      Wed: '星期三',
-      Thu: '星期四',
-      Fri: '星期五',
-      Sat: '星期六'
+      Sun: 'Sunday',
+      Mon: 'Monday',
+      Tue: 'Tuesday',
+      Wed: 'Wednesday',
+      Thu: 'Thursday',
+      Fri: 'Friday',
+      Sat: 'Saturday'
     }
   },
   maintenanceTimePicker: {
-    placeholder: '请选择时间段',
-    duplicate: '不可重复添加相同的时间段',
-    range: '时间段'
+    placeholder: 'Please select a time period',
+    duplicate: 'Cannot add the same time period repeatedly',
+    range: 'Time period'
   },
   testDatabaseConnectButton: {
-    testDatabaseConnection: '测试数据源连通性',
-    testing: '正在尝试进行连接...',
-    testSuccess: '数据源连通性测试成功',
-    testFailed: '未能成功链接到数据源'
+    testDatabaseConnection: 'Test data source connectivity',
+    testing: 'Attempting to connect...',
+    testSuccess: 'Data source connectivity test successful',
+    testFailed: 'Failed to connect to the data source'
   },
 
-  sqlStatements: 'SQL语句',
+  sqlStatements: 'SQL statements',
 
   enterpriseFeatureDisplay: {
-    featureDescription: '功能说明',
-    additionalAttention: '更多关注',
+    featureDescription: 'Feature description',
+    additionalAttention: 'More attention',
     businessLink:
-      '{{featureName}}为企业版功能。如您想使用该功能，可以通过以下链接联系我们。',
-    compareLink: '如您想了解更多关于企业版及社区版功能的差异，可参考用户手册：'
+      '{{featureName}} is an enterprise version feature. If you want to use this feature, you can contact us through the following link.',
+    compareLink:
+      'If you want to know more about the difference between the enterprise version and the community version, please refer to the user manual',
+    userBook: 'User manual',
+    linkUs: 'Actionstech official website'
   },
 
   actiontechTable: {
     searchInput: {
-      placeholder: '输入关键字搜索'
+      placeholder: 'Enter keywords to search'
     },
     filterButton: {
-      filter: '筛选',
-      clearFilter: '收起筛选'
+      filter: 'Filter',
+      clearFilter: 'Close filter'
     },
     setting: {
-      buttonText: '表格设置',
-      fixedLeft: '固定在左侧',
-      fixedRight: '固定在右侧',
-      noFixed: '不固定'
+      buttonText: 'Table settings',
+      fixedLeft: 'Fixed on the left',
+      fixedRight: 'Fixed on the right',
+      noFixed: 'Not fixed'
     },
     filterContainer: {
-      rangePickerPlaceholderStart: '开始时间',
-      rangePickerPlaceholderEnd: '结束时间'
+      rangePickerPlaceholderStart: 'Start time',
+      rangePickerPlaceholderEnd: 'End time'
     },
     pagination: {
-      total: '共 {{total}} 条数据'
+      total: 'Total {{total}} records'
     }
   },
   version: {
-    currentVersion: '当前版本',
-    ce: '社区版',
-    ee: '企业版',
-    demo: '专业版',
-    startApply: '开始试用',
+    currentVersion: 'Current version',
+    ce: 'Community edition',
+    ee: 'Enterprise edition',
+    demo: 'Professional edition',
+    startApply: 'Start trial',
     ceDesc:
-      '支持纳管MySQL数据源\n支持资源权限隔离\n集成CloudBeaver在线查询\n提供专业SQL审核能力\n支持多方式采集MySQL数据\n无实例限制',
+      'Supports the management of MySQL data sources\nsupports resource permission isolation\nintegrated CloudBeaver online query\nprovides professional SQL audit capabilities\nsupports multiple methods for collecting MySQL data\nno instance limit',
     demoDesc:
-      '支持纳管10多种主流数据源\n支持资源权限隔离\n集成CloudBeaver在线查询\n提供专业SQL审核能力\n支持多方式采集各数据源数据\n最大实例个数20',
+      'Supports the management of more than 10 mainstream data sources\nsupports resource permission isolation\nintegrated CloudBeaver online query\nprovides professional SQL audit capabilities\nsupports multiple methods for collecting data from various data sources\nmaximum instance number 20',
     eeDesc:
-      '支持纳管10多种主流数据源\n支持资源权限隔离\n集成CloudBeaver在线查询\n提供专业SQL审核能力\n支持多方式采集各数据源数据\n无实例限制\n多维度智能统计\n个性化定制',
-    ceSubTitle: '适用于MySQL基础审核场景',
-    demoSubTitle: '适用于多种数据源类型体验场景',
-    eeSubTitle: '适用于私有云用户定制场景',
-    ceTitle: '免费',
-    demoTitle: '免费',
-    eeTitle: '定制',
-    ceTerm: '永久',
-    demoTerm: '永久',
-    ceButtonText: '快速部署',
-    demoButtonText: '立即申请',
-    eeButtonText: '联系我们',
-    bottomDesc: '各版本完整功能对比请参考：',
-    functionalComparison: '功能对比'
+      'Supports the management of more than 10 mainstream data sources\nsupports resource permission isolation\nintegrated CloudBeaver online query\nprovides professional SQL audit capabilities\nsupports multiple methods for collecting data from various data sources\nno instance limit\nmultidimensional intelligent statistics\npersonalized customization',
+    ceSubTitle: 'Suitable for MySQL basic audit scenarios',
+    demoSubTitle: 'Suitable for various data source type experience scenarios',
+    eeSubTitle: 'Suitable for private cloud user customization scenarios',
+    ceTitle: 'Free',
+    demoTitle: 'Free',
+    eeTitle: 'Customized',
+    ceTerm: 'Permanent',
+    demoTerm: 'Permanent',
+    ceButtonText: 'Fast deployment',
+    demoButtonText: 'Apply now',
+    eeButtonText: 'Contact us',
+    bottomDesc:
+      'For complete functional comparisons of each version, please refer to:',
+    functionalComparison: 'Functional comparison'
   }
 };

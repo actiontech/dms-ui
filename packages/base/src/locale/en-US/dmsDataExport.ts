@@ -1,178 +1,180 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '数据导出',
+  pageTitle: 'Data export',
   ceTips:
-    '当您没有某个数据源的查看权限，但需要导出其中的数据时，可以利用数据导出功能。通过进行审批流程，您可以获取相应的数据。这样，即使没有直接的查看权限，您仍然可以获得所需的数据。',
+    'When you do not have permission to view a certain DB instance, but need to export data from it, you can use the data export function. by going through the approval process, you can get the corresponding data. this way, even without direct viewing permission, you can still get the data you need.',
   status: {
-    wait_for_audit: '待审核',
-    wait_for_export: '待导出',
-    finished: '导出成功',
-    exporting: '正在导出',
-    export_failed: '导出失败',
-    expired: '已过期',
-    rejected: '已驳回',
-    canceled: '已关闭',
-    file_deleted: '已移除'
+    wait_for_audit: 'Pending audit',
+    wait_for_export: 'Pending export',
+    finished: 'Export success',
+    exporting: 'Exporting',
+    export_failed: 'Export failed',
+    expired: 'Expired',
+    rejected: 'Rejected',
+    canceled: 'Closed',
+    file_deleted: 'Removed'
   },
   batchCancel: {
     messageWarn:
-      '您所选的工单包含不可关闭的工单!（只有工单状态为“{{waitAudit}}”和“{{reject}}”的工单可以关闭。）'
+      'The tasks you selected contain tasks that cannot be closed! (only tasks with status "{{waitAudit}}" and "{{reject}}" can be closed.)'
   },
   create: {
-    backToList: '返回工单列表',
-    button: '创建导出',
+    backToList: 'Back to task list',
+    button: 'Create export',
     form: {
       base: {
-        title: '创建导出工单',
-        name: '数据导出工单名称',
-        describe: '工单描述',
-        describePlaceholder: '点击添加数据导出描述'
+        title: 'Create export task',
+        name: 'Data export task name',
+        describe: 'Task description',
+        describePlaceholder: 'Click to add data export description'
       },
       source: {
-        title: '选择导出对象',
-        business: '业务类型',
-        dbService: '数据源',
-        schema: '数据库'
+        title: 'Select export target',
+        business: 'Business type',
+        dbService: 'DB instance',
+        schema: 'Database'
       },
       method: {
-        title: '选择导出方式',
-        manualInput: '输入SQL语句'
+        title: 'Select export method',
+        manualInput: 'Input sql statement'
       },
       action: {
-        audit: '审核',
-        format: 'SQL美化',
+        audit: 'Audit',
+        format: 'Sql beautify',
         formatTips:
-          '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。'
+          'Currently, the database types that support sql beautify are {{supportType}}. if no DB instance is selected or the selected DB instance type is not yet supported, sql beautify may lead to syntax errors in the sql statement.'
       }
     },
     update: {
-      baseTitle: '工单基本信息',
-      sourceTitle: '工单导出对象',
-      methodTitle: '导出方式',
-      updateInfoAction: '修改工单',
-      submitAction: '提交工单',
-      submitTips: '仅支持对DQL语句创建导出工单'
+      baseTitle: 'Task basic info',
+      sourceTitle: 'Task export target',
+      methodTitle: 'Export method',
+      updateInfoAction: 'Modify task',
+      submitAction: 'Submit task',
+      submitTips: 'Only supports creating export tasks for dql statements'
     },
     result: {
-      success: '工单创建成功',
-      guide: '查看刚刚创建的工单'
+      success: 'Task created successfully',
+      guide: 'View the newly created task'
     }
   },
   batchClose: {
-    button: '批量关闭',
-    tips: '您确认关闭所选导出工单吗？'
+    button: 'Batch close',
+    tips: 'Are you sure you want to close the selected export tasks?'
   },
   list: {
     column: {
-      id: '工单号',
-      name: '工单名称',
-      dbService: '数据源',
-      desc: '描述',
-      exportMethod: '导出方式',
-      createUser: '创建人',
-      createTime: '创建时间',
-      exportTime: '导出时间',
-      status: '状态',
-      assignee: '待操作人',
-      viewOrderDetail: '查看工单详情'
+      id: 'Task id',
+      name: 'Task name',
+      dbService: 'DB instance',
+      desc: 'Description',
+      exportMethod: 'Export method',
+      createUser: 'Creator',
+      createTime: 'Create time',
+      exportTime: 'Export time',
+      status: 'Status',
+      assignee: 'Assignee',
+      viewOrderDetail: 'View task detail'
     },
     actions: {
-      closed: '关闭',
-      closeTips: '确认要关闭任务"{{name}}"么？'
+      closed: 'Close',
+      closeTips: 'Are you sure you want to close the task "{{name}}"? '
     }
   },
   detail: {
     reject: {
-      reason: '{{name}}驳回了当前工单，驳回原因为：',
-      tips: '当工单被驳回时，工单创建者需要对其进行修改，然后重新提交审核。（目前暂不支持修改工单。）'
+      reason: '{{name}} rejected the current task, the reason is:',
+      tips: 'When the task is rejected, the task creator needs to modify it and resubmit it for review. (currently, modifying the task is not supported.)'
     },
     exportResult: {
-      title: '导出结果',
+      title: 'Export result',
       overview: {
-        title: '概览',
+        title: 'Overview',
         column: {
-          dbService: '数据源',
-          status: '状态',
-          assigneeUser: '待操作人',
-          exportStartTime: '导出开始时间',
-          exportEndTime: '导出结束时间',
-          exportType: '导出方式',
-          exportFileType: '导出文件类型',
+          dbService: 'DB instance',
+          status: 'Status',
+          assigneeUser: 'Assignee',
+          exportStartTime: 'Export start time',
+          exportEndTime: 'Export end time',
+          exportType: 'Export method',
+          exportFileType: 'Export file type',
           action: {
-            download: '下载数据',
-            downloadTips: '请在24小时内下载数据集，如超期，则需要重新提交工单。'
+            download: 'Download data',
+            downloadTips:
+              'Please download the dataset within 24 hours. if it expires, you will need to resubmit the task.'
           }
         }
       },
       taskDetail: {
-        copy: '复制SQL语句',
-        exportContent: '导出内容',
-        exportFileType: '导出格式',
-        auditResult: '审核结果',
-        exportResult: '导出结果',
-        downloadSQL: '下载SQL语句'
+        copy: 'Copy sql statement',
+        exportContent: 'Export content',
+        exportFileType: 'Export format',
+        auditResult: 'Audit result',
+        exportResult: 'Export result',
+        downloadSQL: 'Download sql statement'
       }
     },
     record: {
-      title: '工单信息',
+      title: 'Task info',
       basicInfo: {
-        title: '基本信息',
-        createUser: '创建人',
-        createTime: '创建时间',
-        status: '状态'
+        title: 'Basic info',
+        createUser: 'Creator',
+        createTime: 'Create time',
+        status: 'Status'
       },
       steps: {
-        title: '工单进度',
-        create: '创建工单',
-        update: '更新工单',
-        approve: '审核工单',
-        execute: '执行导出'
+        title: 'Task progress',
+        create: 'Create task',
+        update: 'Update task',
+        approve: 'Audit task',
+        execute: 'Execute export'
       },
       history: {
-        title: '工单操作记录'
+        title: 'Task operation record'
       }
     },
     action: {
-      workflowDetail: '工单详情',
+      workflowDetail: 'Task detail',
       close: {
-        text: '关闭工单',
-        successTips: '工单关闭成功！'
+        text: 'Close task',
+        successTips: 'Task closed successfully!'
       },
       approve: {
-        text: '审核通过',
-        successTips: '工单审核通过！'
+        text: 'Approve',
+        successTips: 'Task approved successfully!'
       },
       reject: {
         modal: {
-          title: '驳回',
-          text: '驳回'
+          title: 'Reject',
+          text: 'Reject'
         },
-        reason: '驳回原因',
-        text: '审核驳回',
-        tips: '当前操作将驳回工单下所有导出任务，请谨慎操作！',
-        successTips: '工单驳回成功！'
+        reason: 'Reject reason',
+        text: 'Reject audit',
+        tips: 'The current operation will reject all export tasks under the task. please operate with caution!',
+        successTips: 'Task rejected successfully!'
       },
       execute: {
-        text: '执行导出',
-        successTips: '工单执行导出成功！',
+        text: 'Execute export',
+        successTips: 'Task executed successfully!',
         confirmTips:
-          '当前操作将立即执行导出工单下的所有任务，是否确认立即执行导出?'
+          'The current operation will immediately execute all tasks under the export task. do you confirm to execute export immediately?'
       }
     },
     operator: {
-      unknown: '未知步骤',
-      waitAudit: '等待审核人操作',
-      alreadyRejected: '工单已被驳回',
-      alreadyClosed: '工单已被关闭'
+      unknown: 'Unknown step',
+      waitAudit: 'Waiting for auditor operation',
+      alreadyRejected: 'Task has been rejected',
+      alreadyClosed: 'Task has been closed'
     }
   },
   common: {
     auditResult: {
       column: {
-        number: '序号',
-        execSql: '执行语句',
-        sqlType: '语句类型',
-        auditResult: '审核结果'
+        number: 'No.',
+        execSql: 'Execute statement',
+        sqlType: 'Statement type',
+        auditResult: 'Audit result',
+        createWhitelist: 'Add to audit whitelist'
       }
     }
   }

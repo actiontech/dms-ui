@@ -1,61 +1,63 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '成员与权限管理',
-  pageDesc: '您可以在成员与权限管理中添加成员，并配置成员权限',
+  pageTitle: 'Members',
+  pageDesc: 'You can add members and configure member permissions in members',
   memberList: {
-    title: '成员列表',
-    deleteConfirmTitle: '确定要删除成员:{{name}}?',
-    deleteSuccessTips: '删除成员{{name}}成功',
+    title: 'Member list',
+    deleteConfirmTitle: 'Confirm to delete member: {{name}}?',
+    deleteSuccessTips: 'Delete member {{name}} successfully',
     columns: {
-      opRanges: '平台操作权限',
-      opRangeTips: '格式 角色: [操作范围11,操作范围2 ...]',
-      isProjectAdmin: '项目管理员'
+      opRanges: 'Platform operation permissions',
+      opRangeTips: 'Format role: [operation range 11, operation range 2 ...]',
+      isProjectAdmin: 'Project admin'
     },
-    allPermission: 'ALL: 拥有对所有数据源的全部操作权限'
+    allPermission: 'ALL: have full operation permissions on all DB instances'
   },
   addMember: {
-    modalTitle: '添加成员',
-    successTips: '添加成员{{name}}成功'
+    modalTitle: 'Add member',
+    successTips: 'Add member {{name}} successfully'
   },
   updateMember: {
-    modalTitle: '编辑成员',
-    successTips: '编辑成员{{name}}成功'
+    modalTitle: 'Edit member',
+    successTips: 'Edit member {{name}} successfully'
   },
   memberForm: {
-    username: '用户名称',
-    isProjectAdmin: '项目管理权限'
+    username: 'Username',
+    usernameTips:
+      'Need to add users in <0>system settings-user center</0> first',
+    isProjectAdmin: 'Project management permission'
   },
 
   roleSelector: {
-    role: '平台角色',
-    opRange: '操作范围',
-    addRoleAndOpRange: '添加平台角色与操作范围'
+    role: 'Platform role',
+    opRange: 'Operation range',
+    addRoleAndOpRange: 'Add platform role and operation range'
   },
 
   memberGroupList: {
-    title: '成员组列表',
-    deleteSuccessTips: '删除成员组{{name}}成功',
-    deleteConfirmTitle: '确定要删除成员组:{{name}}?',
+    title: 'Member group list',
+    deleteSuccessTips: 'Delete member group {{name}} successfully',
+    deleteConfirmTitle: 'Confirm to delete member group: {{name}}?',
 
     columns: {
-      userGroupName: '成员组名',
-      users: '用户名',
-      opRanges: '平台操作权限',
-      opRangeTips: '格式 角色: [操作范围11,操作范围2 ...]',
-      isProjectAdmin: '项目管理员'
+      userGroupName: 'Member group name',
+      users: 'Username',
+      opRanges: 'Platform operation permissions',
+      opRangeTips: 'Format role: [operation range 11, operation range 2 ...]',
+      isProjectAdmin: 'Project admin'
     },
-    allPermission: 'ALL: 拥有对所有数据源的全部操作权限'
+    allPermission: 'ALL: have full operation permissions on all DB instances'
   },
   memberGroupForm: {
-    userGroupName: '成员组名',
-    users: '用户'
+    userGroupName: 'Member group name',
+    users: 'Users'
   },
   addMemberGroup: {
-    modalTitle: '添加成员组',
-    successTips: '添加成员组{{name}}成功'
+    modalTitle: 'Add member group',
+    successTips: 'Add member group {{name}} successfully'
   },
   updateMemberGroup: {
-    modalTitle: '更新成员组',
-    successTips: '更新成员组{{name}}成功'
+    modalTitle: 'Update member group',
+    successTips: 'Update member group {{name}} successfully'
   }
 };

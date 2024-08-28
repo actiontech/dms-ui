@@ -1,40 +1,67 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  result: '审核结果',
-  passRage: '审核通过率',
-  source: '审核结果评分',
-  duplicate: '是否去重',
-  downloadSql: '下载SQL语句',
-  downloadReport: '下载审核报告',
+  result: 'Audit result',
+  passRage: 'Audit pass rate',
+  source: 'Audit score',
+  duplicate: 'Deduplication',
+  downloadSql: 'Download SQL statement',
+  downloadReport: 'Download audit report',
   table: {
-    number: '序号',
-    auditLevel: '规则等级',
-    auditStatus: '审核状态',
-    auditResult: '审核结果',
-    execSql: '执行语句',
-    execStatus: '执行状态',
-    execResult: '执行结果',
-    rollback: '回滚语句',
-    rollbackTips: '仅提示，不支持执行回滚',
-    describe: '说明',
-    analyze: '分析'
+    number: 'No.',
+    auditLevel: 'Rule level',
+    auditStatus: 'Audit status',
+    auditResult: 'Audit result',
+    execSql: 'Execute statement',
+    execStatus: 'Execute status',
+    execResult: 'Execute result',
+    rollback: 'Rollback statement',
+    rollbackTips: 'Only prompt, rollback is not supported',
+    describe: 'Description',
+    analyze: 'Analyze',
+    addDescribe: 'Add description'
   },
 
   filterForm: {
-    highestAuditLevel: '最高审核告警等级'
+    highestAuditLevel: 'Highest audit warning level'
+  },
+
+  sqlFileSource: {
+    tips: 'Currently only supports viewing SQL sources in SQL/ZIP files',
+    source: 'Source file',
+    fileLine: 'Line number'
   },
 
   execStatus: {
-    initialized: '准备执行',
-    doing: '正在执行',
-    succeeded: '执行成功',
-    failed: '执行失败',
-    manually_executed: '人工执行'
+    initialized: 'Ready to execute',
+    doing: 'Executing',
+    succeeded: 'Execute success',
+    failed: 'Execute failed',
+    manually_executed: 'Manual execution',
+    terminate_fail: 'Termination failed',
+    terminate_succ: 'Termination success',
+    terminating: 'Terminating',
+    allStatus: 'All status'
   },
 
   auditStatus: {
-    initialized: '准备审核',
-    doing: '正在审核',
-    finished: '审核完毕'
+    initialized: 'Ready to audit',
+    doing: 'Auditing',
+    finished: 'Audit completed'
+  },
+  copyExecSql: 'Copy execute statement',
+  auditSuccess: 'Audit passed',
+
+  fileModeExecute: {
+    headerTitle: 'File information overview',
+    sqlsTips: 'Only the first 5 data are displayed, <0>view more<0>'
+  },
+  fileModeSqls: {
+    backToDetail: 'Return to workflow details',
+    title: 'File information details',
+
+    statistics: {
+      audit: 'Audit result information',
+      execute: 'Execute result information'
+    }
   }
 };

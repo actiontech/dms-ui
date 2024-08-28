@@ -1,91 +1,100 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   list: {
-    pageTitle: 'SQL审核',
+    pageTitle: 'SQL audit',
     action: {
-      create: '创建审核',
+      create: 'Create audit',
       updateTags: {
-        successTips: '更新业务标签成功',
+        successTips: 'Update business tags successfully',
         addTag: {
-          text: '新增业务标签',
-          notTags: '暂无标签数据',
-          placeholder: '请输入新增的业务标签'
+          text: 'Add business tag',
+          notTags: 'No tag data',
+          placeholder: 'Please input the new business tag'
         }
       }
     },
     filter: {
-      instanceName: '数据源',
-      auditTime: '审核时间',
-      inputTagPlaceholder: '请输入业务标签搜索'
+      instanceName: 'DB instance',
+      auditTime: 'Audit time',
+      inputTagPlaceholder: 'Please input the business tag to search'
     },
     status: {
       auditStatus: {
-        auditing: '审核中',
-        successfully: '审核成功'
+        auditing: 'Auditing',
+        successfully: 'Audit succeed'
       }
     },
     columns: {
-      auditID: '审核ID',
-      auditStatus: '审核状态',
-      businessTag: '业务标签',
-      auditRating: '审核评分',
-      auditPassRate: '审核通过率（%）',
-      createUser: '创建人',
-      auditTime: '审核时间',
-      instanceName: '数据源'
+      auditID: 'Audit ID',
+      auditStatus: 'Audit status',
+      businessTag: 'Business tag',
+      auditRating: 'Score',
+      auditPassRate: 'Audit pass rate (%)',
+      createUser: 'Create user',
+      auditTime: 'Audit time',
+      instanceName: 'DB instance'
     }
   },
   common: {
-    goBackList: '返回SQL审核列表'
+    goBackList: 'Back to SQL audit list'
   },
   detail: {
-    download: '下载审核结果',
-    auditID: '审核ID',
-    auditRating: '审核评分',
-    auditPassRate: '审核通过率'
+    download: 'Download audit result',
+    auditID: 'Audit ID',
+    auditRating: 'Audit rating',
+    auditPassRate: 'Audit pass rate'
   },
   create: {
-    title: '创建SQL审核',
-    createTagErrorTips: '当前标签已存在',
-    successTips: '创建审核成功',
+    title: 'Create SQL audit',
+    createTagErrorTips: 'The current tag already exists',
+    successTips: 'Create audit successfully',
     baseInfoForm: {
-      tags: '业务标签',
-      tagsPlaceholder: '要搜索的业务标签'
+      tags: 'Business tag',
+      tagsPlaceholder: 'Business tag to search'
     },
     sqlInfo: {
-      title: '审核SQL语句信息',
+      title: 'Audit SQL statement information',
+      audit: 'Audit',
+      format: 'SQL beautify',
+      formatTips:
+        'Currently, the database types supported for SQL beautify are {{supportType}}. if no data source is selected or the selected data source type is not supported, SQL beautification may lead to syntax errors in SQL statements.',
       form: {
-        auditType: '审核方式',
-        dbType: '数据库类型',
-        instanceName: '数据源',
-        instanceSchema: '数据库',
-        staticAudit: '离线审核',
-        dynamicAudit: '在线审核',
-        uploadType: '选择SQL语句上传方式'
+        auditType: 'Audit method',
+        auditTypeDesc:
+          'During online audit, platform audit will give suggestions based on the actual database schema of the selected data source; during offline audit, platform audit will not connect to the data source.',
+        dbType: 'Database type',
+        instanceName: 'DB instance',
+        instanceSchema: 'Database',
+        staticAudit: 'Offline audit',
+        dynamicAudit: 'Online audit',
+        uploadType: 'Select SQL statement upload method'
       },
       uploadTypeEnum: {
-        sql: '输入SQL语句',
-        sqlFile: '上传SQL文件',
-        mybatisFile: '上传Mybatis的XML文件',
-        zipFile: '上传ZIP文件',
-        git: '配置GIT仓库'
+        sql: 'Input SQL statement',
+        sqlFile: 'Upload SQL file',
+        mybatisFile: 'Upload Mybatis XML file',
+        zipFile: 'Upload ZIP file',
+        git: 'Configure GIT repository'
       },
       uploadLabelEnum: {
-        sql: 'SQL语句',
-        sqlFile: 'SQL文件',
-        mybatisFile: 'Mybatis的XML文件',
-        zipFile: 'ZIP文件',
-        gitUrl: 'GIT地址',
-        gitUrlTips: '若为私有GIT仓库，则必须输入有读权限的账号密码'
+        sql: 'SQL statement',
+        sqlFile: 'SQL file',
+        mybatisFile: 'Mybatis XML file',
+        zipFile: 'ZIP file',
+        gitUrl: 'GIT address',
+        gitUrlTips:
+          'Please enter the HTTP(S) clone address of the git repository. if it is a private GIT repository, you must enter the account and password with read permission'
       },
       uploadFileTip: {
-        sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
-        mybatisFile: '点击选择Mybatis的XML文件或将文件拖拽到此区域',
-        zipFile: '点击选择ZIP文件或将文件拖拽到此区域'
+        sqlFile: 'Click to select a SQL file or drag the file to this area',
+        mybatisFile:
+          'Click to select a Mybatis XML file or drag the file to this area',
+        zipFile:
+          'Click to select a ZIP file or drag the file to this area. currently, only .xml and .sql files in the ZIP file can be audited for SQL'
       }
     }
   },
   result: {
-    deleteRuleTip: '该规则已删除'
+    deleteRuleTip: 'The rule has been deleted'
   }
 };
