@@ -35,6 +35,7 @@ describe('sqle/ReportStatistics', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
     cleanup();
+    MockDate.reset();
   });
 
   it('should match snap shot', async () => {

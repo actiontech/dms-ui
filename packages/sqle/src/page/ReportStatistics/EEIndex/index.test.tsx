@@ -31,6 +31,7 @@ describe('sqle/ReportStatistics/EEIndex', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
     cleanup();
+    MockDate.reset();
   });
 
   it('render report statics page', async () => {

@@ -2,7 +2,6 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MockDate from 'mockdate';
-import dayjs from 'dayjs';
 import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
 import { UserInfo } from '../../testUtils/mockApi/global/data';
@@ -40,10 +39,10 @@ describe('page/Login-ee', () => {
   };
 
   beforeEach(() => {
-    MockDate.set(dayjs('2023-12-19 12:00:00').valueOf());
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
+    MockDate.set('2023-12-19 12:00:00');
     dms.mockAllApi();
   });
 
@@ -51,6 +50,7 @@ describe('page/Login-ee', () => {
     jest.useRealTimers();
     assignMock.mockClear();
     cleanup();
+    MockDate.reset();
   });
 
   it('render login snap', async () => {
