@@ -1,7 +1,4 @@
 import {
-  IGetAuditPlanSQLDataReqV1,
-  IGetAuditPlanSQLDataResV1,
-  IGetAuditPlanSQLMetaResV1,
   IGetInstanceAuditPlansResV1,
   ICreateInstanceAuditPlanReqV1,
   ICreatInstanceAuditPlanResV1,
@@ -11,30 +8,14 @@ import {
   IUpdateInstanceAuditPlanStatusReqV1,
   IGetInstanceAuditPlanOverviewResV1,
   IUpdateAuditPlanStatusReqV1,
+  IGetAuditPlanSQLDataReqV1,
+  IGetAuditPlanSQLDataResV1,
   IGetAuditPlanSQLExportReqV1,
+  IGetAuditPlanSQLMetaResV1,
   IGetAuditPlanSQLsResV1,
   IGetSqlManageSqlAnalysisResp,
   IUploadInstanceAuditPlanSQLsReqV2
 } from '../common.d';
-
-export interface IGetAuditPlanSQLDataV1Params
-  extends IGetAuditPlanSQLDataReqV1 {
-  project_name: string;
-
-  audit_plan_id: string;
-}
-
-export interface IGetAuditPlanSQLDataV1Return
-  extends IGetAuditPlanSQLDataResV1 {}
-
-export interface IGetAuditPlanSQLMetaV1Params {
-  project_name: string;
-
-  audit_plan_id: string;
-}
-
-export interface IGetAuditPlanSQLMetaV1Return
-  extends IGetAuditPlanSQLMetaResV1 {}
 
 export interface IGetInstanceAuditPlansV1Params {
   project_name: string;

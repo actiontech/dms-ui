@@ -7,10 +7,6 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
-  IGetAuditPlanSQLDataV1Params,
-  IGetAuditPlanSQLDataV1Return,
-  IGetAuditPlanSQLMetaV1Params,
-  IGetAuditPlanSQLMetaV1Return,
   IGetInstanceAuditPlansV1Params,
   IGetInstanceAuditPlansV1Return,
   ICreateInstanceAuditPlanV1Params,
@@ -45,42 +41,6 @@ import {
 } from './index.d';
 
 class InstanceAuditPlanService extends ServiceBase {
-  public getAuditPlanSQLDataV1(
-    params: IGetAuditPlanSQLDataV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const audit_plan_id = paramsData.audit_plan_id;
-    delete paramsData.audit_plan_id;
-
-    return this.post<IGetAuditPlanSQLDataV1Return>(
-      `/v1/projects/${project_name}/audit_plans/${audit_plan_id}/sql_data`,
-      paramsData,
-      options
-    );
-  }
-
-  public getAuditPlanSQLMetaV1(
-    params: IGetAuditPlanSQLMetaV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const audit_plan_id = paramsData.audit_plan_id;
-    delete paramsData.audit_plan_id;
-
-    return this.get<IGetAuditPlanSQLMetaV1Return>(
-      `/v1/projects/${project_name}/audit_plans/${audit_plan_id}/sql_meta`,
-      paramsData,
-      options
-    );
-  }
-
   public getInstanceAuditPlansV1(
     params: IGetInstanceAuditPlansV1Params,
     options?: AxiosRequestConfig
