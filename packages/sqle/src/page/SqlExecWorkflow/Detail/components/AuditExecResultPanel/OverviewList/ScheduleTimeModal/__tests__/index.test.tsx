@@ -195,6 +195,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
     fireEvent.click(
       getBySelector('.ant-picker-date-panel td[title="2024-12-18"]')
     );
+    MockDate.reset();
   });
 
   it('render submit btn', async () => {
