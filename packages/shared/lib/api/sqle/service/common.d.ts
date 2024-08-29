@@ -564,6 +564,14 @@ export interface ICreatePipelineReqV1 {
   nodes?: IPipelineNodeBase[];
 }
 
+export interface ICreatePipelineResV1 {
+  code?: number;
+
+  data?: ICreatePipelineResData;
+
+  message?: string;
+}
+
 export interface ICreateProjectRuleTemplateReqV1 {
   db_type?: string;
 
@@ -1185,21 +1193,11 @@ export interface IGetOptimizationSQLsRes {
 }
 
 export interface IGetPipelineDetailResV1 {
-  address?: string;
-
   code?: number;
 
-  description?: string;
-
-  id?: string;
+  data?: IPipelineDetailData;
 
   message?: string;
-
-  name?: string;
-
-  node_count?: number;
-
-  nodes?: IPipelineNodeDetail[];
 }
 
 export interface IGetPipelinesResV1 {
@@ -2629,7 +2627,7 @@ export interface IUpdatePipelineReqV1 {
 
   name?: string;
 
-  nodes?: IPipelineNodeDetail[];
+  nodes?: IPipelineNodeBase[];
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {
@@ -2918,22 +2916,42 @@ export interface IWorkflowTemplateDetailResV1 {
   workflow_template_name?: string;
 }
 
+export interface ICreatePipelineResData {
+  pipeline_id?: number;
+}
+
 export interface IPipelineDetail {
   address?: string;
 
   description?: string;
 
-  id?: string;
+  id?: number;
 
   name?: string;
 
   node_count?: number;
 }
 
+export interface IPipelineDetailData {
+  address?: string;
+
+  description?: string;
+
+  id?: number;
+
+  name?: string;
+
+  node_count?: number;
+
+  nodes?: IPipelineNodeDetail[];
+}
+
 export interface IPipelineNodeBase {
   audit_method?: pipelineNodeBaseAuditMethodEnum;
 
   instance_name?: string;
+
+  instance_type?: string;
 
   name?: string;
 
@@ -2949,9 +2967,13 @@ export interface IPipelineNodeBase {
 export interface IPipelineNodeDetail {
   audit_method?: pipelineNodeDetailAuditMethodEnum;
 
-  id?: string;
+  id?: number;
 
   instance_name?: string;
+
+  instance_type?: string;
+
+  integration_info?: string;
 
   name?: string;
 

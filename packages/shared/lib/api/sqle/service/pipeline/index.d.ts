@@ -1,8 +1,9 @@
 import {
   IGetPipelinesResV1,
   ICreatePipelineReqV1,
-  IBaseRes,
+  ICreatePipelineResV1,
   IGetPipelineDetailResV1,
+  IBaseRes,
   IUpdatePipelineReqV1
 } from '../common.d';
 
@@ -22,7 +23,7 @@ export interface ICreatePipelineV1Params extends ICreatePipelineReqV1 {
   project_name: string;
 }
 
-export interface ICreatePipelineV1Return extends IBaseRes {}
+export interface ICreatePipelineV1Return extends ICreatePipelineResV1 {}
 
 export interface IGetPipelineDetailV1Params {
   project_name: string;
