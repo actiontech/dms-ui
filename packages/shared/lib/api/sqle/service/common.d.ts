@@ -58,6 +58,9 @@ import {
   pipelineNodeDetailAuditMethodEnum,
   pipelineNodeDetailObjectTypeEnum,
   pipelineNodeDetailTypeEnum,
+  pipelineNodeToBeUpdatedAuditMethodEnum,
+  pipelineNodeToBeUpdatedObjectTypeEnum,
+  pipelineNodeToBeUpdatedTypeEnum,
   AuditResDataV2AuditLevelEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -2627,7 +2630,7 @@ export interface IUpdatePipelineReqV1 {
 
   name?: string;
 
-  nodes?: IPipelineNodeBase[];
+  nodes?: IPipelineNodeToBeUpdated[];
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {
@@ -2984,6 +2987,26 @@ export interface IPipelineNodeDetail {
   rule_template_name?: string;
 
   type?: pipelineNodeDetailTypeEnum;
+}
+
+export interface IPipelineNodeToBeUpdated {
+  audit_method?: pipelineNodeToBeUpdatedAuditMethodEnum;
+
+  id?: number;
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  name?: string;
+
+  object_path?: string;
+
+  object_type?: pipelineNodeToBeUpdatedObjectTypeEnum;
+
+  rule_template_name?: string;
+
+  type?: pipelineNodeToBeUpdatedTypeEnum;
 }
 
 export interface IAuditFileExecStatistic {

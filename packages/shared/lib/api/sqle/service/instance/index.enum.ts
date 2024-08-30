@@ -7,5 +7,7 @@ export enum getInstanceTipListV1FunctionalModuleEnum {
 
   'sql_manage' = 'sql_manage',
 
-  'create_optimization' = 'create_optimization'
+  'create_optimization' = 'create_optimization',
+
+  'create_pipeline' = 'create_pipeline'
 }
