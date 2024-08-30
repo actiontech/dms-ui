@@ -42,4 +42,5 @@ export type MenuStructTreeKey =
   | 'auth-audit'
   | 'template-audit'
   | 'account-management'
-  | 'password-management';
+  | 'password-management'
+  | 'pipeline-configuration';

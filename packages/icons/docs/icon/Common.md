@@ -375,6 +375,13 @@ import { OverviewOutlined } from '@actiontech/icons';
 export default () => <OverviewOutlined width={32} height={32} />
 ```
 
+## PipelineOutlined
+```jsx
+import { PipelineOutlined } from '@actiontech/icons';
+
+export default () => <PipelineOutlined width={32} height={32} />
+```
+
 ## RefreshOutlined
 ```jsx
 import { RefreshOutlined } from '@actiontech/icons';
