@@ -27,6 +27,7 @@ export default {
   dataExportManagement: '数据导出',
   sqlManagementConf: 'SQL管控配置',
   pushRuleConfiguration: '推送规则',
+  pipelineConfiguration: '流水线配置',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
@@ -37,6 +38,7 @@ export default {
 
   groupLabel: {
     SQLExecute: 'SQL上线',
+    CICDIntegration: 'CI/CD集成',
     SQLDev: 'SQL开发',
     SQLManagement: 'SQL管控',
     projectConfigure: '项目配置',
