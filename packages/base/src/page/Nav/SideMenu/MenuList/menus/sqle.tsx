@@ -125,7 +125,7 @@ const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'whitelist'
 });
 
-const SqlManagementException: GenerateMenuItemType = (projectID) => ({
+const sqlManagementException: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/sql-management-exception`}>
       {t('dmsMenu.sqlManagementExcept')}
@@ -181,7 +181,7 @@ const pushRuleConfiguration: GenerateMenuItemType = (projectID) => ({
   structKey: 'push-rule-configuration'
 });
 
-const PipelineConfiguration: GenerateMenuItemType = (projectID) => ({
+const pipelineConfiguration: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/pipeline-configuration`}>
       {t('dmsMenu.pipelineConfiguration')}
@@ -207,8 +207,8 @@ const sqleMenusCollection = [
   sqleOperationRecordMenuItem,
   sqlManagementConf,
   pushRuleConfiguration,
-  SqlManagementException,
-  PipelineConfiguration
+  sqlManagementException,
+  pipelineConfiguration
 ];
 
 export default sqleMenusCollection;
