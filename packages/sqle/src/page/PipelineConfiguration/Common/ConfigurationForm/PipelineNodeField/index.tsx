@@ -8,9 +8,7 @@ import { BasicButton } from '@actiontech/shared';
 import { PipelineNodeListStyleWrapper } from '../../style';
 import NodeModal from './NodeModal';
 import { useBoolean } from 'ahooks';
-import { IPipelineNodeDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import React, { useMemo, useState } from 'react';
-import { uniqueId } from 'lodash';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { DndContext } from '@dnd-kit/core';
 import {
@@ -21,6 +19,7 @@ import {
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DragTableRow } from './DragTableRow';
+import { PipelineNodeType } from '../index.type';
 
 const PipelineNodeField: React.FC<PipelineNodeFieldProps> = ({
   value,
@@ -31,17 +30,17 @@ const PipelineNodeField: React.FC<PipelineNodeFieldProps> = ({
   const [visible, { setTrue: showNodeModal, setFalse: hideNodeModal }] =
     useBoolean();
 
-  const [editNodeId, setEditNodeId] = useState<number>();
+  const [editNodeId, setEditNodeId] = useState<string>();
 
-  const [form] = Form.useForm<IPipelineNodeDetail>();
+  const [form] = Form.useForm<PipelineNodeType>();
 
-  const onEdit = (id?: number) => {
+  const onEdit = (id?: string) => {
     setEditNodeId(id);
     form.setFieldsValue(value?.find((v) => v.id === id) ?? {});
     showNodeModal();
   };
 
-  const onRemove = (id?: number) => {
+  const onRemove = (id?: string) => {
     const index = value?.findIndex((v) => v.id === id);
     value?.splice(index!, 1);
     onChange?.([...(value ?? [])]);
@@ -54,9 +53,10 @@ const PipelineNodeField: React.FC<PipelineNodeFieldProps> = ({
       value?.splice(index!, 1, { ...values, id: editNodeId });
       onChange?.([...(value ?? [])]);
     } else {
+      // 因为name在当前流水线是唯一的，所以添加节点用name作为自定义id submit时会删除掉此id
       onChange?.([
         ...(value ?? []),
-        { ...values, id: values?.id ?? Number(uniqueId()) }
+        { ...values, id: values?.id ?? values.name }
       ]);
     }
     onCancel();

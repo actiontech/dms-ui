@@ -22,9 +22,6 @@ import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { omit } from 'lodash';
 import {
-  pipelineNodeBaseAuditMethodEnum,
-  pipelineNodeBaseObjectTypeEnum,
-  pipelineNodeBaseTypeEnum,
   pipelineNodeToBeUpdatedAuditMethodEnum,
   pipelineNodeToBeUpdatedObjectTypeEnum,
   pipelineNodeToBeUpdatedTypeEnum
@@ -64,11 +61,7 @@ const CreatePipelineConfiguration = () => {
             nodes:
               data?.nodes?.map((i) => ({
                 ...omit(i, 'integration_info'),
-                audit_method:
-                  i.audit_method as unknown as pipelineNodeBaseAuditMethodEnum,
-                object_type:
-                  i.object_type as unknown as pipelineNodeBaseObjectTypeEnum,
-                type: i.type as unknown as pipelineNodeBaseTypeEnum
+                id: i.id?.toString()
               })) ?? []
           });
         }
@@ -85,7 +78,8 @@ const CreatePipelineConfiguration = () => {
         ...values,
         nodes:
           values?.nodes?.map((i) => ({
-            ...omit(i, 'integration_info'),
+            ...i,
+            id: isNaN(parseInt(i?.id)) ? undefined : parseInt(i?.id),
             audit_method:
               i.audit_method as unknown as pipelineNodeToBeUpdatedAuditMethodEnum,
             object_type:

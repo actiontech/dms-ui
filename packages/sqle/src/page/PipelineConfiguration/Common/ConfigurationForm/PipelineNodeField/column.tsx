@@ -2,13 +2,13 @@ import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IPipelineNodeDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../../locale/index';
 import { PipelineNodeTypeDictionary } from '../index.data';
 import { DragHandle } from './DragTableRow';
+import { PipelineNodeType } from '../index.type';
 
 export const PipelineNodeTableColumn =
-  (): ActiontechTableColumn<IPipelineNodeDetail> => {
+  (): ActiontechTableColumn<PipelineNodeType> => {
     return [
       {
         key: 'sort',
@@ -24,7 +24,7 @@ export const PipelineNodeTableColumn =
       {
         title: () => <>{t('pipelineConfiguration.form.node.type')}</>,
         dataIndex: 'type',
-        render: (value: IPipelineNodeDetail['type']) => {
+        render: (value: PipelineNodeType['type']) => {
           return value ? PipelineNodeTypeDictionary[value] : '-';
         }
       }
@@ -32,9 +32,9 @@ export const PipelineNodeTableColumn =
   };
 
 export const PipelineNodeTableActions = (
-  onEdit: (id?: number) => void,
-  onRemove: (id?: number) => void
-): ActiontechTableActionMeta<IPipelineNodeDetail>[] => {
+  onEdit: (id?: string) => void,
+  onRemove: (id?: string) => void
+): ActiontechTableActionMeta<PipelineNodeType>[] => {
   return [
     {
       key: 'edit',

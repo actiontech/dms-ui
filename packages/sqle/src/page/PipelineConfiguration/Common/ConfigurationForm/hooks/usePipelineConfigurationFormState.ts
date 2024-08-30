@@ -1,5 +1,4 @@
 import { Form } from 'antd';
-import { ICreatePipelineReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useBoolean } from 'ahooks';
 import {
   updateSelectPipelineId,
@@ -11,6 +10,7 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useDispatch } from 'react-redux';
+import { PipelineFormType } from '../index.type';
 
 const usePipelineConfigurationFormState = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const usePipelineConfigurationFormState = () => {
 
   const { projectName, projectID } = useCurrentProject();
 
-  const [form] = Form.useForm<ICreatePipelineReqV1>();
+  const [form] = Form.useForm<PipelineFormType>();
 
   const [submitLoading, { setTrue: startSubmit, setFalse: finishSubmit }] =
     useBoolean(false);

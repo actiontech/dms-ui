@@ -20,6 +20,11 @@ import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { omit } from 'lodash';
 import usePipelineConfigurationFormState from '../Common/ConfigurationForm/hooks/usePipelineConfigurationFormState';
+import {
+  pipelineNodeBaseAuditMethodEnum,
+  pipelineNodeBaseObjectTypeEnum,
+  pipelineNodeBaseTypeEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const CreatePipelineConfiguration = () => {
   const { t } = useTranslation();
@@ -43,7 +48,14 @@ const CreatePipelineConfiguration = () => {
       .createPipelineV1({
         project_name: projectName,
         ...values,
-        nodes: values.nodes?.map((i) => omit(i, 'id'))
+        nodes: values.nodes?.map((i) => ({
+          ...omit(i, 'id'),
+          audit_method:
+            i.audit_method as unknown as pipelineNodeBaseAuditMethodEnum,
+          object_type:
+            i.object_type as unknown as pipelineNodeBaseObjectTypeEnum,
+          type: i.type as unknown as pipelineNodeBaseTypeEnum
+        }))
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
