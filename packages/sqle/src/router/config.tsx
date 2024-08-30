@@ -185,6 +185,18 @@ const PushRuleConfiguration = React.lazy(
   () => import('../page/PushRuleConfiguration')
 );
 
+const PipelineConfigurationList = React.lazy(
+  () => import('../page/PipelineConfiguration/List')
+);
+
+const PipelineConfigurationCreation = React.lazy(
+  () => import('../page/PipelineConfiguration/Create')
+);
+
+const PipelineConfigurationUpdate = React.lazy(
+  () => import('../page/PipelineConfiguration/Update')
+);
+
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     key: 'projectOverview',
@@ -414,6 +426,27 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/push-rule`,
     key: 'pushRuleConfiguration',
     element: <PushRuleConfiguration />
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/pipeline-configuration`,
+    key: 'pipelineConfiguration',
+    children: [
+      {
+        index: true,
+        element: <PipelineConfigurationList />,
+        key: 'pipelineConfigurationList'
+      },
+      {
+        path: 'create',
+        element: <PipelineConfigurationCreation />,
+        key: 'sqlOptimizationCreate'
+      },
+      {
+        path: 'update/:id',
+        element: <PipelineConfigurationUpdate />,
+        key: 'sqlOptimizationCreate'
+      }
+    ]
   },
   {
     path: '*',
