@@ -18,6 +18,7 @@ import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+import { SQLAuditRecordListUrlParamsKey } from './index.data';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -230,11 +231,28 @@ const SqlManagementColumn: (
       dataIndex: 'source',
       title: () => t('sqlManagement.table.column.source'),
       render: (source) => {
-        //todo 本期只支持跳转至 sql管控配置，后续调整
-        if (source && source.sql_source_id && source.sql_source_type) {
+        if (
+          !!source &&
+          !!source.sql_source_ids &&
+          source.sql_source_ids.length > 0 &&
+          !!source.sql_source_type
+        ) {
+          if (source.sql_source_type === 'sql_audit_record') {
+            return (
+              <Link
+                target="_blank"
+                to={`/sqle/project/${projectID}/sql-audit?${
+                  SQLAuditRecordListUrlParamsKey.SQLAuditRecordID
+                }=${source.sql_source_ids.join(',')}`}
+              >
+                {source.sql_source_desc}
+              </Link>
+            );
+          }
           return (
             <Link
-              to={`/sqle/project/${projectID}/sql-management-conf/${source.sql_source_id}?active=${source.sql_source_type}`}
+              target="_blank"
+              to={`/sqle/project/${projectID}/sql-management-conf/${source.sql_source_ids[0]}`}
             >
               {source.sql_source_desc ?? source.sql_source_type}
             </Link>

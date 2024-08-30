@@ -57,10 +57,10 @@ const SqlAuditList = () => {
     const searchStr = new URLSearchParams(location.search);
     if (searchStr.has(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID)) {
       return (
-        searchStr.get(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID) ?? ''
+        searchStr.get(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID) ??
+        undefined
       );
     }
-    return '';
   }, [location.search]);
   const [filterStatus, setFilterStatus] = useState<
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'

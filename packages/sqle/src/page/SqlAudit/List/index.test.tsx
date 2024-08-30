@@ -138,7 +138,7 @@ describe('sqle/SqlAudit/List', () => {
       fuzzy_search_tags: 'test',
       page_index: 1,
       page_size: 20,
-      filter_sql_audit_record_ids: ''
+      filter_sql_audit_record_ids: undefined
     });
   });
 
