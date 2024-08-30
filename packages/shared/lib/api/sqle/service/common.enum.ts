@@ -504,6 +504,24 @@ export enum pipelineNodeDetailTypeEnum {
   'release' = 'release'
 }
 
+export enum pipelineNodeToBeUpdatedAuditMethodEnum {
+  'offline' = 'offline',
+
+  'online' = 'online'
+}
+
+export enum pipelineNodeToBeUpdatedObjectTypeEnum {
+  'sql' = 'sql',
+
+  'mybatis' = 'mybatis'
+}
+
+export enum pipelineNodeToBeUpdatedTypeEnum {
+  'audit' = 'audit',
+
+  'release' = 'release'
+}
+
 export enum AuditResDataV2AuditLevelEnum {
   'normal' = 'normal',
 
