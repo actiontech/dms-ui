@@ -155,7 +155,7 @@ const UpdateSqlManagementException = () => {
           </Space>
         }
       >
-        <SqlManagementExceptionForm form={form} />
+        <SqlManagementExceptionForm form={form} isUpdate />
       </BasicDrawer>
     </>
   );
