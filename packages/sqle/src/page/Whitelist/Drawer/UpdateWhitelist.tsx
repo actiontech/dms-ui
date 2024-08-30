@@ -116,7 +116,7 @@ const UpdateWhitelist = () => {
           </Space>
         }
       >
-        <WhitelistForm form={form} />
+        <WhitelistForm isUpdate form={form} />
       </BasicDrawer>
     </>
   );

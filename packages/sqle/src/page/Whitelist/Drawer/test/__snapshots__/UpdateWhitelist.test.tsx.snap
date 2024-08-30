@@ -226,6 +226,34 @@ exports[`slqe/Whitelist/UpdateWhitelist should send update whitelist request whe
                     </div>
                   </div>
                 </div>
+                <div
+                  class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+                  data-show="true"
+                  role="alert"
+                >
+                  <svg
+                    class="ant-alert-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                      fill="#EBAD1C"
+                    />
+                  </svg>
+                  <div
+                    class="ant-alert-content"
+                  >
+                    <div
+                      class="ant-alert-message"
+                    >
+                      当修改匹配类型或匹配内容后，该条记录的匹配次数和最后匹配时间将被重置。
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
             <div
