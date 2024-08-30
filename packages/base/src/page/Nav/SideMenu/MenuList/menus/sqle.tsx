@@ -18,7 +18,8 @@ import {
   OperateAuditFilled,
   BriefcaseFilled,
   PlanFilled,
-  GearFilled
+  GearFilled,
+  PipelineOutlined
 } from '@actiontech/icons';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -180,6 +181,17 @@ const pushRuleConfiguration: GenerateMenuItemType = (projectID) => ({
   structKey: 'push-rule-configuration'
 });
 
+const PipelineConfiguration: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/pipeline-configuration`}>
+      {t('dmsMenu.pipelineConfiguration')}
+    </Link>
+  ),
+  icon: <PipelineOutlined width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/pipeline-configuration`,
+  structKey: 'pipeline-configuration'
+});
+
 const sqleMenusCollection = [
   projectOverviewMenuItem,
   dashboardMenuItem,
@@ -195,7 +207,8 @@ const sqleMenusCollection = [
   sqleOperationRecordMenuItem,
   sqlManagementConf,
   pushRuleConfiguration,
-  SqlManagementException
+  SqlManagementException,
+  PipelineConfiguration
 ];
 
 export default sqleMenusCollection;
