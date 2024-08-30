@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import type { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities';
 import { CSS } from '@dnd-kit/utilities';
-import { HolderOutlined } from '@ant-design/icons';
+import { DragOutlined } from '@actiontech/icons';
 
 interface RowContextProps {
   setActivatorNodeRef?: (element: HTMLElement | null) => void;
@@ -52,7 +52,7 @@ const DragHandle: React.FC = () => {
     <Button
       type="text"
       size="small"
-      icon={<HolderOutlined />}
+      icon={<DragOutlined />}
       style={{ cursor: 'move' }}
       ref={setActivatorNodeRef}
       {...listeners}

@@ -197,7 +197,14 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
               tips={t('pipelineConfiguration.form.node.auditObjectTypeTips')}
             />
           }
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('pipelineConfiguration.form.node.auditObjectType')
+              })
+            }
+          ]}
         >
           <BasicSelect options={PipelineNodeObjectTypeOptions} />
         </FormItemLabel>
@@ -210,7 +217,14 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
               tips={t('pipelineConfiguration.form.node.auditObjectPathTips')}
             />
           }
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.input', {
+                name: t('pipelineConfiguration.form.node.auditObjectPath')
+              })
+            }
+          ]}
         >
           <BasicInput />
         </FormItemLabel>
@@ -277,7 +291,14 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
               tips={t('pipelineConfiguration.form.node.templateTips')}
             />
           }
-          rules={[{ required: true }]}
+          rules={[
+            {
+              required: true,
+              message: t('common.form.placeholder.select', {
+                name: t('pipelineConfiguration.form.node.template')
+              })
+            }
+          ]}
         >
           <BasicSelect
             options={ruleTemplateOptions}

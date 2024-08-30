@@ -99,9 +99,7 @@ const CreatePipelineConfiguration = () => {
   };
 
   const onReset = () => {
-    form.resetFields(
-      Object.keys(form.getFieldsValue()).filter((key) => key !== 'name')
-    );
+    form.resetFields(['description', 'address', 'nodes']);
   };
 
   return (
