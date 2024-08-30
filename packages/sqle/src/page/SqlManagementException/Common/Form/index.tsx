@@ -1,4 +1,4 @@
-import { Form, Radio } from 'antd';
+import { Alert, Form, Radio } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SqlManagementExceptionFormProps } from '../../index.type';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
@@ -13,9 +13,11 @@ import { SqlManagementExceptionMatchTypeOptions } from '../../index.data';
 import useInstance from '../../../../hooks/useInstance';
 import { useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { WarningFilled } from '@actiontech/icons';
 
 const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
-  form
+  form,
+  isUpdate
 }) => {
   const { t } = useTranslation();
 
@@ -112,6 +114,15 @@ const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({
         >
           <BasicInput />
         </Form.Item>
+      </EmptyBox>
+
+      <EmptyBox if={isUpdate}>
+        <Alert
+          showIcon
+          icon={<WarningFilled />}
+          message={t('sqlManagementException.modal.update.tips')}
+          type="warning"
+        />
       </EmptyBox>
     </Form>
   );

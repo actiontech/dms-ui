@@ -12,4 +12,5 @@ export type SqlManagementExceptionFormFieldType = {
 
 export type SqlManagementExceptionFormProps = {
   form: FormInstance<SqlManagementExceptionFormFieldType>;
+  isUpdate?: boolean;
 };
