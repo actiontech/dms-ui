@@ -1163,6 +1163,38 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "path": ":projectID/push-rule",
       },
       {
+        "children": [
+          {
+            "element": <div>
+              pipelineConfigurationList
+            </div>,
+            "key": "pipelineConfigurationList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              sqlOptimizationCreate
+            </div>,
+            "key": "sqlOptimizationCreate",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              sqlOptimizationCreate
+            </div>,
+            "key": "sqlOptimizationCreate",
+            "path": "update/:id",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="pipelineConfiguration"
+        >
+          <Outlet />
+        </div>,
+        "key": "pipelineConfiguration",
+        "path": ":projectID/pipeline-configuration",
+      },
+      {
         "element": <div>
           projectRedirect
         </div>,

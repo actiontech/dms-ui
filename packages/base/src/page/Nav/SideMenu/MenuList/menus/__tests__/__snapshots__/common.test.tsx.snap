@@ -50,6 +50,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
   },
   null,
   null,
+  null,
   {
     "type": "divider",
   },
@@ -138,6 +139,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
     "label": "SQL开发",
     "type": "group",
   },
+  null,
   null,
   null,
   {
@@ -312,6 +314,25 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       },
     ],
     "label": "SQL上线",
+    "type": "group",
+  },
+  {
+    "children": [
+      {
+        "icon": <PipelineOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/pipeline-configuration",
+        "label": <Link
+          to="/sqle/project/600300/pipeline-configuration"
+        >
+          流水线配置
+        </Link>,
+        "structKey": "pipeline-configuration",
+      },
+    ],
+    "label": "CI/CD集成",
     "type": "group",
   },
   {
@@ -567,6 +588,25 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       },
     ],
     "label": "SQL上线",
+    "type": "group",
+  },
+  {
+    "children": [
+      {
+        "icon": <PipelineOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/pipeline-configuration",
+        "label": <Link
+          to="/sqle/project/600300/pipeline-configuration"
+        >
+          流水线配置
+        </Link>,
+        "structKey": "pipeline-configuration",
+      },
+    ],
+    "label": "CI/CD集成",
     "type": "group",
   },
   {

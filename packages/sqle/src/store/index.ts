@@ -8,6 +8,7 @@ import sqlManagement from './sqlManagement';
 import pluginAudit from './pluginAudit';
 import sqlExecWorkflow from './sqlExecWorkflow';
 import sqlManagementException from './sqlManagementException';
+import pipeline from './pipeline';
 
 export const SQLEStoreData = {
   whitelist,
@@ -18,7 +19,8 @@ export const SQLEStoreData = {
   sqlManagement,
   pluginAudit,
   sqlExecWorkflow,
-  sqlManagementException
+  sqlManagementException,
+  pipeline
 };
 
 const store = configureStore({

@@ -15,6 +15,7 @@ export { default as ListLayoutOutlined } from './ListLayoutOutlined';
 export { default as MinusCircleOutlined } from './MinusCircleOutlined';
 export { default as MoonOutlined } from './MoonOutlined';
 export { default as OverviewOutlined } from './OverviewOutlined';
+export { default as PipelineOutlined } from './PipelineOutlined';
 export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as RingOutlined } from './RingOutlined';
 export { default as SearchOutlined } from './SearchOutlined';

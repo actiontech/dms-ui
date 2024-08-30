@@ -22,5 +22,7 @@ export enum ModalName {
 
   //
   Create_Sql_Management_Exception = 'Create_Sql_Management_Exception',
-  Update_Sql_Management_Exception = 'Update_Sql_Management_Exception'
+  Update_Sql_Management_Exception = 'Update_Sql_Management_Exception',
+
+  Pipeline_Configuration_Detail_Modal = 'Pipeline_Configuration_Detail_Modal'
 }

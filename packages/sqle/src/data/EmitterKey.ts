@@ -31,7 +31,9 @@ enum EmitterKey {
   Refresh_Sql_Management_Conf_Detail_Sql_List = 'Refresh_Sql_Management_Conf_Detail_Sql_List',
   Export_Sql_Management_Conf_Detail_Sql_List = 'Export_Sql_Management_Conf_Detail_Sql_List',
 
-  Refresh_Sql_management_Exception_List = 'Refresh_Sql_management_Exception_List'
+  Refresh_Sql_management_Exception_List = 'Refresh_Sql_management_Exception_List',
+
+  Refresh_Pipeline_Configuration_list = 'Refresh_Pipeline_Configuration_list'
 }
 
 export default EmitterKey;
