@@ -1,4 +1,4 @@
-import { Form, Radio } from 'antd';
+import { Alert, Form, Radio } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { WhitelistFormProps } from './index.type';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
@@ -8,8 +8,9 @@ import {
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput, EmptyBox } from '@actiontech/shared';
 import { whitelistMatchTypeOptions } from '../index.data';
+import { WarningFilled } from '@actiontech/icons';
 
 const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
   const { t } = useTranslation();
@@ -54,6 +55,15 @@ const WhitelistForm: React.FC<WhitelistFormProps> = (props) => {
           onMount={editorDidMount}
         />
       </Form.Item>
+
+      <EmptyBox if={props.isUpdate}>
+        <Alert
+          showIcon
+          icon={<WarningFilled />}
+          message={t('whitelist.modal.update.tips')}
+          type="warning"
+        />
+      </EmptyBox>
     </Form>
   );
 };

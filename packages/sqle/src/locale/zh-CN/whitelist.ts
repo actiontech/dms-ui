@@ -35,7 +35,8 @@ export default {
     },
     update: {
       title: '更新审核SQL例外',
-      success: '更新审核SQL例外成功'
+      success: '更新审核SQL例外成功',
+      tips: '当修改匹配类型或匹配内容后，该条记录的匹配次数和最后匹配时间将被重置。'
     },
     sql: 'SQL语句'
   }

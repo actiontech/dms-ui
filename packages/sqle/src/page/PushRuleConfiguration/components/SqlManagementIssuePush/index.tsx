@@ -250,7 +250,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
               popoverVisible={configSwitchPopoverOpenState}
               onConfirm={onConfigSwitchPopoverConfirm}
               onSwitchChange={(open) => {
-                handleConfigSwitchChange(open, startModify);
+                handleConfigSwitchChange(open, handleClickModify);
               }}
               onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
             />

@@ -77,7 +77,9 @@ function App() {
   }));
 
   const { currentLanguage, antdLanguage } = useMemo(() => {
-    const lang = getPreferredLanguages()?.[0] ?? SupportLanguage.zhCN;
+    const lang = getPreferredLanguages()?.[0].startsWith('en')
+      ? SupportLanguage.enUS
+      : SupportLanguage.zhCN;
 
     return {
       currentLanguage: lang,
