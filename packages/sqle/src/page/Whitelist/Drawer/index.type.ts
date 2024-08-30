@@ -9,4 +9,5 @@ export type WhitelistFormFields = {
 
 export type WhitelistFormProps = {
   form: FormInstance<WhitelistFormFields>;
+  isUpdate?: boolean;
 };
