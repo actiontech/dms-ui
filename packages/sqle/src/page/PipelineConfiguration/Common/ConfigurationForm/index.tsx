@@ -29,7 +29,12 @@ const PipelineConfigurationForm: React.FC<{ isEditionMode?: boolean }> = ({
         }
         name="name"
         rules={[
-          { required: true },
+          {
+            required: true,
+            message: t('common.form.placeholder.input', {
+              name: t('pipelineConfiguration.form.name')
+            })
+          },
           { validator: workflowNameRule() },
           { max: 59 }
         ]}
@@ -62,7 +67,14 @@ const PipelineConfigurationForm: React.FC<{ isEditionMode?: boolean }> = ({
       </FormItemLabel>
       <FormItemLabel
         name="nodes"
-        rules={[{ required: true }]}
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.input', {
+              name: t('pipelineConfiguration.form.nodeConfig')
+            })
+          }
+        ]}
         wrapperCol={{ span: 24 }}
       >
         <PipelineNodeField />

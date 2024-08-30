@@ -181,7 +181,7 @@ const pushRuleConfiguration: GenerateMenuItemType = (projectID) => ({
   structKey: 'push-rule-configuration'
 });
 
-const pipelineConfiguration: GenerateMenuItemType = (projectID) => ({
+const PipelineConfiguration: GenerateMenuItemType = (projectID) => ({
   label: (
     <Link to={`/sqle/project/${projectID}/pipeline-configuration`}>
       {t('dmsMenu.pipelineConfiguration')}
@@ -208,7 +208,7 @@ const sqleMenusCollection = [
   sqlManagementConf,
   pushRuleConfiguration,
   SqlManagementException,
-  pipelineConfiguration
+  PipelineConfiguration
 ];
 
 export default sqleMenusCollection;
