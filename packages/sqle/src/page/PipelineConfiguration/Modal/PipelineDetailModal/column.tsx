@@ -35,7 +35,7 @@ export const PipelineNodeTableColumn =
               titleWidth={360}
               title={
                 <PipelineDetailModalIntegrationInfoStyleWrapper
-                  copyable={{ text: value?.split('#启动命令#')?.[1] }}
+                  copyable={{ text: value?.split('#启动命令#\n')?.[1] }}
                 >
                   {value}
                 </PipelineDetailModalIntegrationInfoStyleWrapper>

@@ -31,7 +31,6 @@ import { ruleTemplateListDefaultKey } from '../../../../../../data/common';
 import { useRequest } from 'ahooks';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { isNumber } from 'lodash';
 import useDatabaseType from '../../../../../../hooks/useDatabaseType';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 
@@ -145,7 +144,7 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
     <PipelineNodeModalStyleWrapper
       open={visible}
       title={
-        !isNumber(editNodeId)
+        !editNodeId
           ? t('pipelineConfiguration.form.node.modal.createTitle')
           : t('pipelineConfiguration.form.node.modal.editTitle')
       }
