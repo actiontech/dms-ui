@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test useConfigRender renderReadOnlyModeConfig should render read-only mode configuration correctly 1`] = `
+<Styled(Descriptions)
+  className="system-config-view-wrapper"
+>
+  <DescriptionsItem
+    span={3}
+  >
+    value1-test
+  </DescriptionsItem>
+  <DescriptionsItem
+    span={3}
+  >
+    <React.Fragment>
+      value2
+    </React.Fragment>
+  </DescriptionsItem>
+</Styled(Descriptions)>
+`;
+
+exports[`test useConfigRender useConfigRender should apply correct layout to form fields 1`] = `
+<div>
+  <section
+    class="css-zupqof"
+  >
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="switch-field-wrapper"
+      >
+        <div
+          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title="开关"
+              >
+                开关
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 12px;"
+                    >
+                      configExtraButtons
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      configSwitchNode
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="config-field-wrapper"
+      >
+        configField
+        <button
+          data-testid="submit-field"
+          type="submit"
+        >
+          submit
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
+`;
