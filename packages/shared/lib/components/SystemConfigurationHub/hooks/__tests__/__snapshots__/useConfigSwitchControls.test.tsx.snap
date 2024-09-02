@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test useConfigSwitchControls should generate the correct configuration switch popover title based on modification flag 1`] = `"是否确认关闭当前配置？"`;
+
+exports[`test useConfigSwitchControls should generate the correct configuration switch popover title based on modification flag 2`] = `"关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？"`;
