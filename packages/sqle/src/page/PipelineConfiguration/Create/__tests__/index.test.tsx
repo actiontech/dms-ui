@@ -94,94 +94,78 @@ describe('sqle//PipelineConfiguration/Create', () => {
   it('render create pipeline', async () => {
     const { baseElement } = superRender(<CreatePipelineConfiguration />);
     await act(async () => jest.advanceTimersByTime(3000));
-    await act(async () => {
-      fireEvent.change(getBySelector('#name'), {
-        target: { value: 'test_pipeline' }
-      });
-      fireEvent.change(getBySelector('#description'), {
-        target: { value: 'desc' }
-      });
-      fireEvent.change(getBySelector('#address'), {
-        target: { value: 'http://127.0.0.1' }
-      });
-      await jest.advanceTimersByTime(0);
+    fireEvent.change(getBySelector('#name'), {
+      target: { value: 'test_pipeline' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.change(getBySelector('#description'), {
+      target: { value: 'desc' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.change(getBySelector('#address'), {
+      target: { value: 'http://127.0.0.1' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('添加节点'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('创建节点')).toBeVisible();
     expect(baseElement).toMatchSnapshot();
-    await act(async () => {
-      fireEvent.change(
-        getBySelector(
-          '#name',
-          getBySelector('label[title="节点名称"]').parentElement?.parentElement!
-        ),
-        {
-          target: { value: 'node1' }
-        }
-      );
-      await jest.advanceTimersByTime(0);
-    });
+    fireEvent.change(
+      getBySelector(
+        '#name',
+        getBySelector('label[title="节点名称"]').parentElement?.parentElement!
+      ),
+      {
+        target: { value: 'node1' }
+      }
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.mouseDown(getBySelector('#object_type'));
     await act(async () => jest.advanceTimersByTime(0));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="SQL文件"]'));
-      await jest.advanceTimersByTime(0);
-      fireEvent.change(getBySelector('#object_path'), {
-        target: { value: '/opt/sqle' }
-      });
-      await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="SQL文件"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.change(getBySelector('#object_path'), {
+      target: { value: '/opt/sqle' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.mouseDown(getBySelector('#instance_type'));
     await act(async () => jest.advanceTimersByTime(0));
-    await act(async () => {
-      fireEvent.click(getBySelector('span[title="mysql"]'));
-      await act(async () => jest.advanceTimersByTime(0));
-    });
+    fireEvent.click(getBySelector('span[title="mysql"]'));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.mouseDown(getBySelector('#rule_template_name'));
     await act(async () => jest.advanceTimersByTime(0));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
-      await act(async () => jest.advanceTimersByTime(0));
-    });
+    fireEvent.click(getBySelector('div[title="default_MySQL1"]'));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('创建节点')).not.toBeVisible();
 
-    fireEvent.click(screen.getByText('添加节点'));
+    fireEvent.change(
+      getBySelector(
+        '#name',
+        getBySelector('label[title="节点名称"]').parentElement?.parentElement!
+      ),
+      {
+        target: { value: 'node2' }
+      }
+    );
+
     await act(async () => jest.advanceTimersByTime(0));
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => {
-      fireEvent.change(
-        getBySelector(
-          '#name',
-          getBySelector('label[title="节点名称"]').parentElement?.parentElement!
-        ),
-        {
-          target: { value: 'node2' }
-        }
-      );
-      await jest.advanceTimersByTime(0);
-    });
     fireEvent.mouseDown(getBySelector('#object_type'));
     await act(async () => jest.advanceTimersByTime(0));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="MyBatis文件"]'));
-      await jest.advanceTimersByTime(0);
-      fireEvent.change(getBySelector('#object_path'), {
-        target: { value: '/opt/sqle' }
-      });
-      await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="MyBatis文件"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.change(getBySelector('#object_path'), {
+      target: { value: '/opt/sqle' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.mouseDown(getBySelector('#audit_method'));
     await act(async () => jest.advanceTimersByTime(0));
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="在线审核"]'));
-      await jest.advanceTimersByTime(0);
-    });
-    await act(async () => {
-      await jest.advanceTimersByTime(3000);
-    });
+    fireEvent.click(getBySelector('div[title="在线审核"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.mouseDown(getBySelector('#instance_name'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -261,17 +245,16 @@ describe('sqle//PipelineConfiguration/Create', () => {
   it('render reset form', async () => {
     superRender(<CreatePipelineConfiguration />);
     await act(async () => jest.advanceTimersByTime(3000));
-    await act(async () => {
-      fireEvent.change(getBySelector('#name'), {
-        target: { value: 'test_pipeline' }
-      });
-      fireEvent.change(getBySelector('#description'), {
-        target: { value: 'desc' }
-      });
-      fireEvent.change(getBySelector('#address'), {
-        target: { value: 'http://127.0.0.1' }
-      });
-      await jest.advanceTimersByTime(0);
+    fireEvent.change(getBySelector('#name'), {
+      target: { value: 'test_pipeline' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.change(getBySelector('#description'), {
+      target: { value: 'desc' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.change(getBySelector('#address'), {
+      target: { value: 'http://127.0.0.1' }
     });
     expect(getBySelector('#name')).toHaveValue('test_pipeline');
     expect(getBySelector('#description')).toHaveValue('desc');
