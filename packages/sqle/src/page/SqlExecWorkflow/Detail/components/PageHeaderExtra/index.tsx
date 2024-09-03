@@ -52,14 +52,21 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       {messageContextHolder}
 
       <div hidden={closeWorkflowButtonMeta.hidden}>
-        <BasicButton
+        <Popconfirm
+          title={t('execWorkflow.detail.operator.closeConfirm')}
+          onConfirm={() => closeWorkflowButtonMeta.action()}
           disabled={closeWorkflowButtonMeta.loading}
-          loading={closeWorkflowButtonMeta.loading}
-          danger
-          onClick={() => closeWorkflowButtonMeta.action()}
+          overlayClassName="popconfirm-small"
+          okText={t('common.ok')}
         >
-          {t('execWorkflow.detail.operator.closeWorkflow')}
-        </BasicButton>
+          <BasicButton
+            disabled={closeWorkflowButtonMeta.loading}
+            loading={closeWorkflowButtonMeta.loading}
+            danger
+          >
+            {t('execWorkflow.detail.operator.closeWorkflow')}
+          </BasicButton>
+        </Popconfirm>
 
         <Divider
           type="vertical"
