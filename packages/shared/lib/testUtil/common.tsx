@@ -47,5 +47,8 @@ export enum UtilsConsoleErrorStringsEnum {
    * 过滤 NaN is an invalid value for the height css style property. 问题
    * input.textarea 设置 minRows 或者 maxRows 时出现
    */
-  INVALID_CSS_VALUE = '`NaN` is an invalid value for the'
+  INVALID_CSS_VALUE = '`NaN` is an invalid value for the',
+
+  // antd Drawer Popconfirm等弹出组件不在同一个根元素内 会报此warning
+  TRIGGER_ELEMENT_SAME_ROOT = 'trigger element and popup element should in same shadow root.'
 }
