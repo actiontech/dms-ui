@@ -228,7 +228,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
   }, [config?.enabled, form]);
 
   return (
-    <Spin spinning={submitPending} delay={300}>
+    <>
       {messageContextHolder}
       {renderConfigForm({
         onSubmit: (values) => {
@@ -258,6 +258,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
         ),
         configField: (
           <ConfigFields
+            submitPending={submitPending}
             fetchUserTipsPending={fetchUserTipsPending}
             generateUsernameSelectOption={generateUsernameSelectOption}
           />
@@ -269,7 +270,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
           />
         )
       })}
-    </Spin>
+    </>
   );
 };
 
