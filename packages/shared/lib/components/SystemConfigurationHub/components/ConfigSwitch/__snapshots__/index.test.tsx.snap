@@ -124,7 +124,7 @@ exports[`base/System/components/ConfigSwitch render snap when switch disabled 1`
                   type="button"
                 >
                   <span>
-                    OK
+                    确 认
                   </span>
                 </button>
               </div>
@@ -261,7 +261,7 @@ exports[`base/System/components/ConfigSwitch render snap when title is false 1`]
                   type="button"
                 >
                   <span>
-                    OK
+                    确 认
                   </span>
                 </button>
               </div>

@@ -3,6 +3,7 @@ import { FormItemLabel } from '../../../FormCom';
 import { BasicSwitch } from '../../../..';
 import { IBasicSwitch } from '../../../BasicSwitch';
 import classNames from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 export interface ConfigSwitchParams extends Omit<IBasicSwitch, 'onChange'> {
   title: string;
@@ -24,12 +25,14 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
   onSwitchPopoverOpen,
   ...switchProps
 }) => {
+  const { t } = useTranslation();
   return (
     <Popconfirm
       title={title}
       open={popoverVisible}
       onOpenChange={onSwitchPopoverOpen}
       onConfirm={onConfirm}
+      okText={t('common.ok')}
     >
       <FormItemLabel name={switchFieldName} valuePropName="checked">
         <BasicSwitch

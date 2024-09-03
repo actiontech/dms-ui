@@ -8,11 +8,13 @@ import CronInputCom from '@actiontech/shared/lib/components/CronInput';
 import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
 
 type Props = {
+  submitPending: boolean;
   fetchUserTipsPending: boolean;
   generateUsernameSelectOption: () => JSX.Element[];
 };
 
 const ConfigFields: React.FC<Props> = ({
+  submitPending,
   fetchUserTipsPending,
   generateUsernameSelectOption
 }) => {
@@ -52,7 +54,7 @@ const ConfigFields: React.FC<Props> = ({
           }
         ]}
       >
-        <CronInputCom />
+        <CronInputCom disabled={submitPending} />
       </FormItemLabel>
 
       <FormItemLabel
@@ -68,7 +70,11 @@ const ConfigFields: React.FC<Props> = ({
         name="pushUserList"
         label={t('pushRule.pushRule.sqlManagementIssuePush.form.pusher')}
       >
-        <BasicSelect mode="multiple" loading={fetchUserTipsPending}>
+        <BasicSelect
+          disabled={submitPending}
+          mode="multiple"
+          loading={fetchUserTipsPending}
+        >
           {generateUsernameSelectOption()}
         </BasicSelect>
       </FormItemLabel>
