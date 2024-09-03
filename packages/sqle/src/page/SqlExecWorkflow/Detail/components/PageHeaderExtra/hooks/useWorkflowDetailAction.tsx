@@ -68,6 +68,7 @@ const useWorkflowDetailAction = ({
     closeWorkflowLoading,
     { setTrue: startCloseWorkflow, setFalse: closeWorkflowFinish }
   ] = useBoolean();
+
   const closeWorkflow = useCallback(() => {
     if (!closeWorkflowButtonVisibility) {
       return;
