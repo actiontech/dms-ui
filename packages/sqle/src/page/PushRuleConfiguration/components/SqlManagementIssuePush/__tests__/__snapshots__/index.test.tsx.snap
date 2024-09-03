@@ -909,7 +909,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                   <span
                     class="ant-descriptions-item-content"
                   >
-                    下次推送时间为 2024-09-03 18:01:00
+                    下次推送时间为 2024-12-12 12:01:00
                   </span>
                 </div>
               </td>
