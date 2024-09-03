@@ -22,8 +22,8 @@ describe('test SqlManagementIssuePush', () => {
   let updateReportPushConfigSpy: jest.SpyInstance;
   const refetchSpy = jest.fn();
   beforeEach(() => {
-    MockDate.set('2024-12-12:12:00:00');
     jest.useFakeTimers();
+    MockDate.set('2024-12-12:12:00:00');
     mockUseCurrentProject();
     mockUseCurrentUser();
     getUserTipListSpy = user.getUserTipList();
