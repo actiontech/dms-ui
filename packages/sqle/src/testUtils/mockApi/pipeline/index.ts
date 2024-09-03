@@ -3,7 +3,7 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockPipelineListData } from './data';
+import { mockPipelineListData, mockPipelineDetailData } from './data';
 
 class Pipeline implements MockSpyApy {
   public mockAllApi(): void {
@@ -47,7 +47,9 @@ class Pipeline implements MockSpyApy {
 
   public getPipelineDetail() {
     const spy = jest.spyOn(pipeline, 'getPipelineDetailV1');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockPipelineDetailData })
+    );
     return spy;
   }
 }
