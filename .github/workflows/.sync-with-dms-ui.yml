@@ -48,4 +48,4 @@ jobs:
       - name: Create Pull Request
         env:
           GH_TOKEN: ${{ secrets.UPSTREAM_REPO_SECRET }}
-        run: pnpm sync:main
+        run: sh ./scripts/create_pr_to_sync_main.sh

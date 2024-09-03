@@ -33,7 +33,6 @@
     "icon:docs": "pnpm --filter @actiontech/icons start",
     "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
     "icon:build": "pnpm --filter @actiontech/icons build",
-    "sync:main": "sh ./scripts/create_pr_to_sync_main.sh"
   },
   "keywords": [],
   "author": "",
