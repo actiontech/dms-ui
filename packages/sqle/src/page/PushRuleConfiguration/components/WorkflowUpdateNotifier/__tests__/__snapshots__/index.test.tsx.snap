@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test WorkflowUpdateNotifier should disable the switch and hide the confirmation popup when the user lacks permission 1`] = `
+<div>
+  <section
+    class="css-zupqof"
+  >
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="switch-field-wrapper"
+      >
+        <div
+          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title=""
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <span>
+                      工单变更推送
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <svg
+                      color="#8a8f99"
+                      height="16"
+                      viewBox="0 0 14 14"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="config-field-wrapper"
+        hidden=""
+      />
+    </form>
+  </section>
+</div>
+`;
+
+exports[`test WorkflowUpdateNotifier should render the component with the initial configuration correctly 1`] = `
+<div>
+  <section
+    class="css-zupqof"
+  >
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="switch-field-wrapper"
+      >
+        <div
+          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title=""
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <span>
+                      工单变更推送
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <svg
+                      color="#8a8f99"
+                      height="16"
+                      viewBox="0 0 14 14"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        aria-checked="true"
+                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        data-testid="config-switch"
+                        role="switch"
+                        type="button"
+                      >
+                        <div
+                          class="ant-switch-handle"
+                        />
+                        <span
+                          class="ant-switch-inner"
+                        >
+                          <span
+                            class="ant-switch-inner-checked"
+                          />
+                          <span
+                            class="ant-switch-inner-unchecked"
+                          />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="config-field-wrapper"
+        hidden=""
+      />
+    </form>
+    <div
+      class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-descriptions-view"
+      >
+        <table>
+          <tbody>
+            <tr
+              class="ant-descriptions-row"
+            >
+              <td
+                class="ant-descriptions-item"
+                colspan="3"
+              >
+                <div
+                  class="ant-descriptions-item-container"
+                >
+                  <span
+                    class="ant-descriptions-item-label"
+                  >
+                    推送频率
+                  </span>
+                  <span
+                    class="ant-descriptions-item-content"
+                  >
+                    根据工单状态变更即时触发
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="ant-descriptions-row"
+            >
+              <td
+                class="ant-descriptions-item"
+                colspan="3"
+              >
+                <div
+                  class="ant-descriptions-item-container"
+                >
+                  <span
+                    class="ant-descriptions-item-label"
+                  >
+                    推送人
+                  </span>
+                  <span
+                    class="ant-descriptions-item-content"
+                  >
+                    根据权限匹配有操作权限的成员
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="ant-descriptions-row"
+            >
+              <td
+                class="ant-descriptions-item"
+                colspan="3"
+              >
+                <div
+                  class="ant-descriptions-item-container"
+                >
+                  <span
+                    class="ant-descriptions-item-label"
+                  >
+                    最近一次推送时间
+                  </span>
+                  <span
+                    class="ant-descriptions-item-content"
+                  >
+                    0001-01-01 08:05:43
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+`;
