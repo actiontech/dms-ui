@@ -7,7 +7,6 @@ import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetSqlDEVRecordListParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
 import { t } from '../../../locale';
 import ResultIconRender from '../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../components/AuditResultMessage';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { AvatarCom, SQLRenderer } from '@actiontech/shared';
 
@@ -80,19 +79,11 @@ export const PluginAuditListColumns: (
             onClick={() => onOpenDrawer(record)}
             className="audit-result-wrapper"
           >
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <ResultIconRender
+              iconLevels={result.map((item) => {
+                return item.level ?? '';
+              })}
+            />
           </div>
         );
       }

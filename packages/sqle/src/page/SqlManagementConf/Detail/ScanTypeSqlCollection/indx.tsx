@@ -34,7 +34,6 @@ import {
   getErrorMessage
 } from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../components/AuditResultMessage';
 import {
   IGetInstanceAuditPlanSQLDataV1Params,
   IGetInstanceAuditPlanSQLExportV1Params
@@ -301,21 +300,11 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
                   data-testid="trigger-open-report-drawer"
                   onClick={() => onClickAuditResult(record)}
                 >
-                  {results?.length > 1 ? (
-                    <ResultIconRender
-                      iconLevels={results.map((item) => {
-                        return item.level ?? '';
-                      })}
-                    />
-                  ) : (
-                    <AuditResultMessage
-                      auditResult={
-                        Array.isArray(results) && results.length
-                          ? results[0]
-                          : {}
-                      }
-                    />
-                  )}
+                  <ResultIconRender
+                    iconLevels={results?.map((item) => {
+                      return item.level ?? '';
+                    })}
+                  />
                 </div>
               );
             }

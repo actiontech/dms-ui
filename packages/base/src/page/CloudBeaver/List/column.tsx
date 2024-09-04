@@ -8,7 +8,6 @@ import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common'
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
   AvatarCom,
@@ -103,19 +102,11 @@ export const CBOperationListColumns = (
             onClick={() => onOpenDrawer(record)}
             className="audit-result-wrapper"
           >
-            {result?.length && result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <ResultIconRender
+              iconLevels={result?.map((item) => {
+                return item.level ?? '';
+              })}
+            />
           </div>
         );
       }
