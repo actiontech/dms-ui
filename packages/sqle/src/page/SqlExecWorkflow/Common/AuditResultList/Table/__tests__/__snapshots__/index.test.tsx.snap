@@ -190,10 +190,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -206,12 +206,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -656,10 +651,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -672,12 +667,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -1450,10 +1440,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                       >
                         <div>
                           <div
-                            class=" css-1avyf41"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
-                            <span
-                              class="icon-wrapper"
+                            <div
+                              class="ant-space-item"
                             >
                               <svg
                                 height="20"
@@ -1466,12 +1456,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                                   fill="#41BF9A"
                                 />
                               </svg>
-                            </span>
-                            <span
-                              class="text-wrapper"
-                            >
-                              审核通过
-                            </span>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -2046,31 +2031,22 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class=" css-1v03opz"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="ant-space-item"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  height="20"
-                                  viewBox="0 0 16 16"
-                                  width="20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                除了自增列及大字段列之外，每个列都必须添加默认值
-                              </span>
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
                             </div>
                           </div>
                         </div>
@@ -2628,31 +2604,22 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                       >
                         <div>
                           <div
-                            class=" css-1v03opz"
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                           >
                             <div
-                              class="css-1avyf41"
+                              class="ant-space-item"
                             >
-                              <span
-                                class="icon-wrapper"
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <svg
-                                  height="20"
-                                  viewBox="0 0 16 16"
-                                  width="20"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                    fill="#F66074"
-                                  />
-                                </svg>
-                              </span>
-                              <span
-                                class="text-wrapper"
-                              >
-                                除了自增列及大字段列之外，每个列都必须添加默认值
-                              </span>
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
                             </div>
                           </div>
                         </div>
