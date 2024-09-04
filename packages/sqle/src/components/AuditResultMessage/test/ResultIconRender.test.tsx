@@ -37,8 +37,8 @@ describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render normal icon when iconLevels is undefined', () => { 
+  it('render normal icon when iconLevels is undefined', () => {
     const { baseElement } = customRender({});
     expect(baseElement).toMatchSnapshot();
-  })
+  });
 });
