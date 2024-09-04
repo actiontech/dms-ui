@@ -10,7 +10,6 @@ import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../components/AuditResultMessage';
 import { Link } from 'react-router-dom';
 import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
@@ -273,19 +272,11 @@ const SqlManagementColumn: (
             }
             className="audit-result-wrapper"
           >
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <ResultIconRender
+              iconLevels={result.map((item) => {
+                return item.level ?? '';
+              })}
+            />
           </div>
         );
       }
