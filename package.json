@@ -32,7 +32,7 @@
     "icon:docs:g": "pnpm --filter @actiontech/icons docs:g",
     "icon:docs": "pnpm --filter @actiontech/icons start",
     "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
-    "icon:build": "pnpm --filter @actiontech/icons build",
+    "icon:build": "pnpm --filter @actiontech/icons build"
   },
   "keywords": [],
   "author": "",
