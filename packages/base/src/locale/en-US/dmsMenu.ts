@@ -47,7 +47,7 @@ export default {
 
   userNavigate: {
     account: 'Profile',
-    viewVersion: 'View version',
+    viewVersion: 'Version',
     logout: 'Logout',
     notice: 'Notice'
   },
