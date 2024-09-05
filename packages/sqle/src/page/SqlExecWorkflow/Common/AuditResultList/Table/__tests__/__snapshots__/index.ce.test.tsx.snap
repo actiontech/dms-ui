@@ -27,7 +27,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -475,7 +475,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -923,7 +923,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when data is empty
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -1075,7 +1075,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when get table err
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
