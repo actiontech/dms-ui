@@ -39,7 +39,8 @@ export default {
     nameTip:
       'Please enter the pipeline name created in the CI/CD platform or another name that is easy to understand and associate.',
     desc: 'Pipeline Description',
-    descTip: 'Please enter information related to the purpose and expectations of this pipeline.',
+    descTip:
+      'Please enter information related to the purpose and expectations of this pipeline.',
     address: 'Pipeline URL',
     addressTip:
       'Please provide the pipeline project URL created in the CI/CD platform, such as http(s)://ip:port/job/jobname/, to facilitate association. If you have not created a pipeline, you can add it later.',
@@ -50,7 +51,8 @@ export default {
       duplicateName: 'Node name must be unique',
       type: 'Node type',
       auditObjectType: 'Audit object type',
-      auditObjectTypeTips: 'Currently supports auditing SQL files and MyBatis files.',
+      auditObjectTypeTips:
+        'Currently supports auditing SQL files and MyBatis files.',
       auditObjectTypeDictionary: {
         sql: 'SQL file',
         mybatis: 'MyBatis file'
@@ -66,9 +68,11 @@ export default {
         online: 'Online audit'
       },
       instance: 'Data source',
-      instanceTips: 'Please select a data source. The platform will provide audit results based on the data source.',
+      instanceTips:
+        'Please select a data source. The platform will provide audit results based on the data source.',
       template: 'Audit rule template',
-      templateTips: 'Please select the audit rule template applied by the platform when auditing SQL.',
+      templateTips:
+        'Please select the audit rule template applied by the platform when auditing SQL.',
       typeDictionary: {
         audit: 'Audit',
         release: 'Deployment'
