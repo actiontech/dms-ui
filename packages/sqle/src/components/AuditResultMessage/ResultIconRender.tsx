@@ -9,14 +9,14 @@ import {
 } from '@actiontech/icons';
 
 export type IResultIconRender = {
-  iconLevels: string[];
+  iconLevels?: string[];
 };
 
 const ResultIconRender = (props: IResultIconRender) => {
   const { iconLevels } = props;
 
   const iconData = useMemo(() => {
-    return Array.from(new Set(iconLevels.filter((icon: string) => icon)));
+    return Array.from(new Set(iconLevels?.filter((icon: string) => icon)));
   }, [iconLevels]);
 
   const renderIcon = useMemo(() => {
@@ -30,13 +30,15 @@ const ResultIconRender = (props: IResultIconRender) => {
 
   return (
     <Space size={8}>
-      {iconData.map((icon) => {
-        return (
-          <React.Fragment key={icon}>
-            {renderIcon[icon as keyof typeof renderIcon] ?? null}
-          </React.Fragment>
-        );
-      })}
+      {!!iconData.length
+        ? iconData.map((icon) => {
+            return (
+              <React.Fragment key={icon}>
+                {renderIcon[icon as keyof typeof renderIcon] ?? null}
+              </React.Fragment>
+            );
+          })
+        : renderIcon.normal}
     </Space>
   );
 };
