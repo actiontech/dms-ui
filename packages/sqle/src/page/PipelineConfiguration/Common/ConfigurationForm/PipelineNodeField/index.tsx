@@ -1,5 +1,4 @@
 import { PipelineNodeFieldProps } from '../index.type';
-import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { PipelineNodeTableColumn, PipelineNodeTableActions } from './column';
 import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +19,7 @@ import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DragTableRow } from './DragTableRow';
 import { PipelineNodeType } from '../index.type';
+import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 
 const PipelineNodeField: React.FC<PipelineNodeFieldProps> = ({
   value,

@@ -11,6 +11,7 @@ import workflow from '../../../../../../testUtils/mockApi/workflowTemplate';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 type paramsType = Pick<
   WorkflowDetailPageHeaderExtraProps,
@@ -94,16 +95,18 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
       }
     });
     expect(screen.getByText('关闭工单')).toBeVisible();
-    await act(async () => {
-      fireEvent.click(screen.getByText('关闭工单'));
-      await jest.advanceTimersByTime(3000);
-    });
+    fireEvent.click(screen.getByText('关闭工单'));
+    expect(screen.getByText('您确认关闭当前工单？')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 认'));
     expect(cancelWorkflowSpy).toHaveBeenCalledTimes(1);
+    expect(cancelWorkflowSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      workflow_id: '1'
+    });
   });
 
   it('render close button when status is executing', async () => {
     mockUseCurrentProject({ projectArchive: false });
-    const cancelWorkflowSpy = workflow.cancelWorkflow();
     customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -122,11 +125,9 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
         }
       }
     });
-    await act(async () => {
-      fireEvent.click(screen.getByText('关闭工单'));
-      await jest.advanceTimersByTime(3000);
-    });
-    expect(cancelWorkflowSpy).not.toHaveBeenCalled();
+    expect(
+      screen.getByText('关闭工单').closest('button')?.parentNode
+    ).toHaveAttribute('hidden');
   });
 
   it('render reject button', async () => {

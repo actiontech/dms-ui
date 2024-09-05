@@ -7,7 +7,6 @@ import { EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { t } from '../../../../../locale';
 import ResultIconRender from '../../../../../components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from '../../../../../components/AuditResultMessage';
 
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
@@ -40,22 +39,14 @@ export const AuditResultForCreateWorkflowColumn = (
       dataIndex: 'audit_result',
       title: () => t('execWorkflow.audit.table.auditResult'),
       className: 'audit-result-column',
-      render: (result = [], record) => {
+      render: (result, record) => {
         return (
           <div onClick={() => onClickAuditResult(record)}>
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <ResultIconRender
+              iconLevels={result?.map((item) => {
+                return item.level ?? '';
+              })}
+            />
           </div>
         );
       }

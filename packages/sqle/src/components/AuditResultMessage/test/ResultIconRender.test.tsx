@@ -30,10 +30,15 @@ describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render icon when no icon data', () => {
+  it('render normal icon when no icon data', () => {
     const { baseElement } = customRender({
       iconLevels: []
     });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render normal icon when iconLevels is undefined', () => {
+    const { baseElement } = customRender({});
     expect(baseElement).toMatchSnapshot();
   });
 });

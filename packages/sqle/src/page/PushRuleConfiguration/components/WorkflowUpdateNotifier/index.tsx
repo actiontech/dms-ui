@@ -1,4 +1,4 @@
-import { Popconfirm, Spin, message } from 'antd';
+import { Popconfirm, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   WorkflowUpdateNotifierFields,
@@ -123,7 +123,7 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
     }, [config?.enabled, t]);
 
   return (
-    <Spin spinning={submitPending} delay={300}>
+    <>
       {messageContextHolder}
       {renderConfigForm({
         data: config ?? {},
@@ -145,8 +145,11 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
               open={configSwitchPopoverVisible}
               onConfirm={onConfigSwitchPopoverConfirm}
               onCancel={closeConfigSwitchPopover}
+              okText={t('common.ok')}
             >
               <BasicSwitch
+                data-testid="config-switch"
+                disabled={submitPending}
                 onClick={showConfigSwitchPopover}
                 checked={!!config?.enabled}
               />
@@ -154,7 +157,7 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
           </EmptyBox>
         )
       })}
-    </Spin>
+    </>
   );
 };
 

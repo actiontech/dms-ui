@@ -2636,10 +2636,10 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               >
                                 <div>
                                   <div
-                                    class=" css-1avyf41"
+                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                   >
-                                    <span
-                                      class="icon-wrapper"
+                                    <div
+                                      class="ant-space-item"
                                     >
                                       <svg
                                         height="20"
@@ -2652,12 +2652,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                           fill="#41BF9A"
                                         />
                                       </svg>
-                                    </span>
-                                    <span
-                                      class="text-wrapper"
-                                    >
-                                      审核通过
-                                    </span>
+                                    </div>
                                   </div>
                                 </div>
                               </td>
@@ -3777,10 +3772,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               >
                                 <div>
                                   <div
-                                    class=" css-1avyf41"
+                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                                   >
-                                    <span
-                                      class="icon-wrapper"
+                                    <div
+                                      class="ant-space-item"
                                     >
                                       <svg
                                         height="20"
@@ -3793,12 +3788,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                           fill="#41BF9A"
                                         />
                                       </svg>
-                                    </span>
-                                    <span
-                                      class="text-wrapper"
-                                    >
-                                      审核通过
-                                    </span>
+                                    </div>
                                   </div>
                                 </div>
                               </td>
