@@ -3518,10 +3518,10 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class=" css-1avyf41"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span
-                                  class="icon-wrapper"
+                                <div
+                                  class="ant-space-item"
                                 >
                                   <svg
                                     height="20"
@@ -3534,12 +3534,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                                       fill="#41BF9A"
                                     />
                                   </svg>
-                                </span>
-                                <span
-                                  class="text-wrapper"
-                                >
-                                  审核通过
-                                </span>
+                                </div>
                               </div>
                             </div>
                           </td>
@@ -3910,31 +3905,22 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class=" css-1v03opz"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="ant-space-item"
                                 >
-                                  <span
-                                    class="icon-wrapper"
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      height="20"
-                                      viewBox="0 0 16 16"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                        fill="#F66074"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span
-                                    class="text-wrapper"
-                                  >
-                                    建议UNIQUE索引名使用 IDX_UK_表名_字段名
-                                  </span>
+                                    <path
+                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                      fill="#F66074"
+                                    />
+                                  </svg>
                                 </div>
                               </div>
                             </div>
@@ -4271,31 +4257,22 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class=" css-1v03opz"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="ant-space-item"
                                 >
-                                  <span
-                                    class="icon-wrapper"
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 16 16"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      height="20"
-                                      viewBox="0 0 16 16"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
-                                        fill="#F66074"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span
-                                    class="text-wrapper"
-                                  >
-                                    建议UNIQUE索引名使用 IDX_UK_表名_字段名
-                                  </span>
+                                    <path
+                                      d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                      fill="#F66074"
+                                    />
+                                  </svg>
                                 </div>
                               </div>
                             </div>
@@ -4557,31 +4534,22 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class=" css-1v03opz"
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
                                 <div
-                                  class="css-1avyf41"
+                                  class="ant-space-item"
                                 >
-                                  <span
-                                    class="icon-wrapper"
+                                  <svg
+                                    height="20"
+                                    viewBox="0 0 20 20"
+                                    width="20"
+                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <svg
-                                      height="20"
-                                      viewBox="0 0 20 20"
-                                      width="20"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                        fill="#41BF9A"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span
-                                    class="text-wrapper"
-                                  >
-                                    白名单
-                                  </span>
+                                    <path
+                                      d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                                      fill="#41BF9A"
+                                    />
+                                  </svg>
                                 </div>
                               </div>
                             </div>

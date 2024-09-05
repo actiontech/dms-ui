@@ -4,7 +4,6 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../../locale';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
-import AuditResultMessage from 'sqle/src/components/AuditResultMessage';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import { SQLRenderer } from '@actiontech/shared';
 
@@ -46,19 +45,11 @@ export const AuditResultForCreateOrderColumn = (
       render: (result = [], record) => {
         return (
           <div onClick={() => onClickAuditResult(record)}>
-            {result?.length > 1 ? (
-              <ResultIconRender
-                iconLevels={result.map((item) => {
-                  return item.level ?? '';
-                })}
-              />
-            ) : (
-              <AuditResultMessage
-                auditResult={
-                  Array.isArray(result) && result.length ? result[0] : {}
-                }
-              />
-            )}
+            <ResultIconRender
+              iconLevels={result.map((item) => {
+                return item.level ?? '';
+              })}
+            />
           </div>
         );
       }
