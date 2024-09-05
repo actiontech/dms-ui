@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 请勿修改本脚本
 # 脚本功能：当 dms-ui-ee 仓库触发同步 dms-ui mian 分支代码后，自动创建 dms-ui-ee 仓库 main 合并至 main-ee 的 pr，并处理 pr 可能存在冲突的场景
 # 脚本流程
@@ -27,7 +29,7 @@ check_pr_status() {
     fi
 
     sleep $wait_time
-    ((attempt++))
+    ( (attempt++))
   done
 
   echo "TIMEOUT"
@@ -46,7 +48,7 @@ create_and_close_conflicting_pr() {
   # 创建新的 PR
   new_pr=$(gh pr create --base main-ee --head $new_branch \
     --title "Sync main to main-ee (resolved conflicts)" \
-    --body "\n通过脚本自动创建，用于解决代码冲突以及同步 main 变更至 main-ee。\nTips: 请复审人检查冲突原因，并指派相关成员解决冲突。冲突解决并成功合并后，请删除原始分支。")
+    --body "通过脚本自动创建，用于解决代码冲突以及同步 main 变更至 main-ee。  Tips: 请复审人检查冲突原因，并指派相关成员解决冲突。冲突解决并成功合并后，请删除原始分支。")
 
   # 关闭旧的 PR
   gh pr close $pr_number --comment "Closing due to conflicts. New PR created: $new_pr"
@@ -62,7 +64,7 @@ if [ -z "$existing_pr" ]; then
   # 创建新的 PR
   new_pr=$(gh pr create --base main-ee --head main \
     --title "Sync main to main-ee" \
-    --body "\n通过脚本自动创建，用于同步 main 变更至 main-ee。\nTips: 无需复审，直接合并即可。合并后无需删除原始分支。")
+    --body "通过脚本自动创建，用于同步 main 变更至 main-ee。  Tips: 无需复审，直接合并即可。合并后无需删除原始分支。")
 
   # 检查 PR 是否成功创建
 
