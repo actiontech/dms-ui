@@ -138,7 +138,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap 1`] = `
                   >
                     <colgroup>
                       <col
-                        style="width: 100px;"
+                        style="width: 150px;"
                       />
                       <col />
                       <col />
@@ -402,7 +402,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap 2`] = `
                   >
                     <colgroup>
                       <col
-                        style="width: 100px;"
+                        style="width: 150px;"
                       />
                       <col />
                       <col />
@@ -815,7 +815,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 1`] = `
                   >
                     <colgroup>
                       <col
-                        style="width: 100px;"
+                        style="width: 150px;"
                       />
                       <col />
                       <col />
@@ -1228,7 +1228,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap has task 2`] = `
                   >
                     <colgroup>
                       <col
-                        style="width: 100px;"
+                        style="width: 150px;"
                       />
                       <col />
                       <col />

@@ -16,7 +16,7 @@ export const AuditResultForCreateWorkflowColumn = (
     {
       dataIndex: 'number',
       title: () => t('execWorkflow.audit.table.number'),
-      width: 100
+      width: 150
     },
     {
       dataIndex: 'exec_sql',
