@@ -45,7 +45,12 @@ jobs:
           # add -Xtheirs, other ERROR message "Automatic merge failed; fix conflicts and then commit the result."
           upstream_pull_args: '--no-edit --allow-unrelated-histories -Xtheirs'
 
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: Create Pull Request
         env:
           GH_TOKEN: ${{ secrets.UPSTREAM_REPO_SECRET }}
-        run: ls && sh ../../scripts/create_pr_to_sync_main.sh
+        run: sh ./scripts/create_pr_to_sync_main.sh
