@@ -15,4 +15,8 @@ export const ScanTypeSqlCollectionStyleWrapper = styled('section')`
       flex: 1;
     }
   }
+
+  .audit-tag {
+    width: fit-content;
+  }
 `;
