@@ -289,21 +289,31 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             type === 'sql' ? 'ellipsis-column-large-width' : undefined,
           customRender: (text, record, fieldName, type) => {
             if (fieldName === 'audit_results') {
+              let isAuditing = false;
               let results: IAuditResult[] = [];
-              try {
-                results = JSON.parse(text ?? '[]') as IAuditResult[];
-              } catch (error) {
-                results = [];
+              if (text === 'being_audited') {
+                isAuditing = true;
+              } else {
+                try {
+                  results = JSON.parse(text ?? '[]') as IAuditResult[];
+                } catch (error) {
+                  results = [];
+                }
               }
               return (
                 <div
                   data-testid="trigger-open-report-drawer"
-                  onClick={() => onClickAuditResult(record)}
+                  onClick={() => {
+                    if (!isAuditing) {
+                      onClickAuditResult(record);
+                    }
+                  }}
                 >
                   <ResultIconRender
                     iconLevels={results?.map((item) => {
                       return item.level ?? '';
                     })}
+                    isAuditing={isAuditing}
                   />
                 </div>
               );
@@ -318,11 +328,19 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             }
 
             if (type === 'sql') {
+              let isAuditing = false;
+              if (record?.audit_results === 'being_audited') {
+                isAuditing = true;
+              }
               return (
                 <SQLRenderer.Snippet
                   tooltip={false}
                   className="pointer"
-                  onClick={() => onClickAuditResult(record)}
+                  onClick={() => {
+                    if (!isAuditing) {
+                      onClickAuditResult(record);
+                    }
+                  }}
                   sql={text}
                   rows={1}
                   showCopyIcon
