@@ -29,6 +29,7 @@ export default {
   pushRuleConfiguration: 'Notification',
   monitorSourceConfig: '监控源配置',
   diagnosisList: '巡检列表',
+  pipelineConfiguration: 'CI/CD pipeline',
 
   projectSelector: {
     recentlyOpenedProjects: 'Recently opened projects',
@@ -39,6 +40,7 @@ export default {
 
   groupLabel: {
     SQLExecute: 'SQL execute',
+    CICDIntegration: 'CI/CD pipeline',
     SQLDev: 'SQL dev',
     SQLManagement: 'SQL management',
     projectConfigure: 'Project configure',
