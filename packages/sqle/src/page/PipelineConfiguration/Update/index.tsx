@@ -22,9 +22,9 @@ import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { omit } from 'lodash';
 import {
-  pipelineNodeToBeUpdatedAuditMethodEnum,
-  pipelineNodeToBeUpdatedObjectTypeEnum,
-  pipelineNodeToBeUpdatedTypeEnum
+  updatePipelineNodeAuditMethodEnum,
+  updatePipelineNodeObjectTypeEnum,
+  updatePipelineNodeTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import usePipelineConfigurationFormState from '../Common/ConfigurationForm/hooks/usePipelineConfigurationFormState';
 
@@ -81,10 +81,10 @@ const CreatePipelineConfiguration = () => {
             ...i,
             id: isNaN(parseInt(i?.id)) ? undefined : parseInt(i?.id),
             audit_method:
-              i.audit_method as unknown as pipelineNodeToBeUpdatedAuditMethodEnum,
+              i.audit_method as unknown as updatePipelineNodeAuditMethodEnum,
             object_type:
-              i.object_type as unknown as pipelineNodeToBeUpdatedObjectTypeEnum,
-            type: i.type as unknown as pipelineNodeToBeUpdatedTypeEnum
+              i.object_type as unknown as updatePipelineNodeObjectTypeEnum,
+            type: i.type as unknown as updatePipelineNodeTypeEnum
           })) ?? []
       })
       .then((res) => {

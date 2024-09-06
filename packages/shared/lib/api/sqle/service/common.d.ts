@@ -33,6 +33,7 @@ import {
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
+  SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
@@ -58,9 +59,9 @@ import {
   pipelineNodeDetailAuditMethodEnum,
   pipelineNodeDetailObjectTypeEnum,
   pipelineNodeDetailTypeEnum,
-  pipelineNodeToBeUpdatedAuditMethodEnum,
-  pipelineNodeToBeUpdatedObjectTypeEnum,
-  pipelineNodeToBeUpdatedTypeEnum,
+  updatePipelineNodeAuditMethodEnum,
+  updatePipelineNodeObjectTypeEnum,
+  updatePipelineNodeTypeEnum,
   AuditResDataV2AuditLevelEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -2344,6 +2345,8 @@ export interface ISqlManage {
 
   audit_result?: IAuditResult[];
 
+  audit_status?: SqlManageAuditStatusEnum;
+
   endpoints?: string;
 
   first_appear_timestamp?: string;
@@ -2630,7 +2633,7 @@ export interface IUpdatePipelineReqV1 {
 
   name?: string;
 
-  nodes?: IPipelineNodeToBeUpdated[];
+  nodes?: IUpdatePipelineNode[];
 }
 
 export interface IUpdateProjectRuleTemplateReqV1 {
@@ -2989,8 +2992,8 @@ export interface IPipelineNodeDetail {
   type?: pipelineNodeDetailTypeEnum;
 }
 
-export interface IPipelineNodeToBeUpdated {
-  audit_method?: pipelineNodeToBeUpdatedAuditMethodEnum;
+export interface IUpdatePipelineNode {
+  audit_method?: updatePipelineNodeAuditMethodEnum;
 
   id?: number;
 
@@ -3002,11 +3005,11 @@ export interface IPipelineNodeToBeUpdated {
 
   object_path?: string;
 
-  object_type?: pipelineNodeToBeUpdatedObjectTypeEnum;
+  object_type?: updatePipelineNodeObjectTypeEnum;
 
   rule_template_name?: string;
 
-  type?: pipelineNodeToBeUpdatedTypeEnum;
+  type?: updatePipelineNodeTypeEnum;
 }
 
 export interface IAuditFileExecStatistic {
