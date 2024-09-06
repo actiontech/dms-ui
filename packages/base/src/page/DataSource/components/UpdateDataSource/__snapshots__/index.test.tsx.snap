@@ -1146,9 +1146,9 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -2528,9 +2528,9 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -3896,9 +3896,9 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -5186,9 +5186,9 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -6755,9 +6755,9 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -7937,9 +7937,9 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div

@@ -126,7 +126,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
             class="ant-popover-inner-content"
           >
             <div
-              class="css-887nqg"
+              class="css-1oz57g3"
             >
               <div
                 class="download-record-item"
@@ -242,7 +242,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
             class="ant-popover-inner-content"
           >
             <div
-              class="css-887nqg"
+              class="css-1oz57g3"
             >
               <div
                 class="download-record-item"
@@ -359,7 +359,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
             class="ant-popover-inner-content"
           >
             <div
-              class="css-887nqg"
+              class="css-1oz57g3"
             >
               <div
                 class="download-record-item"

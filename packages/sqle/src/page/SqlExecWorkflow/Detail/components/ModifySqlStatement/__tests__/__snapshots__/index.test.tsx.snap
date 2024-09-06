@@ -736,7 +736,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
@@ -1607,7 +1607,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
@@ -2473,7 +2473,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
@@ -3609,7 +3609,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
