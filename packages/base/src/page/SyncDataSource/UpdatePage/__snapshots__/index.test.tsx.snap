@@ -612,9 +612,9 @@ exports[`page/SyncDataSource/UpdateSyncTask get task source failed 1`] = `
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -1616,9 +1616,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 1`] = `
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -2576,9 +2576,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render click reset btn 2`] = `
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -3537,9 +3537,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render edit database snap 1`] = `
                       <label
                         class="ant-form-item-no-colon"
                         for="needAuditForSqlQuery"
-                        title="SQL查询是否需要审核"
+                        title="SQL工作台查询是否需要审核"
                       >
-                        SQL查询是否需要审核
+                        SQL工作台查询是否需要审核
                       </label>
                     </div>
                     <div
@@ -4829,9 +4829,9 @@ exports[`page/SyncDataSource/UpdateSyncTask render update task submit 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="needAuditForSqlQuery"
-                      title="SQL查询是否需要审核"
+                      title="SQL工作台查询是否需要审核"
                     >
-                      SQL查询是否需要审核
+                      SQL工作台查询是否需要审核
                     </label>
                   </div>
                   <div

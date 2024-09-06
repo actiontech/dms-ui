@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BasicButton, PageHeader } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
-  ActiontechTable,
   useTableFilterContainer,
   useTableRequestError,
   TableFilterContainer,
@@ -19,7 +18,8 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePreferredLanguages
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
@@ -51,6 +51,7 @@ import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
+import { SqlManagementTableStyleWrapper } from './style';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -63,6 +64,8 @@ const SQLEEIndex = () => {
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
     GetSqlManageListV2FilterStatusEnum.unhandled
   );
+
+  const { preferredEnUS } = usePreferredLanguages();
 
   const { setSelectData, setBatchSelectData, updateModalStatus } =
     useSqlManagementRedux();
@@ -209,7 +212,8 @@ const SQLEEIndex = () => {
       jumpToAnalyze,
       isAdmin || isProjectManager(projectName),
       onCreateSqlManagementException,
-      onCreateWhitelist
+      onCreateWhitelist,
+      preferredEnUS
     );
   }, [
     isAdmin,
@@ -218,7 +222,8 @@ const SQLEEIndex = () => {
     openModal,
     projectName,
     onCreateSqlManagementException,
-    onCreateWhitelist
+    onCreateWhitelist,
+    preferredEnUS
   ]);
 
   const actionPermission = useMemo(() => {
@@ -283,7 +288,9 @@ const SQLEEIndex = () => {
     onChange: (keys, data) => {
       setSelectedRowKeys(keys.filter((v) => v) as number[]);
       setSelectedRowData(data);
-    }
+    },
+    columnWidth: 80,
+    fixed: true
   };
 
   // batch action
@@ -423,7 +430,7 @@ const SQLEEIndex = () => {
         disabled={getListLoading}
         filterCustomProps={filterCustomProps}
       />
-      <ActiontechTable
+      <SqlManagementTableStyleWrapper
         className="table-row-cursor"
         setting={tableSetting}
         dataSource={sqlList?.list}
@@ -439,7 +446,9 @@ const SQLEEIndex = () => {
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         actions={projectArchive ? undefined : actions}
+        scroll={{ x: '130%', y: '500px' }}
       />
+      {/* scroll 中的y 只支持string | number 所以这里的 500px 只是为了开启antd的固定列功能随便写的高度 具体高度在styled中动态计算 */}
       {/* modal & drawer */}
       <SqlManagementModal />
     </Spin>

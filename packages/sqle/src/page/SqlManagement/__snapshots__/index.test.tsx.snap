@@ -439,7 +439,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
             </div>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1xsk37k css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -448,39 +448,21 @@ exports[`page/SqlManagement render sql management page 1`] = `
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                  class="ant-table ant-table-empty ant-table-fixed-header ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
                   >
                     <div
-                      class="ant-table-content"
-                      style="overflow-x: auto; overflow-y: hidden;"
+                      class="ant-table-header"
+                      style="overflow: hidden;"
                     >
                       <table
-                        style="min-width: 100%; table-layout: auto;"
+                        style="table-layout: fixed;"
                       >
                         <colgroup>
                           <col
                             class="ant-table-selection-col"
-                          />
-                          <col />
-                          <col />
-                          <col />
-                          <col
-                            style="width: 200px;"
-                          />
-                          <col />
-                          <col />
-                          <col />
-                          <col
-                            style="width: 200px;"
-                          />
-                          <col />
-                          <col />
-                          <col />
-                          <col
-                            style="width: 246px;"
                           />
                         </colgroup>
                         <thead
@@ -488,8 +470,9 @@ exports[`page/SqlManagement render sql management page 1`] = `
                         >
                           <tr>
                             <th
-                              class="ant-table-cell ant-table-selection-column"
+                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
                               scope="col"
+                              style="position: sticky; left: 0px;"
                             >
                               <div
                                 class="ant-table-selection"
@@ -568,7 +551,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
                               端点信息
                             </th>
                             <th
-                              class="ant-table-cell"
+                              class="ant-table-cell audit-status"
                               scope="col"
                             >
                               状态
@@ -588,6 +571,57 @@ exports[`page/SqlManagement render sql management page 1`] = `
                             </th>
                           </tr>
                         </thead>
+                      </table>
+                    </div>
+                    <div
+                      class="ant-table-body"
+                      style="overflow-x: auto; overflow-y: scroll; max-height: 500px;"
+                    >
+                      <table
+                        style="width: 130%; min-width: 100%; table-layout: fixed;"
+                      >
+                        <colgroup>
+                          <col
+                            class="ant-table-selection-col"
+                            style="width: 80px;"
+                          />
+                          <col
+                            style="width: 350px;"
+                          />
+                          <col
+                            style="width: 350px;"
+                          />
+                          <col
+                            style="width: 120px;"
+                          />
+                          <col
+                            style="width: 200px;"
+                          />
+                          <col
+                            style="width: 200px;"
+                          />
+                          <col
+                            style="width: 120px;"
+                          />
+                          <col
+                            style="width: 80px;"
+                          />
+                          <col
+                            style="width: 200px;"
+                          />
+                          <col
+                            style="width: 200px;"
+                          />
+                          <col
+                            style="width: 100px;"
+                          />
+                          <col
+                            style="width: 200px;"
+                          />
+                          <col
+                            style="width: 350px;"
+                          />
+                        </colgroup>
                         <tbody
                           class="ant-table-tbody"
                         >

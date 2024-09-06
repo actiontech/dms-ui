@@ -6,23 +6,18 @@ import { useSelector } from 'react-redux';
 import SyncRecoil from 'provision/src/utils/SyncRecoil';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import { EmptyBox, HeaderProgress, SpinIndicator } from '@actiontech/shared';
-import antd_zh_CN from 'antd/locale/zh_CN';
-import antd_en_US from 'antd/locale/en_US';
 import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import {
-  SupportLanguage,
-  SupportTheme,
-  UserRolesType
-} from '@actiontech/shared/lib/enum';
+import { SupportTheme, UserRolesType } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
   useDbServiceDriver,
   useFeaturePermission,
-  useCurrentPermission
+  useCurrentPermission,
+  usePreferredLanguages
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -40,7 +35,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
 import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
-import i18n, { getPreferredLanguages } from './locale';
+import i18n from './locale';
 
 import './index.less';
 
@@ -76,16 +71,7 @@ function App() {
     token: state.user.token
   }));
 
-  const { currentLanguage, antdLanguage } = useMemo(() => {
-    const lang = getPreferredLanguages()?.[0].startsWith('en')
-      ? SupportLanguage.enUS
-      : SupportLanguage.zhCN;
-
-    return {
-      currentLanguage: lang,
-      antdLanguage: lang === SupportLanguage.enUS ? antd_en_US : antd_zh_CN
-    };
-  }, []);
+  const { currentLanguage, antdLanguage } = usePreferredLanguages();
 
   const { notificationContextHolder } = useNotificationContext();
 
