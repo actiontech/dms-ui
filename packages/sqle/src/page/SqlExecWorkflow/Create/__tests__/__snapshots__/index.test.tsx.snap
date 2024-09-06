@@ -1526,7 +1526,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
@@ -3888,7 +3888,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
@@ -7480,7 +7480,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />
@@ -16272,7 +16272,7 @@ from
                         >
                           <colgroup>
                             <col
-                              style="width: 100px;"
+                              style="width: 150px;"
                             />
                             <col />
                             <col />

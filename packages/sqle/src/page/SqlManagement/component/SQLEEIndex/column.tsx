@@ -107,12 +107,18 @@ export const SqlManagementRowAction = (
   jumpToAnalyze: (sqlManageID: string) => void,
   operationPermission: boolean,
   openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
-  onCreateWhitelist: (record?: ISqlManage) => void
+  onCreateWhitelist: (record?: ISqlManage) => void,
+  preferredEnUS: boolean
 ): ActiontechTableProps<ISqlManage>['actions'] => {
+  const getWidth = () => {
+    if (operationPermission) {
+      return preferredEnUS ? 350 : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
+    }
+    return 110;
+  };
+
   return {
-    width: operationPermission
-      ? ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3
-      : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH,
+    width: getWidth(),
     buttons: [
       {
         text: t('sqlManagement.table.action.single.assignment'),
@@ -191,6 +197,7 @@ const SqlManagementColumn: (
       className: 'ellipsis-column-width',
       dataIndex: 'sql_fingerprint',
       title: () => t('sqlManagement.table.column.SQLFingerprint'),
+      width: 350,
       render: (sql_fingerprint, record) => {
         if (!sql_fingerprint) return null;
         return (
@@ -215,6 +222,7 @@ const SqlManagementColumn: (
       dataIndex: 'sql',
       className: 'ellipsis-column-width',
       title: 'SQL',
+      width: 350,
       render: (sql, record) => {
         if (!sql) return null;
         return (
@@ -238,6 +246,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'source',
       title: () => t('sqlManagement.table.column.source'),
+      width: 120,
       render: (source) => {
         if (
           !!source &&
@@ -300,6 +309,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'instance_name',
       title: () => t('sqlManagement.table.column.instanceName'),
+      width: 200,
       render: (instance_name) => {
         return instance_name || '-';
       }
@@ -307,6 +317,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'schema_name',
       title: () => 'Schema',
+      width: 120,
       render: (schemaName) => {
         return schemaName || '-';
       }
@@ -314,6 +325,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'priority',
       title: () => t('sqlManagement.table.column.priority'),
+      width: 80,
       render: (priority) => {
         if (priority === 'high') {
           return t('sqlManagement.table.column.highPriority');
@@ -373,6 +385,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'endpoints',
       title: () => t('sqlManagement.table.column.endpoints'),
+      width: 200,
       render: (endpoints) => {
         if (!endpoints) {
           return '-';
@@ -384,6 +397,8 @@ const SqlManagementColumn: (
     {
       dataIndex: 'status',
       title: () => t('sqlManagement.table.column.status'),
+      width: 100,
+      className: 'audit-status',
       render: (status) => {
         if (!status) return '-';
         return <StatusTag status={status} />;
@@ -392,6 +407,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'remark',
       title: () => t('sqlManagement.table.column.comment'),
+      width: 200,
       className: 'ellipsis-column-width',
       render: (remark, record) => {
         if (!hasPermissionAndNotArchive)

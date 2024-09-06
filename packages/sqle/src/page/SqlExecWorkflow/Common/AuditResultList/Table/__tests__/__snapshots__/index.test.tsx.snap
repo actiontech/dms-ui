@@ -27,7 +27,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -488,7 +488,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -949,7 +949,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when data is 
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -1125,7 +1125,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -1277,7 +1277,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -1700,7 +1700,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -1868,7 +1868,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />
@@ -2441,7 +2441,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                 >
                   <colgroup>
                     <col
-                      style="width: 100px;"
+                      style="width: 150px;"
                     />
                     <col />
                     <col />

@@ -2,7 +2,6 @@ import { styled } from '@mui/material';
 
 export const DownloadDropdownStyleWrapper = styled('div')`
   display: flex;
-  width: 160px;
   padding: 6px;
   flex-direction: column;
   align-items: start;
