@@ -27,6 +27,7 @@ export default {
   dataExportManagement: 'Data export',
   sqlManagementConf: 'Configuration',
   pushRuleConfiguration: 'Notification',
+  pipelineConfiguration: 'CI/CD pipeline',
 
   projectSelector: {
     recentlyOpenedProjects: 'Recently opened projects',
@@ -37,6 +38,7 @@ export default {
 
   groupLabel: {
     SQLExecute: 'SQL execute',
+    CICDIntegration: 'CI/CD pipeline',
     SQLDev: 'SQL dev',
     SQLManagement: 'SQL management',
     projectConfigure: 'Project configure',
@@ -45,7 +47,7 @@ export default {
 
   userNavigate: {
     account: 'Profile',
-    viewVersion: 'View version',
+    viewVersion: 'Version',
     logout: 'Logout',
     notice: 'Notice'
   },
