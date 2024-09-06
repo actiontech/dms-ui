@@ -35,7 +35,7 @@ const OrderExpiredHours = ({
       {messageContextHolder}
       <ConfigItem
         label={
-          <LabelContent>{`${t('dmsSystem.global.orderExpiredHours')}(${t(
+          <LabelContent>{`${t('dmsSystem.global.workflowExpiredHours')}(${t(
             'common.time.hour'
           )})`}</LabelContent>
         }

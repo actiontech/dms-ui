@@ -468,6 +468,470 @@ exports[`test base/page/project/modal/add should match snapshot 1`] = `
 </body>
 `;
 
+exports[`test base/page/project/modal/add should match snapshot when getPreferredLanguages return "en-us" 1`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  创建项目
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="name"
+                        title="项目名称"
+                      >
+                        项目名称
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            aria-required="true"
+                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            id="name"
+                            placeholder="请输入{{name}}"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="desc"
+                        title="项目描述"
+                      >
+                        项目描述
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <textarea
+                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            id="desc"
+                            placeholder="请输入{{name}}"
+                            style="resize: none; height: 2px;"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="isFixedBusiness"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否固定可选业务标签
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            若开启，项目内可用的业务标签将被固定，仅能由管理员管理
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="isFixedBusiness"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        >
+                          <label
+                            class="ant-form-item-required ant-form-item-no-colon"
+                            for="business_0_name"
+                            title="可用业务"
+                          >
+                            可用业务
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <input
+                                        class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                        disabled=""
+                                        placeholder=""
+                                        type="text"
+                                        value=""
+                                        width="200"
+                                      />
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only edit-button basic-button-wrapper css-iieact"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                              fill="#8A8F99"
+                                            />
+                                          </svg>
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only delete-button-disabled basic-button-wrapper css-iieact"
+                                    disabled=""
+                                    type="button"
+                                  >
+                                    <span
+                                      class="ant-btn-icon"
+                                    >
+                                      <svg
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                          fill="#F66074"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default form-list-add basic-button-wrapper css-1719g3l"
+                            type="button"
+                          >
+                            <span
+                              class="ant-btn-icon"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
+                                  fill="#4583FF"
+                                />
+                              </svg>
+                            </span>
+                            <span>
+                              添加业务
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <section
+                class="css-9y9ngc"
+              >
+                <span
+                  class="ant-typography css-dev-only-do-not-override-txh9fw"
+                >
+                  我们的平台采用项目-业务-数据源的层级结构，为您提供清晰、有序的数据资源管理方式。
+                </span>
+                <ul>
+                  <li>
+                    <span
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      项目：每个项目代表一个独立的产品环境，作为资源隔离的单元，确保数据安全和产品独立性。在项目层面，您可以聚合和管理相关的业务模块。
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      业务：在项目的基础上，业务作为子项目或特定业务领域的标签，帮助您进一步组织和细化数据资源。业务层使您能够针对特定需求进行数据的集中管理和操作。
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      数据源：数据源是构建在业务基础上的实际操作对象。您可以在数据源层面执行具体的数据操作，如查询、更新和管理数据。
+                    </span>
+                  </li>
+                </ul>
+              </section>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
 exports[`test base/page/project/modal/add should send create project request when clicking submit button 1`] = `
 <body>
   <textarea

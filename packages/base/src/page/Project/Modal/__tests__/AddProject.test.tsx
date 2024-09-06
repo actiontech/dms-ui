@@ -10,6 +10,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import { getPreferredLanguages } from '../../../../locale';
 
 jest.mock('react-redux', () => {
   return {
@@ -19,11 +20,19 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('../../../../locale', () => {
+  return {
+    ...jest.requireActual('../../../../locale'),
+    getPreferredLanguages: jest.fn()
+  };
+});
+
 describe('test base/page/project/modal/add', () => {
   const dispatchSpy = jest.fn();
-
   let addProjectSpy: jest.SpyInstance;
   let emitSpy: jest.SpyInstance;
+  let getPreferredLanguagesSpy: jest.SpyInstance;
+
   beforeEach(() => {
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
@@ -31,7 +40,8 @@ describe('test base/page/project/modal/add', () => {
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-
+    getPreferredLanguagesSpy = getPreferredLanguages as jest.Mock;
+    getPreferredLanguagesSpy.mockImplementation(() => ['zh-CN', 'en']);
     addProjectSpy = project.addProject();
     emitSpy = jest.spyOn(EventEmitter, 'emit');
     jest.useFakeTimers();
@@ -42,6 +52,7 @@ describe('test base/page/project/modal/add', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
   });
+
   it('should match snapshot', () => {
     const { baseElement } = superRender(<AddProject />);
     expect(baseElement).toMatchSnapshot();
@@ -164,5 +175,12 @@ describe('test base/page/project/modal/add', () => {
       'ant-btn-loading'
     );
     expect(screen.getByText('关 闭').closest('button')).not.toBeDisabled();
+  });
+
+  it('should match snapshot when getPreferredLanguages return "en-us"', async () => {
+    getPreferredLanguagesSpy.mockImplementation(() => ['en-US']);
+    const { baseElement } = superRender(<AddProject />);
+
+    expect(baseElement).toMatchSnapshot();
   });
 });
