@@ -18,6 +18,7 @@ import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
+import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -194,9 +195,13 @@ const SqlManagementColumn: (
         if (!sql_fingerprint) return null;
         return (
           <SQLRenderer.Snippet
-            onClick={() =>
-              openModal(ModalName.View_Audit_Result_Drawer, record)
-            }
+            onClick={() => {
+              if (
+                record.audit_status !== SqlManageAuditStatusEnum.being_audited
+              ) {
+                openModal(ModalName.View_Audit_Result_Drawer, record);
+              }
+            }}
             tooltip={false}
             sql={sql_fingerprint}
             rows={2}
@@ -214,9 +219,13 @@ const SqlManagementColumn: (
         if (!sql) return null;
         return (
           <SQLRenderer.Snippet
-            onClick={() =>
-              openModal(ModalName.View_Audit_Result_Drawer, record)
-            }
+            onClick={() => {
+              if (
+                record.audit_status !== SqlManageAuditStatusEnum.being_audited
+              ) {
+                openModal(ModalName.View_Audit_Result_Drawer, record);
+              }
+            }}
             tooltip={false}
             sql={sql}
             rows={2}
@@ -267,15 +276,22 @@ const SqlManagementColumn: (
       render: (result = [], record) => {
         return (
           <div
-            onClick={() =>
-              openModal(ModalName.View_Audit_Result_Drawer, record)
-            }
+            onClick={() => {
+              if (
+                record.audit_status !== SqlManageAuditStatusEnum.being_audited
+              ) {
+                openModal(ModalName.View_Audit_Result_Drawer, record);
+              }
+            }}
             className="audit-result-wrapper"
           >
             <ResultIconRender
-              iconLevels={result.map((item) => {
+              iconLevels={result?.map((item) => {
                 return item.level ?? '';
               })}
+              isAuditing={
+                record.audit_status === SqlManageAuditStatusEnum.being_audited
+              }
             />
           </div>
         );

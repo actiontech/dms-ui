@@ -801,6 +801,19 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
       row_examined_avg: '0',
       schema_name: 'sqle',
       sql: "INSERT INTO `audit_plan_sqls_v2` (`audit_plan_id`,`fingerprint_md5`, `fingerprint`, `sql_content`, `info`, `schema`) VALUES (3, 'a62860c563df5399c2acb800673ae715', 'CREATE TABLE `audit_files` (\\n  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,\\n  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,\\n  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\\n  `deleted_at` datetime DEFAULT NULL,\\n  `task_id` int(10) unsigned DEFAULT NULL,\\n  `unique_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  `file_host` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,\\n  PRIMARY KEY (`id`)"
+    },
+    {
+      id: '1234567',
+      audit_results: 'being_audited',
+      counter: '598',
+      db_user: '',
+      fingerprint: 'SELECT ?,SLEEP(?) LIMIT ?,?',
+      last_receive_timestamp: '2024-08-06T05:29:54Z',
+      query_time_avg: '11',
+      query_time_max: '11',
+      row_examined_avg: '0',
+      schema_name: 'test123',
+      sql: '/* ApplicationName=DBeaver 24.1.2 - SQLEditor \u003cConsole\u003e */ select 1,SLEEP(11)\nLIMIT 0, 200'
     }
   ]
 };
