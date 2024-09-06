@@ -1,4 +1,4 @@
-import { Space, Spin, message } from 'antd';
+import { Space, message } from 'antd';
 import type {
   SqlManagementIssuePushFields,
   SqlManagementIssuePushProps
