@@ -1,3 +1,5 @@
+import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+
 export const ruleTipsData = [
   {
     db_type: 'MySQL',
@@ -146,6 +148,34 @@ export const sqlManageListData = {
       remark: '',
       endpoints: '',
       priority: ''
+    },
+    {
+      id: 11500871,
+      sql_fingerprint: 'SELECT ?',
+      sql: 'SELECT 1;',
+      source: {
+        sql_source_type: 'sql_audit_record',
+        sql_source_desc: 'SQL审核',
+        sql_source_ids: ['123']
+      },
+      instance_name: 'MYSQL_3307',
+      schema_name: 'db1',
+      audit_result: [
+        {
+          level: 'normal',
+          message: '白名单',
+          rule_name: ''
+        }
+      ],
+      first_appear_timestamp: '',
+      last_receive_timestamp: '',
+      fp_count: 0,
+      assignees: ['t3', 't2'],
+      status: 'unhandled',
+      remark: '',
+      endpoints: '',
+      priority: '',
+      audit_status: SqlManageAuditStatusEnum.being_audited
     }
   ],
   sql_manage_bad_num: 1,
