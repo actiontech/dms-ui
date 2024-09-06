@@ -72,17 +72,10 @@ const initReactI18n = () => {
   });
 };
 
-const getPreferredLanguages = () => {
-  if (navigator.languages && navigator.languages.length) {
-    return Array.from(navigator.languages);
-  }
-  return [navigator.language];
-};
-
 const t = (key: I18nKey, opts: TOptions = {}) => {
   return i18n.t(key, opts);
 };
 
-export { t, initReactI18n, getPreferredLanguages };
+export { t, initReactI18n };
 
 export default i18n;
