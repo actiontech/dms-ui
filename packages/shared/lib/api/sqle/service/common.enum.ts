@@ -300,6 +300,10 @@ export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
   'feishu' = 'feishu'
 }
 
+export enum SqlManageAuditStatusEnum {
+  'being_audited' = 'being_audited'
+}
+
 export enum SqlManageStatusEnum {
   'unhandled' = 'unhandled',
 
@@ -504,19 +508,19 @@ export enum pipelineNodeDetailTypeEnum {
   'release' = 'release'
 }
 
-export enum pipelineNodeToBeUpdatedAuditMethodEnum {
+export enum updatePipelineNodeAuditMethodEnum {
   'offline' = 'offline',
 
   'online' = 'online'
 }
 
-export enum pipelineNodeToBeUpdatedObjectTypeEnum {
+export enum updatePipelineNodeObjectTypeEnum {
   'sql' = 'sql',
 
   'mybatis' = 'mybatis'
 }
 
-export enum pipelineNodeToBeUpdatedTypeEnum {
+export enum updatePipelineNodeTypeEnum {
   'audit' = 'audit',
 
   'release' = 'release'

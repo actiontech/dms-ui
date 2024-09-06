@@ -41,4 +41,9 @@ describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
     const { baseElement } = customRender({});
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render auditing tag when isAuditing is truthy', async () => {
+    const { baseElement } = customRender({ isAuditing: true });
+    expect(baseElement).toMatchSnapshot();
+  });
 });

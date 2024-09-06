@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sqle/components/AuditResultMessage/ResultIconRender render auditing tag when isAuditing is truthy 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-txh9fw"
+    >
+      审核中
+    </span>
+  </div>
+</body>
+`;
+
 exports[`sqle/components/AuditResultMessage/ResultIconRender render icon when has diff icon 1`] = `
 <body>
   <div>
