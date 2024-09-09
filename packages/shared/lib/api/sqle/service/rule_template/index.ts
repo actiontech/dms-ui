@@ -19,6 +19,7 @@ import {
   IDeleteCustomRuleV1Return,
   IUpdateCustomRuleV1Params,
   IUpdateCustomRuleV1Return,
+  IGetRuleTemplateFileV1Params,
   IGetProjectRuleTemplateTipsV1Params,
   IGetProjectRuleTemplateTipsV1Return,
   IGetProjectRuleTemplateListV1Params,
@@ -146,6 +147,14 @@ class RuleTemplateService extends ServiceBase {
       paramsData,
       options
     );
+  }
+
+  public getRuleTemplateFileV1(
+    params: IGetRuleTemplateFileV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<any>('/v1/import_rule_template', paramsData, options);
   }
 
   public getProjectRuleTemplateTipsV1(
@@ -404,6 +413,10 @@ class RuleTemplateService extends ServiceBase {
     };
 
     const paramsData = new FormData();
+
+    if (params.file_type != undefined) {
+      paramsData.append('file_type', params.file_type as any);
+    }
 
     if (params.rule_template_file != undefined) {
       paramsData.append('rule_template_file', params.rule_template_file as any);
