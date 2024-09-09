@@ -97,7 +97,12 @@ export default {
   exportRuleTemplate: {
     button: '导出规则模板',
     exporting: '正在导出模版 "{{name}}"...',
-    exportSuccessTips: '导出模版"{{name}}"成功'
+    exportSuccessTips: '导出模版"{{name}}"成功',
+    modal: {
+      title: '导出规则模板',
+      submit: '导出',
+      exportFileType: '导出文件类型'
+    }
   },
 
   updateRuleTemplate: {

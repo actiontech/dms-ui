@@ -18,6 +18,7 @@ import EmitterKey from '../../../data/EmitterKey';
 import CloneRuleTemplate from '../CloneRuleTemplate';
 import CommonTable from './CommonTable';
 import { PlusOutlined, LoginBoxOutlined } from '@actiontech/icons';
+import ExportProjectRuleTemplate from '../ExportRuleTemplate';
 
 const RuleTemplateList = () => {
   const { t } = useTranslation();
@@ -102,6 +103,7 @@ const RuleTemplateList = () => {
         ]}
       />
       <CloneRuleTemplate />
+      <ExportProjectRuleTemplate />
     </>
   );
 };
