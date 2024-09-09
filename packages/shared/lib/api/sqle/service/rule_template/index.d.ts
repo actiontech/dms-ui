@@ -22,6 +22,13 @@ import {
   IGetRulesResV1
 } from '../common.d';
 
+import {
+  getRuleTemplateFileV1FileTypeEnum,
+  exportProjectRuleTemplateV1ExportTypeEnum,
+  importProjectRuleTemplateV1FileTypeEnum,
+  exportRuleTemplateV1ExportTypeEnum
+} from './index.enum';
+
 export interface IGetCustomRulesV1Params {
   filter_db_type?: string;
 
@@ -58,6 +65,12 @@ export interface IUpdateCustomRuleV1Params extends IUpdateCustomRuleReqV1 {
 }
 
 export interface IUpdateCustomRuleV1Return extends IBaseRes {}
+
+export interface IGetRuleTemplateFileV1Params {
+  instance_type: string;
+
+  file_type: getRuleTemplateFileV1FileTypeEnum;
+}
 
 export interface IGetProjectRuleTemplateTipsV1Params {
   project_name: string;
@@ -127,6 +140,8 @@ export interface IExportProjectRuleTemplateV1Params {
   project_name: string;
 
   rule_template_name: string;
+
+  export_type: exportProjectRuleTemplateV1ExportTypeEnum;
 }
 
 export interface IGetCustomRuleKnowledgeV1Params {
@@ -183,6 +198,8 @@ export interface ICreateRuleTemplateV1Params extends ICreateRuleTemplateReqV1 {}
 export interface ICreateRuleTemplateV1Return extends IBaseRes {}
 
 export interface IImportProjectRuleTemplateV1Params {
+  file_type: importProjectRuleTemplateV1FileTypeEnum;
+
   rule_template_file: any;
 }
 
@@ -216,6 +233,8 @@ export interface ICloneRuleTemplateV1Params extends ICloneRuleTemplateReqV1 {
 export interface ICloneRuleTemplateV1Return extends IBaseRes {}
 
 export interface IExportRuleTemplateV1Params {
+  export_type: exportRuleTemplateV1ExportTypeEnum;
+
   rule_template_name: string;
 }
 
