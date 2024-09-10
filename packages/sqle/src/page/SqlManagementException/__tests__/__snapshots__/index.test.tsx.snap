@@ -439,7 +439,7 @@ exports[`slqe/Whitelist/SqlManagementExceptionList should render sqlManagementEx
                       <td
                         class="ant-table-cell"
                       >
-                        字符串
+                        关键字
                       </td>
                       <td
                         class="ant-table-cell"

@@ -70,7 +70,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                       />
                     </span>
                     <span>
-                      字符串
+                      关键字
                     </span>
                   </label>
                   <label
@@ -327,7 +327,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                       />
                     </span>
                     <span>
-                      字符串
+                      关键字
                     </span>
                   </label>
                   <label
@@ -582,7 +582,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                       />
                     </span>
                     <span>
-                      字符串
+                      关键字
                     </span>
                   </label>
                   <label
@@ -837,7 +837,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                       />
                     </span>
                     <span>
-                      字符串
+                      关键字
                     </span>
                   </label>
                   <label
@@ -1092,7 +1092,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                       />
                     </span>
                     <span>
-                      字符串
+                      关键字
                     </span>
                   </label>
                   <label
@@ -1385,7 +1385,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                       />
                     </span>
                     <span>
-                      字符串
+                      关键字
                     </span>
                   </label>
                   <label

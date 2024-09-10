@@ -19,6 +19,7 @@ import sqlDEVRecord from '../../../testUtils/mockApi/sqlDEVRecord';
 import { sqlDEVRecordListMockData } from '../../../testUtils/mockApi/sqlDEVRecord/data';
 import user from '../../../testUtils/mockApi/user';
 import instance from '../../../testUtils/mockApi/instance';
+import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
 
 jest.mock('react-redux', () => {
   return {
@@ -51,6 +52,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy = sqlDEVRecord.getSqlDEVRecordList();
     getUserTipListSpy = user.getUserTipList();
     getInstanceTipListSpy = instance.getInstanceTipList();
+    mockUsePreferredLanguages();
     jest.useFakeTimers();
   });
 
@@ -220,5 +222,19 @@ describe('sqle/PluginAudit/List', () => {
       payload: { selectRow: { value: 'SELECT 1;' } },
       type: 'whitelist/updateSelectWhitelist'
     });
+  });
+
+  it('should hidden user book when current language is en', async () => {
+    mockUsePreferredLanguages({ preferredEnUS: true, preferredZhCN: false });
+
+    getSqlDEVRecordListSpy.mockClear();
+    getSqlDEVRecordListSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [] })
+    );
+    const { baseElement } = superRender(<PluginAuditList />);
+    expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.queryByText('用户手册')).not.toBeInTheDocument();
   });
 });
