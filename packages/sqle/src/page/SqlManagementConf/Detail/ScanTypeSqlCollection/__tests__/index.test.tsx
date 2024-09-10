@@ -153,4 +153,25 @@ describe('test ScanTypeSqlCollection', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(2);
   });
+
+  it('should stop polling request when sql audit status is not being_audited', async () => {
+    getInstanceAuditPlanSQLDataSpy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          rows: [
+            {
+              ...mockAuditPlanSQLData?.rows?.[0],
+              audit_results: ''
+            }
+          ]
+        }
+      });
+    });
+
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlanSQLDataSpy).not.toHaveBeenCalledTimes(2);
+  });
 });
