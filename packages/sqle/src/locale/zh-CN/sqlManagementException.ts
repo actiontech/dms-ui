@@ -13,7 +13,7 @@ export default {
   },
 
   matchType: {
-    sql: '字符串',
+    sql: '关键字',
     fingerPrint: 'SQL指纹',
     ip: 'IP',
     cidr: '网段',

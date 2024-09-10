@@ -22,7 +22,7 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
 
       <div className="workflow-steps-basic-info-item">
         <div className="workflow-steps-basic-info-item-label">
-          {t('创建人')}
+          {t('execWorkflow.detail.operator.baseInfo.createUser')}
         </div>
         <Space className="workflow-steps-basic-info-item-value" align="center">
           <AvatarCom size={20} name={createUserName} noTips />

@@ -36,7 +36,7 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByLabelText('字符串')).toBeChecked();
+    expect(screen.getByLabelText('关键字')).toBeChecked();
     expect(screen.getByLabelText('SQL语句')).toBeInTheDocument();
   });
 
@@ -44,7 +44,7 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
 
-    expect(screen.getByLabelText('字符串')).toBeChecked();
+    expect(screen.getByLabelText('关键字')).toBeChecked();
     expect(screen.getByLabelText('SQL语句')).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('SQL指纹'));

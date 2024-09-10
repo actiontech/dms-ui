@@ -2061,3 +2061,104 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
   </div>
 </body>
 `;
+
+exports[`sqle/PluginAudit/List should hidden user book when current language is en 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center css-mv7mes"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <h3
+          class="ant-typography css-dev-only-do-not-override-txh9fw"
+        >
+          暂未生成审核记录
+        </h3>
+      </div>
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <span
+          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+        >
+          通过查看IDE审核记录，支持复盘在IDE中审核的SQL，并获取相关统计信息
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="step-wrap"
+        >
+          <div
+            class="ant-steps ant-steps-horizontal css-dev-only-do-not-override-txh9fw ant-steps-label-horizontal"
+          >
+            <div
+              class="ant-steps-item ant-steps-item-wait ant-steps-item-active"
+            >
+              <div
+                class="ant-steps-item-container"
+              >
+                <div
+                  class="ant-steps-item-tail"
+                />
+                <div
+                  class="ant-steps-item-icon"
+                >
+                  <span
+                    class="ant-steps-icon"
+                  >
+                    1
+                  </span>
+                </div>
+                <div
+                  class="ant-steps-item-content"
+                >
+                  <div
+                    class="ant-steps-item-title"
+                  >
+                    使用IDE审核，获得审核结果
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-steps-item ant-steps-item-wait"
+            >
+              <div
+                class="ant-steps-item-container"
+              >
+                <div
+                  class="ant-steps-item-tail"
+                />
+                <div
+                  class="ant-steps-item-icon"
+                >
+                  <span
+                    class="ant-steps-icon"
+                  >
+                    2
+                  </span>
+                </div>
+                <div
+                  class="ant-steps-item-content"
+                >
+                  <div
+                    class="ant-steps-item-title"
+                  >
+                    平台实时生成使用记录
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

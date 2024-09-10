@@ -133,7 +133,7 @@ exports[`slqe/SqlManagementException/UpdateSqlManagementException render update 
                                 />
                               </span>
                               <span>
-                                字符串
+                                关键字
                               </span>
                             </label>
                             <label
@@ -524,7 +524,7 @@ exports[`slqe/SqlManagementException/UpdateSqlManagementException render update 
                                 />
                               </span>
                               <span>
-                                字符串
+                                关键字
                               </span>
                             </label>
                             <label
@@ -919,7 +919,7 @@ exports[`slqe/SqlManagementException/UpdateSqlManagementException render update 
                                 />
                               </span>
                               <span>
-                                字符串
+                                关键字
                               </span>
                             </label>
                             <label
@@ -1310,7 +1310,7 @@ exports[`slqe/SqlManagementException/UpdateSqlManagementException render update 
                                 />
                               </span>
                               <span>
-                                字符串
+                                关键字
                               </span>
                             </label>
                             <label
@@ -1756,7 +1756,7 @@ exports[`slqe/SqlManagementException/UpdateSqlManagementException render update 
                                 />
                               </span>
                               <span>
-                                字符串
+                                关键字
                               </span>
                             </label>
                             <label
@@ -2132,7 +2132,7 @@ exports[`slqe/SqlManagementException/UpdateSqlManagementException render update 
                                 />
                               </span>
                               <span>
-                                字符串
+                                关键字
                               </span>
                             </label>
                             <label
