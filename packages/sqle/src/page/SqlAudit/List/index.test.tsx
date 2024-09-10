@@ -217,4 +217,23 @@ describe('sqle/SqlAudit/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(2);
   });
+
+  it('render stop polling request when sql audit status is not auditing', async () => {
+    sqlAuditRecordsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            ...sqlAuditRecordMockData[0],
+            sql_audit_status: 'successfully'
+          }
+        ],
+        total_nums: 2
+      })
+    );
+    renderWithReduxAndTheme(customRender());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(sqlAuditRecordsSpy).not.toHaveBeenCalledTimes(2);
+  });
 });
