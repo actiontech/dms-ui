@@ -68,7 +68,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByLabelText('字符串')).toBeChecked();
+    expect(screen.getByLabelText('关键字')).toBeChecked();
     expect(screen.getByLabelText('描述')).toHaveValue(mackSelectRow.desc);
     expect(screen.getByLabelText('SQL语句')).toHaveValue(mackSelectRow.content);
     fireEvent.input(screen.getByLabelText('描述'), {
