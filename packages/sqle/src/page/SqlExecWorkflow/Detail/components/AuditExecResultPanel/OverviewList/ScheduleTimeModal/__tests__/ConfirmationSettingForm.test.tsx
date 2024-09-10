@@ -9,6 +9,7 @@ import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow
 import configuration from '../../../../../../../../testUtils/mockApi/configuration';
 import { superRender } from '../../../../../../../../testUtils/customRender';
 import ConfirmationSettingForm from '../components/ConfirmationSettingForm';
+import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
 
 describe('test ConfirmationSettingForm', () => {
   let getWechatAuditConfigSpy: jest.SpyInstance;
@@ -23,6 +24,7 @@ describe('test ConfirmationSettingForm', () => {
     getFeishuAuditConfigSpy = configuration.getFeishuAuditConfiguration();
     getScheduledTaskDefaultOptionSpy =
       execWorkflow.getScheduledTaskDefaultOption();
+    mockUsePreferredLanguages();
   });
   afterEach(() => {
     jest.clearAllMocks();
@@ -256,5 +258,31 @@ describe('test ConfirmationSettingForm', () => {
     expect(setSubmitButtonDisabled).toHaveBeenCalledWith(true);
 
     expect(getScheduledTaskDefaultOptionSpy).not.toHaveBeenCalled();
+  });
+
+  it('should match snapshot when current language is en', async () => {
+    mockUsePreferredLanguages({ preferredEnUS: true, preferredZhCN: false });
+
+    getWechatAuditConfigSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_wechat_notification_enabled: true
+        }
+      })
+    );
+
+    getFeishuAuditConfigSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_feishu_notification_enabled: true
+        }
+      })
+    );
+    const { container } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
   });
 });
