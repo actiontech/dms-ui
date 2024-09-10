@@ -11,6 +11,7 @@ import dmsSyncDataSource from './dmsSyncDataSource';
 import dmsMenu from './dmsMenu';
 import dmsAccount from './dmsAccount';
 import dmsDataExport from './dmsDataExport';
+import dataMaskRuleOverview from './dataMaskRuleOverview';
 import dmsGlobalDataSource from './dmsGlobalDataSource';
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -29,6 +30,7 @@ export default {
     dmsMenu,
     dmsAccount,
     dmsDataExport,
+    dataMaskRuleOverview,
     dmsGlobalDataSource
   }
 };
