@@ -7,6 +7,8 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../../../testUtils/mockApi/rule_template';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockAuditPlanSQLData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
 
 describe('test ScanTypeSqlCollection', () => {
   let getInstanceAuditPlanSQLMetaSpy: jest.SpyInstance;
@@ -129,5 +131,58 @@ describe('test ScanTypeSqlCollection', () => {
     fireEvent.click(getAllByTestId('trigger-open-report-drawer')[0]);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should polling request when sql audit status is being_audited', async () => {
+    getInstanceAuditPlanSQLDataSpy
+      .mockImplementationOnce(() => {
+        return createSpySuccessResponse({
+          data: {
+            rows: [
+              {
+                ...mockAuditPlanSQLData?.rows?.[0],
+                audit_results: 'being_audited'
+              }
+            ]
+          }
+        });
+      })
+      .mockImplementationOnce(() => {
+        return createSpySuccessResponse({
+          data: {
+            rows: [
+              {
+                ...mockAuditPlanSQLData?.rows?.[0],
+                audit_results: ''
+              }
+            ]
+          }
+        });
+      });
+
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('should stop polling request when sql audit status is not being_audited', async () => {
+    getInstanceAuditPlanSQLDataSpy.mockImplementation(() => {
+      return createSpySuccessResponse({
+        data: {
+          rows: [
+            {
+              ...mockAuditPlanSQLData?.rows?.[0],
+              audit_results: ''
+            }
+          ]
+        }
+      });
+    });
+
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
   });
 });

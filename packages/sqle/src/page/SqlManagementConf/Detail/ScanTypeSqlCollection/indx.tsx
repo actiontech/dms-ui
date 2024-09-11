@@ -43,6 +43,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { Link } from 'react-router-dom';
 
+const BEING_AUDITED = 'being_audited';
+
 const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   instanceAuditPlanId,
   auditPlanId,
@@ -63,6 +65,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<ScanTypeSqlTableDataSourceItem>();
   const [messageApi, messageContextHolder] = message.useMessage();
+
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
 
   const {
     tableChange,
@@ -164,7 +169,8 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     data: tableRows,
     loading: getTableRowLoading,
     refresh: refreshTableRows,
-    error: getTableRowError
+    error: getTableRowError,
+    cancel
   } = useRequest(
     () => {
       const params: IGetInstanceAuditPlanSQLDataV1Params = {
@@ -185,7 +191,17 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     },
     {
       refreshDeps: [pagination, tableFilterInfo, sortInfo],
-      ready: activeTabKey === auditPlanId
+      ready: activeTabKey === auditPlanId,
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onSuccess: (res) => {
+        if (res.data?.some((i) => i?.audit_results === BEING_AUDITED)) {
+          startPollRequest();
+        } else {
+          cancel();
+          finishPollRequest();
+        }
+      }
     }
   );
 
@@ -266,6 +282,14 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     };
   }, [username, auditPlanType]);
 
+  const loading = useMemo(
+    () =>
+      polling && !getFilterMetaListLoading
+        ? false
+        : getFilterMetaListLoading || getTableRowLoading,
+    [polling, getFilterMetaListLoading, getTableRowLoading]
+  );
+
   return (
     <ScanTypeSqlCollectionStyleWrapper>
       <TableToolbar setting={tableSetting}>
@@ -283,7 +307,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         rowKey="id"
         setting={tableSetting}
         errorMessage={getTableRowError && getErrorMessage(getTableRowError)}
-        loading={getFilterMetaListLoading || getTableRowLoading}
+        loading={loading}
         columns={sortableTableColumnFactory(tableMetas?.head ?? [], {
           columnClassName: (type) =>
             type === 'sql' ? 'ellipsis-column-large-width' : undefined,
@@ -291,7 +315,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             if (fieldName === 'audit_results') {
               let isAuditing = false;
               let results: IAuditResult[] = [];
-              if (text === 'being_audited') {
+              if (text === BEING_AUDITED) {
                 isAuditing = true;
               } else {
                 try {
@@ -329,7 +353,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
 
             if (type === 'sql') {
               let isAuditing = false;
-              if (record?.audit_results === 'being_audited') {
+              if (record?.audit_results === BEING_AUDITED) {
                 isAuditing = true;
               }
               return (
