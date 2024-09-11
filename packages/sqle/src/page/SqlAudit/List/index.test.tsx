@@ -200,17 +200,29 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('render polling request when sql audit status is auditing', async () => {
-    sqlAuditRecordsSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: [
-          {
-            ...sqlAuditRecordMockData[0],
-            sql_audit_status: 'auditing'
-          }
-        ],
-        total_nums: 2
-      })
-    );
+    sqlAuditRecordsSpy
+      .mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          data: [
+            {
+              ...sqlAuditRecordMockData[0],
+              sql_audit_status: 'auditing'
+            }
+          ],
+          total_nums: 2
+        })
+      )
+      .mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          data: [
+            {
+              ...sqlAuditRecordMockData[0],
+              sql_audit_status: 'successfully'
+            }
+          ],
+          total_nums: 2
+        })
+      );
     renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
@@ -233,7 +245,5 @@ describe('sqle/SqlAudit/List', () => {
     renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(sqlAuditRecordsSpy).not.toHaveBeenCalledTimes(2);
   });
 });

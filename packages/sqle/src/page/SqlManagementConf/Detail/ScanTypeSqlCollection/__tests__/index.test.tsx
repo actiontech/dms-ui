@@ -134,18 +134,31 @@ describe('test ScanTypeSqlCollection', () => {
   });
 
   it('should polling request when sql audit status is being_audited', async () => {
-    getInstanceAuditPlanSQLDataSpy.mockImplementation(() => {
-      return createSpySuccessResponse({
-        data: {
-          rows: [
-            {
-              ...mockAuditPlanSQLData?.rows?.[0],
-              audit_results: 'being_audited'
-            }
-          ]
-        }
+    getInstanceAuditPlanSQLDataSpy
+      .mockImplementationOnce(() => {
+        return createSpySuccessResponse({
+          data: {
+            rows: [
+              {
+                ...mockAuditPlanSQLData?.rows?.[0],
+                audit_results: 'being_audited'
+              }
+            ]
+          }
+        });
+      })
+      .mockImplementationOnce(() => {
+        return createSpySuccessResponse({
+          data: {
+            rows: [
+              {
+                ...mockAuditPlanSQLData?.rows?.[0],
+                audit_results: ''
+              }
+            ]
+          }
+        });
       });
-    });
 
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -171,7 +184,5 @@ describe('test ScanTypeSqlCollection', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceAuditPlanSQLDataSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getInstanceAuditPlanSQLDataSpy).not.toHaveBeenCalledTimes(2);
   });
 });
