@@ -52,6 +52,7 @@ import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import { SqlManagementTableStyleWrapper } from './style';
+import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -66,6 +67,9 @@ const SQLEEIndex = () => {
   );
 
   const { preferredEnUS } = usePreferredLanguages();
+
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
 
   const { setSelectData, setBatchSelectData, updateModalStatus } =
     useSqlManagementRedux();
@@ -121,7 +125,8 @@ const SQLEEIndex = () => {
     data: sqlList,
     loading: getListLoading,
     refresh,
-    error: getListError
+    error: getListError,
+    cancel
   } = useRequest(
     () => {
       const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
@@ -155,12 +160,26 @@ const SQLEEIndex = () => {
         tableFilterInfo,
         sortInfo
       ],
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
       onFinally: (params, data) => {
         setSQLNum({
           SQLTotalNum: data?.otherData?.sql_manage_total_num ?? 0,
           problemSQlNum: data?.otherData?.sql_manage_bad_num ?? 0,
           optimizedSQLNum: data?.otherData?.sql_manage_optimized_num ?? 0
         });
+
+        if (
+          data?.list?.some(
+            (item) =>
+              item?.audit_status === SqlManageAuditStatusEnum.being_audited
+          )
+        ) {
+          startPollRequest();
+        } else {
+          cancel();
+          finishPollRequest();
+        }
       }
     }
   );
@@ -384,8 +403,13 @@ const SQLEEIndex = () => {
       : defaultButton;
   };
 
+  const loading = useMemo(
+    () => (polling ? false : getListLoading),
+    [polling, getListLoading]
+  );
+
   return (
-    <Spin spinning={getListLoading} delay={300}>
+    <Spin spinning={loading} delay={300}>
       {messageContextHolder}
       <PageHeader
         title={t('sqlManagement.pageTitle')}
@@ -404,11 +428,11 @@ const SQLEEIndex = () => {
       <SQLStatistics
         data={SQLNum}
         errorMessage={getListError}
-        loading={getListLoading}
+        loading={loading}
       />
       {/* table  */}
       <TableToolbar
-        refreshButton={{ refresh, disabled: getListLoading }}
+        refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
         actions={getTableActions()}
         filterButton={{
@@ -427,7 +451,7 @@ const SQLEEIndex = () => {
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
-        disabled={getListLoading}
+        disabled={loading}
         filterCustomProps={filterCustomProps}
       />
       <SqlManagementTableStyleWrapper
