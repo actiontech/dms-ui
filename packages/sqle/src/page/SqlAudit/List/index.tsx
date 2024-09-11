@@ -31,6 +31,7 @@ import SqlAuditListColumn, {
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
 import { PlusOutlined } from '@actiontech/icons';
+import { useBoolean } from 'ahooks';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -38,6 +39,9 @@ const SqlAuditList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName, projectID, projectArchive } = useCurrentProject();
   const { username } = useCurrentUser();
+
+  const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
+    useBoolean();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -71,7 +75,8 @@ const SqlAuditList = () => {
   const {
     data: dataList,
     loading,
-    refresh
+    refresh,
+    cancel
   } = useRequest(
     () => {
       const params: IGetSQLAuditRecordsV1Params = {
@@ -94,7 +99,23 @@ const SqlAuditList = () => {
         pagination,
         filterStatus,
         filterDataFromUrl
-      ]
+      ],
+      pollingInterval: 1000,
+      pollingErrorRetryCount: 3,
+      onSuccess: (res) => {
+        if (
+          res.list?.some(
+            (i) =>
+              i.sql_audit_status ===
+              getSQLAuditRecordsV1FilterSqlAuditStatusEnum.auditing
+          )
+        ) {
+          startPollRequest();
+        } else {
+          cancel();
+          finishPollRequest();
+        }
+      }
     }
   );
 
@@ -156,6 +177,11 @@ const SqlAuditList = () => {
     });
   }, [projectName, updateInstanceList]);
 
+  const pageLoading = useMemo(
+    () => (polling ? false : loading),
+    [polling, loading]
+  );
+
   return (
     <>
       {messageContextHolder}
@@ -180,7 +206,7 @@ const SqlAuditList = () => {
       <div className="margin-top-60" />
       {/* table */}
       <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
+        refreshButton={{ refresh, disabled: pageLoading }}
         setting={tableSetting}
         filterButton={{
           filterButtonMeta,
@@ -193,7 +219,7 @@ const SqlAuditList = () => {
           },
           placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
         }}
-        loading={loading}
+        loading={pageLoading}
       >
         <SqlAuditStatusFilter
           status={filterStatus}
@@ -203,7 +229,7 @@ const SqlAuditList = () => {
       <TableFilterContainer
         filterContainerMeta={filterContainerMeta}
         updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
+        disabled={pageLoading}
         filterCustomProps={filterCustomProps}
       />
       <ActiontechTable
@@ -216,7 +242,7 @@ const SqlAuditList = () => {
           total: dataList?.total ?? 0,
           current: pagination.page_index
         }}
-        loading={loading}
+        loading={pageLoading}
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}

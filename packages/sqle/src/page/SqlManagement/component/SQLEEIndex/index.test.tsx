@@ -593,4 +593,40 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       payload: sqlManageListData.data[0]
     });
   });
+
+  it('render polling request when sql audit status is auditing', async () => {
+    const request = sqlManage.getSqlManageList();
+    request
+      .mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          data: [
+            {
+              ...sqlManageListData.data[sqlManageListData.data.length - 1]
+            }
+          ]
+        })
+      )
+      .mockImplementationOnce(() =>
+        createSpySuccessResponse({
+          data: [sqlManageListData.data[0]]
+        })
+      );
+    superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledTimes(2);
+  });
+
+  it('render stop polling request when sql audit status is auditing', async () => {
+    const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [sqlManageListData.data[0]]
+      })
+    );
+    superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledTimes(1);
+  });
 });
