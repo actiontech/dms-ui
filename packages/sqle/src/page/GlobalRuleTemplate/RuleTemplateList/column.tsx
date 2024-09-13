@@ -75,7 +75,7 @@ export const RuleTemplateActions = (
   onNavigateUpdateRuleTemplate: (templateName: string) => void,
   onDelete: (name: string) => void,
   openCloneRuleTemplateModal: (rowData: IRuleTemplateResV1) => void,
-  exportRuleTemplate: (name: string) => void,
+  openExportRuleTemplateModal: (rowData: IRuleTemplateResV1) => void,
   canOperate: boolean
 ): {
   buttons: ActiontechTableActionMeta<IRuleTemplateResV1>[];
@@ -119,8 +119,7 @@ export const RuleTemplateActions = (
       {
         key: 'export-rule-template',
         text: t('ruleTemplate.exportRuleTemplate.button'),
-        onClick: (record) =>
-          exportRuleTemplate(record?.rule_template_name ?? ''),
+        onClick: (record) => openExportRuleTemplateModal(record ?? {}),
         icon: <LogoutBoxFilled />
       }
     ]

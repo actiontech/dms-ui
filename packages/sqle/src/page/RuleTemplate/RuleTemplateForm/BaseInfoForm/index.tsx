@@ -5,7 +5,6 @@ import { Rule } from 'antd/es/form';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { RuleTemplateBaseInfoFormProps } from './index.type';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
-
 import {
   FormStyleWrapper,
   formItemLayout
@@ -107,7 +106,7 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
           })}
           allowClear
           loading={getDriverNameListLoading}
-          disabled={isUpdate}
+          disabled={isUpdate || props.mode === 'import'}
         >
           {generateDriverSelectOptions()}
         </BasicSelect>
