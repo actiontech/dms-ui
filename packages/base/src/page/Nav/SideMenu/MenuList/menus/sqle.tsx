@@ -19,7 +19,8 @@ import {
   BriefcaseFilled,
   PlanFilled,
   GearFilled,
-  PipelineOutlined
+  PipelineOutlined,
+  FileVersionOutlined
 } from '@actiontech/icons';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -192,6 +193,17 @@ const pipelineConfiguration: GenerateMenuItemType = (projectID) => ({
   structKey: 'pipeline-configuration'
 });
 
+const versionManagement: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/version-management`}>
+      {t('dmsMenu.versionManagement')}
+    </Link>
+  ),
+  icon: <FileVersionOutlined width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/version-management`,
+  structKey: 'version-management'
+});
+
 const sqleMenusCollection = [
   projectOverviewMenuItem,
   dashboardMenuItem,
@@ -208,7 +220,8 @@ const sqleMenusCollection = [
   sqlManagementConf,
   pushRuleConfiguration,
   sqlManagementException,
-  pipelineConfiguration
+  pipelineConfiguration,
+  versionManagement
 ];
 
 export default sqleMenusCollection;
