@@ -6,7 +6,7 @@ import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { Upload, Space, Spin } from 'antd';
+import { Space, Spin, Form, Radio } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   BasicButton,
@@ -21,6 +21,7 @@ import {
   formItemLayout
 } from '@actiontech/shared/lib/components/FormCom/style';
 import {
+  CustomLabelContent,
   FormItemBigTitle,
   FormItemLabel
 } from '@actiontech/shared/lib/components/FormCom';
@@ -31,6 +32,8 @@ import {
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
+import { exportProjectRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
+import FileUpload from './FileUpload';
 
 const ImportRuleTemplate = () => {
   const { t } = useTranslation();
@@ -56,13 +59,17 @@ const ImportRuleTemplate = () => {
     nextStep,
     resetAll,
     dbType,
-    messageContextHolder,
     createLoading,
     startCreate,
     finishCreate,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    uploadCheckStatus,
+    removeUploadFile,
+    uploadFileCustomRequest
   } = useImportRuleTemplateForm();
+
+  const fileType = Form.useWatch('fileType', selectFileForm);
 
   const submit = useCallback(() => {
     startCreate();
@@ -104,7 +111,6 @@ const ImportRuleTemplate = () => {
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
-      {messageContextHolder}
       <PageHeader
         fixed={step !== 1}
         title={
@@ -118,7 +124,10 @@ const ImportRuleTemplate = () => {
         extra={
           <Space size={12}>
             {!ruleTemplateFormVisibility && (
-              <BasicButton onClick={importFile} disabled={createLoading}>
+              <BasicButton
+                onClick={importFile}
+                disabled={!uploadCheckStatus.success}
+              >
                 {t('ruleTemplate.importRuleTemplate.submitText')}
               </BasicButton>
             )}
@@ -156,7 +165,6 @@ const ImportRuleTemplate = () => {
             <FormAreaBlockStyleWrapper>
               <FormStyleWrapper
                 form={selectFileForm}
-                onFinish={importFile}
                 colon={false}
                 labelAlign="left"
                 className="hasTopHeader"
@@ -170,8 +178,26 @@ const ImportRuleTemplate = () => {
                   <span>{t('ruleTemplate.importRuleTemplate.title')}</span>
                 </FormItemBigTitle>
                 <FormItemLabel
+                  rules={[{ required: true }]}
+                  initialValue={exportProjectRuleTemplateV1ExportTypeEnum.csv}
+                  name="fileType"
                   className="has-required-style"
-                  label={t('ruleTemplate.importRuleTemplate.selectFile')}
+                  label={t('ruleTemplate.importRuleTemplate.fileType')}
+                >
+                  <Radio.Group
+                    options={Object.values(
+                      exportProjectRuleTemplateV1ExportTypeEnum
+                    ).map((v) => v)}
+                  />
+                </FormItemLabel>
+                <FormItemLabel
+                  className="has-required-style has-label-tip"
+                  label={
+                    <CustomLabelContent
+                      title={t('ruleTemplate.importRuleTemplate.selectFile')}
+                      tips={t('ruleTemplate.importRuleTemplate.selectFileTips')}
+                    />
+                  }
                   name="ruleTemplateFile"
                   valuePropName="fileList"
                   getValueFromEvent={getFileFromUploadChangeEvent}
@@ -184,18 +210,13 @@ const ImportRuleTemplate = () => {
                     }
                   ]}
                 >
-                  <Upload
-                    beforeUpload={() => false}
+                  <FileUpload
+                    uploadCheckStatus={uploadCheckStatus}
+                    customRequest={uploadFileCustomRequest}
                     maxCount={1}
-                    onRemove={() => {
-                      selectFileForm.setFieldsValue({
-                        ruleTemplateFile: []
-                      });
-                    }}
-                    accept=".json"
-                  >
-                    <BasicButton>{t('common.upload')}</BasicButton>
-                  </Upload>
+                    onRemove={removeUploadFile}
+                    accept={`.${fileType}`}
+                  />
                 </FormItemLabel>
               </FormStyleWrapper>
             </FormAreaBlockStyleWrapper>

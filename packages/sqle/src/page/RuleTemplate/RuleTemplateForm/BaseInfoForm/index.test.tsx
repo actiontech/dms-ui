@@ -48,4 +48,21 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('should disabled dbType when form mode is import', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      Form.useForm<RuleTemplateBaseInfoFields>()
+    );
+    const { getByLabelText } = renderWithReduxAndTheme(
+      <BaseInfoForm
+        mode="import"
+        form={result.current[0]}
+        projectName={mockProjectInfo.projectName}
+        submitLoading={false}
+        submit={jest.fn()}
+      />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getByLabelText('数据库类型')).toBeDisabled();
+  });
 });
