@@ -87,17 +87,30 @@ export default {
     button: '导入规则模板',
     title: '导入审核规则模板',
     selectFile: '请选择导入文件',
+    selectFileTips:
+      '仅支持导入平台已有规则，您可以修改规则阈值，或删除不需要的规则',
     submitText: '导入',
     fileRequireTips: '当前未选择任何文件',
     successTitle: '导入审核规则模版成功',
     importNew: '再导入一个新的审核规则模版 >',
-    importingFile: '正在导入文件...'
+    importingFile: '正在导入文件...',
+    parseFileFailed:
+      '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入',
+    dbType: '数据源类型',
+    fileType: '文件类型',
+    downloadTemplate: '下载导入模板',
+    downloading: '正在下载模板文件...',
+    checkSuccess: '校验通过'
   },
 
   exportRuleTemplate: {
     button: '导出规则模板',
     exporting: '正在导出模版 "{{name}}"...',
-    exportSuccessTips: '导出模版"{{name}}"成功'
+    modal: {
+      title: '导出规则模板',
+      submit: '导出',
+      exportFileType: '导出文件类型'
+    }
   },
 
   updateRuleTemplate: {

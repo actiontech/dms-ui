@@ -14,11 +14,15 @@ import {
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import {
   ruleType,
-  ruleListData
+  ruleListData,
+  importRuleTemplateMockData
 } from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import 'blob-polyfill';
+import { AxiosResponse } from 'axios';
+import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -78,30 +82,34 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
 
   it('reset form values', async () => {
     const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
-    await act(async () => jest.advanceTimersByTime(100));
     expect(baseElement).toMatchSnapshot();
-    const file = new File([''], 'test.json');
+    expect(screen.getByText('导 入').closest('button')).toBeDisabled();
+    const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
       target: { files: [file] }
     });
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.mouseMove(getBySelector('.ant-upload-list-item'));
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(getBySelector('.ant-upload-list-item-action'));
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
-      target: { files: [file] }
-    });
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(screen.getByText('导 入'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('正在导入文件...')).toBeVisible();
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledWith(
+      {
+        file_type: 'csv',
+        rule_template_file: file
+      },
+      { responseType: 'blob' }
+    );
     await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
+
     expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('导 入').closest('button')).not.toBeDisabled();
+
+    fireEvent.click(screen.getByText('导 入'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(screen.getByTestId('base-form')).toBeVisible();
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
 
@@ -112,10 +120,6 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     expect(selectValue).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('重 置'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(getBySelector('#templateDesc')).not.toHaveValue();
-    expect(getBySelector('#templateName')).not.toHaveValue();
-    expect(selectValue).not.toBeInTheDocument();
 
     await act(async () => {
       fireEvent.click(screen.getByText('下一步'));
@@ -132,35 +136,28 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('import global rule template', async () => {
-    getAllRuleSpy.mockClear();
     getAllRuleSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [] })
     );
     const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
-    await act(async () => jest.advanceTimersByTime(100));
     const file = new File([''], 'test.json');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
       target: { files: [file] }
     });
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(screen.getByText('导 入'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('正在导入文件...')).toBeVisible();
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
-    expect(getDriversSpy).toHaveBeenCalledTimes(1);
-    expect(screen.getByTestId('base-form')).toBeVisible();
-    expect(screen.getByTestId('rule-list')).not.toBeVisible();
-
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('导 入'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByLabelText('数据库类型')).toBeDisabled();
     fireEvent.input(getBySelector('#templateName'), {
       target: { value: 'test1' }
     });
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
 
     fireEvent.click(screen.getByText('下一步'));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
@@ -217,6 +214,33 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     expect(screen.getByText('禁用全部规则').parentElement).not.toBeDisabled();
     fireEvent.click(screen.getByText('提 交'));
     expect(createRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(createRuleTemplateSpy).toHaveBeenCalledWith({
+      db_type: 'MySQL',
+      desc: '',
+      rule_list: [
+        {
+          level: 'error',
+          name: 'all_check_prepare_statement_placeholders',
+          params: [
+            {
+              key: 'first_key',
+              value: '100'
+            }
+          ]
+        },
+        {
+          level: 'error',
+          name: 'test_name',
+          params: [
+            {
+              key: 'first_key',
+              value: '100'
+            }
+          ]
+        }
+      ],
+      rule_template_name: 'test1'
+    });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
     expect(screen.getByText('导入审核规则模版成功')).toBeInTheDocument();
@@ -226,24 +250,24 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
 
   it('rule list action', async () => {
     const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
-    await act(async () => jest.advanceTimersByTime(100));
     const file = new File([''], 'test.json');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
       target: { files: [file] }
     });
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(screen.getByText('导 入'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('正在导入文件...')).toBeVisible();
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('导 入'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByLabelText('数据库类型')).toBeDisabled();
     fireEvent.input(getBySelector('#templateName'), {
       target: { value: 'test1' }
     });
-    await act(async () => jest.advanceTimersByTime(100));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(screen.getByText('下一步'));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
     fireEvent.click(screen.getByText('上一步'));
@@ -299,5 +323,81 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     expect(createRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
+  });
+
+  it('render check api return csv file', async () => {
+    importProjectRuleTemplateSpy.mockClear();
+    importProjectRuleTemplateSpy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {
+              'content-disposition':
+                'attachment; filename=import_rule_template_problems.csv'
+            },
+            config: {},
+            statusText: '',
+            data: new Blob(['text'])
+          });
+        }, 3000);
+      });
+    });
+
+    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    await act(async () => jest.advanceTimersByTime(300));
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(
+      screen.getByText(
+        '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入'
+      )
+    ).toBeInTheDocument();
+  });
+
+  it('render upload file error', async () => {
+    importProjectRuleTemplateSpy.mockClear();
+    importProjectRuleTemplateSpy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(
+              [
+                JSON.stringify({
+                  code: 1,
+                  message: 'error message',
+                  data: importRuleTemplateMockData
+                })
+              ],
+              {
+                type: MIMETypeEnum.Application_Json
+              }
+            )
+          });
+        }, 3000);
+      });
+    });
+
+    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    await act(async () => jest.advanceTimersByTime(300));
+    const file = new File([''], 'test.csv');
+    fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('test.csv')).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('error message')).toBeInTheDocument();
   });
 });
