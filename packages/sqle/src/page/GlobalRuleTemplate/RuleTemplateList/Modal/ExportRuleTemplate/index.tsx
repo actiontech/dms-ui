@@ -9,7 +9,6 @@ import { useBoolean } from 'ahooks';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { updateGlobalRuleTemplateListModalStatus } from '../../../../../store/globalRuleTemplate';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ExportRuleTemplate from '../../../ExportRuleTemplate';
 import { useCallback } from 'react';
 
@@ -34,7 +33,7 @@ const ExportRuleTemplateModal: React.FC = () => {
     IRuleTemplateResV1 | null
   >((state) => state.globalRuleTemplate.selectGlobalRuleTemplate);
 
-  const onClose = () => {
+  const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
       updateGlobalRuleTemplateListModalStatus({
@@ -42,7 +41,7 @@ const ExportRuleTemplateModal: React.FC = () => {
         status: false
       })
     );
-  };
+  }, [dispatch, form]);
 
   const onSubmit = useCallback(
     async (values: ExportRuleTemplateFormFields) => {
@@ -64,14 +63,8 @@ const ExportRuleTemplateModal: React.FC = () => {
             responseType: 'blob'
           }
         )
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(
-              t('ruleTemplate.exportRuleTemplate.exportSuccessTips', {
-                name: templateName
-              })
-            );
-          }
+        .then(() => {
+          onClose();
         })
         .finally(() => {
           hideLoading();
@@ -81,6 +74,7 @@ const ExportRuleTemplateModal: React.FC = () => {
     [
       currentRuleTemplate?.rule_template_name,
       messageApi,
+      onClose,
       requestFinished,
       startRequest,
       t

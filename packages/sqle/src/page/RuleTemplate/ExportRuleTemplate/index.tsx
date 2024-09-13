@@ -9,7 +9,6 @@ import { exportProjectRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/li
 import { useDispatch, useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import { ModalName } from '../../../data/ModalName';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { updateRuleTemplateListModalStatus } from '../../../store/ruleTemplate';
 import { useBoolean } from 'ahooks';
 
@@ -27,7 +26,7 @@ const ExportProjectRuleTemplate: React.FC = () => {
     open: state.ruleTemplate.modalStatus[ModalName.Export_Rule_Template]
   }));
 
-  const onClose = () => {
+  const onClose = useCallback(() => {
     form.resetFields();
     dispatch(
       updateRuleTemplateListModalStatus({
@@ -35,7 +34,7 @@ const ExportProjectRuleTemplate: React.FC = () => {
         status: false
       })
     );
-  };
+  }, [dispatch, form]);
 
   const obSubmit = useCallback(
     (values: ExportRuleTemplateFormFields) => {
@@ -58,14 +57,8 @@ const ExportProjectRuleTemplate: React.FC = () => {
             responseType: 'blob'
           }
         )
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(
-              t('ruleTemplate.exportRuleTemplate.exportSuccessTips', {
-                name: templateName
-              })
-            );
-          }
+        .then(() => {
+          onClose();
         })
         .finally(() => {
           hideLoading();
@@ -75,6 +68,7 @@ const ExportProjectRuleTemplate: React.FC = () => {
     [
       currentRuleTemplate?.rule_template_name,
       messageApi,
+      onClose,
       projectName,
       requestFinished,
       startRequest,

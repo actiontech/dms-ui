@@ -1,7 +1,7 @@
-import { BasicButton, BasicModal, ToggleTokens } from '@actiontech/shared';
+import { BasicButton, BasicModal } from '@actiontech/shared';
 import { ExportRuleTemplateProps } from './index.type';
 import { useTranslation } from 'react-i18next';
-import { Form } from 'antd';
+import { Form, Radio } from 'antd';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { exportRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 
@@ -18,7 +18,7 @@ const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({
       size="small"
       title={t('ruleTemplate.exportRuleTemplate.modal.title')}
       open={open}
-      closable={false}
+      onCancel={onClose}
       footer={
         <>
           <BasicButton disabled={submitPending} onClick={onClose}>
@@ -45,8 +45,7 @@ const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({
           name="exportFileType"
           label={t('ruleTemplate.exportRuleTemplate.modal.exportFileType')}
         >
-          <ToggleTokens
-            size={12}
+          <Radio.Group
             options={Object.values(exportRuleTemplateV1ExportTypeEnum).map(
               (v) => ({ label: v, value: v })
             )}
