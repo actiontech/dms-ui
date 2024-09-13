@@ -17,6 +17,8 @@ import {
   customRuleMockData,
   importRuleTemplateMockData
 } from './data';
+import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
+import { AxiosResponse } from 'axios';
 
 class MockRuleTemplateApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -48,6 +50,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.importProjectRuleTemplate();
     this.createRuleTemplate();
     this.updateRuleTemplate();
+    this.getRuleTemplateFile();
   }
 
   public getRuleTemplateTips() {
@@ -264,11 +267,30 @@ class MockRuleTemplateApi implements MockSpyApy {
 
   public importProjectRuleTemplate() {
     const spy = jest.spyOn(rule_template, 'importProjectRuleTemplateV1');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: importRuleTemplateMockData
-      })
-    );
+    spy.mockImplementation(() => {
+      return new Promise<AxiosResponse<any>>((res) => {
+        setTimeout(() => {
+          res({
+            status: 200,
+            headers: {},
+            config: {},
+            statusText: '',
+            data: new Blob(
+              [
+                JSON.stringify({
+                  code: 0,
+                  message: 'ok',
+                  data: importRuleTemplateMockData
+                })
+              ],
+              {
+                type: MIMETypeEnum.Application_Json
+              }
+            )
+          });
+        }, 3000);
+      });
+    });
     return spy;
   }
 
@@ -280,6 +302,12 @@ class MockRuleTemplateApi implements MockSpyApy {
 
   public updateRuleTemplate() {
     const spy = jest.spyOn(rule_template, 'updateRuleTemplateV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getRuleTemplateFile() {
+    const spy = jest.spyOn(rule_template, 'getRuleTemplateFileV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
