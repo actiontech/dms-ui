@@ -19,7 +19,10 @@ const useUserInfo = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const userId = useSelector((state: IReduxState) => state.user.uid);
+  const { userId, bindProjects } = useSelector((state: IReduxState) => ({
+    userId: state.user.uid,
+    bindProjects: state.user.bindProjects
+  }));
 
   const clearUserInfo = useCallback(() => {
     dispatch(
@@ -73,7 +76,14 @@ const useUserInfo = () => {
 
           dispatch(
             updateBindProjects({
-              bindProjects: data?.user_bind_projects ?? []
+              bindProjects:
+                data?.user_bind_projects?.map((project) => ({
+                  ...project,
+                  archived:
+                    bindProjects?.find(
+                      (i) => i.project_id === project.project_id
+                    )?.archived ?? false
+                })) ?? []
             })
           );
 
