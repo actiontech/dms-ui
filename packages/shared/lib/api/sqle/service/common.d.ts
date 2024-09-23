@@ -35,6 +35,8 @@ import {
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
   SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
+  SqlVersionDetailResV1StatusEnum,
+  SqlVersionResV1StatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum,
@@ -48,6 +50,7 @@ import {
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
   WorkflowDetailResV1StatusEnum,
+  WorkflowDetailWithInstanceStatusEnum,
   WorkflowRecordResV1StatusEnum,
   WorkflowResV1ModeEnum,
   WorkflowStepResV1StateEnum,
@@ -62,6 +65,7 @@ import {
   updatePipelineNodeAuditMethodEnum,
   updatePipelineNodeObjectTypeEnum,
   updatePipelineNodeTypeEnum,
+  AssociatedVersionStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -80,8 +84,18 @@ export interface IBaseRes {
   message?: string;
 }
 
+export interface IAuditResultInfo {
+  message?: string;
+}
+
+export interface II18nAuditResultInfo {
+  [key: string]: any;
+}
+
 export interface IEnumsValue {
   desc?: string;
+
+  i18n_desc?: string;
 
   value?: string;
 }
@@ -90,6 +104,14 @@ export interface IAffectRows {
   count?: number;
 
   err_message?: string;
+}
+
+export interface IAssociateWorkflows {
+  desc?: string;
+
+  workflow_id?: string;
+
+  workflow_name?: string;
 }
 
 export interface IAuditFileResp {
@@ -137,7 +159,7 @@ export interface IAuditPlanParamReqV1 {
 export interface IAuditPlanParamResV1 {
   desc?: string;
 
-  enums_value?: IEnumsValue[];
+  enums_value?: IEnumsValueResV1[];
 
   key?: string;
 
@@ -283,6 +305,8 @@ export interface IAuditResDataV1 {
 export interface IAuditResult {
   db_type?: string;
 
+  i18n_audit_result_info?: II18nAuditResultInfo;
+
   level?: string;
 
   message?: string;
@@ -392,6 +416,10 @@ export interface IAuditedSQLCount {
   total_sql_count?: number;
 }
 
+export interface IBatchAssociateWorkflowsWithVersionReqV1 {
+  stage_Workflows?: IStageAndWorkflows[];
+}
+
 export interface IBatchCancelWorkflowsReqV1 {
   workflow_names?: string[];
 }
@@ -404,12 +432,20 @@ export interface IBatchCompleteWorkflowsReqV1 {
   workflow_names?: string[];
 }
 
+export interface IBatchExecuteTasksOnWorkflowReqV1 {
+  workflow_ids?: string[];
+}
+
 export interface IBatchGetInstanceConnectionsResV1 {
   code?: number;
 
   data?: IInstanceConnectionResV1[];
 
   message?: string;
+}
+
+export interface IBatchReleaseWorkflowReqV1 {
+  release_workflows?: IReleaseWorkflows[];
 }
 
 export interface IBatchUpdateSqlManageReq {
@@ -604,6 +640,28 @@ export interface ICreateSQLAuditRecordResV1 {
   message?: string;
 }
 
+export interface ICreateSqlVersionReqV1 {
+  create_sql_version_stage?: ICreateSqlVersionStage[];
+
+  desc?: string;
+
+  version?: string;
+}
+
+export interface ICreateSqlVersionStage {
+  create_stages_instance_dep?: ICreateStagesInstanceDep[];
+
+  name?: string;
+
+  stage_sequence?: number;
+}
+
+export interface ICreateStagesInstanceDep {
+  next_stage_instance_id?: string;
+
+  stage_instance_id?: string;
+}
+
 export interface ICreateWorkflowReqV1 {
   desc?: string;
 
@@ -650,6 +708,16 @@ export interface IDBTypeHealth {
 
 export interface IDashboardResV1 {
   workflow_statistics?: IWorkflowStatisticsResV1;
+}
+
+export interface IDepBetweenStageInstance {
+  next_stage_instance_id?: string;
+
+  next_stage_instance_name?: string;
+
+  stage_instance_id?: string;
+
+  stage_instance_name?: string;
 }
 
 export interface IDingTalkConfigurationV1 {
@@ -704,6 +772,12 @@ export interface IDirectGetSQLAnalysisResV1 {
 
 export interface IDriversResV1 {
   driver_name_list?: string[];
+}
+
+export interface IEnumsValueResV1 {
+  desc?: string;
+
+  value?: string;
 }
 
 export interface IExplainClassicResult {
@@ -998,6 +1072,14 @@ export interface IGetDashboardResV1 {
   code?: number;
 
   data?: IDashboardResV1;
+
+  message?: string;
+}
+
+export interface IGetDepBetweenStageInstanceResV1 {
+  code?: number;
+
+  data?: IDepBetweenStageInstance[];
 
   message?: string;
 }
@@ -1432,6 +1514,24 @@ export interface IGetSqlManageSqlAnalysisResp {
   message?: string;
 }
 
+export interface IGetSqlVersionDetailResV1 {
+  code?: number;
+
+  data?: ISqlVersionDetailResV1;
+
+  message?: string;
+}
+
+export interface IGetSqlVersionListResV1 {
+  code?: number;
+
+  data?: ISqlVersionResV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetSystemVariablesResV1 {
   code?: number;
 
@@ -1624,6 +1724,14 @@ export interface IGetWorkflowsResV1 {
   total_nums?: number;
 }
 
+export interface IGetWorkflowsThatCanBeAssociatedToVersionResV1 {
+  code?: number;
+
+  data?: IAssociateWorkflows[];
+
+  message?: string;
+}
+
 export interface IHighPriorityCondition {
   desc?: string;
 
@@ -1812,6 +1920,10 @@ export interface IListTableBySchemaResV1 {
   message?: string;
 }
 
+export interface ILockSqlVersionReqV1 {
+  is_locked?: boolean;
+}
+
 export interface IMaintenanceTimeResV1 {
   maintenance_start_time?: ITimeResV1;
 
@@ -1868,6 +1980,12 @@ export interface IOperationUser {
 
 export interface IOperator {
   operator_enums_value?: IEnumsValue[];
+
+  operator_value?: string;
+}
+
+export interface IOperatorResV1 {
+  operator_enums_value?: IEnumsValueResV1[];
 
   operator_value?: string;
 }
@@ -2034,6 +2152,12 @@ export interface IRejectWorkflowReqV1 {
   reason?: string;
 }
 
+export interface IReleaseWorkflows {
+  target_release_instances?: ITargetReleaseInstance[];
+
+  workflow_id?: string;
+}
+
 export interface IReportPushConfigList {
   enabled?: boolean;
 
@@ -2050,6 +2174,12 @@ export interface IReportPushConfigList {
   trigger_type?: ReportPushConfigListTriggerTypeEnum;
 
   type?: string;
+}
+
+export interface IRetryExecWorkflowReqV1 {
+  task_ids?: number[];
+
+  workflow_ids?: string;
 }
 
 export interface IRewriteRule {
@@ -2374,6 +2504,50 @@ export interface ISqlManage {
   status?: SqlManageStatusEnum;
 }
 
+export interface ISqlVersionDetailResV1 {
+  desc?: string;
+
+  sql_version_id?: number;
+
+  sql_version_stage_detail?: ISqlVersionStageDetail[];
+
+  status?: SqlVersionDetailResV1StatusEnum;
+
+  version?: string;
+}
+
+export interface ISqlVersionResV1 {
+  created_at?: string;
+
+  desc?: string;
+
+  lock_time?: string;
+
+  status?: SqlVersionResV1StatusEnum;
+
+  version?: string;
+
+  version_id?: number;
+}
+
+export interface ISqlVersionStageDetail {
+  stage_id?: number;
+
+  stage_instances?: IVersionStageInstance[];
+
+  stage_name?: string;
+
+  stage_sequence?: number;
+
+  workflow_details?: IWorkflowDetailWithInstance[];
+}
+
+export interface IStageAndWorkflows {
+  sql_version_stage_id?: string;
+
+  workflow_id?: string;
+}
+
 export interface IStatisticAuditPlanResV1 {
   code?: number;
 
@@ -2454,6 +2628,16 @@ export interface ITableMetas {
   err_message?: string;
 
   table_meta_items?: ITableMeta[];
+}
+
+export interface ITargetReleaseInstance {
+  instance_id?: string;
+
+  instance_schema?: string;
+
+  target_instance_id?: string;
+
+  target_instance_schema?: string;
 }
 
 export interface ITestAuditPlanNotifyConfigResDataV1 {
@@ -2672,6 +2856,28 @@ export interface IUpdateSqlFileOrderV1Req {
   files_to_sort?: IFileToSort[];
 }
 
+export interface IUpdateSqlVersionReqV1 {
+  desc?: string;
+
+  update_sql_version_stage?: IUpdateSqlVersionStage[];
+
+  version?: string;
+}
+
+export interface IUpdateSqlVersionStage {
+  name?: string;
+
+  stage_sequence?: number;
+
+  update_stages_instance_dep?: IUpdateStagesInstanceDep[];
+}
+
+export interface IUpdateStagesInstanceDep {
+  next_stage_instance_id?: string;
+
+  stage_instance_id?: string;
+}
+
 export interface IUpdateSystemVariablesReqV1 {
   cb_operation_logs_expired_hours?: number;
 
@@ -2710,6 +2916,14 @@ export interface IUserTipResV1 {
   user_id?: string;
 
   user_name?: string;
+}
+
+export interface IVersionStageInstance {
+  instance_schema?: string;
+
+  instances_id?: string;
+
+  instances_name?: string;
 }
 
 export interface IWechatConfigurationV1 {
@@ -2777,9 +2991,23 @@ export interface IWorkflowDetailResV1 {
 
   project_name?: string;
 
+  sql_version_name?: string;
+
   status?: WorkflowDetailResV1StatusEnum;
 
   workflow_id?: string;
+
+  workflow_name?: string;
+}
+
+export interface IWorkflowDetailWithInstance {
+  desc?: string;
+
+  status?: WorkflowDetailWithInstanceStatusEnum;
+
+  workflow_id?: string;
+
+  workflow_instances?: IVersionStageInstance[];
 
   workflow_name?: string;
 }
@@ -3012,6 +3240,18 @@ export interface IUpdatePipelineNode {
   type?: updatePipelineNodeTypeEnum;
 }
 
+export interface IAssociatedVersionStageWorkflows {
+  sql_version_stage_id?: number;
+
+  stage_sequence?: number;
+
+  status?: AssociatedVersionStageWorkflowsStatusEnum;
+
+  workflow_id?: string;
+
+  workflow_name?: string;
+}
+
 export interface IAuditFileExecStatistic {
   exec_result_count?: IExecResultCount;
 
@@ -3150,6 +3390,8 @@ export interface IBatchCompleteWorkflowsReqV2 {
 
 export interface ICreateWorkflowReqV2 {
   desc?: string;
+
+  sql_version_id?: string;
 
   task_ids?: number[];
 
@@ -3423,6 +3665,8 @@ export interface IWorkflowRecordResV2 {
 }
 
 export interface IWorkflowResV2 {
+  associated_version_stage_workflows?: IAssociatedVersionStageWorkflows;
+
   create_time?: string;
 
   create_user_name?: string;
@@ -3436,6 +3680,8 @@ export interface IWorkflowResV2 {
   record?: IWorkflowRecordResV2;
 
   record_history_list?: IWorkflowRecordResV2[];
+
+  sql_version_name?: string;
 
   workflow_id?: string;
 

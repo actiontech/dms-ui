@@ -232,6 +232,16 @@ export enum HighPriorityConditionReqOperatorEnum {
   '<' = '<'
 }
 
+export enum HighPriorityConditionResV1TypeEnum {
+  'string' = 'string',
+
+  'int' = 'int',
+
+  'bool' = 'bool',
+
+  'password' = 'password'
+}
+
 export enum InstanceAuditPlanInfoActiveStatusEnum {
   'normal' = 'normal',
 
@@ -312,6 +322,18 @@ export enum SqlManageStatusEnum {
   'ignored' = 'ignored',
 
   'manual_audited' = 'manual_audited'
+}
+
+export enum SqlVersionDetailResV1StatusEnum {
+  'is_being_released' = 'is_being_released',
+
+  'locked' = 'locked'
+}
+
+export enum SqlVersionResV1StatusEnum {
+  'is_being_released' = 'is_being_released',
+
+  'locked' = 'locked'
 }
 
 export enum TestFeishuConfigurationReqV1AccountTypeEnum {
@@ -407,6 +429,22 @@ export enum WorkflowDetailResV1CurrentStepTypeEnum {
 }
 
 export enum WorkflowDetailResV1StatusEnum {
+  'wait_for_audit' = 'wait_for_audit',
+
+  'wait_for_execution' = 'wait_for_execution',
+
+  'rejected' = 'rejected',
+
+  'canceled' = 'canceled',
+
+  'exec_failed' = 'exec_failed',
+
+  'executing' = 'executing',
+
+  'finished' = 'finished'
+}
+
+export enum WorkflowDetailWithInstanceStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 
   'wait_for_execution' = 'wait_for_execution',
@@ -524,6 +562,22 @@ export enum updatePipelineNodeTypeEnum {
   'audit' = 'audit',
 
   'release' = 'release'
+}
+
+export enum AssociatedVersionStageWorkflowsStatusEnum {
+  'wait_for_audit' = 'wait_for_audit',
+
+  'wait_for_execution' = 'wait_for_execution',
+
+  'rejected' = 'rejected',
+
+  'canceled' = 'canceled',
+
+  'exec_failed' = 'exec_failed',
+
+  'executing' = 'executing',
+
+  'finished' = 'finished'
 }
 
 export enum AuditResDataV2AuditLevelEnum {
