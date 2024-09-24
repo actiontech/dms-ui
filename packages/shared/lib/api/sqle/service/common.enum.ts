@@ -460,6 +460,14 @@ export enum WorkflowDetailWithInstanceStatusEnum {
   'finished' = 'finished'
 }
 
+export enum WorkflowDetailWithInstanceWorkflowReleaseStatusEnum {
+  'wait_for_release' = 'wait_for_release',
+
+  'released' = 'released',
+
+  'not_need_release' = 'not_need_release'
+}
+
 export enum WorkflowRecordResV1StatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 

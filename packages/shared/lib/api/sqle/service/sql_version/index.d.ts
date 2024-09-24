@@ -4,12 +4,12 @@ import {
   IBaseRes,
   IGetSqlVersionDetailResV1,
   IUpdateSqlVersionReqV1,
-  IBatchAssociateWorkflowsWithVersionReqV1,
   IBatchExecuteTasksOnWorkflowReqV1,
   IBatchReleaseWorkflowReqV1,
   ILockSqlVersionReqV1,
   IRetryExecWorkflowReqV1,
   IGetWorkflowsThatCanBeAssociatedToVersionResV1,
+  IBatchAssociateWorkflowsWithVersionReqV1,
   IGetDepBetweenStageInstanceResV1
 } from '../common.d';
 
@@ -66,15 +66,6 @@ export interface IUpdateSqlVersionV1Params extends IUpdateSqlVersionReqV1 {
 
 export interface IUpdateSqlVersionV1Return extends IBaseRes {}
 
-export interface IBatchAssociateWorkflowsWithVersionV1Params
-  extends IBatchAssociateWorkflowsWithVersionReqV1 {
-  project_name: string;
-
-  sql_version_id: string;
-}
-
-export interface IBatchAssociateWorkflowsWithVersionV1Return extends IBaseRes {}
-
 export interface IBatchExecuteTasksOnWorkflowV1Params
   extends IBatchExecuteTasksOnWorkflowReqV1 {
   project_name: string;
@@ -119,6 +110,17 @@ export interface IGetWorkflowsThatCanBeAssociatedToVersionV1Params {
 
 export interface IGetWorkflowsThatCanBeAssociatedToVersionV1Return
   extends IGetWorkflowsThatCanBeAssociatedToVersionResV1 {}
+
+export interface IBatchAssociateWorkflowsWithVersionV1Params
+  extends IBatchAssociateWorkflowsWithVersionReqV1 {
+  project_name: string;
+
+  sql_version_id: string;
+
+  sql_version_stage_id: string;
+}
+
+export interface IBatchAssociateWorkflowsWithVersionV1Return extends IBaseRes {}
 
 export interface IGetDependenciesBetweenStageInstanceV1Params {
   project_name: string;

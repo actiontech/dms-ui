@@ -51,6 +51,7 @@ import {
   WorkflowDetailResV1CurrentStepTypeEnum,
   WorkflowDetailResV1StatusEnum,
   WorkflowDetailWithInstanceStatusEnum,
+  WorkflowDetailWithInstanceWorkflowReleaseStatusEnum,
   WorkflowRecordResV1StatusEnum,
   WorkflowResV1ModeEnum,
   WorkflowStepResV1StateEnum,
@@ -417,7 +418,7 @@ export interface IAuditedSQLCount {
 }
 
 export interface IBatchAssociateWorkflowsWithVersionReqV1 {
-  stage_Workflows?: IStageAndWorkflows[];
+  workflow_ids?: string[];
 }
 
 export interface IBatchCancelWorkflowsReqV1 {
@@ -2179,7 +2180,7 @@ export interface IReportPushConfigList {
 export interface IRetryExecWorkflowReqV1 {
   task_ids?: number[];
 
-  workflow_ids?: string;
+  workflow_id?: string;
 }
 
 export interface IRewriteRule {
@@ -2540,12 +2541,6 @@ export interface ISqlVersionStageDetail {
   stage_sequence?: number;
 
   workflow_details?: IWorkflowDetailWithInstance[];
-}
-
-export interface IStageAndWorkflows {
-  sql_version_stage_id?: string;
-
-  workflow_id?: string;
 }
 
 export interface IStatisticAuditPlanResV1 {
@@ -3005,11 +3000,17 @@ export interface IWorkflowDetailWithInstance {
 
   status?: WorkflowDetailWithInstanceStatusEnum;
 
+  workflow_exec_time?: string;
+
   workflow_id?: string;
 
   workflow_instances?: IVersionStageInstance[];
 
   workflow_name?: string;
+
+  workflow_release_status?: WorkflowDetailWithInstanceWorkflowReleaseStatusEnum;
+
+  workflow_sequence?: number;
 }
 
 export interface IWorkflowPassPercentV1 {
@@ -3391,7 +3392,7 @@ export interface IBatchCompleteWorkflowsReqV2 {
 export interface ICreateWorkflowReqV2 {
   desc?: string;
 
-  sql_version_id?: string;
+  sql_version_id?: number;
 
   task_ids?: number[];
 
