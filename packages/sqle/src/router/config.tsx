@@ -197,6 +197,8 @@ const PipelineConfigurationUpdate = React.lazy(
   () => import('../page/PipelineConfiguration/Update')
 );
 
+const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
+
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     key: 'projectOverview',
@@ -445,6 +447,17 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: 'update/:id',
         element: <PipelineConfigurationUpdate />,
         key: 'sqlOptimizationCreate'
+      }
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/version-management`,
+    key: 'versionManagement',
+    children: [
+      {
+        index: true,
+        element: <VersionManagement />,
+        key: 'VersionManagementList'
       }
     ]
   },

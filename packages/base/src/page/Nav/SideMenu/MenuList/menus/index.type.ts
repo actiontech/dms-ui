@@ -35,4 +35,5 @@ export type MenuStructTreeKey =
   | 'sqle-log'
   | 'sql-management-conf'
   | 'push-rule-configuration'
-  | 'pipeline-configuration';
+  | 'pipeline-configuration'
+  | 'version-management';
