@@ -17,8 +17,6 @@ import {
   IDeleteSqlVersionV1Return,
   IUpdateSqlVersionV1Params,
   IUpdateSqlVersionV1Return,
-  IBatchAssociateWorkflowsWithVersionV1Params,
-  IBatchAssociateWorkflowsWithVersionV1Return,
   IBatchExecuteTasksOnWorkflowV1Params,
   IBatchExecuteTasksOnWorkflowV1Return,
   IBatchReleaseWorkflowsV1Params,
@@ -29,6 +27,8 @@ import {
   IRetryExecWorkflowV1Return,
   IGetWorkflowsThatCanBeAssociatedToVersionV1Params,
   IGetWorkflowsThatCanBeAssociatedToVersionV1Return,
+  IBatchAssociateWorkflowsWithVersionV1Params,
+  IBatchAssociateWorkflowsWithVersionV1Return,
   IGetDependenciesBetweenStageInstanceV1Params,
   IGetDependenciesBetweenStageInstanceV1Return
 } from './index.d';
@@ -113,24 +113,6 @@ class SqlVersionService extends ServiceBase {
 
     return this.patch<IUpdateSqlVersionV1Return>(
       `/v1/projects/${project_name}/sql_versions/${sql_version_id}/`,
-      paramsData,
-      options
-    );
-  }
-
-  public batchAssociateWorkflowsWithVersionV1(
-    params: IBatchAssociateWorkflowsWithVersionV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const sql_version_id = paramsData.sql_version_id;
-    delete paramsData.sql_version_id;
-
-    return this.post<IBatchAssociateWorkflowsWithVersionV1Return>(
-      `/v1/projects/${project_name}/sql_versions/${sql_version_id}/associate_workflows`,
       paramsData,
       options
     );
@@ -223,6 +205,27 @@ class SqlVersionService extends ServiceBase {
     delete paramsData.sql_version_stage_id;
 
     return this.get<IGetWorkflowsThatCanBeAssociatedToVersionV1Return>(
+      `/v1/projects/${project_name}/sql_versions/${sql_version_id}/sql_version_stages/${sql_version_stage_id}/associate_workflows`,
+      paramsData,
+      options
+    );
+  }
+
+  public batchAssociateWorkflowsWithVersionV1(
+    params: IBatchAssociateWorkflowsWithVersionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const sql_version_id = paramsData.sql_version_id;
+    delete paramsData.sql_version_id;
+
+    const sql_version_stage_id = paramsData.sql_version_stage_id;
+    delete paramsData.sql_version_stage_id;
+
+    return this.post<IBatchAssociateWorkflowsWithVersionV1Return>(
       `/v1/projects/${project_name}/sql_versions/${sql_version_id}/sql_version_stages/${sql_version_stage_id}/associate_workflows`,
       paramsData,
       options
