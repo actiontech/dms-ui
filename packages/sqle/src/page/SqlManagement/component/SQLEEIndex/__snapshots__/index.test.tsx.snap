@@ -976,7 +976,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 350px;"
+                          style="width: 246px;"
                         />
                       </colgroup>
                       <tbody
@@ -2336,7 +2336,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 350px;"
+                          style="width: 246px;"
                         />
                       </colgroup>
                       <tbody
@@ -3108,7 +3108,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 350px;"
+                          style="width: 246px;"
                         />
                       </colgroup>
                       <tbody
