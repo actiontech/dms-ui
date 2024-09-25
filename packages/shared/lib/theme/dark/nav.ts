@@ -30,7 +30,8 @@ export const navTheme: NavTheme = {
     },
     content: {
       color: darkThemeUI.uiToken.colorText,
-      hoverBackgroundColor: darkThemeUI.uiToken.colorFillSecondary
+      hoverBackgroundColor: darkThemeUI.uiToken.colorFillSecondary,
+      disabledColor: darkThemeUI.uiToken.colorTextTertiary
     },
     footer: {
       text: {

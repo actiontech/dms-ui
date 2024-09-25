@@ -1,8 +1,9 @@
-import { SupportTheme } from '@actiontech/shared/lib/enum';
+import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
 import { VersionEnum } from './index.enum';
 
 export type UserMenuProps = {
   username: string;
+  language: SupportLanguage;
   theme: SupportTheme;
   updateTheme: (theme: SupportTheme) => void;
   isAdmin: boolean;

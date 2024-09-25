@@ -1,10 +1,10 @@
-import { Popover, Spin } from 'antd';
 import { CompanyNoticeIconStyleWrapper } from '../../style';
-import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import {
   ArrowRightCircleFilled,
   UserCircleFilled,
-  InfoCircleFilled
+  InfoCircleFilled,
+  LanguageFilled,
+  ArrowRightOutlined
 } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
@@ -13,9 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUserInfo } from '@actiontech/shared/lib/global';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-
-// #if [ee]
+import { ResponseCode, SupportLanguage } from '@actiontech/shared/lib/enum';
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../../store/nav';
 import { ModalName } from '../../../../../data/ModalName';
@@ -24,21 +22,34 @@ import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
 } from '@actiontech/shared/lib/enum';
-import { useRequest } from 'ahooks';
-// #endif
+import { useBoolean, useRequest } from 'ahooks';
+import { ContextMenuItem } from './ContextMenu/index.type';
+import ContextMenu from './ContextMenu';
+import User from '@actiontech/shared/lib/api/base/service/User';
+import { updateLanguage as _updateLanguage } from '../../../../../../../base/src/store/user';
+import { Radio } from 'antd';
 
-const UserNavigate: React.FC<{
+type Props = {
   username: string;
-  setVersionModalOpen: () => void;
-}> = ({ username, setVersionModalOpen }) => {
+  language: SupportLanguage;
+  onOpenVersionModal: () => void;
+};
+
+const UserNavigate: React.FC<Props> = ({
+  username,
+  language: currentLanguage,
+  onOpenVersionModal
+}) => {
   const { t } = useTranslation();
   const { clearUserInfo } = useUserInfo();
-  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const [logoutLoading, setLogoutLoading] = useState(false);
+  const dispatch = useDispatch();
+  const [logoutPending, { setFalse: logoutSucceed, setTrue: startLogout }] =
+    useBoolean(false);
+  const [open, setOpen] = useState(false);
 
   const logout = () => {
-    setLogoutLoading(true);
+    startLogout();
     Session.DelSession()
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -47,12 +58,121 @@ const UserNavigate: React.FC<{
         }
       })
       .finally(() => {
-        setLogoutLoading(false);
+        logoutSucceed();
       });
   };
 
+  const { run: updateLanguage, loading: updateLanguagePending } = useRequest(
+    (language: SupportLanguage) =>
+      User.UpdateCurrentUser({
+        current_user: {
+          language
+        }
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          dispatch(_updateLanguage({ language }));
+          window.location.reload();
+        }
+      }),
+    {
+      manual: true
+    }
+  );
+
+  const menus: ContextMenuItem[] = [
+    {
+      key: 'language',
+      icon: <LanguageFilled />,
+      keepOpenOnClick: true,
+      text: (
+        <ContextMenu
+          popoverProps={{
+            getPopupContainer: () =>
+              document.getElementById('change-language-trigger-node')!,
+            placement: 'right'
+          }}
+          items={[
+            {
+              key: 'znCN',
+              text: (
+                <Radio
+                  className="full-width-element"
+                  onClick={() => {
+                    if (currentLanguage !== SupportLanguage.zhCN) {
+                      updateLanguage(SupportLanguage.zhCN);
+                    }
+                  }}
+                  checked={currentLanguage === SupportLanguage.zhCN}
+                >
+                  {t('dmsMenu.userNavigate.language.zhCN')}
+                </Radio>
+              ),
+
+              disabled: updateLanguagePending
+            },
+            {
+              key: 'enUS',
+              text: (
+                <Radio
+                  className="full-width-element"
+                  onClick={() => {
+                    if (currentLanguage !== SupportLanguage.enUS) {
+                      updateLanguage(SupportLanguage.enUS);
+                    }
+                  }}
+                  checked={currentLanguage === SupportLanguage.enUS}
+                >
+                  {t('dmsMenu.userNavigate.language.enUS')}
+                </Radio>
+              ),
+
+              disabled: updateLanguagePending
+            }
+          ]}
+        >
+          <div id="change-language-trigger-node" className="flex-space-between">
+            <span>{t('dmsMenu.userNavigate.language.text')}</span>
+            <ArrowRightOutlined />
+          </div>
+        </ContextMenu>
+      )
+    },
+    {
+      key: 'account',
+      icon: <UserCircleFilled />,
+      text: t('dmsMenu.userNavigate.account'),
+      onClick: () => navigate('/account')
+    },
+    // #if [ee]
+    {
+      key: 'notice',
+      icon: <CompanyNoticeIconStyleWrapper />,
+      text: t('dmsMenu.userNavigate.notice'),
+      onClick: () =>
+        dispatch(
+          updateNavModalStatus({
+            modalName: ModalName.Company_Notice,
+            status: true
+          })
+        )
+    },
+    // #endif
+    {
+      key: 'viewVersion',
+      icon: <InfoCircleFilled />,
+      text: t('dmsMenu.userNavigate.viewVersion'),
+      onClick: () => onOpenVersionModal()
+    },
+    {
+      key: 'logout',
+      icon: <ArrowRightCircleFilled />,
+      text: t('dmsMenu.userNavigate.logout'),
+      onClick: () => logout(),
+      disabled: logoutPending
+    }
+  ];
+
   // #if [ee]
-  const dispatch = useDispatch();
   useRequest(
     () =>
       CompanyNotice.GetCompanyNotice().then((res) => {
@@ -77,82 +197,19 @@ const UserNavigate: React.FC<{
   // #endif
 
   return (
-    <Spin spinning={logoutLoading} delay={800}>
-      <Popover
-        open={open}
-        onOpenChange={setOpen}
-        trigger={['click']}
-        placement="topRight"
-        arrow={false}
-        content={
-          <PopoverInnerStyleWrapper>
-            <div className="header">{username}</div>
-            <div className="content">
-              <div
-                className="content-item"
-                onClick={() => {
-                  setOpen(false);
-                  navigate('/account');
-                }}
-              >
-                <UserCircleFilled />
-                <span className="content-item-text">
-                  {t('dmsMenu.userNavigate.account')}
-                </span>
-              </div>
-              {/* #if [ee] */}
-              <div
-                className="content-item"
-                onClick={() => {
-                  setOpen(false);
-                  dispatch(
-                    updateNavModalStatus({
-                      modalName: ModalName.Company_Notice,
-                      status: true
-                    })
-                  );
-                }}
-              >
-                <CompanyNoticeIconStyleWrapper />
-                <span className="content-item-text">
-                  {t('dmsMenu.userNavigate.notice')}
-                </span>
-              </div>
-              {/* #endif */}
-              <div
-                className="content-item"
-                onClick={() => {
-                  setVersionModalOpen();
-                  setOpen(false);
-                }}
-              >
-                <InfoCircleFilled />
-                <span className="content-item-text">
-                  {t('dmsMenu.userNavigate.viewVersion')}
-                </span>
-              </div>
-              <div
-                className="content-item"
-                onClick={() => {
-                  logout();
-                  setOpen(false);
-                }}
-              >
-                <ArrowRightCircleFilled />
-                <span className="content-item-text">
-                  {t('dmsMenu.userNavigate.logout')}
-                </span>
-              </div>
-            </div>
-          </PopoverInnerStyleWrapper>
-        }
-        overlayInnerStyle={{ padding: 0 }}
-      >
-        <AvatarStyleWrapper className="action-avatar">
-          {username?.[0]?.toUpperCase()}
-        </AvatarStyleWrapper>
-      </Popover>
-    </Spin>
+    <ContextMenu
+      popoverProps={{
+        open,
+        onOpenChange: setOpen,
+        placement: 'topRight'
+      }}
+      items={menus}
+      header={username}
+    >
+      <AvatarStyleWrapper className="action-avatar">
+        {username?.[0]?.toUpperCase()}
+      </AvatarStyleWrapper>
+    </ContextMenu>
   );
 };
 

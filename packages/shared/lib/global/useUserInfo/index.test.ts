@@ -52,7 +52,8 @@ describe('useUserInfo', () => {
     expect(result.current.getUserInfoLoading).toBeFalsy();
     await act(() => result.current.getUserInfo());
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockDispatch).toHaveBeenCalled();
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         role: 'admin',
@@ -60,6 +61,12 @@ describe('useUserInfo', () => {
       },
       type: 'user/updateUser'
     });
+
+    expect(mockDispatch).toHaveBeenCalledWith({
+      payload: { language: GetUserPayload.language },
+      type: 'user/updateLanguage'
+    });
+
     expect(mockDispatch).toHaveBeenCalledWith({
       payload: {
         bindProjects: GetUserPayload.user_bind_projects
