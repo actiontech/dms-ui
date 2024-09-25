@@ -1,6 +1,7 @@
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
+  SupportLanguage,
   SupportTheme,
   SystemRole
 } from '@actiontech/shared/lib/enum';
@@ -21,6 +22,7 @@ type UserReduxState = {
   managementPermissions: IUidWithName[];
   uid: string;
   useInfoFetched: boolean;
+  language: SupportLanguage;
 };
 
 const initialState: UserReduxState = {
@@ -34,7 +36,11 @@ const initialState: UserReduxState = {
   bindProjects: [],
   managementPermissions: [],
   uid: LocalStorageWrapper.getOrDefault(StorageKey.USER_UID, ''),
-  useInfoFetched: false
+  useInfoFetched: false,
+  language: LocalStorageWrapper.getOrDefault(
+    StorageKey.Language,
+    SupportLanguage.zhCN
+  ) as SupportLanguage
 };
 
 const user = createSlice({
@@ -56,6 +62,13 @@ const user = createSlice({
     ) => {
       state.theme = theme;
       LocalStorageWrapper.set(StorageKey.Theme, theme);
+    },
+    updateLanguage: (
+      state,
+      { payload: { language } }: PayloadAction<{ language: SupportLanguage }>
+    ) => {
+      state.language = language;
+      LocalStorageWrapper.set(StorageKey.Language, language);
     },
     updateToken: (
       state,
@@ -96,6 +109,7 @@ const user = createSlice({
 export const {
   updateUser,
   updateTheme,
+  updateLanguage,
   updateToken,
   updateBindProjects,
   updateManagementPermissions,

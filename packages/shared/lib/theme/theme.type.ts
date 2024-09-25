@@ -449,6 +449,7 @@ export type NavTheme = {
     content: {
       hoverBackgroundColor: string;
       color: string;
+      disabledColor: string;
     };
     footer: {
       text: {

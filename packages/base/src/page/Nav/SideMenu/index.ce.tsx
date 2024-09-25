@@ -18,6 +18,7 @@ const CESideMenu = () => {
     updateTheme,
     isAdmin,
     role,
+    language,
     isCertainProjectManager
   } = useCurrentUser();
 
@@ -37,6 +38,7 @@ const CESideMenu = () => {
       </div>
 
       <UserMenu
+        language={language}
         username={username}
         updateTheme={updateTheme}
         isAdmin={isAdmin}

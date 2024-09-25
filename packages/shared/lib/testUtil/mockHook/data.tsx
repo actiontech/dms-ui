@@ -36,6 +36,8 @@ export const mockCurrentUserReturn = {
   projectID: '1',
   projectName: 'default',
   theme: SupportTheme.LIGHT,
+  language: SupportLanguage.zhCN,
+  updateLanguage: jest.fn(),
   role: SystemRole.admin,
   updateTheme: jest.fn(),
   useInfoFetched: true,

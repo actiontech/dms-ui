@@ -1,8 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 import { IReduxState } from '../../../../base/src/store';
-import { SupportTheme, SystemRole, UserRolesType } from '../../enum';
-import { updateTheme as _updateTheme } from '../../../../base/src/store/user';
+import {
+  SupportLanguage,
+  SupportTheme,
+  SystemRole,
+  UserRolesType
+} from '../../enum';
+import {
+  updateTheme as _updateTheme,
+  updateLanguage as _updateLanguage
+} from '../../../../base/src/store/user';
 
 const useCurrentUser = () => {
   const dispatch = useDispatch();
@@ -13,7 +21,8 @@ const useCurrentUser = () => {
     username,
     theme,
     useInfoFetched,
-    uid
+    uid,
+    language
   } = useSelector((state: IReduxState) => {
     return {
       username: state.user.username,
@@ -22,7 +31,8 @@ const useCurrentUser = () => {
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
       useInfoFetched: state.user.useInfoFetched,
-      uid: state.user.uid
+      uid: state.user.uid,
+      language: state.user.language
     };
   });
 
@@ -37,6 +47,12 @@ const useCurrentUser = () => {
   const updateTheme = useCallback(
     (_theme: SupportTheme) => {
       dispatch(_updateTheme({ theme: _theme }));
+    },
+    [dispatch]
+  );
+  const updateLanguage = useCallback(
+    (_language: SupportLanguage) => {
+      dispatch(_updateLanguage({ language: _language }));
     },
     [dispatch]
   );
@@ -62,7 +78,9 @@ const useCurrentUser = () => {
     useInfoFetched,
     uid,
     isCertainProjectManager,
-    userRoles
+    userRoles,
+    language,
+    updateLanguage
   };
 };
 export default useCurrentUser;

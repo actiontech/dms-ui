@@ -1,7 +1,7 @@
 import useCurrentUser from '.';
 import { renderHook } from '@testing-library/react-hooks';
 import { useSelector } from 'react-redux';
-import { SupportTheme, SystemRole } from '../../enum';
+import { SupportLanguage, SupportTheme, SystemRole } from '../../enum';
 import { useDispatch } from 'react-redux';
 import { IUidWithName, IUserBindProject } from '../../api/base/service/common';
 
@@ -32,9 +32,10 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('hooks/useCurrentUser', () => {
+  const dispatchSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
-    (useDispatch as jest.Mock).mockImplementation(() => jest.fn());
+    (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -42,7 +43,7 @@ describe('hooks/useCurrentUser', () => {
     jest.clearAllTimers();
   });
 
-  test('should return true while role is admin', () => {
+  it('should return true while role is admin', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: { role: SystemRole.admin, bindProjects: mockBindProjects }
@@ -52,7 +53,7 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.isAdmin).toBeTruthy();
   });
 
-  test('should judge whether project manager based on bound project data and the current project name', () => {
+  it('should judge whether project manager based on bound project data and the current project name', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {
@@ -60,7 +61,8 @@ describe('hooks/useCurrentUser', () => {
           role: SystemRole.admin,
           bindProjects: mockBindProjects,
           managementPermissions: mockManagementPermissions,
-          theme: SupportTheme.LIGHT
+          theme: SupportTheme.LIGHT,
+          language: SupportLanguage.enUS
         }
       });
     });
@@ -72,6 +74,7 @@ describe('hooks/useCurrentUser', () => {
       mockManagementPermissions
     );
     expect(result.current.theme).toBe(SupportTheme.LIGHT);
+    expect(result.current.language).toBe(SupportLanguage.enUS);
     expect(result.current.role).toBe(SystemRole.admin);
     expect(result.current.isProjectManager('test')).toBeFalsy();
     expect(result.current.isProjectManager('unknown')).toBeFalsy();
@@ -83,7 +86,7 @@ describe('hooks/useCurrentUser', () => {
     });
   });
 
-  test('when current user not admin or certain project manager', () => {
+  it('when current user not admin or certain project manager', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
         user: {
@@ -108,6 +111,22 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.userRoles).toEqual({
       [SystemRole.admin]: false,
       [SystemRole.certainProjectManager]: false
+    });
+  });
+
+  it(`should update the user's language when the updateLanguage callback is called`, () => {
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        user: { role: SystemRole.admin, bindProjects: mockBindProjects }
+      });
+    });
+    const { result } = renderHook(() => useCurrentUser());
+
+    result.current.updateLanguage(SupportLanguage.zhCN);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      payload: { language: SupportLanguage.zhCN },
+      type: 'user/updateLanguage'
     });
   });
 });
