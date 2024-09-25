@@ -123,6 +123,13 @@ import { KeyFilled } from '@actiontech/icons';
 export default () => <KeyFilled width={32} height={32} />
 ```
 
+## LanguageFilled
+```jsx
+import { LanguageFilled } from '@actiontech/icons';
+
+export default () => <LanguageFilled width={32} height={32} />
+```
+
 ## LikeFilled
 ```jsx
 import { LikeFilled } from '@actiontech/icons';

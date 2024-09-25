@@ -15,6 +15,7 @@ export { default as FolderFilled } from './FolderFilled';
 export { default as GearFilled } from './GearFilled';
 export { default as HonourFilled } from './HonourFilled';
 export { default as KeyFilled } from './KeyFilled';
+export { default as LanguageFilled } from './LanguageFilled';
 export { default as LikeFilled } from './LikeFilled';
 export { default as ListLayoutFilled } from './ListLayoutFilled';
 export { default as LockFilled } from './LockFilled';
