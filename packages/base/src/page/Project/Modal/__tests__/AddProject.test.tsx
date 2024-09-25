@@ -10,7 +10,8 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -39,9 +40,9 @@ describe('test base/page/project/modal/add', () => {
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    mockUsePreferredLanguages({ preferredZhCN: true, preferredEnUS: false });
     addProjectSpy = project.addProject();
     emitSpy = jest.spyOn(EventEmitter, 'emit');
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 
@@ -176,7 +177,7 @@ describe('test base/page/project/modal/add', () => {
   });
 
   it('should match snapshot when getPreferredLanguages return "en-us"', async () => {
-    mockUsePreferredLanguages({ preferredZhCN: false, preferredEnUS: true });
+    mockUseCurrentUser({ language: SupportLanguage.enUS });
     const { baseElement } = superRender(<AddProject />);
 
     expect(baseElement).toMatchSnapshot();
