@@ -19,7 +19,7 @@ import sqlDEVRecord from '../../../testUtils/mockApi/sqlDEVRecord';
 import { sqlDEVRecordListMockData } from '../../../testUtils/mockApi/sqlDEVRecord/data';
 import user from '../../../testUtils/mockApi/user';
 import instance from '../../../testUtils/mockApi/instance';
-import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -52,7 +52,6 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy = sqlDEVRecord.getSqlDEVRecordList();
     getUserTipListSpy = user.getUserTipList();
     getInstanceTipListSpy = instance.getInstanceTipList();
-    mockUsePreferredLanguages();
     jest.useFakeTimers();
   });
 
@@ -225,7 +224,7 @@ describe('sqle/PluginAudit/List', () => {
   });
 
   it('should hidden user book when current language is en', async () => {
-    mockUsePreferredLanguages({ preferredEnUS: true, preferredZhCN: false });
+    mockUseCurrentUser({ language: SupportLanguage.enUS });
 
     getSqlDEVRecordListSpy.mockClear();
     getSqlDEVRecordListSpy.mockImplementation(() =>

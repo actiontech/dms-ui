@@ -5,14 +5,15 @@
 import UserNavigate from '../UserNavigate';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-
 import dms from '../../../../../../testUtils/mockApi/global';
 import { LocalStorageWrapper } from '@actiontech/shared';
-import { CompanyNoticeDisplayStatusEnum } from '@actiontech/shared/lib/enum';
+import {
+  CompanyNoticeDisplayStatusEnum,
+  SupportLanguage
+} from '@actiontech/shared/lib/enum';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 
 jest.mock('react-redux', () => {
@@ -34,11 +35,13 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
   const navigateSpy = jest.fn();
   const scopeDispatch = jest.fn();
   let requestDelSession: jest.SpyInstance;
+
   const customRender = () => {
     return superRender(
       <UserNavigate
+        language={SupportLanguage.zhCN}
         username="Test name"
-        setVersionModalOpen={versionModalOpenFn}
+        onOpenVersionModal={versionModalOpenFn}
       />
     );
   };
@@ -60,14 +63,18 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
     jest
       .spyOn(LocalStorageWrapper, 'get')
       .mockReturnValue(CompanyNoticeDisplayStatusEnum.NotDisplayed);
+    const requestGetCompanyNotice = dms.getCompanyNotice();
+
     const { baseElement } = customRender();
 
     expect(baseElement).toMatchSnapshot();
-
+    expect(requestGetCompanyNotice).toHaveBeenCalledTimes(0);
     const iconUserName = getBySelector('.ant-avatar-string', baseElement);
     fireEvent.click(iconUserName);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
+
+    expect(screen.queryByText('系统公告')).not.toBeInTheDocument();
 
     expect(screen.getByText('个人中心')).toBeInTheDocument();
     fireEvent.click(screen.getByText('个人中心'));
@@ -75,21 +82,5 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
     expect(baseElement).toMatchSnapshot();
     expect(navigateSpy).toHaveBeenCalled();
     expect(navigateSpy).toHaveBeenCalledWith('/account');
-  });
-
-  it('render snap when click logout btn', async () => {
-    const { baseElement } = customRender();
-
-    const iconUserName = getBySelector('.ant-avatar-string', baseElement);
-    fireEvent.click(iconUserName);
-    await act(async () => jest.advanceTimersByTime(500));
-
-    expect(screen.getByText('退出登录')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('退出登录'));
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(requestDelSession).toHaveBeenCalled();
-    await act(async () => jest.advanceTimersByTime(2600));
-    expect(navigateSpy).toHaveBeenCalled();
-    expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 });

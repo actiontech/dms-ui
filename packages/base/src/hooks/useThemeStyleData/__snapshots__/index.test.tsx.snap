@@ -548,6 +548,7 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
       "boxShadow": "0 3px 12px 0 rgba(51, 44, 31, 0.10)",
       "content": {
         "color": "#292C33",
+        "disabledColor": "#8a8f99",
         "hoverBackgroundColor": "#f2f1ef",
       },
       "footer": {

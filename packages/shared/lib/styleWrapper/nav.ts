@@ -277,6 +277,25 @@ export const PopoverInnerStyleWrapper = styled('div')`
 
       &-text {
         margin-left: 8px;
+        width: 100%;
+      }
+    }
+
+    &-item-disabled {
+      opacity: 0.5;
+      color: ${({ theme }) =>
+        theme.sharedTheme.nav.userNavigate.content.disabledColor};
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      .content-item-text {
+        color: inherit;
+      }
+
+      svg {
+        opacity: 0.5;
       }
     }
   }

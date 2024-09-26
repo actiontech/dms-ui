@@ -21,6 +21,7 @@ import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -110,11 +111,13 @@ export const SqlManagementRowAction = (
   operationPermission: boolean,
   openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
   onCreateWhitelist: (record?: ISqlManage) => void,
-  preferredEnUS: boolean
+  language: SupportLanguage
 ): ActiontechTableProps<ISqlManage>['actions'] => {
   const getWidth = () => {
     if (operationPermission) {
-      return preferredEnUS ? 350 : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
+      return language === SupportLanguage.enUS
+        ? 350
+        : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
     }
     return 110;
   };

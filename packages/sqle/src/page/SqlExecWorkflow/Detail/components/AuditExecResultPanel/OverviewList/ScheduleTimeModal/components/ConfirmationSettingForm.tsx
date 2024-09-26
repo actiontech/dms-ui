@@ -14,7 +14,8 @@ import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/Toggl
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ConfirmMethodFormItemLabelStyleWrapper } from './style';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { usePreferredLanguages } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
   enable,
@@ -30,7 +31,7 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
     { setFalse: getConfigFinish, setTrue: startGetConfig }
   ] = useBoolean(false);
 
-  const { preferredZhCN } = usePreferredLanguages();
+  const { language } = useCurrentUser();
 
   const { loading: getDefaultSelectorLoading, run: getDefaultSelector } =
     useRequest(
@@ -154,7 +155,11 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
           }
           name="confirmation_method"
           labelCol={{ span: 16 }}
-          wrapperCol={preferredZhCN ? { span: 6, push: 2 } : { span: 8 }}
+          wrapperCol={
+            language === SupportLanguage.zhCN
+              ? { span: 6, push: 2 }
+              : { span: 8 }
+          }
           rules={[
             {
               required: true,
