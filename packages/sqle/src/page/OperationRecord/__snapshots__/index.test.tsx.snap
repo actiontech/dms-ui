@@ -10,7 +10,7 @@ exports[`slqe/OperationRecord should render operation record list 1`] = `
         <div
           class="title"
         >
-          menu.operationRecord
+          SQLE操作记录
         </div>
         <div
           class="extra"

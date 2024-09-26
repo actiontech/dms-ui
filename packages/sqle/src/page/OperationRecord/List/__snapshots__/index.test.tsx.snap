@@ -10,7 +10,7 @@ exports[`sqle/OperationRecord/List render action when filter item show 1`] = `
         <div
           class="title"
         >
-          menu.operationRecord
+          SQLE操作记录
         </div>
         <div
           class="extra"
@@ -762,7 +762,7 @@ exports[`sqle/OperationRecord/List render operation record table when request re
         <div
           class="title"
         >
-          menu.operationRecord
+          SQLE操作记录
         </div>
         <div
           class="extra"
@@ -1328,7 +1328,7 @@ exports[`sqle/OperationRecord/List render table when request return error 1`] = 
         <div
           class="title"
         >
-          menu.operationRecord
+          SQLE操作记录
         </div>
         <div
           class="extra"
