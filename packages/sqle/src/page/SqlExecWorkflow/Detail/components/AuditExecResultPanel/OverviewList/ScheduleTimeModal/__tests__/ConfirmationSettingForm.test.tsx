@@ -9,7 +9,8 @@ import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow
 import configuration from '../../../../../../../../testUtils/mockApi/configuration';
 import { superRender } from '../../../../../../../../testUtils/customRender';
 import ConfirmationSettingForm from '../components/ConfirmationSettingForm';
-import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 describe('test ConfirmationSettingForm', () => {
   let getWechatAuditConfigSpy: jest.SpyInstance;
@@ -24,7 +25,7 @@ describe('test ConfirmationSettingForm', () => {
     getFeishuAuditConfigSpy = configuration.getFeishuAuditConfiguration();
     getScheduledTaskDefaultOptionSpy =
       execWorkflow.getScheduledTaskDefaultOption();
-    mockUsePreferredLanguages();
+    mockUseCurrentUser();
   });
   afterEach(() => {
     jest.clearAllMocks();
@@ -261,7 +262,7 @@ describe('test ConfirmationSettingForm', () => {
   });
 
   it('should match snapshot when current language is en', async () => {
-    mockUsePreferredLanguages({ preferredEnUS: true, preferredZhCN: false });
+    mockUseCurrentUser({ language: SupportLanguage.enUS });
 
     getWechatAuditConfigSpy.mockImplementation(() =>
       createSpySuccessResponse({

@@ -21,8 +21,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   const customRender = (isAdmin = false, isCertainProjectManager = false) => {
     return superRender(
       <GlobalSetting
-        updateTheme={jest.fn()}
-        theme={SupportTheme.LIGHT}
         isAdmin={isAdmin}
         isCertainProjectManager={isCertainProjectManager}
       />

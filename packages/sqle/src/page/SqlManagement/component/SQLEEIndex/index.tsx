@@ -18,8 +18,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
-  useCurrentUser,
-  usePreferredLanguages
+  useCurrentUser
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
@@ -59,14 +58,13 @@ const SQLEEIndex = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   // api
   const { projectID, projectName, projectArchive } = useCurrentProject();
-  const { isAdmin, username, isProjectManager, uid } = useCurrentUser();
+  const { isAdmin, username, isProjectManager, uid, language } =
+    useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
     GetSqlManageListV2FilterStatusEnum.unhandled
   );
-
-  const { preferredEnUS } = usePreferredLanguages();
 
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
     useBoolean();
@@ -232,7 +230,7 @@ const SQLEEIndex = () => {
       isAdmin || isProjectManager(projectName),
       onCreateSqlManagementException,
       onCreateWhitelist,
-      preferredEnUS
+      language
     );
   }, [
     isAdmin,
@@ -242,7 +240,7 @@ const SQLEEIndex = () => {
     projectName,
     onCreateSqlManagementException,
     onCreateWhitelist,
-    preferredEnUS
+    language
   ]);
 
   const actionPermission = useMemo(() => {

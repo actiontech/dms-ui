@@ -7,7 +7,6 @@ import {
 import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
 import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
 import { SupportLanguage } from '../../enum';
-import antd_zh_CN from 'antd/locale/zh_CN';
 
 export const mockCurrentUserReturn = {
   isAdmin: true,
@@ -36,6 +35,8 @@ export const mockCurrentUserReturn = {
   projectID: '1',
   projectName: 'default',
   theme: SupportTheme.LIGHT,
+  language: SupportLanguage.zhCN,
+  updateLanguage: jest.fn(),
   role: SystemRole.admin,
   updateTheme: jest.fn(),
   useInfoFetched: true,
@@ -150,12 +151,4 @@ export const mockUseUserOperationPermissionData = {
   loading: false,
   updateUserOperationPermission: jest.fn(),
   isHaveServicePermission: jest.fn()
-};
-
-export const mockUsePreferredLanguagesData = {
-  getPreferredLanguages: jest.fn(),
-  currentLanguage: SupportLanguage.zhCN,
-  antdLanguage: antd_zh_CN,
-  preferredEnUS: false,
-  preferredZhCN: true
 };

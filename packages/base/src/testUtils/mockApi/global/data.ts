@@ -6,6 +6,7 @@ import {
   IListDBService
 } from '@actiontech/shared/lib/api/base/service/common';
 import { GetUserAuthenticationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 export const UserInfo = {
   token: 'Dhsiwkow133jn',
@@ -18,6 +19,7 @@ export const GetUserPayload: IGetUser = {
   email: 'test@gamil.com',
   is_admin: true,
   name: 'test',
+  language: SupportLanguage.zhCN,
   uid: '300123',
   user_bind_projects: [
     {

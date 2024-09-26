@@ -31,7 +31,13 @@ export enum GetUserStatEnum {
 
   '被禁用' = '被禁用',
 
-  '未知' = '未知'
+  '未知' = '未知',
+
+  'Normal' = 'Normal',
+
+  'Disabled' = 'Disabled',
+
+  'Unknown' = 'Unknown'
 }
 
 export enum ListDataExportWorkflowStatusEnum {
@@ -75,7 +81,13 @@ export enum ListRoleStatEnum {
 
   '被禁用' = '被禁用',
 
-  '未知' = '未知'
+  '未知' = '未知',
+
+  'Normal' = 'Normal',
+
+  'Disabled' = 'Disabled',
+
+  'Unknown' = 'Unknown'
 }
 
 export enum ListUserAuthenticationTypeEnum {
@@ -93,7 +105,13 @@ export enum ListUserStatEnum {
 
   '被禁用' = '被禁用',
 
-  '未知' = '未知'
+  '未知' = '未知',
+
+  'Normal' = 'Normal',
+
+  'Disabled' = 'Disabled',
+
+  'Unknown' = 'Unknown'
 }
 
 export enum ListUserGroupStatEnum {
@@ -101,7 +119,13 @@ export enum ListUserGroupStatEnum {
 
   '被禁用' = '被禁用',
 
-  '未知' = '未知'
+  '未知' = '未知',
+
+  'Normal' = 'Normal',
+
+  'Disabled' = 'Disabled',
+
+  'Unknown' = 'Unknown'
 }
 
 export enum MemberRoleWithOpRangeOpRangeTypeEnum {
@@ -143,7 +167,9 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'create_optimization' = 'create_optimization',
 
-  'view_others_optimization' = 'view_others_optimization'
+  'view_others_optimization' = 'view_others_optimization',
+
+  'create_pipeline' = 'create_pipeline'
 }
 
 export enum OpPermissionItemRangeTypeEnum {

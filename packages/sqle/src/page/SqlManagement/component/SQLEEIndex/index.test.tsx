@@ -24,7 +24,7 @@ import {
   GetSqlManageListV2FilterPriorityEnum,
   exportSqlManageV1FilterPriorityEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -102,7 +102,21 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   });
 
   it('render table data when preferred language is zh_CN', async () => {
-    mockUsePreferredLanguages({ preferredZhCN: true });
+    const request = sqlManage.getSqlManageList();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({
+        ...sqlManageListData,
+        data: sqlManageListData.data
+      })
+    );
+    const { baseElement } = superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render table data when preferred language is en_US', async () => {
+    mockUseCurrentUser({ language: SupportLanguage.enUS });
     const request = sqlManage.getSqlManageList();
     request.mockImplementation(() =>
       createSpySuccessResponse({
