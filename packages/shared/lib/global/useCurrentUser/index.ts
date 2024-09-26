@@ -8,8 +8,8 @@ import {
   UserRolesType
 } from '../../enum';
 import {
-  updateTheme as _updateTheme,
-  updateLanguage as _updateLanguage
+  updateTheme as updateReduxTheme,
+  updateLanguage as updateReduxLanguage
 } from '../../../../base/src/store/user';
 
 const useCurrentUser = () => {
@@ -45,14 +45,14 @@ const useCurrentUser = () => {
     [bindProjects]
   );
   const updateTheme = useCallback(
-    (_theme: SupportTheme) => {
-      dispatch(_updateTheme({ theme: _theme }));
+    (selectedTheme: SupportTheme) => {
+      dispatch(updateReduxTheme({ theme: selectedTheme }));
     },
     [dispatch]
   );
   const updateLanguage = useCallback(
-    (_language: SupportLanguage) => {
-      dispatch(_updateLanguage({ language: _language }));
+    (selectedLanguage: SupportLanguage) => {
+      dispatch(updateReduxLanguage({ language: selectedLanguage }));
     },
     [dispatch]
   );
