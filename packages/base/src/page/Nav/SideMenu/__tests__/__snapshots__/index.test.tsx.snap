@@ -1132,24 +1132,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
       <div
         class="dms-layout-side-end"
       >
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
         >
-          <div
-            class="ant-spin-container"
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
           >
-            <span
-              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
-            >
-              <span
-                class="ant-avatar-string"
-                style="transform: scale(1) translateX(-50%);"
-              >
-                A
-              </span>
-            </span>
-          </div>
-        </div>
+            A
+          </span>
+        </span>
         <div
           class="global-system-icon-wrapper"
         >
@@ -2287,24 +2279,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
       <div
         class="dms-layout-side-end"
       >
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
         >
-          <div
-            class="ant-spin-container"
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
           >
-            <span
-              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
-            >
-              <span
-                class="ant-avatar-string"
-                style="transform: scale(1) translateX(-50%);"
-              >
-                A
-              </span>
-            </span>
-          </div>
-        </div>
+            A
+          </span>
+        </span>
         <div
           class="global-system-icon-wrapper"
         >
@@ -3442,24 +3426,16 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
       <div
         class="dms-layout-side-end"
       >
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
         >
-          <div
-            class="ant-spin-container"
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
           >
-            <span
-              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
-            >
-              <span
-                class="ant-avatar-string"
-                style="transform: scale(1) translateX(-50%);"
-              >
-                A
-              </span>
-            </span>
-          </div>
-        </div>
+            A
+          </span>
+        </span>
         <div
           class="global-system-icon-wrapper"
         >

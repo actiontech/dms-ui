@@ -9,9 +9,10 @@ import {
   updateToken,
   updateUser,
   updateUserInfoFetchStatus,
-  updateUserUid
+  updateUserUid,
+  updateLanguage
 } from '../../../../base/src/store/user';
-import { ResponseCode, SystemRole } from '../../enum';
+import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
 import User from '../../api/base/service/User';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../data/common';
 
@@ -68,6 +69,14 @@ const useUserInfo = () => {
             updateUser({
               username: data?.name ?? '',
               role: data?.is_admin ? SystemRole.admin : ''
+            })
+          );
+          dispatch(
+            updateLanguage({
+              language:
+                data?.language === SupportLanguage.enUS
+                  ? SupportLanguage.enUS
+                  : SupportLanguage.zhCN
             })
           );
 

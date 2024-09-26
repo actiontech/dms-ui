@@ -5,12 +5,14 @@ import reducers, {
   updateUserUid,
   updateUserInfoFetchStatus,
   updateBindProjects,
-  updateManagementPermissions
+  updateManagementPermissions,
+  updateLanguage
 } from '.';
 import { IReduxState } from '..';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
+  SupportLanguage,
   SupportTheme,
   SystemRole
 } from '@actiontech/shared/lib/enum';
@@ -27,7 +29,8 @@ describe('store user', () => {
     bindProjects: [],
     managementPermissions: [],
     role: '',
-    useInfoFetched: false
+    useInfoFetched: false,
+    language: SupportLanguage.zhCN
   };
 
   it('should update token when dispatch updateToken action', () => {
@@ -43,6 +46,7 @@ describe('store user', () => {
       uid: '',
       token: 'abcd1234',
       theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
       bindProjects: [],
       managementPermissions: [],
       role: '',
@@ -63,6 +67,28 @@ describe('store user', () => {
       uid: '',
       token: '',
       theme: SupportTheme.DARK,
+      language: SupportLanguage.zhCN,
+      bindProjects: [],
+      managementPermissions: [],
+      role: '',
+      useInfoFetched: false
+    });
+  });
+
+  it('should update language when dispatch updateLanguage action', () => {
+    const newState = reducers(
+      state,
+      updateLanguage({
+        language: SupportLanguage.enUS
+      })
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      username: '',
+      uid: '',
+      token: '',
+      theme: SupportTheme.LIGHT,
+      language: SupportLanguage.enUS,
       bindProjects: [],
       managementPermissions: [],
       role: '',
@@ -84,6 +110,7 @@ describe('store user', () => {
       uid: '',
       token: '',
       theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
@@ -104,6 +131,7 @@ describe('store user', () => {
       uid: '100234',
       token: '',
       theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
       bindProjects: [],
       managementPermissions: [],
       role: '',
@@ -119,6 +147,7 @@ describe('store user', () => {
       uid: '',
       token: '',
       theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
       bindProjects: [],
       managementPermissions: [],
       role: '',
@@ -147,6 +176,7 @@ describe('store user', () => {
       uid: '',
       token: '',
       theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
       bindProjects: mockBindProjects,
       managementPermissions: [],
       role: '',
@@ -168,6 +198,7 @@ describe('store user', () => {
       uid: '',
       token: '',
       theme: SupportTheme.LIGHT,
+      language: SupportLanguage.zhCN,
       bindProjects: [],
       managementPermissions: mockManagementPermissions,
       role: '',

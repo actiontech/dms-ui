@@ -2,16 +2,13 @@ import UserNavigate from './components/UserNavigate';
 import { useBoolean } from 'ahooks';
 import GlobalSetting from './components/GlobalSetting';
 import { UserMenuProps } from './index.type';
-// #if [ee]
 import CompanyNoticeModal from './Modal/CompanyNoticeModal';
-// #endif
 import VersionModal from './Modal/VersionModal';
 
 const UserMenu: React.FC<UserMenuProps> = ({
+  language,
   username,
-  updateTheme,
   isAdmin,
-  theme,
   isCertainProjectManager
 }) => {
   const [
@@ -23,12 +20,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
     <>
       <div className="dms-layout-side-end">
         <UserNavigate
+          language={language}
           username={username}
-          setVersionModalOpen={setVersionModalOpen}
+          onOpenVersionModal={setVersionModalOpen}
         />
         <GlobalSetting
-          theme={theme}
-          updateTheme={updateTheme}
           isAdmin={isAdmin}
           isCertainProjectManager={isCertainProjectManager}
         />

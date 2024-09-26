@@ -799,6 +799,8 @@ export interface IGetUser {
 
   is_admin?: boolean;
 
+  language?: string;
+
   name?: string;
 
   op_permissions?: IUidWithName[];
@@ -1843,6 +1845,8 @@ export interface IUpdateCompanyNoticeReq {
 export interface IUpdateCurrentUser {
   email?: string;
 
+  language?: string;
+
   old_password?: string;
 
   password?: string;
@@ -1982,6 +1986,8 @@ export interface IUpdateUser {
   email?: string;
 
   is_disabled?: boolean;
+
+  language?: string;
 
   op_permission_uids?: string[];
 
