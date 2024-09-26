@@ -94,6 +94,38 @@ export const WorkflowStepsStyleWrapper = styled('div')`
   &.workflow-record-info-wrapper-hidden {
     display: none;
   }
+
+  .associated-workflows-wrap {
+    padding: 24px 0;
+
+    &-title {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 20px;
+      margin-bottom: 24px;
+    }
+
+    &-item {
+      width: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+      box-shadow: ${({ theme }) =>
+        theme.sqleTheme.execWorkflow.steps.boxShadow};
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+
+      &-label {
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      }
+    }
+
+    &-item-highlight {
+      background-color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
+    }
+  }
 `;
 
 export const WorkflowStepsItemStyleWrapper = styled('div')`

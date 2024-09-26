@@ -48,7 +48,9 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   workflowId,
   refreshWorkflow,
   refreshOverviewAction,
-  auditExecPanelTabChangeEvent
+  auditExecPanelTabChangeEvent,
+  backToDetailText,
+  onModifySqlSubmit
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -82,6 +84,11 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     }
 
     startSubmit();
+    if (onModifySqlSubmit) {
+      await onModifySqlSubmit(modifiedTasks.map((v) => v.task_id!));
+      submitFinish();
+      return;
+    }
     workflow
       .updateWorkflowV2({
         project_name: projectName,
@@ -90,10 +97,10 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          refreshWorkflow();
-          refreshOverviewAction();
+          refreshWorkflow?.();
+          refreshOverviewAction?.();
           backToDetail();
-          auditExecPanelTabChangeEvent(WORKFLOW_OVERVIEW_TAB_KEY);
+          auditExecPanelTabChangeEvent?.(WORKFLOW_OVERVIEW_TAB_KEY);
         }
       })
       .finally(() => {
@@ -195,7 +202,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         );
       } else {
         sqlStatementTabActiveKey.set(
-          currentTasks?.[0].task_id?.toString() ?? ''
+          currentTasks?.[0]?.task_id?.toString() ?? ''
         );
         currentTasks?.forEach((item) => {
           form.setFieldValue(
@@ -234,7 +241,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
               icon={<LeftArrowOutlined />}
               onClick={innerBackToDetail}
             >
-              {t('execWorkflow.detail.operator.backToDetail')}
+              {backToDetailText ||
+                t('execWorkflow.detail.operator.backToDetail')}
             </BasicButton>
           }
           extra={

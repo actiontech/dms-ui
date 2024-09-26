@@ -25,7 +25,7 @@ import {
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import { SOURCE_WORKFLOW_PATH_KEY } from '../../../../data/common';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum

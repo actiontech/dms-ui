@@ -43,9 +43,12 @@ describe('test useRenderDatabaseSelectionItems', () => {
         }
       })
     );
-    jest
-      .spyOn(useCreationMode, 'default')
-      .mockImplementation(() => ({ isCloneMode: false }));
+    jest.spyOn(useCreationMode, 'default').mockImplementation(() => ({
+      isCloneMode: false,
+      isAssociationVersionMode: false,
+      versionId: null,
+      versionName: null
+    }));
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -347,7 +350,12 @@ describe('test useRenderDatabaseSelectionItems', () => {
     const mockGetInstance = instance.getInstance();
     const mockGetSystemModuleStatus = system.getSystemModuleStatus();
     const spy = jest.spyOn(useCreationMode, 'default');
-    spy.mockImplementation(() => ({ isCloneMode: true }));
+    spy.mockImplementation(() => ({
+      isCloneMode: true,
+      isAssociationVersionMode: false,
+      versionId: null,
+      versionName: null
+    }));
     renderHook(() =>
       useRenderDatabaseSelectionItems({
         dbSourceInfoCollection: MockSharedStepDetail.dbSourceInfoCollection,

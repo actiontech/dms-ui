@@ -12,6 +12,42 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 
+export const statusIconMap: {
+  [key in WorkflowDetailResV1StatusEnum]: {
+    icon: ReactNode;
+    label: string;
+  };
+} = {
+  [WorkflowDetailResV1StatusEnum.canceled]: {
+    icon: <CloseHexagonOutlined />,
+    label: t('execWorkflow.common.workflowStatus.canceled')
+  },
+  [WorkflowDetailResV1StatusEnum.executing]: {
+    icon: <AdvancedHexagonFilled />,
+    label: t('execWorkflow.common.workflowStatus.executing')
+  },
+  [WorkflowDetailResV1StatusEnum.finished]: {
+    icon: <CheckHexagonOutlined />,
+    label: t('execWorkflow.common.workflowStatus.execSucceeded')
+  },
+  [WorkflowDetailResV1StatusEnum.exec_failed]: {
+    icon: <InfoHexagonOutlined />,
+    label: t('execWorkflow.common.workflowStatus.execFailed')
+  },
+  [WorkflowDetailResV1StatusEnum.wait_for_audit]: {
+    icon: <EmptyHexagonOutlined />,
+    label: t('execWorkflow.common.workflowStatus.waitForAudit')
+  },
+  [WorkflowDetailResV1StatusEnum.wait_for_execution]: {
+    icon: <PartialHexagonFilled />,
+    label: t('execWorkflow.common.workflowStatus.waitForExecution')
+  },
+  [WorkflowDetailResV1StatusEnum.rejected]: {
+    icon: <HexagonOutlined />,
+    label: t('execWorkflow.common.workflowStatus.reject')
+  }
+};
+
 const WorkflowStatusMap = () => {
   return new Map<WorkflowDetailResV1StatusEnum, ReactNode>([
     [
@@ -75,6 +111,8 @@ const WorkflowStatus: React.FC<{ status?: WorkflowDetailResV1StatusEnum }> = ({
       {status ? (
         <WorkflowStatusStyleWrapper>
           {WorkflowStatusMap().get(status)}
+          {/* {statusIconMap[status].icon}
+          <span>{statusIconMap[status].label}</span> */}
         </WorkflowStatusStyleWrapper>
       ) : (
         'unknown'

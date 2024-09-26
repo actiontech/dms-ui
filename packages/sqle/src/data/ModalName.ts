@@ -24,5 +24,13 @@ export enum ModalName {
   Create_Sql_Management_Exception = 'Create_Sql_Management_Exception',
   Update_Sql_Management_Exception = 'Update_Sql_Management_Exception',
 
-  Pipeline_Configuration_Detail_Modal = 'Pipeline_Configuration_Detail_Modal'
+  Pipeline_Configuration_Detail_Modal = 'Pipeline_Configuration_Detail_Modal',
+
+  Version_Management_Release_Modal = 'Version_Management_Release_Modal',
+
+  Version_Management_Execute_Modal = 'Version_Management_Execute_Modal',
+
+  Version_Management_Associate_Workflow_Modal = 'Version_Management_Associate_Workflow_Modal',
+
+  Version_Management_Offline_Execute_Modal = 'Version_Management_Offline_Execute_Modal'
 }
