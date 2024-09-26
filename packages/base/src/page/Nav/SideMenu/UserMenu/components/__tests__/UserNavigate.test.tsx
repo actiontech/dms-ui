@@ -12,6 +12,7 @@ import {
   SupportLanguage
 } from '@actiontech/shared/lib/enum';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
+import account from '../../../../../../testUtils/mockApi/account';
 
 jest.mock('react-redux', () => {
   return {
@@ -33,6 +34,8 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
   const scopeDispatch = jest.fn();
   let requestGetCompanyNotice: jest.SpyInstance;
   let requestDelSession: jest.SpyInstance;
+  let requestUpdateCurrentUser: jest.SpyInstance;
+
   const mockClearUserInfo = jest.fn();
   const customRender = () => {
     return superRender(
@@ -50,6 +53,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     jest.useFakeTimers();
     requestGetCompanyNotice = dms.getCompanyNotice();
     requestDelSession = dms.delSession();
+    requestUpdateCurrentUser = account.updateCurrentUser();
     mockUseUserInfo({ clearUserInfo: mockClearUserInfo });
   });
 
@@ -84,7 +88,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     fireEvent.click(screen.getByText('个人中心'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
-    expect(requestDelSession).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith('/account');
   });
 
@@ -113,7 +117,12 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
   });
 
-  it.only(`should update the user's language when a language menu item is clicked.`, async () => {
+  it(`should update the user's language when a language menu item is clicked.`, async () => {
+    const original = window.location;
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: { reload: jest.fn() }
+    });
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -127,5 +136,38 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     await act(async () => jest.advanceTimersByTime(500));
 
     expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('中文'));
+
+    expect(requestUpdateCurrentUser).toHaveBeenCalledTimes(0);
+
+    fireEvent.click(screen.getByText('英文'));
+    expect(requestUpdateCurrentUser).toHaveBeenCalledTimes(1);
+    expect(requestUpdateCurrentUser).toHaveBeenCalledWith({
+      current_user: { language: SupportLanguage.enUS }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(scopeDispatch).toHaveBeenCalledTimes(1);
+    expect(scopeDispatch).toHaveBeenCalledWith({
+      payload: { language: SupportLanguage.enUS },
+      type: 'user/updateLanguage'
+    });
+    expect(window.location.reload).toHaveBeenCalledTimes(1);
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: original
+    });
+  });
+
+  it('should call onOpenVersionModal when the "viewVersion" menu item is clicked', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.ant-avatar-string', baseElement));
+
+    await act(async () => jest.advanceTimersByTime(500));
+
+    fireEvent.click(screen.getByText('查看版本号'));
+    expect(versionModalOpenFn).toHaveBeenCalledTimes(1);
   });
 });
