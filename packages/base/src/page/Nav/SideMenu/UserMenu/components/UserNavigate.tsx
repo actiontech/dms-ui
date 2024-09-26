@@ -26,7 +26,7 @@ import { useBoolean, useRequest } from 'ahooks';
 import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
 import User from '@actiontech/shared/lib/api/base/service/User';
-import { updateLanguage as _updateLanguage } from '../../../../../../../base/src/store/user';
+import { updateLanguage as updateReduxLanguage } from '../../../../../../../base/src/store/user';
 import { Radio } from 'antd';
 
 type Props = {
@@ -70,7 +70,7 @@ const UserNavigate: React.FC<Props> = ({
         }
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          dispatch(_updateLanguage({ language }));
+          dispatch(updateReduxLanguage({ language }));
           window.location.reload();
         }
       }),
