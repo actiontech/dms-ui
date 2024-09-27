@@ -13,6 +13,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 jest.mock('react-router', () => {
   return {
@@ -30,6 +31,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    mockUseCurrentProject();
     useParamsMock.mockReturnValue({
       instanceAuditPlanId: '1',
       id: '2',
@@ -55,18 +57,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
   test('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
     const { container, baseElement } = renderWithReduxAndTheme(
-      <ManagementConfAnalyze />,
-      undefined,
-      {
-        user: {
-          bindProjects: [
-            {
-              project_id: '',
-              project_name: projectName
-            }
-          ]
-        } as any
-      }
+      <ManagementConfAnalyze />
     );
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
@@ -93,20 +84,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(
-      <ManagementConfAnalyze />,
-      undefined,
-      {
-        user: {
-          bindProjects: [
-            {
-              project_id: '',
-              project_name: projectName
-            }
-          ]
-        } as any
-      }
-    );
+    const { container } = renderWithReduxAndTheme(<ManagementConfAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -121,20 +99,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(
-      <ManagementConfAnalyze />,
-      undefined,
-      {
-        user: {
-          bindProjects: [
-            {
-              project_id: '',
-              project_name: projectName
-            }
-          ]
-        } as any
-      }
-    );
+    const { container } = renderWithReduxAndTheme(<ManagementConfAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();

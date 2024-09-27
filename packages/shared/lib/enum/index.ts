@@ -21,7 +21,8 @@ export enum SupportTheme {
 
 export enum SystemRole {
   admin = 'admin',
-  certainProjectManager = 'certainProjectManager'
+  certainProjectManager = 'certainProjectManager',
+  globalViewing = 'globalViewing'
 }
 
 export type UserRolesType = {
@@ -62,7 +63,9 @@ export enum OpPermissionTypeUid {
   'view_others_workflow' = '700007', // 查看其他工单权限 700007
   'view_other_audit_plan' = '700008', // 查看其他扫描任务权限 700008
   'save_audit_plan' = '700009', // 创建扫描任务权限；拥有该权限的用户可以创建/更新扫描任务 700009
-  'sql_query' = '700010' //SQL查询；SQL查询权限 700010
+  'sql_query' = '700010', //SQL查询；SQL查询权限 700010
+  'global_viewing' = '700016', // 全局浏览
+  'global_management' = '700017' // 全局管理
 }
 
 export enum CompanyNoticeDisplayStatusEnum {

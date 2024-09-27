@@ -611,6 +611,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "role": [
       "admin",
       "certainProjectManager",
+      "globalViewing",
     ],
   },
   {
@@ -634,6 +635,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "sync-data-source",
     "role": [
       "admin",
+      "globalViewing",
     ],
   },
   {
@@ -825,6 +827,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "sqle/rule-manager",
     "role": [
       "admin",
+      "globalViewing",
     ],
   },
   {

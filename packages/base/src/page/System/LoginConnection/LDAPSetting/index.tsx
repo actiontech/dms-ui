@@ -2,19 +2,15 @@ import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Form, Space, Spin } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
-
 import { switchFieldName } from './index.data';
-
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigModifyBtn from '../../components/ConfigModifyBtn';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { LDAPFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

@@ -267,5 +267,15 @@ describe('page/GlobalDataSource/List', () => {
       expect(requestTestConnectSpy).toHaveBeenCalled();
       expect(baseElement).toMatchSnapshot();
     });
+
+    it('should not render action when user is not admin and not project manager', async () => {
+      mockUseCurrentUser({ isAdmin: false, isCertainProjectManager: false });
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(9300));
+
+      expect(baseElement).toMatchSnapshot();
+      expect(screen.queryAllByText('编 辑')).toHaveLength(0);
+      expect(screen.queryAllByText('删 除')).toHaveLength(0);
+    });
   });
 });

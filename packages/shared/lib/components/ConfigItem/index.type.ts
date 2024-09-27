@@ -30,6 +30,7 @@ export interface IConfigItemImageUploaderProps {
   submitLoading: boolean;
   onSubmit: UploadProps['customRequest'];
   url: string;
+  isAdmin: boolean;
 }
 
 export type ConfigFieldMapMeta = {

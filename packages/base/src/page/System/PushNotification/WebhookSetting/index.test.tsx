@@ -1,10 +1,8 @@
 import system from '../../../../testUtils/mockApi/system';
-
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DEFAULT_CONSTANT } from './index.data';
-
 import WebHook from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
@@ -36,6 +34,14 @@ describe('base/System/PushNotification/WebhookSetting', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetWebHookConfiguration).toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 

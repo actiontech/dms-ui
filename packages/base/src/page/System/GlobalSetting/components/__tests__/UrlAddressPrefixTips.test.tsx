@@ -1,19 +1,23 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import OrderExpiredHours, { OrderExpiredHoursProps } from './OrderExpiredHours';
 
-describe('base/System/GlobalSetting/OrderExpiredHours', () => {
+import UrlAddressPrefixTips, {
+  UrlAddressPrefixTipsProps
+} from '../UrlAddressPrefixTips';
+
+describe('base/System/GlobalSetting/UrlAddressPrefixTips', () => {
   const showFieldFn = jest.fn();
   const hideFieldFn = jest.fn();
   const submitGlobalConfigFn = jest.fn();
 
   const customRender = (
-    params: Pick<OrderExpiredHoursProps, 'expiredHours' | 'fieldVisible'>
+    params: Pick<UrlAddressPrefixTipsProps, 'url' | 'fieldVisible'>
   ) => {
     return superRender(
-      <OrderExpiredHours
+      <UrlAddressPrefixTips
         {...params}
+        isAdmin
         showField={showFieldFn}
         hideField={hideFieldFn}
         submitGlobalConfig={submitGlobalConfigFn}
@@ -31,20 +35,18 @@ describe('base/System/GlobalSetting/OrderExpiredHours', () => {
     cleanup();
   });
 
-  it('render snap when has expiredHours', () => {
+  it('render snap when has url', () => {
     const { baseElement } = customRender({
-      expiredHours: 2010,
+      url: '1',
       fieldVisible: false
     });
-    expect(
-      screen.getByText('已完成的工单自动过期时间(小时)')
-    ).toBeInTheDocument();
+    expect(screen.getByText('URL地址前缀')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when no expiredHours', () => {
+  it('render snap when no url', () => {
     const { baseElement } = customRender({
-      expiredHours: undefined,
+      url: undefined,
       fieldVisible: false
     });
     expect(baseElement).toMatchSnapshot();
@@ -52,16 +54,16 @@ describe('base/System/GlobalSetting/OrderExpiredHours', () => {
 
   it('render snap when field show', async () => {
     const { baseElement } = customRender({
-      expiredHours: undefined,
+      url: undefined,
       fieldVisible: true
     });
     expect(baseElement).toMatchSnapshot();
 
-    const inputNumEle = getBySelector('.ant-input-number-input', baseElement);
-    fireEvent.change(inputNumEle, { target: { value: 10 } });
+    const inputEle = getBySelector('#editInput', baseElement);
+    fireEvent.change(inputEle, { target: { value: '123' } });
     await act(async () => jest.advanceTimersByTime(500));
 
-    fireEvent.keyDown(inputNumEle, {
+    fireEvent.keyDown(inputEle, {
       key: 'Enter',
       keyCode: 13
     });
