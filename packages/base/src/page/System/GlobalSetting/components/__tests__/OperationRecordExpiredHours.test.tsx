@@ -2,24 +2,25 @@ import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-import CBOperationLogsExpiredHours, {
-  CBOperationLogsExpiredHoursProps
-} from './CBOperationLogsExpiredHours';
+import OperationRecordExpiredHours, {
+  OperationRecordExpiredHoursProps
+} from '../OperationRecordExpiredHours';
 
-describe('base/System/GlobalSetting/CBOperationLogsExpiredHours', () => {
+describe('base/System/GlobalSetting/OperationRecordExpiredHours', () => {
   const showFieldFn = jest.fn();
   const hideFieldFn = jest.fn();
   const submitGlobalConfigFn = jest.fn();
 
   const customRender = (
     params: Pick<
-      CBOperationLogsExpiredHoursProps,
+      OperationRecordExpiredHoursProps,
       'expiredHours' | 'fieldVisible'
     >
   ) => {
     return superRender(
-      <CBOperationLogsExpiredHours
+      <OperationRecordExpiredHours
         {...params}
+        isAdmin
         showField={showFieldFn}
         hideField={hideFieldFn}
         submitGlobalConfig={submitGlobalConfigFn}
@@ -42,9 +43,7 @@ describe('base/System/GlobalSetting/CBOperationLogsExpiredHours', () => {
       expiredHours: 2020,
       fieldVisible: false
     });
-    expect(
-      screen.getByText('CB工作台操作审计过期时间(小时)')
-    ).toBeInTheDocument();
+    expect(screen.getByText('操作记录过期时间(小时)')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 

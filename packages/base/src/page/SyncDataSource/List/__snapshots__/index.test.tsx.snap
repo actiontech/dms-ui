@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            class="ant-table ant-table-scroll-horizontal"
           >
             <div
               class="ant-table-container"
@@ -25,17 +25,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                 <table
                   style="min-width: 100%; table-layout: auto;"
                 >
-                  <colgroup>
-                    <col />
-                    <col />
-                    <col />
-                    <col />
-                    <col />
-                    <col />
-                    <col
-                      style="width: 246px;"
-                    />
-                  </colgroup>
+                  <colgroup />
                   <thead
                     class="ant-table-thead"
                   >
@@ -76,13 +66,6 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                       >
                         最近一次同步成功时间
                       </th>
-                      <th
-                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                        scope="col"
-                        style="position: sticky; right: 0px;"
-                      >
-                        操作
-                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -93,15 +76,6 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -215,30 +189,6 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                       >
                         2023-01-10 00:00:00
                       </td>
-                      <td
-                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                        style="position: sticky; right: 0px;"
-                      >
-                        <div
-                          class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
-                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -297,30 +247,6 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                         class="ant-table-cell"
                       >
                         2023-01-10 00:00:00
-                      </td>
-                      <td
-                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
-                        style="position: sticky; right: 0px;"
-                      >
-                        <div
-                          class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -928,4 +854,263 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
     </div>
   </div>
 </body>
+`;
+
+exports[`page/SyncDataSource/SyncTaskList should not render action column when user is not admin 1`] = `
+<div>
+  <div
+    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+  >
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <div
+          class="ant-table ant-table-scroll-horizontal"
+        >
+          <div
+            class="ant-table-container"
+          >
+            <div
+              class="ant-table-content"
+              style="overflow-x: auto; overflow-y: hidden;"
+            >
+              <table
+                style="min-width: 100%; table-layout: auto;"
+              >
+                <colgroup />
+                <thead
+                  class="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      同步任务名
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      来源
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      地址
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      数据源类型
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      最后一次同步结果
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      最近一次同步成功时间
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="ant-table-tbody"
+                >
+                  <tr
+                    aria-hidden="true"
+                    class="ant-table-measure-row"
+                    style="height: 0px; font-size: 0px;"
+                  >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="0002"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      test-mysql-1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      source1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      http://192.168.1.1:3000
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="css-1uw16ge"
+                      >
+                        <img
+                          alt=""
+                          src=""
+                        />
+                        <span
+                          title="mysql"
+                        >
+                          mysql
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                          >
+                            成功
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      2023-01-10 00:00:00
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-table-row ant-table-row-level-0"
+                    data-row-key="1234"
+                  >
+                    <td
+                      class="ant-table-cell"
+                    >
+                      test-oracle-1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      source1
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      http://192.168.1.1:3000
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="css-1uw16ge"
+                      >
+                        <img
+                          alt=""
+                          src=""
+                        />
+                        <span
+                          title="oracle"
+                        >
+                          oracle
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                          >
+                            成功
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      2023-01-10 00:00:00
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;

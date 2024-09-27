@@ -32,4 +32,14 @@ describe('base/System/components/ConfigModifyBtn', () => {
     fireEvent.click(btnEle);
     expect(onClickFn).toHaveBeenCalled();
   });
+
+  it('should return null when user is not admin', async () => {
+    const onClickFn = jest.fn();
+
+    mockUseCurrentUser({ isAdmin: false });
+
+    expect(
+      renderWithTheme(<ConfigModifyBtn onClick={onClickFn} />).container
+    ).toMatchSnapshot();
+  });
 });

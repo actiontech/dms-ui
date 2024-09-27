@@ -3,6 +3,7 @@ import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import ConfigSwitch, { ConfigSwitchParams } from '.';
 import Form from 'antd/es/form/Form';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/components/ConfigSwitch', () => {
   const onConfirmFn = jest.fn();
@@ -28,11 +29,13 @@ describe('base/System/components/ConfigSwitch', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
   });
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
     cleanup();
   });
 
@@ -82,5 +85,18 @@ describe('base/System/components/ConfigSwitch', () => {
     fireEvent.click(switchHandle);
     await act(async () => jest.advanceTimersByTime(500));
     expect(onSwitchChangeFn).toHaveBeenCalled();
+  });
+
+  it('render snap when user is not admin', () => {
+    mockUseCurrentUser({ isAdmin: false });
+
+    expect(
+      customRender({
+        switchOpen: false,
+        modifyFlag: false,
+        submitLoading: false,
+        popoverVisible: false
+      })
+    ).toMatchSnapshot();
   });
 });

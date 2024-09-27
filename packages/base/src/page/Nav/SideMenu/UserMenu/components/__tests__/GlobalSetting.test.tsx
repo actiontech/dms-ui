@@ -21,6 +21,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   const customRender = (isAdmin = false, isCertainProjectManager = false) => {
     return superRender(
       <GlobalSetting
+        hasGlobalViewingPermission
         isAdmin={isAdmin}
         isCertainProjectManager={isCertainProjectManager}
       />

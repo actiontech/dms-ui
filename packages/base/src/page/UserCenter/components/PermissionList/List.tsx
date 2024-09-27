@@ -13,6 +13,7 @@ import { IListOpPermissionsParams } from '@actiontech/shared/lib/api/base/servic
 import { useEffect } from 'react';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { orderBy, sortBy } from 'lodash';
 
 const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage
@@ -55,7 +56,9 @@ const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
   return (
     <ActiontechTable
       rowKey={(record) => record.op_permission?.uid!}
-      dataSource={permissionList?.list}
+      dataSource={orderBy(permissionList?.list, (item) => item.range_type, [
+        'desc'
+      ])}
       pagination={{
         total: permissionList?.total ?? 0
       }}

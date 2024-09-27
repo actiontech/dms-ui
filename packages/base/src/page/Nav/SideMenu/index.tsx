@@ -29,9 +29,10 @@ const SideMenu: React.FC = () => {
     updateTheme,
     isAdmin,
     bindProjects,
-    role,
+    userRoles,
     isCertainProjectManager,
-    language
+    language,
+    hasGlobalViewingPermission
   } = useCurrentUser();
 
   const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
@@ -147,7 +148,7 @@ const SideMenu: React.FC = () => {
           />
         </Spin>
 
-        <MenuList projectID={currentProjectID ?? ''} role={role} />
+        <MenuList projectID={currentProjectID ?? ''} userRoles={userRoles} />
       </div>
 
       <UserMenu
@@ -157,6 +158,7 @@ const SideMenu: React.FC = () => {
         theme={theme}
         language={language}
         isCertainProjectManager={isCertainProjectManager}
+        hasGlobalViewingPermission={hasGlobalViewingPermission}
       />
     </SideMenuStyleWrapper>
   );

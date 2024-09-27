@@ -18,6 +18,7 @@ export interface CBOperationLogsExpiredHoursProps {
     value: string | number,
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
+  isAdmin: boolean;
 }
 
 const CBOperationLogsExpiredHours = ({
@@ -25,7 +26,8 @@ const CBOperationLogsExpiredHours = ({
   fieldVisible,
   showField,
   hideField,
-  submitGlobalConfig
+  submitGlobalConfig,
+  isAdmin
 }: CBOperationLogsExpiredHoursProps) => {
   const { t } = useTranslation();
   const { messageContextHolder, integerValidator } = useValidatorNumber();
@@ -43,6 +45,7 @@ const CBOperationLogsExpiredHours = ({
         fieldVisible={fieldVisible}
         showField={showField}
         hideField={hideField}
+        needEditButton={isAdmin}
         inputNode={
           <EditInputNumber
             fieldValue={expiredHours ?? 2160}

@@ -15,10 +15,13 @@ import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
 import { RuleManagerSegmentedKey } from './index.type';
 import useRuleManagerSegmented from './useRuleManagerSegmented';
 import { PlusOutlined, LoginBoxOutlined } from '@actiontech/icons';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const { isAdmin } = useCurrentUser();
 
   const { activeKey, updateActiveSegmentedKey } = useRuleManagerSegmented();
 
@@ -72,7 +75,7 @@ const RuleManager: React.FC = () => {
             <TableRefreshButton refresh={refresh} />
           </Space>
         }
-        extra={renderExtraButton()}
+        extra={isAdmin ? renderExtraButton() : null}
       />
 
       <SegmentedTabs

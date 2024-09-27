@@ -1,4 +1,4 @@
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { UserRolesType } from '@actiontech/shared/lib/enum';
 
 import {
   CustomMenuItemType,
@@ -13,14 +13,16 @@ export const genMenuItemsWithMenuStructTree = (
   projectID: string,
   allMenuItems: GenerateMenuItemType[],
   menuStructTree: MenuStructTreeType,
-  role: SystemRole | ''
+  userRoles: UserRolesType
 ): CustomMenuItemType[] => {
   const getMenuItemWithKey = (key: MenuStructTreeKey): CustomMenuItemType => {
     return (
       allMenuItems.find((v) => {
         const menu = v(projectID);
         if (menu?.role) {
-          return menu.role.includes(role) && menu.structKey === key;
+          return (
+            menu.role.some((role) => userRoles[role]) && menu.structKey === key
+          );
         }
 
         return menu?.structKey === key;

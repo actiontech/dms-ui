@@ -13,7 +13,7 @@ import { sideMenuData } from './menus/menu.data';
 import { dmsSideMenuData } from './menus/menu.data.dms';
 // #endif
 
-const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
+const MenuList: React.FC<MenuListProps> = ({ userRoles, projectID }) => {
   const location = useLocation();
 
   const { sqlOptimizationIsSupported } = useCurrentPermission();
@@ -22,13 +22,13 @@ const MenuList: React.FC<MenuListProps> = ({ role, projectID }) => {
     let menus: CustomMenuItemType[] = [];
 
     // #if [sqle && !dms]
-    menus = sideMenuData(projectID, role, sqlOptimizationIsSupported);
+    menus = sideMenuData(projectID, userRoles, sqlOptimizationIsSupported);
     // #else
-    menus = dmsSideMenuData(projectID, role);
+    menus = dmsSideMenuData(projectID, userRoles);
     // #endif
 
     return menus;
-  }, [projectID, role, sqlOptimizationIsSupported]);
+  }, [projectID, userRoles, sqlOptimizationIsSupported]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {

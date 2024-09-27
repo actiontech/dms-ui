@@ -7,6 +7,7 @@ import dms from '../../testUtils/mockApi/global';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { ModalName } from '../../data/ModalName';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -31,6 +32,7 @@ describe('base/System-ee', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     dms.mockAllApi();
