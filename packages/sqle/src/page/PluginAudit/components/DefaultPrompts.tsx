@@ -2,11 +2,12 @@ import { Steps, Typography, StepProps } from 'antd';
 import { BasicButton } from '@actiontech/shared';
 import { PluginAuditDefaultPromptsWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
-import { usePreferredLanguages } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 const DefaultPrompts = () => {
   const { t } = useTranslation();
-  const { preferredZhCN } = usePreferredLanguages();
+  const { language } = useCurrentUser();
 
   const stepItems = (desc: string): StepProps[] => {
     return desc.split('\n').map((i) => ({ title: i }));
@@ -22,7 +23,7 @@ const DefaultPrompts = () => {
       </Typography.Text>
       <div className="step-wrap">
         <Steps status="wait" items={stepItems(t('pluginAudit.promptStep'))} />
-        {preferredZhCN ? (
+        {language === SupportLanguage.zhCN ? (
           <a
             target="_blank"
             href="https://actiontech.github.io/sqle-docs/docs/dev-manual/auditplugins/jetbrains"

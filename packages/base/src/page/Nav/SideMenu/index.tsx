@@ -30,7 +30,8 @@ const SideMenu: React.FC = () => {
     isAdmin,
     bindProjects,
     role,
-    isCertainProjectManager
+    isCertainProjectManager,
+    language
   } = useCurrentUser();
 
   const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
@@ -154,6 +155,7 @@ const SideMenu: React.FC = () => {
         updateTheme={updateTheme}
         isAdmin={isAdmin}
         theme={theme}
+        language={language}
         isCertainProjectManager={isCertainProjectManager}
       />
     </SideMenuStyleWrapper>

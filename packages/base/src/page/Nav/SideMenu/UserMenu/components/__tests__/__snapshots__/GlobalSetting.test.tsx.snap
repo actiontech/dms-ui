@@ -76,7 +76,7 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
             class="ant-popover-inner-content"
           >
             <div
-              class="css-th3cxr"
+              class="css-1uknfyo"
             >
               <div
                 class="header"
@@ -100,11 +100,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     用户中心
-                  </span>
+                  </div>
                 </div>
                 <div
                   class="content-item"
@@ -120,11 +120,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     数据源管理
-                  </span>
+                  </div>
                 </div>
                 <div
                   class="content-item"
@@ -140,11 +140,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     报表统计
-                  </span>
+                  </div>
                 </div>
                 <div
                   class="content-item"
@@ -160,11 +160,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     查看规则
-                  </span>
+                  </div>
                 </div>
                 <div
                   class="content-item"
@@ -180,11 +180,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     规则管理
-                  </span>
+                  </div>
                 </div>
                 <div
                   class="content-item"
@@ -200,11 +200,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is admin 2`] = `
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     系统设置
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -292,7 +292,7 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is not admin 2`] 
             class="ant-popover-inner-content"
           >
             <div
-              class="css-th3cxr"
+              class="css-1uknfyo"
             >
               <div
                 class="header"
@@ -316,11 +316,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is not admin 2`] 
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     查看规则
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when isCertainProjectM
             class="ant-popover-inner-content"
           >
             <div
-              class="css-th3cxr"
+              class="css-1uknfyo"
             >
               <div
                 class="header"
@@ -432,11 +432,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when isCertainProjectM
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     数据源管理
-                  </span>
+                  </div>
                 </div>
                 <div
                   class="content-item"
@@ -452,11 +452,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when isCertainProjectM
                       fill="#C3C6CD"
                     />
                   </svg>
-                  <span
+                  <div
                     class="content-item-text"
                   >
                     查看规则
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>

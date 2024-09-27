@@ -185,39 +185,39 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     getProjectRuleTemplateListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
     );
-    const exportProjectRuleTemplateSpy =
-      rule_template.exportProjectRuleTemplate();
     const { baseElement } = customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      payload: {
+        modalStatus: {
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
+        }
+      },
+      type: 'ruleTemplate/initModalStatus'
+    });
     fireEvent.click(
       getBySelector('.actiontech-table-actions-more-button', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('导出规则模板')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出规则模板'));
-    await act(async () => jest.advanceTimersByTime(100));
-
-    expect(
-      screen.getByText(`正在导出模版 "${templateName}"...`)
-    ).toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(
-      screen.getByText(`导出模版"${templateName}"成功`)
-    ).toBeInTheDocument();
-    expect(
-      screen.queryByText(`正在导出模版 "${templateName}"...`)
-    ).not.toBeInTheDocument();
-    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
-    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledWith(
-      {
-        rule_template_name:
-          projectRuleTemplateListMockData[0].rule_template_name,
-        project_name: mockProjectInfo.projectName
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      payload: {
+        selectRow: projectRuleTemplateListMockData[0]
       },
-      {
-        responseType: 'blob'
-      }
-    );
+      type: 'ruleTemplate/updateSelectRuleTemplate'
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      payload: {
+        modalName: ModalName.Export_Rule_Template,
+        status: true
+      },
+      type: 'ruleTemplate/updateModalStatus'
+    });
   });
 
   it('click clone button', async () => {
@@ -231,7 +231,8 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       payload: {
         modalStatus: {
-          [ModalName.Clone_Rule_Template]: false
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
         }
       },
       type: 'ruleTemplate/initModalStatus'
@@ -269,35 +270,35 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
       ...mockProjectInfo,
       projectArchive: true
     }));
-    const exportProjectRuleTemplateSpy =
-      rule_template.exportProjectRuleTemplate();
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      payload: {
+        modalStatus: {
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
+        }
+      },
+      type: 'ruleTemplate/initModalStatus'
+    });
     expect(screen.getByText('导 出')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导 出'));
     await act(async () => jest.advanceTimersByTime(100));
-
-    expect(
-      screen.getByText(`正在导出模版 "${templateName}"...`)
-    ).toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(
-      screen.getByText(`导出模版"${templateName}"成功`)
-    ).toBeInTheDocument();
-    expect(
-      screen.queryByText(`正在导出模版 "${templateName}"...`)
-    ).not.toBeInTheDocument();
-    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
-    expect(exportProjectRuleTemplateSpy).toHaveBeenCalledWith(
-      {
-        rule_template_name:
-          projectRuleTemplateListMockData[0].rule_template_name,
-        project_name: mockProjectInfo.projectName
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      payload: {
+        selectRow: projectRuleTemplateListMockData[0]
       },
-      {
-        responseType: 'blob'
-      }
-    );
+      type: 'ruleTemplate/updateSelectRuleTemplate'
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      payload: {
+        modalName: ModalName.Export_Rule_Template,
+        status: true
+      },
+      type: 'ruleTemplate/updateModalStatus'
+    });
   });
 
   it('click clone button when projectArchive is true', async () => {
@@ -316,7 +317,8 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       payload: {
         modalStatus: {
-          [ModalName.Clone_Rule_Template]: false
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
         }
       },
       type: 'ruleTemplate/initModalStatus'

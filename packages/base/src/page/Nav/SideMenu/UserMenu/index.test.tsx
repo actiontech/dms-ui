@@ -4,6 +4,7 @@ import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { SupportTheme } from 'sqle/src/theme';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 describe('base/Nav/SideMenu/UserMenu', () => {
   const customRender = (
@@ -12,6 +13,7 @@ describe('base/Nav/SideMenu/UserMenu', () => {
   ) => {
     return superRender(
       <UserMenu
+        language={SupportLanguage.zhCN}
         isAdmin={isAdmin}
         username="Admin"
         theme={SupportTheme.LIGHT}
