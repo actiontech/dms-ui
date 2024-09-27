@@ -12,13 +12,16 @@ import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import { Link } from 'react-router-dom';
 import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
-import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
-import { Avatar } from 'antd';
+import BasicToolTips, {
+  tooltipsCommonProps
+} from '@actiontech/shared/lib/components/BasicToolTips';
+import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -108,11 +111,13 @@ export const SqlManagementRowAction = (
   operationPermission: boolean,
   openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
   onCreateWhitelist: (record?: ISqlManage) => void,
-  preferredEnUS: boolean
+  language: SupportLanguage
 ): ActiontechTableProps<ISqlManage>['actions'] => {
   const getWidth = () => {
     if (operationPermission) {
-      return preferredEnUS ? 350 : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
+      return language === SupportLanguage.enUS
+        ? 350
+        : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
     }
     return 110;
   };
@@ -387,11 +392,26 @@ const SqlManagementColumn: (
       title: () => t('sqlManagement.table.column.endpoints'),
       width: 200,
       render: (endpoints) => {
-        if (!endpoints) {
+        if (!Array.isArray(endpoints) || endpoints.length === 0) {
           return '-';
         }
-        // todo 暂时调整成 string
-        return <BasicTag style={{ marginRight: 0 }}>{endpoints}</BasicTag>;
+
+        return (
+          <BasicToolTips
+            title={
+              endpoints.length > 1 ? (
+                <Space wrap>
+                  {endpoints.map((v) => (
+                    <BasicTag key={v}>{v}</BasicTag>
+                  ))}
+                </Space>
+              ) : null
+            }
+          >
+            <BasicTag style={{ marginRight: 0 }}>{endpoints[0]}</BasicTag>
+            {endpoints.length > 1 ? '...' : null}
+          </BasicToolTips>
+        );
       }
     },
     {

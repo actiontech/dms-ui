@@ -94,38 +94,6 @@ const ProjectTable = (props: TemplateTableProps) => {
     [projectName, refreshRuleTemplate, t]
   );
 
-  const exportRuleTemplate = useCallback(
-    (templateName: string) => {
-      const hideLoading = messageApi.loading(
-        t('ruleTemplate.exportRuleTemplate.exporting', { name: templateName }),
-        0
-      );
-      rule_template
-        .exportProjectRuleTemplateV1(
-          {
-            rule_template_name: templateName,
-            project_name: projectName
-          },
-          {
-            responseType: 'blob'
-          }
-        )
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            messageApi.success(
-              t('ruleTemplate.exportRuleTemplate.exportSuccessTips', {
-                name: templateName
-              })
-            );
-          }
-        })
-        .finally(() => {
-          hideLoading();
-        });
-    },
-    [messageApi, projectName, t]
-  );
-
   const openCloneRuleTemplateModal = useCallback(
     (selectRow: IProjectRuleTemplateResV1) => {
       dispatch(
@@ -136,6 +104,23 @@ const ProjectTable = (props: TemplateTableProps) => {
       dispatch(
         updateRuleTemplateListModalStatus({
           modalName: ModalName.Clone_Rule_Template,
+          status: true
+        })
+      );
+    },
+    [dispatch]
+  );
+
+  const openExportRuleTemplateModal = useCallback(
+    (selectRow: IProjectRuleTemplateResV1) => {
+      dispatch(
+        updateSelectRuleTemplate({
+          selectRow
+        })
+      );
+      dispatch(
+        updateRuleTemplateListModalStatus({
+          modalName: ModalName.Export_Rule_Template,
           status: true
         })
       );
@@ -156,7 +141,7 @@ const ProjectTable = (props: TemplateTableProps) => {
         return;
       }
       if (type === 'export') {
-        exportRuleTemplate(record?.rule_template_name ?? '');
+        openExportRuleTemplateModal(record ?? {});
         return;
       }
       if (type === 'clone') {
@@ -167,9 +152,9 @@ const ProjectTable = (props: TemplateTableProps) => {
     [
       deleteTemplate,
       navigate,
-      exportRuleTemplate,
-      openCloneRuleTemplateModal,
-      projectID
+      projectID,
+      openExportRuleTemplateModal,
+      openCloneRuleTemplateModal
     ]
   );
 
@@ -186,7 +171,8 @@ const ProjectTable = (props: TemplateTableProps) => {
     dispatch(
       initRuleTemplateListModalStatus({
         modalStatus: {
-          [ModalName.Clone_Rule_Template]: false
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
         }
       })
     );

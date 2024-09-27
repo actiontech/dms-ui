@@ -12,7 +12,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { superRender } from '../../../../../../../../testUtils/customRender';
 import configuration from '../../../../../../../../testUtils/mockApi/configuration';
 import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow';
-import { mockUsePreferredLanguages } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePreferredLanguages';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
   const closeScheduleModalFn = jest.fn();
@@ -39,7 +39,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
     getFeishuAuditConfigSpy = configuration.getFeishuAuditConfiguration();
     execWorkflow.getScheduledTaskDefaultOption();
     jest.useFakeTimers({ legacyFakeTimers: true });
-    mockUsePreferredLanguages();
+    mockUseCurrentUser();
     MockDate.set(new Date('2024-12-18T00:00:00Z').getTime());
   });
 

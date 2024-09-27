@@ -25,6 +25,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import ExportRuleTemplateModal from './Modal/ExportRuleTemplate';
 
 const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
   hiddenOperations = false
@@ -100,39 +101,26 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
     );
   };
 
-  const exportRuleTemplate = (templateName: string) => {
-    const hideLoading = messageApi.loading(
-      t('ruleTemplate.exportRuleTemplate.exporting', { name: templateName }),
-      0
-    );
-    rule_template
-      .exportRuleTemplateV1(
-        {
-          rule_template_name: templateName
-        },
-        {
-          responseType: 'blob'
-        }
-      )
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t('ruleTemplate.exportRuleTemplate.exportSuccessTips', {
-              name: templateName
-            })
-          );
-        }
+  const openExportRuleTemplateModal = (ruleTemplate: IRuleTemplateResV1) => {
+    dispatch(
+      updateGlobalSelectRuleTemplate({
+        ruleTemplate
       })
-      .finally(() => {
-        hideLoading();
-      });
+    );
+    dispatch(
+      updateGlobalRuleTemplateListModalStatus({
+        modalName: ModalName.Export_Rule_Template,
+        status: true
+      })
+    );
   };
 
   useEffect(() => {
     dispatch(
       initGlobalRuleTemplateListModalStatus({
         modalStatus: {
-          [ModalName.Clone_Rule_Template]: false
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
         }
       })
     );
@@ -164,7 +152,7 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
           navigateToUpdatePage,
           deleteTemplate,
           openCloneRuleTemplateModal,
-          exportRuleTemplate,
+          openExportRuleTemplateModal,
           isAdmin && !hiddenOperations
         )}
         pagination={{
@@ -173,6 +161,7 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
       />
 
       <RuleTemplateListModal />
+      <ExportRuleTemplateModal />
     </>
   );
 };

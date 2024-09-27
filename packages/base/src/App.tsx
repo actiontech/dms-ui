@@ -9,14 +9,17 @@ import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import { SupportTheme, UserRolesType } from '@actiontech/shared/lib/enum';
+import {
+  SupportLanguage,
+  SupportTheme,
+  UserRolesType
+} from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
   useDbServiceDriver,
   useFeaturePermission,
-  useCurrentPermission,
-  usePreferredLanguages
+  useCurrentPermission
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -35,6 +38,8 @@ import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
 import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
 import i18n from './locale';
+import antd_zh_CN from 'antd/locale/zh_CN';
+import antd_en_US from 'antd/locale/en_US';
 
 import './index.less';
 
@@ -70,13 +75,20 @@ function App() {
     token: state.user.token
   }));
 
-  const { currentLanguage, antdLanguage } = usePreferredLanguages();
-
   const { notificationContextHolder } = useNotificationContext();
 
   const { getUserBySession } = useSessionUser();
 
-  const { useInfoFetched, theme, userRoles } = useCurrentUser();
+  const {
+    useInfoFetched,
+    theme,
+    userRoles,
+    language: currentLanguage
+  } = useCurrentUser();
+
+  const antdLanguage =
+    currentLanguage === SupportLanguage.enUS ? antd_en_US : antd_zh_CN;
+
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
   const { updateFeaturePermission, featurePermissionFetched } =
     useFeaturePermission();

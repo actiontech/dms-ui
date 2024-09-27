@@ -182,36 +182,39 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     getRuleTemplateListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [publicRuleTemplateListMockData[0]] })
     );
-    const exportRuleTemplateSpy = rule_template.exportRuleTemplate();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
+      payload: {
+        modalStatus: {
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
+        }
+      },
+      type: 'globalRuleTemplate/initModalStatus'
+    });
     fireEvent.click(
       getBySelector('.actiontech-table-actions-more-button', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('导出规则模板')).toBeInTheDocument();
     fireEvent.click(screen.getByText('导出规则模板'));
-    await act(async () => jest.advanceTimersByTime(100));
-
-    expect(
-      screen.getByText(`正在导出模版 "${templateName}"...`)
-    ).toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(
-      screen.getByText(`导出模版"${templateName}"成功`)
-    ).toBeInTheDocument();
-    expect(
-      screen.queryByText(`正在导出模版 "${templateName}"...`)
-    ).not.toBeInTheDocument();
-    expect(exportRuleTemplateSpy).toHaveBeenCalledTimes(1);
-    expect(exportRuleTemplateSpy).toHaveBeenCalledWith(
-      {
-        rule_template_name: publicRuleTemplateListMockData[0].rule_template_name
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(dispatchSpy).toHaveBeenCalledTimes(3);
+    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
+      payload: {
+        ruleTemplate: publicRuleTemplateListMockData[0]
       },
-      {
-        responseType: 'blob'
-      }
-    );
+      type: 'globalRuleTemplate/updateGlobalSelectRuleTemplate'
+    });
+    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
+      payload: {
+        modalName: ModalName.Export_Rule_Template,
+        status: true
+      },
+      type: 'globalRuleTemplate/updateModalStatus'
+    });
   });
 
   it('click clone button', async () => {
@@ -225,7 +228,8 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       payload: {
         modalStatus: {
-          [ModalName.Clone_Rule_Template]: false
+          [ModalName.Clone_Rule_Template]: false,
+          [ModalName.Export_Rule_Template]: false
         }
       },
       type: 'globalRuleTemplate/initModalStatus'
