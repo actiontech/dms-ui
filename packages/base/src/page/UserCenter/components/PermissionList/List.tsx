@@ -13,7 +13,7 @@ import { IListOpPermissionsParams } from '@actiontech/shared/lib/api/base/servic
 import { useEffect } from 'react';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { orderBy, sortBy } from 'lodash';
+import { orderBy } from 'lodash';
 
 const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage

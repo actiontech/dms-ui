@@ -473,6 +473,126 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               -
                             </td>
                           </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002001"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-view
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局浏览
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002002"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-management
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局管理
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -485,7 +605,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                     class="ant-pagination-total-text"
                   >
                     <span>
-                      共 3 条数据
+                      共 5 条数据
                     </span>
                   </li>
                   <li
@@ -1241,6 +1361,202 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               </div>
                             </td>
                           </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002001"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-view
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局浏览
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        管 理
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002002"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-management
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局管理
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        管 理
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -1253,7 +1569,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                     class="ant-pagination-total-text"
                   >
                     <span>
-                      共 3 条数据
+                      共 5 条数据
                     </span>
                   </li>
                   <li
@@ -2010,6 +2326,202 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               </div>
                             </td>
                           </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002001"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-view
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局浏览
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        管 理
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002002"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-management
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局管理
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        管 理
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -2022,7 +2534,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                     class="ant-pagination-total-text"
                   >
                     <span>
-                      共 3 条数据
+                      共 5 条数据
                     </span>
                   </li>
                   <li
@@ -2257,24 +2769,6 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
-                            data-row-key="700001"
-                          >
-                            <td
-                              class="ant-table-cell"
-                            >
-                              创建项目
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            >
-                              数据源
-                            </td>
-                            <td
-                              class="ant-table-cell"
-                            />
-                          </tr>
-                          <tr
-                            class="ant-table-row ant-table-row-level-0"
                             data-row-key="20100"
                           >
                             <td
@@ -2286,6 +2780,24 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               class="ant-table-cell"
                             >
                               unknown
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            />
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="700001"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              创建项目
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              数据源
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3077,6 +3589,202 @@ exports[`base/UserCenter switch to role list 1`] = `
                               </div>
                             </td>
                           </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002001"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-view
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局浏览
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        管 理
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ant-table-row ant-table-row-level-0"
+                            data-row-key="7002002"
+                          >
+                            <td
+                              class="ant-table-cell"
+                            >
+                              global-management
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="css-10kos8e"
+                              >
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                    stroke="#41BF9A"
+                                    stroke-width="1.5"
+                                  />
+                                  <path
+                                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                                    stroke="#41BF9A"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                  />
+                                </svg>
+                                <span>
+                                  正常
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              dms
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              全局管理
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        管 理
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -3089,7 +3797,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                     class="ant-pagination-total-text"
                   >
                     <span>
-                      共 3 条数据
+                      共 5 条数据
                     </span>
                   </li>
                   <li

@@ -24,7 +24,8 @@ describe('useCurrentProject', () => {
             project_id: '',
             project_name: DEFAULT_PROJECT_NAME
           }
-        ]
+        ],
+        managementPermissions: []
       }
     });
     expect(result.current.projectName).toBe(DEFAULT_PROJECT_NAME);
@@ -39,7 +40,8 @@ describe('useCurrentProject', () => {
             project_id: '',
             project_name: 'testSpace'
           }
-        ]
+        ],
+        managementPermissions: []
       }
     });
     expect(result.current.projectName).toBe('testSpace');
