@@ -1,0 +1,428 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/Auth/AuthList render init snap 1`] = `
+<body>
+  <div>
+    <div
+      class="css-11hsaqo"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          授权清单
+        </div>
+        <div
+          class="extra"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              授 权
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <div
+                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
+                  >
+                    <div
+                      class="ant-segmented-group"
+                    >
+                      <label
+                        class="ant-segmented-item ant-segmented-item-selected"
+                      >
+                        <input
+                          checked=""
+                          class="ant-segmented-item-input"
+                          type="radio"
+                        />
+                        <div
+                          class="ant-segmented-item-label"
+                          title="全部"
+                        >
+                          全部
+                        </div>
+                      </label>
+                      <label
+                        class="ant-segmented-item"
+                      >
+                        <input
+                          class="ant-segmented-item-input"
+                          type="radio"
+                        />
+                        <div
+                          class="ant-segmented-item-label"
+                          title="过期"
+                        >
+                          过期
+                        </div>
+                      </label>
+                      <label
+                        class="ant-segmented-item"
+                      >
+                        <input
+                          class="ant-segmented-item-input"
+                          type="radio"
+                        />
+                        <div
+                          class="ant-segmented-item-label"
+                          title="即将过期"
+                        >
+                          即将过期
+                        </div>
+                      </label>
+                      <label
+                        class="ant-segmented-item"
+                      >
+                        <input
+                          class="ant-segmented-item-input"
+                          type="radio"
+                        />
+                        <div
+                          class="ant-segmented-item-label"
+                          title="生效中"
+                        >
+                          生效中
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 10px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 2px;"
+                      >
+                        筛选
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currrentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        >
+          <div>
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+            >
+              <span
+                class="ant-spin-dot ant-spin-dot-spin"
+              >
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-spin-container ant-spin-blur"
+          >
+            <div
+              class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            >
+              <div
+                class="ant-table-container"
+              >
+                <div
+                  class="ant-table-content"
+                  style="overflow-x: auto; overflow-y: hidden;"
+                >
+                  <table
+                    style="min-width: 100%; table-layout: auto;"
+                  >
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 90px;"
+                      />
+                      <col />
+                      <col />
+                      <col
+                        style="width: 204px;"
+                      />
+                    </colgroup>
+                    <thead
+                      class="ant-table-thead"
+                    >
+                      <tr>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          使用人
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          目的或用途
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          数据所在业务
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                           权限模板
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          涉及数据源
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          状态
+                        </th>
+                        <th
+                          class="ant-table-cell ellipsis-column-width"
+                          scope="col"
+                        >
+                          备注
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          更新时间
+                        </th>
+                        <th
+                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                          scope="col"
+                          style="position: sticky; right: 0px;"
+                        >
+                          操作
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ant-table-tbody"
+                    >
+                      <tr
+                        aria-hidden="true"
+                        class="ant-table-measure-row"
+                        style="height: 0px; font-size: 0px;"
+                      >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-table-placeholder"
+                      >
+                        <td
+                          class="ant-table-cell"
+                          colspan="9"
+                        >
+                          <div
+                            class="ant-table-expanded-row-fixed"
+                            style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
