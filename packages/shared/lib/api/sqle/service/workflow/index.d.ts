@@ -70,6 +70,8 @@ export interface IGetWorkflowsV1Params {
 
   filter_task_instance_id?: string;
 
+  filter_sql_version_id?: string;
+
   page_index: number;
 
   page_size: number;

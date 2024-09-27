@@ -572,7 +572,7 @@ export enum updatePipelineNodeTypeEnum {
   'release' = 'release'
 }
 
-export enum AssociatedVersionStageWorkflowsStatusEnum {
+export enum AssociatedOtherStageWorkflowsStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 
   'wait_for_execution' = 'wait_for_execution',
