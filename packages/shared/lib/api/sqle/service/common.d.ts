@@ -66,7 +66,7 @@ import {
   updatePipelineNodeAuditMethodEnum,
   updatePipelineNodeObjectTypeEnum,
   updatePipelineNodeTypeEnum,
-  AssociatedVersionStageWorkflowsStatusEnum,
+  AssociatedOtherStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -2986,7 +2986,7 @@ export interface IWorkflowDetailResV1 {
 
   project_name?: string;
 
-  sql_version_name?: string;
+  sql_version_name?: string[];
 
   status?: WorkflowDetailResV1StatusEnum;
 
@@ -3241,12 +3241,12 @@ export interface IUpdatePipelineNode {
   type?: updatePipelineNodeTypeEnum;
 }
 
-export interface IAssociatedVersionStageWorkflows {
+export interface IAssociatedOtherStageWorkflows {
   sql_version_stage_id?: number;
 
   stage_sequence?: number;
 
-  status?: AssociatedVersionStageWorkflowsStatusEnum;
+  status?: AssociatedOtherStageWorkflowsStatusEnum;
 
   workflow_id?: string;
 
@@ -3666,7 +3666,7 @@ export interface IWorkflowRecordResV2 {
 }
 
 export interface IWorkflowResV2 {
-  associated_version_stage_workflows?: IAssociatedVersionStageWorkflows;
+  associated_other_stage_workflows?: IAssociatedOtherStageWorkflows[];
 
   create_time?: string;
 
