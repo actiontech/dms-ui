@@ -1028,7 +1028,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
               <li
                 class="ant-menu-item"
                 data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operation-record"
-                role="admin"
+                role="admin,globalViewing"
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"
@@ -2175,7 +2175,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
               <li
                 class="ant-menu-item"
                 data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operation-record"
-                role="admin"
+                role="admin,globalViewing"
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"
@@ -3322,7 +3322,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               <li
                 class="ant-menu-item"
                 data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operation-record"
-                role="admin"
+                role="admin,globalViewing"
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"

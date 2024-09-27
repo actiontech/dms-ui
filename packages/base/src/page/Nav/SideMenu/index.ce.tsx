@@ -17,9 +17,10 @@ const CESideMenu = () => {
     theme,
     updateTheme,
     isAdmin,
-    role,
+    userRoles,
     language,
-    isCertainProjectManager
+    isCertainProjectManager,
+    hasGlobalViewingPermission
   } = useCurrentUser();
 
   return (
@@ -34,10 +35,11 @@ const CESideMenu = () => {
           </Typography.Text>
         </CEModeProjectWrapperStyleWrapper>
 
-        <MenuList projectID={DEFAULT_PROJECT_ID} role={role} />
+        <MenuList projectID={DEFAULT_PROJECT_ID} userRoles={userRoles} />
       </div>
 
       <UserMenu
+        hasGlobalViewingPermission={hasGlobalViewingPermission}
         language={language}
         username={username}
         updateTheme={updateTheme}

@@ -8,19 +8,12 @@ import { initSystemModalStatus } from '../../store/system';
 import { ModalName } from '../../data/ModalName';
 import { useSearchParams } from 'react-router-dom';
 import { SystemSegmentedKeyEnum } from './index.enum';
-
-// #if [sqle]
 import PushNotification from './PushNotification';
 import ProcessConnection from './ProcessConnection';
 import GlobalSetting from './GlobalSetting';
-// #endif
-
 import LoginConnection from './LoginConnection/index';
-
-// #if [ee]
 import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
-// #endif
 
 const System = () => {
   const { t } = useTranslation();

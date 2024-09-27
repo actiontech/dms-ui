@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 import { IReduxState } from '../../../../base/src/store';
 import {
+  OpPermissionTypeUid,
   SupportLanguage,
   SupportTheme,
   SystemRole,
@@ -36,7 +37,12 @@ const useCurrentUser = () => {
     };
   });
 
-  const isAdmin: boolean = role === SystemRole.admin;
+  const isAdmin =
+    role === SystemRole.admin ||
+    managementPermissions.some(
+      (v) => v.uid === OpPermissionTypeUid.global_management
+    );
+
   const isProjectManager = useCallback(
     (name: string) => {
       const project = bindProjects.find((v) => v.project_name === name);
@@ -61,10 +67,19 @@ const useCurrentUser = () => {
     return bindProjects?.some((v) => v.is_manager) ?? false;
   }, [bindProjects]);
 
-  const userRoles: UserRolesType = {
-    [SystemRole.admin]: isAdmin,
-    [SystemRole.certainProjectManager]: isCertainProjectManager
-  };
+  const hasGlobalViewingPermission = useMemo(() => {
+    return managementPermissions.some(
+      (v) => v.uid === OpPermissionTypeUid.global_viewing
+    );
+  }, [managementPermissions]);
+
+  const userRoles: UserRolesType = useMemo(() => {
+    return {
+      [SystemRole.admin]: isAdmin,
+      [SystemRole.certainProjectManager]: isCertainProjectManager,
+      [SystemRole.globalViewing]: hasGlobalViewingPermission
+    };
+  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager]);
 
   return {
     isAdmin,
@@ -80,7 +95,8 @@ const useCurrentUser = () => {
     isCertainProjectManager,
     userRoles,
     language,
-    updateLanguage
+    updateLanguage,
+    hasGlobalViewingPermission
   };
 };
 export default useCurrentUser;

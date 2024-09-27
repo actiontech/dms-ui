@@ -18,9 +18,14 @@ jest.mock('react-router-dom', () => {
 
 describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   const navigateSpy = jest.fn();
-  const customRender = (isAdmin = false, isCertainProjectManager = false) => {
+  const customRender = (
+    isAdmin = false,
+    isCertainProjectManager = false,
+    hasGlobalViewingPermission = false
+  ) => {
     return superRender(
       <GlobalSetting
+        hasGlobalViewingPermission={hasGlobalViewingPermission}
         isAdmin={isAdmin}
         isCertainProjectManager={isCertainProjectManager}
       />
@@ -37,7 +42,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     cleanup();
   });
 
-  it('render snap when is not admin', async () => {
+  it(`render snap when is not admin and hasn't global view permission`, async () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
 
@@ -51,6 +56,18 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     fireEvent.click(screen.getByText('查看规则'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(navigateSpy).toHaveBeenCalledWith('/sqle/rule');
+  });
+
+  it(`render snap when is not admin and has global view permission`, async () => {
+    const { baseElement } = customRender(false, false, true);
+    expect(baseElement).toMatchSnapshot();
+
+    const iconSystem = getBySelector('.custom-icon-global-system', baseElement);
+    fireEvent.click(iconSystem);
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+
+    expect(getAllBySelector('.content-item-text').length).toBe(6);
   });
 
   it('render snap when is admin', async () => {

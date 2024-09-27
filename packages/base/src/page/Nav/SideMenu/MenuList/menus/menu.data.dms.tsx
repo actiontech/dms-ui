@@ -1,4 +1,4 @@
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { UserRolesType } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../locale';
 import {
   GenerateMenuItemType,
@@ -13,7 +13,7 @@ import { dataMaskRuleMenuItem } from './dms';
 
 export const dmsSideMenuData = (
   projectID: string,
-  role: SystemRole | '',
+  userRoles: UserRolesType,
   sqlOptimizationIsSupport: boolean
 ) => {
   const allMenuItems: GenerateMenuItemType[] = [
@@ -111,6 +111,6 @@ export const dmsSideMenuData = (
     projectID,
     allMenuItems,
     menuStruct,
-    role
+    userRoles
   );
 };
