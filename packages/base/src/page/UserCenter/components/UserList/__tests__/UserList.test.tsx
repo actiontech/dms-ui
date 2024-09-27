@@ -14,6 +14,8 @@ import { ModalName } from '../../../../../data/ModalName';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { UserCenterListEnum } from '../../../index.enum';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -29,10 +31,12 @@ describe('base/UserCenter/UserList', () => {
     jest.useFakeTimers();
     userListSpy = userCenter.getUserList();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    mockUseCurrentUser();
   });
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
     cleanup();
   });
 
@@ -46,9 +50,9 @@ describe('base/UserCenter/UserList', () => {
     expect(screen.getByText('admin')).toBeInTheDocument();
     expect(screen.getByText('test')).toBeInTheDocument();
     expect(screen.getByText('test666')).toBeInTheDocument();
-    expect(screen.getAllByText('dms')).toHaveLength(3);
-    expect(screen.getAllByText('删 除')).toHaveLength(2);
-    expect(screen.getAllByText('管 理')).toHaveLength(3);
+    expect(screen.getAllByText('dms')).toHaveLength(5);
+    expect(screen.getAllByText('删 除')).toHaveLength(4);
+    expect(screen.getAllByText('管 理')).toHaveLength(5);
   });
 
   it('should render empty tips when request not success', async () => {
@@ -163,5 +167,27 @@ describe('base/UserCenter/UserList', () => {
         status: true
       }
     });
+  });
+
+  it('should hidden action column when is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+
+    const { container } = renderWithReduxAndTheme(
+      <UserList activePage={UserCenterListEnum.user_list} />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryAllByText('管 理')).toHaveLength(0);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should disabled action when current role is not admin and ', async () => {
+    mockUseCurrentUser({ isAdmin: false, role: SystemRole.globalViewing });
+
+    const { container } = renderWithReduxAndTheme(
+      <UserList activePage={UserCenterListEnum.user_list} />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(container).toMatchSnapshot();
   });
 });

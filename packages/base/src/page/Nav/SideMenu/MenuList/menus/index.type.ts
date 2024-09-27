@@ -4,7 +4,7 @@ import { ItemType } from 'antd/es/menu/hooks/useItems';
 export type CustomMenuItemType =
   | (ItemType & {
       structKey: MenuStructTreeKey;
-      role?: [SystemRole | ''];
+      role?: Array<SystemRole>;
     })
   | null;
 
