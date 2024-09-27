@@ -48,7 +48,7 @@ export const sqlManageListData = {
       assignees: ['test'],
       status: 'unhandled',
       remark: 'this is remark text',
-      endpoints: ['12', '35', '32'],
+      endpoints: '12',
       priority: 'high'
     },
     {
@@ -120,7 +120,7 @@ export const sqlManageListData = {
       assignees: null,
       status: 'unhandled',
       remark: '',
-      endpoints: ['34']
+      endpoints: '34'
     },
     {
       id: 1150087,
@@ -146,7 +146,7 @@ export const sqlManageListData = {
       assignees: ['t3', 't2'],
       status: 'unhandled',
       remark: '',
-      endpoints: [],
+      endpoints: '',
       priority: ''
     },
     {
@@ -173,7 +173,7 @@ export const sqlManageListData = {
       assignees: ['t3', 't2'],
       status: 'unhandled',
       remark: '',
-      endpoints: [],
+      endpoints: '',
       priority: '',
       audit_status: SqlManageAuditStatusEnum.being_audited
     }
