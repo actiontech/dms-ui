@@ -6,6 +6,7 @@ import userCenter from '../../../testUtils/mockApi/userCenter';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => {
   return {
@@ -26,6 +27,7 @@ describe('base/UserCenter', () => {
     roleListSpy = userCenter.getRoleList();
     permissionListSpy = userCenter.getOpPermissionsList();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    mockUseCurrentUser();
   });
 
   afterEach(() => {
@@ -135,5 +137,19 @@ describe('base/UserCenter', () => {
       filter_by_target: ListOpPermissionsFilterByTargetEnum.all
     });
     await act(async () => jest.advanceTimersByTime(3000));
+  });
+
+  it('should hidden action when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+
+    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('添加用户').closest('button')).toHaveAttribute(
+      'hidden'
+    );
+    expect(screen.getByText('添加角色').closest('button')).toHaveAttribute(
+      'hidden'
+    );
+    expect(baseElement).toMatchSnapshot();
   });
 });

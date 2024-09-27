@@ -16,6 +16,7 @@ export interface UrlAddressPrefixTipsProps {
     value: string | number,
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
+  isAdmin: boolean;
 }
 
 const UrlAddressPrefixTips = ({
@@ -23,7 +24,8 @@ const UrlAddressPrefixTips = ({
   fieldVisible,
   showField,
   hideField,
-  submitGlobalConfig
+  submitGlobalConfig,
+  isAdmin
 }: UrlAddressPrefixTipsProps) => {
   const { t } = useTranslation();
 
@@ -43,6 +45,7 @@ const UrlAddressPrefixTips = ({
         fieldVisible={fieldVisible}
         showField={showField}
         hideField={hideField}
+        needEditButton={isAdmin}
         inputNode={
           <EditInput
             fieldValue={url ?? ''}

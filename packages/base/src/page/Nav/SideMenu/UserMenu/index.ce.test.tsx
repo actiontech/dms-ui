@@ -17,6 +17,7 @@ describe('base/Nav/SideMenu/UserMenu', () => {
   ) => {
     return superRender(
       <UserMenu
+        hasGlobalViewingPermission
         language={SupportLanguage.zhCN}
         isAdmin={isAdmin}
         username="Admin"

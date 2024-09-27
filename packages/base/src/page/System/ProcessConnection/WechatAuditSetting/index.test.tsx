@@ -6,6 +6,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import WechatAuditSetting from '.';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/ProcessConnection/WechatAuditSetting', () => {
   let requestGetWechatAuditConfiguration: jest.SpyInstance;
@@ -16,6 +17,7 @@ describe('base/System/ProcessConnection/WechatAuditSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetWechatAuditConfiguration = system.getWechatAuditConfiguration();
     requestUpdateWechatAuditConfiguration =
@@ -35,6 +37,14 @@ describe('base/System/ProcessConnection/WechatAuditSetting', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetWechatAuditConfiguration).toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 

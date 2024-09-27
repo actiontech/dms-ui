@@ -9,6 +9,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/GlobalSetting', () => {
   let requestGetSystemVariables: jest.SpyInstance;
@@ -19,6 +20,7 @@ describe('base/System/GlobalSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetSystemVariables = system.getSystemVariables();
     requestUpdateSystemVariables = system.updateSystemVariables();
@@ -83,6 +85,26 @@ describe('base/System/GlobalSetting', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3100));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should hidden edit button when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3200));
+
+    expect(screen.getByText('7211')).toBeInTheDocument();
+
+    const editBtn = getAllBySelector(
+      '.config-item-filed-edit-button',
+      baseElement
+    );
+    expect(editBtn.length).toBe(4);
+    expect(editBtn[0]).toHaveAttribute('hidden');
+
+    fireEvent.mouseOver(screen.getByText('7211'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(editBtn[0]).toHaveAttribute('hidden');
   });
 
   describe('render form validate error', () => {

@@ -2,8 +2,8 @@
  * Do not modify this file in the dms-ui repository
  */
 
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { UserRolesType } from '@actiontech/shared/lib/enum';
 
-export const dmsSideMenuData = (_: string, __: SystemRole | '') => {
+export const dmsSideMenuData = (_: string, __: UserRolesType) => {
   return [];
 };

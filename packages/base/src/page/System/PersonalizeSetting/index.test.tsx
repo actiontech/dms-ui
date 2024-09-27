@@ -2,10 +2,13 @@ import PersonalizeSetting from '.';
 import dms from '../../../testUtils/mockApi/global';
 import system from '../../../testUtils/mockApi/system';
 import { mockSystemConfig } from '../../../testUtils/mockHooks/mockSystemConfig';
-
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/PersonalizeSetting', () => {
   let requestGetBasicInfo: jest.SpyInstance;
@@ -15,6 +18,7 @@ describe('base/System/PersonalizeSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     jest.spyOn(Date.prototype, 'getTime').mockReturnValue(1612148800);
     mockSystemConfig();
@@ -35,6 +39,15 @@ describe('base/System/PersonalizeSetting', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetBasicInfo).toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllBySelector('.ant-upload-disabled')[0]).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 

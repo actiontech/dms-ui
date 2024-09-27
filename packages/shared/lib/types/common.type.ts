@@ -39,7 +39,7 @@ export type RouterConfigItem = RouteObject & {
   hideInMenu?: boolean;
   key: string;
   children?: RouterConfigItem[];
-  role?: Array<SystemRole | ''>;
+  role?: Array<SystemRole>;
   permission?: Array<keyof PermissionReduxState>;
 };
 

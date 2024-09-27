@@ -44,8 +44,10 @@ export const mockCurrentUserReturn = {
   isCertainProjectManager: true,
   userRoles: {
     [SystemRole.admin]: true,
-    [SystemRole.certainProjectManager]: true
-  }
+    [SystemRole.certainProjectManager]: true,
+    [SystemRole.globalViewing]: true
+  },
+  hasGlobalViewingPermission: true
 };
 
 export const mockProjectInfo = {

@@ -29,7 +29,8 @@ const DataSourceManagement: React.FC = () => {
     DataSourceManagerSegmentedKey.GlobalDataSource
   );
 
-  const { isAdmin, isCertainProjectManager } = useCurrentUser();
+  const { isAdmin, isCertainProjectManager, hasGlobalViewingPermission } =
+    useCurrentUser();
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const DataSourceManagement: React.FC = () => {
       children: <GlobalDataSource />,
       destroyInactivePane: true
     };
-    if (isAdmin) {
+    if (isAdmin || hasGlobalViewingPermission) {
       return [
         globalDataSourceItem,
         {
@@ -67,7 +68,7 @@ const DataSourceManagement: React.FC = () => {
     }
 
     return [];
-  }, [isAdmin, isCertainProjectManager, t]);
+  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager, t]);
 
   // #if [ee]
   const renderExtra = () => {

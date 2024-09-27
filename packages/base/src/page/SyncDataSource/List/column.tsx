@@ -14,18 +14,15 @@ export const SyncTaskListActions: (params: {
   navigate: NavigateFunction;
   syncAction: (taskId: string) => void;
   deleteAction: (taskId: string) => void;
-  actionPermission: boolean;
 }) => ActiontechTableActionMeta<IListDBServiceSyncTask>[] = ({
   navigate,
   syncAction,
-  deleteAction,
-  actionPermission
+  deleteAction
 }) => {
   return [
     {
       key: 'edit',
       text: t('common.edit'),
-      permissions: () => actionPermission,
       buttonProps: (record) => {
         return {
           onClick: () =>
@@ -36,7 +33,6 @@ export const SyncTaskListActions: (params: {
     {
       key: 'sync',
       text: t('dmsSyncDataSource.syncTaskList.columns.sync'),
-      permissions: () => actionPermission,
       buttonProps: (record) => {
         return {
           onClick: () => syncAction(record?.uid ?? '')
@@ -46,7 +42,6 @@ export const SyncTaskListActions: (params: {
     {
       key: 'delete',
       text: t('common.delete'),
-      permissions: () => actionPermission,
       buttonProps: () => {
         return {
           danger: true

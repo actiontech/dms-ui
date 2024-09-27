@@ -46,7 +46,11 @@ describe('hooks/useCurrentUser', () => {
   it('should return true while role is admin', () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        user: { role: SystemRole.admin, bindProjects: mockBindProjects }
+        user: {
+          role: SystemRole.admin,
+          bindProjects: mockBindProjects,
+          managementPermissions: mockManagementPermissions
+        }
       });
     });
     const { result } = renderHook(() => useCurrentUser());
@@ -82,7 +86,8 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.isCertainProjectManager).toBeTruthy();
     expect(result.current.userRoles).toEqual({
       [SystemRole.admin]: true,
-      [SystemRole.certainProjectManager]: true
+      [SystemRole.certainProjectManager]: true,
+      [SystemRole.globalViewing]: false
     });
   });
 
@@ -99,7 +104,12 @@ describe('hooks/useCurrentUser', () => {
               project_name: 'default'
             }
           ],
-          managementPermissions: mockManagementPermissions,
+          managementPermissions: [
+            {
+              uid: '700016',
+              name: '全局浏览'
+            }
+          ],
           theme: SupportTheme.LIGHT
         }
       });
@@ -110,14 +120,19 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.isCertainProjectManager).toBeFalsy();
     expect(result.current.userRoles).toEqual({
       [SystemRole.admin]: false,
-      [SystemRole.certainProjectManager]: false
+      [SystemRole.certainProjectManager]: false,
+      [SystemRole.globalViewing]: true
     });
   });
 
   it(`should update the user's language when the updateLanguage callback is called`, () => {
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
-        user: { role: SystemRole.admin, bindProjects: mockBindProjects }
+        user: {
+          role: SystemRole.admin,
+          bindProjects: mockBindProjects,
+          managementPermissions: mockManagementPermissions
+        }
       });
     });
     const { result } = renderHook(() => useCurrentUser());

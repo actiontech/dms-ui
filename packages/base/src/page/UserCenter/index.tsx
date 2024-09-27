@@ -15,6 +15,7 @@ import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { PlusOutlined } from '@actiontech/icons';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
@@ -26,6 +27,8 @@ const UserCenter: React.FC = () => {
   const onRefreshTable = (tab: UserCenterListEnum) => {
     eventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
+
+  const { isAdmin } = useCurrentUser();
 
   const pageItems: SegmentedTabsProps['items'] = [
     {
@@ -58,7 +61,7 @@ const UserCenter: React.FC = () => {
     return (
       <>
         <BasicButton
-          hidden={activePage !== UserCenterListEnum.user_list}
+          hidden={activePage !== UserCenterListEnum.user_list || !isAdmin}
           type="primary"
           icon={
             <PlusOutlined
@@ -76,7 +79,7 @@ const UserCenter: React.FC = () => {
         </BasicButton>
 
         <BasicButton
-          hidden={activePage !== UserCenterListEnum.role_list}
+          hidden={activePage !== UserCenterListEnum.role_list || !isAdmin}
           type="primary"
           icon={
             <PlusOutlined

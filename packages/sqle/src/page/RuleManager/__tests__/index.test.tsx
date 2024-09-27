@@ -133,4 +133,17 @@ describe('sqle/RuleManager', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(navigateSpy).toHaveBeenCalled();
   });
+
+  it('should hidden action when is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(baseElement).toMatchSnapshot();
+
+    expect(screen.queryByText('导入规则模板')).not.toBeInTheDocument();
+    expect(screen.queryByText('创建规则模板')).not.toBeInTheDocument();
+  });
 });

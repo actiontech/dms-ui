@@ -105,4 +105,16 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestTableList).toHaveBeenCalledTimes(2);
   });
+
+  it('should not render action column when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+
+    const { container } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(container).toMatchSnapshot();
+    expect(screen.queryAllByText('删 除')).toHaveLength(0);
+    expect(screen.queryAllByText('编 辑')).toHaveLength(0);
+  });
 });
