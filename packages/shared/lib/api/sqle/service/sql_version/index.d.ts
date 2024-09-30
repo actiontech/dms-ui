@@ -1,13 +1,13 @@
 import {
   IGetSqlVersionListResV1,
   ICreateSqlVersionReqV1,
-  IBaseRes,
+  ICreateSqlVersionResV1,
   IGetSqlVersionDetailResV1,
+  IBaseRes,
   IUpdateSqlVersionReqV1,
-  IBatchExecuteTasksOnWorkflowReqV1,
+  IBatchExecuteWorkflowsReqV1,
   IBatchReleaseWorkflowReqV1,
   ILockSqlVersionReqV1,
-  IRetryExecWorkflowReqV1,
   IGetWorkflowsThatCanBeAssociatedToVersionResV1,
   IBatchAssociateWorkflowsWithVersionReqV1,
   IGetDepBetweenStageInstanceResV1
@@ -39,7 +39,7 @@ export interface ICreateSqlVersionV1Params extends ICreateSqlVersionReqV1 {
   project_name: string;
 }
 
-export interface ICreateSqlVersionV1Return extends IBaseRes {}
+export interface ICreateSqlVersionV1Return extends ICreateSqlVersionResV1 {}
 
 export interface IGetSqlVersionDetailV1Params {
   project_name: string;
@@ -66,14 +66,14 @@ export interface IUpdateSqlVersionV1Params extends IUpdateSqlVersionReqV1 {
 
 export interface IUpdateSqlVersionV1Return extends IBaseRes {}
 
-export interface IBatchExecuteTasksOnWorkflowV1Params
-  extends IBatchExecuteTasksOnWorkflowReqV1 {
+export interface IBatchExecuteWorkflowsV1Params
+  extends IBatchExecuteWorkflowsReqV1 {
   project_name: string;
 
   sql_version_id: string;
 }
 
-export interface IBatchExecuteTasksOnWorkflowV1Return extends IBaseRes {}
+export interface IBatchExecuteWorkflowsV1Return extends IBaseRes {}
 
 export interface IBatchReleaseWorkflowsV1Params
   extends IBatchReleaseWorkflowReqV1 {
@@ -91,14 +91,6 @@ export interface ILockSqlVersionV1Params extends ILockSqlVersionReqV1 {
 }
 
 export interface ILockSqlVersionV1Return extends IBaseRes {}
-
-export interface IRetryExecWorkflowV1Params extends IRetryExecWorkflowReqV1 {
-  project_name: string;
-
-  sql_version_id: string;
-}
-
-export interface IRetryExecWorkflowV1Return extends IBaseRes {}
 
 export interface IGetWorkflowsThatCanBeAssociatedToVersionV1Params {
   project_name: string;
