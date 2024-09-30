@@ -47,7 +47,11 @@ const VersionBaseInfo: React.FC = () => {
         }
         name="desc"
       >
-        <BasicInput.TextArea />
+        <BasicInput.TextArea
+          autoSize={{
+            minRows: 5
+          }}
+        />
       </FormItemLabel>
     </>
   );
