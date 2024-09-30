@@ -16,11 +16,15 @@ import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const VersionManagementCreation = () => {
   const { t } = useTranslation();
 
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
+
+  const [versionId, setVersionId] = useState<number>();
 
   const {
     form,
@@ -54,6 +58,7 @@ const VersionManagementCreation = () => {
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
+          setVersionId(res.data.data?.sql_version_id);
           successfulSubmit();
         }
       })
@@ -87,7 +92,15 @@ const VersionManagementCreation = () => {
             extra={[
               <BasicButton type="primary" key="continue-btn" onClick={onReset}>
                 {t('versionManagement.create.continueText')}
-              </BasicButton>
+              </BasicButton>,
+              <Link
+                to={`/sqle/project/${projectID}/version-management/detail/${versionId}`}
+                key="check-detail"
+              >
+                <BasicButton type="primary" onClick={onReset}>
+                  {t('versionManagement.create.viewVersionDetail')}
+                </BasicButton>
+              </Link>
             ]}
           />
         }

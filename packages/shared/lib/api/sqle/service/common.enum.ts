@@ -1,3 +1,19 @@
+export enum AssociateWorkflowsStatusEnum {
+  'wait_for_audit' = 'wait_for_audit',
+
+  'wait_for_execution' = 'wait_for_execution',
+
+  'rejected' = 'rejected',
+
+  'canceled' = 'canceled',
+
+  'exec_failed' = 'exec_failed',
+
+  'executing' = 'executing',
+
+  'finished' = 'finished'
+}
+
 export enum AuditPlanParamResV1TypeEnum {
   'string' = 'string',
 

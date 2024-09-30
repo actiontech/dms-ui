@@ -1,4 +1,5 @@
 import {
+  AssociateWorkflowsStatusEnum,
   AuditPlanParamResV1TypeEnum,
   AuditPlanReportResV1AuditLevelEnum,
   AuditPlanSQLHeadV1TypeEnum,
@@ -109,6 +110,8 @@ export interface IAffectRows {
 
 export interface IAssociateWorkflows {
   desc?: string;
+
+  status?: AssociateWorkflowsStatusEnum;
 
   workflow_id?: string;
 
@@ -433,7 +436,7 @@ export interface IBatchCompleteWorkflowsReqV1 {
   workflow_names?: string[];
 }
 
-export interface IBatchExecuteTasksOnWorkflowReqV1 {
+export interface IBatchExecuteWorkflowsReqV1 {
   workflow_ids?: string[];
 }
 
@@ -647,6 +650,18 @@ export interface ICreateSqlVersionReqV1 {
   desc?: string;
 
   version?: string;
+}
+
+export interface ICreateSqlVersionRes {
+  sql_version_id?: number;
+}
+
+export interface ICreateSqlVersionResV1 {
+  code?: number;
+
+  data?: ICreateSqlVersionRes;
+
+  message?: string;
 }
 
 export interface ICreateSqlVersionStage {
