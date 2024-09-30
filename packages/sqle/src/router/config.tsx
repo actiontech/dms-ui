@@ -121,6 +121,18 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
+
+const VersionManagementCreation = React.lazy(
+  () => import('../page/VersionManagement/Create')
+);
+
+const VersionManagementUpdate = React.lazy(
+  () => import('../page/VersionManagement/Update')
+);
+
+const VersionManagementDetail = React.lazy(
+  () => import('../page/VersionManagement/Detail')
+);
 // #endif
 
 //workflow
@@ -458,7 +470,24 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         index: true,
         element: <VersionManagement />,
         key: 'VersionManagementList'
+      },
+      // #if [ee]
+      {
+        path: 'create',
+        element: <VersionManagementCreation />,
+        key: 'versionManagementCreation'
+      },
+      {
+        path: 'update/:versionId',
+        element: <VersionManagementUpdate />,
+        key: 'versionManagementCreation'
+      },
+      {
+        path: 'detail/:versionId',
+        element: <VersionManagementDetail />,
+        key: 'versionManagementDetail'
       }
+      // #endif
     ]
   },
   {

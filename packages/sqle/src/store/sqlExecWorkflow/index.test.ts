@@ -46,13 +46,15 @@ describe('store/sqlExecWorkflow', () => {
     const state = reducers(
       {
         clonedExecWorkflowSqlAuditInfo: null,
-        clonedExecWorkflowBaseInfo: null
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null
       },
       updateClonedExecWorkflowSqlAuditInfo(mockWorkflowSqlAuditInfo)
     );
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: mockWorkflowSqlAuditInfo,
-      clonedExecWorkflowBaseInfo: null
+      clonedExecWorkflowBaseInfo: null,
+      versionFirstStageInstances: null
     });
   });
 
@@ -69,13 +71,15 @@ describe('store/sqlExecWorkflow', () => {
     const state = reducers(
       {
         clonedExecWorkflowSqlAuditInfo: null,
-        clonedExecWorkflowBaseInfo: null
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null
       },
       updateClonedExecWorkflowBaseInfo(mockWorkflowBaseInfo)
     );
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: null,
-      clonedExecWorkflowBaseInfo: mockWorkflowBaseInfo
+      clonedExecWorkflowBaseInfo: mockWorkflowBaseInfo,
+      versionFirstStageInstances: null
     });
   });
 });
