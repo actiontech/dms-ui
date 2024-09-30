@@ -20,6 +20,9 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useParams } from 'react-router-dom';
 import { useMemo } from 'react';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
+import { useState } from 'react';
+import { VersionStage } from '../Common/VersionForm/index.type';
+import { isEqual } from 'lodash';
 
 const VersionManagementUpdate = () => {
   const { t } = useTranslation();
@@ -27,6 +30,8 @@ const VersionManagementUpdate = () => {
   const { versionId } = useParams<{ versionId: string }>();
 
   const { projectName } = useCurrentProject();
+
+  const [initStages, setInitStages] = useState<VersionStage[]>();
 
   const {
     form,
@@ -51,15 +56,17 @@ const VersionManagementUpdate = () => {
         }),
     {
       onSuccess: (res) => {
+        const stages = res?.sql_version_stage_detail?.map((stage) => ({
+          name: stage.stage_name ?? '',
+          instances:
+            stage.stage_instances?.map((instance) => instance.instances_id) ??
+            []
+        }));
+        setInitStages(stages);
         form.setFieldsValue({
           version: res?.version,
           desc: res?.desc,
-          stages: res?.sql_version_stage_detail?.map((stage) => ({
-            name: stage.stage_name,
-            instances: stage.stage_instances?.map(
-              (instance) => instance.instances_id
-            )
-          }))
+          stages
         });
       }
     }
@@ -68,7 +75,7 @@ const VersionManagementUpdate = () => {
   // 如果第一阶段绑定的工单为空 则可以编辑版本部署阶段
   const allowEditStages = useMemo(
     () =>
-      !!versionDetail?.sql_version_stage_detail?.[0]?.workflow_details?.length,
+      !versionDetail?.sql_version_stage_detail?.[0]?.workflow_details?.length,
     [versionDetail]
   );
 
@@ -83,7 +90,6 @@ const VersionManagementUpdate = () => {
       update_sql_version_stage: values.stages.map((stage, index) => ({
         name: stage.name,
         stage_sequence: index + 1,
-        test: 1,
         update_stages_instance_dep: stage.instances.map(
           (instance, instanceIndex) => ({
             stage_instance_id: instance,
@@ -94,7 +100,7 @@ const VersionManagementUpdate = () => {
       }))
     };
 
-    if (!allowEditStages) {
+    if (!allowEditStages || isEqual(initStages, values.stages)) {
       delete params.update_sql_version_stage;
     }
     sqlVersion
@@ -148,7 +154,7 @@ const VersionManagementUpdate = () => {
             form={form}
             {...formItemLayout.spaceBetween}
           >
-            <VersionForm isUpdate allowEditStages={!allowEditStages} />
+            <VersionForm isUpdate allowEditStages={allowEditStages} />
           </FormStyleWrapper>
         </EmptyBox>
       </Spin>

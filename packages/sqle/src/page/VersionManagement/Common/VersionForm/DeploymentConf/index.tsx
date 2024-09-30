@@ -104,7 +104,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
           <>
             {fields.map((field, index) => (
               <Row key={field.key} gutter={6}>
-                <EmptyBox if={fields.length !== 1}>
+                <EmptyBox if={fields.length !== 2}>
                   <Col span={1}>
                     <FormItemLabel
                       label={index === 0 ? ' ' : ''}
