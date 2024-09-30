@@ -10,6 +10,7 @@ import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { VersionStatusDictionary } from '../index.data';
 import { Link } from 'react-router-dom';
+import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type VersionManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlVersionListV1Params,
@@ -87,7 +88,9 @@ export const VersionManagementTableActions: (
         text: t('common.edit'),
         buttonProps: (record) => ({
           onClick: () => onEdit(record?.version_id)
-        })
+        }),
+        permissions: (record) =>
+          record?.status === SqlVersionResV1StatusEnum.is_being_released
       },
       {
         key: 'lock-button',
@@ -95,7 +98,9 @@ export const VersionManagementTableActions: (
         confirm: (record) => ({
           title: t('versionManagement.list.action.lockConfirm'),
           onConfirm: () => onLock(record?.version_id)
-        })
+        }),
+        permissions: (record) =>
+          record?.status === SqlVersionResV1StatusEnum.is_being_released
       },
       {
         key: 'delete-button',
@@ -104,7 +109,9 @@ export const VersionManagementTableActions: (
         confirm: (record) => ({
           title: t('versionManagement.list.action.deleteConfirm'),
           onConfirm: () => onDelete(record?.version_id)
-        })
+        }),
+        permissions: (record) =>
+          record?.status === SqlVersionResV1StatusEnum.is_being_released
       }
     ]
   };
