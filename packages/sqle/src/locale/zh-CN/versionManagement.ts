@@ -31,6 +31,7 @@ export default {
   create: {
     title: '创建版本',
     successTips: '创建版本成功',
+    viewVersionDetail: '查看版本详情',
     continueText: '继续创建版本'
   },
   update: {
@@ -81,6 +82,7 @@ export default {
     workflow: '工单',
     workflowName: '工单名称',
     workflowDesc: '工单描述',
+    workflowStatus: '工单状态',
     successTips: '关联工单成功'
   },
   offlineExec: {
