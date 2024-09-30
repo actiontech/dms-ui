@@ -8,7 +8,7 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-const useInitDataWithRequest = () => {
+const useInitDataWithRequest = (workflowId?: string) => {
   const urlParams = useParams<{ workflowId: string }>();
   const { projectName } = useCurrentProject();
   const [taskInfos, setTaskInfos] = useState<IAuditTaskResV1[]>([]);
@@ -30,7 +30,7 @@ const useInitDataWithRequest = () => {
       workflow
         .getWorkflowV2({
           project_name: projectName,
-          workflow_id: urlParams.workflowId ?? ''
+          workflow_id: workflowId ?? urlParams.workflowId ?? ''
         })
         .then((res) => res.data.data),
     {

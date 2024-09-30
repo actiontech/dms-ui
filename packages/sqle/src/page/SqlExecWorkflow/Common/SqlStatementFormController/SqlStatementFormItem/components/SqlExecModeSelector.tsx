@@ -23,7 +23,8 @@ import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/elem
 const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   fieldPrefixPath,
   isSupportFileModeExecuteSql,
-  currentSqlUploadType
+  currentSqlUploadType,
+  isAtRejectStep
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
@@ -68,13 +69,13 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
   // #endif
 
   useEffect(() => {
-    if (disabledSqlFileExecMode) {
+    if (disabledSqlFileExecMode && !isAtRejectStep) {
       form.setFieldValue(
         [fieldPrefixPath, 'exec_mode'],
         CreateAuditTasksGroupReqV1ExecModeEnum.sqls
       );
     }
-  }, [fieldPrefixPath, form, disabledSqlFileExecMode]);
+  }, [fieldPrefixPath, form, disabledSqlFileExecMode, isAtRejectStep]);
 
   return (
     <EmptyBox
@@ -143,6 +144,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
           <BasicSelect
             loading={getSqlFileOrderMethodLoading}
             options={sqlFileOrderMethodOptions}
+            disabled={isAtRejectStep}
           />
         </FormItemLabel>
       )}
