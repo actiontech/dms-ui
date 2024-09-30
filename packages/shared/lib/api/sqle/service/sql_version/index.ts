@@ -17,14 +17,12 @@ import {
   IDeleteSqlVersionV1Return,
   IUpdateSqlVersionV1Params,
   IUpdateSqlVersionV1Return,
-  IBatchExecuteTasksOnWorkflowV1Params,
-  IBatchExecuteTasksOnWorkflowV1Return,
+  IBatchExecuteWorkflowsV1Params,
+  IBatchExecuteWorkflowsV1Return,
   IBatchReleaseWorkflowsV1Params,
   IBatchReleaseWorkflowsV1Return,
   ILockSqlVersionV1Params,
   ILockSqlVersionV1Return,
-  IRetryExecWorkflowV1Params,
-  IRetryExecWorkflowV1Return,
   IGetWorkflowsThatCanBeAssociatedToVersionV1Params,
   IGetWorkflowsThatCanBeAssociatedToVersionV1Return,
   IBatchAssociateWorkflowsWithVersionV1Params,
@@ -118,8 +116,8 @@ class SqlVersionService extends ServiceBase {
     );
   }
 
-  public batchExecuteTasksOnWorkflowV1(
-    params: IBatchExecuteTasksOnWorkflowV1Params,
+  public batchExecuteWorkflowsV1(
+    params: IBatchExecuteWorkflowsV1Params,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
@@ -129,7 +127,7 @@ class SqlVersionService extends ServiceBase {
     const sql_version_id = paramsData.sql_version_id;
     delete paramsData.sql_version_id;
 
-    return this.post<IBatchExecuteTasksOnWorkflowV1Return>(
+    return this.post<IBatchExecuteWorkflowsV1Return>(
       `/v1/projects/${project_name}/sql_versions/${sql_version_id}/batch_execute_workflows`,
       paramsData,
       options
@@ -167,24 +165,6 @@ class SqlVersionService extends ServiceBase {
 
     return this.post<ILockSqlVersionV1Return>(
       `/v1/projects/${project_name}/sql_versions/${sql_version_id}/lock`,
-      paramsData,
-      options
-    );
-  }
-
-  public retryExecWorkflowV1(
-    params: IRetryExecWorkflowV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_name = paramsData.project_name;
-    delete paramsData.project_name;
-
-    const sql_version_id = paramsData.sql_version_id;
-    delete paramsData.sql_version_id;
-
-    return this.post<IRetryExecWorkflowV1Return>(
-      `/v1/projects/${project_name}/sql_versions/${sql_version_id}/retry_workflow`,
       paramsData,
       options
     );
