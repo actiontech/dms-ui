@@ -2192,12 +2192,6 @@ export interface IReportPushConfigList {
   type?: string;
 }
 
-export interface IRetryExecWorkflowReqV1 {
-  task_ids?: number[];
-
-  workflow_id?: string;
-}
-
 export interface IRewriteRule {
   message?: string;
 
@@ -3401,7 +3395,13 @@ export interface IBatchCancelWorkflowsReqV2 {
 }
 
 export interface IBatchCompleteWorkflowsReqV2 {
-  workflow_id_list?: string[];
+  workflow_list?: ICompleteWorkflowReq[];
+}
+
+export interface ICompleteWorkflowReq {
+  desc?: string;
+
+  workflow_id?: string;
 }
 
 export interface ICreateWorkflowReqV2 {

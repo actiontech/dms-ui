@@ -50,13 +50,17 @@ const OfflineExecModal = () => {
     dispatch(updateSelectVersionStageId({ stageId: null }));
   };
 
-  const onSubmit = () => {
-    form.validateFields();
-    // todo 待后端补充备注字段
+  const onSubmit = async () => {
+    const values = await form.validateFields();
     startSubmit();
     workflow
       .batchCompleteWorkflowsV2({
-        workflow_id_list: [workflowId ?? ''],
+        workflow_list: [
+          {
+            workflow_id: workflowId ?? '',
+            desc: values.remarks
+          }
+        ],
         project_name: projectName
       })
       .then((res) => {

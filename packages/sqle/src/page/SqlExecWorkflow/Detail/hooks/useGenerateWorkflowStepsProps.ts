@@ -140,7 +140,7 @@ const useGenerateWorkflowStepsProps = ({
   const completeAction = useCallback(async () => {
     return workflow
       .batchCompleteWorkflowsV2({
-        workflow_id_list: [workflowId],
+        workflow_list: [{ workflow_id: workflowId }],
         project_name: projectName
       })
       .then((res) => {
