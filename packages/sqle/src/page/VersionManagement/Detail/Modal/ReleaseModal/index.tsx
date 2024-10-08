@@ -54,7 +54,8 @@ const ReleaseModal: React.FC = () => {
     renderTestDatabasesConnectInfo,
     getConnectionInfoLoading,
     getConnectionInfo,
-    testConnectionAble
+    testConnectionAble,
+    clearConnectionInfo
   } = useTestConnection(releaseWorkflows);
 
   const { stageId, currentStageWorkflowList, visible } = useSelector(
@@ -114,6 +115,7 @@ const ReleaseModal: React.FC = () => {
 
   const onClose = () => {
     form.resetFields();
+    clearConnectionInfo();
     dispatch(
       updateVersionManagementModalStatus({
         modalName: ModalName.Version_Management_Release_Modal,
