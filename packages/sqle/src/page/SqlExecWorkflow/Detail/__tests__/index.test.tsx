@@ -373,7 +373,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
 
     expect(batchCompleteWorkflowsSpy).toHaveBeenCalledTimes(1);
     expect(batchCompleteWorkflowsSpy).toHaveBeenCalledWith({
-      workflow_id_list: [workflowsDetailData.workflow_id],
+      workflow_list: [{ workflow_id: workflowsDetailData.workflow_id }],
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));

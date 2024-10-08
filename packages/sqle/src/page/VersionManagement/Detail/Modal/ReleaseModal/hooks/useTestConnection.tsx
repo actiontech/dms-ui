@@ -34,7 +34,8 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
   const {
     data: connectionInfo,
     loading: getConnectionInfoLoading,
-    run: getConnectionInfo
+    run: getConnectionInfo,
+    mutate: setConnectionInfo
   } = useRequest(
     () => {
       const params: IBatchCheckInstanceIsConnectableByNameParams = {
@@ -84,11 +85,16 @@ const useTestConnection = (releaseWorkflows: TargetReleaseWorkflowType[]) => {
     [t, connectionInfo]
   );
 
+  const clearConnectionInfo = useCallback(() => {
+    setConnectionInfo(undefined);
+  }, [setConnectionInfo]);
+
   return {
     renderTestDatabasesConnectInfo,
     getConnectionInfoLoading,
     getConnectionInfo,
-    testConnectionAble: !!instanceNames?.length
+    testConnectionAble: !!instanceNames?.length,
+    clearConnectionInfo
   };
 };
 

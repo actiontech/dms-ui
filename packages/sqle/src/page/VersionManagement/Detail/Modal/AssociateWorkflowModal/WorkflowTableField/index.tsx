@@ -22,11 +22,6 @@ const WorkflowTableField: React.FC<{
       title: t('versionManagement.associateWorkflow.workflowName')
     },
     {
-      dataIndex: 'desc',
-      title: t('versionManagement.associateWorkflow.workflowDesc'),
-      render: (desc: string) => desc || '-'
-    },
-    {
       dataIndex: 'status',
       title: t('versionManagement.associateWorkflow.workflowStatus'),
       render: (status: string) => (
@@ -34,6 +29,11 @@ const WorkflowTableField: React.FC<{
           status={status as unknown as WorkflowDetailResV1StatusEnum}
         />
       )
+    },
+    {
+      dataIndex: 'desc',
+      title: t('versionManagement.associateWorkflow.workflowDesc'),
+      render: (desc: string) => desc || '-'
     }
   ];
 
