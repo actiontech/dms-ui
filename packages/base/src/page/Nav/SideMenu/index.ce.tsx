@@ -12,16 +12,7 @@ import MenuList from './MenuList';
 import { FlagFilled } from '@actiontech/icons';
 
 const CESideMenu = () => {
-  const {
-    username,
-    theme,
-    updateTheme,
-    isAdmin,
-    userRoles,
-    language,
-    isCertainProjectManager,
-    hasGlobalViewingPermission
-  } = useCurrentUser();
+  const { username, theme, updateTheme, language } = useCurrentUser();
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
@@ -35,17 +26,14 @@ const CESideMenu = () => {
           </Typography.Text>
         </CEModeProjectWrapperStyleWrapper>
 
-        <MenuList projectID={DEFAULT_PROJECT_ID} userRoles={userRoles} />
+        <MenuList projectID={DEFAULT_PROJECT_ID} />
       </div>
 
       <UserMenu
-        hasGlobalViewingPermission={hasGlobalViewingPermission}
         language={language}
         username={username}
         updateTheme={updateTheme}
-        isAdmin={isAdmin}
         theme={theme}
-        isCertainProjectManager={isCertainProjectManager}
       />
     </SideMenuStyleWrapper>
   );

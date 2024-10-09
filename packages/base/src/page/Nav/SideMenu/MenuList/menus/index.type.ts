@@ -1,16 +1,21 @@
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { PermissionsConstantType } from '@actiontech/shared/lib/global';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
 
 export type CustomMenuItemType =
   | (ItemType & {
       structKey: MenuStructTreeKey;
-      role?: Array<SystemRole>;
+      permission?: PermissionsConstantType;
     })
   | null;
 
 export type MenuStructTreeType = Array<
   | MenuStructTreeKey
-  | { type: 'group'; label: string; group: Array<MenuStructTreeKey> }
+  | {
+      type: 'group';
+      label: string;
+      group: Array<MenuStructTreeKey>;
+      permission?: PermissionsConstantType;
+    }
   | { type: 'divider' }
 >;
 

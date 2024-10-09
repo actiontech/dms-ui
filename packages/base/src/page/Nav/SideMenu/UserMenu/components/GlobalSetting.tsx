@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import {
   GearFilled,
@@ -13,73 +13,81 @@ import {
 } from '@actiontech/icons';
 import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
+import {
+  PERMISSIONS,
+  PermissionsConstantType
+} from '@actiontech/shared/lib/global';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
-type Props = {
-  isAdmin: boolean;
-  isCertainProjectManager: boolean;
-  hasGlobalViewingPermission: boolean;
-};
-
-const GlobalSetting: React.FC<Props> = ({
-  isAdmin,
-  isCertainProjectManager,
-  hasGlobalViewingPermission
-}) => {
+const GlobalSetting: React.FC = () => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleClickItem = (path: string) => {
-    navigate(path);
-  };
+  const { checkPagePermission } = usePermission();
 
-  const menus: ContextMenuItem[] = [
-    {
-      key: 'user-center',
-      icon: <UserShieldFilled />,
-      text: t('menu.userCenter'),
-      onClick: () => handleClickItem('/user-center'),
-      hidden: !isAdmin && !hasGlobalViewingPermission
-    },
-    {
-      key: 'data-source-management',
-      icon: <DatabaseFilled />,
-      text: t('dmsMenu.globalSettings.instanceManager'),
-      onClick: () => handleClickItem(`/data-source-management`),
-      hidden:
-        !isAdmin && !isCertainProjectManager && !hasGlobalViewingPermission
-    },
-    // #if [sqle]
-    {
-      key: 'report-statistics',
-      icon: <SignalFilled />,
-      text: t('dmsMenu.globalSettings.reportStatistics'),
-      onClick: () => handleClickItem('/sqle/report-statistics'),
-      hidden: !isAdmin && !hasGlobalViewingPermission
-    },
-    {
-      key: 'viewRule',
-      icon: <ProfileSquareFilled />,
-      text: t('dmsMenu.globalSettings.viewRule'),
-      onClick: () => handleClickItem(`/sqle/rule`)
-    },
-    {
-      key: 'rule-manager',
-      icon: <ProfileEditFilled />,
-      text: t('dmsMenu.globalSettings.ruleManage'),
-      onClick: () => handleClickItem('/sqle/rule-manager'),
-      hidden: !isAdmin && !hasGlobalViewingPermission
-    },
-    // #endif
-    {
-      key: 'system',
-      icon: <GearFilled />,
-      text: t('dmsMenu.globalSettings.system'),
-      onClick: () => handleClickItem('/system'),
-      hidden: !isAdmin && !hasGlobalViewingPermission
-    }
-  ];
+  const menus: ContextMenuItem[] = useMemo(() => {
+    const handleClickItem = (path: string) => {
+      navigate(path);
+    };
+
+    const menusWithPermission: Array<
+      ContextMenuItem & { permission?: PermissionsConstantType }
+    > = [
+      {
+        key: 'user-center',
+        icon: <UserShieldFilled />,
+        text: t('menu.userCenter'),
+        onClick: () => handleClickItem('/user-center'),
+        permission: PERMISSIONS.PAGES.BASE.USER_CENTER
+      },
+      {
+        key: 'data-source-management',
+        icon: <DatabaseFilled />,
+        text: t('dmsMenu.globalSettings.instanceManager'),
+        onClick: () => handleClickItem(`/data-source-management`),
+        permission: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT
+      },
+      // #if [sqle]
+      {
+        key: 'report-statistics',
+        icon: <SignalFilled />,
+        text: t('dmsMenu.globalSettings.reportStatistics'),
+        onClick: () => handleClickItem('/sqle/report-statistics'),
+        permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
+      },
+      {
+        key: 'viewRule',
+        icon: <ProfileSquareFilled />,
+        text: t('dmsMenu.globalSettings.viewRule'),
+        onClick: () => handleClickItem(`/sqle/rule`)
+      },
+      {
+        key: 'rule-manager',
+        icon: <ProfileEditFilled />,
+        text: t('dmsMenu.globalSettings.ruleManage'),
+        onClick: () => handleClickItem('/sqle/rule-manager'),
+        permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT
+      },
+      // #endif
+      {
+        key: 'system',
+        icon: <GearFilled />,
+        text: t('dmsMenu.globalSettings.system'),
+        onClick: () => handleClickItem('/system'),
+        permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
+      }
+    ];
+
+    return menusWithPermission.filter((item) => {
+      if (!item.permission) {
+        return true;
+      }
+
+      return checkPagePermission(item.permission);
+    });
+  }, [checkPagePermission, navigate, t]);
 
   return (
     <ContextMenu
