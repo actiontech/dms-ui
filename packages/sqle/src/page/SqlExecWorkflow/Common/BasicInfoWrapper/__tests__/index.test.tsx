@@ -21,7 +21,8 @@ describe('sqle/ExecWorkflow/BasicInfoWrapper', () => {
       desc: 'this is a desc str',
       status: WorkflowRecordResV2StatusEnum.exec_failed,
       className: 'custom-class-name-a',
-      gap: 10
+      gap: 10,
+      versionName: 'v1-test'
     });
     expect(baseElement).toMatchSnapshot();
   });
