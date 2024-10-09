@@ -21,7 +21,8 @@ import {
   IUpdateWorkflowReqV2,
   IRejectWorkflowReqV2,
   IGetWorkflowTasksResV2,
-  IUpdateWorkflowScheduleReqV2
+  IUpdateWorkflowScheduleReqV2,
+  IBatchCompleteWorkflowsReqV3
 } from '../common.d';
 
 import {
@@ -371,3 +372,10 @@ export interface IUpdateWorkflowScheduleV2Params
 }
 
 export interface IUpdateWorkflowScheduleV2Return extends IBaseRes {}
+
+export interface IBatchCompleteWorkflowsV3Params
+  extends IBatchCompleteWorkflowsReqV3 {
+  project_name: string;
+}
+
+export interface IBatchCompleteWorkflowsV3Return extends IBaseRes {}

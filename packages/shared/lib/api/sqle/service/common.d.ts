@@ -3395,13 +3395,7 @@ export interface IBatchCancelWorkflowsReqV2 {
 }
 
 export interface IBatchCompleteWorkflowsReqV2 {
-  workflow_list?: ICompleteWorkflowReq[];
-}
-
-export interface ICompleteWorkflowReq {
-  desc?: string;
-
-  workflow_id?: string;
+  workflow_id_list?: string[];
 }
 
 export interface ICreateWorkflowReqV2 {
@@ -3722,4 +3716,14 @@ export interface IWorkflowStepResV2 {
   type?: WorkflowStepResV2TypeEnum;
 
   workflow_step_id?: number;
+}
+
+export interface IBatchCompleteWorkflowsReqV3 {
+  workflow_list?: ICompleteWorkflowReq[];
+}
+
+export interface ICompleteWorkflowReq {
+  desc?: string;
+
+  workflow_id?: string;
 }
