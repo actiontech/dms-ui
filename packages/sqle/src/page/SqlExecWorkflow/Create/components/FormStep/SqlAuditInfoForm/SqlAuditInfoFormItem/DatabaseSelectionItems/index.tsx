@@ -4,8 +4,8 @@ import {
 } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { DatabaseSelectionItemProps } from '../../index.type';
-import { Divider, Form, Space } from 'antd';
-import { useEffect } from 'react';
+import { Divider, Form, Space, SelectProps } from 'antd';
+import { useEffect, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useInstance from '../../../../../../../../hooks/useInstance';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
@@ -21,6 +21,9 @@ import {
 } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../../../../../store';
+import useCreationMode from '../../../../../hooks/useCreationMode';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
@@ -31,6 +34,15 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   const { projectName } = useCurrentProject();
 
   const { sqleTheme } = useThemeStyleData();
+
+  const { isAssociationVersionMode } = useCreationMode();
+
+  const { versionFirstStageInstances } = useSelector((state: IReduxState) => {
+    return {
+      versionFirstStageInstances:
+        state.sqlExecWorkflow.versionFirstStageInstances
+    };
+  });
 
   const {
     testDatabaseConnect,
@@ -60,6 +72,29 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     updateInstanceList,
     instanceOptions
   } = useInstance();
+
+  const versionFirstStageInstanceOptions = useMemo(() => {
+    const newOptions: SelectProps['options'] = [];
+    instanceOptions.forEach((item) => {
+      if (
+        item.options.some((i) =>
+          versionFirstStageInstances?.some(
+            (instance) => instance.instances_name === i.value
+          )
+        )
+      ) {
+        newOptions.push({
+          ...item,
+          options: item.options.filter((i) =>
+            versionFirstStageInstances?.some(
+              (instance) => instance.instances_name === i.value
+            )
+          )
+        });
+      }
+    });
+    return newOptions;
+  }, [instanceOptions, versionFirstStageInstances]);
 
   useEffect(() => {
     updateInstanceList({
@@ -130,7 +165,11 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
                           }
                           size="middle"
                           loading={instanceTipsLoading}
-                          options={instanceOptions}
+                          options={
+                            isAssociationVersionMode
+                              ? versionFirstStageInstanceOptions
+                              : instanceOptions
+                          }
                           onChange={(name) => {
                             form.setFieldValue(
                               ['databaseInfo', field.name, 'instanceSchema'],

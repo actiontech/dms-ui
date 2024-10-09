@@ -1,17 +1,32 @@
 import { useSearchParams } from 'react-router-dom';
 import { useMemo } from 'react';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import {
+  WORKFLOW_VERSION_ID_PATH_KEY,
+  SOURCE_WORKFLOW_PATH_KEY,
+  WORKFLOW_VERSION_NAME_PATH_KEY
+} from '../../../../data/common';
 
 const useCreationMode = () => {
   const [searchParams] = useSearchParams();
 
-  const isCloneMode = useMemo(
-    () => searchParams.has(SOURCE_WORKFLOW_PATH_KEY),
-    [searchParams]
-  );
+  const { isAssociationVersionMode, versionId, versionName, isCloneMode } =
+    useMemo(
+      () => ({
+        isAssociationVersionMode:
+          searchParams.has(WORKFLOW_VERSION_ID_PATH_KEY) &&
+          searchParams.has(WORKFLOW_VERSION_NAME_PATH_KEY),
+        versionId: searchParams.get(WORKFLOW_VERSION_ID_PATH_KEY),
+        versionName: searchParams.get(WORKFLOW_VERSION_NAME_PATH_KEY),
+        isCloneMode: searchParams.has(SOURCE_WORKFLOW_PATH_KEY)
+      }),
+      [searchParams]
+    );
 
   return {
-    isCloneMode
+    isCloneMode,
+    isAssociationVersionMode,
+    versionId,
+    versionName
   };
 };
 
