@@ -174,6 +174,7 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
   mode: WorkflowResV2ModeEnum.different_sqls,
   create_user_name: 'admin',
   create_time: '2024-01-17T02:22:17Z',
+  sql_version_name: 'v1-test',
   record: {
     tasks: [
       {
