@@ -1,16 +1,18 @@
 import classNames from 'classnames';
 import { BasicInfoStyleWrapper } from './style';
 import { BasicInfoWrapperProps } from './index.type';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox, BasicTag } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { execWorkflowStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
+import { Space } from 'antd';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
   desc,
   className,
   status,
-  gap = 12
+  gap = 12,
+  versionName
 }) => {
   const { t } = useTranslation();
 
@@ -80,7 +82,14 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
         </div>
       </EmptyBox>
 
-      <div className="workflow-base-info-title">{title}</div>
+      <Space className="workflow-base-info-title">
+        {title}
+        <EmptyBox if={!!versionName}>
+          <BasicTag color="orange" size="large">
+            {versionName}
+          </BasicTag>
+        </EmptyBox>
+      </Space>
       <div className="workflow-base-info-desc">{desc ?? '-'}</div>
     </BasicInfoStyleWrapper>
   );
