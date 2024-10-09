@@ -25,7 +25,11 @@ import {
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import {
+  SOURCE_WORKFLOW_PATH_KEY,
+  WORKFLOW_VERSION_NAME_PATH_KEY,
+  WORKFLOW_VERSION_ID_PATH_KEY
+} from '../../../../data/common';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
@@ -124,7 +128,13 @@ describe('sqle/SqlExecWorkflow/Create', () => {
           clonedExecWorkflowBaseInfo: {
             workflow_subject: 'workflow-name-test',
             desc: 'test desc'
-          }
+          },
+          versionFirstStageInstances: [
+            {
+              instances_name: instanceTipsMockData[0].instance_name,
+              instances_id: instanceTipsMockData[0].instance_id
+            }
+          ]
         }
       })
     );
@@ -836,6 +846,103 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
       sql: 'select * from user'
+    });
+  });
+
+  it('render associated version when create workflow', async () => {
+    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/sqle/project/700300/exec-workflow/create?${WORKFLOW_VERSION_NAME_PATH_KEY}=v1-test&${WORKFLOW_VERSION_ID_PATH_KEY}=1`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstanceTip).toHaveBeenCalledTimes(1);
+    expect(requestInstanceTip).toHaveBeenCalledWith({
+      functional_module:
+        getInstanceTipListV1FunctionalModuleEnum.create_workflow,
+      project_name: projectName
+    });
+
+    const instanceNameEle = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle);
+    const instanceNameLabel = `${instanceTipsMockData[0].instance_name}(${instanceTipsMockData[0].host}:${instanceTipsMockData[0].port})`;
+    expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
+    fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(requestInstanceSchemas).toHaveBeenCalledTimes(1);
+    expect(requestInstanceSchemas).toHaveBeenCalledWith({
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstance).toHaveBeenCalledTimes(1);
+    expect(requestInstance).toHaveBeenNthCalledWith(1, {
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
+    const SchemaNameEle = getBySelector(
+      '#databaseInfo_0_instanceSchema',
+      baseElement
+    );
+    fireEvent.mouseDown(SchemaNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector(`div[title="test123"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+
+    // SQL美化
+    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
+    fireEvent.change(monacoEditor, {
+      target: {
+        value: 'select * from user.list join in all'
+      }
+    });
+    fireEvent.click(screen.getByText('SQL美化'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstance).toHaveBeenCalledTimes(2);
+    expect(requestInstance).toHaveBeenNthCalledWith(2, {
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(requestAuditTask).toHaveBeenCalledTimes(1);
+    expect(requestAuditTask).toHaveBeenCalledWith({
+      exec_mode: undefined,
+      file_order_method: undefined,
+      instances: [{ instance_name: 'mysql-1', instance_schema: 'test123' }],
+      project_name: projectName
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledWith({
+      task_group_id: 99,
+      sql: formatterSQL('select * from user.list join in all', 'MySQL')
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(RequestCreateWorkflow).toHaveBeenCalled();
+    expect(RequestCreateWorkflow).toHaveBeenCalledWith({
+      project_name: projectName,
+      task_ids: [1, 2],
+      workflow_subject: 'mysql-1_20231218120000',
+      desc: undefined,
+      sql_version_id: 1
     });
   });
 });
