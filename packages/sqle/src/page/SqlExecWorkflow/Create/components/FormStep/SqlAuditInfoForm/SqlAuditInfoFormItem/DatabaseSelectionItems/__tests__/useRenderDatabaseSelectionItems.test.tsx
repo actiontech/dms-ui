@@ -14,6 +14,7 @@ import { superRender } from '../../../../../../../../../testUtils/customRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import * as useCreationMode from '../../../../../../hooks/useCreationMode';
+import { instanceTipsMockData } from '../../../../../../../../../testUtils/mockApi/instance/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -39,13 +40,22 @@ describe('test useRenderDatabaseSelectionItems', () => {
                 instanceSchema: 'test'
               }
             ]
-          }
+          },
+          versionFirstStageInstances: [
+            {
+              instances_name: instanceTipsMockData[0].instance_name,
+              instances_id: instanceTipsMockData[0].instance_id
+            }
+          ]
         }
       })
     );
-    jest
-      .spyOn(useCreationMode, 'default')
-      .mockImplementation(() => ({ isCloneMode: false }));
+    jest.spyOn(useCreationMode, 'default').mockImplementation(() => ({
+      isCloneMode: false,
+      isAssociationVersionMode: false,
+      versionId: null,
+      versionName: null
+    }));
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -347,7 +357,12 @@ describe('test useRenderDatabaseSelectionItems', () => {
     const mockGetInstance = instance.getInstance();
     const mockGetSystemModuleStatus = system.getSystemModuleStatus();
     const spy = jest.spyOn(useCreationMode, 'default');
-    spy.mockImplementation(() => ({ isCloneMode: true }));
+    spy.mockImplementation(() => ({
+      isCloneMode: true,
+      isAssociationVersionMode: false,
+      versionId: null,
+      versionName: null
+    }));
     renderHook(() =>
       useRenderDatabaseSelectionItems({
         dbSourceInfoCollection: MockSharedStepDetail.dbSourceInfoCollection,
