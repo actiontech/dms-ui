@@ -9,17 +9,12 @@ import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import {
-  SupportLanguage,
-  SupportTheme,
-  UserRolesType
-} from '@actiontech/shared/lib/enum';
+import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
   useDbServiceDriver,
-  useFeaturePermission,
-  useCurrentPermission
+  useFeaturePermission
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -36,10 +31,10 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
-import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
 import i18n from './locale';
 import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 import './index.less';
 
@@ -79,12 +74,7 @@ function App() {
 
   const { getUserBySession } = useSessionUser();
 
-  const {
-    useInfoFetched,
-    theme,
-    userRoles,
-    language: currentLanguage
-  } = useCurrentUser();
+  const { useInfoFetched, theme, language: currentLanguage } = useCurrentUser();
 
   const antdLanguage =
     currentLanguage === SupportLanguage.enUS ? antd_en_US : antd_zh_CN;
@@ -92,7 +82,7 @@ function App() {
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
   const { updateFeaturePermission, featurePermissionFetched } =
     useFeaturePermission();
-  const currentPermissions = useCurrentPermission();
+  const { checkPagePermission } = usePermission();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -110,44 +100,26 @@ function App() {
   // #endif
 
   const AuthRouterConfigData = useMemo(() => {
-    const filterRoutesByRole: (
-      routes: RouterConfigItem[],
-      roles: UserRolesType,
-      permissions: PermissionReduxState
-    ) => RouterConfigItem[] = (routes, roles, permissions) => {
-      return routes.reduce(
-        (filtered: RouterConfigItem[], route: RouterConfigItem) => {
-          let currentRote: RouterConfigItem | undefined = undefined;
-          if (
-            (!route.permission && !route.role) ||
-            (Array.isArray(route.role) &&
-              route.role.some((r) => r && roles[r])) ||
-            (route.permission && route.permission.every((p) => permissions[p]))
-          ) {
-            currentRote = route;
-          }
+    const filterRoutesByPermission: (
+      routes: RouterConfigItem[]
+    ) => RouterConfigItem[] = (routes) => {
+      return routes.filter((route) => {
+        if (route.permission) {
+          return checkPagePermission(route.permission);
+        }
 
-          if (
-            route.children &&
-            Array.isArray(route.children) &&
-            route.children.length &&
-            !route.permission &&
-            !route.role
-          ) {
-            currentRote = {
-              ...route,
-              children: filterRoutesByRole(route.children, roles, permissions)
-            };
-          }
-          currentRote && filtered.push(currentRote);
-          return filtered;
-        },
-        []
-      );
+        if (route.children) {
+          route.children = filterRoutesByPermission(route.children);
+        }
+
+        return true;
+      });
     };
-
-    return filterRoutesByRole(AuthRouterConfig, userRoles, currentPermissions);
-  }, [currentPermissions, userRoles]);
+    if (useInfoFetched && featurePermissionFetched) {
+      return filterRoutesByPermission(AuthRouterConfig);
+    }
+    return AuthRouterConfig;
+  }, [checkPagePermission, featurePermissionFetched, useInfoFetched]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();
