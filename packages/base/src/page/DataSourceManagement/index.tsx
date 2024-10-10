@@ -22,6 +22,11 @@ import { PlusOutlined } from '@actiontech/icons/src/outlined';
 import GlobalDataSource from '../GlobalDataSource';
 import SyncDataSource from '../SyncDataSource';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
+import {
+  PERMISSIONS,
+  PermissionsConstantType
+} from '@actiontech/shared/lib/global';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const DataSourceManagement: React.FC = () => {
   const { t } = useTranslation();
@@ -29,8 +34,8 @@ const DataSourceManagement: React.FC = () => {
     DataSourceManagerSegmentedKey.GlobalDataSource
   );
 
-  const { isAdmin, isCertainProjectManager, hasGlobalViewingPermission } =
-    useCurrentUser();
+  const { isAdmin, isCertainProjectManager } = useCurrentUser();
+  const { checkPagePermission } = usePermission();
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -45,30 +50,27 @@ const DataSourceManagement: React.FC = () => {
   };
 
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
-    const globalDataSourceItem: SegmentedTabsProps['items'][0] = {
-      label: t('dmsGlobalDataSource.pageTitle'),
-      value: DataSourceManagerSegmentedKey.GlobalDataSource,
-      children: <GlobalDataSource />,
-      destroyInactivePane: true
-    };
-    if (isAdmin || hasGlobalViewingPermission) {
-      return [
-        globalDataSourceItem,
-        {
-          label: t('dmsSyncDataSource.pageTitle'),
-          value: DataSourceManagerSegmentedKey.SyncDataSource,
-          children: <SyncDataSource />,
-          destroyInactivePane: true
-        }
-      ];
-    }
+    const items: Array<
+      SegmentedTabsProps['items'][0] & { permission: PermissionsConstantType }
+    > = [
+      {
+        label: t('dmsGlobalDataSource.pageTitle'),
+        value: DataSourceManagerSegmentedKey.GlobalDataSource,
+        children: <GlobalDataSource />,
+        destroyInactivePane: true,
+        permission: PERMISSIONS.PAGES.BASE.GLOBAL_DATA_SOURCE
+      },
+      {
+        label: t('dmsSyncDataSource.pageTitle'),
+        value: DataSourceManagerSegmentedKey.SyncDataSource,
+        children: <SyncDataSource />,
+        destroyInactivePane: true,
+        permission: PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE
+      }
+    ];
 
-    if (isCertainProjectManager) {
-      return [globalDataSourceItem];
-    }
-
-    return [];
-  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager, t]);
+    return items.filter((item) => checkPagePermission(item.permission));
+  }, [checkPagePermission, t]);
 
   // #if [ee]
   const renderExtra = () => {

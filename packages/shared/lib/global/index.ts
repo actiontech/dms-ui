@@ -6,3 +6,4 @@ export { default as useFeaturePermission } from './useFeaturePermission';
 export { default as useCurrentPermission } from './useCurrentPermission';
 export { default as useProjectBusinessTips } from './useProjectBusinessTips';
 export { default as useUserOperationPermission } from './useUserOperationPermission';
+export * from './usePermission';
