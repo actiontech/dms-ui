@@ -80,7 +80,7 @@ function App() {
   const { getUserBySession } = useSessionUser();
 
   const {
-    useInfoFetched,
+    userInfoFetched,
     theme,
     userRoles,
     language: currentLanguage
@@ -157,7 +157,7 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!useInfoFetched || !driverInfoFetched || !featurePermissionFetched) {
+    if (!userInfoFetched || !driverInfoFetched || !featurePermissionFetched) {
       return <HeaderProgress />;
     }
 
@@ -166,7 +166,7 @@ function App() {
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [useInfoFetched, driverInfoFetched, featurePermissionFetched, elements]);
+  }, [userInfoFetched, driverInfoFetched, featurePermissionFetched, elements]);
 
   useEffect(() => {
     if (token) {
