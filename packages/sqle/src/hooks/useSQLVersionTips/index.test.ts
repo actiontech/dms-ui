@@ -1,14 +1,14 @@
 import { act, renderHook, cleanup } from '@testing-library/react-hooks';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import sqlVersion from '../../testUtils/mockApi/sql_version';
-import useSQLVersion from '.';
+import useSQLVersionTips from '.';
 import { getSqlVersionListV1MockData } from '../../testUtils/mockApi/sql_version/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 
-describe('sqle/useSQLVersion', () => {
+describe('sqle/useSQLVersionTips', () => {
   let getSqlVersionListSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseCurrentProject();
@@ -22,7 +22,7 @@ describe('sqle/useSQLVersion', () => {
   });
 
   it('render get version list from request', async () => {
-    const { result } = renderHook(() => useSQLVersion());
+    const { result } = renderHook(() => useSQLVersionTips());
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.sqlVersionList).toEqual([]);
@@ -50,7 +50,7 @@ describe('sqle/useSQLVersion', () => {
   it('render response code is not equal success code', async () => {
     getSqlVersionListSpy.mockClear();
     getSqlVersionListSpy.mockImplementation(() => createSpyFailResponse({}));
-    const { result } = renderHook(() => useSQLVersion());
+    const { result } = renderHook(() => useSQLVersionTips());
     act(() => {
       result.current.updateSqlVersionList();
     });
@@ -62,7 +62,7 @@ describe('sqle/useSQLVersion', () => {
   it('render response throw error', async () => {
     getSqlVersionListSpy.mockClear();
     getSqlVersionListSpy.mockImplementation(() => createSpyErrorResponse({}));
-    const { result } = renderHook(() => useSQLVersion());
+    const { result } = renderHook(() => useSQLVersionTips());
     act(() => {
       result.current.updateSqlVersionList();
     });

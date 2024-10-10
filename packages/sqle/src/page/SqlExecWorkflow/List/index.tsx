@@ -44,7 +44,7 @@ import {
   translateDictionaryI18nLabel
 } from '../../../hooks/useStaticStatus/index.data';
 import { PlusOutlined, MinusCircleOutlined } from '@actiontech/icons';
-import useSQLVersion from '../../../hooks/useSQLVersion';
+import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -57,7 +57,7 @@ const SqlExecWorkflowList: React.FC = () => {
   const { instanceIDOptions, updateInstanceList } = useInstance();
   const { isAdmin, username } = useCurrentUser();
 
-  const { sqlVersionOptions, updateSqlVersionList } = useSQLVersion();
+  const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
 
   const {
     tableFilterInfo,
