@@ -120,13 +120,31 @@ const ChangePriority: React.FC = () => {
             rules={[{ required: true }]}
           >
             <Radio.Group>
-              <Space direction="vertical">
-                <Radio value={SqlManagePriority.high}>
-                  {t('sqlManagement.table.action.single.updatePriority.high')}
-                </Radio>
-                <Radio value={SqlManagePriority.low}>
-                  {t('sqlManagement.table.action.single.updatePriority.low')}
-                </Radio>
+              <Space direction="vertical" size={0}>
+                {[
+                  {
+                    label: t(
+                      'sqlManagement.table.action.single.updatePriority.high'
+                    ),
+                    value: SqlManagePriority.high
+                  },
+                  {
+                    label: t(
+                      'sqlManagement.table.action.single.updatePriority.low'
+                    ),
+                    value: SqlManagePriority.low
+                  }
+                ].map((item) => {
+                  return (
+                    <Radio
+                      key={item.value}
+                      style={{ lineHeight: '32px' }}
+                      value={item.value}
+                    >
+                      {item.label}
+                    </Radio>
+                  );
+                })}
               </Space>
             </Radio.Group>
           </FormItemLabelStyleWrapper>
