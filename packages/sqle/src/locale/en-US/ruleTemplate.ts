@@ -88,17 +88,30 @@ export default {
     button: 'Import rule template',
     title: 'Import audit rule template',
     selectFile: 'Select import file',
+    selectFileTips:
+      'Only supports importing existing platform rules. You can modify rule thresholds or delete unnecessary rules.',
     submitText: 'Import',
     fileRequireTips: 'No file selected',
     successTitle: 'Import audit rule template successfully',
     importNew: 'Import another new audit rule template >',
-    importingFile: 'Importing file...'
+    importingFile: 'Importing file...',
+    parseFileFailed:
+      'The current import information has validation failures. Please modify according to the prompts in the downloaded file and re-import.',
+    dbType: 'Data Source Type',
+    fileType: 'File Type',
+    downloadTemplate: 'Download Import Template',
+    downloading: 'Downloading template file...',
+    checkSuccess: 'Validation Passed'
   },
 
   exportRuleTemplate: {
     button: 'Export rule template',
     exporting: 'Exporting template "{{name}}"...',
-    exportSuccessTips: 'Export template "{{name}}" successfully'
+    modal: {
+      title: 'Export Audit Rule Template',
+      submit: 'Export',
+      exportFileType: 'Export File Type'
+    }
   },
 
   updateRuleTemplate: {

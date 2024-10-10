@@ -49,7 +49,12 @@ export default {
     account: 'Profile',
     viewVersion: 'Version',
     logout: 'Logout',
-    notice: 'Notice'
+    notice: 'Notice',
+    language: {
+      text: 'Language',
+      zhCN: 'Chinese',
+      enUS: 'English'
+    }
   },
 
   globalSettings: {
