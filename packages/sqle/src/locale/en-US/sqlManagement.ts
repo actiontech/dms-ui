@@ -31,6 +31,13 @@ export default {
       single: {
         assignment: 'Assign person in charge',
         assignmentSuccessTips: 'Assigned person in charge successfully',
+        updatePriority: {
+          triggerText: 'Change Priority',
+          successTips: 'Successfully changed SQL priority',
+          label: 'Change priority to',
+          high: 'High Priority',
+          low: 'Low Priority'
+        },
         updateStatus: {
           triggerText: 'Change status',
           label: 'Current SQL status',
