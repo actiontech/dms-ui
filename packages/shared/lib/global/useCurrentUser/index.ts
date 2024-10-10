@@ -21,7 +21,7 @@ const useCurrentUser = () => {
     managementPermissions,
     username,
     theme,
-    useInfoFetched,
+    userInfoFetched,
     uid,
     language
   } = useSelector((state: IReduxState) => {
@@ -31,7 +31,7 @@ const useCurrentUser = () => {
       bindProjects: state.user.bindProjects,
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
-      useInfoFetched: state.user.useInfoFetched,
+      userInfoFetched: state.user.userInfoFetched,
       uid: state.user.uid,
       language: state.user.language
     };
@@ -58,7 +58,9 @@ const useCurrentUser = () => {
   );
   const updateLanguage = useCallback(
     (selectedLanguage: SupportLanguage) => {
-      dispatch(updateReduxLanguage({ language: selectedLanguage }));
+      dispatch(
+        updateReduxLanguage({ language: selectedLanguage, store: true })
+      );
     },
     [dispatch]
   );
@@ -90,7 +92,7 @@ const useCurrentUser = () => {
     role,
     theme,
     updateTheme,
-    useInfoFetched,
+    userInfoFetched,
     uid,
     isCertainProjectManager,
     userRoles,

@@ -10,6 +10,7 @@ import {
   IUidWithName,
   IUserBindProject
 } from '@actiontech/shared/lib/api/base/service/common';
+import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
 
 export type IBindProject = { archived?: boolean } & IUserBindProject;
 
@@ -21,7 +22,7 @@ type UserReduxState = {
   bindProjects: Array<IBindProject>;
   managementPermissions: IUidWithName[];
   uid: string;
-  useInfoFetched: boolean;
+  userInfoFetched: boolean;
   language: SupportLanguage;
 };
 
@@ -36,10 +37,10 @@ const initialState: UserReduxState = {
   bindProjects: [],
   managementPermissions: [],
   uid: LocalStorageWrapper.getOrDefault(StorageKey.USER_UID, ''),
-  useInfoFetched: false,
+  userInfoFetched: false,
   language: LocalStorageWrapper.getOrDefault(
     StorageKey.Language,
-    SupportLanguage.zhCN
+    DEFAULT_LANGUAGE
   ) as SupportLanguage
 };
 
@@ -65,10 +66,14 @@ const user = createSlice({
     },
     updateLanguage: (
       state,
-      { payload: { language } }: PayloadAction<{ language: SupportLanguage }>
+      {
+        payload: { language, store }
+      }: PayloadAction<{ language: SupportLanguage; store: boolean }>
     ) => {
       state.language = language;
-      LocalStorageWrapper.set(StorageKey.Language, language);
+      if (store) {
+        LocalStorageWrapper.set(StorageKey.Language, language);
+      }
     },
     updateToken: (
       state,
@@ -101,7 +106,7 @@ const user = createSlice({
       LocalStorageWrapper.set(StorageKey.USER_UID, uid);
     },
     updateUserInfoFetchStatus: (state, { payload }: PayloadAction<boolean>) => {
-      state.useInfoFetched = payload;
+      state.userInfoFetched = payload;
     }
   }
 });
