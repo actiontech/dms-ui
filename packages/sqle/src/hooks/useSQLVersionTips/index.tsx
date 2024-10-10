@@ -5,7 +5,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
-const useSQLVersion = () => {
+const useSQLVersionTips = () => {
   const [loading, { setTrue, setFalse }] = useBoolean();
 
   const [sqlVersionList, setSqlVersionList] = useState<ISqlVersionResV1[]>([]);
@@ -52,4 +52,4 @@ const useSQLVersion = () => {
   };
 };
 
-export default useSQLVersion;
+export default useSQLVersionTips;
