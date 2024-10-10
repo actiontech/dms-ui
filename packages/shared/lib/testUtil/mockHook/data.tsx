@@ -39,7 +39,7 @@ export const mockCurrentUserReturn = {
   updateLanguage: jest.fn(),
   role: SystemRole.admin,
   updateTheme: jest.fn(),
-  useInfoFetched: true,
+  userInfoFetched: true,
   uid: '500300',
   isCertainProjectManager: true,
   userRoles: {

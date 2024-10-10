@@ -12,6 +12,7 @@ import { TOptions } from 'i18next';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
 import { findDuplicateKeys } from '../utils/findDuplicateKeys';
+import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
 
 // #if [DEV]
 const zh_dupKeys = findDuplicateKeys([
@@ -64,7 +65,7 @@ const initReactI18n = () => {
     },
     lng: LocalStorageWrapper.getOrDefault(
       StorageKey.Language,
-      SupportLanguage.zhCN
+      DEFAULT_LANGUAGE
     ),
     fallbackLng: SupportLanguage.zhCN,
     interpolation: {
