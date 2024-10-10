@@ -40,11 +40,13 @@ export default {
     instanceName: '数据源',
     passRate: '审核通过率',
     taskScore: '审核结果评分',
-    id: '工单号'
+    id: '工单号',
+    version: '版本'
   },
   create: {
     backToList: '返回工单列表',
     title: '创建工单',
+    currentVersion: '当前版本',
     mustAuditTips: '您必须先对您的SQL进行审核才能进行创建工单',
     mustHaveAuditResultTips: '不能对审核结果为空的SQL进行创建工单',
 
@@ -206,7 +208,8 @@ export default {
       closeWorkflow: '关闭工单',
       closeConfirm: '您确认关闭当前工单？',
       closeWorkflowSuccessTips: '工单关闭成功',
-      cloneExecWorkflow: '上线到其他实例'
+      cloneExecWorkflow: '上线到其他实例',
+      associatedWorkflowInfo: '关联工单信息'
     },
 
     paginationDisplay: '分页展示',

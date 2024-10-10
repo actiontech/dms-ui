@@ -74,9 +74,17 @@ exports[`test AuditResultStep should match snapshot 1`] = `
     class=" css-sjztq0"
   >
     <div
-      class="workflow-base-info-title"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
     >
-      workflow_subject
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        workflow_subject
+      </div>
+      <div
+        class="ant-space-item"
+      />
     </div>
     <div
       class="workflow-base-info-desc"
