@@ -138,8 +138,8 @@ describe('App', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('render App when "useInfoFetched" is equal false', () => {
-    mockUseCurrentUser({ useInfoFetched: false });
+  it('render App when "userInfoFetched" is equal false', () => {
+    mockUseCurrentUser({ userInfoFetched: false });
     const { container } = superRender(<App />);
     expect(container).toMatchSnapshot();
   });
