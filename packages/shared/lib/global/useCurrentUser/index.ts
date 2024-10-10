@@ -37,6 +37,7 @@ const useCurrentUser = () => {
     };
   });
 
+  // todo 暂时保留 全局管理员 == admin 的逻辑，等权限全部重构完成后，移除该逻辑
   const isAdmin =
     role === SystemRole.admin ||
     managementPermissions.some(
@@ -77,9 +78,17 @@ const useCurrentUser = () => {
     return {
       [SystemRole.admin]: isAdmin,
       [SystemRole.certainProjectManager]: isCertainProjectManager,
-      [SystemRole.globalViewing]: hasGlobalViewingPermission
+      [SystemRole.globalViewing]: hasGlobalViewingPermission,
+      [SystemRole.globalManager]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.global_management
+      )
     };
-  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager]);
+  }, [
+    hasGlobalViewingPermission,
+    isAdmin,
+    isCertainProjectManager,
+    managementPermissions
+  ]);
 
   return {
     isAdmin,

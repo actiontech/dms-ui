@@ -35,9 +35,6 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
           {header && <div className="header">{header}</div>}
           <div className="content">
             {items.map((menu) => {
-              if (menu.hidden) {
-                return null;
-              }
               return (
                 <div
                   key={menu.key}
