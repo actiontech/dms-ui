@@ -46,7 +46,7 @@ export const AuditResultForCreateOrderColumn = (
         return (
           <div onClick={() => onClickAuditResult(record)}>
             <ResultIconRender
-              iconLevels={result.map((item) => {
+              iconLevels={result?.map((item) => {
                 return item.level ?? '';
               })}
             />
