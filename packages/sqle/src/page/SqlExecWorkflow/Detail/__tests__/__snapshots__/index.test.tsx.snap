@@ -166,8 +166,16 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
               class="clearPaddingTop css-ahxq8i"
             >
               <div
-                class="workflow-base-info-title"
-              />
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                />
+                <div
+                  class="ant-space-item"
+                />
+              </div>
               <div
                 class="workflow-base-info-desc"
               >
@@ -765,9 +773,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                 </span>
               </div>
               <div
-                class="workflow-base-info-title"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
-                workflow_name
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                />
               </div>
               <div
                 class="workflow-base-info-desc"
@@ -1561,9 +1577,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                 </span>
               </div>
               <div
-                class="workflow-base-info-title"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
-                workflow_name
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                />
               </div>
               <div
                 class="workflow-base-info-desc"
@@ -2396,9 +2420,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 </span>
               </div>
               <div
-                class="workflow-base-info-title"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
-                workflow_name
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                />
               </div>
               <div
                 class="workflow-base-info-desc"

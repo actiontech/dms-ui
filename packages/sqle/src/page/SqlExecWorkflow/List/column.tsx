@@ -1,4 +1,8 @@
-import { BasicTypographyEllipsis, AvatarCom } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  AvatarCom,
+  BasicTag
+} from '@actiontech/shared';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableColumn,
@@ -12,6 +16,7 @@ import WorkflowStatus from './components/WorkflowStatus';
 import { SqlExecWorkflowListTableFilterParam } from './index.type';
 import { WorkflowNameStyleWrapper } from './style';
 import { BriefcaseFilled } from '@actiontech/icons';
+import { Space } from 'antd';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IWorkflowDetailResV1 & {
@@ -102,6 +107,24 @@ export const SqlExecWorkflowListColumn: (
         ) : (
           '-'
         )
+    },
+    {
+      dataIndex: 'sql_version_name',
+      title: () => t('execWorkflow.list.version'),
+      filterCustomType: 'select',
+      filterKey: 'filter_sql_version_id',
+      render: (versionNames: string[]) => {
+        if (!versionNames || versionNames.length === 0) {
+          return '-';
+        }
+        return (
+          <Space>
+            {versionNames?.map((name) => (
+              <BasicTag key={name}>{name}</BasicTag>
+            ))}
+          </Space>
+        );
+      }
     },
     {
       dataIndex: 'create_time',

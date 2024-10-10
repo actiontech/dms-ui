@@ -3723,3 +3723,13 @@ export interface IWorkflowStepResV2 {
 
   workflow_step_id?: number;
 }
+
+export interface IBatchCompleteWorkflowsReqV3 {
+  workflow_list?: ICompleteWorkflowReq[];
+}
+
+export interface ICompleteWorkflowReq {
+  desc?: string;
+
+  workflow_id?: string;
+}
