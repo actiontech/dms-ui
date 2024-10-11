@@ -41,7 +41,7 @@ export default {
   form: {
     baseInfo: '版本基础信息',
     name: '版本名称',
-    nameTip: '请填写具有标识性的版本名称，用来识别本次发布，如SQLE2.2409.0',
+    nameTip: '请填写具有标识性的版本名称，用来识别本次发布，如SQLE2_2409_0',
     desc: '版本说明',
     descTip: '请填写本次发布的目的，提示版本变更范围',
     deploymentStageConf: '部署阶段配置',

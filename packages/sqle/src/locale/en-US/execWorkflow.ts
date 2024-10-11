@@ -40,11 +40,13 @@ export default {
     instanceName: 'DB instance',
     passRate: 'Audit pass rate',
     taskScore: 'Audit score',
-    id: 'Workflow id'
+    id: 'Workflow id',
+    version: 'Version'
   },
   create: {
     backToList: 'Back to workflow list',
     title: 'Create workflow',
+    currentVersion: 'Current version',
     mustAuditTips: 'You must audit your SQL before creating a workflow',
     mustHaveAuditResultTips:
       'You cannot create a workflow for SQL with empty audit results',
@@ -220,9 +222,11 @@ export default {
       stepNumberIsUndefined:
         'The step number of the current node is undefined!',
       closeWorkflow: 'Close workflow',
-      closeConfirm: 'Are you sure you want to close the current workflow?',
+      closeConfirm:
+        'Once the work order is closed, no further actions can be taken on it. Are you sure you want to close the current work order?',
       closeWorkflowSuccessTips: 'Workflow closed successfully',
-      cloneExecWorkflow: 'Execute to another instance'
+      cloneExecWorkflow: 'Execute to another instance',
+      associatedWorkflowInfo: 'Associated workflows'
     },
 
     paginationDisplay: 'Pagination display',

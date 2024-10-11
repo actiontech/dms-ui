@@ -30,6 +30,7 @@ export default {
   monitorSourceConfig: '监控源配置',
   diagnosisList: '巡检列表',
   pipelineConfiguration: 'CI/CD pipeline',
+  versionManagement: 'Version management',
 
   projectSelector: {
     recentlyOpenedProjects: 'Recently opened projects',
@@ -54,7 +55,7 @@ export default {
     notice: 'Notice',
     language: {
       text: 'Language',
-      zhCN: 'Chinese',
+      zhCN: '中文',
       enUS: 'English'
     }
   },

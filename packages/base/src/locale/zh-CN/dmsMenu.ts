@@ -60,7 +60,7 @@ export default {
     language: {
       text: '语言',
       zhCN: '中文',
-      enUS: '英文'
+      enUS: 'English'
     }
   },
 
