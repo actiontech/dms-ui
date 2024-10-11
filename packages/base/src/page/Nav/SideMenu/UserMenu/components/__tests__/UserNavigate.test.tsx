@@ -141,7 +141,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
 
     expect(requestUpdateCurrentUser).toHaveBeenCalledTimes(0);
 
-    fireEvent.click(screen.getByText('英文'));
+    fireEvent.click(screen.getByText('English'));
     expect(requestUpdateCurrentUser).toHaveBeenCalledTimes(1);
     expect(requestUpdateCurrentUser).toHaveBeenCalledWith({
       current_user: { language: SupportLanguage.enUS }
