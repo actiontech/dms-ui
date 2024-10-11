@@ -39,6 +39,8 @@ const useWorkflowDetailAction = ({
   manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta;
   terminateWorkflowButtonMeta: WorkflowDetailActionMeta;
   executeInOtherInstanceMeta: WorkflowDetailActionMeta;
+  executable?: boolean;
+  executable_reason?: string;
 } => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -298,7 +300,10 @@ const useWorkflowDetailAction = ({
       action: executeInOtherInstance,
       loading: executeInOtherInstanceLoading,
       hidden: false
-    }
+    },
+
+    executable: workflowInfo?.record?.executable,
+    executable_reason: workflowInfo?.record?.executable_reason
   };
 };
 

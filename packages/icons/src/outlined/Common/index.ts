@@ -6,6 +6,7 @@ export { default as ClockCircleOutlined } from './ClockCircleOutlined';
 export { default as CloseHexagonOutlined } from './CloseHexagonOutlined';
 export { default as CodeOutlined } from './CodeOutlined';
 export { default as DashOutlined } from './DashOutlined';
+export { default as DoubleArrowOutlined } from './DoubleArrowOutlined';
 export { default as DownArrowLineOutlined } from './DownArrowLineOutlined';
 export { default as DownTriangleOutlined } from './DownTriangleOutlined';
 export { default as EmptyHexagonOutlined } from './EmptyHexagonOutlined';

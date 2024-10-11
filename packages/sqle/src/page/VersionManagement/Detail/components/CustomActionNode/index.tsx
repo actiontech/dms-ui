@@ -1,8 +1,9 @@
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
 import type { Node, NodeProps } from '@xyflow/react';
 import { CustomActionNodeStyleWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
 import { StageNodeData } from '../../index.type';
+import { DoubleArrowOutlined } from '@actiontech/icons';
 
 const CustomActionNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   data
@@ -14,13 +15,23 @@ const CustomActionNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   return (
     <CustomActionNodeStyleWrapper>
       <EmptyBox if={!!onExecute}>
-        <BasicButton
-          type="primary"
-          disabled={!allowExecute}
-          onClick={onExecute}
+        <BasicToolTips
+          title={
+            !allowExecute ? t('versionManagement.execute.disableTips') : ''
+          }
+          overlayClassName="whitespace-pre-line"
         >
-          {t('versionManagement.detail.execute')}
-        </BasicButton>
+          <BasicButton
+            type="primary"
+            disabled={!allowExecute}
+            onClick={onExecute}
+            icon={
+              <DoubleArrowOutlined fill="currentColor" color="currentColor" />
+            }
+          >
+            {t('versionManagement.detail.execute')}
+          </BasicButton>
+        </BasicToolTips>
       </EmptyBox>
     </CustomActionNodeStyleWrapper>
   );

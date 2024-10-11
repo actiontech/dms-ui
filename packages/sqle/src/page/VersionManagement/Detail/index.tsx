@@ -28,7 +28,11 @@ import { ModalName } from '../../../data/ModalName';
 import { useNavigate, useParams } from 'react-router-dom';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useRequest } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser,
+  useUserOperationPermission
+} from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Spin, Space } from 'antd';
 import {
@@ -47,6 +51,7 @@ import {
   WORKFLOW_VERSION_NAME_PATH_KEY,
   WORKFLOW_VERSION_ID_PATH_KEY
 } from '../../../data/common';
+import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const VersionDetail = () => {
   const dispatch = useDispatch();
@@ -56,6 +61,15 @@ const VersionDetail = () => {
   const { versionId } = useParams<{ versionId: string }>();
 
   const { projectName, projectID } = useCurrentProject();
+
+  const { isAdmin } = useCurrentUser();
+
+  const {
+    updateUserOperationPermission,
+    loading: getUserOperationPermissionLoading,
+    isHaveServicePermission,
+    userOperationPermission
+  } = useUserOperationPermission();
 
   const [nodes, setNodes] = useState<Node<StageNodeData>[]>([]);
 
@@ -199,6 +213,7 @@ const VersionDetail = () => {
           }
         }),
     {
+      ready: !!userOperationPermission,
       onSuccess: (res) => {
         const {
           sql_version_stage_detail = [],
@@ -390,6 +405,22 @@ const VersionDetail = () => {
           });
         };
 
+        const hasNextStageCreateWorkflowPermission = (stageId: number) => {
+          const currentStageIndex = sortedStageDetail.findIndex(
+            (i) => i.stage_id === stageId
+          );
+          if (currentStageIndex === sortedStageDetail.length - 1) {
+            return false;
+          }
+          const nextStageInstance =
+            sortedStageDetail[currentStageIndex + 1]?.stage_instances;
+          return nextStageInstance?.some((i) =>
+            isHaveServicePermission(
+              OpPermissionItemOpPermissionTypeEnum.create_workflow,
+              i.instances_id
+            )
+          );
+        };
         stageWorkflowNodes.forEach((node, index) => {
           if (index !== stageWorkflowNodes.length - 1) {
             nodeEdges.push({
@@ -402,7 +433,10 @@ const VersionDetail = () => {
                   ? () =>
                       onRelease(node.data.stageId, node.data.workflowList ?? [])
                   : undefined,
-                allowRelease: allowRelease(node.data.workflowList ?? [])
+                allowRelease:
+                  isAdmin ||
+                  (hasNextStageCreateWorkflowPermission(node.data.stageId) &&
+                    allowRelease(node.data.workflowList ?? []))
               }
             });
           }
@@ -417,6 +451,10 @@ const VersionDetail = () => {
       }
     }
   );
+
+  useEffect(() => {
+    updateUserOperationPermission();
+  }, [updateUserOperationPermission]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -447,7 +485,9 @@ const VersionDetail = () => {
             extra={<BackToList />}
           />
           <Spin
-            spinning={getVersionDetailLoading}
+            spinning={
+              getVersionDetailLoading || getUserOperationPermissionLoading
+            }
             wrapperClassName="flow-wrapper"
           >
             <ReactFlow
