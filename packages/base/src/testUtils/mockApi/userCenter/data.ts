@@ -47,6 +47,26 @@ export const userList: IListUser[] = [
     email: '',
     phone: '',
     wxid: ''
+  },
+  {
+    uid: '7002001',
+    name: 'global-view',
+    stat: ListUserStatEnum.正常,
+    authentication_type: ListUserAuthenticationTypeEnum.dms,
+    email: '',
+    phone: '',
+    wxid: '',
+    op_permissions: [{ uid: '700016', name: '全局浏览' }]
+  },
+  {
+    uid: '7002002',
+    name: 'global-management',
+    stat: ListUserStatEnum.正常,
+    authentication_type: ListUserAuthenticationTypeEnum.dms,
+    email: '',
+    phone: '',
+    wxid: '',
+    op_permissions: [{ uid: '700017', name: '全局管理' }]
   }
 ];
 

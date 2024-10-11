@@ -393,7 +393,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/operation-record`,
     key: 'operationRecord',
     element: <OperationRecord />,
-    role: [SystemRole.admin]
+    role: [SystemRole.admin, SystemRole.globalViewing]
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
@@ -503,7 +503,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
     label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
-    role: [SystemRole.admin]
+    role: [SystemRole.admin, SystemRole.globalViewing]
   },
   {
     path: 'sqle/rule',
@@ -514,7 +514,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   {
     key: 'ruleManager',
     path: 'sqle/rule-manager',
-    role: [SystemRole.admin],
+    role: [SystemRole.admin, SystemRole.globalViewing],
     children: [
       {
         index: true,

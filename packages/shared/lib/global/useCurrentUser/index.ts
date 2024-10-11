@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 import { IReduxState } from '../../../../base/src/store';
 import {
+  OpPermissionTypeUid,
   SupportLanguage,
   SupportTheme,
   SystemRole,
@@ -20,7 +21,7 @@ const useCurrentUser = () => {
     managementPermissions,
     username,
     theme,
-    useInfoFetched,
+    userInfoFetched,
     uid,
     language
   } = useSelector((state: IReduxState) => {
@@ -30,13 +31,18 @@ const useCurrentUser = () => {
       bindProjects: state.user.bindProjects,
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
-      useInfoFetched: state.user.useInfoFetched,
+      userInfoFetched: state.user.userInfoFetched,
       uid: state.user.uid,
       language: state.user.language
     };
   });
 
-  const isAdmin: boolean = role === SystemRole.admin;
+  const isAdmin =
+    role === SystemRole.admin ||
+    managementPermissions.some(
+      (v) => v.uid === OpPermissionTypeUid.global_management
+    );
+
   const isProjectManager = useCallback(
     (name: string) => {
       const project = bindProjects.find((v) => v.project_name === name);
@@ -52,7 +58,9 @@ const useCurrentUser = () => {
   );
   const updateLanguage = useCallback(
     (selectedLanguage: SupportLanguage) => {
-      dispatch(updateReduxLanguage({ language: selectedLanguage }));
+      dispatch(
+        updateReduxLanguage({ language: selectedLanguage, store: true })
+      );
     },
     [dispatch]
   );
@@ -61,10 +69,19 @@ const useCurrentUser = () => {
     return bindProjects?.some((v) => v.is_manager) ?? false;
   }, [bindProjects]);
 
-  const userRoles: UserRolesType = {
-    [SystemRole.admin]: isAdmin,
-    [SystemRole.certainProjectManager]: isCertainProjectManager
-  };
+  const hasGlobalViewingPermission = useMemo(() => {
+    return managementPermissions.some(
+      (v) => v.uid === OpPermissionTypeUid.global_viewing
+    );
+  }, [managementPermissions]);
+
+  const userRoles: UserRolesType = useMemo(() => {
+    return {
+      [SystemRole.admin]: isAdmin,
+      [SystemRole.certainProjectManager]: isCertainProjectManager,
+      [SystemRole.globalViewing]: hasGlobalViewingPermission
+    };
+  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager]);
 
   return {
     isAdmin,
@@ -75,12 +92,13 @@ const useCurrentUser = () => {
     role,
     theme,
     updateTheme,
-    useInfoFetched,
+    userInfoFetched,
     uid,
     isCertainProjectManager,
     userRoles,
     language,
-    updateLanguage
+    updateLanguage,
+    hasGlobalViewingPermission
   };
 };
 export default useCurrentUser;

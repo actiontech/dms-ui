@@ -7,7 +7,7 @@ import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 
 export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
@@ -65,8 +65,20 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
 
 export const UserListActions = (
   onEditUser: (record?: IListUser) => void,
-  onDeleteUser: (record?: IListUser) => void
+  onDeleteUser: (record?: IListUser) => void,
+  role: SystemRole | ''
 ): ActiontechTableActionMeta<IListUser>[] => {
+  const calculateActionDisabled = (record?: IListUser) => {
+    if (
+      record?.op_permissions?.some(
+        (v) => v.uid === OpPermissionTypeUid.global_management
+      ) ||
+      record?.name === SystemRole.admin
+    ) {
+      return role !== SystemRole.admin;
+    }
+    return false;
+  };
   return [
     {
       text: t('common.manage'),
@@ -75,14 +87,16 @@ export const UserListActions = (
         return {
           onClick: () => {
             onEditUser(record);
-          }
+          },
+          disabled: calculateActionDisabled(record)
         };
       }
     },
     {
       text: t('common.delete'),
-      buttonProps: () => ({
-        danger: true
+      buttonProps: (record) => ({
+        danger: true,
+        disabled: calculateActionDisabled(record)
       }),
       key: 'userDelete',
       confirm: (record) => {

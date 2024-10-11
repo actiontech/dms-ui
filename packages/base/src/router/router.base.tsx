@@ -62,13 +62,13 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     path: 'user-center',
     key: 'userCenter',
     element: <UserCenter />,
-    role: [SystemRole.admin]
+    role: [SystemRole.admin, SystemRole.globalViewing]
   },
   {
     path: 'system',
     key: 'system',
     element: <System />,
-    role: [SystemRole.admin]
+    role: [SystemRole.admin, SystemRole.globalViewing]
   },
   {
     path: 'account',
@@ -79,7 +79,11 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: 'data-source-management',
     key: 'dataSourceManagement',
-    role: [SystemRole.admin, SystemRole.certainProjectManager],
+    role: [
+      SystemRole.admin,
+      SystemRole.certainProjectManager,
+      SystemRole.globalViewing
+    ],
     element: <DataSourceManagement />
   },
 
@@ -87,7 +91,11 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: 'global-data-source',
     key: 'globalDataSource',
-    role: [SystemRole.admin, SystemRole.certainProjectManager],
+    role: [
+      SystemRole.admin,
+      SystemRole.certainProjectManager,
+      SystemRole.globalViewing
+    ],
     children: [
       {
         path: 'batch-import',
@@ -104,7 +112,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: `sync-data-source`,
     key: 'syncDataSource',
-    role: [SystemRole.admin],
+    role: [SystemRole.admin, SystemRole.globalViewing],
     children: [
       {
         path: 'create',

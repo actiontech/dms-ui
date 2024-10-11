@@ -59,14 +59,26 @@ const menuStruct: MenuStructTreeType = [
 describe('test genMenuItemsWithMenuStructTree', () => {
   it('should match snapshot', () => {
     expect(
-      genMenuItemsWithMenuStructTree('600300', [], [], '')
+      genMenuItemsWithMenuStructTree('600300', [], [], {
+        [SystemRole.admin]: true,
+        [SystemRole.certainProjectManager]: true,
+        [SystemRole.globalViewing]: false
+      })
     ).toMatchSnapshot();
     expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], '')
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], {
+        [SystemRole.admin]: true,
+        [SystemRole.certainProjectManager]: true,
+        [SystemRole.globalViewing]: false
+      })
     ).toMatchSnapshot();
 
     expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], '')
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], {
+        [SystemRole.admin]: true,
+        [SystemRole.certainProjectManager]: true,
+        [SystemRole.globalViewing]: false
+      })
     ).toMatchSnapshot();
 
     expect(
@@ -74,7 +86,11 @@ describe('test genMenuItemsWithMenuStructTree', () => {
         '600300',
         baseMenusCollection,
         menuStruct,
-        ''
+        {
+          [SystemRole.admin]: true,
+          [SystemRole.certainProjectManager]: true,
+          [SystemRole.globalViewing]: false
+        }
       )
     ).toMatchSnapshot();
 
@@ -83,7 +99,11 @@ describe('test genMenuItemsWithMenuStructTree', () => {
         '600300',
         baseMenusCollection,
         menuStruct,
-        SystemRole.admin
+        {
+          [SystemRole.admin]: true,
+          [SystemRole.certainProjectManager]: true,
+          [SystemRole.globalViewing]: false
+        }
       )
     ).toMatchSnapshot();
 
@@ -92,7 +112,11 @@ describe('test genMenuItemsWithMenuStructTree', () => {
         '600300',
         [...baseMenusCollection, ...sqleMenusCollection],
         menuStruct,
-        ''
+        {
+          [SystemRole.admin]: true,
+          [SystemRole.certainProjectManager]: true,
+          [SystemRole.globalViewing]: false
+        }
       )
     ).toMatchSnapshot();
 
@@ -101,7 +125,11 @@ describe('test genMenuItemsWithMenuStructTree', () => {
         '600300',
         [...baseMenusCollection, ...sqleMenusCollection],
         menuStruct,
-        SystemRole.admin
+        {
+          [SystemRole.admin]: true,
+          [SystemRole.certainProjectManager]: true,
+          [SystemRole.globalViewing]: false
+        }
       )
     ).toMatchSnapshot();
   });

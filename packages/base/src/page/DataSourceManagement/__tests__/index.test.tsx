@@ -73,8 +73,30 @@ describe('test DataSourceManagement', () => {
     );
   });
 
+  it('should render global data source and sync data source item when use has global view permission', () => {
+    mockUseCurrentUser({ isAdmin: false, hasGlobalViewingPermission: true });
+    const { container, getByText } = superRender(<DataSourceManagement />);
+
+    expect(container).toMatchSnapshot();
+
+    fireEvent.click(getByText('外部数据源同步'));
+    expect(container).toMatchSnapshot();
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(
+      {
+        pathname: '/data-source-management',
+        search: `active=${DataSourceManagerSegmentedKey.SyncDataSource}`
+      },
+      { replace: true }
+    );
+  });
+
   it('should not render tabs item when use role is not admin or not project manager', () => {
-    mockUseCurrentUser({ isAdmin: false, isCertainProjectManager: false });
+    mockUseCurrentUser({
+      isAdmin: false,
+      isCertainProjectManager: false,
+      hasGlobalViewingPermission: false
+    });
     const { queryByText } = superRender(<DataSourceManagement />);
 
     expect(queryByText('全局数据源')).not.toBeInTheDocument();
@@ -82,7 +104,11 @@ describe('test DataSourceManagement', () => {
   });
 
   it('should render global data source item when use role is not admin and is project manager', () => {
-    mockUseCurrentUser({ isAdmin: false, isCertainProjectManager: true });
+    mockUseCurrentUser({
+      isAdmin: false,
+      isCertainProjectManager: true,
+      hasGlobalViewingPermission: false
+    });
     const { queryByText } = superRender(<DataSourceManagement />);
 
     expect(queryByText('全局数据源')).toBeInTheDocument();

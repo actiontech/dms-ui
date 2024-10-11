@@ -1,4 +1,4 @@
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { UserRolesType } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../locale';
 import { MenuStructTreeType, MenuStructTreeKey } from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
@@ -7,7 +7,7 @@ import sqleMenusCollection from './sqle';
 
 export const sideMenuData = (
   projectID: string,
-  role: SystemRole | '',
+  userRoles: UserRolesType,
   sqlOptimizationIsSupport: boolean
 ) => {
   const sqlDevGroup: MenuStructTreeKey[] = [
@@ -80,6 +80,6 @@ export const sideMenuData = (
     projectID,
     [...sqleMenusCollection, ...baseMenusCollection],
     menuStruct,
-    role
+    userRoles
   );
 };

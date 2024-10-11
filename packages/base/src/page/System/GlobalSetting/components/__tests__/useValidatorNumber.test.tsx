@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import useValidatorNumber from './useValidatorNumber';
+import useValidatorNumber from '../useValidatorNumber';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe('useValidatorNumber', () => {
