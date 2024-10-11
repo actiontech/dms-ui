@@ -5,6 +5,8 @@ import { EmptyBox, BasicTag } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { execWorkflowStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
 import { Space } from 'antd';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { Link } from 'react-router-dom';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   title,
@@ -12,9 +14,11 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
   className,
   status,
   gap = 12,
-  versionName
+  sqlVersion
 }) => {
   const { t } = useTranslation();
+
+  const { projectID } = useCurrentProject();
 
   return (
     <BasicInfoStyleWrapper
@@ -84,10 +88,14 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
 
       <Space className="workflow-base-info-title">
         {title}
-        <EmptyBox if={!!versionName}>
-          <BasicTag color="orange" size="large">
-            {versionName}
-          </BasicTag>
+        <EmptyBox if={!!sqlVersion}>
+          <Link
+            to={`/sqle/project/${projectID}/version-management/detail/${sqlVersion?.sql_version_id}`}
+          >
+            <BasicTag color="orange" size="large">
+              {t('execWorkflow.list.version')}：{sqlVersion?.sql_version_name}
+            </BasicTag>
+          </Link>
         </EmptyBox>
       </Space>
       <div className="workflow-base-info-desc">{desc ?? '-'}</div>

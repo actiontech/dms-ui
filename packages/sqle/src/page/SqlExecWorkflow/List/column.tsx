@@ -108,6 +108,7 @@ export const SqlExecWorkflowListColumn: (
           '-'
         )
     },
+    // #if [ee]
     {
       dataIndex: 'sql_version_name',
       title: () => t('execWorkflow.list.version'),
@@ -126,6 +127,7 @@ export const SqlExecWorkflowListColumn: (
         );
       }
     },
+    // #endif
     {
       dataIndex: 'create_time',
       title: () => t('execWorkflow.list.createTime'),

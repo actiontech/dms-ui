@@ -255,7 +255,7 @@ const VersionDetail = () => {
               label: stage.stage_name,
               stageId: stage.stage_id ?? 0
             },
-            position: { x: index * 500, y: 0 },
+            position: { x: index * 530, y: 0 },
             sourcePosition: !isLastStage ? Position.Right : undefined,
             targetPosition: !isFirstStage ? Position.Left : undefined
           });
@@ -304,7 +304,7 @@ const VersionDetail = () => {
           stageActionNodes.push({
             id: `${stage.stage_id}_actionNode`,
             type: 'actionNode',
-            position: { x: index * 500, y: 40 },
+            position: { x: index * 530, y: 40 },
             data: {
               stageId: stage.stage_id ?? 0,
               onExecute: !!stage.workflow_details?.length
@@ -351,7 +351,7 @@ const VersionDetail = () => {
                 !isLastStage && !!stage.workflow_details?.length,
               versionStatus: status
             },
-            position: { x: index * 500, y: 78 }
+            position: { x: index * 530, y: 78 }
           });
         });
 
@@ -434,9 +434,9 @@ const VersionDetail = () => {
                       onRelease(node.data.stageId, node.data.workflowList ?? [])
                   : undefined,
                 allowRelease:
-                  isAdmin ||
-                  (hasNextStageCreateWorkflowPermission(node.data.stageId) &&
-                    allowRelease(node.data.workflowList ?? []))
+                  (isAdmin ||
+                    hasNextStageCreateWorkflowPermission(node.data.stageId)) &&
+                  allowRelease(node.data.workflowList ?? [])
               }
             });
           }
