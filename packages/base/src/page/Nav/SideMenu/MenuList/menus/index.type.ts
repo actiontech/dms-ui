@@ -35,5 +35,13 @@ export type MenuStructTreeKey =
   | 'sqle-log'
   | 'sql-management-conf'
   | 'push-rule-configuration'
+  | 'permission-group'
+  | 'permission-template'
+  | 'auth-list'
+  | 'data-mask-rule'
+  | 'auth-audit'
+  | 'template-audit'
+  | 'account-management'
+  | 'password-management'
   | 'pipeline-configuration'
   | 'version-management';
