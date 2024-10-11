@@ -18,3 +18,22 @@ exports[`test BaseInfoForm should match snapshot 1`] = `
   </Styled(section)>
 </Styled(section)>
 `;
+
+exports[`test BaseInfoForm should match snapshot when isAssociationVersionMode is truth 1`] = `
+<Styled(section)
+  className="has-border"
+>
+  <Styled(section)>
+    <FormItemBigTitle>
+      <AntdIcon
+        className="title-icon"
+        component={[Function]}
+      />
+      <span>
+        创建工单(当前版本：v1-test)
+      </span>
+    </FormItemBigTitle>
+    <ForwardRef />
+  </Styled(section)>
+</Styled(section)>
+`;

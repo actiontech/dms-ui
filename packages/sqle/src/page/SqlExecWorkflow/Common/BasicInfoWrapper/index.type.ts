@@ -6,4 +6,5 @@ export type BasicInfoWrapperProps = {
   status?: WorkflowRecordResV2StatusEnum;
   className?: string;
   gap?: number;
+  versionName?: string;
 };

@@ -444,3 +444,448 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
   </form>
 </div>
 `;
+
+exports[`test DatabaseSelectionItems should match snapshot when isAssociationVersionMode is truth 1`] = `
+<div>
+  <form
+    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        >
+          <label
+            class=""
+            title=""
+          >
+            <svg
+              class="custom-icon-ellipse"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                fill="#E8F3FF"
+                height="16"
+                rx="3"
+                width="16"
+              />
+              <circle
+                cx="8"
+                cy="8"
+                fill="#fff"
+                r="3"
+                stroke="#4583FF"
+                stroke-width="2"
+              />
+            </svg>
+            <span>
+              数据源
+            </span>
+          </label>
+        </div>
+        <div
+          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical database-list-item"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 0px;"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 12px;"
+          >
+            <div
+              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="databaseInfo_0_instanceName"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-activedescendant="databaseInfo_0_instanceName_list_0"
+                              aria-autocomplete="list"
+                              aria-controls="databaseInfo_0_instanceName_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="databaseInfo_0_instanceName_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="databaseInfo_0_instanceName"
+                              readonly=""
+                              role="combobox"
+                              style="opacity: 0;"
+                              type="search"
+                              unselectable="on"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-placeholder"
+                          >
+                            <span
+                              class="custom-select-placeholder css-qly0fu"
+                            >
+                              <span
+                                class="custom-select-placeholder-prefix"
+                              >
+                                <span
+                                  class="css-u3jcp4"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                      fill="#C3C6CD"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                class="custom-select-placeholder-value"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 12px;"
+          >
+            <div
+              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                >
+                  <label
+                    class=""
+                    for="databaseInfo_0_instanceSchema"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-activedescendant="databaseInfo_0_instanceSchema_list_0"
+                              aria-autocomplete="list"
+                              aria-controls="databaseInfo_0_instanceSchema_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="databaseInfo_0_instanceSchema_list"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              disabled=""
+                              id="databaseInfo_0_instanceSchema"
+                              readonly=""
+                              role="combobox"
+                              style="opacity: 0;"
+                              type="search"
+                              unselectable="on"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-placeholder"
+                          >
+                            <span
+                              class="custom-select-placeholder css-qly0fu"
+                            >
+                              <span
+                                class="custom-select-placeholder-prefix"
+                              >
+                                <span
+                                  class="css-u3jcp4"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                      fill="#C3C6CD"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                class="custom-select-placeholder-value"
+                              >
+                                请选择数据库（选填）
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 12px;"
+          >
+            <div
+              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical data-source-row-divider"
+              role="separator"
+            />
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 12px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="18"
+                  viewBox="0 0 18 19"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  color="#C3C6CD"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <section
+          class="database-connection-info"
+        />
+      </div>
+    </div>
+    <div
+      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        >
+          <label
+            class=""
+            title=""
+          />
+        </div>
+        <div
+          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-form-item-control-input"
+          >
+            <div
+              class="ant-form-item-control-input-content"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      添加数据源
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
+                  >
+                    <span>
+                      测试数据源连通性
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

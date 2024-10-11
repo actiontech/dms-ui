@@ -33,6 +33,7 @@ export default {
   monitorSourceConfig: '监控源配置',
   diagnosisList: '巡检列表',
   pipelineConfiguration: '流水线配置',
+  versionManagement: '版本管理',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',

@@ -312,6 +312,19 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         </Link>,
         "structKey": "exec-workflow",
       },
+      {
+        "icon": <FileVersionOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/version-management",
+        "label": <Link
+          to="/sqle/project/600300/version-management"
+        >
+          版本管理
+        </Link>,
+        "structKey": "version-management",
+      },
     ],
     "label": "SQL上线",
     "type": "group",
@@ -607,6 +620,19 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
           SQL工单
         </Link>,
         "structKey": "exec-workflow",
+      },
+      {
+        "icon": <FileVersionOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/version-management",
+        "label": <Link
+          to="/sqle/project/600300/version-management"
+        >
+          版本管理
+        </Link>,
+        "structKey": "version-management",
       },
     ],
     "label": "SQL上线",

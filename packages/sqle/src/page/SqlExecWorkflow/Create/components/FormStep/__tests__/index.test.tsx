@@ -8,9 +8,12 @@ import * as useCreationMode from '../../../hooks/useCreationMode';
 
 describe('test FormStep', () => {
   it('should match snapshot', () => {
-    jest
-      .spyOn(useCreationMode, 'default')
-      .mockImplementation(() => ({ isCloneMode: false }));
+    jest.spyOn(useCreationMode, 'default').mockImplementation(() => ({
+      isCloneMode: false,
+      isAssociationVersionMode: false,
+      versionId: null,
+      versionName: null
+    }));
     const { result: baseInfoFormResult } = renderHook(() => useForm());
     const { result: sqlAuditInfoFormResult } = renderHook(() => useForm());
     const wrapper = shallow(

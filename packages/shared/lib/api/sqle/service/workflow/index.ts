@@ -71,7 +71,9 @@ import {
   IExecuteOneTaskOnWorkflowV2Params,
   IExecuteOneTaskOnWorkflowV2Return,
   IUpdateWorkflowScheduleV2Params,
-  IUpdateWorkflowScheduleV2Return
+  IUpdateWorkflowScheduleV2Return,
+  IBatchCompleteWorkflowsV3Params,
+  IBatchCompleteWorkflowsV3Return
 } from './index.d';
 
 class WorkflowService extends ServiceBase {
@@ -660,6 +662,21 @@ class WorkflowService extends ServiceBase {
 
     return this.put<IUpdateWorkflowScheduleV2Return>(
       `/v2/projects/${project_name}/workflows/${workflow_id}/tasks/${task_id}/schedule`,
+      paramsData,
+      options
+    );
+  }
+
+  public batchCompleteWorkflowsV3(
+    params: IBatchCompleteWorkflowsV3Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.post<IBatchCompleteWorkflowsV3Return>(
+      `/v3/projects/${project_name}/workflows/complete`,
       paramsData,
       options
     );

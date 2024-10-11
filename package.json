@@ -107,6 +107,7 @@
     "@mui/styles": "^5.11.16",
     "@mui/system": "^5.9.1",
     "@reduxjs/toolkit": "^1.9.3",
+    "@xyflow/react": "^12.3.0",
     "ahooks": "^3.7.0",
     "antd": "^5.7.3",
     "axios": "^0.27.2",
