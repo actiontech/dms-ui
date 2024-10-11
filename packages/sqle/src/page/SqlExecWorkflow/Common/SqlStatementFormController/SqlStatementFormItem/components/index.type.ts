@@ -9,7 +9,7 @@ export type SqlExecModeSelectorProps = {
   currentSqlUploadType: AuditTaskResV1SqlSourceEnum;
 } & Pick<
   SqlStatementFormItemProps,
-  'fieldPrefixPath' | 'isSupportFileModeExecuteSql'
+  'fieldPrefixPath' | 'isSupportFileModeExecuteSql' | 'isAtRejectStep'
 >;
 
 export type SqlFormatterAndSubmitterProps = {

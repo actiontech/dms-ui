@@ -23,7 +23,8 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   disabledUploadType,
   databaseInfo,
   isSameSqlForAll,
-  isSupportFileModeExecuteSql
+  isSupportFileModeExecuteSql,
+  isAtRejectStep
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormProps>();
@@ -80,6 +81,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
         isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
+        isAtRejectStep={isAtRejectStep}
       />
 
       <SqlFormatterAndSubmitter

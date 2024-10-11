@@ -325,7 +325,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
     expect(requestWorkflowInfo).toHaveBeenCalled();
   });
 
-  it('render current workflow status is wait for execution', async () => {
+  it('render current workflow status is wait for execution when executable is truth', async () => {
     requestWorkflowInfo.mockClear();
     requestWorkflowInfo.mockImplementation(() =>
       createSpySuccessResponse({ data: workflowsDetailWaitForExecutionData })
@@ -373,11 +373,37 @@ describe('sqle/ExecWorkflow/Detail', () => {
 
     expect(batchCompleteWorkflowsSpy).toHaveBeenCalledTimes(1);
     expect(batchCompleteWorkflowsSpy).toHaveBeenCalledWith({
-      workflow_id_list: [workflowsDetailData.workflow_id],
+      workflow_list: [{ workflow_id: workflowsDetailData.workflow_id }],
       project_name: mockProjectInfo.projectName
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalled();
+  });
+
+  it('render current workflow status is wait for execution when executable is false', async () => {
+    requestWorkflowInfo.mockClear();
+    requestWorkflowInfo.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...workflowsDetailWaitForExecutionData,
+          record: {
+            ...workflowsDetailWaitForExecutionData.record,
+            executable: false,
+            executable_reason:
+              '当前工单所处的版本阶段前存在暂未上线的工单，暂时无法上线'
+          }
+        }
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(
+      screen.queryAllByText('批量立即上线')[1].closest('button')
+    ).toBeDisabled();
+    expect(
+      screen.queryAllByText('标记为人工上线')[1].closest('button')
+    ).toBeDisabled();
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render current workflow status is executing', async () => {

@@ -1,5 +1,674 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sqle/SqlExecWorkflow/Detail/RecordInfo render snap when has associated stage workflows 1`] = `
+<body>
+  <div>
+    <div
+      class="lazy-load-wrapper lazy-load-wrapper-show lazy-load-wrapper-animation css-952l0m"
+    >
+      <div
+        class="css-1mm2w9z"
+      >
+        <div
+          class="workflow-record-info-header"
+        >
+          <span
+            class="workflow-record-info-header-text"
+          >
+            工单信息
+          </span>
+          <svg
+            class="custom-icon-close"
+            height="16"
+            viewBox="0 0 14 14"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+            />
+          </svg>
+        </div>
+        <div
+          class="workflow-steps-basic-info"
+        >
+          <div
+            class="workflow-steps-basic-info-title"
+          >
+            基本信息
+          </div>
+          <div
+            class="workflow-steps-basic-info-item"
+          >
+            <div
+              class="workflow-steps-basic-info-item-label"
+            >
+              创建人
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                <span
+                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                  style="width: 20px; height: 20px; line-height: 20px; font-size: 18px;"
+                >
+                  <span
+                    class="ant-avatar-string"
+                    style="line-height: 20px; transform: scale(1) translateX(-50%);"
+                  >
+                    A
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <span>
+                  admin
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="workflow-steps-basic-info-item"
+          >
+            <div
+              class="workflow-steps-basic-info-item-label"
+            >
+              创建时间
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                <span
+                  class="css-u3jcp4"
+                >
+                  <svg
+                    height="18"
+                    viewBox="0 0 18 18"
+                    width="18"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
+                      fill="#8A8F99"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <span>
+                  2024-01-17 10:22:17
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="workflow-steps-basic-info-item"
+          >
+            <div
+              class="workflow-steps-basic-info-item-label"
+            >
+              工单状态
+            </div>
+            <div
+              class="workflow-steps-basic-info-item-value"
+            >
+              <div
+                class="css-3q8fl"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                    stroke="#41BF9A"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="m5.083 8 2.084 2.083 4.166-4.166"
+                    stroke="#41BF9A"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                <span>
+                  上线成功
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="custom-steps-wrapper"
+        >
+          <div
+            class="custom-steps-wrapper-title"
+          >
+            工单进度
+          </div>
+          <div
+            class="ant-steps ant-steps-vertical css-1epey7k css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
+            >
+              <div
+                class="ant-steps-item-container"
+              >
+                <div
+                  class="ant-steps-item-tail"
+                />
+                <div
+                  class="ant-steps-item-icon"
+                >
+                  <span
+                    class="ant-steps-icon"
+                  >
+                    <svg
+                      color="currentColor"
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-steps-item-content"
+                >
+                  <div
+                    class="ant-steps-item-title"
+                  >
+                    <div
+                      class="css-8yx2by"
+                    >
+                      <div
+                        class="step-title"
+                      >
+                        更新工单
+                      </div>
+                      <div
+                        class="step-info"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              admin
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <div
+                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                              role="separator"
+                            />
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              2024-01-17 10:58:37
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
+            >
+              <div
+                class="ant-steps-item-container"
+              >
+                <div
+                  class="ant-steps-item-tail"
+                />
+                <div
+                  class="ant-steps-item-icon"
+                >
+                  <span
+                    class="ant-steps-icon"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 14.664A6.667 6.667 0 1 1 8 1.331a6.667 6.667 0 0 1 0 13.333m0-1.333A5.333 5.333 0 1 0 8 2.664a5.333 5.333 0 0 0 0 10.667m0-1.333v-8a4 4 0 1 1 0 8"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-steps-item-content"
+                >
+                  <div
+                    class="ant-steps-item-title"
+                  >
+                    <div
+                      class="css-8yx2by"
+                    >
+                      <div
+                        class="step-title"
+                      >
+                        审核工单
+                      </div>
+                      <div
+                        class="step-info"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              admin
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <div
+                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                              role="separator"
+                            />
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              2024-01-17 11:36:25
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
+            >
+              <div
+                class="ant-steps-item-container"
+              >
+                <div
+                  class="ant-steps-item-tail"
+                />
+                <div
+                  class="ant-steps-item-icon"
+                >
+                  <span
+                    class="ant-steps-icon"
+                  >
+                    <svg
+                      color="currentColor"
+                      fill="currentColor"
+                      height="16"
+                      viewBox="0 0 20 20"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="ant-steps-item-content"
+                >
+                  <div
+                    class="ant-steps-item-title"
+                  >
+                    <div
+                      class="css-8yx2by"
+                    >
+                      <div
+                        class="step-title"
+                      >
+                        上线工单
+                      </div>
+                      <div
+                        class="step-info"
+                      >
+                        <div>
+                          <span>
+                            上线成功
+                            :
+                             
+                          </span>
+                          <span>
+                            1
+                          </span>
+                        </div>
+                        <div>
+                          <span>
+                            上线失败
+                            :
+                             
+                          </span>
+                          <span>
+                            0
+                          </span>
+                        </div>
+                        <div>
+                          <span>
+                            正在上线
+                            : 
+                          </span>
+                          <span>
+                            0
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section
+          class="associated-workflows-wrap"
+        >
+          <div
+            class="associated-workflows-wrap-title"
+          >
+            关联工单信息
+          </div>
+          <ul
+            class="ant-timeline css-dev-only-do-not-override-txh9fw"
+          >
+            <li
+              class="ant-timeline-item"
+            >
+              <div
+                class="ant-timeline-item-tail"
+              />
+              <div
+                class="ant-timeline-item-head ant-timeline-item-head-blue"
+              />
+              <div
+                class="ant-timeline-item-content"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    <a
+                      href="/sqle/project/700300/exec-workflow/1839493775269826560"
+                      target="__blank"
+                    >
+                      v-12-dev-3
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span
+                          class="associated-workflows-wrap-item-label"
+                        >
+                          工单状态
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="css-3q8fl"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                              stroke="#41BF9A"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              d="m5.083 8 2.084 2.083 4.166-4.166"
+                              stroke="#41BF9A"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                            />
+                          </svg>
+                          <span>
+                            上线成功
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="ant-timeline-item"
+            >
+              <div
+                class="ant-timeline-item-tail"
+              />
+              <div
+                class="ant-timeline-item-head ant-timeline-item-head-green"
+              />
+              <div
+                class="ant-timeline-item-content"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    workflow_name
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span
+                          class="associated-workflows-wrap-item-label"
+                        >
+                          工单状态
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="css-3q8fl"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                              stroke="#41BF9A"
+                              stroke-width="1.5"
+                            />
+                            <path
+                              d="m5.083 8 2.084 2.083 4.166-4.166"
+                              stroke="#41BF9A"
+                              stroke-linejoin="round"
+                              stroke-width="1.5"
+                            />
+                          </svg>
+                          <span>
+                            上线成功
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="ant-timeline-item ant-timeline-item-last"
+            >
+              <div
+                class="ant-timeline-item-tail"
+              />
+              <div
+                class="ant-timeline-item-head ant-timeline-item-head-blue"
+              />
+              <div
+                class="ant-timeline-item-content"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    <a
+                      href="/sqle/project/700300/exec-workflow/1839543178827403264"
+                      target="__blank"
+                    >
+                      v-12-dev-3_生产
+                    </a>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span
+                          class="associated-workflows-wrap-item-label"
+                        >
+                          工单状态
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="css-3q8fl"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                              stroke="#7453DA"
+                              stroke-width="1.5"
+                            />
+                          </svg>
+                          <span>
+                            待审核
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <div
+          class="css-vzbzkc"
+        >
+          <div
+            class="history-steps-trigger-wrapper"
+          >
+            <span>
+              工单操作历史
+            </span>
+            <svg
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                fill="#C3C6CD"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`sqle/SqlExecWorkflow/Detail/RecordInfo render snap when has workflow info 1`] = `
 <body>
   <div>
@@ -7,7 +676,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo render snap when has workflow in
       class="lazy-load-wrapper lazy-load-wrapper-show lazy-load-wrapper-animation css-952l0m"
     >
       <div
-        class="css-z1wi3a"
+        class="css-1mm2w9z"
       >
         <div
           class="workflow-record-info-header"

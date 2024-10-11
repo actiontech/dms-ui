@@ -7,6 +7,7 @@ import WorkflowSteps from './components/WorkflowSteps';
 import { EmptyBox, LazyLoadComponent } from '@actiontech/shared';
 import WorkflowHistorySteps from './components/WorkflowHistorySteps';
 import { CloseOutlined } from '@actiontech/icons';
+import AssociatedWorkflows from './components/AssociatedWorkflows';
 
 const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
   visibility,
@@ -38,6 +39,18 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
           workflowStatus={workflowInfo?.record?.status}
           tasksStatusCount={tasksStatusCount}
         />
+
+        <EmptyBox
+          if={
+            !!workflowInfo?.associated_stage_workflows &&
+            workflowInfo?.associated_stage_workflows?.length > 1
+          }
+        >
+          <AssociatedWorkflows
+            workflowId={workflowInfo?.workflow_id}
+            associatedWorkflows={workflowInfo?.associated_stage_workflows}
+          />
+        </EmptyBox>
 
         <EmptyBox if={!!workflowInfo?.record_history_list}>
           <WorkflowHistorySteps

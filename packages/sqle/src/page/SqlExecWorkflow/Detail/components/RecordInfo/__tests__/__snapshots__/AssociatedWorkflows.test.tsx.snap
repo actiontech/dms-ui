@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage workflows 1`] = `
+<body>
+  <div>
+    <section
+      class="associated-workflows-wrap"
+    >
+      <div
+        class="associated-workflows-wrap-title"
+      >
+        关联工单信息
+      </div>
+      <ul
+        class="ant-timeline css-dev-only-do-not-override-txh9fw"
+      >
+        <li
+          class="ant-timeline-item"
+        >
+          <div
+            class="ant-timeline-item-tail"
+          />
+          <div
+            class="ant-timeline-item-head ant-timeline-item-head-blue"
+          />
+          <div
+            class="ant-timeline-item-content"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-bottom: 8px;"
+              >
+                <a
+                  href="/sqle/project/700300/exec-workflow/1839493775269826560"
+                  target="__blank"
+                >
+                  v-12-dev-3
+                </a>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <span
+                      class="associated-workflows-wrap-item-label"
+                    >
+                      工单状态
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="css-3q8fl"
+                    >
+                      <svg
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                          stroke="#41BF9A"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="m5.083 8 2.084 2.083 4.166-4.166"
+                          stroke="#41BF9A"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                      <span>
+                        上线成功
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="ant-timeline-item"
+        >
+          <div
+            class="ant-timeline-item-tail"
+          />
+          <div
+            class="ant-timeline-item-head ant-timeline-item-head-green"
+          />
+          <div
+            class="ant-timeline-item-content"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-bottom: 8px;"
+              >
+                workflow_name
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <span
+                      class="associated-workflows-wrap-item-label"
+                    >
+                      工单状态
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="css-3q8fl"
+                    >
+                      <svg
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                          stroke="#41BF9A"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="m5.083 8 2.084 2.083 4.166-4.166"
+                          stroke="#41BF9A"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                      <span>
+                        上线成功
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="ant-timeline-item ant-timeline-item-last"
+        >
+          <div
+            class="ant-timeline-item-tail"
+          />
+          <div
+            class="ant-timeline-item-head ant-timeline-item-head-blue"
+          />
+          <div
+            class="ant-timeline-item-content"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-bottom: 8px;"
+              >
+                <a
+                  href="/sqle/project/700300/exec-workflow/1839543178827403264"
+                  target="__blank"
+                >
+                  v-12-dev-3_生产
+                </a>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    <span
+                      class="associated-workflows-wrap-item-label"
+                    >
+                      工单状态
+                    </span>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="css-3q8fl"
+                    >
+                      <svg
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                          stroke="#7453DA"
+                          stroke-width="1.5"
+                        />
+                      </svg>
+                      <span>
+                        待审核
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render init snap 1`] = `
+<body>
+  <div>
+    <section
+      class="associated-workflows-wrap"
+    >
+      <div
+        class="associated-workflows-wrap-title"
+      >
+        关联工单信息
+      </div>
+      <ul
+        class="ant-timeline css-dev-only-do-not-override-txh9fw"
+      />
+    </section>
+  </div>
+</body>
+`;

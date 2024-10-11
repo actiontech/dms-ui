@@ -112,6 +112,7 @@ const SqlWorkflowDetail: React.FC = () => {
             status={workflowInfo?.record?.status}
             className="clearPaddingTop"
             gap={24}
+            versionName={workflowInfo?.sql_version_name}
           />
 
           <EmptyBox

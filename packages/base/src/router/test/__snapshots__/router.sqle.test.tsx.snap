@@ -1198,6 +1198,45 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "path": ":projectID/pipeline-configuration",
       },
       {
+        "children": [
+          {
+            "element": <div>
+              VersionManagementList
+            </div>,
+            "key": "VersionManagementList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              versionManagementCreation
+            </div>,
+            "key": "versionManagementCreation",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              versionManagementCreation
+            </div>,
+            "key": "versionManagementCreation",
+            "path": "update/:versionId",
+          },
+          {
+            "element": <div>
+              versionManagementDetail
+            </div>,
+            "key": "versionManagementDetail",
+            "path": "detail/:versionId",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="versionManagement"
+        >
+          <Outlet />
+        </div>,
+        "key": "versionManagement",
+        "path": ":projectID/version-management",
+      },
+      {
         "element": <div>
           projectRedirect
         </div>,

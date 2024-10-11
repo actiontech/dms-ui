@@ -1,5 +1,700 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for execution when executable is false 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <section
+          class="css-1w05k8a"
+        >
+          <div
+            class="workflow-detail-content"
+          >
+            <div
+              class="actiontech-page-header-namespace css-1xspr0w"
+            >
+              <div
+                class="title"
+              >
+                <a
+                  href="/sqle/project/700300/exec-workflow"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                    <span>
+                      返回工单列表
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div
+                class="extra"
+              >
+                <div
+                  class="css-12u4yvr"
+                >
+                  <div>
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <span>
+                        关闭工单
+                      </span>
+                    </button>
+                    <div
+                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                      role="separator"
+                    />
+                  </div>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全部驳回
+                    </span>
+                  </button>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span>
+                      审核通过
+                    </span>
+                  </button>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span>
+                      批量立即上线
+                    </span>
+                  </button>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span>
+                      标记为人工上线
+                    </span>
+                  </button>
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        disabled=""
+                        type="button"
+                      >
+                        <span>
+                          批量立即上线
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        disabled=""
+                        type="button"
+                      >
+                        <span>
+                          标记为人工上线
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    hidden=""
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 0px;"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          中止上线
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 0px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          刷新工单
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                    role="separator"
+                  />
+                  <div
+                    class="toggle-workflow-detail-wrapper"
+                  >
+                    工单详情
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="clearPaddingTop css-1rxlo0k"
+            >
+              <div
+                class="workflow-base-info-status"
+              >
+                <svg
+                  class="icon-workflow-status-wrapper"
+                  fill="none"
+                  height="55"
+                  viewBox="0 0 74 55"
+                  width="74"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    filter="url(#filter0_d_1360_13602)"
+                  >
+                    <path
+                      d="M69 0H5V31.6481C5 33.2482 5.95359 34.6944 7.42432 35.3247L33.8487 46.6494C35.861 47.5119 38.139 47.5119 40.1514 46.6494L66.5757 35.3247C68.0464 34.6944 69 33.2482 69 31.6481V0Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      color-interpolation-filters="sRGB"
+                      filterUnits="userSpaceOnUse"
+                      height="57.2961"
+                      id="filter0_d_1360_13602"
+                      width="74"
+                      x="0"
+                      y="-3"
+                    >
+                      <feflood
+                        flood-opacity="0"
+                        result="BackgroundImageFix"
+                      />
+                      <fecolormatrix
+                        in="SourceAlpha"
+                        result="hardAlpha"
+                        type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      />
+                      <feoffset
+                        dy="2"
+                      />
+                      <fegaussianblur
+                        stdDeviation="2.5"
+                      />
+                      <fecomposite
+                        in2="hardAlpha"
+                        operator="out"
+                      />
+                      <fecolormatrix
+                        type="matrix"
+                        values="0 0 0 0 0.454902 0 0 0 0 0.32549 0 0 0 0 0.854902 0 0 0 0.4 0"
+                      />
+                      <feblend
+                        in2="BackgroundImageFix"
+                        mode="normal"
+                        result="effect1_dropShadow_2935_18512"
+                      />
+                      <feblend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow_2935_18512"
+                        mode="normal"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+                <span
+                  class="workflow-base-info-status-text"
+                >
+                  待上线
+                </span>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                />
+              </div>
+              <div
+                class="workflow-base-info-desc"
+              >
+                this is a desc
+              </div>
+            </div>
+            <section
+              class="css-142ey94"
+            >
+              <div
+                class="audit-result-title"
+              >
+                审核结果
+              </div>
+              <div
+                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-segmented-group"
+                  >
+                    <label
+                      class="ant-segmented-item ant-segmented-item-selected"
+                    >
+                      <input
+                        checked=""
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="概览"
+                      >
+                        概览
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  hidden=""
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <span
+                          class="css-u3jcp4"
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12.25 1.75c.322 0 .583.261.583.583v9.334a.583.583 0 0 1-.583.583H1.75a.583.583 0 0 1-.583-.583V2.333c0-.322.26-.583.583-.583zm-.583 1.167H2.333v8.166h9.334zM10.5 8.75v1.167h-7V8.75z"
+                              fill="#292C33"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        分页展示
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="css-u3jcp4"
+                        >
+                          <svg
+                            color="currentColor"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              >
+                <div
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                >
+                  <div
+                    class="ant-spin-container"
+                  >
+                    <div
+                      class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                    >
+                      <div
+                        class="ant-table-container"
+                      >
+                        <div
+                          class="ant-table-content"
+                          style="overflow-x: auto; overflow-y: hidden;"
+                        >
+                          <table
+                            style="min-width: 100%; table-layout: auto;"
+                          >
+                            <colgroup>
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                              <col
+                                style="width: 180px;"
+                              />
+                            </colgroup>
+                            <thead
+                              class="ant-table-thead"
+                            >
+                              <tr>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  数据源
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  状态
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                  style="text-align: right;"
+                                >
+                                  审核通过率
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                  style="text-align: right;"
+                                >
+                                  审核结果评分
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  待操作人
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  上线人
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  上线开始时间
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  上线结束时间
+                                </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  定时上线时间
+                                </th>
+                                <th
+                                  class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                  scope="col"
+                                  style="position: sticky; right: 0px;"
+                                >
+                                  操作
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ant-table-tbody"
+                            >
+                              <tr
+                                aria-hidden="true"
+                                class="ant-table-measure-row"
+                                style="height: 0px; font-size: 0px;"
+                              >
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ant-table-row ant-table-row-level-0"
+                                data-row-key="40"
+                              >
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  mysql
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  <div
+                                    class="css-3q8fl"
+                                  >
+                                    <svg
+                                      fill="none"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                        stroke="#7453DA"
+                                        stroke-width="1.5"
+                                      />
+                                    </svg>
+                                    <span>
+                                      待审核
+                                    </span>
+                                  </div>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: right;"
+                                >
+                                  <span>
+                                    100%
+                                  </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                  style="text-align: right;"
+                                >
+                                  100
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                />
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  admin
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  2024-01-17 13:23:32
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  2024-01-17 13:23:32
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  -
+                                </td>
+                                <td
+                                  class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                  style="position: sticky; right: 0px;"
+                                >
+                                  <div
+                                    class="css-new95e"
+                                  >
+                                    <div
+                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 8px;"
+                                      />
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 8px;"
+                                      />
+                                      <div
+                                        class="ant-space-item"
+                                        style="margin-right: 8px;"
+                                      />
+                                      <div
+                                        class="ant-space-item"
+                                      />
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
 <body>
   <div>
@@ -166,8 +861,16 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
               class="clearPaddingTop css-ahxq8i"
             >
               <div
-                class="workflow-base-info-title"
-              />
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                />
+                <div
+                  class="ant-space-item"
+                />
+              </div>
               <div
                 class="workflow-base-info-desc"
               >
@@ -765,9 +1468,23 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                 </span>
               </div>
               <div
-                class="workflow-base-info-title"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
-                workflow_name
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                  >
+                    v1-test
+                  </span>
+                </div>
               </div>
               <div
                 class="workflow-base-info-desc"
@@ -1273,31 +1990,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            立即上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            定时上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                       />
@@ -1561,9 +2258,23 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                 </span>
               </div>
               <div
-                class="workflow-base-info-title"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
-                workflow_name
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                  >
+                    v1-test
+                  </span>
+                </div>
               </div>
               <div
                 class="workflow-base-info-desc"
@@ -2117,31 +2828,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            立即上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            定时上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                       />
@@ -2396,9 +3087,17 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 </span>
               </div>
               <div
-                class="workflow-base-info-title"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
-                workflow_name
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  workflow_name
+                </div>
+                <div
+                  class="ant-space-item"
+                />
               </div>
               <div
                 class="workflow-base-info-desc"
@@ -2946,31 +3645,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            立即上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            定时上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                       />
@@ -3180,31 +3859,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            立即上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      >
-                                        <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                          disabled=""
-                                          type="button"
-                                        >
-                                          <span>
-                                            定时上线
-                                          </span>
-                                        </button>
-                                      </div>
+                                      />
                                       <div
                                         class="ant-space-item"
                                       />
@@ -3226,7 +3885,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
             class="lazy-load-wrapper lazy-load-wrapper-show lazy-load-wrapper-animation css-952l0m"
           >
             <div
-              class="css-z1wi3a"
+              class="css-1mm2w9z"
             >
               <div
                 class="workflow-record-info-header"

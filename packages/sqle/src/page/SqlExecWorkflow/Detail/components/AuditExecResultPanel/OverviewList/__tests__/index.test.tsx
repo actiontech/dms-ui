@@ -35,7 +35,10 @@ describe('test OverviewList', () => {
   const customRender = (params?: Partial<WorkflowOverviewListProps>) => {
     return superRender(
       <WorkflowOverviewList
-        workflowInfo={WorkflowsOverviewListData}
+        workflowInfo={{
+          ...WorkflowsOverviewListData,
+          record: { ...WorkflowsOverviewListData.record, executable: true }
+        }}
         activeTabChangeEvent={activeTabChangeEvent}
         refreshWorkflow={refreshWorkflow}
         refreshOverviewAction={refreshOverviewAction}
@@ -177,6 +180,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -225,6 +229,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -254,6 +259,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.rejected
         }
       },
@@ -283,6 +289,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -312,6 +319,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -371,6 +379,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -405,6 +414,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -428,6 +438,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.canceled
         }
       },
@@ -450,6 +461,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -590,6 +602,32 @@ describe('test OverviewList', () => {
         total: 1
       }
     });
+    expect(screen.queryByText('取消定时上线')).toBeNull();
+  });
+
+  it('render snap when workflow status is wait_for_execution and executable is false', async () => {
+    mockUseCurrentUser({ username: 'test_user' });
+    customRender({
+      workflowInfo: {
+        ...WorkflowsOverviewListData,
+        record: {
+          ...WorkflowsOverviewListData.record,
+          executable: false,
+          status: WorkflowRecordResV2StatusEnum.wait_for_execution
+        }
+      },
+      overviewList: {
+        list: [
+          {
+            ...WorkflowTasksItemData[0],
+            current_step_assignee_user_name_list: ['test_user'],
+            status: GetWorkflowTasksItemV2StatusEnum.wait_for_execution
+          }
+        ],
+        total: 1
+      }
+    });
+    expect(screen.queryByText('定时上线')).toBeNull();
     expect(screen.queryByText('取消定时上线')).toBeNull();
   });
 });

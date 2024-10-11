@@ -121,6 +121,18 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
+
+const VersionManagementCreation = React.lazy(
+  () => import('../page/VersionManagement/Create')
+);
+
+const VersionManagementUpdate = React.lazy(
+  () => import('../page/VersionManagement/Update')
+);
+
+const VersionManagementDetail = React.lazy(
+  () => import('../page/VersionManagement/Detail')
+);
 // #endif
 
 //workflow
@@ -196,6 +208,8 @@ const PipelineConfigurationCreation = React.lazy(
 const PipelineConfigurationUpdate = React.lazy(
   () => import('../page/PipelineConfiguration/Update')
 );
+
+const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
 
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
@@ -446,6 +460,34 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         element: <PipelineConfigurationUpdate />,
         key: 'sqlOptimizationCreate'
       }
+    ]
+  },
+  {
+    path: `${PROJECT_ROUTER_PARAM}/version-management`,
+    key: 'versionManagement',
+    children: [
+      {
+        index: true,
+        element: <VersionManagement />,
+        key: 'VersionManagementList'
+      },
+      // #if [ee]
+      {
+        path: 'create',
+        element: <VersionManagementCreation />,
+        key: 'versionManagementCreation'
+      },
+      {
+        path: 'update/:versionId',
+        element: <VersionManagementUpdate />,
+        key: 'versionManagementCreation'
+      },
+      {
+        path: 'detail/:versionId',
+        element: <VersionManagementDetail />,
+        key: 'versionManagementDetail'
+      }
+      // #endif
     ]
   },
   {
