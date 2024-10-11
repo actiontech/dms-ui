@@ -222,7 +222,8 @@ export default {
       stepNumberIsUndefined:
         'The step number of the current node is undefined!',
       closeWorkflow: 'Close workflow',
-      closeConfirm: 'Are you sure you want to close the current workflow?',
+      closeConfirm:
+        'Once the work order is closed, no further actions can be taken on it. Are you sure you want to close the current work order?',
       closeWorkflowSuccessTips: 'Workflow closed successfully',
       cloneExecWorkflow: 'Execute to another instance',
       associatedWorkflowInfo: 'Associated workflows'
