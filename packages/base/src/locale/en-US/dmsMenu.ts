@@ -28,6 +28,7 @@ export default {
   sqlManagementConf: 'Configuration',
   pushRuleConfiguration: 'Notification',
   pipelineConfiguration: 'CI/CD pipeline',
+  versionManagement: 'Version management',
 
   projectSelector: {
     recentlyOpenedProjects: 'Recently opened projects',
