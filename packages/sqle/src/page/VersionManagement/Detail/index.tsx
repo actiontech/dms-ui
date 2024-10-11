@@ -30,6 +30,7 @@ import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useRequest } from 'ahooks';
 import {
   useCurrentProject,
+  useCurrentUser,
   useUserOperationPermission
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -60,6 +61,8 @@ const VersionDetail = () => {
   const { versionId } = useParams<{ versionId: string }>();
 
   const { projectName, projectID } = useCurrentProject();
+
+  const { isAdmin } = useCurrentUser();
 
   const {
     updateUserOperationPermission,
@@ -431,8 +434,9 @@ const VersionDetail = () => {
                       onRelease(node.data.stageId, node.data.workflowList ?? [])
                   : undefined,
                 allowRelease:
-                  hasNextStageCreateWorkflowPermission(node.data.stageId) &&
-                  allowRelease(node.data.workflowList ?? [])
+                  isAdmin ||
+                  (hasNextStageCreateWorkflowPermission(node.data.stageId) &&
+                    allowRelease(node.data.workflowList ?? []))
               }
             });
           }
