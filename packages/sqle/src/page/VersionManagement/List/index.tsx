@@ -1,8 +1,11 @@
-import { PageHeader, BasicButton } from '@actiontech/shared';
+import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { PlusOutlined } from '@actiontech/icons';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useCurrentUser
+} from '@actiontech/shared/lib/global';
 import {
   VersionManagementTableFilterParamType,
   VersionManagementTableColumns,
@@ -22,6 +25,7 @@ import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useMemo } from 'react';
 
 const VersionManagementList = () => {
   const { t } = useTranslation();
@@ -31,6 +35,12 @@ const VersionManagementList = () => {
   const { projectID, projectName } = useCurrentProject();
 
   const [messageApi, messageContextHolder] = message.useMessage();
+
+  const { isAdmin, isProjectManager } = useCurrentUser();
+
+  const actionPermission = useMemo(() => {
+    return isAdmin || isProjectManager(projectName);
+  }, [isAdmin, isProjectManager, projectName]);
 
   const {
     tableFilterInfo,
@@ -125,16 +135,18 @@ const VersionManagementList = () => {
       <PageHeader
         title={t('versionManagement.pageTitle')}
         extra={
-          <Link to={`/sqle/project/${projectID}/version-management/create`}>
-            <BasicButton
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-            >
-              {t('versionManagement.operation.add')}
-            </BasicButton>
-          </Link>
+          <EmptyBox if={actionPermission}>
+            <Link to={`/sqle/project/${projectID}/version-management/create`}>
+              <BasicButton
+                type="primary"
+                icon={
+                  <PlusOutlined width={10} height={10} color="currentColor" />
+                }
+              >
+                {t('versionManagement.operation.add')}
+              </BasicButton>
+            </Link>
+          </EmptyBox>
         }
       />
       <TableToolbar
@@ -168,7 +180,12 @@ const VersionManagementList = () => {
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={VersionManagementTableActions(onEdit, onDelete, onLock)}
+        actions={
+          actionPermission
+            ? VersionManagementTableActions(onEdit, onDelete, onLock)
+            : undefined
+        }
+        scroll={{}}
       />
     </>
   );

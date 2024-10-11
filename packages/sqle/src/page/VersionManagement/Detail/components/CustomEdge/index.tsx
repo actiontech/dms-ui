@@ -5,7 +5,7 @@ import {
   Edge,
   getBezierPath
 } from '@xyflow/react';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
 import { PaperPlaneFilled } from '@actiontech/icons';
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -42,16 +42,28 @@ const CustomEdge: React.FC<EdgeProps<Edge<CustomEdgeData>>> = ({
         <CustomEdgeStyleWrapper labelX={labelX} labelY={labelY}>
           <Space direction="vertical">
             <EmptyBox if={!!data?.onRelease}>
-              <BasicButton
-                type="primary"
-                onClick={data?.onRelease}
-                disabled={!data?.allowRelease}
-                icon={
-                  <PaperPlaneFilled fill="currentColor" color="currentColor" />
+              <BasicToolTips
+                title={
+                  !data?.allowRelease
+                    ? t('versionManagement.release.disableTips')
+                    : ''
                 }
+                overlayClassName="whitespace-pre-line"
               >
-                {t('versionManagement.detail.deploy')}
-              </BasicButton>
+                <BasicButton
+                  type="primary"
+                  onClick={data?.onRelease}
+                  disabled={!data?.allowRelease}
+                  icon={
+                    <PaperPlaneFilled
+                      fill="currentColor"
+                      color="currentColor"
+                    />
+                  }
+                >
+                  {t('versionManagement.detail.deploy')}
+                </BasicButton>
+              </BasicToolTips>
             </EmptyBox>
           </Space>
         </CustomEdgeStyleWrapper>

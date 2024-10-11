@@ -68,7 +68,7 @@ export const StageNodeStyleWrapper = styled('section')`
   }
 
   & .ant-card {
-    height: 152px;
+    height: 120px;
   }
 
   & .ant-card.empty-card {

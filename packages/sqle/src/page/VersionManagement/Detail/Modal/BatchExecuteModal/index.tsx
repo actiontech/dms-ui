@@ -100,7 +100,7 @@ const BatchExecuteModal: React.FC = () => {
       {messageContextHolder}
       <Space direction="vertical">
         <Typography.Text type="secondary">
-          {t('versionManagement.execute.currentAllowExecuteWorkflow')}：
+          {t('versionManagement.execute.currentAllowExecuteWorkflow')}
         </Typography.Text>
         {currentStageWorkflowList?.map((workflow, index) => (
           <Link

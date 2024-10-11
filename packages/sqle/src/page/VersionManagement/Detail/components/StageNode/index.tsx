@@ -17,8 +17,8 @@ import {
   WorkflowDetailWithInstanceStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { StageNodeData } from '../../index.type';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { SqlVersionDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useMemo } from 'react';
 
 const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   data,
@@ -39,6 +39,14 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
 
   const { projectID } = useCurrentProject();
 
+  const displayWorkflow = useMemo(() => {
+    // 版本初始化不存在工单时 统一展示一个空占位
+    if (!workflowList?.length) {
+      return [{}];
+    }
+    return workflowList;
+  }, [workflowList]);
+
   return (
     <StageNodeStyleWrapper>
       <EmptyBox if={!isFirstStage}>
@@ -49,7 +57,7 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
         />
       </EmptyBox>
       <Space direction="vertical">
-        {workflowList?.map((workflow, index) => {
+        {displayWorkflow.map((workflow, index) => {
           const isNoEmptyWorkflow = !!workflow?.workflow_id;
           return (
             <Card
@@ -84,12 +92,6 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
                     ) : (
                       '-'
                     )}
-                  </Space>
-                  <Space className="card-content-item">
-                    <Typography.Text type="secondary">
-                      {t('versionManagement.stageNode.executeTime')}
-                    </Typography.Text>
-                    {formatTime(workflow.workflow_exec_time, '-')}
                   </Space>
                   <Space
                     className="card-action-wrap"
