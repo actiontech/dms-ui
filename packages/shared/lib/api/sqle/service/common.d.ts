@@ -3399,13 +3399,7 @@ export interface IBatchCancelWorkflowsReqV2 {
 }
 
 export interface IBatchCompleteWorkflowsReqV2 {
-  workflow_list?: ICompleteWorkflowReq[];
-}
-
-export interface ICompleteWorkflowReq {
-  desc?: string;
-
-  workflow_id?: string;
+  workflow_id_list?: string[];
 }
 
 export interface ICreateWorkflowReqV2 {
@@ -3650,6 +3644,12 @@ export interface IRuleTemplateV2 {
   name?: string;
 }
 
+export interface ISqlVersion {
+  sql_version_id?: number;
+
+  sql_version_name?: string;
+}
+
 export interface ITaskAnalysisDataV2 {
   performance_statistics?: IPerformanceStatistics;
 
@@ -3705,7 +3705,7 @@ export interface IWorkflowResV2 {
 
   record_history_list?: IWorkflowRecordResV2[];
 
-  sql_version_name?: string;
+  sql_version?: ISqlVersion;
 
   workflow_id?: string;
 

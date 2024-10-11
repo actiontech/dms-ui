@@ -91,11 +91,17 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has all params 1`] 
         <div
           class="ant-space-item"
         >
-          <span
-            class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+          <a
+            href="/sqle/project/700300/version-management/detail/1"
           >
-            v1-test
-          </span>
+            <span
+              class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+            >
+              版本
+              ：
+              v1-test
+            </span>
+          </a>
         </div>
       </div>
       <div
