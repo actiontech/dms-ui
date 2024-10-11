@@ -250,7 +250,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
   }
 
   public batchCompleteWorkflows() {
-    const spy = jest.spyOn(workflow, 'batchCompleteWorkflowsV2');
+    const spy = jest.spyOn(workflow, 'batchCompleteWorkflowsV3');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

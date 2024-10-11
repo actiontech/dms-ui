@@ -14,7 +14,8 @@ import {
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum,
   WorkflowStepResV2StateEnum,
-  WorkflowStepResV2TypeEnum
+  WorkflowStepResV2TypeEnum,
+  AssociatedStageWorkflowsStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const WorkflowListData = [
@@ -185,6 +186,8 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
       }
     ],
     status: WorkflowRecordResV2StatusEnum.finished,
+    executable: false,
+    executable_reason: 'the status of workflow is finished',
     workflow_step_list: [
       {
         number: 1,
@@ -234,7 +237,30 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
       ]
     }
   ],
-  exec_mode: WorkflowResV2ExecModeEnum.sqls
+  exec_mode: WorkflowResV2ExecModeEnum.sqls,
+  associated_stage_workflows: [
+    {
+      workflow_id: '1839493775269826560',
+      workflow_name: 'v-12-dev-3',
+      status: AssociatedStageWorkflowsStatusEnum.finished,
+      sql_version_stage_id: 48,
+      stage_sequence: 1
+    },
+    {
+      workflow_name: 'workflow_name',
+      workflow_id: '1747444197486497792',
+      status: AssociatedStageWorkflowsStatusEnum.finished,
+      sql_version_stage_id: 48,
+      stage_sequence: 2
+    },
+    {
+      workflow_id: '1839543178827403264',
+      workflow_name: 'v-12-dev-3_生产',
+      status: AssociatedStageWorkflowsStatusEnum.wait_for_audit,
+      sql_version_stage_id: 48,
+      stage_sequence: 3
+    }
+  ]
 };
 
 export const workflowsDetailData = {
@@ -320,6 +346,8 @@ export const workflowsDetailWaitForAuditData = {
 export const workflowsDetailWaitForExecutionData = {
   ...workflowsDetailData,
   record: {
+    executable: true,
+    executable_reason: '',
     tasks: [
       {
         task_id: 40
