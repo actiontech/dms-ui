@@ -1203,6 +1203,30 @@ exports[`base/Member/Modal/AddMemberGroup should send add member group request w
                     admin
                   </div>
                 </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  label="global-view"
+                  title="global-view"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    global-view
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  label="global-management"
+                  title="global-management"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    global-management
+                  </div>
+                </div>
               </div>
             </div>
           </div>

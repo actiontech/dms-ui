@@ -10,6 +10,7 @@ import { RuleManagerSegmentedKey } from '../index.type';
 import { ModalName } from '../../../data/ModalName';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 import { cleanup } from '@testing-library/react';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -26,6 +27,7 @@ jest.mock('react-router-dom', () => {
 
 describe('sqle/RuleManager CE', () => {
   beforeEach(() => {
+    mockUseCurrentUser();
     mockUseCurrentPermission();
   });
   afterEach(() => {

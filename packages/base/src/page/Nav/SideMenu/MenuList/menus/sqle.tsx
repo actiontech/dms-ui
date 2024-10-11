@@ -157,7 +157,7 @@ const sqleOperationRecordMenuItem: GenerateMenuItemType = (projectID) => ({
   icon: <OperateAuditFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`,
   structKey: 'sqle-log',
-  role: [SystemRole.admin]
+  role: [SystemRole.admin, SystemRole.globalViewing]
 });
 
 const sqlManagementConf: GenerateMenuItemType = (projectID) => ({

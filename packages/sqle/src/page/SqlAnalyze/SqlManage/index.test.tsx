@@ -1,6 +1,5 @@
 import { act, fireEvent } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
-
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
@@ -15,6 +14,7 @@ import {
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageSqlAnalyzeData } from '../__testData__';
 import SQLManageAnalyze from '.';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 jest.mock('react-router', () => {
   return {
@@ -32,6 +32,7 @@ describe('SqlAnalyze/SQLManage', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    mockUseCurrentProject();
     useParamsMock.mockReturnValue({
       sqlManageId: 'sqlManageId1',
       sqlNum: '123',
@@ -54,18 +55,7 @@ describe('SqlAnalyze/SQLManage', () => {
   it('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
     const { container, baseElement } = renderWithReduxAndTheme(
-      <SQLManageAnalyze />,
-      undefined,
-      {
-        user: {
-          bindProjects: [
-            {
-              project_id: '',
-              project_name: projectName
-            }
-          ]
-        } as any
-      }
+      <SQLManageAnalyze />
     );
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
@@ -109,20 +99,7 @@ describe('SqlAnalyze/SQLManage', () => {
         }
       )
     );
-    const { container } = renderWithReduxAndTheme(
-      <SQLManageAnalyze />,
-      undefined,
-      {
-        user: {
-          bindProjects: [
-            {
-              project_id: '',
-              project_name: projectName
-            }
-          ]
-        } as any
-      }
-    );
+    const { container } = renderWithReduxAndTheme(<SQLManageAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -152,20 +129,7 @@ describe('SqlAnalyze/SQLManage', () => {
         }
       )
     );
-    const { container } = renderWithReduxAndTheme(
-      <SQLManageAnalyze />,
-      undefined,
-      {
-        user: {
-          bindProjects: [
-            {
-              project_id: '',
-              project_name: projectName
-            }
-          ]
-        } as any
-      }
-    );
+    const { container } = renderWithReduxAndTheme(<SQLManageAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();

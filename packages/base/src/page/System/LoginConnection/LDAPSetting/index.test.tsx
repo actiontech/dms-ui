@@ -40,6 +40,14 @@ describe('base/System/LoginConnection/LDAPSetting', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('render snap when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+  });
+
   describe('render switch cancel btn', () => {
     it('render snap when click cont cancel btn', async () => {
       const { baseElement } = customRender();

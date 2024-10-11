@@ -2487,7 +2487,7 @@ export interface ISqlManage {
 
   audit_status?: SqlManageAuditStatusEnum;
 
-  endpoints?: string[];
+  endpoints?: string;
 
   first_appear_timestamp?: string;
 
@@ -3399,7 +3399,13 @@ export interface IBatchCancelWorkflowsReqV2 {
 }
 
 export interface IBatchCompleteWorkflowsReqV2 {
-  workflow_id_list?: string[];
+  workflow_list?: ICompleteWorkflowReq[];
+}
+
+export interface ICompleteWorkflowReq {
+  desc?: string;
+
+  workflow_id?: string;
 }
 
 export interface ICreateWorkflowReqV2 {

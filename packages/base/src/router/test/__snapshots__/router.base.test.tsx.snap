@@ -59,6 +59,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "role": [
       "admin",
       "certainProjectManager",
+      "globalViewing",
     ],
   },
   {
@@ -82,6 +83,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "path": "sync-data-source",
     "role": [
       "admin",
+      "globalViewing",
     ],
   },
   {

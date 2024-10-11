@@ -7,7 +7,8 @@ import { IConfigItemImageUploaderProps } from '../index.type';
 const ImageUploader: React.FC<IConfigItemImageUploaderProps> = ({
   submitLoading,
   onSubmit,
-  url
+  url,
+  isAdmin
 }) => {
   const { t } = useTranslation();
   const [maskVisible, { setTrue: showMask, setFalse: hideMask }] =
@@ -19,7 +20,7 @@ const ImageUploader: React.FC<IConfigItemImageUploaderProps> = ({
       listType="picture-card"
       showUploadList={false}
       customRequest={onSubmit}
-      disabled={submitLoading}
+      disabled={submitLoading || !isAdmin}
       accept="image/*"
     >
       {submitLoading ? (
