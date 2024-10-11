@@ -2,7 +2,7 @@
 
 exports[`App render App when "driverInfoFetched" is equal false 1`] = `<div />`;
 
-exports[`App render App when "useInfoFetched" is equal false 1`] = `<div />`;
+exports[`App render App when "userInfoFetched" is equal false 1`] = `<div />`;
 
 exports[`App render App when token is existed 1`] = `
 <div>

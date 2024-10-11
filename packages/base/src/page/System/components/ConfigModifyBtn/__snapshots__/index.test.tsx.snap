@@ -94,3 +94,5 @@ exports[`base/System/components/ConfigModifyBtn render snap 2`] = `
   </div>
 </body>
 `;
+
+exports[`base/System/components/ConfigModifyBtn should return null when user is not admin 1`] = `<div />`;

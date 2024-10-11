@@ -21,6 +21,7 @@ import { UserListActions, UserListColumns } from './column';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage
@@ -38,6 +39,8 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     IListUser,
     IListUsersParams
   >();
+
+  const { isAdmin, role } = useCurrentUser();
 
   const {
     data: userList,
@@ -90,8 +93,11 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   );
 
   const actions = useMemo(() => {
-    return UserListActions(onEditUser, onDeleteUser);
-  }, [onEditUser, onDeleteUser]);
+    if (isAdmin) {
+      return UserListActions(onEditUser, onDeleteUser, role);
+    }
+    return [];
+  }, [isAdmin, onEditUser, onDeleteUser, role]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(

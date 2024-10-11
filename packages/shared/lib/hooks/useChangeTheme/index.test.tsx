@@ -9,7 +9,8 @@ describe('useChangeTheme', () => {
   const customRender = () => {
     return renderHooksWithRedux(() => useChangeTheme(), {
       user: {
-        theme: SupportTheme.LIGHT
+        theme: SupportTheme.LIGHT,
+        managementPermissions: []
       }
     });
   };

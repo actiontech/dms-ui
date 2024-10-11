@@ -2487,7 +2487,7 @@ export interface ISqlManage {
 
   audit_status?: SqlManageAuditStatusEnum;
 
-  endpoints?: string[];
+  endpoints?: string;
 
   first_appear_timestamp?: string;
 
