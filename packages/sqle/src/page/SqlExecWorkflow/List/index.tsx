@@ -135,7 +135,9 @@ const SqlExecWorkflowList: React.FC = () => {
           showTime: true
         }
       ],
+      // #if [ee]
       ['sql_version_name', { options: sqlVersionOptions }]
+      // #endif
     ]);
   }, [instanceIDOptions, usernameOptions, sqlVersionOptions]);
 
@@ -200,13 +202,13 @@ const SqlExecWorkflowList: React.FC = () => {
     updateInstanceList({
       project_name: projectName
     });
+  }, [projectName, updateInstanceList, updateUsernameList]);
+
+  // #if [ee]
+  useEffect(() => {
     updateSqlVersionList();
-  }, [
-    projectName,
-    updateInstanceList,
-    updateUsernameList,
-    updateSqlVersionList
-  ]);
+  }, [updateSqlVersionList]);
+  // #endif
 
   return (
     <SqlExecWorkflowListStyleWrapper>
