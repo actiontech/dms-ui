@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
 import { Divider, Popconfirm, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -44,7 +44,9 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     batchExecutingWorkflowButtonMeta,
     manualExecuteWorkflowButtonMeta,
     terminateWorkflowButtonMeta,
-    executeInOtherInstanceMeta
+    executeInOtherInstanceMeta,
+    executable,
+    executable_reason
   } = useWorkflowDetailAction({ projectName, ...props });
 
   return (
@@ -107,7 +109,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           okText={t('common.ok')}
         >
           <BasicButton
-            hidden={batchExecutingWorkflowButtonMeta.hidden}
+            hidden={batchExecutingWorkflowButtonMeta.hidden || !executable}
             disabled={batchExecutingWorkflowButtonMeta.loading}
             loading={batchExecutingWorkflowButtonMeta.loading}
             type="primary"
@@ -124,7 +126,7 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           okText={t('common.ok')}
         >
           <BasicButton
-            hidden={manualExecuteWorkflowButtonMeta.hidden}
+            hidden={manualExecuteWorkflowButtonMeta.hidden || !executable}
             disabled={manualExecuteWorkflowButtonMeta.loading}
             loading={manualExecuteWorkflowButtonMeta.loading}
             type="primary"
@@ -132,6 +134,26 @@ const WorkflowDetailPageHeaderExtra: React.FC<
             {t('execWorkflow.detail.operator.markManually')}
           </BasicButton>
         </Popconfirm>
+
+        <EmptyBox
+          if={
+            !manualExecuteWorkflowButtonMeta.hidden &&
+            !batchExecutingWorkflowButtonMeta.hidden &&
+            !executable
+          }
+        >
+          <BasicToolTips
+            title={executable_reason}
+            overlayClassName="whitespace-pre-line"
+          >
+            <BasicButton disabled type="primary">
+              {t('execWorkflow.detail.operator.batchSqlExecute')}
+            </BasicButton>
+            <BasicButton disabled type="primary">
+              {t('execWorkflow.detail.operator.markManually')}
+            </BasicButton>
+          </BasicToolTips>
+        </EmptyBox>
       </EmptyBox>
 
       <Space hidden={terminateWorkflowButtonMeta.hidden} size={0}>

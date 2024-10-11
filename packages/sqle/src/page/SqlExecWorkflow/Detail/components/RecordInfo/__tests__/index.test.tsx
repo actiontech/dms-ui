@@ -4,7 +4,10 @@ import { cleanup, fireEvent, act } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { WorkflowListData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import {
+  WorkflowListData,
+  WorkflowsOverviewListData
+} from '../../../../../../testUtils/mockApi/execWorkflow/data';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 
@@ -51,6 +54,20 @@ describe('sqle/SqlExecWorkflow/Detail/RecordInfo', () => {
       visibility: true,
       onClose: closeFn,
       workflowInfo: WorkflowListData[0],
+      tasksStatusCount: {
+        success: 1,
+        failed: 0,
+        executing: 0
+      }
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when has associated stage workflows', () => {
+    const { baseElement } = customRender({
+      visibility: true,
+      onClose: closeFn,
+      workflowInfo: WorkflowsOverviewListData,
       tasksStatusCount: {
         success: 1,
         failed: 0,

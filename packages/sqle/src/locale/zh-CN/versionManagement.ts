@@ -59,6 +59,10 @@ export default {
   },
   release: {
     title: '批量发布工单',
+    disableTips:
+      '工单需要按顺序发布，并确保您具有下一阶段数据源的创建工单权限。请确认当前顺序工单已成功上线，并检查您的权限。仅在满足这些条件后才能进行发布操作。',
+    currentAllowReleaseWorkflow:
+      '工单将按顺序依次发布，当前阶段具备发布条件的工单如下',
     targetDataSource: '目标发布数据源',
     currentDataSource: '工单当前数据源',
     schemaPlaceholder: '请选择数据库（选填）',
@@ -66,7 +70,10 @@ export default {
   },
   execute: {
     title: '批量上线工单',
-    currentAllowExecuteWorkflow: '当前阶段可上线工单',
+    disableTips:
+      '工单将按顺序依次上线，请确保下一个工单已具备上线条件后再尝试上线操作。',
+    currentAllowExecuteWorkflow:
+      '工单将按顺序依次上线，当前阶段具备上线条件的工单如下，是否确认上线？',
     successTips: '批量上线工单成功'
   },
   stageNode: {
