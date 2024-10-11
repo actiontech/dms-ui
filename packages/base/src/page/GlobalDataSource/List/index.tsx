@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { message, Modal } from 'antd';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import {
+  useCurrentUser,
+  useDbServiceDriver
+} from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -31,6 +34,8 @@ const GlobalDataSourceList = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
+
+  const { isAdmin, isCertainProjectManager } = useCurrentUser();
 
   const [modalApi, modalContextHolder] = Modal.useModal();
 
@@ -199,12 +204,21 @@ const GlobalDataSourceList = () => {
   ]);
 
   const actions = useMemo(() => {
-    return GlobalDataSourceListActions(
-      navigateToUpdatePage,
-      deleteDatabase,
-      testDatabaseConnection
-    );
-  }, [navigateToUpdatePage, deleteDatabase, testDatabaseConnection]);
+    if (isAdmin || isCertainProjectManager) {
+      return GlobalDataSourceListActions(
+        navigateToUpdatePage,
+        deleteDatabase,
+        testDatabaseConnection
+      );
+    }
+    return [];
+  }, [
+    isAdmin,
+    isCertainProjectManager,
+    navigateToUpdatePage,
+    deleteDatabase,
+    testDatabaseConnection
+  ]);
 
   useEffect(() => {
     updateDriverList();

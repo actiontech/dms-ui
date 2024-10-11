@@ -1459,24 +1459,6 @@ exports[`base/UserCenter/PermissionList should render permission table when requ
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
-                      data-row-key="700001"
-                    >
-                      <td
-                        class="ant-table-cell"
-                      >
-                        创建项目
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        数据源
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      />
-                    </tr>
-                    <tr
-                      class="ant-table-row ant-table-row-level-0"
                       data-row-key="20100"
                     >
                       <td
@@ -1488,6 +1470,24 @@ exports[`base/UserCenter/PermissionList should render permission table when requ
                         class="ant-table-cell"
                       >
                         unknown
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      />
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="700001"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        创建项目
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        数据源
                       </td>
                       <td
                         class="ant-table-cell"

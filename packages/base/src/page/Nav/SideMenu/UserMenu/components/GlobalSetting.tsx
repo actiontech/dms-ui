@@ -17,11 +17,13 @@ import ContextMenu from './ContextMenu';
 type Props = {
   isAdmin: boolean;
   isCertainProjectManager: boolean;
+  hasGlobalViewingPermission: boolean;
 };
 
 const GlobalSetting: React.FC<Props> = ({
   isAdmin,
-  isCertainProjectManager
+  isCertainProjectManager,
+  hasGlobalViewingPermission
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
@@ -38,14 +40,15 @@ const GlobalSetting: React.FC<Props> = ({
       icon: <UserShieldFilled />,
       text: t('menu.userCenter'),
       onClick: () => handleClickItem('/user-center'),
-      hidden: !isAdmin
+      hidden: !isAdmin && !hasGlobalViewingPermission
     },
     {
       key: 'data-source-management',
       icon: <DatabaseFilled />,
       text: t('dmsMenu.globalSettings.instanceManager'),
       onClick: () => handleClickItem(`/data-source-management`),
-      hidden: !isAdmin && !isCertainProjectManager
+      hidden:
+        !isAdmin && !isCertainProjectManager && !hasGlobalViewingPermission
     },
     // #if [sqle]
     {
@@ -53,7 +56,7 @@ const GlobalSetting: React.FC<Props> = ({
       icon: <SignalFilled />,
       text: t('dmsMenu.globalSettings.reportStatistics'),
       onClick: () => handleClickItem('/sqle/report-statistics'),
-      hidden: !isAdmin
+      hidden: !isAdmin && !hasGlobalViewingPermission
     },
     {
       key: 'viewRule',
@@ -66,7 +69,7 @@ const GlobalSetting: React.FC<Props> = ({
       icon: <ProfileEditFilled />,
       text: t('dmsMenu.globalSettings.ruleManage'),
       onClick: () => handleClickItem('/sqle/rule-manager'),
-      hidden: !isAdmin
+      hidden: !isAdmin && !hasGlobalViewingPermission
     },
     // #endif
     {
@@ -74,7 +77,7 @@ const GlobalSetting: React.FC<Props> = ({
       icon: <GearFilled />,
       text: t('dmsMenu.globalSettings.system'),
       onClick: () => handleClickItem('/system'),
-      hidden: !isAdmin
+      hidden: !isAdmin && !hasGlobalViewingPermission
     }
   ];
 

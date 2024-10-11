@@ -150,7 +150,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(scopeDispatch).toHaveBeenCalledTimes(1);
     expect(scopeDispatch).toHaveBeenCalledWith({
-      payload: { language: SupportLanguage.enUS },
+      payload: { language: SupportLanguage.enUS, store: true },
       type: 'user/updateLanguage'
     });
     expect(window.location.reload).toHaveBeenCalledTimes(1);

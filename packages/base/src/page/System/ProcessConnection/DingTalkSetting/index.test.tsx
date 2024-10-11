@@ -6,6 +6,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import DingTalkSetting from '.';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/ProcessConnection/DingTalkSetting', () => {
   let requestGetDingTalkConfiguration: jest.SpyInstance;
@@ -16,6 +17,7 @@ describe('base/System/ProcessConnection/DingTalkSetting', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     requestGetDingTalkConfiguration = system.getDingTalkConfiguration();
     requestUpdateDingTalkConfiguration = system.updateDingTalkConfiguration();
@@ -34,6 +36,14 @@ describe('base/System/ProcessConnection/DingTalkSetting', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetDingTalkConfiguration).toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when user is not admin', async () => {
+    mockUseCurrentUser({ isAdmin: false });
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 

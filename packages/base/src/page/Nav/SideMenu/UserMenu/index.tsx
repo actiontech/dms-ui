@@ -9,7 +9,8 @@ const UserMenu: React.FC<UserMenuProps> = ({
   language,
   username,
   isAdmin,
-  isCertainProjectManager
+  isCertainProjectManager,
+  hasGlobalViewingPermission
 }) => {
   const [
     versionModalOpen,
@@ -27,6 +28,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         <GlobalSetting
           isAdmin={isAdmin}
           isCertainProjectManager={isCertainProjectManager}
+          hasGlobalViewingPermission={hasGlobalViewingPermission}
         />
       </div>
       <VersionModal

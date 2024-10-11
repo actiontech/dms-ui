@@ -18,6 +18,7 @@ export interface OperationRecordExpiredHoursProps {
     value: string | number,
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
+  isAdmin: boolean;
 }
 
 const OperationRecordExpiredHours = ({
@@ -25,7 +26,8 @@ const OperationRecordExpiredHours = ({
   fieldVisible,
   showField,
   hideField,
-  submitGlobalConfig
+  submitGlobalConfig,
+  isAdmin
 }: OperationRecordExpiredHoursProps) => {
   const { t } = useTranslation();
   const { messageContextHolder, integerValidator } = useValidatorNumber();
@@ -43,6 +45,7 @@ const OperationRecordExpiredHours = ({
         fieldVisible={fieldVisible}
         showField={showField}
         hideField={hideField}
+        needEditButton={isAdmin}
         inputNode={
           <EditInputNumber
             fieldValue={expiredHours ?? 2160}

@@ -1049,6 +1049,42 @@ exports[`base/Member/Modal/AddMember should send add member request when click s
                     unselectable="on"
                   />
                 </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  label="global-view"
+                  title="global-view"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    global-view
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  label="global-management"
+                  title="global-management"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    global-management
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
               </div>
             </div>
           </div>

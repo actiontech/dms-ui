@@ -92,12 +92,15 @@ const SyncTaskList: React.FC = () => {
         loading={loading}
         pagination={false}
         columns={SyncTaskListTableColumnFactory()}
-        actions={SyncTaskListActions({
-          navigate,
-          syncAction,
-          deleteAction,
-          actionPermission: isAdmin
-        })}
+        actions={
+          isAdmin
+            ? SyncTaskListActions({
+                navigate,
+                syncAction,
+                deleteAction
+              })
+            : []
+        }
       />
     </>
   );

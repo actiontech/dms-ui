@@ -8,6 +8,7 @@ export type UserMenuProps = {
   updateTheme: (theme: SupportTheme) => void;
   isAdmin: boolean;
   isCertainProjectManager: boolean;
+  hasGlobalViewingPermission: boolean;
 };
 
 export type BasicVersionModalProps = {

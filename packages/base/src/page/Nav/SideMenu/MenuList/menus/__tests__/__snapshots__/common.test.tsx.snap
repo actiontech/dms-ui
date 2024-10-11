@@ -471,7 +471,29 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
   {
     "type": "divider",
   },
-  null,
+  {
+    "children": [
+      {
+        "icon": <OperateAuditFilled
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/operation-record",
+        "label": <Link
+          to="/sqle/project/600300/operation-record"
+        >
+          SQLE操作记录
+        </Link>,
+        "role": [
+          "admin",
+          "globalViewing",
+        ],
+        "structKey": "sqle-log",
+      },
+    ],
+    "label": "操作与审计",
+    "type": "group",
+  },
 ]
 `;
 
@@ -773,6 +795,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         </Link>,
         "role": [
           "admin",
+          "globalViewing",
         ],
         "structKey": "sqle-log",
       },

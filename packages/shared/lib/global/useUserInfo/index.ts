@@ -15,6 +15,7 @@ import {
 import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
 import User from '../../api/base/service/User';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../data/common';
+import { DEFAULT_LANGUAGE } from '../../locale';
 
 const useUserInfo = () => {
   const dispatch = useDispatch();
@@ -65,6 +66,14 @@ const useUserInfo = () => {
       onSuccess: (res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           const { data } = res.data;
+          let language = DEFAULT_LANGUAGE;
+          if (
+            data?.language === SupportLanguage.enUS ||
+            data?.language === SupportLanguage.zhCN
+          ) {
+            language = data.language;
+          }
+
           dispatch(
             updateUser({
               username: data?.name ?? '',
@@ -73,10 +82,8 @@ const useUserInfo = () => {
           );
           dispatch(
             updateLanguage({
-              language:
-                data?.language === SupportLanguage.enUS
-                  ? SupportLanguage.enUS
-                  : SupportLanguage.zhCN
+              language,
+              store: !!data?.language
             })
           );
 

@@ -23,9 +23,12 @@ import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/BasicInfo/index.d';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
+
+  const { isAdmin } = useCurrentUser();
 
   const [
     titleFieldVisible,
@@ -101,6 +104,7 @@ const PersonalizeSetting: React.FC = () => {
           fieldVisible={titleFieldVisible}
           showField={showTitleField}
           hideField={hideTitleField}
+          needEditButton={isAdmin}
           inputNode={
             <EditInput
               submitLoading={submitLoading}
@@ -120,6 +124,7 @@ const PersonalizeSetting: React.FC = () => {
           }
           inputNode={
             <ImageUploader
+              isAdmin={isAdmin}
               submitLoading={submitLoading}
               onSubmit={(option) => {
                 submitPersonalize(option.file as File, 'file');

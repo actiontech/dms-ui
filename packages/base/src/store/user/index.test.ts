@@ -29,7 +29,7 @@ describe('store user', () => {
     bindProjects: [],
     managementPermissions: [],
     role: '',
-    useInfoFetched: false,
+    userInfoFetched: false,
     language: SupportLanguage.zhCN
   };
 
@@ -50,7 +50,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 
@@ -71,7 +71,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 
@@ -79,7 +79,8 @@ describe('store user', () => {
     const newState = reducers(
       state,
       updateLanguage({
-        language: SupportLanguage.enUS
+        language: SupportLanguage.enUS,
+        store: true
       })
     );
     expect(newState).not.toBe(state);
@@ -92,7 +93,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 
@@ -114,7 +115,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 
@@ -135,11 +136,11 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 
-  it('should update user useInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
+  it('should update user userInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
     const newState = reducers(state, updateUserInfoFetchStatus(true));
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
@@ -151,7 +152,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: true
+      userInfoFetched: true
     });
   });
 
@@ -180,7 +181,7 @@ describe('store user', () => {
       bindProjects: mockBindProjects,
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 
@@ -202,7 +203,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: mockManagementPermissions,
       role: '',
-      useInfoFetched: false
+      userInfoFetched: false
     });
   });
 });

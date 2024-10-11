@@ -63,7 +63,7 @@ describe('useUserInfo', () => {
     });
 
     expect(mockDispatch).toHaveBeenCalledWith({
-      payload: { language: GetUserPayload.language },
+      payload: { language: GetUserPayload.language, store: true },
       type: 'user/updateLanguage'
     });
 
