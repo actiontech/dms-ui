@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
+import { EnvironmentFilled } from '@actiontech/icons';
 
 const AssociatedWorkflows: React.FC<{
   associatedWorkflows?: IAssociatedStageWorkflows[];
@@ -22,7 +23,10 @@ const AssociatedWorkflows: React.FC<{
       .map((workflow) => {
         const isCurrentWorkflow = workflow.workflow_id === workflowId;
         return {
-          color: isCurrentWorkflow ? 'green' : 'blue',
+          color: 'gray',
+          dot: isCurrentWorkflow ? (
+            <EnvironmentFilled width={24} height={24} />
+          ) : null,
           children: (
             <Space
               direction="vertical"
