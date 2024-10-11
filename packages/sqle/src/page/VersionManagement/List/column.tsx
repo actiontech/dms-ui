@@ -100,7 +100,8 @@ export const VersionManagementTableActions: (
           onConfirm: () => onLock(record?.version_id)
         }),
         permissions: (record) =>
-          record?.status === SqlVersionResV1StatusEnum.is_being_released
+          !!record?.lockable &&
+          record?.status !== SqlVersionResV1StatusEnum.locked
       },
       {
         key: 'delete-button',
@@ -110,8 +111,7 @@ export const VersionManagementTableActions: (
           title: t('versionManagement.list.action.deleteConfirm'),
           onConfirm: () => onDelete(record?.version_id)
         }),
-        permissions: (record) =>
-          record?.status === SqlVersionResV1StatusEnum.is_being_released
+        permissions: (record) => !!record?.deletable
       }
     ]
   };

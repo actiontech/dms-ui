@@ -54,7 +54,7 @@ const OfflineExecModal = () => {
     const values = await form.validateFields();
     startSubmit();
     workflow
-      .batchCompleteWorkflowsV2({
+      .batchCompleteWorkflowsV3({
         workflow_list: [
           {
             workflow_id: workflowId ?? '',
