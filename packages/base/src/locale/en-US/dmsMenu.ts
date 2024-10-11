@@ -53,7 +53,7 @@ export default {
     notice: 'Notice',
     language: {
       text: 'Language',
-      zhCN: 'Chinese',
+      zhCN: '中文',
       enUS: 'English'
     }
   },
