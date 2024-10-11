@@ -8,13 +8,13 @@ const useCurrentPermission = () => {
     sqlOptimizationIsSupported: state.permission.sqlOptimizationIsSupported
   }));
 
-  const moduleSupportedStatus: ModuleFeatureSupportStatus = {
-    sqlOptimization: true
+  const moduleSupportStatus: ModuleFeatureSupportStatus = {
+    sqlOptimization: sqlOptimizationIsSupported
   };
 
   return {
     sqlOptimizationIsSupported,
-    moduleSupportedStatus
+    moduleSupportStatus
   };
 };
 

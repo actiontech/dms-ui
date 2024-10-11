@@ -13,11 +13,18 @@ export const PERMISSIONS = {
       REPORT_STATISTICS: 'page:report_statistics',
       RULE_MANAGEMENT: 'page:rule_management'
     }
+  },
+  ACTIONS: {
+    BASE: {
+      DB_SERVICE: {
+        EDIT: 'action:edit_db_service',
+        DELETE: 'action:delete_db_service',
+        TEST: 'action:test_db_service',
+        TEST_IN_MORE_BUTTON: 'action:test_db_service_in_more_button',
+        CREATE_AUDIT_PLAN: 'action:db_service_create_audit_plan'
+      }
+    }
   }
-  // ACTIONS: {
-  //   CREATE_WORK_ORDER: 'action:create_work_order',
-  //   EDIT_USER: 'action:edit_user'
-  // }
 } as const;
 
 type ValueOf<T> = T[keyof T];

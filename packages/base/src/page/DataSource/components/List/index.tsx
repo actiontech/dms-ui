@@ -31,6 +31,7 @@ import {
   filterDataMaskOptions
 } from './columns';
 import { PlusOutlined } from '@actiontech/icons';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ const DataSourceList = () => {
   const [searchParams] = useSearchParams();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
-
+  const { parse2TableActionPermissions } = usePermission();
   const { projectID, projectArchive, projectName } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
 
@@ -241,21 +242,20 @@ const DataSourceList = () => {
   ]);
 
   const actions = useMemo(() => {
-    return DataSourceListActions(
-      navigateToUpdatePage,
-      deleteDatabase,
-      testDatabaseConnection,
-      navigateToSqlManagementConf,
-      projectArchive,
-      actionPermission
+    return parse2TableActionPermissions(
+      DataSourceListActions(
+        navigateToUpdatePage,
+        deleteDatabase,
+        testDatabaseConnection,
+        navigateToSqlManagementConf
+      )
     );
   }, [
+    parse2TableActionPermissions,
     navigateToUpdatePage,
     deleteDatabase,
     testDatabaseConnection,
-    navigateToSqlManagementConf,
-    projectArchive,
-    actionPermission
+    navigateToSqlManagementConf
   ]);
 
   useEffect(() => {
