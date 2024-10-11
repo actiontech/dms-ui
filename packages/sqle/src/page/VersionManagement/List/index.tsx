@@ -171,7 +171,7 @@ const VersionManagementList = () => {
       <ActiontechTable
         dataSource={versionData?.list}
         rowKey={(record: ISqlVersionResV1) => {
-          return `${record?.version}`;
+          return `${record?.version_id}`;
         }}
         pagination={{
           total: versionData?.total ?? 0

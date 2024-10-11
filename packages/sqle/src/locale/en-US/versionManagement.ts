@@ -43,7 +43,7 @@ export default {
     baseInfo: 'Version basic information',
     name: 'Version name',
     nameTip:
-      'Please fill in an identifiable version name for this dispatch, e.g., SQLE2.2409.0',
+      'Please fill in an identifiable version name for this dispatch, e.g., SQLE2_2409_0',
     desc: 'Version description',
     descTip:
       'Please describe the purpose of this dispatch, indicating the scope of version changes',
