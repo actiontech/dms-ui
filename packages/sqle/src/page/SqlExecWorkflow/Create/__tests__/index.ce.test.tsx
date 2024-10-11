@@ -19,7 +19,7 @@ import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseTy
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import instance from '../../../../testUtils/mockApi/instance';
 import { useSelector } from 'react-redux';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import { SOURCE_WORKFLOW_PATH_KEY } from '../../../../data/common';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum

@@ -33,7 +33,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
 
-  const { isCloneMode } = useCreationMode();
+  const { isCloneMode, isAssociationVersionMode, versionId } =
+    useCreationMode();
 
   const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
     return {
@@ -155,7 +156,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
       task_ids: taskInfos.map((v) => v.task_id!),
       desc: baseInfo?.desc,
       workflow_subject: baseInfo?.workflow_subject,
-      project_name: projectName
+      project_name: projectName,
+      sql_version_id: isAssociationVersionMode ? Number(versionId) : undefined
     };
     return workflow.createWorkflowV2(createWorkflowParam).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
@@ -170,7 +172,9 @@ const CreateSqlExecWorkflow: React.FC = () => {
     messageApi,
     projectName,
     t,
-    taskInfos
+    taskInfos,
+    isAssociationVersionMode,
+    versionId
   ]);
 
   usePrompt(t('execWorkflow.create.auditResult.leaveTip'), isAtAuditResultStep);

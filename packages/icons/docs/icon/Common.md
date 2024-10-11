@@ -319,6 +319,13 @@ import { DashOutlined } from '@actiontech/icons';
 export default () => <DashOutlined width={32} height={32} />
 ```
 
+## DoubleArrowOutlined
+```jsx
+import { DoubleArrowOutlined } from '@actiontech/icons';
+
+export default () => <DoubleArrowOutlined width={32} height={32} />
+```
+
 ## DownArrowLineOutlined
 ```jsx
 import { DownArrowLineOutlined } from '@actiontech/icons';

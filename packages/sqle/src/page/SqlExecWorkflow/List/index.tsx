@@ -44,6 +44,7 @@ import {
   translateDictionaryI18nLabel
 } from '../../../hooks/useStaticStatus/index.data';
 import { PlusOutlined, MinusCircleOutlined } from '@actiontech/icons';
+import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -55,6 +56,8 @@ const SqlExecWorkflowList: React.FC = () => {
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceIDOptions, updateInstanceList } = useInstance();
   const { isAdmin, username } = useCurrentUser();
+
+  const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
 
   const {
     tableFilterInfo,
@@ -131,9 +134,10 @@ const SqlExecWorkflowList: React.FC = () => {
         {
           showTime: true
         }
-      ]
+      ],
+      ['sql_version_name', { options: sqlVersionOptions }]
     ]);
-  }, [instanceIDOptions, usernameOptions]);
+  }, [instanceIDOptions, usernameOptions, sqlVersionOptions]);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -196,7 +200,13 @@ const SqlExecWorkflowList: React.FC = () => {
     updateInstanceList({
       project_name: projectName
     });
-  }, [projectName, updateInstanceList, updateUsernameList]);
+    updateSqlVersionList();
+  }, [
+    projectName,
+    updateInstanceList,
+    updateUsernameList,
+    updateSqlVersionList
+  ]);
 
   return (
     <SqlExecWorkflowListStyleWrapper>

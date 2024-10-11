@@ -28,6 +28,7 @@ export default {
   sqlManagementConf: 'SQL管控配置',
   pushRuleConfiguration: '推送规则',
   pipelineConfiguration: '流水线配置',
+  versionManagement: '版本管理',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',

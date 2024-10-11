@@ -21,7 +21,8 @@ import {
   IUpdateWorkflowReqV2,
   IRejectWorkflowReqV2,
   IGetWorkflowTasksResV2,
-  IUpdateWorkflowScheduleReqV2
+  IUpdateWorkflowScheduleReqV2,
+  IBatchCompleteWorkflowsReqV3
 } from '../common.d';
 
 import {
@@ -69,6 +70,8 @@ export interface IGetWorkflowsV1Params {
   filter_current_step_assignee_user_id?: string;
 
   filter_task_instance_id?: string;
+
+  filter_sql_version_id?: string;
 
   page_index: number;
 
@@ -369,3 +372,10 @@ export interface IUpdateWorkflowScheduleV2Params
 }
 
 export interface IUpdateWorkflowScheduleV2Return extends IBaseRes {}
+
+export interface IBatchCompleteWorkflowsV3Params
+  extends IBatchCompleteWorkflowsReqV3 {
+  project_name: string;
+}
+
+export interface IBatchCompleteWorkflowsV3Return extends IBaseRes {}
