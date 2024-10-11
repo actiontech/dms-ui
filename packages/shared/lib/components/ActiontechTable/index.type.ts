@@ -324,6 +324,23 @@ export type InlineActiontechTableMoreActionsButtonMeta<
 >;
 
 /**
+ * 表格操作集合类型
+ */
+export type ActiontechTableActionsConfig<
+  T = Record<string, any>,
+  F = Record<string, any>,
+  OtherColumnKeys extends string = never
+> = {
+  title?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['title'];
+  moreButtons?:
+    | InlineActiontechTableMoreActionsButtonMeta<T>[]
+    | ((record: T) => InlineActiontechTableMoreActionsButtonMeta<T>[]);
+  buttons: ActiontechTableActionMeta<T>[];
+  fixed?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['fixed'];
+  width?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['width'];
+};
+
+/**
  * todo: 如何控制 筛选项的顺序
  * 表格 columns props, 当配置 filterCustomType 和 filterKey 启用该列的筛选功能, 通过 useTableFilterContainer 来生成 筛选项的元数据
  * 当需要添加表格列以外的筛选列时, 可以使用 useTableFilterContainer 的第三个参数: extraFilterMeta
@@ -356,22 +373,14 @@ export type ActiontechTableColumn<
 export interface ActiontechTableProps<
   T = Record<string, any>,
   F = Record<string, any>,
-  OtherColumnKeys extends string = ''
+  OtherColumnKeys extends string = never
 > extends Omit<TableProps<T>, 'columns'> {
   setting?: ColumnsSettingProps | false;
   /**
    * 生成表格操作列
    */
   actions?:
-    | {
-        title?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['title'];
-        moreButtons?:
-          | InlineActiontechTableMoreActionsButtonMeta<T>[]
-          | ((record: T) => InlineActiontechTableMoreActionsButtonMeta<T>[]);
-        buttons: ActiontechTableActionMeta<T>[];
-        fixed?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['fixed'];
-        width?: ActiontechTableColumn<T, F, OtherColumnKeys>[0]['width'];
-      }
+    | ActiontechTableActionsConfig<T, F, OtherColumnKeys>
     | ActiontechTableActionMeta<T>[];
 
   /**

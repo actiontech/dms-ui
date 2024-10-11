@@ -1,19 +1,25 @@
+import { OpPermissionItemOpPermissionTypeEnum } from '../../api/base/service/common.enum';
 import { SystemModuleSupported, SystemRole } from '../../enum';
 import { PERMISSIONS, PermissionsConstantType } from './permissions';
 
-type PermissionDetail = {
+export type PermissionDetail = {
   id: PermissionsConstantType;
-  name?: string;
-  description?: string;
   type: 'page' | 'action';
   role?: readonly SystemRole[];
-  featureSupport?: readonly SystemModuleSupported[];
+  moduleSupport?: readonly SystemModuleSupported[];
+  projectManager?: boolean;
+  projectArchived?: boolean;
+  dbServicePermission?: {
+    fieldName: string;
+    opType: OpPermissionItemOpPermissionTypeEnum;
+  };
 };
 
 export const PERMISSION_MANIFEST: Record<
   PermissionsConstantType,
   PermissionDetail
 > = {
+  //page
   [PERMISSIONS.PAGES.BASE.USER_CENTER]: {
     id: PERMISSIONS.PAGES.BASE.USER_CENTER,
     type: 'page',
@@ -67,6 +73,42 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION]: {
     id: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
     type: 'page',
-    featureSupport: [SystemModuleSupported.sqlOptimization]
+    moduleSupport: [SystemModuleSupported.sqlOptimization]
+  },
+  // action
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false,
+    dbServicePermission: {
+      fieldName: 'uid',
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST,
+    type: 'action',
+    projectArchived: true
+  },
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST_IN_MORE_BUTTON]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST_IN_MORE_BUTTON,
+    type: 'action',
+    projectArchived: false
   }
 } as const;
