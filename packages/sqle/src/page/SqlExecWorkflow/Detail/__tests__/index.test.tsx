@@ -313,7 +313,11 @@ describe('sqle/ExecWorkflow/Detail', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('关闭工单'));
-    expect(screen.getByText('您确认关闭当前工单？')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        '工单关闭后将无法再对工单执行任何操作，是否确认关闭当前工单？'
+      )
+    ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(cancelWorkflowSpy).toHaveBeenCalledTimes(1);
