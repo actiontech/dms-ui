@@ -434,9 +434,9 @@ const VersionDetail = () => {
                       onRelease(node.data.stageId, node.data.workflowList ?? [])
                   : undefined,
                 allowRelease:
-                  isAdmin ||
-                  (hasNextStageCreateWorkflowPermission(node.data.stageId) &&
-                    allowRelease(node.data.workflowList ?? []))
+                  (isAdmin ||
+                    hasNextStageCreateWorkflowPermission(node.data.stageId)) &&
+                  allowRelease(node.data.workflowList ?? [])
               }
             });
           }
