@@ -19,6 +19,7 @@ import { checkButtonPermissions, checkButtonDisabled } from '../utils';
 import { PopconfirmMessageStyleWrapper } from '../../../styleWrapper/element';
 import classNames from 'classnames';
 import { DashOutlined } from '@actiontech/icons';
+import { cloneDeep } from 'lodash';
 
 export const ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH = 82;
 export const ACTIONTECH_TABLE_MORE_BUTTON_WIDTH = 40;
@@ -37,11 +38,12 @@ const useTableAction = () => {
       > = [],
       record?: T
     ) => {
+      if (actions.length === 0) {
+        return null;
+      }
       return (
         <Space>
           {actions.map((v) => {
-            const isShow = checkButtonPermissions(v.permissions, record);
-
             const buttonProps =
               typeof v.buttonProps === 'function'
                 ? v.buttonProps(record)
@@ -49,7 +51,7 @@ const useTableAction = () => {
             const confirm =
               typeof v.confirm === 'function' ? v.confirm(record) : v.confirm;
 
-            const renderButton = !!confirm ? (
+            return !!confirm ? (
               <Popconfirm
                 okText={t('common.ok')}
                 cancelText={t('common.cancel')}
@@ -89,12 +91,6 @@ const useTableAction = () => {
                 {v.text}
               </BasicButton>
             );
-
-            return (
-              <EmptyBox if={isShow} key={v.key}>
-                {renderButton}
-              </EmptyBox>
-            );
           })}
         </Space>
       );
@@ -111,75 +107,94 @@ const useTableAction = () => {
           Record<string, any>,
           typeof ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
         >[0]
-      | undefined => {
-      if (Array.isArray(actions)) {
-        if (actions.length === 0) {
-          return;
-        }
-        return {
-          dataIndex: ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX,
-          className: ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS,
-          title: () => t('common.operate'),
-          fixed: 'right',
-          width: actions.length * ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH,
-          render: (_, record: T) => {
-            return (
-              <InlineTableActionButtonsStyleWrapper
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
-              >
-                {renderAction<T>(actions, record)}
-              </InlineTableActionButtonsStyleWrapper>
-            );
-          }
-        };
-      }
+      | null => {
+      if (!actions) return null;
 
-      if (
-        (actions?.buttons ?? []).length === 0 &&
-        (actions?.moreButtons ?? []).length === 0
-      ) {
-        return;
-      }
+      const calculateMaxWidth = () => {
+        if (Array.isArray(actions)) {
+          return actions.length * ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH;
+        } else {
+          const buttonCount = actions.buttons.length;
+          const hasMoreButtons =
+            !Array.isArray(actions) &&
+            actions.moreButtons &&
+            (Array.isArray(actions.moreButtons)
+              ? actions.moreButtons.length > 0
+              : true);
+
+          return (
+            buttonCount * ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH +
+            (hasMoreButtons ? ACTIONTECH_TABLE_MORE_BUTTON_WIDTH : 0)
+          );
+        }
+      };
+
+      const maxWidth = calculateMaxWidth();
+
+      const renderContent = (record: T) => {
+        const visibleButtons = Array.isArray(actions)
+          ? actions.filter((action) =>
+              checkButtonPermissions(action.permissions, record)
+            )
+          : actions.buttons.filter((action) =>
+              checkButtonPermissions(action.permissions, record)
+            );
+        let visibleMoreButtons: InlineActiontechTableMoreActionsButtonMeta<T>[] =
+          [];
+
+        if (!Array.isArray(actions) && actions.moreButtons) {
+          const moreButtons =
+            typeof actions.moreButtons === 'function'
+              ? actions.moreButtons(record)
+              : actions.moreButtons;
+          visibleMoreButtons = moreButtons.filter((button) =>
+            checkButtonPermissions(button.permissions, record)
+          );
+        }
+        if (visibleButtons.length === 0 && visibleMoreButtons.length > 0) {
+          //todo 文档记录. 当 visibleButtons 为 0 时，从 moreButtons 中 move 两个 button 到外层。
+          const maxIndex = visibleMoreButtons.length >= 2 ? 2 : 1;
+          for (let i = 0; i < maxIndex; i++) {
+            const cloneVisibleMoreButtons = cloneDeep(visibleMoreButtons);
+            visibleButtons.push({
+              key: cloneVisibleMoreButtons[i].key,
+              text: cloneVisibleMoreButtons[i].text,
+              confirm: cloneVisibleMoreButtons[i].confirm,
+              permissions: cloneVisibleMoreButtons[i].permissions,
+              buttonProps: (data) => ({
+                onClick: () => {
+                  cloneVisibleMoreButtons[i]?.onClick?.(data);
+                },
+                disabled: !!cloneVisibleMoreButtons[i]?.disabled,
+                icon: cloneVisibleMoreButtons[i]?.icon
+              })
+            });
+          }
+
+          visibleMoreButtons.splice(0, 2);
+        }
+
+        return (
+          <InlineTableActionButtonsStyleWrapper
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            {renderAction(visibleButtons, record)}
+            <MoreButtons moreButtons={visibleMoreButtons} record={record} />
+          </InlineTableActionButtonsStyleWrapper>
+        );
+      };
 
       return {
         dataIndex: ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX,
         className: ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS,
-        title: actions?.title ?? (() => t('common.operate')),
-        fixed: actions?.fixed ?? 'right',
-        width:
-          actions?.width ??
-          (actions?.buttons.length ?? 0) *
-            ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH +
-            (!!actions?.moreButtons ? ACTIONTECH_TABLE_MORE_BUTTON_WIDTH : 0),
-        render: (_, record: T) => {
-          return (
-            <InlineTableActionButtonsStyleWrapper
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              {renderAction(actions?.buttons, record)}
-              {actions?.moreButtons &&
-                Array.isArray(actions.moreButtons) &&
-                actions.moreButtons.length && (
-                  <MoreButtons
-                    moreButtons={actions?.moreButtons ?? []}
-                    record={record}
-                  />
-                )}
-              {actions?.moreButtons &&
-              typeof actions.moreButtons === 'function' &&
-              actions?.moreButtons(record).length ? (
-                <MoreButtons
-                  moreButtons={actions.moreButtons(record)}
-                  record={record}
-                />
-              ) : null}
-            </InlineTableActionButtonsStyleWrapper>
-          );
-        }
+        title: Array.isArray(actions)
+          ? () => t('common.operate')
+          : actions.title ?? (() => t('common.operate')),
+        fixed: Array.isArray(actions) ? 'right' : actions.fixed ?? 'right',
+        width: Array.isArray(actions) ? maxWidth : actions.width ?? maxWidth,
+        render: (_, record: T) => renderContent(record)
       };
     },
     [renderAction, t]
@@ -200,6 +215,10 @@ const MoreButtons = <T extends Record<string, any>>({
 }) => {
   const [open, setOpen] = useState(false);
 
+  if (moreButtons.length === 0) {
+    return null;
+  }
+
   return (
     <Popover
       open={open}
@@ -210,21 +229,20 @@ const MoreButtons = <T extends Record<string, any>>({
       onOpenChange={setOpen}
       content={
         <InlineTableActionMoreButtonPopoverStyleWrapper>
-          {moreButtons.map((v) => {
-            const isShow = checkButtonPermissions(v.permissions, record);
-            const isDisabled = checkButtonDisabled(v.disabled, record);
+          {moreButtons.map((button) => {
+            const isDisabled = checkButtonDisabled(button.disabled, record);
 
             const handleClick = () => {
               if (!isDisabled) {
-                v.onClick?.(record);
+                button.onClick?.(record);
                 setOpen(false);
               }
             };
 
             const buttonChildren = (
               <>
-                <span className="more-button-item-icon">{v.icon}</span>
-                <span className="more-button-item-text">{v.text}</span>
+                <span className="more-button-item-icon">{button.icon}</span>
+                <span className="more-button-item-text">{button.text}</span>
               </>
             );
 
@@ -238,12 +256,14 @@ const MoreButtons = <T extends Record<string, any>>({
               </div>
             );
 
-            const onConfirm = v.confirm ? v.confirm?.(record)?.onConfirm : null;
+            const onConfirm = button.confirm
+              ? button.confirm?.(record)?.onConfirm
+              : null;
 
-            const renderItem = v.confirm ? (
+            return button.confirm ? (
               <EmptyBox if={!isDisabled} defaultNode={confirmButton}>
                 <Popconfirm
-                  {...v.confirm?.(record)}
+                  {...button.confirm?.(record)}
                   onConfirm={() => {
                     onConfirm?.();
                     setOpen(false);
@@ -262,12 +282,6 @@ const MoreButtons = <T extends Record<string, any>>({
                 {buttonChildren}
               </div>
             );
-
-            return (
-              <EmptyBox if={isShow} key={v.key}>
-                {renderItem}
-              </EmptyBox>
-            );
           })}
         </InlineTableActionMoreButtonPopoverStyleWrapper>
       }
@@ -283,4 +297,5 @@ const MoreButtons = <T extends Record<string, any>>({
     </Popover>
   );
 };
+
 export default useTableAction;

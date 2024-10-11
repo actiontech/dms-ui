@@ -9,6 +9,7 @@ import {
   OpPermissionItemRangeTypeEnum
 } from '../../api/base/service/common.enum';
 
+// todo 后续需要整合下获取权限相关数据的 hooks，统一移动至 App.tsx， 存放在 redux 中。
 const useUserOperationPermission = () => {
   const { uid } = useCurrentUser();
 
@@ -28,7 +29,8 @@ const useUserOperationPermission = () => {
         }
       ),
     {
-      manual: true
+      manual: true,
+      ready: !!projectID
     }
   );
 
@@ -64,7 +66,6 @@ const useUserOperationPermission = () => {
           }
           return false;
         });
-
         if (is_admin || haveProjectPermission || haveServicePermission) {
           return true;
         }
