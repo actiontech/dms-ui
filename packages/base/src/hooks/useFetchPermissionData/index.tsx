@@ -4,12 +4,11 @@ import { useDispatch } from 'react-redux';
 import {
   updateModuleFeatureSupport,
   updateUserOperationPermissions
-} from '../../../../base/src/store/permission';
-import systemService from '../../api/sqle/service/system';
-import { getSystemModuleStatusModuleNameEnum } from '../../api/sqle/service/system/index.enum';
-import { ResponseCode } from '../../enum';
-import useCurrentUser from '../useCurrentUser';
-import UserService from '../../api/base/service/User';
+} from '../../store/permission';
+import systemService from '@actiontech/shared/lib/api/sqle/service/system';
+import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import UserService from '@actiontech/shared/lib/api/base/service/User';
 
 const useFetchPermissionData = () => {
   const dispatch = useDispatch();
@@ -17,11 +16,9 @@ const useFetchPermissionData = () => {
   const [isUserPermissionsFetched, setIsUserPermissionsFetched] =
     useState(false);
 
-  const { userId } = useCurrentUser();
-
   const { loading: isUserPermissionsLoading, run: fetchUserPermissions } =
     useRequest(
-      (projectId: string) =>
+      (projectId: string, userId: string) =>
         UserService.GetUserOpPermission({
           user_uid: userId,
           project_uid: projectId
