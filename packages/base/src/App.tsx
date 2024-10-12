@@ -14,7 +14,7 @@ import Nav from './page/Nav';
 import {
   useCurrentUser,
   useDbServiceDriver,
-  useFeaturePermission
+  useFetchPermissionData
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -74,14 +74,20 @@ function App() {
 
   const { getUserBySession } = useSessionUser();
 
-  const { useInfoFetched, theme, language: currentLanguage } = useCurrentUser();
+  const {
+    isUserInfoFetched,
+    theme,
+    language: currentLanguage
+  } = useCurrentUser();
+
+  const { fetchModuleSupportStatus, isFeatureSupportFetched } =
+    useFetchPermissionData();
 
   const antdLanguage =
     currentLanguage === SupportLanguage.enUS ? antd_en_US : antd_zh_CN;
 
-  const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
-  const { updateFeaturePermission, featurePermissionFetched } =
-    useFeaturePermission();
+  const { isDriverInfoFetched, updateDriverList } = useDbServiceDriver();
+
   const { checkPagePermission } = usePermission();
 
   // #if [ee]
@@ -115,11 +121,11 @@ function App() {
         return true;
       });
     };
-    if (useInfoFetched && featurePermissionFetched) {
+    if (isUserInfoFetched && isFeatureSupportFetched) {
       return filterRoutesByPermission(AuthRouterConfig);
     }
     return AuthRouterConfig;
-  }, [checkPagePermission, featurePermissionFetched, useInfoFetched]);
+  }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();
@@ -129,7 +135,11 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!useInfoFetched || !driverInfoFetched || !featurePermissionFetched) {
+    if (
+      !isUserInfoFetched ||
+      !isDriverInfoFetched ||
+      !isFeatureSupportFetched
+    ) {
       return <HeaderProgress />;
     }
 
@@ -138,15 +148,20 @@ function App() {
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [useInfoFetched, driverInfoFetched, featurePermissionFetched, elements]);
+  }, [
+    isUserInfoFetched,
+    isDriverInfoFetched,
+    isFeatureSupportFetched,
+    elements
+  ]);
 
   useEffect(() => {
     if (token) {
       getUserBySession({});
       updateDriverList();
-      updateFeaturePermission();
+      fetchModuleSupportStatus();
     }
-  }, [getUserBySession, token, updateDriverList, updateFeaturePermission]);
+  }, [getUserBySession, token, updateDriverList, fetchModuleSupportStatus]);
 
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);

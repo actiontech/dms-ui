@@ -1,20 +1,28 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import useCurrentUser from '../useCurrentUser';
 import { PERMISSION_MANIFEST, PermissionDetail } from './permissionManifest';
 import { PermissionsConstantType } from './permissions';
-import useCurrentPermission from '../useCurrentPermission';
 import useCurrentProject from '../useCurrentProject';
 import { ActiontechTableActionsWithConstantPermissions } from './index.type';
 import { ActiontechTableProps } from '../../components/ActiontechTable';
 import { ActiontechTableActionsConfig } from '../../components/ActiontechTable/index.type';
-import useUserOperationPermission from '../useUserOperationPermission';
+
+import {
+  OpPermissionItemOpPermissionTypeEnum,
+  OpPermissionItemRangeTypeEnum
+} from '../../api/base/service/common.enum';
+import { useSelector } from 'react-redux';
+import { IReduxState } from '../../../../base/src/store';
 
 const usePermission = () => {
   const { userRoles, bindProjects } = useCurrentUser();
-  const { moduleSupportStatus } = useCurrentPermission();
+  const { moduleFeatureSupport, userOperationPermissions } = useSelector(
+    (state: IReduxState) => ({
+      moduleFeatureSupport: state.permission.moduleFeatureSupport,
+      userOperationPermissions: state.permission.userOperationPermissions
+    })
+  );
   const { projectID } = useCurrentProject();
-  const { updateUserOperationPermission, isHaveServicePermission } =
-    useUserOperationPermission();
 
   const projectAttributesStatus = useMemo(() => {
     const isArchived = !!bindProjects.find(
@@ -28,6 +36,48 @@ const usePermission = () => {
       isArchived
     };
   }, [bindProjects, projectID]);
+
+  const checkDbServicePermission = useCallback(
+    (
+      opPermissionType: OpPermissionItemOpPermissionTypeEnum,
+      serviceID?: string
+    ) => {
+      if (userOperationPermissions) {
+        const { is_admin, op_permission_list } = userOperationPermissions;
+        const haveProjectPermission = op_permission_list?.some((permission) => {
+          if (
+            permission.range_type === OpPermissionItemRangeTypeEnum.project &&
+            permission.range_uids?.includes(projectID) &&
+            permission.op_permission_type ===
+              OpPermissionItemOpPermissionTypeEnum.project_admin
+          ) {
+            return true;
+          }
+          return false;
+        });
+
+        const haveServicePermission = op_permission_list?.some((permission) => {
+          if (
+            permission.range_type ===
+              OpPermissionItemRangeTypeEnum.db_service &&
+            serviceID &&
+            permission.range_uids?.includes(serviceID) &&
+            permission.op_permission_type === opPermissionType
+          ) {
+            return true;
+          }
+          return false;
+        });
+        if (is_admin || haveProjectPermission || haveServicePermission) {
+          return true;
+        }
+
+        return false;
+      }
+      return false;
+    },
+    [userOperationPermissions, projectID]
+  );
 
   const checkRoles = useCallback(
     (permissionDetails: PermissionDetail) => {
@@ -45,10 +95,10 @@ const usePermission = () => {
         return true;
       }
       return permissionDetails.moduleSupport.some(
-        (role) => moduleSupportStatus[role]
+        (role) => moduleFeatureSupport[role]
       );
     },
-    [moduleSupportStatus]
+    [moduleFeatureSupport]
   );
 
   const checkPagePermission = useCallback(
@@ -86,7 +136,7 @@ const usePermission = () => {
         const { fieldName, opType } = permissionDetails.dbServicePermission;
         return (
           hasRoleOrManagerPermission ||
-          isHaveServicePermission(
+          checkDbServicePermission(
             opType,
             (record as Record<string, string>)?.[fieldName]
           )
@@ -97,7 +147,7 @@ const usePermission = () => {
     },
     [
       checkRoles,
-      isHaveServicePermission,
+      checkDbServicePermission,
       projectAttributesStatus.isArchived,
       projectAttributesStatus.isManager
     ]
@@ -159,11 +209,10 @@ const usePermission = () => {
     [checkActionPermission]
   );
 
-  useEffect(() => {
-    updateUserOperationPermission();
-  }, [updateUserOperationPermission]);
-
   return {
+    moduleFeatureSupport,
+    userOperationPermissions,
+    checkDbServicePermission,
     checkPagePermission,
     checkActionPermission,
     parse2TableActionPermissions

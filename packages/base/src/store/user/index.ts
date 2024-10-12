@@ -21,7 +21,7 @@ type UserReduxState = {
   bindProjects: Array<IBindProject>;
   managementPermissions: IUidWithName[];
   uid: string;
-  useInfoFetched: boolean;
+  isUserInfoFetched: boolean;
   language: SupportLanguage;
 };
 
@@ -36,7 +36,7 @@ const initialState: UserReduxState = {
   bindProjects: [],
   managementPermissions: [],
   uid: LocalStorageWrapper.getOrDefault(StorageKey.USER_UID, ''),
-  useInfoFetched: false,
+  isUserInfoFetched: false,
   language: LocalStorageWrapper.getOrDefault(
     StorageKey.Language,
     SupportLanguage.zhCN
@@ -101,7 +101,7 @@ const user = createSlice({
       LocalStorageWrapper.set(StorageKey.USER_UID, uid);
     },
     updateUserInfoFetchStatus: (state, { payload }: PayloadAction<boolean>) => {
-      state.useInfoFetched = payload;
+      state.isUserInfoFetched = payload;
     }
   }
 });
