@@ -17,7 +17,7 @@ const useActionButtonState: (messageApi: MessageInstance) => {
   rejectWorkflowButtonMeta: ActionMeta;
   executeExportButtonMeta: ActionMeta;
 } = (messageApi) => {
-  const { uid } = useCurrentUser();
+  const { userId } = useCurrentUser();
   const { workflowInfo, updateWorkflowRejectOpen } =
     useDataExportDetailReduxManage();
 
@@ -44,14 +44,14 @@ const useActionButtonState: (messageApi: MessageInstance) => {
   ]);
 
   const allowOperateStep = useMemo(() => {
-    return currentStep?.assignee_user_list?.some((v) => v.uid === uid);
-  }, [currentStep?.assignee_user_list, uid]);
+    return currentStep?.assignee_user_list?.some((v) => v.uid === userId);
+  }, [currentStep?.assignee_user_list, userId]);
 
   const closeWorkflowButtonVisibility = useMemo(() => {
     if (!workflowStatus) {
       return false;
     }
-    const allowClose = workflowInfo.create_user?.uid === uid;
+    const allowClose = workflowInfo.create_user?.uid === userId;
 
     return (
       [
@@ -59,7 +59,7 @@ const useActionButtonState: (messageApi: MessageInstance) => {
         WorkflowRecordStatusEnum.rejected
       ].includes(workflowStatus) && allowClose
     );
-  }, [uid, workflowInfo?.create_user?.uid, workflowStatus]);
+  }, [userId, workflowInfo?.create_user?.uid, workflowStatus]);
 
   const approveWorkflowButtonVisibility = useMemo(() => {
     if (!workflowStatus || !currentStep) {
@@ -87,9 +87,9 @@ const useActionButtonState: (messageApi: MessageInstance) => {
     }
     return (
       workflowStatus === WorkflowRecordStatusEnum.wait_for_export &&
-      workflowInfo.create_user?.uid === uid
+      workflowInfo.create_user?.uid === userId
     );
-  }, [currentStep, uid, workflowInfo?.create_user?.uid, workflowStatus]);
+  }, [currentStep, userId, workflowInfo?.create_user?.uid, workflowStatus]);
 
   return {
     closeWorkflowButtonMeta: {

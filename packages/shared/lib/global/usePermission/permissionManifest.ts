@@ -76,6 +76,20 @@ export const PERMISSION_MANIFEST: Record<
     moduleSupport: [SystemModuleSupported.sqlOptimization]
   },
   // action
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN,
     type: 'action',

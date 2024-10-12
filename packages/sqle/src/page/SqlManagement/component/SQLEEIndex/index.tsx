@@ -58,7 +58,7 @@ const SQLEEIndex = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   // api
   const { projectID, projectName, projectArchive } = useCurrentProject();
-  const { isAdmin, username, isProjectManager, uid, language } =
+  const { isAdmin, username, isProjectManager, userId, language } =
     useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -141,7 +141,7 @@ const SQLEEIndex = () => {
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
-        filter_assignee: isAssigneeSelf ? uid : undefined, // filter_assignee 需要用 id
+        filter_assignee: isAssigneeSelf ? userId : undefined, // filter_assignee 需要用 id
         filter_priority: isHighPriority
           ? GetSqlManageListV2FilterPriorityEnum.high
           : undefined
@@ -344,7 +344,7 @@ const SQLEEIndex = () => {
           : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
-      filter_assignee: isAssigneeSelf ? uid : undefined,
+      filter_assignee: isAssigneeSelf ? userId : undefined,
       filter_priority: isHighPriority
         ? exportSqlManageV1FilterPriorityEnum.high
         : undefined,

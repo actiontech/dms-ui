@@ -1,7 +1,6 @@
 import { RuleObject } from 'antd/es/form';
 import { ReactNode } from 'react';
 import { RouteObject } from 'react-router-dom';
-import { SystemRole } from '../enum';
 import { PermissionsConstantType } from '../global';
 
 export type Dictionary = {

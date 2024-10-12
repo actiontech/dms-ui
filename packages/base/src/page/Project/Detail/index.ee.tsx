@@ -1,4 +1,7 @@
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  useFetchPermissionData
+} from '@actiontech/shared/lib/global';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
@@ -10,6 +13,8 @@ const EEIndexProjectDetail: React.FC = () => {
 
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
+
+  const { fetchUserPermissions } = useFetchPermissionData();
 
   const renderProjectDetail = () => {
     if (!currentProjectID && !nextProjectID) {
@@ -29,6 +34,12 @@ const EEIndexProjectDetail: React.FC = () => {
       updateRecentlyProject(nextProjectID, nextProjectName);
     }
   }, [currentProjectID, nextProjectID, nextProjectName, updateRecentlyProject]);
+
+  useEffect(() => {
+    if (nextProjectID) {
+      fetchUserPermissions(nextProjectID);
+    }
+  }, [fetchUserPermissions, nextProjectID]);
 
   return <>{renderProjectDetail()}</>;
 };

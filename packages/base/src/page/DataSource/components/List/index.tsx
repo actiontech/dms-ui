@@ -26,12 +26,12 @@ import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataMaskingFilterTypeEnum,
   DataSourceColumns,
-  DataSourceListActions,
   DataSourceListParamType,
   filterDataMaskOptions
 } from './columns';
-import { PlusOutlined } from '@actiontech/icons';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { PermissionControlGroup } from '@actiontech/shared/lib/global';
+import { DataSourceListActions, DataSourcePageHeadActions } from './actions';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -41,12 +41,8 @@ const DataSourceList = () => {
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { parse2TableActionPermissions } = usePermission();
-  const { projectID, projectArchive, projectName } = useCurrentProject();
-  const { isAdmin, isProjectManager } = useCurrentUser();
+  const { projectID } = useCurrentProject();
 
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
   const {
     dbDriverOptions,
     getLogoUrlByDbType,
@@ -272,37 +268,11 @@ const DataSourceList = () => {
       {messageContextHolder}
       <PageHeader
         title={t('dmsDataSource.databaseListTitle')}
-        extra={[
-          <EmptyBox
-            if={!projectArchive && actionPermission}
-            key="add-dataSource"
-          >
-            <Space>
-              {/* #if [ee] */}
-              <Link to={`/project/${projectID}/db-services/batch-import`}>
-                <BasicButton>
-                  {t('dmsDataSource.batchImportDataSource.buttonText')}
-                </BasicButton>
-              </Link>
-              {/* #endif */}
-              <Link to={`/project/${projectID}/db-services/create`}>
-                <BasicButton
-                  type="primary"
-                  icon={
-                    <PlusOutlined
-                      width={10}
-                      height={10}
-                      fill="currentColor"
-                      color="currentColor"
-                    />
-                  }
-                >
-                  {t('dmsDataSource.addDatabase')}
-                </BasicButton>
-              </Link>
-            </Space>
-          </EmptyBox>
-        ]}
+        extra={
+          <PermissionControlGroup
+            actions={DataSourcePageHeadActions(projectID)}
+          />
+        }
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
