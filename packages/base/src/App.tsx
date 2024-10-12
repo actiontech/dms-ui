@@ -13,8 +13,7 @@ import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
-  useDbServiceDriver,
-  useFetchPermissionData
+  useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -35,6 +34,7 @@ import i18n from './locale';
 import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import useFetchPermissionData from './hooks/useFetchPermissionData';
 
 import './index.less';
 
