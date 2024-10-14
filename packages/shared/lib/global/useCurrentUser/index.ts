@@ -21,8 +21,8 @@ const useCurrentUser = () => {
     managementPermissions,
     username,
     theme,
-    useInfoFetched,
-    uid,
+    isUserInfoFetched,
+    userId,
     language
   } = useSelector((state: IReduxState) => {
     return {
@@ -31,8 +31,8 @@ const useCurrentUser = () => {
       bindProjects: state.user.bindProjects,
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
-      useInfoFetched: state.user.useInfoFetched,
-      uid: state.user.uid,
+      isUserInfoFetched: state.user.isUserInfoFetched,
+      userId: state.user.uid,
       language: state.user.language
     };
   });
@@ -99,8 +99,8 @@ const useCurrentUser = () => {
     role,
     theme,
     updateTheme,
-    useInfoFetched,
-    uid,
+    isUserInfoFetched,
+    userId,
     isCertainProjectManager,
     userRoles,
     language,
