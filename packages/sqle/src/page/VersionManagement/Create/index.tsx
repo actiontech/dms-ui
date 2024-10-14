@@ -77,7 +77,9 @@ const VersionManagementCreation = () => {
         title={<BackToList />}
         extra={
           <Space hidden={submitSuccessStatus}>
-            <BasicButton loading={submitting}>{t('common.reset')}</BasicButton>
+            <BasicButton loading={submitting} onClick={onReset}>
+              {t('common.reset')}
+            </BasicButton>
             <BasicButton type="primary" onClick={onSubmit} loading={submitting}>
               {t('common.save')}
             </BasicButton>
