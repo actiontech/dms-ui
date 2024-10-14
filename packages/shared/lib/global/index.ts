@@ -3,5 +3,6 @@ export { default as useUserInfo } from './useUserInfo';
 export { default as useCurrentProject } from './useCurrentProject';
 export { default as useDbServiceDriver } from './useDbServiceDriver';
 export { default as useProjectBusinessTips } from './useProjectBusinessTips';
+export { default as PermissionControl } from './PermissionControl';
+
 export * from './usePermission';
-export * from './PermissionControl';
