@@ -7,7 +7,7 @@ import {
 } from '../index.type';
 import BasicButton from '../../BasicButton';
 import { useTranslation } from 'react-i18next';
-import { Popconfirm, Popover, Space } from 'antd';
+import { Popconfirm, Popover } from 'antd';
 import classnames from 'classnames';
 import { useCallback, useState } from 'react';
 import {
@@ -16,10 +16,10 @@ import {
 } from '../components/style';
 import EmptyBox from '../../EmptyBox';
 import { checkButtonPermissions, checkButtonDisabled } from '../utils';
-import { PopconfirmMessageStyleWrapper } from '../../../styleWrapper/element';
 import classNames from 'classnames';
 import { DashOutlined } from '@actiontech/icons';
 import { cloneDeep } from 'lodash';
+import { ActionButtonGroup, ActionButtonGroupProps } from '../../ActionButton';
 
 export const ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH = 82;
 export const ACTIONTECH_TABLE_MORE_BUTTON_WIDTH = 40;
@@ -42,60 +42,49 @@ const useTableAction = () => {
         return null;
       }
       return (
-        <Space>
-          {actions.map((v) => {
-            const buttonProps =
-              typeof v.buttonProps === 'function'
-                ? v.buttonProps(record)
-                : v.buttonProps;
-            const confirm =
-              typeof v.confirm === 'function' ? v.confirm(record) : v.confirm;
+        <ActionButtonGroup
+          actions={actions.map<ActionButtonGroupProps['actions'][0]>(
+            (action) => {
+              const buttonProps =
+                typeof action.buttonProps === 'function'
+                  ? action.buttonProps(record)
+                  : action.buttonProps;
 
-            return !!confirm ? (
-              <Popconfirm
-                okText={t('common.ok')}
-                cancelText={t('common.cancel')}
-                {...confirm}
-                title={
-                  typeof confirm.title === 'string' ? (
-                    <PopconfirmMessageStyleWrapper>
-                      {confirm.title}
-                    </PopconfirmMessageStyleWrapper>
-                  ) : (
-                    confirm.title
-                  )
-                }
-              >
-                <BasicButton
-                  size="small"
-                  key={v.key}
-                  {...buttonProps}
-                  className={classnames(
-                    'actiontech-table-actions-button',
-                    buttonProps?.className
-                  )}
-                >
-                  {v.text}
-                </BasicButton>
-              </Popconfirm>
-            ) : (
-              <BasicButton
-                size="small"
-                key={v.key}
-                {...buttonProps}
-                className={classnames(
-                  'actiontech-table-actions-button',
-                  buttonProps?.className
-                )}
-              >
-                {v.text}
-              </BasicButton>
-            );
-          })}
-        </Space>
+              const cls = classnames(
+                'actiontech-table-actions-button',
+                buttonProps?.className
+              );
+
+              const confirm =
+                typeof action.confirm === 'function'
+                  ? action.confirm(record)
+                  : action.confirm;
+
+              if (confirm) {
+                return {
+                  ...buttonProps,
+                  key: action.key,
+                  text: action.text,
+                  className: cls,
+                  size: 'small',
+                  actionType: 'confirm',
+                  confirm
+                };
+              }
+
+              return {
+                ...buttonProps,
+                key: action.key,
+                className: cls,
+                text: action.text,
+                size: 'small'
+              };
+            }
+          )}
+        />
       );
     },
-    [t]
+    []
   );
 
   const renderActionInTable = useCallback(

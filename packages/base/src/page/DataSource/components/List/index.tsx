@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { message, Modal, Space } from 'antd';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { ActionButton, PageHeader } from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import {
+  PERMISSIONS,
+  PermissionControl,
   useCurrentProject,
-  useCurrentUser,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useDbService from '../../../../hooks/useDbService';
@@ -30,7 +31,6 @@ import {
   filterDataMaskOptions
 } from './columns';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
-import { PermissionControlGroup } from '@actiontech/shared/lib/global';
 import { DataSourceListActions, DataSourcePageHeadActions } from './actions';
 
 const DataSourceList = () => {
@@ -237,7 +237,7 @@ const DataSourceList = () => {
     getDriveOptionsLoading
   ]);
 
-  const actions = useMemo(() => {
+  const tableActions = useMemo(() => {
     return parse2TableActionPermissions(
       DataSourceListActions(
         navigateToUpdatePage,
@@ -254,6 +254,8 @@ const DataSourceList = () => {
     navigateToSqlManagementConf
   ]);
 
+  const pageHeaderActions = DataSourcePageHeadActions(projectID);
+
   useEffect(() => {
     if (projectID) {
       updateDriverList();
@@ -269,9 +271,22 @@ const DataSourceList = () => {
       <PageHeader
         title={t('dmsDataSource.databaseListTitle')}
         extra={
-          <PermissionControlGroup
-            actions={DataSourcePageHeadActions(projectID)}
-          />
+          <Space>
+            {/* #if [ee] */}
+            <PermissionControl
+              permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}
+            >
+              <ActionButton
+                {...pageHeaderActions['batch-import-data-source']}
+              />
+            </PermissionControl>
+            {/* #endif */}
+            <PermissionControl
+              permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD}
+            >
+              <ActionButton {...pageHeaderActions['add-data-source']} />
+            </PermissionControl>
+          </Space>
         }
       />
       <TableToolbar
@@ -305,7 +320,7 @@ const DataSourceList = () => {
         }}
         loading={loading}
         columns={columns}
-        actions={actions}
+        actions={tableActions}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
       />
