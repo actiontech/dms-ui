@@ -29,7 +29,7 @@ describe('store user', () => {
     bindProjects: [],
     managementPermissions: [],
     role: '',
-    useInfoFetched: false,
+    isUserInfoFetched: false,
     language: SupportLanguage.zhCN
   };
 
@@ -50,7 +50,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -71,7 +71,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -92,7 +92,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -114,7 +114,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -135,11 +135,11 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
-  it('should update user useInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
+  it('should update user isUserInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
     const newState = reducers(state, updateUserInfoFetchStatus(true));
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
@@ -151,7 +151,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      useInfoFetched: true
+      isUserInfoFetched: true
     });
   });
 
@@ -180,7 +180,7 @@ describe('store user', () => {
       bindProjects: mockBindProjects,
       managementPermissions: [],
       role: '',
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -202,7 +202,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: mockManagementPermissions,
       role: '',
-      useInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 });

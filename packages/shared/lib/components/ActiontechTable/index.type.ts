@@ -1,7 +1,7 @@
 import { TableProps, ButtonProps, PopconfirmProps, InputProps } from 'antd';
 import { RangePickerProps } from 'antd/es/date-picker';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, Key, ReactNode } from 'react';
 import { CustomSelectProps } from '../CustomSelect';
 import { IBasicButton } from '../BasicButton';
 import { ICustomInputProps } from '../CustomInput';
@@ -251,7 +251,7 @@ export type ColumnsSettingProps = {
  * toolbar 中操作按钮的数据格式
  */
 export type ActiontechTableToolbarActionMeta = {
-  key: string;
+  key: Key;
   text: ReactNode;
   buttonProps?: Omit<ButtonProps, 'children'>;
   confirm?: PopconfirmProps | false;
@@ -302,7 +302,7 @@ export type TableToolbarProps<T = Record<string, any>> = {
  * 表格操作列中按钮的数据格式
  */
 export type ActiontechTableActionMeta<T = Record<string, any>> = {
-  key: string;
+  key: Key;
   text: ReactNode;
   buttonProps?: (record?: T) => Omit<ButtonProps, 'children'>;
   confirm?: ((record?: T) => PopconfirmProps) | false;

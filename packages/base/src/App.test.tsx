@@ -138,14 +138,14 @@ describe('App', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('render App when "useInfoFetched" is equal false', () => {
-    mockUseCurrentUser({ useInfoFetched: false });
+  it('render App when "isUserInfoFetched" is equal false', () => {
+    mockUseCurrentUser({ isUserInfoFetched: false });
     const { container } = superRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
-  it('render App when "driverInfoFetched" is equal false', () => {
-    mockUseDbServiceDriver({ driverInfoFetched: false });
+  it('render App when "isDriverInfoFetched" is equal false', () => {
+    mockUseDbServiceDriver({ isDriverInfoFetched: false });
     const { container } = superRender(<App />);
     expect(container).toMatchSnapshot();
   });

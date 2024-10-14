@@ -1,22 +1,39 @@
-import reducers, { updateSqlOptimizationIsSupported } from '.';
+import reducers, {
+  updateModuleFeatureSupport,
+  updateUserOperationPermissions
+} from '.';
 
 import { IReduxState } from '..';
 
 describe('store system', () => {
   const state: IReduxState['permission'] = {
-    sqlOptimizationIsSupported: false
+    moduleFeatureSupport: { sqlOptimization: false },
+    userOperationPermissions: null
   };
 
-  it('should update sql optimization is supported', () => {
+  it('should update module feature support state', () => {
     const newState = reducers(
       state,
-      updateSqlOptimizationIsSupported({
-        isSupported: true
+      updateModuleFeatureSupport({
+        sqlOptimization: true
       })
     );
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
-      sqlOptimizationIsSupported: true
+      moduleFeatureSupport: { sqlOptimization: true },
+      userOperationPermissions: null
+    });
+  });
+
+  it('should update user operation permission data', () => {
+    const newState = reducers(
+      state,
+      updateUserOperationPermissions({ is_admin: false })
+    );
+    expect(newState).not.toBe(state);
+    expect(newState).toEqual({
+      moduleFeatureSupport: { sqlOptimization: false },
+      userOperationPermissions: { is_admin: false }
     });
   });
 });
