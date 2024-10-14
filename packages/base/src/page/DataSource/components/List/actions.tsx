@@ -1,11 +1,11 @@
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionsWithConstantPermissions,
-  PERMISSIONS,
-  PermissionControlGroupProps
+  PERMISSIONS
 } from '@actiontech/shared/lib/global';
 import { t } from '../../../../locale';
 import { PlusOutlined } from '@actiontech/icons';
+import { ActionButtonProps } from '@actiontech/shared';
 
 export const DataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string) => void,
@@ -84,21 +84,18 @@ export const DataSourceListActions = (
 
 export const DataSourcePageHeadActions = (
   projectID: string
-): PermissionControlGroupProps['actions'] => [
-  // #if [ee]
-  {
-    key: 'batch-import-data-source',
-    permission: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT,
+): Record<
+  'batch-import-data-source' | 'add-data-source',
+  ActionButtonProps
+> => ({
+  'batch-import-data-source': {
     text: t('dmsDataSource.batchImportDataSource.buttonText'),
     actionType: 'navigate-link',
     link: {
       to: `/project/${projectID}/db-services/batch-import`
     }
   },
-  // #endif
-  {
-    key: 'add-data-source',
-    permission: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
+  'add-data-source': {
     text: t('dmsDataSource.addDatabase'),
     type: 'primary',
     icon: (
@@ -114,4 +111,4 @@ export const DataSourcePageHeadActions = (
       to: `/project/${projectID}/db-services/create`
     }
   }
-];
+});
