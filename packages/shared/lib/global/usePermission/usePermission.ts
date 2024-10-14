@@ -6,7 +6,6 @@ import useCurrentProject from '../useCurrentProject';
 import { ActiontechTableActionsWithConstantPermissions } from './index.type';
 import { ActiontechTableProps } from '../../components/ActiontechTable';
 import { ActiontechTableActionsConfig } from '../../components/ActiontechTable/index.type';
-
 import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum
@@ -95,7 +94,7 @@ const usePermission = () => {
         return true;
       }
       return permissionDetails.moduleSupport.some(
-        (role) => moduleFeatureSupport[role]
+        (module) => moduleFeatureSupport[module]
       );
     },
     [moduleFeatureSupport]
@@ -105,7 +104,7 @@ const usePermission = () => {
     (requiredPermission: PermissionsConstantType): boolean => {
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
       return (
-        checkRoles(permissionDetails) || checkModuleSupport(permissionDetails)
+        checkRoles(permissionDetails) && checkModuleSupport(permissionDetails)
       );
     },
     [checkModuleSupport, checkRoles]
