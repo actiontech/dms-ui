@@ -16,6 +16,18 @@ export const PERMISSIONS = {
   },
   ACTIONS: {
     BASE: {
+      USER_CENTER: {
+        USER: {
+          ADD: 'action:add_user',
+          EDIT: 'action:edit_user',
+          DELETE: 'action:delete_user'
+        },
+        ROLE: {
+          ADD: 'action:add_role',
+          EDIT: 'action:edit_role',
+          DELETE: 'action:delete_role'
+        }
+      },
       DB_SERVICE: {
         BATCH_IMPORT: 'action:batch_import',
         ADD: 'action:add_db_service',

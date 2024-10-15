@@ -11,7 +11,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
 import Role from '@actiontech/shared/lib/api/base/service/Role';
 import { ModalName } from '../../../../data/ModalName';
-import { RoleListColumns, RoleListActions } from './column';
+import { RoleListColumns } from './column';
 import {
   updateUserManageModalStatus,
   updateSelectRole
@@ -21,6 +21,8 @@ import { IListRolesParams } from '@actiontech/shared/lib/api/base/service/Role/i
 import { useRequest } from 'ahooks';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { RoleListActions } from './action';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage
@@ -28,6 +30,7 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
+  const { parse2TableActionPermissions } = usePermission();
 
   const dispatch = useDispatch();
 
@@ -88,8 +91,10 @@ const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   );
 
   const actions = useMemo(() => {
-    return RoleListActions(onEditRole, onDeleteRole);
-  }, [onEditRole, onDeleteRole]);
+    return parse2TableActionPermissions(
+      RoleListActions(onEditRole, onDeleteRole)
+    );
+  }, [parse2TableActionPermissions, onEditRole, onDeleteRole]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
