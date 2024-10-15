@@ -3,7 +3,7 @@ import useCurrentUser from '../useCurrentUser';
 import { PERMISSION_MANIFEST, PermissionDetail } from './permissionManifest';
 import { PermissionsConstantType } from './permissions';
 import useCurrentProject from '../useCurrentProject';
-import { ActiontechTableActionsWithConstantPermissions } from './index.type';
+import { ActiontechTableActionsWithPermissions } from './index.type';
 import { ActiontechTableProps } from '../../components/ActiontechTable';
 import { ActiontechTableActionsConfig } from '../../components/ActiontechTable/index.type';
 import {
@@ -158,11 +158,7 @@ const usePermission = () => {
       F = Record<string, any>,
       OtherColumnKeys extends string = never
     >(
-      actions: ActiontechTableActionsWithConstantPermissions<
-        T,
-        F,
-        OtherColumnKeys
-      >
+      actions: ActiontechTableActionsWithPermissions<T, F, OtherColumnKeys>
     ): ActiontechTableProps<T, F, OtherColumnKeys>['actions'] => {
       if (Array.isArray(actions)) {
         return actions.map((item) => ({

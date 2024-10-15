@@ -19,7 +19,7 @@ type ReplaceButtonsPermissions<T> = T extends (...args: any[]) => any
   : T;
 
 // 根据 ActiontechTableActionsConfig 调整内部 permissions 的类型
-export type ActiontechTableActionsWithConstantPermissions<
+export type ActiontechTableActionsWithPermissions<
   T = Record<string, any>,
   F = Record<string, any>,
   OtherColumnKeys extends string = never

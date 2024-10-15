@@ -1,6 +1,6 @@
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
-  ActiontechTableActionsWithConstantPermissions,
+  ActiontechTableActionsWithPermissions,
   PERMISSIONS
 } from '@actiontech/shared/lib/global';
 import { t } from '../../../../locale';
@@ -16,7 +16,7 @@ export const DataSourceListActions = (
     business: string,
     instanceAuditPlanId?: string
   ) => void
-): ActiontechTableActionsWithConstantPermissions<IListDBService> => {
+): ActiontechTableActionsWithPermissions<IListDBService> => {
   return {
     buttons: [
       {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import { BasicButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
+import { ActionButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
@@ -14,8 +14,8 @@ import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedT
 import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { PlusOutlined } from '@actiontech/icons';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import { UserCenterPageHeaderActions } from './actions';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
@@ -27,8 +27,6 @@ const UserCenter: React.FC = () => {
   const onRefreshTable = (tab: UserCenterListEnum) => {
     eventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
-
-  const { isAdmin } = useCurrentUser();
 
   const pageItems: SegmentedTabsProps['items'] = [
     {
@@ -58,43 +56,23 @@ const UserCenter: React.FC = () => {
       );
     };
 
+    const pageHeaderAction = UserCenterPageHeaderActions(
+      handleClick,
+      activePage
+    );
+
     return (
       <>
-        <BasicButton
-          hidden={activePage !== UserCenterListEnum.user_list || !isAdmin}
-          type="primary"
-          icon={
-            <PlusOutlined
-              width={10}
-              height={10}
-              fill="currentColor"
-              color="currentColor"
-            />
-          }
-          onClick={() => {
-            handleClick(ModalName.DMS_Add_User);
-          }}
+        <PermissionControl
+          permission={PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD}
         >
-          {t('dmsUserCenter.user.userList.addUserButton')}
-        </BasicButton>
-
-        <BasicButton
-          hidden={activePage !== UserCenterListEnum.role_list || !isAdmin}
-          type="primary"
-          icon={
-            <PlusOutlined
-              width={10}
-              height={10}
-              fill="currentColor"
-              color="currentColor"
-            />
-          }
-          onClick={() => {
-            handleClick(ModalName.DMS_Add_Role);
-          }}
+          <ActionButton {...pageHeaderAction.add_user} />
+        </PermissionControl>
+        <PermissionControl
+          permission={PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD}
         >
-          {t('dmsUserCenter.role.createRole.button')}
-        </BasicButton>
+          <ActionButton {...pageHeaderAction.add_role} />
+        </PermissionControl>
       </>
     );
   };
