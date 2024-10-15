@@ -115,6 +115,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
                         onClick={() => remove(field.name)}
                         icon={<MinusCircleFilled />}
                         disabled={!allowEditStages}
+                        className="delete-stage-btn"
                       />
                     </FormItemLabel>
                   </Col>
@@ -158,7 +159,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
                                 ? 8
                                 : Math.ceil(24 / instanceFields?.length)
                             }
-                            key={instanceIndex}
+                            key={`${index}-${instanceIndex}`}
                             className="instance-col"
                           >
                             <FormItemLabel

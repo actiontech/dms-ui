@@ -17,9 +17,11 @@ export const getSqlVersionListV1MockData = {
       created_at: '2025-03-05T02:01:23.568Z',
       desc: 'now unzip supposing awful solicit enroll mobilize kookily junior dilate hence ferociously smart unless lest alienated modulo onto monster roasted interesting below miscalculate at department bump except dividend skeleton casement precedent soliloquy bind amid overconfidently because unnecessarily aboard however tragic toothbrush regarding vast quicker shyly expostulate uh-huh lumpy with please dish hateful unruly radiant hole weekly yum blah geez modulo gymnast even ick livid sleepily ha inasmuch lest ravioli unfortunately procurement intelligent onto between husband object instead hm tepid quirkily offset starboard luck besides minus linear executor meadow colour under austere shush far innocently gallivant illiterate waist nearly fisherman quaver whoa telescope kindly kowtow now really what limply contradict nab customise lazy times ocelot spellcheck subtract political cumbersome loftily apropos demonstrate busily before selfishly aw amidst busily instead vice intrepid yak scenario where linseed uselessly slowly intently which but ew incidentally of pace lyre reconstitute like so round advocate minus the proper doorpost busily between achieve irk gifted precious yum eke until suddenly fidget pfft even slump out fooey um amused furiously anti yuppify to since',
       lock_time: '2024-12-06T15:24:32.956Z',
-      status: 'locked',
+      status: 'is_being_released',
       version: 'tentacle',
-      version_id: 50
+      version_id: 50,
+      deletable: true,
+      lockable: true
     },
     {
       created_at: '2025-08-31T03:34:05.561Z',
@@ -27,7 +29,9 @@ export const getSqlVersionListV1MockData = {
       lock_time: '2024-05-15T00:36:15.825Z',
       status: 'locked',
       version: 'membership',
-      version_id: 86
+      version_id: 86,
+      deletable: true,
+      lockable: true
     },
     {
       created_at: '2024-01-19T07:52:42.274Z',
@@ -60,14 +64,12 @@ export const getSqlVersionDetailV1MockData = {
         stage_id: 79,
         stage_instances: [
           {
-            instance_schema: 'blossom',
-            instances_id: 'whack',
-            instances_name: 'hubris'
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
           },
           {
-            instance_schema: 'request',
-            instances_id: 'curl',
-            instances_name: 'wasabi'
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
           }
         ],
         stage_name: 'haircut',
@@ -134,16 +136,6 @@ export const getSqlVersionDetailV1MockData = {
             instance_schema: 'going',
             instances_id: 'agreement',
             instances_name: 'scale'
-          },
-          {
-            instance_schema: 'horst',
-            instances_id: 'safe',
-            instances_name: 'promise'
-          },
-          {
-            instance_schema: 'defendant',
-            instances_id: 'quit',
-            instances_name: 'overheard'
           }
         ],
         stage_name: 'institute',
@@ -185,43 +177,6 @@ export const getSqlVersionDetailV1MockData = {
             workflow_name: 'license',
             workflow_release_status: 'released',
             workflow_sequence: 75
-          },
-          {
-            desc: 'when before ha down alliance obligation restfully finally westernize or or elegantly fooey gray yet inwardly duh before noisily wisecrack cumbersome limited negative psst yum whereas boring concerning elliptical tremendously coolly among median hm knowledgeably bravely when back winged since boohoo merit woot gosh grandiose idealistic midst ack maestro gee lest inure if lay unto piglet complicated hyena until furthermore rosy fooey kiddingly including phooey until by rapid afore vainly delete drowse softly yippee geez cautiously roughly skyscraper alarmed ferociously readily untimely eek feminize feather gosh lest mid that showy athwart weakly husband uniform',
-            status: 'wait_for_audit',
-            workflow_exec_time: '2025-09-24T16:41:36.890Z',
-            workflow_id: 'precedent',
-            workflow_instances: [
-              {
-                instance_schema: 'soliloquy',
-                instances_id: 'tooth',
-                instances_name: 'alert'
-              }
-            ],
-            workflow_name: 'folklore',
-            workflow_release_status: 'released',
-            workflow_sequence: 48
-          },
-          {
-            desc: 'aw ugh forearm knuckle finally able near upbeat yellowish masquerade during round who across classic implode onto aboard quaintly yesterday toward coaxingly after finally hundred or',
-            status: 'wait_for_audit',
-            workflow_exec_time: '2024-05-22T06:09:35.739Z',
-            workflow_id: 'makeover',
-            workflow_instances: [
-              {
-                instance_schema: 'extent',
-                instances_id: 'slipper',
-                instances_name: 'quit'
-              },
-              {
-                instance_schema: 'palate',
-                instances_id: 'assist',
-                instances_name: 'hope'
-              }
-            ],
-            workflow_name: 'secret',
-            workflow_release_status: 'released',
-            workflow_sequence: 55
           }
         ]
       },
@@ -237,16 +192,6 @@ export const getSqlVersionDetailV1MockData = {
             instance_schema: 'cutover',
             instances_id: 'ecliptic',
             instances_name: 'remark'
-          },
-          {
-            instance_schema: 'jury',
-            instances_id: 'cake',
-            instances_name: 'expense'
-          },
-          {
-            instance_schema: 'kettledrum',
-            instances_id: 'ostrich',
-            instances_name: 'premier'
           }
         ],
         stage_name: 'horde',
@@ -293,58 +238,6 @@ export const getSqlVersionDetailV1MockData = {
             workflow_name: 'grandpa',
             workflow_release_status: 'released',
             workflow_sequence: 68
-          },
-          {
-            desc: 'carelessly incomplete ferret pave since hmph or majestically geez instead hence passport atop hmph likewise welcome hence besides regular who than diver shoulder barracks boiling subdued daily gosh aha although quirkily litter who dock however junior amongst excluding fray rigidly huzzah boo upside-down drat massage hierarchy jumbo impossible besmirch beret',
-            status: 'wait_for_audit',
-            workflow_exec_time: '2025-04-22T19:49:42.268Z',
-            workflow_id: 'jump',
-            workflow_instances: [
-              {
-                instance_schema: 'chap',
-                instances_id: 'ice-cream',
-                instances_name: 'armchair'
-              },
-              {
-                instance_schema: 'scratch',
-                instances_id: 'clavicle',
-                instances_name: 'lamp'
-              },
-              {
-                instance_schema: 'grandpa',
-                instances_id: 'meander',
-                instances_name: 'in-joke'
-              }
-            ],
-            workflow_name: 'sustenance',
-            workflow_release_status: 'released',
-            workflow_sequence: 61
-          },
-          {
-            desc: 'milky blissfully that innocently deafening instead consequently beyond converse likewise who yum aha afford mad lest daintily drag dowse jump under as communicate amid opposite round limply mundane whether angle extract palatable drab behest past compromise formula mechanically considering dally airmail off gosh ice-cream within card so fundraising cease hoof so apologise retention bob within outside carefully loudly across utterly enthusiastically remarkable plump citizen snow because abscond aw orange brr ruin yahoo cram honored even noisily thoroughly motionless which brandish intently divine meanwhile refine catalyst cardboard perspire anaesthetise provided ice-cream pish guest to until yet wear ordinary saw than blossom punctually upsell impartial about indelible outside uh-huh vet what dulcimer construe properly warp mean unless notwithstanding unibody completion especially cassava grimy whoever gleaming fedora while to pro through cruelly speedily wherever supposing meadow yuck though teeming geez bore apropos fiercely hence brr incomplete clamor winged while but unit inveigle boohoo yum via deflate coolly shore honestly lined great athwart transom underneath rejigger kindly afore following search capitalize casement that liquid bah',
-            status: 'wait_for_audit',
-            workflow_exec_time: '2025-06-01T16:19:30.629Z',
-            workflow_id: 'digit',
-            workflow_instances: [
-              {
-                instance_schema: 'impostor',
-                instances_id: 'harp',
-                instances_name: 'account'
-              },
-              {
-                instance_schema: 'hepatitis',
-                instances_id: 'drive',
-                instances_name: 'exterior'
-              },
-              {
-                instance_schema: 'synergy',
-                instances_id: 'adrenalin',
-                instances_name: 'help'
-              }
-            ],
-            workflow_name: 'governance',
-            workflow_release_status: 'released',
-            workflow_sequence: 57
           }
         ]
       }
