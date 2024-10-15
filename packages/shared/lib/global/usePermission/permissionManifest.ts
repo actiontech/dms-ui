@@ -124,5 +124,35 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST_IN_MORE_BUTTON,
     type: 'action',
     projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
   }
 } as const;
