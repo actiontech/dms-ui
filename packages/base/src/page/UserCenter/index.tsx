@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import { ActionButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
@@ -14,8 +14,7 @@ import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedT
 import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
-import { UserCenterPageHeaderActions } from './actions';
+import { UserCenterPageHeaderActions } from './action';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
@@ -56,23 +55,15 @@ const UserCenter: React.FC = () => {
       );
     };
 
-    const pageHeaderAction = UserCenterPageHeaderActions(
-      handleClick,
-      activePage
+    const pageHeaderActions = UserCenterPageHeaderActions(
+      activePage,
+      handleClick
     );
 
     return (
       <>
-        <PermissionControl
-          permission={PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD}
-        >
-          <ActionButton {...pageHeaderAction.add_user} />
-        </PermissionControl>
-        <PermissionControl
-          permission={PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD}
-        >
-          <ActionButton {...pageHeaderAction.add_role} />
-        </PermissionControl>
+        {pageHeaderActions['add_user']}
+        {pageHeaderActions['add_role']}
       </>
     );
   };

@@ -1,61 +1,10 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IListDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
-import {
-  ActiontechTableActionMeta,
-  ActiontechTableColumn
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { NavigateFunction } from 'react-router-dom';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { BasicTag, BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { Space } from 'antd';
-
-export const SyncTaskListActions: (params: {
-  navigate: NavigateFunction;
-  syncAction: (taskId: string) => void;
-  deleteAction: (taskId: string) => void;
-}) => ActiontechTableActionMeta<IListDBServiceSyncTask>[] = ({
-  navigate,
-  syncAction,
-  deleteAction
-}) => {
-  return [
-    {
-      key: 'edit',
-      text: t('common.edit'),
-      buttonProps: (record) => {
-        return {
-          onClick: () =>
-            navigate(`/sync-data-source/update/${record?.uid ?? ''}`)
-        };
-      }
-    },
-    {
-      key: 'sync',
-      text: t('dmsSyncDataSource.syncTaskList.columns.sync'),
-      buttonProps: (record) => {
-        return {
-          onClick: () => syncAction(record?.uid ?? '')
-        };
-      }
-    },
-    {
-      key: 'delete',
-      text: t('common.delete'),
-      buttonProps: () => {
-        return {
-          danger: true
-        };
-      },
-      confirm: (record) => {
-        return {
-          title: t('dmsSyncDataSource.syncTaskList.columns.deleteConfirmTitle'),
-          onConfirm: () => deleteAction(record?.uid ?? '')
-        };
-      }
-    }
-  ];
-};
 
 export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDBServiceSyncTask> =
   () => {

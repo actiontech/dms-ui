@@ -3,9 +3,7 @@ import { Tag } from 'antd';
 import { t } from '../../../locale';
 import { IListGlobalDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
-  ActiontechTableActionMeta,
   ActiontechTableColumn,
-  InlineActiontechTableMoreActionsButtonMeta,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
@@ -102,58 +100,4 @@ export const GlobalDataSourceColumns = (
       }
     }
   ];
-};
-
-export const GlobalDataSourceListActions = (
-  onNavigateUpdateDataSource: (uid: string, projectID: string) => void,
-  onDeleteDataSource: (uid: string, name: string, projectID: string) => void,
-  onTestConnection: (uid: string, name: string, projectID: string) => void
-): {
-  title?: ActiontechTableColumn<IListGlobalDBService>[0]['title'];
-  moreButtons?: InlineActiontechTableMoreActionsButtonMeta<IListGlobalDBService>[];
-  buttons: ActiontechTableActionMeta<IListGlobalDBService>[];
-} => {
-  return {
-    buttons: [
-      {
-        key: 'edit-DataSource',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: onNavigateUpdateDataSource.bind(
-            null,
-            record?.uid ?? '',
-            record?.project_uid ?? ''
-          )
-        })
-      },
-      {
-        key: 'remove-DataSource',
-        text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
-        confirm: (record) => ({
-          title: t('dmsGlobalDataSource.deleteDatabase.confirmMessage', {
-            name: record?.name
-          }),
-          onConfirm: onDeleteDataSource.bind(
-            null,
-            record?.uid ?? '',
-            record?.name ?? '',
-            record?.project_uid ?? ''
-          )
-        })
-      }
-    ],
-    moreButtons: [
-      {
-        key: 'dataSource-test-connection',
-        text: t('common.testDatabaseConnectButton.testDatabaseConnection'),
-        onClick: (record) =>
-          onTestConnection(
-            record?.uid ?? '',
-            record?.name ?? '',
-            record?.project_uid ?? ''
-          )
-      }
-    ]
-  };
 };
