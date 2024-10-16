@@ -47,7 +47,9 @@ const useRuleType = () => {
       const map = new Map<string, IRuleTypeItem>();
       if (allRules) {
         allRules.forEach((rule) => {
-          map.set(rule.type ?? '', { rule_type: rule.type ?? '', len: 0 });
+          if (rule.type) {
+            map.set(rule.type, { rule_type: rule.type, len: 0 });
+          }
         });
       }
       if (rules?.length) {

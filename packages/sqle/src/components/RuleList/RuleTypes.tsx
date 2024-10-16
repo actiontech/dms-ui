@@ -55,13 +55,13 @@ const RuleTypes: React.FC<RuleTypesProps> = ({
         <RuleTypeItemStyleWrapper
           key={v.rule_type}
           onClick={() => {
-            setInternalRuleType(v.rule_type ?? '');
-            ruleTypeChange?.(v.rule_type ?? '');
+            setInternalRuleType(v.rule_type);
+            ruleTypeChange?.(v.rule_type);
           }}
           active={v.rule_type === internalRuleType}
         >
           {v.rule_type}
-          <span className="number-wrapper">{v.len ?? 0}</span>
+          <span className="number-wrapper">{v.len}</span>
         </RuleTypeItemStyleWrapper>
       ))}
     </RuleTypeStyleWrapper>
