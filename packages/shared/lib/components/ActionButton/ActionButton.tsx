@@ -3,9 +3,9 @@ import { ActionButtonProps } from './index.type';
 import BasicButton from '../BasicButton';
 import { useTranslation } from 'react-i18next';
 import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';
-import { Popconfirm, Tooltip } from 'antd';
+import { Popconfirm } from 'antd';
 import classnames from 'classnames';
-import { tooltipsCommonProps } from '../BasicToolTips';
+import BasicToolTips from '../BasicToolTips';
 
 const ActionButton: React.FC<ActionButtonProps> = (props) => {
   const { t } = useTranslation();
@@ -50,11 +50,11 @@ const ActionButton: React.FC<ActionButtonProps> = (props) => {
   if (actionType === 'tooltip') {
     const { tooltip } = props;
 
-    <Tooltip {...tooltip} {...tooltipsCommonProps(tooltip.title)}>
+    <BasicToolTips {...tooltip}>
       <BasicButton {...buttonProps} className={cls}>
         {text}
       </BasicButton>
-    </Tooltip>;
+    </BasicToolTips>;
   }
 
   return (

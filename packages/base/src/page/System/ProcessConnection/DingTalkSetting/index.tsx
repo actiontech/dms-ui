@@ -1,24 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
-
 import { Form, Spin, Typography } from 'antd';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
-
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { IDingTalkConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const DingTalkSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -152,23 +150,37 @@ const DingTalkSetting: React.FC = () => {
           data: dingTalkInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <ConfigExtraButtons
-              isConfigClosed={isConfigClosed}
-              extraButtonsVisible={extraButtonsVisible}
-              handleClickModify={handleClickModify}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION
+                  .ENABLE_DING_TALK
+              }
+            >
+              <ConfigExtraButtons
+                isConfigClosed={isConfigClosed}
+                extraButtonsVisible={extraButtonsVisible}
+                handleClickModify={handleClickModify}
+              />
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION
+                  .ENABLE_DING_TALK
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (

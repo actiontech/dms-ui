@@ -3,22 +3,20 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin } from 'antd';
 import { Link } from 'react-router-dom';
-
 import { DEFAULT_CONSTANT, switchFieldName } from './index.data';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
-
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
 import { WebhookFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const WebHook: React.FC = () => {
   const { t } = useTranslation();
@@ -169,25 +167,39 @@ const WebHook: React.FC = () => {
           data: webhookConfig ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <ConfigExtraButtons
-              enabled={enabled}
-              isConfigClosed={isConfigClosed}
-              extraButtonsVisible={extraButtonsVisible}
-              handleClickModify={handleClickModify}
-              msgUrl={webhookConfig?.url ?? ''}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION
+                  .ENABLE_WEBHOOKS
+              }
+            >
+              <ConfigExtraButtons
+                enabled={enabled}
+                isConfigClosed={isConfigClosed}
+                extraButtonsVisible={extraButtonsVisible}
+                handleClickModify={handleClickModify}
+                msgUrl={webhookConfig?.url ?? ''}
+              />
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION
+                  .ENABLE_WEBHOOKS
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (

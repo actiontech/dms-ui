@@ -1,7 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-
 import { Form, Space, Spin, Tag, Typography } from 'antd';
 import {
   BasicToolTips,
@@ -12,14 +11,11 @@ import ConfigModifyBtn from '../../components/ConfigModifyBtn';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
-
 import { switchFieldName } from './index.data';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { OauthFormField } from './index.type';
@@ -30,6 +26,7 @@ import {
 import { IUpdateOauth2ConfigurationParams } from '@actiontech/shared/lib/api/base/service/Configuration/index.d';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const Oauth = () => {
   const { t } = useTranslation();
@@ -395,21 +392,35 @@ const Oauth = () => {
               data: oauthConfig ?? {},
               columns: readonlyColumnsConfig,
               configExtraButtons: (
-                <Space hidden={isConfigClosed || !extraButtonsVisible}>
-                  <ConfigModifyBtn onClick={handleClickModify} />
-                </Space>
+                <PermissionControl
+                  permission={
+                    PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION
+                      .ENABLE_OAUTH2
+                  }
+                >
+                  <Space hidden={isConfigClosed || !extraButtonsVisible}>
+                    <ConfigModifyBtn onClick={handleClickModify} />
+                  </Space>
+                </PermissionControl>
               ),
               configSwitchNode: (
-                <ConfigSwitch
-                  switchFieldName={switchFieldName}
-                  switchOpen={switchOpen}
-                  modifyFlag={modifyFlag}
-                  submitLoading={submitLoading}
-                  popoverVisible={configSwitchPopoverVisible}
-                  onConfirm={onConfigSwitchPopoverConfirm}
-                  onSwitchChange={onConfigSwitchChange}
-                  onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-                />
+                <PermissionControl
+                  permission={
+                    PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION
+                      .ENABLE_OAUTH2
+                  }
+                >
+                  <ConfigSwitch
+                    switchFieldName={switchFieldName}
+                    switchOpen={switchOpen}
+                    modifyFlag={modifyFlag}
+                    submitLoading={submitLoading}
+                    popoverVisible={configSwitchPopoverVisible}
+                    onConfirm={onConfigSwitchPopoverConfirm}
+                    onSwitchChange={onConfigSwitchChange}
+                    onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+                  />
+                </PermissionControl>
               ),
               configField: <ConfigField />,
               submitButtonField: (

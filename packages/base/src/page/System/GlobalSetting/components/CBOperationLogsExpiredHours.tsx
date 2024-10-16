@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-
 import { ConfigItem } from '@actiontech/shared';
 import {
   EditInputNumber,
@@ -8,6 +7,7 @@ import {
 import useValidatorNumber from './useValidatorNumber';
 
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
 
 export interface CBOperationLogsExpiredHoursProps {
   expiredHours: number | undefined;
@@ -18,7 +18,6 @@ export interface CBOperationLogsExpiredHoursProps {
     value: string | number,
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
-  isAdmin: boolean;
 }
 
 const CBOperationLogsExpiredHours = ({
@@ -26,12 +25,11 @@ const CBOperationLogsExpiredHours = ({
   fieldVisible,
   showField,
   hideField,
-  submitGlobalConfig,
-  isAdmin
+  submitGlobalConfig
 }: CBOperationLogsExpiredHoursProps) => {
   const { t } = useTranslation();
   const { messageContextHolder, integerValidator } = useValidatorNumber();
-
+  const { checkActionPermission } = usePermission();
   return (
     <>
       {messageContextHolder}
@@ -45,7 +43,10 @@ const CBOperationLogsExpiredHours = ({
         fieldVisible={fieldVisible}
         showField={showField}
         hideField={hideField}
-        needEditButton={isAdmin}
+        needEditButton={checkActionPermission(
+          PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
+            .CB_OPERATION_LOG_EXPIRED_HOURS
+        )}
         inputNode={
           <EditInputNumber
             fieldValue={expiredHours ?? 2160}
