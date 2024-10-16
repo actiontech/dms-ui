@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ActionButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
@@ -12,11 +12,10 @@ import SyncDataSource from '../SyncDataSource';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import {
   PERMISSIONS,
-  PermissionControl,
   PermissionsConstantType
 } from '@actiontech/shared/lib/global';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
-import { PlusOutlined } from '@actiontech/icons';
+import { DataSourceManagementPageHeaderActions } from './action';
 
 const DataSourceManagement: React.FC = () => {
   const { t } = useTranslation();
@@ -63,51 +62,13 @@ const DataSourceManagement: React.FC = () => {
 
   // #if [ee]
   const renderExtra = () => {
+    const pageHeaderActions = DataSourceManagementPageHeaderActions(activeKey);
     return (
       <>
-        <PermissionControl
-          permission={PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD}
-        >
-          <ActionButton
-            text={t('dmsSyncDataSource.syncTaskList.addSyncTask')}
-            type="primary"
-            icon={<PlusOutlined width={10} height={10} color="currentColor" />}
-            hidden={activeKey !== DataSourceManagerSegmentedKey.SyncDataSource}
-            actionType="navigate-link"
-            link={{ to: `/sync-data-source/create` }}
-          />
-        </PermissionControl>
+        {pageHeaderActions['add_sync_task']}
         <Space>
-          <PermissionControl
-            permission={
-              PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_IMPORT
-            }
-          >
-            <ActionButton
-              text={t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
-              hidden={
-                activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource
-              }
-              actionType="navigate-link"
-              link={{ to: `/global-data-source/batch-import` }}
-            />
-          </PermissionControl>
-          <PermissionControl
-            permission={PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.ADD}
-          >
-            <ActionButton
-              text={t('dmsGlobalDataSource.addDatabase')}
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-              hidden={
-                activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource
-              }
-              actionType="navigate-link"
-              link={{ to: `/global-data-source/create` }}
-            />
-          </PermissionControl>
+          {pageHeaderActions['batch_import_db_service']}
+          {pageHeaderActions['add_db_service']}
         </Space>
       </>
     );
