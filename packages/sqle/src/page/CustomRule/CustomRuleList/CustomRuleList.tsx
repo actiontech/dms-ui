@@ -20,6 +20,11 @@ import EmitterKey from '../../../data/EmitterKey';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { CloseOutlined } from '@actiontech/icons';
+import {
+  PERMISSIONS,
+  PermissionControl,
+  usePermission
+} from '@actiontech/shared/lib/global';
 
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
@@ -27,6 +32,7 @@ const CustomRuleList: React.FC = () => {
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [messageApi, messageContextHolder] = message.useMessage();
   const { activeKey } = useRuleManagerSegmented();
+  const { checkActionPermission } = usePermission();
 
   const {
     data: ruleList,
@@ -84,32 +90,38 @@ const CustomRuleList: React.FC = () => {
 
   const renderDisabledNode = (item: ICustomRuleResV1) => {
     return (
-      <Popconfirm
-        key={`${item.rule_id}-delete-item`}
-        disabled={deleteLoading}
-        placement="topLeft"
-        title={t('customRule.deleteConfirm')}
-        onOpenChange={(open: boolean, e) => {
-          e?.stopPropagation();
-        }}
-        onConfirm={(e) => {
-          e?.stopPropagation();
-          deleteRule(item);
-        }}
-        okText={t('common.ok')}
+      <PermissionControl
+        permission={PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.DELETE}
       >
-        <BasicButton
-          size="small"
-          shape="circle"
-          danger
-          className="action-circle-btn disabled-rule-item custom-rule-item-operator"
-          key={`${item.rule_id}-remove-item`}
-          icon={<CloseOutlined className="icon-disabled" fill="currentColor" />}
-          onClick={(e) => {
-            e.stopPropagation();
+        <Popconfirm
+          key={`${item.rule_id}-delete-item`}
+          disabled={deleteLoading}
+          placement="topLeft"
+          title={t('customRule.deleteConfirm')}
+          onOpenChange={(_, e) => {
+            e?.stopPropagation();
           }}
-        />
-      </Popconfirm>
+          onConfirm={(e) => {
+            e?.stopPropagation();
+            deleteRule(item);
+          }}
+          okText={t('common.ok')}
+        >
+          <BasicButton
+            size="small"
+            shape="circle"
+            danger
+            className="action-circle-btn disabled-rule-item custom-rule-item-operator"
+            key={`${item.rule_id}-remove-item`}
+            icon={
+              <CloseOutlined className="icon-disabled" fill="currentColor" />
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          />
+        </Popconfirm>
+      </PermissionControl>
     );
   };
 
@@ -141,7 +153,11 @@ const CustomRuleList: React.FC = () => {
         <RuleList
           enableCheckDetail
           isAction={true}
-          actionType={RuleStatusEnum.enabled}
+          actionType={
+            checkActionPermission(PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.EDIT)
+              ? RuleStatusEnum.enabled
+              : undefined
+          }
           renderDisableNode={(rule) =>
             renderDisabledNode(rule as ICustomRuleResV1)
           }

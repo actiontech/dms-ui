@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { Space, Typography } from 'antd';
 import {
-  BasicButton,
+  ActionButton,
   EnterpriseFeatureDisplay,
   PageHeader,
   SegmentedTabs
@@ -14,53 +13,63 @@ import CustomRuleList from '../CustomRule/CustomRuleList';
 import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
 import { RuleManagerSegmentedKey } from './index.type';
 import useRuleManagerSegmented from './useRuleManagerSegmented';
-import { PlusOutlined, LoginBoxOutlined } from '@actiontech/icons';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import { LoginBoxOutlined, PlusOutlined } from '@actiontech/icons';
 
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-
-  const { isAdmin } = useCurrentUser();
 
   const { activeKey, updateActiveSegmentedKey } = useRuleManagerSegmented();
 
   const refresh = () => {
     eventEmitter.emit(EmitterKey.Refresh_Global_Rule_Template_List);
+    // #if [ee]
     eventEmitter.emit(EmitterKey.Refresh_Custom_Rule_Template_List);
+    // #endif
   };
 
   const renderExtraButton = () => {
     return (
       <>
-        <Space
-          size={12}
-          hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
-        >
-          <BasicButton
-            type="text"
-            icon={<LoginBoxOutlined />}
-            onClick={() => navigate('/sqle/rule-manager/global-import')}
+        <Space>
+          <PermissionControl
+            permission={PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT}
           >
-            {t('ruleTemplate.importRuleTemplate.button')}
-          </BasicButton>
-          <BasicButton
-            type="primary"
-            icon={<PlusOutlined color="currentColor" width={10} height={10} />}
-            onClick={() => navigate('/sqle/rule-manager/global-create')}
+            <ActionButton
+              text={t('ruleTemplate.importRuleTemplate.button')}
+              hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
+              icon={<LoginBoxOutlined />}
+              actionType="navigate-link"
+              link={{ to: `/sqle/rule-manager/global-import` }}
+            />
+          </PermissionControl>
+          <PermissionControl
+            permission={PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CREATE}
           >
-            {t('ruleTemplate.createRuleTemplate.button')}
-          </BasicButton>
+            <ActionButton
+              text={t('ruleTemplate.createRuleTemplate.button')}
+              hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
+              type="primary"
+              icon={
+                <PlusOutlined color="currentColor" width={10} height={10} />
+              }
+              actionType="navigate-link"
+              link={{ to: `/sqle/rule-manager/global-create` }}
+            />
+          </PermissionControl>
         </Space>
-
         {/* #if [ee] */}
-        <BasicButton
-          hidden={activeKey !== RuleManagerSegmentedKey.CustomRule}
-          type="primary"
-          onClick={() => navigate('/sqle/rule-manager/custom-create')}
+        <PermissionControl
+          permission={PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.CREATE}
         >
-          {t('customRule.filterForm.add')}
-        </BasicButton>
+          <ActionButton
+            text={t('customRule.filterForm.add')}
+            hidden={activeKey !== RuleManagerSegmentedKey.CustomRule}
+            type="primary"
+            actionType="navigate-link"
+            link={{ to: `/sqle/rule-manager/custom-create` }}
+          />
+        </PermissionControl>
         {/* #endif */}
       </>
     );
@@ -75,7 +84,7 @@ const RuleManager: React.FC = () => {
             <TableRefreshButton refresh={refresh} />
           </Space>
         }
-        extra={isAdmin ? renderExtraButton() : null}
+        extra={renderExtraButton()}
       />
 
       <SegmentedTabs

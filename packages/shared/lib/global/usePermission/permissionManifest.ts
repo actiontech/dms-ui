@@ -76,6 +76,8 @@ export const PERMISSION_MANIFEST: Record<
     moduleSupport: [SystemModuleSupported.sqlOptimization]
   },
   // action
+
+  //数据源
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
     type: 'action',
@@ -125,6 +127,8 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false
   },
+
+  //用户中心
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD,
     type: 'action',
@@ -152,6 +156,118 @@ export const PERMISSION_MANIFEST: Record<
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  //全局数据源
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.ADD]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.ADD,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.certainProjectManager
+    ]
+  },
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_IMPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_IMPORT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.certainProjectManager
+    ]
+  },
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.DELETE,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.certainProjectManager
+    ]
+  },
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.EDIT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.certainProjectManager
+    ]
+  },
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.TEST_IN_MORE_BUTTON]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.TEST_IN_MORE_BUTTON,
+    type: 'action'
+  },
+
+  // 同步外部数据源
+  [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.ADD,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.SYNC]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.SYNC,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  //全局规则模板
+  [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CLONE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CLONE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EXPORT,
+    type: 'action'
+  },
+
+  //自定义规则
+  [PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
   }
