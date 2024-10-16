@@ -1,11 +1,13 @@
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionsWithPermissions,
-  PERMISSIONS
+  PERMISSIONS,
+  PermissionControl
 } from '@actiontech/shared/lib/global';
 import { t } from '../../../../locale';
 import { PlusOutlined } from '@actiontech/icons';
-import { ActionButtonProps } from '@actiontech/shared';
+import { ActionButton } from '@actiontech/shared';
+import { ReactNode } from 'react';
 
 export const DataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string) => void,
@@ -82,33 +84,42 @@ export const DataSourceListActions = (
   };
 };
 
-export const DataSourcePageHeadActions = (
+export const DataSourcePageHeaderActions = (
   projectID: string
-): Record<
-  'batch-import-data-source' | 'add-data-source',
-  ActionButtonProps
-> => ({
-  'batch-import-data-source': {
-    text: t('dmsDataSource.batchImportDataSource.buttonText'),
-    actionType: 'navigate-link',
-    link: {
-      to: `/project/${projectID}/db-services/batch-import`
-    }
-  },
-  'add-data-source': {
-    text: t('dmsDataSource.addDatabase'),
-    type: 'primary',
-    icon: (
-      <PlusOutlined
-        width={10}
-        height={10}
-        fill="currentColor"
-        color="currentColor"
+): Record<'batch-import-data-source' | 'add-data-source', ReactNode> => ({
+  'batch-import-data-source': (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}
+    >
+      <ActionButton
+        text={t('dmsDataSource.batchImportDataSource.buttonText')}
+        actionType="navigate-link"
+        link={{
+          to: `/project/${projectID}/db-services/batch-import`
+        }}
       />
-    ),
-    actionType: 'navigate-link',
-    link: {
-      to: `/project/${projectID}/db-services/create`
-    }
-  }
+    </PermissionControl>
+  ),
+  'add-data-source': (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}
+    >
+      <ActionButton
+        text={t('dmsDataSource.addDatabase')}
+        type="primary"
+        icon={
+          <PlusOutlined
+            width={10}
+            height={10}
+            fill="currentColor"
+            color="currentColor"
+          />
+        }
+        actionType="navigate-link"
+        link={{
+          to: `/project/${projectID}/db-services/create`
+        }}
+      />
+    </PermissionControl>
+  )
 });

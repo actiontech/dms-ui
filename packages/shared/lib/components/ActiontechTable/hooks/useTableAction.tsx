@@ -7,7 +7,7 @@ import {
 } from '../index.type';
 import BasicButton from '../../BasicButton';
 import { useTranslation } from 'react-i18next';
-import { Popconfirm, Popover } from 'antd';
+import { Popconfirm, Popover, Space } from 'antd';
 import classnames from 'classnames';
 import { useCallback, useState } from 'react';
 import {
@@ -18,8 +18,7 @@ import EmptyBox from '../../EmptyBox';
 import { checkButtonPermissions, checkButtonDisabled } from '../utils';
 import classNames from 'classnames';
 import { DashOutlined } from '@actiontech/icons';
-import { cloneDeep } from 'lodash';
-import { ActionButtonGroup, ActionButtonGroupProps } from '../../ActionButton';
+import { ActionButton, ActionButtonProps } from '../../ActionButton';
 
 export const ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH = 82;
 export const ACTIONTECH_TABLE_MORE_BUTTON_WIDTH = 40;
@@ -42,46 +41,55 @@ const useTableAction = () => {
         return null;
       }
       return (
-        <ActionButtonGroup
-          actions={actions.map<ActionButtonGroupProps['actions'][0]>(
-            (action) => {
-              const buttonProps =
-                typeof action.buttonProps === 'function'
-                  ? action.buttonProps(record)
-                  : action.buttonProps;
+        <Space>
+          {actions.map((action) => {
+            const buttonProps =
+              typeof action.buttonProps === 'function'
+                ? action.buttonProps(record)
+                : action.buttonProps;
 
-              const cls = classnames(
+            const commonProps: ActionButtonProps = {
+              ...buttonProps,
+              text: action.text,
+              className: classnames(
                 'actiontech-table-actions-button',
                 buttonProps?.className
+              ),
+              size: 'small'
+            };
+
+            const confirm =
+              typeof action.confirm === 'function'
+                ? action.confirm(record)
+                : action.confirm;
+
+            if (confirm) {
+              return (
+                <ActionButton
+                  {...commonProps}
+                  key={action.key}
+                  actionType="confirm"
+                  confirm={confirm}
+                />
               );
-
-              const confirm =
-                typeof action.confirm === 'function'
-                  ? action.confirm(record)
-                  : action.confirm;
-
-              if (confirm) {
-                return {
-                  ...buttonProps,
-                  key: action.key,
-                  text: action.text,
-                  className: cls,
-                  size: 'small',
-                  actionType: 'confirm',
-                  confirm
-                };
-              }
-
-              return {
-                ...buttonProps,
-                key: action.key,
-                className: cls,
-                text: action.text,
-                size: 'small'
-              };
             }
-          )}
-        />
+            const link =
+              typeof action.link === 'function'
+                ? action.link(record)
+                : action.link;
+            if (link) {
+              return (
+                <ActionButton
+                  {...commonProps}
+                  key={action.key}
+                  actionType="navigate-link"
+                  link={link}
+                />
+              );
+            }
+            return <ActionButton {...commonProps} key={action.key} />;
+          })}
+        </Space>
       );
     },
     []
@@ -142,25 +150,25 @@ const useTableAction = () => {
         }
         if (visibleButtons.length === 0 && visibleMoreButtons.length > 0) {
           //todo 文档记录. 当 visibleButtons 为 0 时，从 moreButtons 中 move 两个 button 到外层。
-          const maxIndex = visibleMoreButtons.length >= 2 ? 2 : 1;
+          const maxIndex = Math.min(visibleMoreButtons.length, 2);
+
           for (let i = 0; i < maxIndex; i++) {
-            const cloneVisibleMoreButtons = cloneDeep(visibleMoreButtons);
+            const button = visibleMoreButtons[i];
             visibleButtons.push({
-              key: cloneVisibleMoreButtons[i].key,
-              text: cloneVisibleMoreButtons[i].text,
-              confirm: cloneVisibleMoreButtons[i].confirm,
-              permissions: cloneVisibleMoreButtons[i].permissions,
+              key: button.key,
+              text: button.text,
+              confirm: button.confirm,
+              permissions: button.permissions,
               buttonProps: (data) => ({
                 onClick: () => {
-                  cloneVisibleMoreButtons[i]?.onClick?.(data);
+                  button.onClick?.(data);
                 },
-                disabled: !!cloneVisibleMoreButtons[i]?.disabled,
-                icon: cloneVisibleMoreButtons[i]?.icon
+                disabled: !!button.disabled,
+                icon: button.icon
               })
             });
           }
-
-          visibleMoreButtons.splice(0, 2);
+          visibleMoreButtons = visibleMoreButtons.slice(maxIndex);
         }
 
         return (
@@ -212,7 +220,7 @@ const MoreButtons = <T extends Record<string, any>>({
     <Popover
       open={open}
       arrow={false}
-      trigger={'click'}
+      trigger="click"
       placement="bottomLeft"
       overlayInnerStyle={{ padding: 0 }}
       onOpenChange={setOpen}

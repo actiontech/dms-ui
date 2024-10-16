@@ -4,7 +4,7 @@ import { LinkProps } from 'react-router-dom';
 import { Key, ReactNode } from 'react';
 
 type ActionButtonBase = Omit<IBasicButton, 'children'> & {
-  text: ReactNode;
+  text?: ReactNode;
 };
 
 type ActionButtonWithNormal = {

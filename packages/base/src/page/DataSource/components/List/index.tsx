@@ -2,11 +2,9 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { message, Modal, Space } from 'antd';
-import { ActionButton, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import {
-  PERMISSIONS,
-  PermissionControl,
   useCurrentProject,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
@@ -31,7 +29,7 @@ import {
   filterDataMaskOptions
 } from './columns';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
-import { DataSourceListActions, DataSourcePageHeadActions } from './actions';
+import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -254,7 +252,7 @@ const DataSourceList = () => {
     navigateToSqlManagementConf
   ]);
 
-  const pageHeaderActions = DataSourcePageHeadActions(projectID);
+  const pageHeaderActions = DataSourcePageHeaderActions(projectID);
 
   useEffect(() => {
     if (projectID) {
@@ -273,19 +271,9 @@ const DataSourceList = () => {
         extra={
           <Space>
             {/* #if [ee] */}
-            <PermissionControl
-              permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}
-            >
-              <ActionButton
-                {...pageHeaderActions['batch-import-data-source']}
-              />
-            </PermissionControl>
+            {pageHeaderActions['batch-import-data-source']}
             {/* #endif */}
-            <PermissionControl
-              permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD}
-            >
-              <ActionButton {...pageHeaderActions['add-data-source']} />
-            </PermissionControl>
+            {pageHeaderActions['add-data-source']}
           </Space>
         }
       />

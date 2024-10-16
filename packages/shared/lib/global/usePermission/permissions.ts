@@ -28,14 +28,42 @@ export const PERMISSIONS = {
           DELETE: 'action:delete_role'
         }
       },
+      GLOBAL_DATA_SOURCE: {
+        EDIT: 'action:edit_db_service',
+        DELETE: 'action:delete_db_service',
+        TEST_IN_MORE_BUTTON: 'action:test_db_service_in_more_button',
+        ADD: 'action:add_db_service',
+        BATCH_IMPORT: 'action:batch_import_db_service'
+      },
+      SYNC_DATA_SOURCE: {
+        ADD: 'action:add_task',
+        EDIT: 'action:edit_task',
+        SYNC: 'action:sync_task',
+        DELETE: 'action:delete_task'
+      },
       DB_SERVICE: {
-        BATCH_IMPORT: 'action:batch_import',
+        BATCH_IMPORT: 'action:batch_import_db_service',
         ADD: 'action:add_db_service',
         EDIT: 'action:edit_db_service',
         DELETE: 'action:delete_db_service',
         TEST: 'action:test_db_service',
         TEST_IN_MORE_BUTTON: 'action:test_db_service_in_more_button',
         CREATE_AUDIT_PLAN: 'action:db_service_create_audit_plan'
+      }
+    },
+    SQLE: {
+      GLOBAL_RULE_TEMPLATE: {
+        IMPORT: 'action:import_rule_template',
+        CREATE: 'action:create_rule_template',
+        EDIT: 'action:edit_rule_template',
+        DELETE: 'action:delete_rule_template',
+        CLONE: 'action:clone_rule_template',
+        EXPORT: 'action:export_rule_template'
+      },
+      CUSTOM_RULE: {
+        CREATE: 'action:create_custom_rule',
+        EDIT: 'action:edit_custom_rule',
+        DELETE: 'action:delete_custom_rule'
       }
     }
   }
