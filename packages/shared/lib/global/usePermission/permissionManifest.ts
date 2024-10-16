@@ -270,5 +270,91 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  //系统设置
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_SMTP]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_SMTP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WECHAT]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WECHAT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_LARK]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_LARK,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WEBHOOKS]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WEBHOOKS,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_DING_TALK]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_DING_TALK,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_LARK_AUDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_LARK_AUDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_WECHAT_AUDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_WECHAT_AUDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_LDAP]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_LDAP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_OAUTH2]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_OAUTH2,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.OPERATION_LOG_EXPIRED_HOURS]:
+    {
+      id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
+        .OPERATION_LOG_EXPIRED_HOURS,
+      type: 'action',
+      role: [SystemRole.admin, SystemRole.globalManager]
+    },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
+    .CB_OPERATION_LOG_EXPIRED_HOURS]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
+      .CB_OPERATION_LOG_EXPIRED_HOURS,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.URL_ADDRESS_PREFIX]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.URL_ADDRESS_PREFIX,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.COLLECT_LICENSE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.COLLECT_LICENSE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.IMPORT_LICENSE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.IMPORT_LICENSE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_TITLE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_TITLE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_LOGO]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_LOGO,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
   }
 } as const;

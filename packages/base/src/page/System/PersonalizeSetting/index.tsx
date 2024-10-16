@@ -1,7 +1,6 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
-
 import { Spin } from 'antd';
 import { ConfigItem } from '@actiontech/shared';
 import {
@@ -15,21 +14,18 @@ import {
   DMS_DEFAULT_WEB_LOGO_URL,
   DMS_DEFAULT_WEB_TITLE
 } from '@actiontech/shared/lib/data/common';
-
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import useSystemConfig from '../../../hooks/useSystemConfig';
-
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/BasicInfo/index.d';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
 
-  const { isAdmin } = useCurrentUser();
-
+  const { checkActionPermission } = usePermission();
   const [
     titleFieldVisible,
     { setTrue: showTitleField, setFalse: hideTitleField }
@@ -104,7 +100,10 @@ const PersonalizeSetting: React.FC = () => {
           fieldVisible={titleFieldVisible}
           showField={showTitleField}
           hideField={hideTitleField}
-          needEditButton={isAdmin}
+          needEditButton={checkActionPermission(
+            PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING
+              .PERSONALIZE_TITLE
+          )}
           inputNode={
             <EditInput
               submitLoading={submitLoading}
@@ -124,7 +123,12 @@ const PersonalizeSetting: React.FC = () => {
           }
           inputNode={
             <ImageUploader
-              isAdmin={isAdmin}
+              disabled={
+                !checkActionPermission(
+                  PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING
+                    .PERSONALIZE_LOGO
+                )
+              }
               submitLoading={submitLoading}
               onSubmit={(option) => {
                 submitPersonalize(option.file as File, 'file');

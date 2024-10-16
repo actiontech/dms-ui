@@ -2,19 +2,17 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { updateSystemModalStatus } from '../../../store/system';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-
 import { Space, QRCode } from 'antd';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { ModalName } from '../../../data/ModalName';
 import SystemBasicTitle from '../components/BasicTitle';
 import ImportLicense from './Modal/ImportLicense';
 import { LicenseColumn } from './index.data';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
+import { LicenseActions } from './action';
 
 const License = () => {
   const { t } = useTranslation();
@@ -68,6 +66,22 @@ const License = () => {
     );
   };
 
+  const actions = LicenseActions({
+    collectActionTooltipProps: {
+      titleWidth: 326,
+      title: <QRCode value={licenseData} size={300} />,
+      open: qrCodeVisible,
+      trigger: ['click'],
+      onOpenChange: (open) => {
+        if (!open) {
+          hideQRCode();
+        }
+      }
+    },
+    collectAction: { onClick: collectLicense, loading: collectLicenseLoading },
+    importAction: { onClick: importLicense }
+  });
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Refresh_License_List,
@@ -83,28 +97,8 @@ const License = () => {
       titleTip={t('dmsSystem.license.productName')}
       titleExtra={
         <Space key="button-wrapper">
-          <BasicToolTips
-            titleWidth={326}
-            title={<QRCode value={licenseData} size={300} />}
-            open={qrCodeVisible}
-            trigger={['click']}
-            onOpenChange={(open: boolean) => {
-              if (!open) {
-                hideQRCode();
-              }
-            }}
-          >
-            <BasicButton
-              type="primary"
-              onClick={collectLicense}
-              loading={collectLicenseLoading}
-            >
-              {t('dmsSystem.license.collect')}
-            </BasicButton>
-          </BasicToolTips>
-          <BasicButton type="primary" onClick={importLicense}>
-            {t('dmsSystem.license.import')}
-          </BasicButton>
+          {actions['collect_license']}
+          {actions['import_license']}
         </Space>
       }
     >

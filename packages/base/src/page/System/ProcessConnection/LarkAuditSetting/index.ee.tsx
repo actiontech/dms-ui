@@ -1,24 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
-
 import { Form, Spin, Typography } from 'antd';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
-
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
-
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IFeishuConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const LarkAuditSettingEEIndex = () => {
   const { t } = useTranslation();
@@ -153,24 +151,38 @@ const LarkAuditSettingEEIndex = () => {
         data: larkAuditInfo ?? {},
         columns: readonlyColumnsConfig,
         configExtraButtons: (
-          <ConfigExtraButtons
-            isConfigClosed={isConfigClosed}
-            extraButtonsVisible={extraButtonsVisible}
-            enabled={enabled}
-            handleClickModify={handleClickModify}
-          />
+          <PermissionControl
+            permission={
+              PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION
+                .ENABLE_LARK_AUDIT
+            }
+          >
+            <ConfigExtraButtons
+              isConfigClosed={isConfigClosed}
+              extraButtonsVisible={extraButtonsVisible}
+              enabled={enabled}
+              handleClickModify={handleClickModify}
+            />
+          </PermissionControl>
         ),
         configSwitchNode: (
-          <ConfigSwitch
-            switchFieldName={switchFieldName}
-            switchOpen={switchOpen}
-            modifyFlag={modifyFlag}
-            submitLoading={submitLoading}
-            popoverVisible={configSwitchPopoverVisible}
-            onConfirm={onConfigSwitchPopoverConfirm}
-            onSwitchChange={onConfigSwitchChange}
-            onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-          />
+          <PermissionControl
+            permission={
+              PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION
+                .ENABLE_LARK_AUDIT
+            }
+          >
+            <ConfigSwitch
+              switchFieldName={switchFieldName}
+              switchOpen={switchOpen}
+              modifyFlag={modifyFlag}
+              submitLoading={submitLoading}
+              popoverVisible={configSwitchPopoverVisible}
+              onConfirm={onConfigSwitchPopoverConfirm}
+              onSwitchChange={onConfigSwitchChange}
+              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+            />
+          </PermissionControl>
         ),
         configField: <ConfigField />,
         submitButtonField: (

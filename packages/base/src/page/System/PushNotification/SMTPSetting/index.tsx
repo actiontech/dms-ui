@@ -18,6 +18,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const SMTPSetting = () => {
   const { t } = useTranslation();
@@ -190,24 +191,36 @@ const SMTPSetting = () => {
           data: smtpInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <ConfigExtraButtons
-              isConfigClosed={isConfigClosed}
-              enabled={enabled}
-              extraButtonsVisible={extraButtonsVisible}
-              handleClickModify={handleClickModify}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_SMTP
+              }
+            >
+              <ConfigExtraButtons
+                isConfigClosed={isConfigClosed}
+                enabled={enabled}
+                extraButtonsVisible={extraButtonsVisible}
+                handleClickModify={handleClickModify}
+              />
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_SMTP
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (
