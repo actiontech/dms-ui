@@ -4,6 +4,7 @@ import {
   IProjectTips,
   IDBService
 } from '@actiontech/shared/lib/api/base/service/common';
+import { ListProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const mockProjectList: IListProject[] = [
   {
@@ -15,7 +16,8 @@ export const mockProjectList: IListProject[] = [
     create_user: {
       uid: '700101',
       name: 'admin'
-    }
+    },
+    project_priority: ListProjectProjectPriorityEnum.high
   },
   {
     uid: '100122',
@@ -34,7 +36,8 @@ export const mockProjectList: IListProject[] = [
         is_used: true
       }
     ],
-    is_fixed_business: true
+    is_fixed_business: true,
+    project_priority: ListProjectProjectPriorityEnum.medium
   },
   {
     uid: '100133',
