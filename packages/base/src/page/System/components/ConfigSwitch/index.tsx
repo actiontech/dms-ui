@@ -2,7 +2,6 @@ import { Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { BasicSwitch } from '@actiontech/shared';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 export interface ConfigSwitchParams {
   switchFieldName: string;
@@ -29,7 +28,6 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
   onSwitchChange,
   onSwitchPopoverOpen
 }) => {
-  const { isAdmin } = useCurrentUser();
   const { t } = useTranslation();
 
   return (
@@ -43,11 +41,7 @@ const ConfigSwitch: React.FC<ConfigSwitchParams> = ({
       onOpenChange={onSwitchPopoverOpen}
       onConfirm={onConfirm}
     >
-      <FormItemLabel
-        hidden={!isAdmin}
-        name={switchFieldName}
-        valuePropName="checked"
-      >
+      <FormItemLabel name={switchFieldName} valuePropName="checked">
         <BasicSwitch
           className="system-config-switch"
           checked={switchOpen}

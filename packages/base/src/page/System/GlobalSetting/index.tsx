@@ -1,14 +1,11 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
-
 import useHideConfigInputNode from '../../../../../shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
-
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
-
 import { Spin } from 'antd';
 import SystemBasicTitle from '../components/BasicTitle';
 import OrderExpiredHours from './components/OrderExpiredHours';
@@ -139,6 +136,7 @@ const GlobalSetting = () => {
     <SystemBasicTitle title={t('dmsSystem.tabPaneTitle.globalConfiguration')}>
       <>
         <Spin spinning={getConfigLoading || submitLoading}>
+          {/* main 分支中已删除该组件 */}
           <OrderExpiredHours
             expiredHours={globalConfig?.workflow_expired_hours}
             fieldVisible={orderExpiredHoursFieldVisible}
@@ -153,7 +151,6 @@ const GlobalSetting = () => {
             showField={showOperationRecordExpiredHoursField}
             hideField={hideOperationRecordExpiredHoursField}
             submitGlobalConfig={submitGlobalConfig}
-            isAdmin={isAdmin}
           />
           <CBOperationLogsExpiredHours
             expiredHours={globalConfig?.cb_operation_logs_expired_hours}
@@ -161,7 +158,6 @@ const GlobalSetting = () => {
             showField={showCBOperationLogsExpiredHoursField}
             hideField={hideCBOperationLogsExpiredHoursField}
             submitGlobalConfig={submitGlobalConfig}
-            isAdmin={isAdmin}
           />
           <UrlAddressPrefixTips
             url={globalConfig?.url}
@@ -169,7 +165,6 @@ const GlobalSetting = () => {
             showField={showUrlField}
             hideField={hideUrlField}
             submitGlobalConfig={submitGlobalConfig}
-            isAdmin={isAdmin}
           />
         </Spin>
       </>
