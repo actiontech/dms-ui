@@ -69,5 +69,5 @@ export default {
     instanceManager: 'DB instances'
   },
   copyRight:
-    '© {{year}} Shanghai Aicos Information Technology Co., Ltd. All rights reserved'
+    '© {{year}} Shanghai Action Information Technology Co., Ltd. All rights reserved.'
 };
