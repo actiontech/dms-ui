@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../data/EmitterKey';
 import { ModalName } from '../../../data/ModalName';
@@ -14,7 +12,7 @@ import {
   updateGlobalRuleTemplateListModalStatus
 } from '../../../store/globalRuleTemplate';
 import EventEmitter from '../../../utils/EventEmitter';
-import { RuleTemplateActions, RuleTemplateColumns } from './column';
+import { RuleTemplateColumns } from './column';
 import RuleTemplateListModal from './Modal';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -26,6 +24,8 @@ import {
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import ExportRuleTemplateModal from './Modal/ExportRuleTemplate';
+import { RuleTemplateListActions } from './action';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
   hiddenOperations = false
@@ -37,9 +37,8 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
     useTableRequestParams<IRuleTemplateResV1>();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
-  const { isAdmin } = useCurrentUser();
-  const navigate = useNavigate();
   const { activeKey } = useRuleManagerSegmented();
+  const { parse2TableActionPermissions } = usePermission();
 
   const {
     data: ruleTemplateList,
@@ -56,12 +55,12 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
     }
   );
 
-  const navigateToUpdatePage = (templateName: string) => {
-    navigate(`/sqle/rule-manager/global-update/${templateName}`);
-  };
+  const tableActions = useMemo(() => {
+    if (hiddenOperations) {
+      return;
+    }
 
-  const deleteTemplate = React.useCallback(
-    (templateName: string) => {
+    const deleteTemplate = (templateName: string) => {
       const hideLoading = messageApi.loading(
         t('ruleTemplate.deleteRuleTemplate.deleting', { name: templateName }),
         0
@@ -83,37 +82,49 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
         .finally(() => {
           hideLoading();
         });
-    },
-    [messageApi, refreshRuleTemplate, t]
-  );
+    };
+    const openCloneRuleTemplateModal = (ruleTemplate: IRuleTemplateResV1) => {
+      dispatch(
+        updateGlobalSelectRuleTemplate({
+          ruleTemplate
+        })
+      );
+      dispatch(
+        updateGlobalRuleTemplateListModalStatus({
+          modalName: ModalName.Clone_Rule_Template,
+          status: true
+        })
+      );
+    };
+    const openExportRuleTemplateModal = (ruleTemplate: IRuleTemplateResV1) => {
+      dispatch(
+        updateGlobalSelectRuleTemplate({
+          ruleTemplate
+        })
+      );
+      dispatch(
+        updateGlobalRuleTemplateListModalStatus({
+          modalName: ModalName.Export_Rule_Template,
+          status: true
+        })
+      );
+    };
 
-  const openCloneRuleTemplateModal = (ruleTemplate: IRuleTemplateResV1) => {
-    dispatch(
-      updateGlobalSelectRuleTemplate({
-        ruleTemplate
-      })
+    return parse2TableActionPermissions(
+      RuleTemplateListActions(
+        deleteTemplate,
+        openCloneRuleTemplateModal,
+        openExportRuleTemplateModal
+      )
     );
-    dispatch(
-      updateGlobalRuleTemplateListModalStatus({
-        modalName: ModalName.Clone_Rule_Template,
-        status: true
-      })
-    );
-  };
-
-  const openExportRuleTemplateModal = (ruleTemplate: IRuleTemplateResV1) => {
-    dispatch(
-      updateGlobalSelectRuleTemplate({
-        ruleTemplate
-      })
-    );
-    dispatch(
-      updateGlobalRuleTemplateListModalStatus({
-        modalName: ModalName.Export_Rule_Template,
-        status: true
-      })
-    );
-  };
+  }, [
+    dispatch,
+    hiddenOperations,
+    messageApi,
+    parse2TableActionPermissions,
+    refreshRuleTemplate,
+    t
+  ]);
 
   useEffect(() => {
     dispatch(
@@ -126,7 +137,6 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   useEffect(() => {
     const scopeRefresh = () => {
       refreshRuleTemplate();
@@ -148,13 +158,7 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
         columns={RuleTemplateColumns()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={RuleTemplateActions(
-          navigateToUpdatePage,
-          deleteTemplate,
-          openCloneRuleTemplateModal,
-          openExportRuleTemplateModal,
-          isAdmin && !hiddenOperations
-        )}
+        actions={tableActions}
         pagination={{
           total: ruleTemplateList?.total ?? 0
         }}

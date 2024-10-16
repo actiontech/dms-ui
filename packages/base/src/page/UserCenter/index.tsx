@@ -15,7 +15,7 @@ import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
-import { UserCenterPageHeaderActions } from './actions';
+import { PlusOutlined } from '@actiontech/icons';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
@@ -56,22 +56,47 @@ const UserCenter: React.FC = () => {
       );
     };
 
-    const pageHeaderAction = UserCenterPageHeaderActions(
-      handleClick,
-      activePage
-    );
-
     return (
       <>
         <PermissionControl
           permission={PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD}
         >
-          <ActionButton {...pageHeaderAction.add_user} />
+          <ActionButton
+            type="primary"
+            text={t('dmsUserCenter.user.userList.addUserButton')}
+            onClick={() => {
+              handleClick(ModalName.DMS_Add_User);
+            }}
+            hidden={activePage !== UserCenterListEnum.user_list}
+            icon={
+              <PlusOutlined
+                width={10}
+                height={10}
+                fill="currentColor"
+                color="currentColor"
+              />
+            }
+          />
         </PermissionControl>
         <PermissionControl
           permission={PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD}
         >
-          <ActionButton {...pageHeaderAction.add_role} />
+          <ActionButton
+            type="primary"
+            text={t('dmsUserCenter.role.createRole.button')}
+            onClick={() => {
+              handleClick(ModalName.DMS_Add_Role);
+            }}
+            hidden={activePage !== UserCenterListEnum.role_list}
+            icon={
+              <PlusOutlined
+                width={10}
+                height={10}
+                fill="currentColor"
+                color="currentColor"
+              />
+            }
+          />
         </PermissionControl>
       </>
     );

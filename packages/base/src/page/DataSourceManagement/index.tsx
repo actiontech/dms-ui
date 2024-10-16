@@ -1,32 +1,22 @@
 import { useTranslation } from 'react-i18next';
-import {
-  BasicButton,
-  EmptyBox,
-  PageHeader,
-  SegmentedTabs
-} from '@actiontech/shared';
+import { ActionButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
-import {
-  Link,
-  useLocation,
-  useNavigate,
-  useSearchParams
-} from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Space } from 'antd';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import useCurrentUser from '@actiontech/shared/lib/global/useCurrentUser';
-import { PlusOutlined } from '@actiontech/icons/src/outlined';
 import GlobalDataSource from '../GlobalDataSource';
 import SyncDataSource from '../SyncDataSource';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import {
   PERMISSIONS,
+  PermissionControl,
   PermissionsConstantType
 } from '@actiontech/shared/lib/global';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { PlusOutlined } from '@actiontech/icons';
 
 const DataSourceManagement: React.FC = () => {
   const { t } = useTranslation();
@@ -34,7 +24,6 @@ const DataSourceManagement: React.FC = () => {
     DataSourceManagerSegmentedKey.GlobalDataSource
   );
 
-  const { isAdmin, isCertainProjectManager } = useCurrentUser();
   const { checkPagePermission } = usePermission();
 
   const [searchParams] = useSearchParams();
@@ -74,46 +63,54 @@ const DataSourceManagement: React.FC = () => {
 
   // #if [ee]
   const renderExtra = () => {
-    if (activeKey === DataSourceManagerSegmentedKey.SyncDataSource) {
-      return (
-        <EmptyBox if={isAdmin}>
-          <Link to={`/sync-data-source/create`}>
-            <BasicButton
+    return (
+      <>
+        <PermissionControl
+          permission={PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD}
+        >
+          <ActionButton
+            text={t('dmsSyncDataSource.syncTaskList.addSyncTask')}
+            type="primary"
+            icon={<PlusOutlined width={10} height={10} color="currentColor" />}
+            hidden={activeKey !== DataSourceManagerSegmentedKey.SyncDataSource}
+            actionType="navigate-link"
+            link={{ to: `/sync-data-source/create` }}
+          />
+        </PermissionControl>
+        <Space>
+          <PermissionControl
+            permission={
+              PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_IMPORT
+            }
+          >
+            <ActionButton
+              text={t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
+              hidden={
+                activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource
+              }
+              actionType="navigate-link"
+              link={{ to: `/global-data-source/batch-import` }}
+            />
+          </PermissionControl>
+          <PermissionControl
+            permission={PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.ADD}
+          >
+            <ActionButton
+              text={t('dmsGlobalDataSource.addDatabase')}
               type="primary"
               icon={
                 <PlusOutlined width={10} height={10} color="currentColor" />
               }
-            >
-              {t('dmsSyncDataSource.syncTaskList.addSyncTask')}
-            </BasicButton>
-          </Link>
-        </EmptyBox>
-      );
-    }
-
-    if (activeKey === DataSourceManagerSegmentedKey.GlobalDataSource) {
-      return (
-        <EmptyBox if={isAdmin || isCertainProjectManager}>
-          <Space>
-            <Link to={`/global-data-source/batch-import`}>
-              <BasicButton>
-                {t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
-              </BasicButton>
-            </Link>
-            <Link to={`/global-data-source/create`}>
-              <BasicButton
-                type="primary"
-                icon={
-                  <PlusOutlined width={10} height={10} color="currentColor" />
-                }
-              >
-                {t('dmsGlobalDataSource.addDatabase')}
-              </BasicButton>
-            </Link>
-          </Space>
-        </EmptyBox>
-      );
-    }
+              hidden={
+                activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource
+              }
+              actionType="navigate-link"
+              link={{ to: `/global-data-source/create` }}
+            />
+          </PermissionControl>
+        </Space>
+      </>
+    );
   };
   // #endif
 
