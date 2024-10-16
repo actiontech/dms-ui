@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Space, Typography } from 'antd';
 import {
-  ActionButton,
   EnterpriseFeatureDisplay,
   PageHeader,
   SegmentedTabs
@@ -13,8 +12,7 @@ import CustomRuleList from '../CustomRule/CustomRuleList';
 import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
 import { RuleManagerSegmentedKey } from './index.type';
 import useRuleManagerSegmented from './useRuleManagerSegmented';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
-import { LoginBoxOutlined, PlusOutlined } from '@actiontech/icons';
+import { RuleManagerPageHeaderActions } from './action';
 
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
@@ -29,47 +27,15 @@ const RuleManager: React.FC = () => {
   };
 
   const renderExtraButton = () => {
+    const pageHeaderActions = RuleManagerPageHeaderActions(activeKey);
     return (
       <>
         <Space>
-          <PermissionControl
-            permission={PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT}
-          >
-            <ActionButton
-              text={t('ruleTemplate.importRuleTemplate.button')}
-              hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
-              icon={<LoginBoxOutlined />}
-              actionType="navigate-link"
-              link={{ to: `/sqle/rule-manager/global-import` }}
-            />
-          </PermissionControl>
-          <PermissionControl
-            permission={PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CREATE}
-          >
-            <ActionButton
-              text={t('ruleTemplate.createRuleTemplate.button')}
-              hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
-              type="primary"
-              icon={
-                <PlusOutlined color="currentColor" width={10} height={10} />
-              }
-              actionType="navigate-link"
-              link={{ to: `/sqle/rule-manager/global-create` }}
-            />
-          </PermissionControl>
+          {pageHeaderActions['import_rule_template']}
+          {pageHeaderActions['create_rule_template']}
         </Space>
         {/* #if [ee] */}
-        <PermissionControl
-          permission={PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.CREATE}
-        >
-          <ActionButton
-            text={t('customRule.filterForm.add')}
-            hidden={activeKey !== RuleManagerSegmentedKey.CustomRule}
-            type="primary"
-            actionType="navigate-link"
-            link={{ to: `/sqle/rule-manager/custom-create` }}
-          />
-        </PermissionControl>
+        {pageHeaderActions['create_custom_rule']}
         {/* #endif */}
       </>
     );
