@@ -206,8 +206,6 @@ export default {
   },
 
   global: {
-    workflowExpiredHours:
-      'Automatic expiration time for completed work workflows',
     operationRecordExpiredHours: 'Operation record expiration time',
     cbOperationLogsExpiredHours:
       'Cb workstation operation audit expiration time',
