@@ -15,6 +15,7 @@ import Configuration from '@actiontech/shared/lib/api/base/service/Configuration
 import { LDAPFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ILDAPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const LDAPSetting = () => {
   const { t } = useTranslation();
@@ -190,21 +191,33 @@ const LDAPSetting = () => {
           data: ldapSetting ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <Space hidden={isConfigClosed || !extraButtonsVisible}>
-              <ConfigModifyBtn onClick={handleClickModify} />
-            </Space>
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_LDAP
+              }
+            >
+              <Space hidden={isConfigClosed || !extraButtonsVisible}>
+                <ConfigModifyBtn onClick={handleClickModify} />
+              </Space>
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_LDAP
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (

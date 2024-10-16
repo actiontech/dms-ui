@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { BasicButton, BasicToolTips } from '@actiontech/shared';
 import { EditFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 /**
  * @deprecated
@@ -11,11 +10,6 @@ import { useCurrentUser } from '@actiontech/shared/lib/global';
 const ConfigModifyBtn: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const { t } = useTranslation();
   const { baseTheme } = useThemeStyleData();
-  const { isAdmin } = useCurrentUser();
-
-  if (!isAdmin) {
-    return null;
-  }
 
   return (
     <BasicToolTips title={t('common.modify')} titleWidth={54}>

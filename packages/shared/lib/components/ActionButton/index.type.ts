@@ -1,7 +1,8 @@
-import { PopconfirmProps, SpaceProps, TooltipProps } from 'antd';
+import { PopconfirmProps, SpaceProps } from 'antd';
 import { IBasicButton } from '../BasicButton';
 import { LinkProps } from 'react-router-dom';
 import { Key, ReactNode } from 'react';
+import { IBasicToolTips } from '../BasicToolTips';
 
 type ActionButtonBase = Omit<IBasicButton, 'children'> & {
   text?: ReactNode;
@@ -23,7 +24,7 @@ type ActionBUttonWithConfirm = {
 
 type ActionButtonWithTooltip = {
   actionType: 'tooltip';
-  tooltip: TooltipProps;
+  tooltip: IBasicToolTips;
 };
 
 export type ActionButtonProps =

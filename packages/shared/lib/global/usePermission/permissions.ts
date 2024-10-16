@@ -49,6 +49,37 @@ export const PERMISSIONS = {
         TEST: 'action:test_db_service',
         TEST_IN_MORE_BUTTON: 'action:test_db_service_in_more_button',
         CREATE_AUDIT_PLAN: 'action:db_service_create_audit_plan'
+      },
+      SYSTEM: {
+        PUSH_NOTIFICATION: {
+          ENABLE_SMTP: 'action:enable_smtp',
+          ENABLE_WECHAT: 'action:enable_wechat',
+          ENABLE_LARK: 'action:enable_lark',
+          ENABLE_WEBHOOKS: 'action:enable_webhooks'
+        },
+        PROCESS_CONNECTION: {
+          ENABLE_DING_TALK: 'action:enable_ding_talk',
+          ENABLE_LARK_AUDIT: 'action:enable_lark_audit',
+          ENABLE_WECHAT_AUDIT: 'action:enable_wechat_audit'
+        },
+        LOGIN_CONNECTION: {
+          ENABLE_LDAP: 'action:enable_ldap',
+          ENABLE_OAUTH2: 'action:enable_oauth2'
+        },
+        GLOBAL_SETTING: {
+          OPERATION_LOG_EXPIRED_HOURS: 'action:operation_log_expired_hours',
+          CB_OPERATION_LOG_EXPIRED_HOURS:
+            'action:cb_operation_log_expired_hours',
+          URL_ADDRESS_PREFIX: 'action:url_address_prefix'
+        },
+        LICENSE: {
+          COLLECT_LICENSE: 'action:collect_license',
+          IMPORT_LICENSE: 'action:import_license'
+        },
+        PERSONALIZE_SETTING: {
+          PERSONALIZE_TITLE: 'action:personalize_title',
+          PERSONALIZE_LOGO: 'action:personalize_logo'
+        }
       }
     },
     SQLE: {

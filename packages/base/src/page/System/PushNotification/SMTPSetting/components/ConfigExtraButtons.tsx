@@ -1,7 +1,6 @@
 import { Form, message, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
-
 import { useForm } from 'antd/es/form/Form';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
@@ -9,7 +8,6 @@ import { BasicInput } from '@actiontech/shared';
 import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
@@ -45,7 +43,7 @@ const ConfigExtraButtons = ({
     toggleTestPopoverVisible(open);
   };
 
-  const test = async () => {
+  const handleTest = async () => {
     if (testTing.current) {
       return;
     }
@@ -95,7 +93,7 @@ const ConfigExtraButtons = ({
           onPopoverOpenChange={onTestPopoverOpen}
           popoverForm={
             <ConfigTestPopoverForm
-              handleTest={test}
+              handleTest={handleTest}
               handleCancel={() => toggleTestPopoverVisible(false)}
             >
               <Form form={testForm} colon={false} {...formItemLayout.fullLine}>
