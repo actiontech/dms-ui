@@ -12,6 +12,7 @@ import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { BasicTag, BasicToolTips } from '@actiontech/shared';
 import { Space } from 'antd';
+import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
@@ -82,6 +83,13 @@ export const ProjectListTableColumnFactory =
               )}
             </TableColumnWithIconStyleWrapper>
           );
+        }
+      },
+      {
+        dataIndex: 'project_priority',
+        title: () => t('dmsProject.projectForm.priority'),
+        render(priority) {
+          return priority ? ProjectPriorityDictionary[priority] : '-';
         }
       },
       {
