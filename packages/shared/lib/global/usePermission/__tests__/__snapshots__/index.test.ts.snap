@@ -1,0 +1,656 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`usePermission should match snapshot 1`] = `
+{
+  "ACTIONS": {
+    "BASE": {
+      "DB_SERVICE": {
+        "ADD": "action:add_db_service",
+        "BATCH_IMPORT": "action:batch_import_db_service",
+        "CREATE_AUDIT_PLAN": "action:db_service_create_audit_plan",
+        "DELETE": "action:delete_db_service",
+        "EDIT": "action:edit_db_service",
+        "TEST": "action:test_db_service",
+        "TEST_IN_MORE_BUTTON": "action:test_db_service_in_more_button",
+      },
+      "GLOBAL_DATA_SOURCE": {
+        "ADD": "action:add_global_db_service",
+        "BATCH_IMPORT": "action:batch_import_global_db_service",
+        "DELETE": "action:delete_global_db_service",
+        "EDIT": "action:edit_global_db_service",
+        "TEST_IN_MORE_BUTTON": "action:test_global_db_service_in_more_button",
+      },
+      "SYNC_DATA_SOURCE": {
+        "ADD": "action:add_task",
+        "DELETE": "action:delete_task",
+        "EDIT": "action:edit_task",
+        "SYNC": "action:sync_task",
+      },
+      "SYSTEM": {
+        "GLOBAL_SETTING": {
+          "CB_OPERATION_LOG_EXPIRED_HOURS": "action:cb_operation_log_expired_hours",
+          "OPERATION_LOG_EXPIRED_HOURS": "action:operation_log_expired_hours",
+          "URL_ADDRESS_PREFIX": "action:url_address_prefix",
+        },
+        "LICENSE": {
+          "COLLECT_LICENSE": "action:collect_license",
+          "IMPORT_LICENSE": "action:import_license",
+        },
+        "LOGIN_CONNECTION": {
+          "ENABLE_LDAP": "action:enable_ldap",
+          "ENABLE_OAUTH2": "action:enable_oauth2",
+        },
+        "PERSONALIZE_SETTING": {
+          "PERSONALIZE_LOGO": "action:personalize_logo",
+          "PERSONALIZE_TITLE": "action:personalize_title",
+        },
+        "PROCESS_CONNECTION": {
+          "ENABLE_DING_TALK": "action:enable_ding_talk",
+          "ENABLE_LARK_AUDIT": "action:enable_lark_audit",
+          "ENABLE_WECHAT_AUDIT": "action:enable_wechat_audit",
+        },
+        "PUSH_NOTIFICATION": {
+          "ENABLE_LARK": "action:enable_lark",
+          "ENABLE_SMTP": "action:enable_smtp",
+          "ENABLE_WEBHOOKS": "action:enable_webhooks",
+          "ENABLE_WECHAT": "action:enable_wechat",
+        },
+      },
+      "USER_CENTER": {
+        "ROLE": {
+          "ADD": "action:add_role",
+          "DELETE": "action:delete_role",
+          "EDIT": "action:edit_role",
+        },
+        "USER": {
+          "ADD": "action:add_user",
+          "DELETE": "action:delete_user",
+          "EDIT": "action:edit_user",
+        },
+      },
+    },
+    "SQLE": {
+      "CUSTOM_RULE": {
+        "CREATE": "action:create_custom_rule",
+        "DELETE": "action:delete_custom_rule",
+        "EDIT": "action:edit_custom_rule",
+      },
+      "GLOBAL_RULE_TEMPLATE": {
+        "CLONE": "action:clone_rule_template",
+        "CREATE": "action:create_rule_template",
+        "DELETE": "action:delete_rule_template",
+        "EDIT": "action:edit_rule_template",
+        "EXPORT": "action:export_rule_template",
+        "IMPORT": "action:import_rule_template",
+      },
+      "SQL_EXEC_WORKFLOW": {
+        "APPROVE": "action:approve_workflow",
+        "BATCH_EXEC": "action:batch_exec_workflow",
+        "BATCH_REJECT": "action:batch_reject_workflow",
+        "CANCEL_SCHEDULE_TIME_EXEC_TASK": "action:cancel_schedule_time_exec_task",
+        "CLONE": "action:clone_workflow",
+        "CLOSE": "action:close_workflow",
+        "CREATE": "action:create_workflow",
+        "EXEC_TASK": "action:exec_task",
+        "EXPORT": "action:export_workflow",
+        "MANUALLY_EXEC": "action:manually_exec_workflow",
+        "SCHEDULE_TIME_EXEC_TASK": "action:schedule_time_exec_task",
+        "TERMINATE_EXEC": "action:terminate_exec_workflow",
+        "TERMINATE_EXEC_TASK": "action:terminate_exec_task",
+      },
+    },
+  },
+  "PAGES": {
+    "BASE": {
+      "DATA_SOURCE_MANAGEMENT": "page:data_source_management",
+      "GLOBAL_DATA_SOURCE": "page:global_data_source",
+      "SYNC_DATA_SOURCE": "page:sync_data_source",
+      "SYSTEM_SETTING": "page:system_setting",
+      "USER_CENTER": "page:user_center",
+    },
+    "SQLE": {
+      "OPERATION_RECORD": "page:operation_record",
+      "REPORT_STATISTICS": "page:report_statistics",
+      "RULE_MANAGEMENT": "page:rule_management",
+      "SQL_OPTIMIZATION": "page:sql_optimization",
+    },
+  },
+}
+`;
+
+exports[`usePermission should match snapshot 2`] = `
+{
+  "action:add_db_service": {
+    "id": "action:add_db_service",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:add_global_db_service": {
+    "id": "action:add_global_db_service",
+    "role": [
+      "admin",
+      "globalManager",
+      "certainProjectManager",
+    ],
+    "type": "action",
+  },
+  "action:add_role": {
+    "id": "action:add_role",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:add_task": {
+    "id": "action:add_global_db_service",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:add_user": {
+    "id": "action:add_user",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:approve_workflow": {
+    "id": "action:approve_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:batch_exec_workflow": {
+    "id": "action:batch_exec_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:batch_import_db_service": {
+    "id": "action:batch_import_db_service",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:batch_import_global_db_service": {
+    "id": "action:batch_import_global_db_service",
+    "role": [
+      "admin",
+      "globalManager",
+      "certainProjectManager",
+    ],
+    "type": "action",
+  },
+  "action:batch_reject_workflow": {
+    "id": "action:batch_reject_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:cancel_schedule_time_exec_task": {
+    "id": "action:cancel_schedule_time_exec_task",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:cb_operation_log_expired_hours": {
+    "id": "action:cb_operation_log_expired_hours",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:clone_rule_template": {
+    "id": "action:clone_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:clone_workflow": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
+    "id": "action:clone_workflow",
+    "projectArchived": false,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:close_workflow": {
+    "id": "action:close_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:collect_license": {
+    "id": "action:collect_license",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:create_custom_rule": {
+    "id": "action:create_custom_rule",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:create_rule_template": {
+    "id": "action:create_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:create_workflow": {
+    "id": "action:create_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:db_service_create_audit_plan": {
+    "dbServicePermission": {
+      "fieldName": "uid",
+      "opType": "save_audit_plan",
+    },
+    "id": "action:db_service_create_audit_plan",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_custom_rule": {
+    "id": "action:delete_custom_rule",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_db_service": {
+    "id": "action:delete_db_service",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_global_db_service": {
+    "id": "action:delete_global_db_service",
+    "role": [
+      "admin",
+      "globalManager",
+      "certainProjectManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_role": {
+    "id": "action:delete_role",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_rule_template": {
+    "id": "action:delete_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_task": {
+    "id": "action:delete_task",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_user": {
+    "id": "action:delete_user",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_custom_rule": {
+    "id": "action:edit_custom_rule",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_db_service": {
+    "id": "action:edit_db_service",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_global_db_service": {
+    "id": "action:edit_global_db_service",
+    "role": [
+      "admin",
+      "globalManager",
+      "certainProjectManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_role": {
+    "id": "action:edit_role",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_rule_template": {
+    "id": "action:edit_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_task": {
+    "id": "action:edit_task",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_user": {
+    "id": "action:edit_user",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_ding_talk": {
+    "id": "action:enable_ding_talk",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_lark": {
+    "id": "action:enable_lark",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_lark_audit": {
+    "id": "action:enable_lark_audit",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_ldap": {
+    "id": "action:enable_ldap",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_oauth2": {
+    "id": "action:enable_oauth2",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_smtp": {
+    "id": "action:enable_smtp",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_webhooks": {
+    "id": "action:enable_webhooks",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_wechat": {
+    "id": "action:enable_wechat",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:enable_wechat_audit": {
+    "id": "action:enable_wechat_audit",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:exec_task": {
+    "id": "action:exec_task",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:export_rule_template": {
+    "id": "action:export_rule_template",
+    "type": "action",
+  },
+  "action:export_workflow": {
+    "id": "action:export_workflow",
+    "type": "action",
+  },
+  "action:import_license": {
+    "id": "action:import_license",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:import_rule_template": {
+    "id": "action:import_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:manually_exec_workflow": {
+    "id": "action:manually_exec_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:operation_log_expired_hours": {
+    "id": "action:operation_log_expired_hours",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:personalize_logo": {
+    "id": "action:personalize_logo",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:personalize_title": {
+    "id": "action:personalize_title",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:schedule_time_exec_task": {
+    "id": "action:schedule_time_exec_task",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:sync_task": {
+    "id": "action:sync_task",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:terminate_exec_task": {
+    "id": "action:terminate_exec_task",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:terminate_exec_workflow": {
+    "id": "action:terminate_exec_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:test_db_service": {
+    "id": "action:test_db_service",
+    "projectArchived": true,
+    "type": "action",
+  },
+  "action:test_db_service_in_more_button": {
+    "id": "action:test_db_service_in_more_button",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:test_global_db_service_in_more_button": {
+    "id": "action:test_global_db_service_in_more_button",
+    "type": "action",
+  },
+  "action:url_address_prefix": {
+    "id": "action:url_address_prefix",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "page:data_source_management": {
+    "id": "page:data_source_management",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+      "certainProjectManager",
+    ],
+    "type": "page",
+  },
+  "page:global_data_source": {
+    "id": "page:global_data_source",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+      "certainProjectManager",
+    ],
+    "type": "page",
+  },
+  "page:operation_record": {
+    "id": "page:operation_record",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+    ],
+    "type": "page",
+  },
+  "page:report_statistics": {
+    "id": "page:report_statistics",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+    ],
+    "type": "page",
+  },
+  "page:rule_management": {
+    "id": "page:rule_management",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+    ],
+    "type": "page",
+  },
+  "page:sql_optimization": {
+    "id": "page:sql_optimization",
+    "moduleSupport": [
+      "sqlOptimization",
+    ],
+    "type": "page",
+  },
+  "page:sync_data_source": {
+    "id": "page:sync_data_source",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+    ],
+    "type": "page",
+  },
+  "page:system_setting": {
+    "id": "page:system_setting",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+    ],
+    "type": "page",
+  },
+  "page:user_center": {
+    "id": "page:user_center",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+    ],
+    "type": "page",
+  },
+}
+`;
