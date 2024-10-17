@@ -3,7 +3,7 @@ import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { routePathCollection } from '@actiontech/shared/lib/data/routePathCollection';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -62,7 +62,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       1,
-      routePathCollection.SQLE.GLOBAL_DASHBOARD
+      ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD
     );
 
     fireEvent.click(actions[1]);
@@ -70,7 +70,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(2);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       2,
-      routePathCollection.SQLE.REPORT_STATISTICS
+      ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS
     );
 
     fireEvent.click(actions[2]);
@@ -78,7 +78,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(3);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       3,
-      routePathCollection.SQLE.RULE
+      ROUTE_PATH_COLLECTION.SQLE.RULE
     );
   });
 });

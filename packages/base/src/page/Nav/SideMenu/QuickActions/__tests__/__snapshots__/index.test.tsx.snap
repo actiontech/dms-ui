@@ -338,10 +338,6 @@ exports[`base/Nav/QuickActions render quick action when current user is not admi
       </div>
       <div
         class="ant-space-item"
-        style="margin-right: 8px;"
-      />
-      <div
-        class="ant-space-item"
       >
         <div
           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"

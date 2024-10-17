@@ -66,7 +66,7 @@ const GlobalSetting: React.FC<Props> = ({
     }
   ];
 
-  return (
+  return !menus.every((i) => i.hidden) ? (
     <ContextMenu
       popoverProps={{
         open,
@@ -86,7 +86,7 @@ const GlobalSetting: React.FC<Props> = ({
         />
       </div>
     </ContextMenu>
-  );
+  ) : null;
 };
 
 export default GlobalSetting;
