@@ -9,11 +9,12 @@ import { SupportLanguage } from '@actiontech/shared/lib/enum';
 describe('base/Nav/SideMenu/UserMenu', () => {
   const customRender = (
     isAdmin: boolean = true,
-    isCertainProjectManager = true
+    isCertainProjectManager = true,
+    hasGlobalViewingPermission = true
   ) => {
     return superRender(
       <UserMenu
-        hasGlobalViewingPermission
+        hasGlobalViewingPermission={hasGlobalViewingPermission}
         language={SupportLanguage.zhCN}
         isAdmin={isAdmin}
         username="Admin"
@@ -55,6 +56,11 @@ describe('base/Nav/SideMenu/UserMenu', () => {
     const iconAvatar = getBySelector('.custom-icon-global-system', baseElement);
     fireEvent.click(iconAvatar);
     await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when current is not admin or certain project manager and has not global view permission', () => {
+    const { baseElement } = customRender(false, false, false);
     expect(baseElement).toMatchSnapshot();
   });
 });
