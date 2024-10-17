@@ -1,8 +1,1028 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App render App when "driverInfoFetched" is equal false 1`] = `<div />`;
+exports[`App render App when "checkPageAction" is false 1`] = `
+<div>
+  <section
+    class="css-m36rcd"
+  >
+    <div
+      class="dms-layout-side css-13dah2i"
+    >
+      <div
+        class="dms-layout-side-start"
+      >
+        <div>
+          <div
+            class="title"
+          >
+            <span
+              class="label label-primary"
+            >
+              Action
+            </span>
+            <span
+              class="label label-base"
+            >
+              SQLE
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
+        >
+          <div>
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
+            >
+              <span
+                class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
+              >
+                <svg
+                  fill="currentColor"
+                  height="30"
+                  viewBox="0 0 24 30"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="0"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="8"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="16"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-spin-container ant-spin-blur"
+          >
+            <div
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
+              searchinputref="[object Object]"
+            >
+              <div
+                class="ant-select-selector"
+              >
+                <span
+                  class="ant-select-selection-search"
+                >
+                  <input
+                    aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                    aria-autocomplete="list"
+                    aria-controls="rc_select_TEST_OR_SSR_list"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="rc_select_TEST_OR_SSR_list"
+                    autocomplete="off"
+                    class="ant-select-selection-search-input"
+                    id="rc_select_TEST_OR_SSR"
+                    readonly=""
+                    role="combobox"
+                    style="opacity: 0;"
+                    type="search"
+                    unselectable="on"
+                    value=""
+                  />
+                </span>
+                <span
+                  class="ant-select-selection-placeholder"
+                >
+                  <span
+                    class="custom-select-placeholder css-qly0fu"
+                  >
+                    <span
+                      class="custom-select-placeholder-prefix"
+                    >
+                      <svg
+                        height="18"
+                        viewBox="0 0 18 18"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                          fill="#EBAD1C"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="custom-select-placeholder-value"
+                    >
+                      请选择{{name}}
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <span
+                aria-hidden="true"
+                class="ant-select-arrow"
+                style="user-select: none;"
+                unselectable="on"
+              >
+                <svg
+                  class="custom-icon-right-arrow-select-suffix"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m8.781 8-3.3-3.3.943-.943L10.667 8l-4.243 4.243-.943-.943z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <ul
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
+          data-menu-list="true"
+          role="menu"
+          tabindex="0"
+        />
+        <div
+          aria-hidden="true"
+          style="display: none;"
+        />
+      </div>
+      <div
+        class="dms-layout-side-end"
+      >
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
+        >
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
+          >
+            A
+          </span>
+        </span>
+        <div
+          class="global-system-icon-wrapper"
+        >
+          <svg
+            class="custom-icon-global-system"
+            color=""
+            fill="none"
+            height="18"
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M16.125 4.875 9 .75 1.875 4.875v8.25L9 17.25l7.125-4.125zM9 12.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5"
+              fill="#C3C6CD"
+              fill-rule="evenodd"
+            />
+            <path
+              d="M9 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"
+              fill="#8A8F99"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="dms-layout-content"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          用户引导
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+      <section
+        class="css-1wil037"
+      >
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
+          >
+            <span
+              class="step-icon css-u3jcp4"
+            >
+              <svg
+                color="#ffffff"
+                height="24"
+                viewBox="0 0 18 18"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            style="flex-basis: auto; min-width: 0;"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="inner-title-wrapper"
+              >
+                <div
+                  class="step-index"
+                >
+                  STEP1
+                </div>
+                <div
+                  class="step-title"
+                >
+                  数据源管理
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据源管理
+                </div>
+                <div
+                  class="desc"
+                >
+                  管理数据源相关操作
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          添加数据源
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  外部数据源
+                </div>
+                <div
+                  class="desc"
+                >
+                  管理外部数据源相关操作
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          新建同步任务
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
+          >
+            <span
+              class="step-icon css-u3jcp4"
+            >
+              <svg
+                color="#ffffff"
+                height="24"
+                viewBox="0 0 18 18"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            style="flex-basis: auto; min-width: 0;"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="inner-title-wrapper"
+              >
+                <div
+                  class="step-index"
+                >
+                  STEP2
+                </div>
+                <div
+                  class="step-title"
+                >
+                  成员与权限管理
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  成员与权限管理
+                </div>
+                <div
+                  class="desc"
+                >
+                  为项目添加成员/成员组，并配置相应的数据源操作权限
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看成员
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
+          >
+            <span
+              class="step-icon css-u3jcp4"
+            >
+              <svg
+                color="#ffffff"
+                height="24"
+                viewBox="0 0 18 18"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            style="flex-basis: auto; min-width: 0;"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="inner-title-wrapper"
+              >
+                <div
+                  class="step-index"
+                >
+                  STEP3
+                </div>
+                <div
+                  class="step-title"
+                >
+                  数据安全规则管理
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  审核管理
+                </div>
+                <div
+                  class="desc"
+                >
+                  查看平台支持的审核规则，并自定义审核规则模板，监察已生成的SQL，或使用SQL审核改善SQL质量
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看审核规则
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看规则模板
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                           查看SQL管控配置
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          新建SQL审核
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  审批流程
+                </div>
+                <div
+                  class="desc"
+                >
+                  根据实际业务流转变更流程模板
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          配置审批流程模板
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
+          >
+            <span
+              class="step-icon css-u3jcp4"
+            >
+              <svg
+                color="#ffffff"
+                fill="currentColor"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.833 1.5c-.736 0-1.333.597-1.333 1.333V3.5h13.667c.736 0 1.333.597 1.333 1.333v15.334q0 .172-.042.333h.709c.736 0 1.333-.597 1.333-1.333V2.833c0-.736-.597-1.333-1.333-1.333z"
+                />
+                <path
+                  clip-rule="evenodd"
+                  d="M3.833 3.5c-.736 0-1.333.597-1.333 1.333v16.334c0 .736.597 1.333 1.333 1.333h14.334c.736 0 1.333-.597 1.333-1.333V4.833c0-.736-.597-1.333-1.333-1.333zM7 9.667C7 9.298 7.298 9 7.667 9h6.666c.368 0 .667.298.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 10.333zm0 5c0-.368.298-.667.667-.667h3.666c.368 0 .667.299.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 15.333z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            style="flex-basis: auto; min-width: 0;"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="inner-title-wrapper"
+              >
+                <div
+                  class="step-index"
+                >
+                  STEP4
+                </div>
+                <div
+                  class="step-title"
+                >
+                  数据查询与变更
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  SQL窗口
+                </div>
+                <div
+                  class="desc"
+                >
+                  使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          进入SQL工作台
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据变更
+                </div>
+                <div
+                  class="desc"
+                >
+                  在线提起SQL变更申请，经由审批流程完成上线
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          发起SQL工单
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据导出
+                </div>
+                <div
+                  class="desc"
+                >
+                  发起数据导出工单，审核通过后获取数据集。
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          发起导出工单
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
+          >
+            <span
+              class="step-icon css-u3jcp4"
+            >
+              <svg
+                color="#ffffff"
+                fill="currentColor"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.33 3.271a3.5 3.5 0 0 1 4.472 4.474L20.647 18.59l-2.122 2.121L7.68 9.867a3.5 3.5 0 0 1-4.472-4.474L5.444 7.63a1.5 1.5 0 1 0 2.12-2.121L5.33 3.27zm10.367 1.884 3.182-1.768 1.414 1.414-1.768 3.182-1.768.354-2.12 2.121-1.415-1.414 2.12-2.121zm-7.071 7.778 2.12 2.122-4.95 4.95A1.5 1.5 0 0 1 3.58 17.99l.097-.107z"
+                />
+                <path
+                  d="m15.697 5.155 3.182-1.768 1.414 1.414-1.768 3.182-1.768.354-2.12 2.121-1.415-1.414 2.12-2.121zm-7.071 7.778 2.12 2.122-4.95 4.95A1.5 1.5 0 0 1 3.58 17.99l.097-.107z"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            style="flex-basis: auto; min-width: 0;"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="inner-title-wrapper"
+              >
+                <div
+                  class="step-index"
+                >
+                  STEP5
+                </div>
+                <div
+                  class="step-title"
+                >
+                  运维与审计
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  操作审计
+                </div>
+                <div
+                  class="desc"
+                >
+                  审计平台内用户操作
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          SQLE操作记录
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+`;
 
-exports[`App render App when "useInfoFetched" is equal false 1`] = `<div />`;
+exports[`App render App when "isDriverInfoFetched" is equal false 1`] = `<div />`;
+
+exports[`App render App when "isFeatureSupportFetched" is equal false 1`] = `<div />`;
+
+exports[`App render App when "isUserInfoFetched" is equal false 1`] = `<div />`;
 
 exports[`App render App when token is existed 1`] = `
 <div>
@@ -34,8 +1054,127 @@ exports[`App render App when token is existed 1`] = `
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
         >
+          <div>
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
+            >
+              <span
+                class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
+              >
+                <svg
+                  fill="currentColor"
+                  height="30"
+                  viewBox="0 0 24 30"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="0"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="8"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="16"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                </svg>
+              </span>
+            </div>
+          </div>
           <div
-            class="ant-spin-container"
+            class="ant-spin-container ant-spin-blur"
           >
             <div
               class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
@@ -1157,363 +2296,6 @@ exports[`App render App when token is not existed 1`] = `
           </button>
         </form>
       </div>
-    </div>
-  </section>
-</div>
-`;
-
-exports[`App render App when user role is not admin 1`] = `
-<div>
-  <section
-    class="css-m36rcd"
-  >
-    <div
-      class="dms-layout-side css-13dah2i"
-    >
-      <div
-        class="dms-layout-side-start"
-      >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              SQLE
-            </span>
-          </div>
-        </div>
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
-        >
-          <div
-            class="ant-spin-container"
-          >
-            <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
-              searchinputref="[object Object]"
-            >
-              <div
-                class="ant-select-selector"
-              >
-                <span
-                  class="ant-select-selection-search"
-                >
-                  <input
-                    aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
-                    aria-autocomplete="list"
-                    aria-controls="rc_select_TEST_OR_SSR_list"
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-owns="rc_select_TEST_OR_SSR_list"
-                    autocomplete="off"
-                    class="ant-select-selection-search-input"
-                    id="rc_select_TEST_OR_SSR"
-                    readonly=""
-                    role="combobox"
-                    style="opacity: 0;"
-                    type="search"
-                    unselectable="on"
-                    value=""
-                  />
-                </span>
-                <span
-                  class="ant-select-selection-placeholder"
-                >
-                  <span
-                    class="custom-select-placeholder css-qly0fu"
-                  >
-                    <span
-                      class="custom-select-placeholder-prefix"
-                    >
-                      <svg
-                        height="18"
-                        viewBox="0 0 18 18"
-                        width="18"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
-                          fill="#EBAD1C"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="custom-select-placeholder-value"
-                    >
-                      请选择{{name}}
-                    </span>
-                  </span>
-                </span>
-              </div>
-              <span
-                aria-hidden="true"
-                class="ant-select-arrow"
-                style="user-select: none;"
-                unselectable="on"
-              >
-                <svg
-                  class="custom-icon-right-arrow-select-suffix"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m8.781 8-3.3-3.3.943-.943L10.667 8l-4.243 4.243-.943-.943z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-        <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
-          data-menu-list="true"
-          role="menu"
-          tabindex="0"
-        />
-        <div
-          aria-hidden="true"
-          style="display: none;"
-        />
-      </div>
-      <div
-        class="dms-layout-side-end"
-      >
-        <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
-        >
-          <span
-            class="ant-avatar-string"
-            style="transform: scale(1) translateX(-50%);"
-          >
-            A
-          </span>
-        </span>
-        <div
-          class="global-system-icon-wrapper"
-        >
-          <svg
-            class="custom-icon-global-system"
-            color=""
-            fill="none"
-            height="18"
-            viewBox="0 0 18 18"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M16.125 4.875 9 .75 1.875 4.875v8.25L9 17.25l7.125-4.125zM9 12.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5"
-              fill="#C3C6CD"
-              fill-rule="evenodd"
-            />
-            <path
-              d="M9 11.25a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5"
-              fill="#8A8F99"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="dms-layout-content"
-    >
-      <div
-        class="actiontech-page-header-namespace css-1xspr0w"
-      >
-        <div
-          class="title"
-        >
-          用户引导
-        </div>
-        <div
-          class="extra"
-        />
-      </div>
-      <section
-        class="css-1wil037"
-      >
-        <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
-        >
-          <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
-            style="flex: 0 0 40px; min-width: 0;"
-          >
-            <span
-              class="step-icon css-u3jcp4"
-            >
-              <svg
-                color="#ffffff"
-                fill="currentColor"
-                height="24"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.833 1.5c-.736 0-1.333.597-1.333 1.333V3.5h13.667c.736 0 1.333.597 1.333 1.333v15.334q0 .172-.042.333h.709c.736 0 1.333-.597 1.333-1.333V2.833c0-.736-.597-1.333-1.333-1.333z"
-                />
-                <path
-                  clip-rule="evenodd"
-                  d="M3.833 3.5c-.736 0-1.333.597-1.333 1.333v16.334c0 .736.597 1.333 1.333 1.333h14.334c.736 0 1.333-.597 1.333-1.333V4.833c0-.736-.597-1.333-1.333-1.333zM7 9.667C7 9.298 7.298 9 7.667 9h6.666c.368 0 .667.298.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 10.333zm0 5c0-.368.298-.667.667-.667h3.666c.368 0 .667.299.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 15.333z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
-            style="flex-basis: auto; min-width: 0;"
-          >
-            <div
-              class="title-wrapper"
-            >
-              <div
-                class="inner-title-wrapper"
-              >
-                <div
-                  class="step-index"
-                >
-                  STEP1
-                </div>
-                <div
-                  class="step-title"
-                >
-                  数据查询与变更
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
-            >
-              <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
-              >
-                <div
-                  class="sub-title"
-                >
-                  SQL窗口
-                </div>
-                <div
-                  class="desc"
-                >
-                  使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
-                </div>
-                <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
-                  style="flex-wrap: wrap; margin-bottom: -8px;"
-                >
-                  <div
-                    class="ant-space-item"
-                    style="padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          进入SQL工作台
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
-              >
-                <div
-                  class="sub-title"
-                >
-                  数据变更
-                </div>
-                <div
-                  class="desc"
-                >
-                  在线提起SQL变更申请，经由审批流程完成上线
-                </div>
-                <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
-                  style="flex-wrap: wrap; margin-bottom: -8px;"
-                >
-                  <div
-                    class="ant-space-item"
-                    style="padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          发起SQL工单
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
-              >
-                <div
-                  class="sub-title"
-                >
-                  数据导出
-                </div>
-                <div
-                  class="desc"
-                >
-                  发起数据导出工单，审核通过后获取数据集。
-                </div>
-                <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
-                  style="flex-wrap: wrap; margin-bottom: -8px;"
-                >
-                  <div
-                    class="ant-space-item"
-                    style="padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          发起导出工单
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   </section>
 </div>

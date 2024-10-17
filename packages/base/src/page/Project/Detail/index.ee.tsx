@@ -7,11 +7,14 @@ import { Outlet } from 'react-router-dom';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundRecentlyProject from './NotFoundRecentlyProject';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useDispatch } from 'react-redux';
+import { updateUserOperationPermissions } from '../../../store/permission';
 
 const EEIndexProjectDetail: React.FC = () => {
   const { projectID: nextProjectID, projectName: nextProjectName } =
     useCurrentProject();
-
+  const dispatch = useDispatch();
   const { userId } = useCurrentUser();
 
   const { currentProjectID, updateRecentlyProject } =
@@ -40,9 +43,13 @@ const EEIndexProjectDetail: React.FC = () => {
 
   useEffect(() => {
     if (nextProjectID) {
-      fetchUserPermissions(nextProjectID, userId);
+      fetchUserPermissions(nextProjectID, userId).then((response) => {
+        if (response.data.code === ResponseCode.SUCCESS) {
+          dispatch(updateUserOperationPermissions(response.data.data));
+        }
+      });
     }
-  }, [fetchUserPermissions, nextProjectID, userId]);
+  }, [dispatch, fetchUserPermissions, nextProjectID, userId]);
 
   return <>{renderProjectDetail()}</>;
 };
