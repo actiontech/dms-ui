@@ -1,4 +1,3 @@
-import { BasicButton } from '@actiontech/shared';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IExportWorkflowV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -7,7 +6,7 @@ import { useBoolean } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ExportWorkflowButtonProps } from './index.type';
-import { DownArrowLineOutlined } from '@actiontech/icons';
+import { SqlExecWorkflowExportAction } from '../../action';
 
 const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   tableFilterInfo,
@@ -72,13 +71,7 @@ const ExportWorkflowButton: React.FC<ExportWorkflowButtonProps> = ({
   return (
     <>
       {messageContextHolder}
-      <BasicButton
-        onClick={exportWorkflow}
-        disabled={exportButtonDisabled}
-        icon={<DownArrowLineOutlined />}
-      >
-        {t('execWorkflow.list.exportWorkflow.buttonText')}
-      </BasicButton>
+      {SqlExecWorkflowExportAction(exportWorkflow, exportButtonDisabled)}
     </>
   );
 };

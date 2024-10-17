@@ -39,7 +39,7 @@ const usePermission = () => {
   const checkDbServicePermission = useCallback(
     (
       opPermissionType: OpPermissionItemOpPermissionTypeEnum,
-      serviceID?: string
+      dbServiceId?: string
     ) => {
       if (userOperationPermissions) {
         const { is_admin, op_permission_list } = userOperationPermissions;
@@ -59,8 +59,9 @@ const usePermission = () => {
           if (
             permission.range_type ===
               OpPermissionItemRangeTypeEnum.db_service &&
-            serviceID &&
-            permission.range_uids?.includes(serviceID) &&
+            (dbServiceId
+              ? permission.range_uids?.includes(dbServiceId)
+              : permission.range_uids?.length) &&
             permission.op_permission_type === opPermissionType
           ) {
             return true;
@@ -137,7 +138,9 @@ const usePermission = () => {
           hasRoleOrManagerPermission ||
           checkDbServicePermission(
             opType,
-            (record as Record<string, string>)?.[fieldName]
+            fieldName
+              ? (record as Record<string, string>)?.[fieldName]
+              : undefined
           )
         );
       }
