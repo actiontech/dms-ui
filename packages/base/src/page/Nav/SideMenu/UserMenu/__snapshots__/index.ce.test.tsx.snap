@@ -300,46 +300,6 @@ exports[`base/Nav/SideMenu/UserMenu render snap when click system icon 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M2 8h2.667v6H2zm9.333-2.667H14V14h-2.667zm-4.666-4h2.666V14H6.667z"
-                      fill="#C3C6CD"
-                    />
-                  </svg>
-                  <div
-                    class="content-item-text"
-                  >
-                    报表统计
-                  </div>
-                </div>
-                <div
-                  class="content-item"
-                >
-                  <svg
-                    height="16"
-                    viewBox="0 0 18 19"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                      fill="#C3C6CD"
-                    />
-                  </svg>
-                  <div
-                    class="content-item-text"
-                  >
-                    查看规则
-                  </div>
-                </div>
-                <div
-                  class="content-item"
-                >
-                  <svg
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
                       d="M13.333 1.333c.368 0 .667.299.667.667v2.505l-6 6-.003 2.825 2.83.004L14 10.16V14a.667.667 0 0 1-.667.667H2.667A.667.667 0 0 1 2 14V2c0-.368.299-.667.667-.667zm1.186 4.539.942.943L10.276 12l-.944-.001.001-.942zM8 8H4.667v1.333H8zm2-2.667H4.667v1.334H10z"
                       fill="#C3C6CD"
                     />
