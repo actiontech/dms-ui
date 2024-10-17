@@ -1,15 +1,14 @@
 import useOverviewActions from '../hooks/useOverviewActions';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import ScheduleTimeModal from './ScheduleTimeModal';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
-import {
-  auditResultOverviewActions,
-  auditResultOverviewColumn
-} from './column';
+import { auditResultOverviewColumn } from './column';
 import { WorkflowOverviewListProps } from './index.type';
+import { AuditResultOverviewListAction } from './action';
 
 const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
   workflowInfo,
@@ -21,7 +20,8 @@ const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
   overviewTableErrorMessage
 }) => {
   const { username } = useCurrentUser();
-  const { projectArchive, projectName } = useCurrentProject();
+  const { projectName } = useCurrentProject();
+  const { parse2TableActionPermissions } = usePermission();
   const {
     contextHolder,
     scheduleModalVisible,
@@ -55,18 +55,16 @@ const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
         errorMessage={overviewTableErrorMessage}
         dataSource={overviewList?.list}
         pagination={false}
-        actions={
-          !projectArchive
-            ? auditResultOverviewActions({
-                scheduleTimeHandle,
-                sqlExecuteHandle,
-                sqlTerminateHandle,
-                openScheduleModalAndSetCurrentTask,
-                currentUsername: username,
-                workflowStatus: workflowInfo?.record?.status
-              })
-            : undefined
-        }
+        actions={parse2TableActionPermissions(
+          AuditResultOverviewListAction({
+            scheduleTimeHandle,
+            sqlExecuteHandle,
+            sqlTerminateHandle,
+            openScheduleModalAndSetCurrentTask,
+            currentUsername: username,
+            workflowStatus: workflowInfo?.record?.status
+          })
+        )}
         onRow={(record) => {
           return {
             onClick: () => {

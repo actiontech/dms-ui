@@ -10,7 +10,7 @@ export type PermissionDetail = {
   projectManager?: boolean;
   projectArchived?: boolean;
   dbServicePermission?: {
-    fieldName: string;
+    fieldName?: string;
     opType: OpPermissionItemOpPermissionTypeEnum;
   };
 };
@@ -356,5 +356,76 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_LOGO,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  // SQL 工单
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXPORT,
+    type: 'action'
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLOSE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLOSE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLONE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLONE,
+    type: 'action',
+    projectArchived: false,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_REJECT,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.APPROVE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC_TASK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC_TASK,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXEC_TASK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.EXEC_TASK,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.SCHEDULE_TIME_EXEC_TASK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.SCHEDULE_TIME_EXEC_TASK,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CANCEL_SCHEDULE_TIME_EXEC_TASK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW
+      .CANCEL_SCHEDULE_TIME_EXEC_TASK,
+    type: 'action',
+    projectArchived: false
   }
 } as const;
