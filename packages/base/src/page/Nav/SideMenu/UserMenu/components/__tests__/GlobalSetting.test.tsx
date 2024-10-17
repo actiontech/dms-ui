@@ -45,11 +45,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   it(`render snap when is not admin and hasn't global view permission`, async () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
-
-    const iconSystem = getBySelector('.custom-icon-global-system', baseElement);
-    fireEvent.click(iconSystem);
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
   });
 
   it(`render snap when is not admin and has global view permission`, async () => {

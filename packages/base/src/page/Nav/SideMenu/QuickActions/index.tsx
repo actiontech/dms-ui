@@ -4,11 +4,19 @@ import {
   ProfileSquareFilled
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTips, EmptyBox } from '@actiontech/shared';
+import { BasicToolTips } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { routePathCollection } from '@actiontech/shared/lib/data/routePathCollection';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
+
+type QuickActionItemType = {
+  key: string;
+  title: React.ReactNode;
+  path: string;
+  icon: React.ReactNode;
+  hidden: boolean;
+};
 
 const QuickActions: React.FC<{
   isAdmin: boolean;
@@ -18,35 +26,50 @@ const QuickActions: React.FC<{
 
   const navigate = useNavigate();
 
+  const actionItems: Array<QuickActionItemType> = useMemo(() => {
+    return [
+      {
+        key: 'global-dashboard',
+        title: t('dmsMenu.quickActions.globalDashboard'),
+        path: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD,
+        icon: <TodoListOutlined width={18} height={18} />,
+        hidden: false
+      },
+      {
+        key: 'report-statistics',
+        title: t('dmsMenu.globalSettings.reportStatistics'),
+        path: ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS,
+        icon: <SignalFilled width={18} height={18} />,
+        // todo 权限重构代码合并后需要进行调整
+        hidden: !isAdmin && !hasGlobalViewingPermission
+      },
+      {
+        key: 'view-rule',
+        title: t('dmsMenu.globalSettings.viewRule'),
+        path: ROUTE_PATH_COLLECTION.SQLE.RULE,
+        icon: <ProfileSquareFilled width={18} height={18} />,
+        hidden: false
+      }
+    ];
+  }, [t, hasGlobalViewingPermission, isAdmin]);
+
   return (
     <QuickActionsStyleWrapper>
-      <BasicToolTips title={t('dmsMenu.quickActions.globalDashboard')}>
-        <div
-          className="action-item"
-          onClick={() => navigate(routePathCollection.SQLE.GLOBAL_DASHBOARD)}
-        >
-          <TodoListOutlined width={18} height={18} />
-        </div>
-      </BasicToolTips>
-      <EmptyBox if={isAdmin || hasGlobalViewingPermission}>
-        <BasicToolTips title={t('dmsMenu.globalSettings.reportStatistics')}>
-          <div
-            className="action-item"
-            onClick={() => navigate(routePathCollection.SQLE.REPORT_STATISTICS)}
-          >
-            <SignalFilled width={18} height={18} />
-          </div>
-        </BasicToolTips>
-      </EmptyBox>
-
-      <BasicToolTips title={t('dmsMenu.globalSettings.viewRule')}>
-        <div
-          className="action-item"
-          onClick={() => navigate(routePathCollection.SQLE.RULE)}
-        >
-          <ProfileSquareFilled width={18} height={18} />
-        </div>
-      </BasicToolTips>
+      {actionItems.map((action) => {
+        if (!action.hidden) {
+          return (
+            <BasicToolTips key={action.key} title={action.title}>
+              <div
+                className="action-item"
+                onClick={() => navigate(action.path)}
+              >
+                {action.icon}
+              </div>
+            </BasicToolTips>
+          );
+        }
+        return null;
+      })}
     </QuickActionsStyleWrapper>
   );
 };
