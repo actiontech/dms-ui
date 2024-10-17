@@ -7,8 +7,6 @@ import {
   UserShieldFilled,
   CenterCircleHexagonFilled,
   DatabaseFilled,
-  ProfileSquareFilled,
-  SignalFilled,
   ProfileEditFilled
 } from '@actiontech/icons';
 import { ContextMenuItem } from './ContextMenu/index.type';
@@ -51,19 +49,6 @@ const GlobalSetting: React.FC<Props> = ({
         !isAdmin && !isCertainProjectManager && !hasGlobalViewingPermission
     },
     // #if [sqle]
-    {
-      key: 'report-statistics',
-      icon: <SignalFilled />,
-      text: t('dmsMenu.globalSettings.reportStatistics'),
-      onClick: () => handleClickItem('/sqle/report-statistics'),
-      hidden: !isAdmin && !hasGlobalViewingPermission
-    },
-    {
-      key: 'viewRule',
-      icon: <ProfileSquareFilled />,
-      text: t('dmsMenu.globalSettings.viewRule'),
-      onClick: () => handleClickItem(`/sqle/rule`)
-    },
     {
       key: 'rule-manager',
       icon: <ProfileEditFilled />,

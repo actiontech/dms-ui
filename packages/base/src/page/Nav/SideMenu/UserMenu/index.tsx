@@ -4,6 +4,7 @@ import GlobalSetting from './components/GlobalSetting';
 import { UserMenuProps } from './index.type';
 import CompanyNoticeModal from './Modal/CompanyNoticeModal';
 import VersionModal from './Modal/VersionModal';
+import { EmptyBox } from '@actiontech/shared';
 
 const UserMenu: React.FC<UserMenuProps> = ({
   language,
@@ -25,11 +26,15 @@ const UserMenu: React.FC<UserMenuProps> = ({
           username={username}
           onOpenVersionModal={setVersionModalOpen}
         />
-        <GlobalSetting
-          isAdmin={isAdmin}
-          isCertainProjectManager={isCertainProjectManager}
-          hasGlobalViewingPermission={hasGlobalViewingPermission}
-        />
+        <EmptyBox
+          if={isAdmin || isCertainProjectManager || hasGlobalViewingPermission}
+        >
+          <GlobalSetting
+            isAdmin={isAdmin}
+            isCertainProjectManager={isCertainProjectManager}
+            hasGlobalViewingPermission={hasGlobalViewingPermission}
+          />
+        </EmptyBox>
       </div>
       <VersionModal
         open={versionModalOpen}
