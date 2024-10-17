@@ -95,6 +95,21 @@ export const PERMISSIONS = {
         CREATE: 'action:create_custom_rule',
         EDIT: 'action:edit_custom_rule',
         DELETE: 'action:delete_custom_rule'
+      },
+      SQL_EXEC_WORKFLOW: {
+        EXPORT: 'action:export_workflow',
+        CREATE: 'action:create_workflow',
+        CLOSE: 'action:close_workflow',
+        CLONE: 'action:clone_workflow',
+        BATCH_REJECT: 'action:batch_reject_workflow',
+        APPROVE: 'action:approve_workflow',
+        BATCH_EXEC: 'action:batch_exec_workflow',
+        MANUALLY_EXEC: 'action:manually_exec_workflow',
+        TERMINATE_EXEC: 'action:terminate_exec_workflow',
+        TERMINATE_EXEC_TASK: 'action:terminate_exec_task',
+        EXEC_TASK: 'action:exec_task',
+        SCHEDULE_TIME_EXEC_TASK: 'action:schedule_time_exec_task',
+        CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task'
       }
     }
   }
