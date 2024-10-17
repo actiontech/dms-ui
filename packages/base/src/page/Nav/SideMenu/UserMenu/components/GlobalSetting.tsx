@@ -66,7 +66,7 @@ const GlobalSetting: React.FC<Props> = ({
     }
   ];
 
-  return !menus.every((i) => i.hidden) ? (
+  return menus.some((i) => !i.hidden) ? (
     <ContextMenu
       popoverProps={{
         open,
