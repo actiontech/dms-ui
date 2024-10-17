@@ -7,7 +7,8 @@ import {
   userGroupList,
   opPermissionList,
   roleList,
-  memberTips
+  memberTips,
+  userOpPermissionMockData
 } from './data';
 import UserGroup from '@actiontech/shared/lib/api/base/service/UserGroup';
 import User from '@actiontech/shared/lib/api/base/service/User';
@@ -167,6 +168,14 @@ class MockUserCenterApi implements MockSpyApy {
   public updateCurrentUser() {
     const spy = jest.spyOn(User, 'UpdateCurrentUser');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getUserOpPermission() {
+    const spy = jest.spyOn(User, 'GetUserOpPermission');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ userOpPermissionMockData })
+    );
     return spy;
   }
 }
