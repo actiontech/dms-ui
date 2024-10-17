@@ -10,6 +10,7 @@ import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import MenuList from './MenuList';
 import { FlagFilled } from '@actiontech/icons';
+import QuickActions from './QuickActions';
 
 const CESideMenu = () => {
   const {
@@ -27,7 +28,12 @@ const CESideMenu = () => {
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
         <ProjectTitle />
-
+        {/* #if [sqle] */}
+        <QuickActions
+          isAdmin={isAdmin}
+          hasGlobalViewingPermission={hasGlobalViewingPermission}
+        />
+        {/* #endif */}
         <CEModeProjectWrapperStyleWrapper>
           <FlagFilled width={18} height={18} className="project-flag-icon" />
           <Typography.Text className="default-project-name">

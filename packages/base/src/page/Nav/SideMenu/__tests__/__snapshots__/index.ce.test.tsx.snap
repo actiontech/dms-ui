@@ -25,6 +25,98 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
         </div>
       </div>
       <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-y245jy"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="action-item"
+              >
+                <svg
+                  class="TodoListOutlined_svg__icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="action-item"
+              >
+                <svg
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 8h2.667v6H2zm9.333-2.667H14V14h-2.667zm-4.666-4h2.666V14H6.667z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="action-item"
+              >
+                <svg
+                  height="18"
+                  viewBox="0 0 18 19"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
         class="css-2f3ey2"
       >
         <svg
