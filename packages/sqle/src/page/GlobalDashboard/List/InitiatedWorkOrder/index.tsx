@@ -49,7 +49,6 @@ const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_audit,
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_execution,
           getGlobalWorkflowsV1FilterStatusListEnum.rejected,
-          getGlobalWorkflowsV1FilterStatusListEnum.canceled,
           getGlobalWorkflowsV1FilterStatusListEnum.exec_failed
         ]
       };

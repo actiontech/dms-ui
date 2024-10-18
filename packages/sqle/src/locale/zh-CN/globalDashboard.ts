@@ -16,7 +16,9 @@ export default {
       project: '所属项目',
       projectPriority: '项目优先级',
       detail: '详情'
-    }
+    },
+    ceTips:
+      '待处理SQL面板将整合SQL管控中被识别为问题的SQL，如您需要集中追踪问题SQL解决进度，可以在待处理SQL面板中进行全局访问。'
   },
   initiatedWorkOrder: '发起的工单',
   filter: {
