@@ -66,7 +66,7 @@ describe('test useActionButtonState', () => {
 
   beforeEach(() => {
     mockUseCurrentUser({
-      uid: '700200'
+      userId: '700200'
     });
     mockUseExportDetailAction();
     mockUseDataExportDetailReduxManage();
@@ -100,7 +100,7 @@ describe('test useActionButtonState', () => {
 
   it('render current user is not in workflow assignee user list', () => {
     mockUseCurrentUser({
-      uid: '7002001'
+      userId: '7002001'
     });
 
     const { result } = renderHook(() => useActionButtonState(messageApiSpy));
@@ -111,7 +111,7 @@ describe('test useActionButtonState', () => {
 
   it('render current user is not workflow creator', () => {
     mockUseCurrentUser({
-      uid: '7002001'
+      userId: '7002001'
     });
     const { result } = renderHook(() => useActionButtonState(messageApiSpy));
     expect(result.current.executeExportButtonMeta.hidden).toBeTruthy();

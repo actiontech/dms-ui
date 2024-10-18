@@ -13,7 +13,19 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
       </div>
       <div
         class="extra"
-      />
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
     </div>
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
@@ -195,7 +207,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -641,7 +653,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -1242,7 +1254,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -2234,7 +2246,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -2832,7 +2844,19 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
       </div>
       <div
         class="extra"
-      />
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
     </div>
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
@@ -2989,7 +3013,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col
-                      style="width: 82px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -3236,22 +3260,14 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  测试数据源连通性
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              测试数据源连通性
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -3325,22 +3341,14 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  测试数据源连通性
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              测试数据源连通性
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -3733,7 +3741,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -4563,7 +4571,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -5393,7 +5401,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -6230,7 +6238,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -7042,7 +7050,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -7463,7 +7471,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead
@@ -7884,7 +7892,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead

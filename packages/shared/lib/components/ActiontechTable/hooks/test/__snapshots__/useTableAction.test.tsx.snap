@@ -1,118 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click confirm 1`] = `
-<Space>
-  <EmptyBox
-    if={true}
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+    data-testid="test-button"
+    type="button"
   >
-    <BasicButton
-      block={true}
-      className="actiontech-table-actions-button"
-      confirm={[Function]}
-      size="middle"
-    >
-      <span>
-        删除
-      </span>
-    </BasicButton>
-  </EmptyBox>
-</Space>
+    <span>
+      删 除
+    </span>
+  </button>
+</div>
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click fn 1`] = `
-<Space>
-  <EmptyBox
-    if={true}
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button test-btn-click basic-button-wrapper css-geipcv"
+    data-testid="test-button"
+    type="button"
   >
-    <BasicButton
-      block={true}
-      className="actiontech-table-actions-button test-btn-click"
-      onClick={[MockFunction]}
-      size="middle"
-    >
-      <span>
-        增加
-      </span>
-    </BasicButton>
-  </EmptyBox>
-</Space>
+    <span>
+      增 加
+    </span>
+  </button>
+</div>
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn is disabled 1`] = `
-<Space>
-  <EmptyBox
-    if={true}
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+    data-testid="add"
+    disabled=""
+    type="button"
   >
-    <BasicButton
-      block={true}
-      className="actiontech-table-actions-button"
-      disabled={true}
-      size="middle"
+    <span>
+      增 加
+    </span>
+  </button>
+</div>
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn when action type is "navigate-link" 1`] = `
+<div>
+  <a
+    href="/home"
+  >
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button test-btn-click basic-button-wrapper css-geipcv"
+      data-testid="test-button"
+      type="button"
     >
       <span>
-        增加
+        编 辑
       </span>
-    </BasicButton>
-  </EmptyBox>
-</Space>
+    </button>
+  </a>
+</div>
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render use renderAction 1`] = `
-<Space>
-  <EmptyBox
-    if={true}
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
   >
-    <BasicButton
-      block={true}
-      className="actiontech-table-actions-button"
-      size="middle"
+    <div
+      class="ant-space-item"
+      style="margin-right: 8px;"
     >
-      <span>
-        增加
-      </span>
-    </BasicButton>
-  </EmptyBox>
-  <EmptyBox
-    if={true}
-  >
-    <Popconfirm
-      cancelText="取消"
-      okText="确认"
-      onConfirm={[MockFunction]}
-      title={
-        <Styled(span)>
-          删除确认
-        </Styled(span)>
-      }
-    >
-      <BasicButton
-        className="actiontech-table-actions-button"
-        danger={true}
-        size="small"
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button basic-button-wrapper css-geipcv"
+        data-testid="add"
+        type="button"
       >
         <span>
-          删除
+          增 加
         </span>
-      </BasicButton>
-    </Popconfirm>
-  </EmptyBox>
-</Space>
+      </button>
+    </div>
+    <div
+      class="ant-space-item"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+        data-testid="delete"
+        type="button"
+      >
+        <span>
+          删 除
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
 `;
-
-exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render action when actions is empty 1`] = `undefined`;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render button & moreButtons 1`] = `
-{
-  "className": "actiontech-table-actions-column",
-  "dataIndex": "operator",
-  "fixed": "right",
-  "render": [Function],
-  "title": [Function],
-  "width": 122,
-}
+<div>
+  <div
+    class="css-new95e"
+  >
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        增 加
+      </span>
+    </button>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span
+        class="ant-btn-icon"
+      >
+        <svg
+          color="currentColor"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
 `;
-
-exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons | moreButtons is empty 1`] = `undefined`;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons 1`] = `
 {
@@ -121,66 +142,145 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render bu
   "fixed": "right",
   "render": [Function],
   "title": [Function],
-  "width": 122,
+  "width": 246,
 }
+`;
+
+exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render buttons 2`] = `
+<div>
+  <div
+    class="css-new95e"
+  >
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          data-testid="add"
+          type="button"
+        >
+          <span>
+            增 加
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          data-testid="delete"
+          type="button"
+        >
+          <span>
+            删 除
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render moreButtons 1`] = `
-{
-  "className": "actiontech-table-actions-column",
-  "dataIndex": "operator",
-  "fixed": "right",
-  "render": [Function],
-  "title": [Function],
-  "width": 40,
-}
+<div>
+  <div
+    class="css-new95e"
+  >
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span>
+            编 辑
+          </span>
+        </button>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span>
+            删 除
+          </span>
+        </button>
+      </div>
+    </div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span
+        class="ant-btn-icon"
+      >
+        <svg
+          color="currentColor"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render moreButtons when it is a function 1`] = `
-{
-  "className": "actiontech-table-actions-column",
-  "dataIndex": "operator",
-  "fixed": "right",
-  "render": [Function],
-  "title": [Function],
-  "width": 122,
-}
-`;
-
-exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render moreButtons when it is a function 2`] = `
-<Styled(div)
-  onClick={[Function]}
->
-  <Space>
-    <EmptyBox
-      if={true}
+<div>
+  <div
+    class="css-new95e"
+  >
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+      type="button"
     >
-      <BasicButton
-        className="actiontech-table-actions-button"
-        size="small"
+      <span>
+        增 加
+      </span>
+    </button>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span
+        class="ant-btn-icon"
       >
-        <span>
-          增加
-        </span>
-      </BasicButton>
-    </EmptyBox>
-  </Space>
-  <MoreButtons
-    moreButtons={
-      [
-        {
-          "icon": <React.Fragment />,
-          "key": "delete-btn2",
-          "onClick": [Function],
-          "text": <span>
-            函数moreButtons
-          </span>,
-        },
-      ]
-    }
-    record={{}}
-  />
-</Styled(div)>
+        <svg
+          color="currentColor"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
 `;
 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render normal columns 1`] = `
