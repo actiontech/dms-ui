@@ -68,6 +68,11 @@ describe('test base/page/project/modal/add', () => {
       target: { value: 'desc' }
     });
 
+    fireEvent.mouseDown(getBySelector('#priority'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="高"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(getBySelector('#isFixedBusiness'));
     expect(screen.queryByText('添加业务')).not.toBeInTheDocument();
 
@@ -83,7 +88,8 @@ describe('test base/page/project/modal/add', () => {
         name: 'name',
         desc: 'desc',
         is_fixed_business: false,
-        business: undefined
+        business: undefined,
+        project_priority: 'high'
       }
     });
 
@@ -118,6 +124,10 @@ describe('test base/page/project/modal/add', () => {
     fireEvent.input(screen.getByLabelText('项目描述'), {
       target: { value: 'desc' }
     });
+    fireEvent.mouseDown(getBySelector('#priority'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="中"]'));
+    await act(async () => jest.advanceTimersByTime(0));
 
     expect(screen.getByText('添加业务')).toBeInTheDocument();
 
@@ -151,7 +161,8 @@ describe('test base/page/project/modal/add', () => {
         name: 'name',
         desc: 'desc',
         is_fixed_business: true,
-        business: ['test']
+        business: ['test'],
+        project_priority: 'medium'
       }
     });
 

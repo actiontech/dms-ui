@@ -5,6 +5,7 @@ import {
   UserDevopsStepButtonItem,
   UserDevopsStepChildren
 } from '../../index.type';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 
 export const getAuditManageStep: (
   arg: DevopsStepsProps
@@ -25,7 +26,9 @@ export const getAuditManageStep: (
         ),
         action: () => {
           if (projectID) {
-            navigate(`/sqle/rule?${RuleUrlParamKey.projectID}=${projectID}`);
+            navigate(
+              `${ROUTE_PATH_COLLECTION.SQLE.RULE}?${RuleUrlParamKey.projectID}=${projectID}`
+            );
           } else {
             setOpenRulePageProjectSelectorModal?.(true);
           }
