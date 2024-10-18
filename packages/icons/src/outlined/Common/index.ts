@@ -21,5 +21,6 @@ export { default as RefreshOutlined } from './RefreshOutlined';
 export { default as RingOutlined } from './RingOutlined';
 export { default as SearchOutlined } from './SearchOutlined';
 export { default as SettingOutlined } from './SettingOutlined';
+export { default as TodoListOutlined } from './TodoListOutlined';
 export { default as UploadCloudOutlined } from './UploadCloudOutlined';
 export { default as UtilOutlined } from './UtilOutlined';

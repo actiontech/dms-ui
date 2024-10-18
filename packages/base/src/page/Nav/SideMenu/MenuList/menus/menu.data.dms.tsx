@@ -41,7 +41,6 @@ export const dmsSideMenuData = (
 
   const menuStruct: MenuStructTreeType = [
     'project-overview',
-    'dashboard',
     { type: 'divider' },
     // #if [ce]
     {
