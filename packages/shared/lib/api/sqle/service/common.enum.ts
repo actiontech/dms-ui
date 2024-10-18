@@ -240,6 +240,24 @@ export enum HighPriorityConditionTypeEnum {
   'password' = 'password'
 }
 
+export enum GlobalSqlManageProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
+export enum GlobalSqlManageStatusEnum {
+  'unhandled' = 'unhandled',
+
+  'solved' = 'solved',
+
+  'ignored' = 'ignored',
+
+  'manual_audited' = 'manual_audited'
+}
+
 export enum HighPriorityConditionReqOperatorEnum {
   '>' = '>',
 

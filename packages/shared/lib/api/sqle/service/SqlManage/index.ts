@@ -16,6 +16,8 @@ import {
   IGetSqlManageRuleTipsReturn,
   IGetSqlManageSqlAnalysisV1Params,
   IGetSqlManageSqlAnalysisV1Return,
+  IGetGlobalSqlManageListParams,
+  IGetGlobalSqlManageListReturn,
   IGetSqlManageListV2Params,
   IGetSqlManageListV2Return
 } from './index.d';
@@ -94,6 +96,18 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageSqlAnalysisV1Return>(
       `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/sql_analysis`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetGlobalSqlManageList(
+    params: IGetGlobalSqlManageListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalSqlManageListReturn>(
+      '/v1/sql_manages',
       paramsData,
       options
     );
