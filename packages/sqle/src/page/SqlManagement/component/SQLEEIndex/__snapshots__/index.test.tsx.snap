@@ -531,23 +531,9 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                   />
                 </span>
                 <span
-                  class="ant-select-selection-placeholder"
-                >
-                  <span
-                    class="custom-select-placeholder css-qly0fu"
-                  >
-                    <span
-                      class="custom-select-placeholder-prefix"
-                    >
-                      数据源
-                    </span>
-                    <span
-                      class="custom-select-placeholder-value"
-                    >
-                      请选择{{name}}
-                    </span>
-                  </span>
-                </span>
+                  class="ant-select-selection-item"
+                  title=""
+                />
               </div>
               <span
                 aria-hidden="true"
@@ -555,6 +541,24 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 style="user-select: none;"
                 unselectable="on"
               />
+              <span
+                aria-hidden="true"
+                class="ant-select-clear"
+                style="user-select: none;"
+                unselectable="on"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
           <div
@@ -589,23 +593,9 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                   />
                 </span>
                 <span
-                  class="ant-select-selection-placeholder"
-                >
-                  <span
-                    class="custom-select-placeholder css-qly0fu"
-                  >
-                    <span
-                      class="custom-select-placeholder-prefix"
-                    >
-                      来源
-                    </span>
-                    <span
-                      class="custom-select-placeholder-value"
-                    >
-                      请选择{{name}}
-                    </span>
-                  </span>
-                </span>
+                  class="ant-select-selection-item"
+                  title=""
+                />
               </div>
               <span
                 aria-hidden="true"
@@ -613,6 +603,24 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 style="user-select: none;"
                 unselectable="on"
               />
+              <span
+                aria-hidden="true"
+                class="ant-select-clear"
+                style="user-select: none;"
+                unselectable="on"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
           <div
