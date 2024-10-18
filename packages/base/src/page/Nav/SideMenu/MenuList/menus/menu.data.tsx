@@ -21,7 +21,6 @@ export const sideMenuData = (
   // todo: 下一期需求周期把此问题给产品抛出 希望解决此问题
   const menuStruct: MenuStructTreeType = [
     'project-overview',
-    'dashboard',
     { type: 'divider' },
     // #if [ce]
     {

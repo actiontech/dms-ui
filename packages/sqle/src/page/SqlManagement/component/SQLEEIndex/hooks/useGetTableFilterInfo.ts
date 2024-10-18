@@ -9,9 +9,16 @@ import useInstance from '../../../../../hooks/useInstance';
 import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
+import { useSearchParams } from 'react-router-dom';
+import {
+  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
+  SQL_MANAGEMENT_SOURCE_PATH_KEY
+} from '../../../../../data/common';
 
 const useGetTableFilterInfo = () => {
   const { projectName } = useCurrentProject();
+
+  const [searchParams] = useSearchParams();
 
   const { generateAuditLevelSelectOptions } = useStaticStatus();
 
@@ -55,11 +62,19 @@ const useGetTableFilterInfo = () => {
       ],
       [
         'filter_instance_id',
-        { options: instanceIDOptions, loading: getInstanceLoading }
+        {
+          options: instanceIDOptions,
+          loading: getInstanceLoading,
+          defaultValue: searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY)
+        }
       ],
       [
         'filter_source',
-        { options: generateSourceSelectOptions, loading: getSourceTipsLoading }
+        {
+          options: generateSourceSelectOptions,
+          loading: getSourceTipsLoading,
+          defaultValue: searchParams.get(SQL_MANAGEMENT_SOURCE_PATH_KEY)
+        }
       ],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
       ['time', { showTime: true }],
@@ -81,7 +96,8 @@ const useGetTableFilterInfo = () => {
     getSourceTipsLoading,
     generateAuditLevelSelectOptions,
     generateRuleTipsSelectOptions,
-    getRuleTipsLoading
+    getRuleTipsLoading,
+    searchParams
   ]);
 
   return {
