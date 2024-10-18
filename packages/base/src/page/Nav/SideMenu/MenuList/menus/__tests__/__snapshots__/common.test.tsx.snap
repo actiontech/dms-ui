@@ -9,7 +9,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `[]`;
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 [
   null,
-  null,
   {
     "type": "divider",
   },
@@ -99,7 +98,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
 [
-  null,
   null,
   {
     "type": "divider",
@@ -203,7 +201,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
     </Link>,
     "structKey": "project-overview",
   },
-  null,
   {
     "type": "divider",
   },
@@ -493,7 +490,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
     </Link>,
     "structKey": "project-overview",
   },
-  null,
   {
     "type": "divider",
   },
