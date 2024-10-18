@@ -6,7 +6,7 @@ import {
 import { QuickActionsStyleWrapper } from '../style';
 import { BasicToolTips } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 import classNames from 'classnames';
@@ -28,8 +28,6 @@ const QuickActions: React.FC<{
   const navigate = useNavigate();
 
   const location = useLocation();
-
-  const [currentPath, setCurrentPath] = useState<string>();
 
   const actionItems: Array<QuickActionItemType> = useMemo(() => {
     return [
@@ -60,10 +58,6 @@ const QuickActions: React.FC<{
     ];
   }, [t, hasGlobalViewingPermission, isAdmin]);
 
-  useEffect(() => {
-    setCurrentPath(location.pathname);
-  }, [location]);
-
   return (
     <QuickActionsStyleWrapper>
       {actionItems.map((action) => {
@@ -72,7 +66,7 @@ const QuickActions: React.FC<{
             <BasicToolTips key={action.key} title={action.title}>
               <div
                 className={classNames('action-item', {
-                  'action-item-active': currentPath === action.path
+                  'action-item-active': location.pathname === action.path
                 })}
                 onClick={() => navigate(action.path)}
               >

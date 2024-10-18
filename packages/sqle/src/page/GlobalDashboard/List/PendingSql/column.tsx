@@ -146,7 +146,7 @@ export const PendingSqlListAction: (
   return {
     buttons: [
       {
-        key: 'edit-button',
+        key: 'check-detail-button',
         text: t('globalDashboard.pendingSql.column.detail'),
         buttonProps: (record) => ({
           onClick: () => onCheckDetail(record)
