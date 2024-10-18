@@ -252,62 +252,6 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </li>
           <li
-            class="ant-menu-item menu-todo-list-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/dashboard"
-            role="menuitem"
-            structkey="dashboard"
-            style="padding-left: 24px;"
-            tabindex="-1"
-          >
-            <svg
-              class="ant-menu-item-icon"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.75 15.75a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1zm-7.5-6a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1z"
-                fill="#C3C6CD"
-              />
-              <path
-                d="M3.25 15.75a1 1 0 0 1-1-1v-2.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1zm6.5-12.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"
-                fill="#8A8F99"
-              />
-            </svg>
-            <span
-              class="ant-menu-title-content"
-            >
-              <a
-                href="/sqle/project//dashboard"
-              >
-                待关注清单
-              </a>
-              <svg
-                fill="none"
-                height="14"
-                viewBox="0 0 14 12"
-                width="14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="6"
-                  cy="6"
-                  fill="#F66074"
-                  r="2.5"
-                />
-                <circle
-                  cx="6"
-                  cy="6"
-                  r="4"
-                  stroke="#F66074"
-                  stroke-opacity="0.2"
-                  stroke-width="3"
-                />
-              </svg>
-            </span>
-          </li>
-          <li
             class="ant-menu-item-divider"
           />
           <li
@@ -2653,62 +2597,6 @@ exports[`App render App when user role is not admin 1`] = `
               >
                 项目概览
               </a>
-            </span>
-          </li>
-          <li
-            class="ant-menu-item menu-todo-list-item"
-            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/dashboard"
-            role="menuitem"
-            structkey="dashboard"
-            style="padding-left: 24px;"
-            tabindex="-1"
-          >
-            <svg
-              class="ant-menu-item-icon"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.75 15.75a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1zm-7.5-6a1 1 0 0 1-1-1v-5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5.5a1 1 0 0 1-1 1z"
-                fill="#C3C6CD"
-              />
-              <path
-                d="M3.25 15.75a1 1 0 0 1-1-1v-2.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1zm6.5-12.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"
-                fill="#8A8F99"
-              />
-            </svg>
-            <span
-              class="ant-menu-title-content"
-            >
-              <a
-                href="/sqle/project//dashboard"
-              >
-                待关注清单
-              </a>
-              <svg
-                fill="none"
-                height="14"
-                viewBox="0 0 14 12"
-                width="14"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="6"
-                  cy="6"
-                  fill="#F66074"
-                  r="2.5"
-                />
-                <circle
-                  cx="6"
-                  cy="6"
-                  r="4"
-                  stroke="#F66074"
-                  stroke-opacity="0.2"
-                  stroke-width="3"
-                />
-              </svg>
             </span>
           </li>
           <li
