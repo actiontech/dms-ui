@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
@@ -8,16 +8,20 @@ import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathColl
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn()
+    useNavigate: jest.fn(),
+    useLocation: jest.fn()
   };
 });
 
 describe('base/Nav/QuickActions', () => {
   const navigateSpy = jest.fn();
-
+  const useLocationMock: jest.Mock = useLocation as jest.Mock;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
+    useLocationMock.mockReturnValue({
+      pathname: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD
+    });
   });
 
   afterEach(() => {
@@ -38,6 +42,9 @@ describe('base/Nav/QuickActions', () => {
   it('render quick action when current user is admin', () => {
     const { baseElement } = customRender(true, false);
     expect(baseElement).toMatchSnapshot();
+    expect(getAllBySelector('.action-item')[0]).toHaveClass(
+      'action-item action-item-active'
+    );
   });
 
   it('render quick action when current user has global view permission', () => {

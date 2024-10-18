@@ -1,8 +1,7 @@
 import {
   IAuditTaskResV1,
   IGetWorkflowTasksItemV2,
-  IWorkflowResV2,
-  IWorkflowDetailResV1
+  IWorkflowResV2
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   AuditTaskResV1AuditLevelEnum,

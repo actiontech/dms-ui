@@ -203,26 +203,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
     </Link>,
     "structKey": "project-overview",
   },
-  {
-    "className": "menu-todo-list-item",
-    "icon": <MenuFilled
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/dashboard",
-    "label": <React.Fragment>
-      <Link
-        to="/sqle/project/600300/dashboard"
-      >
-        待关注清单
-      </Link>
-      <RingOutlined
-        height={14}
-        width={14}
-      />
-    </React.Fragment>,
-    "structKey": "dashboard",
-  },
+  null,
   {
     "type": "divider",
   },
@@ -512,26 +493,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
     </Link>,
     "structKey": "project-overview",
   },
-  {
-    "className": "menu-todo-list-item",
-    "icon": <MenuFilled
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/dashboard",
-    "label": <React.Fragment>
-      <Link
-        to="/sqle/project/600300/dashboard"
-      >
-        待关注清单
-      </Link>
-      <RingOutlined
-        height={14}
-        width={14}
-      />
-    </React.Fragment>,
-    "structKey": "dashboard",
-  },
+  null,
   {
     "type": "divider",
   },
