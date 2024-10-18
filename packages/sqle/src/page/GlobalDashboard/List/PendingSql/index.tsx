@@ -1,101 +1,27 @@
-import React, { useEffect, useCallback } from 'react';
-import eventEmitter from '../../../../utils/EventEmitter';
-import EmitterKey from '../../../../data/EmitterKey';
-import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { useRequest } from 'ahooks';
-import {
-  ActiontechTable,
-  useTableRequestError,
-  useTableRequestParams
-} from '@actiontech/shared/lib/components/ActiontechTable';
-import { IGetGlobalSqlManageListParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
-import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { GetGlobalSqlManageListFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-import { PendingSqlListColumn, PendingSqlListAction } from './column';
+import { useTranslation } from 'react-i18next';
+import { EnterpriseFeatureDisplay } from '@actiontech/shared';
+import { Typography } from 'antd';
+import PendingSqlList from './PendingSqlList';
 import { GlobalDashboardListProps } from '../../index.type';
-import { useNavigate } from 'react-router-dom';
-import {
-  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
-  SQL_MANAGEMENT_SOURCE_PATH_KEY
-} from '../../../../data/common';
-import { PendingSqlTableStyleWrapper } from '../../style';
+import React from 'react';
 
-const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
-  filterValues,
-  updateFilterValue
-}) => {
-  const navigate = useNavigate();
-
-  const { pagination, tableChange } = useTableRequestParams<IGlobalSqlManage>();
-
-  const { requestErrorMessage, handleTableRequestError } =
-    useTableRequestError();
-
-  const {
-    data: sqlManageList,
-    loading,
-    refresh
-  } = useRequest(
-    () => {
-      const params: IGetGlobalSqlManageListParams = {
-        page_index: pagination.page_index,
-        page_size: pagination.page_size,
-        filter_instance_id: filterValues.instanceId,
-        filter_project_priority:
-          filterValues.projectPriority as unknown as GetGlobalSqlManageListFilterProjectPriorityEnum,
-        filter_project_uid: filterValues.projectId
-      };
-
-      return handleTableRequestError(sqlManage.GetGlobalSqlManageList(params));
-    },
-    {
-      refreshDeps: [pagination, filterValues]
-    }
-  );
-
-  const onUpdateFilterValue = useCallback(
-    (projectId?: string, instanceId?: string) => {
-      updateFilterValue('projectId', projectId);
-      updateFilterValue('instanceId', instanceId);
-    },
-    [updateFilterValue]
-  );
-
-  const onCheckDetail = (record?: IGlobalSqlManage) => {
-    // todo 确定理由参数如何format后需要进行调整
-    navigate(
-      `/sqle/project/${record?.project_uid}/sql-management?${SQL_MANAGEMENT_SOURCE_PATH_KEY}=${record?.source?.sql_source_type}&${SQL_MANAGEMENT_INSTANCE_PATH_KEY}=${record?.instance_id}`
-    );
-  };
-
-  useEffect(() => {
-    const { unsubscribe } = eventEmitter.subscribe(
-      EmitterKey.Refresh_Global_Dashboard_Pending_Sql,
-      refresh
-    );
-
-    return unsubscribe;
-  });
+const PendingSql: React.FC<GlobalDashboardListProps> = (props) => {
+  const { t } = useTranslation();
 
   return (
-    <PendingSqlTableStyleWrapper>
-      <ActiontechTable
-        className="table-row-cursor"
-        dataSource={sqlManageList?.list}
-        rowKey={(record: IGlobalSqlManage) => {
-          return `${record?.id}`;
-        }}
-        pagination={{
-          total: sqlManageList?.total ?? 0
-        }}
-        columns={PendingSqlListColumn(onUpdateFilterValue)}
-        actions={PendingSqlListAction(onCheckDetail)}
-        loading={loading}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-      />
-    </PendingSqlTableStyleWrapper>
+    <>
+      <EnterpriseFeatureDisplay
+        featureName={t('globalDashboard.pendingSql.title')}
+        eeFeatureDescription={
+          <Typography.Paragraph className="paragraph">
+            {t('globalDashboard.pendingSql.ceTips')}
+          </Typography.Paragraph>
+        }
+      >
+        <PendingSqlList {...props} />
+      </EnterpriseFeatureDisplay>
+    </>
   );
 };
 
-export default PendingSqlList;
+export default PendingSql;
