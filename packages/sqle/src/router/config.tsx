@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -210,6 +211,8 @@ const PipelineConfigurationUpdate = React.lazy(
 );
 
 const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
+
+const GlobalDashboard = React.lazy(() => import('../page/GlobalDashboard'));
 
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
@@ -499,14 +502,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 
 export const globalRouterConfig: RouterConfigItem[] = [
   {
-    path: 'sqle/report-statistics',
+    path: ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS,
     label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
     role: [SystemRole.admin, SystemRole.globalViewing]
   },
   {
-    path: 'sqle/rule',
+    path: ROUTE_PATH_COLLECTION.SQLE.RULE,
     label: 'menu.rule',
     element: <Rule />,
     key: 'rule'
@@ -558,6 +561,11 @@ export const globalRouterConfig: RouterConfigItem[] = [
     path: 'sqle/rule/knowledge/:ruleName/:dbType',
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
-  }
+  },
   // #endif
+  {
+    path: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD,
+    key: 'globalDashboard',
+    element: <GlobalDashboard />
+  }
 ];

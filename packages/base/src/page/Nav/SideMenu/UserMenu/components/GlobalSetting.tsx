@@ -7,8 +7,6 @@ import {
   UserShieldFilled,
   CenterCircleHexagonFilled,
   DatabaseFilled,
-  ProfileSquareFilled,
-  SignalFilled,
   ProfileEditFilled
 } from '@actiontech/icons';
 import { ContextMenuItem } from './ContextMenu/index.type';
@@ -52,19 +50,6 @@ const GlobalSetting: React.FC<Props> = ({
     },
     // #if [sqle]
     {
-      key: 'report-statistics',
-      icon: <SignalFilled />,
-      text: t('dmsMenu.globalSettings.reportStatistics'),
-      onClick: () => handleClickItem('/sqle/report-statistics'),
-      hidden: !isAdmin && !hasGlobalViewingPermission
-    },
-    {
-      key: 'viewRule',
-      icon: <ProfileSquareFilled />,
-      text: t('dmsMenu.globalSettings.viewRule'),
-      onClick: () => handleClickItem(`/sqle/rule`)
-    },
-    {
       key: 'rule-manager',
       icon: <ProfileEditFilled />,
       text: t('dmsMenu.globalSettings.ruleManage'),
@@ -81,7 +66,7 @@ const GlobalSetting: React.FC<Props> = ({
     }
   ];
 
-  return (
+  return menus.some((i) => !i.hidden) ? (
     <ContextMenu
       popoverProps={{
         open,
@@ -101,7 +86,7 @@ const GlobalSetting: React.FC<Props> = ({
         />
       </div>
     </ContextMenu>
-  );
+  ) : null;
 };
 
 export default GlobalSetting;

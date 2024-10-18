@@ -6,6 +6,7 @@ import {
   ListDataExportWorkflowStatusEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
+  ListProjectProjectPriorityEnum,
   ListRoleStatEnum,
   ListUserAuthenticationTypeEnum,
   ListUserStatEnum,
@@ -14,8 +15,10 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   OperationOperationTypeEnum,
+  ProjectProjectPriorityEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
   TestFeishuConfigurationAccountTypeEnum,
+  UpdateProjectProjectPriorityEnum,
   WorkflowRecordStatusEnum,
   WorkflowStepStateEnum
 } from './common.enum';
@@ -880,6 +883,10 @@ export interface IGetWebHookConfigurationReplyItem {
   url?: string;
 }
 
+export interface II18nStr {
+  [key: string]: string;
+}
+
 export interface IIPluginDBService {
   Business?: string;
 
@@ -1393,6 +1400,8 @@ export interface IListProject {
 
   name?: string;
 
+  project_priority?: ListProjectProjectPriorityEnum;
+
   uid?: string;
 }
 
@@ -1521,9 +1530,9 @@ export interface IMemberRoleWithOpRange {
 }
 
 export interface INotification {
-  notification_body?: string;
+  notification_body?: II18nStr;
 
-  notification_subject?: string;
+  notification_subject?: II18nStr;
 
   user_uids?: string[];
 }
@@ -1646,6 +1655,8 @@ export interface IProject {
   is_fixed_business?: boolean;
 
   name?: string;
+
+  project_priority?: ProjectProjectPriorityEnum;
 }
 
 export interface IProjectTips {
@@ -1946,6 +1957,8 @@ export interface IUpdateProject {
   desc?: string;
 
   is_fixed_business?: boolean;
+
+  project_priority?: UpdateProjectProjectPriorityEnum;
 }
 
 export interface IUpdateProjectReq {

@@ -7,7 +7,6 @@ import sqleMenusCollection from '../sqle';
 
 const menuStruct: MenuStructTreeType = [
   'project-overview',
-  'dashboard',
   { type: 'divider' },
   {
     type: 'group',

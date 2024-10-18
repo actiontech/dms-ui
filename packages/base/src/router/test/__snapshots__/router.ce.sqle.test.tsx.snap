@@ -570,14 +570,14 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       reportStatistics
     </div>,
     "key": "reportStatistics",
-    "path": "sqle/report-statistics",
+    "path": "/sqle/report-statistics",
   },
   {
     "element": <div>
       rule
     </div>,
     "key": "rule",
-    "path": "sqle/rule",
+    "path": "/sqle/rule",
   },
   {
     "children": [
@@ -637,6 +637,13 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       "admin",
       "globalViewing",
     ],
+  },
+  {
+    "element": <div>
+      globalDashboard
+    </div>,
+    "key": "globalDashboard",
+    "path": "/sqle/global-dashboard",
   },
   {
     "children": [

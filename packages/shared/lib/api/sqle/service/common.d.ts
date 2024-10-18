@@ -23,6 +23,8 @@ import {
   FilterMetaFilterOpTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
   HighPriorityConditionTypeEnum,
+  GlobalSqlManageProjectPriorityEnum,
+  GlobalSqlManageStatusEnum,
   HighPriorityConditionReqOperatorEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
@@ -1124,6 +1126,16 @@ export interface IGetFeishuAuditConfigurationResV1 {
   message?: string;
 }
 
+export interface IGetGlobalSqlManageListResp {
+  code?: number;
+
+  data?: IGlobalSqlManage[];
+
+  message?: string;
+
+  total_num?: number;
+}
+
 export interface IGetInstanceAuditPlanDetailResV1 {
   code?: number;
 
@@ -1762,6 +1774,32 @@ export interface IHighPriorityCondition {
   value?: string;
 }
 
+export interface IGlobalSqlManage {
+  audit_result?: IAuditResult[];
+
+  first_appear_timestamp?: string;
+
+  id?: number;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  problem_descriptions?: string[];
+
+  project_name?: string;
+
+  project_priority?: GlobalSqlManageProjectPriorityEnum;
+
+  project_uid?: string;
+
+  source?: ISource;
+
+  sql?: string;
+
+  status?: GlobalSqlManageStatusEnum;
+}
+
 export interface IHighPriorityConditionReq {
   key?: string;
 
@@ -1856,6 +1894,12 @@ export interface IInstanceForCreatingTask {
   instance_name?: string;
 
   instance_schema?: string;
+}
+
+export interface IInstanceInfo {
+  instance_id?: number;
+
+  instance_name?: string;
 }
 
 export interface IInstanceSchemaResV1 {
@@ -2997,7 +3041,13 @@ export interface IWorkflowDetailResV1 {
 
   desc?: string;
 
+  instance_info?: IInstanceInfo[];
+
   project_name?: string;
+
+  project_priority?: string;
+
+  project_uid?: string;
 
   sql_version_name?: string[];
 
