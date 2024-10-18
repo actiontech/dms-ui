@@ -15,7 +15,9 @@ import {
   WorkflowStepResV1TypeEnum,
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum,
-  AssociatedStageWorkflowsStatusEnum
+  AssociatedStageWorkflowsStatusEnum,
+  WorkflowDetailResV1StatusEnum,
+  WorkflowDetailResV1CurrentStepTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const WorkflowListData = [
@@ -421,3 +423,65 @@ export const workflowsDetailExecutingData = {
     ]
   }
 };
+
+export const mockGlobalWorkflowListData = [
+  {
+    project_uid: '700300',
+    project_name: 'default',
+    project_priority: 'high',
+    workflow_name: 'dms-ui_20241016043751',
+    workflow_id: '1846470650022072320',
+    desc: '',
+    create_user_name: '700200',
+    create_time: '2024-10-16T16:38:03.438+08:00',
+    current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
+    current_step_assignee_user_name_list: [
+      '1843911856977088512',
+      '1844656757964541952',
+      '700200'
+    ],
+    status: WorkflowDetailResV1StatusEnum.wait_for_audit,
+    instance_info: [
+      {
+        instance_id: '1739531854064652288',
+        instance_name: 'mysql-1'
+      },
+      {
+        instance_id: '1739531942258282496',
+        instance_name: 'mysql-2'
+      }
+    ]
+  },
+  {
+    project_uid: '700300',
+    project_name: 'default',
+    project_priority: 'high',
+    workflow_name: 'mysql-1_20241016050733',
+    workflow_id: '1846478104923475968',
+    desc: '',
+    create_user_name: '1846476851174707200',
+    create_time: '2024-10-16T17:07:40.821+08:00',
+    current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
+    current_step_assignee_user_name_list: ['1843911856977088512', '700200'],
+    status: WorkflowDetailResV1StatusEnum.wait_for_audit,
+    instance_info: [
+      {
+        instance_id: '1739531854064652288',
+        instance_name: 'mysql-1'
+      }
+    ]
+  },
+  {
+    project_uid: '700300',
+    project_name: 'default',
+    project_priority: 'high',
+    workflow_name: 'mysql-1_20241016045354',
+    workflow_id: '1846474683185106944',
+    desc: '',
+    create_user_name: '700200',
+    create_time: '2024-10-16T16:54:05.006+08:00',
+    current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
+    current_step_assignee_user_name_list: ['700200'],
+    status: WorkflowDetailResV1StatusEnum.wait_for_audit
+  }
+];

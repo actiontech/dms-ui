@@ -9,7 +9,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `[]`;
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 [
   null,
-  null,
   {
     "type": "divider",
   },
@@ -99,7 +98,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
 [
-  null,
   null,
   {
     "type": "divider",
@@ -202,26 +200,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       项目概览
     </Link>,
     "structKey": "project-overview",
-  },
-  {
-    "className": "menu-todo-list-item",
-    "icon": <MenuFilled
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/dashboard",
-    "label": <React.Fragment>
-      <Link
-        to="/sqle/project/600300/dashboard"
-      >
-        待关注清单
-      </Link>
-      <RingOutlined
-        height={14}
-        width={14}
-      />
-    </React.Fragment>,
-    "structKey": "dashboard",
   },
   {
     "type": "divider",
@@ -511,26 +489,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       项目概览
     </Link>,
     "structKey": "project-overview",
-  },
-  {
-    "className": "menu-todo-list-item",
-    "icon": <MenuFilled
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/dashboard",
-    "label": <React.Fragment>
-      <Link
-        to="/sqle/project/600300/dashboard"
-      >
-        待关注清单
-      </Link>
-      <RingOutlined
-        height={14}
-        width={14}
-      />
-    </React.Fragment>,
-    "structKey": "dashboard",
   },
   {
     "type": "divider",

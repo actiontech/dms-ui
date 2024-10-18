@@ -52,9 +52,18 @@ import useSqlManagementExceptionRedux from '../../../SqlManagementException/hook
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import { SqlManagementTableStyleWrapper } from './style';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useSearchParams } from 'react-router-dom';
+import {
+  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
+  SQL_MANAGEMENT_SOURCE_PATH_KEY
+} from '../../../../data/common';
+import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
+
+  const [searchParams] = useSearchParams();
+
   const [messageApi, messageContextHolder] = message.useMessage();
   // api
   const { projectID, projectName, projectArchive } = useCurrentProject();
@@ -405,6 +414,23 @@ const SQLEEIndex = () => {
     () => (polling ? false : getListLoading),
     [polling, getListLoading]
   );
+
+  useEffect(() => {
+    if (
+      !!searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY) &&
+      !!searchParams.get(SQL_MANAGEMENT_SOURCE_PATH_KEY)
+    ) {
+      updateAllSelectedFilterItem(true);
+      updateTableFilterInfo({
+        filter_source: searchParams.get(
+          SQL_MANAGEMENT_SOURCE_PATH_KEY
+        ) as GetSqlManageListV2FilterSourceEnum,
+        filter_instance_id:
+          searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY) ?? ''
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Spin spinning={loading} delay={300}>
