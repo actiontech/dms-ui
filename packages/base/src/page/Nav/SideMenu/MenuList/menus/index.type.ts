@@ -22,7 +22,6 @@ export type MenuStructTreeKey =
   | 'cloud-beaver'
   | 'data-export'
   | 'project-overview'
-  | 'dashboard'
   | 'sql-audit'
   | 'plugin-audit'
   | 'sql-optimization'

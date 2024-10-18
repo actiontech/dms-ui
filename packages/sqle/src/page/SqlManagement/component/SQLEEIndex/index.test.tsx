@@ -25,12 +25,24 @@ import {
   exportSqlManageV1FilterPriorityEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import {
+  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
+  SQL_MANAGEMENT_SOURCE_PATH_KEY
+} from '../../../../data/common';
+import { useSearchParams } from 'react-router-dom';
 
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
     useSelector: jest.fn(),
     useDispatch: jest.fn()
+  };
+});
+
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useSearchParams: jest.fn()
   };
 });
 
@@ -55,7 +67,7 @@ const requestParams = {
 
 describe('page/SqlManagement/SQLEEIndex', () => {
   const mockDispatch = jest.fn();
-
+  const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -77,6 +89,12 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         }
       });
     });
+    useSearchParamsSpy.mockReturnValue([
+      new URLSearchParams({
+        [SQL_MANAGEMENT_INSTANCE_PATH_KEY]: '',
+        [SQL_MANAGEMENT_SOURCE_PATH_KEY]: ''
+      })
+    ]);
   });
 
   afterEach(() => {
@@ -642,5 +660,33 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     superRender(<SQLEEIndex />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledTimes(1);
+  });
+
+  it('render init request when url has instance and source params', async () => {
+    useSearchParamsSpy.mockReturnValue([
+      new URLSearchParams({
+        [SQL_MANAGEMENT_INSTANCE_PATH_KEY]: '123456',
+        [SQL_MANAGEMENT_SOURCE_PATH_KEY]: 'mysql_slow_log'
+      })
+    ]);
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(request).toHaveBeenCalledTimes(2);
+    expect(request).toHaveBeenNthCalledWith(2, {
+      page_index: 1,
+      page_size: 20,
+      project_name: mockProjectInfo.projectName,
+      filter_instance_id: '123456',
+      filter_source: 'mysql_slow_log',
+      sort_field: undefined,
+      sort_order: undefined,
+      fuzzy_search_sql_fingerprint: '',
+      filter_status: 'unhandled',
+      filter_priority: undefined,
+      filter_rule_name: undefined,
+      filter_db_type: undefined,
+      filter_assignee: undefined
+    });
   });
 });

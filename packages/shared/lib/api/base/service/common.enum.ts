@@ -76,6 +76,14 @@ export enum ListOpPermissionRangeTypeEnum {
   'db_service' = 'db_service'
 }
 
+export enum ListProjectProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
 export enum ListRoleStatEnum {
   '正常' = '正常',
 
@@ -143,6 +151,10 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'create_project' = 'create_project',
 
+  'global_view' = 'global_view',
+
+  'global_management' = 'global_management',
+
   'project_admin' = 'project_admin',
 
   'create_workflow' = 'create_workflow',
@@ -186,6 +198,14 @@ export enum OperationOperationTypeEnum {
   'SQL' = 'SQL'
 }
 
+export enum ProjectProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
 export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
   'normal' = 'normal',
 
@@ -200,6 +220,14 @@ export enum TestFeishuConfigurationAccountTypeEnum {
   'email' = 'email',
 
   'phone' = 'phone'
+}
+
+export enum UpdateProjectProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
 }
 
 export enum WorkflowRecordStatusEnum {

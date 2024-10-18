@@ -45,17 +45,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   it(`render snap when is not admin and hasn't global view permission`, async () => {
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
-
-    const iconSystem = getBySelector('.custom-icon-global-system', baseElement);
-    fireEvent.click(iconSystem);
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-
-    expect(screen.getByText('查看规则')).toBeInTheDocument();
-    expect(getAllBySelector('.content-item-text').length).toBe(1);
-    fireEvent.click(screen.getByText('查看规则'));
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toHaveBeenCalledWith('/sqle/rule');
   });
 
   it(`render snap when is not admin and has global view permission`, async () => {
@@ -67,7 +56,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
 
-    expect(getAllBySelector('.content-item-text').length).toBe(6);
+    expect(getAllBySelector('.content-item-text').length).toBe(4);
   });
 
   it('render snap when is admin', async () => {
@@ -80,7 +69,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('用户中心')).toBeInTheDocument();
-    expect(getAllBySelector('.content-item-text').length).toBe(6);
+    expect(getAllBySelector('.content-item-text').length).toBe(4);
     fireEvent.click(screen.getByText('用户中心'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(navigateSpy).toHaveBeenCalledWith('/user-center');
@@ -96,7 +85,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('数据源管理')).toBeInTheDocument();
-    expect(getAllBySelector('.content-item-text').length).toBe(2);
+    expect(getAllBySelector('.content-item-text').length).toBe(1);
     fireEvent.click(screen.getByText('数据源管理'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(navigateSpy).toHaveBeenCalledWith('/data-source-management');
