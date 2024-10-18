@@ -28,7 +28,9 @@ import {
 import {
   getWorkflowsV1FilterStatusEnum,
   exportWorkflowV1FilterStatusEnum,
-  getGlobalWorkflowsV1FilterStatusEnum
+  getGlobalWorkflowsV1FilterStatusEnum,
+  getGlobalWorkflowsV1FilterStatusListEnum,
+  getGlobalWorkflowsV1FilterProjectPriorityEnum
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
@@ -252,6 +254,14 @@ export interface IGetGlobalWorkflowsV1Params {
   filter_create_user_id?: string;
 
   filter_status?: getGlobalWorkflowsV1FilterStatusEnum;
+
+  filter_status_list?: getGlobalWorkflowsV1FilterStatusListEnum[];
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: getGlobalWorkflowsV1FilterProjectPriorityEnum;
 
   filter_current_step_assignee_user_id?: string;
 

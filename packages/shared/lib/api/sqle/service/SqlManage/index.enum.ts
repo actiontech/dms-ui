@@ -86,6 +86,14 @@ export enum exportSqlManageV1SortOrderEnum {
   'desc' = 'desc'
 }
 
+export enum GetGlobalSqlManageListFilterProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
 export enum GetSqlManageListV2FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 
