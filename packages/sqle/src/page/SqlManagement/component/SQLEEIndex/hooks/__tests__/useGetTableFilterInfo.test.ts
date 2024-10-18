@@ -8,6 +8,11 @@ import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelec
 import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
+import { useSearchParams } from 'react-router-dom';
+import {
+  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
+  SQL_MANAGEMENT_SOURCE_PATH_KEY
+} from '../../../../../../data/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -16,7 +21,15 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('react-router-dom', () => {
+  return {
+    ...jest.requireActual('react-router-dom'),
+    useSearchParams: jest.fn()
+  };
+});
+
 describe('SqlManagement/useGetTableFilterInfo', () => {
+  const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
   beforeEach(() => {
     mockUseCurrentProject();
     instance.mockAllApi();
@@ -28,6 +41,12 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
         database: { driverMeta: [] }
       });
     });
+    useSearchParamsSpy.mockReturnValue([
+      new URLSearchParams({
+        [SQL_MANAGEMENT_INSTANCE_PATH_KEY]: '',
+        [SQL_MANAGEMENT_SOURCE_PATH_KEY]: ''
+      })
+    ]);
   });
 
   afterEach(() => {

@@ -10,7 +10,8 @@ import {
   WorkflowTemplateData,
   WorkflowListData,
   WorkflowsOverviewListData,
-  AuditTaskResData
+  AuditTaskResData,
+  mockGlobalWorkflowListData
 } from './data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { AxiosResponse } from 'axios';
@@ -41,6 +42,7 @@ class MockWorkflowApi implements MockSpyApy {
     this.rejectWorkflow();
     this.executeTasksOnWorkflow();
     this.getWorkflowAttachment();
+    this.getGlobalWorkflows();
   }
 
   public getWorkflows() {
@@ -288,6 +290,17 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
         }, 3000);
       });
     });
+    return spy;
+  }
+
+  public getGlobalWorkflows() {
+    const spy = jest.spyOn(workflow, 'getGlobalWorkflowsV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockGlobalWorkflowListData,
+        total_nums: mockGlobalWorkflowListData.length
+      })
+    );
     return spy;
   }
 }
