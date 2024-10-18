@@ -17,7 +17,6 @@ describe('base/System/GlobalSetting/UrlAddressPrefixTips', () => {
     return superRender(
       <UrlAddressPrefixTips
         {...params}
-        isAdmin
         showField={showFieldFn}
         hideField={hideFieldFn}
         submitGlobalConfig={submitGlobalConfigFn}

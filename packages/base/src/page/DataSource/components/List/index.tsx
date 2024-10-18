@@ -251,7 +251,6 @@ const DataSourceList = () => {
     testDatabaseConnection,
     navigateToSqlManagementConf
   ]);
-
   const pageHeaderActions = DataSourcePageHeaderActions(projectID);
 
   useEffect(() => {
