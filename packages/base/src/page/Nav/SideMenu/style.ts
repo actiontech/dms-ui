@@ -55,6 +55,7 @@ export const CompanyNoticeIconStyleWrapper = styled(NotificationFilled)`
 
 export const QuickActionsStyleWrapper = styled(Space)`
   width: 100%;
+  margin-bottom: 8px;
 
   & > .ant-space-item {
     flex: 1;
@@ -77,11 +78,18 @@ export const QuickActionsStyleWrapper = styled(Space)`
       cursor: pointer;
       border: 1px solid
         ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+      color: ${({ theme }) => theme.sharedTheme.basic.colorFontGrayByWhite};
 
       &:hover {
         background-color: ${({ theme }) =>
           theme.sharedTheme.uiToken.colorFillTertiary} !important;
       }
+    }
+
+    .action-item-active {
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillTertiary};
     }
   }
 `;
