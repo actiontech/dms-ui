@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButton renders a confirm button 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+    type="button"
+  >
+    <span>
+      Delete
+    </span>
+  </button>
+</div>
+`;
+
+exports[`ActionButton renders a tooltip button 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+    tooltip="[object Object]"
+    type="button"
+  >
+    <span>
+      Info
+    </span>
+  </button>
+</div>
+`;

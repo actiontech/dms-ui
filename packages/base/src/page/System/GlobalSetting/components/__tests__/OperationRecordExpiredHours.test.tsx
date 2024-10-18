@@ -20,7 +20,6 @@ describe('base/System/GlobalSetting/OperationRecordExpiredHours', () => {
     return superRender(
       <OperationRecordExpiredHours
         {...params}
-        isAdmin
         showField={showFieldFn}
         hideField={hideFieldFn}
         submitGlobalConfig={submitGlobalConfigFn}
