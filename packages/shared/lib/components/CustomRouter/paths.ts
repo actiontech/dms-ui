@@ -1,4 +1,4 @@
-export const ROUTE_PATH_COLLECTION = {
+export const ROUTE_PATHS = {
   SQLE: {
     PREFIX: '/sqle',
     GLOBAL_DASHBOARD: '/sqle/global-dashboard',

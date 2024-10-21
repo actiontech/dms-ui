@@ -1,7 +1,7 @@
 import {
   BasicButton,
   CustomLink,
-  ROUTE_PATH_COLLECTION,
+  ROUTE_PATHS,
   useCustomNavigate,
   useCustomParams
 } from '@actiontech/shared';
@@ -22,7 +22,7 @@ const ComparisonEntry: React.FC = () => {
   //
   const values =
     useCustomParams<
-      typeof ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
+      typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
     >();
 
   return (
@@ -30,14 +30,14 @@ const ComparisonEntry: React.FC = () => {
       {/* normal */}
       <BasicButton
         onClick={() => {
-          navigate(ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD);
+          navigate(ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD);
         }}
       >
         跳转至全局DASHBOARD
       </BasicButton>
       <BasicButton
         onClick={() => {
-          navigate(ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.detail, {
+          navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
             values: { workflowId: '1846478104923475968', projectID }
           });
         }}
@@ -46,30 +46,28 @@ const ComparisonEntry: React.FC = () => {
       </BasicButton>
       <BasicButton
         onClick={() => {
-          navigate(ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.create, {
+          navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
             values: { projectID }
           });
         }}
       >
         跳转至工单创建
       </BasicButton>
-      <CustomLink to={ROUTE_PATH_COLLECTION.SQLE.RULE}>
-        跳转至规则列表
-      </CustomLink>
+      <CustomLink to={ROUTE_PATHS.SQLE.RULE}>跳转至规则列表</CustomLink>
       <CustomLink
-        to={ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.index}
+        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index}
         values={{ projectID }}
       >
         跳转至SQL工单
       </CustomLink>
       <CustomLink
-        to={ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.analyze}
+        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze}
         values={{ projectID, taskId: '10', sqlNum: '1' }}
       >
         跳转至SQL分析
       </CustomLink>
       <CustomLink
-        to={ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview}
+        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview}
         values={{ projectID, taskId: '11', fileId: '1' }}
       >
         跳转至SQL文件概览
