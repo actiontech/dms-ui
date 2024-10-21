@@ -4,11 +4,10 @@ import {
   ProfileSquareFilled
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTips, ROUTE_PATH_COLLECTION } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import React, { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 import classNames from 'classnames';
 
 type QuickActionItemType = {

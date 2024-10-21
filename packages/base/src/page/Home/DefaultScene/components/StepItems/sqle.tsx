@@ -5,7 +5,7 @@ import {
   UserDevopsStepButtonItem,
   UserDevopsStepChildren
 } from '../../index.type';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared';
 
 export const getAuditManageStep: (
   arg: DevopsStepsProps
