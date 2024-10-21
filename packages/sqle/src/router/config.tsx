@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -122,7 +122,6 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
-
 const VersionManagementCreation = React.lazy(
   () => import('../page/VersionManagement/Create')
 );
@@ -134,6 +133,7 @@ const VersionManagementUpdate = React.lazy(
 const VersionManagementDetail = React.lazy(
   () => import('../page/VersionManagement/Detail')
 );
+
 // #endif
 
 //workflow
@@ -169,6 +169,11 @@ const SqlManagementConfDetail = React.lazy(
 );
 const SqlManagementConfAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/ManagementConf')
+);
+
+//data source comparison
+const DataSourceComparison = React.lazy(
+  () => import('../page/DataSourceComparison')
 );
 
 //sqle global page
@@ -222,7 +227,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   },
   {
     key: 'sqlExecWorkflow',
-    path: `${PROJECT_ROUTER_PARAM}/exec-workflow`,
+    path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.index.path,
     children: [
       {
         index: true,
@@ -230,12 +235,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'sqlExecWorkflowList'
       },
       {
-        path: 'create',
+        path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.create.path,
         element: <CreateSqlExecWorkflow />,
         key: 'createSqlExecWorkflow'
       },
       {
-        path: ':taskId/:sqlNum/analyze',
+        path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.analyze.path,
         element: <WorkflowSqlAnalyze />,
         key: 'workflowAnalyze'
       },
@@ -245,7 +250,8 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'workflowDetail'
       },
       {
-        path: ':taskId/files/:fileId/sqls',
+        path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
+          .path,
         element: <WorkflowSqlFileStatementOverview />,
         key: 'workflowSqlFileStatementOverview'
       }
@@ -492,6 +498,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       }
       // #endif
     ]
+  },
+  {
+    path: ROUTE_PATH_COLLECTION.SQLE.DATA_SOURCE_COMPARISON.index.path,
+    key: 'dataSourceComparison',
+    element: <DataSourceComparison />
   },
   {
     path: '*',

@@ -3,7 +3,7 @@ import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared';
 
 jest.mock('react-router-dom', () => {
   return {
