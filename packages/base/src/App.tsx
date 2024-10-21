@@ -9,7 +9,11 @@ import {
   useChangeTheme,
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
-import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
+import {
+  ResponseCode,
+  SupportLanguage,
+  SupportTheme
+} from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
@@ -35,6 +39,8 @@ import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import useFetchPermissionData from './hooks/useFetchPermissionData';
+import { useDispatch } from 'react-redux';
+import { updateModuleFeatureSupport } from './store/permission';
 
 import './index.less';
 
@@ -69,6 +75,8 @@ function App() {
   const { token } = useSelector((state: IReduxState) => ({
     token: state.user.token
   }));
+
+  const dispatch = useDispatch();
 
   const { notificationContextHolder } = useNotificationContext();
 
@@ -142,7 +150,6 @@ function App() {
     ) {
       return <HeaderProgress />;
     }
-
     return (
       <Nav>
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
@@ -159,9 +166,23 @@ function App() {
     if (token) {
       getUserBySession({});
       updateDriverList();
-      fetchModuleSupportStatus();
+      fetchModuleSupportStatus().then((response) => {
+        if (response.data.code === ResponseCode.SUCCESS) {
+          dispatch(
+            updateModuleFeatureSupport({
+              sqlOptimization: !!response.data.data?.is_supported
+            })
+          );
+        }
+      });
     }
-  }, [getUserBySession, token, updateDriverList, fetchModuleSupportStatus]);
+  }, [
+    getUserBySession,
+    token,
+    updateDriverList,
+    fetchModuleSupportStatus,
+    dispatch
+  ]);
 
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);

@@ -5,11 +5,11 @@
 import { fireEvent } from '@testing-library/dom';
 import DataSourceManagement from '..';
 import { superRender } from '../../../testUtils/customRender';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('test DataSourceManagement ce', () => {
   it('should match snapshot', () => {
-    mockUseCurrentUser({ isAdmin: true });
+    mockUsePermission({ checkPagePermission: jest.fn().mockReturnValue(true) });
     const { container, getByText } = superRender(<DataSourceManagement />);
 
     expect(container).toMatchSnapshot();

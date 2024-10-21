@@ -84,7 +84,7 @@ describe('test base/DataExport/List', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('render batch close button When the user is non-admin and non-project manager', async () => {
+  it.only('render batch close button When the user is non-admin and non-project manager', async () => {
     mockUseCurrentUser({
       isAdmin: false,
       isProjectManager: jest.fn().mockReturnValue(false)

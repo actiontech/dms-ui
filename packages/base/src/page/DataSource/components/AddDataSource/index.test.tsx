@@ -2,7 +2,6 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { superRender } from '../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-
 import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';

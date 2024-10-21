@@ -246,22 +246,14 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                       <div
                         class="css-new95e"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          type="button"
                         >
-                          <div
-                            class="ant-space-item"
-                          >
-                            <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                              type="button"
-                            >
-                              <span>
-                                下载数据
-                              </span>
-                            </button>
-                          </div>
-                        </div>
+                          <span>
+                            下载数据
+                          </span>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -331,23 +323,15 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                       <div
                         class="css-new95e"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
                         >
-                          <div
-                            class="ant-space-item"
-                          >
-                            <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                              disabled=""
-                              type="button"
-                            >
-                              <span>
-                                下载数据
-                              </span>
-                            </button>
-                          </div>
-                        </div>
+                          <span>
+                            下载数据
+                          </span>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -411,23 +395,15 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                       <div
                         class="css-new95e"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
                         >
-                          <div
-                            class="ant-space-item"
-                          >
-                            <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                              disabled=""
-                              type="button"
-                            >
-                              <span>
-                                下载数据
-                              </span>
-                            </button>
-                          </div>
-                        </div>
+                          <span>
+                            下载数据
+                          </span>
+                        </button>
                       </div>
                     </td>
                   </tr>
