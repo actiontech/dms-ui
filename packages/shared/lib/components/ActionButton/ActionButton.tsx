@@ -4,27 +4,23 @@ import BasicButton from '../BasicButton';
 import { useTranslation } from 'react-i18next';
 import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';
 import { Popconfirm } from 'antd';
-import classnames from 'classnames';
 import BasicToolTips from '../BasicToolTips';
 
 const ActionButton: React.FC<ActionButtonProps> = (props) => {
   const { t } = useTranslation();
-  const { actionType, text, className, ...buttonProps } = props;
 
-  const cls = classnames('actiontech-config-actions-button', className);
+  if (props.actionType === 'navigate-link') {
+    const { actionType, text, link, ...buttonProps } = props;
 
-  if (actionType === 'navigate-link') {
     return (
       <Link {...props.link}>
-        <BasicButton {...buttonProps} className={cls}>
-          {text}
-        </BasicButton>
+        <BasicButton {...buttonProps}>{text}</BasicButton>
       </Link>
     );
   }
 
-  if (actionType === 'confirm') {
-    const { confirm } = props;
+  if (props.actionType === 'confirm') {
+    const { actionType, text, confirm, ...buttonProps } = props;
     return (
       <Popconfirm
         okText={t('common.ok')}
@@ -40,28 +36,22 @@ const ActionButton: React.FC<ActionButtonProps> = (props) => {
           )
         }
       >
-        <BasicButton {...buttonProps} className={cls}>
-          {text}
-        </BasicButton>
+        <BasicButton {...buttonProps}>{text}</BasicButton>
       </Popconfirm>
     );
   }
 
-  if (actionType === 'tooltip') {
-    const { tooltip } = props;
+  if (props.actionType === 'tooltip') {
+    const { actionType, text, tooltip, ...buttonProps } = props;
 
     <BasicToolTips {...tooltip}>
-      <BasicButton {...buttonProps} className={cls}>
-        {text}
-      </BasicButton>
+      <BasicButton {...buttonProps}>{text}</BasicButton>
     </BasicToolTips>;
   }
 
-  return (
-    <BasicButton {...buttonProps} className={cls}>
-      {text}
-    </BasicButton>
-  );
+  const { actionType, text, ...buttonProps } = props;
+
+  return <BasicButton {...buttonProps}>{text}</BasicButton>;
 };
 
 ActionButton.displayName = 'ActionButton';

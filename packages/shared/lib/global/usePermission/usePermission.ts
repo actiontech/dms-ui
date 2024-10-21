@@ -27,7 +27,6 @@ const usePermission = () => {
     const isArchived = !!bindProjects.find(
       (project) => project.project_id === projectID
     )?.archived;
-
     return {
       isManager: !!bindProjects.find(
         (project) => project.project_id === projectID

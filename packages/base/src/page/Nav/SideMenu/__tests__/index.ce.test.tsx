@@ -3,17 +3,17 @@
  */
 
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { superRender } from '../../../../testUtils/customRender';
 import { mockSystemConfig } from '../../../../testUtils/mockHooks/mockSystemConfig';
 import CESideMenu from '../index.ce';
 import { act } from '@testing-library/react';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 
 describe('test base/Nav/SideMenu/index.ce', () => {
   beforeEach(() => {
     mockSystemConfig();
     mockUseCurrentUser();
-    mockUseCurrentPermission();
+    mockUsePermission();
     jest.useFakeTimers();
   });
 

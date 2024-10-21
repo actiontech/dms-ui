@@ -40,57 +40,61 @@ const useTableAction = () => {
       if (actions.length === 0) {
         return null;
       }
-      return (
-        <Space>
-          {actions.map((action) => {
-            const buttonProps =
-              typeof action.buttonProps === 'function'
-                ? action.buttonProps(record)
-                : action.buttonProps;
+      const render = (
+        action: ActiontechTableActionMeta<T> | ActiontechTableToolbarActionMeta
+      ) => {
+        if (!checkButtonPermissions(action.permissions, record)) {
+          return null;
+        }
+        const buttonProps =
+          typeof action.buttonProps === 'function'
+            ? action.buttonProps(record)
+            : action.buttonProps;
 
-            const commonProps: ActionButtonProps = {
-              ...buttonProps,
-              text: action.text,
-              className: classnames(
-                'actiontech-table-actions-button',
-                buttonProps?.className
-              ),
-              size: 'small'
-            };
+        const commonProps: ActionButtonProps = {
+          ...buttonProps,
+          text: action.text,
+          className: classnames(
+            'actiontech-table-actions-button',
+            buttonProps?.className
+          ),
+          size: 'small'
+        };
 
-            const confirm =
-              typeof action.confirm === 'function'
-                ? action.confirm(record)
-                : action.confirm;
+        const confirm =
+          typeof action.confirm === 'function'
+            ? action.confirm(record)
+            : action.confirm;
 
-            if (confirm) {
-              return (
-                <ActionButton
-                  {...commonProps}
-                  key={action.key}
-                  actionType="confirm"
-                  confirm={confirm}
-                />
-              );
-            }
-            const link =
-              typeof action.link === 'function'
-                ? action.link(record)
-                : action.link;
-            if (link) {
-              return (
-                <ActionButton
-                  {...commonProps}
-                  key={action.key}
-                  actionType="navigate-link"
-                  link={link}
-                />
-              );
-            }
-            return <ActionButton {...commonProps} key={action.key} />;
-          })}
-        </Space>
-      );
+        if (confirm) {
+          return (
+            <ActionButton
+              {...commonProps}
+              key={action.key}
+              actionType="confirm"
+              confirm={confirm}
+            />
+          );
+        }
+        const link =
+          typeof action.link === 'function' ? action.link(record) : action.link;
+        if (link) {
+          return (
+            <ActionButton
+              {...commonProps}
+              key={action.key}
+              actionType="navigate-link"
+              link={link}
+            />
+          );
+        }
+        return <ActionButton {...commonProps} key={action.key} />;
+      };
+      if (actions.length === 1) {
+        return render(actions[0]);
+      }
+
+      return <Space>{actions.map(render)}</Space>;
     },
     []
   );
@@ -105,8 +109,19 @@ const useTableAction = () => {
           typeof ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
         >[0]
       | null => {
-      if (!actions) return null;
-
+      if (!actions) {
+        return null;
+      }
+      if (Array.isArray(actions) && actions.length === 0) {
+        return null;
+      }
+      if (
+        !Array.isArray(actions) &&
+        actions.buttons.length === 0 &&
+        actions.moreButtons?.length === 0
+      ) {
+        return null;
+      }
       const calculateMaxWidth = () => {
         if (Array.isArray(actions)) {
           return actions.length * ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH;
@@ -170,7 +185,6 @@ const useTableAction = () => {
           }
           visibleMoreButtons = visibleMoreButtons.slice(maxIndex);
         }
-
         return (
           <InlineTableActionButtonsStyleWrapper
             onClick={(e) => {
@@ -212,7 +226,15 @@ const MoreButtons = <T extends Record<string, any>>({
 }) => {
   const [open, setOpen] = useState(false);
 
-  if (moreButtons.length === 0) {
+  const visibleMoreButtons = moreButtons.map((button) => {
+    return {
+      ...button,
+      disabled: checkButtonDisabled(button.disabled, record),
+      permissions: checkButtonPermissions(button.permissions, record)
+    };
+  });
+
+  if (visibleMoreButtons.length === 0) {
     return null;
   }
 
@@ -226,8 +248,8 @@ const MoreButtons = <T extends Record<string, any>>({
       onOpenChange={setOpen}
       content={
         <InlineTableActionMoreButtonPopoverStyleWrapper>
-          {moreButtons.map((button) => {
-            const isDisabled = checkButtonDisabled(button.disabled, record);
+          {visibleMoreButtons.map((button) => {
+            const isDisabled = button.disabled;
 
             const handleClick = () => {
               if (!isDisabled) {
@@ -258,7 +280,11 @@ const MoreButtons = <T extends Record<string, any>>({
               : null;
 
             return button.confirm ? (
-              <EmptyBox if={!isDisabled} defaultNode={confirmButton}>
+              <EmptyBox
+                key={button.key}
+                if={!isDisabled}
+                defaultNode={confirmButton}
+              >
                 <Popconfirm
                   {...button.confirm?.(record)}
                   onConfirm={() => {
@@ -271,6 +297,7 @@ const MoreButtons = <T extends Record<string, any>>({
               </EmptyBox>
             ) : (
               <div
+                key={button.key}
                 className={classNames('more-button-item', {
                   'more-button-item-disabled': isDisabled
                 })}

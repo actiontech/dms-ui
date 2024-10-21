@@ -29,11 +29,11 @@ export const PERMISSIONS = {
         }
       },
       GLOBAL_DATA_SOURCE: {
-        EDIT: 'action:edit_db_service',
-        DELETE: 'action:delete_db_service',
-        TEST_IN_MORE_BUTTON: 'action:test_db_service_in_more_button',
-        ADD: 'action:add_db_service',
-        BATCH_IMPORT: 'action:batch_import_db_service'
+        EDIT: 'action:edit_global_db_service',
+        DELETE: 'action:delete_global_db_service',
+        TEST_IN_MORE_BUTTON: 'action:test_global_db_service_in_more_button',
+        ADD: 'action:add_global_db_service',
+        BATCH_IMPORT: 'action:batch_import_global_db_service'
       },
       SYNC_DATA_SOURCE: {
         ADD: 'action:add_task',
