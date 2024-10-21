@@ -20,7 +20,7 @@ import {
   PipelineOutlined,
   FileVersionOutlined
 } from '@actiontech/icons';
-import { CustomLink, ROUTE_PATH_COLLECTION } from '@actiontech/shared';
+import { CustomLink, ROUTE_PATHS } from '@actiontech/shared';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
@@ -191,7 +191,7 @@ const versionManagement: GenerateMenuItemType = (projectID) => ({
 const dataSourceComparison: GenerateMenuItemType = (projectID) => ({
   label: (
     <CustomLink
-      to={ROUTE_PATH_COLLECTION.SQLE.DATA_SOURCE_COMPARISON.index}
+      to={ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index}
       values={{ projectID }}
     >
       {t('dmsMenu.dataSourceComparison')}

@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -227,7 +227,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   },
   {
     key: 'sqlExecWorkflow',
-    path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.index.path,
+    path: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index.path,
     children: [
       {
         index: true,
@@ -235,12 +235,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'sqlExecWorkflowList'
       },
       {
-        path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.create.path,
+        path: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create.path,
         element: <CreateSqlExecWorkflow />,
         key: 'createSqlExecWorkflow'
       },
       {
-        path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.analyze.path,
+        path: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze.path,
         element: <WorkflowSqlAnalyze />,
         key: 'workflowAnalyze'
       },
@@ -250,8 +250,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'workflowDetail'
       },
       {
-        path: ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
-          .path,
+        path: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview.path,
         element: <WorkflowSqlFileStatementOverview />,
         key: 'workflowSqlFileStatementOverview'
       }
@@ -500,7 +499,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: ROUTE_PATH_COLLECTION.SQLE.DATA_SOURCE_COMPARISON.index.path,
+    path: ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index.path,
     key: 'dataSourceComparison',
     element: <DataSourceComparison />
   },
@@ -513,14 +512,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 
 export const globalRouterConfig: RouterConfigItem[] = [
   {
-    path: ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS,
+    path: ROUTE_PATHS.SQLE.REPORT_STATISTICS,
     label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
     role: [SystemRole.admin, SystemRole.globalViewing]
   },
   {
-    path: ROUTE_PATH_COLLECTION.SQLE.RULE,
+    path: ROUTE_PATHS.SQLE.RULE,
     label: 'menu.rule',
     element: <Rule />,
     key: 'rule'
@@ -575,7 +574,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   },
   // #endif
   {
-    path: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD,
+    path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD,
     key: 'globalDashboard',
     element: <GlobalDashboard />
   }

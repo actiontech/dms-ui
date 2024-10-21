@@ -21,7 +21,7 @@ import {
   BasicButton,
   CustomSegmentedFilter,
   PageHeader,
-  ROUTE_PATH_COLLECTION,
+  ROUTE_PATHS,
   useCustomParams
 } from '@actiontech/shared';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -40,7 +40,7 @@ const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
   const { taskId, fileId } =
     useCustomParams<
-      typeof ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
+      typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
     >();
 
   const navigate = useNavigate();
