@@ -1,6 +1,5 @@
 import {
   NavigateOptions,
-  To,
   useNavigate as useRouterNavigate
 } from 'react-router-dom';
 import { isCustomRoutePathObject, parse2ReactRouterPath } from '../utils';
@@ -14,10 +13,11 @@ const useCustomNavigate = () => {
     options?: NavigateOptions & { values?: InferParamsFromConfig<T> }
   ) => {
     const { values } = options ?? {};
-    const formattedPath = isCustomRoutePathObject(to)
-      ? parse2ReactRouterPath(to, values)
-      : (to as To);
-    navigate(formattedPath, options);
+    if (isCustomRoutePathObject(to)) {
+      navigate(parse2ReactRouterPath(to, values), options);
+    } else {
+      navigate(to, options);
+    }
   };
 };
 
