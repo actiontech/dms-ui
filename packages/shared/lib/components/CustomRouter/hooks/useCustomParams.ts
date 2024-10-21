@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useParams } from 'react-router-dom';
 import { InferParamsFromConfig, RouteConfig } from '../index.type';
 

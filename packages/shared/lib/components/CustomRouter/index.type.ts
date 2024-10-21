@@ -8,15 +8,17 @@ export type ObjectRoutePathValue = {
 export type RoutePathValue = To | ObjectRoutePathValue;
 
 export type RouteConfig = {
-  [key: string]: string | ObjectRoutePathValue | RouteConfig;
+  [key: string]: string | ObjectRoutePathValue;
 };
 
 // 提取路径中的参数
 type ExtractParams<T extends string> = string extends T
   ? Record<string, string>
-  : T extends `${infer _}:${infer Param}/${infer Rest}`
+  : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  T extends `${infer _}:${infer Param}/${infer Rest}`
   ? { [K in Param | keyof ExtractParams<Rest>]: string }
-  : T extends `${infer _}:${infer Param}`
+  : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  T extends `${infer _}:${infer Param}`
   ? { [K in Param]: string }
   : unknown;
 

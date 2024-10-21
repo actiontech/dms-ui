@@ -27,6 +27,14 @@ const ComparisonEntry: React.FC = () => {
 
   return (
     <Space direction="vertical">
+      {/* normal */}
+      <BasicButton
+        onClick={() => {
+          navigate(ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD);
+        }}
+      >
+        跳转至全局DASHBOARD
+      </BasicButton>
       <BasicButton
         onClick={() => {
           navigate(ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.detail, {
@@ -45,6 +53,9 @@ const ComparisonEntry: React.FC = () => {
       >
         跳转至工单创建
       </BasicButton>
+      <CustomLink to={ROUTE_PATH_COLLECTION.SQLE.RULE}>
+        跳转至规则列表
+      </CustomLink>
       <CustomLink
         to={ROUTE_PATH_COLLECTION.SQLE.SQL_EXEC_WORKFLOW.index}
         values={{ projectID }}
