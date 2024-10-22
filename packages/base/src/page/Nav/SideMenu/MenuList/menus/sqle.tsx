@@ -20,7 +20,7 @@ import {
   PipelineOutlined,
   FileVersionOutlined
 } from '@actiontech/icons';
-import { CustomLink, ROUTE_PATHS } from '@actiontech/shared';
+import { TypedLink, ROUTE_PATHS } from '@actiontech/shared';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
@@ -190,12 +190,12 @@ const versionManagement: GenerateMenuItemType = (projectID) => ({
 
 const dataSourceComparison: GenerateMenuItemType = (projectID) => ({
   label: (
-    <CustomLink
+    <TypedLink
       to={ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index}
       values={{ projectID }}
     >
       {t('dmsMenu.dataSourceComparison')}
-    </CustomLink>
+    </TypedLink>
   ),
   icon: <FileVersionOutlined width={18} height={18} />,
   // todo 后续调整当前选中菜单与 key 绑定的逻辑
