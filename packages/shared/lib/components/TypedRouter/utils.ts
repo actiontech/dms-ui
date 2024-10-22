@@ -41,6 +41,9 @@ export const parse2ReactRouterPath = <T extends RouteConfig[keyof RouteConfig]>(
   const { prefix, path } = to;
 
   if (!values) {
+    if (prefix) {
+      return `${prefix}/${path}`;
+    }
     return path;
   }
 
