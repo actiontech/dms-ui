@@ -1,0 +1,2503 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/VersionManagement/Detail render init snap 1`] = `
+<body>
+  <div>
+    <section
+      class="css-o4t7ka"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              coast
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
+                >
+                  <svg
+                    class="custom-icon custom-icon-refresh"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="extra"
+        >
+          <a
+            href="/sqle/project/700300/version-management"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回版本管理列表
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading flow-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="react-flow light"
+            data-testid="rf__wrapper"
+            style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+          >
+            <div
+              class="react-flow__renderer"
+              style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+            >
+              <div
+                class="react-flow__pane draggable"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  class="react-flow__viewport xyflow__viewport react-flow__container"
+                  style="transform: translate(49px,49px) scale(2);"
+                >
+                  <div
+                    class="react-flow__edges"
+                  >
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 79 to 53"
+                        class="react-flow__edge react-flow__edge-default nopan selectable"
+                        data-id="79_edge"
+                        data-testid="rf__edge-79_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M1,0.5 C265.5,0.5 265.5,0.5 530,0.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M1,0.5 C265.5,0.5 265.5,0.5 530,0.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 53 to 34"
+                        class="react-flow__edge react-flow__edge-default nopan selectable"
+                        data-id="53_edge"
+                        data-testid="rf__edge-53_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M531,0.5 C795.5,0.5 795.5,0.5 1060,0.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M531,0.5 C795.5,0.5 795.5,0.5 1060,0.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 79_workflowNode to 53_workflowNode"
+                        class="react-flow__edge react-flow__edge-buttonEdge nopan selectable"
+                        data-id="79_workflowNode_edge"
+                        data-testid="rf__edge-79_workflowNode_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M1,78.5 C265.5,78.5 265.5,78.5 530,78.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M1,78.5 C265.5,78.5 265.5,78.5 530,78.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 53_workflowNode to 34_workflowNode"
+                        class="react-flow__edge react-flow__edge-buttonEdge nopan selectable"
+                        data-id="53_workflowNode_edge"
+                        data-testid="rf__edge-53_workflowNode_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M531,78.5 C795.5,78.5 795.5,78.5 1060,78.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M531,78.5 C795.5,78.5 795.5,78.5 1060,78.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div
+                    class="react-flow__edgelabel-renderer"
+                  >
+                    <section
+                      class="css-1epqoyd"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                disabled=""
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    color="currentColor"
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 14 14"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1.135 5.434c-.304-.102-.307-.266.006-.37l11.134-3.711c.309-.103.485.07.4.372L9.492 12.858c-.088.309-.266.32-.396.027L7 8.167 10.5 3.5 5.833 7z"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  发布
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section
+                      class="css-17x6wdd"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                disabled=""
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    color="currentColor"
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 14 14"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1.135 5.434c-.304-.102-.307-.266.006-.37l11.134-3.711c.309-.103.485.07.4.372L9.492 12.858c-.088.309-.266.32-.396.027L7 8.167 10.5 3.5 5.833 7z"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  发布
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div
+                    class="react-flow__nodes"
+                    style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                  >
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-input selectable"
+                      data-id="79"
+                      data-testid="rf__node-79"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      haircut
+                      <div
+                        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                        data-handlepos="right"
+                        data-id="1-79-null-source"
+                        data-nodeid="79"
+                      />
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-default selectable"
+                      data-id="53"
+                      data-testid="rf__node-53"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                        data-handlepos="left"
+                        data-id="1-53-null-target"
+                        data-nodeid="53"
+                      />
+                      institute
+                      <div
+                        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                        data-handlepos="right"
+                        data-id="1-53-null-source"
+                        data-nodeid="53"
+                      />
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-output selectable"
+                      data-id="34"
+                      data-testid="rf__node-34"
+                      role="button"
+                      style="z-index: 0; transform: translate(1060px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                        data-handlepos="left"
+                        data-id="1-34-null-target"
+                        data-nodeid="34"
+                      />
+                      horde
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="79_workflowNode"
+                      data-testid="rf__node-79_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <a
+                                      href="/sqle/project/700300/exec-workflow/123456"
+                                      target="__blank"
+                                      title="publicity"
+                                    >
+                                      publicity
+                                    </a>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      class="css-3q8fl"
+                                    >
+                                      <svg
+                                        fill="none"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                          stroke="#7453DA"
+                                          stroke-width="1.5"
+                                        />
+                                      </svg>
+                                      <span>
+                                        待审核
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                                    >
+                                      工单描述
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      aria-label="drat quinoa however notwithstanding courteous obediently above gee consequently although plus aha by bludgeon so barring incidentally over heavy ah boohoo nor pricey duh pro knavishly ick delirious geez yippee challenge unto emergent fiercely advocate under blindly motionless extremely as from ack dicker assist suckle travel repentant worthless lest now boss given with blissfully venture behest circa free who ultimately eek muted woot inasmuch rewrite pish gosh while naughty furthermore below yowza blindly oof behind when twin worriedly boo scent boring um experienced till convince fooey ugh barring jealous reprove circa limply given save between stint coarse courageously if importance hepatitis fatally in furthermore ew geez between zowie whereas entire drat lovingly ick out or nor creaking although before duh minus unimpressively overplay summary loudly popularize couch long-term forceful intrepid perky duh marvelous shabby yowza eyeliner hm strategy see cleverly dress with smoggy dishonor under unfortunately ordinary conservative starch diligently well-off overwork through scowl yowza adrenalin tedious filthy hopeful legislature numeracy fooey furlough excepting analyse but while broadly till mmm"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    >
+                                      drat quinoa however notwithstanding courteous obediently above gee consequently although plus aha by bludgeon so barring incidentally over heavy ah boohoo nor pricey duh pro knavishly ick delirious geez yippee challenge unto emergent fiercely advocate under blindly motionless extremely as from ack dicker assist suckle travel repentant worthless lest now boss given with blissfully venture behest circa free who ultimately eek muted woot inasmuch rewrite pish gosh while naughty furthermore below yowza blindly oof behind when twin worriedly boo scent boring um experienced till convince fooey ugh barring jealous reprove circa limply given save between stint coarse courageously if importance hepatitis fatally in furthermore ew geez between zowie whereas entire drat lovingly ick out or nor creaking although before duh minus unimpressively overplay summary loudly popularize couch long-term forceful intrepid perky duh marvelous shabby yowza eyeliner hm strategy see cleverly dress with smoggy dishonor under unfortunately ordinary conservative starch diligently well-off overwork through scowl yowza adrenalin tedious filthy hopeful legislature numeracy fooey furlough excepting analyse but while broadly till mmm
+                                      <div
+                                        aria-label="Copy"
+                                        class="ant-typography-copy"
+                                        role="button"
+                                        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                        tabindex="0"
+                                      >
+                                        <span
+                                          aria-label="copy"
+                                          class="anticon anticon-copy"
+                                          role="img"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            data-icon="copy"
+                                            fill="currentColor"
+                                            focusable="false"
+                                            height="1em"
+                                            viewBox="64 64 896 896"
+                                            width="1em"
+                                          >
+                                            <path
+                                              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                            />
+                                          </svg>
+                                        </span>
+                                      </div>
+                                      <span
+                                        aria-hidden="true"
+                                        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                      >
+                                        lg
+                                      </span>
+                                      <span
+                                        aria-hidden="true"
+                                        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                      >
+                                        <span
+                                          aria-hidden="true"
+                                        >
+                                          ...
+                                        </span>
+                                        <div
+                                          aria-label="Copy"
+                                          class="ant-typography-copy"
+                                          role="button"
+                                          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                          tabindex="0"
+                                        >
+                                          <span
+                                            aria-label="copy"
+                                            class="anticon anticon-copy"
+                                            role="img"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              data-icon="copy"
+                                              fill="currentColor"
+                                              focusable="false"
+                                              height="1em"
+                                              viewBox="64 64 896 896"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                              />
+                                            </svg>
+                                          </span>
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                                  hidden=""
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        重 试
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        已线下执行
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <a
+                                      href="/sqle/project/700300/exec-workflow/1234567"
+                                      target="__blank"
+                                      title="mortise"
+                                    >
+                                      mortise
+                                    </a>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      class="css-3q8fl"
+                                    >
+                                      <svg
+                                        fill="none"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                          stroke="#7453DA"
+                                          stroke-width="1.5"
+                                        />
+                                      </svg>
+                                      <span>
+                                        待审核
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                                    >
+                                      工单描述
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      aria-label="pulp enroll than duh lustrous despite for toe with er pantyhose accentuate ugh during er drat cutlet amid whether abnegate delightfully before hope uh-huh scorpion aboard near raw yet co-producer cruelty sinful purse interviewer anenst apud huzzah abscond solemnly generously usually sleet the incidentally toward until anti quizzically flimsy finally behind and futon vol unless humble sorrowful astride afore intensely blah modulo state too paltry kissingly at outsource blossom yum mealy boohoo about concerning tromp import quizzically slowly velocity hm gadzooks snow insidious geez failing um veto chromakey geez discrete linseed rare bah gadzooks happy gleefully eek window chops yippee midst eke second yahoo handsome till despite likewise obvious redound enormously except putrid surprise only beside brr surprisingly experience ferociously even dredger after incidentally requite er sonata instead pfft mad upwardly meh pish solace offensively as finally considering if er yearly in shyly kissingly circa for alongside better display"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    >
+                                      pulp enroll than duh lustrous despite for toe with er pantyhose accentuate ugh during er drat cutlet amid whether abnegate delightfully before hope uh-huh scorpion aboard near raw yet co-producer cruelty sinful purse interviewer anenst apud huzzah abscond solemnly generously usually sleet the incidentally toward until anti quizzically flimsy finally behind and futon vol unless humble sorrowful astride afore intensely blah modulo state too paltry kissingly at outsource blossom yum mealy boohoo about concerning tromp import quizzically slowly velocity hm gadzooks snow insidious geez failing um veto chromakey geez discrete linseed rare bah gadzooks happy gleefully eek window chops yippee midst eke second yahoo handsome till despite likewise obvious redound enormously except putrid surprise only beside brr surprisingly experience ferociously even dredger after incidentally requite er sonata instead pfft mad upwardly meh pish solace offensively as finally considering if er yearly in shyly kissingly circa for alongside better display
+                                      <div
+                                        aria-label="Copy"
+                                        class="ant-typography-copy"
+                                        role="button"
+                                        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                        tabindex="0"
+                                      >
+                                        <span
+                                          aria-label="copy"
+                                          class="anticon anticon-copy"
+                                          role="img"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            data-icon="copy"
+                                            fill="currentColor"
+                                            focusable="false"
+                                            height="1em"
+                                            viewBox="64 64 896 896"
+                                            width="1em"
+                                          >
+                                            <path
+                                              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                            />
+                                          </svg>
+                                        </span>
+                                      </div>
+                                      <span
+                                        aria-hidden="true"
+                                        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                                      >
+                                        lg
+                                      </span>
+                                      <span
+                                        aria-hidden="true"
+                                        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                                      >
+                                        <span
+                                          aria-hidden="true"
+                                        >
+                                          ...
+                                        </span>
+                                        <div
+                                          aria-label="Copy"
+                                          class="ant-typography-copy"
+                                          role="button"
+                                          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                          tabindex="0"
+                                        >
+                                          <span
+                                            aria-label="copy"
+                                            class="anticon anticon-copy"
+                                            role="img"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              data-icon="copy"
+                                              fill="currentColor"
+                                              focusable="false"
+                                              height="1em"
+                                              viewBox="64 64 896 896"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                              />
+                                            </svg>
+                                          </span>
+                                        </div>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                                  hidden=""
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        重 试
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        已线下执行
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                          data-handleid="a"
+                          data-handlepos="right"
+                          data-id="1-79_workflowNode-a-source"
+                          data-nodeid="79_workflowNode"
+                        />
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="53_workflowNode"
+                      data-testid="rf__node-53_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                          data-handlepos="left"
+                          data-id="1-53_workflowNode-null-target"
+                          data-nodeid="53_workflowNode"
+                        />
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              hidden=""
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                          data-handleid="a"
+                          data-handlepos="right"
+                          data-id="1-53_workflowNode-a-source"
+                          data-nodeid="53_workflowNode"
+                        />
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="34_workflowNode"
+                      data-testid="rf__node-34_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(1060px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                          data-handlepos="left"
+                          data-id="1-34_workflowNode-null-target"
+                          data-nodeid="34_workflowNode"
+                        />
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              hidden=""
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="79_actionNode"
+                      data-testid="rf__node-79_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="DoubleArrowOutlined_svg__icon"
+                                  color="currentColor"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 1024 1024"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M429.6 880c-3.2 0-7.2-.8-10.4-2.4-8.8-4-13.6-12.8-13.6-21.6V184c0-9.6 5.6-17.6 13.6-21.6 8.8-4 18.4-2.4 25.6 3.2l403.2 336c5.6 4.8 8.8 11.2 8.8 18.4s-3.2 13.6-8.8 18.4l-403.2 336c-4 4-9.6 5.6-15.2 5.6m24-644.8v569.6L795.2 520z"
+                                    fill="currentColor"
+                                  />
+                                  <path
+                                    d="M192 880q-4.8 0-9.6-2.4c-8.8-4-14.4-12.8-14.4-21.6V184c0-9.6 5.6-18.4 14.4-21.6s18.4-2.4 25.6 4L432 368c9.6 8.8 10.4 24 1.6 33.6s-24 10.4-33.6 1.6L216 237.6v564L400 636c9.6-8.8 24.8-8 33.6 1.6s8 24.8-1.6 33.6L208 872.8c-4.8 4.8-10.4 7.2-16 7.2"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                上线
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="53_actionNode"
+                      data-testid="rf__node-53_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="DoubleArrowOutlined_svg__icon"
+                                  color="currentColor"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 1024 1024"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M429.6 880c-3.2 0-7.2-.8-10.4-2.4-8.8-4-13.6-12.8-13.6-21.6V184c0-9.6 5.6-17.6 13.6-21.6 8.8-4 18.4-2.4 25.6 3.2l403.2 336c5.6 4.8 8.8 11.2 8.8 18.4s-3.2 13.6-8.8 18.4l-403.2 336c-4 4-9.6 5.6-15.2 5.6m24-644.8v569.6L795.2 520z"
+                                    fill="currentColor"
+                                  />
+                                  <path
+                                    d="M192 880q-4.8 0-9.6-2.4c-8.8-4-14.4-12.8-14.4-21.6V184c0-9.6 5.6-18.4 14.4-21.6s18.4-2.4 25.6 4L432 368c9.6 8.8 10.4 24 1.6 33.6s-24 10.4-33.6 1.6L216 237.6v564L400 636c9.6-8.8 24.8-8 33.6 1.6s8 24.8-1.6 33.6L208 872.8c-4.8 4.8-10.4 7.2-16 7.2"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                上线
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="34_actionNode"
+                      data-testid="rf__node-34_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(1060px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="DoubleArrowOutlined_svg__icon"
+                                  color="currentColor"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 1024 1024"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M429.6 880c-3.2 0-7.2-.8-10.4-2.4-8.8-4-13.6-12.8-13.6-21.6V184c0-9.6 5.6-17.6 13.6-21.6 8.8-4 18.4-2.4 25.6 3.2l403.2 336c5.6 4.8 8.8 11.2 8.8 18.4s-3.2 13.6-8.8 18.4l-403.2 336c-4 4-9.6 5.6-15.2 5.6m24-644.8v569.6L795.2 520z"
+                                    fill="currentColor"
+                                  />
+                                  <path
+                                    d="M192 880q-4.8 0-9.6-2.4c-8.8-4-14.4-12.8-14.4-21.6V184c0-9.6 5.6-18.4 14.4-21.6s18.4-2.4 25.6 4L432 368c9.6 8.8 10.4 24 1.6 33.6s-24 10.4-33.6 1.6L216 237.6v564L400 636c9.6-8.8 24.8-8 33.6 1.6s8 24.8-1.6 33.6L208 872.8c-4.8 4.8-10.4 7.2-16 7.2"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                上线
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                  <div
+                    class="react-flow__viewport-portal"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-label="React Flow controls"
+              class="react-flow__panel react-flow__controls vertical bottom left"
+              data-testid="rf__controls"
+              style="pointer-events: all;"
+            >
+              <button
+                aria-label="zoom in"
+                class="react-flow__controls-button react-flow__controls-zoomin"
+                disabled=""
+                title="zoom in"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="zoom out"
+                class="react-flow__controls-button react-flow__controls-zoomout"
+                title="zoom out"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h32v4.2H0z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="fit view"
+                class="react-flow__controls-button react-flow__controls-fitview"
+                title="fit view"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 30"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="react-flow__panel react-flow__attribution bottom left"
+              data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+              style="pointer-events: all;"
+            >
+              <a
+                aria-label="React Flow attribution"
+                href="https://reactflow.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                React Flow
+              </a>
+            </div>
+            <div
+              id="react-flow__node-desc-1"
+              style="display: none;"
+            >
+              Press enter or space to select a node.
+              You can then use the arrow keys to move the node around.
+               Press delete to remove it and escape to cancel.
+               
+            </div>
+            <div
+              id="react-flow__edge-desc-1"
+              style="display: none;"
+            >
+              Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+            </div>
+            <div
+              aria-atomic="true"
+              aria-live="assertive"
+              id="react-flow__aria-live-1"
+              style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
+<body>
+  <div>
+    <section
+      class="css-o4t7ka"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              coast
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
+                >
+                  <svg
+                    class="custom-icon custom-icon-refresh"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="extra"
+        >
+          <a
+            href="/sqle/project/700300/version-management"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回版本管理列表
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading flow-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="react-flow light"
+            data-testid="rf__wrapper"
+            style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+          >
+            <div
+              class="react-flow__renderer"
+              style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+            >
+              <div
+                class="react-flow__pane draggable"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  class="react-flow__viewport xyflow__viewport react-flow__container"
+                  style="transform: translate(49px,49px) scale(2);"
+                >
+                  <div
+                    class="react-flow__edges"
+                  >
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 79 to 78"
+                        class="react-flow__edge react-flow__edge-default nopan selectable"
+                        data-id="79_edge"
+                        data-testid="rf__edge-79_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M1,0.5 C265.5,0.5 265.5,0.5 530,0.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M1,0.5 C265.5,0.5 265.5,0.5 530,0.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 79_workflowNode to 78_workflowNode"
+                        class="react-flow__edge react-flow__edge-buttonEdge nopan selectable"
+                        data-id="79_workflowNode_edge"
+                        data-testid="rf__edge-79_workflowNode_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M1,78.5 C265.5,78.5 265.5,78.5 530,78.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M1,78.5 C265.5,78.5 265.5,78.5 530,78.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div
+                    class="react-flow__edgelabel-renderer"
+                  >
+                    <section
+                      class="css-1epqoyd"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                disabled=""
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    color="currentColor"
+                                    fill="currentColor"
+                                    height="16"
+                                    viewBox="0 0 14 14"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M1.135 5.434c-.304-.102-.307-.266.006-.37l11.134-3.711c.309-.103.485.07.4.372L9.492 12.858c-.088.309-.266.32-.396.027L7 8.167 10.5 3.5 5.833 7z"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  发布
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div
+                    class="react-flow__nodes"
+                    style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                  >
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-input selectable"
+                      data-id="79"
+                      data-testid="rf__node-79"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      dev
+                      <div
+                        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                        data-handlepos="right"
+                        data-id="1-79-null-source"
+                        data-nodeid="79"
+                      />
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-output selectable"
+                      data-id="78"
+                      data-testid="rf__node-78"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                        data-handlepos="left"
+                        data-id="1-78-null-target"
+                        data-nodeid="78"
+                      />
+                      test
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="79_workflowNode"
+                      data-testid="rf__node-79_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <a
+                                      href="/sqle/project/700300/exec-workflow/123456"
+                                      target="__blank"
+                                      title="test-failed-workflow"
+                                    >
+                                      test-failed-workflow
+                                    </a>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      class="css-3q8fl"
+                                    >
+                                      <svg
+                                        fill="none"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                                          stroke="#F59957"
+                                          stroke-width="1.5"
+                                        />
+                                      </svg>
+                                      <span>
+                                        上线失败
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                                    >
+                                      工单描述
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    -
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        重 试
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        已线下执行
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                          data-handleid="a"
+                          data-handlepos="right"
+                          data-id="1-79_workflowNode-a-source"
+                          data-nodeid="79_workflowNode"
+                        />
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="78_workflowNode"
+                      data-testid="rf__node-78_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                          data-handlepos="left"
+                          data-id="1-78_workflowNode-null-target"
+                          data-nodeid="78_workflowNode"
+                        />
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              hidden=""
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="79_actionNode"
+                      data-testid="rf__node-79_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="DoubleArrowOutlined_svg__icon"
+                                  color="currentColor"
+                                  fill="currentColor"
+                                  height="16"
+                                  viewBox="0 0 1024 1024"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M429.6 880c-3.2 0-7.2-.8-10.4-2.4-8.8-4-13.6-12.8-13.6-21.6V184c0-9.6 5.6-17.6 13.6-21.6 8.8-4 18.4-2.4 25.6 3.2l403.2 336c5.6 4.8 8.8 11.2 8.8 18.4s-3.2 13.6-8.8 18.4l-403.2 336c-4 4-9.6 5.6-15.2 5.6m24-644.8v569.6L795.2 520z"
+                                    fill="currentColor"
+                                  />
+                                  <path
+                                    d="M192 880q-4.8 0-9.6-2.4c-8.8-4-14.4-12.8-14.4-21.6V184c0-9.6 5.6-18.4 14.4-21.6s18.4-2.4 25.6 4L432 368c9.6 8.8 10.4 24 1.6 33.6s-24 10.4-33.6 1.6L216 237.6v564L400 636c9.6-8.8 24.8-8 33.6 1.6s8 24.8-1.6 33.6L208 872.8c-4.8 4.8-10.4 7.2-16 7.2"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                上线
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="78_actionNode"
+                      data-testid="rf__node-78_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="react-flow__viewport-portal"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-label="React Flow controls"
+              class="react-flow__panel react-flow__controls vertical bottom left"
+              data-testid="rf__controls"
+              style="pointer-events: all;"
+            >
+              <button
+                aria-label="zoom in"
+                class="react-flow__controls-button react-flow__controls-zoomin"
+                disabled=""
+                title="zoom in"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="zoom out"
+                class="react-flow__controls-button react-flow__controls-zoomout"
+                title="zoom out"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h32v4.2H0z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="fit view"
+                class="react-flow__controls-button react-flow__controls-fitview"
+                title="fit view"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 30"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="react-flow__panel react-flow__attribution bottom left"
+              data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+              style="pointer-events: all;"
+            >
+              <a
+                aria-label="React Flow attribution"
+                href="https://reactflow.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                React Flow
+              </a>
+            </div>
+            <div
+              id="react-flow__node-desc-1"
+              style="display: none;"
+            >
+              Press enter or space to select a node.
+              You can then use the arrow keys to move the node around.
+               Press delete to remove it and escape to cancel.
+               
+            </div>
+            <div
+              id="react-flow__edge-desc-1"
+              style="display: none;"
+            >
+              Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+            </div>
+            <div
+              aria-atomic="true"
+              aria-live="assertive"
+              id="react-flow__aria-live-1"
+              style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail render version detail when no work order associated 1`] = `
+<body>
+  <div>
+    <section
+      class="css-o4t7ka"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              coast
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span
+                  class="ant-btn-icon"
+                >
+                  <svg
+                    class="custom-icon custom-icon-refresh"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    width="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="extra"
+        >
+          <a
+            href="/sqle/project/700300/version-management"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回版本管理列表
+              </span>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading flow-wrapper css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="react-flow light"
+            data-testid="rf__wrapper"
+            style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+          >
+            <div
+              class="react-flow__renderer"
+              style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+            >
+              <div
+                class="react-flow__pane draggable"
+                style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+              >
+                <div
+                  class="react-flow__viewport xyflow__viewport react-flow__container"
+                  style="transform: translate(49px,49px) scale(2);"
+                >
+                  <div
+                    class="react-flow__edges"
+                  >
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 79 to 78"
+                        class="react-flow__edge react-flow__edge-default nopan selectable"
+                        data-id="79_edge"
+                        data-testid="rf__edge-79_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M1,0.5 C265.5,0.5 265.5,0.5 530,0.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M1,0.5 C265.5,0.5 265.5,0.5 530,0.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                    <svg
+                      style="z-index: 0;"
+                    >
+                      <g
+                        aria-describedby="react-flow__edge-desc-1"
+                        aria-label="Edge from 79_workflowNode to 78_workflowNode"
+                        class="react-flow__edge react-flow__edge-buttonEdge nopan selectable"
+                        data-id="79_workflowNode_edge"
+                        data-testid="rf__edge-79_workflowNode_edge"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <path
+                          class="react-flow__edge-path"
+                          d="M1,78.5 C265.5,78.5 265.5,78.5 530,78.5"
+                          fill="none"
+                        />
+                        <path
+                          class="react-flow__edge-interaction"
+                          d="M1,78.5 C265.5,78.5 265.5,78.5 530,78.5"
+                          fill="none"
+                          stroke-opacity="0"
+                          stroke-width="20"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div
+                    class="react-flow__edgelabel-renderer"
+                  >
+                    <section
+                      class="css-1epqoyd"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      >
+                        <div
+                          class="ant-space-item"
+                        />
+                      </div>
+                    </section>
+                  </div>
+                  <div
+                    class="react-flow__nodes"
+                    style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                  >
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-input selectable"
+                      data-id="79"
+                      data-testid="rf__node-79"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      dev
+                      <div
+                        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                        data-handlepos="right"
+                        data-id="1-79-null-source"
+                        data-nodeid="79"
+                      />
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-output selectable"
+                      data-id="78"
+                      data-testid="rf__node-78"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,0px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                        data-handlepos="left"
+                        data-id="1-78-null-target"
+                        data-nodeid="78"
+                      />
+                      test
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="79_workflowNode"
+                      data-testid="rf__node-79_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+                          data-handleid="a"
+                          data-handlepos="right"
+                          data-id="1-79_workflowNode-a-source"
+                          data-nodeid="79_workflowNode"
+                        />
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-stageNode selectable"
+                      data-id="78_workflowNode"
+                      data-testid="rf__node-78_workflowNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,78px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1e6vd6y"
+                      >
+                        <div
+                          class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+                          data-handlepos="left"
+                          data-id="1-78_workflowNode-null-target"
+                          data-nodeid="78_workflowNode"
+                        />
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-bottom: 8px;"
+                          >
+                            <div
+                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-card-body"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              hidden=""
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    添加已有工单
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    创建新工单
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="79_actionNode"
+                      data-testid="rf__node-79_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(0px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      />
+                    </div>
+                    <div
+                      aria-describedby="react-flow__node-desc-1"
+                      class="react-flow__node react-flow__node-actionNode selectable"
+                      data-id="78_actionNode"
+                      data-testid="rf__node-78_actionNode"
+                      role="button"
+                      style="z-index: 0; transform: translate(530px,40px); pointer-events: all; visibility: visible;"
+                      tabindex="0"
+                    >
+                      <section
+                        class="css-1diyz6t"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="react-flow__viewport-portal"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-label="React Flow controls"
+              class="react-flow__panel react-flow__controls vertical bottom left"
+              data-testid="rf__controls"
+              style="pointer-events: all;"
+            >
+              <button
+                aria-label="zoom in"
+                class="react-flow__controls-button react-flow__controls-zoomin"
+                disabled=""
+                title="zoom in"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="zoom out"
+                class="react-flow__controls-button react-flow__controls-zoomout"
+                title="zoom out"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h32v4.2H0z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="fit view"
+                class="react-flow__controls-button react-flow__controls-fitview"
+                title="fit view"
+                type="button"
+              >
+                <svg
+                  viewBox="0 0 32 30"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="react-flow__panel react-flow__attribution bottom left"
+              data-message="Please only hide this attribution when you are subscribed to React Flow Pro: https://pro.reactflow.dev"
+              style="pointer-events: all;"
+            >
+              <a
+                aria-label="React Flow attribution"
+                href="https://reactflow.dev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                React Flow
+              </a>
+            </div>
+            <div
+              id="react-flow__node-desc-1"
+              style="display: none;"
+            >
+              Press enter or space to select a node.
+              You can then use the arrow keys to move the node around.
+               Press delete to remove it and escape to cancel.
+               
+            </div>
+            <div
+              id="react-flow__edge-desc-1"
+              style="display: none;"
+            >
+              Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.
+            </div>
+            <div
+              aria-atomic="true"
+              aria-live="assertive"
+              id="react-flow__aria-live-1"
+              style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    >
+      <div>
+        <div
+          aria-busy="true"
+          aria-live="polite"
+          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="ant-spin-dot ant-spin-dot-spin"
+          >
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+            <i
+              class="ant-spin-dot-item"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-spin-container ant-spin-blur"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <section
+              class="css-doq0dk"
+            >
+              <div
+                class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+              >
+                <div
+                  class="title"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                    <span>
+                      返回版本详情
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="extra"
+                />
+              </div>
+              <form
+                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-re75ti"
+              >
+                <section
+                  class="has-border css-1114g56"
+                >
+                  <section
+                    class="css-bspaai"
+                  >
+                    <h3
+                      class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                    >
+                      <span
+                        class="anticon title-icon"
+                        role="img"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class=""
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          viewBox="0 0 24 28"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                            fill="#C3C6CD"
+                          />
+                        </svg>
+                      </span>
+                      <span>
+                        修改审核语句
+                      </span>
+                    </h3>
+                    <div
+                      class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+                    >
+                      <div
+                        class="ant-empty-image"
+                      >
+                        <svg
+                          height="41"
+                          viewBox="0 0 64 41"
+                          width="64"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            fill="none"
+                            fill-rule="evenodd"
+                            transform="translate(0 1)"
+                          >
+                            <ellipse
+                              cx="32"
+                              cy="33"
+                              fill="#f5f5f5"
+                              rx="32"
+                              ry="7"
+                            />
+                            <g
+                              fill-rule="nonzero"
+                              stroke="#d9d9d9"
+                            >
+                              <path
+                                d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
+                              />
+                              <path
+                                d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
+                                fill="#fafafa"
+                              />
+                            </g>
+                          </g>
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-empty-description"
+                      >
+                        请添加数据源
+                      </div>
+                    </div>
+                  </section>
+                </section>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
