@@ -17,8 +17,8 @@ const useModifySql = (isSameSqlForAll: boolean) => {
     clearTaskInfos,
     auditWorkflowWithSameSql,
     auditWorkflowWthDifferenceSql,
-    isDisableFinallySubmitButton,
-    disabledOperatorWorkflowBtnTips,
+    isConfirmationRequiredForSubmission,
+    submitWorkflowConfirmationMessage,
     resetFinallySubmitButtonStatus
   } = useAuditWorkflow();
 
@@ -49,8 +49,8 @@ const useModifySql = (isSameSqlForAll: boolean) => {
     showModifySqlStatementStep,
     backToWorkflowDetail,
     resetAllState,
-    disabledOperatorWorkflowBtnTips,
-    isDisableFinallySubmitButton,
+    submitWorkflowConfirmationMessage,
+    isConfirmationRequiredForSubmission,
     modifySqlAudit
   };
 };
