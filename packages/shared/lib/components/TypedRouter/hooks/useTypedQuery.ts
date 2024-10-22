@@ -36,8 +36,7 @@ function useTypedQuery() {
 
     const values: InferQueryFormConfig<T> = {} as InferQueryFormConfig<T>;
 
-    queryString.split('&').forEach((param) => {
-      const [key] = param.split('=');
+    queryString.split('&').forEach((key) => {
       (values as Record<string, string | null>)[key] = searchParams.get(key);
     });
 
