@@ -6,7 +6,7 @@ import ProjectSelectorModal from '../../../../Project/Detail/NotFoundRecentlyPro
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { NotFoundProjectProps } from './index.type';
 import { FlagFilled } from '@actiontech/icons';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
+import { ROUTE_PATHS } from '@actiontech/shared';
 
 const NotFoundProject: React.FC<NotFoundProjectProps> = ({
   open,
@@ -25,7 +25,7 @@ const NotFoundProject: React.FC<NotFoundProjectProps> = ({
     );
 
     navigate(
-      `${ROUTE_PATH_COLLECTION.SQLE.RULE}?${RuleUrlParamKey.projectID}=${projectSelectorValue}`,
+      `${ROUTE_PATHS.SQLE.RULE}?${RuleUrlParamKey.projectID}=${projectSelectorValue}`,
       {
         replace: true
       }
