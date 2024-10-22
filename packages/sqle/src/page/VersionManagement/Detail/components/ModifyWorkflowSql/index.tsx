@@ -27,8 +27,8 @@ const ModifyWorkflowSql: React.FC<{
 
   const {
     taskInfos: modifiedTasks,
-    disabledOperatorWorkflowBtnTips,
-    isDisableFinallySubmitButton,
+    submitWorkflowConfirmationMessage,
+    isConfirmationRequiredForSubmission,
     modifySqlAudit,
     resetAllState
   } = useModifySql(workflowInfo?.mode === WorkflowResV2ModeEnum.same_sqls);
@@ -54,8 +54,10 @@ const ModifyWorkflowSql: React.FC<{
         executeMode={workflowInfo?.exec_mode}
         workflowId={workflowInfo?.workflow_id ?? ''}
         modifiedTasks={modifiedTasks}
-        disabledOperatorWorkflowBtnTips={disabledOperatorWorkflowBtnTips}
-        isDisableFinallySubmitButton={isDisableFinallySubmitButton}
+        submitWorkflowConfirmationMessage={submitWorkflowConfirmationMessage}
+        isConfirmationRequiredForSubmission={
+          isConfirmationRequiredForSubmission
+        }
         backToDetailText={t('versionManagement.detail.backToVersionDetail')}
         refreshOverviewAction={onRefreshDetail}
       />
