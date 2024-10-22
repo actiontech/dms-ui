@@ -35,7 +35,12 @@ export type InferParamsFromConfig<T> = T extends ObjectRoutePathValue
 export type CustomLinkProps<T extends RouteConfig[keyof RouteConfig]> = Omit<
   LinkProps,
   'to'
-> & {
-  to: T | To;
-  values?: InferParamsFromConfig<T>;
-};
+> &
+  InferParamsFromConfig<T> extends never
+  ? {
+      to: T | To;
+    }
+  : {
+      to: T | To;
+      values: InferParamsFromConfig<T>;
+    };

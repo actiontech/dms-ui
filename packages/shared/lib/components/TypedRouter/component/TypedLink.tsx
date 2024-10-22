@@ -7,11 +7,15 @@ const TypedLink = <T extends RouteConfig[keyof RouteConfig]>(
   props: CustomLinkProps<T>,
   ref: React.Ref<HTMLAnchorElement>
 ) => {
-  const { to, values, ...linkProps } = props;
+  const { to, ...linkProps } = props;
   if (isCustomRoutePathObject(to)) {
-    return (
-      <Link {...linkProps} to={parse2ReactRouterPath(to, values)} ref={ref} />
-    );
+    if ('values' in props) {
+      const { values } = props;
+      return (
+        <Link {...linkProps} to={parse2ReactRouterPath(to, values)} ref={ref} />
+      );
+    }
+    return <Link {...linkProps} to={parse2ReactRouterPath(to)} ref={ref} />;
   }
   return <Link {...linkProps} to={to} ref={ref} />;
 };

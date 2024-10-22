@@ -38,7 +38,10 @@ const ComparisonEntry: React.FC = () => {
       <BasicButton
         onClick={() => {
           navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
-            values: { workflowId: '1846478104923475968', projectID }
+            values: {
+              workflowId: '1846478104923475968',
+              projectID
+            }
           });
         }}
       >
