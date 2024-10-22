@@ -14,8 +14,8 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
   updateTaskRecordCount,
   baseFormValues,
   sqlAuditInfoFormValues,
-  isDisableFinallySubmitButton,
-  disabledOperatorWorkflowBtnTips,
+  isConfirmationRequiredForSubmission,
+  submitWorkflowConfirmationMessage,
   createAction,
   auditAction,
   ...sharedStepDetail
@@ -52,9 +52,13 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
               {t('execWorkflow.create.auditResult.updateInfo')}
             </BasicButton>
             <SubmitWorkflowButton
-              disabled={isDisableFinallySubmitButton}
+              isConfirmationRequiredForSubmission={
+                isConfirmationRequiredForSubmission
+              }
               loading={creating}
-              disabledTips={disabledOperatorWorkflowBtnTips}
+              submitWorkflowConfirmationMessage={
+                submitWorkflowConfirmationMessage
+              }
               onClick={internalCreateWorkflow}
             />
           </Space>

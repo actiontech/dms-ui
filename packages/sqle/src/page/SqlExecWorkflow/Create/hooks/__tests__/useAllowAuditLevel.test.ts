@@ -26,11 +26,11 @@ describe('sqle/useAllowAuditLevel', () => {
     const resetBtnDisabledFn = jest.fn();
     const { result } = customRender();
 
-    expect(result.current.disabledOperatorWorkflowBtnTips).toBe('');
+    expect(result.current.submitWorkflowConfirmationMessage).toBe('');
     await act(async () => {
-      result.current.setDisabledOperatorWorkflowBtnTips('text');
+      result.current.setSubmitWorkflowConfirmationMessage('text');
     });
-    expect(result.current.disabledOperatorWorkflowBtnTips).toBe('text');
+    expect(result.current.submitWorkflowConfirmationMessage).toBe('text');
 
     await act(async () => {
       result.current.judgeAuditLevel(
@@ -49,6 +49,6 @@ describe('sqle/useAllowAuditLevel', () => {
     });
     expect(requestGetWorkflowTemplate).toHaveBeenCalled;
     expect(resetBtnDisabledFn).toHaveBeenCalled();
-    expect(result.current.disabledOperatorWorkflowBtnTips).toBe('');
+    expect(result.current.submitWorkflowConfirmationMessage).toBe('');
   });
 });

@@ -35,6 +35,7 @@ import {
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ModalName } from '../../../../data/ModalName';
+import { AuditTaskResData } from '../../../../testUtils/mockApi/execWorkflow/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -56,6 +57,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let requestGetModalStatus: jest.SpyInstance;
   let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
   let getSqlFileOrderMethodV1Spy: jest.SpyInstance;
+  let requestGetWorkflowTemplateSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
 
   const customRender = () => {
@@ -87,6 +89,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     getSqlFileOrderMethodV1Spy = task.getSqlFileOrderMethod();
     batchCheckInstanceIsConnectableByName =
       instance.batchCheckInstanceIsConnectableByName();
+    requestGetWorkflowTemplateSpy = execWorkflow.getWorkflowTemplate();
 
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -944,5 +947,100 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       desc: undefined,
       sql_version_id: 1
     });
+  });
+
+  it('should display a confirmation when attempting to submit a workflow with an audit level that prohibits submission', async () => {
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    // workflow_subject
+    const workflowName = getBySelector('#workflow_subject', baseElement);
+    fireEvent.change(workflowName, {
+      target: {
+        value: 'workflow_name_2'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    // desc
+    fireEvent.change(getBySelector('#desc', baseElement), {
+      target: {
+        value: 'workflow desc'
+      }
+    });
+
+    // data source
+    const instanceNameEle = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    const instanceNameLabel = `${instanceTipsMockData[1].instance_name}(${instanceTipsMockData[1].host}:${instanceTipsMockData[1].port})`;
+    await act(async () => {
+      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+      await act(async () => jest.advanceTimersByTime(3000));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    const SchemaNameEle = getBySelector(
+      '#databaseInfo_0_instanceSchema',
+      baseElement
+    );
+    fireEvent.mouseDown(SchemaNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => {
+      fireEvent.click(getBySelector(`div[title="sqle"]`));
+      await act(async () => jest.advanceTimersByTime(0));
+    });
+
+    await act(async () => jest.advanceTimersByTime(0));
+    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
+    fireEvent.change(monacoEditor, {
+      target: { value: 'select * from user' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // audit btn
+    await act(async () => {
+      fireEvent.click(screen.getByText('审 核'));
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(screen.getByText('审 核').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(requestAuditTask).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
+    expect(requestGetWorkflowTemplateSpy).toHaveBeenCalledTimes(
+      AuditTaskResData.length
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 提交工单
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(RequestCreateWorkflow).toHaveBeenCalledTimes(0);
+    await screen.findByText(
+      `项目 default 创建工单时最高只能允许有 warn 等级的审核错误，但是当前审核结果中最高包含 error 等级的审核结果。`
+    );
+    fireEvent.click(screen.getByText('仍要创建'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(RequestCreateWorkflow).toHaveBeenCalledTimes(1);
+    expect(RequestCreateWorkflow).toHaveBeenCalledWith({
+      desc: 'workflow desc',
+      project_name: 'default',
+      sql_version_id: undefined,
+      task_ids: [1, 2],
+      workflow_subject: 'workflow_name_2'
+    });
+    expect(screen.getByText('提交工单').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
   });
 });

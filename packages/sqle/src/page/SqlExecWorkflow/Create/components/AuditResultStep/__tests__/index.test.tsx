@@ -24,8 +24,8 @@ describe('test AuditResultStep', () => {
           isSameSqlForAll: true,
           databaseInfo: [{ instanceName: 'mysql-1', instanceSchema: 'test' }]
         }}
-        isDisableFinallySubmitButton={false}
-        disabledOperatorWorkflowBtnTips={''}
+        isConfirmationRequiredForSubmission={false}
+        submitWorkflowConfirmationMessage={''}
         createAction={createAction}
         auditAction={jest.fn()}
         {...MockSharedStepDetail}

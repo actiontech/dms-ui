@@ -1,7 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import SubmitWorkflowButton from '..';
 import { superRender } from '../../../../../testUtils/customRender';
-import { act } from '@testing-library/react';
 
 describe('test SubmitWorkflowButton', () => {
   it('handles button click', () => {
@@ -9,7 +8,7 @@ describe('test SubmitWorkflowButton', () => {
 
     const { container } = superRender(
       <SubmitWorkflowButton
-        disabled={false}
+        isConfirmationRequiredForSubmission={false}
         loading={false}
         onClick={onClick}
       />
@@ -20,14 +19,13 @@ describe('test SubmitWorkflowButton', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  it('displays the tooltip when disabled', async () => {
-    jest.useFakeTimers();
+  it('displays the confirmation message when isConfirmationRequiredForSubmission is true', async () => {
     const onClick = jest.fn();
 
     superRender(
       <SubmitWorkflowButton
-        disabled
-        disabledTips="Disabled Reason"
+        isConfirmationRequiredForSubmission
+        submitWorkflowConfirmationMessage="Confirmation Message"
         loading={false}
         onClick={onClick}
       />
@@ -35,21 +33,22 @@ describe('test SubmitWorkflowButton', () => {
     fireEvent.click(screen.getByText('提交工单'));
     expect(onClick).not.toHaveBeenCalled();
 
-    await act(async () => {
-      fireEvent.mouseOver(screen.getByText('提交工单'));
-      await jest.advanceTimersByTime(300);
-    });
+    await screen.findByText('Confirmation Message');
 
-    expect(screen.getByText('Disabled Reason')).toBeInTheDocument();
-
-    jest.useRealTimers();
+    expect(screen.getByText('仍要创建')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('仍要创建'));
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('disables the button when loading prop is true', () => {
     const onClick = jest.fn();
 
     superRender(
-      <SubmitWorkflowButton disabled={false} loading={true} onClick={onClick} />
+      <SubmitWorkflowButton
+        isConfirmationRequiredForSubmission={false}
+        loading={true}
+        onClick={onClick}
+      />
     );
     fireEvent.click(screen.getByText('提交工单'));
     expect(onClick).not.toHaveBeenCalled();
