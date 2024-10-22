@@ -3,7 +3,7 @@ import { CustomLinkProps, RouteConfig } from '../index.type';
 import { forwardRef } from 'react';
 import { isCustomRoutePathObject, parse2ReactRouterPath } from '../utils';
 
-const CustomLink = <T extends RouteConfig[keyof RouteConfig]>(
+const TypedLink = <T extends RouteConfig[keyof RouteConfig]>(
   props: CustomLinkProps<T>,
   ref: React.Ref<HTMLAnchorElement>
 ) => {
@@ -16,7 +16,7 @@ const CustomLink = <T extends RouteConfig[keyof RouteConfig]>(
   return <Link {...linkProps} to={to} ref={ref} />;
 };
 
-export default forwardRef(CustomLink) as unknown as <
+export default forwardRef(TypedLink) as unknown as <
   T extends RouteConfig[keyof RouteConfig]
 >(
   props: React.PropsWithChildren<CustomLinkProps<T>> &
