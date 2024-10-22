@@ -4,11 +4,10 @@ import {
   ProfileSquareFilled
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTips, ROUTE_PATHS } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import React, { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 import classNames from 'classnames';
 
 type QuickActionItemType = {
@@ -34,14 +33,14 @@ const QuickActions: React.FC<{
       {
         key: 'global-dashboard',
         title: t('dmsMenu.quickActions.globalDashboard'),
-        path: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD,
+        path: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD,
         icon: <TodoListOutlined width={18} height={18} color="currentColor" />,
         hidden: false
       },
       {
         key: 'report-statistics',
         title: t('dmsMenu.globalSettings.reportStatistics'),
-        path: ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS,
+        path: ROUTE_PATHS.SQLE.REPORT_STATISTICS,
         icon: <SignalFilled width={18} height={18} color="currentColor" />,
         // todo 权限重构代码合并后需要进行调整
         hidden: !isAdmin && !hasGlobalViewingPermission
@@ -49,7 +48,7 @@ const QuickActions: React.FC<{
       {
         key: 'view-rule',
         title: t('dmsMenu.globalSettings.viewRule'),
-        path: ROUTE_PATH_COLLECTION.SQLE.RULE,
+        path: ROUTE_PATHS.SQLE.RULE,
         icon: (
           <ProfileSquareFilled width={18} height={18} color="currentColor" />
         ),
