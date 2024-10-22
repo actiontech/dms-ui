@@ -75,6 +75,21 @@ const ComparisonEntry: React.FC = () => {
       >
         跳转至SQL文件概览
       </TypedLink>
+      <TypedLink
+        to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index}
+        values={{ projectID, instanceId: '123' }}
+      >
+        跳转至SQL管控
+      </TypedLink>
+      <BasicButton
+        onClick={() => {
+          navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index, {
+            values: { projectID, instanceId: '123', source: 'zz' }
+          });
+        }}
+      >
+        跳转至SQL管控-完整query
+      </BasicButton>
     </Space>
   );
 };

@@ -31,6 +31,13 @@ export const ROUTE_PATHS = {
         prefix: '/sqle/project/:projectID/exec-workflow',
         path: ':taskId/files/:fileId/sqls'
       }
+    },
+    SQL_MANAGEMENT: {
+      index: {
+        prefix: '/sqle/project',
+        path: ':projectID/sql-management',
+        query: 'instanceId&source'
+      }
     }
   }
 } as const;
