@@ -26,23 +26,26 @@ const useAuditWorkflow = () => {
   const { projectName } = useCurrentProject();
   const [taskInfos, setTaskInfos] = useState<IAuditTaskResV1[]>([]);
   const [
-    isDisableFinallySubmitButton,
+    isConfirmationRequiredForSubmission,
     {
-      setTrue: disableFinallySubmitButton,
-      setFalse: cancelDisableFinallySubmitButton
+      setTrue: enableSubmitButtonForConfirmation,
+      setFalse: disableSubmitButtonAfterConfirmation
     }
   ] = useBoolean(false);
 
   const {
-    disabledOperatorWorkflowBtnTips,
+    submitWorkflowConfirmationMessage,
     judgeAuditLevel,
-    setDisabledOperatorWorkflowBtnTips
+    setSubmitWorkflowConfirmationMessage
   } = useAllowAuditLevel();
 
   const resetFinallySubmitButtonStatus = useCallback(() => {
-    cancelDisableFinallySubmitButton();
-    setDisabledOperatorWorkflowBtnTips('');
-  }, [cancelDisableFinallySubmitButton, setDisabledOperatorWorkflowBtnTips]);
+    disableSubmitButtonAfterConfirmation();
+    setSubmitWorkflowConfirmationMessage('');
+  }, [
+    disableSubmitButtonAfterConfirmation,
+    setSubmitWorkflowConfirmationMessage
+  ]);
 
   const commonJudgeAuditLevel = useCallback(
     (tasks: IAuditTaskResV1[]) => {
@@ -54,13 +57,13 @@ const useAuditWorkflow = () => {
             | WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
             | undefined
         })) ?? [],
-        disableFinallySubmitButton,
-        cancelDisableFinallySubmitButton
+        enableSubmitButtonForConfirmation,
+        disableSubmitButtonAfterConfirmation
       );
     },
     [
-      cancelDisableFinallySubmitButton,
-      disableFinallySubmitButton,
+      disableSubmitButtonAfterConfirmation,
+      enableSubmitButtonForConfirmation,
       judgeAuditLevel,
       projectName
     ]
@@ -223,8 +226,8 @@ const useAuditWorkflow = () => {
     clearTaskInfos,
     auditWorkflowWithSameSql,
     auditWorkflowWthDifferenceSql,
-    isDisableFinallySubmitButton,
-    disabledOperatorWorkflowBtnTips,
+    isConfirmationRequiredForSubmission,
+    submitWorkflowConfirmationMessage,
     resetFinallySubmitButtonStatus
   };
 };

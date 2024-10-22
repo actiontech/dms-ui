@@ -16,8 +16,10 @@ const judgeLevelMap = new Map<
 export const useAllowAuditLevel = () => {
   const { t } = useTranslation();
 
-  const [disabledOperatorWorkflowBtnTips, setDisabledOperatorWorkflowBtnTips] =
-    useState('');
+  const [
+    submitWorkflowConfirmationMessage,
+    setSubmitWorkflowConfirmationMessage
+  ] = useState('');
   const judgeAuditLevel = useCallback(
     async (
       taskInfos: Array<{
@@ -33,7 +35,6 @@ export const useAllowAuditLevel = () => {
           project_name: projectName
         });
       };
-
       const tips: string[] = [];
       Promise.all(
         taskInfos.map((taskInfo) => request(taskInfo.projectName))
@@ -45,10 +46,11 @@ export const useAllowAuditLevel = () => {
             ?.allow_submit_when_less_audit_level as
             | WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum
             | undefined;
+
           if (isExistNotAllowLevel(currentAuditLevel, allowAuditLevel)) {
             tips.push(
               t(
-                'execWorkflow.create.auditResult.disabledOperatorWorkflowBtnTips',
+                'execWorkflow.create.auditResult.submitWorkflowConfirmationMessage',
                 {
                   currentProject: projectName,
                   allowAuditLevel: allowAuditLevel,
@@ -61,11 +63,11 @@ export const useAllowAuditLevel = () => {
           return false;
         });
         if (invalidTasks.length > 0 && tips.length > 0) {
-          setDisabledOperatorWorkflowBtnTips([...new Set(tips)].join('\n'));
+          setSubmitWorkflowConfirmationMessage([...new Set(tips)].join('\n'));
           setBtnDisabled();
         } else {
           resetBtnDisabled();
-          setDisabledOperatorWorkflowBtnTips('');
+          setSubmitWorkflowConfirmationMessage('');
         }
       });
     },
@@ -87,7 +89,7 @@ export const useAllowAuditLevel = () => {
 
   return {
     judgeAuditLevel,
-    disabledOperatorWorkflowBtnTips,
-    setDisabledOperatorWorkflowBtnTips
+    submitWorkflowConfirmationMessage,
+    setSubmitWorkflowConfirmationMessage
   };
 };
