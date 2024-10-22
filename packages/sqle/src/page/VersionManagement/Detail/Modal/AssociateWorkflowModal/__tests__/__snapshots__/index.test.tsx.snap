@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render init snap shot 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  关联已有工单
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item has-required-style css-15d6abf css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="workflow_ids"
+                        title=""
+                      />
+                    </div>
+                    <div
+                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                          >
+                            <div
+                              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                            >
+                              <div
+                                class="ant-spin-container"
+                              >
+                                <div
+                                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+                                >
+                                  <div
+                                    class="ant-table-container"
+                                  >
+                                    <div
+                                      class="ant-table-content"
+                                      style="overflow-x: auto; overflow-y: hidden;"
+                                    >
+                                      <table
+                                        style="min-width: 100%; table-layout: auto;"
+                                      >
+                                        <colgroup>
+                                          <col
+                                            class="ant-table-selection-col"
+                                          />
+                                        </colgroup>
+                                        <thead
+                                          class="ant-table-thead"
+                                        >
+                                          <tr>
+                                            <th
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              scope="col"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <div
+                                                class="ant-table-selection"
+                                              >
+                                                <label
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                                >
+                                                  <span
+                                                    class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                                  >
+                                                    <input
+                                                      aria-label="Select all"
+                                                      class="ant-checkbox-input"
+                                                      type="checkbox"
+                                                    />
+                                                    <span
+                                                      class="ant-checkbox-inner"
+                                                    />
+                                                  </span>
+                                                </label>
+                                              </div>
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              工单名称
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              工单状态
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              工单描述
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody
+                                          class="ant-table-tbody"
+                                        >
+                                          <tr
+                                            aria-hidden="true"
+                                            class="ant-table-measure-row"
+                                            style="height: 0px; font-size: 0px;"
+                                          >
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="ant-table-row ant-table-row-level-0"
+                                            data-row-key="123456"
+                                          >
+                                            <td
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <label
+                                                class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                <span
+                                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                                >
+                                                  <input
+                                                    class="ant-checkbox-input"
+                                                    type="checkbox"
+                                                  />
+                                                  <span
+                                                    class="ant-checkbox-inner"
+                                                  />
+                                                </span>
+                                              </label>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              exhaust
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              <div
+                                                class="css-3q8fl"
+                                              >
+                                                <svg
+                                                  fill="none"
+                                                  height="16"
+                                                  viewBox="0 0 16 16"
+                                                  width="16"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                                    stroke="#7453DA"
+                                                    stroke-width="1.5"
+                                                  />
+                                                </svg>
+                                                <span>
+                                                  待审核
+                                                </span>
+                                              </div>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              galoshes ack pretend cardboard drum deceivingly beside guilt sometimes polyester consequently moist boohoo perky construe submissive valiantly honesty indeed preheat greedily after worth scotch animated toward eek zowie numeric sustenance never ah than through quirkily cop-out gadzooks deliberately afore reasonable boo jacket anguished however rough round except orchid brand haversack mortally airbrush or fashion please er among bleakly underneath courageous zowie overload honestly jaywalk harangue clearly garage pulse unlike circumnavigate dearly unethically fess frivolous gloom pause yahoo pace bah hippodrome
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="ant-table-row ant-table-row-level-0"
+                                            data-row-key="1234567"
+                                          >
+                                            <td
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <label
+                                                class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                <span
+                                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                                >
+                                                  <input
+                                                    class="ant-checkbox-input"
+                                                    type="checkbox"
+                                                  />
+                                                  <span
+                                                    class="ant-checkbox-inner"
+                                                  />
+                                                </span>
+                                              </label>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              sailor
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              <div
+                                                class="css-3q8fl"
+                                              >
+                                                <svg
+                                                  fill="none"
+                                                  height="16"
+                                                  viewBox="0 0 16 16"
+                                                  width="16"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                                    stroke="#7453DA"
+                                                    stroke-width="1.5"
+                                                  />
+                                                </svg>
+                                                <span>
+                                                  待审核
+                                                </span>
+                                              </div>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              granular whenever pocket-watch bossy chubby gah but however orange cork absentmindedly hence flat depart digit mmm paltry every sedately blue truly reconsideration skean till form in though allegation reconsideration in so likewise splurge refute rawhide prime monthly brief instantly an greatly institute that however aha gummy excess wetly properly beautifully phew apropos pfft gummy decongestant verbally though timely after likely during impostor inasmuch scotch orchestrate beloved besides early but too who consequently woot outbid geez yieldingly within victorious specific not weary concrete rebel truthfully custody since geez sinful sprinkles switchboard confused past gah now frankly but even modulo platypus before ugh for tensely oof of procurement whether depot ah institutionalize even midst till papa fooey hence viciously opposite extremely around gladly rapidly psst blah putrefy reiterate indelible suitcase the any anti hello roughly through machine desecrate
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="ant-table-row ant-table-row-level-0"
+                                            data-row-key="12345678"
+                                          >
+                                            <td
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <label
+                                                class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                <span
+                                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                                >
+                                                  <input
+                                                    class="ant-checkbox-input"
+                                                    type="checkbox"
+                                                  />
+                                                  <span
+                                                    class="ant-checkbox-inner"
+                                                  />
+                                                </span>
+                                              </label>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              resource
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              <div
+                                                class="css-3q8fl"
+                                              >
+                                                <svg
+                                                  fill="none"
+                                                  height="16"
+                                                  viewBox="0 0 16 16"
+                                                  width="16"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                                                    stroke="#7453DA"
+                                                    stroke-width="1.5"
+                                                  />
+                                                </svg>
+                                                <span>
+                                                  待审核
+                                                </span>
+                                              </div>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              embody cleverly justly blah around yahoo distinction bare harangue however upset yuck upon reassuringly executor inasmuch truly meh monthly owlishly underneath aha innocently outlandish juvenile in whoever
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
