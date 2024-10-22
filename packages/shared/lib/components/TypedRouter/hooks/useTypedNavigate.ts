@@ -6,23 +6,30 @@ import {
 import { isCustomRoutePathObject, parse2ReactRouterPath } from '../utils';
 import { InferParamsFromConfig, RouteConfig } from '../index.type';
 
+type NavigateCustomOptions<T> = InferParamsFromConfig<T> extends never
+  ? NavigateOptions
+  : NavigateOptions & { values: InferParamsFromConfig<T> };
 const useTypedNavigate = () => {
   const innerNavigate = useRouterNavigate();
 
   function navigate(delta: number): void;
   function navigate<T extends RouteConfig[keyof RouteConfig]>(
-    to: T | To,
-    options?: NavigateOptions & { values: InferParamsFromConfig<T> }
+    to: To | T,
+    options?: NavigateCustomOptions<T>
   ): void;
   function navigate<T extends RouteConfig[keyof RouteConfig]>(
     to: T | To | number,
-    options?: NavigateOptions & { values: InferParamsFromConfig<T> }
+    options?: NavigateCustomOptions<T>
   ) {
-    const { values } = options ?? {};
     if (typeof to === 'number') {
       innerNavigate(to);
     } else if (isCustomRoutePathObject(to)) {
-      innerNavigate(parse2ReactRouterPath(to, values), options);
+      if (options && 'values' in options) {
+        const { values } = options;
+        innerNavigate(parse2ReactRouterPath(to, values), options);
+      } else {
+        innerNavigate(parse2ReactRouterPath(to), options);
+      }
     } else {
       innerNavigate(to, options);
     }
