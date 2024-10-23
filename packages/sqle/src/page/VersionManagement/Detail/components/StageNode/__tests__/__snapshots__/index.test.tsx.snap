@@ -1,0 +1,878 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstStage and isLastStage is all false 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1e6vd6y"
+    >
+      <div
+        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+        data-handlepos="left"
+        data-id="1-null-null-target"
+      />
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-bottom: 8px;"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <a
+                    href="/sqle/project/700300/exec-workflow/12345678"
+                    target="__blank"
+                    title="DEV1_20241021103951"
+                  >
+                    DEV1_20241021103951
+                  </a>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="css-3q8fl"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                        stroke="#41BF9A"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="m5.083 8 2.084 2.083 4.166-4.166"
+                        stroke="#41BF9A"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <span>
+                      上线成功
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  >
+                    工单描述
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  -
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                hidden=""
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重 试
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      已线下执行
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+            hidden=""
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  添加已有工单
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建新工单
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+        data-handleid="a"
+        data-handlepos="right"
+        data-id="1-null-a-source"
+      />
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstStage is true 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1e6vd6y"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-bottom: 8px;"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <a
+                    href="/sqle/project/700300/exec-workflow/12345678"
+                    target="__blank"
+                    title="DEV1_20241021103951"
+                  >
+                    DEV1_20241021103951
+                  </a>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="css-3q8fl"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                        stroke="#41BF9A"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="m5.083 8 2.084 2.083 4.166-4.166"
+                        stroke="#41BF9A"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <span>
+                      上线成功
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  >
+                    工单描述
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  -
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                hidden=""
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重 试
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      已线下执行
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  添加已有工单
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建新工单
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+        data-handleid="a"
+        data-handlepos="right"
+        data-id="1-null-a-source"
+      />
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstStage is true and version status is locked 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1e6vd6y"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-bottom: 8px;"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <a
+                    href="/sqle/project/700300/exec-workflow/12345678"
+                    target="__blank"
+                    title="DEV1_20241021103951"
+                  >
+                    DEV1_20241021103951
+                  </a>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="css-3q8fl"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                        stroke="#41BF9A"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="m5.083 8 2.084 2.083 4.166-4.166"
+                        stroke="#41BF9A"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <span>
+                      上线成功
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  >
+                    工单描述
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  -
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                hidden=""
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重 试
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      已线下执行
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                disabled=""
+                type="button"
+              >
+                <span>
+                  添加已有工单
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                disabled=""
+                type="button"
+              >
+                <span>
+                  创建新工单
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+        data-handleid="a"
+        data-handlepos="right"
+        data-id="1-null-a-source"
+      />
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail/StageNode render stage node when isLastStage is true 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1e6vd6y"
+    >
+      <div
+        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+        data-handlepos="left"
+        data-id="1-null-null-target"
+      />
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-bottom: 8px;"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <a
+                    href="/sqle/project/700300/exec-workflow/12345678"
+                    target="__blank"
+                    title="DEV1_20241021103951"
+                  >
+                    DEV1_20241021103951
+                  </a>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="css-3q8fl"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+                        stroke="#41BF9A"
+                        stroke-width="1.5"
+                      />
+                      <path
+                        d="m5.083 8 2.084 2.083 4.166-4.166"
+                        stroke="#41BF9A"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <span>
+                      上线成功
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  >
+                    工单描述
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  -
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                hidden=""
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重 试
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      已线下执行
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+            hidden=""
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  添加已有工单
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建新工单
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow list is empty 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1e6vd6y"
+    >
+      <div
+        class="react-flow__handle react-flow__handle-left nodrag nopan target connectablestart connectableend"
+        data-handlepos="left"
+        data-id="1-null-null-target"
+      />
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-bottom: 8px;"
+        >
+          <div
+            class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            />
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+            hidden=""
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  添加已有工单
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建新工单
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow status is failed 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1e6vd6y"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+      >
+        <div
+          class="ant-space-item"
+          style="margin-bottom: 8px;"
+        >
+          <div
+            class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <a
+                    href="/sqle/project/700300/exec-workflow/12345678"
+                    target="__blank"
+                    title="DEV1_20241021103951"
+                  >
+                    DEV1_20241021103951
+                  </a>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="css-3q8fl"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+                        stroke="#F59957"
+                        stroke-width="1.5"
+                      />
+                    </svg>
+                    <span>
+                      上线失败
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <span
+                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  >
+                    工单描述
+                  </span>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  -
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      重 试
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      已线下执行
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  添加已有工单
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建新工单
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="react-flow__handle react-flow__handle-right nodrag nopan source connectablestart connectableend"
+        data-handleid="a"
+        data-handlepos="right"
+        data-id="1-null-a-source"
+      />
+    </section>
+  </div>
+</body>
+`;

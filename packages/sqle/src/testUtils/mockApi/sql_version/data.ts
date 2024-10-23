@@ -9,6 +9,7 @@ import {
   IGetWorkflowsThatCanBeAssociatedToVersionV1Return,
   IGetDependenciesBetweenStageInstanceV1Return
 } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
+import { instanceTipsMockData } from '../instance/data';
 
 export const getSqlVersionListV1MockData = {
   code: 0,
@@ -79,7 +80,7 @@ export const getSqlVersionDetailV1MockData = {
             desc: 'drat quinoa however notwithstanding courteous obediently above gee consequently although plus aha by bludgeon so barring incidentally over heavy ah boohoo nor pricey duh pro knavishly ick delirious geez yippee challenge unto emergent fiercely advocate under blindly motionless extremely as from ack dicker assist suckle travel repentant worthless lest now boss given with blissfully venture behest circa free who ultimately eek muted woot inasmuch rewrite pish gosh while naughty furthermore below yowza blindly oof behind when twin worriedly boo scent boring um experienced till convince fooey ugh barring jealous reprove circa limply given save between stint coarse courageously if importance hepatitis fatally in furthermore ew geez between zowie whereas entire drat lovingly ick out or nor creaking although before duh minus unimpressively overplay summary loudly popularize couch long-term forceful intrepid perky duh marvelous shabby yowza eyeliner hm strategy see cleverly dress with smoggy dishonor under unfortunately ordinary conservative starch diligently well-off overwork through scowl yowza adrenalin tedious filthy hopeful legislature numeracy fooey furlough excepting analyse but while broadly till mmm',
             status: 'wait_for_audit',
             workflow_exec_time: '2025-04-27T01:46:32.187Z',
-            workflow_id: 'deed',
+            workflow_id: '123456',
             workflow_instances: [
               {
                 instance_schema: 'trash',
@@ -110,7 +111,7 @@ export const getSqlVersionDetailV1MockData = {
             desc: 'pulp enroll than duh lustrous despite for toe with er pantyhose accentuate ugh during er drat cutlet amid whether abnegate delightfully before hope uh-huh scorpion aboard near raw yet co-producer cruelty sinful purse interviewer anenst apud huzzah abscond solemnly generously usually sleet the incidentally toward until anti quizzically flimsy finally behind and futon vol unless humble sorrowful astride afore intensely blah modulo state too paltry kissingly at outsource blossom yum mealy boohoo about concerning tromp import quizzically slowly velocity hm gadzooks snow insidious geez failing um veto chromakey geez discrete linseed rare bah gadzooks happy gleefully eek window chops yippee midst eke second yahoo handsome till despite likewise obvious redound enormously except putrid surprise only beside brr surprisingly experience ferociously even dredger after incidentally requite er sonata instead pfft mad upwardly meh pish solace offensively as finally considering if er yearly in shyly kissingly circa for alongside better display',
             status: 'wait_for_audit',
             workflow_exec_time: '2024-07-11T07:11:15.631Z',
-            workflow_id: 'mousse',
+            workflow_id: '1234567',
             workflow_instances: [
               {
                 instance_schema: 'muscat',
@@ -145,7 +146,7 @@ export const getSqlVersionDetailV1MockData = {
             desc: 'atop sans excitedly own larva meh swordfish sunbeam rewrite as whoa lox mismatch beret recount austere ravioli loyalty shaft apropos nervously accompanist guilt whenever readjust ah abaft following indeed pertinent since molasses cinema reward huzzah blah when pike sprinkles ditch unless microchip though woot moral neglected zealous politely encouragement who forgo toward furthermore hastily so sniff whose enchanting sashay for instead the via hornet sprinkles blah first grok colorfully clone sparkling acquaintance phooey telescope whereas ack where acidly alongside given punctually whoa lasting practical lasting indeed since since cash moor on help gah team yowza burgeon cafe key down of though brochure efface wherever runny grave beneficial meanwhile brr finally fine hydrocarbon custom doubtfully t-shirt as which emphasize consistency mmm cleaner exonerate yippee fully until of creature ah twine gaseous gee wherever tinderbox mmm inhibit heartfelt disarm toady admired blacken consequently similar aw provider while handful hydrant intent gigantic unnaturally curse while upside-down naturally pish whoa apricot bicycle bah er till an whoa substitution misjudge modulo mask gigantic bus scholarship peninsula yet unnecessarily optimistically unsightly fidget gosh independence',
             status: 'wait_for_audit',
             workflow_exec_time: '2024-07-24T01:55:54.941Z',
-            workflow_id: 'forager',
+            workflow_id: '1234578',
             workflow_instances: [
               {
                 instance_schema: 'deer',
@@ -166,7 +167,7 @@ export const getSqlVersionDetailV1MockData = {
             desc: 'outside geez inasmuch igloo elderly who since hm drat neaten overconfidently um yowza pecan reword sharply charming sandbar whoever serialize hmph place ah inventory but swordfish yawningly hundred intensely inscribe gleefully icebreaker deploy with naughty trivial violently bewail deplore sand brightly comfortable tabulate schedule charlatan warmhearted speedily er twin aw marten of aboard furthermore furthermore whoa frequent ill-fated archive furthermore spark break bossy switch comestible finally past married supposing quizzically different enrich tensely severe finer deeply frizz including willfully anti typewriter helpfully following adjourn provider whenever huzzah aha fictionalize afraid monstrous cheerfully uh-huh potable unusual out sundae hungry indeed fuel astride ripe airbrush range duh pace likewise male scratchy steel notwithstanding stark browse gracious amid splurge geez reasoning bah huddle although massage hundred aw although coil pace slowly phony knight concrete gentle openly overconfidently because cooperative wretched thoughtfully encouragement beside excluding brr fondly mid memorise culture while beyond what generally faithfully silver quizzically among finally when now past schedule emphasize royal sorrowful absent times',
             status: 'wait_for_audit',
             workflow_exec_time: '2025-04-27T21:53:26.600Z',
-            workflow_id: 'barracks',
+            workflow_id: '1234579',
             workflow_instances: [
               {
                 instance_schema: 'abacus',
@@ -201,7 +202,7 @@ export const getSqlVersionDetailV1MockData = {
             desc: 'across fisherman provided ferociously anguished times manipulate',
             status: 'wait_for_audit',
             workflow_exec_time: '2024-11-29T20:01:35.931Z',
-            workflow_id: 'dead',
+            workflow_id: '123456789',
             workflow_instances: [
               {
                 instance_schema: 'labourer',
@@ -222,7 +223,7 @@ export const getSqlVersionDetailV1MockData = {
             desc: 'reproachfully when psst eek instantly vain beautifully supposing',
             status: 'wait_for_audit',
             workflow_exec_time: '2025-04-10T17:28:40.318Z',
-            workflow_id: 'hygienic',
+            workflow_id: '1235678',
             workflow_instances: [
               {
                 instance_schema: 'swanling',
@@ -242,7 +243,7 @@ export const getSqlVersionDetailV1MockData = {
         ]
       }
     ],
-    status: 'locked',
+    status: 'is_being_released',
     version: 'coast'
   },
   message: 'ok'
@@ -254,19 +255,19 @@ export const GetWorkflowsThatCanBeAssociatedToVersionV1MockData = {
     {
       desc: 'galoshes ack pretend cardboard drum deceivingly beside guilt sometimes polyester consequently moist boohoo perky construe submissive valiantly honesty indeed preheat greedily after worth scotch animated toward eek zowie numeric sustenance never ah than through quirkily cop-out gadzooks deliberately afore reasonable boo jacket anguished however rough round except orchid brand haversack mortally airbrush or fashion please er among bleakly underneath courageous zowie overload honestly jaywalk harangue clearly garage pulse unlike circumnavigate dearly unethically fess frivolous gloom pause yahoo pace bah hippodrome',
       status: 'wait_for_audit',
-      workflow_id: 'approach',
+      workflow_id: '123456',
       workflow_name: 'exhaust'
     },
     {
       desc: 'granular whenever pocket-watch bossy chubby gah but however orange cork absentmindedly hence flat depart digit mmm paltry every sedately blue truly reconsideration skean till form in though allegation reconsideration in so likewise splurge refute rawhide prime monthly brief instantly an greatly institute that however aha gummy excess wetly properly beautifully phew apropos pfft gummy decongestant verbally though timely after likely during impostor inasmuch scotch orchestrate beloved besides early but too who consequently woot outbid geez yieldingly within victorious specific not weary concrete rebel truthfully custody since geez sinful sprinkles switchboard confused past gah now frankly but even modulo platypus before ugh for tensely oof of procurement whether depot ah institutionalize even midst till papa fooey hence viciously opposite extremely around gladly rapidly psst blah putrefy reiterate indelible suitcase the any anti hello roughly through machine desecrate',
       status: 'wait_for_audit',
-      workflow_id: 'overload',
+      workflow_id: '1234567',
       workflow_name: 'sailor'
     },
     {
       desc: 'embody cleverly justly blah around yahoo distinction bare harangue however upset yuck upon reassuringly executor inasmuch truly meh monthly owlishly underneath aha innocently outlandish juvenile in whoever',
       status: 'wait_for_audit',
-      workflow_id: 'straw',
+      workflow_id: '12345678',
       workflow_name: 'resource'
     }
   ],
@@ -277,11 +278,322 @@ export const getDependenciesBetweenStageInstanceV1MockData = {
   code: 0,
   data: [
     {
-      next_stage_instance_id: 'allocation',
-      next_stage_instance_name: 'edge',
-      stage_instance_id: 'stall',
-      stage_instance_name: 'stir-fry'
+      next_stage_instance_id: instanceTipsMockData[1].instance_id,
+      next_stage_instance_name: instanceTipsMockData[1].instance_name,
+      stage_instance_id: instanceTipsMockData[0].instance_id,
+      stage_instance_name: instanceTipsMockData[0].instance_name
     }
   ],
   message: 'ok'
 } as IGetDependenciesBetweenStageInstanceV1Return;
+
+export const mockVersionDetailWithoutWorkflowData = {
+  ...getSqlVersionDetailV1MockData,
+  data: {
+    ...getSqlVersionDetailV1MockData.data,
+    sql_version_stage_detail: [
+      {
+        stage_id: 79,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'dev',
+        stage_sequence: 1,
+        workflow_details: []
+      },
+      {
+        stage_id: 78,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'test',
+        stage_sequence: 2,
+        workflow_details: []
+      }
+    ]
+  }
+};
+
+export const mockVersionDetailWhenWorkflowStatusISExecFailed = {
+  ...getSqlVersionDetailV1MockData,
+  data: {
+    ...getSqlVersionDetailV1MockData.data,
+    sql_version_stage_detail: [
+      {
+        stage_id: 79,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'dev',
+        stage_sequence: 1,
+        workflow_details: [
+          {
+            desc: '',
+            status: 'exec_failed',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '123456',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'test-failed-workflow',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 87
+          }
+        ]
+      },
+      {
+        stage_id: 78,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'test',
+        stage_sequence: 2,
+        workflow_details: []
+      }
+    ]
+  }
+};
+
+export const mockVersionDetailAllowExecWorkflowOrderData = {
+  ...getSqlVersionDetailV1MockData,
+  data: {
+    ...getSqlVersionDetailV1MockData.data,
+    sql_version_stage_detail: [
+      {
+        stage_id: 79,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'dev',
+        stage_sequence: 1,
+        workflow_details: [
+          {
+            desc: '',
+            status: 'finished',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '123456',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow1',
+            workflow_release_status: 'release',
+            workflow_sequence: 87
+          },
+          {
+            desc: '',
+            status: 'canceled',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '1234567',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow2',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 88
+          },
+          {
+            desc: '',
+            status: 'wait_for_execution',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '12345678',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow3',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 89
+          },
+          {
+            desc: '',
+            status: 'wait_for_audit',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '123456789',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow3=4',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 90
+          }
+        ]
+      },
+      {
+        stage_id: 78,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'test',
+        stage_sequence: 2,
+        workflow_details: []
+      }
+    ]
+  }
+};
+
+export const mockVersionDetailAllowReleaseWorkflowOrderData = {
+  ...getSqlVersionDetailV1MockData,
+  data: {
+    ...getSqlVersionDetailV1MockData.data,
+    sql_version_stage_detail: [
+      {
+        stage_id: 79,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'dev',
+        stage_sequence: 1,
+        workflow_details: [
+          {
+            desc: '',
+            status: 'finished',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '123456',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow1',
+            workflow_release_status: 'released',
+            workflow_sequence: 87
+          },
+          {
+            desc: '',
+            status: 'canceled',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '1234567',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow2',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 88
+          },
+          {
+            desc: '',
+            status: 'finished',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '12345678',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow3',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 89
+          },
+          {
+            desc: '',
+            status: 'wait_for_audit',
+            workflow_exec_time: '2024-07-11T07:11:15.631Z',
+            workflow_id: '123456789',
+            workflow_instances: [
+              {
+                instance_schema: 'muscat',
+                instances_id: 'dead',
+                instances_name: 'pension'
+              }
+            ],
+            workflow_name: 'workflow3=4',
+            workflow_release_status: 'wait_for_release',
+            workflow_sequence: 90
+          }
+        ]
+      },
+      {
+        stage_id: 78,
+        stage_instances: [
+          {
+            instances_id: '1739531854064652288',
+            instances_name: 'mysql-1'
+          },
+          {
+            instances_id: '1739531942258282496',
+            instances_name: 'mysql-2'
+          }
+        ],
+        stage_name: 'test',
+        stage_sequence: 2,
+        workflow_details: []
+      }
+    ]
+  }
+};
