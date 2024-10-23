@@ -88,7 +88,9 @@ const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({
 
       <Space className="workflow-base-info-title">
         {title}
-        <EmptyBox if={!!sqlVersion}>
+        <EmptyBox
+          if={!!sqlVersion?.sql_version_id && !!sqlVersion?.sql_version_name}
+        >
           <Link
             to={`/sqle/project/${projectID}/version-management/detail/${sqlVersion?.sql_version_id}`}
           >
