@@ -65,6 +65,13 @@ describe('base/router-base-ce', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('render router transit', async () => {
+      const { baseElement } = customRender(['/transit']);
+
+      expect(screen.getByText('transit')).toBeInTheDocument();
+      expect(baseElement).toMatchSnapshot();
+    });
+
     describe('render router project', () => {
       it('render route member', async () => {
         const { baseElement } = customRender([`/project/${projectID}/member`]);

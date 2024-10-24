@@ -18,10 +18,18 @@ import {
   WORKFLOW_VERSION_NAME_PATH_KEY,
   WORKFLOW_VERSION_ID_PATH_KEY
 } from '../../../../../../../../../data/common';
+import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { decompressData } from '@actiontech/shared/lib/utils/Compression';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useSelector: jest.fn()
+}));
+
+jest.mock('@actiontech/shared/lib/utils/Compression', () => ({
+  ...jest.requireActual('@actiontech/shared/lib/utils/Compression'),
+  decompressData: jest.fn()
 }));
 
 describe('test DatabaseSelectionItems', () => {
@@ -126,5 +134,100 @@ describe('test DatabaseSelectionItems', () => {
     expect(handleInstanceNameChangeSpy).toHaveBeenCalledWith(
       instanceTipsMockData[1].instance_name
     );
+  });
+
+  describe('cloudbeaver navigate', () => {
+    it('should decompress compressionData from searchParams and populate form fields when cloud_beaver redirects to create a work order page', async () => {
+      const getInstanceSpy = instance.getInstance();
+      const getInstanceSchemaSpy = instance.getInstanceSchemas();
+      const handleInstanceNameChangeSpy = jest.fn();
+      const decompressDataSpy = decompressData as jest.Mock;
+      const instanceName = 'mysql-1';
+      const schema = 'dev';
+      const sql = 'select * form t1 where id = 1';
+
+      decompressDataSpy.mockReturnValue({ instanceName, schema, sql });
+      const { result } = renderHook(() => Form.useForm());
+      const { container } = superRender(
+        <Form form={result.current[0]}>
+          <DatabaseSelectionItems
+            handleInstanceNameChange={handleInstanceNameChangeSpy}
+            {...MockSharedStepDetail}
+          />
+        </Form>,
+        undefined,
+        {
+          routerProps: {
+            initialEntries: [
+              `/exec-workflow?from=${TRANSIT_FROM_CONSTANT.cloudbeaver}&compression_data=data`
+            ]
+          }
+        }
+      );
+      expect(getInstanceSpy).toHaveBeenCalledTimes(1);
+      expect(getInstanceSpy).toHaveBeenCalledWith({
+        instance_name: instanceName,
+        project_name: mockProjectInfo.projectName
+      });
+      expect(decompressDataSpy).toHaveBeenCalledTimes(1);
+      expect(decompressDataSpy).toHaveBeenCalledWith('data');
+      expect(handleInstanceNameChangeSpy).toHaveBeenCalledTimes(1);
+      expect(handleInstanceNameChangeSpy).toHaveBeenCalledWith(instanceName);
+      expect(getInstanceSchemaSpy).toHaveBeenCalledTimes(1);
+      expect(getInstanceSchemaSpy).toHaveBeenCalledWith({
+        instance_name: instanceName,
+        project_name: mockProjectInfo.projectName
+      });
+
+      expect(container).toMatchSnapshot();
+    });
+
+    it('should not perform any action if compressionData is not found in searchParams', () => {
+      const handleInstanceNameChangeSpy = jest.fn();
+
+      const { result } = renderHook(() => Form.useForm());
+      superRender(
+        <Form form={result.current[0]}>
+          <DatabaseSelectionItems
+            handleInstanceNameChange={handleInstanceNameChangeSpy}
+            {...MockSharedStepDetail}
+          />
+        </Form>,
+        undefined,
+        {
+          routerProps: {
+            initialEntries: [
+              `/exec-workflow?from=${TRANSIT_FROM_CONSTANT.cloudbeaver}`
+            ]
+          }
+        }
+      );
+
+      expect(handleInstanceNameChangeSpy).toHaveBeenCalledTimes(0);
+    });
+
+    it('should not perform any action if from is not  in TRANSIT_FROM_CONSTANT', () => {
+      const handleInstanceNameChangeSpy = jest.fn();
+
+      const { result } = renderHook(() => Form.useForm());
+      superRender(
+        <Form form={result.current[0]}>
+          <DatabaseSelectionItems
+            handleInstanceNameChange={handleInstanceNameChangeSpy}
+            {...MockSharedStepDetail}
+          />
+        </Form>,
+        undefined,
+        {
+          routerProps: {
+            initialEntries: [
+              `/exec-workflow?from=${TRANSIT_FROM_CONSTANT.cloudbeaver}1&compression_data=data`
+            ]
+          }
+        }
+      );
+
+      expect(handleInstanceNameChangeSpy).toHaveBeenCalledTimes(0);
+    });
   });
 });
