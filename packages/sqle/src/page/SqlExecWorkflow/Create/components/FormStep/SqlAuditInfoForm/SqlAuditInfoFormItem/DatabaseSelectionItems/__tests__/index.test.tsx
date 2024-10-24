@@ -19,7 +19,7 @@ import {
   WORKFLOW_VERSION_ID_PATH_KEY
 } from '../../../../../../../../../data/common';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
-import { decompressData } from '@actiontech/shared/lib/utils/Compression';
+import { decompressFromEncodedURIComponent } from 'lz-string';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 jest.mock('react-redux', () => ({
@@ -27,9 +27,9 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn()
 }));
 
-jest.mock('@actiontech/shared/lib/utils/Compression', () => ({
-  ...jest.requireActual('@actiontech/shared/lib/utils/Compression'),
-  decompressData: jest.fn()
+jest.mock('lz-string', () => ({
+  ...jest.requireActual('lz-string'),
+  decompressFromEncodedURIComponent: jest.fn()
 }));
 
 describe('test DatabaseSelectionItems', () => {
@@ -141,12 +141,14 @@ describe('test DatabaseSelectionItems', () => {
       const getInstanceSpy = instance.getInstance();
       const getInstanceSchemaSpy = instance.getInstanceSchemas();
       const handleInstanceNameChangeSpy = jest.fn();
-      const decompressDataSpy = decompressData as jest.Mock;
+      const decompressDataSpy = decompressFromEncodedURIComponent as jest.Mock;
       const instanceName = 'mysql-1';
       const schema = 'dev';
       const sql = 'select * form t1 where id = 1';
 
-      decompressDataSpy.mockReturnValue({ instanceName, schema, sql });
+      decompressDataSpy.mockReturnValue(
+        JSON.stringify({ instanceName, schema, sql })
+      );
       const { result } = renderHook(() => Form.useForm());
       const { container } = superRender(
         <Form form={result.current[0]}>

@@ -28,9 +28,10 @@ import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../store';
 import useCreationMode from '../../../../../hooks/useCreationMode';
 import { useSearchParams } from 'react-router-dom';
-import { decompressData } from '@actiontech/shared/lib/utils/Compression';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { decompressFromEncodedURIComponent } from 'lz-string';
+import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
@@ -120,11 +121,11 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
       // 处理从 cloud_beaver 跳转至创建工单的情况
       if (compressionData && from === TRANSIT_FROM_CONSTANT.cloudbeaver) {
         try {
-          const { instanceName, schema, sql } = decompressData<{
+          const { instanceName, schema, sql } = jsonParse<{
             instanceName: string;
             schema: string;
             sql: string;
-          }>(compressionData);
+          }>(decompressFromEncodedURIComponent(compressionData));
 
           form.setFieldsValue({
             databaseInfo: [{ instanceName, instanceSchema: schema }],
