@@ -87,8 +87,30 @@ describe('sqle/GlobalDashboard/InitiatedWorkOrder', () => {
 
     fireEvent.click(screen.getAllByText('default')[0]);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(updateFilterValueFn).toHaveBeenCalledTimes(1);
+    expect(updateFilterValueFn).toHaveBeenCalledTimes(2);
     expect(updateFilterValueFn).toHaveBeenCalledWith('projectId', '700300');
+    expect(updateFilterValueFn).toHaveBeenCalledWith('instanceId', undefined);
+  });
+
+  it('render update filter value when click instance name', async () => {
+    customRender({});
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(screen.getAllByText('mysql-1')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateFilterValueFn).toHaveBeenCalledTimes(2);
+    expect(updateFilterValueFn).toHaveBeenNthCalledWith(
+      1,
+      'projectId',
+      '700300'
+    );
+
+    expect(updateFilterValueFn).toHaveBeenNthCalledWith(
+      2,
+      'instanceId',
+      '1739531854064652288'
+    );
   });
 
   it('render refresh list', async () => {

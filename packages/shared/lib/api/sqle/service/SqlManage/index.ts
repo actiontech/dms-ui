@@ -18,6 +18,8 @@ import {
   IGetSqlManageSqlAnalysisV1Return,
   IGetGlobalSqlManageListParams,
   IGetGlobalSqlManageListReturn,
+  IGetGlobalSqlManageStatisticsParams,
+  IGetGlobalSqlManageStatisticsReturn,
   IGetSqlManageListV2Params,
   IGetSqlManageListV2Return
 } from './index.d';
@@ -108,6 +110,18 @@ class SqlManageService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IGetGlobalSqlManageListReturn>(
       '/v1/sql_manages',
+      paramsData,
+      options
+    );
+  }
+
+  public GetGlobalSqlManageStatistics(
+    params: IGetGlobalSqlManageStatisticsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalSqlManageStatisticsReturn>(
+      '/v1/sql_manages/statistics',
       paramsData,
       options
     );

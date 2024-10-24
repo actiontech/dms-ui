@@ -48,6 +48,8 @@ import {
   IGetGlobalWorkflowsV1Return,
   IGetWorkflowStatisticOfInstancesParams,
   IGetWorkflowStatisticOfInstancesReturn,
+  IGetGlobalWorkflowStatisticsParams,
+  IGetGlobalWorkflowStatisticsReturn,
   ICreateWorkflowV2Params,
   ICreateWorkflowV2Return,
   IBatchCancelWorkflowsV2Params,
@@ -443,6 +445,18 @@ class WorkflowService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IGetWorkflowStatisticOfInstancesReturn>(
       '/v1/workflows/statistic_of_instances',
+      paramsData,
+      options
+    );
+  }
+
+  public GetGlobalWorkflowStatistics(
+    params: IGetGlobalWorkflowStatisticsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalWorkflowStatisticsReturn>(
+      '/v1/workflows/statistics',
       paramsData,
       options
     );

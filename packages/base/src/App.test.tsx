@@ -20,6 +20,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import system from './testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -37,6 +38,7 @@ jest.mock('react-redux', () => {
 describe('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
   let getUserBySessionSpy: jest.SpyInstance;
+  let getSystemModuleRedDotsSpy: jest.SpyInstance;
   const scopeDispatch = jest.fn();
   const navigateSpy = jest.fn();
 
@@ -52,7 +54,7 @@ describe('App', () => {
 
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();
     getUserBySessionSpy = mockDMSGlobalApi.getUserBySession();
-
+    getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
 
@@ -131,6 +133,7 @@ describe('App', () => {
     });
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
+    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledTimes(1);
