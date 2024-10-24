@@ -683,7 +683,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       sort_order: undefined,
       fuzzy_search_sql_fingerprint: '',
       filter_status: 'unhandled',
-      filter_priority: undefined,
+      filter_priority: 'high',
       filter_rule_name: undefined,
       filter_db_type: undefined,
       filter_assignee: undefined

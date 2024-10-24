@@ -225,9 +225,11 @@ exports[`sqle/GlobalDashboard/InitiatedWorkOrder render init snap shot 1`] = `
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  <span>
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                  >
                                     mysql-1
-                                  </span>
+                                  </a>
                                 </div>
                                 <div
                                   class="ant-space-item"
@@ -324,9 +326,11 @@ exports[`sqle/GlobalDashboard/InitiatedWorkOrder render init snap shot 1`] = `
                             <div
                               class="ant-space-item"
                             >
-                              <span>
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                              >
                                 mysql-1
-                              </span>
+                              </a>
                             </div>
                           </div>
                         </td>
