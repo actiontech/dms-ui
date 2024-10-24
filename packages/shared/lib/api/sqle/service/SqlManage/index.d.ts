@@ -11,6 +11,7 @@ import {
   exportSqlManageV1SortFieldEnum,
   exportSqlManageV1SortOrderEnum,
   GetGlobalSqlManageListFilterProjectPriorityEnum,
+  GetGlobalSqlManageStatisticsFilterProjectPriorityEnum,
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterStatusEnum,
@@ -25,7 +26,8 @@ import {
   IBaseRes,
   IGetSqlManageRuleTipsResp,
   IGetSqlManageSqlAnalysisResp,
-  IGetGlobalSqlManageListResp
+  IGetGlobalSqlManageListResp,
+  IGetGlobalSqlManageStatisticsResp
 } from '../common.d';
 
 export interface IGetSqlManageListParams {
@@ -138,6 +140,17 @@ export interface IGetGlobalSqlManageListParams {
 
 export interface IGetGlobalSqlManageListReturn
   extends IGetGlobalSqlManageListResp {}
+
+export interface IGetGlobalSqlManageStatisticsParams {
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: GetGlobalSqlManageStatisticsFilterProjectPriorityEnum;
+}
+
+export interface IGetGlobalSqlManageStatisticsReturn
+  extends IGetGlobalSqlManageStatisticsResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;

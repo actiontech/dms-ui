@@ -13,6 +13,7 @@ import {
   IGetWorkflowTasksResV1,
   IUpdateWorkflowScheduleReqV1,
   IGetWorkflowStatisticOfInstancesResV1,
+  IGlobalWorkflowStatisticsResV1,
   ICreateWorkflowReqV2,
   ICreateWorkflowResV2,
   IBatchCancelWorkflowsReqV2,
@@ -28,9 +29,10 @@ import {
 import {
   getWorkflowsV1FilterStatusEnum,
   exportWorkflowV1FilterStatusEnum,
-  getGlobalWorkflowsV1FilterStatusEnum,
   getGlobalWorkflowsV1FilterStatusListEnum,
-  getGlobalWorkflowsV1FilterProjectPriorityEnum
+  getGlobalWorkflowsV1FilterProjectPriorityEnum,
+  GetGlobalWorkflowStatisticsFilterStatusListEnum,
+  GetGlobalWorkflowStatisticsFilterProjectPriorityEnum
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
@@ -241,19 +243,7 @@ export interface IUpdateWorkflowScheduleV1Params
 export interface IUpdateWorkflowScheduleV1Return extends IBaseRes {}
 
 export interface IGetGlobalWorkflowsV1Params {
-  filter_subject?: string;
-
-  filter_create_time_from?: string;
-
-  filter_create_time_to?: string;
-
-  filter_task_execute_start_time_from?: string;
-
-  filter_task_execute_start_time_to?: string;
-
   filter_create_user_id?: string;
-
-  filter_status?: getGlobalWorkflowsV1FilterStatusEnum;
 
   filter_status_list?: getGlobalWorkflowsV1FilterStatusListEnum[];
 
@@ -262,10 +252,6 @@ export interface IGetGlobalWorkflowsV1Params {
   filter_instance_id?: string;
 
   filter_project_priority?: getGlobalWorkflowsV1FilterProjectPriorityEnum;
-
-  filter_current_step_assignee_user_id?: string;
-
-  filter_task_instance_id?: string;
 
   page_index: number;
 
@@ -280,6 +266,21 @@ export interface IGetWorkflowStatisticOfInstancesParams {
 
 export interface IGetWorkflowStatisticOfInstancesReturn
   extends IGetWorkflowStatisticOfInstancesResV1 {}
+
+export interface IGetGlobalWorkflowStatisticsParams {
+  filter_create_user_id?: string;
+
+  filter_status_list?: GetGlobalWorkflowStatisticsFilterStatusListEnum[];
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: GetGlobalWorkflowStatisticsFilterProjectPriorityEnum;
+}
+
+export interface IGetGlobalWorkflowStatisticsReturn
+  extends IGlobalWorkflowStatisticsResV1 {}
 
 export interface ICreateWorkflowV2Params extends ICreateWorkflowReqV2 {
   project_name: string;

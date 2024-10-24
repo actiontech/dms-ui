@@ -94,6 +94,14 @@ export enum GetGlobalSqlManageListFilterProjectPriorityEnum {
   'low' = 'low'
 }
 
+export enum GetGlobalSqlManageStatisticsFilterProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
 export enum GetSqlManageListV2FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 
