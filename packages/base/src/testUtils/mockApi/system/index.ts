@@ -13,11 +13,13 @@ import {
   successLarkTestReturn,
   webhookConfig,
   successWechatTestReturn,
-  successWebhookTestReturn
+  successWebhookTestReturn,
+  mockModuleRedHotsData
 } from './data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import DMSConfiguration from '@actiontech/shared/lib/api/base/service/Configuration';
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
+import system from '@actiontech/shared/lib/api/sqle/service/system';
 
 class MockSystemApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -54,6 +56,7 @@ class MockSystemApi implements MockSpyApy {
     this.getWechatAuditConfiguration();
     this.updateWechatAuditConfiguration();
     this.testWechatAuditConfig();
+    this.getSystemModuleRedDots();
   }
 
   public getLDAPConfig() {
@@ -337,6 +340,16 @@ class MockSystemApi implements MockSpyApy {
         data: {
           is_message_sent_normally: true
         }
+      })
+    );
+    return spy;
+  }
+
+  public getSystemModuleRedDots() {
+    const spy = jest.spyOn(system, 'GetSystemModuleRedDots');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockModuleRedHotsData
       })
     );
     return spy;
