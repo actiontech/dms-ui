@@ -506,6 +506,13 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     "path": "data-source-management",
   },
   {
+    "element": <div>
+      transit
+    </div>,
+    "key": "transit",
+    "path": "/transit",
+  },
+  {
     "children": [
       {
         "element": <div>

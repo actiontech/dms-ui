@@ -106,7 +106,7 @@ describe('page/Login-ee', () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useLocationMock.mockReturnValue({
         pathname: '/',
-        search: '?target=/index1',
+        search: `?target=${encodeURIComponent('/index1')}`,
         hash: '',
         state: null
       });
@@ -160,7 +160,7 @@ describe('page/Login-ee', () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useLocationMock.mockReturnValue({
         pathname: '/',
-        search: '?target=/project/700300/cloud-beaver',
+        search: `?target=${encodeURIComponent('/project/700300/cloud-beaver')}`,
         hash: '',
         state: null
       });
@@ -203,6 +203,53 @@ describe('page/Login-ee', () => {
       expect(navigateSpy).toHaveBeenCalledWith(
         `/project/700300/cloud-beaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
       );
+      expect(LocalStorageWrapperSet).toHaveBeenCalled();
+      expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
+        StorageKey.SHOW_COMPANY_NOTICE,
+        CompanyNoticeDisplayStatusEnum.NotDisplayed
+      );
+    });
+
+    it('render search value with search params', async () => {
+      const requestGetOauth2Tip = dms.getOauth2Tips();
+      const requestLogin = dms.addSession();
+      const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
+      useLocationMock.mockReturnValue({
+        pathname: '/',
+        search: `?target=${encodeURIComponent('/transit?from=cloudbeaver')}`,
+        hash: '',
+        state: null
+      });
+
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3300));
+      expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+
+      fireEvent.change(getBySelector('#username', baseElement), {
+        target: {
+          value: 'admin1'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.change(getBySelector('#password', baseElement), {
+        target: {
+          value: 'admin1'
+        }
+      });
+      await act(async () => jest.advanceTimersByTime(300));
+      fireEvent.click(screen.getByText('登 录'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(baseElement).toMatchSnapshot();
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestLogin).toHaveBeenCalledTimes(1);
+      expect(requestLogin).toHaveBeenCalledWith({
+        session: {
+          username: 'admin1',
+          password: 'admin1'
+        }
+      });
+      expect(navigateSpy).toHaveBeenCalled();
+      expect(navigateSpy).toHaveBeenCalledWith('/transit?from=cloudbeaver');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
       expect(LocalStorageWrapperSet).toHaveBeenCalledWith(
         StorageKey.SHOW_COMPANY_NOTICE,
