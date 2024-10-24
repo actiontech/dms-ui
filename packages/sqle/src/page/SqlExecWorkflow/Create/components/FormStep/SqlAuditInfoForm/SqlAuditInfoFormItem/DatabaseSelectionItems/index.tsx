@@ -121,6 +121,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
       // 处理从 cloud_beaver 跳转至创建工单的情况
       if (compressionData && from === TRANSIT_FROM_CONSTANT.cloudbeaver) {
         try {
+          // 存在即使压缩后的字符长度依旧超出浏览器地址栏的长度限制，导致解压缩失败的场景。
           const { instanceName, schema, sql } = jsonParse<{
             instanceName: string;
             schema: string;
