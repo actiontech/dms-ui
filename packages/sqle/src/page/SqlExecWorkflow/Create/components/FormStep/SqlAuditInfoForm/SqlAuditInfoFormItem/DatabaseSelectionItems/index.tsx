@@ -10,7 +10,10 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useInstance from '../../../../../../../../hooks/useInstance';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import useTestDatabaseConnect from './hooks/useTestDatabaseConnect';
-import { SqlAuditInfoFormFields } from '../../../../../index.type';
+import {
+  SqlAuditInfoFormFields,
+  SqlStatementFields
+} from '../../../../../index.type';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useRenderDatabaseSelectionItems from './hooks/useRenderDatabaseSelectionItems';
 import { BasicButton } from '@actiontech/shared';
@@ -24,6 +27,11 @@ import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../store';
 import useCreationMode from '../../../../../hooks/useCreationMode';
+import { useSearchParams } from 'react-router-dom';
+import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
+import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { decompressFromEncodedURIComponent } from 'lz-string';
+import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
@@ -32,6 +40,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
   const { projectName } = useCurrentProject();
+  const [searchParams] = useSearchParams();
 
   const { sqleTheme } = useThemeStyleData();
 
@@ -103,6 +112,39 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
         getInstanceTipListV1FunctionalModuleEnum.create_workflow
     });
   }, [projectName, updateInstanceList]);
+
+  useEffect(() => {
+    if (searchParams) {
+      const compressionData = searchParams.get('compression_data');
+      const from = searchParams.get('from');
+
+      // 处理从 cloud_beaver 跳转至创建工单的情况
+      if (compressionData && from === TRANSIT_FROM_CONSTANT.cloudbeaver) {
+        try {
+          // 存在即使压缩后的字符长度依旧超出浏览器地址栏的长度限制，导致解压缩失败的场景。
+          const { instanceName, schema, sql } = jsonParse<{
+            instanceName: string;
+            schema: string;
+            sql: string;
+          }>(decompressFromEncodedURIComponent(compressionData));
+
+          form.setFieldsValue({
+            databaseInfo: [{ instanceName, instanceSchema: schema }],
+            [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
+              form_data: sql
+            } as SqlStatementFields
+          });
+          handleInstanceNameChange?.(instanceName);
+          handleInstanceChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, instanceName);
+          handleInstanceSchemaChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, schema);
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error(error);
+        }
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form, searchParams]);
 
   return (
     <>
