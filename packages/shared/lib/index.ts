@@ -43,7 +43,6 @@ export { default as Download } from './utils/Download';
 export { default as LocalStorageWrapper } from './utils/LocalStorageWrapper';
 export { default as EventEmitter } from './utils/EventEmitter';
 export { default as HighlightCode } from './utils/HighlightCode';
-export * as Compression from './utils/Compression';
 
 export * as FormatterSQL from './utils/FormatterSQL';
 export * as Common from './utils/Common';
