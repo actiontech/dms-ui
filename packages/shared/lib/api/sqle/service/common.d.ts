@@ -29,6 +29,7 @@ import {
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   OperationRecordListStatusEnum,
+  ModuleRedDotModuleNameEnum,
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
@@ -2031,7 +2032,7 @@ export interface IMaintenanceTimeResV1 {
 export interface IModuleRedDot {
   has_red_dot?: boolean;
 
-  module_name?: string;
+  module_name?: ModuleRedDotModuleNameEnum;
 }
 
 export type IModuleRedDots = IModuleRedDot[];
