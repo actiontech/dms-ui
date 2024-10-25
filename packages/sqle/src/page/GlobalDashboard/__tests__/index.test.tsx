@@ -14,13 +14,17 @@ describe('sqle/GlobalDashboard', () => {
   let getGlobalWorkflowsSpy: jest.SpyInstance;
   let getGlobalSqlManageList: jest.SpyInstance;
   let getInstanceTipListSpy: jest.SpyInstance;
+  let getGlobalSqlManageStatisticsSpy: jest.SpyInstance;
+  let getGlobalWorkflowStatisticsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     getGlobalWorkflowsSpy = workflow.getGlobalWorkflows();
+    getGlobalWorkflowStatisticsSpy = workflow.getGlobalWorkflowStatistics();
     getGlobalSqlManageList = sqlManage.getGlobalSqlManageList();
+    getGlobalSqlManageStatisticsSpy = sqlManage.getGlobalSqlManageStatistics();
     getInstanceTipListSpy = instance.getInstanceTipList();
   });
 
@@ -34,12 +38,16 @@ describe('sqle/GlobalDashboard', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(2);
   });
 
   it('render filter list', async () => {
     superRender(<GlobalDashboard />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(2);
 
     fireEvent.mouseDown(getBySelector('#projectId'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -47,6 +55,8 @@ describe('sqle/GlobalDashboard', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(2);
+    expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(2);
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(4);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -62,12 +72,16 @@ describe('sqle/GlobalDashboard', () => {
     );
     await act(async () => jest.advanceTimersByTime(0));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(3);
+    expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(3);
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(6);
 
     fireEvent.mouseDown(getBySelector('#projectPriority'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('div[title="高"]'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(4);
+    expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(4);
+    expect(getGlobalWorkflowStatisticsSpy).toHaveBeenCalledTimes(8);
   });
 
   it('test refresh list', async () => {

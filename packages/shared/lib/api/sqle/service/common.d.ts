@@ -29,6 +29,7 @@ import {
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   OperationRecordListStatusEnum,
+  ModuleRedDotModuleNameEnum,
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
@@ -1133,7 +1134,15 @@ export interface IGetGlobalSqlManageListResp {
 
   message?: string;
 
-  total_num?: number;
+  total_nums?: number;
+}
+
+export interface IGetGlobalSqlManageStatisticsResp {
+  code?: number;
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IGetInstanceAuditPlanDetailResV1 {
@@ -1560,6 +1569,14 @@ export interface IGetSqlVersionListResV1 {
   total_nums?: number;
 }
 
+export interface IGetSystemModuleRedDotsRes {
+  code?: number;
+
+  data?: IModuleRedDots;
+
+  message?: string;
+}
+
 export interface IGetSystemVariablesResV1 {
   code?: number;
 
@@ -1800,10 +1817,32 @@ export interface IGlobalSqlManage {
   status?: GlobalSqlManageStatusEnum;
 }
 
+export interface IGlobalWorkflowStatisticsResV1 {
+  code?: number;
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IHighPriorityConditionReq {
   key?: string;
 
   operator?: HighPriorityConditionReqOperatorEnum;
+
+  value?: string;
+}
+
+export interface IHighPriorityConditionResV1 {
+  desc?: string;
+
+  enums_value?: IEnumsValueResV1[];
+
+  key?: string;
+
+  operator?: IOperatorResV1;
+
+  type?: HighPriorityConditionResV1TypeEnum;
 
   value?: string;
 }
@@ -1897,7 +1936,7 @@ export interface IInstanceForCreatingTask {
 }
 
 export interface IInstanceInfo {
-  instance_id?: number;
+  instance_id?: string;
 
   instance_name?: string;
 }
@@ -1989,6 +2028,14 @@ export interface IMaintenanceTimeResV1 {
 
   maintenance_stop_time?: ITimeResV1;
 }
+
+export interface IModuleRedDot {
+  has_red_dot?: boolean;
+
+  module_name?: ModuleRedDotModuleNameEnum;
+}
+
+export type IModuleRedDots = IModuleRedDot[];
 
 export interface IModuleStatusRes {
   is_supported?: boolean;
@@ -2632,8 +2679,6 @@ export interface ISystemVariablesResV1 {
   operation_record_expired_hours?: number;
 
   url?: string;
-
-  workflow_expired_hours?: number;
 }
 
 export interface ITable {
@@ -2936,8 +2981,6 @@ export interface IUpdateSystemVariablesReqV1 {
   operation_record_expired_hours?: number;
 
   url?: string;
-
-  workflow_expired_hours?: number;
 }
 
 export interface IUpdateWechatConfigurationReqV1 {

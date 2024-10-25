@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/GlobalDashboard render init snap shot 1`] = `
+exports[`sqle/GlobalDashboard ce render init snap shot 1`] = `
 <body>
   <div>
     <div
@@ -292,14 +292,8 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px;"
                   >
                     待解决SQL
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    10
                   </div>
                 </div>
               </div>
