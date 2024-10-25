@@ -427,5 +427,63 @@ export const PERMISSION_MANIFEST: Record<
       .CANCEL_SCHEDULE_TIME_EXEC_TASK,
     type: 'action',
     projectArchived: false
+  },
+
+  // SQL 管控
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
   }
 } as const;

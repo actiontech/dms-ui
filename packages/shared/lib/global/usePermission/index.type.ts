@@ -1,6 +1,7 @@
 import {
   ActiontechTableActionMeta,
-  ActiontechTableActionsConfig
+  ActiontechTableActionsConfig,
+  ActiontechTableToolbarActionMeta
 } from '../../components/ActiontechTable/index.type';
 import { PermissionsConstantType } from './permissions';
 
@@ -36,3 +37,6 @@ export type ActiontechTableActionsWithPermissions<
         : ActiontechTableActionsConfig<T, F, OtherColumnKeys>[K];
     }
   | ReplacePermissions<ActiontechTableActionMeta<T>>[];
+
+export type ActiontechTableToolbarActionWithPermissions =
+  ReplacePermissions<ActiontechTableToolbarActionMeta>[];

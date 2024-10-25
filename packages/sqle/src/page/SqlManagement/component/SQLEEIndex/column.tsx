@@ -3,8 +3,7 @@ import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
-  PageInfoWithoutIndexAndSize,
-  ActiontechTableProps
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
@@ -16,10 +15,14 @@ import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicTool
 import { Avatar } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
-import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
+// import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import {
+  ActiontechTableActionsWithPermissions,
+  PERMISSIONS
+} from '@actiontech/shared/lib/global';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -106,22 +109,22 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 export const SqlManagementRowAction = (
   openModal: (name: ModalName, row?: ISqlManage) => void,
   jumpToAnalyze: (sqlManageID: string) => void,
-  operationPermission: boolean,
   openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
   onCreateWhitelist: (record?: ISqlManage) => void,
   language: SupportLanguage
-): ActiontechTableProps<ISqlManage>['actions'] => {
-  const getWidth = () => {
-    if (operationPermission) {
-      return language === SupportLanguage.enUS
-        ? 350
-        : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
-    }
-    return 110;
-  };
+): ActiontechTableActionsWithPermissions<ISqlManage> => {
+  // const getWidth = () => {
+  //   if (operationPermission) {
+  //     return language === SupportLanguage.enUS
+  //       ? 350
+  //       : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
+  //   }
+  //   return 110;
+  // };
 
   return {
-    width: getWidth(),
+    // todo width根据权限和语言适配
+    // width: getWidth(),
     buttons: [
       {
         text: t('sqlManagement.table.action.single.assignment'),
@@ -133,7 +136,7 @@ export const SqlManagementRowAction = (
             }
           };
         },
-        permissions: () => operationPermission
+        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT
       },
       {
         text: t('sqlManagement.table.action.single.updateStatus.triggerText'),
@@ -145,7 +148,7 @@ export const SqlManagementRowAction = (
             }
           };
         },
-        permissions: () => operationPermission
+        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS
       }
     ],
     moreButtons: [
@@ -155,7 +158,7 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           openModal(ModalName.Change_SQL_Priority, record);
         },
-        permissions: () => operationPermission
+        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY
       },
       {
         text: t('sqlManagement.table.action.analyze'),
@@ -170,7 +173,8 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           openCreateSqlManagementExceptionModal(record);
         },
-        permissions: () => operationPermission
+        permissions:
+          PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION
       },
       {
         text: t('sqlManagement.table.action.createWhitelist'),
@@ -178,7 +182,7 @@ export const SqlManagementRowAction = (
         onClick: (record) => {
           onCreateWhitelist(record);
         },
-        permissions: () => operationPermission
+        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
       }
     ]
   };
@@ -186,12 +190,10 @@ export const SqlManagementRowAction = (
 
 const SqlManagementColumn: (
   projectID: string,
-  hasPermissionAndNotArchive: boolean,
   updateRemark: (id: number, remark: string) => void,
   openModal: (name: ModalName, row?: ISqlManage) => void
 ) => ActiontechTableColumn<ISqlManage, SqlManagementTableFilterParamType> = (
   projectID,
-  hasPermissionAndNotArchive,
   updateRemark,
   openModal
 ) => {
@@ -413,6 +415,9 @@ const SqlManagementColumn: (
       width: 200,
       className: 'ellipsis-column-width',
       render: (remark, record) => {
+        // todo column中的权限判断 admin project_manager project_not_archived
+        // todo 是否可以从usePermission中导出一个通用的权限 这个权限感觉是最常用的 （（ admin || project_manager） && project_not_archived）
+        const hasPermissionAndNotArchive = true;
         if (!hasPermissionAndNotArchive)
           return remark ? <BasicTypographyEllipsis textCont={remark} /> : '-';
         return (

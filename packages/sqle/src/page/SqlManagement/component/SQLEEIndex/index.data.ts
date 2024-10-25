@@ -1,4 +1,8 @@
 import { t } from '../../../../locale';
+import {
+  PERMISSIONS,
+  ActiontechTableToolbarActionWithPermissions
+} from '@actiontech/shared/lib/global';
 
 export const SQLAuditRecordListUrlParamsKey = {
   SQLAuditRecordID: 'SQLAuditRecordID'
@@ -46,7 +50,7 @@ export const actionsButtonData = (
   onBatchAssignment: () => void,
   onBatchSolve: () => void,
   onBatchIgnore: () => void
-) => {
+): ActiontechTableToolbarActionWithPermissions => {
   return [
     {
       key: 'batch-assignment',
@@ -56,7 +60,8 @@ export const actionsButtonData = (
         onClick: () => {
           onBatchAssignment();
         }
-      }
+      },
+      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT
     },
     {
       key: 'batch-solve',
@@ -70,7 +75,8 @@ export const actionsButtonData = (
         okButtonProps: {
           disabled: batchSolveLoading
         }
-      }
+      },
+      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE
     },
     {
       key: 'batch-ignore',
@@ -84,7 +90,8 @@ export const actionsButtonData = (
         okButtonProps: {
           disabled: batchIgnoreLoading
         }
-      }
+      },
+      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE
     }
   ];
 };
