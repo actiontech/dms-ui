@@ -118,7 +118,9 @@ describe('App', () => {
     );
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/exec-workflow`,
+      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
+        '/exec-workflow'
+      )}`,
       { replace: true }
     );
   });
@@ -172,7 +174,7 @@ describe('App', () => {
       });
     });
     const { container } = superRender(<App />, undefined, {
-      routerProps: { initialEntries: ['/exec-workflow'] }
+      routerProps: { initialEntries: ['/exec-workflow?query=test'] }
     });
 
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(0);
@@ -180,7 +182,9 @@ describe('App', () => {
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(0);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/exec-workflow`,
+      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
+        '/exec-workflow?query=test'
+      )}`,
       { replace: true }
     );
     await act(async () => jest.advanceTimersByTime(0));

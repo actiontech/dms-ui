@@ -53,6 +53,8 @@ const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
 const DataSourceManagement = lazy(() => import('../page/DataSourceManagement'));
 const DataMaskRuleOverview = lazy(() => import('../page/DataMaskRuleOverview'));
 
+const Transit = lazy(() => import('../page/Transit'));
+
 export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: '/',
@@ -86,6 +88,11 @@ export const BaseRouterConfig: RouterConfigItem[] = [
       SystemRole.globalViewing
     ],
     element: <DataSourceManagement />
+  },
+  {
+    path: '/transit',
+    key: 'transit',
+    element: <Transit />
   },
 
   // #if [ee]

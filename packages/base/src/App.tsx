@@ -41,7 +41,6 @@ import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
 import i18n from './locale';
 import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
-
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -63,11 +62,23 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
     }
     setInitRenderApp(false);
     if (!token && !['/login', '/user/bind'].includes(location.pathname)) {
-      navigate(`/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${location.pathname}`, {
-        replace: true
-      });
+      const currentPath = location.pathname;
+      const currentSearch = location.search;
+
+      const fullPath = currentSearch
+        ? `${currentPath}${currentSearch}`
+        : currentPath;
+
+      navigate(
+        `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
+          fullPath
+        )}`,
+        {
+          replace: true
+        }
+      );
     }
-  }, [initRenderApp, location.pathname, navigate, token]);
+  }, [initRenderApp, location.pathname, location.search, navigate, token]);
   return <>{!initRenderApp && children}</>;
 };
 
