@@ -3,10 +3,8 @@ import { useMemo, useEffect, useCallback, useState } from 'react';
 import useInstance from '../../../hooks/useInstance';
 import { Form } from 'antd';
 import { GlobalDashboardFilterType } from '../index.type';
-// #if [ee]
 import sqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { GetGlobalSqlManageStatisticsFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
-// #endif
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import {
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
