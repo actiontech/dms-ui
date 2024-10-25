@@ -60,9 +60,10 @@ const PendingWorkOrder: React.FC<GlobalDashboardListProps> = ({
     }
   );
 
-  const onUpdateFilterProjectValue = useCallback(
-    (value?: string) => {
-      updateFilterValue('projectId', value);
+  const onUpdateFilterValue = useCallback(
+    (projectId?: string, instanceId?: string) => {
+      updateFilterValue('projectId', projectId);
+      updateFilterValue('instanceId', instanceId);
     },
     [updateFilterValue]
   );
@@ -87,9 +88,7 @@ const PendingWorkOrder: React.FC<GlobalDashboardListProps> = ({
         pagination={{
           total: workflowList?.total ?? 0
         }}
-        columns={GlobalDashboardPendingWorkflowListColumn(
-          onUpdateFilterProjectValue
-        )}
+        columns={GlobalDashboardPendingWorkflowListColumn(onUpdateFilterValue)}
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}

@@ -428,6 +428,7 @@ const SQLEEIndex = () => {
         filter_instance_id:
           searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY) ?? ''
       });
+      setIsHighPriority(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
