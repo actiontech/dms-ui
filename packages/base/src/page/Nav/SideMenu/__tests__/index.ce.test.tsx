@@ -15,7 +15,7 @@ import {
 import system from '../../../../testUtils/mockApi/system';
 
 describe('test base/Nav/SideMenu/index.ce', () => {
-   let getSystemModuleRedDotsSpy: jest.SpyInstance;
+  let getSystemModuleRedDotsSpy: jest.SpyInstance;
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
   beforeEach(() => {
     mockSystemConfig();
