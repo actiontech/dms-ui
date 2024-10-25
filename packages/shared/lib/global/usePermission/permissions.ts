@@ -110,6 +110,16 @@ export const PERMISSIONS = {
         EXEC_TASK: 'action:exec_task',
         SCHEDULE_TIME_EXEC_TASK: 'action:schedule_time_exec_task',
         CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task'
+      },
+      SQL_MANAGEMENT: {
+        ASSIGNMENT: 'action:sql_assignment',
+        UPDATE_STATUS: 'action:update_sql_status',
+        UPDATE_PRIORITY: 'action:update_sql_priority',
+        CREATE_SQL_EXCEPTION: 'action:create_SQL_exception',
+        CREATE_WHITE_LIST: 'action:create_white_list',
+        BATCH_ASSIGNMENT: 'action:batch_sql_assignment',
+        BATCH_RESOLVE: 'action:batch_resolve',
+        BATCH_IGNORE: 'action:batch_ignore'
       }
     }
   }
