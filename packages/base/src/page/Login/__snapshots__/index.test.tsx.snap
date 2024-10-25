@@ -47,7 +47,7 @@ exports[`page/Login-ee render login snap 1`] = `
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
@@ -607,7 +607,7 @@ exports[`page/Login-ee render login success when has location search val render 
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
@@ -899,7 +899,7 @@ exports[`page/Login-ee render login success when has location search val render 
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
@@ -1191,7 +1191,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
