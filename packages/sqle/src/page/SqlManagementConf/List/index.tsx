@@ -50,10 +50,11 @@ import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
 const List: React.FC = () => {
   const { t } = useTranslation();
   const { projectArchive, projectName, projectID } = useCurrentProject();
-  const { username } = useCurrentUser();
+  const { username, isAdmin, isProjectManager } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
+  const operationPermission = isAdmin || isProjectManager(projectName);
 
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
@@ -248,7 +249,8 @@ const List: React.FC = () => {
             deleteAction,
             disabledAction,
             enabledAction,
-            isHaveServicePermission
+            isHaveServicePermission,
+            operationPermission
           })}
         />
       </Spin>
