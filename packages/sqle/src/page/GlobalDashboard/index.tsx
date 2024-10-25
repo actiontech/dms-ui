@@ -22,7 +22,11 @@ const GlobalDashBoard = () => {
     form,
     getInstanceListLoading,
     filterValues,
-    updateFilterValue
+    updateFilterValue,
+    refreshStatistics,
+    pendingSqlStatistics,
+    pendingWorkflowOrderStatistics,
+    initiatedWorkflowOrderStatistics
   } = useDashboardFilter();
 
   const [activeKey, setActiveKey] = useState(
@@ -39,12 +43,18 @@ const GlobalDashBoard = () => {
         EmitterKey.Refresh_Global_Dashboard_Initiated_Work_Order
       );
     }
+    refreshStatistics();
   };
 
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
     return [
       {
-        label: <Space>{t('globalDashboard.pendingWorkOrder')}</Space>,
+        label: (
+          <Space>
+            {t('globalDashboard.pendingWorkOrder')}
+            {pendingWorkflowOrderStatistics}
+          </Space>
+        ),
         value: GlobalDashBoardSegmentedEnum.PendingWorkOrder,
         children: (
           <PendingWorkOrder
@@ -55,7 +65,12 @@ const GlobalDashBoard = () => {
         destroyInactivePane: true
       },
       {
-        label: t('globalDashboard.pendingSql.title'),
+        label: (
+          <Space>
+            {t('globalDashboard.pendingSql.title')}
+            {pendingSqlStatistics}
+          </Space>
+        ),
         value: GlobalDashBoardSegmentedEnum.PendingSqlRecord,
         children: (
           <PendingSql
@@ -66,7 +81,12 @@ const GlobalDashBoard = () => {
         destroyInactivePane: true
       },
       {
-        label: t('globalDashboard.initiatedWorkOrder'),
+        label: (
+          <Space>
+            {t('globalDashboard.initiatedWorkOrder')}
+            {initiatedWorkflowOrderStatistics}
+          </Space>
+        ),
         value: GlobalDashBoardSegmentedEnum.InitiatedWorkOrder,
         children: (
           <InitiatedWorkOrder
@@ -77,7 +97,14 @@ const GlobalDashBoard = () => {
         destroyInactivePane: true
       }
     ];
-  }, [t, filterValues, updateFilterValue]);
+  }, [
+    t,
+    filterValues,
+    updateFilterValue,
+    pendingSqlStatistics,
+    pendingWorkflowOrderStatistics,
+    initiatedWorkflowOrderStatistics
+  ]);
 
   return (
     <>

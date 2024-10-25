@@ -1,4 +1,6 @@
 import {
+  GetGlobalSqlManageListFilterProjectPriorityEnum,
+  GetGlobalSqlManageStatisticsFilterProjectPriorityEnum,
   GetSqlManageListFilterSourceEnum,
   GetSqlManageListFilterAuditLevelEnum,
   GetSqlManageListFilterStatusEnum,
@@ -10,7 +12,6 @@ import {
   exportSqlManageV1FilterStatusEnum,
   exportSqlManageV1SortFieldEnum,
   exportSqlManageV1SortOrderEnum,
-  GetGlobalSqlManageListFilterProjectPriorityEnum,
   GetSqlManageListV2FilterSourceEnum,
   GetSqlManageListV2FilterAuditLevelEnum,
   GetSqlManageListV2FilterStatusEnum,
@@ -20,13 +21,40 @@ import {
 } from './index.enum';
 
 import {
+  IGetGlobalSqlManageListResp,
+  IGetGlobalSqlManageStatisticsResp,
   IGetSqlManageListResp,
   IBatchUpdateSqlManageReq,
   IBaseRes,
   IGetSqlManageRuleTipsResp,
-  IGetSqlManageSqlAnalysisResp,
-  IGetGlobalSqlManageListResp
+  IGetSqlManageSqlAnalysisResp
 } from '../common.d';
+
+export interface IGetGlobalSqlManageListParams {
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: GetGlobalSqlManageListFilterProjectPriorityEnum;
+
+  page_index: number;
+
+  page_size: number;
+}
+
+export interface IGetGlobalSqlManageListReturn
+  extends IGetGlobalSqlManageListResp {}
+
+export interface IGetGlobalSqlManageStatisticsParams {
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: GetGlobalSqlManageStatisticsFilterProjectPriorityEnum;
+}
+
+export interface IGetGlobalSqlManageStatisticsReturn
+  extends IGetGlobalSqlManageStatisticsResp {}
 
 export interface IGetSqlManageListParams {
   project_name: string;
@@ -123,21 +151,6 @@ export interface IGetSqlManageSqlAnalysisV1Params {
 
 export interface IGetSqlManageSqlAnalysisV1Return
   extends IGetSqlManageSqlAnalysisResp {}
-
-export interface IGetGlobalSqlManageListParams {
-  filter_project_uid?: string;
-
-  filter_instance_id?: string;
-
-  filter_project_priority?: GetGlobalSqlManageListFilterProjectPriorityEnum;
-
-  page_index: number;
-
-  page_size: number;
-}
-
-export interface IGetGlobalSqlManageListReturn
-  extends IGetGlobalSqlManageListResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;
