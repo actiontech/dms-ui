@@ -18,7 +18,8 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
@@ -56,10 +57,11 @@ import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/servic
 const SQLEEIndex = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
+  const { parse2TableActionPermissions, parse2TableToolbarActionPermissions } =
+    usePermission();
   // api
-  const { projectID, projectName, projectArchive } = useCurrentProject();
-  const { isAdmin, username, isProjectManager, userId, language } =
-    useCurrentUser();
+  const { projectID, projectName } = useCurrentProject();
+  const { username, userId, language } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
@@ -224,28 +226,23 @@ const SQLEEIndex = () => {
   );
 
   const actions = useMemo(() => {
-    return SqlManagementRowAction(
-      openModal,
-      jumpToAnalyze,
-      isAdmin || isProjectManager(projectName),
-      onCreateSqlManagementException,
-      onCreateWhitelist,
-      language
+    return parse2TableActionPermissions(
+      SqlManagementRowAction(
+        openModal,
+        jumpToAnalyze,
+        onCreateSqlManagementException,
+        onCreateWhitelist,
+        language
+      )
     );
   }, [
-    isAdmin,
-    isProjectManager,
     jumpToAnalyze,
     openModal,
-    projectName,
     onCreateSqlManagementException,
     onCreateWhitelist,
-    language
+    language,
+    parse2TableActionPermissions
   ]);
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
@@ -253,10 +250,7 @@ const SQLEEIndex = () => {
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
     (id: number, remark: string) => {
-      if (
-        updateRemarkProtect.current ||
-        !(actionPermission && !projectArchive)
-      ) {
+      if (updateRemarkProtect.current) {
         return;
       }
       updateRemarkProtect.current = true;
@@ -274,18 +268,12 @@ const SQLEEIndex = () => {
           updateRemarkProtect.current = false;
         });
     },
-    [actionPermission, projectName, refresh, projectArchive]
+    [projectName, refresh]
   );
 
   const columns = useMemo(
-    () =>
-      SqlManagementColumn(
-        projectID,
-        actionPermission && !projectArchive,
-        updateRemark,
-        openModal
-      ),
-    [projectID, actionPermission, projectArchive, updateRemark, openModal]
+    () => SqlManagementColumn(projectID, updateRemark, openModal),
+    [projectID, updateRemark, openModal]
   );
 
   const tableSetting = useMemo<ColumnsSettingProps>(
@@ -318,11 +306,7 @@ const SQLEEIndex = () => {
   };
 
   const { batchIgnoreLoading, batchSolveLoading, onBatchIgnore, onBatchSolve } =
-    useBatchIgnoreOrSolve(
-      actionPermission && !projectArchive,
-      selectedRowKeys,
-      batchSuccessOperate
-    );
+    useBatchIgnoreOrSolve(selectedRowKeys, batchSuccessOperate);
 
   // export
   const [
@@ -388,17 +372,17 @@ const SQLEEIndex = () => {
       setAssigneeSelf,
       setIsHighPriority
     });
-    const actionButton = actionsButtonData(
-      selectedRowKeys?.length === 0,
-      batchSolveLoading,
-      batchIgnoreLoading,
-      onBatchAssignment,
-      onBatchSolve,
-      onBatchIgnore
+    const actionButton = parse2TableToolbarActionPermissions(
+      actionsButtonData(
+        selectedRowKeys?.length === 0,
+        batchSolveLoading,
+        batchIgnoreLoading,
+        onBatchAssignment,
+        onBatchSolve,
+        onBatchIgnore
+      )
     );
-    return actionPermission && !projectArchive
-      ? [...defaultButton, ...actionButton]
-      : defaultButton;
+    return [...defaultButton, ...actionButton];
   };
 
   const loading = useMemo(
@@ -467,7 +451,7 @@ const SQLEEIndex = () => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={projectArchive ? undefined : actions}
+        actions={actions}
         scroll={{ x: '130%', y: '500px' }}
       />
       {/* scroll 中的y 只支持string | number 所以这里的 500px 只是为了开启antd的固定列功能随便写的高度 具体高度在styled中动态计算 */}
