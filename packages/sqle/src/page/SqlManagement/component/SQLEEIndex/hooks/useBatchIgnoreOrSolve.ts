@@ -8,7 +8,6 @@ import { useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const useBatchIgnoreOrSolve = (
-  hasPermissionAndNotArchive: boolean,
   selectedRowKeys: Key[],
   batchSuccessOperate: (message: string) => void
 ) => {
@@ -29,7 +28,7 @@ const useBatchIgnoreOrSolve = (
   ] = useBoolean();
 
   const onBatchSolve = () => {
-    if (!hasPermissionAndNotArchive || selectedRowKeys.length === 0) {
+    if (selectedRowKeys.length === 0) {
       return;
     }
     startBatchSolve();
@@ -51,7 +50,7 @@ const useBatchIgnoreOrSolve = (
   };
 
   const onBatchIgnore = () => {
-    if (!hasPermissionAndNotArchive || selectedRowKeys.length === 0) {
+    if (selectedRowKeys.length === 0) {
       return;
     }
     startBatchIgnore();

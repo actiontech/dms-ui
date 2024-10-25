@@ -3,9 +3,15 @@ import useCurrentUser from '../useCurrentUser';
 import { PERMISSION_MANIFEST, PermissionDetail } from './permissionManifest';
 import { PermissionsConstantType } from './permissions';
 import useCurrentProject from '../useCurrentProject';
-import { ActiontechTableActionsWithPermissions } from './index.type';
+import {
+  ActiontechTableActionsWithPermissions,
+  ActiontechTableToolbarActionWithPermissions
+} from './index.type';
 import { ActiontechTableProps } from '../../components/ActiontechTable';
-import { ActiontechTableActionsConfig } from '../../components/ActiontechTable/index.type';
+import {
+  ActiontechTableActionsConfig,
+  ActiontechTableToolbarActionMeta
+} from '../../components/ActiontechTable/index.type';
 import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum
@@ -206,13 +212,28 @@ const usePermission = () => {
     [checkActionPermission]
   );
 
+  const parse2TableToolbarActionPermissions = useCallback(
+    (
+      actions: ActiontechTableToolbarActionWithPermissions
+    ): ActiontechTableToolbarActionMeta[] => {
+      return actions.map((item) => ({
+        ...item,
+        permissions: item.permissions
+          ? checkActionPermission(item.permissions!)
+          : undefined
+      }));
+    },
+    [checkActionPermission]
+  );
+
   return {
     moduleFeatureSupport,
     userOperationPermissions,
     checkDbServicePermission,
     checkPagePermission,
     checkActionPermission,
-    parse2TableActionPermissions
+    parse2TableActionPermissions,
+    parse2TableToolbarActionPermissions
   };
 };
 
