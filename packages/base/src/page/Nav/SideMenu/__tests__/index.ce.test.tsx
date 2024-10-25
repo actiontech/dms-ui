@@ -8,10 +8,15 @@ import { mockSystemConfig } from '../../../../testUtils/mockHooks/mockSystemConf
 import CESideMenu from '../index.ce';
 import { act } from '@testing-library/react';
 import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 import system from '../../../../testUtils/mockApi/system';
 
 describe('test base/Nav/SideMenu/index.ce', () => {
-  let getSystemModuleRedDotsSpy: jest.SpyInstance;
+   let getSystemModuleRedDotsSpy: jest.SpyInstance;
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
   beforeEach(() => {
     mockSystemConfig();
     mockUseCurrentUser();
