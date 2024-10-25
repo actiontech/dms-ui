@@ -46,15 +46,15 @@ import {
   BookMarkTagOutlined
 } from '@actiontech/icons';
 import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
-import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const List: React.FC = () => {
   const { t } = useTranslation();
   const { projectArchive, projectName, projectID } = useCurrentProject();
-  const { username } = useCurrentUser();
+  const { username, isAdmin, isProjectManager } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
+  const operationPermission = isAdmin || isProjectManager(projectName);
 
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
@@ -163,14 +163,7 @@ const List: React.FC = () => {
       <PageHeader
         title={t('managementConf.list.pageTitle')}
         extra={
-          <EmptyBox
-            if={
-              !projectArchive &&
-              isHaveServicePermission(
-                OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-              )
-            }
-          >
+          <EmptyBox if={!projectArchive}>
             <Link to={`/sqle/project/${projectID}/sql-management-conf/create`}>
               <BasicButton type="primary">
                 {t('managementConf.list.pageAction.enableAuditPlan')}
@@ -256,7 +249,8 @@ const List: React.FC = () => {
             deleteAction,
             disabledAction,
             enabledAction,
-            isHaveServicePermission
+            isHaveServicePermission,
+            operationPermission
           })}
         />
       </Spin>
