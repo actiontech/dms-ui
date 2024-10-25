@@ -8,6 +8,10 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetScheduledTaskDefaultOptionV1Return,
+  IGetGlobalWorkflowsV1Params,
+  IGetGlobalWorkflowsV1Return,
+  IGetGlobalWorkflowStatisticsParams,
+  IGetGlobalWorkflowStatisticsReturn,
   IGetWorkflowTemplateV1Params,
   IGetWorkflowTemplateV1Return,
   IUpdateWorkflowTemplateV1Params,
@@ -44,12 +48,8 @@ import {
   IExecuteOneTaskOnWorkflowV1Return,
   IUpdateWorkflowScheduleV1Params,
   IUpdateWorkflowScheduleV1Return,
-  IGetGlobalWorkflowsV1Params,
-  IGetGlobalWorkflowsV1Return,
   IGetWorkflowStatisticOfInstancesParams,
   IGetWorkflowStatisticOfInstancesReturn,
-  IGetGlobalWorkflowStatisticsParams,
-  IGetGlobalWorkflowStatisticsReturn,
   ICreateWorkflowV2Params,
   ICreateWorkflowV2Return,
   IBatchCancelWorkflowsV2Params,
@@ -83,6 +83,30 @@ class WorkflowService extends ServiceBase {
     return this.get<IGetScheduledTaskDefaultOptionV1Return>(
       '/v1/configurations/workflows/schedule/default_option',
       undefined,
+      options
+    );
+  }
+
+  public getGlobalWorkflowsV1(
+    params: IGetGlobalWorkflowsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalWorkflowsV1Return>(
+      '/v1/dashboard/workflows',
+      paramsData,
+      options
+    );
+  }
+
+  public GetGlobalWorkflowStatistics(
+    params: IGetGlobalWorkflowStatisticsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalWorkflowStatisticsReturn>(
+      '/v1/dashboard/workflows/statistics',
+      paramsData,
       options
     );
   }
@@ -426,18 +450,6 @@ class WorkflowService extends ServiceBase {
     );
   }
 
-  public getGlobalWorkflowsV1(
-    params: IGetGlobalWorkflowsV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IGetGlobalWorkflowsV1Return>(
-      '/v1/workflows',
-      paramsData,
-      options
-    );
-  }
-
   public GetWorkflowStatisticOfInstances(
     params: IGetWorkflowStatisticOfInstancesParams,
     options?: AxiosRequestConfig
@@ -445,18 +457,6 @@ class WorkflowService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IGetWorkflowStatisticOfInstancesReturn>(
       '/v1/workflows/statistic_of_instances',
-      paramsData,
-      options
-    );
-  }
-
-  public GetGlobalWorkflowStatistics(
-    params: IGetGlobalWorkflowStatisticsParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IGetGlobalWorkflowStatisticsReturn>(
-      '/v1/workflows/statistics',
       paramsData,
       options
     );
