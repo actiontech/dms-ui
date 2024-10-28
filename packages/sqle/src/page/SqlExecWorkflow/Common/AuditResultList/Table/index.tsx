@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -9,13 +9,12 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { AuditResultTableProps } from './index.type';
-import {
-  AuditResultForCreateWorkflowActions,
-  AuditResultForCreateWorkflowColumn
-} from './column';
+import { AuditResultForCreateWorkflowColumn } from './column';
 import AuditResultDrawer from './AuditResultDrawer';
 import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
+import { AuditResultForCreateWorkflowActions } from './actions';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
@@ -35,20 +34,22 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const {
-    openCreateWhitelistModal,
-    updateSelectWhitelistRecord,
-    actionPermission
-  } = useWhitelistRedux();
+  const { parse2TableActionPermissions } = usePermission();
 
-  const handleClickAnalyze = (sqlNum?: number) => {
-    if (typeof sqlNum === 'undefined') {
-      return;
-    }
-    window.open(
-      `/sqle/project/${projectID}/exec-workflow/${taskID}/${sqlNum}/analyze`
-    );
-  };
+  const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
+    useWhitelistRedux();
+
+  const handleClickAnalyze = useCallback(
+    (sqlNum?: number) => {
+      if (typeof sqlNum === 'undefined') {
+        return;
+      }
+      window.open(
+        `/sqle/project/${projectID}/exec-workflow/${taskID}/${sqlNum}/analyze`
+      );
+    },
+    [projectID, taskID]
+  );
   const updateSqlDescribeProtect = useRef(false);
   const updateSqlDescribe = (sqlNum: number, sqlDescribe: string) => {
     if (updateSqlDescribeProtect.current) {
@@ -110,12 +111,21 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditLevelFilterValue, noDuplicate]);
 
-  const onCreateWhitelist = (record?: IAuditTaskSQLResV2) => {
-    openCreateWhitelistModal();
-    updateSelectWhitelistRecord({
-      value: record?.exec_sql
-    });
-  };
+  const onCreateWhitelist = useCallback(
+    (record?: IAuditTaskSQLResV2) => {
+      openCreateWhitelistModal();
+      updateSelectWhitelistRecord({
+        value: record?.exec_sql
+      });
+    },
+    [openCreateWhitelistModal, updateSelectWhitelistRecord]
+  );
+
+  const actions = useMemo(() => {
+    return parse2TableActionPermissions(
+      AuditResultForCreateWorkflowActions(handleClickAnalyze, onCreateWhitelist)
+    );
+  }, [parse2TableActionPermissions, handleClickAnalyze, onCreateWhitelist]);
 
   return (
     <>
@@ -133,11 +143,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
           total: data?.total ?? 0,
           current: pagination.page_index ?? 1
         }}
-        actions={AuditResultForCreateWorkflowActions(
-          handleClickAnalyze,
-          onCreateWhitelist,
-          actionPermission
-        )}
+        actions={actions}
       />
       <AuditResultDrawer
         open={auditResultDrawerVisibility}
