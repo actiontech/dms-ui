@@ -119,7 +119,9 @@ export const PERMISSIONS = {
         CREATE_WHITE_LIST: 'action:create_white_list',
         BATCH_ASSIGNMENT: 'action:batch_sql_assignment',
         BATCH_RESOLVE: 'action:batch_resolve',
-        BATCH_IGNORE: 'action:batch_ignore'
+        BATCH_IGNORE: 'action:batch_ignore',
+        ACTION_LAYOUT: 'action:sql_management_action_layout',
+        EDIT_REMARK: 'action:edit_sql_remark'
       },
       SQL_MANAGEMENT_EXCEPTION: {
         CREATE: 'action:create_sql_management_exception',
