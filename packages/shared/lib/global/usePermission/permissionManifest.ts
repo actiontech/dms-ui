@@ -486,6 +486,20 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false
   },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.EDIT_REMARK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
 
   // SQL 管控例外
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE]: {
