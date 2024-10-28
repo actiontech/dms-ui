@@ -10,8 +10,8 @@ export type AuditResultStepProps = {
   updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   baseFormValues?: WorkflowBaseInfoFormFields;
   sqlAuditInfoFormValues?: SqlAuditInfoFormFields;
-  isDisableFinallySubmitButton: boolean;
-  disabledOperatorWorkflowBtnTips: string;
+  isConfirmationRequiredForSubmission: boolean;
+  submitWorkflowConfirmationMessage: string;
   createAction: () => Promise<void>;
   auditAction: (
     value: SqlAuditInfoFormFields,

@@ -268,6 +268,298 @@ exports[`page/Login-ee render login snap 1`] = `
 </body>
 `;
 
+exports[`page/Login-ee render login success when has location search val render search value with search params 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1zkush"
+    >
+      <div
+        class="css-9y19rd"
+      >
+        <div
+          class="banner"
+        >
+          <img
+            alt="left_bg"
+            class="login-background-img"
+            src="/static/image/login-left-bg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="css-1pqzecc"
+      >
+        <div
+          class="login-page-right-content"
+        >
+          <div
+            class="content-header"
+          >
+            <div
+              class="logo"
+            >
+              <img
+                alt="logo_img"
+                src="/logo.png"
+              />
+            </div>
+            <div
+              class="title"
+            >
+              <span
+                class="label label-primary"
+              >
+                Action
+              </span>
+              <span
+                class="label label-base"
+              >
+                SQLE
+              </span>
+            </div>
+          </div>
+          <form
+            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            color="#C3C6CD"
+                            height="19"
+                            viewBox="0 0 12 12"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              fill="currentColor"
+                            >
+                              <path
+                                d="M4.457 4.684a2.182 2.182 0 1 1 3.087-3.086 2.182 2.182 0 0 1-3.087 3.086M10.584 9.47a3.49 3.49 0 0 0-3.492-3.492H4.909A3.49 3.49 0 0 0 1.417 9.47v.218a.873.873 0 0 0 .873.874h7.42a.873.873 0 0 0 .874-.874z"
+                              />
+                            </g>
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          id="username"
+                          placeholder="用户名"
+                          type="text"
+                          value="admin1"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <span
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-input-prefix"
+                        >
+                          <svg
+                            color="#C3C6CD"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                        <input
+                          aria-required="true"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          id="password"
+                          placeholder="密码"
+                          type="password"
+                          value="admin1"
+                        />
+                        <span
+                          class="ant-input-suffix"
+                        >
+                          <span
+                            aria-label="eye-invisible"
+                            class="anticon anticon-eye-invisible ant-input-password-icon"
+                            role="img"
+                            tabindex="-1"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="eye-invisible"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                              />
+                              <path
+                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <label
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                        >
+                          <input
+                            checked=""
+                            class="ant-checkbox-input"
+                            id="userAgreement"
+                            type="checkbox"
+                          />
+                          <span
+                            class="ant-checkbox-inner"
+                          />
+                        </span>
+                        <span>
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              已阅读并同意
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <a
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                href="/user-agreement.html"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                用户协议
+                              </a>
+                            </div>
+                          </div>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              type="submit"
+            >
+              <span
+                class="ant-btn-icon ant-btn-loading-icon"
+              >
+                <span
+                  aria-label="loading"
+                  class="anticon anticon-loading anticon-spin"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="loading"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="0 0 1024 1024"
+                    width="1em"
+                  >
+                    <path
+                      d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                    />
+                  </svg>
+                </span>
+              </span>
+              <span>
+                登 录
+              </span>
+            </button>
+            <a
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              href="/v1/dms/oauth2/link"
+            >
+              <span>
+                Login With Oauth2
+              </span>
+            </a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
 exports[`page/Login-ee render login success when has location search val render with other search val 1`] = `
 <body>
   <div>

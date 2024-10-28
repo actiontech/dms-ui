@@ -12,10 +12,8 @@ import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWra
 import { BriefcaseFilled } from '@actiontech/icons';
 
 export const GlobalDashboardPendingWorkflowListColumn: (
-  onUpdateFilterProjectValue: (value?: string) => void
-) => ActiontechTableColumn<IWorkflowDetailResV1> = (
-  onUpdateFilterProjectValue
-) => {
+  onUpdateFilterValue: (projectId?: string, instanceId?: string) => void
+) => ActiontechTableColumn<IWorkflowDetailResV1> = (onUpdateFilterValue) => {
   return [
     {
       dataIndex: 'status',
@@ -67,7 +65,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
     {
       dataIndex: 'instance_info',
       title: t('globalDashboard.pendingSql.column.instance'),
-      render: (instances) => {
+      render: (instances, record) => {
         if (!instances || !instances.length) {
           return '-';
         }
@@ -77,14 +75,30 @@ export const GlobalDashboardPendingWorkflowListColumn: (
               instances.length > 1 ? (
                 <Space wrap>
                   {instances.map((v) => (
-                    <span key={v.instance_id}>{v.instance_name}</span>
+                    <Typography.Link
+                      key={v.instance_id}
+                      onClick={() =>
+                        onUpdateFilterValue(record.project_uid, v.instance_id)
+                      }
+                    >
+                      {v.instance_name}
+                    </Typography.Link>
                   ))}
                 </Space>
               ) : null
             }
           >
             <Space>
-              <span>{instances[0].instance_name}</span>
+              <Typography.Link
+                onClick={() =>
+                  onUpdateFilterValue(
+                    record.project_uid,
+                    instances[0].instance_id
+                  )
+                }
+              >
+                {instances[0].instance_name}
+              </Typography.Link>
               {instances.length > 1 ? '...' : null}
             </Space>
           </BasicToolTips>
@@ -97,7 +111,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
       render: (project_name, record) => {
         return (
           <Typography.Link
-            onClick={() => onUpdateFilterProjectValue(record.project_uid)}
+            onClick={() => onUpdateFilterValue(record.project_uid)}
           >
             {project_name}
           </Typography.Link>

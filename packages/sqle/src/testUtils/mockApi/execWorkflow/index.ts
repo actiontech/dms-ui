@@ -43,6 +43,7 @@ class MockWorkflowApi implements MockSpyApy {
     this.executeTasksOnWorkflow();
     this.getWorkflowAttachment();
     this.getGlobalWorkflows();
+    this.getGlobalWorkflowStatistics();
   }
 
   public getWorkflows() {
@@ -299,6 +300,16 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
       createSpySuccessResponse({
         data: mockGlobalWorkflowListData,
         total_nums: mockGlobalWorkflowListData.length
+      })
+    );
+    return spy;
+  }
+
+  public getGlobalWorkflowStatistics() {
+    const spy = jest.spyOn(workflow, 'GetGlobalWorkflowStatistics');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        total_nums: 10
       })
     );
     return spy;

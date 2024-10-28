@@ -43,8 +43,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   auditAction,
   backToDetail,
   isAtRejectStep,
-  disabledOperatorWorkflowBtnTips,
-  isDisableFinallySubmitButton,
+  submitWorkflowConfirmationMessage,
+  isConfirmationRequiredForSubmission,
   workflowId,
   refreshWorkflow,
   refreshOverviewAction,
@@ -245,9 +245,13 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           extra={
             <EmptyBox if={!!modifiedTasks?.length}>
               <SubmitWorkflowButton
-                disabled={isDisableFinallySubmitButton}
+                isConfirmationRequiredForSubmission={
+                  isConfirmationRequiredForSubmission
+                }
                 loading={submitLoading}
-                disabledTips={disabledOperatorWorkflowBtnTips}
+                submitWorkflowConfirmationMessage={
+                  submitWorkflowConfirmationMessage
+                }
                 onClick={modifySqlSubmit}
               />
             </EmptyBox>

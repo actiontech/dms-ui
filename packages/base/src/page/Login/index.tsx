@@ -18,14 +18,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
-
-// #if [ee]
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-// #endif
 
 const Login = () => {
   const { t } = useTranslation();
@@ -67,12 +64,18 @@ const Login = () => {
             })
           );
           const params = new URLSearchParams(location.search);
-          const target = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
-          if (target) {
-            if (target.endsWith('/cloud-beaver')) {
-              navigate(`${target}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
+          const encodedTarget = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
+
+          if (encodedTarget) {
+            const decoded = decodeURIComponent(encodedTarget);
+            const [path, targetParams] = decoded.split('?');
+
+            if (targetParams) {
+              navigate(`${path}?${targetParams}`);
+            } else if (path.endsWith('cloud-beaver')) {
+              navigate(`${path}?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`);
             } else {
-              navigate(target);
+              navigate(path);
             }
           }
         }

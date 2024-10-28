@@ -117,7 +117,8 @@ export default {
       allLevel: '全部等级',
       submit: '提交工单',
       updateInfo: '修改工单',
-      disabledOperatorWorkflowBtnTips:
+      continueSubmission: '仍要创建',
+      submitWorkflowConfirmationMessage:
         '项目 {{currentProject}} 创建工单时最高只能允许有 {{allowAuditLevel}} 等级的审核错误，但是当前审核结果中最高包含 {{currentAuditLevel}} 等级的审核结果。',
       mustHaveAuditResultTips: '不能对审核结果为空的SQL进行创建工单',
       leaveTip: '是否离开本页面？当前工单暂未提交！'

@@ -122,7 +122,7 @@ export default {
       allLevel: 'All levels',
       submit: 'Submit workflow',
       updateInfo: 'Update workflow',
-      disabledOperatorWorkflowBtnTips:
+      submitWorkflowConfirmationMessage:
         'Project {{currentProject}} can only allow a maximum of {{allowAuditLevel}} level audit errors when creating workflows, but the current audit results contain a maximum of {{currentAuditLevel}} level audit results.',
       mustHaveAuditResultTips:
         'You cannot create a workflow for SQL with empty audit results',

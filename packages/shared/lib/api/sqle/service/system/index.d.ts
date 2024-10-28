@@ -1,9 +1,12 @@
+import { IGetSystemModuleRedDotsRes, IGetModuleStatusResV1 } from '../common.d';
+
 import {
   getSystemModuleStatusDbTypeEnum,
   getSystemModuleStatusModuleNameEnum
 } from './index.enum';
 
-import { IGetModuleStatusResV1 } from '../common.d';
+export interface IGetSystemModuleRedDotsReturn
+  extends IGetSystemModuleRedDotsRes {}
 
 export interface IGetSystemModuleStatusParams {
   db_type?: getSystemModuleStatusDbTypeEnum;

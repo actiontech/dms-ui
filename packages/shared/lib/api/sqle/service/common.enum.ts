@@ -288,6 +288,10 @@ export enum InstanceAuditPlanResV1ActiveStatusEnum {
   'disabled' = 'disabled'
 }
 
+export enum ModuleRedDotModuleNameEnum {
+  'global_dashboard' = 'global_dashboard'
+}
+
 export enum OperationRecordListStatusEnum {
   'succeeded' = 'succeeded',
 

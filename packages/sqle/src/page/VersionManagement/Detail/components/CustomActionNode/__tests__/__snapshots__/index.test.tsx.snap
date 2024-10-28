@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is false 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1diyz6t"
+    >
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            disabled=""
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                class="DoubleArrowOutlined_svg__icon"
+                color="currentColor"
+                fill="currentColor"
+                height="16"
+                viewBox="0 0 1024 1024"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M429.6 880c-3.2 0-7.2-.8-10.4-2.4-8.8-4-13.6-12.8-13.6-21.6V184c0-9.6 5.6-17.6 13.6-21.6 8.8-4 18.4-2.4 25.6 3.2l403.2 336c5.6 4.8 8.8 11.2 8.8 18.4s-3.2 13.6-8.8 18.4l-403.2 336c-4 4-9.6 5.6-15.2 5.6m24-644.8v569.6L795.2 520z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M192 880q-4.8 0-9.6-2.4c-8.8-4-14.4-12.8-14.4-21.6V184c0-9.6 5.6-18.4 14.4-21.6s18.4-2.4 25.6 4L432 368c9.6 8.8 10.4 24 1.6 33.6s-24 10.4-33.6 1.6L216 237.6v564L400 636c9.6-8.8 24.8-8 33.6 1.6s8 24.8-1.6 33.6L208 872.8c-4.8 4.8-10.4 7.2-16 7.2"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span>
+              上线
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast whitespace-pre-line css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-19kgj31"
+          >
+            工单将按顺序依次上线，请确保下一个工单已具备上线条件后再尝试上线操作。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is true 1`] = `
+<body>
+  <div>
+    <section
+      class="css-1diyz6t"
+    >
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span
+          class="ant-btn-icon"
+        >
+          <svg
+            class="DoubleArrowOutlined_svg__icon"
+            color="currentColor"
+            fill="currentColor"
+            height="16"
+            viewBox="0 0 1024 1024"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M429.6 880c-3.2 0-7.2-.8-10.4-2.4-8.8-4-13.6-12.8-13.6-21.6V184c0-9.6 5.6-17.6 13.6-21.6 8.8-4 18.4-2.4 25.6 3.2l403.2 336c5.6 4.8 8.8 11.2 8.8 18.4s-3.2 13.6-8.8 18.4l-403.2 336c-4 4-9.6 5.6-15.2 5.6m24-644.8v569.6L795.2 520z"
+              fill="currentColor"
+            />
+            <path
+              d="M192 880q-4.8 0-9.6-2.4c-8.8-4-14.4-12.8-14.4-21.6V184c0-9.6 5.6-18.4 14.4-21.6s18.4-2.4 25.6 4L432 368c9.6 8.8 10.4 24 1.6 33.6s-24 10.4-33.6 1.6L216 237.6v564L400 636c9.6-8.8 24.8-8 33.6 1.6s8 24.8-1.6 33.6L208 872.8c-4.8 4.8-10.4 7.2-16 7.2"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+        <span>
+          上线
+        </span>
+      </button>
+    </section>
+  </div>
+</body>
+`;

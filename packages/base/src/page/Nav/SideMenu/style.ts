@@ -53,43 +53,55 @@ export const CompanyNoticeIconStyleWrapper = styled(NotificationFilled)`
   height: 16px;
 `;
 
-export const QuickActionsStyleWrapper = styled(Space)`
+export const QuickActionsStyleWrapper = styled('div')`
   width: 100%;
   margin-bottom: 8px;
 
-  & > .ant-space-item {
-    flex: 1;
+  .action-space-wrapper {
+    width: 100%;
 
-    .basic-tooltips-wrapper {
-      width: 100%;
+    & > .ant-space-item {
+      flex: 1;
 
-      & .ant-space-item {
+      .basic-tooltips-wrapper {
         width: 100%;
+
+        & .ant-space-item {
+          width: 100%;
+        }
       }
-    }
 
-    .action-item {
-      width: 100%;
-      padding: 6px 0;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: 1px solid
-        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-      color: ${({ theme }) => theme.sharedTheme.basic.colorFontGrayByWhite};
+      .action-item {
+        position: relative;
+        width: 100%;
+        padding: 6px 0;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid
+          ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+        color: ${({ theme }) => theme.sharedTheme.basic.colorFontGrayByWhite};
 
-      &:hover {
+        &:hover {
+          background-color: ${({ theme }) =>
+            theme.sharedTheme.uiToken.colorFillTertiary} !important;
+        }
+      }
+
+      .action-item-active {
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
         background-color: ${({ theme }) =>
-          theme.sharedTheme.uiToken.colorFillTertiary} !important;
+          theme.sharedTheme.uiToken.colorFillTertiary};
       }
-    }
 
-    .action-item-active {
-      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
-      background-color: ${({ theme }) =>
-        theme.sharedTheme.uiToken.colorFillTertiary};
+      .action-item-dot {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+      }
     }
   }
 `;

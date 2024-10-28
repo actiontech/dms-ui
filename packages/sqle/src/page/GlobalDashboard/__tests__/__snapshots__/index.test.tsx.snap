@@ -265,8 +265,14 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                 >
                   <div
                     class="ant-space-item"
+                    style="margin-right: 8px;"
                   >
                     待解决工单
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    10
                   </div>
                 </div>
               </div>
@@ -280,9 +286,22 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="待解决SQL"
               >
-                待解决SQL
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    待解决SQL
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    10
+                  </div>
+                </div>
               </div>
             </label>
             <label
@@ -294,9 +313,22 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="发起的工单"
               >
-                发起的工单
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    发起的工单
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    10
+                  </div>
+                </div>
               </div>
             </label>
           </div>
@@ -527,9 +559,11 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                                       class="ant-space-item"
                                       style="margin-right: 8px;"
                                     >
-                                      <span>
+                                      <a
+                                        class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                      >
                                         mysql-1
-                                      </span>
+                                      </a>
                                     </div>
                                     <div
                                       class="ant-space-item"
@@ -626,9 +660,11 @@ exports[`sqle/GlobalDashboard render init snap shot 1`] = `
                                 <div
                                   class="ant-space-item"
                                 >
-                                  <span>
+                                  <a
+                                    class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                  >
                                     mysql-1
-                                  </span>
+                                  </a>
                                 </div>
                               </div>
                             </td>

@@ -7,7 +7,7 @@ import { Form, Space, message } from 'antd';
 import { useBoolean } from 'ahooks';
 import {
   updateVersionManagementModalStatus,
-  updateSelectVersionStageId
+  updateSelectWorkflowId
 } from '../../../../../store/versionManagement';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -47,7 +47,7 @@ const OfflineExecModal = () => {
         status: false
       })
     );
-    dispatch(updateSelectVersionStageId({ stageId: null }));
+    dispatch(updateSelectWorkflowId({ workflowId: null }));
   };
 
   const onSubmit = async () => {

@@ -1,5 +1,21 @@
 /* tslint:disable no-duplicate-string */
 
+export enum GetGlobalSqlManageListFilterProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
+export enum GetGlobalSqlManageStatisticsFilterProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low'
+}
+
 export enum GetSqlManageListFilterSourceEnum {
   'audit_plan' = 'audit_plan',
 
@@ -84,14 +100,6 @@ export enum exportSqlManageV1SortOrderEnum {
   'asc' = 'asc',
 
   'desc' = 'desc'
-}
-
-export enum GetGlobalSqlManageListFilterProjectPriorityEnum {
-  'high' = 'high',
-
-  'medium' = 'medium',
-
-  'low' = 'low'
 }
 
 export enum GetSqlManageListV2FilterSourceEnum {

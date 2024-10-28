@@ -41,7 +41,7 @@ describe('test useAuditWorkflow', () => {
   it('should initialize with correct states', () => {
     const { result } = renderHook(() => useAuditWorkflow());
     expect(result.current.taskInfos).toEqual([]);
-    expect(result.current.isDisableFinallySubmitButton).toBeFalsy();
+    expect(result.current.isConfirmationRequiredForSubmission).toBeFalsy();
   });
 
   it('should handle same sql workflow audit correctly', async () => {

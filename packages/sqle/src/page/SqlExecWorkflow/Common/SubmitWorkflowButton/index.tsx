@@ -1,27 +1,39 @@
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton } from '@actiontech/shared';
 import { SubmitWorkflowButtonProps } from './index.type';
 import { useTranslation } from 'react-i18next';
+import { InfoHexagonOutlined } from '@actiontech/icons';
+import { Popconfirm } from 'antd';
 
 const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
-  disabled,
+  isConfirmationRequiredForSubmission,
   loading,
-  disabledTips,
+  submitWorkflowConfirmationMessage,
   onClick
 }) => {
   const { t } = useTranslation();
+  if (!isConfirmationRequiredForSubmission) {
+    return (
+      <BasicButton loading={loading} type="primary" onClick={onClick}>
+        {t('execWorkflow.create.auditResult.submit')}
+      </BasicButton>
+    );
+  }
+
   return (
-    <BasicToolTips
-      title={disabled ? disabledTips : ''}
-      overlayClassName="whitespace-pre-line"
+    <Popconfirm
+      title={submitWorkflowConfirmationMessage}
+      okText={t('execWorkflow.create.auditResult.continueSubmission')}
+      onConfirm={onClick}
+      okButtonProps={{ loading }}
     >
       <BasicButton
-        disabled={disabled || loading}
-        type="primary"
-        onClick={onClick}
+        danger
+        loading={loading}
+        icon={<InfoHexagonOutlined color="currentColor" height={20} />}
       >
         {t('execWorkflow.create.auditResult.submit')}
       </BasicButton>
-    </BasicToolTips>
+    </Popconfirm>
   );
 };
 
