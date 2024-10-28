@@ -1,8 +1,7 @@
-import { PageHeader, ActionButton } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useMemo, useEffect } from 'react';
-import { PlusOutlined } from '@actiontech/icons';
 import { useCallback } from 'react';
 import { updateSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
 import { ModalName } from '../../../data/ModalName';
@@ -30,12 +29,11 @@ import { SqlManagementExceptionMatchTypeOptions } from '../index.data';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useSqlManagementExceptionRedux from '../hooks/useSqlManagementExceptionRedux';
+import { usePermission } from '@actiontech/shared/lib/global';
 import {
-  usePermission,
-  PermissionControl,
-  PERMISSIONS
-} from '@actiontech/shared/lib/global';
-import { SqlManagementExceptionActions } from './actions';
+  SqlManagementExceptionActions,
+  SqlManagementExceptionPageHeaderActions
+} from './actions';
 
 const SqlManagementExceptionList = () => {
   const { t } = useTranslation();
@@ -51,6 +49,10 @@ const SqlManagementExceptionList = () => {
     updateSelectSqlManagementExceptionRecord,
     dispatch
   } = useSqlManagementExceptionRedux();
+
+  const pageHeaderActions = SqlManagementExceptionPageHeaderActions(
+    openCreateSqlManagementExceptionModal
+  );
 
   const {
     tableFilterInfo,
@@ -158,22 +160,7 @@ const SqlManagementExceptionList = () => {
       {messageContextHolder}
       <PageHeader
         title={t('sqlManagementException.pageTitle')}
-        extra={
-          <PermissionControl
-            permission={
-              PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE
-            }
-          >
-            <ActionButton
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-              text={t('sqlManagementException.operate.add')}
-              onClick={openCreateSqlManagementExceptionModal}
-            />
-          </PermissionControl>
-        }
+        extra={pageHeaderActions['create-sql-exception']}
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}

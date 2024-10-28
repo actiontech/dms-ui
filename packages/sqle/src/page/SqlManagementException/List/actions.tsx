@@ -2,8 +2,11 @@ import { t } from '../../../locale';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTableActionsWithPermissions,
-  PERMISSIONS
+  PERMISSIONS,
+  PermissionControl
 } from '@actiontech/shared/lib/global';
+import { ActionButton } from '@actiontech/shared';
+import { PlusOutlined } from '@actiontech/icons';
 
 export const SqlManagementExceptionActions: (
   onUpdate: (record?: IBlacklistResV1) => void,
@@ -35,3 +38,20 @@ export const SqlManagementExceptionActions: (
     ]
   };
 };
+
+export const SqlManagementExceptionPageHeaderActions = (
+  openCreateSqlManagementExceptionModal: () => void
+): Record<'create-sql-exception', React.ReactNode> => ({
+  'create-sql-exception': (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE}
+    >
+      <ActionButton
+        type="primary"
+        icon={<PlusOutlined width={10} height={10} color="currentColor" />}
+        text={t('sqlManagementException.operate.add')}
+        onClick={openCreateSqlManagementExceptionModal}
+      />
+    </PermissionControl>
+  )
+});

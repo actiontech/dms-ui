@@ -98,48 +98,39 @@ export const SqlManagementRowAction = (
   };
 };
 
-export const defaultActionButton = ({
-  isAssigneeSelf,
-  isHighPriority,
-  setAssigneeSelf,
-  setIsHighPriority
-}: {
-  isAssigneeSelf: boolean;
-  setAssigneeSelf: (value: boolean) => void;
-  isHighPriority: boolean;
-  setIsHighPriority: (value: boolean) => void;
-}) => [
-  {
-    key: 'is-high-priority',
-    text: t('sqlManagement.table.filter.viewHighPrioritySql'),
-    buttonProps: {
-      className: isHighPriority ? 'switch-btn-active' : 'switch-btn-default',
-      onClick: () => {
-        setIsHighPriority(!isHighPriority);
-      }
-    }
-  },
-  {
-    key: 'assignment-self',
-    text: t('sqlManagement.table.filter.assignee'),
-    buttonProps: {
-      className: isAssigneeSelf ? 'switch-btn-active' : 'switch-btn-default',
-      onClick: () => {
-        setAssigneeSelf(!isAssigneeSelf);
-      }
-    }
-  }
-];
-
-export const actionsButtonData = (
+export const SqlManagementTableToolbarActions = (
   disabled: boolean,
   batchSolveLoading: boolean,
   batchIgnoreLoading: boolean,
   onBatchAssignment: () => void,
   onBatchSolve: () => void,
-  onBatchIgnore: () => void
+  onBatchIgnore: () => void,
+  isAssigneeSelf: boolean,
+  isHighPriority: boolean,
+  setAssigneeSelf: (value: boolean) => void,
+  setIsHighPriority: (value: boolean) => void
 ): ActiontechTableToolbarActionWithPermissions => {
   return [
+    {
+      key: 'is-high-priority',
+      text: t('sqlManagement.table.filter.viewHighPrioritySql'),
+      buttonProps: {
+        className: isHighPriority ? 'switch-btn-active' : 'switch-btn-default',
+        onClick: () => {
+          setIsHighPriority(!isHighPriority);
+        }
+      }
+    },
+    {
+      key: 'assignment-self',
+      text: t('sqlManagement.table.filter.assignee'),
+      buttonProps: {
+        className: isAssigneeSelf ? 'switch-btn-active' : 'switch-btn-default',
+        onClick: () => {
+          setAssigneeSelf(!isAssigneeSelf);
+        }
+      }
+    },
     {
       key: 'batch-assignment',
       text: t('sqlManagement.table.action.batch.assignment'),
