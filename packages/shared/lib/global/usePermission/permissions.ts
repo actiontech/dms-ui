@@ -109,14 +109,15 @@ export const PERMISSIONS = {
         TERMINATE_EXEC_TASK: 'action:terminate_exec_task',
         EXEC_TASK: 'action:exec_task',
         SCHEDULE_TIME_EXEC_TASK: 'action:schedule_time_exec_task',
-        CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task'
+        CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task',
+        CREATE_WHITE_LIST: 'action:workflow_sql_audit_result_create_white_list'
       },
       SQL_MANAGEMENT: {
         ASSIGNMENT: 'action:sql_assignment',
         UPDATE_STATUS: 'action:update_sql_status',
         UPDATE_PRIORITY: 'action:update_sql_priority',
         CREATE_SQL_EXCEPTION: 'action:create_SQL_exception',
-        CREATE_WHITE_LIST: 'action:create_white_list',
+        CREATE_WHITE_LIST: 'action:sql_management_create_white_list',
         BATCH_ASSIGNMENT: 'action:batch_sql_assignment',
         BATCH_RESOLVE: 'action:batch_resolve',
         BATCH_IGNORE: 'action:batch_ignore',
@@ -127,6 +128,11 @@ export const PERMISSIONS = {
         CREATE: 'action:create_sql_management_exception',
         EDIT: 'action:edit_sql_management_exception',
         DELETE: 'action:delete_sql_management_exception'
+      },
+      WHITE_LIST: {
+        CREATE: 'action:white_list_creation',
+        EDIT: 'action:edit_white_list',
+        DELETE: 'action:delete_white_list'
       }
     }
   }
