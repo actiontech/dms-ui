@@ -120,6 +120,11 @@ export const PERMISSIONS = {
         BATCH_ASSIGNMENT: 'action:batch_sql_assignment',
         BATCH_RESOLVE: 'action:batch_resolve',
         BATCH_IGNORE: 'action:batch_ignore'
+      },
+      SQL_MANAGEMENT_EXCEPTION: {
+        CREATE: 'action:create_sql_management_exception',
+        EDIT: 'action:edit_sql_management_exception',
+        DELETE: 'action:delete_sql_management_exception'
       }
     }
   }
