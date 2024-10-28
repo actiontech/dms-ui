@@ -8,6 +8,10 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IGetScheduledTaskDefaultOptionV1Return,
+  IGetGlobalWorkflowsV1Params,
+  IGetGlobalWorkflowsV1Return,
+  IGetGlobalWorkflowStatisticsParams,
+  IGetGlobalWorkflowStatisticsReturn,
   IGetWorkflowTemplateV1Params,
   IGetWorkflowTemplateV1Return,
   IUpdateWorkflowTemplateV1Params,
@@ -44,8 +48,6 @@ import {
   IExecuteOneTaskOnWorkflowV1Return,
   IUpdateWorkflowScheduleV1Params,
   IUpdateWorkflowScheduleV1Return,
-  IGetGlobalWorkflowsV1Params,
-  IGetGlobalWorkflowsV1Return,
   IGetWorkflowStatisticOfInstancesParams,
   IGetWorkflowStatisticOfInstancesReturn,
   ICreateWorkflowV2Params,
@@ -81,6 +83,30 @@ class WorkflowService extends ServiceBase {
     return this.get<IGetScheduledTaskDefaultOptionV1Return>(
       '/v1/configurations/workflows/schedule/default_option',
       undefined,
+      options
+    );
+  }
+
+  public getGlobalWorkflowsV1(
+    params: IGetGlobalWorkflowsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalWorkflowsV1Return>(
+      '/v1/dashboard/workflows',
+      paramsData,
+      options
+    );
+  }
+
+  public GetGlobalWorkflowStatistics(
+    params: IGetGlobalWorkflowStatisticsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalWorkflowStatisticsReturn>(
+      '/v1/dashboard/workflows/statistics',
+      paramsData,
       options
     );
   }
@@ -419,18 +445,6 @@ class WorkflowService extends ServiceBase {
 
     return this.put<IUpdateWorkflowScheduleV1Return>(
       `/v1/projects/${project_name}/workflows/${workflow_name}/tasks/${task_id}/schedule`,
-      paramsData,
-      options
-    );
-  }
-
-  public getGlobalWorkflowsV1(
-    params: IGetGlobalWorkflowsV1Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IGetGlobalWorkflowsV1Return>(
-      '/v1/workflows',
       paramsData,
       options
     );

@@ -2,8 +2,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ROUTE_PATHS } from '@actiontech/shared';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
+import system from '../../../../../testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -16,16 +20,18 @@ jest.mock('react-router-dom', () => {
 describe('base/Nav/QuickActions', () => {
   const navigateSpy = jest.fn();
   const useLocationMock: jest.Mock = useLocation as jest.Mock;
+  let getSystemModuleRedDotsSpy: jest.SpyInstance;
+
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     useLocationMock.mockReturnValue({
       pathname: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD
     });
+    getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
   });
 
   afterEach(() => {
-    jest.useRealTimers();
     jest.useRealTimers();
     cleanup();
   });
@@ -39,12 +45,16 @@ describe('base/Nav/QuickActions', () => {
     );
   };
 
-  it('render quick action when current user is admin', () => {
+  it('render quick action when current user is admin', async () => {
     const { baseElement } = customRender(true, false);
-    expect(baseElement).toMatchSnapshot();
+
     expect(getAllBySelector('.action-item')[0]).toHaveClass(
       'action-item action-item-active'
     );
+    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(getBySelector('.action-item-dot')).toBeInTheDocument();
   });
 
   it('render quick action when current user has global view permission', () => {

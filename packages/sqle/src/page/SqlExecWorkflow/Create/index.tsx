@@ -81,8 +81,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
     taskInfos,
     auditWorkflowWithSameSql,
     auditWorkflowWthDifferenceSql,
-    isDisableFinallySubmitButton,
-    disabledOperatorWorkflowBtnTips
+    isConfirmationRequiredForSubmission,
+    submitWorkflowConfirmationMessage
   } = useAuditWorkflow();
 
   const auditAction = useCallback(
@@ -195,8 +195,10 @@ const CreateSqlExecWorkflow: React.FC = () => {
           baseFormValues={baseInfoForm.getFieldsValue()}
           sqlAuditInfoFormValues={sqlAuditInfoForm.getFieldsValue()}
           tasks={taskInfos}
-          isDisableFinallySubmitButton={isDisableFinallySubmitButton}
-          disabledOperatorWorkflowBtnTips={disabledOperatorWorkflowBtnTips}
+          isConfirmationRequiredForSubmission={
+            isConfirmationRequiredForSubmission
+          }
+          submitWorkflowConfirmationMessage={submitWorkflowConfirmationMessage}
           auditAction={auditAction}
           createAction={createAction}
           updateTaskRecordCount={updateTaskRecordCount}
