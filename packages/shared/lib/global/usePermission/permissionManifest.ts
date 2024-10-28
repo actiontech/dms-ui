@@ -485,5 +485,42 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,
     projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.EDIT_REMARK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
+  // SQL 管控例外
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
   }
 } as const;

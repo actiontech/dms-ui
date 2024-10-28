@@ -33,9 +33,12 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
-  SqlManagementRowAction,
   type SqlManagementTableFilterParamType
 } from './column';
+import {
+  SqlManagementRowAction,
+  SqlManagementTableToolbarActions
+} from './actions';
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -46,7 +49,6 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
-import { actionsButtonData, defaultActionButton } from './index.data';
 import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
@@ -57,8 +59,11 @@ import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/servic
 const SQLEEIndex = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { parse2TableActionPermissions, parse2TableToolbarActionPermissions } =
-    usePermission();
+  const {
+    parse2TableActionPermissions,
+    parse2TableToolbarActionPermissions,
+    checkActionPermission
+  } = usePermission();
   // api
   const { projectID, projectName } = useCurrentProject();
   const { username, userId, language } = useCurrentUser();
@@ -232,7 +237,8 @@ const SQLEEIndex = () => {
         jumpToAnalyze,
         onCreateSqlManagementException,
         onCreateWhitelist,
-        language
+        language,
+        checkActionPermission
       )
     );
   }, [
@@ -241,7 +247,8 @@ const SQLEEIndex = () => {
     onCreateSqlManagementException,
     onCreateWhitelist,
     language,
-    parse2TableActionPermissions
+    parse2TableActionPermissions,
+    checkActionPermission
   ]);
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
@@ -272,8 +279,14 @@ const SQLEEIndex = () => {
   );
 
   const columns = useMemo(
-    () => SqlManagementColumn(projectID, updateRemark, openModal),
-    [projectID, updateRemark, openModal]
+    () =>
+      SqlManagementColumn(
+        projectID,
+        updateRemark,
+        openModal,
+        checkActionPermission
+      ),
+    [projectID, updateRemark, openModal, checkActionPermission]
   );
 
   const tableSetting = useMemo<ColumnsSettingProps>(
@@ -365,24 +378,21 @@ const SQLEEIndex = () => {
     setBatchSelectData(selectedRowData);
   };
 
-  const getTableActions = () => {
-    const defaultButton = defaultActionButton({
-      isAssigneeSelf,
-      isHighPriority,
-      setAssigneeSelf,
-      setIsHighPriority
-    });
-    const actionButton = parse2TableToolbarActionPermissions(
-      actionsButtonData(
+  const getTableToolbarActions = () => {
+    return parse2TableToolbarActionPermissions(
+      SqlManagementTableToolbarActions(
         selectedRowKeys?.length === 0,
         batchSolveLoading,
         batchIgnoreLoading,
         onBatchAssignment,
         onBatchSolve,
-        onBatchIgnore
+        onBatchIgnore,
+        isAssigneeSelf,
+        isHighPriority,
+        setAssigneeSelf,
+        setIsHighPriority
       )
     );
-    return [...defaultButton, ...actionButton];
   };
 
   const loading = useMemo(
@@ -416,7 +426,7 @@ const SQLEEIndex = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
-        actions={getTableActions()}
+        actions={getTableToolbarActions()}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
