@@ -428,6 +428,13 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false
   },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
 
   // SQL 管控
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT]: {
@@ -518,6 +525,29 @@ export const PERMISSION_MANIFEST: Record<
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
+  //审核SQL例外
+  [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,
