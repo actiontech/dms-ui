@@ -109,7 +109,8 @@ export const PERMISSIONS = {
         TERMINATE_EXEC_TASK: 'action:terminate_exec_task',
         EXEC_TASK: 'action:exec_task',
         SCHEDULE_TIME_EXEC_TASK: 'action:schedule_time_exec_task',
-        CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task'
+        CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task',
+        CREATE_WHITE_LIST: 'action:create_white_list'
       },
       SQL_MANAGEMENT: {
         ASSIGNMENT: 'action:sql_assignment',
@@ -127,6 +128,11 @@ export const PERMISSIONS = {
         CREATE: 'action:create_sql_management_exception',
         EDIT: 'action:edit_sql_management_exception',
         DELETE: 'action:delete_sql_management_exception'
+      },
+      WHITE_LIST: {
+        CREATE: 'action:create_white_list',
+        EDIT: 'action:edit_white_list',
+        DELETE: 'action:delete_white_list'
       }
     }
   }

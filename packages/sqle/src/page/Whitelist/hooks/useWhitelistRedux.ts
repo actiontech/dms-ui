@@ -17,6 +17,7 @@ const useWhitelistRedux = () => {
   const { projectName, projectArchive } = useCurrentProject();
   const { isAdmin, isProjectManager } = useCurrentUser();
 
+  // todo 此权限被多个页面引用（添加审核SQL例外操作） 待全部重构后删除此权限
   const actionPermission = useMemo(() => {
     return (isAdmin || isProjectManager(projectName)) && !projectArchive;
   }, [isAdmin, isProjectManager, projectName, projectArchive]);
