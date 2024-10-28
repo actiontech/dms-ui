@@ -37,8 +37,7 @@ import SqlManagementColumn, {
 } from './column';
 import {
   SqlManagementRowAction,
-  actionsButtonData,
-  defaultActionButton
+  SqlManagementTableToolbarActions
 } from './actions';
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
@@ -379,24 +378,21 @@ const SQLEEIndex = () => {
     setBatchSelectData(selectedRowData);
   };
 
-  const getTableActions = () => {
-    const defaultButton = defaultActionButton({
-      isAssigneeSelf,
-      isHighPriority,
-      setAssigneeSelf,
-      setIsHighPriority
-    });
-    const actionButton = parse2TableToolbarActionPermissions(
-      actionsButtonData(
+  const getTableToolbarActions = () => {
+    return parse2TableToolbarActionPermissions(
+      SqlManagementTableToolbarActions(
         selectedRowKeys?.length === 0,
         batchSolveLoading,
         batchIgnoreLoading,
         onBatchAssignment,
         onBatchSolve,
-        onBatchIgnore
+        onBatchIgnore,
+        isAssigneeSelf,
+        isHighPriority,
+        setAssigneeSelf,
+        setIsHighPriority
       )
     );
-    return [...defaultButton, ...actionButton];
   };
 
   const loading = useMemo(
@@ -430,7 +426,7 @@ const SQLEEIndex = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
-        actions={getTableActions()}
+        actions={getTableToolbarActions()}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
