@@ -25,7 +25,11 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
     getBlacklistSpy = blacklist.getBlacklist();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        sqlManagementException: { modalStatus: {} }
+        sqlManagementException: { modalStatus: {} },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: { is_admin: true, op_permission_list: [] }
+        }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
