@@ -12,13 +12,13 @@ import {
 import { useRequest, useBoolean } from 'ahooks';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import {
   CBOperationListFilterParamType,
-  CBOperationListColumns,
-  CBOperationListAction
+  CBOperationListColumns
 } from './column';
 import { IListCBOperationLogsParams } from '@actiontech/shared/lib/api/base/service/CBOperationLogs/index.d';
 import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperationLogs';
@@ -38,9 +38,15 @@ import { CloudBeaverOperationLogsListStyleWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
 import CreateWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
+import {
+  CloudBeaverListActions,
+  CloudBeaverListToolbarActions
+} from './actions';
 
 const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   const { t } = useTranslation();
+  const { parse2TableToolbarActionPermissions, parse2TableActionPermissions } =
+    usePermission();
 
   const dispatch = useDispatch();
 
@@ -62,11 +68,8 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const {
-    openCreateWhitelistModal,
-    updateSelectWhitelistRecord,
-    actionPermission
-  } = useWhitelistRedux();
+  const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
+    useWhitelistRedux();
 
   const {
     tableFilterInfo,
@@ -198,16 +201,9 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
           />
           <TableToolbar
             refreshButton={{ refresh }}
-            actions={[
-              {
-                key: 'modifyPassword',
-                text: t('dmsCloudBeaver.operationList.exportButton'),
-                buttonProps: {
-                  onClick: onExport,
-                  loading: exporting
-                }
-              }
-            ]}
+            actions={parse2TableToolbarActionPermissions(
+              CloudBeaverListToolbarActions(onExport, exporting)
+            )}
             filterButton={{
               filterButtonMeta,
               updateAllSelectedFilterItem
@@ -236,11 +232,9 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
             columns={columns}
             onChange={tableChange}
             errorMessage={requestErrorMessage}
-            actions={
-              actionPermission
-                ? CBOperationListAction(onCreateWhitelist)
-                : undefined
-            }
+            actions={parse2TableActionPermissions(
+              CloudBeaverListActions(onCreateWhitelist)
+            )}
           />
           <CBSqlOperationAuditDetailDrawer />
         </Spin>

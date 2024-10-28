@@ -228,22 +228,14 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                        type="button"
                       >
-                        <div
-                          class="ant-space-item"
-                        >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                            type="button"
-                          >
-                            <span>
-                              导 出
-                            </span>
-                          </button>
-                        </div>
-                      </div>
+                        <span>
+                          导 出
+                        </span>
+                      </button>
                     </div>
                     <div
                       class="ant-space-item"
@@ -1009,22 +1001,14 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  >
-                                    <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                      type="button"
-                                    >
-                                      <span>
-                                        添加为审核SQL例外
-                                      </span>
-                                    </button>
-                                  </div>
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -1247,22 +1231,14 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  >
-                                    <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                      type="button"
-                                    >
-                                      <span>
-                                        添加为审核SQL例外
-                                      </span>
-                                    </button>
-                                  </div>
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -1419,13 +1395,15 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  disabled=""
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -1497,13 +1475,15 @@ exports[`test base/CloudBeaver/List filter data with search 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  disabled=""
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -1899,22 +1879,14 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                        type="button"
                       >
-                        <div
-                          class="ant-space-item"
-                        >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                            type="button"
-                          >
-                            <span>
-                              导 出
-                            </span>
-                          </button>
-                        </div>
-                      </div>
+                        <span>
+                          导 出
+                        </span>
+                      </button>
                     </div>
                     <div
                       class="ant-space-item"
@@ -2437,22 +2409,14 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  >
-                                    <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                      type="button"
-                                    >
-                                      <span>
-                                        添加为审核SQL例外
-                                      </span>
-                                    </button>
-                                  </div>
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -2675,22 +2639,14 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  >
-                                    <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                      type="button"
-                                    >
-                                      <span>
-                                        添加为审核SQL例外
-                                      </span>
-                                    </button>
-                                  </div>
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -2847,13 +2803,15 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  disabled=""
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -2925,13 +2883,15 @@ exports[`test base/CloudBeaver/List render init table 1`] = `
                               <div
                                 class="css-new95e"
                               >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  disabled=""
+                                  type="button"
                                 >
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
+                                  <span>
+                                    添加为审核SQL例外
+                                  </span>
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -3327,22 +3287,14 @@ exports[`test base/CloudBeaver/List render table when request return failed 1`] 
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                        type="button"
                       >
-                        <div
-                          class="ant-space-item"
-                        >
-                          <button
-                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                            type="button"
-                          >
-                            <span>
-                              导 出
-                            </span>
-                          </button>
-                        </div>
-                      </div>
+                        <span>
+                          导 出
+                        </span>
+                      </button>
                     </div>
                     <div
                       class="ant-space-item"
