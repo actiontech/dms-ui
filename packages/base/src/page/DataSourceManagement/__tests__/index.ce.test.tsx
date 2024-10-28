@@ -9,7 +9,10 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 
 describe('test DataSourceManagement ce', () => {
   it('should match snapshot', () => {
-    mockUsePermission({ checkPagePermission: jest.fn().mockReturnValue(true) });
+    mockUsePermission(
+      { checkPagePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
     const { container, getByText } = superRender(<DataSourceManagement />);
 
     expect(container).toMatchSnapshot();

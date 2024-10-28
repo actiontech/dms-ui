@@ -77,6 +77,19 @@ export const PERMISSION_MANIFEST: Record<
   },
   // action
 
+  //cloud beaver
+  [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.EXPORT,
+    type: 'action'
+  },
+  [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST]: {
+    id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
   //数据源
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,

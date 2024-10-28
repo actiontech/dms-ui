@@ -8,7 +8,7 @@ import toJson from 'enzyme-to-json';
 
 describe('base/Nav/SideMenu/UserMenu', () => {
   beforeEach(() => {
-    mockUsePermission();
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
     jest.useFakeTimers();
   });
 

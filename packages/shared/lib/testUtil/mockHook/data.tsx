@@ -155,14 +155,3 @@ export const mockUseUserOperationPermissionData = {
   updateUserOperationPermission: jest.fn(),
   isHaveServicePermission: jest.fn()
 };
-
-export const mockUsePermissionData = {
-  moduleFeatureSupport: {
-    sqlOptimization: false
-  },
-  userOperationPermissions: null,
-  checkDbServicePermission: jest.fn(),
-  checkPagePermission: jest.fn(),
-  checkActionPermission: jest.fn(),
-  parse2TableActionPermissions: jest.fn()
-};

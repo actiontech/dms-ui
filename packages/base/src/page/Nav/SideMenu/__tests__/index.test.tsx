@@ -52,7 +52,7 @@ describe('test Base/Nav/SideMenu/index', () => {
       .spyOn(eventEmitter, 'subscribe')
       .mockImplementation(() => ({ unsubscribe: unsubscribeSpy }));
     jest.useFakeTimers();
-    mockUsePermission();
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
     mockUseCurrentUser({
       bindProjects: mockBindProjects
     });

@@ -5,9 +5,12 @@ import { PERMISSIONS } from '../usePermission';
 
 describe('test PermissionControl', () => {
   it('should match snapshot with "checkActionPermission" return false', () => {
-    mockUsePermission({
-      checkActionPermission: jest.fn().mockReturnValue(false)
-    });
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(false)
+      },
+      { useSpyOnMockHooks: true }
+    );
 
     expect(
       render(
@@ -19,9 +22,12 @@ describe('test PermissionControl', () => {
   });
 
   it('should match snapshot with "checkActionPermission" return true', () => {
-    mockUsePermission({
-      checkActionPermission: jest.fn().mockReturnValue(true)
-    });
+    mockUsePermission(
+      {
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
 
     expect(
       render(
