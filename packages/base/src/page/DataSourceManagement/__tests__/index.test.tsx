@@ -29,7 +29,10 @@ describe('test DataSourceManagement', () => {
     (useLocation as jest.Mock).mockReturnValue({
       pathname: '/data-source-management'
     });
-    mockUsePermission({ checkPagePermission: jest.fn().mockReturnValue(true) });
+    mockUsePermission(
+      { checkPagePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -74,9 +77,12 @@ describe('test DataSourceManagement', () => {
   });
 
   it('should not render tabs item when use role is not admin or not project manager', () => {
-    mockUsePermission({
-      checkPagePermission: jest.fn().mockReturnValue(false)
-    });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(false)
+      },
+      { useSpyOnMockHooks: true }
+    );
 
     const { queryByText } = superRender(<DataSourceManagement />);
 

@@ -13,7 +13,9 @@ describe('test base/Nav/SideMenu/index.ce', () => {
   beforeEach(() => {
     mockSystemConfig();
     mockUseCurrentUser();
-    mockUsePermission();
+    mockUsePermission(undefined, {
+      useSpyOnMockHooks: true
+    });
     jest.useFakeTimers();
   });
 
