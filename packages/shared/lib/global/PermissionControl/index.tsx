@@ -3,9 +3,10 @@ import { PermissionControlProps } from './index.type';
 
 const PermissionControl: React.FC<PermissionControlProps> = ({
   permission,
-  children
+  children,
+  projectID
 }) => {
-  const { checkActionPermission } = usePermission();
+  const { checkActionPermission } = usePermission(projectID);
 
   if (checkActionPermission(permission)) {
     return <>{children}</>;
