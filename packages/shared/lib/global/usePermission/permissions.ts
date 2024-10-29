@@ -80,6 +80,10 @@ export const PERMISSIONS = {
           PERSONALIZE_TITLE: 'action:personalize_title',
           PERSONALIZE_LOGO: 'action:personalize_logo'
         }
+      },
+      CLOUD_BEAVER: {
+        EXPORT: 'action:export_cb_operation_log',
+        CREATE_WHITE_LIST: 'action:cb_create_white_list'
       }
     },
     SQLE: {

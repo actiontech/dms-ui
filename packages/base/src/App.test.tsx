@@ -49,9 +49,12 @@ describe('App', () => {
     mockUseDbServiceDriver();
     mockUseCurrentUser();
     mockSystemConfig();
-    mockUsePermission({
-      checkPagePermission: checkPageActionSpy
-    });
+    mockUsePermission(
+      {
+        checkPagePermission: checkPageActionSpy
+      },
+      { useSpyOnMockHooks: true }
+    );
     mockDMSGlobalApi.mockAllApi();
     requestGetModalStatus = system.getSystemModuleStatus();
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();

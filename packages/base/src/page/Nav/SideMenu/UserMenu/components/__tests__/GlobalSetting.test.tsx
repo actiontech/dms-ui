@@ -29,9 +29,12 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   });
 
   it(`render snap when "checkPagePermission" is return false`, async () => {
-    mockUsePermission({
-      checkPagePermission: jest.fn().mockReturnValue(false)
-    });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(false)
+      },
+      { useSpyOnMockHooks: true }
+    );
 
     const { baseElement } = superRender(<GlobalSetting />);
     expect(baseElement).toMatchSnapshot();
@@ -49,9 +52,12 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
   });
 
   it(`render snap when is "checkPagePermission" is return true`, async () => {
-    mockUsePermission({
-      checkPagePermission: jest.fn().mockReturnValue(true)
-    });
+    mockUsePermission(
+      {
+        checkPagePermission: jest.fn().mockReturnValue(true)
+      },
+      { useSpyOnMockHooks: true }
+    );
     const { baseElement } = superRender(<GlobalSetting />);
     expect(baseElement).toMatchSnapshot();
 
