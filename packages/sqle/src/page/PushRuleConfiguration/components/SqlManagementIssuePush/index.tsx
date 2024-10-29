@@ -32,11 +32,7 @@ import { getNextExecutionTimesByCronExpression } from '@actiontech/shared/lib/co
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useCurrentTime from './useCurrentTime';
-import {
-  PermissionControl,
-  PERMISSIONS,
-  usePermission
-} from '@actiontech/shared/lib/global';
+import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
 
 const switchFieldName: keyof SqlManagementIssuePushFields = 'enabled';
 
@@ -56,8 +52,6 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
     updateUsernameList,
     loading: fetchUserTipsPending
   } = useUsername();
-
-  const { checkActionPermission } = usePermission();
 
   const {
     form,
@@ -243,17 +237,15 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
         data: config ?? {},
         columns: readonlyColumnsConfig,
         configExtraButtons: (
-          <EmptyBox
-            if={
-              extraButtonsVisible &&
-              !!config?.enabled &&
-              checkActionPermission(
+          <EmptyBox if={extraButtonsVisible && !!config?.enabled}>
+            <PermissionControl
+              permission={
                 PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
                   .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH
-              )
-            }
-          >
-            <ConfigModifyBtn onClick={handleClickModify} />
+              }
+            >
+              <ConfigModifyBtn onClick={handleClickModify} />
+            </PermissionControl>
           </EmptyBox>
         ),
         configSwitchNode: (
