@@ -623,5 +623,23 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  // 推送规则配置
+  [PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+    .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+      .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+    .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+      .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
   }
 } as const;

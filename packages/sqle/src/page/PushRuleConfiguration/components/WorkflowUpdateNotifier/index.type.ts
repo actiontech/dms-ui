@@ -6,7 +6,6 @@ import {
 
 export type WorkflowUpdateNotifierProps = {
   config?: IReportPushConfigList;
-  permission: boolean;
   refetch: () => void;
 };
 
