@@ -148,6 +148,9 @@ export const PERMISSIONS = {
         DELETE: 'action:delete_project_rule_template',
         CLONE: 'action:clone_project_rule_template',
         EXPORT: 'action:export_project_rule_template'
+      },
+      RULE_KNOWLEDGE: {
+        EDIT: 'action:edit_rule_knowledge'
       }
     }
   }

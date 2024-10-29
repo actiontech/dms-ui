@@ -616,5 +616,12 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true
+  },
+
+  // 知识库
+  [PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
   }
 } as const;
