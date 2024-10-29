@@ -137,6 +137,9 @@ export const PERMISSIONS = {
         CREATE: 'action:white_list_creation',
         EDIT: 'action:edit_white_list',
         DELETE: 'action:delete_white_list'
+      },
+      WORKFLOW_TEMPLATE: {
+        UPDATE: 'action:update_workflow_template'
       }
     }
   }

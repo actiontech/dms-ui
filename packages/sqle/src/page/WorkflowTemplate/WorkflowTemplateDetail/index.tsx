@@ -1,27 +1,21 @@
 import { Col, Row, Spin } from 'antd';
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useRequest } from 'ahooks';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 import WorkflowTemplateAuthInfo from './components/WorkflowTemplateAuthInfo';
 import WorkflowTemplateStepInfo from './components/WorkflowTemplateStepInfo';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
-import { Link } from 'react-router-dom';
-import { EditOutlined } from '@ant-design/icons';
+import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { WorkflowTemplateStyleWrapper } from './style';
 import useUsername from '../../../hooks/useUsername';
+import { WorkflowTemplatePageHeaderActions } from './actions';
 
 const WorkflowTemplateDetail: React.FC = () => {
   const { t } = useTranslation();
 
-  const { projectName, projectID, projectArchive } = useCurrentProject();
-
-  const { isAdmin, isProjectManager } = useCurrentUser();
+  const { projectName, projectID } = useCurrentProject();
 
   const {
     updateUsernameList,
@@ -32,10 +26,6 @@ const WorkflowTemplateDetail: React.FC = () => {
   React.useEffect(() => {
     updateUsernameList({ filter_project: projectName });
   }, [projectName, updateUsernameList]);
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
 
   const [reviewSteps, setReviewSteps] = useState<IWorkFlowStepTemplateResV1[]>(
     []
@@ -69,25 +59,17 @@ const WorkflowTemplateDetail: React.FC = () => {
       }
     );
 
+  const pageHeaderActions = WorkflowTemplatePageHeaderActions(
+    projectID,
+    workflowTemplate?.workflow_template_name
+  );
+
   return (
     <WorkflowTemplateStyleWrapper>
       <PageHeader
         title={t('workflowTemplate.pageTitle')}
         // #if [ee]
-        extra={[
-          <EmptyBox
-            if={actionPermission && !projectArchive}
-            key="update-workflow-template"
-          >
-            <Link
-              to={`/sqle/project/${projectID}/progress/update/${workflowTemplate?.workflow_template_name}`}
-            >
-              <BasicButton type="primary" icon={<EditOutlined />}>
-                {t('workflowTemplate.detail.updateTemplate')}
-              </BasicButton>
-            </Link>
-          </EmptyBox>
-        ]}
+        extra={pageHeaderActions['update-workflow-template']}
         // #endif
       />
       <Spin spinning={getUsernameListLoading || getWorkflowTemplateLoading}>
