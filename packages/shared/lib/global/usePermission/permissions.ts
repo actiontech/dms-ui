@@ -157,6 +157,9 @@ export const PERMISSIONS = {
           'action:workflow_modification_notifier_switch',
         SQL_MANAGEMENT_ISSUE_PUSH_SWITCH:
           'action:sql_management_issue_push_switch'
+      },
+      RULE: {
+        CREATE_RULE_TEMPLATE: 'action:create_rule_template'
       }
     }
   }
