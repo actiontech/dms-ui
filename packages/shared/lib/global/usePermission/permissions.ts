@@ -140,6 +140,14 @@ export const PERMISSIONS = {
       },
       WORKFLOW_TEMPLATE: {
         UPDATE: 'action:update_workflow_template'
+      },
+      PROJECT_RULE_TEMPLATE: {
+        CREATE: 'action:create_project_rule_template',
+        IMPORT: 'action:import_project_rule_template',
+        EDIT: 'action:edit_project_rule_template',
+        DELETE: 'action:delete_project_rule_template',
+        CLONE: 'action:clone_project_rule_template',
+        EXPORT: 'action:export_project_rule_template'
       }
     }
   }
