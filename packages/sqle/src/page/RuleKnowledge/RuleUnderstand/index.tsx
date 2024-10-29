@@ -18,6 +18,7 @@ import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template
 import { ResponseCode } from '../../../data/common';
 import { RuleKnowledgeMarkDownStyleWrapper } from '../style';
 import classNames from 'classnames';
+import { RuleKnowledgeEditActions } from './actions';
 
 const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   content,
@@ -25,7 +26,6 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   refresh,
   dbType,
   loading,
-  isAdmin,
   isCustomRule
 }) => {
   const { t } = useTranslation();
@@ -76,6 +76,8 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
     }
   }, [content, modifyFlag]);
 
+  const actions = RuleKnowledgeEditActions(startModify, loading);
+
   return (
     <>
       {contextHolder}
@@ -83,15 +85,7 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
         title={t('ruleKnowledge.ruleUnderstanding')}
         extra={
           !modifyFlag ? (
-            <EmptyBox if={isAdmin}>
-              <BasicButton
-                onClick={startModify}
-                type="primary"
-                disabled={loading}
-              >
-                {t('ruleKnowledge.edit')}
-              </BasicButton>
-            </EmptyBox>
+            actions['edit-rule-knowledge']
           ) : (
             <Space>
               <EmptyBox

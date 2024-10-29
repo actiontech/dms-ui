@@ -12,7 +12,6 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import {
   BasicSwitch,
   BasicToolTips,
-  EmptyBox,
   ReadOnlyConfigColumnsType,
   useConfigRender
 } from '@actiontech/shared';
@@ -28,12 +27,12 @@ import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/c
 import { useMemo } from 'react';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
 
 const switchFieldName: keyof WorkflowUpdateNotifierFields = 'enabled';
 
 const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
   config,
-  permission,
   refetch
 }) => {
   const { t } = useTranslation();
@@ -131,7 +130,12 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
         configExtraButtons: null,
         configField: null,
         configSwitchNode: (
-          <EmptyBox if={permission}>
+          <PermissionControl
+            permission={
+              PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+                .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH
+            }
+          >
             <Popconfirm
               title={
                 config?.enabled
@@ -154,7 +158,7 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
                 checked={!!config?.enabled}
               />
             </Popconfirm>
-          </EmptyBox>
+          </PermissionControl>
         )
       })}
     </>
