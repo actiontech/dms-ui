@@ -6,7 +6,6 @@ import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import RuleUnderstand from './RuleUnderstand';
 import { EmptyBox, PageHeader } from '@actiontech/shared';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { RuleKnowledgeContentStyleWrapper } from './style';
 import { DownTriangleOutlined } from '@actiontech/icons';
@@ -20,8 +19,6 @@ const RuleKnowledge: React.FC = () => {
   }>();
 
   const [isCustomRule, setIsCustomRule] = useState(false);
-
-  const { isAdmin } = useCurrentUser();
 
   const {
     data: ruleKnowledgeInfo,
@@ -95,7 +92,6 @@ const RuleKnowledge: React.FC = () => {
             content={ruleKnowledgeInfo?.knowledge_content}
             refresh={refresh}
             dbType={dbType!}
-            isAdmin={isAdmin}
             isCustomRule={isCustomRule}
           />
         </EmptyBox>

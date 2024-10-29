@@ -6,7 +6,6 @@ export type RuleUnderstandProps = {
   refresh: () => void;
   dbType: string;
   loading: boolean;
-  isAdmin: boolean;
   isCustomRule: boolean;
 };
 

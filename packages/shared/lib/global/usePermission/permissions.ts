@@ -137,6 +137,26 @@ export const PERMISSIONS = {
         CREATE: 'action:white_list_creation',
         EDIT: 'action:edit_white_list',
         DELETE: 'action:delete_white_list'
+      },
+      WORKFLOW_TEMPLATE: {
+        UPDATE: 'action:update_workflow_template'
+      },
+      PROJECT_RULE_TEMPLATE: {
+        CREATE: 'action:create_project_rule_template',
+        IMPORT: 'action:import_project_rule_template',
+        EDIT: 'action:edit_project_rule_template',
+        DELETE: 'action:delete_project_rule_template',
+        CLONE: 'action:clone_project_rule_template',
+        EXPORT: 'action:export_project_rule_template'
+      },
+      RULE_KNOWLEDGE: {
+        EDIT: 'action:edit_rule_knowledge'
+      },
+      PUSH_RULE_CONFIGURATION: {
+        WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH:
+          'action:workflow_modification_notifier_switch',
+        SQL_MANAGEMENT_ISSUE_PUSH_SWITCH:
+          'action:sql_management_issue_push_switch'
       }
     }
   }

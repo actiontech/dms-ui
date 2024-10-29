@@ -565,5 +565,81 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,
     projectArchived: false
+  },
+
+  // 审批流程模板
+  [PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
+  // 审核规则模板
+  [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.IMPORT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.IMPORT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CLONE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CLONE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EXPORT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
+
+  // 知识库
+  [PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  // 推送规则配置
+  [PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+    .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+      .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
+  [PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+    .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
+      .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
   }
 } as const;

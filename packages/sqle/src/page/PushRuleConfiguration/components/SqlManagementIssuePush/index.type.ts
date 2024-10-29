@@ -2,7 +2,6 @@ import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/c
 
 export type SqlManagementIssuePushProps = {
   config?: IReportPushConfigList;
-  permission: boolean;
   refetch: () => void;
 };
 
