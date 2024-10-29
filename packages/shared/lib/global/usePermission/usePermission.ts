@@ -19,7 +19,7 @@ import {
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
 
-const usePermission = () => {
+const usePermission = (targetProjectID?: string) => {
   const { userRoles, bindProjects } = useCurrentUser();
   const { moduleFeatureSupport, userOperationPermissions } = useSelector(
     (state: IReduxState) => ({
@@ -31,15 +31,15 @@ const usePermission = () => {
 
   const projectAttributesStatus = useMemo(() => {
     const isArchived = !!bindProjects.find(
-      (project) => project.project_id === projectID
+      (project) => project.project_id === (targetProjectID ?? projectID)
     )?.archived;
     return {
       isManager: !!bindProjects.find(
-        (project) => project.project_id === projectID
+        (project) => project.project_id === (targetProjectID ?? projectID)
       )?.is_manager,
       isArchived
     };
-  }, [bindProjects, projectID]);
+  }, [bindProjects, projectID, targetProjectID]);
 
   const checkDbServicePermission = useCallback(
     (
