@@ -151,6 +151,12 @@ export const PERMISSIONS = {
       },
       RULE_KNOWLEDGE: {
         EDIT: 'action:edit_rule_knowledge'
+      },
+      PUSH_RULE_CONFIGURATION: {
+        WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH:
+          'action:workflow_modification_notifier_switch',
+        SQL_MANAGEMENT_ISSUE_PUSH_SWITCH:
+          'action:sql_management_issue_push_switch'
       }
     }
   }
