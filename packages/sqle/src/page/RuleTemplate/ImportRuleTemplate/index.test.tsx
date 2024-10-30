@@ -19,10 +19,11 @@ import {
 } from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
 import 'blob-polyfill';
 import { AxiosResponse } from 'axios';
 import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -54,10 +55,12 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
         }
       })
     );
-    mockUseCurrentPermission();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
+    mockUsePermission(undefined, {
+      useSpyOnMockHooks: true
+    });
     getAllRuleSpy = rule_template.getRuleList();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     createProjectRuleTemplateSpy = rule_template.createProjectRuleTemplate();

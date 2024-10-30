@@ -13,7 +13,7 @@ import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data'
 import configuration from '../../../testUtils/mockApi/configuration';
 import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './BaseInfoForm/index.type';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -28,7 +28,9 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
-    mockUseCurrentPermission();
+    mockUsePermission(undefined, {
+      useSpyOnMockHooks: true
+    });
     getDriversSpy = configuration.getDrivers();
     jest.useFakeTimers();
   });

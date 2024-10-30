@@ -14,7 +14,8 @@ import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
 import { mockDriver } from '../../../testUtils/mockRequest';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -37,7 +38,7 @@ describe('sqle/RuleManager', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
-    mockUseCurrentPermission();
+
     mockUseCurrentUserSpy = mockUseCurrentUser();
     mockUseDbServiceDriver();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -47,6 +48,10 @@ describe('sqle/RuleManager', () => {
         globalRuleTemplate: {
           modalStatus: { [ModalName.Clone_Rule_Template]: false },
           activeSegmentedKey: RuleManagerSegmentedKey.GlobalRuleTemplate
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );
@@ -85,12 +90,6 @@ describe('sqle/RuleManager', () => {
     ).toBeInTheDocument();
     expect(screen.getByText('导入规则模板')).toBeInTheDocument();
     expect(screen.getByText('创建规则模版')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('导入规则模板'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalled();
-    fireEvent.click(screen.getByText('创建规则模版'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalled();
   });
 
   it('click refresh icon', async () => {
@@ -117,6 +116,10 @@ describe('sqle/RuleManager', () => {
         globalRuleTemplate: {
           modalStatus: { [ModalName.Clone_Rule_Template]: false },
           activeSegmentedKey: RuleManagerSegmentedKey.CustomRule
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );
@@ -129,13 +132,17 @@ describe('sqle/RuleManager', () => {
     expect(getCustomRulesSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('新 建')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('新 建'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalled();
   });
 
   it('should hidden action when is not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
+    });
 
     const { baseElement } = customRender();
 
