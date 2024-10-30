@@ -21,25 +21,10 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
     cleanup();
   });
 
-  it('send request with no actionPermission', async () => {
-    const request = sqlManage.batchUpdateSqlManage();
-    const { result } = renderHooksWithRedux(() =>
-      useBatchIgnoreOrSolve(false, ['249'], mockBatch)
-    );
-    expect(result.current.batchIgnoreLoading).toBe(false);
-    expect(result.current.batchSolveLoading).toBe(false);
-    await act(async () => {
-      result.current.onBatchIgnore();
-      result.current.onBatchSolve();
-    });
-    expect(request).not.toHaveBeenCalled();
-    expect(request).not.toHaveBeenCalled();
-  });
-
   it('send request with empty row key', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchIgnoreOrSolve(true, [], mockBatch)
+      useBatchIgnoreOrSolve([], mockBatch)
     );
     expect(result.current.batchIgnoreLoading).toBe(false);
     expect(result.current.batchSolveLoading).toBe(false);
@@ -54,7 +39,7 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
   it('send batch solve request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchIgnoreOrSolve(true, ['249'], mockBatch)
+      useBatchIgnoreOrSolve(['249'], mockBatch)
     );
     expect(result.current.batchSolveLoading).toBe(false);
     await act(async () => {
@@ -74,7 +59,7 @@ describe('SqlManagement/useBatchIgnoreOrSolve', () => {
   it('send batch ignore request', async () => {
     const request = sqlManage.batchUpdateSqlManage();
     const { result } = renderHooksWithRedux(() =>
-      useBatchIgnoreOrSolve(true, ['249'], mockBatch)
+      useBatchIgnoreOrSolve(['249'], mockBatch)
     );
     expect(result.current.batchIgnoreLoading).toBe(false);
     await act(async () => {
