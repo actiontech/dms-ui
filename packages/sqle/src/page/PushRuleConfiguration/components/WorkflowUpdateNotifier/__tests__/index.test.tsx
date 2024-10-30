@@ -10,7 +10,19 @@ import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import WorkflowUpdateNotifier from '..';
 import { fireEvent, screen } from '@testing-library/dom';
 import { act, cleanup } from '@testing-library/react';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockProjectInfo,
+  mockCurrentUserReturn
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('test WorkflowUpdateNotifier', () => {
   let updateReportPushConfigSpy: jest.SpyInstance;
@@ -19,6 +31,7 @@ describe('test WorkflowUpdateNotifier', () => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
     updateReportPushConfigSpy =
       MockReportPushConfigService.UpdateReportPushConfig();
   });
@@ -37,15 +50,10 @@ describe('test WorkflowUpdateNotifier', () => {
       push_user_Type: ReportPushConfigListPushUserTypeEnum.permission_match,
       push_user_list: [],
       last_push_time: '0001-01-01T00:00:00Z'
-    },
-    permission = true
+    }
   ) => {
     return superRender(
-      <WorkflowUpdateNotifier
-        config={config}
-        permission={permission}
-        refetch={refetchSpy}
-      />
+      <WorkflowUpdateNotifier config={config} refetch={refetchSpy} />
     );
   };
   it('should render the component with the initial configuration correctly', () => {
@@ -115,19 +123,24 @@ describe('test WorkflowUpdateNotifier', () => {
   });
 
   it('should disable the switch and hide the confirmation popup when the user lacks permission', () => {
-    const { container } = customRender(
-      {
-        report_push_config_id: '1',
-        type: 'workflow',
-        enabled: false,
-        trigger_type: ReportPushConfigListTriggerTypeEnum.immediately,
-        push_frequency_cron: '',
-        push_user_Type: ReportPushConfigListPushUserTypeEnum.permission_match,
-        push_user_list: [],
-        last_push_time: '0001-01-01T00:00:00Z'
-      },
-      false
-    );
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
+    });
+    const { container } = customRender({
+      report_push_config_id: '1',
+      type: 'workflow',
+      enabled: false,
+      trigger_type: ReportPushConfigListTriggerTypeEnum.immediately,
+      push_frequency_cron: '',
+      push_user_Type: ReportPushConfigListPushUserTypeEnum.permission_match,
+      push_user_list: [],
+      last_push_time: '0001-01-01T00:00:00Z'
+    });
 
     expect(container).toMatchSnapshot();
     expect(screen.queryByTestId('config-switch')).not.toBeInTheDocument();
