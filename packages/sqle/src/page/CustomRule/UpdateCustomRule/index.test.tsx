@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { CreateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -36,7 +36,14 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     mockUseDbServiceDriver();
-    mockUseCurrentPermission();
+    mockUsePermission(
+      {
+        moduleFeatureSupport: { sqlOptimization: true }
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     getDriversSpy = configuration.getDrivers();
     updateCustomRuleSpy = rule_template.updateCustomRule();
     getCustomRuleSpy = rule_template.getCustomRule();
