@@ -17,6 +17,15 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useSelector } from 'react-redux';
+import { ModalName } from '../../../../../data/ModalName';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn(),
+  };
+});
 
 const tasksData = [
   {
@@ -67,6 +76,15 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     execWorkflow.mockAllApi();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
     mockUseCurrentProject();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
+      })
+    );
   });
 
   afterEach(() => {

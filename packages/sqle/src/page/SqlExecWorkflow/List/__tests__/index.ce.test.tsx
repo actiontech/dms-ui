@@ -17,11 +17,19 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
     useNavigate: jest.fn()
+  };
+});
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
   };
 });
 
@@ -47,6 +55,7 @@ describe('sqle/Workflow/List', () => {
     RequestBatchCancel = execWorkflow.batchCancelWorkflows();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
   });
 
   afterEach(() => {
