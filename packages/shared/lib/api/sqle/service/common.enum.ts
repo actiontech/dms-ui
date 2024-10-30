@@ -184,6 +184,34 @@ export enum CustomRuleResV1LevelEnum {
   'error' = 'error'
 }
 
+export enum DatabaseDiffObjectObjectTypeEnum {
+  'TABLE' = 'TABLE',
+
+  'VIEW' = 'VIEW',
+
+  'PROCEDURE' = 'PROCEDURE',
+
+  'TIGGER' = 'TIGGER',
+
+  'EVENT' = 'EVENT',
+
+  'FUNCTION' = 'FUNCTION'
+}
+
+export enum DatabaseObjectObjectTypeEnum {
+  'TABLE' = 'TABLE',
+
+  'VIEW' = 'VIEW',
+
+  'PROCEDURE' = 'PROCEDURE',
+
+  'TIGGER' = 'TIGGER',
+
+  'EVENT' = 'EVENT',
+
+  'FUNCTION' = 'FUNCTION'
+}
+
 export enum DirectAuditFileReqV1SqlTypeEnum {
   'sql' = 'sql',
 
@@ -228,16 +256,6 @@ export enum GetWorkflowTasksItemV1StatusEnum {
   'executing' = 'executing',
 
   'manually_executed' = 'manually_executed'
-}
-
-export enum HighPriorityConditionTypeEnum {
-  'string' = 'string',
-
-  'int' = 'int',
-
-  'bool' = 'bool',
-
-  'password' = 'password'
 }
 
 export enum GlobalSqlManageProjectPriorityEnum {
@@ -290,6 +308,16 @@ export enum InstanceAuditPlanResV1ActiveStatusEnum {
 
 export enum ModuleRedDotModuleNameEnum {
   'global_dashboard' = 'global_dashboard'
+}
+
+export enum ObjectDiffResultComparisonResultEnum {
+  'same' = 'same',
+
+  'inconsistent' = 'inconsistent',
+
+  'base_not_exist' = 'base_not_exist',
+
+  'comparison_not_exist' = 'comparison_not_exist'
 }
 
 export enum OperationRecordListStatusEnum {
@@ -346,6 +374,16 @@ export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
   'wechat' = 'wechat',
 
   'feishu' = 'feishu'
+}
+
+export enum SchemaObjectComparisonResultEnum {
+  'same' = 'same',
+
+  'inconsistent' = 'inconsistent',
+
+  'base_not_exist' = 'base_not_exist',
+
+  'comparison_not_exist' = 'comparison_not_exist'
 }
 
 export enum SqlManageAuditStatusEnum {

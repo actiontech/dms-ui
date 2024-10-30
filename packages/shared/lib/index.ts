@@ -7,6 +7,7 @@ export { default as BasicInput } from './components/BasicInput';
 export { default as BasicButton } from './components/BasicButton';
 export { default as BasicRangePicker } from './components/BasicRangePicker';
 export { default as BasicSelect } from './components/BasicSelect';
+export { default as BasicTreeSelect } from './components/BasicTreeSelect';
 export { default as PageHeader } from './components/PageHeader';
 export { default as BasicSegmented } from './components/BasicSegmented';
 export { default as BasicDrawer } from './components/BasicDrawer';
