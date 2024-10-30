@@ -1,11 +1,11 @@
-import { IEnumsValue } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IEnumsValueResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export type FormItem = {
   desc?: string;
   key?: string;
   type?: string;
   value?: string;
-  enums_value?: IEnumsValue[];
+  enums_value?: IEnumsValueResV1[];
   hidden?: boolean;
 };
 
