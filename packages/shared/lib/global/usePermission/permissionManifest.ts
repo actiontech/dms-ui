@@ -641,5 +641,14 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true
+  },
+
+  // 查看规则
+  [PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
   }
 } as const;
