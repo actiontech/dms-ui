@@ -15,7 +15,7 @@ import {
   AuditPlanSQLHeadV1TypeEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
-  HighPriorityConditionTypeEnum
+  HighPriorityConditionResV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
@@ -207,7 +207,7 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
         key: 'query_time_avg',
         desc: '平均查询时间',
         value: '10',
-        type: HighPriorityConditionTypeEnum.int,
+        type: HighPriorityConditionResV1TypeEnum.int,
         enums_value: undefined,
         operator: {
           operator_value: '\u003e',
@@ -231,7 +231,7 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
         key: 'row_examined_avg',
         desc: '平均扫描行数',
         value: '100',
-        type: HighPriorityConditionTypeEnum.int,
+        type: HighPriorityConditionResV1TypeEnum.int,
         enums_value: undefined,
         operator: {
           operator_value: '\u003e',
@@ -255,7 +255,7 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
         key: 'audit_level',
         desc: '告警级别',
         value: 'warn',
-        type: HighPriorityConditionTypeEnum.string,
+        type: HighPriorityConditionResV1TypeEnum.string,
         enums_value: [
           {
             value: 'info',
@@ -402,7 +402,7 @@ export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
           key: 'query_time_avg',
           desc: '平均查询时间',
           value: '0.3',
-          type: HighPriorityConditionTypeEnum.int,
+          type: HighPriorityConditionResV1TypeEnum.int,
           enums_value: undefined,
           operator: {
             operator_value: '\u003e',
@@ -426,7 +426,7 @@ export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
           key: 'row_examined_avg',
           desc: '平均扫描行数',
           value: '0.5',
-          type: HighPriorityConditionTypeEnum.int,
+          type: HighPriorityConditionResV1TypeEnum.int,
           enums_value: undefined,
           operator: {
             operator_value: '\u003e',
