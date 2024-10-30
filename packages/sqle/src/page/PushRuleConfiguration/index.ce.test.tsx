@@ -9,6 +9,14 @@ import MockReportPushConfigService from '../../testUtils/mockApi/reportPushConfi
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act } from '@testing-library/react';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('test PushRuleConfiguration/ce', () => {
   let mockGetReportPushConfigList: jest.SpyInstance;
@@ -16,6 +24,7 @@ describe('test PushRuleConfiguration/ce', () => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
     mockGetReportPushConfigList =
       MockReportPushConfigService.GetReportPushConfigList();
   });
