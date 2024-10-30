@@ -17,19 +17,22 @@ import {
   CreateBlacklistReqV1TypeEnum,
   CreateCustomRuleReqV1LevelEnum,
   CustomRuleResV1LevelEnum,
+  DatabaseDiffObjectObjectTypeEnum,
+  DatabaseObjectObjectTypeEnum,
   DirectAuditFileReqV1SqlTypeEnum,
   DirectAuditReqV1SqlTypeEnum,
   FilterMetaFilterInputTypeEnum,
   FilterMetaFilterOpTypeEnum,
   GetWorkflowTasksItemV1StatusEnum,
-  HighPriorityConditionTypeEnum,
   GlobalSqlManageProjectPriorityEnum,
   GlobalSqlManageStatusEnum,
   HighPriorityConditionReqOperatorEnum,
+  HighPriorityConditionResV1TypeEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
-  OperationRecordListStatusEnum,
   ModuleRedDotModuleNameEnum,
+  ObjectDiffResultComparisonResultEnum,
+  OperationRecordListStatusEnum,
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
@@ -37,6 +40,7 @@ import {
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
+  SchemaObjectComparisonResultEnum,
   SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
   SqlVersionDetailResV1StatusEnum,
@@ -89,20 +93,26 @@ export interface IBaseRes {
   message?: string;
 }
 
+export interface IAuditResult {
+  db_type?: string;
+
+  i18n_audit_result_info?: II18nAuditResultInfo;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+}
+
 export interface IAuditResultInfo {
   message?: string;
 }
 
+export type IAuditResults = IAuditResult[];
+
 export interface II18nAuditResultInfo {
   [key: string]: any;
-}
-
-export interface IEnumsValue {
-  desc?: string;
-
-  i18n_desc?: string;
-
-  value?: string;
 }
 
 export interface IAffectRows {
@@ -152,7 +162,7 @@ export interface IAuditPlanMetaV1 {
 
   audit_plan_type_desc?: string;
 
-  high_priority_conditions?: IHighPriorityCondition[];
+  high_priority_conditions?: IHighPriorityConditionResV1[];
 
   instance_type?: string;
 }
@@ -200,7 +210,7 @@ export interface IAuditPlanRes {
 
   audit_plan_type?: IAuditPlanTypeResBase;
 
-  high_priority_conditions?: IHighPriorityCondition[];
+  high_priority_conditions?: IHighPriorityConditionResV1[];
 
   need_mark_high_priority_sql?: boolean;
 
@@ -288,6 +298,8 @@ export interface IAuditPlanTypeResBase {
 
   desc?: string;
 
+  token?: string;
+
   type?: string;
 }
 
@@ -307,18 +319,6 @@ export interface IAuditResDataV1 {
   score?: number;
 
   sql_results?: IAuditSQLResV1[];
-}
-
-export interface IAuditResult {
-  db_type?: string;
-
-  i18n_audit_result_info?: II18nAuditResultInfo;
-
-  level?: string;
-
-  message?: string;
-
-  rule_name?: string;
 }
 
 export interface IAuditSQLResV1 {
@@ -729,6 +729,62 @@ export interface IDashboardResV1 {
   workflow_statistics?: IWorkflowStatisticsResV1;
 }
 
+export interface IDatabaseComparisonObject {
+  instance_id?: string;
+
+  schema_name?: string;
+}
+
+export interface IDatabaseComparisonResV1 {
+  code?: number;
+
+  data?: ISchemaObject[];
+
+  message?: string;
+}
+
+export interface IDatabaseComparisonStatements {
+  base_sql?: ISQLStatementWithAuditResult;
+
+  comparison_sql?: ISQLStatementWithAuditResult;
+}
+
+export interface IDatabaseComparisonStatementsResV1 {
+  code?: number;
+
+  data?: IDatabaseComparisonStatements;
+
+  message?: string;
+}
+
+export interface IDatabaseDiffModifySQL {
+  modify_sqls?: ISQLStatementWithAuditResult[];
+
+  schema_name?: string;
+}
+
+export interface IDatabaseDiffObject {
+  inconsistent_num?: number;
+
+  object_type?: DatabaseDiffObjectObjectTypeEnum;
+
+  objects_diff_result?: IObjectDiffResult[];
+}
+
+export interface IDatabaseObject {
+  object_name?: string;
+
+  object_type?: DatabaseObjectObjectTypeEnum;
+}
+
+export interface IDatabaseSchemaObject {
+  base_schema_name?: string;
+
+  comparison_schema_name?: string;
+
+  database_objects?: IDatabaseObject[];
+}
+
 export interface IDepBetweenStageInstance {
   next_stage_instance_id?: string;
 
@@ -867,6 +923,22 @@ export interface IFilterTip {
 
 export interface IFullSyncAuditPlanSQLsReqV1 {
   audit_plan_sql_list?: IAuditPlanSQLReqV1[];
+}
+
+export interface IGenModifySQLResV1 {
+  code?: number;
+
+  data?: IDatabaseDiffModifySQL[];
+
+  message?: string;
+}
+
+export interface IGenModifylSQLReqV1 {
+  base_instance_id?: string;
+
+  comparison_instance_id?: string;
+
+  database_schema_objects?: IDatabaseSchemaObject[];
 }
 
 export interface IGetAuditPlanAnalysisDataResV1 {
@@ -1063,6 +1135,12 @@ export interface IGetCompanyNoticeResp {
   message?: string;
 }
 
+export interface IGetComparisonStatementsReqV1 {
+  database_comparison_object?: IGetDatabaseComparisonReqV1;
+
+  database_object?: IDatabaseObject;
+}
+
 export interface IGetCustomRuleResV1 {
   code?: number;
 
@@ -1093,6 +1171,12 @@ export interface IGetDashboardResV1 {
   data?: IDashboardResV1;
 
   message?: string;
+}
+
+export interface IGetDatabaseComparisonReqV1 {
+  base_db_object?: IDatabaseComparisonObject;
+
+  comparison_db_object?: IDatabaseComparisonObject;
 }
 
 export interface IGetDepBetweenStageInstanceResV1 {
@@ -1777,20 +1861,6 @@ export interface IGetWorkflowsThatCanBeAssociatedToVersionResV1 {
   message?: string;
 }
 
-export interface IHighPriorityCondition {
-  desc?: string;
-
-  enums_value?: IEnumsValue[];
-
-  key?: string;
-
-  operator?: IOperator;
-
-  type?: HighPriorityConditionTypeEnum;
-
-  value?: string;
-}
-
 export interface IGlobalSqlManage {
   audit_result?: IAuditResult[];
 
@@ -2041,6 +2111,12 @@ export interface IModuleStatusRes {
   is_supported?: boolean;
 }
 
+export interface IObjectDiffResult {
+  comparison_result?: ObjectDiffResultComparisonResultEnum;
+
+  object_name?: string;
+}
+
 export interface IOperationActionList {
   desc?: string;
 
@@ -2083,12 +2159,6 @@ export interface IOperationUser {
   ip?: string;
 
   user_name?: string;
-}
-
-export interface IOperator {
-  operator_enums_value?: IEnumsValue[];
-
-  operator_value?: string;
 }
 
 export interface IOperatorResV1 {
@@ -2487,6 +2557,14 @@ export interface ISQLQueryConfigResV1 {
   query_timeout_second?: number;
 }
 
+export interface ISQLStatementWithAuditResult {
+  audit_level?: string;
+
+  audit_results?: IAuditResults;
+
+  sql_statement?: string;
+}
+
 export interface IScheduleTaskDefaultOption {
   default_selector?: ScheduleTaskDefaultOptionDefaultSelectorEnum;
 }
@@ -2497,6 +2575,16 @@ export interface IScheduledTaskDefaultOptionV1Rsp {
   data?: IScheduleTaskDefaultOption;
 
   message?: string;
+}
+
+export interface ISchemaObject {
+  comparison_result?: SchemaObjectComparisonResultEnum;
+
+  database_diff_objects?: IDatabaseDiffObject[];
+
+  inconsistent_num?: number;
+
+  schema_name?: string;
 }
 
 export interface ISource {
@@ -2578,7 +2666,7 @@ export interface ISqlManage {
 
   audit_status?: SqlManageAuditStatusEnum;
 
-  endpoints?: string;
+  endpoints?: string[];
 
   first_appear_timestamp?: string;
 

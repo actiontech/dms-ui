@@ -1,96 +1,109 @@
+import { useTranslation } from 'react-i18next';
 import {
-  BasicButton,
-  TypedLink,
-  ROUTE_PATHS,
-  useTypedNavigate,
-  useTypedParams
-} from '@actiontech/shared';
+  ComparisonActionStyleWrapper,
+  ComparisonEntryStyleWrapper,
+  ComparisonSelectorFormStyleWrapper
+} from './style';
+import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { Empty, Form, Typography } from 'antd';
+import { ToggleButtonStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { Space } from 'antd';
+import { useRequest, useToggle } from 'ahooks';
+import databaseCompareService from '@actiontech/shared/lib/api/sqle/service/database_comparison';
+import { DatabaseComparisonFromFields } from './index.type';
+import EnvironmentSelector from './component/EnvironmentSelector';
+import { parse2DatabaseCompareObject } from './utils';
+import ComparisonTreeNode from './component/ComparisonTreeNode';
 
 const ComparisonEntry: React.FC = () => {
-  const { projectID } = useCurrentProject();
-  const navigate = useTypedNavigate();
+  const { t } = useTranslation();
+  const { projectName } = useCurrentProject();
 
-  // 自动推导出 values 类型为
-  // {
-  //   projectID: string;
-  // } & {
-  //     taskId: string;
-  //     fileId: string;
-  // }
-  //
-  const values =
-    useTypedParams<
-      typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
-    >();
+  const [form] = Form.useForm<DatabaseComparisonFromFields>();
+
+  const [showDifferencesOnly, { toggle: toggleShowDifferencesOnly }] =
+    useToggle();
+
+  const {
+    data: comparisonResults,
+    run: executeComparisonApi,
+    loading: executeComparisonPending
+  } = useRequest(
+    (baseLineValue: string, comparisonValue: string) =>
+      databaseCompareService
+        .executeDatabaseComparisonV1({
+          project_name: projectName,
+          base_db_object: parse2DatabaseCompareObject(baseLineValue),
+          comparison_db_object: parse2DatabaseCompareObject(comparisonValue)
+        })
+        .then((res) => res.data.data),
+    {
+      manual: true
+    }
+  );
+
+  const executeComparison = async () => {
+    const values = await form.validateFields();
+    executeComparisonApi(values.baselineInstance, values.comparisonInstance);
+  };
 
   return (
-    <Space direction="vertical">
-      {/* normal */}
+    <ComparisonEntryStyleWrapper>
+      <ComparisonSelectorFormStyleWrapper form={form}>
+        <EnvironmentSelector
+          executeComparisonPending={executeComparisonPending}
+        />
+      </ComparisonSelectorFormStyleWrapper>
+
       <BasicButton
-        onClick={() => {
-          navigate(ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD);
-        }}
+        size="large"
+        className="full-width-element"
+        type="primary"
+        onClick={executeComparison}
+        disabled={executeComparisonPending}
+        loading={executeComparisonPending}
       >
-        跳转至全局DASHBOARD
+        {t('dataSourceComparison.entry.executeComparison')}
       </BasicButton>
-      <BasicButton
-        onClick={() => {
-          navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
-            values: {
-              workflowId: '1846478104923475968',
-              projectID
+
+      <ComparisonActionStyleWrapper size={12}>
+        <ToggleButtonStyleWrapper
+          disabled={executeComparisonPending}
+          active={showDifferencesOnly}
+          onClick={() => {
+            if (!executeComparisonPending) {
+              toggleShowDifferencesOnly();
             }
-          });
-        }}
+          }}
+        >
+          {t('dataSourceComparison.entry.showDifferencesOnly')}
+        </ToggleButtonStyleWrapper>
+
+        <BasicButton disabled={executeComparisonPending}>
+          {t('dataSourceComparison.entry.modifyMappings')}
+        </BasicButton>
+
+        <BasicButton disabled={executeComparisonPending}>
+          {t('dataSourceComparison.entry.generateSQL')}
+        </BasicButton>
+      </ComparisonActionStyleWrapper>
+
+      {/* <EmptyBox
+        if={!!comparisonResults}
+        defaultNode={
+          <Empty
+            image={Empty.PRESENTED_IMAGE_SIMPLE}
+            description={
+              <Typography.Text type="secondary">
+                {t('common.tip.no_data')}
+              </Typography.Text>
+            }
+          />
+        }
       >
-        跳转至工单详情
-      </BasicButton>
-      <BasicButton
-        onClick={() => {
-          navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
-            values: { projectID }
-          });
-        }}
-      >
-        跳转至工单创建
-      </BasicButton>
-      <TypedLink to={ROUTE_PATHS.SQLE.RULE}>跳转至规则列表</TypedLink>
-      <TypedLink
-        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index}
-        values={{ projectID }}
-      >
-        跳转至SQL工单
-      </TypedLink>
-      <TypedLink
-        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze}
-        values={{ projectID, taskId: '10', sqlNum: '1' }}
-      >
-        跳转至SQL分析
-      </TypedLink>
-      <TypedLink
-        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview}
-        values={{ projectID, taskId: '11', fileId: '1' }}
-      >
-        跳转至SQL文件概览
-      </TypedLink>
-      <TypedLink
-        to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index}
-        values={{ projectID, instanceId: '123' }}
-      >
-        跳转至SQL管控
-      </TypedLink>
-      <BasicButton
-        onClick={() => {
-          navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index, {
-            values: { projectID, instanceId: '123', source: 'zz' }
-          });
-        }}
-      >
-        跳转至SQL管控-完整query
-      </BasicButton>
-    </Space>
+        <ComparisonTreeNode comparisonResults={comparisonResults ?? []} />
+      </EmptyBox> */}
+    </ComparisonEntryStyleWrapper>
   );
 };
 

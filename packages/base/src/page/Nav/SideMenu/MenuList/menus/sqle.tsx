@@ -18,7 +18,8 @@ import {
   PlanFilled,
   GearFilled,
   PipelineOutlined,
-  FileVersionOutlined
+  FileVersionOutlined,
+  ComparisonOutlined
 } from '@actiontech/icons';
 import { TypedLink, ROUTE_PATHS } from '@actiontech/shared';
 
@@ -197,7 +198,7 @@ const dataSourceComparison: GenerateMenuItemType = (projectID) => ({
       {t('dmsMenu.dataSourceComparison')}
     </TypedLink>
   ),
-  icon: <FileVersionOutlined width={18} height={18} />,
+  icon: <ComparisonOutlined width={18} height={18} />,
   // todo 后续调整当前选中菜单与 key 绑定的逻辑
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-source-comparison`,
   structKey: 'data-source-comparison'
