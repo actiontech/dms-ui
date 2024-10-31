@@ -371,6 +371,50 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager]
   },
 
+  // 成员与权限管理
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
   // SQL 工单
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE,
