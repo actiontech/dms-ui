@@ -15,6 +15,14 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import { useParams } from 'react-router-dom';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('rehype-sanitize', () => () => jest.fn());
 
@@ -37,6 +45,7 @@ describe('page/RuleKnowledge', () => {
     });
     rule_template.mockAllApi();
     mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
     jest.useFakeTimers();
   });
 

@@ -187,7 +187,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
           </div>
         </div>
         <div
-          class="rule-list-wrapper css-ghg9ee"
+          class="rule-list-wrapper css-8rro2x"
         >
           <div
             id="rule-list-wrapper-id"
@@ -263,30 +263,10 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                       <div
                         class="ant-space-item"
                         style="margin-right: 8px;"
-                      >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
-                        >
-                          <div
-                            class="ant-space-item"
-                          >
-                            审核能力
-                          </div>
-                        </div>
-                      </div>
+                      />
                       <div
                         class="ant-space-item"
-                      >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
-                        >
-                          <div
-                            class="ant-space-item"
-                          >
-                            重写能力
-                          </div>
-                        </div>
-                      </div>
+                      />
                     </div>
                   </div>
                   <section
@@ -408,17 +388,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                       <div
                         class="ant-space-item"
                         style="margin-right: 8px;"
-                      >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
-                        >
-                          <div
-                            class="ant-space-item"
-                          >
-                            审核能力
-                          </div>
-                        </div>
-                      </div>
+                      />
                       <div
                         class="ant-space-item"
                       />
@@ -546,17 +516,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                       />
                       <div
                         class="ant-space-item"
-                      >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
-                        >
-                          <div
-                            class="ant-space-item"
-                          >
-                            重写能力
-                          </div>
-                        </div>
-                      </div>
+                      />
                     </div>
                   </div>
                   <section

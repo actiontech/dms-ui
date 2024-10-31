@@ -19,7 +19,7 @@ import {
 } from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import 'blob-polyfill';
 import { AxiosResponse } from 'axios';
 import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
@@ -56,7 +56,14 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     );
     mockUseCurrentProject();
     mockUseCurrentUser();
-    mockUseCurrentPermission();
+    mockUsePermission(
+      {
+        moduleFeatureSupport: { sqlOptimization: true }
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     mockUseDbServiceDriver();
     getAllRuleSpy = rule_template.getRuleList();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');

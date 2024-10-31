@@ -11,6 +11,15 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
+import { ModalName } from '../../../data/ModalName';
+import { useSelector } from 'react-redux';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('sqle/SqlAudit/Detail', () => {
   let mockUseCurrentProjectSpy: jest.SpyInstance;
@@ -20,6 +29,15 @@ describe('sqle/SqlAudit/Detail', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
+      })
+    );
     mockUseCurrentProjectSpy = mockUseCurrentProject();
   });
 

@@ -5,7 +5,10 @@ import user from '../../../../../testUtils/mockApi/user';
 import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/common';
 import { superRender } from '../../../../../testUtils/customRender';
 import SqlManagementIssuePush from '..';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockProjectInfo,
+  mockCurrentUserReturn
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum
@@ -16,6 +19,15 @@ import {
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import MockReportPushConfigService from '../../../../../testUtils/mockApi/reportPushConfigService';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('test SqlManagementIssuePush', () => {
   let getUserTipListSpy: jest.SpyInstance;
@@ -26,6 +38,7 @@ describe('test SqlManagementIssuePush', () => {
     MockDate.set('2024-12-12:12:00:00');
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
     getUserTipListSpy = user.getUserTipList();
     updateReportPushConfigSpy =
       MockReportPushConfigService.UpdateReportPushConfig();
@@ -51,11 +64,7 @@ describe('test SqlManagementIssuePush', () => {
     permission = true
   ) => {
     return superRender(
-      <SqlManagementIssuePush
-        config={config}
-        permission={permission}
-        refetch={refetchSpy}
-      />
+      <SqlManagementIssuePush config={config} refetch={refetchSpy} />
     );
   };
   it('should render the component and display initial configuration correctly', async () => {
@@ -191,19 +200,24 @@ describe('test SqlManagementIssuePush', () => {
   });
 
   it('should hide the configuration switch and modify button when the user does not have permission', async () => {
-    const { baseElement } = customRender(
-      {
-        report_push_config_id: '2',
-        type: 'sql_manage',
-        enabled: false,
-        trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
-        push_frequency_cron: '1 * * * *',
-        push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
-        push_user_list: ['1739544663515205632', '1739544663515205633'],
-        last_push_time: '0001-01-01T00:00:00Z'
-      },
-      false
-    );
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
+    });
+    const { baseElement } = customRender({
+      report_push_config_id: '2',
+      type: 'sql_manage',
+      enabled: false,
+      trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
+      push_frequency_cron: '1 * * * *',
+      push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
+      push_user_list: ['1739544663515205632', '1739544663515205633'],
+      last_push_time: '0001-01-01T00:00:00Z'
+    });
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(
@@ -212,19 +226,16 @@ describe('test SqlManagementIssuePush', () => {
   });
 
   it('should display/hide configuration details correctly when the configuration switch state changes', async () => {
-    customRender(
-      {
-        report_push_config_id: '2',
-        type: 'sql_manage',
-        enabled: true,
-        trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
-        push_frequency_cron: '1 * * * *',
-        push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
-        push_user_list: ['1739544663515205632', '1739544663515205633'],
-        last_push_time: '0001-01-01T00:00:00Z'
-      },
-      true
-    );
+    customRender({
+      report_push_config_id: '2',
+      type: 'sql_manage',
+      enabled: true,
+      trigger_type: ReportPushConfigListTriggerTypeEnum.timing,
+      push_frequency_cron: '1 * * * *',
+      push_user_Type: ReportPushConfigListPushUserTypeEnum.fixed,
+      push_user_list: ['1739544663515205632', '1739544663515205633'],
+      last_push_time: '0001-01-01T00:00:00Z'
+    });
 
     fireEvent.click(getBySelector('.system-config-switch'));
     await act(async () => jest.advanceTimersByTime(0));

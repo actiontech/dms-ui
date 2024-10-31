@@ -13,7 +13,19 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import {
+  mockProjectInfo,
+  mockCurrentUserReturn
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -31,7 +43,16 @@ describe('sqle/Rule', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
-    mockUseCurrentPermission();
+    mockUsePermission(
+      {
+        moduleFeatureSupport: {
+          sqlOptimization: true
+        }
+      },
+      {
+        mockSelector: true
+      }
+    );
     mockUseDbServiceDriver({
       driverNameList: ['MySQL', 'MySQL1'],
       loading: false,
@@ -210,6 +231,33 @@ describe('sqle/Rule', () => {
   });
 
   it('filter list based on project name', async () => {
+    mockUsePermission(
+      {
+        moduleFeatureSupport: {
+          sqlOptimization: true
+        }
+      },
+      {
+        mockSelector: true,
+        mockCurrentUser: true,
+        mockUseCurrentUserData: {
+          ...mockCurrentUserReturn,
+          userRoles: {
+            ...mockCurrentUserReturn.userRoles,
+            [SystemRole.admin]: false,
+            [SystemRole.globalManager]: false
+          },
+          bindProjects: [
+            {
+              is_manager: true,
+              project_name: mockProjectInfo.projectName,
+              project_id: mockProjectInfo.projectID,
+              archived: false
+            }
+          ]
+        }
+      }
+    );
     const { baseElement } = renderWithThemeAndRedux(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
@@ -266,15 +314,8 @@ describe('sqle/Rule', () => {
     fireEvent.click(screen.getByText('default'));
     await act(async () => jest.advanceTimersByTime(3300));
     expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
-    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
-    expect(getProjectListSpy).toHaveBeenCalledWith({
-      filter_by_uid: '1',
-      page_size: 10
-    });
 
     expect(getBySelector('.ant-empty', baseElement2)).toBeInTheDocument();
-    expect(screen.queryByText('创建规则模板')).not.toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('创建规则模板')).toBeInTheDocument();
     expect(baseElement2).toMatchSnapshot();
     expect(
@@ -335,23 +376,36 @@ describe('sqle/Rule', () => {
   });
 
   it('should hide empty list tips', async () => {
+    mockUsePermission(
+      {
+        moduleFeatureSupport: {
+          sqlOptimization: true
+        }
+      },
+      {
+        mockSelector: true,
+        mockCurrentUser: true,
+        mockUseCurrentUserData: {
+          ...mockCurrentUserReturn,
+          userRoles: {
+            ...mockCurrentUserReturn.userRoles,
+            [SystemRole.admin]: false,
+            [SystemRole.globalManager]: false
+          },
+          bindProjects: [
+            {
+              is_manager: true,
+              project_name: mockProjectInfo.projectName,
+              project_id: mockProjectInfo.projectID,
+              archived: true
+            }
+          ]
+        }
+      }
+    );
     getProjectRuleTemplateTipsSpy.mockClear();
     getProjectRuleTemplateTipsSpy.mockImplementation(() =>
       createSpySuccessResponse({})
-    );
-    getProjectListSpy.mockClear();
-    getProjectListSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total_nums: 1,
-        data: [
-          {
-            is_manager: true,
-            project_name: 'default',
-            project_id: '1',
-            archived: true
-          }
-        ]
-      })
     );
     const { baseElement } = renderWithThemeAndRedux(
       <BrowserRouter>
@@ -365,10 +419,7 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3300));
     expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
     expect(getBySelector('.ant-empty', baseElement)).toBeInTheDocument();
-    expect(getProjectListSpy).toHaveBeenCalledTimes(1);
     expect(getBySelector('.ant-empty', baseElement)).toBeInTheDocument();
-    expect(screen.queryByText('创建规则模板')).not.toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('创建规则模板')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });

@@ -27,6 +27,10 @@ describe('page/SqlManagement', () => {
         whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
         sqlManagementException: {
           modalStatus: { [ModalName.Create_Sql_Management_Exception]: false }
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       });
     });
