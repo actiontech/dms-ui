@@ -92,6 +92,10 @@ export const PERMISSIONS = {
         ADD_MEMBER_GROUP: 'action:add_member_group',
         EDIT_MEMBER_GROUP: 'action:edit_member_group',
         DELETE_MEMBER_GROUP: 'action:delete_member_group'
+      },
+      DATA_EXPORT: {
+        BATCH_CLOSE: 'action:data_export_batch_close',
+        CREATE_WHITELIST: 'action:data_export_create_whitelist'
       }
     },
     SQLE: {
