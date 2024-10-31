@@ -5,12 +5,19 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { RuleListProps, RuleStatusEnum } from '../index.type';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('sqle/components/RuleList', () => {
   const onActionHandleSpy = jest.fn();
   beforeEach(() => {
-    mockUseCurrentPermission();
+    mockUsePermission(
+      {
+        moduleFeatureSupport: { sqlOptimization: true }
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     jest.useFakeTimers();
   });
 

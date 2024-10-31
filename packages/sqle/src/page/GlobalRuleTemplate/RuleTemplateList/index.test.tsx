@@ -22,13 +22,6 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 
-jest.mock('react-router-dom', () => {
-  return {
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn()
-  };
-});
-
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn(),
@@ -36,7 +29,6 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
-  const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
   const templateName = publicRuleTemplateListMockData[0].rule_template_name;
   let getRuleTemplateListSpy: jest.SpyInstance;
@@ -46,13 +38,16 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     mockUseCurrentProject();
     mockUseCurrentUserSpy = mockUseCurrentUser();
     mockUseDbServiceDriver();
-    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         globalRuleTemplate: {
           modalStatus: { [ModalName.Clone_Rule_Template]: false },
           activeSegmentedKey: RuleManagerSegmentedKey.GlobalRuleTemplate
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );
@@ -132,18 +127,6 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getRuleTemplateListSpy).toHaveBeenCalledTimes(2);
-  });
-
-  it('click edit button', async () => {
-    getRuleTemplateListSpy.mockClear();
-    getRuleTemplateListSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [publicRuleTemplateListMockData[0]] })
-    );
-    customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('编 辑'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
 
   it('click delete button', async () => {

@@ -11,6 +11,15 @@ import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useSelector } from 'react-redux';
+import { ModalName } from '../../../../../../data/ModalName';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
   let requestUpdateAuditTaskSQLs: jest.SpyInstance;
@@ -26,6 +35,15 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     requestUpdateAuditTaskSQLs = execWorkflow.updateAuditTaskSQLs();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
     execWorkflow.mockAllApi();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
+      })
+    );
   });
 
   afterEach(() => {

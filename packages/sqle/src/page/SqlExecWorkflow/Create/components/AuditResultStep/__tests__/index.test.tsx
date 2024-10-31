@@ -12,6 +12,13 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { useSelector } from 'react-redux';
+import { ModalName } from '../../../../../../data/ModalName';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test AuditResultStep', () => {
   const customRender = (createAction: () => Promise<void>) => {
@@ -43,6 +50,15 @@ describe('test AuditResultStep', () => {
     mockUseCurrentProject();
     jest.useFakeTimers();
     execWorkflow.mockAllApi();
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
+      })
+    );
   });
   afterEach(() => {
     jest.useRealTimers();
