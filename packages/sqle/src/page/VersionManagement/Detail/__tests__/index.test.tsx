@@ -1,5 +1,4 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -55,7 +54,6 @@ describe('sqle/VersionManagement/Detail', () => {
     mockUseCurrentUser();
     mockUseCurrentProject();
     mockUseDbServiceDriver();
-    mockUseUserOperationPermission();
     getInstanceTipListSpy = instance.getInstanceTipList();
     getSqlVersionDetailSpy = sqlVersion.mockGetSqlVersionDetailV1();
     (useSelector as jest.Mock).mockImplementation((selector) => {
@@ -63,11 +61,16 @@ describe('sqle/VersionManagement/Detail', () => {
         versionManagement: {
           modalStatus: {},
           currentStageWorkflowList: []
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       });
     });
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    
     execWorkflow.getWorkflow();
     task.getAuditTask();
     mockReactFlow();
@@ -268,9 +271,6 @@ describe('sqle/VersionManagement/Detail', () => {
 
   it('render disable batch release workflow button when current user has not next stage service permission', async () => {
     mockUseCurrentUser({ isAdmin: false });
-    mockUseUserOperationPermission({
-      isHaveServicePermission: jest.fn(() => false)
-    });
     getSqlVersionDetailSpy.mockClear();
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailAllowReleaseWorkflowOrderData)
