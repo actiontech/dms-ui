@@ -125,10 +125,7 @@ const SideMenu: React.FC = () => {
       <div className="dms-layout-side-start">
         <ProjectTitle />
         {/* #if [sqle] */}
-        <QuickActions
-          isAdmin={isAdmin}
-          hasGlobalViewingPermission={hasGlobalViewingPermission}
-        />
+        <QuickActions />
         {/* #endif */}
         <Spin spinning={getProjectListLoading}>
           <ProjectSelector

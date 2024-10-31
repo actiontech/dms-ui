@@ -20,10 +20,7 @@ const CESideMenu = () => {
       <div className="dms-layout-side-start">
         <ProjectTitle />
         {/* #if [sqle] */}
-        <QuickActions
-          isAdmin={isAdmin}
-          hasGlobalViewingPermission={hasGlobalViewingPermission}
-        />
+        <QuickActions />
         {/* #endif */}
         <CEModeProjectWrapperStyleWrapper>
           <FlagFilled width={18} height={18} className="project-flag-icon" />
