@@ -1,5 +1,5 @@
 import { useRequest, useBoolean } from 'ahooks';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useCallback } from 'react';
 import DefaultPrompts from '../components/DefaultPrompts';
 import sqlDEVRecord from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord';
 import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -9,8 +9,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import {
   PluginAuditListColumns,
-  PluginAuditListTableFilterParamType,
-  PluginAuditListActions
+  PluginAuditListTableFilterParamType
 } from './columns';
 import useInstance from '../../../hooks/useInstance';
 import useUsername from '../../../hooks/useUsername';
@@ -35,6 +34,8 @@ import {
 import { ResponseCode } from '../../../data/common';
 import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
+import { usePermission } from '@actiontech/shared/lib/global';
+import { PluginAuditListActions } from './actions';
 
 const PluginAuditList = () => {
   const dispatch = useDispatch();
@@ -44,11 +45,10 @@ const PluginAuditList = () => {
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceOptions, updateInstanceList } = useInstance();
 
-  const {
-    openCreateWhitelistModal,
-    updateSelectWhitelistRecord,
-    actionPermission
-  } = useWhitelistRedux();
+  const { parse2TableActionPermissions } = usePermission();
+
+  const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
+    useWhitelistRedux();
 
   const {
     tableFilterInfo,
@@ -107,12 +107,15 @@ const PluginAuditList = () => {
     [username]
   );
 
-  const onCreateWhitelist = (record?: ISqlDEVRecord) => {
-    openCreateWhitelistModal();
-    updateSelectWhitelistRecord({
-      value: record?.sql
-    });
-  };
+  const onCreateWhitelist = useCallback(
+    (record?: ISqlDEVRecord) => {
+      openCreateWhitelistModal();
+      updateSelectWhitelistRecord({
+        value: record?.sql
+      });
+    },
+    [openCreateWhitelistModal, updateSelectWhitelistRecord]
+  );
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof ISqlDEVRecord, FilterCustomProps>([
@@ -150,6 +153,12 @@ const PluginAuditList = () => {
 
     return PluginAuditListColumns(onOpenDrawer);
   }, [dispatch]);
+
+  const actions = useMemo(() => {
+    return parse2TableActionPermissions(
+      PluginAuditListActions(onCreateWhitelist)
+    );
+  }, [parse2TableActionPermissions, onCreateWhitelist]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo);
@@ -200,11 +209,7 @@ const PluginAuditList = () => {
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
-          actions={
-            actionPermission
-              ? PluginAuditListActions(onCreateWhitelist)
-              : undefined
-          }
+          actions={actions}
           scroll={{}}
         />
         <AuditResultDrawer />
