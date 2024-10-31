@@ -46,33 +46,19 @@ describe('base/System/GlobalSetting', () => {
 
     await act(async () => jest.advanceTimersByTime(3200));
 
-    expect(screen.getByText('7211')).toBeInTheDocument();
-
     const editBtn = getAllBySelector(
       '.config-item-filed-edit-button',
       baseElement
     );
-    expect(editBtn.length).toBe(4);
+    expect(editBtn.length).toBe(3);
     expect(editBtn[0]).toHaveAttribute('hidden');
 
-    fireEvent.mouseOver(screen.getByText('7211'));
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(editBtn[0]).not.toHaveAttribute('hidden');
-
-    fireEvent.mouseDown(screen.getByText('已完成的工单自动过期时间(小时)'));
-    await act(async () => jest.advanceTimersByTime(300));
-
     fireEvent.click(editBtn[1]);
-    await act(async () => jest.advanceTimersByTime(500));
-    fireEvent.mouseDown(screen.getByText('操作记录过期时间(小时)'));
-    await act(async () => jest.advanceTimersByTime(300));
-
-    fireEvent.click(editBtn[2]);
     await act(async () => jest.advanceTimersByTime(500));
     fireEvent.mouseDown(screen.getByText('CB工作台操作审计过期时间(小时)'));
     await act(async () => jest.advanceTimersByTime(300));
 
-    fireEvent.click(editBtn[3]);
+    fireEvent.click(editBtn[2]);
     await act(async () => jest.advanceTimersByTime(500));
     fireEvent.mouseDown(screen.getByText('URL地址前缀'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -93,50 +79,41 @@ describe('base/System/GlobalSetting', () => {
 
     await act(async () => jest.advanceTimersByTime(3200));
 
-    expect(screen.getByText('7211')).toBeInTheDocument();
-
     const editBtn = getAllBySelector(
       '.config-item-filed-edit-button',
       baseElement
     );
-    expect(editBtn.length).toBe(4);
-    expect(editBtn[0]).toHaveAttribute('hidden');
-
-    fireEvent.mouseOver(screen.getByText('7211'));
-    await act(async () => jest.advanceTimersByTime(500));
+    expect(editBtn.length).toBe(3);
     expect(editBtn[0]).toHaveAttribute('hidden');
   });
 
   describe('render form validate error', () => {
-    it('render workflow_expired_hours', async () => {
+    it('render operation_record_expired_hours', async () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3200));
-
-      expect(screen.getByText('7211')).toBeInTheDocument();
-      fireEvent.mouseOver(screen.getByText('7211'));
+      expect(screen.getByText('3161')).toBeInTheDocument();
+      fireEvent.mouseOver(screen.getByText('3161'));
       await act(async () => jest.advanceTimersByTime(500));
 
       const editBtn = getAllBySelector(
         '.config-item-filed-edit-button',
         baseElement
       );
-      expect(editBtn.length).toBe(4);
       fireEvent.click(editBtn[0]);
       await act(async () => jest.advanceTimersByTime(500));
 
       const inputNumEle = getBySelector('.ant-input-number-input', baseElement);
       fireEvent.change(inputNumEle, {
         target: {
-          value: 'abc'
+          value: 'cef'
         }
       });
       await act(async () => jest.advanceTimersByTime(500));
-      expect(baseElement).toMatchSnapshot();
 
       fireEvent.change(inputNumEle, {
         target: {
-          value: '8866'
+          value: '9988'
         }
       });
       await act(async () => jest.advanceTimersByTime(500));
@@ -149,21 +126,20 @@ describe('base/System/GlobalSetting', () => {
       expect(requestUpdateSystemVariables).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
       expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
-        operation_record_expired_hours: 3161,
+        operation_record_expired_hours: 9988,
         url: 'http://demo.com',
-        workflow_expired_hours: 8866,
         cb_operation_logs_expired_hours: 2160
       });
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestGetSystemVariables).toHaveBeenCalled();
     });
 
-    it('render operation_record_expired_hours', async () => {
+    it('render cb_operation_logs_expired_hours', async () => {
       const { baseElement } = customRender();
 
       await act(async () => jest.advanceTimersByTime(3200));
-      expect(screen.getByText('3161')).toBeInTheDocument();
-      fireEvent.mouseOver(screen.getByText('3161'));
+      expect(screen.getByText('2160')).toBeInTheDocument();
+      fireEvent.mouseOver(screen.getByText('2160'));
       await act(async () => jest.advanceTimersByTime(500));
 
       const editBtn = getAllBySelector(
@@ -196,56 +172,8 @@ describe('base/System/GlobalSetting', () => {
       expect(requestUpdateSystemVariables).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2600));
       expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
-        operation_record_expired_hours: 9988,
-        url: 'http://demo.com',
-        workflow_expired_hours: 7211,
-        cb_operation_logs_expired_hours: 2160
-      });
-      await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestGetSystemVariables).toHaveBeenCalled();
-    });
-
-    it('render cb_operation_logs_expired_hours', async () => {
-      const { baseElement } = customRender();
-
-      await act(async () => jest.advanceTimersByTime(3200));
-      expect(screen.getByText('2160')).toBeInTheDocument();
-      fireEvent.mouseOver(screen.getByText('2160'));
-      await act(async () => jest.advanceTimersByTime(500));
-
-      const editBtn = getAllBySelector(
-        '.config-item-filed-edit-button',
-        baseElement
-      );
-      fireEvent.click(editBtn[2]);
-      await act(async () => jest.advanceTimersByTime(500));
-
-      const inputNumEle = getBySelector('.ant-input-number-input', baseElement);
-      fireEvent.change(inputNumEle, {
-        target: {
-          value: 'cef'
-        }
-      });
-      await act(async () => jest.advanceTimersByTime(500));
-
-      fireEvent.change(inputNumEle, {
-        target: {
-          value: '9988'
-        }
-      });
-      await act(async () => jest.advanceTimersByTime(500));
-
-      fireEvent.keyDown(inputNumEle, {
-        key: 'Enter',
-        keyCode: 13
-      });
-      await act(async () => jest.advanceTimersByTime(500));
-      expect(requestUpdateSystemVariables).toHaveBeenCalled();
-      await act(async () => jest.advanceTimersByTime(2600));
-      expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
         operation_record_expired_hours: 3161,
         url: 'http://demo.com',
-        workflow_expired_hours: 7211,
         cb_operation_logs_expired_hours: 9988
       });
       await act(async () => jest.advanceTimersByTime(3000));
@@ -264,7 +192,7 @@ describe('base/System/GlobalSetting', () => {
         '.config-item-filed-edit-button',
         baseElement
       );
-      fireEvent.click(editBtn[3]);
+      fireEvent.click(editBtn[2]);
       await act(async () => jest.advanceTimersByTime(500));
 
       const inputEle = getBySelector('#editInput', baseElement);
@@ -285,7 +213,6 @@ describe('base/System/GlobalSetting', () => {
       expect(requestUpdateSystemVariables).toHaveBeenCalledWith({
         operation_record_expired_hours: 3161,
         url: 'this is a url string',
-        workflow_expired_hours: 7211,
         cb_operation_logs_expired_hours: 2160
       });
       await act(async () => jest.advanceTimersByTime(3000));

@@ -2179,31 +2179,11 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                disabled=""
-                                type="button"
-                              >
-                                <span>
-                                  立即上线
-                                </span>
-                              </button>
-                            </div>
+                            />
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                disabled=""
-                                type="button"
-                              >
-                                <span>
-                                  定时上线
-                                </span>
-                              </button>
-                            </div>
+                            />
                             <div
                               class="ant-space-item"
                             />
@@ -2304,31 +2284,11 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                disabled=""
-                                type="button"
-                              >
-                                <span>
-                                  立即上线
-                                </span>
-                              </button>
-                            </div>
+                            />
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                disabled=""
-                                type="button"
-                              >
-                                <span>
-                                  定时上线
-                                </span>
-                              </button>
-                            </div>
+                            />
                             <div
                               class="ant-space-item"
                             />

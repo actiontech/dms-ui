@@ -41,3 +41,15 @@ body * {
     border-radius: 2px;
   }
 }
+
+/*
+  解决Popover 和 Popconfirm 在屏幕右侧边缘闪烁的问题
+  issue: https://github.com/ant-design/ant-design/issues/47969?open_in_browser=true
+  PR: https://github.com/ant-design/ant-design/pull/48591
+  changelog: https://github.com/ant-design/ant-design/pull/48676
+  升级antd至v5.16.5或更高版本后可删除此全局样式
+*/
+.ant-popover {
+  width: max-content;
+  max-width: 100vw;
+}

@@ -34,8 +34,8 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
   ) => {
     const params: ModifySqlStatementProps = {
       isAtRejectStep: false,
-      isDisableFinallySubmitButton: false,
-      disabledOperatorWorkflowBtnTips: 'disabled workflow Btn Tips',
+      isConfirmationRequiredForSubmission: false,
+      submitWorkflowConfirmationMessage: 'disabled workflow Btn Tips',
       auditAction: auditFn,
       refreshWorkflow: refreshWorkflowFn,
       refreshOverviewAction: refreshOverviewActionFn,

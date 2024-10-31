@@ -40,6 +40,7 @@ import {
 } from '../../../hooks/useStaticStatus/index.data';
 import { MinusCircleOutlined } from '@actiontech/icons';
 import { SqlExecWorkflowCreateAction } from './action';
+import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -51,6 +52,8 @@ const SqlExecWorkflowList: React.FC = () => {
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceIDOptions, updateInstanceList } = useInstance();
   const { isAdmin, username } = useCurrentUser();
+
+  const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
 
   const {
     tableFilterInfo,
@@ -127,9 +130,12 @@ const SqlExecWorkflowList: React.FC = () => {
         {
           showTime: true
         }
-      ]
+      ],
+      // #if [ee]
+      ['sql_version_name', { options: sqlVersionOptions }]
+      // #endif
     ]);
-  }, [instanceIDOptions, usernameOptions]);
+  }, [instanceIDOptions, usernameOptions, sqlVersionOptions]);
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -193,6 +199,12 @@ const SqlExecWorkflowList: React.FC = () => {
       project_name: projectName
     });
   }, [projectName, updateInstanceList, updateUsernameList]);
+
+  // #if [ee]
+  useEffect(() => {
+    updateSqlVersionList();
+  }, [updateSqlVersionList]);
+  // #endif
 
   return (
     <SqlExecWorkflowListStyleWrapper>

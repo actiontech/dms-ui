@@ -6,7 +6,6 @@ import sqleMenusCollection from '../sqle';
 
 const menuStruct: MenuStructTreeType = [
   'project-overview',
-  'dashboard',
   { type: 'divider' },
   {
     type: 'group',
@@ -22,7 +21,7 @@ const menuStruct: MenuStructTreeType = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLExecute'),
-    group: ['exec-workflow']
+    group: ['exec-workflow', 'version-management']
   },
   {
     type: 'group',

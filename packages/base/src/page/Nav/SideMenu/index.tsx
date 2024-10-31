@@ -18,6 +18,7 @@ import EmitterKey from '../../../data/EmitterKey';
 import { useDispatch } from 'react-redux';
 import { updateBindProjects } from '../../../store/user';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
+import QuickActions from './QuickActions';
 
 const SideMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -123,6 +124,12 @@ const SideMenu: React.FC = () => {
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
         <ProjectTitle />
+        {/* #if [sqle] */}
+        <QuickActions
+          isAdmin={isAdmin}
+          hasGlobalViewingPermission={hasGlobalViewingPermission}
+        />
+        {/* #endif */}
         <Spin spinning={getProjectListLoading}>
           <ProjectSelector
             value={currentProjectID}

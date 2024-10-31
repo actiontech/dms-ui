@@ -84,3 +84,10 @@ export const webhookConfig: IWebHookConfigurationData = {
 export const successWebhookTestReturn = {
   is_message_sent_normally: true
 };
+
+export const mockModuleRedHotsData = [
+  {
+    module_name: 'global_dashboard',
+    has_red_dot: true
+  }
+];

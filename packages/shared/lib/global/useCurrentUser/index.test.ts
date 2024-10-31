@@ -140,7 +140,7 @@ describe('hooks/useCurrentUser', () => {
     result.current.updateLanguage(SupportLanguage.zhCN);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({
-      payload: { language: SupportLanguage.zhCN },
+      payload: { language: SupportLanguage.zhCN, store: true },
       type: 'user/updateLanguage'
     });
   });

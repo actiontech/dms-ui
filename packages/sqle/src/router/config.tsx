@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -121,6 +122,18 @@ const UpdateWorkflowTemplate = React.lazy(
       /* webpackChunkName: "UpdateWorkflowTemplate" */ '../page/WorkflowTemplate/UpdateWorkflowTemplate'
     )
 );
+
+const VersionManagementCreation = React.lazy(
+  () => import('../page/VersionManagement/Create')
+);
+
+const VersionManagementUpdate = React.lazy(
+  () => import('../page/VersionManagement/Update')
+);
+
+const VersionManagementDetail = React.lazy(
+  () => import('../page/VersionManagement/Detail')
+);
 // #endif
 
 //workflow
@@ -196,6 +209,10 @@ const PipelineConfigurationCreation = React.lazy(
 const PipelineConfigurationUpdate = React.lazy(
   () => import('../page/PipelineConfiguration/Update')
 );
+
+const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
+
+const GlobalDashboard = React.lazy(() => import('../page/GlobalDashboard'));
 
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
@@ -449,6 +466,34 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
+    path: `${PROJECT_ROUTER_PARAM}/version-management`,
+    key: 'versionManagement',
+    children: [
+      {
+        index: true,
+        element: <VersionManagement />,
+        key: 'VersionManagementList'
+      },
+      // #if [ee]
+      {
+        path: 'create',
+        element: <VersionManagementCreation />,
+        key: 'versionManagementCreation'
+      },
+      {
+        path: 'update/:versionId',
+        element: <VersionManagementUpdate />,
+        key: 'versionManagementCreation'
+      },
+      {
+        path: 'detail/:versionId',
+        element: <VersionManagementDetail />,
+        key: 'versionManagementDetail'
+      }
+      // #endif
+    ]
+  },
+  {
     path: '*',
     key: 'projectRedirect',
     element: <Navigate to="/" />
@@ -457,14 +502,14 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 
 export const globalRouterConfig: RouterConfigItem[] = [
   {
-    path: 'sqle/report-statistics',
+    path: ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS,
     label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
     permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
   },
   {
-    path: 'sqle/rule',
+    path: ROUTE_PATH_COLLECTION.SQLE.RULE,
     label: 'menu.rule',
     element: <Rule />,
     key: 'rule'
@@ -516,6 +561,11 @@ export const globalRouterConfig: RouterConfigItem[] = [
     path: 'sqle/rule/knowledge/:ruleName/:dbType',
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
-  }
+  },
   // #endif
+  {
+    path: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD,
+    key: 'globalDashboard',
+    element: <GlobalDashboard />
+  }
 ];

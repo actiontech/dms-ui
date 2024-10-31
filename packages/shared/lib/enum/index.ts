@@ -11,7 +11,10 @@ export enum ResponseCode {
   SUCCESS = 0,
 
   // sql analyze
-  NotSupportDML = 8001
+  NotSupportDML = 8001,
+
+  // version management
+  BatchTaskNotFullyCompleted = 8005
 }
 
 export enum SupportTheme {

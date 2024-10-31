@@ -14,7 +14,10 @@ import {
   WorkflowStepResV1StateEnum,
   WorkflowStepResV1TypeEnum,
   WorkflowStepResV2StateEnum,
-  WorkflowStepResV2TypeEnum
+  WorkflowStepResV2TypeEnum,
+  AssociatedStageWorkflowsStatusEnum,
+  WorkflowDetailResV1StatusEnum,
+  WorkflowDetailResV1CurrentStepTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const WorkflowListData = [
@@ -174,6 +177,10 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
   mode: WorkflowResV2ModeEnum.different_sqls,
   create_user_name: 'admin',
   create_time: '2024-01-17T02:22:17Z',
+  sql_version: {
+    sql_version_id: 1,
+    sql_version_name: 'v1-test'
+  },
   record: {
     tasks: [
       {
@@ -184,6 +191,8 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
       }
     ],
     status: WorkflowRecordResV2StatusEnum.finished,
+    executable: false,
+    executable_reason: 'the status of workflow is finished',
     workflow_step_list: [
       {
         number: 1,
@@ -233,7 +242,30 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
       ]
     }
   ],
-  exec_mode: WorkflowResV2ExecModeEnum.sqls
+  exec_mode: WorkflowResV2ExecModeEnum.sqls,
+  associated_stage_workflows: [
+    {
+      workflow_id: '1839493775269826560',
+      workflow_name: 'v-12-dev-3',
+      status: AssociatedStageWorkflowsStatusEnum.finished,
+      sql_version_stage_id: 48,
+      stage_sequence: 1
+    },
+    {
+      workflow_name: 'workflow_name',
+      workflow_id: '1747444197486497792',
+      status: AssociatedStageWorkflowsStatusEnum.finished,
+      sql_version_stage_id: 48,
+      stage_sequence: 2
+    },
+    {
+      workflow_id: '1839543178827403264',
+      workflow_name: 'v-12-dev-3_生产',
+      status: AssociatedStageWorkflowsStatusEnum.wait_for_audit,
+      sql_version_stage_id: 48,
+      stage_sequence: 3
+    }
+  ]
 };
 
 export const workflowsDetailData = {
@@ -319,6 +351,8 @@ export const workflowsDetailWaitForAuditData = {
 export const workflowsDetailWaitForExecutionData = {
   ...workflowsDetailData,
   record: {
+    executable: true,
+    executable_reason: '',
     tasks: [
       {
         task_id: 40
@@ -389,3 +423,65 @@ export const workflowsDetailExecutingData = {
     ]
   }
 };
+
+export const mockGlobalWorkflowListData = [
+  {
+    project_uid: '700300',
+    project_name: 'default',
+    project_priority: 'high',
+    workflow_name: 'dms-ui_20241016043751',
+    workflow_id: '1846470650022072320',
+    desc: '',
+    create_user_name: '700200',
+    create_time: '2024-10-16T16:38:03.438+08:00',
+    current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
+    current_step_assignee_user_name_list: [
+      '1843911856977088512',
+      '1844656757964541952',
+      '700200'
+    ],
+    status: WorkflowDetailResV1StatusEnum.wait_for_audit,
+    instance_info: [
+      {
+        instance_id: '1739531854064652288',
+        instance_name: 'mysql-1'
+      },
+      {
+        instance_id: '1739531942258282496',
+        instance_name: 'mysql-2'
+      }
+    ]
+  },
+  {
+    project_uid: '700300',
+    project_name: 'default',
+    project_priority: 'high',
+    workflow_name: 'mysql-1_20241016050733',
+    workflow_id: '1846478104923475968',
+    desc: '',
+    create_user_name: '1846476851174707200',
+    create_time: '2024-10-16T17:07:40.821+08:00',
+    current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
+    current_step_assignee_user_name_list: ['1843911856977088512', '700200'],
+    status: WorkflowDetailResV1StatusEnum.wait_for_audit,
+    instance_info: [
+      {
+        instance_id: '1739531854064652288',
+        instance_name: 'mysql-1'
+      }
+    ]
+  },
+  {
+    project_uid: '700300',
+    project_name: 'default',
+    project_priority: 'high',
+    workflow_name: 'mysql-1_20241016045354',
+    workflow_id: '1846474683185106944',
+    desc: '',
+    create_user_name: '700200',
+    create_time: '2024-10-16T16:54:05.006+08:00',
+    current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
+    current_step_assignee_user_name_list: ['700200'],
+    status: WorkflowDetailResV1StatusEnum.wait_for_audit
+  }
+];

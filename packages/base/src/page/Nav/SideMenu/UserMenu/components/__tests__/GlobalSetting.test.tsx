@@ -28,6 +28,20 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     cleanup();
   });
 
+  const customRender = (
+    isAdmin = false,
+    isCertainProjectManager = false,
+    hasGlobalViewingPermission = false
+  ) => {
+    return superRender(
+      <GlobalSetting
+        hasGlobalViewingPermission={hasGlobalViewingPermission}
+        isAdmin={isAdmin}
+        isCertainProjectManager={isCertainProjectManager}
+      />
+    );
+  };
+
   it(`render snap when "checkPagePermission" is return false`, async () => {
     mockUsePermission(
       {
@@ -38,17 +52,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
 
     const { baseElement } = superRender(<GlobalSetting />);
     expect(baseElement).toMatchSnapshot();
-
-    const iconSystem = getBySelector('.custom-icon-global-system', baseElement);
-    fireEvent.click(iconSystem);
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-
-    expect(screen.getByText('查看规则')).toBeInTheDocument();
-    expect(getAllBySelector('.content-item-text').length).toBe(1);
-    fireEvent.click(screen.getByText('查看规则'));
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(navigateSpy).toHaveBeenCalledWith('/sqle/rule');
   });
 
   it(`render snap when is "checkPagePermission" is return true`, async () => {

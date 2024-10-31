@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import system from '../../../../testUtils/mockApi/system';
 
 jest.mock('react-redux', () => {
   return {
@@ -34,6 +35,7 @@ jest.mock('react-router-dom', () => {
 describe('test Base/Nav/SideMenu/index', () => {
   let getProjectsSpy: jest.SpyInstance;
   let subscribeSpy: jest.SpyInstance;
+  let getSystemModuleRedDotsSpy: jest.SpyInstance;
 
   const dispatchSpy = jest.fn();
   const navigateSpy = jest.fn();
@@ -67,6 +69,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     });
 
     getProjectsSpy = project.getProjectList();
+    getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
   });
@@ -80,6 +83,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     const { baseElement, unmount } = superRender(<SideMenu />);
     expect(baseElement).toMatchSnapshot();
     expect(getProjectsSpy).toHaveBeenCalledTimes(1);
+    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
     expect(getProjectsSpy).toHaveBeenCalledWith({ page_size: 9999 });
     expect(subscribeSpy).toHaveBeenCalledTimes(1);
     expect(subscribeSpy.mock.calls[0][0]).toBe(

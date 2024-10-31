@@ -92,15 +92,15 @@ export default {
       'Query root dn, description: query will use this directory as the root directory',
     ldapUserNameRdnKey: 'Username attribute name',
     ldapUserNameRdnKeyTips:
-      'The attribute name corresponding to the username bound to sqle in ldap',
+      'The attribute name corresponding to the username bound to SQLE in ldap',
     ldapUserEmailRdnKey: 'User email attribute name',
     ldapUserEmailRdnKeyTips:
-      'The attribute name corresponding to the user email bound to sqle in ldap'
+      'The attribute name corresponding to the user email bound to SQLE in ldap'
   },
 
   oauth: {
     ceTips:
-      "If the user already has a set of common account and password within the company and wants to use this set of common account and password to log in to sqle, the user can use the platform's oauth2.0 docking function. after enabling and configuring oauth2.0 correctly, the user can use third-party login on the sqle login interface.\nthus, users can log in using their common account and password, without having to remember another set of sqle passwords, which can improve the efficiency of enterprise users.",
+      "If the user already has a set of common account and password within the company and wants to use this set of common account and password to log in to SQLE, the user can use the platform's oauth2.0 docking function. after enabling and configuring oauth2.0 correctly, the user can use third-party login on the SQLE login interface.\nthus, users can log in using their common account and password, without having to remember another set of SQLE passwords, which can improve the efficiency of enterprise users.",
     featureName: 'User docking oauth2.0',
 
     enable: 'Enable oauth2.0 login',
@@ -111,7 +111,7 @@ export default {
     clientSecret: 'Application secret',
     clientSecretTips:
       'The secret corresponding to appid, used to verify the legitimacy of the application when accessing user resources. in the oauth2.0 authentication process, the value of appkey is the same as the value of oauth_consumer_secret. if this item has been configured before, not filling in this item when updating means not updating the secret.',
-    clientHost: 'External access address of sqle',
+    clientHost: 'External access address of SQLE',
     clientHostTips: 'Format is http(s)://ip:port',
 
     serverAuthUrl: 'Oauth2.0 login authorization page address',
@@ -129,17 +129,17 @@ export default {
 
     accessTokenKeyName: 'Access_token key name',
     accessTokenKeyNameTips:
-      'Sqle will put the access_token in the value corresponding to this key when obtaining the user id. this parameter will be sent as a parameter of the get request to the user id acquisition address',
+      'SQLE will put the access_token in the value corresponding to this key when obtaining the user id. this parameter will be sent as a parameter of the get request to the user id acquisition address',
 
     userIdKeyName: 'Json path of user uid',
     userIdKeyNameTips:
-      'Sqle will try to use this path to parse the user id from the response of obtaining user information from the third-party platform. the user id should be a unique id',
+      'SQLE will try to use this path to parse the user id from the response of obtaining user information from the third-party platform. the user id should be a unique id',
     userEmailTagName: 'Json path of user email',
     userEmailTagNameTips:
-      'Sqle will try to use this path to parse the user email from the response of obtaining user information from the third-party platform',
+      'SQLE will try to use this path to parse the user email from the response of obtaining user information from the third-party platform',
     userWechatTagName: 'Json path of user wechat id',
     userWechatTagNameTips:
-      'Sqle will try to use this path to parse the user wechat id from the response of obtaining user information from the third-party platform',
+      'SQLE will try to use this path to parse the user wechat id from the response of obtaining user information from the third-party platform',
 
     loginButtonText: 'Login button text',
     loginButtonTextTips: 'Login page oauth2.0 login button text',
@@ -147,10 +147,10 @@ export default {
 
     autoCreateUser: 'Automatically create and bind user',
     autoCreateUserTips:
-      'If enabled, when logging in through oauth2, if the user is not bound to a sqle user, sqle will create a sqle account based on the user id obtained from the oauth2 server, and will not jump to the binding interface, but enter the sqle main interface.',
+      'If enabled, when logging in through oauth2, if the user is not bound to a SQLE user, SQLE will create a SQLE account based on the user id obtained from the oauth2 server, and will not jump to the binding interface, but enter the SQLE main interface.',
     skipCheckState: 'Skip request source verification',
     skipStateCheckTips:
-      'Skip the verification of the request sending source, which may put your account at risk. it is recommended to enable this option only in a trusted environment. after enabling, sqle will no longer verify the state parameter in the callback.'
+      'Skip the verification of the request sending source, which may put your account at risk. it is recommended to enable this option only in a trusted environment. after enabling, SQLE will no longer verify the state parameter in the callback.'
   },
 
   dingTalk: {
@@ -206,8 +206,6 @@ export default {
   },
 
   global: {
-    workflowExpiredHours:
-      'Automatic expiration time for completed work workflows',
     operationRecordExpiredHours: 'Operation record expiration time',
     cbOperationLogsExpiredHours:
       'Cb workstation operation audit expiration time',
@@ -234,7 +232,7 @@ export default {
     productIntroduction: 'Product introduction',
     productFeatures: 'Features',
     sqle_desc:
-      'Sqle is an independently developed sql quality management platform that supports multiple databases, developed by aisino. it is used in sql quality governance during development, testing, release, and production operation phases. through the method of “establishing standards, pre-control, post-supervision, and standard release”, it provides enterprises with the ability to control sql quality throughout its life cycle, while promoting the rapid implementation of internal development standards.',
+      'SQLE is an independently developed sql quality management platform that supports multiple databases, developed by aisino. it is used in sql quality governance during development, testing, release, and production operation phases. through the method of “establishing standards, pre-control, post-supervision, and standard release”, it provides enterprises with the ability to control sql quality throughout its life cycle, while promoting the rapid implementation of internal development standards.',
     sqle_feature:
       '1. meet the use scenarios of mainstream commercial and open source databases, supporting more than ten types of data sources.\n2. provide years of technical precipitation from the operation and maintenance expert team and support independent precipitation of the rule knowledge base.\n3. provide sql intelligent scanning of more than ten types, including slow logs, covering the needs of pre-and post-sql collection.\n4. provide a full-process control perspective of sql, track the progress of solving problematic sql, and provide quick optimization.'
   },

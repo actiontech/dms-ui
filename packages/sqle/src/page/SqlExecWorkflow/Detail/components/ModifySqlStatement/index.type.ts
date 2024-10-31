@@ -4,9 +4,11 @@ import {
   SqlAuditInfoFormFields,
   CreateWorkflowDatabaseInfo
 } from '../../../Create/index.type';
+import React from 'react';
 
 export type ModifySqlStatementProps = {
   backToDetail: () => void;
+  backToDetailText?: React.ReactNode;
   isAtRejectStep: boolean;
   auditAction: (
     values: SqlAuditInfoFormFields,
@@ -15,11 +17,11 @@ export type ModifySqlStatementProps = {
   currentTasks?: IAuditTaskResV1[];
   isSameSqlForAll: boolean;
   modifiedTasks?: IAuditTaskResV1[];
-  isDisableFinallySubmitButton: boolean;
-  disabledOperatorWorkflowBtnTips: string;
+  isConfirmationRequiredForSubmission: boolean;
+  submitWorkflowConfirmationMessage: string;
   workflowId: string;
-  refreshWorkflow: () => void;
-  refreshOverviewAction: () => void;
+  refreshWorkflow?: () => void;
+  refreshOverviewAction?: () => void;
   executeMode?: WorkflowResV2ExecModeEnum;
-  auditExecPanelTabChangeEvent: (key: string) => void;
+  auditExecPanelTabChangeEvent?: (key: string) => void;
 };

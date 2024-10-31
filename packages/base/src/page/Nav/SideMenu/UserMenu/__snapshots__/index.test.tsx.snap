@@ -19,3 +19,24 @@ exports[`base/Nav/SideMenu/UserMenu should match snapshot 1`] = `
   <CompanyNoticeModal />
 </Fragment>
 `;
+
+exports[`base/Nav/SideMenu/UserMenu render snap when current is not admin or certain project manager and has not global view permission 1`] = `
+<body>
+  <div>
+    <div
+      class="dms-layout-side-end"
+    >
+      <span
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="ant-avatar-string"
+          style="transform: scale(1) translateX(-50%);"
+        >
+          A
+        </span>
+      </span>
+    </div>
+  </div>
+</body>
+`;

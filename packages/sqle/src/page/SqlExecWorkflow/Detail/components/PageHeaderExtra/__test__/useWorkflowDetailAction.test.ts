@@ -31,6 +31,8 @@ describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
         workflowInfo: {
           ...WorkflowListData[1],
           record: {
+            executable: true,
+            executable_reason: '',
             status: WorkflowRecordResV2StatusEnum.wait_for_audit
           }
         },

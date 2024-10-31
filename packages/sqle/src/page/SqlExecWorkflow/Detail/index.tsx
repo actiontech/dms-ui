@@ -49,8 +49,8 @@ const SqlWorkflowDetail: React.FC = () => {
     isAtModifySqlStatementStep,
     showModifySqlStatementStep,
     resetAllState,
-    disabledOperatorWorkflowBtnTips,
-    isDisableFinallySubmitButton,
+    submitWorkflowConfirmationMessage,
+    isConfirmationRequiredForSubmission,
     modifySqlAudit
   } = useModifySql(workflowInfo?.mode === WorkflowResV2ModeEnum.same_sqls);
 
@@ -112,6 +112,7 @@ const SqlWorkflowDetail: React.FC = () => {
             status={workflowInfo?.record?.status}
             className="clearPaddingTop"
             gap={24}
+            sqlVersion={workflowInfo?.sql_version}
           />
 
           <EmptyBox
@@ -157,8 +158,10 @@ const SqlWorkflowDetail: React.FC = () => {
         executeMode={workflowInfo?.exec_mode}
         workflowId={workflowInfo?.workflow_id ?? ''}
         modifiedTasks={modifiedTasks}
-        disabledOperatorWorkflowBtnTips={disabledOperatorWorkflowBtnTips}
-        isDisableFinallySubmitButton={isDisableFinallySubmitButton}
+        submitWorkflowConfirmationMessage={submitWorkflowConfirmationMessage}
+        isConfirmationRequiredForSubmission={
+          isConfirmationRequiredForSubmission
+        }
         refreshWorkflow={refreshWorkflowInfo}
         refreshOverviewAction={refreshOverviewAction}
         auditExecPanelTabChangeEvent={changeActiveTabKey}

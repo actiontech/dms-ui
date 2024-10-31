@@ -96,7 +96,11 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
     });
     expect(screen.getByText('关闭工单')).toBeVisible();
     fireEvent.click(screen.getByText('关闭工单'));
-    expect(screen.getByText('您确认关闭当前工单？')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        '工单关闭后将无法再对工单执行任何操作，是否确认关闭当前工单？'
+      )
+    ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     expect(cancelWorkflowSpy).toHaveBeenCalledTimes(1);
     expect(cancelWorkflowSpy).toHaveBeenCalledWith({
@@ -341,6 +345,33 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
       fireEvent.click(screen.getByText('确 认'));
       await jest.advanceTimersByTime(100);
     });
+  });
+
+  it('render batch executing button and manual execute button when executable is false', async () => {
+    mockUseCurrentProject({ projectArchive: false });
+    const { baseElement } = customRender({
+      workflowStepsVisibility: true,
+      workflowInfo: {
+        workflow_id: '1',
+        record: {
+          status: WorkflowRecordResV2StatusEnum.wait_for_execution,
+          current_step_number: 1,
+          executable: false,
+          executable_reason:
+            '当前工单所处的版本阶段前存在暂未上线的工单，暂时无法上线',
+          workflow_step_list: [
+            {
+              number: 1,
+              type: WorkflowStepResV2TypeEnum.create_workflow,
+              assignee_user_name_list: ['admin'],
+              operation_time: '2024-02-22T18:08:00+08:00'
+            }
+          ]
+        }
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render terminate button', async () => {

@@ -48,7 +48,8 @@ const AddProject: React.FC = () => {
         name: values.name,
         desc: values.desc,
         is_fixed_business: values.isFixedBusiness,
-        business: values.business?.map((i) => i.name ?? '')
+        business: values.business?.map((i) => i.name ?? ''),
+        project_priority: values.priority
       }
     };
     startSubmit();

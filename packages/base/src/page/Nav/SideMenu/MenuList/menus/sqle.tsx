@@ -4,9 +4,7 @@ import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
 import {
   ManagementFilled,
-  RingOutlined,
   WorkflowFilled,
-  MenuFilled,
   OverviewOutlined,
   RiseSquareOutlined,
   ResolveFileFilled,
@@ -18,7 +16,8 @@ import {
   BriefcaseFilled,
   PlanFilled,
   GearFilled,
-  PipelineOutlined
+  PipelineOutlined,
+  FileVersionOutlined
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
 
@@ -31,21 +30,6 @@ const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   icon: <OverviewOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/overview`,
   structKey: 'project-overview'
-});
-
-const dashboardMenuItem: GenerateMenuItemType = (projectID) => ({
-  className: 'menu-todo-list-item',
-  label: (
-    <>
-      <Link to={`/sqle/project/${projectID}/dashboard`}>
-        {t('dmsMenu.todoList')}
-      </Link>
-      <RingOutlined width={14} height={14} />
-    </>
-  ),
-  icon: <MenuFilled width={18} height={18} />,
-  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/dashboard`,
-  structKey: 'dashboard'
 });
 
 const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -195,9 +179,19 @@ const pipelineConfiguration: GenerateMenuItemType = (projectID) => ({
   structKey: 'pipeline-configuration'
 });
 
+const versionManagement: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/sqle/project/${projectID}/version-management`}>
+      {t('dmsMenu.versionManagement')}
+    </Link>
+  ),
+  icon: <FileVersionOutlined width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/version-management`,
+  structKey: 'version-management'
+});
+
 const sqleMenusCollection = [
   projectOverviewMenuItem,
-  dashboardMenuItem,
   sqlAuditMenuItem,
   pluginAuditMenuItem,
   sqlOptimizationMenuItem,
@@ -211,7 +205,8 @@ const sqleMenusCollection = [
   sqlManagementConf,
   pushRuleConfiguration,
   sqlManagementException,
-  pipelineConfiguration
+  pipelineConfiguration,
+  versionManagement
 ];
 
 export default sqleMenusCollection;

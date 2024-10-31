@@ -147,12 +147,14 @@ export const SqlManagementConfColumnAction: (params: {
     opPermissionType: OpPermissionItemOpPermissionTypeEnum,
     serviceID?: string
   ) => boolean;
+  operationPermission: boolean;
 }) => ActiontechTableProps<IInstanceAuditPlanResV1>['actions'] = ({
   editAction,
   disabledAction,
   enabledAction,
   deleteAction,
-  isHaveServicePermission
+  isHaveServicePermission,
+  operationPermission
 }) => {
   return {
     buttons: [
@@ -170,14 +172,14 @@ export const SqlManagementConfColumnAction: (params: {
           isHaveServicePermission(
             OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
             record?.instance_id
-          )
+          ) || operationPermission
       }
     ],
     moreButtons: (record) =>
       isHaveServicePermission(
         OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
         record?.instance_id
-      )
+      ) || operationPermission
         ? [
             {
               key: 'disabled',

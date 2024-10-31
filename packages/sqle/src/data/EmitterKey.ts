@@ -33,7 +33,13 @@ enum EmitterKey {
 
   Refresh_Sql_management_Exception_List = 'Refresh_Sql_management_Exception_List',
 
-  Refresh_Pipeline_Configuration_list = 'Refresh_Pipeline_Configuration_list'
+  Refresh_Pipeline_Configuration_list = 'Refresh_Pipeline_Configuration_list',
+
+  Refresh_Version_Management_Detail = 'Refresh_Version_Management_Detail',
+
+  Refresh_Global_Dashboard_Pending_Work_Order = 'Refresh_Global_Dashboard_Pending_Work_Order',
+  Refresh_Global_Dashboard_Pending_Sql = 'Refresh_Global_Dashboard_Pending_Work_Order',
+  Refresh_Global_Dashboard_Initiated_Work_Order = 'Refresh_Global_Dashboard_Initiated_Work_Order'
 }
 
 export default EmitterKey;

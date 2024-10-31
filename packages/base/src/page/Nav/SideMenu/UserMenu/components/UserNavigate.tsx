@@ -70,7 +70,7 @@ const UserNavigate: React.FC<Props> = ({
         }
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          dispatch(updateReduxLanguage({ language }));
+          dispatch(updateReduxLanguage({ language, store: true }));
           window.location.reload();
         }
       }),
