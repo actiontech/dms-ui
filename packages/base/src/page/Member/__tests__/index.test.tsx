@@ -8,9 +8,13 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockCurrentUserReturn,
+  mockProjectInfo
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import userCenter from '../../../testUtils/mockApi/userCenter';
 import dbServices from '../../../testUtils/mockApi/dbServices';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 describe('base/Member', () => {
   beforeEach(() => {
@@ -85,8 +89,19 @@ describe('base/Member', () => {
     mockUseCurrentUserSpy.mockImplementation(() => {
       return {
         ...mockCurrentUserReturn,
-        isAdmin: false,
-        isProjectManager: jest.fn().mockImplementation(() => true)
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        },
+        bindProjects: [
+          {
+            project_id: mockProjectInfo.projectID,
+            project_name: mockProjectInfo.projectName,
+            is_manager: true,
+            archived: false
+          }
+        ]
       };
     });
     renderWithReduxAndTheme(<Member />);
@@ -97,8 +112,35 @@ describe('base/Member', () => {
     mockUseCurrentUserSpy.mockImplementation(() => {
       return {
         ...mockCurrentUserReturn,
-        isAdmin: false,
-        isProjectManager: jest.fn()
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        }
+      };
+    });
+    renderWithReduxAndTheme(<Member />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('添加成员')).not.toBeInTheDocument();
+
+    cleanup();
+    mockUseCurrentUserSpy.mockClear();
+    mockUseCurrentUserSpy.mockImplementation(() => {
+      return {
+        ...mockCurrentUserReturn,
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        },
+        bindProjects: [
+          {
+            project_id: mockProjectInfo.projectID,
+            project_name: mockProjectInfo.projectName,
+            is_manager: true,
+            archived: true
+          }
+        ]
       };
     });
     renderWithReduxAndTheme(<Member />);
