@@ -19,6 +19,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { MemberListTypeEnum } from '../../index.enum';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -58,7 +59,8 @@ describe('base/MemberList', () => {
     expect(
       screen.getByText(`共 ${memberList.length} 条数据`)
     ).toBeInTheDocument();
-    expect(screen.getAllByText('删 除')).toHaveLength(3);
+    expect(screen.getAllByText('删 除')).toHaveLength(4);
+    expect(screen.getAllByText('删 除')[0]).not.toBeVisible();
     expect(screen.getAllByText('编 辑')).toHaveLength(4);
   });
 
@@ -79,7 +81,11 @@ describe('base/MemberList', () => {
   it('should hide table actions', async () => {
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
     }));
     renderWithReduxAndTheme(
       <MemberList activePage={MemberListTypeEnum.member_list} />
@@ -91,20 +97,43 @@ describe('base/MemberList', () => {
     cleanup();
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isProjectManager: jest.fn().mockImplementation(() => true),
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
     }));
     renderWithReduxAndTheme(
       <MemberList activePage={MemberListTypeEnum.member_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(3);
+    expect(screen.queryAllByText('删 除')).toHaveLength(4);
     expect(screen.queryAllByText('编 辑')).toHaveLength(4);
     useCurrentUserSpy.mockClear();
     cleanup();
     useCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: true
+        }
+      ]
     }));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
