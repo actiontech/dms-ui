@@ -415,6 +415,21 @@ export const PERMISSION_MANIFEST: Record<
     projectArchived: false
   },
 
+  // 数据导出
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
   // SQL 工单
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE,

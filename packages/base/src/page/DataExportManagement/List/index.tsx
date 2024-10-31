@@ -11,13 +11,15 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePermission,
+  PERMISSIONS
 } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useCallback } from 'react';
 import {
   ExportWorkflowExtraFilterMeta,
   ExportWorkflowListColumn,
@@ -34,8 +36,8 @@ import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/li
 import useMemberTips from '../../../hooks/useMemberTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { MinusCircleOutlined } from '@actiontech/icons';
 import { PlusOutlined } from '@actiontech/icons';
+import { DataExportManagementTableToolbarActions } from './actions';
 
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -43,8 +45,11 @@ const ExportWorkflowList: React.FC = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const { projectID, projectArchive, projectName } = useCurrentProject();
-  const { isAdmin, username, isProjectManager } = useCurrentUser();
+  const { projectID, projectArchive } = useCurrentProject();
+  const { username } = useCurrentUser();
+
+  const { parse2TableToolbarActionPermissions, checkActionPermission } =
+    usePermission();
 
   const [filterStatus, setFilterStatus] = useState<
     ListDataExportWorkflowsFilterByStatusEnum | 'all'
@@ -114,11 +119,32 @@ const ExportWorkflowList: React.FC = () => {
     }
   };
 
-  const allowClose = isAdmin || isProjectManager(projectName);
   const [batchCloseConfirmLoading, setBatchCloseConfirmLoading] =
     useState<boolean>(false);
 
-  const batchCloseWorkflowAction = () => {
+  const {
+    data: exportWorkflowList,
+    loading,
+    refresh
+  } = useRequest(
+    () => {
+      const params: IListDataExportWorkflowsParams = {
+        ...tableFilterInfo,
+        ...pagination,
+        filter_by_status: filterStatus === 'all' ? undefined : filterStatus,
+        project_uid: projectID,
+        fuzzy_keyword: searchKeyword
+      };
+      return handleTableRequestError(
+        DataExportWorkflows.ListDataExportWorkflows(params)
+      );
+    },
+    {
+      refreshDeps: [tableFilterInfo, pagination, filterStatus]
+    }
+  );
+
+  const batchCloseWorkflowAction = useCallback(() => {
     const canCancel: boolean = selectedRowKeys.every((e) => {
       const status = exportWorkflowList?.list?.filter(
         (data) => `${data.workflow_uid}` === e
@@ -154,7 +180,29 @@ const ExportWorkflowList: React.FC = () => {
         })
       );
     }
-  };
+  }, [
+    messageApi,
+    projectID,
+    selectedRowKeys,
+    t,
+    exportWorkflowList?.list,
+    refresh
+  ]);
+
+  const tableToolbarActions = useMemo(() => {
+    return parse2TableToolbarActionPermissions(
+      DataExportManagementTableToolbarActions({
+        disabled: selectedRowKeys.length === 0,
+        loading: batchCloseConfirmLoading,
+        batchCloseWorkflowAction
+      })
+    );
+  }, [
+    parse2TableToolbarActionPermissions,
+    batchCloseConfirmLoading,
+    selectedRowKeys,
+    batchCloseWorkflowAction
+  ]);
 
   useEffect(() => {
     updateDbServiceList({
@@ -164,28 +212,6 @@ const ExportWorkflowList: React.FC = () => {
     });
     updateMemberTips({ project_uid: projectID });
   }, [projectID, updateDbServiceList, updateMemberTips]);
-
-  const {
-    data: exportWorkflowList,
-    loading,
-    refresh
-  } = useRequest(
-    () => {
-      const params: IListDataExportWorkflowsParams = {
-        ...tableFilterInfo,
-        ...pagination,
-        filter_by_status: filterStatus === 'all' ? undefined : filterStatus,
-        project_uid: projectID,
-        fuzzy_keyword: searchKeyword
-      };
-      return handleTableRequestError(
-        DataExportWorkflows.ListDataExportWorkflows(params)
-      );
-    },
-    {
-      refreshDeps: [tableFilterInfo, pagination, filterStatus]
-    }
-  );
 
   return (
     <section>
@@ -218,31 +244,7 @@ const ExportWorkflowList: React.FC = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
-        actions={[
-          {
-            key: 'close',
-            text: t('dmsDataExport.batchClose.button'),
-            buttonProps: {
-              icon: (
-                <MinusCircleOutlined
-                  fill="currentColor"
-                  width={14}
-                  height={14}
-                />
-              ),
-              disabled: selectedRowKeys?.length === 0,
-              loading: batchCloseConfirmLoading
-            },
-            permissions: allowClose,
-            confirm: {
-              onConfirm: batchCloseWorkflowAction,
-              title: t('dmsDataExport.batchClose.tips'),
-              okButtonProps: {
-                disabled: batchCloseConfirmLoading
-              }
-            }
-          }
-        ]}
+        actions={tableToolbarActions}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -276,7 +278,9 @@ const ExportWorkflowList: React.FC = () => {
           return `${record?.workflow_uid}`;
         }}
         rowSelection={
-          allowClose
+          checkActionPermission(
+            PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
+          )
             ? (rowSelection as TableRowSelection<IListDataExportWorkflow>)
             : undefined
         }
