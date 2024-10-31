@@ -160,6 +160,9 @@ export const PERMISSIONS = {
       },
       RULE: {
         CREATE_RULE_TEMPLATE: 'action:create_rule_template'
+      },
+      PLUGIN_AUDIT: {
+        CREATE_WHITELIST: 'action:plugin_audit_create_whitelist'
       }
     }
   }

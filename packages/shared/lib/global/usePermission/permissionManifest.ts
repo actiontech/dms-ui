@@ -650,5 +650,14 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,
     projectArchived: false
+  },
+
+  //IDE审核
+  [PERMISSIONS.ACTIONS.SQLE.PLUGIN_AUDIT.CREATE_WHITELIST]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PLUGIN_AUDIT.CREATE_WHITELIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
   }
 } as const;
