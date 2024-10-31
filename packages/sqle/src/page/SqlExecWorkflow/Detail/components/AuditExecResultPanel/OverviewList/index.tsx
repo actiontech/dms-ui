@@ -62,7 +62,8 @@ const WorkflowOverviewList: React.FC<WorkflowOverviewListProps> = ({
             sqlTerminateHandle,
             openScheduleModalAndSetCurrentTask,
             currentUsername: username,
-            workflowStatus: workflowInfo?.record?.status
+            workflowStatus: workflowInfo?.record?.status,
+            executable: !!workflowInfo?.record?.executable
           })
         )}
         onRow={(record) => {
