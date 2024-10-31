@@ -28,20 +28,6 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     cleanup();
   });
 
-  const customRender = (
-    isAdmin = false,
-    isCertainProjectManager = false,
-    hasGlobalViewingPermission = false
-  ) => {
-    return superRender(
-      <GlobalSetting
-        hasGlobalViewingPermission={hasGlobalViewingPermission}
-        isAdmin={isAdmin}
-        isCertainProjectManager={isCertainProjectManager}
-      />
-    );
-  };
-
   it(`render snap when "checkPagePermission" is return false`, async () => {
     mockUsePermission(
       {
@@ -69,7 +55,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
 
-    expect(getAllBySelector('.content-item-text').length).toBe(6);
+    expect(getAllBySelector('.content-item-text').length).toBe(4);
 
     fireEvent.click(screen.getByText('用户中心'));
     expect(navigateSpy).toHaveBeenNthCalledWith(1, '/user-center');
@@ -77,16 +63,10 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
     fireEvent.click(screen.getByText('数据源管理'));
     expect(navigateSpy).toHaveBeenNthCalledWith(2, '/data-source-management');
 
-    fireEvent.click(screen.getByText('报表统计'));
-    expect(navigateSpy).toHaveBeenNthCalledWith(3, '/sqle/report-statistics');
-
-    fireEvent.click(screen.getByText('查看规则'));
-    expect(navigateSpy).toHaveBeenNthCalledWith(4, '/sqle/rule');
-
     fireEvent.click(screen.getByText('规则管理'));
-    expect(navigateSpy).toHaveBeenNthCalledWith(5, '/sqle/rule-manager');
+    expect(navigateSpy).toHaveBeenNthCalledWith(3, '/sqle/rule-manager');
 
     fireEvent.click(screen.getByText('系统设置'));
-    expect(navigateSpy).toHaveBeenNthCalledWith(6, '/system');
+    expect(navigateSpy).toHaveBeenNthCalledWith(4, '/system');
   });
 });

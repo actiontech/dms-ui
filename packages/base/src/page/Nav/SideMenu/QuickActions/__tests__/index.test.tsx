@@ -8,6 +8,10 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 import system from '../../../../../testUtils/mockApi/system';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -36,17 +40,18 @@ describe('base/Nav/QuickActions', () => {
     cleanup();
   });
 
-  const customRender = (isAdmin = true, hasGlobalViewingPermission = true) => {
-    return superRender(
-      <QuickActions
-        isAdmin={isAdmin}
-        hasGlobalViewingPermission={hasGlobalViewingPermission}
-      />
-    );
+  const customRender = () => {
+    return superRender(<QuickActions />);
   };
 
   it('render quick action when current user is admin', async () => {
-    const { baseElement } = customRender(true, false);
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: true
+      }
+    });
+    const { baseElement } = customRender();
 
     expect(getAllBySelector('.action-item')[0]).toHaveClass(
       'action-item action-item-active'
@@ -58,17 +63,37 @@ describe('base/Nav/QuickActions', () => {
   });
 
   it('render quick action when current user has global view permission', () => {
-    const { baseElement } = customRender(false, true);
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalViewing]: true,
+        [SystemRole.globalManager]: false
+      }
+    });
+    const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render quick action when current user is not admin and has not global view permission', () => {
-    const { baseElement } = customRender(false, false);
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalViewing]: false,
+        [SystemRole.globalManager]: false
+      }
+    });
+    const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
     expect(getAllBySelector('.action-item')).toHaveLength(2);
   });
 
   it('render navigate event', async () => {
+    mockUsePermission(
+      { checkPagePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
     const { baseElement } = customRender();
     expect(baseElement).toMatchSnapshot();
     const actions = getAllBySelector('.action-item');
