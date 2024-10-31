@@ -55,6 +55,7 @@ exports[`test base/project/list should be get data from the request to render th
                   <col />
                   <col />
                   <col />
+                  <col />
                   <col
                     style="width: 246px;"
                   />
@@ -89,6 +90,12 @@ exports[`test base/project/list should be get data from the request to render th
                       项目状态
                     </th>
                     <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      项目优先级
+                    </th>
+                    <th
                       class="ant-table-cell ant-table-cell-ellipsis"
                       scope="col"
                       title="创建时间"
@@ -119,6 +126,15 @@ exports[`test base/project/list should be get data from the request to render th
                     class="ant-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
                     <td
                       style="padding: 0px; border: 0px; height: 0px;"
                     >
@@ -188,7 +204,7 @@ exports[`test base/project/list should be get data from the request to render th
                   >
                     <td
                       class="ant-table-cell"
-                      colspan="7"
+                      colspan="8"
                     >
                       <div
                         class="ant-table-expanded-row-fixed"
@@ -238,6 +254,7 @@ exports[`test base/project/list should be get data from the request to render th
                   <col />
                   <col />
                   <col />
+                  <col />
                   <col
                     style="width: 246px;"
                   />
@@ -272,6 +289,12 @@ exports[`test base/project/list should be get data from the request to render th
                       项目状态
                     </th>
                     <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      项目优先级
+                    </th>
+                    <th
                       class="ant-table-cell ant-table-cell-ellipsis"
                       scope="col"
                       title="创建时间"
@@ -302,6 +325,15 @@ exports[`test base/project/list should be get data from the request to render th
                     class="ant-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
                     <td
                       style="padding: 0px; border: 0px; height: 0px;"
                     >
@@ -484,6 +516,11 @@ exports[`test base/project/list should be get data from the request to render th
                           不可用
                         </span>
                       </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      高
                     </td>
                     <td
                       class="ant-table-cell ant-table-cell-ellipsis"
@@ -687,6 +724,11 @@ exports[`test base/project/list should be get data from the request to render th
                           可用
                         </span>
                       </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      中
                     </td>
                     <td
                       class="ant-table-cell ant-table-cell-ellipsis"
@@ -901,6 +943,11 @@ exports[`test base/project/list should be get data from the request to render th
                           不可用
                         </span>
                       </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
                     </td>
                     <td
                       class="ant-table-cell ant-table-cell-ellipsis"

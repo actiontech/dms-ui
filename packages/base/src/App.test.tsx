@@ -19,6 +19,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import system from 'sqle/src/testUtils/mockApi/system';
+import baseSystem from './testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -38,6 +39,7 @@ describe('App', () => {
   let getUserBySessionSpy: jest.SpyInstance;
   let requestGetModalStatus: jest.SpyInstance;
 
+  let getSystemModuleRedDotsSpy: jest.SpyInstance;
   const scopeDispatch = jest.fn();
   const navigateSpy = jest.fn();
   const checkPageActionSpy = jest.fn();
@@ -59,7 +61,7 @@ describe('App', () => {
     requestGetModalStatus = system.getSystemModuleStatus();
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();
     getUserBySessionSpy = mockDMSGlobalApi.getUserBySession();
-
+    getSystemModuleRedDotsSpy = baseSystem.getSystemModuleRedDots();
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
 
@@ -125,7 +127,9 @@ describe('App', () => {
     );
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/exec-workflow`,
+      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
+        '/exec-workflow'
+      )}`,
       { replace: true }
     );
   });
@@ -137,6 +141,7 @@ describe('App', () => {
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(1);
+    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledTimes(1);
@@ -187,7 +192,7 @@ describe('App', () => {
       });
     });
     const { container } = superRender(<App />, undefined, {
-      routerProps: { initialEntries: ['/exec-workflow'] }
+      routerProps: { initialEntries: ['/exec-workflow?query=test'] }
     });
 
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(0);
@@ -195,7 +200,9 @@ describe('App', () => {
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(0);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=/exec-workflow`,
+      `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
+        '/exec-workflow?query=test'
+      )}`,
       { replace: true }
     );
     await act(async () => jest.advanceTimersByTime(0));

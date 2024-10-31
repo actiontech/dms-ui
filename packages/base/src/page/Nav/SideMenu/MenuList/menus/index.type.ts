@@ -27,7 +27,6 @@ export type MenuStructTreeKey =
   | 'cloud-beaver'
   | 'data-export'
   | 'project-overview'
-  | 'dashboard'
   | 'sql-audit'
   | 'plugin-audit'
   | 'sql-optimization'
@@ -40,4 +39,5 @@ export type MenuStructTreeKey =
   | 'sqle-log'
   | 'sql-management-conf'
   | 'push-rule-configuration'
-  | 'pipeline-configuration';
+  | 'pipeline-configuration'
+  | 'version-management';

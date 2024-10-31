@@ -10,6 +10,7 @@ import {
   IUidWithName,
   IUserBindProject
 } from '@actiontech/shared/lib/api/base/service/common';
+import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
 
 export type IBindProject = { archived?: boolean } & IUserBindProject;
 
@@ -39,7 +40,7 @@ const initialState: UserReduxState = {
   isUserInfoFetched: false,
   language: LocalStorageWrapper.getOrDefault(
     StorageKey.Language,
-    SupportLanguage.zhCN
+    DEFAULT_LANGUAGE
   ) as SupportLanguage
 };
 
@@ -65,10 +66,14 @@ const user = createSlice({
     },
     updateLanguage: (
       state,
-      { payload: { language } }: PayloadAction<{ language: SupportLanguage }>
+      {
+        payload: { language, store }
+      }: PayloadAction<{ language: SupportLanguage; store: boolean }>
     ) => {
       state.language = language;
-      LocalStorageWrapper.set(StorageKey.Language, language);
+      if (store) {
+        LocalStorageWrapper.set(StorageKey.Language, language);
+      }
     },
     updateToken: (
       state,

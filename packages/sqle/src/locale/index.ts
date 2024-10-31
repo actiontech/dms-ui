@@ -12,6 +12,7 @@ import {
   TemplateKeyPath
 } from '@actiontech/shared/lib/types/common.type';
 import { findDuplicateKeys } from '../../../base/src/utils/findDuplicateKeys';
+import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
 
 // #if [DEV]
 const zh_dupKeys = findDuplicateKeys([
@@ -53,7 +54,7 @@ export const initReactI18n = () => {
     },
     lng: LocalStorageWrapper.getOrDefault(
       StorageKey.Language,
-      SupportLanguage.zhCN
+      DEFAULT_LANGUAGE
     ),
     fallbackLng: SupportLanguage.zhCN,
     interpolation: {

@@ -25,6 +25,7 @@ export default {
   projectForm: {
     name: '项目名称',
     desc: '项目描述',
+    priority: '项目优先级',
     business: '可用业务',
     addBusiness: '添加业务',
     deleteTip: '当前业务已有关联资源，无法删除',

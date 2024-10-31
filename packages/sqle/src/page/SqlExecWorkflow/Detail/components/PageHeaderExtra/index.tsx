@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
 import { Divider, Popconfirm, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -37,7 +37,9 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     batchExecutingWorkflowButtonMeta,
     manualExecuteWorkflowButtonMeta,
     terminateWorkflowButtonMeta,
-    executeInOtherInstanceMeta
+    executeInOtherInstanceMeta,
+    executable,
+    executable_reason
   } = useWorkflowDetailAction({ projectName, ...props });
 
   return (
