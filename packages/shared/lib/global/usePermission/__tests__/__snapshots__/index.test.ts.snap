@@ -4,6 +4,14 @@ exports[`usePermission should match snapshot 1`] = `
 {
   "ACTIONS": {
     "BASE": {
+      "CLOUD_BEAVER": {
+        "CREATE_WHITE_LIST": "action:cb_create_white_list",
+        "EXPORT": "action:export_cb_operation_log",
+      },
+      "DATA_EXPORT": {
+        "BATCH_CLOSE": "action:data_export_batch_close",
+        "CREATE_WHITELIST": "action:data_export_create_whitelist",
+      },
       "DB_SERVICE": {
         "ADD": "action:add_db_service",
         "BATCH_IMPORT": "action:batch_import_db_service",
@@ -19,6 +27,14 @@ exports[`usePermission should match snapshot 1`] = `
         "DELETE": "action:delete_global_db_service",
         "EDIT": "action:edit_global_db_service",
         "TEST_IN_MORE_BUTTON": "action:test_global_db_service_in_more_button",
+      },
+      "MEMBER": {
+        "ADD_MEMBER": "action:add_member",
+        "ADD_MEMBER_GROUP": "action:add_member_group",
+        "DELETE_MEMBER": "action:delete_member",
+        "DELETE_MEMBER_GROUP": "action:delete_member_group",
+        "EDIT_MEMBER": "action:edit_member",
+        "EDIT_MEMBER_GROUP": "action:edit_member_group",
       },
       "SYNC_DATA_SOURCE": {
         "ADD": "action:add_task",
@@ -77,11 +93,32 @@ exports[`usePermission should match snapshot 1`] = `
       },
       "GLOBAL_RULE_TEMPLATE": {
         "CLONE": "action:clone_rule_template",
-        "CREATE": "action:create_rule_template",
+        "CREATE": "action:global_rule_template_create_rule_template",
         "DELETE": "action:delete_rule_template",
         "EDIT": "action:edit_rule_template",
         "EXPORT": "action:export_rule_template",
         "IMPORT": "action:import_rule_template",
+      },
+      "PLUGIN_AUDIT": {
+        "CREATE_WHITELIST": "action:plugin_audit_create_whitelist",
+      },
+      "PROJECT_RULE_TEMPLATE": {
+        "CLONE": "action:clone_project_rule_template",
+        "CREATE": "action:create_project_rule_template",
+        "DELETE": "action:delete_project_rule_template",
+        "EDIT": "action:edit_project_rule_template",
+        "EXPORT": "action:export_project_rule_template",
+        "IMPORT": "action:import_project_rule_template",
+      },
+      "PUSH_RULE_CONFIGURATION": {
+        "SQL_MANAGEMENT_ISSUE_PUSH_SWITCH": "action:sql_management_issue_push_switch",
+        "WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH": "action:workflow_modification_notifier_switch",
+      },
+      "RULE": {
+        "CREATE_RULE_TEMPLATE": "action:rule_create_rule_template",
+      },
+      "RULE_KNOWLEDGE": {
+        "EDIT": "action:edit_rule_knowledge",
       },
       "SQL_EXEC_WORKFLOW": {
         "APPROVE": "action:approve_workflow",
@@ -91,12 +128,38 @@ exports[`usePermission should match snapshot 1`] = `
         "CLONE": "action:clone_workflow",
         "CLOSE": "action:close_workflow",
         "CREATE": "action:create_workflow",
+        "CREATE_WHITE_LIST": "action:workflow_sql_audit_result_create_white_list",
         "EXEC_TASK": "action:exec_task",
         "EXPORT": "action:export_workflow",
         "MANUALLY_EXEC": "action:manually_exec_workflow",
         "SCHEDULE_TIME_EXEC_TASK": "action:schedule_time_exec_task",
         "TERMINATE_EXEC": "action:terminate_exec_workflow",
         "TERMINATE_EXEC_TASK": "action:terminate_exec_task",
+      },
+      "SQL_MANAGEMENT": {
+        "ACTION_LAYOUT": "action:sql_management_action_layout",
+        "ASSIGNMENT": "action:sql_assignment",
+        "BATCH_ASSIGNMENT": "action:batch_sql_assignment",
+        "BATCH_IGNORE": "action:batch_ignore",
+        "BATCH_RESOLVE": "action:batch_resolve",
+        "CREATE_SQL_EXCEPTION": "action:create_SQL_exception",
+        "CREATE_WHITE_LIST": "action:sql_management_create_white_list",
+        "EDIT_REMARK": "action:edit_sql_remark",
+        "UPDATE_PRIORITY": "action:update_sql_priority",
+        "UPDATE_STATUS": "action:update_sql_status",
+      },
+      "SQL_MANAGEMENT_EXCEPTION": {
+        "CREATE": "action:create_sql_management_exception",
+        "DELETE": "action:delete_sql_management_exception",
+        "EDIT": "action:edit_sql_management_exception",
+      },
+      "WHITE_LIST": {
+        "CREATE": "action:white_list_creation",
+        "DELETE": "action:delete_white_list",
+        "EDIT": "action:edit_white_list",
+      },
+      "WORKFLOW_TEMPLATE": {
+        "UPDATE": "action:update_workflow_template",
       },
     },
   },
@@ -139,6 +202,26 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:add_member": {
+    "id": "action:add_member",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:add_member_group": {
+    "id": "action:add_member_group",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:add_role": {
     "id": "action:add_role",
     "role": [
@@ -173,6 +256,16 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "type": "action",
   },
+  "action:batch_ignore": {
+    "id": "action:batch_ignore",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:batch_import_db_service": {
     "id": "action:batch_import_db_service",
     "projectArchived": false,
@@ -197,13 +290,52 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "type": "action",
   },
+  "action:batch_resolve": {
+    "id": "action:batch_resolve",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:batch_sql_assignment": {
+    "id": "action:batch_sql_assignment",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:cancel_schedule_time_exec_task": {
     "id": "action:cancel_schedule_time_exec_task",
     "projectArchived": false,
     "type": "action",
   },
+  "action:cb_create_white_list": {
+    "id": "action:cb_create_white_list",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:cb_operation_log_expired_hours": {
     "id": "action:cb_operation_log_expired_hours",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:clone_project_rule_template": {
+    "id": "action:clone_project_rule_template",
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
@@ -243,6 +375,16 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:create_SQL_exception": {
+    "id": "action:create_SQL_exception",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:create_custom_rule": {
     "id": "action:create_custom_rule",
     "role": [
@@ -251,8 +393,20 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
-  "action:create_rule_template": {
-    "id": "action:create_rule_template",
+  "action:create_project_rule_template": {
+    "id": "action:create_project_rule_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:create_sql_management_exception": {
+    "id": "action:create_sql_management_exception",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
@@ -262,6 +416,25 @@ exports[`usePermission should match snapshot 2`] = `
   "action:create_workflow": {
     "id": "action:create_workflow",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:data_export_batch_close": {
+    "id": "action:data_export_batch_close",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:data_export_create_whitelist": {
+    "id": "action:data_export_create_whitelist",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
     "type": "action",
   },
   "action:db_service_create_audit_plan": {
@@ -305,6 +478,36 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:delete_member": {
+    "id": "action:delete_member",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_member_group": {
+    "id": "action:delete_member_group",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_project_rule_template": {
+    "id": "action:delete_project_rule_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:delete_role": {
     "id": "action:delete_role",
     "role": [
@@ -321,6 +524,16 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:delete_sql_management_exception": {
+    "id": "action:delete_sql_management_exception",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:delete_task": {
     "id": "action:delete_task",
     "role": [
@@ -331,6 +544,16 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:delete_user": {
     "id": "action:delete_user",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:delete_white_list": {
+    "id": "action:delete_white_list",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
@@ -364,6 +587,36 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:edit_member": {
+    "id": "action:edit_member",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_member_group": {
+    "id": "action:edit_member_group",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_project_rule_template": {
+    "id": "action:edit_project_rule_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:edit_role": {
     "id": "action:edit_role",
     "role": [
@@ -372,8 +625,36 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:edit_rule_knowledge": {
+    "id": "action:edit_rule_knowledge",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:edit_rule_template": {
     "id": "action:edit_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_sql_management_exception": {
+    "id": "action:edit_sql_management_exception",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_sql_remark": {
+    "id": "action:sql_management_action_layout",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
@@ -390,6 +671,16 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:edit_user": {
     "id": "action:edit_user",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:edit_white_list": {
+    "id": "action:edit_white_list",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
@@ -473,6 +764,19 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "type": "action",
   },
+  "action:export_cb_operation_log": {
+    "id": "action:export_cb_operation_log",
+    "type": "action",
+  },
+  "action:export_project_rule_template": {
+    "id": "action:export_project_rule_template",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:export_rule_template": {
     "id": "action:export_rule_template",
     "type": "action",
@@ -481,8 +785,26 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:export_workflow",
     "type": "action",
   },
+  "action:global_rule_template_create_rule_template": {
+    "id": "action:global_rule_template_create_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:import_license": {
     "id": "action:import_license",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:import_project_rule_template": {
+    "id": "action:import_project_rule_template",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
@@ -526,9 +848,68 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:plugin_audit_create_whitelist": {
+    "id": "action:plugin_audit_create_whitelist",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:rule_create_rule_template": {
+    "id": "action:rule_create_rule_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:schedule_time_exec_task": {
     "id": "action:schedule_time_exec_task",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:sql_assignment": {
+    "id": "action:sql_assignment",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_action_layout": {
+    "id": "action:sql_management_action_layout",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_create_white_list": {
+    "id": "action:sql_management_create_white_list",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_issue_push_switch": {
+    "id": "action:sql_management_issue_push_switch",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
     "type": "action",
   },
   "action:sync_task": {
@@ -563,8 +944,67 @@ exports[`usePermission should match snapshot 2`] = `
     "id": "action:test_global_db_service_in_more_button",
     "type": "action",
   },
+  "action:update_sql_priority": {
+    "id": "action:update_sql_priority",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:update_sql_status": {
+    "id": "action:update_sql_status",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:update_workflow_template": {
+    "id": "action:update_workflow_template",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:url_address_prefix": {
     "id": "action:url_address_prefix",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:white_list_creation": {
+    "id": "action:white_list_creation",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:workflow_modification_notifier_switch": {
+    "id": "action:workflow_modification_notifier_switch",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:workflow_sql_audit_result_create_white_list": {
+    "id": "action:workflow_sql_audit_result_create_white_list",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
