@@ -12,6 +12,27 @@ export default {
     executeComparison: '执行对比',
     showDifferencesOnly: '只看差异',
     modifyMappings: '修改映射',
-    generateSQL: '生成变更SQL'
+    generateSQL: '生成变更SQL',
+    generateSQLErrorTips:
+      '当前选中的节点中包含对比结果一致的对象，请修改选择对象后重试！',
+    generateSQLDisabledTips: '请先选择数据对象',
+    comparisonDetail: {
+      title: '查看对比详情',
+      generateSQL: '生成变更SQL',
+      generateSQLDisabledTips: '当前对比结果不存在偏差',
+      ddlDiff: '建表语句差异',
+      modifySqlInfo: '{{schema}}变更SQL详情',
+      baselineDDLAuditResultTitle: '基准环境建表语句审核结果',
+      comparisonDDLAuditResultTitle: '对比环境建表语句审核结果',
+      modifiedSqlAuditResultTitle: '变更SQL语句审核结果',
+      actions: {
+        createChangeWorkflow: '生成变更工单',
+        copyChangeSQL: '复制变更SQL语句',
+        downloadChangeSQL: '下载变更SQL语句'
+      }
+    },
+    modifiedSqlDrawer: {
+      title: '变更SQL语句信息'
+    }
   }
 };

@@ -3,32 +3,47 @@ import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { Form, TreeSelectProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { DatabaseComparisonFromFields } from '../../index.type';
-import useDataSourceTreeData from '../../hooks/useDataSourceTreeData';
+import useDataSourceTreeData from '../../hooks/useDataSourceSelectorTree';
 import { EnvironmentSelectStyleWrapper } from './style';
+import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 
 type Props = {
   executeComparisonPending: boolean;
-};
+  updateComparisonResult: (data?: ISchemaObject[]) => void;
+} & Pick<
+  ReturnType<typeof useDataSourceTreeData>,
+  | 'treeLoadedKeys'
+  | 'onTreeExpand'
+  | 'treeExpandedKeys'
+  | 'onLoadTreeData'
+  | 'getTreeDataPending'
+  | 'disableTreeNodesBasedOnSelection'
+>;
 
-const EnvironmentSelector: React.FC<Props> = ({ executeComparisonPending }) => {
+const EnvironmentSelector: React.FC<Props> = ({
+  executeComparisonPending,
+  treeLoadedKeys,
+  onTreeExpand,
+  treeExpandedKeys,
+  onLoadTreeData,
+  getTreeDataPending,
+  disableTreeNodesBasedOnSelection,
+  updateComparisonResult
+}) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<DatabaseComparisonFromFields>();
   const baselineInstance = Form.useWatch('baselineInstance', form);
   const comparisonInstance = Form.useWatch('comparisonInstance', form);
 
-  const {
-    onLoadTreeData,
-    treeExpandedKeys,
-    onTreeExpand,
-    disableTreeNodesBasedOnSelection,
-    treeLoadedKeys,
-    getTreeDataPending
-  } = useDataSourceTreeData();
+  const onChange: TreeSelectProps['onChange'] = () => {
+    updateComparisonResult(undefined);
+  };
 
   const databaseComparisonSelectorCommonProps: TreeSelectProps = {
     treeLoadedKeys,
     onTreeExpand,
     treeExpandedKeys,
+    onChange,
     showSearch: true,
     allowClear: true,
     treeDataSimpleMode: true,
