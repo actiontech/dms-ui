@@ -24,8 +24,7 @@ describe('lib/ConfigItem-ImageUploader', () => {
     const { baseElement } = customRender({
       submitLoading: true,
       url: 'http://mock.com',
-      onSubmit: jest.fn(),
-      isAdmin: true
+      onSubmit: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -34,8 +33,7 @@ describe('lib/ConfigItem-ImageUploader', () => {
     const { baseElement } = customRender({
       submitLoading: false,
       url: 'http://mock.com',
-      onSubmit: jest.fn(),
-      isAdmin: true
+      onSubmit: jest.fn()
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -44,8 +42,7 @@ describe('lib/ConfigItem-ImageUploader', () => {
     const { baseElement } = customRender({
       submitLoading: false,
       url: 'http://mock.com',
-      onSubmit: jest.fn(),
-      isAdmin: true
+      onSubmit: jest.fn()
     });
     const uploadWrapperEle = getBySelector(
       '.upload-content-wrapper',
