@@ -144,6 +144,13 @@ import { ExceptionFileOutlined } from '@actiontech/icons';
 export default () => <ExceptionFileOutlined width={32} height={32} />
 ```
 
+## FileVersionOutlined
+```jsx
+import { FileVersionOutlined } from '@actiontech/icons';
+
+export default () => <FileVersionOutlined width={32} height={32} />
+```
+
 ## HorizontalTripleLineOutlined
 ```jsx
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';

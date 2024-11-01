@@ -13,6 +13,8 @@ import ImportLicense from './Modal/ImportLicense';
 import { LicenseColumn } from './index.data';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { LicenseActions } from './action';
+import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
 
 const License = () => {
   const { t } = useTranslation();
@@ -21,6 +23,8 @@ const License = () => {
     collectLicenseLoading,
     { setTrue: startCollect, setFalse: collectFinish }
   ] = useBoolean();
+
+  const { language } = useCurrentUser();
 
   const [qrCodeVisible, { setTrue: showQRCode, setFalse: hideQRCode }] =
     useBoolean();
@@ -32,14 +36,19 @@ const License = () => {
     loading,
     refresh: refreshLicenseList
   } = useRequest(() => {
-    return Configuration.GetLicense().then((res) => ({
+    // 这个接口后端无法获取用户信息，会默认使用 浏览器语言偏好的语言。为了防止出现语言不一致的问题，前端修改 Accept-Language 为当前用户设置的语言
+    return Configuration.GetLicense({
+      headers: { 'Accept-Language': `${language},${DEFAULT_LANGUAGE};` }
+    }).then((res) => ({
       list: res?.data?.license ?? []
     }));
   });
 
   const collectLicense = () => {
     startCollect();
-    Configuration.GetLicenseInfo({ responseType: 'blob' })
+    Configuration.GetLicenseInfo({
+      responseType: 'blob'
+    })
       .then((res) => {
         if (
           res.data instanceof Blob &&

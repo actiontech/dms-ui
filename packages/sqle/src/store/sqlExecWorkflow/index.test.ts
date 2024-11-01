@@ -1,6 +1,7 @@
 import reducers, {
   updateClonedExecWorkflowSqlAuditInfo,
-  updateClonedExecWorkflowBaseInfo
+  updateClonedExecWorkflowBaseInfo,
+  updateVersionFirstStageInstances
 } from '.';
 import {
   AuditTaskResV1SqlSourceEnum,
@@ -46,13 +47,15 @@ describe('store/sqlExecWorkflow', () => {
     const state = reducers(
       {
         clonedExecWorkflowSqlAuditInfo: null,
-        clonedExecWorkflowBaseInfo: null
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null
       },
       updateClonedExecWorkflowSqlAuditInfo(mockWorkflowSqlAuditInfo)
     );
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: mockWorkflowSqlAuditInfo,
-      clonedExecWorkflowBaseInfo: null
+      clonedExecWorkflowBaseInfo: null,
+      versionFirstStageInstances: null
     });
   });
 
@@ -69,13 +72,44 @@ describe('store/sqlExecWorkflow', () => {
     const state = reducers(
       {
         clonedExecWorkflowSqlAuditInfo: null,
-        clonedExecWorkflowBaseInfo: null
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null
       },
       updateClonedExecWorkflowBaseInfo(mockWorkflowBaseInfo)
     );
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: null,
-      clonedExecWorkflowBaseInfo: mockWorkflowBaseInfo
+      clonedExecWorkflowBaseInfo: mockWorkflowBaseInfo,
+      versionFirstStageInstances: null
+    });
+  });
+
+  test('should create action when call updateVersionFirstStageInstances', () => {
+    const versionFirstStageInstances = [
+      {
+        instances_name: 'test',
+        instance_id: '1'
+      }
+    ];
+    expect(
+      updateVersionFirstStageInstances({ versionFirstStageInstances })
+    ).toEqual({
+      payload: { versionFirstStageInstances },
+      type: 'sqlExecWorkflow/updateVersionFirstStageInstances'
+    });
+
+    const state = reducers(
+      {
+        clonedExecWorkflowSqlAuditInfo: null,
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null
+      },
+      updateVersionFirstStageInstances({ versionFirstStageInstances })
+    );
+    expect(state).toEqual({
+      clonedExecWorkflowSqlAuditInfo: null,
+      clonedExecWorkflowBaseInfo: null,
+      versionFirstStageInstances: versionFirstStageInstances
     });
   });
 });

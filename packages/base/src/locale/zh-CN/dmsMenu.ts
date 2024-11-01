@@ -28,6 +28,7 @@ export default {
   sqlManagementConf: 'SQL管控配置',
   pushRuleConfiguration: '推送规则',
   pipelineConfiguration: '流水线配置',
+  versionManagement: '版本管理',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
@@ -53,7 +54,7 @@ export default {
     language: {
       text: '语言',
       zhCN: '中文',
-      enUS: '英文'
+      enUS: 'English'
     }
   },
 
@@ -67,5 +68,8 @@ export default {
     changeTheme: '模式切换',
     instanceManager: '数据源管理'
   },
-  copyRight: '© {{year}} 上海爱可生信息技术股份有限公司 版权所有'
+  copyRight: '© {{year}} 上海爱可生信息技术股份有限公司 版权所有',
+  quickActions: {
+    globalDashboard: '全局Dashboard'
+  }
 };

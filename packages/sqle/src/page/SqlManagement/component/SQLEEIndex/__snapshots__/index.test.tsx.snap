@@ -531,23 +531,9 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                   />
                 </span>
                 <span
-                  class="ant-select-selection-placeholder"
-                >
-                  <span
-                    class="custom-select-placeholder css-qly0fu"
-                  >
-                    <span
-                      class="custom-select-placeholder-prefix"
-                    >
-                      数据源
-                    </span>
-                    <span
-                      class="custom-select-placeholder-value"
-                    >
-                      请选择{{name}}
-                    </span>
-                  </span>
-                </span>
+                  class="ant-select-selection-item"
+                  title=""
+                />
               </div>
               <span
                 aria-hidden="true"
@@ -555,6 +541,24 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 style="user-select: none;"
                 unselectable="on"
               />
+              <span
+                aria-hidden="true"
+                class="ant-select-clear"
+                style="user-select: none;"
+                unselectable="on"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
           <div
@@ -589,23 +593,9 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                   />
                 </span>
                 <span
-                  class="ant-select-selection-placeholder"
-                >
-                  <span
-                    class="custom-select-placeholder css-qly0fu"
-                  >
-                    <span
-                      class="custom-select-placeholder-prefix"
-                    >
-                      来源
-                    </span>
-                    <span
-                      class="custom-select-placeholder-value"
-                    >
-                      请选择{{name}}
-                    </span>
-                  </span>
-                </span>
+                  class="ant-select-selection-item"
+                  title=""
+                />
               </div>
               <span
                 aria-hidden="true"
@@ -613,6 +603,24 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                 style="user-select: none;"
                 unselectable="on"
               />
+              <span
+                aria-hidden="true"
+                class="ant-select-clear"
+                style="user-select: none;"
+                unselectable="on"
+              >
+                <svg
+                  fill="currentColor"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
           <div
@@ -1207,12 +1215,26 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -3325,12 +3347,26 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -6130,12 +6166,26 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -8935,12 +8985,26 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -11756,12 +11820,26 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -12885,12 +12963,26 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -13984,12 +14076,26 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"

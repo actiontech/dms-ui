@@ -1,19 +1,17 @@
 import system from '../../../../testUtils/mockApi/system';
-
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-
 import Oauth from '.';
 import { oauthConfig } from '../../../../testUtils/mockApi/system/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 
 describe('base/System/LoginConnection/Oauth', () => {
   let requestGetOauth2Configuration: jest.SpyInstance;
   let requestUpdateOauth2Configuration: jest.SpyInstance;
 
   const customRender = () => {
-    return renderWithTheme(<Oauth />);
+    return superRender(<Oauth />);
   };
 
   beforeEach(() => {

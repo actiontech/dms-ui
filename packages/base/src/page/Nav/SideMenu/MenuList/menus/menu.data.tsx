@@ -8,7 +8,6 @@ import { PERMISSIONS } from '@actiontech/shared/lib/global';
 export const sideMenuData = (projectID: string) => {
   const menuStruct: MenuStructTreeType = [
     'project-overview',
-    'dashboard',
     { type: 'divider' },
     {
       type: 'group',
@@ -24,7 +23,7 @@ export const sideMenuData = (projectID: string) => {
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.SQLExecute'),
-      group: ['exec-workflow']
+      group: ['exec-workflow', 'version-management']
     },
     {
       type: 'group',

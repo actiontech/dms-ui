@@ -8,4 +8,5 @@ export type SqlStatementFormItemProps = {
   databaseInfo: CreateWorkflowDatabaseInfo;
   isSameSqlForAll: boolean;
   isSupportFileModeExecuteSql: boolean;
+  isAtRejectStep?: boolean;
 } & Pick<SqlAuditInfoFormProps, 'isAuditing' | 'auditAction'>;

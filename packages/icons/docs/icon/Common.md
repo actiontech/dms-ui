@@ -319,6 +319,13 @@ import { DashOutlined } from '@actiontech/icons';
 export default () => <DashOutlined width={32} height={32} />
 ```
 
+## DoubleArrowOutlined
+```jsx
+import { DoubleArrowOutlined } from '@actiontech/icons';
+
+export default () => <DoubleArrowOutlined width={32} height={32} />
+```
+
 ## DownArrowLineOutlined
 ```jsx
 import { DownArrowLineOutlined } from '@actiontech/icons';
@@ -415,6 +422,13 @@ export default () => <SearchOutlined width={32} height={32} />
 import { SettingOutlined } from '@actiontech/icons';
 
 export default () => <SettingOutlined width={32} height={32} />
+```
+
+## TodoListOutlined
+```jsx
+import { TodoListOutlined } from '@actiontech/icons';
+
+export default () => <TodoListOutlined width={32} height={32} />
 ```
 
 ## UploadCloudOutlined

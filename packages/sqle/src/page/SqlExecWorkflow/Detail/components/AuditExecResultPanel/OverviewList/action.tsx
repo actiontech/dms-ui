@@ -27,6 +27,7 @@ type Params = {
     notify_type?: UpdateWorkflowScheduleReqV2NotifyTypeEnum,
     taskId?: string
   ) => Promise<void>;
+  executable: boolean;
 };
 
 export const AuditResultOverviewListAction = (
@@ -38,7 +39,8 @@ export const AuditResultOverviewListAction = (
     sqlTerminateHandle,
     workflowStatus,
     openScheduleModalAndSetCurrentTask,
-    scheduleTimeHandle
+    scheduleTimeHandle,
+    executable
   } = params;
 
   const unusableStatus = [
@@ -149,7 +151,8 @@ export const AuditResultOverviewListAction = (
               record?.instance_maintenance_times
             ),
             hidden:
-              record?.status === GetWorkflowTasksItemV2StatusEnum.executing
+              record?.status === GetWorkflowTasksItemV2StatusEnum.executing ||
+              !executable
           };
         },
         confirm(record) {
@@ -183,7 +186,8 @@ export const AuditResultOverviewListAction = (
               record?.status
             ),
             hidden:
-              record?.status === GetWorkflowTasksItemV2StatusEnum.executing
+              record?.status === GetWorkflowTasksItemV2StatusEnum.executing ||
+              !executable
           };
         },
         permissions:

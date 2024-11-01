@@ -13,7 +13,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-scroll-horizontal"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -25,7 +25,17 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                 <table
                   style="min-width: 100%; table-layout: auto;"
                 >
-                  <colgroup />
+                  <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 246px;"
+                    />
+                  </colgroup>
                   <thead
                     class="ant-table-thead"
                   >
@@ -66,6 +76,13 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                       >
                         最近一次同步成功时间
                       </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -76,6 +93,15 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -189,6 +215,61 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                       >
                         2023-01-10 00:00:00
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <a
+                                href="/sync-data-source/update/0002"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    编 辑
+                                  </span>
+                                </button>
+                              </a>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  同 步
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -247,6 +328,61 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                         class="ant-table-cell"
                       >
                         2023-01-10 00:00:00
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <a
+                                href="/sync-data-source/update/1234"
+                              >
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    编 辑
+                                  </span>
+                                </button>
+                              </a>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  同 步
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>
@@ -696,14 +832,18 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <a
+                                href="/sync-data-source/update/0002"
                               >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    编 辑
+                                  </span>
+                                </button>
+                              </a>
                             </div>
                             <div
                               class="ant-space-item"
@@ -806,14 +946,18 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <a
+                                href="/sync-data-source/update/1234"
                               >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
+                                <button
+                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    编 辑
+                                  </span>
+                                </button>
+                              </a>
                             </div>
                             <div
                               class="ant-space-item"
@@ -856,7 +1000,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
 </body>
 `;
 
-exports[`page/SyncDataSource/SyncTaskList should not render action column when user is not admin 1`] = `
+exports[`page/SyncDataSource/SyncTaskList should not render action column when user no operation permissions 1`] = `
 <div>
   <div
     class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
@@ -868,7 +1012,7 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
         class="ant-spin-container"
       >
         <div
-          class="ant-table ant-table-scroll-horizontal"
+          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
         >
           <div
             class="ant-table-container"
@@ -880,7 +1024,17 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
               <table
                 style="min-width: 100%; table-layout: auto;"
               >
-                <colgroup />
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col
+                    style="width: 246px;"
+                  />
+                </colgroup>
                 <thead
                   class="ant-table-thead"
                 >
@@ -921,6 +1075,13 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                     >
                       最近一次同步成功时间
                     </th>
+                    <th
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      scope="col"
+                      style="position: sticky; right: 0px;"
+                    >
+                      操作
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -931,6 +1092,15 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                     class="ant-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
                     <td
                       style="padding: 0px; border: 0px; height: 0px;"
                     >
@@ -1044,6 +1214,14 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                     >
                       2023-01-10 00:00:00
                     </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1102,6 +1280,14 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                       class="ant-table-cell"
                     >
                       2023-01-10 00:00:00
+                    </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
                     </td>
                   </tr>
                 </tbody>

@@ -7,6 +7,10 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetGlobalSqlManageListParams,
+  IGetGlobalSqlManageListReturn,
+  IGetGlobalSqlManageStatisticsParams,
+  IGetGlobalSqlManageStatisticsReturn,
   IGetSqlManageListParams,
   IGetSqlManageListReturn,
   IBatchUpdateSqlManageParams,
@@ -21,6 +25,30 @@ import {
 } from './index.d';
 
 class SqlManageService extends ServiceBase {
+  public GetGlobalSqlManageList(
+    params: IGetGlobalSqlManageListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalSqlManageListReturn>(
+      '/v1/dashboard/sql_manages',
+      paramsData,
+      options
+    );
+  }
+
+  public GetGlobalSqlManageStatistics(
+    params: IGetGlobalSqlManageStatisticsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetGlobalSqlManageStatisticsReturn>(
+      '/v1/dashboard/sql_manages/statistics',
+      paramsData,
+      options
+    );
+  }
+
   public GetSqlManageList(
     params: IGetSqlManageListParams,
     options?: AxiosRequestConfig

@@ -62,6 +62,13 @@ describe('base/router-base-ee', () => {
       expect(baseElement).toMatchSnapshot();
     });
 
+    it('render router transit', async () => {
+      const { baseElement } = customRender(['/transit']);
+
+      expect(screen.getByText('transit')).toBeInTheDocument();
+      expect(baseElement).toMatchSnapshot();
+    });
+
     it('render router globalDataSource', async () => {
       const { baseElement } = customRender(['/data-source-management']);
 

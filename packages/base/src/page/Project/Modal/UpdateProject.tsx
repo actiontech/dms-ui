@@ -15,6 +15,10 @@ import { updateProjectModalStatus } from '../../../store/project';
 import { IUpdateProjectParams } from '@actiontech/shared/lib/api/base/service/Project/index.d';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
+import {
+  ProjectProjectPriorityEnum,
+  UpdateProjectProjectPriorityEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const UpdateProject: React.FC = () => {
   const { t } = useTranslation();
@@ -49,7 +53,9 @@ const UpdateProject: React.FC = () => {
       project: {
         desc: values.desc,
         is_fixed_business: values.isFixedBusiness,
-        business: values.business
+        business: values.business,
+        project_priority:
+          values.priority as unknown as UpdateProjectProjectPriorityEnum
       }
     };
     startSubmit();
@@ -76,7 +82,9 @@ const UpdateProject: React.FC = () => {
         desc: selectProjectItem?.desc ?? '',
         name: selectProjectItem?.name ?? '',
         isFixedBusiness: selectProjectItem?.is_fixed_business ?? false,
-        business: selectProjectItem?.business
+        business: selectProjectItem?.business,
+        priority:
+          selectProjectItem?.project_priority as unknown as ProjectProjectPriorityEnum
       });
     }
   }, [form, visible, selectProjectItem]);

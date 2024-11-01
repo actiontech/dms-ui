@@ -81,10 +81,11 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                             >
                               <div
                                 class="ant-space-item"
-                                style="margin-bottom: 8px;"
+                                style="margin-bottom: 0px;"
                               >
                                 <label
                                   class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                  style="line-height: 32px;"
                                 >
                                   <span
                                     class="ant-radio ant-radio-checked"
@@ -106,10 +107,11 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-bottom: 8px;"
+                                style="margin-bottom: 0px;"
                               >
                                 <label
                                   class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                  style="line-height: 32px;"
                                 >
                                   <span
                                     class="ant-radio"
@@ -133,6 +135,7 @@ exports[`page/SqlManagement/ChangeStatus change status and submit data 1`] = `
                               >
                                 <label
                                   class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                  style="line-height: 32px;"
                                 >
                                   <span
                                     class="ant-radio"

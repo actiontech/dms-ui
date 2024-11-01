@@ -79,7 +79,7 @@ export const PluginAuditListColumns: (
             className="audit-result-wrapper"
           >
             <ResultIconRender
-              iconLevels={result.map((item) => {
+              iconLevels={result?.map((item) => {
                 return item.level ?? '';
               })}
             />

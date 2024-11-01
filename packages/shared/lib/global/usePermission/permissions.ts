@@ -101,7 +101,7 @@ export const PERMISSIONS = {
     SQLE: {
       GLOBAL_RULE_TEMPLATE: {
         IMPORT: 'action:import_rule_template',
-        CREATE: 'action:create_rule_template',
+        CREATE: 'action:global_rule_template_create_rule_template',
         EDIT: 'action:edit_rule_template',
         DELETE: 'action:delete_rule_template',
         CLONE: 'action:clone_rule_template',
@@ -171,7 +171,7 @@ export const PERMISSIONS = {
           'action:sql_management_issue_push_switch'
       },
       RULE: {
-        CREATE_RULE_TEMPLATE: 'action:create_rule_template'
+        CREATE_RULE_TEMPLATE: 'action:rule_create_rule_template'
       },
       PLUGIN_AUDIT: {
         CREATE_WHITELIST: 'action:plugin_audit_create_whitelist'

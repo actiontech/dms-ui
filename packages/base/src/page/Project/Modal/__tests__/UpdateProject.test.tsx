@@ -134,7 +134,8 @@ describe('test base/page/project/modal/update', () => {
             is_used: true,
             name: 'business3'
           }
-        ]
+        ],
+        project_priority: 'medium'
       }
     });
 

@@ -14,6 +14,7 @@ import { ModalName } from '../../../../../data/ModalName';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { UserCenterListEnum } from '../../../index.enum';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => {
   return {
@@ -29,6 +30,7 @@ describe('base/UserCenter/RoleList', () => {
     jest.useFakeTimers();
     roleListSpy = userCenter.getRoleList();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
+    mockUsePermission(undefined, { mockCurrentUser: true });
   });
 
   afterEach(() => {

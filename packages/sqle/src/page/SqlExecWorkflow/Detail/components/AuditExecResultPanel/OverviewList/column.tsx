@@ -31,13 +31,15 @@ export const auditResultOverviewActions: (params: {
     notify_type?: UpdateWorkflowScheduleReqV2NotifyTypeEnum,
     taskId?: string
   ) => Promise<void>;
+  executable: boolean;
 }) => ActiontechTableProps<IGetWorkflowTasksItemV2>['actions'] = ({
   currentUsername,
   sqlTerminateHandle,
   workflowStatus,
   sqlExecuteHandle,
   openScheduleModalAndSetCurrentTask,
-  scheduleTimeHandle
+  scheduleTimeHandle,
+  executable
 }) => {
   const unusableStatus = [
     WorkflowRecordResV2StatusEnum.rejected,
@@ -163,8 +165,8 @@ export const auditResultOverviewActions: (params: {
             }
           };
         },
-        permissions(record) {
-          return record?.status !== GetWorkflowTasksItemV2StatusEnum.executing;
+        permissions() {
+          return executable;
         }
       },
       {
@@ -181,8 +183,8 @@ export const auditResultOverviewActions: (params: {
             )
           };
         },
-        permissions(record) {
-          return record?.status !== GetWorkflowTasksItemV2StatusEnum.executing;
+        permissions() {
+          return executable;
         }
       },
       {

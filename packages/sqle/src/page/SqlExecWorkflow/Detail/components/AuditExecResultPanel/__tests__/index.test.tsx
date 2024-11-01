@@ -17,6 +17,12 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { AuditExecResultPanelProps } from '../index.type';
 import { act } from '@testing-library/react';
 import task from '../../../../../../testUtils/mockApi/task';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test AuditExecResultPanel', () => {
   const activeTabChangeEvent = jest.fn();
@@ -49,6 +55,9 @@ describe('test AuditExecResultPanel', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     task.mockAllApi();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
   afterEach(() => {
     jest.useRealTimers();

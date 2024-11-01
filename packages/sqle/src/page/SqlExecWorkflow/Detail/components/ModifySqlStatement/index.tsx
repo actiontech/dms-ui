@@ -43,12 +43,13 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   auditAction,
   backToDetail,
   isAtRejectStep,
-  disabledOperatorWorkflowBtnTips,
-  isDisableFinallySubmitButton,
+  submitWorkflowConfirmationMessage,
+  isConfirmationRequiredForSubmission,
   workflowId,
   refreshWorkflow,
   refreshOverviewAction,
-  auditExecPanelTabChangeEvent
+  auditExecPanelTabChangeEvent,
+  backToDetailText
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -90,10 +91,10 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          refreshWorkflow();
-          refreshOverviewAction();
+          refreshWorkflow?.();
+          refreshOverviewAction?.();
           backToDetail();
-          auditExecPanelTabChangeEvent(WORKFLOW_OVERVIEW_TAB_KEY);
+          auditExecPanelTabChangeEvent?.(WORKFLOW_OVERVIEW_TAB_KEY);
         }
       })
       .finally(() => {
@@ -189,19 +190,22 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     if (isAtRejectStep) {
       getAllSqlStatement();
       if (isSameSqlForAll) {
-        form.setFieldValue(
-          [SAME_SQL_MODE_DEFAULT_FIELD_KEY, 'currentUploadType'],
-          currentTasks?.[0]?.sql_source
-        );
+        form.setFieldValue(SAME_SQL_MODE_DEFAULT_FIELD_KEY, {
+          currentUploadType: currentTasks?.[0]?.sql_source,
+          exec_mode: currentTasks?.[0]?.exec_mode,
+          file_sort_method: currentTasks?.[0]?.file_order_method
+        });
       } else {
         sqlStatementTabActiveKey.set(
-          currentTasks?.[0].task_id?.toString() ?? ''
+          currentTasks?.[0]?.task_id?.toString() ?? ''
         );
+
         currentTasks?.forEach((item) => {
-          form.setFieldValue(
-            [item.task_id?.toString() ?? '', 'currentUploadType'],
-            item.sql_source
-          );
+          form.setFieldValue(item.task_id?.toString() ?? '', {
+            currentUploadType: item.sql_source,
+            exec_mode: item.exec_mode,
+            file_sort_method: item.file_order_method
+          });
         });
       }
     }
@@ -234,15 +238,20 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
               icon={<LeftArrowOutlined />}
               onClick={innerBackToDetail}
             >
-              {t('execWorkflow.detail.operator.backToDetail')}
+              {backToDetailText ||
+                t('execWorkflow.detail.operator.backToDetail')}
             </BasicButton>
           }
           extra={
             <EmptyBox if={!!modifiedTasks?.length}>
               <SubmitWorkflowButton
-                disabled={isDisableFinallySubmitButton}
+                isConfirmationRequiredForSubmission={
+                  isConfirmationRequiredForSubmission
+                }
                 loading={submitLoading}
-                disabledTips={disabledOperatorWorkflowBtnTips}
+                submitWorkflowConfirmationMessage={
+                  submitWorkflowConfirmationMessage
+                }
                 onClick={modifySqlSubmit}
               />
             </EmptyBox>
@@ -270,6 +279,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
                 clearSqlContentFormWhenChangeUploadType={false}
                 auditAction={innerAuditAction}
                 disabledUploadType
+                isAtRejectStep
               />
             </FormAreaBlockStyleWrapper>
           </FormAreaLineStyleWrapper>

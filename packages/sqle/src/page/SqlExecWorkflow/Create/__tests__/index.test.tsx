@@ -25,13 +25,18 @@ import {
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../Common/data';
+import {
+  SOURCE_WORKFLOW_PATH_KEY,
+  WORKFLOW_VERSION_NAME_PATH_KEY,
+  WORKFLOW_VERSION_ID_PATH_KEY
+} from '../../../../data/common';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { AuditTaskResData } from '../../../../testUtils/mockApi/execWorkflow/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -53,6 +58,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let requestGetModalStatus: jest.SpyInstance;
   let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
   let getSqlFileOrderMethodV1Spy: jest.SpyInstance;
+  let requestGetWorkflowTemplateSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
 
   const customRender = () => {
@@ -84,6 +90,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     getSqlFileOrderMethodV1Spy = task.getSqlFileOrderMethod();
     batchCheckInstanceIsConnectableByName =
       instance.batchCheckInstanceIsConnectableByName();
+    requestGetWorkflowTemplateSpy = execWorkflow.getWorkflowTemplate();
 
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -125,7 +132,13 @@ describe('sqle/SqlExecWorkflow/Create', () => {
           clonedExecWorkflowBaseInfo: {
             workflow_subject: 'workflow-name-test',
             desc: 'test desc'
-          }
+          },
+          versionFirstStageInstances: [
+            {
+              instances_name: instanceTipsMockData[0].instance_name,
+              instances_id: instanceTipsMockData[0].instance_id
+            }
+          ]
         },
         permission: {
           moduleFeatureSupport: { sqlOptimization: false },
@@ -842,5 +855,197 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       task_group_id: 99,
       sql: 'select * from user'
     });
+  });
+
+  it('render associated version when create workflow', async () => {
+    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/sqle/project/700300/exec-workflow/create?${WORKFLOW_VERSION_NAME_PATH_KEY}=v1-test&${WORKFLOW_VERSION_ID_PATH_KEY}=1`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstanceTip).toHaveBeenCalledTimes(1);
+    expect(requestInstanceTip).toHaveBeenCalledWith({
+      functional_module:
+        getInstanceTipListV1FunctionalModuleEnum.create_workflow,
+      project_name: projectName
+    });
+
+    const instanceNameEle = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle);
+    const instanceNameLabel = `${instanceTipsMockData[0].instance_name}(${instanceTipsMockData[0].host}:${instanceTipsMockData[0].port})`;
+    expect(screen.getByText(instanceNameLabel)).toBeInTheDocument();
+    fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(requestInstanceSchemas).toHaveBeenCalledTimes(1);
+    expect(requestInstanceSchemas).toHaveBeenCalledWith({
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstance).toHaveBeenCalledTimes(1);
+    expect(requestInstance).toHaveBeenNthCalledWith(1, {
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
+    const SchemaNameEle = getBySelector(
+      '#databaseInfo_0_instanceSchema',
+      baseElement
+    );
+    fireEvent.mouseDown(SchemaNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector(`div[title="test123"]`));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+
+    // SQL美化
+    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
+    fireEvent.change(monacoEditor, {
+      target: {
+        value: 'select * from user.list join in all'
+      }
+    });
+    fireEvent.click(screen.getByText('SQL美化'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstance).toHaveBeenCalledTimes(2);
+    expect(requestInstance).toHaveBeenNthCalledWith(2, {
+      instance_name: instanceTipsMockData[0].instance_name,
+      project_name: projectName
+    });
+    expect(baseElement).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(requestAuditTask).toHaveBeenCalledTimes(1);
+    expect(requestAuditTask).toHaveBeenCalledWith({
+      exec_mode: undefined,
+      file_order_method: undefined,
+      instances: [{ instance_name: 'mysql-1', instance_schema: 'test123' }],
+      project_name: projectName
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+    expect(auditTaskGroupId).toHaveBeenCalledWith({
+      task_group_id: 99,
+      sql: formatterSQL('select * from user.list join in all', 'MySQL')
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(RequestCreateWorkflow).toHaveBeenCalled();
+    expect(RequestCreateWorkflow).toHaveBeenCalledWith({
+      project_name: projectName,
+      task_ids: [1, 2],
+      workflow_subject: 'mysql-1_20231218120000',
+      desc: undefined,
+      sql_version_id: 1
+    });
+  });
+
+  it('should display a confirmation when attempting to submit a workflow with an audit level that prohibits submission', async () => {
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    // workflow_subject
+    const workflowName = getBySelector('#workflow_subject', baseElement);
+    fireEvent.change(workflowName, {
+      target: {
+        value: 'workflow_name_2'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    // desc
+    fireEvent.change(getBySelector('#desc', baseElement), {
+      target: {
+        value: 'workflow desc'
+      }
+    });
+
+    // data source
+    const instanceNameEle = getBySelector(
+      '#databaseInfo_0_instanceName',
+      baseElement
+    );
+    fireEvent.mouseDown(instanceNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    const instanceNameLabel = `${instanceTipsMockData[1].instance_name}(${instanceTipsMockData[1].host}:${instanceTipsMockData[1].port})`;
+    await act(async () => {
+      fireEvent.click(getBySelector(`div[title="${instanceNameLabel}"]`));
+      await act(async () => jest.advanceTimersByTime(3000));
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    const SchemaNameEle = getBySelector(
+      '#databaseInfo_0_instanceSchema',
+      baseElement
+    );
+    fireEvent.mouseDown(SchemaNameEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => {
+      fireEvent.click(getBySelector(`div[title="sqle"]`));
+      await act(async () => jest.advanceTimersByTime(0));
+    });
+
+    await act(async () => jest.advanceTimersByTime(0));
+    const monacoEditor = getBySelector('.custom-monaco-editor', baseElement);
+    fireEvent.change(monacoEditor, {
+      target: { value: 'select * from user' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    // audit btn
+    await act(async () => {
+      fireEvent.click(screen.getByText('审 核'));
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(screen.getByText('审 核').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(requestAuditTask).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
+
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
+    expect(requestGetWorkflowTemplateSpy).toHaveBeenCalledTimes(
+      AuditTaskResData.length
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 提交工单
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(RequestCreateWorkflow).toHaveBeenCalledTimes(0);
+    await screen.findByText(
+      `项目 default 创建工单时最高只能允许有 warn 等级的审核错误，但是当前审核结果中最高包含 error 等级的审核结果。`
+    );
+    fireEvent.click(screen.getByText('仍要创建'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(RequestCreateWorkflow).toHaveBeenCalledTimes(1);
+    expect(RequestCreateWorkflow).toHaveBeenCalledWith({
+      desc: 'workflow desc',
+      project_name: 'default',
+      sql_version_id: undefined,
+      task_ids: [1, 2],
+      workflow_subject: 'workflow_name_2'
+    });
+    expect(screen.getByText('提交工单').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
   });
 });

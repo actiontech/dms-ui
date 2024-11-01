@@ -1,6 +1,6 @@
 export type SubmitWorkflowButtonProps = {
-  disabled: boolean;
+  isConfirmationRequiredForSubmission: boolean;
   loading: boolean;
-  disabledTips?: string;
+  submitWorkflowConfirmationMessage?: string;
   onClick: () => void;
 };

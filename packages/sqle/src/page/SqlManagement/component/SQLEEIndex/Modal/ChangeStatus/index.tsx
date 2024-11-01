@@ -103,18 +103,37 @@ const ChangeStatus = () => {
             initialValue={BatchUpdateSqlManageReqStatusEnum.solved}
           >
             <Radio.Group>
-              <Space direction="vertical">
-                <Radio value={BatchUpdateSqlManageReqStatusEnum.solved}>
-                  {t('sqlManagement.table.action.single.updateStatus.solve')}
-                </Radio>
-                <Radio value={BatchUpdateSqlManageReqStatusEnum.ignored}>
-                  {t('sqlManagement.table.action.single.updateStatus.ignore')}
-                </Radio>
-                <Radio value={BatchUpdateSqlManageReqStatusEnum.manual_audited}>
-                  {t(
-                    'sqlManagement.table.action.single.updateStatus.manualAudit'
-                  )}
-                </Radio>
+              <Space direction="vertical" size={0}>
+                {[
+                  {
+                    label: t(
+                      'sqlManagement.table.action.single.updateStatus.solve'
+                    ),
+                    value: BatchUpdateSqlManageReqStatusEnum.solved
+                  },
+                  {
+                    label: t(
+                      'sqlManagement.table.action.single.updateStatus.ignore'
+                    ),
+                    value: BatchUpdateSqlManageReqStatusEnum.ignored
+                  },
+                  {
+                    label: t(
+                      'sqlManagement.table.action.single.updateStatus.manualAudit'
+                    ),
+                    value: BatchUpdateSqlManageReqStatusEnum.manual_audited
+                  }
+                ].map((item) => {
+                  return (
+                    <Radio
+                      key={item.value}
+                      style={{ lineHeight: '32px' }}
+                      value={item.value}
+                    >
+                      {item.label}
+                    </Radio>
+                  );
+                })}
               </Space>
             </Radio.Group>
           </FormItemLabelStyleWrapper>

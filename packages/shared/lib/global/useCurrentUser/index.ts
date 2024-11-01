@@ -59,7 +59,9 @@ const useCurrentUser = () => {
   );
   const updateLanguage = useCallback(
     (selectedLanguage: SupportLanguage) => {
-      dispatch(updateReduxLanguage({ language: selectedLanguage }));
+      dispatch(
+        updateReduxLanguage({ language: selectedLanguage, store: true })
+      );
     },
     [dispatch]
   );

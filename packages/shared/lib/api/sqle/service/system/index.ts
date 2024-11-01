@@ -7,11 +7,20 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetSystemModuleRedDotsReturn,
   IGetSystemModuleStatusParams,
   IGetSystemModuleStatusReturn
 } from './index.d';
 
 class SystemService extends ServiceBase {
+  public GetSystemModuleRedDots(options?: AxiosRequestConfig) {
+    return this.get<IGetSystemModuleRedDotsReturn>(
+      '/v1/system/module_red_dots',
+      undefined,
+      options
+    );
+  }
+
   public getSystemModuleStatus(
     params: IGetSystemModuleStatusParams,
     options?: AxiosRequestConfig
