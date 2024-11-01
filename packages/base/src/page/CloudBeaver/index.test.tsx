@@ -41,7 +41,11 @@ describe('test base/page/CloudBeaver', () => {
         cloudBeaver: {
           modalStatus: {}
         },
-        whitelist: { modalStatus: {} }
+        whitelist: { modalStatus: {} },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       });
     });
   });
