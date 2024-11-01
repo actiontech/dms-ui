@@ -11820,12 +11820,26 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
@@ -14062,12 +14076,26 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                              style="margin-right: 0px;"
+                            <div
+                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
-                              12
-                            </span>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                  style="margin-right: 0px;"
+                                >
+                                  12
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                ...
+                              </div>
+                            </div>
                           </td>
                           <td
                             class="ant-table-cell audit-status"
