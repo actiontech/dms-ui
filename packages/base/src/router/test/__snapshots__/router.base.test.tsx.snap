@@ -38,6 +38,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "path": "data-source-management",
   },
   {
+    "element": <div>
+      transit
+    </div>,
+    "key": "transit",
+    "path": "/transit",
+  },
+  {
     "children": [
       {
         "element": <div>
@@ -56,11 +63,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     ],
     "key": "globalDataSource",
     "path": "global-data-source",
-    "role": [
-      "admin",
-      "certainProjectManager",
-      "globalViewing",
-    ],
+    "permission": "page:global_data_source",
   },
   {
     "children": [
@@ -81,10 +84,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     ],
     "key": "syncDataSource",
     "path": "sync-data-source",
-    "role": [
-      "admin",
-      "globalViewing",
-    ],
+    "permission": "page:sync_data_source",
   },
   {
     "children": [
@@ -339,6 +339,16 @@ exports[`base/router-base-ee render base router when version is ce render router
   <div>
     <div>
       system
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ce render router transit 1`] = `
+<body>
+  <div>
+    <div>
+      transit
     </div>
   </div>
 </body>

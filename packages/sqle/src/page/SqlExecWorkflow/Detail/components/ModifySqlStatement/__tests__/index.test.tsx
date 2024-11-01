@@ -17,6 +17,12 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import workflowTemplate from '../../../../../../testUtils/mockApi/workflowTemplate';
 import instance from '../../../../../../testUtils/mockApi/instance';
+import { useSelector } from 'react-redux';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 const workflowId = 'workflow ID';
 
@@ -34,8 +40,8 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
   ) => {
     const params: ModifySqlStatementProps = {
       isAtRejectStep: false,
-      isDisableFinallySubmitButton: false,
-      disabledOperatorWorkflowBtnTips: 'disabled workflow Btn Tips',
+      isConfirmationRequiredForSubmission: false,
+      submitWorkflowConfirmationMessage: 'disabled workflow Btn Tips',
       auditAction: auditFn,
       refreshWorkflow: refreshWorkflowFn,
       refreshOverviewAction: refreshOverviewActionFn,
@@ -59,6 +65,17 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     workflowTemplate.getWorkflowTemplate();
     requestUpdateWorkflow = execWorkflow.updateWorkflow();
     instance.getInstance();
+
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: {} },
+
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
+      })
+    );
   });
 
   afterEach(() => {

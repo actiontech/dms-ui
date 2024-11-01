@@ -9,7 +9,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `[]`;
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 [
   null,
-  null,
   {
     "type": "divider",
   },
@@ -101,7 +100,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
 [
-  null,
   null,
   {
     "type": "divider",
@@ -208,26 +206,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
     "structKey": "project-overview",
   },
   {
-    "className": "menu-todo-list-item",
-    "icon": <MenuFilled
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/dashboard",
-    "label": <React.Fragment>
-      <Link
-        to="/sqle/project/600300/dashboard"
-      >
-        待关注清单
-      </Link>
-      <RingOutlined
-        height={14}
-        width={14}
-      />
-    </React.Fragment>,
-    "structKey": "dashboard",
-  },
-  {
     "type": "divider",
   },
   {
@@ -317,6 +295,19 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
           SQL工单
         </Link>,
         "structKey": "exec-workflow",
+      },
+      {
+        "icon": <FileVersionOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/version-management",
+        "label": <Link
+          to="/sqle/project/600300/version-management"
+        >
+          版本管理
+        </Link>,
+        "structKey": "version-management",
       },
     ],
     "label": "SQL上线",
@@ -508,26 +499,6 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
     "structKey": "project-overview",
   },
   {
-    "className": "menu-todo-list-item",
-    "icon": <MenuFilled
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/dashboard",
-    "label": <React.Fragment>
-      <Link
-        to="/sqle/project/600300/dashboard"
-      >
-        待关注清单
-      </Link>
-      <RingOutlined
-        height={14}
-        width={14}
-      />
-    </React.Fragment>,
-    "structKey": "dashboard",
-  },
-  {
     "type": "divider",
   },
   {
@@ -617,6 +588,19 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
           SQL工单
         </Link>,
         "structKey": "exec-workflow",
+      },
+      {
+        "icon": <FileVersionOutlined
+          height={18}
+          width={18}
+        />,
+        "key": "sqle/project/projectID/version-management",
+        "label": <Link
+          to="/sqle/project/600300/version-management"
+        >
+          版本管理
+        </Link>,
+        "structKey": "version-management",
       },
     ],
     "label": "SQL上线",

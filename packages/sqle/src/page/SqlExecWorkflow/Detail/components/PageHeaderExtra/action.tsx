@@ -80,7 +80,8 @@ export const ApproveWorkflowAction = (
 };
 
 export const BatchExecWorkflowAction = (
-  batchExecutingWorkflowButtonMeta: WorkflowDetailActionMeta
+  batchExecutingWorkflowButtonMeta: WorkflowDetailActionMeta,
+  executable?: boolean
 ) => {
   return (
     <PermissionControl
@@ -88,7 +89,7 @@ export const BatchExecWorkflowAction = (
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.batchSqlExecute')}
-        hidden={batchExecutingWorkflowButtonMeta.hidden}
+        hidden={batchExecutingWorkflowButtonMeta.hidden || !executable}
         disabled={batchExecutingWorkflowButtonMeta.loading}
         loading={batchExecutingWorkflowButtonMeta.loading}
         type="primary"
@@ -105,7 +106,8 @@ export const BatchExecWorkflowAction = (
 };
 
 export const MarkManuallyExecWorkflowAction = (
-  manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta
+  manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta,
+  executable?: boolean
 ) => {
   return (
     <PermissionControl
@@ -113,7 +115,7 @@ export const MarkManuallyExecWorkflowAction = (
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.markManually')}
-        hidden={manualExecuteWorkflowButtonMeta.hidden}
+        hidden={manualExecuteWorkflowButtonMeta.hidden || !executable}
         disabled={manualExecuteWorkflowButtonMeta.loading}
         loading={manualExecuteWorkflowButtonMeta.loading}
         type="primary"
@@ -134,7 +136,7 @@ export const TerminateWorkflowAction = (
 ) => {
   return (
     <PermissionControl
-      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC}
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC}
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.terminate')}

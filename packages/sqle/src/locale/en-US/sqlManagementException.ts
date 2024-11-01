@@ -36,7 +36,8 @@ export default {
     },
     update: {
       title: 'Update SQL management whitelist',
-      success: 'Successfully updated SQL management whitelist'
+      success: 'Successfully updated SQL management whitelist',
+      tips: '"When the match type or match content is modified, the matched count and the last matched time of this record will be reset.'
     },
     sql: 'SQL'
   }

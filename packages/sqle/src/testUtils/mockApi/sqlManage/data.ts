@@ -48,7 +48,7 @@ export const sqlManageListData = {
       assignees: ['test'],
       status: 'unhandled',
       remark: 'this is remark text',
-      endpoints: '12',
+      endpoints: ['12', '35', '32'],
       priority: 'high'
     },
     {
@@ -120,7 +120,7 @@ export const sqlManageListData = {
       assignees: null,
       status: 'unhandled',
       remark: '',
-      endpoints: '34'
+      endpoints: ['34']
     },
     {
       id: 1150087,
@@ -146,7 +146,7 @@ export const sqlManageListData = {
       assignees: ['t3', 't2'],
       status: 'unhandled',
       remark: '',
-      endpoints: '',
+      endpoints: [],
       priority: ''
     },
     {
@@ -173,7 +173,7 @@ export const sqlManageListData = {
       assignees: ['t3', 't2'],
       status: 'unhandled',
       remark: '',
-      endpoints: '',
+      endpoints: [],
       priority: '',
       audit_status: SqlManageAuditStatusEnum.being_audited
     }
@@ -182,3 +182,55 @@ export const sqlManageListData = {
   sql_manage_optimized_num: 1,
   sql_manage_total_num: 2
 };
+
+export const mockGlobalSqlManageListData = [
+  {
+    id: 249,
+    source: {
+      sql_source_type: 'mysql_slow_log',
+      sql_source_desc: '慢日志',
+      sql_source_ids: ['123']
+    },
+    sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+    instance_id: '1739531854064652288',
+    instance_name: 'mysql-1',
+    audit_result: [
+      {
+        level: 'error',
+        message: '新建表建议加入 IF NOT EXISTS，保证重复执行不报错',
+        rule_name: 'ddl_check_table_without_if_not_exists'
+      },
+      {
+        level: 'error',
+        message: '主键建议使用自增',
+        rule_name: 'ddl_check_pk_without_auto_increment'
+      }
+    ],
+    first_appear_timestamp: '2024-01-02T11:28:34+08:00',
+    status: 'unhandled',
+    project_priority: 'high',
+    project_name: 'default',
+    project_uid: '700300',
+    problem_descriptions: ['test desc 1', 'test desc 2']
+  },
+  {
+    id: 211,
+    sql: 'CREATE TABLE `projects` (\n  UNIQUE KEY `name` (`name`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci',
+    instance_id: '1739531854064652288',
+    instance_name: 'mysql-1',
+    audit_result: [
+      {
+        level: 'error',
+        message: '新建表建议加入 IF NOT EXISTS，保证重复执行不报错',
+        rule_name: 'ddl_check_table_without_if_not_exists'
+      },
+      {
+        level: 'error',
+        message: '主键建议使用自增',
+        rule_name: 'ddl_check_pk_without_auto_increment'
+      }
+    ],
+    first_appear_timestamp: '2024-01-02T11:28:34+08:00',
+    project_priority: 'high'
+  }
+];

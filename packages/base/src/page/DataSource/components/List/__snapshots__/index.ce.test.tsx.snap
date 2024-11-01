@@ -235,7 +235,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 204px;"
+                      style="width: 286px;"
                     />
                   </colgroup>
                   <thead

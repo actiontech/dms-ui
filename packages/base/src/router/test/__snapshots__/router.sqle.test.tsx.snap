@@ -590,6 +590,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "data-source-management",
   },
   {
+    "element": <div>
+      transit
+    </div>,
+    "key": "transit",
+    "path": "/transit",
+  },
+  {
     "children": [
       {
         "element": <div>
@@ -608,11 +615,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     ],
     "key": "globalDataSource",
     "path": "global-data-source",
-    "role": [
-      "admin",
-      "certainProjectManager",
-      "globalViewing",
-    ],
+    "permission": "page:global_data_source",
   },
   {
     "children": [
@@ -633,10 +636,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     ],
     "key": "syncDataSource",
     "path": "sync-data-source",
-    "role": [
-      "admin",
-      "globalViewing",
-    ],
+    "permission": "page:sync_data_source",
   },
   {
     "children": [
@@ -762,14 +762,14 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       reportStatistics
     </div>,
     "key": "reportStatistics",
-    "path": "sqle/report-statistics",
+    "path": "/sqle/report-statistics",
   },
   {
     "element": <div>
       rule
     </div>,
     "key": "rule",
-    "path": "sqle/rule",
+    "path": "/sqle/rule",
   },
   {
     "children": [
@@ -825,10 +825,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     ],
     "key": "ruleManager",
     "path": "sqle/rule-manager",
-    "role": [
-      "admin",
-      "globalViewing",
-    ],
+    "permission": "page:rule_management",
   },
   {
     "element": <div>
@@ -836,6 +833,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     </div>,
     "key": "ruleKnowledge",
     "path": "sqle/rule/knowledge/:ruleName/:dbType",
+  },
+  {
+    "element": <div>
+      globalDashboard
+    </div>,
+    "key": "globalDashboard",
+    "path": "/sqle/global-dashboard",
   },
   {
     "children": [
@@ -1196,6 +1200,45 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "pipelineConfiguration",
         "path": ":projectID/pipeline-configuration",
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              VersionManagementList
+            </div>,
+            "key": "VersionManagementList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              versionManagementCreation
+            </div>,
+            "key": "versionManagementCreation",
+            "path": "create",
+          },
+          {
+            "element": <div>
+              versionManagementCreation
+            </div>,
+            "key": "versionManagementCreation",
+            "path": "update/:versionId",
+          },
+          {
+            "element": <div>
+              versionManagementDetail
+            </div>,
+            "key": "versionManagementDetail",
+            "path": "detail/:versionId",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="versionManagement"
+        >
+          <Outlet />
+        </div>,
+        "key": "versionManagement",
+        "path": ":projectID/version-management",
       },
       {
         "element": <div>

@@ -2175,7 +2175,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                disabled=""
+                                hidden=""
+                                type="button"
+                              >
+                                <span>
+                                  中止上线
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
@@ -2183,6 +2194,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
+                                hidden=""
                                 type="button"
                               >
                                 <span>
@@ -2197,6 +2209,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
+                                hidden=""
                                 type="button"
                               >
                                 <span>
@@ -2206,7 +2219,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                disabled=""
+                                hidden=""
+                                type="button"
+                              >
+                                <span>
+                                  取消定时上线
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -2300,7 +2324,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                disabled=""
+                                hidden=""
+                                type="button"
+                              >
+                                <span>
+                                  中止上线
+                                </span>
+                              </button>
+                            </div>
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
@@ -2308,6 +2343,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
+                                hidden=""
                                 type="button"
                               >
                                 <span>
@@ -2322,6 +2358,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
+                                hidden=""
                                 type="button"
                               >
                                 <span>
@@ -2331,7 +2368,18 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                disabled=""
+                                hidden=""
+                                type="button"
+                              >
+                                <span>
+                                  取消定时上线
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>

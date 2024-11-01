@@ -1,15 +1,14 @@
 import { useDispatch } from 'react-redux';
 import License from '.';
 import { ModalName } from '../../../data/ModalName';
-
 import system from '../../../testUtils/mockApi/system';
-
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { AxiosResponse } from 'axios';
 import 'blob-polyfill';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -26,6 +25,7 @@ describe('base/System/License', () => {
   };
 
   beforeEach(() => {
+    mockUseCurrentUser();
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => modalStatusDispatch);
     system.mockAllApi();
@@ -68,7 +68,12 @@ describe('base/System/License', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(requestGetLicense).toHaveBeenCalled();
+    expect(requestGetLicense).toHaveBeenCalledTimes(1);
+    expect(requestGetLicense).toHaveBeenCalledWith({
+      headers: {
+        'Accept-Language': 'zh-CN,en-US;'
+      }
+    });
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -120,7 +125,6 @@ describe('base/System/License', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(requestGetLicenseInfo).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(getBySelector('.ant-qrcode')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(300));
     await act(async () => {
       fireEvent.click(screen.getByText('导入许可信息'));

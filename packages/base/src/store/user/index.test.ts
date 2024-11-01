@@ -79,7 +79,8 @@ describe('store user', () => {
     const newState = reducers(
       state,
       updateLanguage({
-        language: SupportLanguage.enUS
+        language: SupportLanguage.enUS,
+        store: true
       })
     );
     expect(newState).not.toBe(state);

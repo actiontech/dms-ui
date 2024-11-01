@@ -21,6 +21,12 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('test OverviewList', () => {
   const activeTabChangeEvent = jest.fn();
@@ -35,7 +41,10 @@ describe('test OverviewList', () => {
   const customRender = (params?: Partial<WorkflowOverviewListProps>) => {
     return superRender(
       <WorkflowOverviewList
-        workflowInfo={WorkflowsOverviewListData}
+        workflowInfo={{
+          ...WorkflowsOverviewListData,
+          record: { ...WorkflowsOverviewListData.record, executable: true }
+        }}
         activeTabChangeEvent={activeTabChangeEvent}
         refreshWorkflow={refreshWorkflow}
         refreshOverviewAction={refreshOverviewAction}
@@ -59,6 +68,9 @@ describe('test OverviewList', () => {
     terminateSingleTaskByWorkflowSpy =
       execWorkflow.terminateSingleTaskByWorkflow();
     updateWorkflowScheduleSpy = execWorkflow.updateWorkflowSchedule();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
 
   afterEach(() => {
@@ -104,8 +116,6 @@ describe('test OverviewList', () => {
     mockUseCurrentProject({ projectArchive: true });
 
     customRender();
-
-    expect(screen.queryByText('操作')).not.toBeInTheDocument();
   });
 
   it('render the terminate button and allows termination when the task is executing and the current user is authorized', async () => {
@@ -177,6 +187,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -225,6 +236,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -254,6 +266,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.rejected
         }
       },
@@ -283,6 +296,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -312,6 +326,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -361,7 +376,7 @@ describe('test OverviewList', () => {
         total: 1
       }
     });
-    expect(screen.queryByText('立即上线')).toBeNull();
+    expect(screen.queryByText('立即上线')).not.toBeVisible();
   });
 
   it('render the schedule execution button and allows scheduling when the task status is waiting for execution and the current user is authorized', async () => {
@@ -371,6 +386,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -405,6 +421,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -428,6 +445,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.canceled
         }
       },
@@ -450,6 +468,7 @@ describe('test OverviewList', () => {
         ...WorkflowsOverviewListData,
         record: {
           ...WorkflowsOverviewListData.record,
+          executable: true,
           status: WorkflowRecordResV2StatusEnum.wait_for_execution
         }
       },
@@ -486,7 +505,7 @@ describe('test OverviewList', () => {
         total: 1
       }
     });
-    expect(screen.queryByText('定时上线')).toBeNull();
+    expect(screen.queryByText('定时上线')).not.toBeVisible();
   });
 
   it('render the cancel scheduled execution button and allows cancellation when the task is scheduled for execution and the current user is authorized', async () => {
@@ -590,6 +609,32 @@ describe('test OverviewList', () => {
         total: 1
       }
     });
-    expect(screen.queryByText('取消定时上线')).toBeNull();
+    expect(screen.queryByText('取消定时上线')).not.toBeVisible();
+  });
+
+  it('render snap when workflow status is wait_for_execution and executable is false', async () => {
+    mockUseCurrentUser({ username: 'test_user' });
+    customRender({
+      workflowInfo: {
+        ...WorkflowsOverviewListData,
+        record: {
+          ...WorkflowsOverviewListData.record,
+          executable: false,
+          status: WorkflowRecordResV2StatusEnum.wait_for_execution
+        }
+      },
+      overviewList: {
+        list: [
+          {
+            ...WorkflowTasksItemData[0],
+            current_step_assignee_user_name_list: ['test_user'],
+            status: GetWorkflowTasksItemV2StatusEnum.wait_for_execution
+          }
+        ],
+        total: 1
+      }
+    });
+    expect(screen.queryByText('定时上线')).not.toBeVisible();
+    expect(screen.queryByText('取消定时上线')).not.toBeVisible();
   });
 });

@@ -166,6 +166,7 @@ exports[`test base/page/project should match snapshot 1`] = `
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 246px;"
                       />
@@ -198,6 +199,12 @@ exports[`test base/page/project should match snapshot 1`] = `
                           scope="col"
                         >
                           项目状态
+                        </th>
+                        <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          项目优先级
                         </th>
                         <th
                           class="ant-table-cell ant-table-cell-ellipsis"
@@ -293,13 +300,22 @@ exports[`test base/page/project should match snapshot 1`] = `
                              
                           </div>
                         </td>
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                       </tr>
                       <tr
                         class="ant-table-placeholder"
                       >
                         <td
                           class="ant-table-cell"
-                          colspan="7"
+                          colspan="8"
                         >
                           <div
                             class="ant-table-expanded-row-fixed"
@@ -462,6 +478,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                       <col />
                       <col />
                       <col />
+                      <col />
                       <col
                         style="width: 246px;"
                       />
@@ -496,6 +513,12 @@ exports[`test base/page/project should match snapshot 2`] = `
                           项目状态
                         </th>
                         <th
+                          class="ant-table-cell"
+                          scope="col"
+                        >
+                          项目优先级
+                        </th>
+                        <th
                           class="ant-table-cell ant-table-cell-ellipsis"
                           scope="col"
                           title="创建时间"
@@ -526,6 +549,15 @@ exports[`test base/page/project should match snapshot 2`] = `
                         class="ant-table-measure-row"
                         style="height: 0px; font-size: 0px;"
                       >
+                        <td
+                          style="padding: 0px; border: 0px; height: 0px;"
+                        >
+                          <div
+                            style="height: 0px; overflow: hidden;"
+                          >
+                             
+                          </div>
+                        </td>
                         <td
                           style="padding: 0px; border: 0px; height: 0px;"
                         >
@@ -710,6 +742,11 @@ exports[`test base/page/project should match snapshot 2`] = `
                           </div>
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          高
+                        </td>
+                        <td
                           class="ant-table-cell ant-table-cell-ellipsis"
                           title="2023-06-01 18:00:00"
                         >
@@ -759,10 +796,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                                   </span>
                                 </button>
                               </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              />
                               <div
                                 class="ant-space-item"
                               >
@@ -913,6 +946,11 @@ exports[`test base/page/project should match snapshot 2`] = `
                           </div>
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          中
+                        </td>
+                        <td
                           class="ant-table-cell ant-table-cell-ellipsis"
                           title="2023-05-31 20:21:55"
                         >
@@ -962,7 +1000,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 8px;"
                               >
                                 <button
                                   class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -973,9 +1010,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                                   </span>
                                 </button>
                               </div>
-                              <div
-                                class="ant-space-item"
-                              />
                             </div>
                           </div>
                         </td>
@@ -1127,6 +1161,11 @@ exports[`test base/page/project should match snapshot 2`] = `
                           </div>
                         </td>
                         <td
+                          class="ant-table-cell"
+                        >
+                          -
+                        </td>
+                        <td
                           class="ant-table-cell ant-table-cell-ellipsis"
                           title="2023-05-21 23:43:10"
                         >
@@ -1176,10 +1215,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                                   </span>
                                 </button>
                               </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              />
                               <div
                                 class="ant-space-item"
                               >

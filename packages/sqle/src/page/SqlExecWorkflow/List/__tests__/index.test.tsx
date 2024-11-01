@@ -21,6 +21,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import sqlVersion from '../../../../testUtils/mockApi/sql_version';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => {
@@ -46,6 +47,7 @@ describe('sqle/Workflow/List', () => {
   let RequestWorkflowList: jest.SpyInstance;
   let RequestExportWorkflowList: jest.SpyInstance;
   let RequestBatchCancel: jest.SpyInstance;
+  let RequestSqlVersionListV1: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<WorkflowList />);
@@ -59,6 +61,7 @@ describe('sqle/Workflow/List', () => {
     RequestWorkflowList = execWorkflow.getWorkflows();
     RequestExportWorkflowList = execWorkflow.exportWorkflow();
     RequestBatchCancel = execWorkflow.batchCancelWorkflows();
+    RequestSqlVersionListV1 = sqlVersion.mockGetSqlVersionListV1();
     mockDatabaseType();
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -77,6 +80,7 @@ describe('sqle/Workflow/List', () => {
     expect(RequestUserTipList).toHaveBeenCalledTimes(1);
     expect(RequestInstanceTipList).toHaveBeenCalledTimes(1);
     expect(RequestWorkflowList).toHaveBeenCalledTimes(1);
+    expect(RequestSqlVersionListV1).toHaveBeenCalledTimes(1);
 
     expect(RequestUserTipList).toHaveBeenCalledWith({
       filter_project: projectName
@@ -92,6 +96,12 @@ describe('sqle/Workflow/List', () => {
       fuzzy_keyword: '',
       page_index: 1,
       page_size: 20
+    });
+
+    expect(RequestSqlVersionListV1).toHaveBeenCalledWith({
+      project_name: projectName,
+      page_index: 1,
+      page_size: 9999
     });
 
     expect(baseElement).toMatchSnapshot;
@@ -286,7 +296,8 @@ describe('sqle/Workflow/List', () => {
             create_time: '',
             current_step_type: 'sql_execute',
             current_step_assignee_user_name_list: [],
-            status: 'wait_for_execution'
+            status: 'wait_for_execution',
+            sql_version_name: ['v1-test']
           },
           {
             project_name: '700300',

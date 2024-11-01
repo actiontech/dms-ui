@@ -28,6 +28,7 @@ export default {
   sqlManagementConf: 'Configuration',
   pushRuleConfiguration: 'Notification',
   pipelineConfiguration: 'CI/CD pipeline',
+  versionManagement: 'Version management',
 
   projectSelector: {
     recentlyOpenedProjects: 'Recently opened projects',
@@ -49,7 +50,12 @@ export default {
     account: 'Profile',
     viewVersion: 'Version',
     logout: 'Logout',
-    notice: 'Notice'
+    notice: 'Notice',
+    language: {
+      text: 'Language',
+      zhCN: '中文',
+      enUS: 'English'
+    }
   },
 
   globalSettings: {
@@ -63,5 +69,5 @@ export default {
     instanceManager: 'DB instances'
   },
   copyRight:
-    '© {{year}} Shanghai Aicos Information Technology Co., Ltd. All rights reserved'
+    '© {{year}} Shanghai Action Information Technology Co., Ltd. All rights reserved.'
 };

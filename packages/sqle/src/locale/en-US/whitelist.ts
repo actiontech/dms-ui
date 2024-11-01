@@ -11,6 +11,7 @@ export default {
     sql: 'SQL statement',
     desc: 'Audit whitelist description',
     matchType: 'Match mode',
+    matchCount: 'Matched count',
     lastMatchedTime: 'The last matching time'
   },
 
@@ -29,10 +30,13 @@ export default {
 
   modal: {
     add: {
-      title: 'Add audit whitelist'
+      title: 'Add audit whitelist',
+      success: 'Add audit whitelist Successfully'
     },
     update: {
-      title: 'Update audit whitelist'
+      title: 'Update audit whitelist',
+      success: 'Update audit whitelist Successfully',
+      tips: 'When the match type or match content is modified, the match count and last match time of this record will be reset.'
     },
     sql: 'SQL'
   }

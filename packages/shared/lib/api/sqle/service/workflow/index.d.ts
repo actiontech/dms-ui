@@ -1,9 +1,10 @@
 import {
   IScheduledTaskDefaultOptionV1Rsp,
+  IGetWorkflowsResV1,
+  IGlobalWorkflowStatisticsResV1,
   IGetWorkflowTemplateResV1,
   IUpdateWorkflowTemplateReqV1,
   IBaseRes,
-  IGetWorkflowsResV1,
   ICreateWorkflowReqV1,
   IBatchCancelWorkflowsReqV1,
   IBatchCompleteWorkflowsReqV1,
@@ -21,17 +22,54 @@ import {
   IUpdateWorkflowReqV2,
   IRejectWorkflowReqV2,
   IGetWorkflowTasksResV2,
-  IUpdateWorkflowScheduleReqV2
+  IUpdateWorkflowScheduleReqV2,
+  IBatchCompleteWorkflowsReqV3
 } from '../common.d';
 
 import {
+  getGlobalWorkflowsV1FilterStatusListEnum,
+  getGlobalWorkflowsV1FilterProjectPriorityEnum,
+  GetGlobalWorkflowStatisticsFilterStatusListEnum,
+  GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
   getWorkflowsV1FilterStatusEnum,
-  exportWorkflowV1FilterStatusEnum,
-  getGlobalWorkflowsV1FilterStatusEnum
+  exportWorkflowV1FilterStatusEnum
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
   extends IScheduledTaskDefaultOptionV1Rsp {}
+
+export interface IGetGlobalWorkflowsV1Params {
+  filter_create_user_id?: string;
+
+  filter_status_list?: getGlobalWorkflowsV1FilterStatusListEnum[];
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: getGlobalWorkflowsV1FilterProjectPriorityEnum;
+
+  page_index: number;
+
+  page_size: number;
+}
+
+export interface IGetGlobalWorkflowsV1Return extends IGetWorkflowsResV1 {}
+
+export interface IGetGlobalWorkflowStatisticsParams {
+  filter_create_user_id?: string;
+
+  filter_status_list?: GetGlobalWorkflowStatisticsFilterStatusListEnum[];
+
+  filter_project_uid?: string;
+
+  filter_instance_id?: string;
+
+  filter_project_priority?: GetGlobalWorkflowStatisticsFilterProjectPriorityEnum;
+}
+
+export interface IGetGlobalWorkflowStatisticsReturn
+  extends IGlobalWorkflowStatisticsResV1 {}
 
 export interface IGetWorkflowTemplateV1Params {
   project_name: string;
@@ -69,6 +107,8 @@ export interface IGetWorkflowsV1Params {
   filter_current_step_assignee_user_id?: string;
 
   filter_task_instance_id?: string;
+
+  filter_sql_version_id?: string;
 
   page_index: number;
 
@@ -235,32 +275,6 @@ export interface IUpdateWorkflowScheduleV1Params
 
 export interface IUpdateWorkflowScheduleV1Return extends IBaseRes {}
 
-export interface IGetGlobalWorkflowsV1Params {
-  filter_subject?: string;
-
-  filter_create_time_from?: string;
-
-  filter_create_time_to?: string;
-
-  filter_task_execute_start_time_from?: string;
-
-  filter_task_execute_start_time_to?: string;
-
-  filter_create_user_id?: string;
-
-  filter_status?: getGlobalWorkflowsV1FilterStatusEnum;
-
-  filter_current_step_assignee_user_id?: string;
-
-  filter_task_instance_id?: string;
-
-  page_index: number;
-
-  page_size: number;
-}
-
-export interface IGetGlobalWorkflowsV1Return extends IGetWorkflowsResV1 {}
-
 export interface IGetWorkflowStatisticOfInstancesParams {
   instance_id: string;
 }
@@ -369,3 +383,10 @@ export interface IUpdateWorkflowScheduleV2Params
 }
 
 export interface IUpdateWorkflowScheduleV2Return extends IBaseRes {}
+
+export interface IBatchCompleteWorkflowsV3Params
+  extends IBatchCompleteWorkflowsReqV3 {
+  project_name: string;
+}
+
+export interface IBatchCompleteWorkflowsV3Return extends IBaseRes {}
