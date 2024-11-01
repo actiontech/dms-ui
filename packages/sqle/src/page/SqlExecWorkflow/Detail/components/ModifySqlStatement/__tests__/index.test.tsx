@@ -65,7 +65,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     workflowTemplate.getWorkflowTemplate();
     requestUpdateWorkflow = execWorkflow.updateWorkflow();
     instance.getInstance();
-    
+
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         whitelist: { modalStatus: {} },

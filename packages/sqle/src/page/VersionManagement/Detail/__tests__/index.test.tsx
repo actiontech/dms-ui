@@ -70,7 +70,7 @@ describe('sqle/VersionManagement/Detail', () => {
     });
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
-    
+
     execWorkflow.getWorkflow();
     task.getAuditTask();
     mockReactFlow();

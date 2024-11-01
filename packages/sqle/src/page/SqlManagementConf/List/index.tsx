@@ -45,7 +45,6 @@ import {
   BookMarkTagOutlined
 } from '@actiontech/icons';
 import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
-import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const List: React.FC = () => {
