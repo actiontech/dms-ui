@@ -16,10 +16,7 @@ describe('test Overview', () => {
   const handleChangeTabSpy = jest.fn();
   const instanceAuditPlanId = '1';
   const refreshAuditPlanDetailSpy = jest.fn();
-  const customRender = (
-    hasOpPermission = true,
-    getUserOperationPermissionLoading = false
-  ) => {
+  const customRender = (hasOpPermission = true) => {
     return superRender(
       <ConfDetailOverview
         activeTabKey={SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}
@@ -27,7 +24,6 @@ describe('test Overview', () => {
         instanceAuditPlanId={instanceAuditPlanId}
         refreshAuditPlanDetail={refreshAuditPlanDetailSpy}
         hasOpPermission={hasOpPermission}
-        getUserOperationPermissionLoading={getUserOperationPermissionLoading}
       />
     );
   };
@@ -157,11 +153,6 @@ describe('test Overview', () => {
       1,
       mockInstanceAuditPlanInfo[0].audit_plan_type?.audit_plan_id?.toString()
     );
-  });
-
-  it('should match snapshot when getUserOperationPermissionLoading is equal true', async () => {
-    const { container } = customRender(true, true);
-    expect(container).toMatchSnapshot();
   });
 
   it('should match snapshot when hasOpPermission is equal false', () => {

@@ -7,10 +7,9 @@ import {
 import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
 import { superRender } from '../../../../testUtils/customRender';
 import ConfDetail from '..';
-import { act, fireEvent } from '@testing-library/react';
+import { act, cleanup, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
 import {
   mockProjectInfo,
   mockUseUserOperationPermissionData
@@ -20,6 +19,14 @@ import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi'
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('react-router-dom', () => {
   return {
@@ -45,7 +52,6 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
-    mockUseUserOperationPermission();
     instanceAuditPlan.mockAllApi();
     getInstanceAuditPlanDetailSpy =
       instanceAuditPlan.getInstanceAuditPlanDetail();
@@ -56,14 +62,13 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     mockUseParams.mockReturnValue({ id: instanceAuditPlanId });
     mockUseNavigate.mockReturnValue(navigateSpy);
     mockUseSearchParams.mockReturnValue([new URLSearchParams()]);
-    mockUseUserOperationPermissionData.isHaveServicePermission.mockReturnValue(
-      true
-    );
+    mockUsePermission(undefined, { mockSelector: true });
   });
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
+    cleanup();
   });
   it('should match snapshot', async () => {
     const { container } = superRender(<ConfDetail />);
@@ -78,6 +83,10 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
   });
 
   it('should render extra action buttons in the page header', async () => {
+    mockUsePermission(
+      { checkDbServicePermission: jest.fn(() => true) },
+      { useSpyOnMockHooks: true }
+    );
     const getInstanceAuditPlanSQLExportSpy =
       instanceAuditPlan.getInstanceAuditPlanSQLExport();
     const { getByText, queryByText, getAllByText } = superRender(
@@ -93,6 +102,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     expect(queryByText('立即审核')).toBeInTheDocument();
 
     fireEvent.click(getByText('导 出'));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceAuditPlanSQLExportSpy).toHaveBeenNthCalledWith(
       1,
@@ -130,6 +140,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
   });
 
   it('should display error message when data request fails', async () => {
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
     const originOutputError = console.error;
     // 过滤 react-hooks 的 console error 输出
     console.error = () => {
@@ -148,6 +159,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
   });
 
   it('should render the segmented tabs with correct items and active key', async () => {
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
     mockUseSearchParams.mockReturnValue([
       new URLSearchParams({
         active_audit_plan_id: '9'
@@ -174,6 +186,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
   });
 
   it('should trigger refresh event for the correct component when refresh button is clicked', async () => {
+    mockUsePermission(undefined, { useSpyOnMockHooks: true });
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const { getAllByText } = superRender(<ConfDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
