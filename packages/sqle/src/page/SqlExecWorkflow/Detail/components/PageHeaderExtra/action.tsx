@@ -136,7 +136,7 @@ export const TerminateWorkflowAction = (
 ) => {
   return (
     <PermissionControl
-      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC}
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.TERMINATE_EXEC}
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.terminate')}
