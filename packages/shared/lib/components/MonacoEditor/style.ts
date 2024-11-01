@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import MonacoEditor from '@monaco-editor/react';
+import MonacoEditor, { DiffEditor } from '@monaco-editor/react';
 
 export const MonacoEditorStyleWrapper = styled(MonacoEditor)`
   .monaco-editor {
@@ -38,6 +38,79 @@ export const MonacoEditorStyleWrapper = styled(MonacoEditor)`
       .decorationsOverviewRuler {
         display: none !important;
       }
+    }
+  }
+`;
+
+export const MonacoDiffEditorStyleWrapper = styled(DiffEditor)`
+  .monaco-diff-editor {
+    border: ${({ theme }) =>
+      theme.sharedTheme.components.customMonacoEditor.border};
+    border-radius: 8px;
+    background: ${({ theme }) =>
+      theme.sharedTheme.components.customMonacoEditor
+        .linesContentBackgroundColor};
+
+    .margin {
+      background: ${({ theme }) =>
+        theme.sharedTheme.components.customMonacoEditor.marginBackgroundColor};
+      border-radius: 8px 0 0 8px;
+
+      .margin-view-overlays {
+        div {
+          color: ${({ theme }) =>
+            theme.sharedTheme.components.customMonacoEditor
+              .marginViewOverlaysColor};
+          left: 8px;
+        }
+      }
+    }
+
+    div.monaco-scrollable-element[role='presentation'] {
+      height: calc(100% - 2px) !important;
+      width: calc(100% - 50px) !important;
+
+      .lines-content {
+        background: ${({ theme }) =>
+          theme.sharedTheme.components.customMonacoEditor
+            .linesContentBackgroundColor};
+      }
+
+      .decorationsOverviewRuler {
+        display: none !important;
+      }
+    }
+
+    .diffOverview {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      width: 8px !important;
+    }
+
+    .diffOverview .diff-review-line {
+      border-radius: 4px !important;
+      transition: background 0.3s ease;
+    }
+
+    .diffOverview .diff-added,
+    .diffOverview .diff-removed {
+      opacity: 0.8;
+      border-radius: 2px;
+    }
+
+    .monaco-scrollable-element > .scrollbar > .slider {
+      background: rgba(100, 100, 100, 0.4) !important;
+      border-radius: 4px !important;
+      transition: background 0.3s ease;
+    }
+
+    .monaco-scrollable-element > .scrollbar > .slider:hover {
+      background: rgba(100, 100, 100, 0.6) !important;
+    }
+
+    .monaco-scrollable-element > .scrollbar > .slider-background {
+      background: rgba(0, 0, 0, 0.1) !important;
+      border-radius: 4px !important;
     }
   }
 `;

@@ -93,23 +93,9 @@ export interface IBaseRes {
   message?: string;
 }
 
-export interface IAuditResult {
-  db_type?: string;
-
-  i18n_audit_result_info?: II18nAuditResultInfo;
-
-  level?: string;
-
-  message?: string;
-
-  rule_name?: string;
-}
-
 export interface IAuditResultInfo {
   message?: string;
 }
-
-export type IAuditResults = IAuditResult[];
 
 export interface II18nAuditResultInfo {
   [key: string]: any;
@@ -319,6 +305,18 @@ export interface IAuditResDataV1 {
   score?: number;
 
   sql_results?: IAuditSQLResV1[];
+}
+
+export interface IAuditResult {
+  db_type?: string;
+
+  i18n_audit_result_info?: II18nAuditResultInfo;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
 }
 
 export interface IAuditSQLResV1 {
@@ -2539,6 +2537,18 @@ export interface ISQLAuditRecordResData {
   task?: IAuditTaskResV1;
 }
 
+export interface ISQLAuditResult {
+  db_type?: string;
+
+  i18n_audit_result_info?: II18nAuditResultInfo;
+
+  level?: string;
+
+  message?: string;
+
+  rule_name?: string;
+}
+
 export interface ISQLExplain {
   classic_result?: IExplainClassicResult;
 
@@ -2558,9 +2568,7 @@ export interface ISQLQueryConfigResV1 {
 }
 
 export interface ISQLStatementWithAuditResult {
-  audit_level?: string;
-
-  audit_results?: IAuditResults;
+  audit_results?: ISQLAuditResult[];
 
   sql_statement?: string;
 }
@@ -2578,13 +2586,15 @@ export interface IScheduledTaskDefaultOptionV1Rsp {
 }
 
 export interface ISchemaObject {
+  base_schema_name?: string;
+
   comparison_result?: SchemaObjectComparisonResultEnum;
+
+  comparison_schema_name?: string;
 
   database_diff_objects?: IDatabaseDiffObject[];
 
   inconsistent_num?: number;
-
-  schema_name?: string;
 }
 
 export interface ISource {
@@ -2666,7 +2676,7 @@ export interface ISqlManage {
 
   audit_status?: SqlManageAuditStatusEnum;
 
-  endpoints?: string[];
+  endpoints?: string;
 
   first_appear_timestamp?: string;
 

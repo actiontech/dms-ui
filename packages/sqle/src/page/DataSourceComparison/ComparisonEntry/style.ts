@@ -41,5 +41,6 @@ export const DatabaseSelectorTitleStyleWrapper = styled(CommonIconStyleWrapper)`
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break: break-word;
+    line-height: 16px;
   }
 `;

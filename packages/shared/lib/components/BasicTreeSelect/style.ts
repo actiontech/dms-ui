@@ -88,6 +88,7 @@ export const BasicTreeSelectPopupMenuStyleWrapper = styled('div')`
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
       }
     }
+
     .ant-select-tree-node-content-wrapper {
       display: flex;
       align-items: center;
