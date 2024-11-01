@@ -798,10 +798,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 8px;"
-                              />
-                              <div
-                                class="ant-space-item"
                               >
                                 <button
                                   class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -1004,7 +1000,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 8px;"
                               >
                                 <button
                                   class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -1015,9 +1010,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                                   </span>
                                 </button>
                               </div>
-                              <div
-                                class="ant-space-item"
-                              />
                             </div>
                           </div>
                         </td>
@@ -1223,10 +1215,6 @@ exports[`test base/page/project should match snapshot 2`] = `
                                   </span>
                                 </button>
                               </div>
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              />
                               <div
                                 class="ant-space-item"
                               >
