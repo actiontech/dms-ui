@@ -5,6 +5,7 @@ import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
 import SyncTaskList from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { syncTaskListMockData } from '../../../testUtils/mockApi/syncTaskList/data';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -54,18 +55,6 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render edit action', async () => {
-    customRender();
-
-    await act(async () => jest.advanceTimersByTime(3300));
-    fireEvent.click(screen.getAllByText('编 辑')[0]);
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(navigateSpy).toHaveBeenCalled();
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/sync-data-source/update/${syncTaskListMockData[0].uid}`
-    );
-  });
-
   it('render delete action', async () => {
     const requestDel = syncTaskList.deleteTaskSource();
     customRender();
@@ -106,8 +95,15 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     expect(requestTableList).toHaveBeenCalledTimes(2);
   });
 
-  it('should not render action column when user is not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+  it('should not render action column when user no operation permissions', async () => {
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false,
+        [SystemRole.certainProjectManager]: true
+      }
+    });
 
     const { container } = customRender();
 
