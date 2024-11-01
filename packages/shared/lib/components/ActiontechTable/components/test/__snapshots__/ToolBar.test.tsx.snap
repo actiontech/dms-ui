@@ -105,10 +105,6 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
               <div
                 class="ant-space-item"
                 style="margin-right: 12px;"
-              />
-              <div
-                class="ant-space-item"
-                style="margin-right: 12px;"
               >
                 <button
                   class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
