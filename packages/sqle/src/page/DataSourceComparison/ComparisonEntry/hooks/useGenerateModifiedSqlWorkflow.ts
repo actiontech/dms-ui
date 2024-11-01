@@ -6,34 +6,28 @@ import {
 } from '@actiontech/shared/lib/global';
 import { compressToEncodedURIComponent } from 'lz-string';
 import { useEffect } from 'react';
-import useInstanceSchema from '../../../../hooks/useInstanceSchema';
 
 const useGenerateModifiedSqlWorkflow = (
   instanceId: string,
   instanceName: string
 ) => {
-  const { projectID, projectName } = useCurrentProject();
+  const { projectID } = useCurrentProject();
   const {
     isHaveServicePermission,
     updateUserOperationPermission,
     loading: getUserOperationPermissionPending
   } = useUserOperationPermission();
-  const { schemaList, loading: getSchemaListPending } = useInstanceSchema(
-    projectName,
-    instanceName
-  );
 
   const createWorkflowPermission = isHaveServicePermission(
     OpPermissionItemOpPermissionTypeEnum.create_workflow,
     instanceId
   );
 
-  const createWorkflowAction = (sql: string, schemaNames: string[]) => {
+  const createWorkflowAction = (sql: string) => {
     const compressionData = compressToEncodedURIComponent(
       JSON.stringify({
         sql,
-        instanceName,
-        schema: schemaNames.filter((schema) => schemaList.includes(schema))
+        instanceName
       })
     );
     window.open(
@@ -48,8 +42,7 @@ const useGenerateModifiedSqlWorkflow = (
   return {
     createWorkflowAction,
     createWorkflowPermission,
-    createWorkflowPending:
-      getSchemaListPending || getUserOperationPermissionPending
+    createWorkflowPending: getUserOperationPermissionPending
   };
 };
 
