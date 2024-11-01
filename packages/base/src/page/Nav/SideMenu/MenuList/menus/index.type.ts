@@ -43,4 +43,5 @@ export type MenuStructTreeKey =
   | 'account-management'
   | 'password-management'
   | 'pipeline-configuration'
-  | 'version-management';
+  | 'version-management'
+  | 'data-source-comparison';

@@ -5,7 +5,7 @@ import {
   BasicTypographyEllipsis,
   EmptyBox
 } from '@actiontech/shared';
-import { IHighPriorityCondition } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IHighPriorityConditionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   FormItemLabel,
   FormItemNoLabel
@@ -24,7 +24,7 @@ import { HighPriorityConditionDescTagStyleWrapper } from './style';
 type Props = {
   prefixPath: string;
   submitLoading: boolean;
-  conditions: IHighPriorityCondition[];
+  conditions: IHighPriorityConditionResV1[];
 };
 
 const HighPriorityConditions: React.FC<Props> = ({

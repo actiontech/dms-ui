@@ -34,6 +34,7 @@ export default {
   diagnosisList: '巡检列表',
   pipelineConfiguration: '流水线配置',
   versionManagement: '版本管理',
+  dataSourceComparison: '结构对比',
 
   projectSelector: {
     recentlyOpenedProjects: '最近打开的项目',
