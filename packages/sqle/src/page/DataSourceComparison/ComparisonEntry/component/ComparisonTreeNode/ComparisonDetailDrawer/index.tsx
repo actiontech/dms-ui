@@ -34,7 +34,7 @@ type Props = {
   getDetailParams: IGetComparisonStatementV1Params;
   genModifiedSqlParams: IGenDatabaseDiffModifySQLsV1Params;
   comparisonResult: ObjectDiffResultComparisonResultEnum;
-  selectedBaselineInstanceType: string;
+  selectedBaselineInstanceInfo?: SelectedInstanceInfo;
   selectComparisonInstanceInfo?: SelectedInstanceInfo;
 };
 
@@ -50,7 +50,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   getDetailParams,
   genModifiedSqlParams,
   comparisonResult,
-  selectedBaselineInstanceType,
+  selectedBaselineInstanceInfo,
   selectComparisonInstanceInfo
 }) => {
   const { t } = useTranslation();
@@ -115,7 +115,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     loading: getBaselineSqlAuditResultRuleInfoPending
   } = useAuditResultRuleInfo(
     comparisonDetail?.base_sql?.audit_results ?? [],
-    selectedBaselineInstanceType,
+    selectedBaselineInstanceInfo?.instanceType,
     tableDDLAuditResultActiveKey.includes(CollapseItemKeyEnum.baseline)
   );
 
@@ -124,7 +124,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     loading: getComparisonSqlAuditResultRuleInfoPending
   } = useAuditResultRuleInfo(
     comparisonDetail?.comparison_sql?.audit_results ?? [],
-    selectedBaselineInstanceType,
+    selectComparisonInstanceInfo?.instanceType,
     tableDDLAuditResultActiveKey.includes(CollapseItemKeyEnum.comparison)
   );
 
@@ -133,7 +133,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     loading: getModifiedSqlRulePending
   } = useAuditResultRuleInfo(
     modifiedSqlAuditResults,
-    selectedBaselineInstanceType,
+    selectComparisonInstanceInfo?.instanceType,
     modifiedSqlAuditResultActiveKey.includes(CollapseItemKeyEnum.modified)
   );
 
@@ -225,11 +225,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
                 loading={createWorkflowPending}
                 type="primary"
                 onClick={() => {
-                  createWorkflowAction(
-                    modifiedSqls,
-                    modifiedSqlResult?.map((item) => item.schema_name ?? '') ??
-                      []
-                  );
+                  createWorkflowAction(modifiedSqls);
                 }}
               >
                 {t(
@@ -298,6 +294,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
           <Typography.Title level={4}>
             {t('dataSourceComparison.entry.comparisonDetail.ddlDiff')}
           </Typography.Title>
+
           <SQLRenderer.DiffViewOnlyEditor
             originalSql={comparisonDetail?.base_sql?.sql_statement}
             modifiedSql={comparisonDetail?.comparison_sql?.sql_statement}
