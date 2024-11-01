@@ -1,7 +1,7 @@
 import Wechat from '.';
 import system from '../../../../testUtils/mockApi/system';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import {
   getAllBySelector,
   getBySelector
@@ -12,7 +12,7 @@ describe('base/System/PushNotification/Wechat', () => {
   let requestGetWeChatConfiguration: jest.SpyInstance;
   let requestUpdateWeChatConfiguration: jest.SpyInstance;
   const customRender = () => {
-    return renderWithTheme(<Wechat />);
+    return superRender(<Wechat />);
   };
 
   beforeEach(() => {

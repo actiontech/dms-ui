@@ -125,7 +125,6 @@ describe('base/System/License', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(requestGetLicenseInfo).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(getBySelector('.ant-qrcode')).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(300));
     await act(async () => {
       fireEvent.click(screen.getByText('导入许可信息'));

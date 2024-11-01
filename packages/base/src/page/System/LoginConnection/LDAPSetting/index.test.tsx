@@ -1,20 +1,18 @@
 import system from '../../../../testUtils/mockApi/system';
-
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import LDAPSetting from '.';
 
 describe('base/System/LoginConnection/LDAPSetting', () => {
   let requestGetLDAPConfiguration: jest.SpyInstance;
   let requestUpdateLDAPConfiguration: jest.SpyInstance;
   const customRender = () => {
-    return renderWithTheme(<LDAPSetting />);
+    return superRender(<LDAPSetting />);
   };
 
   beforeEach(() => {
