@@ -2,11 +2,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
+import { ROUTE_PATHS } from '@actiontech/shared';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ROUTE_PATH_COLLECTION } from '@actiontech/shared/lib/data/routePathCollection';
 import system from '../../../../../testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => {
@@ -26,7 +26,7 @@ describe('base/Nav/QuickActions', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     useLocationMock.mockReturnValue({
-      pathname: ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD
+      pathname: ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD
     });
     getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
   });
@@ -79,7 +79,7 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       1,
-      ROUTE_PATH_COLLECTION.SQLE.GLOBAL_DASHBOARD
+      ROUTE_PATHS.SQLE.GLOBAL_DASHBOARD
     );
 
     fireEvent.click(actions[1]);
@@ -87,15 +87,12 @@ describe('base/Nav/QuickActions', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(2);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       2,
-      ROUTE_PATH_COLLECTION.SQLE.REPORT_STATISTICS
+      ROUTE_PATHS.SQLE.REPORT_STATISTICS
     );
 
     fireEvent.click(actions[2]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(navigateSpy).toHaveBeenCalledTimes(3);
-    expect(navigateSpy).toHaveBeenNthCalledWith(
-      3,
-      ROUTE_PATH_COLLECTION.SQLE.RULE
-    );
+    expect(navigateSpy).toHaveBeenNthCalledWith(3, ROUTE_PATHS.SQLE.RULE);
   });
 });
