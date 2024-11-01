@@ -115,9 +115,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
               selectedObjectNodeKey
             )!
           }
-          selectedBaselineInstanceType={
-            selectedBaselineInstanceInfo?.instanceType ?? ''
-          }
+          selectedBaselineInstanceInfo={selectedBaselineInstanceInfo}
           selectComparisonInstanceInfo={selectedComparisonInstanceInfo}
           getDetailParams={generateGetComparisonDetailParams(
             selectedObjectNodeKey,
