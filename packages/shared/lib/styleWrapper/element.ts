@@ -201,3 +201,69 @@ export const CommonIconStyleWrapper = styled('span')`
     margin: -10px;
   }
 `;
+
+/**
+ * 一个开关按钮 style，某些情况可用以替换 Switch 使用
+ */
+export const ToggleButtonStyleWrapper = styled('div')<{
+  active: boolean;
+  disabled?: boolean;
+  size?: 'lg' | 'sm';
+}>`
+  height: ${({ size, theme }) => {
+    let height = theme.sharedTheme.basic.controlHeight;
+    if (size === 'lg') {
+      height = theme.sharedTheme.basic.controlHeightLG;
+    } else if (size === 'sm') {
+      height = theme.sharedTheme.basic.controlHeightSM;
+    }
+    return `${height}px`;
+  }};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  pointer-events: ${({ disabled }) => (disabled ? 'none' : 'auto')};
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: ${({ theme }) => theme.sharedTheme.basic.borderRadius4 + 'px'};
+  border: 0;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  box-shadow: ${({ theme }) =>
+    `0 1px 4px 0 ${theme.sharedTheme.basic.colorShadowByWhite}`};
+  color: ${({ active, theme }) =>
+    !!active
+      ? theme.sharedTheme.uiToken.colorPrimary
+      : theme.sharedTheme.uiToken.colorTextSecondary};
+  background: ${({ active, theme }) =>
+    !!active
+      ? theme.sharedTheme.basic.colorPrimaryBgActive
+      : theme.sharedTheme.uiToken.colorFillTertiary};
+  transition: all 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.15) 0%,
+      transparent 100%
+    );
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
+  &:active::before {
+    transform: scale(2);
+    opacity: 1;
+    transition: 0s;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+`;
