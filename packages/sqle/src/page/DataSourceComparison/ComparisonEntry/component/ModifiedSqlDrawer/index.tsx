@@ -125,10 +125,7 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
                   ?.map((info) =>
                     info.modify_sqls?.map((v) => v.sql_statement).join('\n')
                   )
-                  .join('\n') ?? '',
-                databaseDiffModifiedSqlInfos?.map(
-                  (info) => info.schema_name!
-                ) ?? []
+                  .join('\n') ?? ''
               );
             }}
           >

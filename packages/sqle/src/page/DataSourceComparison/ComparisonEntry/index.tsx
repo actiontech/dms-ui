@@ -211,13 +211,8 @@ const ComparisonEntry: React.FC = () => {
       >
         <ComparisonActionStyleWrapper size={12}>
           <ToggleButtonStyleWrapper
-            disabled={executeComparisonPending}
             active={showDifferencesOnly}
-            onClick={() => {
-              if (!executeComparisonPending) {
-                toggleShowDifferencesOnly();
-              }
-            }}
+            onClick={toggleShowDifferencesOnly}
           >
             {t('dataSourceComparison.entry.showDifferencesOnly')}
           </ToggleButtonStyleWrapper>
@@ -226,7 +221,8 @@ const ComparisonEntry: React.FC = () => {
           {t('dataSourceComparison.entry.modifyMappings')}
         </BasicButton> */}
 
-          {checkedObjectNodeKeys.length === 0 ? (
+          {filteredWithoutSchemaNameNodeKey(checkedObjectNodeKeys).length ===
+          0 ? (
             <BasicToolTips
               title={t('dataSourceComparison.entry.generateSQLDisabledTips')}
             >
@@ -235,10 +231,7 @@ const ComparisonEntry: React.FC = () => {
               </BasicButton>
             </BasicToolTips>
           ) : (
-            <BasicButton
-              onClick={generateModifiedSqlEvent}
-              disabled={executeComparisonPending}
-            >
+            <BasicButton onClick={generateModifiedSqlEvent}>
               {t('dataSourceComparison.entry.generateSQL')}
             </BasicButton>
           )}

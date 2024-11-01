@@ -1,10 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Collapse } from 'antd';
 
-export const ComparisonDetailContentStyleWrapper = styled('div')`
-  height: 100%;
-`;
-
 export const DiffSQLEditorWrapperStyleWrapper = styled('div')`
   margin-bottom: 24px;
 
