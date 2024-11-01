@@ -84,6 +84,18 @@ export const PERMISSIONS = {
       CLOUD_BEAVER: {
         EXPORT: 'action:export_cb_operation_log',
         CREATE_WHITE_LIST: 'action:cb_create_white_list'
+      },
+      MEMBER: {
+        ADD_MEMBER: 'action:add_member',
+        EDIT_MEMBER: 'action:edit_member',
+        DELETE_MEMBER: 'action:delete_member',
+        ADD_MEMBER_GROUP: 'action:add_member_group',
+        EDIT_MEMBER_GROUP: 'action:edit_member_group',
+        DELETE_MEMBER_GROUP: 'action:delete_member_group'
+      },
+      DATA_EXPORT: {
+        BATCH_CLOSE: 'action:data_export_batch_close',
+        CREATE_WHITELIST: 'action:data_export_create_whitelist'
       }
     },
     SQLE: {
@@ -160,6 +172,9 @@ export const PERMISSIONS = {
       },
       RULE: {
         CREATE_RULE_TEMPLATE: 'action:create_rule_template'
+      },
+      PLUGIN_AUDIT: {
+        CREATE_WHITELIST: 'action:plugin_audit_create_whitelist'
       }
     }
   }

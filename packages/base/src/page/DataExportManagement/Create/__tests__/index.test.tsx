@@ -30,7 +30,11 @@ describe('first', () => {
     mockUseCreateDataExportReduxManage();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);

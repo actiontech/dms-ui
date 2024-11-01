@@ -7,16 +7,15 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { ActiontechTableActionMeta } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import {
   useCurrentProject,
-  useCurrentUser
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common';
 import { IListMemberGroupsParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
 import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
-import { MemberGroupListColumns, MemberGroupListActions } from './column';
+import { MemberGroupListColumns } from './column';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   updateMemberModalStatus,
@@ -26,6 +25,7 @@ import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { MemberListTypeEnum } from '../index.enum';
+import { MemberGroupListActions } from './actions';
 
 const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   activePage
@@ -36,13 +36,9 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
 
   const dispatch = useDispatch();
 
-  const { projectID, projectArchive, projectName } = useCurrentProject();
+  const { projectID } = useCurrentProject();
 
-  const { isAdmin, isProjectManager } = useCurrentUser();
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
+  const { parse2TableActionPermissions } = usePermission();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -102,11 +98,11 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     [messageApi, refresh, t, projectID]
   );
 
-  const memberGroupListActions = useMemo<
-    ActiontechTableActionMeta<IListMemberGroup>[]
-  >(() => {
-    return MemberGroupListActions(onEditMemberGroup, onDeleteMemberGroup);
-  }, [onEditMemberGroup, onDeleteMemberGroup]);
+  const memberGroupListActions = useMemo(() => {
+    return parse2TableActionPermissions(
+      MemberGroupListActions(onEditMemberGroup, onDeleteMemberGroup)
+    );
+  }, [onEditMemberGroup, onDeleteMemberGroup, parse2TableActionPermissions]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -130,11 +126,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
         columns={MemberGroupListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={
-          !projectArchive && actionPermission
-            ? memberGroupListActions
-            : undefined
-        }
+        actions={memberGroupListActions}
       />
     </>
   );

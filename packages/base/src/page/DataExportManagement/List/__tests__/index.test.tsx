@@ -5,6 +5,7 @@ import { superRender } from '../../../../testUtils/customRender';
 import ExportWorkflowList from '..';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -15,6 +16,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DataExportWorkflowList } from '../../../../testUtils/mockApi/dataExport/data';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -84,10 +86,13 @@ describe('test base/DataExport/List', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it.only('render batch close button When the user is non-admin and non-project manager', async () => {
+  it('render batch close button When the user is non-admin and non-project manager', async () => {
     mockUseCurrentUser({
-      isAdmin: false,
-      isProjectManager: jest.fn().mockReturnValue(false)
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
     });
 
     const { container } = superRender(<ExportWorkflowList />);
@@ -99,8 +104,10 @@ describe('test base/DataExport/List', () => {
     cleanup();
 
     mockUseCurrentUser({
-      isAdmin: true,
-      isProjectManager: jest.fn().mockReturnValue(false)
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: true
+      }
     });
     superRender(<ExportWorkflowList />);
     expect(screen.queryByText('批量关闭')).toBeInTheDocument();
@@ -109,8 +116,19 @@ describe('test base/DataExport/List', () => {
     cleanup();
 
     mockUseCurrentUser({
-      isAdmin: false,
-      isProjectManager: jest.fn().mockReturnValue(true)
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
     });
 
     const batchCloseSpy = dataExport.batchCloseWorkflowAction();
