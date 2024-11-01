@@ -10,7 +10,8 @@ import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { DatabaseSelectorTitleStyleWrapper } from '../style';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import { INSTANCE_SCHEMA_SEPARATOR } from '../utils';
+import { IDatabaseComparisonObject } from '@actiontech/shared/lib/api/sqle/service/common';
+import { SelectedInstanceInfo } from '../index.type';
 
 type DefaultOptionType = {
   id: string;
@@ -20,7 +21,12 @@ type DefaultOptionType = {
   title: ReactNode;
   isLeaf?: boolean;
   disabled?: boolean;
+  dbType: string;
 };
+
+const TREE_DATA_PARENT_NODE_ID = 'TREE_DATA_PARENT_NODE_ID';
+
+const INSTANCE_SCHEMA_SEPARATOR = '_INSTANCE_SCHEMA_SEPARATOR_';
 
 const useDataSourceTreeData = () => {
   const { getLogoUrlByDbType } = useDatabaseType();
@@ -30,6 +36,7 @@ const useDataSourceTreeData = () => {
   const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
   const [treeLoadedKeys, setTreeLoadedKeys] = useState<Key[]>([]);
   const { sharedTheme } = useThemeStyleData();
+
   const {
     updateInstanceList,
     loading: instanceLoading,
@@ -47,14 +54,12 @@ const useDataSourceTreeData = () => {
   >['loadData'] = ({ id }) => {
     currentInstanceId.current = id;
     setTreeLoadedKeys((keys) => [...keys, id]);
-    const instanceName = instanceList.find(
-      (v) => v.instance_id === id
-    )?.instance_name;
+    const instanceInfo = instanceList.find((v) => v.instance_id === id);
 
     startGetInstanceSchema();
     return instance
       .getInstanceSchemasV1({
-        instance_name: instanceName!,
+        instance_name: instanceInfo?.instance_name!,
         project_name: projectName
       })
       .then((res) => {
@@ -67,6 +72,7 @@ const useDataSourceTreeData = () => {
               pId: id,
               value: `${id}${INSTANCE_SCHEMA_SEPARATOR}${schema}`,
               label: schema,
+              dbType: instanceInfo?.instance_type!,
               title: (
                 <DatabaseSelectorTitleStyleWrapper>
                   <DatabaseSchemaFilled
@@ -102,17 +108,63 @@ const useDataSourceTreeData = () => {
       return treeData;
     }
 
-    if (selectedItem.isLeaf) {
-      return treeData.map((item) => ({
+    return treeData.map((item) => {
+      if (item.pId === TREE_DATA_PARENT_NODE_ID) {
+        return item;
+      }
+      return {
         ...item,
-        disabled: !item.isLeaf || item.value === otherValue
-      }));
+        disabled:
+          item.value === otherValue || item.dbType !== selectedItem.dbType
+      };
+    });
+  };
+
+  const parse2DatabaseCompareObject = (
+    value?: string
+  ): IDatabaseComparisonObject => {
+    if (!value) {
+      return {};
+    }
+    if (value.includes(INSTANCE_SCHEMA_SEPARATOR)) {
+      const [instanceId, schemaName] = value.split(INSTANCE_SCHEMA_SEPARATOR);
+      return {
+        instance_id: instanceId,
+        schema_name: schemaName
+      };
+    }
+    return {
+      instance_id: value
+    };
+  };
+
+  const getInstanceInfoBySelectedValue = (
+    value?: string
+  ): SelectedInstanceInfo | undefined => {
+    if (!value) {
+      return undefined;
+    }
+    if (value.includes(INSTANCE_SCHEMA_SEPARATOR)) {
+      const [instanceId, schemaName] = value.split(INSTANCE_SCHEMA_SEPARATOR);
+      const instanceInfo = instanceList.find(
+        (v) => v.instance_id === instanceId
+      );
+
+      return {
+        instanceId,
+        schemaName,
+        instanceName: instanceInfo?.instance_name ?? '',
+        instanceType: instanceInfo?.instance_type ?? ''
+      };
     }
 
-    return treeData.map((item) => ({
-      ...item,
-      disabled: item.value === otherValue || item.isLeaf
-    }));
+    const instanceInfo = instanceList.find((v) => v.instance_id === value);
+
+    return {
+      instanceId: value,
+      instanceName: instanceInfo?.instance_name ?? '',
+      instanceType: instanceInfo?.instance_type ?? ''
+    };
   };
 
   useEffect(() => {
@@ -126,10 +178,11 @@ const useDataSourceTreeData = () => {
           setTreeData([
             ...Array.from(dbTypes).map((type) => ({
               id: type,
-              pId: '0',
+              pId: TREE_DATA_PARENT_NODE_ID,
               value: type,
               label: type,
               disabled: true,
+              dbType: type,
               title: (
                 <DatabaseTypeLogo
                   dbType={type}
@@ -143,6 +196,7 @@ const useDataSourceTreeData = () => {
                 pId: item.instance_type ?? '',
                 value: item.instance_id ?? '',
                 label: item.instance_name ?? '',
+                dbType: item.instance_type ?? '',
                 title: (
                   <DatabaseSelectorTitleStyleWrapper>
                     <DatabaseFilled
@@ -169,11 +223,14 @@ const useDataSourceTreeData = () => {
   ]);
 
   return {
+    treeData,
     onLoadTreeData,
     treeExpandedKeys,
     onTreeExpand,
     disableTreeNodesBasedOnSelection,
     treeLoadedKeys,
+    parse2DatabaseCompareObject,
+    getInstanceInfoBySelectedValue,
     getTreeDataPending: instanceLoading || getInstanceSchemaPending
   };
 };

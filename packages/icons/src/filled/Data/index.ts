@@ -1,5 +1,7 @@
 export { default as AdvancedHexagonFilled } from './AdvancedHexagonFilled';
 export { default as CheckDoubleSquareFilled } from './CheckDoubleSquareFilled';
+export { default as DatabaseTableFilled } from './DatabaseTableFilled';
+export { default as DatabaseViewFilled } from './DatabaseViewFilled';
 export { default as LightShieldFilled } from './LightShieldFilled';
 export { default as ManagementFilled } from './ManagementFilled';
 export { default as MenuSquareFilled } from './MenuSquareFilled';

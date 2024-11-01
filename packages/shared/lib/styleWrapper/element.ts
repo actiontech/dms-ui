@@ -221,7 +221,6 @@ export const ToggleButtonStyleWrapper = styled('div')<{
   }};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   pointer-events: ${({ disabled }) => (disabled ? 'none' : 'auto')};
-
   padding: 0 12px;
   display: flex;
   align-items: center;
