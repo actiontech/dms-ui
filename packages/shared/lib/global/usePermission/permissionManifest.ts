@@ -371,6 +371,65 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager]
   },
 
+  // 成员与权限管理
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
+  // 数据导出
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
   // SQL 工单
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE,
@@ -646,6 +705,15 @@ export const PERMISSION_MANIFEST: Record<
   // 查看规则
   [PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true,
+    projectArchived: false
+  },
+
+  //IDE审核
+  [PERMISSIONS.ACTIONS.SQLE.PLUGIN_AUDIT.CREATE_WHITELIST]: {
+    id: PERMISSIONS.ACTIONS.SQLE.PLUGIN_AUDIT.CREATE_WHITELIST,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,

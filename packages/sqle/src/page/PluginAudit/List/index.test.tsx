@@ -46,7 +46,11 @@ describe('sqle/PluginAudit/List', () => {
         pluginAudit: {
           modalStatus: {}
         },
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       });
     });
     getSqlDEVRecordListSpy = sqlDEVRecord.getSqlDEVRecordList();

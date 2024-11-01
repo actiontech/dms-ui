@@ -108,7 +108,7 @@ exports[`base/Member should render member list when it first entered the member 
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table"
+                  class="ant-table ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -128,6 +128,9 @@ exports[`base/Member should render member list when it first entered the member 
                           />
                           <col
                             style="width: 20%;"
+                          />
+                          <col
+                            style="width: 164px;"
                           />
                         </colgroup>
                         <thead
@@ -187,6 +190,13 @@ exports[`base/Member should render member list when it first entered the member 
                             >
                               项目管理员
                             </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -235,6 +245,14 @@ exports[`base/Member should render member list when it first entered the member 
                                   是
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                           <tr
@@ -301,6 +319,14 @@ exports[`base/Member should render member list when it first entered the member 
                                 </span>
                               </div>
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -320,6 +346,14 @@ exports[`base/Member should render member list when it first entered the member 
                               class="ant-table-cell"
                             >
                               未知状态...
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                           <tr
@@ -385,6 +419,14 @@ exports[`base/Member should render member list when it first entered the member 
                                   否
                                 </span>
                               </div>
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                         </tbody>
@@ -684,7 +726,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                 class="ant-spin-container ant-spin-blur"
               >
                 <div
-                  class="ant-table ant-table-empty"
+                  class="ant-table ant-table-empty ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -704,6 +746,9 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           />
                           <col
                             style="width: 20%;"
+                          />
+                          <col
+                            style="width: 164px;"
                           />
                         </colgroup>
                         <thead
@@ -763,6 +808,13 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             >
                               项目管理员
                             </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -773,7 +825,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="3"
+                              colspan="4"
                             >
                               <div
                                 class="css-dev-only-do-not-override-bj9uhl ant-empty ant-empty-normal"
@@ -844,7 +896,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-scroll-horizontal"
+                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -856,7 +908,15 @@ exports[`base/Member should update content when change segmented value 1`] = `
                       <table
                         style="min-width: 100%; table-layout: auto;"
                       >
-                        <colgroup />
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col
+                            style="width: 164px;"
+                          />
+                        </colgroup>
                         <thead
                           class="ant-table-thead"
                         >
@@ -920,6 +980,13 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             >
                               项目管理员
                             </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -930,6 +997,15 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -1040,6 +1116,14 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                 </span>
                               </div>
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1088,6 +1172,14 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               未知状态...
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                           <tr
@@ -1163,6 +1255,14 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                 </span>
                               </div>
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -1205,6 +1305,14 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               未知状态...
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                         </tbody>

@@ -5,16 +5,15 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { AuditResultTableProps } from './index.type';
 import { useBoolean, useRequest } from 'ahooks';
-import {
-  AuditResultForCreateOrderColumn,
-  AuditResultForCreateOrderActions
-} from './column';
-import { useState } from 'react';
+import { AuditResultForCreateOrderColumn } from './column';
+import { useState, useMemo, useCallback } from 'react';
 import AuditResultDrawer from './AuditResultDrawer';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
+import { AuditResultForCreateOrderActions } from './actions';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   taskID,
@@ -31,11 +30,10 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const {
-    openCreateWhitelistModal,
-    updateSelectWhitelistRecord,
-    actionPermission
-  } = useWhitelistRedux();
+  const { openCreateWhitelistModal, updateSelectWhitelistRecord } =
+    useWhitelistRedux();
+
+  const { parse2TableActionPermissions } = usePermission();
 
   const onClickAuditResult = (record: IListDataExportTaskSQL) => {
     openAuditResultDrawer();
@@ -66,12 +64,21 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     }
   );
 
-  const onCreateWhitelist = (record?: IListDataExportTaskSQL) => {
-    openCreateWhitelistModal();
-    updateSelectWhitelistRecord({
-      value: record?.sql
-    });
-  };
+  const onCreateWhitelist = useCallback(
+    (record?: IListDataExportTaskSQL) => {
+      openCreateWhitelistModal();
+      updateSelectWhitelistRecord({
+        value: record?.sql
+      });
+    },
+    [openCreateWhitelistModal, updateSelectWhitelistRecord]
+  );
+
+  const actions = useMemo(() => {
+    return parse2TableActionPermissions(
+      AuditResultForCreateOrderActions(onCreateWhitelist)
+    );
+  }, [onCreateWhitelist, parse2TableActionPermissions]);
 
   return (
     <>
@@ -86,11 +93,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
           total: data?.total ?? 0,
           current: pagination.page_index
         }}
-        actions={
-          actionPermission
-            ? AuditResultForCreateOrderActions(onCreateWhitelist)
-            : undefined
-        }
+        actions={actions}
       />
       <AuditResultDrawer
         open={auditResultDrawerVisibility}
