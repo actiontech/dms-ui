@@ -137,7 +137,8 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
           form.setFieldsValue({
             databaseInfo: [
               {
-                instanceName
+                instanceName,
+                instanceSchema: schema
               }
             ],
             [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
