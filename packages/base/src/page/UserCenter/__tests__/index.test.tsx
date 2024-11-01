@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -140,16 +141,19 @@ describe('base/UserCenter', () => {
   });
 
   it('should hidden action when user is not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: true,
+        [SystemRole.certainProjectManager]: true
+      }
+    });
 
     const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('添加用户').closest('button')).toHaveAttribute(
-      'hidden'
-    );
-    expect(screen.getByText('添加角色').closest('button')).toHaveAttribute(
-      'hidden'
-    );
+    expect(screen.queryByText('添加用户')).not.toBeInTheDocument();
+    expect(screen.queryByText('添加角色')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 });
