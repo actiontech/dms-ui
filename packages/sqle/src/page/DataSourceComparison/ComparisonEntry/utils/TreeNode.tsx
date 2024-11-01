@@ -78,7 +78,12 @@ export const renderComparisonResultObjectName = (
     }
 
     if (result === ObjectDiffResultComparisonResultEnum.comparison_not_exist) {
-      return <CloseCircleFilled />;
+      return (
+        <>
+          <span className="content"></span>
+          <CloseCircleFilled />
+        </>
+      );
     }
   }
 };

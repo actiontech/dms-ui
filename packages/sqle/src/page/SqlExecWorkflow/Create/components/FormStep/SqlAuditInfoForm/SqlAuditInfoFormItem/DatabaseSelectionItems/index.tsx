@@ -128,45 +128,26 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
           // 存在即使压缩后的字符长度依旧超出浏览器地址栏的长度限制，导致解压缩失败的场景。
           const { instanceName, schema, sql } = jsonParse<{
             instanceName: string;
-            schema: string | string[];
+            schema?: string;
             sql: string;
           }>(decompressFromEncodedURIComponent(compressionData));
 
-          const schemaNames: string[] = [];
-          if (Array.isArray(schema)) {
-            schemaNames.push(...schema);
-          } else {
-            schemaNames.push(schema);
-          }
-
           handleInstanceNameChange?.(instanceName);
 
-          if (schemaNames.length === 0) {
-            form.setFieldsValue({
-              databaseInfo: [
-                {
-                  instanceName
-                }
-              ],
-              [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
-                form_data: sql
-              } as SqlStatementFields
-            });
-            handleInstanceChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, instanceName);
-          } else {
-            form.setFieldsValue({
-              databaseInfo: schemaNames.map((item) => ({
+          form.setFieldsValue({
+            databaseInfo: [
+              {
                 instanceName,
-                instanceSchema: item
-              })),
-              [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
-                form_data: sql
-              } as SqlStatementFields
-            });
-            schemaNames.forEach((item, index) => {
-              handleInstanceChange(index.toString(), instanceName);
-              handleInstanceSchemaChange(index.toString(), item);
-            });
+                instanceSchema: schema
+              }
+            ],
+            [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
+              form_data: sql
+            } as SqlStatementFields
+          });
+          handleInstanceChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, instanceName);
+          if (schema) {
+            handleInstanceSchemaChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, schema);
           }
         } catch (error) {
           // eslint-disable-next-line no-console
