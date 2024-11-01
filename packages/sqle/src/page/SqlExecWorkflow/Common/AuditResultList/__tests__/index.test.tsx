@@ -23,7 +23,7 @@ import { ModalName } from '../../../../../data/ModalName';
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
-    useSelector: jest.fn(),
+    useSelector: jest.fn()
   };
 });
 

@@ -30,7 +30,7 @@ describe('base/UserCenter/RoleList', () => {
     jest.useFakeTimers();
     roleListSpy = userCenter.getRoleList();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    mockUsePermission(undefined, {mockCurrentUser: true});
+    mockUsePermission(undefined, { mockCurrentUser: true });
   });
 
   afterEach(() => {
