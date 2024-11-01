@@ -74,6 +74,14 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     type="button"
                   >
                     <span>
+                      上线到其他实例
+                    </span>
+                  </button>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
                       全部驳回
                     </span>
                   </button>
@@ -662,18 +670,62 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            中止上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            立即上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            取消定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>
@@ -1992,18 +2044,62 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            中止上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            立即上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            取消定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>
@@ -2836,18 +2932,62 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            中止上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            立即上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            取消定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>
@@ -2938,6 +3078,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       role="separator"
                     />
                   </div>
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      上线到其他实例
+                    </span>
+                  </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
@@ -3653,18 +3801,62 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            中止上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            立即上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            取消定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>
@@ -3772,14 +3964,47 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            立即上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            取消定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>
@@ -3867,18 +4092,62 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            中止上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            立即上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                       <div
                                         class="ant-space-item"
-                                      />
+                                      >
+                                        <button
+                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          disabled=""
+                                          hidden=""
+                                          type="button"
+                                        >
+                                          <span>
+                                            取消定时上线
+                                          </span>
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </td>

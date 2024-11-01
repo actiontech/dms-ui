@@ -132,18 +132,18 @@ describe('sqle/SqlExecWorkflow/Create', () => {
           clonedExecWorkflowBaseInfo: {
             workflow_subject: 'workflow-name-test',
             desc: 'test desc'
-          }
-        },
-        permission: {
-          moduleFeatureSupport: { sqlOptimization: false },
-          userOperationPermissions: null
-        },
-        versionFirstStageInstances: [
+          },
+          versionFirstStageInstances: [
             {
               instances_name: instanceTipsMockData[0].instance_name,
               instances_id: instanceTipsMockData[0].instance_id
             }
           ]
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       })
     );
   });
