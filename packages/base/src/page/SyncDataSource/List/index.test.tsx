@@ -101,6 +101,7 @@ describe('page/SyncDataSource/SyncTaskList', () => {
         [SystemRole.admin]: false,
         [SystemRole.globalManager]: false,
         [SystemRole.globalViewing]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.certainProjectManager]: true
       }
     });
