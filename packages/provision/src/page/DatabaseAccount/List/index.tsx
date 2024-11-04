@@ -15,7 +15,7 @@ import { useRequest } from 'ahooks';
 import {
   useCurrentProject,
   useCurrentUser,
-  useUserOperationPermission
+  usePermission
 } from '@actiontech/shared/lib/global';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
@@ -64,11 +64,7 @@ const DatabaseAccountList = () => {
 
   const { updateServiceList, serviceOptions } = useServiceOptions();
 
-  const {
-    isHaveServicePermission,
-    updateUserOperationPermission,
-    loading: updateUserOperationPermissionLoading
-  } = useUserOperationPermission();
+  const { checkDbServicePermission } = usePermission();
 
   const { toggleModal, initModalStatus } = useModalStatus(
     DatabaseAccountModalStatus
@@ -276,7 +272,7 @@ const DatabaseAccountList = () => {
       onDeleteAccount,
       onNavigateToUpdatePage,
       (dbServiceId) =>
-        isHaveServicePermission(
+        checkDbServicePermission(
           OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
           dbServiceId
         )
@@ -287,7 +283,7 @@ const DatabaseAccountList = () => {
     onSetManagedStatus,
     onDeleteAccount,
     onNavigateToUpdatePage,
-    isHaveServicePermission
+    checkDbServicePermission
   ]);
 
   const onBatchAction = (name: ModalName) => {
@@ -309,8 +305,7 @@ const DatabaseAccountList = () => {
   useEffect(() => {
     updateUserList();
     updateServiceList();
-    updateUserOperationPermission();
-  }, [updateUserList, updateServiceList, updateUserOperationPermission]);
+  }, [updateUserList, updateServiceList]);
 
   useEffect(() => {
     initModalStatus({
@@ -346,7 +341,7 @@ const DatabaseAccountList = () => {
         title={t('databaseAccount.list.title')}
         extra={
           <EmptyBox
-            if={isHaveServicePermission(
+            if={checkDbServicePermission(
               OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
             )}
           >
@@ -369,13 +364,7 @@ const DatabaseAccountList = () => {
           </EmptyBox>
         }
       />
-      <Spin
-        spinning={
-          accountStaticLoading ||
-          loading ||
-          updateUserOperationPermissionLoading
-        }
-      >
+      <Spin spinning={accountStaticLoading || loading}>
         <AccountStatistics data={accountStatic} />
         <TableToolbar
           refreshButton={{ refresh: onRefresh, disabled: loading }}

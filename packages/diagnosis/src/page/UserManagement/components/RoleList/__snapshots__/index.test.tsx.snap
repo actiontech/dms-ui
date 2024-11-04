@@ -940,19 +940,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                       >
                         <div
                           class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
+                        />
                       </td>
                     </tr>
                     <tr
@@ -1004,19 +992,7 @@ exports[`diagnosis/test role table render without permission 1`] = `
                       >
                         <div
                           class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
+                        />
                       </td>
                     </tr>
                   </tbody>
@@ -1379,19 +1355,7 @@ exports[`diagnosis/test role table should open model when click edit button 1`] 
                       >
                         <div
                           class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
+                        />
                       </td>
                     </tr>
                     <tr
@@ -1836,19 +1800,7 @@ exports[`diagnosis/test role table should open query popover when click delete b
                       >
                         <div
                           class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
+                        />
                       </td>
                     </tr>
                     <tr
@@ -2293,19 +2245,7 @@ exports[`diagnosis/test role table should refresh table when change pagination i
                       >
                         <div
                           class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
+                        />
                       </td>
                     </tr>
                     <tr
@@ -2750,19 +2690,7 @@ exports[`diagnosis/test role table should render normal table 1`] = `
                       >
                         <div
                           class="css-new95e"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            />
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
-                        </div>
+                        />
                       </td>
                     </tr>
                     <tr

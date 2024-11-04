@@ -13,41 +13,7 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
       </div>
       <div
         class="extra"
-      >
-        <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-        >
-          <div
-            class="ant-space-item"
-            style="margin-right: 8px;"
-          >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
-            >
-              <span>
-                账号发现
-              </span>
-            </button>
-          </div>
-          <div
-            class="ant-space-item"
-          >
-            <a
-              href="/provision/project/700300/database-account/create"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                type="button"
-              >
-                <span>
-                  创建账号
-                </span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
+      />
     </div>
     <div
       class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -269,23 +235,15 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
-                    <div
-                      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                      disabled=""
+                      type="button"
                     >
-                      <div
-                        class="ant-space-item"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                          disabled=""
-                          type="button"
-                        >
-                          <span>
-                            批量修改密码
-                          </span>
-                        </button>
-                      </div>
-                    </div>
+                      <span>
+                        批量修改密码
+                      </span>
+                    </button>
                   </div>
                   <div
                     class="ant-space-item"
@@ -762,41 +720,12 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    color="currentColor"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
-                                      fill="currentColor"
-                                    />
-                                  </svg>
+                                <span>
+                                  查 看
                                 </span>
                               </button>
                             </div>
@@ -876,41 +805,12 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    color="currentColor"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
-                                      fill="currentColor"
-                                    />
-                                  </svg>
+                                <span>
+                                  查 看
                                 </span>
                               </button>
                             </div>
@@ -990,41 +890,12 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    color="currentColor"
-                                    height="16"
-                                    viewBox="0 0 16 16"
-                                    width="16"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
-                                      fill="currentColor"
-                                    />
-                                  </svg>
+                                <span>
+                                  查 看
                                 </span>
                               </button>
                             </div>

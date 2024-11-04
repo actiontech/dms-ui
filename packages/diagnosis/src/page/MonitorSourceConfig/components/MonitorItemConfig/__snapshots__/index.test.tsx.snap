@@ -284,15 +284,7 @@ exports[`test monitor item config table render without permission 1`] = `
                           >
                             <div
                               class="css-new95e"
-                            >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                />
-                              </div>
-                            </div>
+                            />
                           </td>
                         </tr>
                         <tr
@@ -330,15 +322,7 @@ exports[`test monitor item config table render without permission 1`] = `
                           >
                             <div
                               class="css-new95e"
-                            >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                              >
-                                <div
-                                  class="ant-space-item"
-                                />
-                              </div>
-                            </div>
+                            />
                           </td>
                         </tr>
                       </tbody>
@@ -1066,22 +1050,14 @@ exports[`test monitor item config table should open check model when click check
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
                             </div>
                           </td>
                         </tr>
@@ -1121,22 +1097,14 @@ exports[`test monitor item config table should open check model when click check
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
                             </div>
                           </td>
                         </tr>
@@ -1589,22 +1557,14 @@ exports[`test monitor item config table should refresh table when change paginat
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
                             </div>
                           </td>
                         </tr>
@@ -1644,22 +1604,14 @@ exports[`test monitor item config table should refresh table when change paginat
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
                             </div>
                           </td>
                         </tr>
@@ -2112,22 +2064,14 @@ exports[`test monitor item config table should render normal table 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
                             </div>
                           </td>
                         </tr>
@@ -2167,22 +2111,14 @@ exports[`test monitor item config table should render normal table 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                    type="button"
-                                  >
-                                    <span>
-                                      查 看
-                                    </span>
-                                  </button>
-                                </div>
-                              </div>
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
                             </div>
                           </td>
                         </tr>

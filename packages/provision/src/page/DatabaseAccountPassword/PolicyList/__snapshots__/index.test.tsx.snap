@@ -252,26 +252,14 @@ exports[`provision/DatabaseAccountPassword/PolicyList render init snap 1`] = `
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
+                            <span>
+                              编 辑
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -296,26 +284,14 @@ exports[`provision/DatabaseAccountPassword/PolicyList render init snap 1`] = `
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
+                            <span>
+                              编 辑
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -340,26 +316,14 @@ exports[`provision/DatabaseAccountPassword/PolicyList render init snap 1`] = `
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  编 辑
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            />
-                          </div>
+                            <span>
+                              编 辑
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>

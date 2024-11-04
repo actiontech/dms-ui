@@ -14,6 +14,7 @@ import auth from '../../../testUtil/mockApi/auth';
 import CreateDatabaseAccount from './index';
 import Password from '../../../utils/Password';
 import user from '../../../testUtil/mockApi/user';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -39,6 +40,10 @@ describe('provision/DatabaseAccount/Create', () => {
     user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
+    mockUsePermission(
+      { checkDbServicePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
     jest.useFakeTimers();
   });
 
