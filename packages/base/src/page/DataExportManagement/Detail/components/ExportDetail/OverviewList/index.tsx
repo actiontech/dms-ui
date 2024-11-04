@@ -14,11 +14,11 @@ const OverviewList: React.FC = () => {
   const { taskInfos, updateCurTaskID, workflowInfo } =
     useDataExportDetailReduxManage();
   const { projectID } = useCurrentProject();
-  const { uid } = useCurrentUser();
+  const { userId } = useCurrentUser();
 
   const isCreateWorkflowUser = useMemo(() => {
-    return uid === workflowInfo?.create_user?.uid;
-  }, [uid, workflowInfo?.create_user?.uid]);
+    return userId === workflowInfo?.create_user?.uid;
+  }, [userId, workflowInfo?.create_user?.uid]);
 
   const [
     downloadLoading,

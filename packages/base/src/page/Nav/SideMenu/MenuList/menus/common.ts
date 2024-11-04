@@ -1,5 +1,3 @@
-import { UserRolesType } from '@actiontech/shared/lib/enum';
-
 import {
   CustomMenuItemType,
   GenerateMenuItemType,
@@ -12,19 +10,12 @@ export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 export const genMenuItemsWithMenuStructTree = (
   projectID: string,
   allMenuItems: GenerateMenuItemType[],
-  menuStructTree: MenuStructTreeType,
-  userRoles: UserRolesType
+  menuStructTree: MenuStructTreeType
 ): CustomMenuItemType[] => {
   const getMenuItemWithKey = (key: MenuStructTreeKey): CustomMenuItemType => {
     return (
-      allMenuItems.find((v) => {
-        const menu = v(projectID);
-        if (menu?.role) {
-          return (
-            menu.role.some((role) => userRoles[role]) && menu.structKey === key
-          );
-        }
-
+      allMenuItems.find((item) => {
+        const menu = item(projectID);
         return menu?.structKey === key;
       })?.(projectID) ?? null
     );
@@ -42,6 +33,7 @@ export const genMenuItemsWithMenuStructTree = (
       }
       return {
         type: 'group',
+        permission: item.permission,
         label: item.label,
         children
       } as CustomMenuItemType;

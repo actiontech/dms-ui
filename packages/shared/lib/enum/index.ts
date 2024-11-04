@@ -25,11 +25,20 @@ export enum SupportTheme {
 export enum SystemRole {
   admin = 'admin',
   certainProjectManager = 'certainProjectManager',
-  globalViewing = 'globalViewing'
+  globalViewing = 'globalViewing',
+  globalManager = 'globalManager'
 }
 
 export type UserRolesType = {
   [key in SystemRole]: boolean;
+};
+
+export enum SystemModuleSupported {
+  sqlOptimization = 'sqlOptimization'
+}
+
+export type ModuleFeatureSupportStatus = {
+  [key in SystemModuleSupported]: boolean;
 };
 
 export enum ModalSize {

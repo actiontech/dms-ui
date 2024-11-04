@@ -1,9 +1,4 @@
-import {
-  BasicButton,
-  BasicDrawer,
-  EmptyBox,
-  SQLRenderer
-} from '@actiontech/shared';
+import { BasicDrawer, SQLRenderer } from '@actiontech/shared';
 import {
   IAuditResult,
   IDatabaseDiffModifySQL
@@ -19,9 +14,10 @@ import {
   useAuditResultMapRuleInfo
 } from '../../hooks/useAuditResultMapRuleInfo';
 import { useMemo } from 'react';
-import useGenerateModifiedSqlWorkflow from '../../hooks/useGenerateModifiedSqlWorkflow';
 import { SelectedInstanceInfo } from '../../index.type';
 import AuditResult from '../ComparisonTreeNode/ComparisonDetailDrawer/AuditResult';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { CreateWorkflowForModifiedSqlAction } from '../../actions';
 
 type Props = {
   open: boolean;
@@ -41,6 +37,7 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
   comparisonInstanceInfo
 }) => {
   const { t } = useTranslation();
+  const { projectID } = useCurrentProject();
 
   const auditResultMap = useMemo(() => {
     return databaseDiffModifiedSqlInfos?.reduce<AuditResultMap>((acc, cur) => {
@@ -99,42 +96,23 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
     );
   };
 
-  const {
-    createWorkflowAction,
-    createWorkflowPermission,
-    createWorkflowPending
-  } = useGenerateModifiedSqlWorkflow(
-    comparisonInstanceInfo?.instanceId ?? '',
-    comparisonInstanceInfo?.instanceName ?? ''
-  );
-
   return (
     <BasicDrawer
       open={open}
       onClose={onClose}
       size="large"
       title={t('dataSourceComparison.entry.modifiedSqlDrawer.title')}
-      extra={
-        <EmptyBox if={createWorkflowPermission}>
-          <BasicButton
-            loading={createWorkflowPending}
-            type="primary"
-            onClick={() => {
-              createWorkflowAction(
-                databaseDiffModifiedSqlInfos
-                  ?.map((info) =>
-                    info.modify_sqls?.map((v) => v.sql_statement).join('\n')
-                  )
-                  .join('\n') ?? ''
-              );
-            }}
-          >
-            {t(
-              'dataSourceComparison.entry.comparisonDetail.actions.createChangeWorkflow'
-            )}
-          </BasicButton>
-        </EmptyBox>
-      }
+      extra={CreateWorkflowForModifiedSqlAction({
+        projectID,
+        sql:
+          databaseDiffModifiedSqlInfos
+            ?.map((info) =>
+              info.modify_sqls?.map((v) => v.sql_statement).join('\n')
+            )
+            .join('\n') ?? '',
+        instanceId: comparisonInstanceInfo?.instanceId ?? '',
+        instanceName: comparisonInstanceInfo?.instanceName ?? ''
+      })}
     >
       <Spin
         spinning={generateModifySqlPending || getAuditResultsRuleInfoPending}

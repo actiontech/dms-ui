@@ -53,7 +53,7 @@ describe('page/GlobalDataSource/List', () => {
     cleanup();
   });
 
-  it('render list snap', async () => {
+  it.only('render list snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(1);

@@ -35,7 +35,7 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
   getWorkflowStatistics,
   projectName
 }) => {
-  const { uid } = useCurrentUser();
+  const { userId } = useCurrentUser();
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const [filterStatus, setFilterStatus] = useState<DEVPanelFilterKey>(
@@ -56,7 +56,7 @@ const DEVPanel: React.FC<IDEVPanelProps> = ({
       const params: IGetWorkflowsV1Params = {
         page_index: 1,
         page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
-        filter_create_user_id: uid,
+        filter_create_user_id: userId,
         filter_status: filterStatus,
         project_name: projectName
       };

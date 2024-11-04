@@ -7,19 +7,17 @@ import EmitterKey from '../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockCurrentUserReturn,
+  mockProjectInfo
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { projectRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
-import { useNavigate, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
-
-jest.mock('react-router-dom', () => {
-  return {
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn()
-  };
-});
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -28,7 +26,6 @@ jest.mock('react-redux', () => ({
 }));
 
 describe('sqle/RuleTemplate/List', () => {
-  const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
   let getProjectRuleTemplateListSpy: jest.SpyInstance;
   let mockUseCurrentUserSpy: jest.SpyInstance;
@@ -37,12 +34,15 @@ describe('sqle/RuleTemplate/List', () => {
     mockUseCurrentProject();
     mockUseCurrentUserSpy = mockUseCurrentUser();
     mockUseDbServiceDriver();
-    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         ruleTemplate: {
           modalStatus: { [ModalName.Clone_Rule_Template]: false }
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );
@@ -105,24 +105,30 @@ describe('sqle/RuleTemplate/List', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should render action button when current user is admin or project manager', async () => {
+  it('render action button with  permissions', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('导入规则模板')).toBeInTheDocument();
     expect(screen.getByText('创建规则模版')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('创建规则模版'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalledTimes(1);
-    fireEvent.click(screen.getByText('导入规则模板'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalledTimes(2);
+
     cleanup();
     mockUseCurrentUserSpy.mockClear();
     mockUseCurrentUserSpy.mockImplementation(() => {
       return {
         ...mockCurrentUserReturn,
-        isAdmin: false,
-        isProjectManager: jest.fn().mockImplementation(() => true)
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        },
+        bindProjects: [
+          {
+            is_manager: true,
+            project_name: mockProjectInfo.projectName,
+            project_id: mockProjectInfo.projectID,
+            archived: false
+          }
+        ]
       };
     });
     customRender();
@@ -135,13 +141,45 @@ describe('sqle/RuleTemplate/List', () => {
     mockUseCurrentUserSpy.mockImplementation(() => {
       return {
         ...mockCurrentUserReturn,
-        isAdmin: false,
-        isProjectManager: jest.fn()
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        }
       };
     });
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('导入规则模板')).not.toBeInTheDocument();
     expect(screen.queryByText('创建规则模版')).not.toBeInTheDocument();
+
+    cleanup();
+    mockUseCurrentUserSpy.mockClear();
+    mockUseCurrentUserSpy.mockImplementation(() => {
+      return {
+        ...mockCurrentUserReturn,
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        },
+        bindProjects: [
+          {
+            is_manager: true,
+            project_name: mockProjectInfo.projectName,
+            project_id: mockProjectInfo.projectID,
+            archived: true
+          }
+        ]
+      };
+    });
+    getProjectRuleTemplateListSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('克隆规则模版')).toBeInTheDocument();
+    expect(screen.getByText('导出规则模板')).toBeInTheDocument();
   });
 });

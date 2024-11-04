@@ -22,6 +22,14 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import sqlVersion from '../../../../testUtils/mockApi/sql_version';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('react-router-dom', () => {
   return {
@@ -57,6 +65,7 @@ describe('sqle/Workflow/List', () => {
     mockDatabaseType();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUsePermission(undefined, { mockSelector: true });
   });
 
   afterEach(() => {

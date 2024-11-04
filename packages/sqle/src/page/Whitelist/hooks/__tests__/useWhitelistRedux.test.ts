@@ -3,12 +3,6 @@ import { useDispatch } from 'react-redux';
 import { cleanup, act } from '@testing-library/react';
 import useWhitelistRedux from '../useWhitelistRedux';
 import { ModalName } from '../../../../data/ModalName';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import {
-  mockProjectInfo,
-  mockCurrentUserReturn
-} from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -18,14 +12,10 @@ jest.mock('react-redux', () => {
 });
 
 describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
-  let useCurrentUserSpy: jest.SpyInstance;
-  let useCurrentProjectSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    useCurrentProjectSpy = mockUseCurrentProject();
-    useCurrentUserSpy = mockUseCurrentUser();
   });
 
   afterEach(() => {
@@ -68,32 +58,5 @@ describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
         }
       }
     });
-  });
-
-  it('render actionPermission is true when current user is admin', async () => {
-    const { result } = renderHooksWithTheme(() => useWhitelistRedux());
-
-    expect(result.current.actionPermission).toBeTruthy();
-  });
-
-  it('render actionPermission is true when current user is project manager', async () => {
-    useCurrentUserSpy.mockImplementation(() => ({
-      ...mockCurrentUserReturn,
-      isAdmin: false,
-      isProjectManager: jest.fn().mockImplementation(() => true)
-    }));
-    const { result } = renderHooksWithTheme(() => useWhitelistRedux());
-
-    expect(result.current.actionPermission).toBeTruthy();
-  });
-
-  it('render actionPermission is false when project is archived', async () => {
-    useCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
-    }));
-    const { result } = renderHooksWithTheme(() => useWhitelistRedux());
-
-    expect(result.current.actionPermission).toBeFalsy();
   });
 });

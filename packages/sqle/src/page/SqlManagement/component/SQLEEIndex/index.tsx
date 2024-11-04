@@ -18,7 +18,8 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
@@ -32,9 +33,12 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
-  SqlManagementRowAction,
   type SqlManagementTableFilterParamType
 } from './column';
+import {
+  SqlManagementRowAction,
+  SqlManagementTableToolbarActions
+} from './actions';
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -45,7 +49,6 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
 import useSqlManagementRedux from './hooks/useSqlManagementRedux';
 import useBatchIgnoreOrSolve from './hooks/useBatchIgnoreOrSolve';
-import { actionsButtonData, defaultActionButton } from './index.data';
 import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
@@ -65,10 +68,14 @@ const SQLEEIndex = () => {
   const [searchParams] = useSearchParams();
 
   const [messageApi, messageContextHolder] = message.useMessage();
+  const {
+    parse2TableActionPermissions,
+    parse2TableToolbarActionPermissions,
+    checkActionPermission
+  } = usePermission();
   // api
-  const { projectID, projectName, projectArchive } = useCurrentProject();
-  const { isAdmin, username, isProjectManager, uid, language } =
-    useCurrentUser();
+  const { projectID, projectName } = useCurrentProject();
+  const { username, userId, language } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
@@ -150,7 +157,7 @@ const SQLEEIndex = () => {
         filter_status: filterStatus === 'all' ? undefined : filterStatus,
         fuzzy_search_sql_fingerprint: searchKeyword,
         project_name: projectName,
-        filter_assignee: isAssigneeSelf ? uid : undefined, // filter_assignee 需要用 id
+        filter_assignee: isAssigneeSelf ? userId : undefined, // filter_assignee 需要用 id
         filter_priority: isHighPriority
           ? GetSqlManageListV2FilterPriorityEnum.high
           : undefined
@@ -233,28 +240,25 @@ const SQLEEIndex = () => {
   );
 
   const actions = useMemo(() => {
-    return SqlManagementRowAction(
-      openModal,
-      jumpToAnalyze,
-      isAdmin || isProjectManager(projectName),
-      onCreateSqlManagementException,
-      onCreateWhitelist,
-      language
+    return parse2TableActionPermissions(
+      SqlManagementRowAction(
+        openModal,
+        jumpToAnalyze,
+        onCreateSqlManagementException,
+        onCreateWhitelist,
+        language,
+        checkActionPermission
+      )
     );
   }, [
-    isAdmin,
-    isProjectManager,
     jumpToAnalyze,
     openModal,
-    projectName,
     onCreateSqlManagementException,
     onCreateWhitelist,
-    language
+    language,
+    parse2TableActionPermissions,
+    checkActionPermission
   ]);
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
   const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
@@ -262,10 +266,7 @@ const SQLEEIndex = () => {
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
     (id: number, remark: string) => {
-      if (
-        updateRemarkProtect.current ||
-        !(actionPermission && !projectArchive)
-      ) {
+      if (updateRemarkProtect.current) {
         return;
       }
       updateRemarkProtect.current = true;
@@ -283,18 +284,18 @@ const SQLEEIndex = () => {
           updateRemarkProtect.current = false;
         });
     },
-    [actionPermission, projectName, refresh, projectArchive]
+    [projectName, refresh]
   );
 
   const columns = useMemo(
     () =>
       SqlManagementColumn(
         projectID,
-        actionPermission && !projectArchive,
         updateRemark,
-        openModal
+        openModal,
+        checkActionPermission
       ),
-    [projectID, actionPermission, projectArchive, updateRemark, openModal]
+    [projectID, updateRemark, openModal, checkActionPermission]
   );
 
   const tableSetting = useMemo<ColumnsSettingProps>(
@@ -327,11 +328,7 @@ const SQLEEIndex = () => {
   };
 
   const { batchIgnoreLoading, batchSolveLoading, onBatchIgnore, onBatchSolve } =
-    useBatchIgnoreOrSolve(
-      actionPermission && !projectArchive,
-      selectedRowKeys,
-      batchSuccessOperate
-    );
+    useBatchIgnoreOrSolve(selectedRowKeys, batchSuccessOperate);
 
   // export
   const [
@@ -353,7 +350,7 @@ const SQLEEIndex = () => {
           : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
-      filter_assignee: isAssigneeSelf ? uid : undefined,
+      filter_assignee: isAssigneeSelf ? userId : undefined,
       filter_priority: isHighPriority
         ? exportSqlManageV1FilterPriorityEnum.high
         : undefined,
@@ -390,24 +387,21 @@ const SQLEEIndex = () => {
     setBatchSelectData(selectedRowData);
   };
 
-  const getTableActions = () => {
-    const defaultButton = defaultActionButton({
-      isAssigneeSelf,
-      isHighPriority,
-      setAssigneeSelf,
-      setIsHighPriority
-    });
-    const actionButton = actionsButtonData(
-      selectedRowKeys?.length === 0,
-      batchSolveLoading,
-      batchIgnoreLoading,
-      onBatchAssignment,
-      onBatchSolve,
-      onBatchIgnore
+  const getTableToolbarActions = () => {
+    return parse2TableToolbarActionPermissions(
+      SqlManagementTableToolbarActions(
+        selectedRowKeys?.length === 0,
+        batchSolveLoading,
+        batchIgnoreLoading,
+        onBatchAssignment,
+        onBatchSolve,
+        onBatchIgnore,
+        isAssigneeSelf,
+        isHighPriority,
+        setAssigneeSelf,
+        setIsHighPriority
+      )
     );
-    return actionPermission && !projectArchive
-      ? [...defaultButton, ...actionButton]
-      : defaultButton;
   };
 
   const loading = useMemo(
@@ -459,7 +453,7 @@ const SQLEEIndex = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
-        actions={getTableActions()}
+        actions={getTableToolbarActions()}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -494,7 +488,7 @@ const SQLEEIndex = () => {
         columns={columns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={projectArchive ? undefined : actions}
+        actions={actions}
         scroll={{ x: '130%', y: '500px' }}
       />
       {/* scroll 中的y 只支持string | number 所以这里的 500px 只是为了开启antd的固定列功能随便写的高度 具体高度在styled中动态计算 */}

@@ -50,6 +50,10 @@ describe('page/DataSource/DataSourceList', () => {
           theme: SupportTheme.LIGHT,
           uid: '500300',
           ...params
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: { is_admin: true, op_permission_list: [] }
         }
       },
       routerProps: {
@@ -57,7 +61,6 @@ describe('page/DataSource/DataSourceList', () => {
       }
     });
   };
-
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);

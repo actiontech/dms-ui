@@ -2,7 +2,7 @@
  * @test_version ce
  */
 
-import { renderWithMemoryRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
 import CEIndexProjectDetail from '../index.ce';
 import { cleanup, screen } from '@testing-library/react';
@@ -10,12 +10,12 @@ import { cleanup, screen } from '@testing-library/react';
 describe('test base/page/project/detail/ce', () => {
   it('should replace to "/" when pathname is "/project"', () => {
     const [, LocationComponent] = renderLocationDisplay();
-    renderWithMemoryRouter(
+    superRender(
       <>
         <CEIndexProjectDetail /> <LocationComponent />
       </>,
       undefined,
-      { initialEntries: ['/project/overview'] }
+      { routerProps: { initialEntries: ['/project/overview'] } }
     );
 
     expect(screen.getByTestId('location-display')).toHaveTextContent(
@@ -24,12 +24,12 @@ describe('test base/page/project/detail/ce', () => {
 
     cleanup();
 
-    renderWithMemoryRouter(
+    superRender(
       <>
         <CEIndexProjectDetail /> <LocationComponent />
       </>,
       undefined,
-      { initialEntries: ['/project'] }
+      { routerProps: { initialEntries: ['/project'] } }
     );
     expect(screen.getByTestId('location-display')).toHaveTextContent('/');
   });

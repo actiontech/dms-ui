@@ -143,26 +143,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                               <div
                                 class="ant-space-item"
                               >
-                                <section>
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      审核能力
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      重写能力
-                                    </div>
-                                  </div>
-                                </section>
+                                <section />
                               </div>
                             </div>
                           </section>
@@ -1019,26 +1000,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                               <div
                                 class="ant-space-item"
                               >
-                                <section>
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-rncbf4"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      审核能力
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-rncbf4"
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                    >
-                                      重写能力
-                                    </div>
-                                  </div>
-                                </section>
+                                <section />
                               </div>
                             </div>
                           </section>

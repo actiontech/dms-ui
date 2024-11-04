@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import RuleSelect from '.';
 import { ruleListMockData } from '../../../../testUtils/mockApi/rule_template/data';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -15,7 +15,9 @@ describe('sqle/RuleTemplate/RuleSelect', () => {
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     jest.useFakeTimers();
-    mockUseCurrentPermission();
+    mockUsePermission(undefined, {
+      useSpyOnMockHooks: true
+    });
   });
 
   afterEach(() => {

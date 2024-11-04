@@ -1,7 +1,6 @@
 import {
   ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize,
-  ActiontechTableActionMeta
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetSqlDEVRecordListParams } from '@actiontech/shared/lib/api/sqle/service/SqlDEVRecord/index.d';
@@ -121,22 +120,4 @@ export const PluginAuditListColumns: (
       }
     }
   ];
-};
-
-export const PluginAuditListActions: (
-  onCreateWhitelist: (record?: ISqlDEVRecord) => void
-) => {
-  buttons: ActiontechTableActionMeta<ISqlDEVRecord>[];
-} = (onCreateWhitelist) => {
-  return {
-    buttons: [
-      {
-        key: 'create-exception',
-        text: t('pluginAudit.table.createWhitelist'),
-        buttonProps: (record) => ({
-          onClick: () => onCreateWhitelist(record)
-        })
-      }
-    ]
-  };
 };

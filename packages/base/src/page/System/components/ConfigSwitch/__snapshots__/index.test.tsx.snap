@@ -283,7 +283,7 @@ exports[`base/System/components/ConfigSwitch render snap when user is not admin 
         class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
       >
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -331,7 +331,7 @@ exports[`base/System/components/ConfigSwitch render snap when user is not admin 
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"

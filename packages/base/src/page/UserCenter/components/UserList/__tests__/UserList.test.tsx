@@ -51,7 +51,7 @@ describe('base/UserCenter/UserList', () => {
     expect(screen.getByText('test')).toBeInTheDocument();
     expect(screen.getByText('test666')).toBeInTheDocument();
     expect(screen.getAllByText('dms')).toHaveLength(5);
-    expect(screen.getAllByText('删 除')).toHaveLength(4);
+    expect(screen.getAllByText('删 除')).toHaveLength(5);
     expect(screen.getAllByText('管 理')).toHaveLength(5);
   });
 
@@ -170,24 +170,39 @@ describe('base/UserCenter/UserList', () => {
   });
 
   it('should hidden action column when is not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.globalViewing]: true,
+        [SystemRole.globalManager]: true,
+        [SystemRole.certainProjectManager]: true
+      }
+    });
+
+    const { container } = renderWithReduxAndTheme(
+      <UserList activePage={UserCenterListEnum.user_list} />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryAllByText('管 理')).toHaveLength(5);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should disabled action when current role is not admin and not global manager', async () => {
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.globalViewing]: true,
+        [SystemRole.globalManager]: false,
+        [SystemRole.certainProjectManager]: true
+      }
+    });
 
     const { container } = renderWithReduxAndTheme(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('管 理')).toHaveLength(0);
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should disabled action when current role is not admin and ', async () => {
-    mockUseCurrentUser({ isAdmin: false, role: SystemRole.globalViewing });
-
-    const { container } = renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
-    await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
   });
 });

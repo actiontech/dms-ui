@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { Space, Typography } from 'antd';
 import {
-  BasicButton,
   EnterpriseFeatureDisplay,
   PageHeader,
   SegmentedTabs
@@ -14,53 +12,30 @@ import CustomRuleList from '../CustomRule/CustomRuleList';
 import RuleTemplateList from '../GlobalRuleTemplate/RuleTemplateList';
 import { RuleManagerSegmentedKey } from './index.type';
 import useRuleManagerSegmented from './useRuleManagerSegmented';
-import { PlusOutlined, LoginBoxOutlined } from '@actiontech/icons';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { RuleManagerPageHeaderActions } from './action';
 
 const RuleManager: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-
-  const { isAdmin } = useCurrentUser();
 
   const { activeKey, updateActiveSegmentedKey } = useRuleManagerSegmented();
 
   const refresh = () => {
     eventEmitter.emit(EmitterKey.Refresh_Global_Rule_Template_List);
+    // #if [ee]
     eventEmitter.emit(EmitterKey.Refresh_Custom_Rule_Template_List);
+    // #endif
   };
 
   const renderExtraButton = () => {
+    const pageHeaderActions = RuleManagerPageHeaderActions(activeKey);
     return (
       <>
-        <Space
-          size={12}
-          hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
-        >
-          <BasicButton
-            type="text"
-            icon={<LoginBoxOutlined />}
-            onClick={() => navigate('/sqle/rule-manager/global-import')}
-          >
-            {t('ruleTemplate.importRuleTemplate.button')}
-          </BasicButton>
-          <BasicButton
-            type="primary"
-            icon={<PlusOutlined color="currentColor" width={10} height={10} />}
-            onClick={() => navigate('/sqle/rule-manager/global-create')}
-          >
-            {t('ruleTemplate.createRuleTemplate.button')}
-          </BasicButton>
+        <Space>
+          {pageHeaderActions['import_rule_template']}
+          {pageHeaderActions['create_rule_template']}
         </Space>
-
         {/* #if [ee] */}
-        <BasicButton
-          hidden={activeKey !== RuleManagerSegmentedKey.CustomRule}
-          type="primary"
-          onClick={() => navigate('/sqle/rule-manager/custom-create')}
-        >
-          {t('customRule.filterForm.add')}
-        </BasicButton>
+        {pageHeaderActions['create_custom_rule']}
         {/* #endif */}
       </>
     );
@@ -75,7 +50,7 @@ const RuleManager: React.FC = () => {
             <TableRefreshButton refresh={refresh} />
           </Space>
         }
-        extra={isAdmin ? renderExtraButton() : null}
+        extra={renderExtraButton()}
       />
 
       <SegmentedTabs

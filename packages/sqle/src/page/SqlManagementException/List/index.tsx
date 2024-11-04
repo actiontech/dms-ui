@@ -1,11 +1,7 @@
-import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import {
-  useCurrentProject,
-  useCurrentUser
-} from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useMemo, useEffect } from 'react';
-import { PlusOutlined } from '@actiontech/icons';
 import { useCallback } from 'react';
 import { updateSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
 import { ModalName } from '../../../data/ModalName';
@@ -27,32 +23,36 @@ import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/b
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   SqlManagementExceptionListColumns,
-  SqlManagementExceptionTableFilterParamType,
-  SqlManagementExceptionActions
+  SqlManagementExceptionTableFilterParamType
 } from './column';
 import { SqlManagementExceptionMatchTypeOptions } from '../index.data';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useSqlManagementExceptionRedux from '../hooks/useSqlManagementExceptionRedux';
+import { usePermission } from '@actiontech/shared/lib/global';
+import {
+  SqlManagementExceptionActions,
+  SqlManagementExceptionPageHeaderActions
+} from './actions';
 
 const SqlManagementExceptionList = () => {
   const { t } = useTranslation();
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const { projectName, projectArchive } = useCurrentProject();
+  const { parse2TableActionPermissions } = usePermission();
 
-  const { isAdmin, isProjectManager } = useCurrentUser();
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
+  const { projectName } = useCurrentProject();
 
   const {
     openCreateSqlManagementExceptionModal,
     updateSelectSqlManagementExceptionRecord,
     dispatch
   } = useSqlManagementExceptionRedux();
+
+  const pageHeaderActions = SqlManagementExceptionPageHeaderActions(
+    openCreateSqlManagementExceptionModal
+  );
 
   const {
     tableFilterInfo,
@@ -141,6 +141,12 @@ const SqlManagementExceptionList = () => {
     [messageApi, projectName, refresh, t]
   );
 
+  const actions = useMemo(() => {
+    return parse2TableActionPermissions(
+      SqlManagementExceptionActions(onUpdate, onDelete)
+    );
+  }, [onDelete, onUpdate, parse2TableActionPermissions]);
+
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Sql_management_Exception_List,
@@ -154,19 +160,7 @@ const SqlManagementExceptionList = () => {
       {messageContextHolder}
       <PageHeader
         title={t('sqlManagementException.pageTitle')}
-        extra={
-          <EmptyBox if={actionPermission && !projectArchive}>
-            <BasicButton
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-              onClick={openCreateSqlManagementExceptionModal}
-            >
-              {t('sqlManagementException.operate.add')}
-            </BasicButton>
-          </EmptyBox>
-        }
+        extra={pageHeaderActions['create-sql-exception']}
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -200,11 +194,7 @@ const SqlManagementExceptionList = () => {
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={
-          actionPermission && !projectArchive
-            ? SqlManagementExceptionActions(onUpdate, onDelete)
-            : undefined
-        }
+        actions={actions}
       />
       <SqlManagementExceptionModal />
     </>

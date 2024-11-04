@@ -13,26 +13,14 @@ import { FlagFilled } from '@actiontech/icons';
 import QuickActions from './QuickActions';
 
 const CESideMenu = () => {
-  const {
-    username,
-    theme,
-    updateTheme,
-    isAdmin,
-    userRoles,
-    language,
-    isCertainProjectManager,
-    hasGlobalViewingPermission
-  } = useCurrentUser();
+  const { username, theme, updateTheme, language } = useCurrentUser();
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
         <ProjectTitle />
         {/* #if [sqle] */}
-        <QuickActions
-          isAdmin={isAdmin}
-          hasGlobalViewingPermission={hasGlobalViewingPermission}
-        />
+        <QuickActions />
         {/* #endif */}
         <CEModeProjectWrapperStyleWrapper>
           <FlagFilled width={18} height={18} className="project-flag-icon" />
@@ -41,17 +29,14 @@ const CESideMenu = () => {
           </Typography.Text>
         </CEModeProjectWrapperStyleWrapper>
 
-        <MenuList projectID={DEFAULT_PROJECT_ID} userRoles={userRoles} />
+        <MenuList projectID={DEFAULT_PROJECT_ID} />
       </div>
 
       <UserMenu
-        hasGlobalViewingPermission={hasGlobalViewingPermission}
         language={language}
         username={username}
         updateTheme={updateTheme}
-        isAdmin={isAdmin}
         theme={theme}
-        isCertainProjectManager={isCertainProjectManager}
       />
     </SideMenuStyleWrapper>
   );

@@ -11,19 +11,18 @@ import OrderStatus from './component/OrderStatus';
 import OrderRiskList from './component/OrderRiskList';
 import DataSourcePerformance from './component/DataSourcePerformance';
 import OptimizationDistribution from './component/OptimizationDistribution';
-
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { useCallback, useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import useCurrentPermission from '@actiontech/shared/lib/global/useCurrentPermission';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const Overview = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const { projectID } = useCurrentProject();
 
-  const { sqlOptimizationIsSupported } = useCurrentPermission();
+  const { moduleFeatureSupport } = usePermission();
 
   const onRefreshPage = useCallback(() => {
     eventEmitter.emit(EmitterKey.Refresh_Project_Overview);
@@ -97,7 +96,7 @@ const Overview = () => {
           <Col span={6} className="right-chart">
             <ScanTask />
           </Col> */}
-          <EmptyBox if={sqlOptimizationIsSupported}>
+          <EmptyBox if={moduleFeatureSupport.sqlOptimization}>
             <Col span={24}>
               <Row className="marginTop20" gutter={20}>
                 <Col span={12}>

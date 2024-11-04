@@ -7,7 +7,6 @@ export type ContextMenuItem = {
   text: ReactNode;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   keepOpenOnClick?: boolean;
-  hidden?: boolean;
   disabled?: boolean;
 };
 

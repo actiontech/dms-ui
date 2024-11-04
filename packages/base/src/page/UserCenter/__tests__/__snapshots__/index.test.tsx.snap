@@ -47,64 +47,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
         </div>
         <div
           class="extra"
-        >
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            hidden=""
-            type="button"
-          >
-            <span
-              class="ant-btn-icon"
-            >
-              <svg
-                color="currentColor"
-                fill="currentColor"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m5.02.5-.012 9M.5 5h9"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </span>
-            <span>
-              添加用户
-            </span>
-          </button>
-          <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-            hidden=""
-            type="button"
-          >
-            <span
-              class="ant-btn-icon"
-            >
-              <svg
-                color="currentColor"
-                fill="currentColor"
-                height="10"
-                viewBox="0 0 10 10"
-                width="10"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m5.02.5-.012 9M.5 5h9"
-                  stroke="currentColor"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </span>
-            <span>
-              添加角色
-            </span>
-          </button>
-        </div>
+        />
       </div>
       <div
         class="segmented-tabs-wrapper"
@@ -177,7 +120,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-table ant-table-scroll-horizontal"
+                  class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                 >
                   <div
                     class="ant-table-container"
@@ -189,7 +132,17 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                       <table
                         style="min-width: 100%; table-layout: auto;"
                       >
-                        <colgroup />
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                          <col
+                            style="width: 164px;"
+                          />
+                        </colgroup>
                         <thead
                           class="ant-table-thead"
                         >
@@ -230,6 +183,13 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             >
                               平台管理权限
                             </th>
+                            <th
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              scope="col"
+                              style="position: sticky; right: 0px;"
+                            >
+                              操作
+                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -240,6 +200,15 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -354,6 +323,14 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             >
                               创建项目
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -412,6 +389,14 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             <td
                               class="ant-table-cell"
                             />
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -471,6 +456,14 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               class="ant-table-cell"
                             >
                               -
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                           <tr
@@ -532,6 +525,14 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             >
                               全局浏览
                             </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
+                            </td>
                           </tr>
                           <tr
                             class="ant-table-row ant-table-row-level-0"
@@ -591,6 +592,14 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               class="ant-table-cell"
                             >
                               全局管理
+                            </td>
+                            <td
+                              class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                              style="position: sticky; right: 0px;"
+                            >
+                              <div
+                                class="css-new95e"
+                              />
                             </td>
                           </tr>
                         </tbody>
@@ -1356,7 +1365,17 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                   </div>
                                   <div
                                     class="ant-space-item"
-                                  />
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -2321,7 +2340,17 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                   </div>
                                   <div
                                     class="ant-space-item"
-                                  />
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </td>
@@ -3584,7 +3613,17 @@ exports[`base/UserCenter switch to role list 1`] = `
                                   </div>
                                   <div
                                     class="ant-space-item"
-                                  />
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </td>
