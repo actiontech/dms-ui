@@ -7,9 +7,14 @@ const PermissionControl: React.FC<PermissionControlProps> = ({
   projectID,
   authDataSourceId
 }) => {
-  const { checkActionPermission } = usePermission(projectID);
+  const { checkActionPermission } = usePermission();
 
-  if (checkActionPermission(permission, undefined, authDataSourceId)) {
+  if (
+    checkActionPermission(permission, {
+      targetProjectID: projectID,
+      authDataSourceId
+    })
+  ) {
     return <>{children}</>;
   }
 
