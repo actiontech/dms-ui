@@ -100,3 +100,27 @@ export const DBServicesList: IListDBService[] = [
     is_enable_masking: false
   }
 ];
+
+export const maskRuleData = [
+  {
+    effect: '182****8767',
+    id: 1,
+    description: '手机号码',
+    masking_type: '电话',
+    reference_fields: ['电话', '投诉电话']
+  },
+  {
+    id: 2,
+    masking_type: '护照',
+    reference_fields: ['passport', '护照']
+  },
+  {
+    effect: '182****8780',
+    id: 3,
+    reference_fields: ['SSN']
+  },
+  {
+    effect: '182****8790',
+    id: 4
+  }
+];

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/provision/Audit/AuditActionIcon render action icon 1`] = `
+<body>
+  <div>
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#41BF9A"
+        stroke-width="1.5"
+      />
+      <path
+        d="m5.083 8 2.084 2.083 4.166-4.166"
+        stroke="#41BF9A"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
+exports[`/provision/Audit/AuditActionIcon render action icon 2`] = `
+<body>
+  <div>
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#41BF9A"
+        stroke-width="1.5"
+      />
+      <path
+        d="m5.083 8 2.084 2.083 4.166-4.166"
+        stroke="#41BF9A"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+  <div>
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+        stroke="#F59957"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
+exports[`/provision/Audit/AuditActionIcon render action icon 3`] = `
+<body>
+  <div>
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#41BF9A"
+        stroke-width="1.5"
+      />
+      <path
+        d="m5.083 8 2.084 2.083 4.166-4.166"
+        stroke="#41BF9A"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+  <div>
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949zM8 10v2M8 4l.004 4.5"
+        stroke="#F59957"
+        stroke-width="1.5"
+      />
+    </svg>
+  </div>
+  <div>
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
+        stroke="#6094FC"
+        stroke-width="1.5"
+      />
+      <path
+        clip-rule="evenodd"
+        d="M8 3.155V8l-4.207 2.404a1 1 0 0 0 .377.385L7.5 12.71a1 1 0 0 0 1 0l3.33-1.922a1 1 0 0 0 .5-.866V6.077a1 1 0 0 0-.5-.866L8.5 3.29a1 1 0 0 0-.5-.134"
+        fill="#6094FC"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+</body>
+`;

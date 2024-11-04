@@ -1,7 +1,90 @@
-/**
- * Do not modify this file in the dms-ui repository
- */
+import { t } from '../../../../../locale';
+import { GenerateMenuItemType, MenuStructTreeType } from './index.type';
+import { genMenuItemsWithMenuStructTree } from './common';
+import baseMenusCollection from './base';
+import sqleMenusCollection from './sqle';
+import provisionMenusCollection from './provision';
+import { dataMaskRuleMenuItem } from './dms';
 
-export const dmsSideMenuData = (_: string) => {
-  return [];
+export const dmsSideMenuData = (projectID: string) => {
+  const allMenuItems: GenerateMenuItemType[] = [
+    ...baseMenusCollection,
+
+    // #if [sqle]
+    ...sqleMenusCollection,
+    // #endif
+
+    // #if [provision]
+    ...provisionMenusCollection,
+    // #endif
+
+    // #if [dms]
+    dataMaskRuleMenuItem
+    // #endif
+  ];
+
+  const menuStruct: MenuStructTreeType = [
+    'project-overview',
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLDev'),
+      group: [
+        'cloud-beaver',
+        'data-export',
+        'sql-audit',
+        'plugin-audit',
+        'sql-optimization',
+        'data-source-comparison'
+      ]
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLExecute'),
+      group: ['exec-workflow', 'version-management']
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.CICDIntegration'),
+      group: ['pipeline-configuration']
+    },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.SQLManagement'),
+      group: ['sql-management', 'sql-management-conf']
+    },
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.dataSecurity'),
+      group: [
+        'permission-group',
+        'account-management',
+        'password-management',
+        'data-mask-rule'
+      ]
+    },
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.projectConfigure'),
+      group: [
+        'instance',
+        'rule-template',
+        'workflow-template',
+        'member',
+        'push-rule-configuration',
+        'whitelist',
+        'sql-management-exception'
+      ]
+    },
+    { type: 'divider' },
+    {
+      type: 'group',
+      label: t('dmsMenu.groupLabel.operateAndAudit'),
+      group: ['sqle-log', 'auth-audit', 'template-audit']
+    }
+  ];
+
+  return genMenuItemsWithMenuStructTree(projectID, allMenuItems, menuStruct);
 };
