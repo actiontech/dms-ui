@@ -19,6 +19,8 @@ const mockEditor = (props) => {
   );
 };
 
+export const DiffEditor = mockEditor;
+
 mockEditor.Markdown = (props) => {
   const { source, ...otherProps } = props;
   return <div {...otherProps}>{source}</div>;

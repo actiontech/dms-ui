@@ -1,4 +1,4 @@
-import { EditorProps } from '@monaco-editor/react';
+import { DiffEditorProps, EditorProps } from '@monaco-editor/react';
 import { TooltipProps } from 'antd';
 import { ParagraphProps } from 'antd/es/typography/Paragraph';
 import { MouseEventHandler } from 'react';
@@ -109,3 +109,16 @@ export type SQLSnippetRendererProps = Omit<
 export type SQLViewOnlyEditorRendererProps = {
   sql?: string;
 } & Omit<EditorProps, 'theme' | 'language'>;
+
+export type SQLDiffViewOnlyEditorRendererProps = {
+  originalSql?: string;
+  modifiedSql?: string;
+} & Omit<
+  DiffEditorProps,
+  | 'theme'
+  | 'language'
+  | 'original'
+  | 'modified'
+  | 'originalLanguage'
+  | 'modifiedLanguage'
+>;

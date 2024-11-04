@@ -1242,6 +1242,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       },
       {
         "element": <div>
+          dataSourceComparison
+        </div>,
+        "key": "dataSourceComparison",
+        "path": ":projectID/data-source-comparison",
+      },
+      {
+        "element": <div>
           projectRedirect
         </div>,
         "key": "projectRedirect",

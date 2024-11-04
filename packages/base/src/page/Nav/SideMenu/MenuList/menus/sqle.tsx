@@ -17,9 +17,11 @@ import {
   PlanFilled,
   GearFilled,
   PipelineOutlined,
-  FileVersionOutlined
+  FileVersionOutlined,
+  ComparisonOutlined
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { TypedLink, ROUTE_PATHS } from '@actiontech/shared';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
@@ -190,6 +192,21 @@ const versionManagement: GenerateMenuItemType = (projectID) => ({
   structKey: 'version-management'
 });
 
+const dataSourceComparison: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index}
+      values={{ projectID }}
+    >
+      {t('dmsMenu.dataSourceComparison')}
+    </TypedLink>
+  ),
+  icon: <ComparisonOutlined width={18} height={18} />,
+  // todo 后续调整当前选中菜单与 key 绑定的逻辑
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-source-comparison`,
+  structKey: 'data-source-comparison'
+});
+
 const sqleMenusCollection = [
   projectOverviewMenuItem,
   sqlAuditMenuItem,
@@ -206,7 +223,8 @@ const sqleMenusCollection = [
   pushRuleConfiguration,
   sqlManagementException,
   pipelineConfiguration,
-  versionManagement
+  versionManagement,
+  dataSourceComparison
 ];
 
 export default sqleMenusCollection;
