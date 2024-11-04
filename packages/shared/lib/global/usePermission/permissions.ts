@@ -96,6 +96,17 @@ export const PERMISSIONS = {
       DATA_EXPORT: {
         BATCH_CLOSE: 'action:data_export_batch_close',
         CREATE_WHITELIST: 'action:data_export_create_whitelist'
+      },
+      PROJECT_MANAGER: {
+        BATCH_IMPORT_DATA_SOURCE:
+          'action:project_manager_batch_import_data_source',
+        IMPORT: 'action:project_manager_import',
+        EXPORT: 'action:project_manager_export',
+        CREATE: 'action:project_manager_create',
+        EDIT: 'action:project_manager_edit',
+        DELETE: 'action:project_manager_delete',
+        ARCHIVE: 'action:project_manager_archive',
+        UNARCHIVE: 'action:project_manager_unarchive'
       }
     },
     SQLE: {

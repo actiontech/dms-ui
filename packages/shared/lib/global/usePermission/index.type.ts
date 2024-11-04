@@ -40,3 +40,9 @@ export type ActiontechTableActionsWithPermissions<
 
 export type ActiontechTableToolbarActionWithPermissions =
   ReplacePermissions<ActiontechTableToolbarActionMeta>[];
+
+export type CheckActionPermissionOtherValues<T> = {
+  record?: T;
+  authDataSourceId?: string;
+  targetProjectID?: string;
+};

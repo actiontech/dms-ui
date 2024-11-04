@@ -26,7 +26,8 @@ export enum SystemRole {
   admin = 'admin',
   certainProjectManager = 'certainProjectManager',
   globalViewing = 'globalViewing',
-  globalManager = 'globalManager'
+  globalManager = 'globalManager',
+  createProject = 'createProject'
 }
 
 export type UserRolesType = {

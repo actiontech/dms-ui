@@ -88,6 +88,7 @@ describe('hooks/useCurrentUser', () => {
       [SystemRole.admin]: true,
       [SystemRole.certainProjectManager]: true,
       [SystemRole.globalViewing]: false,
+      [SystemRole.createProject]: true,
       [SystemRole.globalManager]: false
     });
   });
@@ -123,6 +124,7 @@ describe('hooks/useCurrentUser', () => {
       [SystemRole.admin]: false,
       [SystemRole.certainProjectManager]: false,
       [SystemRole.globalViewing]: true,
+      [SystemRole.createProject]: false,
       [SystemRole.globalManager]: false
     });
   });

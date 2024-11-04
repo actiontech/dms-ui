@@ -155,6 +155,7 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: true,
         [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.globalViewing]: false
       }
     });
@@ -191,6 +192,7 @@ describe('usePermission', () => {
         [SystemRole.admin]: true,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.globalViewing]: false
       }
     });
@@ -234,10 +236,9 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.globalViewing]: false
-      }
-    });
-    mockUseCurrentUser({
+      },
       bindProjects: [
         {
           project_id: '123',
@@ -247,6 +248,7 @@ describe('usePermission', () => {
         }
       ]
     });
+
     mockUseCurrentProject({
       projectID: '123'
     });
@@ -273,6 +275,7 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.globalViewing]: false
       }
     });
@@ -282,14 +285,14 @@ describe('usePermission', () => {
     expect(
       result.current.checkActionPermission(
         PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN,
-        { uid: 'dbService1' }
+        { record: { uid: 'dbService1' } }
       )
     ).toBeTruthy();
 
     expect(
       result.current.checkActionPermission(
         PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN,
-        { uid: 'dbService2' }
+        { record: { uid: 'dbService2' } }
       )
     ).toBeFalsy();
 
@@ -308,6 +311,7 @@ describe('usePermission', () => {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
         [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.globalViewing]: false
       }
     });
@@ -318,8 +322,7 @@ describe('usePermission', () => {
       result.current.checkActionPermission(
         PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
           .CREATE_MODIFIED_SQL_WORKFLOW,
-        undefined,
-        'dbService1'
+        { authDataSourceId: 'dbService1' }
       )
     ).toBeTruthy();
 
@@ -327,10 +330,46 @@ describe('usePermission', () => {
       result.current.checkActionPermission(
         PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
           .CREATE_MODIFIED_SQL_WORKFLOW,
-        undefined,
-        'dbService2'
+        { authDataSourceId: 'dbService2' }
       )
     ).toBeFalsy();
+
+    // Case 6: Action requires project manager permission by target project id
+    mockState.permission.userOperationPermissions.is_admin = false;
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
+        [SystemRole.globalViewing]: false
+      },
+      bindProjects: [
+        {
+          project_id: '123',
+          project_name: 'test',
+          is_manager: true,
+          archived: false
+        }
+      ]
+    });
+
+    mockUseCurrentProject({
+      projectID: '1234'
+    });
+
+    rerender();
+    expect(
+      result.current.checkActionPermission(
+        PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD
+      )
+    ).toBeFalsy();
+    expect(
+      result.current.checkActionPermission(
+        PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
+        { targetProjectID: '123' }
+      )
+    ).toBeTruthy();
   });
 
   it('should parse table action permissions correctly', () => {

@@ -731,5 +731,51 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
     }
+  },
+
+  // 项目管理
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.BATCH_IMPORT_DATA_SOURCE]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.BATCH_IMPORT_DATA_SOURCE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.IMPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.IMPORT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.createProject]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EXPORT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.createProject]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CREATE]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.createProject]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EDIT,
+    type: 'action',
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.DELETE,
+    type: 'action',
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.ARCHIVE]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.ARCHIVE,
+    type: 'action',
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.UNARCHIVE]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.UNARCHIVE,
+    type: 'action',
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
   }
 } as const;
