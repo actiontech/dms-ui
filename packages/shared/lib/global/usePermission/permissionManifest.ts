@@ -718,5 +718,18 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,
     projectArchived: false
+  },
+
+  // 数据源结构对比
+  [PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
+    .CREATE_MODIFIED_SQL_WORKFLOW]: {
+    id: PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
+      .CREATE_MODIFIED_SQL_WORKFLOW,
+    type: 'action',
+    projectArchived: false,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
+    }
   }
 } as const;

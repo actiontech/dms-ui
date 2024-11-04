@@ -44,7 +44,7 @@ const usePermission = (targetProjectID?: string) => {
   const checkDbServicePermission = useCallback(
     (
       opPermissionType: OpPermissionItemOpPermissionTypeEnum,
-      dbServiceId?: string
+      authDataSourceId?: string
     ) => {
       if (userOperationPermissions) {
         const { is_admin, op_permission_list } = userOperationPermissions;
@@ -64,8 +64,8 @@ const usePermission = (targetProjectID?: string) => {
           if (
             permission.range_type ===
               OpPermissionItemRangeTypeEnum.db_service &&
-            (dbServiceId
-              ? permission.range_uids?.includes(dbServiceId)
+            (authDataSourceId
+              ? permission.range_uids?.includes(authDataSourceId)
               : permission.range_uids?.length) &&
             permission.op_permission_type === opPermissionType
           ) {
@@ -119,10 +119,10 @@ const usePermission = (targetProjectID?: string) => {
   const checkActionPermission = useCallback(
     <T = Record<string, string>>(
       requiredPermission: PermissionsConstantType,
-      record?: T
+      record?: T,
+      authDataSourceId?: string
     ): boolean => {
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
-
       // 检查项目是否已冻结
       if (
         permissionDetails.projectArchived !== undefined &&
@@ -145,7 +145,7 @@ const usePermission = (targetProjectID?: string) => {
             opType,
             fieldName
               ? (record as Record<string, string>)?.[fieldName]
-              : undefined
+              : authDataSourceId
           )
         );
       }
