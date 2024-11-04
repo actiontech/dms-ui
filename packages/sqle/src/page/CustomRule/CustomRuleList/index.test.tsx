@@ -10,9 +10,10 @@ import { customRuleMockData } from '../../../testUtils/mockApi/rule_template/dat
 import configuration from '../../../testUtils/mockApi/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { useSelector } from 'react-redux';
+import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -37,12 +38,16 @@ describe('sqle/CustomRuleList', () => {
       return selector({
         globalRuleTemplate: {
           activeSegmentedKey: RuleManagerSegmentedKey.CustomRule
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       });
     });
     jest.useFakeTimers();
     mockUseDbServiceDriver();
-    mockUseCurrentPermission();
+    mockUseCurrentUser();
     getCustomRulesSpy = rule_template.getCustomRules();
     getDrivers = configuration.getDrivers();
   });

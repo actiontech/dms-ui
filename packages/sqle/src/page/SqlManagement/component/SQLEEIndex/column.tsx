@@ -3,8 +3,7 @@ import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
   ActiontechTableFilterMetaValue,
-  PageInfoWithoutIndexAndSize,
-  ActiontechTableProps
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
@@ -18,10 +17,12 @@ import BasicToolTips, {
 import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
-import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { SQLAuditRecordListUrlParamsKey } from './index.data';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import {
+  PERMISSIONS,
+  PermissionsConstantType
+} from '@actiontech/shared/lib/global';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -105,97 +106,18 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   ]);
 };
 
-export const SqlManagementRowAction = (
-  openModal: (name: ModalName, row?: ISqlManage) => void,
-  jumpToAnalyze: (sqlManageID: string) => void,
-  operationPermission: boolean,
-  openCreateSqlManagementExceptionModal: (record?: ISqlManage) => void,
-  onCreateWhitelist: (record?: ISqlManage) => void,
-  language: SupportLanguage
-): ActiontechTableProps<ISqlManage>['actions'] => {
-  const getWidth = () => {
-    if (operationPermission) {
-      return language === SupportLanguage.enUS
-        ? 350
-        : ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3;
-    }
-    return 110;
-  };
-
-  return {
-    width: getWidth(),
-    buttons: [
-      {
-        text: t('sqlManagement.table.action.single.assignment'),
-        key: 'assignment-single',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              openModal(ModalName.Assignment_Member_Single, record);
-            }
-          };
-        },
-        permissions: () => operationPermission
-      },
-      {
-        text: t('sqlManagement.table.action.single.updateStatus.triggerText'),
-        key: 'change-status-single',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              openModal(ModalName.Change_Status_Single, record);
-            }
-          };
-        },
-        permissions: () => operationPermission
-      }
-    ],
-    moreButtons: [
-      {
-        text: t('sqlManagement.table.action.single.updatePriority.triggerText'),
-        key: 'change-priority-single',
-        onClick: (record) => {
-          openModal(ModalName.Change_SQL_Priority, record);
-        },
-        permissions: () => operationPermission
-      },
-      {
-        text: t('sqlManagement.table.action.analyze'),
-        key: 'analyze-sql',
-        onClick: (record) => {
-          jumpToAnalyze(record?.id?.toString() ?? '');
-        }
-      },
-      {
-        text: t('sqlManagement.table.action.createSqlManagementException'),
-        key: 'create-exception',
-        onClick: (record) => {
-          openCreateSqlManagementExceptionModal(record);
-        },
-        permissions: () => operationPermission
-      },
-      {
-        text: t('sqlManagement.table.action.createWhitelist'),
-        key: 'create-whitelist',
-        onClick: (record) => {
-          onCreateWhitelist(record);
-        },
-        permissions: () => operationPermission
-      }
-    ]
-  };
-};
-
 const SqlManagementColumn: (
   projectID: string,
-  hasPermissionAndNotArchive: boolean,
   updateRemark: (id: number, remark: string) => void,
-  openModal: (name: ModalName, row?: ISqlManage) => void
+  openModal: (name: ModalName, row?: ISqlManage) => void,
+  checkActionPermission: (
+    requiredPermission: PermissionsConstantType
+  ) => boolean
 ) => ActiontechTableColumn<ISqlManage, SqlManagementTableFilterParamType> = (
   projectID,
-  hasPermissionAndNotArchive,
   updateRemark,
-  openModal
+  openModal,
+  checkActionPermission
 ) => {
   return [
     {
@@ -430,7 +352,11 @@ const SqlManagementColumn: (
       width: 200,
       className: 'ellipsis-column-width',
       render: (remark, record) => {
-        if (!hasPermissionAndNotArchive)
+        if (
+          !checkActionPermission(
+            PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.EDIT_REMARK
+          )
+        )
           return remark ? <BasicTypographyEllipsis textCont={remark} /> : '-';
         return (
           <EditText

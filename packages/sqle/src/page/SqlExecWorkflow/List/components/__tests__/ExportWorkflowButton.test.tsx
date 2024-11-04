@@ -6,6 +6,14 @@ import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act } from '@testing-library/react';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('test ExportWorkflowButton', () => {
   let RequestExportWorkflowList: jest.SpyInstance;
@@ -13,6 +21,10 @@ describe('test ExportWorkflowButton', () => {
     jest.useFakeTimers();
     RequestExportWorkflowList = execWorkflow.exportWorkflow();
     mockUseCurrentProject();
+    mockUsePermission(undefined, {
+      mockCurrentUser: true,
+      mockSelector: true
+    });
   });
 
   afterEach(() => {

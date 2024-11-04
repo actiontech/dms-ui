@@ -1,26 +1,25 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import App, { Wrapper } from './App';
-import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { act, screen } from '@testing-library/react';
 import mockDMSGlobalApi from './testUtils/mockApi/global';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/common';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { ModalName } from './data/ModalName';
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
 import { BasicInfoMockData } from './testUtils/mockApi/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
-import { mockUseFeaturePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseFeaturePermission';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import system from './testUtils/mockApi/system';
+import system from 'sqle/src/testUtils/mockApi/system';
+import baseSystem from './testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -38,23 +37,31 @@ jest.mock('react-redux', () => {
 describe('App', () => {
   let requestGetBasicInfo: jest.SpyInstance;
   let getUserBySessionSpy: jest.SpyInstance;
+  let requestGetModalStatus: jest.SpyInstance;
+
   let getSystemModuleRedDotsSpy: jest.SpyInstance;
   const scopeDispatch = jest.fn();
   const navigateSpy = jest.fn();
+  const checkPageActionSpy = jest.fn();
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
+    checkPageActionSpy.mockReturnValue(true);
     mockUseDbServiceDriver();
     mockUseCurrentUser();
     mockSystemConfig();
-    mockUseCurrentPermission();
-    mockUseFeaturePermission();
+    mockUsePermission(
+      {
+        checkPagePermission: checkPageActionSpy
+      },
+      { useSpyOnMockHooks: true }
+    );
     mockDMSGlobalApi.mockAllApi();
-
+    requestGetModalStatus = system.getSystemModuleStatus();
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();
     getUserBySessionSpy = mockDMSGlobalApi.getUserBySession();
-    getSystemModuleRedDotsSpy = system.getSystemModuleRedDots();
+    getSystemModuleRedDotsSpy = baseSystem.getSystemModuleRedDots();
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
 
@@ -133,30 +140,38 @@ describe('App', () => {
     });
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
-    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(1);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledTimes(1);
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledWith(
       BasicInfoMockData
     );
+    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
     expect(container).toMatchSnapshot();
   });
 
-  it('render App when "userInfoFetched" is equal false', () => {
-    mockUseCurrentUser({ userInfoFetched: false });
+  it('render App when "isUserInfoFetched" is equal false', () => {
+    mockUseCurrentUser({ isUserInfoFetched: false });
     const { container } = superRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
-  it('render App when "driverInfoFetched" is equal false', () => {
-    mockUseDbServiceDriver({ driverInfoFetched: false });
+  it('render App when "isDriverInfoFetched" is equal false', () => {
+    mockUseDbServiceDriver({ isDriverInfoFetched: false });
     const { container } = superRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
-  it('render App when user role is not admin', async () => {
-    mockUseCurrentUser({ role: undefined, isAdmin: false });
+  it('render App when "isFeatureSupportFetched" is equal false', () => {
+    mockUseCurrentUser({ isUserInfoFetched: true });
+    mockUseDbServiceDriver({ isDriverInfoFetched: true });
+    const { container } = superRender(<App />);
+    expect(container).toMatchSnapshot();
+  });
+
+  it('render App when "checkPageAction" is false', async () => {
+    checkPageActionSpy.mockReturnValue(false);
     const { container } = superRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
 

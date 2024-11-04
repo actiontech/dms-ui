@@ -16,7 +16,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('page/Home/DBAPanel', () => {
-  const uid = mockCurrentUserReturn.uid;
+  const uid = mockCurrentUserReturn.userId;
   const mockRequest = jest.fn();
   const customRender = (data = dashboardMockData.workflow_statistics) => {
     return superRender(

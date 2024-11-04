@@ -3,7 +3,7 @@ import LarkSetting from '.';
 import system from '../../../../testUtils/mockApi/system';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
@@ -11,7 +11,7 @@ describe('base/System/PushNotification/LarkSetting', () => {
   let requestGetFeishuConfiguration: jest.SpyInstance;
   let requestUpdateFeishuConfiguration: jest.SpyInstance;
   const customRender = () => {
-    return renderWithTheme(<LarkSetting />);
+    return superRender(<LarkSetting />);
   };
 
   beforeEach(() => {

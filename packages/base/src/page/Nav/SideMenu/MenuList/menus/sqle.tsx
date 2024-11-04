@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { t } from '../../../../../locale';
-import { SystemRole } from '@actiontech/shared/lib/enum';
 import { GenerateMenuItemType } from './index.type';
 import {
   ManagementFilled,
@@ -21,6 +20,7 @@ import {
   FileVersionOutlined,
   ComparisonOutlined
 } from '@actiontech/icons';
+import { PERMISSIONS } from '@actiontech/shared/lib/global';
 import { TypedLink, ROUTE_PATHS } from '@actiontech/shared';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -64,7 +64,10 @@ const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
   ),
   icon: <RiseSquareOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-optimization`,
-  structKey: 'sql-optimization'
+  structKey: 'sql-optimization',
+  // #if [ee]
+  permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION
+  // #endif
 });
 
 const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
@@ -142,7 +145,7 @@ const sqleOperationRecordMenuItem: GenerateMenuItemType = (projectID) => ({
   icon: <OperateAuditFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`,
   structKey: 'sqle-log',
-  role: [SystemRole.admin, SystemRole.globalViewing]
+  permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
 });
 
 const sqlManagementConf: GenerateMenuItemType = (projectID) => ({

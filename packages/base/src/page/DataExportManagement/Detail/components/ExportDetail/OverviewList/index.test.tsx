@@ -18,7 +18,7 @@ describe('test base/DataExport/Detail/OverviewList', () => {
     MockDate.set('2024-01-30 10:00:00');
     mockUseCurrentProject();
     mockUseCurrentUser({
-      uid: mockDataExportDetailRedux.workflowInfo.create_user?.uid
+      userId: mockDataExportDetailRedux.workflowInfo.create_user?.uid
     });
 
     mockUseDataExportDetailReduxManage();
@@ -45,7 +45,7 @@ describe('test base/DataExport/Detail/OverviewList', () => {
 
   it('should not render download button when current user is not workflow creator', () => {
     mockUseCurrentUser({
-      uid: mockDataExportDetailRedux.workflowInfo.create_user?.uid + '1'
+      userId: mockDataExportDetailRedux.workflowInfo.create_user?.uid + '1'
     });
 
     superRender(<OverviewList />);

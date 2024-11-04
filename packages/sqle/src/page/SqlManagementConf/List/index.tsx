@@ -17,8 +17,7 @@ import {
 import {
   useCurrentProject,
   useCurrentUser,
-  useDbServiceDriver,
-  useUserOperationPermission
+  useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useMemo } from 'react';
@@ -46,6 +45,7 @@ import {
   BookMarkTagOutlined
 } from '@actiontech/icons';
 import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const List: React.FC = () => {
   const { t } = useTranslation();
@@ -76,11 +76,7 @@ const List: React.FC = () => {
     InstanceAuditPlanTableFilterParamType
   >();
 
-  const {
-    updateUserOperationPermission,
-    loading: getUserOperationPermissionLoading,
-    isHaveServicePermission
-  } = useUserOperationPermission();
+  const { checkDbServicePermission } = usePermission();
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
@@ -155,8 +151,7 @@ const List: React.FC = () => {
 
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
-    updateUserOperationPermission();
-  }, [updateInstanceList, projectName, updateUserOperationPermission]);
+  }, [updateInstanceList, projectName]);
 
   return (
     <SqlManagementConfPageStyleWrapper>
@@ -172,14 +167,7 @@ const List: React.FC = () => {
           </EmptyBox>
         }
       />
-      <Spin
-        spinning={
-          getTaskTypesLoading ||
-          getTableDataLoading ||
-          getUserOperationPermissionLoading
-        }
-        delay={300}
-      >
+      <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
         <TableToolbar
           refreshButton={{ refresh: onRefresh, disabled: getTableDataLoading }}
           setting={tableSetting}
@@ -249,7 +237,7 @@ const List: React.FC = () => {
             deleteAction,
             disabledAction,
             enabledAction,
-            isHaveServicePermission,
+            isHaveServicePermission: checkDbServicePermission,
             operationPermission
           })}
         />

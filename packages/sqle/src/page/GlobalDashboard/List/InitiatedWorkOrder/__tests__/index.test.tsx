@@ -19,7 +19,7 @@ describe('sqle/GlobalDashboard/InitiatedWorkOrder', () => {
   const commonParams = {
     page_index: 1,
     page_size: 20,
-    filter_create_user_id: mockCurrentUserReturn.uid,
+    filter_create_user_id: mockCurrentUserReturn.userId,
     filter_status_list: [
       getGlobalWorkflowsV1FilterStatusListEnum.wait_for_audit,
       getGlobalWorkflowsV1FilterStatusListEnum.wait_for_execution,

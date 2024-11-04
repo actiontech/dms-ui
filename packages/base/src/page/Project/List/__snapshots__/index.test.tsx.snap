@@ -574,10 +574,6 @@ exports[`test base/project/list should be get data from the request to render th
                           </div>
                           <div
                             class="ant-space-item"
-                            style="margin-right: 8px;"
-                          />
-                          <div
-                            class="ant-space-item"
                           >
                             <button
                               class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -780,7 +776,6 @@ exports[`test base/project/list should be get data from the request to render th
                           </div>
                           <div
                             class="ant-space-item"
-                            style="margin-right: 8px;"
                           >
                             <button
                               class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -791,9 +786,6 @@ exports[`test base/project/list should be get data from the request to render th
                               </span>
                             </button>
                           </div>
-                          <div
-                            class="ant-space-item"
-                          />
                         </div>
                       </div>
                     </td>
@@ -999,10 +991,6 @@ exports[`test base/project/list should be get data from the request to render th
                               </span>
                             </button>
                           </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 8px;"
-                          />
                           <div
                             class="ant-space-item"
                           >

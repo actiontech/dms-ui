@@ -435,7 +435,17 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
-                            />
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                disabled=""
+                                type="button"
+                              >
+                                <span>
+                                  删 除
+                                </span>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </td>
@@ -798,7 +808,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
 </body>
 `;
 
-exports[`base/UserCenter/UserList should disabled action when current role is not admin and  1`] = `
+exports[`base/UserCenter/UserList should disabled action when current role is not admin and not global manager 1`] = `
 <div>
   <div
     class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
@@ -810,7 +820,7 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
         class="ant-spin-container"
       >
         <div
-          class="ant-table ant-table-scroll-horizontal"
+          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
         >
           <div
             class="ant-table-container"
@@ -822,7 +832,17 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
               <table
                 style="min-width: 100%; table-layout: auto;"
               >
-                <colgroup />
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col
+                    style="width: 164px;"
+                  />
+                </colgroup>
                 <thead
                   class="ant-table-thead"
                 >
@@ -863,6 +883,13 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     >
                       平台管理权限
                     </th>
+                    <th
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      scope="col"
+                      style="position: sticky; right: 0px;"
+                    >
+                      操作
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -873,6 +900,15 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     class="ant-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
                     <td
                       style="padding: 0px; border: 0px; height: 0px;"
                     >
@@ -987,6 +1023,14 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     >
                       创建项目
                     </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1045,6 +1089,14 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     <td
                       class="ant-table-cell"
                     />
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1104,6 +1156,14 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       class="ant-table-cell"
                     >
                       -
+                    </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
                     </td>
                   </tr>
                   <tr
@@ -1165,6 +1225,14 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     >
                       全局浏览
                     </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1224,6 +1292,14 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       class="ant-table-cell"
                     >
                       全局管理
+                    </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      />
                     </td>
                   </tr>
                 </tbody>
@@ -1399,7 +1475,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
         class="ant-spin-container"
       >
         <div
-          class="ant-table ant-table-scroll-horizontal"
+          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
         >
           <div
             class="ant-table-container"
@@ -1411,7 +1487,17 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
               <table
                 style="min-width: 100%; table-layout: auto;"
               >
-                <colgroup />
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col
+                    style="width: 164px;"
+                  />
+                </colgroup>
                 <thead
                   class="ant-table-thead"
                 >
@@ -1452,6 +1538,13 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     >
                       平台管理权限
                     </th>
+                    <th
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      scope="col"
+                      style="position: sticky; right: 0px;"
+                    >
+                      操作
+                    </th>
                   </tr>
                 </thead>
                 <tbody
@@ -1462,6 +1555,15 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     class="ant-table-measure-row"
                     style="height: 0px; font-size: 0px;"
                   >
+                    <td
+                      style="padding: 0px; border: 0px; height: 0px;"
+                    >
+                      <div
+                        style="height: 0px; overflow: hidden;"
+                      >
+                         
+                      </div>
+                    </td>
                     <td
                       style="padding: 0px; border: 0px; height: 0px;"
                     >
@@ -1576,6 +1678,44 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     >
                       创建项目
                     </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                管 理
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                删 除
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1634,6 +1774,44 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     <td
                       class="ant-table-cell"
                     />
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                管 理
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                删 除
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1693,6 +1871,45 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       class="ant-table-cell"
                     >
                       -
+                    </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                管 理
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span>
+                                删 除
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr
@@ -1754,6 +1971,44 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     >
                       全局浏览
                     </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                管 理
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                删 除
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
                   </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
@@ -1813,6 +2068,44 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       class="ant-table-cell"
                     >
                       全局管理
+                    </td>
+                    <td
+                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                      style="position: sticky; right: 0px;"
+                    >
+                      <div
+                        class="css-new95e"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                管 理
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                删 除
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                 </tbody>

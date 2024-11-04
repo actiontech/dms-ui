@@ -8,7 +8,7 @@ import RuleManager from '..';
 import { useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../index.type';
 import { ModalName } from '../../../data/ModalName';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { cleanup } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
@@ -28,7 +28,14 @@ jest.mock('react-router-dom', () => {
 describe('sqle/RuleManager CE', () => {
   beforeEach(() => {
     mockUseCurrentUser();
-    mockUseCurrentPermission();
+    mockUsePermission(
+      {
+        moduleFeatureSupport: { sqlOptimization: true }
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
   });
   afterEach(() => {
     cleanup();

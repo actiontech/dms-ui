@@ -29,7 +29,7 @@ describe('store user', () => {
     bindProjects: [],
     managementPermissions: [],
     role: '',
-    userInfoFetched: false,
+    isUserInfoFetched: false,
     language: SupportLanguage.zhCN
   };
 
@@ -50,7 +50,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -71,7 +71,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -93,7 +93,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -115,7 +115,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: SystemRole.admin,
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -136,11 +136,11 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
-  it('should update user userInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
+  it('should update user isUserInfoFetched when dispatch updateUserInfoFetchStatus action', () => {
     const newState = reducers(state, updateUserInfoFetchStatus(true));
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
@@ -152,7 +152,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: [],
       role: '',
-      userInfoFetched: true
+      isUserInfoFetched: true
     });
   });
 
@@ -181,7 +181,7 @@ describe('store user', () => {
       bindProjects: mockBindProjects,
       managementPermissions: [],
       role: '',
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 
@@ -203,7 +203,7 @@ describe('store user', () => {
       bindProjects: [],
       managementPermissions: mockManagementPermissions,
       role: '',
-      userInfoFetched: false
+      isUserInfoFetched: false
     });
   });
 });

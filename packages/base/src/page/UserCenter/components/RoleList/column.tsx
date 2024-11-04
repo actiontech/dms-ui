@@ -1,8 +1,5 @@
 import { IListRole } from '@actiontech/shared/lib/api/base/service/common';
-import {
-  ActiontechTableColumn,
-  ActiontechTableActionMeta
-} from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
@@ -54,39 +51,3 @@ export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
     width: 500
   }
 ];
-
-export const RoleListActions = (
-  onEditRole: (record?: IListRole) => void,
-  onDeleteRole: (record?: IListRole) => void
-): ActiontechTableActionMeta<IListRole>[] => {
-  return [
-    {
-      text: t('common.edit'),
-      key: 'roleManage',
-      buttonProps: (record) => {
-        return {
-          onClick: () => {
-            onEditRole(record);
-          }
-        };
-      }
-    },
-    {
-      text: t('common.delete'),
-      buttonProps: () => ({
-        danger: true
-      }),
-      key: 'roleDelete',
-      confirm: (record) => {
-        return {
-          title: t('dmsUserCenter.role.deleteRole.deleteTips', {
-            name: record?.name ?? ''
-          }),
-          onConfirm: () => {
-            onDeleteRole(record);
-          }
-        };
-      }
-    }
-  ];
-};

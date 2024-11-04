@@ -4,5 +4,4 @@ export type ConfDetailOverviewProps = {
   instanceAuditPlanId: string;
   refreshAuditPlanDetail: () => void;
   hasOpPermission: boolean;
-  getUserOperationPermissionLoading: boolean;
 };

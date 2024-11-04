@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test PermissionControl should match snapshot with "checkActionPermission" return false 1`] = `<div />`;
+
+exports[`test PermissionControl should match snapshot with "checkActionPermission" return true 1`] = `
+<div>
+  children
+</div>
+`;

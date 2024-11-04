@@ -11,12 +11,9 @@ import SystemBasicTitle from '../components/BasicTitle';
 import OperationRecordExpiredHours from './components/OperationRecordExpiredHours';
 import UrlAddressPrefixTips from './components/UrlAddressPrefixTips';
 import CBOperationLogsExpiredHours from './components/CBOperationLogsExpiredHours';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 
 const GlobalSetting = () => {
   const { t } = useTranslation();
-
-  const { isAdmin } = useCurrentUser();
 
   const [
     operationRecordExpiredHoursField,
@@ -120,7 +117,6 @@ const GlobalSetting = () => {
             showField={showOperationRecordExpiredHoursField}
             hideField={hideOperationRecordExpiredHoursField}
             submitGlobalConfig={submitGlobalConfig}
-            isAdmin={isAdmin}
           />
           <CBOperationLogsExpiredHours
             expiredHours={globalConfig?.cb_operation_logs_expired_hours}
@@ -128,7 +124,6 @@ const GlobalSetting = () => {
             showField={showCBOperationLogsExpiredHoursField}
             hideField={hideCBOperationLogsExpiredHoursField}
             submitGlobalConfig={submitGlobalConfig}
-            isAdmin={isAdmin}
           />
           <UrlAddressPrefixTips
             url={globalConfig?.url}
@@ -136,7 +131,6 @@ const GlobalSetting = () => {
             showField={showUrlField}
             hideField={hideUrlField}
             submitGlobalConfig={submitGlobalConfig}
-            isAdmin={isAdmin}
           />
         </Spin>
       </>

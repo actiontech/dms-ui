@@ -308,37 +308,29 @@ exports[`sqle/Workflow/List render click batch cancel btn when has not closed  1
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <div
-                      class="ant-space-item"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                        type="button"
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 14 14"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="16"
-                            viewBox="0 0 14 14"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
-                            />
-                          </svg>
-                        </span>
-                        <span>
-                          批量关闭
-                        </span>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
+                        />
+                      </svg>
+                    </span>
+                    <span>
+                      批量关闭
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="ant-space-item"
@@ -1962,37 +1954,29 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                    type="button"
                   >
-                    <div
-                      class="ant-space-item"
+                    <span
+                      class="ant-btn-icon"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                        type="button"
+                      <svg
+                        fill="currentColor"
+                        height="16"
+                        viewBox="0 0 14 14"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            fill="currentColor"
-                            height="16"
-                            viewBox="0 0 14 14"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
-                            />
-                          </svg>
-                        </span>
-                        <span>
-                          批量关闭
-                        </span>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
+                        />
+                      </svg>
+                    </span>
+                    <span>
+                      批量关闭
+                    </span>
+                  </button>
                 </div>
                 <div
                   class="ant-space-item"

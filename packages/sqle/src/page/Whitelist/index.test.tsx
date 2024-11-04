@@ -22,7 +22,11 @@ describe('slqe/Whitelist', () => {
     whiteListSpy = auditWhiteList.getAuditWhitelist();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       })
     );
     mockUseCurrentProject();

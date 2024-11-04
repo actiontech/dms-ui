@@ -21,6 +21,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -29,6 +30,11 @@ jest.mock('react-router-dom', () => {
     useParams: jest.fn()
   };
 });
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('sqle/ExecWorkflow/Detail', () => {
   let requestWorkflowInfo: jest.SpyInstance;
@@ -70,6 +76,9 @@ describe('sqle/ExecWorkflow/Detail', () => {
     );
     getAuditTaskSpy = task.getAuditTask();
     useParamsMock.mockReturnValue({ workflowId: 'workflowId' });
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
 
   afterEach(() => {
@@ -417,14 +426,15 @@ describe('sqle/ExecWorkflow/Detail', () => {
     );
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('中止上线')).toBeVisible();
+    const pageHeaderTerminateButton = screen.getAllByText('中止上线')[0];
+    expect(pageHeaderTerminateButton).toBeVisible();
     expect(screen.getByText('刷新工单')).toBeVisible();
     fireEvent.click(screen.getByText('刷新工单'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalled();
 
     await act(async () => {
-      fireEvent.click(screen.getByText('中止上线'));
+      fireEvent.click(pageHeaderTerminateButton);
       await jest.advanceTimersByTime(100);
     });
     expect(

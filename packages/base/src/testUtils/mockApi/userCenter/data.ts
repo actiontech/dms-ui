@@ -3,14 +3,17 @@ import {
   IListUserGroup,
   IListOpPermission,
   IListRole,
-  IListMemberTipsItem
+  IListMemberTipsItem,
+  IGetUserOpPermissionReply
 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ListUserStatEnum,
   ListUserAuthenticationTypeEnum,
   ListUserGroupStatEnum,
   ListOpPermissionRangeTypeEnum,
-  ListRoleStatEnum
+  ListRoleStatEnum,
+  OpPermissionItemOpPermissionTypeEnum,
+  OpPermissionItemRangeTypeEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const userList: IListUser[] = [
@@ -142,3 +145,14 @@ export const memberTips: IListMemberTipsItem[] = [
     user_name: 'a2'
   }
 ];
+
+export const userOpPermissionMockData: IGetUserOpPermissionReply['data'] = {
+  is_admin: true,
+  op_permission_list: [
+    {
+      op_permission_type: OpPermissionItemOpPermissionTypeEnum.audit_workflow,
+      range_type: OpPermissionItemRangeTypeEnum.db_service,
+      range_uids: ['1234']
+    }
+  ]
+};

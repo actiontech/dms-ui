@@ -1,7 +1,7 @@
 import SMTPSetting from '.';
 import system from '../../../../testUtils/mockApi/system';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import {
   getAllBySelector,
   getBySelector
@@ -12,7 +12,7 @@ describe('base/System/PushNotification/SMTPSetting', () => {
   let requestGetSMTPConfiguration: jest.SpyInstance;
   let requestUpdateSMTPConfiguration: jest.SpyInstance;
   const customRender = () => {
-    return renderWithTheme(<SMTPSetting />);
+    return superRender(<SMTPSetting />);
   };
 
   beforeEach(() => {

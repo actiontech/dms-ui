@@ -19,6 +19,7 @@ import {
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { MemberListTypeEnum } from '../../index.enum';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -78,7 +79,11 @@ describe('base/MemberGroupList', () => {
   it('should hide table actions', async () => {
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
     }));
     renderWithReduxAndTheme(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
@@ -90,8 +95,19 @@ describe('base/MemberGroupList', () => {
     cleanup();
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isProjectManager: jest.fn().mockImplementation(() => true),
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
     }));
     renderWithReduxAndTheme(
       <MemberGroupList activePage={MemberListTypeEnum.member_group_list} />
@@ -102,8 +118,20 @@ describe('base/MemberGroupList', () => {
     useCurrentUserSpy.mockClear();
     cleanup();
     useCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: true
+        }
+      ]
     }));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);

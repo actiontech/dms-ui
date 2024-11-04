@@ -370,7 +370,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1vzpr2e"
+            class="rule-list-wrapper css-8rro2x"
           >
             <div
               id="rule-list-wrapper-id"
@@ -570,47 +570,6 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           <span>
                              
                             default
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    id="project_name_list_1"
-                    role="option"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      <div
-                        class="css-g53e93"
-                      >
-                        <div
-                          class="css-10kos8e"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
-                              fill="#EBAD1C"
-                            />
-                          </svg>
-                          <span>
-                             
-                            test
                              
                           </span>
                         </div>
@@ -980,7 +939,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                   请前往
                   <a
                     class="link-create-project-rule-template-btn"
-                    href="/sqle/project/1/rule/template/create"
+                    href="/sqle/project/700300/rule/template/create"
                   >
                     创建规则模板
                   </a>
@@ -1080,47 +1039,6 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                           <span>
                              
                             default
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    id="project_name_list_1"
-                    role="option"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      <div
-                        class="css-g53e93"
-                      >
-                        <div
-                          class="css-10kos8e"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
-                              fill="#EBAD1C"
-                            />
-                          </svg>
-                          <span>
-                             
-                            test
                              
                           </span>
                         </div>
@@ -1424,7 +1342,7 @@ exports[`sqle/Rule request return no data 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1vzpr2e"
+            class="rule-list-wrapper css-8rro2x"
           >
             <div
               class="css-1br6ibb"
@@ -1943,47 +1861,6 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                       unselectable="on"
                     />
                   </div>
-                  <div
-                    aria-selected="false"
-                    class="ant-select-item ant-select-item-option"
-                    id="project_name_list_1"
-                    role="option"
-                  >
-                    <div
-                      class="ant-select-item-option-content"
-                    >
-                      <div
-                        class="css-g53e93"
-                      >
-                        <div
-                          class="css-10kos8e"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 18 18"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
-                              fill="#EBAD1C"
-                            />
-                          </svg>
-                          <span>
-                             
-                            test
-                             
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-item-option-state"
-                      style="user-select: none;"
-                      unselectable="on"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -2285,7 +2162,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1vzpr2e"
+            class="rule-list-wrapper css-8rro2x"
           >
             <div
               id="rule-list-wrapper-id"

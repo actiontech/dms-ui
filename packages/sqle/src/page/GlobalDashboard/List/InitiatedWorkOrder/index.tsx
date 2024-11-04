@@ -23,7 +23,7 @@ const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
   filterValues,
   updateFilterValue
 }) => {
-  const { uid } = useCurrentUser();
+  const { userId } = useCurrentUser();
 
   const { pagination, tableChange } =
     useTableRequestParams<IWorkflowDetailResV1>();
@@ -44,7 +44,7 @@ const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
         filter_project_priority:
           filterValues.projectPriority as unknown as getGlobalWorkflowsV1FilterProjectPriorityEnum,
         filter_project_uid: filterValues.projectId,
-        filter_create_user_id: uid,
+        filter_create_user_id: userId,
         filter_status_list: [
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_audit,
           getGlobalWorkflowsV1FilterStatusListEnum.wait_for_execution,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import { BasicButton, PageHeader, SegmentedTabs } from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
@@ -14,8 +14,7 @@ import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedT
 import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { PlusOutlined } from '@actiontech/icons';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { UserCenterPageHeaderActions } from './action';
 
 const UserCenter: React.FC = () => {
   const { t } = useTranslation();
@@ -27,8 +26,6 @@ const UserCenter: React.FC = () => {
   const onRefreshTable = (tab: UserCenterListEnum) => {
     eventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
-
-  const { isAdmin } = useCurrentUser();
 
   const pageItems: SegmentedTabsProps['items'] = [
     {
@@ -58,43 +55,15 @@ const UserCenter: React.FC = () => {
       );
     };
 
+    const pageHeaderActions = UserCenterPageHeaderActions(
+      activePage,
+      handleClick
+    );
+
     return (
       <>
-        <BasicButton
-          hidden={activePage !== UserCenterListEnum.user_list || !isAdmin}
-          type="primary"
-          icon={
-            <PlusOutlined
-              width={10}
-              height={10}
-              fill="currentColor"
-              color="currentColor"
-            />
-          }
-          onClick={() => {
-            handleClick(ModalName.DMS_Add_User);
-          }}
-        >
-          {t('dmsUserCenter.user.userList.addUserButton')}
-        </BasicButton>
-
-        <BasicButton
-          hidden={activePage !== UserCenterListEnum.role_list || !isAdmin}
-          type="primary"
-          icon={
-            <PlusOutlined
-              width={10}
-              height={10}
-              fill="currentColor"
-              color="currentColor"
-            />
-          }
-          onClick={() => {
-            handleClick(ModalName.DMS_Add_Role);
-          }}
-        >
-          {t('dmsUserCenter.role.createRole.button')}
-        </BasicButton>
+        {pageHeaderActions['add_user']}
+        {pageHeaderActions['add_role']}
       </>
     );
   };

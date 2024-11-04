@@ -55,7 +55,11 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
         versionManagement: {
           workflowId: '123456'
         },
-        whitelist: { modalStatus: {} }
+        whitelist: { modalStatus: {} },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       });
     });
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);

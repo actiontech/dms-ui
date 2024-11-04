@@ -22,7 +22,14 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import instance from '../../../../testUtils/mockApi/instance';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
-import { mockUseUserOperationPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserOperationPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -49,10 +56,9 @@ describe('test sqle/SqlManagementConf/List', () => {
     mockUseDbServiceDriver();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
-    mockUseUserOperationPermission();
-    mockUseUserOperationPermissionData.isHaveServicePermission.mockReturnValue(
-      true
-    );
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
 
   afterEach(() => {

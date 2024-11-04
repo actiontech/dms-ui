@@ -25,8 +25,9 @@ import AuditResult from './AuditResult';
 import { useMemo, useState } from 'react';
 import { SelectedInstanceInfo } from '../../../index.type';
 import dayjs from 'dayjs';
-import useGenerateModifiedSqlWorkflow from '../../../hooks/useGenerateModifiedSqlWorkflow';
 import useAuditResultRuleInfo from '../../../../../../components/ReportDrawer/useAuditResultRuleInfo';
+import { CreateWorkflowForModifiedSqlAction } from '../../../actions';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 type Props = {
   open: boolean;
@@ -54,6 +55,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   selectComparisonInstanceInfo
 }) => {
   const { t } = useTranslation();
+  const { projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading: getDetailPending, data: comparisonDetail } = useRequest(
     () =>
@@ -70,15 +72,6 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
 
   const [modifiedSqlAuditResultActiveKey, setModifiedSqlAuditResultActiveKey] =
     useState<CollapseItemKeyEnum[]>([]);
-
-  const {
-    createWorkflowAction,
-    createWorkflowPermission,
-    createWorkflowPending
-  } = useGenerateModifiedSqlWorkflow(
-    selectComparisonInstanceInfo?.instanceId ?? '',
-    selectComparisonInstanceInfo?.instanceName ?? ''
-  );
 
   const {
     loading: generateModifiedSqlPending,
@@ -220,19 +213,12 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
       footer={
         <EmptyBox if={!!modifiedSqlResult}>
           <Space size={12}>
-            <EmptyBox if={createWorkflowPermission}>
-              <BasicButton
-                loading={createWorkflowPending}
-                type="primary"
-                onClick={() => {
-                  createWorkflowAction(modifiedSqls);
-                }}
-              >
-                {t(
-                  'dataSourceComparison.entry.comparisonDetail.actions.createChangeWorkflow'
-                )}
-              </BasicButton>
-            </EmptyBox>
+            {CreateWorkflowForModifiedSqlAction({
+              projectID,
+              sql: modifiedSqls,
+              instanceId: selectComparisonInstanceInfo?.instanceId ?? '',
+              instanceName: selectComparisonInstanceInfo?.instanceName ?? ''
+            })}
 
             <BasicButton onClick={copyModifiedSql}>
               {t(

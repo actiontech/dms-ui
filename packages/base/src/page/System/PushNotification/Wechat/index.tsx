@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCallback, useMemo } from 'react';
-
 import { useBoolean, useRequest } from 'ahooks';
-
 import { switchFieldName } from './index.data';
 import { Form, Spin } from 'antd';
 import ConfigSwitch from '../../components/ConfigSwitch';
@@ -10,15 +8,14 @@ import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
-
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WechatFormFields } from './index.type';
 import { IWeChatConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const Wechat = () => {
   const { t } = useTranslation();
@@ -173,24 +170,36 @@ const Wechat = () => {
           data: wechatConfig ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <ConfigExtraButtons
-              isConfigClosed={isConfigClosed}
-              extraButtonsVisible={extraButtonsVisible}
-              enabled={enabled}
-              handleClickModify={handleClickModify}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WECHAT
+              }
+            >
+              <ConfigExtraButtons
+                isConfigClosed={isConfigClosed}
+                extraButtonsVisible={extraButtonsVisible}
+                enabled={enabled}
+                handleClickModify={handleClickModify}
+              />
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WECHAT
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (

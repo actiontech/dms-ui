@@ -1,8 +1,5 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import {
-  ActiontechTableActionMeta,
-  ActiontechTableColumn
-} from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { EditText, SQLRenderer } from '@actiontech/shared';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { t } from '../../../../../locale';
@@ -81,41 +78,5 @@ export const AuditResultForCreateWorkflowColumn = (
         );
       }
     }
-  ];
-};
-
-export const AuditResultForCreateWorkflowActions = (
-  clickAnalyze: (sqlNum?: number) => void,
-  onCreateWhitelist: (record?: IAuditTaskSQLResV2) => void,
-  actionPermission: boolean
-): ActiontechTableActionMeta<IAuditTaskSQLResV2>[] => {
-  return [
-    {
-      key: 'jumpAnalyze',
-      text: t('execWorkflow.audit.table.analyze'),
-      buttonProps: (record) => {
-        return {
-          onClick: (e) => {
-            e.stopPropagation();
-            clickAnalyze(record?.number);
-          }
-        };
-      }
-    },
-    // #if [ee]
-    {
-      key: 'create-exception',
-      text: t('execWorkflow.audit.table.createWhitelist'),
-      buttonProps: (record) => {
-        return {
-          onClick: (e) => {
-            e.stopPropagation();
-            onCreateWhitelist(record);
-          }
-        };
-      },
-      permissions: () => actionPermission
-    }
-    // #endif
   ];
 };

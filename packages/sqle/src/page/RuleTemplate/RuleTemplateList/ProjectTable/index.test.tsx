@@ -51,6 +51,10 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
       e({
         ruleTemplate: {
           modalStatus: { [ModalName.Clone_Rule_Template]: false }
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );
@@ -67,50 +71,9 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   const customRender = (actionPermission?: boolean) =>
     renderWithReduxAndTheme(
       <BrowserRouter>
-        <ProjectTable actionPermission={actionPermission} />
+        <ProjectTable />
       </BrowserRouter>
     );
-
-  it('render project rule template list when actionPermission is falsy', async () => {
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
-    expect(
-      screen.getByText(`共 ${projectRuleTemplateListMockData.length} 条数据`)
-    ).toBeInTheDocument();
-    expect(screen.queryByText('编 辑')).not.toBeInTheDocument();
-    expect(screen.queryByText('删 除')).not.toBeInTheDocument();
-  });
-
-  it('render project rule template list when actionPermission is true', async () => {
-    const { baseElement } = customRender(true);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
-    const length = projectRuleTemplateListMockData.length;
-    expect(screen.getByText(`共 ${length} 条数据`)).toBeInTheDocument();
-    expect(screen.getAllByText('编 辑')).toHaveLength(length);
-    expect(screen.getAllByText('删 除')).toHaveLength(length);
-  });
-
-  it('render project rule template list when projectArchive is true', async () => {
-    mockUseCurrentProjectSpy.mockClear();
-    mockUseCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
-    }));
-    const { baseElement } = customRender(true);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectRuleTemplateListSpy).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
-    const length = projectRuleTemplateListMockData.length;
-    expect(screen.getByText(`共 ${length} 条数据`)).toBeInTheDocument();
-    expect(screen.queryByText('编 辑')).not.toBeInTheDocument();
-    expect(screen.queryByText('删 除')).not.toBeInTheDocument();
-    expect(screen.getAllByText('导 出')).toHaveLength(length);
-    expect(screen.getAllByText('克 隆')).toHaveLength(length);
-  });
 
   it('should render empty tips when request not success', async () => {
     getProjectRuleTemplateListSpy.mockClear();
@@ -243,88 +206,6 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('克隆规则模版')).toBeInTheDocument();
     fireEvent.click(screen.getByText('克隆规则模版'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toHaveBeenCalledTimes(3);
-    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
-      payload: {
-        selectRow: projectRuleTemplateListMockData[0]
-      },
-      type: 'ruleTemplate/updateSelectRuleTemplate'
-    });
-    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
-      payload: {
-        modalName: ModalName.Clone_Rule_Template,
-        status: true
-      },
-      type: 'ruleTemplate/updateModalStatus'
-    });
-  });
-
-  it('click export button when isAdmin when projectArchive is true', async () => {
-    getProjectRuleTemplateListSpy.mockClear();
-    getProjectRuleTemplateListSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
-    );
-    mockUseCurrentProjectSpy.mockClear();
-    mockUseCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
-    }));
-    customRender(true);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
-      payload: {
-        modalStatus: {
-          [ModalName.Clone_Rule_Template]: false,
-          [ModalName.Export_Rule_Template]: false
-        }
-      },
-      type: 'ruleTemplate/initModalStatus'
-    });
-    expect(screen.getByText('导 出')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('导 出'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(dispatchSpy).toHaveBeenCalledTimes(3);
-    expect(dispatchSpy).toHaveBeenNthCalledWith(2, {
-      payload: {
-        selectRow: projectRuleTemplateListMockData[0]
-      },
-      type: 'ruleTemplate/updateSelectRuleTemplate'
-    });
-    expect(dispatchSpy).toHaveBeenNthCalledWith(3, {
-      payload: {
-        modalName: ModalName.Export_Rule_Template,
-        status: true
-      },
-      type: 'ruleTemplate/updateModalStatus'
-    });
-  });
-
-  it('click clone button when projectArchive is true', async () => {
-    getProjectRuleTemplateListSpy.mockClear();
-    getProjectRuleTemplateListSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [projectRuleTemplateListMockData[0]] })
-    );
-    mockUseCurrentProjectSpy.mockClear();
-    mockUseCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
-    }));
-    customRender(true);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
-      payload: {
-        modalStatus: {
-          [ModalName.Clone_Rule_Template]: false,
-          [ModalName.Export_Rule_Template]: false
-        }
-      },
-      type: 'ruleTemplate/initModalStatus'
-    });
-    expect(screen.getByText('克 隆')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('克 隆'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {

@@ -3,32 +3,44 @@ import { SubMenuType } from 'antd/lib/menu/hooks/useItems';
 import { useMemo, useCallback } from 'react';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
 import { useLocation } from 'react-router-dom';
-import { MenuListProps } from './index.type';
 import { CustomMenuItemType } from './menus/index.type';
-import useCurrentPermission from '@actiontech/shared/lib/global/useCurrentPermission';
-
-// #if [sqle && !dms]
 import { sideMenuData } from './menus/menu.data';
-// #else
 import { dmsSideMenuData } from './menus/menu.data.dms';
-// #endif
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
-const MenuList: React.FC<MenuListProps> = ({ userRoles, projectID }) => {
+type Props = {
+  projectID: string;
+};
+
+const MenuList: React.FC<Props> = ({ projectID }) => {
   const location = useLocation();
-
-  const { sqlOptimizationIsSupported } = useCurrentPermission();
-
+  const { checkPagePermission } = usePermission();
   const menuItems = useMemo(() => {
     let menus: CustomMenuItemType[] = [];
 
     // #if [sqle && !dms]
-    menus = sideMenuData(projectID, userRoles, sqlOptimizationIsSupported);
+    menus = sideMenuData(projectID);
     // #else
-    menus = dmsSideMenuData(projectID, userRoles);
+    menus = dmsSideMenuData(projectID);
     // #endif
+    const filterMenusByPermissions = (requiredMenus: CustomMenuItemType[]) => {
+      return requiredMenus.filter((menu) => {
+        if (menu?.permission) {
+          return checkPagePermission(menu.permission);
+        }
 
-    return menus;
-  }, [projectID, userRoles, sqlOptimizationIsSupported]);
+        if ((menu as SubMenuType).children) {
+          (menu as SubMenuType).children = filterMenusByPermissions(
+            (menu as SubMenuType).children as CustomMenuItemType[]
+          );
+        }
+
+        return true;
+      });
+    };
+
+    return filterMenusByPermissions(menus);
+  }, [projectID, checkPagePermission]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {

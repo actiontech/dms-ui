@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-
 import { ConfigItem } from '@actiontech/shared';
 import {
   EditInput,
   LabelContent
 } from '@actiontech/shared/lib/components/ConfigItem';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
 
 export interface UrlAddressPrefixTipsProps {
   url: string | undefined;
@@ -16,7 +16,6 @@ export interface UrlAddressPrefixTipsProps {
     value: string | number,
     fieldName: keyof IUpdateSystemVariablesReqV1
   ) => void;
-  isAdmin: boolean;
 }
 
 const UrlAddressPrefixTips = ({
@@ -24,11 +23,10 @@ const UrlAddressPrefixTips = ({
   fieldVisible,
   showField,
   hideField,
-  submitGlobalConfig,
-  isAdmin
+  submitGlobalConfig
 }: UrlAddressPrefixTipsProps) => {
   const { t } = useTranslation();
-
+  const { checkActionPermission } = usePermission();
   return (
     <>
       <ConfigItem
@@ -45,7 +43,9 @@ const UrlAddressPrefixTips = ({
         fieldVisible={fieldVisible}
         showField={showField}
         hideField={hideField}
-        needEditButton={isAdmin}
+        needEditButton={checkActionPermission(
+          PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.URL_ADDRESS_PREFIX
+        )}
         inputNode={
           <EditInput
             fieldValue={url ?? ''}

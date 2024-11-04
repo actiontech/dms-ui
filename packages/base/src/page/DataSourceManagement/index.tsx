@@ -1,27 +1,21 @@
 import { useTranslation } from 'react-i18next';
-import {
-  BasicButton,
-  EmptyBox,
-  PageHeader,
-  SegmentedTabs
-} from '@actiontech/shared';
+import { PageHeader, SegmentedTabs } from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
-import {
-  Link,
-  useLocation,
-  useNavigate,
-  useSearchParams
-} from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Space } from 'antd';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import useCurrentUser from '@actiontech/shared/lib/global/useCurrentUser';
-import { PlusOutlined } from '@actiontech/icons/src/outlined';
 import GlobalDataSource from '../GlobalDataSource';
 import SyncDataSource from '../SyncDataSource';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
+import {
+  PERMISSIONS,
+  PermissionsConstantType
+} from '@actiontech/shared/lib/global';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { DataSourceManagementPageHeaderActions } from './action';
 
 const DataSourceManagement: React.FC = () => {
   const { t } = useTranslation();
@@ -29,8 +23,7 @@ const DataSourceManagement: React.FC = () => {
     DataSourceManagerSegmentedKey.GlobalDataSource
   );
 
-  const { isAdmin, isCertainProjectManager, hasGlobalViewingPermission } =
-    useCurrentUser();
+  const { checkPagePermission } = usePermission();
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -45,73 +38,40 @@ const DataSourceManagement: React.FC = () => {
   };
 
   const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
-    const globalDataSourceItem: SegmentedTabsProps['items'][0] = {
-      label: t('dmsGlobalDataSource.pageTitle'),
-      value: DataSourceManagerSegmentedKey.GlobalDataSource,
-      children: <GlobalDataSource />,
-      destroyInactivePane: true
-    };
-    if (isAdmin || hasGlobalViewingPermission) {
-      return [
-        globalDataSourceItem,
-        {
-          label: t('dmsSyncDataSource.pageTitle'),
-          value: DataSourceManagerSegmentedKey.SyncDataSource,
-          children: <SyncDataSource />,
-          destroyInactivePane: true
-        }
-      ];
-    }
+    const items: Array<
+      SegmentedTabsProps['items'][0] & { permission: PermissionsConstantType }
+    > = [
+      {
+        label: t('dmsGlobalDataSource.pageTitle'),
+        value: DataSourceManagerSegmentedKey.GlobalDataSource,
+        children: <GlobalDataSource />,
+        destroyInactivePane: true,
+        permission: PERMISSIONS.PAGES.BASE.GLOBAL_DATA_SOURCE
+      },
+      {
+        label: t('dmsSyncDataSource.pageTitle'),
+        value: DataSourceManagerSegmentedKey.SyncDataSource,
+        children: <SyncDataSource />,
+        destroyInactivePane: true,
+        permission: PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE
+      }
+    ];
 
-    if (isCertainProjectManager) {
-      return [globalDataSourceItem];
-    }
-
-    return [];
-  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager, t]);
+    return items.filter((item) => checkPagePermission(item.permission));
+  }, [checkPagePermission, t]);
 
   // #if [ee]
   const renderExtra = () => {
-    if (activeKey === DataSourceManagerSegmentedKey.SyncDataSource) {
-      return (
-        <EmptyBox if={isAdmin}>
-          <Link to={`/sync-data-source/create`}>
-            <BasicButton
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-            >
-              {t('dmsSyncDataSource.syncTaskList.addSyncTask')}
-            </BasicButton>
-          </Link>
-        </EmptyBox>
-      );
-    }
-
-    if (activeKey === DataSourceManagerSegmentedKey.GlobalDataSource) {
-      return (
-        <EmptyBox if={isAdmin || isCertainProjectManager}>
-          <Space>
-            <Link to={`/global-data-source/batch-import`}>
-              <BasicButton>
-                {t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
-              </BasicButton>
-            </Link>
-            <Link to={`/global-data-source/create`}>
-              <BasicButton
-                type="primary"
-                icon={
-                  <PlusOutlined width={10} height={10} color="currentColor" />
-                }
-              >
-                {t('dmsGlobalDataSource.addDatabase')}
-              </BasicButton>
-            </Link>
-          </Space>
-        </EmptyBox>
-      );
-    }
+    const pageHeaderActions = DataSourceManagementPageHeaderActions(activeKey);
+    return (
+      <>
+        {pageHeaderActions['add_sync_task']}
+        <Space>
+          {pageHeaderActions['batch_import_db_service']}
+          {pageHeaderActions['add_db_service']}
+        </Space>
+      </>
+    );
   };
   // #endif
 

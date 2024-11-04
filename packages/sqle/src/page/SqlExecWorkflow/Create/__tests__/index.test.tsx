@@ -35,6 +35,7 @@ import {
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ModalName } from '../../../../data/ModalName';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { AuditTaskResData } from '../../../../testUtils/mockApi/execWorkflow/data';
 
 jest.mock('react-redux', () => ({
@@ -138,6 +139,10 @@ describe('sqle/SqlExecWorkflow/Create', () => {
               instances_id: instanceTipsMockData[0].instance_id
             }
           ]
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );

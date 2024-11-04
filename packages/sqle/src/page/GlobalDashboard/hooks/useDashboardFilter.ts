@@ -16,7 +16,7 @@ import { paramsSerializer } from '../utils';
 import { useBoolean } from 'ahooks';
 
 const useDashboardFilter = () => {
-  const { bindProjects, uid } = useCurrentUser();
+  const { bindProjects, userId } = useCurrentUser();
 
   const [form] = Form.useForm<GlobalDashboardFilterType>();
 
@@ -120,7 +120,7 @@ const useDashboardFilter = () => {
               GetGlobalWorkflowStatisticsFilterStatusListEnum.rejected,
               GetGlobalWorkflowStatisticsFilterStatusListEnum.exec_failed
             ],
-            filter_create_user_id: uid
+            filter_create_user_id: userId
           },
           {
             paramsSerializer

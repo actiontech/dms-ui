@@ -16,6 +16,7 @@ import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { IWechatConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const WechatAuditSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -150,24 +151,38 @@ const WechatAuditSetting: React.FC = () => {
           data: wechatAuditInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <ConfigExtraButtons
-              isConfigClosed={isConfigClosed}
-              extraButtonsVisible={extraButtonsVisible}
-              handleClickModify={handleClickModify}
-              enabled={!!enabled}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION
+                  .ENABLE_WECHAT_AUDIT
+              }
+            >
+              <ConfigExtraButtons
+                isConfigClosed={isConfigClosed}
+                extraButtonsVisible={extraButtonsVisible}
+                handleClickModify={handleClickModify}
+                enabled={!!enabled}
+              />
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION
+                  .ENABLE_WECHAT_AUDIT
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (

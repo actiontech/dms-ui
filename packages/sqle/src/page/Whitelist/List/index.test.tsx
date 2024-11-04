@@ -13,6 +13,7 @@ import {
   mockProjectInfo,
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -26,17 +27,20 @@ describe('slqe/Whitelist/WhitelistList', () => {
   let whitelistSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   let useCurrentUserSpy: jest.SpyInstance;
-  let useCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     whitelistSpy = auditWhiteList.getAuditWhitelist();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } }
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    useCurrentProjectSpy = mockUseCurrentProject();
+    mockUseCurrentProject();
     useCurrentUserSpy = mockUseCurrentUser();
   });
 
@@ -72,20 +76,38 @@ describe('slqe/Whitelist/WhitelistList', () => {
   });
 
   it('should hide table actions', async () => {
+    // not admin or global manager or project manager
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
     }));
     renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
+
     useCurrentUserSpy.mockClear();
     cleanup();
+    // project manager
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isProjectManager: jest.fn().mockImplementation(() => true),
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
     }));
     renderWithReduxAndTheme(<WhitelistList />);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -97,9 +119,22 @@ describe('slqe/Whitelist/WhitelistList', () => {
     );
     useCurrentUserSpy.mockClear();
     cleanup();
-    useCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
+    // project archived
+    useCurrentUserSpy.mockImplementation(() => ({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: true
+        }
+      ]
     }));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);

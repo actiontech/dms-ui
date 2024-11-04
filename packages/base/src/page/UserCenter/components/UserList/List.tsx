@@ -17,11 +17,13 @@ import {
   updateSelectUser,
   updateUserManageModalStatus
 } from '../../../../store/userCenter';
-import { UserListActions, UserListColumns } from './column';
+import { UserListColumns } from './column';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { UserListActions } from './action';
 
 const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage
@@ -29,6 +31,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
+  const { parse2TableActionPermissions } = usePermission();
 
   const dispatch = useDispatch();
 
@@ -40,7 +43,7 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
     IListUsersParams
   >();
 
-  const { isAdmin, role } = useCurrentUser();
+  const { username } = useCurrentUser();
 
   const {
     data: userList,
@@ -93,11 +96,10 @@ const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({
   );
 
   const actions = useMemo(() => {
-    if (isAdmin) {
-      return UserListActions(onEditUser, onDeleteUser, role);
-    }
-    return [];
-  }, [isAdmin, onEditUser, onDeleteUser, role]);
+    return parse2TableActionPermissions(
+      UserListActions(onEditUser, onDeleteUser, username)
+    );
+  }, [parse2TableActionPermissions, onEditUser, onDeleteUser, username]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(

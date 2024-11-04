@@ -1,23 +1,39 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
+import { IGetUserOpPermissionReply } from '@actiontech/shared/lib/api/base/service/common';
+import { ModuleFeatureSupportStatus } from '@actiontech/shared/lib/enum';
 
-const initialState: PermissionReduxState = {
-  sqlOptimizationIsSupported: false
+type PermissionState = {
+  moduleFeatureSupport: ModuleFeatureSupportStatus;
+  userOperationPermissions: IGetUserOpPermissionReply['data'] | null;
 };
 
-const dmsPermission = createSlice({
+const initialState: PermissionState = {
+  moduleFeatureSupport: {
+    sqlOptimization: false
+  },
+  userOperationPermissions: null
+};
+
+const permissionSlice = createSlice({
   name: 'permission',
   initialState,
   reducers: {
-    updateSqlOptimizationIsSupported(
+    updateModuleFeatureSupport(
       state,
-      { payload: { isSupported } }: PayloadAction<{ isSupported: boolean }>
+      { payload }: PayloadAction<ModuleFeatureSupportStatus>
     ) {
-      state.sqlOptimizationIsSupported = isSupported;
+      state.moduleFeatureSupport = payload;
+    },
+    updateUserOperationPermissions(
+      state,
+      { payload }: PayloadAction<IGetUserOpPermissionReply['data']>
+    ) {
+      state.userOperationPermissions = payload;
     }
   }
 });
 
-export const { updateSqlOptimizationIsSupported } = dmsPermission.actions;
+export const { updateModuleFeatureSupport, updateUserOperationPermissions } =
+  permissionSlice.actions;
 
-export default dmsPermission.reducer;
+export default permissionSlice.reducer;

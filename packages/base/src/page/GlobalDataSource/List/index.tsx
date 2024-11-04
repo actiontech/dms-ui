@@ -1,12 +1,9 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { message, Modal } from 'antd';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
-import {
-  useCurrentUser,
-  useDbServiceDriver
-} from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -22,20 +19,21 @@ import {
 import { IListGlobalDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   GlobalDataSourceColumns,
-  GlobalDataSourceListActions,
   GLobalDataSourceListParamType
 } from './columns';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import useProjectTips from '../../../hooks/useProjectTips';
 import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { GlobalDataSourceListActions } from './action';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
 
-  const { isAdmin, isCertainProjectManager } = useCurrentUser();
+  const { parse2TableActionPermissions } = usePermission();
 
   const [modalApi, modalContextHolder] = Modal.useModal();
 
@@ -91,15 +89,39 @@ const GlobalDataSourceList = () => {
     }
   );
 
-  const navigateToUpdatePage = useCallback(
-    (dbServiceUid: string, projectID: string) => {
-      navigate(`/project/${projectID}/db-services/update/${dbServiceUid}`);
-    },
-    [navigate]
+  const columns = useMemo(
+    () => GlobalDataSourceColumns(getLogoUrlByDbType),
+    [getLogoUrlByDbType]
   );
 
-  const deleteDatabase = useCallback(
-    (dbServiceUid: string, dvServiceName: string, projectID: string) => {
+  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+    useTableFilterContainer(columns, updateTableFilterInfo);
+
+  const filterCustomProps = useMemo(() => {
+    return new Map<keyof IListGlobalDBService, FilterCustomProps>([
+      ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
+      [
+        'project_name',
+        { options: projectIDOptions, loading: getProjectsLoading }
+      ]
+    ]);
+  }, [
+    dbTypeOptions,
+    getDbTypeListLoading,
+    projectIDOptions,
+    getProjectsLoading
+  ]);
+
+  const actions = useMemo(() => {
+    const navigateToUpdatePage = (dbServiceUid: string, projectID: string) => {
+      navigate(`/project/${projectID}/db-services/update/${dbServiceUid}`);
+    };
+
+    const deleteDatabase = (
+      dbServiceUid: string,
+      dvServiceName: string,
+      projectID: string
+    ) => {
       const hideLoading = messageApi.loading(
         t('dmsGlobalDataSource.deleteDatabase.deletingDatabase', {
           name: dvServiceName
@@ -123,12 +145,13 @@ const GlobalDataSourceList = () => {
         .finally(() => {
           hideLoading();
         });
-    },
-    [messageApi, refresh, t]
-  );
+    };
 
-  const testDatabaseConnection = useCallback(
-    (dbServiceUid: string, dbServiceName: string, projectID: string) => {
+    const testDatabaseConnection = (
+      dbServiceUid: string,
+      dbServiceName: string,
+      projectID: string
+    ) => {
       const hide = messageApi.loading(
         t('common.testDatabaseConnectButton.testing'),
         0
@@ -176,56 +199,28 @@ const GlobalDataSourceList = () => {
         .finally(() => {
           hide();
         });
-    },
-    [messageApi, modalApi, t]
-  );
-
-  const columns = useMemo(
-    () => GlobalDataSourceColumns(getLogoUrlByDbType),
-    [getLogoUrlByDbType]
-  );
-
-  const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo);
-
-  const filterCustomProps = useMemo(() => {
-    return new Map<keyof IListGlobalDBService, FilterCustomProps>([
-      ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
-      [
-        'project_name',
-        { options: projectIDOptions, loading: getProjectsLoading }
-      ]
-    ]);
-  }, [
-    dbTypeOptions,
-    getDbTypeListLoading,
-    projectIDOptions,
-    getProjectsLoading
-  ]);
-
-  const actions = useMemo(() => {
-    if (isAdmin || isCertainProjectManager) {
-      return GlobalDataSourceListActions(
+    };
+    return parse2TableActionPermissions(
+      GlobalDataSourceListActions(
         navigateToUpdatePage,
         deleteDatabase,
         testDatabaseConnection
-      );
-    }
-    return [];
+      )
+    );
   }, [
-    isAdmin,
-    isCertainProjectManager,
-    navigateToUpdatePage,
-    deleteDatabase,
-    testDatabaseConnection
+    parse2TableActionPermissions,
+    navigate,
+    messageApi,
+    t,
+    refresh,
+    modalApi
   ]);
 
   useEffect(() => {
     updateDriverList();
     updateProjects();
     updateDbTypeList();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [updateDbTypeList, updateDriverList, updateProjects]);
 
   useEffect(() => {
     const { unsubscribe } = eventEmitter.subscribe(

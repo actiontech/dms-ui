@@ -1,8 +1,5 @@
 import { Typography, Space } from 'antd';
-import {
-  ActiontechTableColumn,
-  ActiontechTableActionMeta
-} from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import {
   IListMember,
@@ -12,7 +9,6 @@ import {
 import renderRolesInfo from '../Common/renderRolesInfo';
 import IsProjectAdmin from '../components/IsProjectAdmin';
 import { BasicToolTips } from '@actiontech/shared';
-import { SystemRole } from '@actiontech/shared/lib/enum';
 import { MemberPermissionStyleWrapper } from '../style';
 
 const commonRoleOperateRangesRender = (
@@ -89,43 +85,6 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   }
 ];
 
-export const MemberListActions = (
-  onEditMember: (record: IListMember | undefined) => void,
-  onDeleteMember: (record: IListMember | undefined) => void
-): ActiontechTableActionMeta<IListMember>[] => [
-  {
-    text: t('common.edit'),
-    key: 'memberEdit',
-    buttonProps: (record) => {
-      return {
-        onClick: () => {
-          onEditMember(record);
-        }
-      };
-    }
-  },
-  {
-    text: t('common.delete'),
-    buttonProps: () => ({
-      danger: true
-    }),
-    key: 'memberDelete',
-    confirm: (record) => {
-      return {
-        title: t('dmsMember.memberList.deleteConfirmTitle', {
-          name: record?.user?.name ?? ''
-        }),
-        onConfirm: () => {
-          onDeleteMember(record);
-        }
-      };
-    },
-    permissions: (record) => {
-      return record?.user?.name !== SystemRole.admin;
-    }
-  }
-];
-
 export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   {
     dataIndex: 'name',
@@ -176,40 +135,6 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
         return t('common.unknownStatus');
       }
       return <IsProjectAdmin value={isAdmin} />;
-    }
-  }
-];
-
-export const MemberGroupListActions = (
-  onEditMemberGroup: (record?: IListMemberGroup) => void,
-  onDeleteMemberGroup: (record?: IListMemberGroup) => void
-): ActiontechTableActionMeta<IListMemberGroup>[] => [
-  {
-    text: t('common.edit'),
-    key: 'memberGroupEdit',
-    buttonProps: (record) => {
-      return {
-        onClick: () => {
-          onEditMemberGroup(record);
-        }
-      };
-    }
-  },
-  {
-    text: t('common.delete'),
-    buttonProps: () => ({
-      danger: true
-    }),
-    key: 'memberGroupDelete',
-    confirm: (record) => {
-      return {
-        title: t('dmsMember.memberGroupList.deleteConfirmTitle', {
-          name: record?.name ?? ''
-        }),
-        onConfirm: () => {
-          onDeleteMemberGroup(record);
-        }
-      };
     }
   }
 ];

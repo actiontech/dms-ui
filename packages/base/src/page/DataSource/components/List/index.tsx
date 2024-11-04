@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { message, Modal, Space } from 'antd';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import {
   useCurrentProject,
-  useCurrentUser,
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useDbService from '../../../../hooks/useDbService';
@@ -26,11 +25,11 @@ import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataMaskingFilterTypeEnum,
   DataSourceColumns,
-  DataSourceListActions,
   DataSourceListParamType,
   filterDataMaskOptions
 } from './columns';
-import { PlusOutlined } from '@actiontech/icons';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -39,13 +38,9 @@ const DataSourceList = () => {
   const [searchParams] = useSearchParams();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
+  const { parse2TableActionPermissions } = usePermission();
+  const { projectID } = useCurrentProject();
 
-  const { projectID, projectArchive, projectName } = useCurrentProject();
-  const { isAdmin, isProjectManager } = useCurrentUser();
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
   const {
     dbDriverOptions,
     getLogoUrlByDbType,
@@ -240,23 +235,23 @@ const DataSourceList = () => {
     getDriveOptionsLoading
   ]);
 
-  const actions = useMemo(() => {
-    return DataSourceListActions(
-      navigateToUpdatePage,
-      deleteDatabase,
-      testDatabaseConnection,
-      navigateToSqlManagementConf,
-      projectArchive,
-      actionPermission
+  const tableActions = useMemo(() => {
+    return parse2TableActionPermissions(
+      DataSourceListActions(
+        navigateToUpdatePage,
+        deleteDatabase,
+        testDatabaseConnection,
+        navigateToSqlManagementConf
+      )
     );
   }, [
+    parse2TableActionPermissions,
     navigateToUpdatePage,
     deleteDatabase,
     testDatabaseConnection,
-    navigateToSqlManagementConf,
-    projectArchive,
-    actionPermission
+    navigateToSqlManagementConf
   ]);
+  const pageHeaderActions = DataSourcePageHeaderActions(projectID);
 
   useEffect(() => {
     if (projectID) {
@@ -272,37 +267,14 @@ const DataSourceList = () => {
       {messageContextHolder}
       <PageHeader
         title={t('dmsDataSource.databaseListTitle')}
-        extra={[
-          <EmptyBox
-            if={!projectArchive && actionPermission}
-            key="add-dataSource"
-          >
-            <Space>
-              {/* #if [ee] */}
-              <Link to={`/project/${projectID}/db-services/batch-import`}>
-                <BasicButton>
-                  {t('dmsDataSource.batchImportDataSource.buttonText')}
-                </BasicButton>
-              </Link>
-              {/* #endif */}
-              <Link to={`/project/${projectID}/db-services/create`}>
-                <BasicButton
-                  type="primary"
-                  icon={
-                    <PlusOutlined
-                      width={10}
-                      height={10}
-                      fill="currentColor"
-                      color="currentColor"
-                    />
-                  }
-                >
-                  {t('dmsDataSource.addDatabase')}
-                </BasicButton>
-              </Link>
-            </Space>
-          </EmptyBox>
-        ]}
+        extra={
+          <Space>
+            {/* #if [ee] */}
+            {pageHeaderActions['batch-import-data-source']}
+            {/* #endif */}
+            {pageHeaderActions['add-data-source']}
+          </Space>
+        }
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -335,7 +307,7 @@ const DataSourceList = () => {
         }}
         loading={loading}
         columns={columns}
-        actions={actions}
+        actions={tableActions}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
       />

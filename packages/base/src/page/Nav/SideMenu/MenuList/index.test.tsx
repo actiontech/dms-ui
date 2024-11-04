@@ -23,16 +23,7 @@ jest.mock('react-router-dom', () => ({
 describe.skip('base/page/Nav/SideMenu/MenuList', () => {
   const navigateSpy = jest.fn();
   const customRender = (role: SystemRole | '' = '') => {
-    return superRender(
-      <MenuList
-        projectID={projectID}
-        userRoles={{
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }}
-      />
-    );
+    return superRender(<MenuList projectID={projectID} />);
   };
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
@@ -63,14 +54,7 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
 
   it('render is not admin snap when has location pathname', async () => {
     const { baseElement } = superRender(
-      <MenuList
-        projectID={projectID}
-        userRoles={{
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }}
-      />,
+      <MenuList projectID={projectID} />,
       undefined,
       {
         routerProps: {
@@ -84,14 +68,7 @@ describe.skip('base/page/Nav/SideMenu/MenuList', () => {
 
   it('render is admin snap when has location pathname', async () => {
     const { baseElement } = superRender(
-      <MenuList
-        projectID={projectID}
-        userRoles={{
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }}
-      />,
+      <MenuList projectID={projectID} />,
       undefined,
       {
         routerProps: {

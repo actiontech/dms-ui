@@ -45,6 +45,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
       null,
     ],
     "label": "SQL开发",
+    "permission": undefined,
     "type": "group",
   },
   null,
@@ -87,6 +88,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
       },
     ],
     "label": "项目配置",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -135,6 +137,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
       null,
     ],
     "label": "SQL开发",
+    "permission": undefined,
     "type": "group",
   },
   null,
@@ -177,6 +180,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
       },
     ],
     "label": "项目配置",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -269,10 +273,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         >
           智能调优
         </Link>,
+        "permission": "page:sql_optimization",
         "structKey": "sql-optimization",
       },
     ],
     "label": "SQL开发",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -305,6 +311,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       },
     ],
     "label": "SQL上线",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -324,6 +331,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       },
     ],
     "label": "CI/CD集成",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -356,6 +364,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       },
     ],
     "label": "SQL管控",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -444,6 +453,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
       },
     ],
     "label": "项目配置",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -462,14 +472,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         >
           SQLE操作记录
         </Link>,
-        "role": [
-          "admin",
-          "globalViewing",
-        ],
+        "permission": "page:operation_record",
         "structKey": "sqle-log",
       },
     ],
     "label": "操作与审计",
+    "permission": undefined,
     "type": "group",
   },
 ]
@@ -558,10 +566,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         >
           智能调优
         </Link>,
+        "permission": "page:sql_optimization",
         "structKey": "sql-optimization",
       },
     ],
     "label": "SQL开发",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -594,6 +604,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       },
     ],
     "label": "SQL上线",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -613,6 +624,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       },
     ],
     "label": "CI/CD集成",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -645,6 +657,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       },
     ],
     "label": "SQL管控",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -733,6 +746,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
       },
     ],
     "label": "项目配置",
+    "permission": undefined,
     "type": "group",
   },
   {
@@ -751,14 +765,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
         >
           SQLE操作记录
         </Link>,
-        "role": [
-          "admin",
-          "globalViewing",
-        ],
+        "permission": "page:operation_record",
         "structKey": "sqle-log",
       },
     ],
     "label": "操作与审计",
+    "permission": undefined,
     "type": "group",
   },
 ]

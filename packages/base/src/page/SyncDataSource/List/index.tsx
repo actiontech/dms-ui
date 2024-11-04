@@ -1,11 +1,9 @@
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { SyncTaskListActions, SyncTaskListTableColumnFactory } from './column';
+import { SyncTaskListTableColumnFactory } from './column';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
-import { useNavigate } from 'react-router-dom';
 import {
   ActiontechTable,
   useTableRequestError
@@ -13,13 +11,14 @@ import {
 import { useEffect } from 'react';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { SyncTaskListActions } from './action';
 
 const SyncTaskList: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const [messageApi, contextHoler] = message.useMessage();
 
-  const { isAdmin } = useCurrentUser();
+  const { parse2TableActionPermissions } = usePermission();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -92,15 +91,12 @@ const SyncTaskList: React.FC = () => {
         loading={loading}
         pagination={false}
         columns={SyncTaskListTableColumnFactory()}
-        actions={
-          isAdmin
-            ? SyncTaskListActions({
-                navigate,
-                syncAction,
-                deleteAction
-              })
-            : []
-        }
+        actions={parse2TableActionPermissions(
+          SyncTaskListActions({
+            syncAction,
+            deleteAction
+          })
+        )}
       />
     </>
   );

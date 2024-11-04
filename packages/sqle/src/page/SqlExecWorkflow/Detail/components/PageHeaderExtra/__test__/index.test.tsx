@@ -12,6 +12,7 @@ import { superRender } from '../../../../../../testUtils/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 type paramsType = Pick<
   WorkflowDetailPageHeaderExtraProps,
@@ -20,6 +21,11 @@ type paramsType = Pick<
   | 'canRejectWorkflow'
   | 'workflowStepsVisibility'
 >;
+
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   const showWorkflowSteps = jest.fn();
@@ -42,6 +48,9 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
 
   afterEach(() => {

@@ -7,14 +7,13 @@ import { useTranslation } from 'react-i18next';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
-import { RuleTemplateTableColumn, RuleTemplateTableActions } from '../columns';
+import { RuleTemplateTableColumn } from '../columns';
 import {
   updateSelectRuleTemplate,
   initRuleTemplateListModalStatus,
   updateRuleTemplateListModalStatus
 } from '../../../../store/ruleTemplate';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { TemplateTableProps } from '../index.type';
 import {
   useTableRequestError,
   ActiontechTable,
@@ -25,17 +24,20 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
 import {
   useCurrentProject,
-  useDbServiceDriver
+  useDbServiceDriver,
+  usePermission
 } from '@actiontech/shared/lib/global';
+import { RuleTemplateTableActions } from '../actions';
 
-const ProjectTable = (props: TemplateTableProps) => {
-  const { actionPermission } = props;
+const ProjectTable = () => {
   const { getLogoUrlByDbType } = useDbServiceDriver();
+
+  const { parse2TableActionPermissions } = usePermission();
 
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [messageApi, contextMessageHolder] = message.useMessage();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const dispatch = useDispatch();
 
   const { tableChange, pagination } =
@@ -159,9 +161,9 @@ const ProjectTable = (props: TemplateTableProps) => {
   );
 
   const actions = useMemo(() => {
-    if (!actionPermission) return [];
-    return RuleTemplateTableActions(onAction, projectArchive);
-  }, [onAction, actionPermission, projectArchive]);
+    return parse2TableActionPermissions(RuleTemplateTableActions(onAction));
+  }, [onAction, parse2TableActionPermissions]);
+
   const columns = useMemo(
     () => RuleTemplateTableColumn(projectID, getLogoUrlByDbType),
     [getLogoUrlByDbType, projectID]

@@ -5,13 +5,7 @@ import { UserMenuProps } from './index.type';
 import CompanyNoticeModal from './Modal/CompanyNoticeModal';
 import VersionModal from './Modal/VersionModal';
 
-const UserMenu: React.FC<UserMenuProps> = ({
-  language,
-  username,
-  isAdmin,
-  isCertainProjectManager,
-  hasGlobalViewingPermission
-}) => {
+const UserMenu: React.FC<UserMenuProps> = ({ language, username }) => {
   const [
     versionModalOpen,
     { setTrue: setVersionModalOpen, setFalse: setVersionModalClose }
@@ -25,11 +19,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           username={username}
           onOpenVersionModal={setVersionModalOpen}
         />
-        <GlobalSetting
-          isAdmin={isAdmin}
-          isCertainProjectManager={isCertainProjectManager}
-          hasGlobalViewingPermission={hasGlobalViewingPermission}
-        />
+        <GlobalSetting />
       </div>
       <VersionModal
         open={versionModalOpen}

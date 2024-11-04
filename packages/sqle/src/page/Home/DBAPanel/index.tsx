@@ -37,7 +37,7 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
-  const { uid } = useCurrentUser();
+  const { userId } = useCurrentUser();
   const [filterStatus, setFilterStatus] = useState<DBAPanelFilterKey>(
     getWorkflowsV1FilterStatusEnum.wait_for_audit
   );
@@ -56,7 +56,7 @@ const DBAPanel: React.FC<IDBAPanelProps> = ({
         page_index: 1,
         page_size: DASHBOARD_COMMON_GET_ORDER_NUMBER,
         filter_status: filterStatus,
-        filter_current_step_assignee_user_id: uid,
+        filter_current_step_assignee_user_id: userId,
         project_name: projectName
       };
       return handleTableRequestError(workflow.getWorkflowsV1(params));

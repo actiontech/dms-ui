@@ -3,21 +3,19 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
 import { FormFields } from './index.type';
-
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
 } from '../../hooks/useConfigRender';
 import ConfigSwitch from '../../components/ConfigSwitch';
-
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import ConfigExtraButtons from './conponents/ConfigExtraButtons';
 import ConfigField from './conponents/ConfigField';
-
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IFeishuConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { switchFieldName } from './index.data';
+import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 
 const LarkSetting: React.FC = () => {
   const { t } = useTranslation();
@@ -150,24 +148,36 @@ const LarkSetting: React.FC = () => {
           data: larkInfo ?? {},
           columns: readonlyColumnsConfig,
           configExtraButtons: (
-            <ConfigExtraButtons
-              enabled={enabled}
-              isConfigClosed={isConfigClosed}
-              extraButtonsVisible={extraButtonsVisible}
-              handleClickModify={handleClickModify}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_LARK
+              }
+            >
+              <ConfigExtraButtons
+                enabled={enabled}
+                isConfigClosed={isConfigClosed}
+                extraButtonsVisible={extraButtonsVisible}
+                handleClickModify={handleClickModify}
+              />
+            </PermissionControl>
           ),
           configSwitchNode: (
-            <ConfigSwitch
-              switchFieldName={switchFieldName}
-              switchOpen={switchOpen}
-              modifyFlag={modifyFlag}
-              submitLoading={submitLoading}
-              popoverVisible={configSwitchPopoverVisible}
-              onConfirm={onConfigSwitchPopoverConfirm}
-              onSwitchChange={onConfigSwitchChange}
-              onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
-            />
+            <PermissionControl
+              permission={
+                PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_LARK
+              }
+            >
+              <ConfigSwitch
+                switchFieldName={switchFieldName}
+                switchOpen={switchOpen}
+                modifyFlag={modifyFlag}
+                submitLoading={submitLoading}
+                popoverVisible={configSwitchPopoverVisible}
+                onConfirm={onConfigSwitchPopoverConfirm}
+                onSwitchChange={onConfigSwitchChange}
+                onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
+              />
+            </PermissionControl>
           ),
           configField: <ConfigField />,
           submitButtonField: (

@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useCurrentProject,
+  usePermission
+} from '@actiontech/shared/lib/global';
 import { WhitelistColumn, WhitelistTableFilterParamType } from './columns';
 import { ModalName } from '../../../data/ModalName';
 import { message } from 'antd';
@@ -9,7 +12,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { updateWhitelistModalStatus } from '../../../store/whitelist';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import WhitelistDrawer from '../Drawer';
 import { IAuditWhitelistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetAuditWhitelistV1Params } from '@actiontech/shared/lib/api/sqle/service/audit_whitelist/index.d';
@@ -21,24 +24,25 @@ import {
   TableToolbar,
   TableFilterContainer,
   useTableFilterContainer,
-  FilterCustomProps,
-  ActiontechTableActionMeta
+  FilterCustomProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { PlusOutlined } from '@actiontech/icons';
 import { whitelistMatchTypeOptions } from '../index.data';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
+import { WhitelistTableActions, WhitelistPageHeaderActions } from './actions';
 
 const WhitelistList = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName } = useCurrentProject();
 
-  const {
-    dispatch,
-    updateSelectWhitelistRecord,
-    openCreateWhitelistModal,
-    actionPermission
-  } = useWhitelistRedux();
+  const { parse2TableActionPermissions } = usePermission();
+
+  const { dispatch, updateSelectWhitelistRecord, openCreateWhitelistModal } =
+    useWhitelistRedux();
+
+  const pageHeaderActions = WhitelistPageHeaderActions(
+    openCreateWhitelistModal
+  );
 
   const {
     tableFilterInfo,
@@ -115,28 +119,11 @@ const WhitelistList = () => {
     [messageApi, projectName, refresh, t]
   );
 
-  const whitelistActionsInTable: {
-    buttons: ActiontechTableActionMeta<IAuditWhitelistResV1>[];
-  } = {
-    buttons: [
-      {
-        key: 'edit-whitelist',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: openUpdateWhitelistModal.bind(null, record ?? {})
-        })
-      },
-      {
-        key: 'remove-whitelist',
-        text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
-        confirm: (record) => ({
-          title: t('whitelist.operate.confirmDelete'),
-          onConfirm: removeWhitelist.bind(null, record?.audit_whitelist_id ?? 0)
-        })
-      }
-    ]
-  };
+  const actions = useMemo(() => {
+    return parse2TableActionPermissions(
+      WhitelistTableActions(openUpdateWhitelistModal, removeWhitelist)
+    );
+  }, [parse2TableActionPermissions, openUpdateWhitelistModal, removeWhitelist]);
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof IAuditWhitelistResV1, FilterCustomProps>([
@@ -160,19 +147,7 @@ const WhitelistList = () => {
       {messageContextHolder}
       <PageHeader
         title={t('whitelist.pageTitle')}
-        extra={[
-          <EmptyBox if={actionPermission} key="add-whitelist">
-            <BasicButton
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-              onClick={openCreateWhitelistModal}
-            >
-              {t('whitelist.operate.addWhitelist')}
-            </BasicButton>
-          </EmptyBox>
-        ]}
+        extra={pageHeaderActions['create-whitelist']}
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -204,7 +179,7 @@ const WhitelistList = () => {
         }}
         loading={loading}
         columns={columns}
-        actions={actionPermission ? whitelistActionsInTable : undefined}
+        actions={actions}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
         scroll={{}}

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { SystemRole } from '../data/common';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
+import { PERMISSIONS } from '@actiontech/shared/lib/global';
 import { ROUTE_PATHS } from '@actiontech/shared';
 
 const Home = React.lazy(
@@ -401,7 +401,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     path: `${PROJECT_ROUTER_PARAM}/operation-record`,
     key: 'operationRecord',
     element: <OperationRecord />,
-    role: [SystemRole.admin, SystemRole.globalViewing]
+    permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
   },
   {
     path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
@@ -419,7 +419,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     key: 'sqlOptimization',
     element: <SqlOptimization />,
     // #if [ee]
-    permission: ['sqlOptimizationIsSupported'],
+    permission: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
     children: [
       {
         index: true,
@@ -516,7 +516,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
     label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
-    role: [SystemRole.admin, SystemRole.globalViewing]
+    permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
   },
   {
     path: ROUTE_PATHS.SQLE.RULE,
@@ -527,7 +527,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   {
     key: 'ruleManager',
     path: 'sqle/rule-manager',
-    role: [SystemRole.admin, SystemRole.globalViewing],
+    permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT,
     children: [
       {
         index: true,

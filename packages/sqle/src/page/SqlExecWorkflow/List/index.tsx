@@ -9,14 +9,9 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { SqlExecWorkflowListStyleWrapper } from './style';
-import {
-  PageHeader,
-  BasicButton,
-  EmptyBox,
-  CustomSegmentedFilter
-} from '@actiontech/shared';
+import { PageHeader, CustomSegmentedFilter } from '@actiontech/shared';
 import { Space, message } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   useCurrentProject,
@@ -43,13 +38,14 @@ import {
   execWorkflowStatusDictionary,
   translateDictionaryI18nLabel
 } from '../../../hooks/useStaticStatus/index.data';
-import { PlusOutlined, MinusCircleOutlined } from '@actiontech/icons';
+import { MinusCircleOutlined } from '@actiontech/icons';
+import { SqlExecWorkflowCreateAction } from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { projectID, projectArchive, projectName } = useCurrentProject();
+  const { projectID, projectName } = useCurrentProject();
   const navigate = useNavigate();
   const [filterStatus, setFilterStatus] =
     useState<getWorkflowsV1FilterStatusEnum>();
@@ -227,18 +223,7 @@ const SqlExecWorkflowList: React.FC = () => {
             />
             {/* #endif */}
 
-            <EmptyBox if={!projectArchive}>
-              <Link to={`/sqle/project/${projectID}/exec-workflow/create`}>
-                <BasicButton
-                  type="primary"
-                  icon={
-                    <PlusOutlined width={10} height={10} color="currentColor" />
-                  }
-                >
-                  {t('execWorkflow.list.createButtonText')}
-                </BasicButton>
-              </Link>
-            </EmptyBox>
+            {SqlExecWorkflowCreateAction(projectID)}
           </Space>
         }
       />
