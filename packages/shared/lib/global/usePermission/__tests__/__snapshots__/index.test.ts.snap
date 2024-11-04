@@ -91,6 +91,9 @@ exports[`usePermission should match snapshot 1`] = `
         "DELETE": "action:delete_custom_rule",
         "EDIT": "action:edit_custom_rule",
       },
+      "DATA_SOURCE_COMPARISON": {
+        "CREATE_MODIFIED_SQL_WORKFLOW": "action:create_modified_sql_workflow",
+      },
       "GLOBAL_RULE_TEMPLATE": {
         "CLONE": "action:clone_rule_template",
         "CREATE": "action:global_rule_template_create_rule_template",
@@ -387,6 +390,18 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:create_custom_rule": {
     "id": "action:create_custom_rule",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:create_modified_sql_workflow": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
+    "id": "action:create_modified_sql_workflow",
+    "projectArchived": false,
     "role": [
       "admin",
       "globalManager",
