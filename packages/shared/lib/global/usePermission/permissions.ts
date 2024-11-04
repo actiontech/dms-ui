@@ -175,6 +175,9 @@ export const PERMISSIONS = {
       },
       PLUGIN_AUDIT: {
         CREATE_WHITELIST: 'action:plugin_audit_create_whitelist'
+      },
+      DATA_SOURCE_COMPARISON: {
+        CREATE_MODIFIED_SQL_WORKFLOW: 'action:create_modified_sql_workflow'
       }
     }
   }

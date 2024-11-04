@@ -1,5 +1,5 @@
 import {
-  IHighPriorityCondition,
+  IHighPriorityConditionResV1,
   IHighPriorityConditionReq
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCallback } from 'react';
@@ -31,8 +31,8 @@ const usePriorityConditionsParams = () => {
 
   const generateFormValuesWithAPIResponse = useCallback(
     (
-      response: IHighPriorityCondition[],
-      allConditions: IHighPriorityCondition[]
+      response: IHighPriorityConditionResV1[],
+      allConditions: IHighPriorityConditionResV1[]
     ) => {
       if (allConditions.length === 0) {
         return {} as PrioritySqlConditionsParams;

@@ -292,6 +292,45 @@ describe('usePermission', () => {
         { uid: 'dbService2' }
       )
     ).toBeFalsy();
+
+    // Case 5: Action requires db service permission - 2
+    mockState.permission.userOperationPermissions.is_admin = false;
+    mockState.permission.userOperationPermissions.op_permission_list = [
+      {
+        range_type: OpPermissionItemRangeTypeEnum.db_service,
+        range_uids: ['dbService1'],
+        op_permission_type: OpPermissionItemOpPermissionTypeEnum.create_workflow
+      }
+    ];
+
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false
+      }
+    });
+
+    rerender();
+
+    expect(
+      result.current.checkActionPermission(
+        PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
+          .CREATE_MODIFIED_SQL_WORKFLOW,
+        undefined,
+        'dbService1'
+      )
+    ).toBeTruthy();
+
+    expect(
+      result.current.checkActionPermission(
+        PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
+          .CREATE_MODIFIED_SQL_WORKFLOW,
+        undefined,
+        'dbService2'
+      )
+    ).toBeFalsy();
   });
 
   it('should parse table action permissions correctly', () => {
