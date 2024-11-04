@@ -119,10 +119,10 @@ const usePermission = (targetProjectID?: string) => {
   const checkActionPermission = useCallback(
     <T = Record<string, string>>(
       requiredPermission: PermissionsConstantType,
-      record?: T
+      record?: T,
+      dbServiceId?: string
     ): boolean => {
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
-
       // 检查项目是否已冻结
       if (
         permissionDetails.projectArchived !== undefined &&
@@ -145,7 +145,7 @@ const usePermission = (targetProjectID?: string) => {
             opType,
             fieldName
               ? (record as Record<string, string>)?.[fieldName]
-              : undefined
+              : dbServiceId
           )
         );
       }

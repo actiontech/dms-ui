@@ -4,11 +4,12 @@ import { PermissionControlProps } from './index.type';
 const PermissionControl: React.FC<PermissionControlProps> = ({
   permission,
   children,
-  projectID
+  projectID,
+  dbServiceID
 }) => {
   const { checkActionPermission } = usePermission(projectID);
 
-  if (checkActionPermission(permission)) {
+  if (checkActionPermission(permission, undefined, dbServiceID)) {
     return <>{children}</>;
   }
 
