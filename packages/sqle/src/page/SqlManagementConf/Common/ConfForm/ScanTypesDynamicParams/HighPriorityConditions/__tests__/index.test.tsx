@@ -1,12 +1,12 @@
 import { act, fireEvent, renderHook } from '@testing-library/react';
 import { Form } from 'antd';
 import HighPriorityConditions from '..';
-import { IHighPriorityCondition } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IHighPriorityConditionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { superRender } from '../../../../../../../testUtils/customRender';
 
 describe('test HighPriorityConditions', () => {
   const prefixPath = 'prefixPath';
-  const conditionsValue: IHighPriorityCondition[] = [
+  const conditionsValue: IHighPriorityConditionResV1[] = [
     {
       operator: {
         operator_enums_value: [

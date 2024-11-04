@@ -9,7 +9,6 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useRequest } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
 import useStaticStatus from '../../../../../../../hooks/useStaticStatus';
 import useAuditResultFilterParams from '../../../../../Common/AuditResultFilterContainer/useAuditResultFilterParams';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -20,7 +19,10 @@ import { GetAuditTaskSQLsPrams } from '../../index.type';
 import {
   BasicButton,
   CustomSegmentedFilter,
-  PageHeader
+  PageHeader,
+  ROUTE_PATHS,
+  useTypedNavigate,
+  useTypedParams
 } from '@actiontech/shared';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
@@ -36,9 +38,12 @@ import { LeftArrowOutlined, SqlFileOutlined } from '@actiontech/icons';
 
 const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();
-  const { taskId, fileId } = useParams<{ taskId: string; fileId: string }>();
+  const { taskId, fileId } =
+    useTypedParams<
+      typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview
+    >();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {

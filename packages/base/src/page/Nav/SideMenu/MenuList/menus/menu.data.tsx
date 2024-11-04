@@ -17,7 +17,8 @@ export const sideMenuData = (projectID: string) => {
         'data-export',
         'sql-audit',
         'plugin-audit',
-        'sql-optimization'
+        'sql-optimization',
+        'data-source-comparison'
       ]
     },
     {
