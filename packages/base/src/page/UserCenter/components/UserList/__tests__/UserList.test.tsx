@@ -175,6 +175,7 @@ describe('base/UserCenter/UserList', () => {
         [SystemRole.admin]: false,
         [SystemRole.globalViewing]: true,
         [SystemRole.globalManager]: true,
+        [SystemRole.createProject]: true,
         [SystemRole.certainProjectManager]: true
       }
     });
@@ -194,6 +195,7 @@ describe('base/UserCenter/UserList', () => {
         [SystemRole.admin]: false,
         [SystemRole.globalViewing]: true,
         [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.certainProjectManager]: true
       }
     });

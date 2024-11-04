@@ -83,6 +83,9 @@ const useCurrentUser = () => {
       [SystemRole.globalViewing]: hasGlobalViewingPermission,
       [SystemRole.globalManager]: managementPermissions.some(
         (v) => v.uid === OpPermissionTypeUid.global_management
+      ),
+      [SystemRole.createProject]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.create_project
       )
     };
   }, [

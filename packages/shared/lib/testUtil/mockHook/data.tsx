@@ -46,7 +46,8 @@ export const mockCurrentUserReturn = {
     [SystemRole.admin]: true,
     [SystemRole.certainProjectManager]: true,
     [SystemRole.globalManager]: true,
-    [SystemRole.globalViewing]: true
+    [SystemRole.globalViewing]: true,
+    [SystemRole.createProject]: true
   },
   hasGlobalViewingPermission: true
 };

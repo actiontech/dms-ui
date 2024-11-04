@@ -240,7 +240,8 @@ describe('test base/CloudBeaver/List', () => {
           [SystemRole.admin]: false,
           [SystemRole.certainProjectManager]: false,
           [SystemRole.globalViewing]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.globalManager]: false,
+          [SystemRole.createProject]: false
         },
         bindProjects: [
           {

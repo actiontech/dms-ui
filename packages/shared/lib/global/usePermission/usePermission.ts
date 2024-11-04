@@ -1,11 +1,12 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import useCurrentUser from '../useCurrentUser';
 import { PERMISSION_MANIFEST, PermissionDetail } from './permissionManifest';
 import { PermissionsConstantType } from './permissions';
 import useCurrentProject from '../useCurrentProject';
 import {
   ActiontechTableActionsWithPermissions,
-  ActiontechTableToolbarActionWithPermissions
+  ActiontechTableToolbarActionWithPermissions,
+  CheckActionPermissionOtherValues
 } from './index.type';
 import { ActiontechTableProps } from '../../components/ActiontechTable';
 import {
@@ -19,7 +20,7 @@ import {
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
 
-const usePermission = (targetProjectID?: string) => {
+const usePermission = () => {
   const { userRoles, bindProjects } = useCurrentUser();
   const { moduleFeatureSupport, userOperationPermissions } = useSelector(
     (state: IReduxState) => ({
@@ -29,17 +30,20 @@ const usePermission = (targetProjectID?: string) => {
   );
   const { projectID } = useCurrentProject();
 
-  const projectAttributesStatus = useMemo(() => {
-    const isArchived = !!bindProjects.find(
-      (project) => project.project_id === (targetProjectID ?? projectID)
-    )?.archived;
-    return {
-      isManager: !!bindProjects.find(
-        (project) => project.project_id === (targetProjectID ?? projectID)
-      )?.is_manager,
-      isArchived
-    };
-  }, [bindProjects, projectID, targetProjectID]);
+  const getProjectAttributesStatus = useCallback(
+    (targetProjectID = projectID) => {
+      const isArchived = !!bindProjects.find(
+        (project) => project.project_id === targetProjectID
+      )?.archived;
+      return {
+        isManager: !!bindProjects.find(
+          (project) => project.project_id === targetProjectID
+        )?.is_manager,
+        isArchived
+      };
+    },
+    [bindProjects, projectID]
+  );
 
   const checkDbServicePermission = useCallback(
     (
@@ -119,10 +123,14 @@ const usePermission = (targetProjectID?: string) => {
   const checkActionPermission = useCallback(
     <T = Record<string, string>>(
       requiredPermission: PermissionsConstantType,
-      record?: T,
-      authDataSourceId?: string
+      otherValues?: CheckActionPermissionOtherValues<T>
     ): boolean => {
+      const { record, authDataSourceId, targetProjectID } = otherValues ?? {};
+
       const permissionDetails = PERMISSION_MANIFEST[requiredPermission];
+      const projectAttributesStatus =
+        getProjectAttributesStatus(targetProjectID);
+
       // 检查项目是否已冻结
       if (
         permissionDetails.projectArchived !== undefined &&
@@ -152,12 +160,7 @@ const usePermission = (targetProjectID?: string) => {
 
       return hasRoleOrManagerPermission;
     },
-    [
-      checkRoles,
-      checkDbServicePermission,
-      projectAttributesStatus.isArchived,
-      projectAttributesStatus.isManager
-    ]
+    [getProjectAttributesStatus, checkRoles, checkDbServicePermission]
   );
 
   const parse2TableActionPermissions = useCallback(
@@ -172,7 +175,7 @@ const usePermission = (targetProjectID?: string) => {
         return actions.map((item) => ({
           ...item,
           permissions: item.permissions
-            ? (record) => checkActionPermission(item.permissions!, record)
+            ? (record) => checkActionPermission(item.permissions!, { record })
             : undefined
         }));
       }
@@ -185,7 +188,8 @@ const usePermission = (targetProjectID?: string) => {
             moreButtons(record).map((item) => ({
               ...item,
               permissions: item.permissions
-                ? (data) => checkActionPermission(item.permissions!, data)
+                ? (data) =>
+                    checkActionPermission(item.permissions!, { record: data })
                 : undefined
             }));
         }
@@ -193,7 +197,7 @@ const usePermission = (targetProjectID?: string) => {
         return moreButtons?.map((item) => ({
           ...item,
           permissions: item.permissions
-            ? (record) => checkActionPermission(item.permissions!, record)
+            ? (record) => checkActionPermission(item.permissions!, { record })
             : undefined
         }));
       };
@@ -203,7 +207,7 @@ const usePermission = (targetProjectID?: string) => {
         buttons: actions.buttons.map((item) => ({
           ...item,
           permissions: item.permissions
-            ? (record) => checkActionPermission(item.permissions!, record)
+            ? (record) => checkActionPermission(item.permissions!, { record })
             : undefined
         })),
         moreButtons: parseActionMoreButtons(actions.moreButtons)

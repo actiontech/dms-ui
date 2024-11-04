@@ -49,6 +49,7 @@ describe('base/System/PersonalizeSetting', () => {
         [SystemRole.admin]: false,
         [SystemRole.globalManager]: false,
         [SystemRole.globalViewing]: false,
+        [SystemRole.createProject]: false,
         [SystemRole.certainProjectManager]: false
       }
     });

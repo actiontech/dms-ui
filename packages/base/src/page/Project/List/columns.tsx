@@ -2,14 +2,10 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
 import { Link } from 'react-router-dom';
-import {
-  ActiontechTableColumn,
-  ActiontechTableProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
-import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { BasicTag, BasicToolTips } from '@actiontech/shared';
 import { Space } from 'antd';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
@@ -112,87 +108,3 @@ export const ProjectListTableColumnFactory =
 
     return columns;
   };
-
-export const ProjectListActions = (
-  deleteProject: (record: IListProject) => void,
-  updateProject: (record: IListProject) => void,
-  archiveProject: (record: IListProject) => void,
-  unarchiveProject: (record: IListProject) => void,
-  allowOperateProject: (name: string) => boolean
-): ActiontechTableProps<IListProject>['actions'] => {
-  return {
-    width: ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3,
-    buttons: [
-      {
-        text: t('common.edit'),
-        key: 'projectEdit',
-        buttonProps: (record) => {
-          const allowOperate = allowOperateProject(record?.name ?? '');
-          return {
-            onClick: () => {
-              updateProject(record ?? {});
-            },
-            disabled: !allowOperate || record?.archived
-          };
-        }
-      },
-      {
-        text: t('common.delete'),
-        buttonProps: (record) => ({
-          danger: true,
-          disabled: !allowOperateProject(record?.name ?? '') || record?.archived
-        }),
-        key: 'projectDelete',
-        confirm: (record) => {
-          return {
-            title: t('dmsProject.projectList.columns.deleteProjectTips', {
-              name: record?.name ?? ''
-            }),
-            onConfirm: () => {
-              deleteProject(record ?? {});
-            },
-            disabled: !allowOperateProject(record?.name ?? '')
-          };
-        }
-      },
-      {
-        text: t('dmsProject.projectList.columns.archive'),
-        key: 'archiveName',
-        buttonProps: (record) => ({
-          disabled: !allowOperateProject(record?.name ?? '')
-        }),
-        confirm: (record) => {
-          return {
-            title: t('dmsProject.projectList.columns.archiveProjectTips', {
-              name: record?.name ?? ''
-            }),
-            onConfirm: () => {
-              archiveProject(record ?? {});
-            },
-            disabled: !allowOperateProject(record?.name ?? '')
-          };
-        },
-        permissions: (record) => !record?.archived
-      },
-      {
-        text: t('dmsProject.projectList.columns.unarchive'),
-        key: 'unarchiveProject',
-        buttonProps: (record) => ({
-          disabled: !allowOperateProject(record?.name ?? '')
-        }),
-        confirm: (record) => {
-          return {
-            title: t('dmsProject.projectList.columns.unarchiveProjectTips', {
-              name: record?.name ?? ''
-            }),
-            onConfirm: () => {
-              unarchiveProject(record ?? {});
-            },
-            disabled: !allowOperateProject(record?.name ?? '')
-          };
-        },
-        permissions: (record) => !!record?.archived
-      }
-    ]
-  };
-};

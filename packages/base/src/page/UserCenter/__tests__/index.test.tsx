@@ -146,6 +146,7 @@ describe('base/UserCenter', () => {
         [SystemRole.admin]: false,
         [SystemRole.globalManager]: false,
         [SystemRole.globalViewing]: true,
+        [SystemRole.createProject]: true,
         [SystemRole.certainProjectManager]: true
       }
     });

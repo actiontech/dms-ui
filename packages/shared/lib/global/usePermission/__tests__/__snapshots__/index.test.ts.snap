@@ -36,6 +36,16 @@ exports[`usePermission should match snapshot 1`] = `
         "EDIT_MEMBER": "action:edit_member",
         "EDIT_MEMBER_GROUP": "action:edit_member_group",
       },
+      "PROJECT_MANAGER": {
+        "ARCHIVE": "action:project_manager_archive",
+        "BATCH_IMPORT_DATA_SOURCE": "action:project_manager_batch_import_data_source",
+        "CREATE": "action:project_manager_create",
+        "DELETE": "action:project_manager_delete",
+        "EDIT": "action:project_manager_edit",
+        "EXPORT": "action:project_manager_export",
+        "IMPORT": "action:project_manager_import",
+        "UNARCHIVE": "action:project_manager_unarchive",
+      },
       "SYNC_DATA_SOURCE": {
         "ADD": "action:add_task",
         "DELETE": "action:delete_task",
@@ -866,6 +876,77 @@ exports[`usePermission should match snapshot 2`] = `
   "action:plugin_audit_create_whitelist": {
     "id": "action:plugin_audit_create_whitelist",
     "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_archive": {
+    "id": "action:project_manager_archive",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_batch_import_data_source": {
+    "id": "action:project_manager_batch_import_data_source",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_create": {
+    "id": "action:project_manager_create",
+    "role": [
+      "admin",
+      "globalManager",
+      "createProject",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_delete": {
+    "id": "action:project_manager_delete",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_edit": {
+    "id": "action:project_manager_edit",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_export": {
+    "id": "action:project_manager_export",
+    "role": [
+      "admin",
+      "globalManager",
+      "createProject",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_import": {
+    "id": "action:project_manager_import",
+    "role": [
+      "admin",
+      "globalManager",
+      "createProject",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_unarchive": {
+    "id": "action:project_manager_unarchive",
     "projectManager": true,
     "role": [
       "admin",
