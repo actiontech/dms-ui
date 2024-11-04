@@ -5,5 +5,5 @@ export type PermissionControlProps = {
   permission: PermissionsConstantType;
   children: ReactNode;
   projectID?: string;
-  dbServiceID?: string;
+  authDataSourceId?: string;
 };

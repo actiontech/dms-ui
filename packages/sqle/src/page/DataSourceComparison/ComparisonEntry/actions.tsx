@@ -29,7 +29,7 @@ export const CreateWorkflowForModifiedSqlAction = (
         PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
           .CREATE_MODIFIED_SQL_WORKFLOW
       }
-      dbServiceID={instanceId}
+      authDataSourceId={instanceId}
     >
       <ActionButton
         actionType="navigate-link"
