@@ -9,13 +9,13 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentUser, useUserInfo } from '@actiontech/shared/lib/global';
+import { usePermission, useUserInfo } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { ProjectListActions, ProjectListTableColumnFactory } from './columns';
+import { ProjectListTableColumnFactory } from './columns';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -24,19 +24,15 @@ import {
   updateSelectProject
 } from '../../../store/project';
 import { ModalName } from '../../../data/ModalName';
+import { ProjectManagementTableActions } from './action';
 
 const ProjectList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, contextHolder] = message.useMessage();
+  const { checkActionPermission } = usePermission();
 
   const dispatch = useDispatch();
-  const { isAdmin, isProjectManager } = useCurrentUser();
   const { updateUserInfo } = useUserInfo();
-
-  const allowOperateProject = useCallback(
-    (projectName: string) => isAdmin || isProjectManager(projectName),
-    [isAdmin, isProjectManager]
-  );
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -67,8 +63,6 @@ const ProjectList: React.FC = () => {
 
   const deleteProject = useCallback(
     (record: IListProject) => {
-      if (!allowOperateProject(record?.name ?? '')) return;
-
       const { uid = '', name = '' } = record;
       Project.DelProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -81,13 +75,11 @@ const ProjectList: React.FC = () => {
         }
       });
     },
-    [allowOperateProject, refresh, t, messageApi]
+    [refresh, t, messageApi]
   );
 
   const archiveProject = useCallback(
     (record: IListProject) => {
-      if (!allowOperateProject(record?.name ?? '')) return;
-
       const { uid = '', name = '' } = record;
       Project.ArchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -101,13 +93,11 @@ const ProjectList: React.FC = () => {
         }
       });
     },
-    [allowOperateProject, refresh, t, messageApi]
+    [refresh, t, messageApi]
   );
 
   const unarchiveProject = useCallback(
     (record: IListProject) => {
-      if (!allowOperateProject(record?.name ?? '')) return;
-
       const { uid = '', name = '' } = record;
       Project.UnarchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -121,13 +111,11 @@ const ProjectList: React.FC = () => {
         }
       });
     },
-    [allowOperateProject, refresh, t, messageApi]
+    [refresh, t, messageApi]
   );
 
   const updateProject = useCallback(
     (record: IListProject) => {
-      if (!allowOperateProject(record?.name ?? '')) return;
-
       dispatch(
         updateProjectModalStatus({
           modalName: ModalName.DMS_Update_Project,
@@ -136,7 +124,7 @@ const ProjectList: React.FC = () => {
       );
       dispatch(updateSelectProject({ selectProject: record }));
     },
-    [allowOperateProject, dispatch]
+    [dispatch]
   );
 
   useEffect(() => {
@@ -161,13 +149,13 @@ const ProjectList: React.FC = () => {
         columns={ProjectListTableColumnFactory()}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={ProjectListActions(
+        actions={ProjectManagementTableActions({
           deleteProject,
           updateProject,
           archiveProject,
           unarchiveProject,
-          allowOperateProject
-        )}
+          checkActionPermission
+        })}
       />
     </>
   );

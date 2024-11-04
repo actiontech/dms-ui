@@ -176,93 +176,10 @@ exports[`base/System-ee render snap 1`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="false"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                                              id="enable"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -727,93 +644,10 @@ exports[`base/System-ee render snap 1`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="false"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                                              id="enable_wechat_notify"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -1197,93 +1031,10 @@ exports[`base/System-ee render snap 1`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="false"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                                              id="enabled"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -1555,93 +1306,10 @@ exports[`base/System-ee render snap 1`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="false"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                                              id="enable"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -2170,93 +1838,10 @@ exports[`base/System-ee render snap 2`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="true"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
-                                              id="enable"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -2827,93 +2412,10 @@ exports[`base/System-ee render snap 2`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="false"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                                              id="enable_wechat_notify"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -3273,93 +2775,10 @@ exports[`base/System-ee render snap 2`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="true"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
-                                              id="enabled"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>
@@ -3647,93 +3066,10 @@ exports[`base/System-ee render snap 2`] = `
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
-                                >
-                                  <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                                    hidden=""
-                                  >
-                                    <div
-                                      class="ant-space-item"
-                                      style="margin-right: 12px;"
-                                    >
-                                      <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                                      >
-                                        <div
-                                          class="ant-space-item"
-                                        >
-                                          <button
-                                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                            type="submit"
-                                          >
-                                            <span
-                                              class="ant-btn-icon"
-                                            >
-                                              <svg
-                                                height="16"
-                                                viewBox="0 0 17 16"
-                                                width="16"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
-                                                />
-                                              </svg>
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="ant-space-item"
-                                    />
-                                  </div>
-                                </div>
+                                />
                                 <div
                                   class="ant-space-item"
-                                >
-                                  <div
-                                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
-                                  >
-                                    <div
-                                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                                    >
-                                      <div
-                                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                                      >
-                                        <div
-                                          class="ant-form-item-control-input"
-                                        >
-                                          <div
-                                            class="ant-form-item-control-input-content"
-                                          >
-                                            <button
-                                              aria-checked="false"
-                                              class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                                              id="enable"
-                                              role="switch"
-                                              type="button"
-                                            >
-                                              <div
-                                                class="ant-switch-handle"
-                                              />
-                                              <span
-                                                class="ant-switch-inner"
-                                              >
-                                                <span
-                                                  class="ant-switch-inner-checked"
-                                                />
-                                                <span
-                                                  class="ant-switch-inner-unchecked"
-                                                />
-                                              </span>
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                />
                               </div>
                             </div>
                           </div>

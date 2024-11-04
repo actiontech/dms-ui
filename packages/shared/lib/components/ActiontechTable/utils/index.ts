@@ -62,7 +62,7 @@ export const checkButtonPermissions = <T extends Record<string, any>>(
 export const checkButtonDisabled = <T extends Record<string, any>>(
   disabled: ((record?: T) => boolean) | boolean | undefined,
   record?: T
-): boolean => {
+): boolean | undefined => {
   if (typeof disabled === 'function') {
     return disabled(record);
   }
@@ -71,5 +71,5 @@ export const checkButtonDisabled = <T extends Record<string, any>>(
     return disabled;
   }
 
-  return false;
+  return undefined;
 };

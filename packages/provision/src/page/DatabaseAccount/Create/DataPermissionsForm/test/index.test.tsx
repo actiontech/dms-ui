@@ -5,7 +5,6 @@ import {
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import {
   getBySelector,
-  queryBySelector,
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -15,6 +14,7 @@ import DataPermissionsForm from '../index';
 import { Form } from 'antd';
 import { CreateAccountFormType } from '../../../index.type';
 import user from '../../../../../testUtil/mockApi/user';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -35,6 +35,10 @@ describe('provision/DatabaseAccount/Create', () => {
     user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
+    mockUsePermission(
+      { checkDbServicePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
     jest.useFakeTimers();
   });
 

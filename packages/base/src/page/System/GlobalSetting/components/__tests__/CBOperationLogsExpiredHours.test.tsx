@@ -20,7 +20,6 @@ describe('base/System/GlobalSetting/CBOperationLogsExpiredHours', () => {
     return superRender(
       <CBOperationLogsExpiredHours
         {...params}
-        isAdmin
         showField={showFieldFn}
         hideField={hideFieldFn}
         submitGlobalConfig={submitGlobalConfigFn}

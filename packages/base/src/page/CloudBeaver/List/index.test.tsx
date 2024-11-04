@@ -18,6 +18,7 @@ import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { listCBOperationLogsMockData } from '../../../testUtils/mockApi/cloudBeaver/data';
 import { ModalName } from '../../../data/ModalName';
 import { ModalName as SqleModalName } from 'sqle/src/data/ModalName';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -52,7 +53,14 @@ describe('test base/CloudBeaver/List', () => {
         cloudBeaver: {
           modalStatus: {}
         },
-        whitelist: { modalStatus: {} }
+        whitelist: { modalStatus: {} },
+        permission: {
+          moduleFeatureSupport: false,
+          userOperationPermissions: {
+            is_admin: true,
+            op_permission_list: []
+          }
+        }
       });
     });
   });
@@ -64,17 +72,20 @@ describe('test base/CloudBeaver/List', () => {
     cleanup();
   });
 
-  test('render init table', async () => {
+  it('render init table', async () => {
     const { baseElement } = superRender(<CBOperationLogsList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+    expect(
+      screen.getAllByText('添加为审核SQL例外')[2].closest('button')
+    ).toBeDisabled();
     expect(listCBOperationLogsSpy).toHaveBeenCalledTimes(1);
     expect(getCBOperationLogTipsSpy).toHaveBeenCalledTimes(1);
     expect(dbServiceTipsSpy).toHaveBeenCalledTimes(1);
     expect(memberTipsSpy).toHaveBeenCalledTimes(1);
   });
 
-  test('render table when request return failed', async () => {
+  it('render table when request return failed', async () => {
     listCBOperationLogsSpy.mockClear();
     listCBOperationLogsSpy.mockImplementation(() => createSpyFailResponse({}));
     const { baseElement } = superRender(<CBOperationLogsList />);
@@ -84,7 +95,7 @@ describe('test base/CloudBeaver/List', () => {
 
   it('filter data with search', async () => {
     const { baseElement } = superRender(<CBOperationLogsList />);
-    expect(listCBOperationLogsSpy).toHaveBeenCalled();
+    expect(listCBOperationLogsSpy).toHaveBeenCalledTimes(1);
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
     fireEvent.change(inputEle, {
@@ -100,6 +111,7 @@ describe('test base/CloudBeaver/List', () => {
       await jest.advanceTimersByTime(300);
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(listCBOperationLogsSpy).toHaveBeenCalledTimes(2);
     expect(listCBOperationLogsSpy).toHaveBeenCalledWith({
       fuzzy_keyword: searchText,
       page_index: 1,
@@ -108,14 +120,12 @@ describe('test base/CloudBeaver/List', () => {
     });
 
     fireEvent.click(screen.getByText('筛选'));
-    await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('export file', async () => {
     superRender(<CBOperationLogsList />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(listCBOperationLogsSpy).toHaveBeenCalled();
     fireEvent.click(screen.getByText('导 出'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('正在导出SQL操作记录')).toBeInTheDocument();
@@ -135,7 +145,6 @@ describe('test base/CloudBeaver/List', () => {
 
   it('click sql and open cloud beaver sql operation result', async () => {
     superRender(<CBOperationLogsList />);
-    expect(listCBOperationLogsSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT')).toHaveLength(2);
     fireEvent.click(screen.getAllByText('SELECT')[1]);
@@ -157,7 +166,6 @@ describe('test base/CloudBeaver/List', () => {
 
   it('click audit result and open cloud beaver sql operation result', async () => {
     superRender(<CBOperationLogsList />);
-    expect(listCBOperationLogsSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllBySelector('.audit-result-wrapper')).toHaveLength(2);
     fireEvent.click(getAllBySelector('.audit-result-wrapper')[0]);
@@ -192,6 +200,64 @@ describe('test base/CloudBeaver/List', () => {
     expect(mockDispatch).toHaveBeenNthCalledWith(4, {
       payload: { selectRow: { value: 'SELECT 1;' } },
       type: 'whitelist/updateSelectWhitelist'
+    });
+  });
+
+  describe('action permissions', () => {
+    it('should render actions', async () => {
+      superRender(<CBOperationLogsList />);
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.getByText('导 出')).toBeInTheDocument();
+      expect(screen.queryAllByText('添加为审核SQL例外').length).toBe(
+        listCBOperationLogsMockData.length
+      );
+    });
+
+    it('should not render actions when project is archived', async () => {
+      mockUseCurrentUser({
+        bindProjects: [
+          {
+            project_id: mockProjectInfo.projectID,
+            project_name: mockProjectInfo.projectName,
+            archived: true,
+            is_manager: true
+          }
+        ]
+      });
+      superRender(<CBOperationLogsList />);
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.getByText('导 出')).toBeInTheDocument();
+      expect(screen.queryAllByText('添加为审核SQL例外').length).toBe(0);
+    });
+
+    it('should not render actions when user is not admin or is not project manager', async () => {
+      mockUseCurrentUser({
+        userRoles: {
+          [SystemRole.admin]: false,
+          [SystemRole.certainProjectManager]: false,
+          [SystemRole.globalViewing]: false,
+          [SystemRole.globalManager]: false,
+          [SystemRole.createProject]: false
+        },
+        bindProjects: [
+          {
+            project_id: mockProjectInfo.projectID,
+            project_name: mockProjectInfo.projectName,
+            archived: false,
+            is_manager: false
+          }
+        ]
+      });
+      superRender(<CBOperationLogsList />);
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.getByText('导 出')).toBeInTheDocument();
+      expect(screen.queryAllByText('添加为审核SQL例外').length).toBe(0);
     });
   });
 });

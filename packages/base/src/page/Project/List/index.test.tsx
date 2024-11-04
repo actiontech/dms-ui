@@ -10,6 +10,7 @@ import { mockProjectList } from '../../../testUtils/mockApi/project/data';
 import { superRender } from '../../../testUtils/customRender';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -194,7 +195,14 @@ describe('test base/project/list', () => {
     mockUseCurrentUser({
       isAdmin: false,
       bindProjects: [],
-      managementPermissions: []
+      managementPermissions: [],
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
+        [SystemRole.globalViewing]: false
+      }
     });
     superRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));

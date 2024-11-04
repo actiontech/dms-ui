@@ -1,10 +1,10 @@
 import {
   useCurrentProject,
   useDbServiceDriver,
-  useUserOperationPermission
+  usePermission
 } from '@actiontech/shared/lib/global';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { useMemo, useCallback, useState, useEffect } from 'react';
+import { useMemo, useCallback, useState } from 'react';
 import { IListService } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
@@ -20,8 +20,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
 
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
-  const { isHaveServicePermission, updateUserOperationPermission } =
-    useUserOperationPermission();
+  const { checkDbServicePermission } = usePermission();
 
   const updateServiceList = useCallback(
     (business?: string) => {
@@ -56,7 +55,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
         new Set(
           serviceList
             .filter((i) =>
-              isHaveServicePermission(
+              checkDbServicePermission(
                 OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
                 i.uid
               )
@@ -66,7 +65,11 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
       );
     }
     return Array.from(new Set(serviceList.map((v) => v.db_type ?? '')));
-  }, [serviceList, isNeedFilterByOperationPermission, isHaveServicePermission]);
+  }, [
+    serviceList,
+    isNeedFilterByOperationPermission,
+    checkDbServicePermission
+  ]);
 
   const serviceOptions = useMemo(() => {
     return dbTypeList.map((type) => {
@@ -74,7 +77,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
         if (isNeedFilterByOperationPermission) {
           return (
             service.db_type === type &&
-            isHaveServicePermission(
+            checkDbServicePermission(
               OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
               service.uid
             )
@@ -101,7 +104,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
     dbTypeList,
     getLogoUrlByDbType,
     serviceList,
-    isHaveServicePermission,
+    checkDbServicePermission,
     isNeedFilterByOperationPermission
   ]);
 
@@ -123,13 +126,6 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
         }))
     }));
   }, [dbTypeList, getLogoUrlByDbType, serviceList]);
-
-  useEffect(() => {
-    if (isNeedFilterByOperationPermission) {
-      updateUserOperationPermission();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return {
     loading,

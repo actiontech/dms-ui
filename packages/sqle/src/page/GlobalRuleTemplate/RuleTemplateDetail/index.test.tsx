@@ -4,7 +4,7 @@ import RuleTemplateDetail from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { useParams } from 'react-router-dom';
-import { mockUseCurrentPermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentPermission';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -21,7 +21,14 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateDetail', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
-    mockUseCurrentPermission();
+    mockUsePermission(
+      {
+        moduleFeatureSupport: { sqlOptimization: true }
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     requestGetGlobalRule = rule_template.getRuleTemplate();
     requestGetAllRule = rule_template.getRuleList();
     useParamsMock.mockReturnValue({

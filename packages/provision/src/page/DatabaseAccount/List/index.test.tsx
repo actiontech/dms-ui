@@ -26,6 +26,7 @@ import {
   OpPermissionItemRangeTypeEnum,
   OpPermissionItemOpPermissionTypeEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -40,15 +41,72 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('provision/DatabaseAccount/List', () => {
-  let authListDBAccountSpy: jest.SpyInstance;
-  let authGetAccountStaticsSpy: jest.SpyInstance;
-  let authUpdateDBAccountSpy: jest.SpyInstance;
-  let authDelDBAccountSpy: jest.SpyInstance;
-  let authListServicesSpy: jest.SpyInstance;
+let authListDBAccountSpy: jest.SpyInstance;
+let authGetAccountStaticsSpy: jest.SpyInstance;
+let authUpdateDBAccountSpy: jest.SpyInstance;
+let authDelDBAccountSpy: jest.SpyInstance;
+let authListServicesSpy: jest.SpyInstance;
+const dispatchSpy = jest.fn();
+const navigateSpy = jest.fn();
 
-  const dispatchSpy = jest.fn();
-  const navigateSpy = jest.fn();
+describe('provision/DatabaseAccount/List-1', () => {
+  beforeEach(() => {
+    authListDBAccountSpy = dbAccountService.authListDBAccount();
+    authGetAccountStaticsSpy = dbAccountService.authGetAccountStatics();
+    authUpdateDBAccountSpy = dbAccountService.authUpdateDBAccount();
+    authDelDBAccountSpy = dbAccountService.authDelDBAccount();
+    authListServicesSpy = auth.listServices();
+    passwordSecurityPolicy.mockAllApi();
+    auth.mockAllApi();
+    user.mockAllApi();
+    mockUseCurrentUser();
+    mockUseDbServiceDriver();
+    mockUseCurrentProject();
+    jest.useFakeTimers();
+
+    (useDispatch as jest.Mock).mockReturnValue(dispatchSpy);
+    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    cleanup();
+  });
+
+  test('render table moreButtons', async () => {
+    mockUsePermission(
+      {
+        userOperationPermissions: {
+          is_admin: false,
+          op_permission_list: [
+            {
+              range_uids: ['1793883708181188608'],
+              range_type: OpPermissionItemRangeTypeEnum.db_service,
+              op_permission_type:
+                OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
+            }
+          ]
+        }
+      } as any,
+      { mockSelector: true }
+    );
+
+    const { baseElement } = superRender(<DatabaseAccountList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(authListDBAccountSpy).toHaveBeenCalled();
+    expect(authGetAccountStaticsSpy).toHaveBeenCalled();
+    expect(authListServicesSpy).toHaveBeenCalled();
+    expect(screen.getByText('账号发现')).toBeInTheDocument();
+    expect(screen.getByText('创建账号')).toBeInTheDocument();
+    expect(
+      getAllBySelector('.actiontech-table-actions-more-button')
+    ).toHaveLength(2);
+  });
+});
+
+describe('provision/DatabaseAccount/List-2', () => {
+  const checkDbServicePermissionSpy = jest.fn();
 
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
@@ -62,13 +120,20 @@ describe('provision/DatabaseAccount/List', () => {
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
+    mockUsePermission(
+      { checkDbServicePermission: checkDbServicePermissionSpy },
+      { useSpyOnMockHooks: true }
+    );
+    checkDbServicePermissionSpy.mockReturnValue(true);
+    jest.useFakeTimers();
+
     (useDispatch as jest.Mock).mockReturnValue(dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
-    jest.useFakeTimers();
   });
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
     cleanup();
   });
 
@@ -127,7 +192,7 @@ describe('provision/DatabaseAccount/List', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('filter data with search', async () => {
+  test('filter data with search', async () => {
     superRender(<DatabaseAccountList />);
     expect(authListDBAccountSpy).toHaveBeenCalled();
     const searchText = 'search text';
@@ -484,51 +549,15 @@ describe('provision/DatabaseAccount/List', () => {
   });
 
   test('render create and discovery button', async () => {
-    const getUserOpPermissionSpy = user.getUserOpPermission();
-    getUserOpPermissionSpy.mockClear();
-    getUserOpPermissionSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: { is_admin: false } })
-    );
+    checkDbServicePermissionSpy.mockReturnValue(false);
+
     const { baseElement } = superRender(<DatabaseAccountList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(authListDBAccountSpy).toHaveBeenCalled();
     expect(authGetAccountStaticsSpy).toHaveBeenCalled();
     expect(authListServicesSpy).toHaveBeenCalled();
-    expect(getUserOpPermissionSpy).toHaveBeenCalled();
     expect(screen.queryByText('账号发现')).not.toBeInTheDocument();
     expect(screen.queryByText('创建账号')).not.toBeInTheDocument();
-  });
-
-  test('render table moreButtons', async () => {
-    const getUserOpPermissionSpy = user.getUserOpPermission();
-    getUserOpPermissionSpy.mockClear();
-    getUserOpPermissionSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: {
-          is_admin: false,
-          op_permission_list: [
-            {
-              range_uids: ['1793883708181188608'],
-              range_type: OpPermissionItemRangeTypeEnum.db_service,
-              op_permission_type:
-                OpPermissionItemOpPermissionTypeEnum.auth_db_service_data
-            }
-          ]
-        }
-      })
-    );
-    const { baseElement } = superRender(<DatabaseAccountList />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
-    expect(authListDBAccountSpy).toHaveBeenCalled();
-    expect(authGetAccountStaticsSpy).toHaveBeenCalled();
-    expect(authListServicesSpy).toHaveBeenCalled();
-    expect(getUserOpPermissionSpy).toHaveBeenCalled();
-    expect(screen.getByText('账号发现')).toBeInTheDocument();
-    expect(screen.getByText('创建账号')).toBeInTheDocument();
-    expect(
-      getAllBySelector('.actiontech-table-actions-more-button')
-    ).toHaveLength(2);
   });
 });

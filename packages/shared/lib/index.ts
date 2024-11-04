@@ -38,6 +38,7 @@ export { default as SpinIndicator } from './components/SpinIndicator';
 export { default as ReminderInformation } from './components/ReminderInformation';
 export { default as TestDatabaseConnectButton } from './components/TestDatabaseConnectButton';
 export * from './components/SystemConfigurationHub';
+export * from './components/ActionButton';
 export * from './components/TypedRouter';
 
 export { default as Copy } from './utils/Copy';

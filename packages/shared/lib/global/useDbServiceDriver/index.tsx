@@ -15,7 +15,7 @@ const useDbServiceDriver = () => {
     (state: IReduxState) => state.database.driverMeta
   );
   const [driverNameList, setDriverNameList] = React.useState<string[]>([]);
-  const [driverInfoFetched, setDriverInfoFetched] = React.useState(false);
+  const [isDriverInfoFetched, setDriverInfoFetched] = React.useState(false);
 
   const {
     loading,
@@ -80,7 +80,7 @@ const useDbServiceDriver = () => {
     updateDriverListAsync,
     getLogoUrlByDbType,
     generateDriverSelectOptions,
-    driverInfoFetched,
+    isDriverInfoFetched,
     setDriverInfoFetched
   };
 };

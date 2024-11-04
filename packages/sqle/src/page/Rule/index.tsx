@@ -7,11 +7,11 @@ import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapp
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { Link } from 'react-router-dom';
 import { RuleListStyleWrapper } from './style';
-import useCreateRuleTemplatePermission from './hooks/useCreateRuleTemplatePermission';
 
 import RuleListFilter from './RuleListFilter';
 import useRuleListFilter from './hooks/useRuleListFilter';
 import { RuleListFilterForm } from './index.type';
+import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
 
 const Rule = () => {
   const { t } = useTranslation();
@@ -33,19 +33,12 @@ const Rule = () => {
     bindProjects,
     loading,
     projectID,
-    projectName,
     filterRuleTemplate,
     filterDbType,
     allRules,
     templateRules,
     getAllRules
   } = useRuleListFilter(form);
-
-  const { allowCreateRuleTemplate } = useCreateRuleTemplatePermission({
-    projectID,
-    projectName,
-    showNotRuleTemplatePage
-  });
 
   return (
     <RuleListStyleWrapper>
@@ -74,7 +67,12 @@ const Rule = () => {
                 <div className="no-project-rule-template-empty-content">
                   <div>{t('rule.notProjectRuleTemplate')}</div>
 
-                  <EmptyBox if={allowCreateRuleTemplate}>
+                  <PermissionControl
+                    permission={
+                      PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE
+                    }
+                    projectID={projectID}
+                  >
                     {t('rule.createRuleTemplateTips1')}
                     <Link
                       className="link-create-project-rule-template-btn"
@@ -83,7 +81,7 @@ const Rule = () => {
                       {t('rule.createRuleTemplate')}
                     </Link>
                     {t('rule.createRuleTemplateTips2')}
-                  </EmptyBox>
+                  </PermissionControl>
                 </div>
               }
             />

@@ -14,6 +14,19 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import {
+  mockProjectInfo,
+  mockCurrentUserReturn
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 jest.mock('rehype-sanitize', () => () => jest.fn());
 
@@ -34,6 +47,7 @@ describe('page/RuleUnderstand', () => {
 
   beforeEach(() => {
     rule_template.mockAllApi();
+    mockUsePermission(undefined, { mockSelector: true, mockCurrentUser: true });
     jest.useFakeTimers();
   });
 
@@ -57,9 +71,20 @@ describe('page/RuleUnderstand', () => {
   });
 
   it('render content data and no edit permission for not admin', () => {
+    mockUsePermission(undefined, {
+      mockSelector: true,
+      mockCurrentUser: true,
+      mockUseCurrentUserData: {
+        ...mockCurrentUserReturn,
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false
+        }
+      }
+    });
     const { baseElement } = customRender({
-      ...ruleUnderstandProps,
-      isAdmin: false
+      ...ruleUnderstandProps
     });
     expect(baseElement).toMatchSnapshot();
     expect(

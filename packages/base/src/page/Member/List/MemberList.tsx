@@ -11,7 +11,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
   useCurrentProject,
-  useCurrentUser
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
@@ -20,12 +20,13 @@ import Member from '@actiontech/shared/lib/api/base/service/Member';
 import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import { MemberListColumns, MemberListActions } from './column';
+import { MemberListColumns } from './column';
 import {
   updateMemberModalStatus,
   updateSelectMember
 } from '../../../store/member';
 import { MemberListTypeEnum } from '../index.enum';
+import { MemberListActions } from './actions';
 
 const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   activePage
@@ -36,13 +37,9 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
 
   const dispatch = useDispatch();
 
-  const { projectID, projectArchive, projectName } = useCurrentProject();
+  const { projectID } = useCurrentProject();
 
-  const { isAdmin, isProjectManager } = useCurrentUser();
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
+  const { parse2TableActionPermissions } = usePermission();
 
   const [refreshFlag, { toggle: toggleRefreshFlag }] = useToggle(false);
 
@@ -105,8 +102,10 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   );
 
   const actions = useMemo(() => {
-    return MemberListActions(onEditMember, onDeleteMember);
-  }, [onEditMember, onDeleteMember]);
+    return parse2TableActionPermissions(
+      MemberListActions(onEditMember, onDeleteMember)
+    );
+  }, [onEditMember, onDeleteMember, parse2TableActionPermissions]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
@@ -130,7 +129,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
         columns={MemberListColumns}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={!projectArchive && actionPermission ? actions : undefined}
+        actions={actions}
         scroll={{}}
       />
     </>

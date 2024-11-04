@@ -9,8 +9,8 @@ import Project from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../data/EmitterKey';
-import { useNavigate } from 'react-router-dom';
-import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -20,22 +20,15 @@ jest.mock('react-redux', () => {
   };
 });
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: jest.fn()
-}));
-
 describe('test base/page/project', () => {
   let emitSpy: jest.SpyInstance;
   const useSelectorMock = useSelector as jest.Mock;
   const dispatchSpy = jest.fn();
-  const navigateSpy = jest.fn();
   let exportProjectsSpy: jest.SpyInstance;
 
   beforeEach(() => {
     jest.useFakeTimers();
     emitSpy = jest.spyOn(EventEmitter, 'emit');
-    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     project.getProjectList();
     exportProjectsSpy = project.exportProjects();
     mockUseCurrentUser();
@@ -48,6 +41,12 @@ describe('test base/page/project', () => {
             [ModalName.DMS_Add_Project]: false,
             [ModalName.DMS_Update_Project]: false
           }
+        },
+        permission: {
+          moduleFeatureSupport: {
+            sqlOptimization: false
+          },
+          userOperationPermissions: null
         }
       })
     );
@@ -75,7 +74,14 @@ describe('test base/page/project', () => {
   });
 
   it('should open the modal for creating a project when click the Create Project button', () => {
-    // mockUseCurrentUser({ isAdmin: true });
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: true,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false
+      }
+    });
     superRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('创建项目'));
@@ -93,7 +99,12 @@ describe('test base/page/project', () => {
     jest.clearAllTimers();
 
     mockUseCurrentUser({
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: true
+      }
     });
     superRender(<Project />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
@@ -108,21 +119,17 @@ describe('test base/page/project', () => {
     jest.clearAllTimers();
 
     mockUseCurrentUser({
-      isAdmin: false,
-      managementPermissions: []
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false
+      }
     });
     superRender(<Project />);
     expect(screen.queryByText('创建项目')).not.toBeInTheDocument();
     expect(screen.queryByText('导 入')).not.toBeInTheDocument();
     expect(screen.queryByText('导 出')).not.toBeInTheDocument();
-  });
-
-  it('render navigate to import page', async () => {
-    superRender(<Project />);
-    await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('导 入'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalledWith('/project/import');
   });
 
   it('should export project info', async () => {
@@ -140,18 +147,27 @@ describe('test base/page/project', () => {
   });
 
   it('render batch import data source button', async () => {
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: true,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false
+      }
+    });
     superRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('批量导入数据源'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(navigateSpy).toHaveBeenCalledTimes(1);
 
     cleanup();
     jest.clearAllMocks();
     jest.clearAllTimers();
     mockUseCurrentUser({
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
     });
     superRender(<Project />);
     await act(async () => jest.advanceTimersByTime(3000));

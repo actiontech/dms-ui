@@ -6,9 +6,21 @@ import workflowTemplate from '../../../testUtils/mockApi/workflowTemplate';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockProjectInfo,
+  mockCurrentUserReturn
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import user from '../../../testUtils/mockApi/user';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
   beforeEach(() => {
@@ -17,6 +29,9 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
 
   afterEach(() => {
@@ -52,7 +67,15 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
   });
 
   it('render workflow template detail without permission', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+    // not admin or global manager or project manager
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
+    });
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
     const userInfoRequest = user.getUserTipList();
     const { baseElement } = customRender();
@@ -60,7 +83,49 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('审批流程模版')).toBeInTheDocument();
+    expect(screen.queryByText('修改当前审批流程模版')).not.toBeInTheDocument();
+
+    // project manager
+    cleanup();
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
+    });
+    customRender();
+    expect(screen.getByText('修改当前审批流程模版')).toBeInTheDocument();
+
+    // project is archived
+    cleanup();
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: true
+        }
+      ]
+    });
+    customRender();
+    expect(screen.queryByText('修改当前审批流程模版')).not.toBeInTheDocument();
   });
 
   it('render workflow template detail with not projectArchive', async () => {

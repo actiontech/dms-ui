@@ -1,5 +1,5 @@
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
-import { SystemRole } from '@actiontech/shared/lib/enum';
+import { PERMISSIONS } from '@actiontech/shared/lib/global';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
 
@@ -65,13 +65,13 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     path: 'user-center',
     key: 'userCenter',
     element: <UserCenter />,
-    role: [SystemRole.admin, SystemRole.globalViewing]
+    permission: PERMISSIONS.PAGES.BASE.USER_CENTER
   },
   {
     path: 'system',
     key: 'system',
     element: <System />,
-    role: [SystemRole.admin, SystemRole.globalViewing]
+    permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
   },
   {
     path: 'account',
@@ -82,11 +82,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: 'data-source-management',
     key: 'dataSourceManagement',
-    role: [
-      SystemRole.admin,
-      SystemRole.certainProjectManager,
-      SystemRole.globalViewing
-    ],
+    permission: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT,
     element: <DataSourceManagement />
   },
   {
@@ -99,11 +95,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: 'global-data-source',
     key: 'globalDataSource',
-    role: [
-      SystemRole.admin,
-      SystemRole.certainProjectManager,
-      SystemRole.globalViewing
-    ],
+    permission: PERMISSIONS.PAGES.BASE.GLOBAL_DATA_SOURCE,
     children: [
       {
         path: 'batch-import',
@@ -120,7 +112,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
   {
     path: `sync-data-source`,
     key: 'syncDataSource',
-    role: [SystemRole.admin, SystemRole.globalViewing],
+    permission: PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE,
     children: [
       {
         path: 'create',

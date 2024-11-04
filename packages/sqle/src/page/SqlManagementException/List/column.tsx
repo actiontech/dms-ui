@@ -1,7 +1,6 @@
 import {
   ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize,
-  ActiontechTableActionMeta
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { t } from '../../../locale';
@@ -76,32 +75,4 @@ export const SqlManagementExceptionListColumns: () => ActiontechTableColumn<
       }
     }
   ];
-};
-
-export const SqlManagementExceptionActions: (
-  onUpdate: (record?: IBlacklistResV1) => void,
-  onDelete: (id?: number) => void
-) => {
-  buttons: ActiontechTableActionMeta<IBlacklistResV1>[];
-} = (onUpdate, onDelete) => {
-  return {
-    buttons: [
-      {
-        key: 'edit-button',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: () => onUpdate(record)
-        })
-      },
-      {
-        key: 'delete-button',
-        text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
-        confirm: (record) => ({
-          title: t('sqlManagementException.operate.confirmDelete'),
-          onConfirm: () => onDelete(record?.blacklist_id)
-        })
-      }
-    ]
-  };
 };

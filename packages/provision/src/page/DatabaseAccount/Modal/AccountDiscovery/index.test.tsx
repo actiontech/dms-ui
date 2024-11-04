@@ -16,6 +16,7 @@ import { discoveryDBAccountMockData } from '../../../../testUtil/mockApi/dbAccou
 import EventEmitter from '../../../../utils/EventEmitter';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import user from '../../../../testUtil/mockApi/user';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -32,7 +33,10 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
     user.mockAllApi();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
-
+    mockUsePermission(
+      { checkDbServicePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
     jest.useFakeTimers();
   });
 

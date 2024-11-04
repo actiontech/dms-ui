@@ -11,7 +11,8 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { sqlManageListData } from '../../../../testUtils/mockApi/sqlManage/data';
 import {
   getAllBySelector,
-  getBySelector
+  getBySelector,
+  queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   mockCurrentUserReturn,
@@ -25,6 +26,7 @@ import {
   exportSqlManageV1FilterPriorityEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 import {
   SQL_MANAGEMENT_INSTANCE_PATH_KEY,
   SQL_MANAGEMENT_SOURCE_PATH_KEY
@@ -86,6 +88,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
         whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
         sqlManagementException: {
           modalStatus: { [ModalName.Create_Sql_Management_Exception]: false }
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       });
     });
@@ -200,7 +206,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(request).toHaveBeenCalledWith({
       ...requestParams,
-      filter_assignee: mockCurrentUserReturn.uid
+      filter_assignee: mockCurrentUserReturn.userId
     });
   });
 
@@ -283,7 +289,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     expect(exportRequest).toHaveBeenCalledWith(
       {
         ...exportParams,
-        filter_assignee: mockCurrentUserReturn.uid,
+        filter_assignee: mockCurrentUserReturn.userId,
         filter_priority: exportSqlManageV1FilterPriorityEnum.high
       },
       {
@@ -488,13 +494,96 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
   });
 
-  it('render table for not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+  it('render table with permissions', async () => {
+    // project manager
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
+    });
     const request = sqlManage.getSqlManageList();
     const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('批量指派')).toBeInTheDocument();
+    expect(screen.getByText('批量解决')).toBeInTheDocument();
+    expect(screen.getByText('批量忽略')).toBeInTheDocument();
+    expect(screen.getByText('指派负责人')).toBeInTheDocument();
+    expect(screen.getByText('变更状态')).toBeInTheDocument();
+    expect(
+      getBySelector('.actiontech-table-actions-more-button')
+    ).toBeInTheDocument();
+    expect(screen.queryByText('分 析')).not.toBeInTheDocument();
+    cleanup();
+
+    // not admin or global manager or project manager
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
+    });
+    const { baseElement: noPermissionBaseElement } = superRender(
+      <SQLEEIndex />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(noPermissionBaseElement).toMatchSnapshot();
+    expect(screen.queryByText('批量指派')).not.toBeInTheDocument();
+    expect(screen.queryByText('批量解决')).not.toBeInTheDocument();
+    expect(screen.queryByText('批量忽略')).not.toBeInTheDocument();
+    expect(screen.queryByText('指派负责人')).not.toBeInTheDocument();
+    expect(screen.queryByText('变更状态')).not.toBeInTheDocument();
+    expect(
+      queryBySelector('.actiontech-table-actions-more-button')
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('分 析')).toBeInTheDocument();
+    cleanup();
+
+    // project archived
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: true
+        }
+      ]
+    });
+    const { baseElement: projectArchivedBaseElement } = superRender(
+      <SQLEEIndex />
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(projectArchivedBaseElement).toMatchSnapshot();
+    expect(screen.queryByText('批量指派')).not.toBeInTheDocument();
+    expect(screen.queryByText('批量解决')).not.toBeInTheDocument();
+    expect(screen.queryByText('批量忽略')).not.toBeInTheDocument();
+    expect(screen.queryByText('指派负责人')).not.toBeInTheDocument();
+    expect(screen.queryByText('变更状态')).not.toBeInTheDocument();
+    expect(
+      queryBySelector('.actiontech-table-actions-more-button')
+    ).not.toBeInTheDocument();
+    expect(screen.getByText('分 析')).toBeInTheDocument();
   });
 
   it('change single status when click row button', async () => {

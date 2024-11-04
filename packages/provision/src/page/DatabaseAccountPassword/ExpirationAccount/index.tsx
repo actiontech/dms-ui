@@ -12,7 +12,7 @@ import { useRequest } from 'ahooks';
 import {
   useCurrentProject,
   useCurrentUser,
-  useUserOperationPermission
+  usePermission
 } from '@actiontech/shared/lib/global';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
@@ -57,11 +57,7 @@ const ExpirationAccountList = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
 
-  const {
-    isHaveServicePermission,
-    updateUserOperationPermission,
-    loading: updateUserOperationPermissionLoading
-  } = useUserOperationPermission();
+  const { checkDbServicePermission } = usePermission();
 
   const {
     tableFilterInfo,
@@ -76,11 +72,7 @@ const ExpirationAccountList = () => {
     ExpirationAccountListFilterParamType
   >();
 
-  const {
-    data,
-    loading: tableLoading,
-    refresh
-  } = useRequest(
+  const { data, loading, refresh } = useRequest(
     () => {
       const params: IAuthListDBAccountParams = {
         ...tableFilterInfo,
@@ -99,11 +91,6 @@ const ExpirationAccountList = () => {
     {
       refreshDeps: [projectID, tableFilterInfo, pagination, searchKeyword]
     }
-  );
-
-  const loading = useMemo(
-    () => updateUserOperationPermissionLoading || tableLoading,
-    [updateUserOperationPermissionLoading, tableLoading]
   );
 
   const tableSetting = useMemo<ColumnsSettingProps>(
@@ -163,12 +150,7 @@ const ExpirationAccountList = () => {
   useEffect(() => {
     updateServiceList();
     updateSecurityPolicyList();
-    updateUserOperationPermission();
-  }, [
-    updateServiceList,
-    updateSecurityPolicyList,
-    updateUserOperationPermission
-  ]);
+  }, [updateServiceList, updateSecurityPolicyList]);
 
   useEffect(() => {
     initModalStatus({
@@ -220,7 +202,7 @@ const ExpirationAccountList = () => {
         onChange={tableChange}
         errorMessage={requestErrorMessage}
         actions={ExpirationAccountListActions(onOpenModal, (dbServiceId) =>
-          isHaveServicePermission(
+          checkDbServicePermission(
             OpPermissionItemOpPermissionTypeEnum.auth_db_service_data,
             dbServiceId
           )

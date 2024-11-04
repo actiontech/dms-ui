@@ -1194,22 +1194,14 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2000,22 +1992,14 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2097,22 +2081,14 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2188,22 +2164,14 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2808,22 +2776,14 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2905,22 +2865,14 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2996,22 +2948,14 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -3974,22 +3918,14 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -4927,22 +4863,14 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -5557,22 +5485,14 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -6140,22 +6060,14 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    详 情
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                详 情
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>

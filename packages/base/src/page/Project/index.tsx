@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -9,40 +9,25 @@ import { useDispatch } from 'react-redux';
 import { updateProjectModalStatus } from '../../store/project';
 import { ModalName } from '../../data/ModalName';
 import ProjectManageModal from './Modal';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
-import { useMemo } from 'react';
-import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
-import { useNavigate } from 'react-router-dom';
 import ProjectApi from '@actiontech/shared/lib/api/base/service/Project';
 import { useBoolean } from 'ahooks';
+import { ProjectManagementPageHeaderActions } from './action';
 
 const Project: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const [messageApi, contextHolder] = message.useMessage();
 
   const [exportLoading, { setTrue: exportPending, setFalse: exportFinish }] =
     useBoolean();
 
-  const { isAdmin, managementPermissions } = useCurrentUser();
   const dispatch = useDispatch();
-
-  const allowCreateProject = useMemo(() => {
-    return (
-      isAdmin ||
-      managementPermissions.some(
-        (v) => OpPermissionTypeUid['create_project'] === (v?.uid ?? '')
-      )
-    );
-  }, [isAdmin, managementPermissions]);
 
   const refreshTable = () => {
     EventEmitter.emit(EmitterKey.DMS_Refresh_Project_List);
   };
 
-  const createProject = () => {
-    if (!allowCreateProject) return;
+  const onCreateProject = () => {
     dispatch(
       updateProjectModalStatus({
         modalName: ModalName.DMS_Add_Project,
@@ -63,13 +48,11 @@ const Project: React.FC = () => {
     });
   };
 
-  const onImport = () => {
-    navigate('/project/import');
-  };
-
-  const onBatchImportDataSource = () => {
-    navigate('/project/batch-import');
-  };
+  const headerActions = ProjectManagementPageHeaderActions(
+    onExport,
+    exportLoading,
+    onCreateProject
+  );
 
   return (
     <section>
@@ -83,24 +66,10 @@ const Project: React.FC = () => {
         }
         extra={
           <Space>
-            <EmptyBox if={isAdmin}>
-              <BasicButton onClick={onBatchImportDataSource}>
-                {t('dmsProject.batchImportDataSource.buttonText')}
-              </BasicButton>
-            </EmptyBox>
-            <EmptyBox if={allowCreateProject}>
-              <Space>
-                <BasicButton onClick={onExport} loading={exportLoading}>
-                  {t('dmsProject.exportProject.buttonText')}
-                </BasicButton>
-                <BasicButton onClick={onImport}>
-                  {t('dmsProject.importProject.buttonText')}
-                </BasicButton>
-                <BasicButton type="primary" onClick={createProject}>
-                  {t('dmsProject.createProject.modalTitle')}
-                </BasicButton>
-              </Space>
-            </EmptyBox>
+            {headerActions.batch_import_data_source}
+            {headerActions.export}
+            {headerActions.import}
+            {headerActions.create}
           </Space>
         }
       />

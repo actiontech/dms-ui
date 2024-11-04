@@ -31,7 +31,7 @@ import { useRequest } from 'ahooks';
 import {
   useCurrentProject,
   useCurrentUser,
-  useUserOperationPermission
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Spin, Space } from 'antd';
@@ -64,12 +64,7 @@ const VersionDetail = () => {
 
   const { isAdmin } = useCurrentUser();
 
-  const {
-    updateUserOperationPermission,
-    loading: getUserOperationPermissionLoading,
-    isHaveServicePermission,
-    userOperationPermission
-  } = useUserOperationPermission();
+  const { checkDbServicePermission } = usePermission();
 
   const [nodes, setNodes] = useState<Node<StageNodeData>[]>([]);
 
@@ -213,7 +208,6 @@ const VersionDetail = () => {
           }
         }),
     {
-      ready: !!userOperationPermission,
       onSuccess: (res) => {
         const {
           sql_version_stage_detail = [],
@@ -415,7 +409,7 @@ const VersionDetail = () => {
           const nextStageInstance =
             sortedStageDetail[currentStageIndex + 1]?.stage_instances;
           return nextStageInstance?.some((i) =>
-            isHaveServicePermission(
+            checkDbServicePermission(
               OpPermissionItemOpPermissionTypeEnum.create_workflow,
               i.instances_id
             )
@@ -453,10 +447,6 @@ const VersionDetail = () => {
   );
 
   useEffect(() => {
-    updateUserOperationPermission();
-  }, [updateUserOperationPermission]);
-
-  useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.Refresh_Version_Management_Detail,
       refresh
@@ -485,9 +475,7 @@ const VersionDetail = () => {
             extra={<BackToList />}
           />
           <Spin
-            spinning={
-              getVersionDetailLoading || getUserOperationPermissionLoading
-            }
+            spinning={getVersionDetailLoading}
             wrapperClassName="flow-wrapper"
           >
             <ReactFlow

@@ -11,16 +11,14 @@ import {
   useNotificationContext
 } from '@actiontech/shared/lib/hooks';
 import {
+  ResponseCode,
   SupportLanguage,
-  SupportTheme,
-  UserRolesType
+  SupportTheme
 } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useCurrentUser,
-  useDbServiceDriver,
-  useFeaturePermission,
-  useCurrentPermission
+  useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -37,10 +35,14 @@ import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import updateLocale from 'dayjs/plugin/updateLocale';
-import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
 import i18n from './locale';
 import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import useFetchPermissionData from './hooks/useFetchPermissionData';
+import { useDispatch } from 'react-redux';
+import { updateModuleFeatureSupport } from './store/permission';
+
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -87,24 +89,27 @@ function App() {
     token: state.user.token
   }));
 
+  const dispatch = useDispatch();
+
   const { notificationContextHolder } = useNotificationContext();
 
   const { getUserBySession } = useSessionUser();
 
   const {
-    userInfoFetched,
+    isUserInfoFetched,
     theme,
-    userRoles,
     language: currentLanguage
   } = useCurrentUser();
+
+  const { fetchModuleSupportStatus, isFeatureSupportFetched } =
+    useFetchPermissionData();
 
   const antdLanguage =
     currentLanguage === SupportLanguage.enUS ? antd_en_US : antd_zh_CN;
 
-  const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
-  const { updateFeaturePermission, featurePermissionFetched } =
-    useFeaturePermission();
-  const currentPermissions = useCurrentPermission();
+  const { isDriverInfoFetched, updateDriverList } = useDbServiceDriver();
+
+  const { checkPagePermission } = usePermission();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -122,44 +127,26 @@ function App() {
   // #endif
 
   const AuthRouterConfigData = useMemo(() => {
-    const filterRoutesByRole: (
-      routes: RouterConfigItem[],
-      roles: UserRolesType,
-      permissions: PermissionReduxState
-    ) => RouterConfigItem[] = (routes, roles, permissions) => {
-      return routes.reduce(
-        (filtered: RouterConfigItem[], route: RouterConfigItem) => {
-          let currentRote: RouterConfigItem | undefined = undefined;
-          if (
-            (!route.permission && !route.role) ||
-            (Array.isArray(route.role) &&
-              route.role.some((r) => r && roles[r])) ||
-            (route.permission && route.permission.every((p) => permissions[p]))
-          ) {
-            currentRote = route;
-          }
+    const filterRoutesByPermission: (
+      routes: RouterConfigItem[]
+    ) => RouterConfigItem[] = (routes) => {
+      return routes.filter((route) => {
+        if (route.permission) {
+          return checkPagePermission(route.permission);
+        }
 
-          if (
-            route.children &&
-            Array.isArray(route.children) &&
-            route.children.length &&
-            !route.permission &&
-            !route.role
-          ) {
-            currentRote = {
-              ...route,
-              children: filterRoutesByRole(route.children, roles, permissions)
-            };
-          }
-          currentRote && filtered.push(currentRote);
-          return filtered;
-        },
-        []
-      );
+        if (route.children) {
+          route.children = filterRoutesByPermission(route.children);
+        }
+
+        return true;
+      });
     };
-
-    return filterRoutesByRole(AuthRouterConfig, userRoles, currentPermissions);
-  }, [currentPermissions, userRoles]);
+    if (isUserInfoFetched && isFeatureSupportFetched) {
+      return filterRoutesByPermission(AuthRouterConfig);
+    }
+    return AuthRouterConfig;
+  }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
 
   const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
   useChangeTheme();
@@ -169,24 +156,46 @@ function App() {
   }, [theme]);
 
   const body = useMemo(() => {
-    if (!userInfoFetched || !driverInfoFetched || !featurePermissionFetched) {
+    if (
+      !isUserInfoFetched ||
+      !isDriverInfoFetched ||
+      !isFeatureSupportFetched
+    ) {
       return <HeaderProgress />;
     }
-
     return (
       <Nav>
         <Suspense fallback={<HeaderProgress />}>{elements}</Suspense>
       </Nav>
     );
-  }, [userInfoFetched, driverInfoFetched, featurePermissionFetched, elements]);
+  }, [
+    isUserInfoFetched,
+    isDriverInfoFetched,
+    isFeatureSupportFetched,
+    elements
+  ]);
 
   useEffect(() => {
     if (token) {
       getUserBySession({});
       updateDriverList();
-      updateFeaturePermission();
+      fetchModuleSupportStatus().then((response) => {
+        if (response.data.code === ResponseCode.SUCCESS) {
+          dispatch(
+            updateModuleFeatureSupport({
+              sqlOptimization: !!response.data.data?.is_supported
+            })
+          );
+        }
+      });
     }
-  }, [getUserBySession, token, updateDriverList, updateFeaturePermission]);
+  }, [
+    getUserBySession,
+    token,
+    updateDriverList,
+    fetchModuleSupportStatus,
+    dispatch
+  ]);
 
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);

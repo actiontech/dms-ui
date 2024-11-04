@@ -39,13 +39,15 @@ export const mockCurrentUserReturn = {
   updateLanguage: jest.fn(),
   role: SystemRole.admin,
   updateTheme: jest.fn(),
-  userInfoFetched: true,
-  uid: '500300',
+  isUserInfoFetched: true,
+  userId: '500300',
   isCertainProjectManager: true,
   userRoles: {
     [SystemRole.admin]: true,
     [SystemRole.certainProjectManager]: true,
-    [SystemRole.globalViewing]: true
+    [SystemRole.globalManager]: true,
+    [SystemRole.globalViewing]: true,
+    [SystemRole.createProject]: true
   },
   hasGlobalViewingPermission: true
 };
@@ -108,7 +110,7 @@ export const mockDBServiceDriverInfo = {
   updateDriverListAsync: jest.fn(),
   getLogoUrlByDbType: jest.fn(),
   generateDriverSelectOptions: jest.fn(),
-  driverInfoFetched: true,
+  isDriverInfoFetched: true,
   setDriverInfoFetched: jest.fn()
 };
 

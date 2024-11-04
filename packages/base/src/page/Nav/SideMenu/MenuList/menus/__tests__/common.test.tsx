@@ -1,4 +1,3 @@
-import { SystemRole } from '@actiontech/shared/lib/enum';
 import { t } from '../../../../../../locale';
 import baseMenusCollection from '../base';
 import { genMenuItemsWithMenuStructTree } from '../common';
@@ -57,52 +56,28 @@ const menuStruct: MenuStructTreeType = [
 
 describe('test genMenuItemsWithMenuStructTree', () => {
   it('should match snapshot', () => {
+    expect(genMenuItemsWithMenuStructTree('600300', [], [])).toMatchSnapshot();
     expect(
-      genMenuItemsWithMenuStructTree('600300', [], [], {
-        [SystemRole.admin]: true,
-        [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalViewing]: false
-      })
-    ).toMatchSnapshot();
-    expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], {
-        [SystemRole.admin]: true,
-        [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalViewing]: false
-      })
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [])
     ).toMatchSnapshot();
 
     expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [], {
-        [SystemRole.admin]: true,
-        [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalViewing]: false
-      })
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [])
+    ).toMatchSnapshot();
+
+    expect(
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, menuStruct)
+    ).toMatchSnapshot();
+
+    expect(
+      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, menuStruct)
     ).toMatchSnapshot();
 
     expect(
       genMenuItemsWithMenuStructTree(
         '600300',
-        baseMenusCollection,
-        menuStruct,
-        {
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }
-      )
-    ).toMatchSnapshot();
-
-    expect(
-      genMenuItemsWithMenuStructTree(
-        '600300',
-        baseMenusCollection,
-        menuStruct,
-        {
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }
+        [...baseMenusCollection, ...sqleMenusCollection],
+        menuStruct
       )
     ).toMatchSnapshot();
 
@@ -110,25 +85,7 @@ describe('test genMenuItemsWithMenuStructTree', () => {
       genMenuItemsWithMenuStructTree(
         '600300',
         [...baseMenusCollection, ...sqleMenusCollection],
-        menuStruct,
-        {
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }
-      )
-    ).toMatchSnapshot();
-
-    expect(
-      genMenuItemsWithMenuStructTree(
-        '600300',
-        [...baseMenusCollection, ...sqleMenusCollection],
-        menuStruct,
-        {
-          [SystemRole.admin]: true,
-          [SystemRole.certainProjectManager]: true,
-          [SystemRole.globalViewing]: false
-        }
+        menuStruct
       )
     ).toMatchSnapshot();
   });

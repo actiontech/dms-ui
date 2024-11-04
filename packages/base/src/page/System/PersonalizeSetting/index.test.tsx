@@ -9,6 +9,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 describe('base/System/PersonalizeSetting', () => {
   let requestGetBasicInfo: jest.SpyInstance;
@@ -43,7 +44,15 @@ describe('base/System/PersonalizeSetting', () => {
   });
 
   it('render snap when user is not admin', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false,
+        [SystemRole.createProject]: false,
+        [SystemRole.certainProjectManager]: false
+      }
+    });
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));

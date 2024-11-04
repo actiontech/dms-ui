@@ -23,7 +23,6 @@ import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import RuleDetailModal from './RuleDetailModal';
 import { useBoolean } from 'ahooks';
 import { isEqual } from 'lodash';
-import { useCurrentPermission } from '@actiontech/shared/lib/global';
 import {
   CloseOutlined,
   PlusOutlined,
@@ -33,6 +32,7 @@ import {
   WarningFilled,
   CloseCircleFilled
 } from '@actiontech/icons';
+import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 
 const scrollStepRange = 30;
 
@@ -47,7 +47,7 @@ const RuleList: React.FC<RuleListProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { sqlOptimizationIsSupported } = useCurrentPermission();
+  const { moduleFeatureSupport } = usePermission();
 
   const isDisabled = useMemo(
     () => actionType === RuleStatusEnum.disabled,
@@ -96,12 +96,18 @@ const RuleList: React.FC<RuleListProps> = ({
         >
           <Space className="level-content-params">
             {renderParams(rule.params)}
-            <EmptyBox if={rule.has_audit_power && sqlOptimizationIsSupported}>
+            <EmptyBox
+              if={rule.has_audit_power && moduleFeatureSupport.sqlOptimization}
+            >
               <RuleItemTagStyleWrapper className="rule-audit-tag">
                 {t('ruleTemplate.detail.auditCapability')}
               </RuleItemTagStyleWrapper>
             </EmptyBox>
-            <EmptyBox if={rule.has_rewrite_power && sqlOptimizationIsSupported}>
+            <EmptyBox
+              if={
+                rule.has_rewrite_power && moduleFeatureSupport.sqlOptimization
+              }
+            >
               <RuleItemTagStyleWrapper className="rule-rewrite-tag">
                 {t('ruleTemplate.detail.rewriteCapability')}
               </RuleItemTagStyleWrapper>
@@ -255,8 +261,6 @@ const RuleList: React.FC<RuleListProps> = ({
   const pageRemainingHeight = useMemo(() => {
     // #if [demo || ce]
     return pageHeaderHeight + 184;
-    // #else
-    return pageHeaderHeight + 128;
     // #endif
   }, [pageHeaderHeight]);
 

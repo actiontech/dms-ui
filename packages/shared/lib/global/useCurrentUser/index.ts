@@ -21,8 +21,8 @@ const useCurrentUser = () => {
     managementPermissions,
     username,
     theme,
-    userInfoFetched,
-    uid,
+    isUserInfoFetched,
+    userId,
     language
   } = useSelector((state: IReduxState) => {
     return {
@@ -31,12 +31,13 @@ const useCurrentUser = () => {
       bindProjects: state.user.bindProjects,
       managementPermissions: state.user.managementPermissions,
       theme: state.user.theme,
-      userInfoFetched: state.user.userInfoFetched,
-      uid: state.user.uid,
+      isUserInfoFetched: state.user.isUserInfoFetched,
+      userId: state.user.uid,
       language: state.user.language
     };
   });
 
+  // todo 暂时保留 全局管理员 == admin 的逻辑，等权限全部重构完成后，移除该逻辑
   const isAdmin =
     role === SystemRole.admin ||
     managementPermissions.some(
@@ -79,9 +80,20 @@ const useCurrentUser = () => {
     return {
       [SystemRole.admin]: isAdmin,
       [SystemRole.certainProjectManager]: isCertainProjectManager,
-      [SystemRole.globalViewing]: hasGlobalViewingPermission
+      [SystemRole.globalViewing]: hasGlobalViewingPermission,
+      [SystemRole.globalManager]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.global_management
+      ),
+      [SystemRole.createProject]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.create_project
+      )
     };
-  }, [hasGlobalViewingPermission, isAdmin, isCertainProjectManager]);
+  }, [
+    hasGlobalViewingPermission,
+    isAdmin,
+    isCertainProjectManager,
+    managementPermissions
+  ]);
 
   return {
     isAdmin,
@@ -92,8 +104,8 @@ const useCurrentUser = () => {
     role,
     theme,
     updateTheme,
-    userInfoFetched,
-    uid,
+    isUserInfoFetched,
+    userId,
     isCertainProjectManager,
     userRoles,
     language,

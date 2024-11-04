@@ -13,6 +13,7 @@ import {
   mockProjectInfo,
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -32,7 +33,11 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
     getBlacklistSpy = blacklist.getBlacklist();
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
-        sqlManagementException: { modalStatus: {} }
+        sqlManagementException: { modalStatus: {} },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: { is_admin: true, op_permission_list: [] }
+        }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -101,9 +106,14 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
   });
 
   it('should hide table actions', async () => {
+    // not admin or globalManager or projectManager
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      }
     }));
     superRender(<SqlManagementExceptionList />);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -111,10 +121,22 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
     useCurrentUserSpy.mockClear();
     cleanup();
+    // Be projectManager
     useCurrentUserSpy.mockImplementation(() => ({
       ...mockCurrentUserReturn,
-      isProjectManager: jest.fn().mockImplementation(() => true),
-      isAdmin: false
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false
+      },
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: false
+        }
+      ]
     }));
     superRender(<SqlManagementExceptionList />);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -126,10 +148,19 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
     );
     useCurrentUserSpy.mockClear();
     cleanup();
-    useCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
+    // project is archived
+    useCurrentUserSpy.mockImplementation(() => ({
+      ...mockCurrentUserReturn,
+      bindProjects: [
+        {
+          is_manager: true,
+          project_name: mockProjectInfo.projectName,
+          project_id: mockProjectInfo.projectID,
+          archived: true
+        }
+      ]
     }));
+    superRender(<SqlManagementExceptionList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);

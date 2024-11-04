@@ -325,19 +325,7 @@ exports[`test monitor source config render without permission 1`] = `
                             >
                               <div
                                 class="css-new95e"
-                              >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                >
-                                  <div
-                                    class="ant-space-item"
-                                    style="margin-right: 8px;"
-                                  />
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
-                              </div>
+                              />
                             </td>
                           </tr>
                           <tr
@@ -380,19 +368,7 @@ exports[`test monitor source config render without permission 1`] = `
                             >
                               <div
                                 class="css-new95e"
-                              >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                >
-                                  <div
-                                    class="ant-space-item"
-                                    style="margin-right: 8px;"
-                                  />
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
-                              </div>
+                              />
                             </td>
                           </tr>
                           <tr
@@ -435,19 +411,7 @@ exports[`test monitor source config render without permission 1`] = `
                             >
                               <div
                                 class="css-new95e"
-                              >
-                                <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                >
-                                  <div
-                                    class="ant-space-item"
-                                    style="margin-right: 8px;"
-                                  />
-                                  <div
-                                    class="ant-space-item"
-                                  />
-                                </div>
-                              </div>
+                              />
                             </td>
                           </tr>
                         </tbody>
