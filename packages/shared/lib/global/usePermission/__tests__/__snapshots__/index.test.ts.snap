@@ -929,10 +929,20 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:project_manager_export": {
     "id": "action:project_manager_export",
+    "role": [
+      "admin",
+      "globalManager",
+      "createProject",
+    ],
     "type": "action",
   },
   "action:project_manager_import": {
     "id": "action:project_manager_import",
+    "role": [
+      "admin",
+      "globalManager",
+      "createProject",
+    ],
     "type": "action",
   },
   "action:project_manager_unarchive": {
