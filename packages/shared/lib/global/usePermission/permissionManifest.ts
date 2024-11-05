@@ -777,5 +777,136 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectManager: true,
     role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  // 版本管理
+  [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD]: {
+    id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY]: {
+    id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
+    },
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  //SQL管控配置
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.CREATE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.EDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.EDIT,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      fieldName: 'instance_id',
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.STOP]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.STOP,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      fieldName: 'instance_id',
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.ENABLE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.ENABLE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      fieldName: 'instance_id',
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DELETE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      fieldName: 'instance_id',
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_AUDIT]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_AUDIT,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_STOP]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_STOP,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_ENABLE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_ENABLE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_DELETE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.DETAIL_DELETE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
   }
 } as const;

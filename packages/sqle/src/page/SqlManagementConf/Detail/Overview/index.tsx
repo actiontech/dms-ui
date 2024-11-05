@@ -3,11 +3,11 @@ import {
   useTableRequestError
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useEffect } from 'react';
+import { ConfDetailOverviewColumns } from './column';
 import {
-  ConfDetailOverviewColumnActions,
-  ConfDetailOverviewColumns
-} from './column';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+  useCurrentProject,
+  usePermission
+} from '@actiontech/shared/lib/global';
 import { ConfDetailOverviewProps } from './index.type';
 import { useRequest } from 'ahooks';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
@@ -18,17 +18,18 @@ import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { SqlManagementConfDetailOverviewTableActions } from './actions';
 
 const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   activeTabKey,
   handleChangeTab,
   instanceAuditPlanId,
-  refreshAuditPlanDetail,
-  hasOpPermission
+  refreshAuditPlanDetail
 }) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
+  const { parse2TableActionPermissions } = usePermission();
 
   const columns = ConfDetailOverviewColumns(projectID);
 
@@ -87,45 +88,50 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
             }
           };
         }}
-        actions={ConfDetailOverviewColumnActions({
-          enabledAction: (auditPlanId) => {
-            enabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
-              if (res.data.code === ResponseCode.SUCCESS) {
-                messageApi.success(
-                  t('managementConf.detail.overview.actions.enabledSuccessTips')
-                );
-                refresh();
-              }
-            });
-          },
-          disabledAction: (auditPlanId) => {
-            disabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
-              if (res.data.code === ResponseCode.SUCCESS) {
-                messageApi.success(
-                  t(
-                    'managementConf.detail.overview.actions.disabledSuccessTips'
-                  )
-                );
-                refresh();
-              }
-            });
-          },
-          deleteAction: (auditPlanId) => {
-            deleteAction(instanceAuditPlanId, auditPlanId).then((res) => {
-              if (res.data.code === ResponseCode.SUCCESS) {
-                messageApi.success(
-                  t('managementConf.detail.overview.actions.deleteSuccessTips')
-                );
-                refreshAuditPlanDetail();
-                refresh();
-              }
-            });
-          },
-          disabledActionPending,
-          enabledActionPending,
-          deleteActionPending,
-          hasOpPermission
-        })}
+        actions={parse2TableActionPermissions(
+          SqlManagementConfDetailOverviewTableActions({
+            enabledAction: (auditPlanId) => {
+              enabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
+                if (res.data.code === ResponseCode.SUCCESS) {
+                  messageApi.success(
+                    t(
+                      'managementConf.detail.overview.actions.enabledSuccessTips'
+                    )
+                  );
+                  refresh();
+                }
+              });
+            },
+            disabledAction: (auditPlanId) => {
+              disabledAction(instanceAuditPlanId, auditPlanId).then((res) => {
+                if (res.data.code === ResponseCode.SUCCESS) {
+                  messageApi.success(
+                    t(
+                      'managementConf.detail.overview.actions.disabledSuccessTips'
+                    )
+                  );
+                  refresh();
+                }
+              });
+            },
+            deleteAction: (auditPlanId) => {
+              deleteAction(instanceAuditPlanId, auditPlanId).then((res) => {
+                if (res.data.code === ResponseCode.SUCCESS) {
+                  messageApi.success(
+                    t(
+                      'managementConf.detail.overview.actions.deleteSuccessTips'
+                    )
+                  );
+                  refreshAuditPlanDetail();
+                  refresh();
+                }
+              });
+            },
+            disabledActionPending,
+            enabledActionPending,
+            deleteActionPending
+          })
+        )}
       />
     </Spin>
   );

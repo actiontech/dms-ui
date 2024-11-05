@@ -12,6 +12,7 @@ import { superRender } from '../../../..//testUtils/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -23,6 +24,7 @@ describe('sqle/VersionManagement/List', () => {
   let lockSqlVersionV1: jest.SpyInstance;
   let deleteSqlVersionV1: jest.SpyInstance;
   const navigateSpy = jest.fn();
+  const checkActionPermissionSpy = jest.fn();
   const firstMockVersion = getSqlVersionListV1MockData.data?.[0];
 
   beforeEach(() => {
@@ -33,6 +35,11 @@ describe('sqle/VersionManagement/List', () => {
     lockSqlVersionV1 = sqlVersion.mockLockSqlVersionV1();
     deleteSqlVersionV1 = sqlVersion.mockDeleteSqlVersionV1();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    mockUsePermission(
+      { checkActionPermission: checkActionPermissionSpy },
+      { useSpyOnMockHooks: true }
+    );
+    checkActionPermissionSpy.mockReturnValue(true);
   });
 
   afterEach(() => {
@@ -49,7 +56,7 @@ describe('sqle/VersionManagement/List', () => {
   });
 
   it('hide action button when current user is not admin or project manager', async () => {
-    mockUseCurrentUser({ ...mockCurrentUserReturn, isAdmin: false });
+    checkActionPermissionSpy.mockReturnValue(false);
     superRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(1);
