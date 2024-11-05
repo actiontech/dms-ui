@@ -21,7 +21,8 @@ import {
   ComparisonOutlined
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
-import { TypedLink, ROUTE_PATHS } from '@actiontech/shared';
+import { TypedLink } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
-import { ROUTE_PATHS } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Home = React.lazy(
   () => import(/* webpackChunkName: "Home" */ '../page/Home')
@@ -222,7 +221,7 @@ const GlobalDashboard = React.lazy(() => import('../page/GlobalDashboard'));
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     key: 'projectOverview',
-    path: `${PROJECT_ROUTER_PARAM}/overview`,
+    path: ROUTE_PATHS.SQLE.PROJECT_OVERVIEW.index.path,
     element: <ProjectOverview />
   },
   {
@@ -245,7 +244,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'workflowAnalyze'
       },
       {
-        path: ':workflowId',
+        path: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail.path,
         element: <SqlWorkflowDetail />,
         key: 'workflowDetail'
       },
@@ -257,7 +256,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sql-audit`,
+    path: ROUTE_PATHS.SQLE.SQL_AUDIT.index.path,
     key: 'sqlAudit',
     children: [
       {
@@ -266,19 +265,19 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'sqlAuditList'
       },
       {
-        path: 'create',
+        path: ROUTE_PATHS.SQLE.SQL_AUDIT.create.path,
         element: <SqlAuditCreate />,
         key: 'sqlAuditCreate'
       },
       {
-        path: 'detail/:sql_audit_record_id',
+        path: ROUTE_PATHS.SQLE.SQL_AUDIT.detail.path,
         element: <SqlAuditDetail />,
         key: 'sqlAuditDetail'
       }
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sql-management-conf`,
+    path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index.path,
     key: 'sqlManagementConf',
     children: [
       {
@@ -289,27 +288,27 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       {
         element: <CreateSqlManagementConf />,
         key: 'CreateSqlManagementConf',
-        path: 'create'
+        path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create.path
       },
       {
         element: <UpdateSqlManagementConf />,
         key: 'UpdateSqlManagementConf',
-        path: 'update/:id'
+        path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update.path
       },
       {
         element: <SqlManagementConfDetail />,
         key: 'SqlManagementConfDetail',
-        path: ':id'
+        path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail.path
       },
       {
         element: <SqlManagementConfAnalyze />,
         key: 'SqlManagementConfAnalyze',
-        path: ':instanceAuditPlanId/analyze/:id'
+        path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.analyze.path
       }
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sql-management`,
+    path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index.path,
     key: 'sqlManagement',
     children: [
       {
@@ -319,8 +318,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       // #if [ee]
       {
-        path: ':sqlManageId/analyze',
-        hideInSliderMenu: true,
+        path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze.path,
         element: <SqlManagementAnalyze />,
         key: 'SqlManagementAnalyze'
       }
@@ -328,12 +326,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/dashboard`,
+    path: ROUTE_PATHS.SQLE.PROJECT_DASHBOARD.index.path,
     element: <Home />,
     key: 'dashboard'
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/rule/template`,
+    path: ROUTE_PATHS.SQLE.RULE_TEMPLATE.index.path,
     key: 'ruleTemplate',
     element: <RuleTemplate />,
     children: [
@@ -348,29 +346,29 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'ruleTemplate'
       },
       {
-        path: 'create',
+        path: ROUTE_PATHS.SQLE.RULE_TEMPLATE.create.path,
         element: <CreateRuleTemplate />,
         key: 'ruleTemplateCreate'
       },
       {
-        path: 'import',
+        path: ROUTE_PATHS.SQLE.RULE_TEMPLATE.import.path,
         element: <ImportRuleTemplate />,
         key: 'ruleTemplateImport'
       },
       {
-        path: 'detail/:templateName/:dbType',
+        path: ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail.path,
         element: <RuleTemplateDetail />,
         key: 'ruleTemplateDetail'
       },
       {
-        path: 'update/:templateName',
+        path: ROUTE_PATHS.SQLE.RULE_TEMPLATE.update.path,
         element: <UpdateRuleTemplate />,
         key: 'ruleTemplateUpdate'
       }
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/progress`,
+    path: ROUTE_PATHS.SQLE.PROGRESS.index.path,
     key: 'progress',
     children: [
       {
@@ -380,7 +378,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       // #if [ee]
       {
-        path: 'update/:workflowName',
+        path: ROUTE_PATHS.SQLE.PROGRESS.update.path,
         element: <UpdateWorkflowTemplate />,
         key: 'progressUpdate'
       }
@@ -388,23 +386,23 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/whitelist`,
+    path: ROUTE_PATHS.SQLE.WHITELIST.index.path,
     key: 'Whitelist',
     element: <Whitelist />
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sql-management-exception`,
+    path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_EXCEPTION.index.path,
     key: 'sqlManagementException',
     element: <SqlManagementException />
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/operation-record`,
+    path: ROUTE_PATHS.SQLE.OPERATION_LOG.index.path,
     key: 'operationRecord',
     element: <OperationRecord />,
     permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/plugin-audit`,
+    path: ROUTE_PATHS.SQLE.PLUGIN_AUDIT.index.path,
     key: 'pluginAudit',
     children: [
       {
@@ -415,7 +413,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/sql-optimization`,
+    path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index.path,
     key: 'sqlOptimization',
     element: <SqlOptimization />,
     // #if [ee]
@@ -427,17 +425,17 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'sqlOptimizationList'
       },
       {
-        path: 'create',
+        path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create.path,
         element: <SqlOptimizationCreate />,
         key: 'sqlOptimizationCreate'
       },
       {
-        path: 'overview/:optimizationId',
+        path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview.path,
         element: <SqlOptimizationOverview />,
         key: 'sqlOptimizationOverview'
       },
       {
-        path: 'detail/:dbType/:optimizationId/:number',
+        path: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.detail.path,
         element: <SqlOptimizationDetail />,
         key: 'sqlOptimizationDetail'
       }
@@ -445,12 +443,12 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
     // #endif
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/push-rule`,
+    path: ROUTE_PATHS.SQLE.PUSH_RULE.index.path,
     key: 'pushRuleConfiguration',
     element: <PushRuleConfiguration />
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/pipeline-configuration`,
+    path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index.path,
     key: 'pipelineConfiguration',
     children: [
       {
@@ -459,19 +457,19 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         key: 'pipelineConfigurationList'
       },
       {
-        path: 'create',
+        path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.create.path,
         element: <PipelineConfigurationCreation />,
         key: 'sqlOptimizationCreate'
       },
       {
-        path: 'update/:id',
+        path: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update.path,
         element: <PipelineConfigurationUpdate />,
         key: 'sqlOptimizationCreate'
       }
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/version-management`,
+    path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.index.path,
     key: 'versionManagement',
     children: [
       {
@@ -481,17 +479,17 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
       },
       // #if [ee]
       {
-        path: 'create',
+        path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.create.path,
         element: <VersionManagementCreation />,
         key: 'versionManagementCreation'
       },
       {
-        path: 'update/:versionId',
+        path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update.path,
         element: <VersionManagementUpdate />,
         key: 'versionManagementCreation'
       },
       {
-        path: 'detail/:versionId',
+        path: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail.path,
         element: <VersionManagementDetail />,
         key: 'versionManagementDetail'
       }
@@ -513,21 +511,19 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
 export const globalRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.REPORT_STATISTICS,
-    label: 'menu.reportStatistics',
     element: <ReportStatistics />,
     key: 'reportStatistics',
     permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
   },
   {
     path: ROUTE_PATHS.SQLE.RULE,
-    label: 'menu.rule',
     element: <Rule />,
     key: 'rule'
   },
   {
     key: 'ruleManager',
-    path: 'sqle/rule-manager',
     permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT,
+    path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index,
     children: [
       {
         index: true,
@@ -535,40 +531,40 @@ export const globalRouterConfig: RouterConfigItem[] = [
         element: <RuleManager />
       },
       {
-        path: 'global-create',
+        path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.create.path,
         key: 'globalRuleTemplateCreate',
         element: <GlobalCreateRuleTemplate />
       },
       {
-        path: 'global-import',
+        path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.import.path,
         key: 'globalRuleTemplateImport',
         element: <GlobalImportRuleTemplate />
       },
       {
-        path: 'global-update/:templateName',
+        path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.update.path,
         key: 'globalRuleTemplateUpdate',
         element: <GlobalUpdateRuleTemplate />
       },
       {
-        path: 'global-detail/:templateName/:dbType',
+        path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail.path,
         key: 'globalRuleTemplateDetail',
         element: <GlobalRuleTemplateDetail />
       },
       {
-        path: 'custom-create',
+        path: ROUTE_PATHS.SQLE.CUSTOM_RULE.create.path,
         key: 'createCustomRule',
         element: <CreateCustomRule />
       },
       {
-        path: 'custom-update/:ruleID',
+        path: ROUTE_PATHS.SQLE.CUSTOM_RULE.update.path,
         key: 'updateCustomRule',
         element: <UpdateCustomRule />
       }
-    ] as RouterConfigItem[]
+    ]
   },
   // #if [ee]
   {
-    path: 'sqle/rule/knowledge/:ruleName/:dbType',
+    path: ROUTE_PATHS.SQLE.RULE_KNOWLEDGE,
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
   },

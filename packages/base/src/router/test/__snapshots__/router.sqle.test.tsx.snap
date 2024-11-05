@@ -110,6 +110,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 </body>
 `;
 
+exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render DataSourceComparison 1`] = `
+<body>
+  <div>
+    <div>
+      dataSourceComparison
+    </div>
+  </div>
+</body>
+`;
+
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
 <body>
   <div>
@@ -566,28 +576,28 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       userCenter
     </div>,
     "key": "userCenter",
-    "path": "user-center",
+    "path": "/user-center",
   },
   {
     "element": <div>
       system
     </div>,
     "key": "system",
-    "path": "system",
+    "path": "/system",
   },
   {
     "element": <div>
       account
     </div>,
     "key": "account",
-    "path": "account",
+    "path": "/account",
   },
   {
     "element": <div>
       dataSourceManagement
     </div>,
     "key": "dataSourceManagement",
-    "path": "data-source-management",
+    "path": "/data-source-management",
   },
   {
     "element": <div>
@@ -614,7 +624,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       },
     ],
     "key": "globalDataSource",
-    "path": "global-data-source",
+    "path": "/global-data-source",
     "permission": "page:global_data_source",
   },
   {
@@ -635,7 +645,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       },
     ],
     "key": "syncDataSource",
-    "path": "sync-data-source",
+    "path": "/sync-data-source",
     "permission": "page:sync_data_source",
   },
   {
@@ -663,7 +673,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       },
     ],
     "key": "project",
-    "path": "project",
+    "path": "/project",
   },
   {
     "children": [
@@ -755,7 +765,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
-    "path": "project/*",
+    "path": "/project/*",
   },
   {
     "element": <div>
@@ -824,7 +834,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       },
     ],
     "key": "ruleManager",
-    "path": "sqle/rule-manager",
+    "path": "/sqle/rule-manager",
     "permission": "page:rule_management",
   },
   {
@@ -832,7 +842,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
       ruleKnowledge
     </div>,
     "key": "ruleKnowledge",
-    "path": "sqle/rule/knowledge/:ruleName/:dbType",
+    "path": "/sqle/rule/knowledge/:ruleName/:dbType",
   },
   {
     "element": <div>
@@ -1257,7 +1267,7 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
-    "path": "sqle/project/*",
+    "path": "/sqle/project/*",
   },
   {
     "element": <div>
