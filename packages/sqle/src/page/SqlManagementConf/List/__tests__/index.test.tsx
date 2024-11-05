@@ -78,8 +78,15 @@ describe('test sqle/SqlManagementConf/List', () => {
   });
 
   it('render create button when project is archived', async () => {
-    mockUseCurrentProject({
-      projectArchive: true
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: mockProjectInfo.projectName,
+          archived: true,
+          is_manager: true
+        }
+      ]
     });
     const { baseElement } = superRender(<SqlManagementConfList />);
     expect(baseElement).toMatchSnapshot();

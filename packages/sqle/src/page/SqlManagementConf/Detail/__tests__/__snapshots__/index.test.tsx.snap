@@ -789,7 +789,51 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             >
                               <div
                                 class="css-new95e"
-                              />
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        启 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        停 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           <tr
@@ -928,7 +972,51 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             >
                               <div
                                 class="css-new95e"
-                              />
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        启 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        停 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           <tr
@@ -1002,7 +1090,51 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             >
                               <div
                                 class="css-new95e"
-                              />
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        启 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        停 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           <tr
@@ -1076,7 +1208,51 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                             >
                               <div
                                 class="css-new95e"
-                              />
+                              >
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      disabled=""
+                                      type="button"
+                                    >
+                                      <span>
+                                        启 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        停 用
+                                      </span>
+                                    </button>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <button
+                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      type="button"
+                                    >
+                                      <span>
+                                        删 除
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
