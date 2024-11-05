@@ -8,6 +8,7 @@ import {
   projectDetailRouterConfig as SQLEProjectDetailRouterConfig,
   globalRouterConfig as SQLEGlobalRouterConfig
 } from 'sqle/src/router/config';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 // #endif
 
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
@@ -19,7 +20,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   ...SQLEGlobalRouterConfig,
   {
     key: 'projectDetail',
-    path: 'sqle/project/*',
+    path: ROUTE_PATHS.BASE.SQLE_PROJECT_DETAIL,
     element: <ProjectDetail />,
     children: SQLEProjectDetailRouterConfig
   },
@@ -27,7 +28,6 @@ export const AuthRouterConfig: RouterConfigItem[] = [
 
   {
     path: '*',
-    hideInMenu: true,
     key: 'null',
     element: <Navigate to="/" />
   }
@@ -38,15 +38,15 @@ const BindUser = lazy(() => import('../page/BindUser'));
 
 export const unAuthRouterConfig: RouteObject[] = [
   {
-    path: '/login',
+    path: ROUTE_PATHS.BASE.LOGIN,
     element: <Login />
   },
   {
-    path: '/user/bind',
+    path: ROUTE_PATHS.BASE.USER_BIND,
     element: <BindUser />
   },
   {
     path: '*',
-    element: <Navigate to="/login" />
+    element: <Navigate to={`${ROUTE_PATHS.BASE.LOGIN}`} />
   }
 ];

@@ -1,5 +1,10 @@
 import { ReactNode, Suspense, useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate, useRoutes } from 'react-router-dom';
+import {
+  RouteObject,
+  useLocation,
+  useNavigate,
+  useRoutes
+} from 'react-router-dom';
 import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
@@ -147,7 +152,9 @@ function App() {
     return AuthRouterConfig;
   }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
 
-  const elements = useRoutes(token ? AuthRouterConfigData : unAuthRouterConfig);
+  const elements = useRoutes(
+    token ? (AuthRouterConfigData as RouteObject[]) : unAuthRouterConfig
+  );
   useChangeTheme();
 
   const themeData = useMemo(() => {

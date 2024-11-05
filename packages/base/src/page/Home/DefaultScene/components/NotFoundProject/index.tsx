@@ -6,7 +6,7 @@ import ProjectSelectorModal from '../../../../Project/Detail/NotFoundRecentlyPro
 import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { NotFoundProjectProps } from './index.type';
 import { FlagFilled } from '@actiontech/icons';
-import { ROUTE_PATHS } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const NotFoundProject: React.FC<NotFoundProjectProps> = ({
   open,

@@ -2,7 +2,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
 import { superRender } from '../../../../../testUtils/customRender';
-import { ROUTE_PATHS } from '@actiontech/shared';
 import {
   getAllBySelector,
   getBySelector
@@ -12,6 +11,7 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 jest.mock('react-router-dom', () => {
   return {

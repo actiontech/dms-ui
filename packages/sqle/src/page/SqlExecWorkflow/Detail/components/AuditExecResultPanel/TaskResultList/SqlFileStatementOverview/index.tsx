@@ -20,7 +20,6 @@ import {
   BasicButton,
   CustomSegmentedFilter,
   PageHeader,
-  ROUTE_PATHS,
   useTypedNavigate,
   useTypedParams
 } from '@actiontech/shared';
@@ -35,6 +34,7 @@ import { ToggleButtonStyleWrapper } from '../../../../../Common/style';
 import DownloadRecord from '../../../../../Common/DownloadRecord';
 import { AuditResultFilterContainerStyleWrapper } from '../../../../../Common/AuditResultFilterContainer/style';
 import { LeftArrowOutlined, SqlFileOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlFileStatementOverview: React.FC = () => {
   const { t } = useTranslation();

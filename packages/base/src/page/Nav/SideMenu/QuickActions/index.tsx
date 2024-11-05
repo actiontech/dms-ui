@@ -5,7 +5,7 @@ import {
   RingOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTips, EmptyBox, ROUTE_PATHS } from '@actiontech/shared';
+import { BasicToolTips, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import React, { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -20,6 +20,7 @@ import {
   PermissionsConstantType,
   usePermission
 } from '@actiontech/shared/lib/global';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 type QuickActionItemType = {
   key: string;
