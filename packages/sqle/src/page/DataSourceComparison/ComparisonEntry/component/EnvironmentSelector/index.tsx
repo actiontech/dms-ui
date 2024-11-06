@@ -18,6 +18,7 @@ type Props = {
   | 'onLoadTreeData'
   | 'getTreeDataPending'
   | 'disableTreeNodesBasedOnSelection'
+  | 'validatorDataSourceTreeSelector'
 >;
 
 const EnvironmentSelector: React.FC<Props> = ({
@@ -28,7 +29,8 @@ const EnvironmentSelector: React.FC<Props> = ({
   onLoadTreeData,
   getTreeDataPending,
   disableTreeNodesBasedOnSelection,
-  updateComparisonResult
+  updateComparisonResult,
+  validatorDataSourceTreeSelector
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<DatabaseComparisonFromFields>();
@@ -89,12 +91,16 @@ const EnvironmentSelector: React.FC<Props> = ({
         </Typography.Text>
         <FormItemNoLabel
           name="comparisonInstance"
+          dependencies={['baselineInstance']}
           rules={[
             {
               required: true,
               message: t('common.form.placeholder.select', {
                 name: t('dataSourceComparison.entry.comparisonEnvironment')
               })
+            },
+            {
+              validator: validatorDataSourceTreeSelector()
             }
           ]}
         >

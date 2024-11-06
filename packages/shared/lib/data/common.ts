@@ -97,6 +97,5 @@ export const DMS_DEFAULT_WEB_LOGO_URL = '/logo.png';
 export const DMS_REDIRECT_KEY_PARAMS_NAME = 'target';
 export const OPEN_CLOUD_BEAVER_URL_PARAM_NAME = 'open_cloud_beaver';
 export const TRANSIT_FROM_CONSTANT = {
-  cloudbeaver: 'cloudbeaver',
-  data_source_comparison: 'data_source_comparison'
+  cloudbeaver: 'cloudbeaver'
 };

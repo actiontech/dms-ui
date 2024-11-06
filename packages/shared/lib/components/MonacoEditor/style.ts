@@ -67,9 +67,6 @@ export const MonacoDiffEditorStyleWrapper = styled(DiffEditor)`
     }
 
     div.monaco-scrollable-element[role='presentation'] {
-      height: calc(100% - 2px) !important;
-      width: calc(100% - 50px) !important;
-
       .lines-content {
         background: ${({ theme }) =>
           theme.sharedTheme.components.customMonacoEditor
@@ -96,21 +93,6 @@ export const MonacoDiffEditorStyleWrapper = styled(DiffEditor)`
     .diffOverview .diff-removed {
       opacity: 0.8;
       border-radius: 2px;
-    }
-
-    .monaco-scrollable-element > .scrollbar > .slider {
-      background: rgba(100, 100, 100, 0.4) !important;
-      border-radius: 4px !important;
-      transition: background 0.3s ease;
-    }
-
-    .monaco-scrollable-element > .scrollbar > .slider:hover {
-      background: rgba(100, 100, 100, 0.6) !important;
-    }
-
-    .monaco-scrollable-element > .scrollbar > .slider-background {
-      background: rgba(0, 0, 0, 0.1) !important;
-      border-radius: 4px !important;
     }
   }
 `;
