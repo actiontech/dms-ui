@@ -2,8 +2,15 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean } from 'ahooks';
-import { TreeSelectProps } from 'antd';
-import { Key, ReactNode, useEffect, useRef, useState } from 'react';
+import { Form, TreeSelectProps } from 'antd';
+import {
+  Key,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 import useInstance from '../../../../hooks/useInstance';
 import { DatabaseFilled, DatabaseSchemaFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
@@ -11,7 +18,13 @@ import { DatabaseSelectorTitleStyleWrapper } from '../style';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { IDatabaseComparisonObject } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SelectedInstanceInfo } from '../index.type';
+import {
+  DatabaseComparisonFromFields,
+  SelectedInstanceInfo
+} from '../index.type';
+import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { FormValidatorRule } from '@actiontech/shared/lib/types/common.type';
+import { useTranslation } from 'react-i18next';
 
 type DefaultOptionType = {
   id: string;
@@ -28,7 +41,8 @@ const TREE_DATA_PARENT_NODE_ID = 'TREE_DATA_PARENT_NODE_ID';
 
 const INSTANCE_SCHEMA_SEPARATOR = '_INSTANCE_SCHEMA_SEPARATOR_';
 
-const useDataSourceTreeData = () => {
+const useDataSourceSelectorTree = () => {
+  const { t } = useTranslation();
   const { getLogoUrlByDbType } = useDatabaseType();
   const currentInstanceId = useRef('');
   const [treeData, setTreeData] = useState<DefaultOptionType[]>([]);
@@ -36,6 +50,12 @@ const useDataSourceTreeData = () => {
   const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
   const [treeLoadedKeys, setTreeLoadedKeys] = useState<Key[]>([]);
   const { sharedTheme } = useThemeStyleData();
+  const [form] = Form.useForm<DatabaseComparisonFromFields>();
+  const selectedBaselineInstanceValue = Form.useWatch('baselineInstance', form);
+  const selectedComparisonInstanceValue = Form.useWatch(
+    'comparisonInstance',
+    form
+  );
 
   const {
     updateInstanceList,
@@ -167,9 +187,45 @@ const useDataSourceTreeData = () => {
     };
   };
 
+  const validatorDataSourceTreeSelector = useCallback((): FormValidatorRule => {
+    const getSelectionLevel = (value: string): 'data-source' | 'schema' => {
+      return value.includes(INSTANCE_SCHEMA_SEPARATOR)
+        ? 'schema'
+        : 'data-source';
+    };
+    return () => {
+      if (!selectedBaselineInstanceValue || !selectedComparisonInstanceValue) {
+        return Promise.resolve();
+      }
+
+      const baselineLevel = getSelectionLevel(selectedBaselineInstanceValue);
+
+      const comparisonLevel = getSelectionLevel(
+        selectedComparisonInstanceValue
+      );
+
+      if (baselineLevel !== comparisonLevel) {
+        const errorMessage =
+          baselineLevel === 'schema'
+            ? t('dataSourceComparison.entry.selectorValidatorSchemaMessage')
+            : t(
+                'dataSourceComparison.entry.selectorValidatorDataSourceMessage'
+              );
+
+        return Promise.reject(errorMessage);
+      }
+
+      return Promise.resolve();
+    };
+  }, [selectedBaselineInstanceValue, selectedComparisonInstanceValue, t]);
+
   useEffect(() => {
     updateInstanceList(
-      { project_name: projectName },
+      {
+        project_name: projectName,
+        functional_module:
+          getInstanceTipListV1FunctionalModuleEnum.create_workflow
+      },
       {
         onSuccess: (data) => {
           const dbTypes = new Set(data.map((v) => v.instance_type) as string[]);
@@ -223,6 +279,9 @@ const useDataSourceTreeData = () => {
   ]);
 
   return {
+    form,
+    selectedBaselineInstanceValue,
+    selectedComparisonInstanceValue,
     treeData,
     onLoadTreeData,
     treeExpandedKeys,
@@ -231,8 +290,9 @@ const useDataSourceTreeData = () => {
     treeLoadedKeys,
     parse2DatabaseCompareObject,
     getInstanceInfoBySelectedValue,
+    validatorDataSourceTreeSelector,
     getTreeDataPending: instanceLoading || getInstanceSchemaPending
   };
 };
 
-export default useDataSourceTreeData;
+export default useDataSourceSelectorTree;

@@ -50,3 +50,20 @@ export const SqlAuditResultStyleWrapper = styled('div')`
     }
   }
 `;
+
+export const DiffSQLEditorSubTitleStyleWrapper = styled('div')`
+  margin: 12px 0;
+  display: flex;
+
+  .subtitle-item-wrapper {
+    width: 50%;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+
+    .subtitle-item-text {
+      margin-left: 4px;
+      line-height: 16px;
+    }
+  }
+`;

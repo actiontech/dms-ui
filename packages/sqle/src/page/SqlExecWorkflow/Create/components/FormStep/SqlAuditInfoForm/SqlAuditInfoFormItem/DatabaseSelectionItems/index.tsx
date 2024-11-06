@@ -32,6 +32,7 @@ import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../Common/SqlSta
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
+import useSetFormValuesWithGenModifiedSqlParams from './hooks/useSetFormValuesWithGenModifiedSqlParams';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
@@ -74,6 +75,14 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   } = useRenderDatabaseSelectionItems({
     dbSourceInfoCollection: sharedStepDetail.dbSourceInfoCollection,
     sqlStatementTabActiveKey: sharedStepDetail.sqlStatementTabActiveKey
+  });
+
+  useSetFormValuesWithGenModifiedSqlParams({
+    form,
+    handleInstanceChange,
+    handleInstanceSchemaChange,
+    handleInstanceNameChange,
+    setGetModifiedSQLsPending: sharedStepDetail.getModifiedSQLsPending.set
   });
 
   const {
@@ -128,23 +137,17 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
           // 存在即使压缩后的字符长度依旧超出浏览器地址栏的长度限制，导致解压缩失败的场景。
           const { instanceName, schema, sql } = jsonParse<{
             instanceName: string;
-            schema?: string;
+            schema: string;
             sql: string;
           }>(decompressFromEncodedURIComponent(compressionData));
 
-          handleInstanceNameChange?.(instanceName);
-
           form.setFieldsValue({
-            databaseInfo: [
-              {
-                instanceName,
-                instanceSchema: schema
-              }
-            ],
+            databaseInfo: [{ instanceName, instanceSchema: schema }],
             [SAME_SQL_MODE_DEFAULT_FIELD_KEY]: {
               form_data: sql
             } as SqlStatementFields
           });
+          handleInstanceNameChange?.(instanceName);
           handleInstanceChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, instanceName);
           if (schema) {
             handleInstanceSchemaChange(SAME_SQL_MODE_DEFAULT_FIELD_KEY, schema);
