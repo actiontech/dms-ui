@@ -72,6 +72,7 @@ export type SharedStepDetails = {
   instanceTestConnectResults: Stateful<IInstanceConnectionResV1[]>;
   isDisabledForDifferenceSql: Stateful<boolean>;
   sqlStatementTabActiveKey: Stateful<string>;
+  getModifiedSQLsPending: Stateful<boolean>;
 
   resetAllSharedData: () => void;
 };
