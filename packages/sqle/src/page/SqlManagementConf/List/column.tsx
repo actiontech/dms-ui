@@ -1,12 +1,10 @@
 import {
   ActiontechTableColumn,
   ActiontechTableFilterMeta,
-  ActiontechTableFilterMetaValue,
-  ActiontechTableProps
+  ActiontechTableFilterMetaValue
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
@@ -19,7 +17,6 @@ import {
 import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ScanTypeTagsCell from './ScanTypeTagsCell';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
@@ -136,101 +133,4 @@ export const SqlManagementConfColumns: (
       title: () => t('managementConf.list.table.column.creator')
     }
   ];
-};
-
-export const SqlManagementConfColumnAction: (params: {
-  editAction: (id: string) => void;
-  disabledAction: (id: string) => void;
-  enabledAction: (id: string) => void;
-  deleteAction: (id: string) => void;
-  isHaveServicePermission: (
-    opPermissionType: OpPermissionItemOpPermissionTypeEnum,
-    serviceID?: string
-  ) => boolean;
-  operationPermission: boolean;
-}) => ActiontechTableProps<IInstanceAuditPlanResV1>['actions'] = ({
-  editAction,
-  disabledAction,
-  enabledAction,
-  deleteAction,
-  isHaveServicePermission,
-  operationPermission
-}) => {
-  return {
-    buttons: [
-      {
-        text: t('common.edit'),
-        key: 'edit-plan-task',
-        buttonProps: (record) => {
-          return {
-            onClick: () => {
-              editAction(record?.instance_audit_plan_id?.toString() ?? '');
-            }
-          };
-        },
-        permissions: (record) =>
-          isHaveServicePermission(
-            OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
-            record?.instance_id
-          ) || operationPermission
-      }
-    ],
-    moreButtons: (record) =>
-      isHaveServicePermission(
-        OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
-        record?.instance_id
-      ) || operationPermission
-        ? [
-            {
-              key: 'disabled',
-              text: t('managementConf.list.table.action.disabled.text'),
-              confirm: () => {
-                return {
-                  title: t(
-                    'managementConf.list.table.action.disabled.confirmTips'
-                  ),
-                  onConfirm: () => {
-                    disabledAction(
-                      record?.instance_audit_plan_id?.toString() ?? ''
-                    );
-                  }
-                };
-              },
-              permissions: () =>
-                record?.active_status ===
-                InstanceAuditPlanResV1ActiveStatusEnum.normal
-            },
-            {
-              key: 'enabled',
-              text: t('managementConf.list.table.action.enabled.text'),
-              onClick: () => {
-                enabledAction(record?.instance_audit_plan_id?.toString() ?? '');
-              },
-              permissions: () =>
-                record?.active_status !==
-                InstanceAuditPlanResV1ActiveStatusEnum.normal
-            },
-            {
-              key: 'delete',
-              text: (
-                <Typography.Text type="danger">
-                  {t('common.delete')}
-                </Typography.Text>
-              ),
-              confirm: () => {
-                return {
-                  title: t(
-                    'managementConf.list.table.action.delete.confirmTips'
-                  ),
-                  onConfirm: () => {
-                    deleteAction(
-                      record?.instance_audit_plan_id?.toString() ?? ''
-                    );
-                  }
-                };
-              }
-            }
-          ]
-        : []
-  };
 };
