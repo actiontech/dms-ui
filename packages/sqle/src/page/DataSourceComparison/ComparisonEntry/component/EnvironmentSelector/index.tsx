@@ -10,6 +10,7 @@ import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 type Props = {
   executeComparisonPending: boolean;
   updateComparisonResult: (data?: ISchemaObject[]) => void;
+  comparisonObjectTreeOnCheck: (keys: string[]) => void;
 } & Pick<
   ReturnType<typeof useDataSourceTreeData>,
   | 'treeLoadedKeys'
@@ -30,6 +31,7 @@ const EnvironmentSelector: React.FC<Props> = ({
   getTreeDataPending,
   disableTreeNodesBasedOnSelection,
   updateComparisonResult,
+  comparisonObjectTreeOnCheck,
   validatorDataSourceTreeSelector
 }) => {
   const { t } = useTranslation();
@@ -39,6 +41,7 @@ const EnvironmentSelector: React.FC<Props> = ({
 
   const onChange: TreeSelectProps['onChange'] = () => {
     updateComparisonResult(undefined);
+    comparisonObjectTreeOnCheck([]);
   };
 
   const databaseComparisonSelectorCommonProps: TreeSelectProps = {
