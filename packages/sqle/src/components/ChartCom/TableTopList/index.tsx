@@ -28,7 +28,8 @@ const TableTopList = <T extends Record<string, any>>(
     columns,
     dataSource,
     errorCont,
-    hideTop3Style
+    hideTop3Style,
+    scroll
   } = props;
   const { sqleTheme } = useThemeStyleData();
   const dataLength = dataSource?.length ?? 0;
@@ -77,6 +78,7 @@ const TableTopList = <T extends Record<string, any>>(
             )
           }}
           columns={columns}
+          scroll={scroll}
         />
         <div
           hidden={dataLength === 0 || dataLength === 10}
