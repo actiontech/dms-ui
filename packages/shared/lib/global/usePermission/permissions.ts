@@ -189,6 +189,24 @@ export const PERMISSIONS = {
       },
       DATA_SOURCE_COMPARISON: {
         CREATE_MODIFIED_SQL_WORKFLOW: 'action:create_modified_sql_workflow'
+      },
+      VERSION_MANAGEMENT: {
+        ADD: 'action:version_management_add_operator',
+        EDIT: 'action:version_management_edit_operator',
+        DELETE: 'action:version_management_delete_operator',
+        LOCK: 'action:version_management_lock_operator',
+        DEPLOY: 'action:version_management_deploy_operator'
+      },
+      SQL_MANAGEMENT_CONF: {
+        CREATE: 'action:sql_management_conf_create_operator',
+        EDIT: 'action:sql_management_conf_edit_operator',
+        STOP: 'action:sql_management_conf_stop_operator',
+        ENABLE: 'action:sql_management_conf_enable_operator',
+        DELETE: 'action:sql_management_conf_delete_operator',
+        DETAIL_AUDIT: 'action:sql_management_conf_detail_audit_operator',
+        DETAIL_STOP: 'action:sql_management_conf_detail_stop_operator',
+        DETAIL_ENABLE: 'action:sql_management_conf_detail_enable_operator',
+        DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator'
       }
     }
   }

@@ -11,19 +11,26 @@ import {
   InstanceAuditPlanInfoActiveStatusEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('test Overview', () => {
   const handleChangeTabSpy = jest.fn();
   const instanceAuditPlanId = '1';
   const refreshAuditPlanDetailSpy = jest.fn();
-  const customRender = (hasOpPermission = true) => {
+  const customRender = () => {
     return superRender(
       <ConfDetailOverview
         activeTabKey={SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}
         handleChangeTab={handleChangeTabSpy}
         instanceAuditPlanId={instanceAuditPlanId}
         refreshAuditPlanDetail={refreshAuditPlanDetailSpy}
-        hasOpPermission={hasOpPermission}
       />
     );
   };
@@ -35,6 +42,9 @@ describe('test Overview', () => {
     mockUseCurrentUser();
     getInstanceAuditPlanOverviewSpy =
       instanceAuditPlan.getInstanceAuditPlanOverview();
+    mockUsePermission(undefined, {
+      mockSelector: true
+    });
   });
   afterEach(() => {
     jest.useRealTimers();
@@ -59,18 +69,24 @@ describe('test Overview', () => {
     const { getAllByText, findByText, getByText } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(
+      getAllByText('停 用')[
+        mockInstanceAuditPlanInfo.findIndex(
+          (v) =>
+            v.active_status === InstanceAuditPlanInfoActiveStatusEnum.disabled
+        )
+      ].closest('button')
+    ).toBeDisabled();
 
-    expect(getAllByText('停 用').length).toBe(
-      mockInstanceAuditPlanInfo.filter(
-        (v) => v.active_status === InstanceAuditPlanInfoActiveStatusEnum.normal
-      ).length
-    );
-    expect(getAllByText('启 用').length).toBe(
-      mockInstanceAuditPlanInfo.filter(
-        (v) =>
-          v.active_status === InstanceAuditPlanInfoActiveStatusEnum.disabled
-      ).length
-    );
+    expect(
+      getAllByText('启 用')[
+        mockInstanceAuditPlanInfo.findIndex(
+          (v) =>
+            v.active_status === InstanceAuditPlanInfoActiveStatusEnum.normal
+        )
+      ].closest('button')
+    ).toBeDisabled();
+
     expect(getAllByText('删 除').length).toBe(mockInstanceAuditPlanInfo.length);
 
     // disabled
@@ -100,7 +116,7 @@ describe('test Overview', () => {
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(2);
 
     // enabled
-    fireEvent.click(getAllByText('启 用')[0]);
+    fireEvent.click(getAllByText('启 用')[1]);
     expect(updateAuditPlanStatusSpy).toHaveBeenCalledTimes(2);
     expect(updateAuditPlanStatusSpy).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
@@ -114,9 +130,9 @@ describe('test Overview', () => {
       active: UpdateAuditPlanStatusReqV1ActiveEnum.normal
     });
 
-    expect(getAllByText('启 用')[0].closest('button')).toBeDisabled();
+    expect(getAllByText('启 用')[1].closest('button')).toBeDisabled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllByText('启 用')[0].closest('button')).not.toBeDisabled();
+    expect(getAllByText('启 用')[1].closest('button')).not.toBeDisabled();
     expect(getByText('启用成功！')).toBeInTheDocument();
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(3);
 
@@ -156,7 +172,7 @@ describe('test Overview', () => {
   });
 
   it('should match snapshot when hasOpPermission is equal false', () => {
-    const { container } = customRender(false);
+    const { container } = customRender();
     expect(container).toMatchSnapshot();
   });
 });

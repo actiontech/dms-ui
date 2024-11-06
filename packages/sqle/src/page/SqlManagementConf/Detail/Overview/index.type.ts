@@ -3,5 +3,4 @@ export type ConfDetailOverviewProps = {
   handleChangeTab: (key: string) => void;
   instanceAuditPlanId: string;
   refreshAuditPlanDetail: () => void;
-  hasOpPermission: boolean;
 };

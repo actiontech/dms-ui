@@ -1,15 +1,13 @@
-import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { PlusOutlined } from '@actiontech/icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   useCurrentProject,
-  useCurrentUser
+  usePermission
 } from '@actiontech/shared/lib/global';
 import {
   VersionManagementTableFilterParamType,
-  VersionManagementTableColumns,
-  VersionManagementTableActions
+  VersionManagementTableColumns
 } from './column';
 import { useRequest } from 'ahooks';
 import {
@@ -25,7 +23,10 @@ import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useMemo } from 'react';
+import {
+  VersionManagementPageHeaderActions,
+  VersionManagementTableActions
+} from './action';
 
 const VersionManagementList = () => {
   const { t } = useTranslation();
@@ -33,14 +34,9 @@ const VersionManagementList = () => {
   const navigate = useNavigate();
 
   const { projectID, projectName } = useCurrentProject();
+  const { checkActionPermission } = usePermission();
 
   const [messageApi, messageContextHolder] = message.useMessage();
-
-  const { isAdmin, isProjectManager } = useCurrentUser();
-
-  const actionPermission = useMemo(() => {
-    return isAdmin || isProjectManager(projectName);
-  }, [isAdmin, isProjectManager, projectName]);
 
   const {
     tableFilterInfo,
@@ -129,25 +125,14 @@ const VersionManagementList = () => {
       });
   };
 
+  const pageHeaderActions = VersionManagementPageHeaderActions(projectID);
+
   return (
     <>
       {messageContextHolder}
       <PageHeader
         title={t('versionManagement.pageTitle')}
-        extra={
-          <EmptyBox if={actionPermission}>
-            <Link to={`/sqle/project/${projectID}/version-management/create`}>
-              <BasicButton
-                type="primary"
-                icon={
-                  <PlusOutlined width={10} height={10} color="currentColor" />
-                }
-              >
-                {t('versionManagement.operation.add')}
-              </BasicButton>
-            </Link>
-          </EmptyBox>
-        }
+        extra={pageHeaderActions.add}
       />
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -180,11 +165,12 @@ const VersionManagementList = () => {
         loading={loading}
         errorMessage={requestErrorMessage}
         onChange={tableChange}
-        actions={
-          actionPermission
-            ? VersionManagementTableActions(onEdit, onDelete, onLock)
-            : undefined
-        }
+        actions={VersionManagementTableActions({
+          onEdit,
+          onDelete,
+          onLock,
+          checkActionPermission
+        })}
         scroll={{}}
       />
     </>
