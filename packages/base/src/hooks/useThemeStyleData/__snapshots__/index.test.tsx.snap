@@ -597,6 +597,9 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
 
 exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
 {
+  "dataSourceComparison": {
+    "comparisonResultDiffBackgroundColor": "#ffebe9",
+  },
   "execWorkflow": {
     "common": {
       "auditResultFilter": {
