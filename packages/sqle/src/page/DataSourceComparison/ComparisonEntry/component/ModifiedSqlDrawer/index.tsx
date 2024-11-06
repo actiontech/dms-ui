@@ -1,9 +1,9 @@
-import { BasicDrawer, SQLRenderer } from '@actiontech/shared';
+import { BasicDrawer, EmptyBox, SQLRenderer } from '@actiontech/shared';
 import {
   IAuditResult,
   IDatabaseDiffModifySQL
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Space, Spin, Typography } from 'antd';
+import { Result, Space, Spin, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   ModifiedSqlStyleWrapper,
@@ -98,13 +98,26 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
                 'dataSourceComparison.entry.comparisonDetail.modifiedSqlAuditResultTitle'
               ),
               children: (
-                <AuditResult
-                  results={
-                    auditResultRuleInfoMap[
-                      databaseDiffModifiedSqlInfo.schema_name!
-                    ] ?? []
+                <EmptyBox
+                  if={!databaseDiffModifiedSqlInfo?.audit_error}
+                  defaultNode={
+                    <Result
+                      status="error"
+                      title={t(
+                        'dataSourceComparison.entry.comparisonDetail.auditFailed'
+                      )}
+                      subTitle={databaseDiffModifiedSqlInfo?.audit_error}
+                    />
                   }
-                />
+                >
+                  <AuditResult
+                    results={
+                      auditResultRuleInfoMap[
+                        databaseDiffModifiedSqlInfo.schema_name!
+                      ] ?? []
+                    }
+                  />
+                </EmptyBox>
               )
             }
           ]}
