@@ -18,7 +18,8 @@ import {
 import {
   ModifiedSqlStyleWrapper,
   DiffSQLEditorWrapperStyleWrapper,
-  SqlAuditResultCollapseStyleWrapper
+  SqlAuditResultCollapseStyleWrapper,
+  DiffSQLEditorSubTitleStyleWrapper
 } from './style';
 import { ObjectDiffResultComparisonResultEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import AuditResult from './AuditResult';
@@ -28,15 +29,24 @@ import dayjs from 'dayjs';
 import useAuditResultRuleInfo from '../../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { CreateWorkflowForModifiedSqlAction } from '../../../actions';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  filterSchemasInDatabase,
+  getComparisonResultByNodeKey,
+  parseTreeNodeKey
+} from '../../../utils/TreeNode';
+import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DatabaseFilled } from '@actiontech/icons';
+import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 
 type Props = {
   open: boolean;
   onClose: () => void;
   getDetailParams: IGetComparisonStatementV1Params;
   genModifiedSqlParams: IGenDatabaseDiffModifySQLsV1Params;
-  comparisonResult: ObjectDiffResultComparisonResultEnum;
+  comparisonResults: ISchemaObject[];
   selectedBaselineInstanceInfo?: SelectedInstanceInfo;
   selectComparisonInstanceInfo?: SelectedInstanceInfo;
+  selectedObjectNodeKey: string;
 };
 
 enum CollapseItemKeyEnum {
@@ -50,12 +60,15 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   onClose,
   getDetailParams,
   genModifiedSqlParams,
-  comparisonResult,
+  comparisonResults,
   selectedBaselineInstanceInfo,
-  selectComparisonInstanceInfo
+  selectComparisonInstanceInfo,
+  selectedObjectNodeKey
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
+  const { sharedTheme } = useThemeStyleData();
+
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading: getDetailPending, data: comparisonDetail } = useRequest(
     () =>
@@ -203,6 +216,11 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     );
   };
 
+  const { baselineSchemaName, comparisonSchemaName } = parseTreeNodeKey(
+    selectedObjectNodeKey,
+    comparisonResults
+  );
+
   return (
     <BasicDrawer
       title={t('dataSourceComparison.entry.comparisonDetail.title')}
@@ -215,9 +233,15 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
           <Space size={12}>
             {CreateWorkflowForModifiedSqlAction({
               projectID,
-              sql: modifiedSqls,
-              instanceId: selectComparisonInstanceInfo?.instanceId ?? '',
-              instanceName: selectComparisonInstanceInfo?.instanceName ?? ''
+              apiParams: genModifiedSqlParams,
+              comparisonInstanceID:
+                selectComparisonInstanceInfo?.instanceId ?? '',
+              comparisonInstanceName:
+                selectComparisonInstanceInfo?.instanceName ?? '',
+              dbExistingSchemas: filterSchemasInDatabase(
+                [selectedObjectNodeKey],
+                comparisonResults
+              )
             })}
 
             <BasicButton onClick={copyModifiedSql}>
@@ -235,7 +259,10 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
       }
       extra={
         <EmptyBox if={!!comparisonDetail}>
-          {comparisonResult === ObjectDiffResultComparisonResultEnum.same ? (
+          {getComparisonResultByNodeKey(
+            comparisonResults,
+            selectedObjectNodeKey
+          ) === ObjectDiffResultComparisonResultEnum.same ? (
             <BasicToolTips
               title={t(
                 'dataSourceComparison.entry.comparisonDetail.generateSQLDisabledTips'
@@ -280,6 +307,22 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
           <Typography.Title level={4}>
             {t('dataSourceComparison.entry.comparisonDetail.ddlDiff')}
           </Typography.Title>
+
+          <DiffSQLEditorSubTitleStyleWrapper>
+            <div className="subtitle-item-wrapper">
+              <DatabaseFilled color={sharedTheme.uiToken.colorPrimary} />
+              <Typography.Text className="subtitle-item-text">
+                {`${selectedBaselineInstanceInfo?.instanceName}.${baselineSchemaName}`}
+              </Typography.Text>
+            </div>
+
+            <div className="subtitle-item-wrapper">
+              <DatabaseFilled color={sharedTheme.uiToken.colorPrimary} />
+              <Typography.Text className="subtitle-item-text">
+                {`${selectComparisonInstanceInfo?.instanceName}.${comparisonSchemaName}`}
+              </Typography.Text>
+            </div>
+          </DiffSQLEditorSubTitleStyleWrapper>
 
           <SQLRenderer.DiffViewOnlyEditor
             originalSql={comparisonDetail?.base_sql?.sql_statement}

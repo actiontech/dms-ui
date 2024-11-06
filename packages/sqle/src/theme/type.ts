@@ -300,3 +300,7 @@ export type IconTheme = {
     userCircleFilled: string;
   };
 };
+
+export type DataSourceComparisonTheme = {
+  comparisonResultDiffBackgroundColor: string;
+};
