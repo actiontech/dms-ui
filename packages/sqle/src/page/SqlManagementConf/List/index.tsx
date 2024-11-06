@@ -1,9 +1,4 @@
-import {
-  BasicButton,
-  EmptyBox,
-  LazyLoadComponent,
-  PageHeader
-} from '@actiontech/shared';
+import { LazyLoadComponent, PageHeader } from '@actiontech/shared';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ActiontechTable,
@@ -22,15 +17,10 @@ import {
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  ExtraFilterMeta,
-  SqlManagementConfColumnAction,
-  SqlManagementConfColumns
-} from './column';
+import { ExtraFilterMeta, SqlManagementConfColumns } from './column';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { Spin, message } from 'antd';
 import TableTaskTypeFilter from './TableTaskTypeFilter';
-import { Link } from 'react-router-dom';
 import {
   PlanListTaskTypeButtonStyleWrapper,
   SqlManagementConfPageStyleWrapper
@@ -46,15 +36,18 @@ import {
 } from '@actiontech/icons';
 import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import {
+  SqlManagementConfPageHeaderActions,
+  SqlManagementConfTableActions
+} from './action';
 
 const List: React.FC = () => {
   const { t } = useTranslation();
-  const { projectArchive, projectName, projectID } = useCurrentProject();
-  const { username, isAdmin, isProjectManager } = useCurrentUser();
+  const { projectName, projectID } = useCurrentProject();
+  const { username } = useCurrentUser();
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [messageApi, contextMessageHolder] = message.useMessage();
-  const operationPermission = isAdmin || isProjectManager(projectName);
 
   const { getLogoUrlByDbType } = useDbServiceDriver();
 
@@ -76,7 +69,7 @@ const List: React.FC = () => {
     InstanceAuditPlanTableFilterParamType
   >();
 
-  const { checkDbServicePermission } = usePermission();
+  const { parse2TableActionPermissions } = usePermission();
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
@@ -143,6 +136,8 @@ const List: React.FC = () => {
       messageApi
     });
 
+  const pageHeaderActions = SqlManagementConfPageHeaderActions(projectID);
+
   useEffect(() => {
     if (taskTypeShowStatus) {
       updateAuditPlanTypes();
@@ -157,15 +152,7 @@ const List: React.FC = () => {
     <SqlManagementConfPageStyleWrapper>
       <PageHeader
         title={t('managementConf.list.pageTitle')}
-        extra={
-          <EmptyBox if={!projectArchive}>
-            <Link to={`/sqle/project/${projectID}/sql-management-conf/create`}>
-              <BasicButton type="primary">
-                {t('managementConf.list.pageAction.enableAuditPlan')}
-              </BasicButton>
-            </Link>
-          </EmptyBox>
-        }
+        extra={pageHeaderActions.add}
       />
       <Spin spinning={getTaskTypesLoading || getTableDataLoading} delay={300}>
         <TableToolbar
@@ -232,14 +219,14 @@ const List: React.FC = () => {
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
-          actions={SqlManagementConfColumnAction({
-            editAction,
-            deleteAction,
-            disabledAction,
-            enabledAction,
-            isHaveServicePermission: checkDbServicePermission,
-            operationPermission
-          })}
+          actions={parse2TableActionPermissions(
+            SqlManagementConfTableActions({
+              editAction,
+              deleteAction,
+              disabledAction,
+              enabledAction
+            })
+          )}
         />
       </Spin>
     </SqlManagementConfPageStyleWrapper>

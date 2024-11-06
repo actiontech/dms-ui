@@ -1,7 +1,6 @@
 import {
   ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize,
-  ActiontechTableActionMeta
+  PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { t } from '../../../locale';
@@ -10,7 +9,6 @@ import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { VersionStatusDictionary } from '../index.data';
 import { Link } from 'react-router-dom';
-import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type VersionManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlVersionListV1Params,
@@ -72,47 +70,4 @@ export const VersionManagementTableColumns: (
       filterKey: ['filter_by_lock_time_from', 'filter_by_lock_time_to']
     }
   ];
-};
-
-export const VersionManagementTableActions: (
-  onEdit: (id?: number) => void,
-  onDelete: (id?: number) => void,
-  onLock: (id?: number) => void
-) => {
-  buttons: ActiontechTableActionMeta<ISqlVersionResV1>[];
-} = (onEdit, onDelete, onLock) => {
-  return {
-    buttons: [
-      {
-        key: 'edit-button',
-        text: t('common.edit'),
-        buttonProps: (record) => ({
-          onClick: () => onEdit(record?.version_id)
-        }),
-        permissions: (record) =>
-          record?.status === SqlVersionResV1StatusEnum.is_being_released
-      },
-      {
-        key: 'lock-button',
-        text: t('versionManagement.list.action.lock'),
-        confirm: (record) => ({
-          title: t('versionManagement.list.action.lockConfirm'),
-          onConfirm: () => onLock(record?.version_id)
-        }),
-        permissions: (record) =>
-          !!record?.lockable &&
-          record?.status !== SqlVersionResV1StatusEnum.locked
-      },
-      {
-        key: 'delete-button',
-        text: t('common.delete'),
-        buttonProps: () => ({ danger: true }),
-        confirm: (record) => ({
-          title: t('versionManagement.list.action.deleteConfirm'),
-          onConfirm: () => onDelete(record?.version_id)
-        }),
-        permissions: (record) => !!record?.deletable
-      }
-    ]
-  };
 };

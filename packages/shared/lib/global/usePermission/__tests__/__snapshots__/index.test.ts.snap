@@ -161,10 +161,28 @@ exports[`usePermission should match snapshot 1`] = `
         "UPDATE_PRIORITY": "action:update_sql_priority",
         "UPDATE_STATUS": "action:update_sql_status",
       },
+      "SQL_MANAGEMENT_CONF": {
+        "CREATE": "action:sql_management_conf_create_operator",
+        "DELETE": "action:sql_management_conf_delete_operator",
+        "DETAIL_AUDIT": "action:sql_management_conf_detail_audit_operator",
+        "DETAIL_DELETE": "action:sql_management_conf_detail_delete_operator",
+        "DETAIL_ENABLE": "action:sql_management_conf_detail_enable_operator",
+        "DETAIL_STOP": "action:sql_management_conf_detail_stop_operator",
+        "EDIT": "action:sql_management_conf_edit_operator",
+        "ENABLE": "action:sql_management_conf_enable_operator",
+        "STOP": "action:sql_management_conf_stop_operator",
+      },
       "SQL_MANAGEMENT_EXCEPTION": {
         "CREATE": "action:create_sql_management_exception",
         "DELETE": "action:delete_sql_management_exception",
         "EDIT": "action:edit_sql_management_exception",
+      },
+      "VERSION_MANAGEMENT": {
+        "ADD": "action:version_management_add_operator",
+        "DELETE": "action:version_management_delete_operator",
+        "DEPLOY": "action:version_management_deploy_operator",
+        "EDIT": "action:version_management_edit_operator",
+        "LOCK": "action:version_management_lock_operator",
       },
       "WHITE_LIST": {
         "CREATE": "action:white_list_creation",
@@ -989,6 +1007,119 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:sql_management_conf_create_operator": {
+    "id": "action:sql_management_conf_create_operator",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:sql_management_conf_delete_operator": {
+    "dbServicePermission": {
+      "fieldName": "instance_id",
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_delete_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_detail_audit_operator": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_detail_audit_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_detail_delete_operator": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_detail_delete_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_detail_enable_operator": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_detail_enable_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_detail_stop_operator": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_detail_stop_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_edit_operator": {
+    "dbServicePermission": {
+      "fieldName": "instance_id",
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_edit_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_enable_operator": {
+    "dbServicePermission": {
+      "fieldName": "instance_id",
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_enable_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_stop_operator": {
+    "dbServicePermission": {
+      "fieldName": "instance_id",
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_stop_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:sql_management_create_white_list": {
     "id": "action:sql_management_create_white_list",
     "projectArchived": false,
@@ -1072,6 +1203,59 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:url_address_prefix": {
     "id": "action:url_address_prefix",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:version_management_add_operator": {
+    "id": "action:version_management_add_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:version_management_delete_operator": {
+    "id": "action:version_management_delete_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:version_management_deploy_operator": {
+    "dbServicePermission": {
+      "opType": "create_workflow",
+    },
+    "id": "action:version_management_deploy_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:version_management_edit_operator": {
+    "id": "action:version_management_edit_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:version_management_lock_operator": {
+    "id": "action:version_management_lock_operator",
+    "projectArchived": false,
+    "projectManager": true,
     "role": [
       "admin",
       "globalManager",
