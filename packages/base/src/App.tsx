@@ -213,7 +213,6 @@ function App() {
     // #elif [ce]
     sqleEdition = 'ce';
     // #endif
-
     if (sqleEdition !== LocalStorageWrapper.get('DMS_CB_CHANNEL')) {
       LocalStorageWrapper.set(
         'DMS_CB_CHANNEL',
