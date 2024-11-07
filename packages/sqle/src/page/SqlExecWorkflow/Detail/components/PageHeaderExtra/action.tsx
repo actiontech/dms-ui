@@ -163,3 +163,41 @@ export const RefreshWorkflowAction = (refreshWorkflow: () => void) => {
     />
   );
 };
+
+export const BatchExecWorkflowDisabledAction = (executableReason?: string) => {
+  return (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_EXEC}
+    >
+      <ActionButton
+        text={t('execWorkflow.detail.operator.batchSqlExecute')}
+        disabled
+        type="primary"
+        actionType="tooltip"
+        tooltip={{
+          title: executableReason
+        }}
+      />
+    </PermissionControl>
+  );
+};
+
+export const MarkManuallyExecWorkflowDisabledAction = (
+  executableReason?: string
+) => {
+  return (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.MANUALLY_EXEC}
+    >
+      <ActionButton
+        text={t('execWorkflow.detail.operator.markManually')}
+        disabled
+        type="primary"
+        actionType="tooltip"
+        tooltip={{
+          title: executableReason
+        }}
+      />
+    </PermissionControl>
+  );
+};

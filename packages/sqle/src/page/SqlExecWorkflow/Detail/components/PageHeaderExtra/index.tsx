@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/shared';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -15,7 +15,9 @@ import {
   CloseWorkflowAction,
   MarkManuallyExecWorkflowAction,
   RefreshWorkflowAction,
-  TerminateWorkflowAction
+  TerminateWorkflowAction,
+  BatchExecWorkflowDisabledAction,
+  MarkManuallyExecWorkflowDisabledAction
 } from './action';
 
 const WorkflowDetailPageHeaderExtra: React.FC<
@@ -71,17 +73,8 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           !executable
         }
       >
-        <BasicToolTips
-          title={executable_reason}
-          overlayClassName="whitespace-pre-line"
-        >
-          <BasicButton disabled type="primary">
-            {t('execWorkflow.detail.operator.batchSqlExecute')}
-          </BasicButton>
-          <BasicButton disabled type="primary">
-            {t('execWorkflow.detail.operator.markManually')}
-          </BasicButton>
-        </BasicToolTips>
+        {BatchExecWorkflowDisabledAction(executable_reason)}
+        {MarkManuallyExecWorkflowDisabledAction(executable_reason)}
       </EmptyBox>
       <Space hidden={terminateWorkflowButtonMeta.hidden} size={0}>
         {TerminateWorkflowAction(terminateWorkflowButtonMeta)}
