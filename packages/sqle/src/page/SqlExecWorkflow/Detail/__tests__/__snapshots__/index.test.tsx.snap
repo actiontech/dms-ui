@@ -117,7 +117,6 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
                       <button
                         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
@@ -129,6 +128,10 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                         </span>
                       </button>
                     </div>
+                  </div>
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
                     <div
                       class="ant-space-item"
                     >
