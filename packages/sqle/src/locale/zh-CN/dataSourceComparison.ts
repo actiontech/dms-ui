@@ -26,6 +26,7 @@ export default {
       generateSQLDisabledTips: '当前对比结果不存在偏差',
       ddlDiff: '建表语句差异',
       modifySqlInfo: '{{schema}}变更SQL详情',
+      auditFailed: '审核失败',
       baselineDDLAuditResultTitle: '基准环境建表语句审核结果',
       comparisonDDLAuditResultTitle: '比对环境建表语句审核结果',
       modifiedSqlAuditResultTitle: '变更SQL语句审核结果',
