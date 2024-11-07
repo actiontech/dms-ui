@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { Card, Space, Typography, Spin } from 'antd';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/CloudBeaver';
@@ -22,7 +22,6 @@ const CloudBeaver = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const cloudBeaverUrl = useRef('');
-  const cbWindow = useRef<Array<Window | null>>([]);
 
   const { data, loading } = useRequest(() => {
     return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
@@ -40,44 +39,8 @@ const CloudBeaver = () => {
   });
 
   const openCloudBeaver = () => {
-    cbWindow.current?.push(window.open(cloudBeaverUrl.current));
+    window.open(cloudBeaverUrl.current);
   };
-
-  // todo 需要封装下和 CB 的通信，后续将 CB跳转 SQLE 创建工单的方案替换掉
-  useEffect(() => {
-    const handleEvent = (event: any) => {
-      if (
-        event.origin === window.location.origin &&
-        event.data.type === 'CB_LOADED' &&
-        cbWindow.current.length
-      ) {
-        cbWindow.current.forEach((win) => {
-          // #if [ee]
-          win?.postMessage(
-            {
-              type: 'SQLE_EDITION',
-              edition: 'ee'
-            },
-            '/'
-          );
-          // #elif [ce]
-          win?.postMessage(
-            {
-              type: 'SQLE_EDITION',
-              edition: 'ce'
-            },
-            '/'
-          );
-          // #endif
-        });
-      }
-    };
-    window.addEventListener('message', handleEvent);
-
-    return () => {
-      window.removeEventListener('message', handleEvent);
-    };
-  }, []);
 
   return (
     <>
