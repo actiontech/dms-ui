@@ -410,12 +410,8 @@ describe('sqle/ExecWorkflow/Detail', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(
-      screen.queryAllByText('批量立即上线')[1].closest('button')
-    ).toBeDisabled();
-    expect(
-      screen.queryAllByText('标记为人工上线')[1].closest('button')
-    ).toBeDisabled();
+    expect(screen.getByText('批量立即上线').closest('button')).toBeDisabled();
+    expect(screen.getByText('标记为人工上线').closest('button')).toBeDisabled();
     expect(baseElement).toMatchSnapshot();
   });
 

@@ -48,6 +48,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        tooltip="[object Object]"
         type="button"
       >
         <span>
@@ -56,6 +57,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        tooltip="[object Object]"
         type="button"
       >
         <span>
@@ -246,24 +248,6 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
           审核通过
         </span>
       </button>
-      <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-        hidden=""
-        type="button"
-      >
-        <span>
-          批量立即上线
-        </span>
-      </button>
-      <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-        hidden=""
-        type="button"
-      >
-        <span>
-          标记为人工上线
-        </span>
-      </button>
       <div
         class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
       >
@@ -272,6 +256,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            confirm="[object Object]"
             disabled=""
             type="button"
           >
@@ -289,6 +274,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
         >
           <button
             class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            confirm="[object Object]"
             disabled=""
             type="button"
           >
@@ -420,6 +406,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -429,6 +417,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -536,6 +526,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -545,6 +537,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -650,6 +644,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -659,6 +655,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
