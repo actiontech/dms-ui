@@ -397,9 +397,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
       maintenanceTimeInfo: []
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseOver(
-      screen.getAllByText('批量立即上线')[1].closest('button')!
-    );
+    fireEvent.mouseOver(screen.getByText('批量立即上线').closest('button')!);
     await act(async () => {
       await jest.advanceTimersByTime(300);
     });

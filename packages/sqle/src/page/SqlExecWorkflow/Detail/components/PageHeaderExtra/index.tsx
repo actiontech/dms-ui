@@ -15,9 +15,7 @@ import {
   CloseWorkflowAction,
   MarkManuallyExecWorkflowAction,
   RefreshWorkflowAction,
-  TerminateWorkflowAction,
-  BatchExecWorkflowDisabledAction,
-  MarkManuallyExecWorkflowDisabledAction
+  TerminateWorkflowAction
 } from './action';
 
 const WorkflowDetailPageHeaderExtra: React.FC<
@@ -60,22 +58,17 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       {CloneWorkflowAction(executeInOtherInstanceMeta)}
       {BatchRejectWorkflowAction(rejectWorkflowButtonMeta, openRejectModal)}
       {ApproveWorkflowAction(auditPassWorkflowButtonMeta)}
-      {BatchExecWorkflowAction(batchExecutingWorkflowButtonMeta, executable)}
+      {BatchExecWorkflowAction(
+        batchExecutingWorkflowButtonMeta,
+        executable,
+        executable_reason
+      )}
       {MarkManuallyExecWorkflowAction(
         manualExecuteWorkflowButtonMeta,
-        executable
+        executable,
+        executable_reason
       )}
 
-      <EmptyBox
-        if={
-          !manualExecuteWorkflowButtonMeta.hidden &&
-          !batchExecutingWorkflowButtonMeta.hidden &&
-          !executable
-        }
-      >
-        {BatchExecWorkflowDisabledAction(executable_reason)}
-        {MarkManuallyExecWorkflowDisabledAction(executable_reason)}
-      </EmptyBox>
       <Space hidden={terminateWorkflowButtonMeta.hidden} size={0}>
         {TerminateWorkflowAction(terminateWorkflowButtonMeta)}
 
