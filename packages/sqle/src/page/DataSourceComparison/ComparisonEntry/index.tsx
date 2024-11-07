@@ -40,7 +40,7 @@ const ComparisonEntry: React.FC = () => {
     { setTrue: openModifiedSqlDrawer, setFalse: closeOpenModifiedSqlDrawer }
   ] = useBoolean();
 
-  const [checkedObjectNodeKeys, setCheckObjectNodeKeys] = useState<string[]>(
+  const [checkedObjectNodeKeys, setCheckedObjectNodeKeys] = useState<string[]>(
     []
   );
 
@@ -79,79 +79,85 @@ const ComparisonEntry: React.FC = () => {
     selectedComparisonInstanceValue
   );
 
-  const genDatabaseDiffModifiedSQLsParams: IGenDatabaseDiffModifySQLsV1Params =
-    useMemo(() => {
-      return {
-        project_name: projectName,
-        base_instance_id: selectedBaselineInstanceInfo?.instanceId,
-        comparison_instance_id: selectedComparisonInstanceInfo?.instanceId,
-        database_schema_objects: (() => {
-          const parseResults = filteredWithoutSchemaNameNodeKey(
-            checkedObjectNodeKeys
-          ).map((key) => {
-            const { comparisonSchemaName, baselineSchemaName } =
-              parseTreeNodeKey(key, comparisonResults ?? []);
-            return {
-              base_schema_name:
-                selectedBaselineInstanceInfo?.schemaName ?? baselineSchemaName,
-              comparison_schema_name:
-                selectedComparisonInstanceInfo?.schemaName ??
-                comparisonSchemaName,
-              key
-            };
-          });
-
-          const groupedResults = parseResults.reduce(
-            (acc, curr) => {
-              const key = `${curr.base_schema_name}_${curr.comparison_schema_name}`;
-              if (!acc[key]) {
-                acc[key] = {
-                  base_schema_name: curr.base_schema_name!,
-                  comparison_schema_name: curr.comparison_schema_name!,
-                  keys: []
-                };
-              }
-              acc[key].keys.push(curr.key);
-              return acc;
-            },
-            {} as Record<
-              string,
-              {
-                base_schema_name: string;
-                comparison_schema_name: string;
-                keys: string[];
-              }
-            >
+  const genDatabaseDiffModifiedSQLsParams:
+    | IGenDatabaseDiffModifySQLsV1Params
+    | undefined = useMemo(() => {
+    if (!comparisonResults) {
+      return undefined;
+    }
+    return {
+      project_name: projectName,
+      base_instance_id: selectedBaselineInstanceInfo?.instanceId,
+      comparison_instance_id: selectedComparisonInstanceInfo?.instanceId,
+      database_schema_objects: (() => {
+        const parseResults = filteredWithoutSchemaNameNodeKey(
+          checkedObjectNodeKeys
+        ).map((key) => {
+          const { comparisonSchemaName, baselineSchemaName } = parseTreeNodeKey(
+            key,
+            comparisonResults
           );
+          return {
+            base_schema_name:
+              selectedBaselineInstanceInfo?.schemaName ?? baselineSchemaName,
+            comparison_schema_name:
+              selectedComparisonInstanceInfo?.schemaName ??
+              comparisonSchemaName,
+            key
+          };
+        });
 
-          return Object.values(groupedResults).map(
-            ({ base_schema_name, comparison_schema_name, keys }) => ({
-              base_schema_name,
-              comparison_schema_name,
-              database_objects: keys.map((key) => {
-                const parseNodeKeyResult = parseTreeNodeKey(
-                  key,
-                  comparisonResults ?? []
-                );
-                return {
-                  object_name: parseNodeKeyResult.objectName,
-                  object_type:
-                    parseNodeKeyResult.objectType as DatabaseObjectObjectTypeEnum
-                };
-              })
+        const groupedResults = parseResults.reduce(
+          (acc, curr) => {
+            const key = `${curr.base_schema_name}_${curr.comparison_schema_name}`;
+            if (!acc[key]) {
+              acc[key] = {
+                base_schema_name: curr.base_schema_name!,
+                comparison_schema_name: curr.comparison_schema_name!,
+                keys: []
+              };
+            }
+            acc[key].keys.push(curr.key);
+            return acc;
+          },
+          {} as Record<
+            string,
+            {
+              base_schema_name: string;
+              comparison_schema_name: string;
+              keys: string[];
+            }
+          >
+        );
+
+        return Object.values(groupedResults).map(
+          ({ base_schema_name, comparison_schema_name, keys }) => ({
+            base_schema_name,
+            comparison_schema_name,
+            database_objects: keys.map((key) => {
+              const parseNodeKeyResult = parseTreeNodeKey(
+                key,
+                comparisonResults ?? []
+              );
+              return {
+                object_name: parseNodeKeyResult.objectName,
+                object_type:
+                  parseNodeKeyResult.objectType as DatabaseObjectObjectTypeEnum
+              };
             })
-          );
-        })()
-      };
-    }, [
-      checkedObjectNodeKeys,
-      comparisonResults,
-      projectName,
-      selectedBaselineInstanceInfo?.instanceId,
-      selectedBaselineInstanceInfo?.schemaName,
-      selectedComparisonInstanceInfo?.instanceId,
-      selectedComparisonInstanceInfo?.schemaName
-    ]);
+          })
+        );
+      })()
+    };
+  }, [
+    checkedObjectNodeKeys,
+    comparisonResults,
+    projectName,
+    selectedBaselineInstanceInfo?.instanceId,
+    selectedBaselineInstanceInfo?.schemaName,
+    selectedComparisonInstanceInfo?.instanceId,
+    selectedComparisonInstanceInfo?.schemaName
+  ]);
 
   const {
     loading: generateModifySqlPending,
@@ -161,7 +167,7 @@ const ComparisonEntry: React.FC = () => {
   } = useRequest(
     () => {
       return databaseCompareService
-        .genDatabaseDiffModifySQLsV1(genDatabaseDiffModifiedSQLsParams)
+        .genDatabaseDiffModifySQLsV1(genDatabaseDiffModifiedSQLsParams!)
         .then((res) => res.data.data);
     },
     {
@@ -171,7 +177,7 @@ const ComparisonEntry: React.FC = () => {
 
   const executeComparison = async () => {
     const values = await form.validateFields();
-    setCheckObjectNodeKeys([]);
+    setCheckedObjectNodeKeys([]);
     executeComparisonApi(values.baselineInstance, values.comparisonInstance);
   };
 
@@ -181,20 +187,23 @@ const ComparisonEntry: React.FC = () => {
   };
 
   const generateModifiedSqlEvent = () => {
-    const comparisonResultsWithCheckNodeKeys = filteredWithoutSchemaNameNodeKey(
-      checkedObjectNodeKeys
-    ).map((key) => getComparisonResultByNodeKey(comparisonResults ?? [], key));
-    if (
-      comparisonResultsWithCheckNodeKeys.includes(
-        ObjectDiffResultComparisonResultEnum.same
-      )
-    ) {
-      messageApi.error(t('dataSourceComparison.entry.generateSQLErrorTips'));
-      return;
-    }
+    if (comparisonResults && genDatabaseDiffModifiedSQLsParams) {
+      const comparisonResultsWithCheckNodeKeys =
+        filteredWithoutSchemaNameNodeKey(checkedObjectNodeKeys).map((key) =>
+          getComparisonResultByNodeKey(comparisonResults ?? [], key)
+        );
+      if (
+        comparisonResultsWithCheckNodeKeys.includes(
+          ObjectDiffResultComparisonResultEnum.same
+        )
+      ) {
+        messageApi.error(t('dataSourceComparison.entry.generateSQLErrorTips'));
+        return;
+      }
 
-    openModifiedSqlDrawer();
-    generateModifiedSqlInfoApi();
+      openModifiedSqlDrawer();
+      generateModifiedSqlInfoApi();
+    }
   };
 
   return (
@@ -204,6 +213,7 @@ const ComparisonEntry: React.FC = () => {
         <EnvironmentSelector
           {...otherHookValues}
           updateComparisonResult={updateComparisonResult}
+          comparisonObjectTreeOnCheck={setCheckedObjectNodeKeys}
           executeComparisonPending={executeComparisonPending}
         />
       </ComparisonSelectorFormStyleWrapper>
@@ -258,7 +268,7 @@ const ComparisonEntry: React.FC = () => {
           comparisonResults={comparisonResults ?? []}
           selectedBaselineInstanceInfo={selectedBaselineInstanceInfo}
           selectedComparisonInstanceInfo={selectedComparisonInstanceInfo}
-          comparisonObjectTreeOnCheck={setCheckObjectNodeKeys}
+          comparisonObjectTreeOnCheck={setCheckedObjectNodeKeys}
           comparisonObjectCheckKeys={checkedObjectNodeKeys}
           showDifferencesOnly={showDifferencesOnly}
         />
@@ -270,7 +280,7 @@ const ComparisonEntry: React.FC = () => {
           databaseDiffModifiedSqlInfos={databaseDiffModifiedSqlInfos}
           generateModifySqlPending={generateModifySqlPending}
           comparisonInstanceInfo={selectedComparisonInstanceInfo}
-          genDatabaseDiffModifiedSQLsParams={genDatabaseDiffModifiedSQLsParams}
+          genDatabaseDiffModifiedSQLsParams={genDatabaseDiffModifiedSQLsParams!}
           dbExistingSchemas={filterSchemasInDatabase(
             checkedObjectNodeKeys,
             comparisonResults ?? []

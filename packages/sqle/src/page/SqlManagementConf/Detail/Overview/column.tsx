@@ -1,7 +1,4 @@
-import {
-  ActiontechTableColumn,
-  ActiontechTableProps
-} from '@actiontech/shared/lib/components/ActiontechTable';
+import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';

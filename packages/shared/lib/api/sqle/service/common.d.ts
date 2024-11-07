@@ -742,9 +742,9 @@ export interface IDatabaseComparisonResV1 {
 }
 
 export interface IDatabaseComparisonStatements {
-  base_sql?: ISQLStatementWithAuditResult;
+  base_sql?: ISQLStatement;
 
-  comparison_sql?: ISQLStatementWithAuditResult;
+  comparison_sql?: ISQLStatement;
 }
 
 export interface IDatabaseComparisonStatementsResV1 {
@@ -756,6 +756,8 @@ export interface IDatabaseComparisonStatementsResV1 {
 }
 
 export interface IDatabaseDiffModifySQL {
+  audit_error?: string;
+
   modify_sqls?: ISQLStatementWithAuditResult[];
 
   schema_name?: string;
@@ -2565,6 +2567,12 @@ export interface ISQLQueryConfigResV1 {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
+}
+
+export interface ISQLStatement {
+  audit_error?: string;
+
+  sql_statement_with_audit?: ISQLStatementWithAuditResult;
 }
 
 export interface ISQLStatementWithAuditResult {

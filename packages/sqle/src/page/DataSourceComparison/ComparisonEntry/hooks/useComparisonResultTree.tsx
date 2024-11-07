@@ -81,7 +81,6 @@ const useComparisonResultTree = (
     setSelectedObjectNodeKey(undefined);
     closeComparisonDetailDrawer();
   };
-
   const assemblingBaselineTreeData = useCallback(
     (instanceName: string): TreeProps['treeData'] => {
       return [
