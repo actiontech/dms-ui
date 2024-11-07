@@ -44,9 +44,11 @@ const ActionButton: React.FC<ActionButtonProps> = (props) => {
   if (props.actionType === 'tooltip') {
     const { actionType, text, tooltip, ...buttonProps } = props;
 
-    <BasicToolTips {...tooltip}>
-      <BasicButton {...buttonProps}>{text}</BasicButton>
-    </BasicToolTips>;
+    return (
+      <BasicToolTips {...tooltip}>
+        <BasicButton {...buttonProps}>{text}</BasicButton>
+      </BasicToolTips>
+    );
   }
 
   const { actionType, text, ...buttonProps } = props;
