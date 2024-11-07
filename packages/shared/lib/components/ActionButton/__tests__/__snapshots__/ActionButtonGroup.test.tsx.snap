@@ -51,15 +51,22 @@ exports[`ActionButtonGroup should match snapshot 1`] = `
     <div
       class="ant-space-item"
     >
-      <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-        tooltip="[object Object]"
-        type="button"
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
       >
-        <span>
-          Info
-        </span>
-      </button>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              Info
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
