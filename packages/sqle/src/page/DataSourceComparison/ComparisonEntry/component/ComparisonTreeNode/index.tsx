@@ -18,7 +18,6 @@ type Props = {
   selectedComparisonInstanceInfo?: SelectedInstanceInfo;
   comparisonObjectTreeOnCheck: (keys: string[]) => void;
   comparisonObjectCheckKeys: string[];
-  showDifferencesOnly: boolean;
 };
 
 const ComparisonTreeNode: React.FC<Props> = ({
@@ -26,8 +25,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
   selectedBaselineInstanceInfo,
   selectedComparisonInstanceInfo,
   comparisonObjectTreeOnCheck,
-  comparisonObjectCheckKeys,
-  showDifferencesOnly
+  comparisonObjectCheckKeys
 }) => {
   const isFirstRenderTreeNode = useRef(true);
 
@@ -41,7 +39,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
     generateModifiedSqlParams,
     treeExpandedKeys,
     setTreeExpandedKeys
-  } = useComparisonResultTree(comparisonResults, showDifferencesOnly);
+  } = useComparisonResultTree(comparisonResults);
 
   const baselineTreeData = useMemo(() => {
     if (!selectedBaselineInstanceInfo) {
