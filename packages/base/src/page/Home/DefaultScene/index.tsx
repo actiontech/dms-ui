@@ -10,11 +10,13 @@ import NotFoundProject from './components/NotFoundProject';
 import { useState } from 'react';
 import StepItems from './components/StepItems';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/global';
 
 const DefaultScene: React.FC = () => {
-  const { isAdmin, bindProjects } = useCurrentUser();
+  const { bindProjects } = useCurrentUser();
   const navigate = useNavigate();
   const { baseTheme } = useThemeStyleData();
+  const { checkActionPermission } = usePermission();
 
   const [
     openRulePageProjectSelectorModal,
@@ -23,7 +25,9 @@ const DefaultScene: React.FC = () => {
   const { currentProjectID, updateRecentlyProject } =
     useRecentlyOpenedProjects();
 
-  const steps = isAdmin
+  const steps = checkActionPermission(
+    PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS
+  )
     ? AdminUserDevopsSteps({
         navigate,
         projectID: currentProjectID,

@@ -237,6 +237,13 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager]
   },
 
+  // Home
+  [PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS]: {
+    id: PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
   //全局规则模板
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT,
@@ -908,5 +915,12 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
+  },
+
+  // 快捷审核
+  [PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE,
+    type: 'action',
+    projectArchived: false
   }
 } as const;
