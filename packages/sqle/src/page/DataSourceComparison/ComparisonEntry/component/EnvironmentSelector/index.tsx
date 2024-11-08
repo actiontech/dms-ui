@@ -10,6 +10,7 @@ import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 type Props = {
   executeComparisonPending: boolean;
   updateComparisonResult: (data?: ISchemaObject[]) => void;
+  comparisonObjectTreeOnCheck: (keys: string[]) => void;
 } & Pick<
   ReturnType<typeof useDataSourceTreeData>,
   | 'treeLoadedKeys'
@@ -18,6 +19,7 @@ type Props = {
   | 'onLoadTreeData'
   | 'getTreeDataPending'
   | 'disableTreeNodesBasedOnSelection'
+  | 'validatorDataSourceTreeSelector'
 >;
 
 const EnvironmentSelector: React.FC<Props> = ({
@@ -28,7 +30,9 @@ const EnvironmentSelector: React.FC<Props> = ({
   onLoadTreeData,
   getTreeDataPending,
   disableTreeNodesBasedOnSelection,
-  updateComparisonResult
+  updateComparisonResult,
+  comparisonObjectTreeOnCheck,
+  validatorDataSourceTreeSelector
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<DatabaseComparisonFromFields>();
@@ -37,6 +41,7 @@ const EnvironmentSelector: React.FC<Props> = ({
 
   const onChange: TreeSelectProps['onChange'] = () => {
     updateComparisonResult(undefined);
+    comparisonObjectTreeOnCheck([]);
   };
 
   const databaseComparisonSelectorCommonProps: TreeSelectProps = {
@@ -89,12 +94,16 @@ const EnvironmentSelector: React.FC<Props> = ({
         </Typography.Text>
         <FormItemNoLabel
           name="comparisonInstance"
+          dependencies={['baselineInstance']}
           rules={[
             {
               required: true,
               message: t('common.form.placeholder.select', {
                 name: t('dataSourceComparison.entry.comparisonEnvironment')
               })
+            },
+            {
+              validator: validatorDataSourceTreeSelector()
             }
           ]}
         >

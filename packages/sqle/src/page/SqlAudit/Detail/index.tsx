@@ -8,13 +8,14 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
-import { PlusOutlined, LeftArrowOutlined } from '@actiontech/icons';
+import { LeftArrowOutlined } from '@actiontech/icons';
+import { SqlAuditPageHeaderActions } from '../List/actions';
 
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
 
   const { sql_audit_record_id } = useParams<{ sql_audit_record_id: string }>();
-  const { projectID, projectName, projectArchive } = useCurrentProject();
+  const { projectID, projectName } = useCurrentProject();
 
   // api
   const { data: pluginAuditRecord, loading: dataLoading } = useRequest(() =>
@@ -39,6 +40,8 @@ const SqlAuditDetail = () => {
     return pluginAuditRecord?.task ? [pluginAuditRecord?.task] : [];
   }, [pluginAuditRecord]);
 
+  const pageHeaderActions = SqlAuditPageHeaderActions(projectID);
+
   return (
     <>
       <Spin spinning={dataLoading}>
@@ -51,20 +54,7 @@ const SqlAuditDetail = () => {
               </BasicButton>
             </Link>
           }
-          extra={
-            !projectArchive ? (
-              <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
-                <BasicButton
-                  type="primary"
-                  icon={
-                    <PlusOutlined color="currentColor" width={10} height={10} />
-                  }
-                >
-                  {t('sqlAudit.list.action.create')}
-                </BasicButton>
-              </Link>
-            ) : null
-          }
+          extra={pageHeaderActions['create-audit']}
         />
         <div
           className="hasTopHeader clearPaddingBottom"

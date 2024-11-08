@@ -37,12 +37,7 @@ const useCurrentUser = () => {
     };
   });
 
-  // todo 暂时保留 全局管理员 == admin 的逻辑，等权限全部重构完成后，移除该逻辑
-  const isAdmin =
-    role === SystemRole.admin ||
-    managementPermissions.some(
-      (v) => v.uid === OpPermissionTypeUid.global_management
-    );
+  const isAdmin = role === SystemRole.admin;
 
   const isProjectManager = useCallback(
     (name: string) => {

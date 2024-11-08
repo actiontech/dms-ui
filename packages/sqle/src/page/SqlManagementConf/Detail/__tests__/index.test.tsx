@@ -84,7 +84,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
 
   it('should render extra action buttons in the page header', async () => {
     mockUsePermission(
-      { checkDbServicePermission: jest.fn(() => true) },
+      { checkActionPermission: jest.fn(() => true) },
       { useSpyOnMockHooks: true }
     );
     const getInstanceAuditPlanSQLExportSpy =

@@ -9,6 +9,10 @@ export default {
     comparisonEnvironment: '比对环境',
     comparisonEnvironmentDescription:
       '请选择您想要检查或更新的数据库环境，\n这个环境将与基准环境进行比较，以找出差异。',
+    selectorValidatorSchemaMessage:
+      '基准环境已选择到Schema级别，请在对比数据源中也选择Schema',
+    selectorValidatorDataSourceMessage:
+      '基准环境选择的是数据源级别，请在对比数据源中也选择数据源',
     executeComparison: '执行对比',
     showDifferencesOnly: '只看差异',
     modifyMappings: '修改映射',
@@ -22,8 +26,9 @@ export default {
       generateSQLDisabledTips: '当前对比结果不存在偏差',
       ddlDiff: '建表语句差异',
       modifySqlInfo: '{{schema}}变更SQL详情',
+      auditFailed: '审核失败',
       baselineDDLAuditResultTitle: '基准环境建表语句审核结果',
-      comparisonDDLAuditResultTitle: '对比环境建表语句审核结果',
+      comparisonDDLAuditResultTitle: '比对环境建表语句审核结果',
       modifiedSqlAuditResultTitle: '变更SQL语句审核结果',
       actions: {
         createChangeWorkflow: '生成变更工单',
@@ -33,6 +38,9 @@ export default {
     },
     modifiedSqlDrawer: {
       title: '变更SQL语句信息'
+    },
+    modifiedSqlAuditResult: {
+      cardTitle: '变更语句'
     }
   }
 };

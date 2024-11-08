@@ -7,6 +7,7 @@ const DEFAULT_DB_SOURCE_INFO = { '0': {} };
 
 const useSharedStepDetail = (): SharedStepDetails => {
   const [isAuditing, setIsAuditing] = useState(false);
+  const [getModifiedSQLsPending, setGetModifiedSQLsPending] = useState(false);
 
   const [isDisabledForDifferenceSql, setIsDisabledForDifferenceSql] =
     useState(false);
@@ -86,7 +87,10 @@ const useSharedStepDetail = (): SharedStepDetails => {
       value: sqlStatementTabActiveKey,
       set: setActiveSqlStatementTabKey
     },
-
+    getModifiedSQLsPending: {
+      value: getModifiedSQLsPending,
+      set: setGetModifiedSQLsPending
+    },
     resetAllSharedData
   };
 };

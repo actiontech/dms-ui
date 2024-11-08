@@ -2,25 +2,29 @@ import { ActionButton } from '@actiontech/shared';
 import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 import { t } from '../../../locale';
 import { compressToEncodedURIComponent } from 'lz-string';
-import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 
 type CreateWorkflowActionParams = {
-  sql: string;
-  instanceName: string;
-  instanceId: string;
+  apiParams: IGenDatabaseDiffModifySQLsV1Params;
+  comparisonInstanceID: string;
+  comparisonInstanceName: string;
   projectID: string;
+  dbExistingSchemas: string[];
 };
 
 export const CreateWorkflowForModifiedSqlAction = (
   params: CreateWorkflowActionParams
 ) => {
-  const { sql, instanceId, instanceName, projectID } = params;
+  const {
+    apiParams,
+    comparisonInstanceID,
+    projectID,
+    comparisonInstanceName,
+    dbExistingSchemas
+  } = params;
 
   const compressionData = compressToEncodedURIComponent(
-    JSON.stringify({
-      sql,
-      instanceName
-    })
+    JSON.stringify({ ...apiParams, comparisonInstanceName, dbExistingSchemas })
   );
 
   return (
@@ -29,7 +33,7 @@ export const CreateWorkflowForModifiedSqlAction = (
         PERMISSIONS.ACTIONS.SQLE.DATA_SOURCE_COMPARISON
           .CREATE_MODIFIED_SQL_WORKFLOW
       }
-      authDataSourceId={instanceId}
+      authDataSourceId={comparisonInstanceID}
     >
       <ActionButton
         actionType="navigate-link"
@@ -38,7 +42,8 @@ export const CreateWorkflowForModifiedSqlAction = (
           'dataSourceComparison.entry.comparisonDetail.actions.createChangeWorkflow'
         )}
         link={{
-          to: `/sqle/project/${projectID}/exec-workflow/create?from=${TRANSIT_FROM_CONSTANT.data_source_comparison}&compression_data=${compressionData}`,
+          // todo TypedRouter 替换
+          to: `/sqle/project/${projectID}/exec-workflow/create?gen_modified_sql_params=${compressionData}`,
           target: '_blank'
         }}
       />

@@ -94,33 +94,15 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                       审核通过
                     </span>
                   </button>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                    hidden=""
-                    type="button"
-                  >
-                    <span>
-                      批量立即上线
-                    </span>
-                  </button>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                    hidden=""
-                    type="button"
-                  >
-                    <span>
-                      标记为人工上线
-                    </span>
-                  </button>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
                       <button
                         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        confirm="[object Object]"
                         disabled=""
                         type="button"
                       >
@@ -129,11 +111,16 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                         </span>
                       </button>
                     </div>
+                  </div>
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
                     <div
                       class="ant-space-item"
                     >
                       <button
                         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        confirm="[object Object]"
                         disabled=""
                         type="button"
                       >
@@ -846,6 +833,8 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                   </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    confirm="[object Object]"
+                    disabled=""
                     hidden=""
                     type="button"
                   >
@@ -855,6 +844,8 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                   </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    confirm="[object Object]"
+                    disabled=""
                     hidden=""
                     type="button"
                   >
@@ -1378,24 +1369,44 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       审核通过
                     </span>
                   </button>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                    hidden=""
-                    type="button"
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
-                    <span>
-                      批量立即上线
-                    </span>
-                  </button>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                    hidden=""
-                    type="button"
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        confirm="[object Object]"
+                        disabled=""
+                        hidden=""
+                        type="button"
+                      >
+                        <span>
+                          批量立即上线
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
-                    <span>
-                      标记为人工上线
-                    </span>
-                  </button>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        confirm="[object Object]"
+                        disabled=""
+                        hidden=""
+                        type="button"
+                      >
+                        <span>
+                          标记为人工上线
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                     hidden=""
@@ -2218,24 +2229,44 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       审核通过
                     </span>
                   </button>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                    hidden=""
-                    type="button"
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
-                    <span>
-                      批量立即上线
-                    </span>
-                  </button>
-                  <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                    hidden=""
-                    type="button"
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        confirm="[object Object]"
+                        disabled=""
+                        hidden=""
+                        type="button"
+                      >
+                        <span>
+                          批量立即上线
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
-                    <span>
-                      标记为人工上线
-                    </span>
-                  </button>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        confirm="[object Object]"
+                        disabled=""
+                        hidden=""
+                        type="button"
+                      >
+                        <span>
+                          标记为人工上线
+                        </span>
+                      </button>
+                    </div>
+                  </div>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                     hidden=""
@@ -3106,6 +3137,8 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    confirm="[object Object]"
+                    disabled=""
                     hidden=""
                     type="button"
                   >
@@ -3115,6 +3148,8 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   </button>
                   <button
                     class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    confirm="[object Object]"
+                    disabled=""
                     hidden=""
                     type="button"
                   >

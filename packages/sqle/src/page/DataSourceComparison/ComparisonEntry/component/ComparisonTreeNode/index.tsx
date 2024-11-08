@@ -9,10 +9,7 @@ import { AntTreeNodeProps } from 'antd/es/tree';
 import useComparisonResultTree from '../../hooks/useComparisonResultTree';
 import { useEffect, useMemo, useRef } from 'react';
 import ComparisonDetailDrawer from './ComparisonDetailDrawer';
-import {
-  getComparisonResultByNodeKey,
-  generateTreeDefaultExpandedKeys
-} from '../../utils/TreeNode';
+import { generateTreeDefaultExpandedKeys } from '../../utils/TreeNode';
 import { SelectedInstanceInfo } from '../../index.type';
 
 type Props = {
@@ -21,7 +18,6 @@ type Props = {
   selectedComparisonInstanceInfo?: SelectedInstanceInfo;
   comparisonObjectTreeOnCheck: (keys: string[]) => void;
   comparisonObjectCheckKeys: string[];
-  showDifferencesOnly: boolean;
 };
 
 const ComparisonTreeNode: React.FC<Props> = ({
@@ -29,8 +25,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
   selectedBaselineInstanceInfo,
   selectedComparisonInstanceInfo,
   comparisonObjectTreeOnCheck,
-  comparisonObjectCheckKeys,
-  showDifferencesOnly
+  comparisonObjectCheckKeys
 }) => {
   const isFirstRenderTreeNode = useRef(true);
 
@@ -44,7 +39,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
     generateModifiedSqlParams,
     treeExpandedKeys,
     setTreeExpandedKeys
-  } = useComparisonResultTree(comparisonResults, showDifferencesOnly);
+  } = useComparisonResultTree(comparisonResults);
 
   const baselineTreeData = useMemo(() => {
     if (!selectedBaselineInstanceInfo) {
@@ -75,6 +70,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
     <ComparisonTreeContainerStyleWrapper>
       <ComparisonTreeItemStyleWrapper>
         <Tree
+          selectable={false}
           expandedKeys={treeExpandedKeys}
           onExpand={setTreeExpandedKeys}
           switcherIcon={({ expanded }: AntTreeNodeProps) => {
@@ -88,6 +84,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
       </ComparisonTreeItemStyleWrapper>
       <ComparisonTreeItemStyleWrapper>
         <Tree
+          selectable={false}
           checkable
           expandedKeys={treeExpandedKeys}
           onExpand={setTreeExpandedKeys}
@@ -108,13 +105,9 @@ const ComparisonTreeNode: React.FC<Props> = ({
       {!!selectedObjectNodeKey ? (
         <ComparisonDetailDrawer
           open={comparisonDetailDrawerOpen}
+          selectedObjectNodeKey={selectedObjectNodeKey}
           onClose={resetStateAndCloseComparisonDetailDrawer}
-          comparisonResult={
-            getComparisonResultByNodeKey(
-              comparisonResults,
-              selectedObjectNodeKey
-            )!
-          }
+          comparisonResults={comparisonResults}
           selectedBaselineInstanceInfo={selectedBaselineInstanceInfo}
           selectComparisonInstanceInfo={selectedComparisonInstanceInfo}
           getDetailParams={generateGetComparisonDetailParams(

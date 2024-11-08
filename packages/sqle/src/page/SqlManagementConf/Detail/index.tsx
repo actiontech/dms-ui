@@ -1,5 +1,4 @@
 import {
-  BasicButton,
   EmptyBox,
   PageHeader,
   SegmentedTabs,
@@ -10,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import ConfDetailOverview from './Overview';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
@@ -23,8 +22,7 @@ import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { SqlManagementConfDetailPageHeaderActions } from './action';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -44,8 +42,6 @@ const ConfDetail: React.FC = () => {
     useBoolean();
 
   const [messageApi, contextMessageHolder] = message.useMessage();
-
-  const { checkDbServicePermission } = usePermission();
 
   const {
     data,
@@ -83,13 +79,6 @@ const ConfDetail: React.FC = () => {
     [location.pathname, navigate, searchParams]
   );
 
-  const hasOpPermission = useMemo(() => {
-    return checkDbServicePermission(
-      OpPermissionItemOpPermissionTypeEnum.save_audit_plan,
-      data?.instance_id
-    );
-  }, [data?.instance_id, checkDbServicePermission]);
-
   const items: SegmentedTabsProps['items'] = [
     {
       label: t('managementConf.detail.overview.title'),
@@ -100,7 +89,6 @@ const ConfDetail: React.FC = () => {
           handleChangeTab={handleChangeTable}
           instanceAuditPlanId={id ?? ''}
           refreshAuditPlanDetail={refreshAuditPlanDetail}
-          hasOpPermission={hasOpPermission}
         />
       )
     },
@@ -156,6 +144,13 @@ const ConfDetail: React.FC = () => {
       });
   };
 
+  const pageHeaderActions = SqlManagementConfDetailPageHeaderActions({
+    onAuditImmediately,
+    auditPending: auditing,
+    onExport: exportScanTypeSqlDetail,
+    exportPending: exporting
+  });
+
   return (
     <>
       {contextMessageHolder}
@@ -182,21 +177,8 @@ const ConfDetail: React.FC = () => {
             <Space>
               <EmptyBox if={activeKey !== SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}>
                 <Space>
-                  <BasicButton
-                    disabled={exporting}
-                    onClick={exportScanTypeSqlDetail}
-                  >
-                    {t('managementConf.detail.export')}
-                  </BasicButton>
-                  {hasOpPermission && (
-                    <BasicButton
-                      loading={auditing}
-                      onClick={onAuditImmediately}
-                      type="primary"
-                    >
-                      {t('managementConf.detail.auditImmediately')}
-                    </BasicButton>
-                  )}
+                  {pageHeaderActions.export}
+                  {pageHeaderActions.immediately_audit}
                 </Space>
               </EmptyBox>
               <TableRefreshButton refresh={onRefresh} />

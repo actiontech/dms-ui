@@ -28,6 +28,7 @@ import {
 } from '../../../../data/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -270,7 +271,15 @@ describe('sqle/VersionManagement/Detail', () => {
   });
 
   it('render disable batch release workflow button when current user has not next stage service permission', async () => {
-    mockUseCurrentUser({ isAdmin: false });
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.globalViewing]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.createProject]: false,
+        [SystemRole.certainProjectManager]: false
+      }
+    });
     getSqlVersionDetailSpy.mockClear();
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailAllowReleaseWorkflowOrderData)
