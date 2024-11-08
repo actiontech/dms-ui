@@ -1,9 +1,7 @@
 import {
-  CheckCircleFilled,
-  CloseCircleFilled,
   DatabaseTableFilled,
   DatabaseViewFilled,
-  FolderFilled
+  MenuSquareFilled
 } from '@actiontech/icons';
 import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
@@ -28,7 +26,7 @@ export const getObjectTypeIcon = (
     return <DatabaseViewFilled />;
   }
 
-  return <FolderFilled width={18} height={18} />;
+  return <MenuSquareFilled />;
 };
 
 export const renderComparisonResultObjectName = (
@@ -38,8 +36,13 @@ export const renderComparisonResultObjectName = (
 ) => {
   if (source === 'baseline') {
     if (result === ObjectDiffResultComparisonResultEnum.base_not_exist) {
-      return null;
+      return <span className="content"></span>;
     }
+
+    if (result === ObjectDiffResultComparisonResultEnum.comparison_not_exist) {
+      return <span className="content">{objectName}</span>;
+    }
+
     return <span className="content">{objectName}</span>;
   }
 
@@ -50,7 +53,6 @@ export const renderComparisonResultObjectName = (
           <span title={objectName} className="content">
             {objectName}
           </span>
-          <CheckCircleFilled />
         </>
       );
     }
@@ -61,7 +63,6 @@ export const renderComparisonResultObjectName = (
           <span title={objectName} className="content">
             {objectName}
           </span>
-          <CloseCircleFilled />
         </>
       );
     }
@@ -72,7 +73,6 @@ export const renderComparisonResultObjectName = (
           <span title={objectName} className="content">
             {objectName}
           </span>
-          <CloseCircleFilled />
         </>
       );
     }
@@ -81,7 +81,6 @@ export const renderComparisonResultObjectName = (
       return (
         <>
           <span className="content"></span>
-          <CloseCircleFilled />
         </>
       );
     }
@@ -180,6 +179,10 @@ export const filteredWithoutSchemaNameNodeKey = (nodeKey: string[]) => {
   );
 };
 
+export const filteredWithoutParentNodeKey = (nodeKey: string[]) => {
+  return nodeKey.filter((key) => key !== TREE_PARENT_NODE_KEY);
+};
+
 export const generateTreeDefaultExpandedKeys = (
   treeData: TreeProps['treeData']
 ) => {
@@ -205,4 +208,51 @@ export const generateTreeDefaultExpandedKeys = (
   }
 
   return expandedKeys;
+};
+
+export const getComparisonResultWithSchemaNodeKey = (
+  targetKey: string,
+  comparisonResults: ISchemaObject[]
+) => {
+  const [index] = targetKey.split(TREE_NODE_KEY_SEPARATOR);
+
+  const schema = comparisonResults[Number(index)];
+  if (!schema) return undefined;
+  return schema.comparison_result;
+};
+
+export const filterSchemasInDatabase = (
+  checkedObjectNodeKeys: string[],
+  comparisonResults: ISchemaObject[]
+) => {
+  return Array.from(
+    new Set(
+      filteredWithoutParentNodeKey(checkedObjectNodeKeys)
+        .filter((key) => {
+          const result = getComparisonResultWithSchemaNodeKey(
+            key,
+            comparisonResults
+          );
+          return (
+            result !== SchemaObjectComparisonResultEnum.comparison_not_exist
+          );
+        })
+        .map((key) => {
+          const { comparisonSchemaName } = parseTreeNodeKey(
+            key,
+            comparisonResults
+          );
+          return comparisonSchemaName ?? '';
+        })
+    )
+  );
+};
+
+export const generateClassNamesByComparisonResult = (
+  result?: ObjectDiffResultComparisonResultEnum
+): string => {
+  if (result !== ObjectDiffResultComparisonResultEnum.same) {
+    return 'object-comparison-result-diff';
+  }
+  return 'object-comparison-result-pass';
 };

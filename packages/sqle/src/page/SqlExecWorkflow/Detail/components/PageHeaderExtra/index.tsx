@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
+import { EmptyBox } from '@actiontech/shared';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
@@ -58,31 +58,17 @@ const WorkflowDetailPageHeaderExtra: React.FC<
       {CloneWorkflowAction(executeInOtherInstanceMeta)}
       {BatchRejectWorkflowAction(rejectWorkflowButtonMeta, openRejectModal)}
       {ApproveWorkflowAction(auditPassWorkflowButtonMeta)}
-      {BatchExecWorkflowAction(batchExecutingWorkflowButtonMeta, executable)}
+      {BatchExecWorkflowAction(
+        batchExecutingWorkflowButtonMeta,
+        executable,
+        executable_reason
+      )}
       {MarkManuallyExecWorkflowAction(
         manualExecuteWorkflowButtonMeta,
-        executable
+        executable,
+        executable_reason
       )}
 
-      <EmptyBox
-        if={
-          !manualExecuteWorkflowButtonMeta.hidden &&
-          !batchExecutingWorkflowButtonMeta.hidden &&
-          !executable
-        }
-      >
-        <BasicToolTips
-          title={executable_reason}
-          overlayClassName="whitespace-pre-line"
-        >
-          <BasicButton disabled type="primary">
-            {t('execWorkflow.detail.operator.batchSqlExecute')}
-          </BasicButton>
-          <BasicButton disabled type="primary">
-            {t('execWorkflow.detail.operator.markManually')}
-          </BasicButton>
-        </BasicToolTips>
-      </EmptyBox>
       <Space hidden={terminateWorkflowButtonMeta.hidden} size={0}>
         {TerminateWorkflowAction(terminateWorkflowButtonMeta)}
 

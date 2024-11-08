@@ -4,6 +4,7 @@ import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import {
   DatabaseFilled,
   DatabaseSchemaFilled,
+  FolderFilled,
   MagnifierFilled
 } from '@actiontech/icons';
 import { BasicToolTips } from '@actiontech/shared';
@@ -11,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { Key, useCallback, useMemo, useState } from 'react';
 import {
   TREE_PARENT_NODE_KEY,
+  generateClassNamesByComparisonResult,
   generateTreeNodeKey,
   getComparisonResultByNodeKey,
   getComparisonResultSchemaName,
@@ -79,7 +81,6 @@ const useComparisonResultTree = (
     setSelectedObjectNodeKey(undefined);
     closeComparisonDetailDrawer();
   };
-
   const assemblingBaselineTreeData = useCallback(
     (instanceName: string): TreeProps['treeData'] => {
       return [
@@ -110,7 +111,7 @@ const useComparisonResultTree = (
                   title: (
                     <>
                       <ComparisonTreeNodeTitleStyleWrapper>
-                        {getObjectTypeIcon(diff.object_type!)}
+                        <FolderFilled width={18} height={18} />
                         <span className="content">{diff.object_type}</span>
                       </ComparisonTreeNodeTitleStyleWrapper>
                     </>
@@ -122,10 +123,17 @@ const useComparisonResultTree = (
                         diff.object_type!,
                         obj.object_name!
                       ),
-                      title: renderComparisonResultObjectName(
-                        obj.comparison_result!,
-                        obj.object_name!,
-                        'baseline'
+                      title: (
+                        <ComparisonTreeNodeTitleStyleWrapper>
+                          <div className="name-container">
+                            {getObjectTypeIcon(diff.object_type!)}
+                            {renderComparisonResultObjectName(
+                              obj.comparison_result!,
+                              obj.object_name!,
+                              'baseline'
+                            )}
+                          </div>
+                        </ComparisonTreeNodeTitleStyleWrapper>
                       )
                     };
                   })
@@ -150,7 +158,11 @@ const useComparisonResultTree = (
         return (
           <BasicToolTips title={t('common.showDetail')}>
             <MagnifierFilled
-              onClick={() => openDetailDrawer(key)}
+              color={sharedTheme.uiToken.colorPrimary}
+              onClick={(e) => {
+                e.stopPropagation();
+                openDetailDrawer(key);
+              }}
               className="view-detail-icon"
             />
           </BasicToolTips>
@@ -190,7 +202,7 @@ const useComparisonResultTree = (
                     title: (
                       <>
                         <ComparisonTreeNodeTitleStyleWrapper>
-                          {getObjectTypeIcon(diff.object_type!)}
+                          <FolderFilled width={18} height={18} />
                           <span className="content">
                             {diff.object_type} ({diff.inconsistent_num})
                           </span>
@@ -205,8 +217,13 @@ const useComparisonResultTree = (
                           obj.object_name!
                         ),
                         title: (
-                          <ComparisonTreeNodeTitleStyleWrapper>
+                          <ComparisonTreeNodeTitleStyleWrapper
+                            className={generateClassNamesByComparisonResult(
+                              obj.comparison_result
+                            )}
+                          >
                             <div className="name-container">
+                              {getObjectTypeIcon(diff.object_type!)}
                               {renderComparisonResultObjectName(
                                 obj.comparison_result!,
                                 obj.object_name!,

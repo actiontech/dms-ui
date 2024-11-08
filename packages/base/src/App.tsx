@@ -5,7 +5,12 @@ import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
 import SyncRecoil from 'provision/src/utils/SyncRecoil';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
-import { EmptyBox, HeaderProgress, SpinIndicator } from '@actiontech/shared';
+import {
+  EmptyBox,
+  HeaderProgress,
+  LocalStorageWrapper,
+  SpinIndicator
+} from '@actiontech/shared';
 import {
   useChangeTheme,
   useNotificationContext
@@ -42,6 +47,7 @@ import usePermission from '@actiontech/shared/lib/global/usePermission/usePermis
 import useFetchPermissionData from './hooks/useFetchPermissionData';
 import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
+import { compressToBase64 } from 'lz-string';
 
 import './index.less';
 
@@ -200,6 +206,23 @@ function App() {
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);
   }, [currentLanguage]);
+
+  useEffect(() => {
+    let sqleEdition;
+    // #if [ee]
+    sqleEdition = 'ee';
+    // #elif [ce]
+    sqleEdition = 'ce';
+    // #endif
+    if (sqleEdition !== LocalStorageWrapper.get('DMS_CB_CHANNEL')) {
+      LocalStorageWrapper.set(
+        'DMS_CB_CHANNEL',
+        compressToBase64(
+          JSON.stringify({ type: 'sqle_edition', data: sqleEdition })
+        )
+      );
+    }
+  }, []);
 
   return (
     <Wrapper>

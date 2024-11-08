@@ -21,5 +21,9 @@ export const MockSharedStepDetail: SharedStepDetails = {
     value: '1',
     set: jest.fn()
   },
+  getModifiedSQLsPending: {
+    value: false,
+    set: jest.fn()
+  },
   resetAllSharedData: jest.fn()
 };

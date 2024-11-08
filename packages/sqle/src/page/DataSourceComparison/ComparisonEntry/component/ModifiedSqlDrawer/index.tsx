@@ -1,9 +1,9 @@
-import { BasicDrawer, SQLRenderer } from '@actiontech/shared';
+import { BasicDrawer, EmptyBox, SQLRenderer } from '@actiontech/shared';
 import {
   IAuditResult,
   IDatabaseDiffModifySQL
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Space, Spin, Typography } from 'antd';
+import { Result, Space, Spin, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   ModifiedSqlStyleWrapper,
@@ -18,6 +18,10 @@ import { SelectedInstanceInfo } from '../../index.type';
 import AuditResult from '../ComparisonTreeNode/ComparisonDetailDrawer/AuditResult';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { CreateWorkflowForModifiedSqlAction } from '../../actions';
+import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
+import { DatabaseFilled } from '@actiontech/icons';
+import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
+import { uniqBy } from 'lodash';
 
 type Props = {
   open: boolean;
@@ -26,6 +30,8 @@ type Props = {
   databaseDiffModifiedSqlInfos?: IDatabaseDiffModifySQL[];
   generateModifySqlPending: boolean;
   comparisonInstanceInfo?: SelectedInstanceInfo;
+  genDatabaseDiffModifiedSQLsParams: IGenDatabaseDiffModifySQLsV1Params;
+  dbExistingSchemas: string[];
 };
 
 const ModifiedSqlDrawer: React.FC<Props> = ({
@@ -34,17 +40,21 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
   generateModifySqlPending,
   instanceType,
   onClose,
-  comparisonInstanceInfo
+  comparisonInstanceInfo,
+  genDatabaseDiffModifiedSQLsParams,
+  dbExistingSchemas
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
+  const { sharedTheme } = useThemeStyleData();
 
   const auditResultMap = useMemo(() => {
     return databaseDiffModifiedSqlInfos?.reduce<AuditResultMap>((acc, cur) => {
       return {
         ...acc,
-        [cur.schema_name!]: cur.modify_sqls?.flatMap(
-          (v) => v.audit_results ?? []
+        [cur.schema_name!]: uniqBy(
+          cur.modify_sqls?.flatMap((v) => v.audit_results ?? []),
+          'rule_name'
         ) as IAuditResult[]
       };
     }, {});
@@ -58,11 +68,18 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
   ) => {
     return (
       <ModifiedSqlStyleWrapper key={databaseDiffModifiedSqlInfo.schema_name}>
-        <Typography.Title level={4}>
-          {t('dataSourceComparison.entry.comparisonDetail.modifySqlInfo', {
-            schema: `SCHEMA-${databaseDiffModifiedSqlInfo.schema_name}-`
-          })}
-        </Typography.Title>
+        <Space size={8} style={{ marginBottom: 8 }}>
+          <DatabaseFilled
+            width={18}
+            height={18}
+            color={sharedTheme.uiToken.colorPrimary}
+          />
+          <Typography.Title level={4} className="clear-margin-bottom">
+            {t('dataSourceComparison.entry.comparisonDetail.modifySqlInfo', {
+              schema: `${comparisonInstanceInfo?.instanceName}.${databaseDiffModifiedSqlInfo.schema_name}`
+            })}
+          </Typography.Title>
+        </Space>
         <SQLRenderer.ViewOnlyEditor
           className="sql-audit-report-content"
           value={
@@ -81,13 +98,26 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
                 'dataSourceComparison.entry.comparisonDetail.modifiedSqlAuditResultTitle'
               ),
               children: (
-                <AuditResult
-                  results={
-                    auditResultRuleInfoMap[
-                      databaseDiffModifiedSqlInfo.schema_name!
-                    ] ?? []
+                <EmptyBox
+                  if={!databaseDiffModifiedSqlInfo?.audit_error}
+                  defaultNode={
+                    <Result
+                      status="error"
+                      title={t(
+                        'dataSourceComparison.entry.comparisonDetail.auditFailed'
+                      )}
+                      subTitle={databaseDiffModifiedSqlInfo?.audit_error}
+                    />
                   }
-                />
+                >
+                  <AuditResult
+                    results={
+                      auditResultRuleInfoMap[
+                        databaseDiffModifiedSqlInfo.schema_name!
+                      ] ?? []
+                    }
+                  />
+                </EmptyBox>
               )
             }
           ]}
@@ -103,15 +133,11 @@ const ModifiedSqlDrawer: React.FC<Props> = ({
       size="large"
       title={t('dataSourceComparison.entry.modifiedSqlDrawer.title')}
       extra={CreateWorkflowForModifiedSqlAction({
+        apiParams: genDatabaseDiffModifiedSQLsParams,
+        comparisonInstanceID: comparisonInstanceInfo?.instanceId ?? '',
+        comparisonInstanceName: comparisonInstanceInfo?.instanceName ?? '',
         projectID,
-        sql:
-          databaseDiffModifiedSqlInfos
-            ?.map((info) =>
-              info.modify_sqls?.map((v) => v.sql_statement).join('\n')
-            )
-            .join('\n') ?? '',
-        instanceId: comparisonInstanceInfo?.instanceId ?? '',
-        instanceName: comparisonInstanceInfo?.instanceName ?? ''
+        dbExistingSchemas
       })}
     >
       <Spin

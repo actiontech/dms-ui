@@ -1,4 +1,4 @@
-import { CollapseProps, Space, Spin, Typography, message } from 'antd';
+import { CollapseProps, Result, Space, Spin, Typography, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import databaseCompareService from '@actiontech/shared/lib/api/sqle/service/database_comparison';
@@ -18,7 +18,8 @@ import {
 import {
   ModifiedSqlStyleWrapper,
   DiffSQLEditorWrapperStyleWrapper,
-  SqlAuditResultCollapseStyleWrapper
+  SqlAuditResultCollapseStyleWrapper,
+  DiffSQLEditorSubTitleStyleWrapper
 } from './style';
 import { ObjectDiffResultComparisonResultEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import AuditResult from './AuditResult';
@@ -28,15 +29,25 @@ import dayjs from 'dayjs';
 import useAuditResultRuleInfo from '../../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { CreateWorkflowForModifiedSqlAction } from '../../../actions';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  filterSchemasInDatabase,
+  getComparisonResultByNodeKey,
+  parseTreeNodeKey
+} from '../../../utils/TreeNode';
+import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
+import { DatabaseFilled } from '@actiontech/icons';
+import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
+import { uniqBy } from 'lodash';
 
 type Props = {
   open: boolean;
   onClose: () => void;
   getDetailParams: IGetComparisonStatementV1Params;
   genModifiedSqlParams: IGenDatabaseDiffModifySQLsV1Params;
-  comparisonResult: ObjectDiffResultComparisonResultEnum;
+  comparisonResults: ISchemaObject[];
   selectedBaselineInstanceInfo?: SelectedInstanceInfo;
   selectComparisonInstanceInfo?: SelectedInstanceInfo;
+  selectedObjectNodeKey: string;
 };
 
 enum CollapseItemKeyEnum {
@@ -50,12 +61,15 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   onClose,
   getDetailParams,
   genModifiedSqlParams,
-  comparisonResult,
+  comparisonResults,
   selectedBaselineInstanceInfo,
-  selectComparisonInstanceInfo
+  selectComparisonInstanceInfo,
+  selectedObjectNodeKey
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
+  const { sharedTheme } = useThemeStyleData();
+
   const [messageApi, messageContextHolder] = message.useMessage();
   const { loading: getDetailPending, data: comparisonDetail } = useRequest(
     () =>
@@ -97,8 +111,11 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
 
   const modifiedSqlAuditResults = useMemo(() => {
     return (
-      modifiedSqlResult?.[0].modify_sqls?.flatMap(
-        (v) => v.audit_results ?? []
+      uniqBy(
+        modifiedSqlResult?.[0].modify_sqls?.flatMap(
+          (v) => v.audit_results ?? []
+        ),
+        'rule_name'
       ) ?? []
     );
   }, [modifiedSqlResult]);
@@ -107,18 +124,21 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     auditResultRuleInfo: baselineSqlAuditResultRuleInfo,
     loading: getBaselineSqlAuditResultRuleInfoPending
   } = useAuditResultRuleInfo(
-    comparisonDetail?.base_sql?.audit_results ?? [],
+    comparisonDetail?.base_sql?.sql_statement_with_audit?.audit_results ?? [],
     selectedBaselineInstanceInfo?.instanceType,
-    tableDDLAuditResultActiveKey.includes(CollapseItemKeyEnum.baseline)
+    tableDDLAuditResultActiveKey.includes(CollapseItemKeyEnum.baseline) &&
+      !comparisonDetail?.base_sql?.audit_error
   );
 
   const {
     auditResultRuleInfo: comparisonSqlAuditResultRuleInfo,
     loading: getComparisonSqlAuditResultRuleInfoPending
   } = useAuditResultRuleInfo(
-    comparisonDetail?.comparison_sql?.audit_results ?? [],
+    comparisonDetail?.comparison_sql?.sql_statement_with_audit?.audit_results ??
+      [],
     selectComparisonInstanceInfo?.instanceType,
-    tableDDLAuditResultActiveKey.includes(CollapseItemKeyEnum.comparison)
+    tableDDLAuditResultActiveKey.includes(CollapseItemKeyEnum.comparison) &&
+      !comparisonDetail?.comparison_sql?.audit_error
   );
 
   const {
@@ -127,35 +147,63 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   } = useAuditResultRuleInfo(
     modifiedSqlAuditResults,
     selectComparisonInstanceInfo?.instanceType,
-    modifiedSqlAuditResultActiveKey.includes(CollapseItemKeyEnum.modified)
+    modifiedSqlAuditResultActiveKey.includes(CollapseItemKeyEnum.modified) &&
+      !modifiedSqlResult?.[0].audit_error
   );
 
   const auditResultCollapseItems: CollapseProps['items'] = useMemo(() => {
     const items: CollapseProps['items'] = [];
-    if (comparisonDetail?.base_sql?.audit_results) {
+
+    if (comparisonDetail?.base_sql) {
       items.push({
         key: CollapseItemKeyEnum.baseline,
         label: t(
           'dataSourceComparison.entry.comparisonDetail.baselineDDLAuditResultTitle'
         ),
         children: (
-          <Spin spinning={getBaselineSqlAuditResultRuleInfoPending}>
-            <AuditResult results={baselineSqlAuditResultRuleInfo ?? []} />
-          </Spin>
+          <EmptyBox
+            if={!comparisonDetail?.base_sql?.audit_error}
+            defaultNode={
+              <Result
+                status="error"
+                title={t(
+                  'dataSourceComparison.entry.comparisonDetail.auditFailed'
+                )}
+                subTitle={comparisonDetail?.base_sql?.audit_error}
+              />
+            }
+          >
+            <Spin spinning={getBaselineSqlAuditResultRuleInfoPending}>
+              <AuditResult results={baselineSqlAuditResultRuleInfo ?? []} />
+            </Spin>
+          </EmptyBox>
         )
       });
     }
 
-    if (comparisonDetail?.comparison_sql?.audit_results) {
+    if (comparisonDetail?.comparison_sql) {
       items.push({
         key: CollapseItemKeyEnum.comparison,
         label: t(
           'dataSourceComparison.entry.comparisonDetail.comparisonDDLAuditResultTitle'
         ),
         children: (
-          <Spin spinning={getComparisonSqlAuditResultRuleInfoPending}>
-            <AuditResult results={comparisonSqlAuditResultRuleInfo ?? []} />
-          </Spin>
+          <EmptyBox
+            if={!comparisonDetail?.comparison_sql?.audit_error}
+            defaultNode={
+              <Result
+                status="error"
+                title={t(
+                  'dataSourceComparison.entry.comparisonDetail.auditFailed'
+                )}
+                subTitle={comparisonDetail?.comparison_sql?.audit_error}
+              />
+            }
+          >
+            <Spin spinning={getComparisonSqlAuditResultRuleInfoPending}>
+              <AuditResult results={comparisonSqlAuditResultRuleInfo ?? []} />
+            </Spin>
+          </EmptyBox>
         )
       });
     }
@@ -163,8 +211,8 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     return items;
   }, [
     baselineSqlAuditResultRuleInfo,
-    comparisonDetail?.base_sql?.audit_results,
-    comparisonDetail?.comparison_sql?.audit_results,
+    comparisonDetail?.base_sql,
+    comparisonDetail?.comparison_sql,
     comparisonSqlAuditResultRuleInfo,
     getBaselineSqlAuditResultRuleInfoPending,
     getComparisonSqlAuditResultRuleInfoPending,
@@ -174,20 +222,36 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   const modifiedSqlAuditResultCollapseItems: CollapseProps['items'] =
     useMemo(() => {
       const items: CollapseProps['items'] = [];
-      if (modifiedSqlAuditResults.length) {
-        items.push({
-          key: CollapseItemKeyEnum.modified,
-          label: t(
-            'dataSourceComparison.entry.comparisonDetail.modifiedSqlAuditResultTitle'
-          ),
-          children: (
+      items.push({
+        key: CollapseItemKeyEnum.modified,
+        label: t(
+          'dataSourceComparison.entry.comparisonDetail.modifiedSqlAuditResultTitle'
+        ),
+        children: (
+          <EmptyBox
+            if={modifiedSqlAuditResults.length > 0}
+            defaultNode={
+              <Result
+                status="error"
+                title={t(
+                  'dataSourceComparison.entry.comparisonDetail.auditFailed'
+                )}
+                subTitle={modifiedSqlResult?.[0].audit_error}
+              />
+            }
+          >
             <AuditResult results={modifiedSqlAuditResultRuleInfo ?? []} />
-          )
-        });
-      }
+          </EmptyBox>
+        )
+      });
 
       return items;
-    }, [modifiedSqlAuditResultRuleInfo, modifiedSqlAuditResults.length, t]);
+    }, [
+      modifiedSqlAuditResultRuleInfo,
+      modifiedSqlAuditResults.length,
+      modifiedSqlResult,
+      t
+    ]);
 
   const copyModifiedSql = () => {
     Copy.copyTextByTextarea(modifiedSqls);
@@ -203,6 +267,11 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     );
   };
 
+  const { baselineSchemaName, comparisonSchemaName } = parseTreeNodeKey(
+    selectedObjectNodeKey,
+    comparisonResults
+  );
+
   return (
     <BasicDrawer
       title={t('dataSourceComparison.entry.comparisonDetail.title')}
@@ -215,9 +284,15 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
           <Space size={12}>
             {CreateWorkflowForModifiedSqlAction({
               projectID,
-              sql: modifiedSqls,
-              instanceId: selectComparisonInstanceInfo?.instanceId ?? '',
-              instanceName: selectComparisonInstanceInfo?.instanceName ?? ''
+              apiParams: genModifiedSqlParams,
+              comparisonInstanceID:
+                selectComparisonInstanceInfo?.instanceId ?? '',
+              comparisonInstanceName:
+                selectComparisonInstanceInfo?.instanceName ?? '',
+              dbExistingSchemas: filterSchemasInDatabase(
+                [selectedObjectNodeKey],
+                comparisonResults
+              )
             })}
 
             <BasicButton onClick={copyModifiedSql}>
@@ -235,7 +310,10 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
       }
       extra={
         <EmptyBox if={!!comparisonDetail}>
-          {comparisonResult === ObjectDiffResultComparisonResultEnum.same ? (
+          {getComparisonResultByNodeKey(
+            comparisonResults,
+            selectedObjectNodeKey
+          ) === ObjectDiffResultComparisonResultEnum.same ? (
             <BasicToolTips
               title={t(
                 'dataSourceComparison.entry.comparisonDetail.generateSQLDisabledTips'
@@ -281,9 +359,31 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
             {t('dataSourceComparison.entry.comparisonDetail.ddlDiff')}
           </Typography.Title>
 
+          <DiffSQLEditorSubTitleStyleWrapper>
+            <div className="subtitle-item-wrapper">
+              <DatabaseFilled color={sharedTheme.uiToken.colorPrimary} />
+              <Typography.Text className="subtitle-item-text">
+                {`${selectedBaselineInstanceInfo?.instanceName}.${baselineSchemaName}`}
+              </Typography.Text>
+            </div>
+
+            <div className="subtitle-item-wrapper">
+              <DatabaseFilled color={sharedTheme.uiToken.colorPrimary} />
+              <Typography.Text className="subtitle-item-text">
+                {`${selectComparisonInstanceInfo?.instanceName}.${comparisonSchemaName}`}
+              </Typography.Text>
+            </div>
+          </DiffSQLEditorSubTitleStyleWrapper>
+
           <SQLRenderer.DiffViewOnlyEditor
-            originalSql={comparisonDetail?.base_sql?.sql_statement}
-            modifiedSql={comparisonDetail?.comparison_sql?.sql_statement}
+            originalSql={
+              comparisonDetail?.base_sql?.sql_statement_with_audit
+                ?.sql_statement
+            }
+            modifiedSql={
+              comparisonDetail?.comparison_sql?.sql_statement_with_audit
+                ?.sql_statement
+            }
             height={400}
           />
         </DiffSQLEditorWrapperStyleWrapper>
