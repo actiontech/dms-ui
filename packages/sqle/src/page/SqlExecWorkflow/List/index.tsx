@@ -15,7 +15,9 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   useCurrentProject,
-  useCurrentUser
+  useCurrentUser,
+  usePermission,
+  PERMISSIONS
 } from '@actiontech/shared/lib/global';
 import ExportWorkflowButton from './components/ExportWorkflowButton';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -38,8 +40,10 @@ import {
   execWorkflowStatusDictionary,
   translateDictionaryI18nLabel
 } from '../../../hooks/useStaticStatus/index.data';
-import { MinusCircleOutlined } from '@actiontech/icons';
-import { SqlExecWorkflowCreateAction } from './action';
+import {
+  SqlExecWorkflowCreateAction,
+  SqlExecWorkflowTableToolbarActions
+} from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 
 const SqlExecWorkflowList: React.FC = () => {
@@ -51,7 +55,10 @@ const SqlExecWorkflowList: React.FC = () => {
     useState<getWorkflowsV1FilterStatusEnum>();
   const { usernameOptions, updateUsernameList } = useUsername();
   const { instanceIDOptions, updateInstanceList } = useInstance();
-  const { isAdmin, username } = useCurrentUser();
+  const { username } = useCurrentUser();
+
+  const { parse2TableToolbarActionPermissions, checkActionPermission } =
+    usePermission();
 
   const { sqlVersionOptions, updateSqlVersionList } = useSQLVersionTips();
 
@@ -193,6 +200,21 @@ const SqlExecWorkflowList: React.FC = () => {
     t
   ]);
 
+  const toolbarActions = useMemo(() => {
+    return parse2TableToolbarActionPermissions(
+      SqlExecWorkflowTableToolbarActions({
+        disabled: selectedRowKeys?.length === 0,
+        loading: confirmLoading,
+        batchCloseAction
+      })
+    );
+  }, [
+    batchCloseAction,
+    confirmLoading,
+    selectedRowKeys?.length,
+    parse2TableToolbarActionPermissions
+  ]);
+
   useEffect(() => {
     updateUsernameList({ filter_project: projectName });
     updateInstanceList({
@@ -230,24 +252,7 @@ const SqlExecWorkflowList: React.FC = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
-        actions={[
-          {
-            key: 'close',
-            text: t('execWorkflow.list.batchClose.buttonText'),
-            buttonProps: {
-              icon: <MinusCircleOutlined fill="currentColor" />,
-              disabled: selectedRowKeys?.length === 0
-            },
-            permissions: !!isAdmin,
-            confirm: {
-              onConfirm: batchCloseAction,
-              title: t('execWorkflow.list.batchClose.closePopTitle'),
-              okButtonProps: {
-                disabled: confirmLoading
-              }
-            }
-          }
-        ]}
+        actions={toolbarActions}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem
@@ -285,7 +290,9 @@ const SqlExecWorkflowList: React.FC = () => {
           return `${record?.workflow_id}`;
         }}
         rowSelection={
-          isAdmin
+          checkActionPermission(
+            PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
+          )
             ? (rowSelection as TableRowSelection<IWorkflowDetailResV1>)
             : undefined
         }

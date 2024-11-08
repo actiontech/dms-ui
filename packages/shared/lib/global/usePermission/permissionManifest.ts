@@ -521,6 +521,11 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false
   },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
 
   // SQL 管控
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT]: {
