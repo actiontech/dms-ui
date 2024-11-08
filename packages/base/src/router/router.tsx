@@ -38,7 +38,7 @@ const BindUser = lazy(() => import('../page/BindUser'));
 
 export const unAuthRouterConfig: RouteObject[] = [
   {
-    path: ROUTE_PATHS.BASE.LOGIN,
+    path: ROUTE_PATHS.BASE.LOGIN.index.path,
     element: <Login />
   },
   {
@@ -47,6 +47,6 @@ export const unAuthRouterConfig: RouteObject[] = [
   },
   {
     path: '*',
-    element: <Navigate to={`${ROUTE_PATHS.BASE.LOGIN}`} />
+    element: <Navigate to={`${ROUTE_PATHS.BASE.LOGIN.index.path}`} />
   }
 ];

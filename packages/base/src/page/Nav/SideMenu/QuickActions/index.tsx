@@ -5,10 +5,10 @@ import {
   RingOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTips, EmptyBox } from '@actiontech/shared';
+import { BasicToolTips, EmptyBox, useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import React, { useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import system from '@actiontech/shared/lib/api/sqle/service/system';
 import { useRequest } from 'ahooks';
@@ -34,7 +34,7 @@ type QuickActionItemType = {
 const QuickActions = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const location = useLocation();
 
@@ -71,7 +71,7 @@ const QuickActions = () => {
       {
         key: 'view-rule',
         title: t('dmsMenu.globalSettings.viewRule'),
-        path: ROUTE_PATHS.SQLE.RULE,
+        path: ROUTE_PATHS.SQLE.RULE.index.path,
         icon: (
           <ProfileSquareFilled width={18} height={18} color="currentColor" />
         )

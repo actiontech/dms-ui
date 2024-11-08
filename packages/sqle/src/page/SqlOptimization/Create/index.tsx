@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { Form, message } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, useTypedNavigate } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import BaseInfoForm from './BaseInfoForm';
@@ -13,6 +13,7 @@ import { useBoolean } from 'ahooks';
 import dayjs from 'dayjs';
 import { OptimizationNameUploadTypePrefix } from '../index.data';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 // todo 后续统一移除掉 context 尽量统一用 redux 来管理
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
@@ -20,7 +21,7 @@ export const FormSubmitStatusContext = React.createContext<boolean>(false);
 const SqlOptimizationCreate = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { projectID, projectName } = useCurrentProject();
 
@@ -59,9 +60,12 @@ const SqlOptimizationCreate = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('sqlOptimization.create.successTips'));
-          navigate(
-            `/sqle/project/${projectID}/sql-optimization/overview/${res.data.data?.sql_optimization_record_id}`
-          );
+          navigate(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview, {
+            params: {
+              projectID,
+              optimizationId: res.data.data?.sql_optimization_record_id ?? ''
+            }
+          });
         }
       })
       .finally(() => {

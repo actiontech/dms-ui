@@ -23,15 +23,16 @@ import {
 } from './columns';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { PageHeader, BasicButton } from '@actiontech/shared';
+import { PageHeader, BasicButton, useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PlusOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlOptimizationList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { projectName, projectID } = useCurrentProject();
 
@@ -163,9 +164,12 @@ const SqlOptimizationList = () => {
         onRow={(record) => {
           return {
             onClick() {
-              navigate(
-                `/sqle/project/${projectID}/sql-optimization/overview/${record.optimization_id}`
-              );
+              navigate(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview, {
+                params: {
+                  projectID,
+                  optimizationId: record.optimization_id ?? ''
+                }
+              });
             }
           };
         }}

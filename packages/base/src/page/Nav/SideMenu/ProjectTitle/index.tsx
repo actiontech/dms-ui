@@ -1,14 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSystemConfig from '../../../../hooks/useSystemConfig';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const ProjectTitle: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { renderWebTitle } = useSystemConfig();
 
   return (
     <div
       onClick={() => {
-        navigate('/');
+        navigate(ROUTE_PATHS.BASE.HOME);
       }}
     >
       {renderWebTitle()}

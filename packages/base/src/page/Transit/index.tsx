@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { HeaderProgress } from '@actiontech/shared';
+import { useSearchParams } from 'react-router-dom';
+import { HeaderProgress, useTypedNavigate } from '@actiontech/shared';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const TARGET_DATA = (projectID: string): Record<string, string> => {
   return {
@@ -12,7 +13,7 @@ const TARGET_DATA = (projectID: string): Record<string, string> => {
 };
 
 const Transit: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [searchParams] = useSearchParams();
   const { bindProjects } = useCurrentUser();
 
@@ -26,13 +27,13 @@ const Transit: React.FC = () => {
       console.error(
         `Missing required parameters!\n from=${from}\n to=${to}\n compression_data=${compressionData}`
       );
-      navigate('/', { replace: true });
+      navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
       return;
     }
 
     if (!Object.keys(TRANSIT_FROM_CONSTANT).includes(from)) {
       console.error(`Unknown source: ${from}`);
-      navigate('/', { replace: true });
+      navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
       return;
     }
 
@@ -43,7 +44,7 @@ const Transit: React.FC = () => {
 
       if (!projectID) {
         console.error(`Not found project: ${projectName}`);
-        navigate('/', { replace: true });
+        navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
         return;
       }
 
@@ -51,7 +52,7 @@ const Transit: React.FC = () => {
 
       if (!path) {
         console.error(`Not found target path: ${to}`);
-        navigate('/', { replace: true });
+        navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
         return;
       }
 
@@ -60,7 +61,7 @@ const Transit: React.FC = () => {
       });
     } else {
       console.error(`project name is undefined`);
-      navigate('/', { replace: true });
+      navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
     }
   }, [bindProjects, navigate, searchParams]);
 

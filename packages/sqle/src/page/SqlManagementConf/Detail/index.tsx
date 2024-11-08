@@ -2,7 +2,8 @@ import {
   BasicButton,
   EmptyBox,
   PageHeader,
-  SegmentedTabs
+  SegmentedTabs,
+  useTypedNavigate
 } from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
@@ -12,12 +13,7 @@ import { TableRefreshButton } from '@actiontech/shared/lib/components/Actiontech
 import { useCallback, useMemo, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams
-} from 'react-router-dom';
+import { useLocation, useParams, useSearchParams } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Result, Space } from 'antd';
@@ -35,7 +31,7 @@ const ConfDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { projectName } = useCurrentProject();
 
   const [activeKey, setActiveKey] = useState(

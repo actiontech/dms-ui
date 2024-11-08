@@ -118,6 +118,9 @@ describe('base/Nav/QuickActions', () => {
     fireEvent.click(actions[2]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(navigateSpy).toHaveBeenCalledTimes(3);
-    expect(navigateSpy).toHaveBeenNthCalledWith(3, ROUTE_PATHS.SQLE.RULE);
+    expect(navigateSpy).toHaveBeenNthCalledWith(
+      3,
+      ROUTE_PATHS.SQLE.RULE.index.path
+    );
   });
 });

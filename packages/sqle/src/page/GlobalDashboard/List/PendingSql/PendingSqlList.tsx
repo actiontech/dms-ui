@@ -13,18 +13,19 @@ import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common
 import { GetGlobalSqlManageListFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { PendingSqlListColumn, PendingSqlListAction } from './column';
 import { GlobalDashboardListProps } from '../../index.type';
-import { useNavigate } from 'react-router-dom';
 import {
   SQL_MANAGEMENT_INSTANCE_PATH_KEY,
   SQL_MANAGEMENT_SOURCE_PATH_KEY
 } from '../../../../data/common';
 import { PendingSqlTableStyleWrapper } from '../../style';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
   filterValues,
   updateFilterValue
 }) => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { pagination, tableChange } = useTableRequestParams<IGlobalSqlManage>();
 
@@ -62,10 +63,13 @@ const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
   );
 
   const onCheckDetail = (record?: IGlobalSqlManage) => {
-    // todo 确定理由参数如何format后需要进行调整
-    navigate(
-      `/sqle/project/${record?.project_uid}/sql-management?${SQL_MANAGEMENT_SOURCE_PATH_KEY}=${record?.source?.sql_source_type}&${SQL_MANAGEMENT_INSTANCE_PATH_KEY}=${record?.instance_id}`
-    );
+    navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index, {
+      params: { projectID: record?.project_uid ?? '' },
+      queries: {
+        source: record?.source?.sql_source_type ?? '',
+        instanceId: record?.instance_id ?? ''
+      }
+    });
   };
 
   useEffect(() => {

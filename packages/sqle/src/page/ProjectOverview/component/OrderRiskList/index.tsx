@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
-import { AvatarCom, BasicButton } from '@actiontech/shared';
+import { AvatarCom, BasicButton, useTypedNavigate } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
@@ -16,10 +16,11 @@ import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { BriefcaseFilled } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const OrderRiskList = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { projectName, projectID } = useCurrentProject();
 
   const [data, setData] = useState<IRiskWorkflow[]>();
@@ -88,7 +89,9 @@ const OrderRiskList = () => {
   };
 
   const onGetMore = () => {
-    navigate(`/sqle/project/${projectID}/exec-workflow`);
+    navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index, {
+      params: { projectID }
+    });
   };
 
   return (

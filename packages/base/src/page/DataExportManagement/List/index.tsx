@@ -1,4 +1,9 @@
-import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
+import {
+  PageHeader,
+  BasicButton,
+  EmptyBox,
+  useTypedNavigate
+} from '@actiontech/shared';
 import {
   useTableRequestParams,
   TableToolbar,
@@ -18,7 +23,7 @@ import {
 import { useRequest } from 'ahooks';
 import { Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useMemo, useState, useCallback } from 'react';
 import {
   ExportWorkflowExtraFilterMeta,
@@ -38,10 +43,11 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { PlusOutlined } from '@actiontech/icons';
 import { DataExportManagementTableToolbarActions } from './actions';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -295,9 +301,9 @@ const ExportWorkflowList: React.FC = () => {
         onRow={(record) => {
           return {
             onClick() {
-              navigate(
-                `/project/${projectID}/data/export/${record.workflow_uid}`
-              );
+              navigate(ROUTE_PATHS.BASE.DATA_EXPORT.detail, {
+                params: { projectID, workflowID: record.workflow_uid ?? '' }
+              });
             }
           };
         }}

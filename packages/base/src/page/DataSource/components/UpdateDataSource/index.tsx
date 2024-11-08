@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { useNavigate, useParams } from 'react-router-dom';
-
 import { useCallback, useEffect, useState } from 'react';
 import { Button, message, Empty, Typography, Spin } from 'antd';
-import { BasicButton, EmptyBox, PageHeader } from '@actiontech/shared';
+import {
+  BasicButton,
+  EmptyBox,
+  PageHeader,
+  useTypedNavigate,
+  useTypedParams
+} from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import DataSourceForm from '../Form';
 
@@ -18,21 +22,22 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { DataSourceFormField } from '../Form/index.type';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { UpdateDataSourceUrlParams } from './index.type';
 import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateDataSource = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [messageApi, messageContextHolder] = message.useMessage();
 
   const { projectID } = useCurrentProject();
 
   const [initError, setInitError] = useState('');
   const [form] = useForm<DataSourceFormField>();
-  const urlParams = useParams<UpdateDataSourceUrlParams>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.BASE.DATA_SOURCE.update>();
 
   const [retryLoading, setRetryLoading] = useState(false);
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =

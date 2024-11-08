@@ -4,11 +4,10 @@ import { useDispatch } from 'react-redux';
 import { Typography, Form } from 'antd';
 import { OauthLoginFormFields } from './index.type';
 import { updateToken } from '../../store/user';
-import { useNavigate } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from '../Login/components/LoginLayout';
-import { BasicButton, BasicInput } from '@actiontech/shared';
+import { BasicButton, BasicInput, useTypedNavigate } from '@actiontech/shared';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
@@ -22,10 +21,11 @@ import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 // #endif
 
 const BindUser = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { baseTheme } = useThemeStyleData();
 
@@ -65,7 +65,7 @@ const BindUser = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
-          navigate('/');
+          navigate(ROUTE_PATHS.BASE.HOME);
           // #if [ee]
           LocalStorageWrapper.set(
             StorageKey.SHOW_COMPANY_NOTICE,
@@ -102,7 +102,7 @@ const BindUser = () => {
       return;
     }
     dispatch(updateToken({ token: concatToken(token) }));
-    navigate('/');
+    navigate(ROUTE_PATHS.BASE.HOME);
   }, [dispatch, navigate, t]);
 
   return (

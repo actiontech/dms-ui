@@ -1,4 +1,4 @@
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
+import { BasicDrawer, BasicButton, useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../..//store';
@@ -14,7 +14,6 @@ import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
-import { useNavigate } from 'react-router-dom';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { PipelineNodeTableColumn } from './column';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -22,11 +21,12 @@ import EmitterKey from '../../../../data/EmitterKey';
 import { useEffect, useRef, useCallback } from 'react';
 import { PipelineDetailModalStyleWrapper } from './style';
 import classNames from 'classnames';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const PipelineDetailModal: React.FC = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const dispatch = useDispatch();
 
@@ -103,9 +103,9 @@ const PipelineDetailModal: React.FC = () => {
 
   const onEdit = () => {
     closeModal();
-    navigate(
-      `/sqle/project/${projectID}/pipeline-configuration/update/${pipelineState.id}`
-    );
+    navigate(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update, {
+      params: { projectID, id: pipelineState.id?.toString() ?? '' }
+    });
   };
 
   useEffect(() => {

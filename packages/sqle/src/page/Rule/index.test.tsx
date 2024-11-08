@@ -11,7 +11,6 @@ import {
 import { renderWithThemeAndRedux } from '../../testUtils/customRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import {
@@ -428,7 +427,7 @@ describe('sqle/Rule', () => {
     useLocationMock.mockClear();
     useLocationMock.mockReturnValue({
       pathname: '/',
-      search: `?${RuleUrlParamKey.projectID}=1`,
+      search: `?projectID=1`,
       hash: '',
       state: null
     });

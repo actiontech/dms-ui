@@ -8,7 +8,6 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import { useNavigate } from 'react-router-dom';
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -84,7 +83,7 @@ describe('test base/home/NotFoundProject', () => {
     fireEvent.click(screen.getByText('确 认'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/rule?${RuleUrlParamKey.projectID}=${mockCurrentUserReturn.bindProjects[0].project_id}`,
+      `/sqle/rule?projectID=${mockCurrentUserReturn.bindProjects[0].project_id}`,
       { replace: true }
     );
 

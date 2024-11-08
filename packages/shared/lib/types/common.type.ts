@@ -49,7 +49,3 @@ export type RouterConfigItem =
       BaseRouterConfigItem & {
         children?: RouterConfigItem[];
       });
-
-export enum RuleUrlParamKey {
-  projectID = 'projectID'
-}

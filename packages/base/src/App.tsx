@@ -1,15 +1,15 @@
 import { ReactNode, Suspense, useEffect, useMemo, useState } from 'react';
-import {
-  RouteObject,
-  useLocation,
-  useNavigate,
-  useRoutes
-} from 'react-router-dom';
+import { RouteObject, useLocation, useRoutes } from 'react-router-dom';
 import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
 import { useSelector } from 'react-redux';
 import { StyledEngineProvider, ThemeProvider } from '@mui/system';
-import { EmptyBox, HeaderProgress, SpinIndicator } from '@actiontech/shared';
+import {
+  EmptyBox,
+  HeaderProgress,
+  SpinIndicator,
+  useTypedNavigate
+} from '@actiontech/shared';
 import {
   useChangeTheme,
   useNotificationContext
@@ -31,7 +31,6 @@ import {
   StyleProvider,
   legacyLogicalPropertiesTransformer
 } from '@ant-design/cssinjs';
-import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/common';
 import { useRequest } from 'ahooks';
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import useSystemConfig from './hooks/useSystemConfig';
@@ -48,6 +47,7 @@ import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
 
 import './index.less';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -61,7 +61,7 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [initRenderApp, setInitRenderApp] = useState<boolean>(true);
   const token = useSelector<IReduxState, string>((state) => state.user.token);
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   useEffect(() => {
     if (!initRenderApp) {
       return;
@@ -75,14 +75,10 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
         ? `${currentPath}${currentSearch}`
         : currentPath;
 
-      navigate(
-        `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
-          fullPath
-        )}`,
-        {
-          replace: true
-        }
-      );
+      navigate(ROUTE_PATHS.BASE.LOGIN.index, {
+        queries: { target: encodeURIComponent(fullPath) },
+        replace: true
+      });
     }
   }, [initRenderApp, location.pathname, location.search, navigate, token]);
   return <>{!initRenderApp && children}</>;

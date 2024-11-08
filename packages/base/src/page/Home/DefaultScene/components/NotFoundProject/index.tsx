@@ -1,12 +1,11 @@
 import { SelectProps } from 'antd';
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ProjectSelectorLabelStyleWrapper } from '../../../../Nav/SideMenu/ProjectSelector/style';
 import ProjectSelectorModal from '../../../../Project/Detail/NotFoundRecentlyProject/ProjectSelectorModal';
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { NotFoundProjectProps } from './index.type';
 import { FlagFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const NotFoundProject: React.FC<NotFoundProjectProps> = ({
   open,
@@ -15,7 +14,7 @@ const NotFoundProject: React.FC<NotFoundProjectProps> = ({
   updateRecentlyProject
 }) => {
   const [projectSelectorValue, setProjectSelectorValue] = useState('');
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const onModalOk = () => {
     setOpen(false);
     updateRecentlyProject(
@@ -24,12 +23,10 @@ const NotFoundProject: React.FC<NotFoundProjectProps> = ({
         ?.project_name ?? ''
     );
 
-    navigate(
-      `${ROUTE_PATHS.SQLE.RULE}?${RuleUrlParamKey.projectID}=${projectSelectorValue}`,
-      {
-        replace: true
-      }
-    );
+    navigate(ROUTE_PATHS.SQLE.RULE.index, {
+      queries: { projectID: projectSelectorValue },
+      replace: true
+    });
   };
   const onModalCancel = () => {
     setOpen(false);
