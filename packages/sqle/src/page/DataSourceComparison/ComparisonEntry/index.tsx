@@ -261,7 +261,7 @@ const ComparisonEntry: React.FC = () => {
 
       <EmptyBox
         if={
-          !!filteredComparisonResultsWithoutSame &&
+          filteredComparisonResultsWithoutSame.length > 0 &&
           !!selectedBaselineInstanceValue &&
           !!selectedComparisonInstanceValue
         }
