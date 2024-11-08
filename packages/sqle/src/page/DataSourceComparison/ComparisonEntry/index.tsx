@@ -15,13 +15,14 @@ import ComparisonTreeNode from './component/ComparisonTreeNode';
 import useDataSourceSelectorTree from './hooks/useDataSourceSelectorTree';
 import {
   filterSchemasInDatabase,
-  filteredWithoutSchemaNameNodeKey,
+  filteredWithoutParentNodeKey,
   getComparisonResultByNodeKey,
   parseTreeNodeKey
 } from './utils/TreeNode';
 import {
   DatabaseObjectObjectTypeEnum,
-  ObjectDiffResultComparisonResultEnum
+  ObjectDiffResultComparisonResultEnum,
+  SchemaObjectComparisonResultEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ModifiedSqlDrawer from './component/ModifiedSqlDrawer';
 import { useMemo, useState } from 'react';
@@ -72,6 +73,31 @@ const ComparisonEntry: React.FC = () => {
     }
   );
 
+  const filteredComparisonResultsWithoutSame = useMemo(() => {
+    if (!showDifferencesOnly) {
+      return comparisonResults ?? [];
+    }
+
+    return (comparisonResults ?? [])
+      .filter(
+        (item) =>
+          item.comparison_result !== SchemaObjectComparisonResultEnum.same
+      )
+      .map((item) => ({
+        ...item,
+        database_diff_objects: item.database_diff_objects?.map(
+          (diffObject) => ({
+            ...diffObject,
+            objects_diff_result: diffObject.objects_diff_result?.filter(
+              (result) =>
+                result.comparison_result !==
+                ObjectDiffResultComparisonResultEnum.same
+            )
+          })
+        )
+      }));
+  }, [comparisonResults, showDifferencesOnly]);
+
   const selectedBaselineInstanceInfo = getInstanceInfoBySelectedValue(
     selectedBaselineInstanceValue
   );
@@ -82,7 +108,7 @@ const ComparisonEntry: React.FC = () => {
   const genDatabaseDiffModifiedSQLsParams:
     | IGenDatabaseDiffModifySQLsV1Params
     | undefined = useMemo(() => {
-    if (!comparisonResults) {
+    if (filteredComparisonResultsWithoutSame.length === 0) {
       return undefined;
     }
     return {
@@ -90,12 +116,12 @@ const ComparisonEntry: React.FC = () => {
       base_instance_id: selectedBaselineInstanceInfo?.instanceId,
       comparison_instance_id: selectedComparisonInstanceInfo?.instanceId,
       database_schema_objects: (() => {
-        const parseResults = filteredWithoutSchemaNameNodeKey(
+        const parseResults = filteredWithoutParentNodeKey(
           checkedObjectNodeKeys
         ).map((key) => {
           const { comparisonSchemaName, baselineSchemaName } = parseTreeNodeKey(
             key,
-            comparisonResults
+            filteredComparisonResultsWithoutSame
           );
           return {
             base_schema_name:
@@ -137,7 +163,7 @@ const ComparisonEntry: React.FC = () => {
             database_objects: keys.map((key) => {
               const parseNodeKeyResult = parseTreeNodeKey(
                 key,
-                comparisonResults ?? []
+                filteredComparisonResultsWithoutSame
               );
               return {
                 object_name: parseNodeKeyResult.objectName,
@@ -151,7 +177,7 @@ const ComparisonEntry: React.FC = () => {
     };
   }, [
     checkedObjectNodeKeys,
-    comparisonResults,
+    filteredComparisonResultsWithoutSame,
     projectName,
     selectedBaselineInstanceInfo?.instanceId,
     selectedBaselineInstanceInfo?.schemaName,
@@ -187,11 +213,15 @@ const ComparisonEntry: React.FC = () => {
   };
 
   const generateModifiedSqlEvent = () => {
-    if (comparisonResults && genDatabaseDiffModifiedSQLsParams) {
-      const comparisonResultsWithCheckNodeKeys =
-        filteredWithoutSchemaNameNodeKey(checkedObjectNodeKeys).map((key) =>
-          getComparisonResultByNodeKey(comparisonResults ?? [], key)
-        );
+    if (
+      filteredComparisonResultsWithoutSame &&
+      genDatabaseDiffModifiedSQLsParams
+    ) {
+      const comparisonResultsWithCheckNodeKeys = filteredWithoutParentNodeKey(
+        checkedObjectNodeKeys
+      ).map((key) =>
+        getComparisonResultByNodeKey(filteredComparisonResultsWithoutSame, key)
+      );
       if (
         comparisonResultsWithCheckNodeKeys.includes(
           ObjectDiffResultComparisonResultEnum.same
@@ -231,7 +261,7 @@ const ComparisonEntry: React.FC = () => {
 
       <EmptyBox
         if={
-          !!comparisonResults &&
+          !!filteredComparisonResultsWithoutSame &&
           !!selectedBaselineInstanceValue &&
           !!selectedComparisonInstanceValue
         }
@@ -239,7 +269,10 @@ const ComparisonEntry: React.FC = () => {
         <ComparisonActionStyleWrapper size={12}>
           <ToggleButtonStyleWrapper
             active={showDifferencesOnly}
-            onClick={toggleShowDifferencesOnly}
+            onClick={() => {
+              toggleShowDifferencesOnly();
+              setCheckedObjectNodeKeys([]);
+            }}
           >
             {t('dataSourceComparison.entry.showDifferencesOnly')}
           </ToggleButtonStyleWrapper>
@@ -248,8 +281,7 @@ const ComparisonEntry: React.FC = () => {
           {t('dataSourceComparison.entry.modifyMappings')}
         </BasicButton> */}
 
-          {filteredWithoutSchemaNameNodeKey(checkedObjectNodeKeys).length ===
-          0 ? (
+          {filteredWithoutParentNodeKey(checkedObjectNodeKeys).length === 0 ? (
             <BasicToolTips
               title={t('dataSourceComparison.entry.generateSQLDisabledTips')}
             >
@@ -265,12 +297,11 @@ const ComparisonEntry: React.FC = () => {
         </ComparisonActionStyleWrapper>
 
         <ComparisonTreeNode
-          comparisonResults={comparisonResults ?? []}
+          comparisonResults={filteredComparisonResultsWithoutSame ?? []}
           selectedBaselineInstanceInfo={selectedBaselineInstanceInfo}
           selectedComparisonInstanceInfo={selectedComparisonInstanceInfo}
           comparisonObjectTreeOnCheck={setCheckedObjectNodeKeys}
           comparisonObjectCheckKeys={checkedObjectNodeKeys}
-          showDifferencesOnly={showDifferencesOnly}
         />
 
         <ModifiedSqlDrawer
@@ -283,7 +314,7 @@ const ComparisonEntry: React.FC = () => {
           genDatabaseDiffModifiedSQLsParams={genDatabaseDiffModifiedSQLsParams!}
           dbExistingSchemas={filterSchemasInDatabase(
             checkedObjectNodeKeys,
-            comparisonResults ?? []
+            filteredComparisonResultsWithoutSame ?? []
           )}
         />
       </EmptyBox>
