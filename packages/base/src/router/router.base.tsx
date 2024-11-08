@@ -51,6 +51,7 @@ const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
 const Account = lazy(() => import('../page/Account'));
 const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
 const DataSourceManagement = lazy(() => import('../page/DataSourceManagement'));
+const DataMaskRuleOverview = lazy(() => import('../page/DataMaskRuleOverview'));
 
 const Transit = lazy(() => import('../page/Transit'));
 
@@ -215,7 +216,14 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         path: `${PROJECT_ROUTER_PARAM}/cloud-beaver`,
         key: 'cloudBeaver',
         element: <CloudBeaver />
+      },
+      // #if [dms]
+      {
+        path: `${PROJECT_ROUTER_PARAM}/data-mask-rule-overview`,
+        key: 'dataMaskRuleOverview',
+        element: <DataMaskRuleOverview />
       }
+      // #endif
     ] as RouterConfigItem[]
   }
 ];
