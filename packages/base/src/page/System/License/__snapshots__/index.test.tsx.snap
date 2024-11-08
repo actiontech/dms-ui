@@ -50,15 +50,22 @@ exports[`base/System/License click collect btn when request return blob data 1`]
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
@@ -164,6 +171,38 @@ exports[`base/System/License click collect btn when request return blob data 1`]
         </div>
       </div>
     </section>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-1s6bzds"
+            width="326"
+          >
+            <div
+              class="ant-qrcode css-dev-only-do-not-override-txh9fw"
+              style="width: 300px; height: 300px; background-color: transparent;"
+            >
+              <canvas
+                height="274"
+                style="height: 274px; width: 274px;"
+                width="274"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 `;
@@ -218,15 +257,22 @@ exports[`base/System/License click collect btn when request return blob data 2`]
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
@@ -333,6 +379,38 @@ exports[`base/System/License click collect btn when request return blob data 2`]
       </div>
     </section>
   </div>
+  <div>
+    <div
+      class="ant-tooltip ant-tooltip-hidden css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-1s6bzds"
+            width="326"
+          >
+            <div
+              class="ant-qrcode css-dev-only-do-not-override-txh9fw"
+              style="width: 300px; height: 300px; background-color: transparent;"
+            >
+              <canvas
+                height="274"
+                style="height: 274px; width: 274px;"
+                width="274"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 `;
 
@@ -386,15 +464,22 @@ exports[`base/System/License click collect btn when request return error message
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
@@ -554,15 +639,22 @@ exports[`base/System/License render snap 1`] = `
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
@@ -746,15 +838,22 @@ exports[`base/System/License render snap 2`] = `
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
@@ -914,15 +1013,22 @@ exports[`base/System/License render snap when click import btn 1`] = `
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
@@ -1082,15 +1188,22 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-              tooltip="[object Object]"
-              type="button"
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
-              <span>
-                收集许可信息
-              </span>
-            </button>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    收集许可信息
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
           <div
             class="ant-space-item"
