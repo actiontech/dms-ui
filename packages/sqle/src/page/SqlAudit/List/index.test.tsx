@@ -162,11 +162,17 @@ describe('sqle/SqlAudit/List', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('创建审核')).toBeInTheDocument();
     cleanup();
-    mockUseCurrentProjectSpy.mockClear();
-    mockUseCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
-    }));
+
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: mockProjectInfo.projectName,
+          is_manager: true,
+          archived: true
+        }
+      ]
+    });
     renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('创建审核')).not.toBeInTheDocument();
