@@ -143,7 +143,8 @@ export const PERMISSIONS = {
         EXEC_TASK: 'action:exec_task',
         SCHEDULE_TIME_EXEC_TASK: 'action:schedule_time_exec_task',
         CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task',
-        CREATE_WHITE_LIST: 'action:workflow_sql_audit_result_create_white_list'
+        CREATE_WHITE_LIST: 'action:workflow_sql_audit_result_create_white_list',
+        BATCH_CLOSE: 'action:batch_close_workflow'
       },
       SQL_MANAGEMENT: {
         ASSIGNMENT: 'action:sql_assignment',
