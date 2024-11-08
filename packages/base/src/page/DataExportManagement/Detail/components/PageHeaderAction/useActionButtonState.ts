@@ -4,12 +4,7 @@ import { useMemo } from 'react';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { MessageInstance } from 'antd/es/message/interface';
-
-type ActionMeta = {
-  action: () => void;
-  loading: boolean;
-  hidden: boolean;
-};
+import { ActionMeta } from './index.type';
 
 const useActionButtonState: (messageApi: MessageInstance) => {
   closeWorkflowButtonMeta: ActionMeta;
