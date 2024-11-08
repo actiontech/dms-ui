@@ -107,6 +107,9 @@ export const PERMISSIONS = {
         DELETE: 'action:project_manager_delete',
         ARCHIVE: 'action:project_manager_archive',
         UNARCHIVE: 'action:project_manager_unarchive'
+      },
+      HOME: {
+        ALL_OPERATIONS: 'action:home_all_operations'
       }
     },
     SQLE: {
@@ -207,6 +210,9 @@ export const PERMISSIONS = {
         DETAIL_STOP: 'action:sql_management_conf_detail_stop_operator',
         DETAIL_ENABLE: 'action:sql_management_conf_detail_enable_operator',
         DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator'
+      },
+      SQL_AUDIT: {
+        CREATE: 'action:create_sql_audit'
       }
     }
   }
