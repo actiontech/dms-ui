@@ -9,6 +9,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -33,8 +34,16 @@ describe('test base/home/DefaultScene', () => {
     expect(navigateSpy).not.toHaveBeenCalled();
   });
 
-  it('should match snapshot when role is not admin', () => {
-    mockUseCurrentUser({ isAdmin: false });
+  it('should match snapshot when role is not admin and global manager', () => {
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false,
+        [SystemRole.createProject]: false
+      }
+    });
 
     const { container } = superRender(<DefaultScene />);
     expect(container).toMatchSnapshot();
