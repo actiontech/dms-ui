@@ -95,7 +95,12 @@ export const PERMISSIONS = {
       },
       DATA_EXPORT: {
         BATCH_CLOSE: 'action:data_export_batch_close',
-        CREATE_WHITELIST: 'action:data_export_create_whitelist'
+        CREATE_WHITELIST: 'action:data_export_create_whitelist',
+        CREATE: 'action:create_data_export',
+        CLOSE: 'action:close_data_export',
+        REJECT: 'action:reject_data_export',
+        APPROVE: 'action:approve_data_export',
+        EXECUTE: 'action:execute_data_export'
       },
       PROJECT_MANAGER: {
         BATCH_IMPORT_DATA_SOURCE:
