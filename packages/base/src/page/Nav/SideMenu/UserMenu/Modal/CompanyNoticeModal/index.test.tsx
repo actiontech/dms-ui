@@ -7,6 +7,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '../../../../../../testUtils/mockApi/global';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { ModalName } from '../../../../../../data/ModalName';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -35,6 +36,10 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
           modalStatus: {
             [ModalName.Company_Notice]: true
           }
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
         }
       })
     );
@@ -152,9 +157,17 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
     });
   });
 
-  describe('render current user is not admin', () => {
+  describe('render current user is not admin and global manager', () => {
     beforeEach(() => {
-      mockUseCurrentUser({ isAdmin: false });
+      mockUseCurrentUser({
+        userRoles: {
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false,
+          [SystemRole.globalViewing]: false,
+          [SystemRole.certainProjectManager]: false,
+          [SystemRole.createProject]: false
+        }
+      });
     });
 
     it('render snap when visible is true', async () => {
