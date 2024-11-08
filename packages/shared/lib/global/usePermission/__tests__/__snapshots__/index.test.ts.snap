@@ -9,8 +9,13 @@ exports[`usePermission should match snapshot 1`] = `
         "EXPORT": "action:export_cb_operation_log",
       },
       "DATA_EXPORT": {
+        "APPROVE": "action:approve_data_export",
         "BATCH_CLOSE": "action:data_export_batch_close",
+        "CLOSE": "action:close_data_export",
+        "CREATE": "action:create_data_export",
         "CREATE_WHITELIST": "action:data_export_create_whitelist",
+        "EXECUTE": "action:execute_data_export",
+        "REJECT": "action:reject_data_export",
       },
       "DB_SERVICE": {
         "ADD": "action:add_db_service",
@@ -28,6 +33,9 @@ exports[`usePermission should match snapshot 1`] = `
         "EDIT": "action:edit_global_db_service",
         "TEST_IN_MORE_BUTTON": "action:test_global_db_service_in_more_button",
       },
+      "HOME": {
+        "ALL_OPERATIONS": "action:home_all_operations",
+      },
       "MEMBER": {
         "ADD_MEMBER": "action:add_member",
         "ADD_MEMBER_GROUP": "action:add_member_group",
@@ -35,6 +43,9 @@ exports[`usePermission should match snapshot 1`] = `
         "DELETE_MEMBER_GROUP": "action:delete_member_group",
         "EDIT_MEMBER": "action:edit_member",
         "EDIT_MEMBER_GROUP": "action:edit_member_group",
+      },
+      "NAV": {
+        "EDIT_SYSTEM_NOTICE": "action: edit_system_notice",
       },
       "PROJECT_MANAGER": {
         "ARCHIVE": "action:project_manager_archive",
@@ -133,8 +144,12 @@ exports[`usePermission should match snapshot 1`] = `
       "RULE_KNOWLEDGE": {
         "EDIT": "action:edit_rule_knowledge",
       },
+      "SQL_AUDIT": {
+        "CREATE": "action:create_sql_audit",
+      },
       "SQL_EXEC_WORKFLOW": {
         "APPROVE": "action:approve_workflow",
+        "BATCH_CLOSE": "action:batch_close_workflow",
         "BATCH_EXEC": "action:batch_exec_workflow",
         "BATCH_REJECT": "action:batch_reject_workflow",
         "CANCEL_SCHEDULE_TIME_EXEC_TASK": "action:cancel_schedule_time_exec_task",
@@ -214,6 +229,14 @@ exports[`usePermission should match snapshot 1`] = `
 
 exports[`usePermission should match snapshot 2`] = `
 {
+  "action: edit_system_notice": {
+    "id": "action: edit_system_notice",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:add_db_service": {
     "id": "action:add_db_service",
     "projectArchived": false,
@@ -277,9 +300,22 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:approve_data_export": {
+    "id": "action:approve_data_export",
+    "projectArchived": false,
+    "type": "action",
+  },
   "action:approve_workflow": {
     "id": "action:approve_workflow",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:batch_close_workflow": {
+    "id": "action:workflow_sql_audit_result_create_white_list",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
     "type": "action",
   },
   "action:batch_exec_workflow": {
@@ -393,6 +429,11 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:close_data_export": {
+    "id": "action:close_data_export",
+    "projectArchived": false,
+    "type": "action",
+  },
   "action:close_workflow": {
     "id": "action:close_workflow",
     "projectArchived": false,
@@ -424,6 +465,11 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:create_data_export": {
+    "id": "action:create_data_export",
+    "projectArchived": false,
+    "type": "action",
+  },
   "action:create_modified_sql_workflow": {
     "dbServicePermission": {
       "opType": "create_workflow",
@@ -444,6 +490,11 @@ exports[`usePermission should match snapshot 2`] = `
       "admin",
       "globalManager",
     ],
+    "type": "action",
+  },
+  "action:create_sql_audit": {
+    "id": "action:create_sql_audit",
+    "projectArchived": false,
     "type": "action",
   },
   "action:create_sql_management_exception": {
@@ -807,6 +858,11 @@ exports[`usePermission should match snapshot 2`] = `
     "projectArchived": false,
     "type": "action",
   },
+  "action:execute_data_export": {
+    "id": "action:execute_data_export",
+    "projectArchived": false,
+    "type": "action",
+  },
   "action:export_cb_operation_log": {
     "id": "action:export_cb_operation_log",
     "type": "action",
@@ -830,6 +886,14 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:global_rule_template_create_rule_template": {
     "id": "action:global_rule_template_create_rule_template",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:home_all_operations": {
+    "id": "action:home_all_operations",
     "role": [
       "admin",
       "globalManager",
@@ -970,6 +1034,11 @@ exports[`usePermission should match snapshot 2`] = `
       "admin",
       "globalManager",
     ],
+    "type": "action",
+  },
+  "action:reject_data_export": {
+    "id": "action:reject_data_export",
+    "projectArchived": false,
     "type": "action",
   },
   "action:rule_create_rule_template": {

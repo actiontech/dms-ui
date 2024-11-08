@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { message } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { PageHeader } from '@actiontech/shared';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -30,14 +30,14 @@ import SqlAuditListColumn, {
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
-import { PlusOutlined } from '@actiontech/icons';
 import { useBoolean } from 'ahooks';
+import { SqlAuditPageHeaderActions } from './actions';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
 
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
@@ -182,26 +182,15 @@ const SqlAuditList = () => {
     [polling, loading]
   );
 
+  const pageHeaderActions = SqlAuditPageHeaderActions(projectID);
+
   return (
     <>
       {messageContextHolder}
       <PageHeader
         title={t('sqlAudit.list.pageTitle')}
         fixed
-        extra={
-          !projectArchive ? (
-            <Link to={`/sqle/project/${projectID}/sql-audit/create`}>
-              <BasicButton
-                type="primary"
-                icon={
-                  <PlusOutlined color="currentColor" width={10} height={10} />
-                }
-              >
-                {t('sqlAudit.list.action.create')}
-              </BasicButton>
-            </Link>
-          ) : null
-        }
+        extra={pageHeaderActions['create-audit']}
       />
       <div className="margin-top-60" />
       {/* table */}
