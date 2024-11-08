@@ -13,6 +13,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import MockDate from 'mockdate';
 
 type paramsType = Pick<
   WorkflowDetailPageHeaderExtraProps,
@@ -47,6 +48,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    MockDate.set('2024-01-30 10:00:00');
     mockUseCurrentUser();
     mockUsePermission(undefined, {
       mockSelector: true
@@ -54,9 +56,11 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   });
 
   afterEach(() => {
+    jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
     cleanup();
+    MockDate.reset();
   });
 
   it('render snap', () => {
@@ -276,13 +280,14 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
 
   it('render batch executing button', async () => {
     mockUseCurrentProject({ projectArchive: false });
-    customRender({
+    const { baseElement } = customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
         workflow_id: '1',
         record: {
           status: WorkflowRecordResV2StatusEnum.wait_for_execution,
           current_step_number: 1,
+          executable: true,
           workflow_step_list: [
             {
               number: 1,
@@ -305,6 +310,9 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
         }
       ]
     });
+    expect(
+      screen.getByText('批量立即上线').closest('button')
+    ).not.toHaveAttribute('hidden');
     await act(async () => {
       fireEvent.click(screen.getByText('批量立即上线'));
       await jest.advanceTimersByTime(100);
@@ -318,6 +326,8 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
       fireEvent.click(screen.getByText('确 认'));
       await jest.advanceTimersByTime(100);
     });
+
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render manual execute button', async () => {
@@ -330,6 +340,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
         record: {
           status: WorkflowRecordResV2StatusEnum.wait_for_execution,
           current_step_number: 1,
+          executable: true,
           workflow_step_list: [
             {
               number: 1,
@@ -339,8 +350,12 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
             }
           ]
         }
-      }
+      },
+      maintenanceTimeInfo: []
     });
+    expect(
+      screen.getByText('标记为人工上线').closest('button')
+    ).not.toHaveAttribute('hidden');
     await act(async () => {
       fireEvent.click(screen.getByText('标记为人工上线'));
       await jest.advanceTimersByTime(100);
@@ -358,6 +373,8 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
 
   it('render batch executing button and manual execute button when executable is false', async () => {
     mockUseCurrentProject({ projectArchive: false });
+    const executableReason =
+      '当前工单所处的版本阶段前存在暂未上线的工单，暂时无法上线';
     const { baseElement } = customRender({
       workflowStepsVisibility: true,
       workflowInfo: {
@@ -366,8 +383,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
           status: WorkflowRecordResV2StatusEnum.wait_for_execution,
           current_step_number: 1,
           executable: false,
-          executable_reason:
-            '当前工单所处的版本阶段前存在暂未上线的工单，暂时无法上线',
+          executable_reason: executableReason,
           workflow_step_list: [
             {
               number: 1,
@@ -377,9 +393,15 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
             }
           ]
         }
-      }
+      },
+      maintenanceTimeInfo: []
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseOver(screen.getByText('批量立即上线').closest('button')!);
+    await act(async () => {
+      await jest.advanceTimersByTime(300);
+    });
+    expect(screen.getByText(executableReason)).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 

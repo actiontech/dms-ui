@@ -81,7 +81,8 @@ export const ApproveWorkflowAction = (
 
 export const BatchExecWorkflowAction = (
   batchExecutingWorkflowButtonMeta: WorkflowDetailActionMeta,
-  executable?: boolean
+  executable?: boolean,
+  executableReason?: string
 ) => {
   return (
     <PermissionControl
@@ -89,16 +90,19 @@ export const BatchExecWorkflowAction = (
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.batchSqlExecute')}
-        hidden={batchExecutingWorkflowButtonMeta.hidden || !executable}
-        disabled={batchExecutingWorkflowButtonMeta.loading}
+        hidden={batchExecutingWorkflowButtonMeta.hidden}
+        disabled={batchExecutingWorkflowButtonMeta.loading || !executable}
         loading={batchExecutingWorkflowButtonMeta.loading}
         type="primary"
-        actionType="confirm"
+        actionType={executable ? 'confirm' : 'tooltip'}
         confirm={{
           title: t('execWorkflow.detail.operator.batchSqlExecuteConfirmTips'),
           onConfirm: () => batchExecutingWorkflowButtonMeta.action(),
           disabled: batchExecutingWorkflowButtonMeta.loading,
           overlayClassName: 'popconfirm-small'
+        }}
+        tooltip={{
+          title: executableReason
         }}
       />
     </PermissionControl>
@@ -107,7 +111,8 @@ export const BatchExecWorkflowAction = (
 
 export const MarkManuallyExecWorkflowAction = (
   manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta,
-  executable?: boolean
+  executable?: boolean,
+  executableReason?: string
 ) => {
   return (
     <PermissionControl
@@ -115,16 +120,19 @@ export const MarkManuallyExecWorkflowAction = (
     >
       <ActionButton
         text={t('execWorkflow.detail.operator.markManually')}
-        hidden={manualExecuteWorkflowButtonMeta.hidden || !executable}
-        disabled={manualExecuteWorkflowButtonMeta.loading}
+        hidden={manualExecuteWorkflowButtonMeta.hidden}
+        disabled={manualExecuteWorkflowButtonMeta.loading || !executable}
         loading={manualExecuteWorkflowButtonMeta.loading}
         type="primary"
-        actionType="confirm"
+        actionType={executable ? 'confirm' : 'tooltip'}
         confirm={{
           title: t('execWorkflow.detail.operator.markManuallyConfirmTips'),
           onConfirm: () => manualExecuteWorkflowButtonMeta.action(),
           disabled: manualExecuteWorkflowButtonMeta.loading,
           overlayClassName: 'popconfirm-small'
+        }}
+        tooltip={{
+          title: executableReason
         }}
       />
     </PermissionControl>

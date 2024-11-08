@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch executing button and manual execute button when executable is false 1`] = `
+exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch executing button 1`] = `
 <body>
   <div>
     <div
@@ -48,7 +48,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-        hidden=""
+        tooltip="[object Object]"
         type="button"
       >
         <span>
@@ -57,7 +57,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-        hidden=""
+        tooltip="[object Object]"
         type="button"
       >
         <span>
@@ -108,6 +108,248 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
         hidden=""
       >
         工单详情
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popover-hidden ant-popconfirm popconfirm-small css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
+    >
+      <div
+        class="ant-popover-arrow"
+        style="position: absolute; bottom: 0px; left: 0px;"
+      />
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="ant-popconfirm-inner-content"
+            >
+              <div
+                class="ant-popconfirm-message"
+              >
+                <span
+                  class="ant-popconfirm-message-icon"
+                >
+                  <span
+                    aria-label="exclamation-circle"
+                    class="anticon anticon-exclamation-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="exclamation-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="ant-popconfirm-message-text"
+                >
+                  <div
+                    class="ant-popconfirm-title"
+                  >
+                    <span
+                      class="css-53w91z"
+                    >
+                      当前操作将立即执行工单下的所有SQL语句，且已经设置了定时上线的数据源仍然在定时时间上线，不会立即上线，是否确认立即批量上线?
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-popconfirm-buttons"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    取 消
+                  </span>
+                </button>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    确 认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch executing button and manual execute button when executable is false 1`] = `
+<body>
+  <div>
+    <div
+      class="css-12u4yvr"
+    >
+      <div>
+        <button
+          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+          type="button"
+        >
+          <span>
+            关闭工单
+          </span>
+        </button>
+        <div
+          class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+          role="separator"
+        />
+      </div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        type="button"
+      >
+        <span>
+          上线到其他实例
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          全部驳回
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          审核通过
+        </span>
+      </button>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            confirm="[object Object]"
+            disabled=""
+            type="button"
+          >
+            <span>
+              批量立即上线
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            confirm="[object Object]"
+            disabled=""
+            type="button"
+          >
+            <span>
+              标记为人工上线
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        hidden=""
+      >
+        <div
+          class="ant-space-item"
+          style="margin-right: 0px;"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              中止上线
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 0px;"
+        >
+          <div
+            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+            role="separator"
+          />
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              刷新工单
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="toggle-workflow-detail-wrapper"
+        hidden=""
+      >
+        工单详情
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-tooltip-content"
+      >
+        <div
+          class="ant-tooltip-inner"
+          role="tooltip"
+          style="padding: 0px; border-radius: 10px;"
+        >
+          <div
+            class="css-19kgj31"
+          >
+            当前工单所处的版本阶段前存在暂未上线的工单，暂时无法上线
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -164,6 +406,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -173,6 +417,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -280,6 +526,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -289,6 +537,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -394,6 +644,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
@@ -403,6 +655,8 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
       </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        confirm="[object Object]"
+        disabled=""
         hidden=""
         type="button"
       >
