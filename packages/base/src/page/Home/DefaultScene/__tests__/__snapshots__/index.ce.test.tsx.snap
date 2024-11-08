@@ -836,7 +836,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
 </div>
 `;
 
-exports[`test base/home/CEDefaultScene should match snapshot when role is not admin 1`] = `
+exports[`test base/home/CEDefaultScene should match snapshot when role is not admin and global manager 1`] = `
 <div>
   <section
     class="css-1wil037"

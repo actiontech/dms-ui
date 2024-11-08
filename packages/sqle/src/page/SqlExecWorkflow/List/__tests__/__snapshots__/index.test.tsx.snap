@@ -1955,23 +1955,31 @@ exports[`sqle/Workflow/List render click batch cancel when action success 1`] = 
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                    class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-loading actiontech-table-actions-button basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
-                      class="ant-btn-icon"
+                      class="ant-btn-icon ant-btn-loading-icon"
                     >
-                      <svg
-                        fill="currentColor"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        aria-label="loading"
+                        class="anticon anticon-loading anticon-spin"
+                        role="img"
                       >
-                        <path
-                          d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden="true"
+                          data-icon="loading"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          viewBox="0 0 1024 1024"
+                          width="1em"
+                        >
+                          <path
+                            d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                          />
+                        </svg>
+                      </span>
                     </span>
                     <span>
                       批量关闭

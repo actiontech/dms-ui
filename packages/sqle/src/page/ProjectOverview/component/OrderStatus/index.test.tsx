@@ -7,26 +7,22 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
-jest.mock('react-router-dom', () => {
-  return {
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn()
-  };
-});
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn()
+}));
 
 describe('page/ProjectOverview/OrderStatus', () => {
-  const navigateSpy = jest.fn();
-
   beforeEach(() => {
     projectOverview.mockAllApi();
     mockUseCurrentProject();
     mockUseCurrentUser();
     jest.useFakeTimers();
-    (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
+    mockUsePermission(undefined, { mockSelector: true });
   });
 
   afterEach(() => {
@@ -52,10 +48,6 @@ describe('page/ProjectOverview/OrderStatus', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('工单')).toBeInTheDocument();
     expect(screen.getByText('创建工单')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('创建工单'));
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/project/${mockProjectInfo.projectID}/exec-workflow/create`
-    );
   });
 
   it('render no data and refresh data', async () => {
@@ -85,7 +77,16 @@ describe('page/ProjectOverview/OrderStatus', () => {
   });
 
   it('no permission for create order', async () => {
-    mockUseCurrentProject({ projectArchive: false });
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: mockProjectInfo.projectName,
+          is_manager: true,
+          archived: true
+        }
+      ]
+    });
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();

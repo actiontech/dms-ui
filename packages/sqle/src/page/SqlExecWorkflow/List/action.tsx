@@ -1,8 +1,16 @@
 import { ActionButton } from '@actiontech/shared';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl,
+  ActiontechTableToolbarActionWithPermissions
+} from '@actiontech/shared/lib/global';
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
-import { DownArrowLineOutlined, PlusOutlined } from '@actiontech/icons';
+import {
+  DownArrowLineOutlined,
+  PlusOutlined,
+  MinusCircleOutlined
+} from '@actiontech/icons';
 
 export const SqlExecWorkflowExportAction = (
   exportWorkflow: () => void,
@@ -36,4 +44,34 @@ export const SqlExecWorkflowCreateAction = (projectID: string): ReactNode => {
       />
     </PermissionControl>
   );
+};
+
+export const SqlExecWorkflowTableToolbarActions = ({
+  disabled,
+  loading,
+  batchCloseAction
+}: {
+  disabled: boolean;
+  loading: boolean;
+  batchCloseAction: () => void;
+}): ActiontechTableToolbarActionWithPermissions => {
+  return [
+    {
+      key: 'close',
+      text: t('execWorkflow.list.batchClose.buttonText'),
+      buttonProps: {
+        icon: <MinusCircleOutlined fill="currentColor" />,
+        disabled,
+        loading
+      },
+      confirm: {
+        onConfirm: batchCloseAction,
+        title: t('execWorkflow.list.batchClose.closePopTitle'),
+        okButtonProps: {
+          disabled: loading
+        }
+      },
+      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE
+    }
+  ];
 };

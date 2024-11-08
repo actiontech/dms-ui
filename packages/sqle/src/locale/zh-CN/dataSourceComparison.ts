@@ -38,6 +38,9 @@ export default {
     },
     modifiedSqlDrawer: {
       title: '变更SQL语句信息'
+    },
+    modifiedSqlAuditResult: {
+      cardTitle: '变更语句'
     }
   }
 };

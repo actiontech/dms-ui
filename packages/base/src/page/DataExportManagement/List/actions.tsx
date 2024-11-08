@@ -1,9 +1,11 @@
 import { t } from '../../../locale';
 import {
   PERMISSIONS,
-  ActiontechTableToolbarActionWithPermissions
+  ActiontechTableToolbarActionWithPermissions,
+  PermissionControl
 } from '@actiontech/shared/lib/global';
-import { MinusCircleOutlined } from '@actiontech/icons';
+import { MinusCircleOutlined, PlusOutlined } from '@actiontech/icons';
+import { ActionButton } from '@actiontech/shared';
 
 export const DataExportManagementTableToolbarActions = ({
   disabled,
@@ -35,4 +37,20 @@ export const DataExportManagementTableToolbarActions = ({
       permissions: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
     }
   ];
+};
+
+export const DataExportManagementCreateAction = (
+  projectID: string
+): React.ReactNode => {
+  return (
+    <PermissionControl permission={PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE}>
+      <ActionButton
+        type="primary"
+        actionType="navigate-link"
+        text={t('dmsDataExport.create.button')}
+        icon={<PlusOutlined width={10} height={10} color="currentColor" />}
+        link={{ to: `/project/${projectID}/data/export/create` }}
+      />
+    </PermissionControl>
+  );
 };

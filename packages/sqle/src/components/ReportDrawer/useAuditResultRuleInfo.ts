@@ -6,7 +6,7 @@ import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template
 const useAuditResultRuleInfo = (
   auditResult: IAuditResult[],
   dbType?: string,
-  apiReady = true
+  shouldFetchRules = true
 ) => {
   const filterRuleNames = useMemo(
     () => (auditResult?.map((v) => v.rule_name ?? '') ?? []).filter((v) => !!v),
@@ -22,7 +22,7 @@ const useAuditResultRuleInfo = (
         })
         .then((res) => res.data.data),
     {
-      ready: !!filterRuleNames.length && apiReady,
+      ready: !!filterRuleNames.length && shouldFetchRules,
       refreshDeps: [filterRuleNames]
     }
   );

@@ -237,6 +237,20 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager]
   },
 
+  // Home
+  [PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS]: {
+    id: PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
+  // 菜单
+  [PERMISSIONS.ACTIONS.BASE.NAV.EDIT_SYSTEM_NOTICE]: {
+    id: PERMISSIONS.ACTIONS.BASE.NAV.EDIT_SYSTEM_NOTICE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
   //全局规则模板
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT,
@@ -429,6 +443,31 @@ export const PERMISSION_MANIFEST: Record<
     projectManager: true,
     projectArchived: false
   },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CLOSE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.REJECT,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.APPROVE,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE]: {
+    id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.EXECUTE,
+    type: 'action',
+    projectArchived: false
+  },
 
   // SQL 工单
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE]: {
@@ -506,6 +545,11 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager],
     projectManager: true,
     projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
   },
 
   // SQL 管控
@@ -908,5 +952,12 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
+  },
+
+  // 快捷审核
+  [PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE,
+    type: 'action',
+    projectArchived: false
   }
 } as const;
