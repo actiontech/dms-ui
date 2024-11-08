@@ -372,16 +372,7 @@ exports[`page/ProjectOverview render over view and refresh page 1`] = `
                       </div>
                       <div
                         class="extra"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            创建工单
-                          </span>
-                        </button>
-                      </div>
+                      />
                     </header>
                     <section
                       class="card-cont"
@@ -1233,16 +1224,7 @@ exports[`page/ProjectOverview render over view when sql optimization is not supp
                       </div>
                       <div
                         class="extra"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-c6qiz6 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
-                          type="button"
-                        >
-                          <span>
-                            创建工单
-                          </span>
-                        </button>
-                      </div>
+                      />
                     </header>
                     <section
                       class="card-cont"

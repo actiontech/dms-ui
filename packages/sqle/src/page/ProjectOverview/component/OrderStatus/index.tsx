@@ -1,9 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
@@ -12,15 +10,11 @@ import useOrderStateBar from '../../../../page/ReportStatistics/EEIndex/componen
 import OrderStateBar from '../../../../components/ChartCom/OrderStateBar';
 import { IWorkflowStatusCountV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { CreateSqlExecWorkflowAction } from './actions';
 
 const OrderStatus = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const { projectName, projectID, projectArchive } = useCurrentProject();
-
-  const onCreated = () => {
-    navigate(`/sqle/project/${projectID}/exec-workflow/create`);
-  };
+  const { projectName, projectID } = useCurrentProject();
 
   const [data, setData] = useState<IWorkflowStatusCountV1>({});
   const { loading, errorMessage, getApiData } = useChatsDataByAPI(
@@ -57,13 +51,7 @@ const OrderStatus = () => {
   return (
     <CardWrapper
       title={t('projectManage.projectOverview.orderClassification.title')}
-      extraNode={
-        <EmptyBox if={!projectArchive}>
-          <BasicButton size="small" onClick={onCreated}>
-            {t('projectManage.projectOverview.orderClassification.button')}
-          </BasicButton>
-        </EmptyBox>
-      }
+      extraNode={CreateSqlExecWorkflowAction(projectID)}
     >
       <ChartWrapper
         loading={loading}

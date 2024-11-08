@@ -23,16 +23,7 @@ exports[`page/ProjectOverview/OrderStatus no permission for create order 1`] = `
           </div>
           <div
             class="extra"
-          >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
-              type="button"
-            >
-              <span>
-                创建工单
-              </span>
-            </button>
-          </div>
+          />
         </header>
         <section
           class="card-cont"
@@ -140,14 +131,18 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
           <div
             class="extra"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
-              type="button"
+            <a
+              href="/sqle/project/700300/exec-workflow/create"
             >
-              <span>
-                创建工单
-              </span>
-            </button>
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建工单
+                </span>
+              </button>
+            </a>
           </div>
         </header>
         <section
@@ -256,14 +251,18 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
           <div
             class="extra"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
-              type="button"
+            <a
+              href="/sqle/project/700300/exec-workflow/create"
             >
-              <span>
-                创建工单
-              </span>
-            </button>
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  创建工单
+                </span>
+              </button>
+            </a>
           </div>
         </header>
         <section
