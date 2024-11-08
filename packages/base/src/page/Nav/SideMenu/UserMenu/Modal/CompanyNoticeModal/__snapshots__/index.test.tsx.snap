@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin render snap when visible is true 1`] = `
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin and global manager render snap when visible is true 1`] = `
 <body>
   <textarea
     aria-hidden="true"
@@ -194,7 +194,7 @@ exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user 
 </body>
 `;
 
-exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin render snap when visible is true 2`] = `
+exports[`base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal render current user is not admin and global manager render snap when visible is true 2`] = `
 <body>
   <textarea
     aria-hidden="true"
