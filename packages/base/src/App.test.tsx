@@ -55,7 +55,8 @@ describe('App', () => {
     mockSystemConfig();
     mockUsePermission(
       {
-        checkPagePermission: checkPageActionSpy
+        checkPagePermission: checkPageActionSpy,
+        checkActionPermission: jest.fn().mockReturnValue(true)
       },
       { useSpyOnMockHooks: true }
     );

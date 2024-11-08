@@ -63,11 +63,16 @@ describe('sqle/SqlAudit/Detail', () => {
 
   it('should hide create button when project is archived', async () => {
     sqlAuditRecord.getSQLAuditRecord();
-    mockUseCurrentProjectSpy.mockClear();
-    mockUseCurrentProjectSpy.mockImplementation(() => ({
-      ...mockProjectInfo,
-      projectArchive: true
-    }));
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: mockProjectInfo.projectName,
+          is_manager: true,
+          archived: true
+        }
+      ]
+    });
     renderWithThemeAndRedux(
       <BrowserRouter>
         <SqlAuditDetail />

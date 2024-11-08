@@ -202,14 +202,32 @@ describe('test base/DataExport/List', () => {
   });
 
   it('render create data export button', () => {
-    mockUseCurrentProject({ projectArchive: true });
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: mockProjectInfo.projectName,
+          is_manager: true,
+          archived: true
+        }
+      ]
+    });
     superRender(<ExportWorkflowList />);
 
     expect(screen.queryByText('创建导出')).not.toBeInTheDocument();
     cleanup();
     jest.clearAllMocks();
 
-    mockUseCurrentProject({ projectArchive: false });
+    mockUseCurrentUser({
+      bindProjects: [
+        {
+          project_id: mockProjectInfo.projectID,
+          project_name: mockProjectInfo.projectName,
+          is_manager: true,
+          archived: false
+        }
+      ]
+    });
 
     superRender(<ExportWorkflowList />);
     expect(screen.queryByText('创建导出')).toBeInTheDocument();

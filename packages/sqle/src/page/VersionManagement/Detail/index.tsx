@@ -62,7 +62,7 @@ const VersionDetail = () => {
 
   const { projectName, projectID } = useCurrentProject();
 
-  const { isAdmin } = useCurrentUser();
+  const { userRoles } = useCurrentUser();
 
   const { checkDbServicePermission } = usePermission();
 
@@ -428,7 +428,8 @@ const VersionDetail = () => {
                       onRelease(node.data.stageId, node.data.workflowList ?? [])
                   : undefined,
                 allowRelease:
-                  (isAdmin ||
+                  (userRoles.admin ||
+                    userRoles.globalManager ||
                     hasNextStageCreateWorkflowPermission(node.data.stageId)) &&
                   allowRelease(node.data.workflowList ?? [])
               }

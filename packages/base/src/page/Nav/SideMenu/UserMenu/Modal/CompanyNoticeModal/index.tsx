@@ -8,7 +8,6 @@ import {
   BasicButton,
   BasicInput
 } from '@actiontech/shared';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
 import {
@@ -21,6 +20,7 @@ import { ModalName } from '../../../../../../data/ModalName';
 import { IReduxState } from '../../../../../../store';
 import { updateNavModalStatus } from '../../../../../../store/nav';
 import { CompanyNoticeModalStyleWrapper } from '../../../style';
+import { CompanyNoticeModalActions } from './actions';
 
 const CompanyNoticeModal: React.FC = () => {
   const { t } = useTranslation();
@@ -31,11 +31,9 @@ const CompanyNoticeModal: React.FC = () => {
     (state) => state.nav.modalStatus[ModalName.Company_Notice]
   );
 
-  const { isAdmin } = useCurrentUser();
-
   const [value, setValue] = useState('');
 
-  const [canEdit, setCanEdit] = useState(false);
+  const [canEdit, { setTrue: showEditor, setFalse: hideEditor }] = useBoolean();
 
   const [hasDirtyData, setHasDirtyData] = useState(false);
 
@@ -55,11 +53,11 @@ const CompanyNoticeModal: React.FC = () => {
     { ready: !!visible }
   );
 
-  const resetAllState = () => {
+  const resetAllState = useCallback(() => {
     setValue('');
-    setCanEdit(false);
+    hideEditor();
     setHasDirtyData(false);
-  };
+  }, [hideEditor]);
 
   const handleCloseModal = useCallback(() => {
     dispatch(
@@ -70,13 +68,13 @@ const CompanyNoticeModal: React.FC = () => {
     );
 
     resetAllState();
-  }, [dispatch]);
+  }, [dispatch, resetAllState]);
 
   const handleCancelEdit = useCallback(() => {
     setHasDirtyData(false);
-    setCanEdit(false);
+    hideEditor();
     setValue(data ?? '');
-  }, [data]);
+  }, [data, hideEditor]);
 
   const submit = () => {
     startSubmit();
@@ -110,6 +108,8 @@ const CompanyNoticeModal: React.FC = () => {
     );
   }, [dispatch]);
 
+  const actions = CompanyNoticeModalActions(showEditor);
+
   return (
     <CompanyNoticeModalStyleWrapper
       width={720}
@@ -126,11 +126,7 @@ const CompanyNoticeModal: React.FC = () => {
               <EmptyBox
                 if={hasDirtyData}
                 defaultNode={
-                  <BasicButton
-                    onClick={() => {
-                      setCanEdit(false);
-                    }}
-                  >
+                  <BasicButton onClick={hideEditor}>
                     {t('common.cancel')}
                   </BasicButton>
                 }
@@ -162,11 +158,7 @@ const CompanyNoticeModal: React.FC = () => {
               <BasicButton onClick={handleCloseModal}>
                 {t('common.close')}
               </BasicButton>
-              <EmptyBox if={isAdmin}>
-                <BasicButton type="primary" onClick={() => setCanEdit(true)}>
-                  {t('common.edit')}
-                </BasicButton>
-              </EmptyBox>
+              {actions['edit-notice']}
             </>
           )}
         </Space>
