@@ -179,7 +179,12 @@ const CreateSqlExecWorkflow: React.FC = () => {
 
   usePrompt(t('execWorkflow.create.auditResult.leaveTip'), isAtAuditResultStep);
   return (
-    <Spin spinning={sharedStepDetail.isAuditing.value}>
+    <Spin
+      spinning={
+        sharedStepDetail.isAuditing.value ||
+        sharedStepDetail.getModifiedSQLsPending.value
+      }
+    >
       {messageContextHolder}
       <LazyLoadComponent open={isAtFormStep} animation={false}>
         <FormStep

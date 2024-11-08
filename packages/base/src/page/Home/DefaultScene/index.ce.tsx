@@ -1,5 +1,5 @@
 import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
 import { DefaultSceneStepContainerWrapper } from '../style';
 import StepItems from './components/StepItems';
 import {
@@ -10,11 +10,14 @@ import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { useTypedNavigate } from '@actiontech/shared';
 
 const CEDefaultScene: React.FC = () => {
-  const { isAdmin } = useCurrentUser();
   const navigate = useTypedNavigate();
-  const { baseTheme } = useThemeStyleData();
 
-  const steps = isAdmin
+  const { baseTheme } = useThemeStyleData();
+  const { checkActionPermission } = usePermission();
+
+  const steps = checkActionPermission(
+    PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS
+  )
     ? AdminUserDevopsSteps({
         navigate,
         projectID: DEFAULT_PROJECT_ID,

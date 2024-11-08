@@ -20,6 +20,8 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import system from 'sqle/src/testUtils/mockApi/system';
 import baseSystem from './testUtils/mockApi/system';
+import { LocalStorageWrapper } from '@actiontech/shared';
+import { compressToBase64 } from 'lz-string';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -53,7 +55,8 @@ describe('App', () => {
     mockSystemConfig();
     mockUsePermission(
       {
-        checkPagePermission: checkPageActionSpy
+        checkPagePermission: checkPageActionSpy,
+        checkActionPermission: jest.fn().mockReturnValue(true)
       },
       { useSpyOnMockHooks: true }
     );
@@ -208,5 +211,46 @@ describe('App', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should set the correct value in local storage when `DMS_CB_CHANNEL` does not exist', () => {
+    const LocalStorageWrapperSetSpy = jest.spyOn(LocalStorageWrapper, 'set');
+    const LocalStorageWrapperGetSpy = jest.spyOn(LocalStorageWrapper, 'get');
+
+    LocalStorageWrapperGetSpy.mockReturnValue('');
+
+    superRender(<App />);
+
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledWith(
+      'DMS_CB_CHANNEL',
+      compressToBase64(JSON.stringify({ type: 'sqle_edition', data: 'ee' }))
+    );
+  });
+
+  it('should update `DMS_CB_CHANNEL` in local storage when it does not match `sqleEdition`', () => {
+    const LocalStorageWrapperSetSpy = jest.spyOn(LocalStorageWrapper, 'set');
+    const LocalStorageWrapperGetSpy = jest.spyOn(LocalStorageWrapper, 'get');
+
+    LocalStorageWrapperGetSpy.mockReturnValue('ce');
+
+    superRender(<App />);
+
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledWith(
+      'DMS_CB_CHANNEL',
+      compressToBase64(JSON.stringify({ type: 'sqle_edition', data: 'ee' }))
+    );
+  });
+
+  it(`should not update 'DMS_CB_CHANNEL' in local storage when it matches 'sqleEdition'`, () => {
+    const LocalStorageWrapperSetSpy = jest.spyOn(LocalStorageWrapper, 'set');
+    const LocalStorageWrapperGetSpy = jest.spyOn(LocalStorageWrapper, 'get');
+
+    LocalStorageWrapperGetSpy.mockReturnValue('ee');
+
+    superRender(<App />);
+
+    expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(0);
   });
 });

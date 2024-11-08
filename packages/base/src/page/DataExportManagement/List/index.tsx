@@ -1,9 +1,4 @@
-import {
-  PageHeader,
-  BasicButton,
-  EmptyBox,
-  useTypedNavigate
-} from '@actiontech/shared';
+import { PageHeader, useTypedNavigate } from '@actiontech/shared';
 import {
   useTableRequestParams,
   TableToolbar,
@@ -21,9 +16,8 @@ import {
   PERMISSIONS
 } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
-import { Space, message } from 'antd';
+import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { useEffect, useMemo, useState, useCallback } from 'react';
 import {
   ExportWorkflowExtraFilterMeta,
@@ -41,9 +35,11 @@ import { ListDataExportWorkflowsFilterByStatusEnum } from '@actiontech/shared/li
 import useMemberTips from '../../../hooks/useMemberTips';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListDataExportWorkflowStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { PlusOutlined } from '@actiontech/icons';
-import { DataExportManagementTableToolbarActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import {
+  DataExportManagementTableToolbarActions,
+  DataExportManagementCreateAction
+} from './actions';
 
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -51,7 +47,7 @@ const ExportWorkflowList: React.FC = () => {
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
-  const { projectID, projectArchive } = useCurrentProject();
+  const { projectID } = useCurrentProject();
   const { username } = useCurrentUser();
 
   const { parse2TableToolbarActionPermissions, checkActionPermission } =
@@ -224,27 +220,7 @@ const ExportWorkflowList: React.FC = () => {
       {messageContextHolder}
       <PageHeader
         title={t('dmsDataExport.pageTitle')}
-        extra={
-          <Space size={12}>
-            <EmptyBox if={!projectArchive}>
-              <Link to={`/project/${projectID}/data/export/create`}>
-                <BasicButton
-                  type="primary"
-                  icon={
-                    <PlusOutlined
-                      width={10}
-                      height={10}
-                      fill="currentColor"
-                      color="currentColor"
-                    />
-                  }
-                >
-                  {t('dmsDataExport.create.button')}
-                </BasicButton>
-              </Link>
-            </EmptyBox>
-          </Space>
-        }
+        extra={DataExportManagementCreateAction(projectID)}
       />
 
       <TableToolbar

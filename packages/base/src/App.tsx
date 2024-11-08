@@ -7,6 +7,7 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import {
   EmptyBox,
   HeaderProgress,
+  LocalStorageWrapper,
   SpinIndicator,
   useTypedNavigate
 } from '@actiontech/shared';
@@ -45,6 +46,7 @@ import usePermission from '@actiontech/shared/lib/global/usePermission/usePermis
 import useFetchPermissionData from './hooks/useFetchPermissionData';
 import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
+import { compressToBase64 } from 'lz-string';
 
 import './index.less';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -202,6 +204,23 @@ function App() {
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);
   }, [currentLanguage]);
+
+  useEffect(() => {
+    let sqleEdition;
+    // #if [ee]
+    sqleEdition = 'ee';
+    // #elif [ce]
+    sqleEdition = 'ce';
+    // #endif
+    if (sqleEdition !== LocalStorageWrapper.get('DMS_CB_CHANNEL')) {
+      LocalStorageWrapper.set(
+        'DMS_CB_CHANNEL',
+        compressToBase64(
+          JSON.stringify({ type: 'sqle_edition', data: sqleEdition })
+        )
+      );
+    }
+  }, []);
 
   return (
     <Wrapper>

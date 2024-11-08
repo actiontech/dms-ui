@@ -80,6 +80,7 @@ const OrderRiskList = () => {
         title: t(
           'projectManage.projectOverview.orderRisk.tableColumn.createUser'
         ),
+        align: 'left',
         render(create_user_name: string) {
           if (!create_user_name) return '-';
           return <AvatarCom name={create_user_name} />;
@@ -112,7 +113,12 @@ const OrderRiskList = () => {
           getApiData();
         }}
       >
-        <TableTopList hideTop3Style {...tableProps} columns={columnData()} />
+        <TableTopList
+          hideTop3Style
+          {...tableProps}
+          columns={columnData()}
+          scroll={{ y: '500px' }}
+        />
       </ChartWrapper>
     </CardWrapper>
   );

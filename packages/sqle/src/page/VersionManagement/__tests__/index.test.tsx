@@ -4,6 +4,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { superRender } from '../../../testUtils/customRender';
 import VersionManagement from '..';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('sqle/VersionManagement', () => {
   beforeEach(() => {
@@ -11,6 +12,10 @@ describe('sqle/VersionManagement', () => {
     mockUseCurrentUser();
     jest.useFakeTimers();
     sqlVersion.mockAllApi();
+    mockUsePermission(
+      { checkActionPermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
   });
 
   afterEach(() => {

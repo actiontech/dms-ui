@@ -95,7 +95,12 @@ export const PERMISSIONS = {
       },
       DATA_EXPORT: {
         BATCH_CLOSE: 'action:data_export_batch_close',
-        CREATE_WHITELIST: 'action:data_export_create_whitelist'
+        CREATE_WHITELIST: 'action:data_export_create_whitelist',
+        CREATE: 'action:create_data_export',
+        CLOSE: 'action:close_data_export',
+        REJECT: 'action:reject_data_export',
+        APPROVE: 'action:approve_data_export',
+        EXECUTE: 'action:execute_data_export'
       },
       PROJECT_MANAGER: {
         BATCH_IMPORT_DATA_SOURCE:
@@ -107,6 +112,12 @@ export const PERMISSIONS = {
         DELETE: 'action:project_manager_delete',
         ARCHIVE: 'action:project_manager_archive',
         UNARCHIVE: 'action:project_manager_unarchive'
+      },
+      HOME: {
+        ALL_OPERATIONS: 'action:home_all_operations'
+      },
+      NAV: {
+        EDIT_SYSTEM_NOTICE: 'action: edit_system_notice'
       }
     },
     SQLE: {
@@ -137,7 +148,8 @@ export const PERMISSIONS = {
         EXEC_TASK: 'action:exec_task',
         SCHEDULE_TIME_EXEC_TASK: 'action:schedule_time_exec_task',
         CANCEL_SCHEDULE_TIME_EXEC_TASK: 'action:cancel_schedule_time_exec_task',
-        CREATE_WHITE_LIST: 'action:workflow_sql_audit_result_create_white_list'
+        CREATE_WHITE_LIST: 'action:workflow_sql_audit_result_create_white_list',
+        BATCH_CLOSE: 'action:batch_close_workflow'
       },
       SQL_MANAGEMENT: {
         ASSIGNMENT: 'action:sql_assignment',
@@ -189,6 +201,27 @@ export const PERMISSIONS = {
       },
       DATA_SOURCE_COMPARISON: {
         CREATE_MODIFIED_SQL_WORKFLOW: 'action:create_modified_sql_workflow'
+      },
+      VERSION_MANAGEMENT: {
+        ADD: 'action:version_management_add_operator',
+        EDIT: 'action:version_management_edit_operator',
+        DELETE: 'action:version_management_delete_operator',
+        LOCK: 'action:version_management_lock_operator',
+        DEPLOY: 'action:version_management_deploy_operator'
+      },
+      SQL_MANAGEMENT_CONF: {
+        CREATE: 'action:sql_management_conf_create_operator',
+        EDIT: 'action:sql_management_conf_edit_operator',
+        STOP: 'action:sql_management_conf_stop_operator',
+        ENABLE: 'action:sql_management_conf_enable_operator',
+        DELETE: 'action:sql_management_conf_delete_operator',
+        DETAIL_AUDIT: 'action:sql_management_conf_detail_audit_operator',
+        DETAIL_STOP: 'action:sql_management_conf_detail_stop_operator',
+        DETAIL_ENABLE: 'action:sql_management_conf_detail_enable_operator',
+        DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator'
+      },
+      SQL_AUDIT: {
+        CREATE: 'action:create_sql_audit'
       }
     }
   }

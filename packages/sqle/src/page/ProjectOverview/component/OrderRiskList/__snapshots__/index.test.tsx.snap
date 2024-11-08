@@ -172,16 +172,17 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                       class="ant-spin-container"
                     >
                       <div
-                        class="ant-table"
+                        class="ant-table ant-table-fixed-header"
                       >
                         <div
                           class="ant-table-container"
                         >
                           <div
-                            class="ant-table-content"
+                            class="ant-table-header"
+                            style="overflow: hidden;"
                           >
                             <table
-                              style="table-layout: auto;"
+                              style="table-layout: fixed; visibility: hidden;"
                             >
                               <colgroup />
                               <thead
@@ -209,14 +210,67 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                   <th
                                     class="ant-table-cell"
                                     scope="col"
+                                    style="text-align: left;"
                                   >
                                     创建人
                                   </th>
                                 </tr>
                               </thead>
+                            </table>
+                          </div>
+                          <div
+                            class="ant-table-body"
+                            style="overflow-y: scroll; max-height: 500px;"
+                          >
+                            <table
+                              style="table-layout: fixed;"
+                            >
+                              <colgroup />
                               <tbody
                                 class="ant-table-tbody"
                               >
+                                <tr
+                                  aria-hidden="true"
+                                  class="ant-table-measure-row"
+                                  style="height: 0px; font-size: 0px;"
+                                >
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                  <td
+                                    style="padding: 0px; border: 0px; height: 0px;"
+                                  >
+                                    <div
+                                      style="height: 0px; overflow: hidden;"
+                                    >
+                                       
+                                    </div>
+                                  </td>
+                                </tr>
                                 <tr
                                   class="ant-table-row ant-table-row-level-0"
                                   data-row-key="1743144533085917184-mysql-1_20240105013651"
@@ -279,6 +333,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                   </td>
                                   <td
                                     class="ant-table-cell"
+                                    style="text-align: left;"
                                   >
                                     <div
                                       class="ant-space css-dev-only-do-not-override-1ror0i4 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -365,6 +420,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                   </td>
                                   <td
                                     class="ant-table-cell"
+                                    style="text-align: left;"
                                   >
                                     -
                                   </td>
@@ -415,6 +471,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                   </td>
                                   <td
                                     class="ant-table-cell"
+                                    style="text-align: left;"
                                   >
                                     -
                                   </td>

@@ -92,6 +92,12 @@ exports[`test FormStep should match snapshot 1`] = `
           },
         }
       }
+      getModifiedSQLsPending={
+        {
+          "set": [MockFunction],
+          "value": false,
+        }
+      }
       handleInstanceNameChange={[Function]}
       instanceTestConnectResults={
         {

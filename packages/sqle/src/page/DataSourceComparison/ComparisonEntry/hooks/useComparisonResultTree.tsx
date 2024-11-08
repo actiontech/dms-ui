@@ -4,13 +4,15 @@ import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import {
   DatabaseFilled,
   DatabaseSchemaFilled,
+  FolderFilled,
   MagnifierFilled
 } from '@actiontech/icons';
 import { BasicToolTips } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Key, useCallback, useMemo, useState } from 'react';
+import { Key, useCallback, useState } from 'react';
 import {
   TREE_PARENT_NODE_KEY,
+  generateClassNamesByComparisonResult,
   generateTreeNodeKey,
   getComparisonResultByNodeKey,
   getComparisonResultSchemaName,
@@ -26,15 +28,11 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 import {
   DatabaseObjectObjectTypeEnum,
-  ObjectDiffResultComparisonResultEnum,
-  SchemaObjectComparisonResultEnum
+  ObjectDiffResultComparisonResultEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ComparisonTreeNodeTitleStyleWrapper } from '../component/ComparisonTreeNode/style';
 
-const useComparisonResultTree = (
-  comparisonResults: ISchemaObject[],
-  showDifferencesOnly: boolean
-) => {
+const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
   const { sharedTheme } = useThemeStyleData();
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -49,37 +47,10 @@ const useComparisonResultTree = (
   ] = useBoolean();
   const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
 
-  const filteredComparisonResultsWithoutSame = useMemo(() => {
-    if (!showDifferencesOnly) {
-      return comparisonResults;
-    }
-
-    return comparisonResults
-      .filter(
-        (item) =>
-          item.comparison_result !== SchemaObjectComparisonResultEnum.same
-      )
-      .map((item) => ({
-        ...item,
-        database_diff_objects: item.database_diff_objects
-          ?.map((diffObject) => ({
-            ...diffObject,
-            objects_diff_result: diffObject.objects_diff_result?.filter(
-              (result) => result.comparison_result !== 'same'
-            )
-          }))
-          .filter(
-            (diffObject) => (diffObject.objects_diff_result?.length ?? 0) > 0
-          )
-      }))
-      .filter((item) => (item.database_diff_objects?.length ?? 0) > 0);
-  }, [comparisonResults, showDifferencesOnly]);
-
   const resetStateAndCloseComparisonDetailDrawer = () => {
     setSelectedObjectNodeKey(undefined);
     closeComparisonDetailDrawer();
   };
-
   const assemblingBaselineTreeData = useCallback(
     (instanceName: string): TreeProps['treeData'] => {
       return [
@@ -91,52 +62,57 @@ const useComparisonResultTree = (
               <span className="content">{instanceName}</span>
             </ComparisonTreeNodeTitleStyleWrapper>
           ),
-          children: filteredComparisonResultsWithoutSame.map(
-            (result, index) => ({
-              key: index.toString(),
-              title: (
-                <ComparisonTreeNodeTitleStyleWrapper>
-                  <DatabaseSchemaFilled
-                    color={sharedTheme.uiToken.colorPrimary}
-                  />
-                  <span className="content">
-                    {getComparisonResultSchemaName(result, 'baseline')}
-                  </span>
-                </ComparisonTreeNodeTitleStyleWrapper>
-              ),
-              children: result.database_diff_objects?.map((diff) => {
-                return {
-                  key: generateTreeNodeKey(index.toString(), diff.object_type!),
-                  title: (
-                    <>
+          children: comparisonResults.map((result, index) => ({
+            key: index.toString(),
+            title: (
+              <ComparisonTreeNodeTitleStyleWrapper>
+                <DatabaseSchemaFilled
+                  color={sharedTheme.uiToken.colorPrimary}
+                />
+                <span className="content">
+                  {getComparisonResultSchemaName(result, 'baseline')}
+                </span>
+              </ComparisonTreeNodeTitleStyleWrapper>
+            ),
+            children: result.database_diff_objects?.map((diff) => {
+              return {
+                key: generateTreeNodeKey(index.toString(), diff.object_type!),
+                title: (
+                  <>
+                    <ComparisonTreeNodeTitleStyleWrapper>
+                      <FolderFilled width={18} height={18} />
+                      <span className="content">{diff.object_type}</span>
+                    </ComparisonTreeNodeTitleStyleWrapper>
+                  </>
+                ),
+                children: diff.objects_diff_result?.map((obj) => {
+                  return {
+                    key: generateTreeNodeKey(
+                      index.toString(),
+                      diff.object_type!,
+                      obj.object_name!
+                    ),
+                    title: (
                       <ComparisonTreeNodeTitleStyleWrapper>
-                        {getObjectTypeIcon(diff.object_type!)}
-                        <span className="content">{diff.object_type}</span>
+                        <div className="name-container">
+                          {getObjectTypeIcon(diff.object_type!)}
+                          {renderComparisonResultObjectName(
+                            obj.comparison_result!,
+                            obj.object_name!,
+                            'baseline'
+                          )}
+                        </div>
                       </ComparisonTreeNodeTitleStyleWrapper>
-                    </>
-                  ),
-                  children: diff.objects_diff_result?.map((obj) => {
-                    return {
-                      key: generateTreeNodeKey(
-                        index.toString(),
-                        diff.object_type!,
-                        obj.object_name!
-                      ),
-                      title: renderComparisonResultObjectName(
-                        obj.comparison_result!,
-                        obj.object_name!,
-                        'baseline'
-                      )
-                    };
-                  })
-                };
-              })
+                    )
+                  };
+                })
+              };
             })
-          )
+          }))
         }
       ];
     },
-    [filteredComparisonResultsWithoutSame, sharedTheme.uiToken.colorPrimary]
+    [comparisonResults, sharedTheme.uiToken.colorPrimary]
   );
 
   const assemblingComparisonTreeData = useCallback(
@@ -150,7 +126,11 @@ const useComparisonResultTree = (
         return (
           <BasicToolTips title={t('common.showDetail')}>
             <MagnifierFilled
-              onClick={() => openDetailDrawer(key)}
+              color={sharedTheme.uiToken.colorPrimary}
+              onClick={(e) => {
+                e.stopPropagation();
+                openDetailDrawer(key);
+              }}
               className="view-detail-icon"
             />
           </BasicToolTips>
@@ -166,74 +146,74 @@ const useComparisonResultTree = (
               <span className="content">{instanceName}</span>
             </ComparisonTreeNodeTitleStyleWrapper>
           ),
-          children: filteredComparisonResultsWithoutSame.map(
-            (result, index) => {
-              return {
-                key: index.toString(),
-                title: (
-                  <ComparisonTreeNodeTitleStyleWrapper>
-                    <DatabaseSchemaFilled
-                      color={sharedTheme.uiToken.colorPrimary}
-                    />
-                    <span className="content">
-                      {getComparisonResultSchemaName(result, 'comparison')}(
-                      {result.inconsistent_num})
-                    </span>
-                  </ComparisonTreeNodeTitleStyleWrapper>
-                ),
-                children: result.database_diff_objects?.map((diff) => {
-                  return {
-                    key: generateTreeNodeKey(
-                      index.toString(),
-                      diff.object_type!
-                    ),
-                    title: (
-                      <>
-                        <ComparisonTreeNodeTitleStyleWrapper>
-                          {getObjectTypeIcon(diff.object_type!)}
-                          <span className="content">
-                            {diff.object_type} ({diff.inconsistent_num})
-                          </span>
-                        </ComparisonTreeNodeTitleStyleWrapper>
-                      </>
-                    ),
-                    children: diff.objects_diff_result?.map((obj) => {
-                      return {
-                        key: generateTreeNodeKey(
-                          index.toString(),
-                          diff.object_type!,
-                          obj.object_name!
-                        ),
-                        title: (
-                          <ComparisonTreeNodeTitleStyleWrapper>
-                            <div className="name-container">
-                              {renderComparisonResultObjectName(
-                                obj.comparison_result!,
-                                obj.object_name!,
-                                'comparison'
-                              )}
-                            </div>
-                            {renderViewDetail(
-                              generateTreeNodeKey(
-                                index.toString(),
-                                diff.object_type!,
-                                obj.object_name!
-                              )
+          children: comparisonResults.map((result, index) => {
+            return {
+              key: index.toString(),
+              title: (
+                <ComparisonTreeNodeTitleStyleWrapper>
+                  <DatabaseSchemaFilled
+                    color={sharedTheme.uiToken.colorPrimary}
+                  />
+                  <span className="content">
+                    {getComparisonResultSchemaName(result, 'comparison')}(
+                    {result.inconsistent_num})
+                  </span>
+                </ComparisonTreeNodeTitleStyleWrapper>
+              ),
+              children: result.database_diff_objects?.map((diff) => {
+                return {
+                  key: generateTreeNodeKey(index.toString(), diff.object_type!),
+                  title: (
+                    <>
+                      <ComparisonTreeNodeTitleStyleWrapper>
+                        <FolderFilled width={18} height={18} />
+                        <span className="content">
+                          {diff.object_type} ({diff.inconsistent_num})
+                        </span>
+                      </ComparisonTreeNodeTitleStyleWrapper>
+                    </>
+                  ),
+                  children: diff.objects_diff_result?.map((obj) => {
+                    return {
+                      key: generateTreeNodeKey(
+                        index.toString(),
+                        diff.object_type!,
+                        obj.object_name!
+                      ),
+                      title: (
+                        <ComparisonTreeNodeTitleStyleWrapper
+                          className={generateClassNamesByComparisonResult(
+                            obj.comparison_result
+                          )}
+                        >
+                          <div className="name-container">
+                            {getObjectTypeIcon(diff.object_type!)}
+                            {renderComparisonResultObjectName(
+                              obj.comparison_result!,
+                              obj.object_name!,
+                              'comparison'
                             )}
-                          </ComparisonTreeNodeTitleStyleWrapper>
-                        )
-                      };
-                    })
-                  };
-                })
-              };
-            }
-          )
+                          </div>
+                          {renderViewDetail(
+                            generateTreeNodeKey(
+                              index.toString(),
+                              diff.object_type!,
+                              obj.object_name!
+                            )
+                          )}
+                        </ComparisonTreeNodeTitleStyleWrapper>
+                      )
+                    };
+                  })
+                };
+              })
+            };
+          })
         }
       ];
     },
     [
-      filteredComparisonResultsWithoutSame,
+      comparisonResults,
       openComparisonDetailDrawer,
       sharedTheme.uiToken.colorPrimary,
       t
