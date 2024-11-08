@@ -1,8 +1,8 @@
 import {
-  InferParamsFromConfig,
+  NavigateTypedOptions,
   ObjectRoutePathValue,
-  RouteConfig,
-  RoutePathValue
+  RoutePathValue,
+  TypedLinkProps
 } from './index.type';
 
 const errorLogger = (msg: string) => {
@@ -14,9 +14,9 @@ const errorLogger = (msg: string) => {
   // #endif
 };
 
-export const formatPath = <T extends RouteConfig[keyof RouteConfig]>(
+export const formatPath = (
   path: string,
-  values: InferParamsFromConfig<T>
+  values: Record<string, string>
 ): string => {
   if (typeof values !== 'object' || values === null) {
     errorLogger('Value must be a non-null object');
@@ -57,12 +57,11 @@ export const formatPath = <T extends RouteConfig[keyof RouteConfig]>(
     : formattedBasePath;
 };
 
-export const parse2ReactRouterPath = <T extends RouteConfig[keyof RouteConfig]>(
+export const parse2ReactRouterPath = (
   to: ObjectRoutePathValue,
-  values?: InferParamsFromConfig<T>
+  values?: Record<string, string>
 ): string => {
   const { prefix, path, query } = to;
-
   let fullPath = prefix ? `${prefix}/${path}` : path;
   if (query) {
     fullPath = `${fullPath}?${query}`;
@@ -71,7 +70,6 @@ export const parse2ReactRouterPath = <T extends RouteConfig[keyof RouteConfig]>(
   if (!values) {
     return fullPath;
   }
-
   return formatPath(fullPath, values);
 };
 
@@ -90,4 +88,21 @@ export const isCustomRoutePathObject = (
     return true;
   }
   return false;
+};
+
+export const getFormatPathValues = <T extends RoutePathValue>(
+  options: TypedLinkProps<T> | NavigateTypedOptions<T>
+) => {
+  let values: Record<string, string> | undefined;
+  if ('params' in options) {
+    const params = options.params;
+    values = { ...params };
+  }
+
+  if ('queries' in options) {
+    const queries = options.queries ?? {};
+    values = values ? { ...values, ...queries } : { ...queries };
+  }
+
+  return values;
 };

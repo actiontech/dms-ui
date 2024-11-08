@@ -516,14 +516,14 @@ export const globalRouterConfig: RouterConfigItem[] = [
     permission: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS
   },
   {
-    path: ROUTE_PATHS.SQLE.RULE,
+    path: ROUTE_PATHS.SQLE.RULE.index.path,
     element: <Rule />,
     key: 'rule'
   },
   {
     key: 'ruleManager',
     permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT,
-    path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index,
+    path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index.path,
     children: [
       {
         index: true,

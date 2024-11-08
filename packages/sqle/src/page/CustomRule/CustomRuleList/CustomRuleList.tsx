@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { Spin, message, Space, Popconfirm } from 'antd';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton, useTypedNavigate } from '@actiontech/shared';
 import { TableToolbar } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useCustomRuleFilterForm from './useCustomRuleFilterForm';
@@ -25,10 +24,11 @@ import {
   PermissionControl,
   usePermission
 } from '@actiontech/shared/lib/global';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const CustomRuleList: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [messageApi, messageContextHolder] = message.useMessage();
   const { activeKey } = useRuleManagerSegmented();
@@ -85,7 +85,9 @@ const CustomRuleList: React.FC = () => {
   const onAction = (record: ICustomRuleResV1, type: EnumActionType) => {
     if (type !== EnumActionType.edit) return;
 
-    navigate(`/sqle/rule-manager/custom-update/${record.rule_id}`);
+    navigate(ROUTE_PATHS.SQLE.CUSTOM_RULE.update, {
+      params: { ruleID: record.rule_id ?? '' }
+    });
   };
 
   const renderDisabledNode = (item: ICustomRuleResV1) => {

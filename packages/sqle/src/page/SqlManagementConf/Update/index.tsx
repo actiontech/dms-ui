@@ -4,7 +4,7 @@ import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, useTypedNavigate } from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { Space, Spin, message } from 'antd';
 import {
@@ -18,20 +18,21 @@ import {
   SqlManagementConfFormFields
 } from '../Common/ConfForm/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
 import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { id } = useParams<{ id: string }>();
   const [messageApi, messageContextHolder] = message.useMessage();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { mergeFromValueIntoParams, generateFormValueByParams } =
     useAsyncParams();
@@ -87,7 +88,9 @@ const Update: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('managementConf.update.successTips'));
-          navigate(`/sqle/project/${projectID}/sql-management-conf`);
+          navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index, {
+            params: { projectID }
+          });
         }
       })
       .finally(() => {

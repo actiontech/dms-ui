@@ -1,3 +1,4 @@
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { t } from '../../../../../locale';
 import { DataSourceManagerSegmentedKey } from '../../../../DataSourceManagement/index.type';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
@@ -30,14 +31,20 @@ export const getDatabaseManagerSteps: (
             label: t(
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_0_0'
             ),
-            action: () => navigate(`/project/${projectID}/db-services`)
+            action: () =>
+              navigate(ROUTE_PATHS.BASE.DATA_SOURCE.index, {
+                params: { projectID }
+              })
           },
           {
             key: 'dbService-create',
             label: t(
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_0_1'
             ),
-            action: () => navigate(`/project/${projectID}/db-services/create`)
+            action: () =>
+              navigate(ROUTE_PATHS.BASE.DATA_SOURCE.create, {
+                params: { projectID }
+              })
           }
         ]
       },
@@ -56,9 +63,11 @@ export const getDatabaseManagerSteps: (
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_0'
             ),
             action: () =>
-              navigate(
-                `/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`
-              )
+              navigate(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index, {
+                queries: {
+                  active: DataSourceManagerSegmentedKey.SyncDataSource
+                }
+              })
           },
           // #if [ee]
           {
@@ -66,7 +75,7 @@ export const getDatabaseManagerSteps: (
             label: t(
               'dmsHome.defaultScene.steps.databaseTarget.innerContents.action_1_1'
             ),
-            action: () => navigate(`/sync-data-source/create`)
+            action: () => navigate(ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.create)
           }
           // #endif
         ]
@@ -101,7 +110,8 @@ export const getMemberAndPermissionSteps: (
             label: t(
               'dmsHome.defaultScene.steps.memberAndPermission.innerContents.action_0_0'
             ),
-            action: () => navigate(`/project/${projectID}/member`)
+            action: () =>
+              navigate(ROUTE_PATHS.BASE.MEMBER.index, { params: { projectID } })
           }
         ]
       }
@@ -124,7 +134,10 @@ export const getSqlEditorStep: (
         label: t(
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_0_0'
         ),
-        action: () => navigate(`/project/${projectID}/cloud-beaver`)
+        action: () =>
+          navigate(ROUTE_PATHS.BASE.CLOUD_BEAVER.index, {
+            params: { projectID }
+          })
       }
     ]
   };
@@ -147,9 +160,13 @@ export const getDataExportTask: (
         ),
         action: () => {
           // #if [ee]
-          navigate(`project/${projectID}/data/export/create`);
+          navigate(ROUTE_PATHS.BASE.DATA_EXPORT.create, {
+            params: { projectID }
+          });
           // #elif [ce]
-          navigate(`project/${projectID}/data/export`);
+          navigate(ROUTE_PATHS.BASE.DATA_EXPORT.index, {
+            params: { projectID }
+          });
           // #endif
         }
       }

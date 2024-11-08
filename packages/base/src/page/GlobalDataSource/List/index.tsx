@@ -1,6 +1,5 @@
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { message, Modal } from 'antd';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
@@ -27,11 +26,13 @@ import useProjectTips from '../../../hooks/useProjectTips';
 import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { GlobalDataSourceListActions } from './action';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { parse2TableActionPermissions } = usePermission();
 
@@ -114,7 +115,9 @@ const GlobalDataSourceList = () => {
 
   const actions = useMemo(() => {
     const navigateToUpdatePage = (dbServiceUid: string, projectID: string) => {
-      navigate(`/project/${projectID}/db-services/update/${dbServiceUid}`);
+      navigate(ROUTE_PATHS.BASE.DATA_SOURCE.update, {
+        params: { dbServiceUid, projectID }
+      });
     };
 
     const deleteDatabase = (

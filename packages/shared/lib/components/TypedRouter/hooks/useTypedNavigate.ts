@@ -1,39 +1,55 @@
+import { To, useNavigate as useRouterNavigate } from 'react-router-dom';
 import {
-  NavigateOptions,
-  To,
-  useNavigate as useRouterNavigate
-} from 'react-router-dom';
-import { isCustomRoutePathObject, parse2ReactRouterPath } from '../utils';
-import { InferParamsFromConfig, RouteConfig } from '../index.type';
+  getFormatPathValues,
+  isCustomRoutePathObject,
+  parse2ReactRouterPath
+} from '../utils';
+import {
+  NavigateTypedOptions,
+  ObjectRoutePathValue,
+  NavigateFunction
+} from '../index.type';
+import { useCallback } from 'react';
 
-type NavigateCustomOptions<T> = InferParamsFromConfig<T> extends never
-  ? NavigateOptions
-  : NavigateOptions & { values: InferParamsFromConfig<T> };
 const useTypedNavigate = () => {
   const innerNavigate = useRouterNavigate();
-
-  function navigate(delta: number): void;
-  function navigate<T extends RouteConfig[keyof RouteConfig]>(
-    to: To | T,
-    options?: NavigateCustomOptions<T>
-  ): void;
-  function navigate<T extends RouteConfig[keyof RouteConfig]>(
-    to: T | To | number,
-    options?: NavigateCustomOptions<T>
-  ) {
-    if (typeof to === 'number') {
-      innerNavigate(to);
-    } else if (isCustomRoutePathObject(to)) {
-      if (options && 'values' in options) {
-        const { values } = options;
-        innerNavigate(parse2ReactRouterPath(to, values), options);
+  const navigate: NavigateFunction = useCallback(
+    <T extends ObjectRoutePathValue>(
+      to: T | To | number,
+      options?: NavigateTypedOptions<T>
+    ) => {
+      if (typeof to === 'number') {
+        innerNavigate(to);
+      } else if (isCustomRoutePathObject(to)) {
+        if (options) {
+          const values = getFormatPathValues(options);
+          if ('params' in options && 'queries' in options) {
+            const { params, queries, ...otherOptions } = options;
+            otherOptions && Object.keys(otherOptions).length > 0
+              ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
+              : innerNavigate(parse2ReactRouterPath(to, values));
+          } else if ('params' in options) {
+            const { params, ...otherOptions } = options;
+            otherOptions && Object.keys(otherOptions).length > 0
+              ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
+              : innerNavigate(parse2ReactRouterPath(to, values));
+          } else if ('queries' in options) {
+            const { queries, ...otherOptions } = options;
+            otherOptions && Object.keys(otherOptions).length > 0
+              ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
+              : innerNavigate(parse2ReactRouterPath(to, values));
+          } else {
+            innerNavigate(parse2ReactRouterPath(to, values), options);
+          }
+        } else {
+          innerNavigate(parse2ReactRouterPath(to));
+        }
       } else {
-        innerNavigate(parse2ReactRouterPath(to), options);
+        options ? innerNavigate(to, options) : innerNavigate(to);
       }
-    } else {
-      innerNavigate(to, options);
-    }
-  }
+    },
+    [innerNavigate]
+  );
 
   return navigate;
 };

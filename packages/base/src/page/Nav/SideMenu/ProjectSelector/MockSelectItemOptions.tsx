@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import {
   MockSelectItemOptionsStyleWrapper,
@@ -7,12 +6,14 @@ import {
 } from './style';
 import { IBindProject } from './index.type';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const MockSelectItemOptions: React.FC<{
   list: IBindProject[];
   closeSelectDropdown: () => void;
 }> = ({ list, closeSelectDropdown }) => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [activeId, setActiveId] = useState('');
   return (
     <MockSelectItemOptionsStyleWrapper>
@@ -26,7 +27,9 @@ const MockSelectItemOptions: React.FC<{
               setActiveId('');
             }}
             onClick={() => {
-              navigate(`/sqle/project/${v.project_id}/overview`);
+              navigate(ROUTE_PATHS.SQLE.PROJECT_OVERVIEW.index, {
+                params: { projectID: v.project_id ?? '' }
+              });
               closeSelectDropdown();
             }}
             key={v.project_id}

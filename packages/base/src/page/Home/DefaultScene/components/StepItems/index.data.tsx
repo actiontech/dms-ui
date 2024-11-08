@@ -27,7 +27,7 @@ export const AdminUserDevopsSteps: (
   arg: DevopsStepsProps
 ) => UserDevopsStepsFactory = ({
   navigate,
-  projectID = '',
+  projectID,
   setOpenRulePageProjectSelectorModal,
   iconColor
 }) => [

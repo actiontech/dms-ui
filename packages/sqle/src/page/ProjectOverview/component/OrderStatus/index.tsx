@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, useTypedNavigate } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
@@ -12,14 +11,17 @@ import useOrderStateBar from '../../../../page/ReportStatistics/EEIndex/componen
 import OrderStateBar from '../../../../components/ChartCom/OrderStateBar';
 import { IWorkflowStatusCountV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const OrderStatus = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { projectName, projectID, projectArchive } = useCurrentProject();
 
   const onCreated = () => {
-    navigate(`/sqle/project/${projectID}/exec-workflow/create`);
+    navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
+      params: { projectID }
+    });
   };
 
   const [data, setData] = useState<IWorkflowStatusCountV1>({});

@@ -197,7 +197,7 @@ const dataSourceComparison: GenerateMenuItemType = (projectID) => ({
   label: (
     <TypedLink
       to={ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index}
-      values={{ projectID }}
+      params={{ projectID }}
     >
       {t('dmsMenu.dataSourceComparison')}
     </TypedLink>

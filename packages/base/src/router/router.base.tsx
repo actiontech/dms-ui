@@ -78,7 +78,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     element: <Account />
   },
   {
-    path: ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT,
+    path: ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index.path,
     key: 'dataSourceManagement',
     permission: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT,
     element: <DataSourceManagement />

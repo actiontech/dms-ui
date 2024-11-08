@@ -1,7 +1,12 @@
-import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
+import {
+  PageHeader,
+  BasicButton,
+  EmptyBox,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { PlusOutlined } from '@actiontech/icons';
@@ -31,11 +36,12 @@ import {
   updatePipelineModalStatus
 } from '../../../store/pipeline';
 import { ModalName } from '../../../data/ModalName';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const PipelineConfigurationList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const dispatch = useDispatch();
 
@@ -78,7 +84,9 @@ const PipelineConfigurationList = () => {
   );
 
   const onEdit = (id?: number) => {
-    navigate(`/sqle/project/${projectID}/pipeline-configuration/update/${id}`);
+    navigate(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update, {
+      params: { projectID, id: id?.toString() ?? '' }
+    });
   };
 
   const onDelete = (id?: number) => {

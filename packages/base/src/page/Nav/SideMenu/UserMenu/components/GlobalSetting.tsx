@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import {
@@ -16,12 +15,13 @@ import {
   PermissionsConstantType
 } from '@actiontech/shared/lib/global';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const GlobalSetting: React.FC = () => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { checkPagePermission } = usePermission();
 

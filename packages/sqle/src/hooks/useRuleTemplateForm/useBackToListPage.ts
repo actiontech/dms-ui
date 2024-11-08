@@ -1,14 +1,17 @@
-import { useNavigate } from 'react-router-dom';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useBackToListPage = (projectID?: string) => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const onGoToGlobalRuleTemplateList = () => {
-    navigate('/sqle/rule-manager');
+    navigate(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index);
   };
 
   const onGotoRuleTemplateList = () => {
-    navigate(`/sqle/project/${projectID}/rule/template`);
+    navigate(ROUTE_PATHS.SQLE.RULE_TEMPLATE.index, {
+      params: { projectID: projectID ?? '' }
+    });
   };
 
   return {

@@ -1,8 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { PageHeader, SegmentedTabs } from '@actiontech/shared';
+import {
+  PageHeader,
+  SegmentedTabs,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Space } from 'antd';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import eventEmitter from '../../utils/EventEmitter';
@@ -16,6 +20,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { DataSourceManagementPageHeaderActions } from './action';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DataSourceManagement: React.FC = () => {
   const { t } = useTranslation();
@@ -25,9 +30,8 @@ const DataSourceManagement: React.FC = () => {
 
   const { checkPagePermission } = usePermission();
 
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const extractQuery = useTypedQuery();
+  const navigate = useTypedNavigate();
 
   const onRefresh = () => {
     if (activeKey === DataSourceManagerSegmentedKey.GlobalDataSource) {
@@ -76,10 +80,13 @@ const DataSourceManagement: React.FC = () => {
   // #endif
 
   useEffect(() => {
-    if (searchParams && searchParams.has('active')) {
-      setActiveKey(searchParams.get('active') as DataSourceManagerSegmentedKey);
+    const searchParams = extractQuery(
+      ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index
+    );
+    if (searchParams && searchParams.active) {
+      setActiveKey(searchParams.active as DataSourceManagerSegmentedKey);
     }
-  }, [searchParams]);
+  }, [extractQuery]);
 
   return (
     <article>
@@ -101,15 +108,10 @@ const DataSourceManagement: React.FC = () => {
         activeKey={activeKey}
         onChange={(key) => {
           setActiveKey(key);
-          navigate(
-            {
-              pathname: location.pathname,
-              search: `active=${key}`
-            },
-            {
-              replace: true
-            }
-          );
+          navigate(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index, {
+            queries: { active: key },
+            replace: true
+          });
         }}
         items={tabItems}
       />

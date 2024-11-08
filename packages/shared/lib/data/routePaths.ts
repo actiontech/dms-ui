@@ -1,12 +1,22 @@
 export const ROUTE_PATHS = {
   BASE: {
-    LOGIN: '/login',
+    LOGIN: {
+      index: {
+        path: '/login',
+        query: 'target'
+      }
+    },
     USER_BIND: '/user/bind',
     HOME: '/',
     USER_CENTER: '/user-center',
     SYSTEM: '/system',
     ACCOUNT: '/account',
-    DATA_SOURCE_MANAGEMENT: '/data-source-management',
+    DATA_SOURCE_MANAGEMENT: {
+      index: {
+        path: '/data-source-management',
+        query: 'active'
+      }
+    },
     GLOBAL_DATA_SOURCE: {
       index: '/global-data-source',
       batch_import: {
@@ -51,7 +61,8 @@ export const ROUTE_PATHS = {
     DATA_SOURCE: {
       index: {
         prefix: '/project',
-        path: ':projectID/db-services'
+        path: ':projectID/db-services',
+        query: 'address'
       },
       create: {
         prefix: '/project/:projectID/db-services',
@@ -91,9 +102,16 @@ export const ROUTE_PATHS = {
     PREFIX: '/sqle',
     GLOBAL_DASHBOARD: '/sqle/global-dashboard',
     REPORT_STATISTICS: '/sqle/report-statistics',
-    RULE: '/sqle/rule',
+    RULE: {
+      index: {
+        path: '/sqle/rule',
+        query: 'projectID'
+      }
+    },
     RULE_MANAGEMENT: {
-      index: '/sqle/rule-manager',
+      index: {
+        path: '/sqle/rule-manager'
+      },
       create: {
         prefix: '/sqle/rule-manager',
         path: 'global-create'
@@ -135,7 +153,8 @@ export const ROUTE_PATHS = {
       },
       create: {
         prefix: '/sqle/project/:projectID/exec-workflow',
-        path: 'create'
+        path: 'create',
+        query: 'sourceWorkflowId&versionId&versionName'
       },
       detail: {
         prefix: '/sqle/project/:projectID/exec-workflow',
@@ -171,7 +190,8 @@ export const ROUTE_PATHS = {
       },
       create: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
-        path: 'create'
+        path: 'create',
+        query: 'instance_id&business'
       },
       update: {
         prefix: '/sqle/project/:projectID/sql-management-conf',

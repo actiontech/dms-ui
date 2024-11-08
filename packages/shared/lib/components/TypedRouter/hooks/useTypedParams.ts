@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { InferParamsFromConfig, RouteConfig } from '../index.type';
+import { InferParamsFromConfig, RoutePathValue } from '../index.type';
 
-function useTypedParams<T extends RouteConfig[keyof RouteConfig]>() {
+function useTypedParams<T extends RoutePathValue>() {
   return useParams<InferParamsFromConfig<T>>();
 }
 export default useTypedParams;

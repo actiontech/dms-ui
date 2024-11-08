@@ -14,8 +14,9 @@ import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { RuleListFilterProps } from '../index.type';
 import { useLocation } from 'react-router-dom';
 import CustomSelectField from './CustomSelectFiled';
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { FlagFilled } from '@actiontech/icons';
+import { useTypedQuery } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const RuleListFilter: React.FC<RuleListFilterProps> = ({
   setShowNorRuleTemplatePage,
@@ -25,7 +26,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   getAllRules
 }) => {
   const { t } = useTranslation();
-
+  const extraQueries = useTypedQuery();
   const location = useLocation();
 
   const fuzzyKeyword = Form.useWatch('fuzzy_keyword', form);
@@ -133,9 +134,9 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
       form.setFieldValue('filter_db_type', res.data.data?.[0]?.db_type);
     });
 
-    const searchParams = new URLSearchParams(location.search);
+    const searchParams = extraQueries(ROUTE_PATHS.SQLE.RULE.index);
     const projectNameInUrl = bindProjects.find(
-      (v) => v.project_id === searchParams.get(RuleUrlParamKey.projectID)
+      (v) => v.project_id === searchParams?.projectID
     )?.project_name;
     form.setFieldValue('project_name', projectNameInUrl);
     onProjectAfterChange(projectNameInUrl);

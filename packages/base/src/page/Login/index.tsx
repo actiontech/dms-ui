@@ -7,14 +7,15 @@ import { updateToken } from '../../store/user';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
 import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from './components/LoginLayout';
-import { BasicInput, BasicButton } from '@actiontech/shared';
+import {
+  BasicInput,
+  BasicButton,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
-import {
-  DMS_REDIRECT_KEY_PARAMS_NAME,
-  OPEN_CLOUD_BEAVER_URL_PARAM_NAME
-} from '@actiontech/shared/lib/data/common';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
@@ -23,6 +24,7 @@ import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -37,8 +39,8 @@ const Login = () => {
 
   const [loading, { setTrue, setFalse }] = useBoolean();
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useTypedNavigate();
+  const extraQueries = useTypedQuery();
   const login = (formData: LoginFormFieldValue) => {
     // #if [ee]
     if (!formData.userAgreement) {
@@ -63,8 +65,9 @@ const Login = () => {
               token
             })
           );
-          const params = new URLSearchParams(location.search);
-          const encodedTarget = params.get(DMS_REDIRECT_KEY_PARAMS_NAME);
+          const encodedTarget = extraQueries(
+            ROUTE_PATHS.BASE.LOGIN.index
+          )?.target;
 
           if (encodedTarget) {
             const decoded = decodeURIComponent(encodedTarget);

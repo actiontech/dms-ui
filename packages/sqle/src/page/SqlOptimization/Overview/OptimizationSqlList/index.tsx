@@ -12,8 +12,9 @@ import {
 } from './columns';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IGetOptimizationSQLsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { useNavigate } from 'react-router-dom';
 import { SqlOptimizationStatusEnum } from '../../index.data';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const OptimizationSqlList: React.FC<{
   projectName: string;
@@ -30,7 +31,7 @@ const OptimizationSqlList: React.FC<{
   dbType,
   optimizationStatus
 }) => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { tableChange, pagination } =
     useTableRequestParams<IOptimizationSQLIncludeOrder>();
@@ -76,9 +77,14 @@ const OptimizationSqlList: React.FC<{
 
   const gotoDetailPage = useCallback(
     (record?: IOptimizationSQLIncludeOrder) => {
-      navigate(
-        `/sqle/project/${projectID}/sql-optimization/detail/${dbType}/${optimizationId}/${record?.number}`
-      );
+      navigate(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.detail, {
+        params: {
+          dbType,
+          projectID,
+          optimizationId,
+          number: record?.number?.toString() ?? ''
+        }
+      });
     },
     [navigate, projectID, optimizationId, dbType]
   );

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 import { message } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, useTypedNavigate } from '@actiontech/shared';
 import { useForm } from 'antd/es/form/Form';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
@@ -16,12 +16,13 @@ import { ICreateSQLAuditRecordV1Params } from '@actiontech/shared/lib/api/sqle/s
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ISQLAuditRecordResData } from '@actiontech/shared/lib/api/sqle/service/common';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const FormSubmitStatusContext = React.createContext<boolean>(false);
 
 const SqlAuditCreate = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { projectID, projectName } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -85,7 +86,9 @@ const SqlAuditCreate = () => {
 
   useEffect(() => {
     auditId &&
-      navigate(`/sqle/project/${projectID}/sql-audit/detail/${auditId}`);
+      navigate(ROUTE_PATHS.SQLE.SQL_AUDIT.detail, {
+        params: { projectID, sql_audit_record_id: auditId }
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditId]);
 

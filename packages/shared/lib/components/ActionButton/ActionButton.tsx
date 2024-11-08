@@ -1,21 +1,24 @@
-import { Link } from 'react-router-dom';
 import { ActionButtonProps } from './index.type';
 import BasicButton from '../BasicButton';
 import { useTranslation } from 'react-i18next';
 import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';
 import { Popconfirm } from 'antd';
 import BasicToolTips from '../BasicToolTips';
+import { RoutePathValue, TypedLink } from '../TypedRouter';
 
-const ActionButton: React.FC<ActionButtonProps> = (props) => {
+const ActionButton = <T extends RoutePathValue>(
+  props: ActionButtonProps<T>
+) => {
   const { t } = useTranslation();
 
   if (props.actionType === 'navigate-link') {
     const { actionType, text, link, ...buttonProps } = props;
 
     return (
-      <Link {...props.link}>
+      // todo 类型问题
+      <TypedLink {...(link as any)}>
         <BasicButton {...buttonProps}>{text}</BasicButton>
-      </Link>
+      </TypedLink>
     );
   }
 

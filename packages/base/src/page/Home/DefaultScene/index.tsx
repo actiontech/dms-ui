@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import {
   AdminUserDevopsSteps,
   NormalUserDevopsSteps
@@ -10,10 +9,11 @@ import NotFoundProject from './components/NotFoundProject';
 import { useState } from 'react';
 import StepItems from './components/StepItems';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const DefaultScene: React.FC = () => {
   const { isAdmin, bindProjects } = useCurrentUser();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const { baseTheme } = useThemeStyleData();
 
   const [
@@ -26,13 +26,13 @@ const DefaultScene: React.FC = () => {
   const steps = isAdmin
     ? AdminUserDevopsSteps({
         navigate,
-        projectID: currentProjectID,
+        projectID: currentProjectID ?? '',
         setOpenRulePageProjectSelectorModal,
         iconColor: baseTheme.icon.home.common
       })
     : NormalUserDevopsSteps({
         navigate,
-        projectID: currentProjectID,
+        projectID: currentProjectID ?? '',
         setOpenRulePageProjectSelectorModal,
         iconColor: baseTheme.icon.home.common
       });
