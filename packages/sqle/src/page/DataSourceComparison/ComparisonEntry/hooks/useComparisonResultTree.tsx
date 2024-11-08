@@ -9,7 +9,7 @@ import {
 } from '@actiontech/icons';
 import { BasicToolTips } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Key, useCallback, useMemo, useState } from 'react';
+import { Key, useCallback, useState } from 'react';
 import {
   TREE_PARENT_NODE_KEY,
   generateClassNamesByComparisonResult,
