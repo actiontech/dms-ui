@@ -244,6 +244,13 @@ export const PERMISSION_MANIFEST: Record<
     role: [SystemRole.admin, SystemRole.globalManager]
   },
 
+  // 菜单
+  [PERMISSIONS.ACTIONS.BASE.NAV.EDIT_SYSTEM_NOTICE]: {
+    id: PERMISSIONS.ACTIONS.BASE.NAV.EDIT_SYSTEM_NOTICE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+
   //全局规则模板
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT,

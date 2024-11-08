@@ -110,6 +110,9 @@ export const PERMISSIONS = {
       },
       HOME: {
         ALL_OPERATIONS: 'action:home_all_operations'
+      },
+      NAV: {
+        EDIT_SYSTEM_NOTICE: 'action: edit_system_notice'
       }
     },
     SQLE: {
