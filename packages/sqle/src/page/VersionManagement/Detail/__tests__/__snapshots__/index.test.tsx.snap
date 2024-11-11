@@ -399,7 +399,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/123456"
-                                      target="__blank"
+                                      target="_blank"
                                       title="publicity"
                                     >
                                       publicity
@@ -576,7 +576,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/1234567"
-                                      target="__blank"
+                                      target="_blank"
                                       title="mortise"
                                     >
                                       mortise
@@ -1489,7 +1489,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/123456"
-                                      target="__blank"
+                                      target="_blank"
                                       title="test-failed-workflow"
                                     >
                                       test-failed-workflow

@@ -2,13 +2,11 @@
  * @test_version ce
  */
 
-import { screen, cleanup, act, fireEvent } from '@testing-library/react';
+import { screen, cleanup } from '@testing-library/react';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { superRender } from '../../../../testUtils/customRender';
 import CreateSqlExecWorkflow from '..';
 import {
@@ -19,11 +17,6 @@ import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseTy
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import instance from '../../../../testUtils/mockApi/instance';
 import { useSelector } from 'react-redux';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../../../data/common';
-import {
-  AuditTaskResV1SqlSourceEnum,
-  CreateAuditTasksGroupReqV1ExecModeEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

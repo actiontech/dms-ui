@@ -2,14 +2,18 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BasicTypographyEllipsis, BasicToolTips } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  BasicToolTips,
+  TypedLink
+} from '@actiontech/shared';
 import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { Space, Typography } from 'antd';
 import { ProjectPriorityDictionary } from '../../index.data';
 import { ProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { Link } from 'react-router-dom';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const GlobalDashboardPendingWorkflowListColumn: (
   onUpdateFilterValue: (projectId?: string, instanceId?: string) => void
@@ -28,11 +32,15 @@ export const GlobalDashboardPendingWorkflowListColumn: (
       render: (name, record) => (
         <TableColumnWithIconStyleWrapper>
           <BriefcaseFilled width={14} height={14} />
-          <Link
-            to={`/sqle/project/${record.project_uid}/exec-workflow/${record.workflow_id}`}
+          <TypedLink
+            to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+            params={{
+              projectID: record.project_uid ?? '',
+              workflowId: record.workflow_id ?? ''
+            }}
           >
             {name}
-          </Link>
+          </TypedLink>
         </TableColumnWithIconStyleWrapper>
       )
     },

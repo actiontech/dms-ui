@@ -1,3 +1,4 @@
+import { PERMISSIONS } from '@actiontech/shared/lib/global';
 import { t } from '../../../../../../locale';
 import baseMenusCollection from '../base';
 import { genMenuItemsWithMenuStructTree } from '../common';
@@ -15,7 +16,8 @@ const menuStruct: MenuStructTreeType = [
       'data-export',
       'sql-audit',
       'plugin-audit',
-      'sql-optimization'
+      'sql-optimization',
+      'data-source-comparison'
     ]
   },
   {
@@ -40,15 +42,17 @@ const menuStruct: MenuStructTreeType = [
     group: [
       'instance',
       'rule-template',
-      'whitelist',
-      'sql-management-exception',
       'workflow-template',
-      'member'
+      'member',
+      'push-rule-configuration',
+      'whitelist',
+      'sql-management-exception'
     ]
   },
   { type: 'divider' },
   {
     type: 'group',
+    permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD,
     label: t('dmsMenu.groupLabel.operateAndAudit'),
     group: ['sqle-log']
   }

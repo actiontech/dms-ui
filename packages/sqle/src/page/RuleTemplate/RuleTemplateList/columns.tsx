@@ -5,11 +5,11 @@ import {
 import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
-import { Link } from 'react-router-dom';
 import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo, TypedLink } from '@actiontech/shared';
 import { ProfileSquareFilled } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type RuleTemplateTableParamType =
   PageInfoWithoutIndexAndSize<IGetProjectRuleTemplateListV1Params>;
@@ -30,18 +30,24 @@ export const RuleTemplateTableColumn: (
         if (!name) {
           return '';
         }
-        const skipUrl = isGlobal
-          ? `/sqle/rule-manager/global-detail/${name}/${record?.db_type ?? ''}`
-          : `/sqle/project/${projectID}/rule/template/detail/${name}/${
-              record?.db_type ?? ''
-            }`;
+
+        const path = isGlobal
+          ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
+          : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
         return (
-          <Link to={skipUrl}>
+          <TypedLink
+            to={path}
+            params={{
+              templateName: name,
+              projectID,
+              dbType: record.db_type ?? ''
+            }}
+          >
             <Space size={12}>
               <ProfileSquareFilled />
               {name}
             </Space>
-          </Link>
+          </TypedLink>
         );
       }
     },

@@ -1,8 +1,8 @@
-import { BasicButton, BasicResult } from '@actiontech/shared';
+import { ActionButton, BasicButton, BasicResult } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { SqlManagementConfCreationResultProps } from './index.type';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
   resetForm,
@@ -18,14 +18,17 @@ const CreationResult: React.FC<SqlManagementConfCreationResultProps> = ({
           <BasicButton key="reset" onClick={resetForm}>
             {t('managementConf.create.result.reset')}
           </BasicButton>,
-          <Link
+
+          <ActionButton
+            type="primary"
             key="jump-to-detail"
-            to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}`}
-          >
-            <BasicButton type="primary">
-              {t('managementConf.create.result.jumpToDetail')}
-            </BasicButton>
-          </Link>
+            text={t('managementConf.create.result.jumpToDetail')}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail,
+              params: { projectID, id: instanceAuditPlanId }
+            }}
+          />
         ]}
       />
     </>

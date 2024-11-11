@@ -13,10 +13,6 @@ import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common
 import { GetGlobalSqlManageListFilterProjectPriorityEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { PendingSqlListColumn, PendingSqlListAction } from './column';
 import { GlobalDashboardListProps } from '../../index.type';
-import {
-  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
-  SQL_MANAGEMENT_SOURCE_PATH_KEY
-} from '../../../../data/common';
 import { PendingSqlTableStyleWrapper } from '../../style';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -67,7 +63,7 @@ const PendingSqlList: React.FC<GlobalDashboardListProps> = ({
       params: { projectID: record?.project_uid ?? '' },
       queries: {
         source: record?.source?.sql_source_type ?? '',
-        instanceId: record?.instance_id ?? ''
+        instance_id: record?.instance_id ?? ''
       }
     });
   };

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, useTypedParams } from '@actiontech/shared';
 import SortableSqlFilesModal from './SortableSqlFilesModal';
 import { useBoolean } from 'ahooks';
 import { Typography } from 'antd';
-import { useParams } from 'react-router-dom';
 import { FileModeHeaderProps } from './index.type';
 import { RingPieFilled } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const FileModeHeader: React.FC<FileModeHeaderProps> = ({
   taskId,
@@ -13,7 +13,8 @@ const FileModeHeader: React.FC<FileModeHeaderProps> = ({
   allowExec
 }) => {
   const { t } = useTranslation();
-  const { workflowId } = useParams<{ workflowId: string }>();
+  const { workflowId } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail>();
 
   const [
     sortableSQLFilesModalOpen,

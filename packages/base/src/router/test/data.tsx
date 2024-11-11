@@ -1,6 +1,5 @@
 import { RouteObject, useRoutes, Outlet } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
-
 import { AuthRouterConfig, unAuthRouterConfig } from '../router';
 import { BaseRouterConfig } from '../router.base';
 

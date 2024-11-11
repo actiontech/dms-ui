@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-
 import { message } from 'antd';
-import { BasicButton, PageHeader, useTypedNavigate } from '@actiontech/shared';
+import {
+  ActionButton,
+  BasicButton,
+  PageHeader,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { useForm } from 'antd/es/form/Form';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
-
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { SqlAuditBaseInfoFormFields } from './BaseInfoForm/index.type';
@@ -98,11 +100,15 @@ const SqlAuditCreate = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/sqle/project/${projectID}/sql-audit`}>
-            <BasicButton icon={<LeftArrowOutlined />}>
-              {t('sqlAudit.common.goBackList')}
-            </BasicButton>
-          </Link>
+          <ActionButton
+            icon={<LeftArrowOutlined />}
+            text={t('sqlAudit.common.goBackList')}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
+              params: { projectID }
+            }}
+          />
         }
         extra={
           <BasicButton disabled={auditLoading} onClick={onResetForm}>

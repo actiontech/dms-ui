@@ -1,7 +1,10 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { HeaderProgress, useTypedNavigate } from '@actiontech/shared';
+import {
+  HeaderProgress,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -14,14 +17,16 @@ const TARGET_DATA = (projectID: string): Record<string, string> => {
 
 const Transit: React.FC = () => {
   const navigate = useTypedNavigate();
-  const [searchParams] = useSearchParams();
   const { bindProjects } = useCurrentUser();
+  const extraQueries = useTypedQuery();
 
   useEffect(() => {
-    const from = searchParams.get('from');
-    const to = searchParams.get('to');
-    const compressionData = searchParams.get('compression_data');
-    const projectName = searchParams.get('project_name');
+    const searchParams = extraQueries(ROUTE_PATHS.BASE.TRANSIT.index);
+
+    const from = searchParams?.from;
+    const to = searchParams?.to;
+    const compressionData = searchParams?.compression_data;
+    const projectName = searchParams?.project_name;
 
     if (!from || !to || !compressionData) {
       console.error(
@@ -63,7 +68,7 @@ const Transit: React.FC = () => {
       console.error(`project name is undefined`);
       navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
     }
-  }, [bindProjects, navigate, searchParams]);
+  }, [bindProjects, navigate, extraQueries]);
 
   return <HeaderProgress />;
 };

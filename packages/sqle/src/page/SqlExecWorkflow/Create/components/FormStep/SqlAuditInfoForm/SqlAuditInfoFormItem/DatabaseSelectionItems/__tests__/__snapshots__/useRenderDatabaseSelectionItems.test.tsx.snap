@@ -3,14 +3,26 @@
 exports[`test useRenderDatabaseSelectionItems should render rule template display correctly with is_global_rule_template is equal false 1`] = `
 <BasicToolTips
   title={
-    <Link
+    <ForwardRef(TypedLink)
+      params={
+        {
+          "dbType": "mysql",
+          "projectID": "700300",
+          "templateName": "template1",
+        }
+      }
       target="_blank"
-      to="/sqle/project/700300/rule/template/detail/template1/mysql"
+      to={
+        {
+          "path": "detail/:templateName/:dbType",
+          "prefix": "/sqle/project/:projectID/rule/template",
+        }
+      }
     >
       规则模板
       : 
       template1
-    </Link>
+    </ForwardRef(TypedLink)>
   }
 >
   <BasicButton
@@ -29,14 +41,26 @@ exports[`test useRenderDatabaseSelectionItems should render rule template displa
 exports[`test useRenderDatabaseSelectionItems should render rule template display correctly with is_global_rule_template is equal true 1`] = `
 <BasicToolTips
   title={
-    <Link
+    <ForwardRef(TypedLink)
+      params={
+        {
+          "dbType": "mysql",
+          "projectID": "700300",
+          "templateName": "template1",
+        }
+      }
       target="_blank"
-      to="/sqle/rule-manager/global-detail/template1/mysql"
+      to={
+        {
+          "path": "global-detail/:templateName/:dbType",
+          "prefix": "/sqle/rule-manager",
+        }
+      }
     >
       规则模板
       : 
       template1
-    </Link>
+    </ForwardRef(TypedLink)>
   }
 >
   <BasicButton

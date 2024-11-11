@@ -26,16 +26,10 @@ import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  SOURCE_WORKFLOW_PATH_KEY,
-  WORKFLOW_VERSION_NAME_PATH_KEY,
-  WORKFLOW_VERSION_ID_PATH_KEY
-} from '../../../../data/common';
-import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ModalName } from '../../../../data/ModalName';
-import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { AuditTaskResData } from '../../../../testUtils/mockApi/execWorkflow/data';
 
 jest.mock('react-redux', () => ({
@@ -171,7 +165,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
       routerProps: {
         initialEntries: [
-          `/sqle/project/700300/exec-workflow/create?${SOURCE_WORKFLOW_PATH_KEY}=123456`
+          `/sqle/project/700300/exec-workflow/create?sourceWorkflowId=123456`
         ]
       }
     });
@@ -861,7 +855,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
       routerProps: {
         initialEntries: [
-          `/sqle/project/700300/exec-workflow/create?${WORKFLOW_VERSION_NAME_PATH_KEY}=v1-test&${WORKFLOW_VERSION_ID_PATH_KEY}=1`
+          `/sqle/project/700300/exec-workflow/create?versionName=v1-test&versionId=1`
         ]
       }
     });

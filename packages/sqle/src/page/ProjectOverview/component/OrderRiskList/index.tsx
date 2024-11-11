@@ -1,12 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
-import { AvatarCom, BasicButton, useTypedNavigate } from '@actiontech/shared';
+import {
+  AvatarCom,
+  BasicButton,
+  TypedLink,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
@@ -50,11 +54,12 @@ const OrderRiskList = () => {
           return (
             <TableColumnWithIconStyleWrapper>
               <BriefcaseFilled width={14} height={14} />
-              <Link
-                to={`/sqle/project/${projectID}/exec-workflow/${record.workflow_id}`}
+              <TypedLink
+                to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+                params={{ projectID, workflowId: record.workflow_id ?? '' }}
               >
                 {name}
-              </Link>
+              </TypedLink>
             </TableColumnWithIconStyleWrapper>
           );
         }

@@ -1,9 +1,9 @@
 import { ReactNode, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import { TypographyStyleWrapper } from './style';
 import { tooltipsCommonProps } from '../BasicToolTips';
 import classNames from 'classnames';
 import { EllipsisConfig } from 'antd/es/typography/Base';
+import { TypedLink } from '../TypedRouter';
 
 export interface IBasicTypographyEllipsis {
   textCont: string;
@@ -36,12 +36,16 @@ const BasicTypographyEllipsis = ({
           textCont.length > tooltipLimitLength ? (
             <span>
               {`${textCont.slice(0, tooltipLimitLength)}...`}{' '}
-              {linkData && <Link to={linkData.route}>{linkData.text}</Link>}
+              {linkData && (
+                <TypedLink to={linkData.route}>{linkData.text}</TypedLink>
+              )}
             </span>
           ) : (
             <span>
               {textCont}{' '}
-              {linkData && <Link to={linkData.route}>{linkData.text}</Link>}
+              {linkData && (
+                <TypedLink to={linkData.route}>{linkData.text}</TypedLink>
+              )}
             </span>
           ),
           tooltipsMaxWidth

@@ -4,7 +4,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
-import { BasicSelect } from '@actiontech/shared';
+import { BasicSelect, useTypedQuery } from '@actiontech/shared';
 import {
   useCurrentProject,
   useProjectBusinessTips
@@ -15,22 +15,25 @@ import { useContext, useEffect, useMemo, useCallback } from 'react';
 import useDatabaseType from '../../../../../hooks/useDatabaseType';
 import { ConfFormContext } from '../context';
 import { SqlManagementConfFormFields } from '../index.type';
-import { useSearchParams } from 'react-router-dom';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const { instanceIdByUrlSearchParams, businessByUrlSearchParams } =
     useMemo(() => {
+      const searchParams = extraQueries(
+        ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
+      );
       return {
-        instanceIdByUrlSearchParams: searchParams.get('instance_id'),
-        businessByUrlSearchParams: searchParams.get('business')
+        instanceIdByUrlSearchParams: searchParams?.instance_id,
+        businessByUrlSearchParams: searchParams?.business
       };
-    }, [searchParams]);
+    }, [extraQueries]);
 
   const submitLoading = !!useContext(ConfFormContext)?.submitLoading;
   const defaultValue = useContext(ConfFormContext)?.defaultValue;

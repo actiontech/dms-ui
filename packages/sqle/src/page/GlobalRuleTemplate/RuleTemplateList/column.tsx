@@ -5,16 +5,16 @@ import {
   ActiontechTableColumn,
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { Link } from 'react-router-dom';
 import { Space } from 'antd';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo, TypedLink } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import {
   ProfileSquareFilled,
   LogoutBoxFilled,
   CheckboxMultipleBlankFilled
 } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const RuleTemplateColumns =
   (): ActiontechTableColumn<IRuleTemplateResV1> => {
@@ -29,16 +29,15 @@ export const RuleTemplateColumns =
           }
 
           return (
-            <Link
-              to={`/sqle/rule-manager/global-detail/${name}/${
-                row?.db_type ?? ''
-              }`}
+            <TypedLink
+              to={ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail}
+              params={{ templateName: name, dbType: row?.db_type ?? '' }}
             >
               <Space size={12}>
                 <ProfileSquareFilled />
                 {name}
               </Space>
-            </Link>
+            </TypedLink>
           );
         }
       },

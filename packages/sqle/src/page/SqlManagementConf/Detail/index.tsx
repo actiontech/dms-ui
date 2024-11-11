@@ -2,7 +2,9 @@ import {
   EmptyBox,
   PageHeader,
   SegmentedTabs,
-  useTypedNavigate
+  useTypedNavigate,
+  useTypedParams,
+  useTypedQuery
 } from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +14,7 @@ import { TableRefreshButton } from '@actiontech/shared/lib/components/Actiontech
 import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
-import { useLocation, useParams, useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Result, Space } from 'antd';
@@ -23,11 +25,20 @@ import EmitterKey from '../../../data/EmitterKey';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { SqlManagementConfDetailPageHeaderActions } from './action';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ConfDetail: React.FC = () => {
   const { t } = useTranslation();
-  const { id } = useParams<{ id: string }>();
-  const [searchParams] = useSearchParams();
+  const { projectID } = useCurrentProject();
+  const { id } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail>();
+
+  const extraQueries = useTypedQuery();
+
+  const searchParams = extraQueries(
+    ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail
+  );
+
   const location = useLocation();
   const navigate = useTypedNavigate();
   const { projectName } = useCurrentProject();
@@ -54,8 +65,8 @@ const ConfDetail: React.FC = () => {
         instance_audit_plan_id: id ?? ''
       })
       .then((res) => {
-        if (searchParams.has('active_audit_plan_id')) {
-          setActiveKey(searchParams.get('active_audit_plan_id') as string);
+        if (searchParams?.active_audit_plan_id) {
+          setActiveKey(searchParams.active_audit_plan_id);
         }
         return res.data.data;
       })
@@ -66,17 +77,21 @@ const ConfDetail: React.FC = () => {
       setActiveKey(tab);
       if (tab === SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY) {
         navigate(location.pathname, { replace: true });
-      } else if (searchParams.has('active_audit_plan_id')) {
-        navigate(
-          {
-            pathname: location.pathname,
-            search: `active_audit_plan_id=${tab}`
-          },
-          { replace: true }
-        );
+      } else if (searchParams?.active_audit_plan_id) {
+        navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail, {
+          params: { projectID, id: id ?? '' },
+          queries: { active_audit_plan_id: tab },
+          replace: true
+        });
       }
     },
-    [location.pathname, navigate, searchParams]
+    [
+      id,
+      location.pathname,
+      navigate,
+      projectID,
+      searchParams?.active_audit_plan_id
+    ]
   );
 
   const items: SegmentedTabsProps['items'] = [

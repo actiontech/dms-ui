@@ -1,8 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { Form, message } from 'antd';
-import { BasicButton, PageHeader, useTypedNavigate } from '@actiontech/shared';
+import {
+  ActionButton,
+  BasicButton,
+  PageHeader,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import BaseInfoForm from './BaseInfoForm';
@@ -92,11 +96,15 @@ const SqlOptimizationCreate = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/sqle/project/${projectID}/sql-optimization`}>
-            <BasicButton icon={<LeftArrowOutlined />}>
-              {t('sqlOptimization.create.returnButton')}
-            </BasicButton>
-          </Link>
+          <ActionButton
+            icon={<LeftArrowOutlined />}
+            text={t('sqlOptimization.create.returnButton')}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index,
+              params: { projectID }
+            }}
+          />
         }
         extra={
           <BasicButton onClick={onResetForm} loading={submitLoading}>

@@ -67,7 +67,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     permission: PERMISSIONS.PAGES.BASE.USER_CENTER
   },
   {
-    path: ROUTE_PATHS.BASE.SYSTEM,
+    path: ROUTE_PATHS.BASE.SYSTEM.index.path,
     key: 'system',
     element: <System />,
     permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
@@ -84,7 +84,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
     element: <DataSourceManagement />
   },
   {
-    path: '/transit',
+    path: ROUTE_PATHS.BASE.TRANSIT.index.path,
     key: 'transit',
     element: <Transit />
   },

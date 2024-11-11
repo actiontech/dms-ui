@@ -31,9 +31,13 @@ export type ExtractPathQueries<T extends string> = string extends T
 
 export type InferParamsFromConfig<T> = T extends ObjectRoutePathValue
   ? T['prefix'] extends string
-    ? ExtractPathParams<T['path']> extends object
-      ? ExtractPathParams<T['prefix']> & ExtractPathParams<T['path']>
-      : ExtractPathParams<T['prefix']>
+    ? ExtractPathParams<T['prefix']> extends object
+      ? ExtractPathParams<T['path']> extends object
+        ? ExtractPathParams<T['path']> & ExtractPathParams<T['prefix']>
+        : ExtractPathParams<T['prefix']>
+      : ExtractPathParams<T['path']> extends object
+      ? ExtractPathParams<T['path']>
+      : never
     : ExtractPathParams<T['path']> extends object
     ? ExtractPathParams<T['path']>
     : never

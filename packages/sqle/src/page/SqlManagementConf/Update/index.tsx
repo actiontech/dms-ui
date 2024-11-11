@@ -4,7 +4,12 @@ import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, PageHeader, useTypedNavigate } from '@actiontech/shared';
+import {
+  BasicButton,
+  PageHeader,
+  useTypedNavigate,
+  useTypedParams
+} from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { Space, Spin, message } from 'antd';
 import {
@@ -18,7 +23,6 @@ import {
   SqlManagementConfFormFields
 } from '../Common/ConfForm/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
@@ -30,7 +34,8 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 const Update: React.FC = () => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
-  const { id } = useParams<{ id: string }>();
+  const { id } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update>();
   const [messageApi, messageContextHolder] = message.useMessage();
   const navigate = useTypedNavigate();
 

@@ -5,11 +5,11 @@ import {
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 import { useTranslation } from 'react-i18next';
-import { SqlFiledInitialValue } from 'sqle/src/data/common';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { ExportMethodEnum } from './index.enum';
 import { ModeSwitcher } from '@actiontech/shared';
 import { PanelCardOutlined } from '@actiontech/icons';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 const ExportMethodFormItem: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'methodForm'>
@@ -36,7 +36,7 @@ const ExportMethodFormItem: React.FC<
 
       <FormItemNoLabel
         name="sql"
-        initialValue={SqlFiledInitialValue}
+        initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
         rules={[
           {
             required: true,

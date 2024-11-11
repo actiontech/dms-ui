@@ -6,7 +6,6 @@ import { act, screen } from '@testing-library/react';
 import mockDMSGlobalApi from './testUtils/mockApi/global';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
-import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/common';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
@@ -22,6 +21,7 @@ import system from 'sqle/src/testUtils/mockApi/system';
 import baseSystem from './testUtils/mockApi/system';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { compressToBase64 } from 'lz-string';
+import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/routePaths';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

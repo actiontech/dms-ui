@@ -1,26 +1,23 @@
-import { useSearchParams } from 'react-router-dom';
 import { useMemo } from 'react';
-import {
-  WORKFLOW_VERSION_ID_PATH_KEY,
-  SOURCE_WORKFLOW_PATH_KEY,
-  WORKFLOW_VERSION_NAME_PATH_KEY
-} from '../../../../data/common';
+import { useTypedQuery } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useCreationMode = () => {
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const { isAssociationVersionMode, versionId, versionName, isCloneMode } =
-    useMemo(
-      () => ({
+    useMemo(() => {
+      const searchParams = extraQueries(
+        ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create
+      );
+      return {
         isAssociationVersionMode:
-          searchParams.has(WORKFLOW_VERSION_ID_PATH_KEY) &&
-          searchParams.has(WORKFLOW_VERSION_NAME_PATH_KEY),
-        versionId: searchParams.get(WORKFLOW_VERSION_ID_PATH_KEY),
-        versionName: searchParams.get(WORKFLOW_VERSION_NAME_PATH_KEY),
-        isCloneMode: searchParams.has(SOURCE_WORKFLOW_PATH_KEY)
-      }),
-      [searchParams]
-    );
+          !!searchParams?.versionId && !!searchParams?.versionName,
+        versionId: searchParams?.versionId,
+        versionName: searchParams?.versionName,
+        isCloneMode: !!searchParams?.sourceWorkflowId
+      };
+    }, [extraQueries]);
 
   return {
     isCloneMode,

@@ -1,11 +1,8 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/lib/result';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
 import { ResponseCode } from '../../../data/common';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { SQLManageAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
   ISQLExplain,
@@ -14,9 +11,12 @@ import {
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 import SqlAnalyze from '../SqlAnalyze';
+import { useTypedParams } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SQLManageAnalyze = () => {
-  const urlParams = useParams<SQLManageAnalyzeUrlParams>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze>();
   const { projectName } = useCurrentProject();
   const [errorMessage, setErrorMessage] = useState<string>('');
 

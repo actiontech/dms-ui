@@ -3,6 +3,7 @@ import { act, screen, cleanup } from '@testing-library/react';
 import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { shallow } from 'enzyme';
 
 describe('base/router-sqle-ee', () => {
   const projectID = mockProjectInfo.projectID;
@@ -147,7 +148,7 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('projectOverview')).toBeInTheDocument();
       });
 
-      describe('render route workflow', () => {
+      describe.only('render route workflow', () => {
         it('render route list', async () => {
           const { baseElement } = customRender([
             `/sqle/project/${projectID}/exec-workflow`
