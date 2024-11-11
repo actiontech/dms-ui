@@ -1,15 +1,34 @@
+export const DMS_REDIRECT_KEY_PARAMS_NAME = 'target';
+export const OPEN_CLOUD_BEAVER_URL_PARAM_NAME = 'open_cloud_beaver';
+
 export const ROUTE_PATHS = {
   BASE: {
     LOGIN: {
       index: {
         path: '/login',
-        query: 'target'
+        query: DMS_REDIRECT_KEY_PARAMS_NAME
       }
     },
-    USER_BIND: '/user/bind',
+    USER_BIND: {
+      index: {
+        path: '/user/bind',
+        query: 'oauth2_token&error&user_exist&dms_token'
+      }
+    },
     HOME: '/',
     USER_CENTER: '/user-center',
-    SYSTEM: '/system',
+    TRANSIT: {
+      index: {
+        path: '/transit',
+        query: 'from&to&compression_data&project_name'
+      }
+    },
+    SYSTEM: {
+      index: {
+        path: '/system',
+        query: 'active_tab'
+      }
+    },
     ACCOUNT: '/account',
     DATA_SOURCE_MANAGEMENT: {
       index: {
@@ -94,7 +113,8 @@ export const ROUTE_PATHS = {
     CLOUD_BEAVER: {
       index: {
         prefix: '/project',
-        path: ':projectID/cloud-beaver'
+        path: ':projectID/cloud-beaver',
+        query: OPEN_CLOUD_BEAVER_URL_PARAM_NAME
       }
     }
   },
@@ -139,7 +159,11 @@ export const ROUTE_PATHS = {
         path: 'custom-update/:ruleID'
       }
     },
-    RULE_KNOWLEDGE: '/sqle/rule/knowledge/:ruleName/:dbType',
+    RULE_KNOWLEDGE: {
+      index: {
+        path: '/sqle/rule/knowledge/:ruleName/:dbType'
+      }
+    },
     PROJECT_OVERVIEW: {
       index: {
         prefix: '/sqle/project',
@@ -154,7 +178,8 @@ export const ROUTE_PATHS = {
       create: {
         prefix: '/sqle/project/:projectID/exec-workflow',
         path: 'create',
-        query: 'sourceWorkflowId&versionId&versionName'
+        query:
+          'sourceWorkflowId&versionId&versionName&compression_data&from&gen_modified_sql_params'
       },
       detail: {
         prefix: '/sqle/project/:projectID/exec-workflow',
@@ -172,7 +197,8 @@ export const ROUTE_PATHS = {
     SQL_AUDIT: {
       index: {
         prefix: '/sqle/project',
-        path: ':projectID/sql-audit'
+        path: ':projectID/sql-audit',
+        query: 'SQLAuditRecordID'
       },
       create: {
         prefix: '/sqle/project/:projectID/sql-audit',
@@ -199,7 +225,8 @@ export const ROUTE_PATHS = {
       },
       detail: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
-        path: ':id'
+        path: ':id',
+        query: 'active_audit_plan_id'
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
@@ -210,7 +237,7 @@ export const ROUTE_PATHS = {
       index: {
         prefix: '/sqle/project',
         path: ':projectID/sql-management',
-        query: 'instanceId&source'
+        query: 'instance_id&source'
       },
       analyze: {
         prefix: '/sqle/project/:projectID/sql-management',

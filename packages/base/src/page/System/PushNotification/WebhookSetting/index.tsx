@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin } from 'antd';
-import { Link } from 'react-router-dom';
 import { DEFAULT_CONSTANT, switchFieldName } from './index.data';
 import useConfigRender, {
   ReadOnlyConfigColumnsType
@@ -17,6 +16,7 @@ import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/servi
 import { WebhookFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import { TypedLink } from '@actiontech/shared';
 
 const WebHook: React.FC = () => {
   const { t } = useTranslation();
@@ -35,13 +35,13 @@ const WebHook: React.FC = () => {
       <div className="label-cont-custom">
         <div>{t('dmsSystem.webhook.enableWebhookNotify')}</div>
         <div className="tip-content-box">
-          <Link
+          <TypedLink
             to="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/webhook"
             target="_blank"
             rel="noreferrer"
           >
             {t('dmsSystem.webhook.configDocs')}
-          </Link>
+          </TypedLink>
         </div>
       </div>
     )

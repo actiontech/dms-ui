@@ -13,7 +13,8 @@ import {
   BasicInput,
   BasicSelect,
   BasicSwitch,
-  EmptyBox
+  EmptyBox,
+  TypedLink
 } from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
@@ -34,19 +35,16 @@ import MaintenanceTimePicker from './MaintenanceTimePicker';
 import { turnDataSourceAsyncFormToCommon } from '../../tool';
 import { FormItem } from 'sqle/src/components/BackendForm';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
-import { SQLE_INSTANCE_SOURCE_NAME } from 'sqle/src/data/common';
-// #if [sqle]
 import Select, { BaseOptionType } from 'antd/es/select';
 import { useRequest } from 'ahooks';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-// #endif
 import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useProjectTips from '../../../../hooks/useProjectTips';
+import { SQLE_INSTANCE_SOURCE_NAME } from '@actiontech/shared/lib/data/common';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -500,12 +498,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                   <div className="tip-content-box">
                     <Space>
                       {t('dmsDataSource.dataSourceForm.dataMaskConfigTips')}
-                      <Link
+                      <TypedLink
+                        // todo provision 路由，后续处理
                         to={`/project/${project}/data-mask-rule-overview`}
                         target="_blank"
                       >
                         {t('dmsDataSource.dataSourceForm.checkDataMaskButton')}
-                      </Link>
+                      </TypedLink>
                     </Space>
                   </div>
                 </EmptyBox>

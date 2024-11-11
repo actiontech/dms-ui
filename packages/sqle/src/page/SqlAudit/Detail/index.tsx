@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { ActionButton, PageHeader, useTypedParams } from '@actiontech/shared';
 import BasicInfoWrapper from './BasicInfoWrapper';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
@@ -10,11 +9,13 @@ import { useMemo } from 'react';
 import AuditResultList from '../../SqlExecWorkflow/Common/AuditResultList';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { SqlAuditPageHeaderActions } from '../List/actions';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlAuditDetail = () => {
   const { t } = useTranslation();
 
-  const { sql_audit_record_id } = useParams<{ sql_audit_record_id: string }>();
+  const { sql_audit_record_id } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_AUDIT.detail>();
   const { projectID, projectName } = useCurrentProject();
 
   // api
@@ -48,11 +49,15 @@ const SqlAuditDetail = () => {
         <PageHeader
           fixed
           title={
-            <Link to={`/sqle/project/${projectID}/sql-audit`}>
-              <BasicButton icon={<LeftArrowOutlined />}>
-                {t('sqlAudit.common.goBackList')}
-              </BasicButton>
-            </Link>
+            <ActionButton
+              icon={<LeftArrowOutlined />}
+              text={t('sqlAudit.common.goBackList')}
+              actionType="navigate-link"
+              link={{
+                to: ROUTE_PATHS.SQLE.SQL_AUDIT.index,
+                params: { projectID }
+              }}
+            />
           }
           extra={pageHeaderActions['create-audit']}
         />

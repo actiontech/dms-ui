@@ -7,7 +7,7 @@ import {
   updateUserUid,
   updateUserInfoFetchStatus
 } from '../../../../../base/src/store/user';
-import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../../data/common';
+import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../../data/routePaths';
 
 const globalAuthInvalid = () => {
   const targetUrl = window.location.pathname;

@@ -42,13 +42,6 @@ export type DatabaseInfoProps = {
   instanceOptions: SelectProps['options'];
 };
 
-export type SqlOptimizationOverviewUrlParams = { optimizationId: string };
-
-export type SqlOptimizationDetailUrlParams = {
-  number: string;
-  dbType: string;
-} & SqlOptimizationOverviewUrlParams;
-
 export type SQLStatementFormProps = Pick<SqlInfoFormProps, 'form'>;
 
 export type SQLStatementFields = {

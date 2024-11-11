@@ -1,13 +1,14 @@
 import { t } from '../../../locale';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox, TypedLink } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { Link } from 'react-router-dom';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
+// todo TypedLink 涉及其他组件，暂时不处理
 export const commonColumn: (
   projectID: string
 ) => ActiontechTableColumn<IWorkflowDetailResV1> = (projectID) => {
@@ -22,11 +23,12 @@ export const commonColumn: (
           <EmptyBox if={!!text && !!record.project_name} defaultNode={text}>
             <TableColumnWithIconStyleWrapper>
               <BriefcaseFilled width={14} height={14} />
-              <Link
-                to={`/sqle/project/${record.project_name}/exec-workflow/${record.workflow_id}`}
+              <TypedLink
+                to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+                params={{ projectID, workflowId: record.workflow_id ?? '' }}
               >
                 {text}
-              </Link>
+              </TypedLink>
             </TableColumnWithIconStyleWrapper>
           </EmptyBox>
         );

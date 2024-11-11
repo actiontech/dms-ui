@@ -27,10 +27,6 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import { SystemRole } from '@actiontech/shared/lib/enum';
-import {
-  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
-  SQL_MANAGEMENT_SOURCE_PATH_KEY
-} from '../../../../data/common';
 import { useSearchParams } from 'react-router-dom';
 
 jest.mock('react-redux', () => {
@@ -97,8 +93,8 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     });
     useSearchParamsSpy.mockReturnValue([
       new URLSearchParams({
-        [SQL_MANAGEMENT_INSTANCE_PATH_KEY]: '',
-        [SQL_MANAGEMENT_SOURCE_PATH_KEY]: ''
+        instance_id: '',
+        source: ''
       })
     ]);
   });
@@ -754,8 +750,8 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   it('render init request when url has instance and source params', async () => {
     useSearchParamsSpy.mockReturnValue([
       new URLSearchParams({
-        [SQL_MANAGEMENT_INSTANCE_PATH_KEY]: '123456',
-        [SQL_MANAGEMENT_SOURCE_PATH_KEY]: 'mysql_slow_log'
+        instance_id: '123456',
+        source: 'mysql_slow_log'
       })
     ]);
     const request = sqlManage.getSqlManageList();

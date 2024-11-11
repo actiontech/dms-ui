@@ -9,8 +9,8 @@ describe('test BaseInfoForm', () => {
     jest.spyOn(useCreationMode, 'default').mockImplementation(() => ({
       isCloneMode: false,
       isAssociationVersionMode: false,
-      versionId: null,
-      versionName: null
+      versionId: undefined,
+      versionName: undefined
     }));
   });
   it('should match snapshot', () => {

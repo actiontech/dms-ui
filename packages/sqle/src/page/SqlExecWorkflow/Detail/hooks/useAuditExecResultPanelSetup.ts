@@ -5,15 +5,17 @@ import { useTableRequestError } from '@actiontech/shared/lib/components/Actionte
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import { useState, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
 import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.type';
 import { TasksStatusCount } from '../index.type';
 import { useBoolean } from 'ahooks';
+import { useTypedParams } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const WORKFLOW_OVERVIEW_TAB_KEY = 'WORKFLOW_OVERVIEW_TAB_KEY';
 
 const useAuditExecResultPanelSetup = () => {
-  const urlParams = useParams<{ workflowId: string }>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail>();
   const { projectName } = useCurrentProject();
   const [activeTabKey, changeActiveTabKey] = useState(
     WORKFLOW_OVERVIEW_TAB_KEY

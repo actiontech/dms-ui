@@ -1,17 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { Spin, Form } from 'antd';
-import { EmptyBox, PageHeader } from '@actiontech/shared';
+import { EmptyBox, PageHeader, TypedLink } from '@actiontech/shared';
 import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
 import useRuleList from '../../components/RuleList/useRuleList';
 import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
-import { Link } from 'react-router-dom';
 import { RuleListStyleWrapper } from './style';
 
 import RuleListFilter from './RuleListFilter';
 import useRuleListFilter from './hooks/useRuleListFilter';
 import { RuleListFilterForm } from './index.type';
 import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Rule = () => {
   const { t } = useTranslation();
@@ -74,12 +74,13 @@ const Rule = () => {
                     projectID={projectID}
                   >
                     {t('rule.createRuleTemplateTips1')}
-                    <Link
+                    <TypedLink
                       className="link-create-project-rule-template-btn"
-                      to={`/sqle/project/${projectID}/rule/template/create`}
+                      to={ROUTE_PATHS.SQLE.RULE_TEMPLATE.create}
+                      params={{ projectID: projectID ?? '' }}
                     >
                       {t('rule.createRuleTemplate')}
-                    </Link>
+                    </TypedLink>
                     {t('rule.createRuleTemplateTips2')}
                   </PermissionControl>
                 </div>

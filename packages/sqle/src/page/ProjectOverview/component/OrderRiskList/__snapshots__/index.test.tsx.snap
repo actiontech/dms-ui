@@ -377,7 +377,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                         />
                                       </svg>
                                       <a
-                                        href="/sqle/project/700300/exec-workflow/undefined"
+                                        href="/sqle/project/700300/exec-workflow/"
                                       >
                                         mysql-1_20240105013652
                                       </a>

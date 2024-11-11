@@ -2,11 +2,10 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Row } from 'antd';
-import { BasicSegmented, PageHeader } from '@actiontech/shared';
+import { BasicSegmented, PageHeader, useTypedQuery } from '@actiontech/shared';
 import { SystemStyleWrapper } from './style';
 import { initSystemModalStatus } from '../../store/system';
 import { ModalName } from '../../data/ModalName';
-import { useSearchParams } from 'react-router-dom';
 import { SystemSegmentedKeyEnum } from './index.enum';
 import PushNotification from './PushNotification';
 import ProcessConnection from './ProcessConnection';
@@ -14,12 +13,13 @@ import GlobalSetting from './GlobalSetting';
 import LoginConnection from './LoginConnection/index';
 import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const System = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const [urlSearchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const options = useMemo(
     () => [
@@ -75,10 +75,11 @@ const System = () => {
   }, [activeTabKey, options]);
 
   useEffect(() => {
-    if (urlSearchParams && urlSearchParams.has('active_tab')) {
-      setActiveTabKey(urlSearchParams.get('active_tab')!);
+    const urlSearchParams = extraQueries(ROUTE_PATHS.BASE.SYSTEM.index);
+    if (urlSearchParams && urlSearchParams.active_tab) {
+      setActiveTabKey(urlSearchParams.active_tab);
     }
-  }, [urlSearchParams]);
+  }, [extraQueries]);
 
   // #if [ee]
   useEffect(() => {

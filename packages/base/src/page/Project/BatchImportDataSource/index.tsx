@@ -2,10 +2,10 @@ import {
   BasicButton,
   PageHeader,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  TypedLink
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import BatchImportDataSourceForm from './UploadForm';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -13,6 +13,7 @@ import useBatchImportDataSource from './hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -73,11 +74,11 @@ const BatchImportDataSource = () => {
     <>
       <PageHeader
         title={
-          <Link to={`/project`}>
+          <TypedLink to={ROUTE_PATHS.BASE.PROJECT.index}>
             <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsProject.backToList')}
             </BasicButton>
-          </Link>
+          </TypedLink>
         }
         extra={
           <EmptyBox if={!resultVisible}>

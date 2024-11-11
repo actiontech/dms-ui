@@ -1,8 +1,12 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
-import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicResult,
+  PageHeader,
+  useTypedParams
+} from '@actiontech/shared';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -19,6 +23,7 @@ import {
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -53,7 +58,8 @@ const UpdateRuleTemplate = () => {
     { setTrue: startLoad, setFalse: finishLoad }
   ] = useBoolean();
 
-  const urlParams = useParams<{ templateName: string }>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.update>();
   const { projectName } = useCurrentProject();
 
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();

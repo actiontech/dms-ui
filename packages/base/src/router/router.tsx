@@ -2,13 +2,13 @@ import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
 import { BaseRouterConfig } from './router.base';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 // #if [sqle]
 import {
   projectDetailRouterConfig as SQLEProjectDetailRouterConfig,
   globalRouterConfig as SQLEGlobalRouterConfig
 } from 'sqle/src/router/config';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 // #endif
 
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
@@ -29,7 +29,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   {
     path: '*',
     key: 'null',
-    element: <Navigate to="/" />
+    element: <Navigate to={ROUTE_PATHS.BASE.HOME} />
   }
 ];
 
@@ -42,7 +42,7 @@ export const unAuthRouterConfig: RouteObject[] = [
     element: <Login />
   },
   {
-    path: ROUTE_PATHS.BASE.USER_BIND,
+    path: ROUTE_PATHS.BASE.USER_BIND.index.path,
     element: <BindUser />
   },
   {

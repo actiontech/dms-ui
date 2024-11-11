@@ -12,7 +12,6 @@ import useRuleTemplate from '../../../hooks/useRuleTemplate';
 import useGlobalRuleTemplate from '../../../hooks/useGlobalRuleTemplate';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { RuleListFilterProps } from '../index.type';
-import { useLocation } from 'react-router-dom';
 import CustomSelectField from './CustomSelectFiled';
 import { FlagFilled } from '@actiontech/icons';
 import { useTypedQuery } from '@actiontech/shared';
@@ -27,7 +26,6 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
 }) => {
   const { t } = useTranslation();
   const extraQueries = useTypedQuery();
-  const location = useLocation();
 
   const fuzzyKeyword = Form.useWatch('fuzzy_keyword', form);
   const projectName = Form.useWatch('project_name', form);
@@ -135,6 +133,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     });
 
     const searchParams = extraQueries(ROUTE_PATHS.SQLE.RULE.index);
+
     const projectNameInUrl = bindProjects.find(
       (v) => v.project_id === searchParams?.projectID
     )?.project_name;

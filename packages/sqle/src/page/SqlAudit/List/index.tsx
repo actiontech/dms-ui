@@ -1,9 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-
 import { message } from 'antd';
-import { PageHeader } from '@actiontech/shared';
+import { PageHeader, useTypedQuery } from '@actiontech/shared';
 import {
   ActiontechTable,
   useTableFilterContainer,
@@ -15,7 +13,6 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import SqlAuditStatusFilter from './component/SqlAuditStatusFilter';
-
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '../../../data/common';
 import useInstance from '../../../hooks/useInstance';
@@ -29,16 +26,16 @@ import SqlAuditListColumn, {
   type SqlAuditListTableFilterParamType
 } from './column';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
-import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
 import { useBoolean } from 'ahooks';
 import { SqlAuditPageHeaderActions } from './actions';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
-  const location = useLocation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
+  const extraQueries = useTypedQuery();
 
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
     useBoolean();
@@ -58,14 +55,11 @@ const SqlAuditList = () => {
     SqlAuditListTableFilterParamType
   >();
   const filterDataFromUrl = useMemo(() => {
-    const searchStr = new URLSearchParams(location.search);
-    if (searchStr.has(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID)) {
-      return (
-        searchStr.get(SQLAuditRecordListUrlParamsKey.SQLAuditRecordID) ??
-        undefined
-      );
+    const searchStr = extraQueries(ROUTE_PATHS.SQLE.SQL_AUDIT.index);
+    if (searchStr?.SQLAuditRecordID) {
+      return searchStr.SQLAuditRecordID ?? undefined;
     }
-  }, [location.search]);
+  }, [extraQueries]);
   const [filterStatus, setFilterStatus] = useState<
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
   >('all');

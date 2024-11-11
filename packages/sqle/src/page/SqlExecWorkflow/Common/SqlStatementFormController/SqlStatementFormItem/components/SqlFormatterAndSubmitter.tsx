@@ -11,8 +11,8 @@ import {
 } from '@actiontech/shared/lib/utils/FormatterSQL';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { SqlFiledInitialValue } from '../../../../../../data/common';
 import { useBoolean } from 'ahooks';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   fieldPrefixPath,
@@ -54,7 +54,7 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
       ? databaseInfo?.[0]?.instanceName
       : databaseInfo.find((v) => v.key === fieldPrefixPath)?.instanceName;
 
-    if (originSql && originSql !== SqlFiledInitialValue) {
+    if (originSql && originSql !== SQL_EDITOR_PLACEHOLDER_VALUE) {
       if (instanceName) {
         const dbType = (await getInstanceType(instanceName))?.db_type;
         form.setFieldValue(

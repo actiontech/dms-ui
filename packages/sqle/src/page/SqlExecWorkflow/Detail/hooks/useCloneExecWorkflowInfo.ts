@@ -13,7 +13,6 @@ import {
 } from '../../../../store/sqlExecWorkflow';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useCallback } from 'react';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../../../data/common';
 import { SqlStatementFields } from '../../Create/index.type';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';

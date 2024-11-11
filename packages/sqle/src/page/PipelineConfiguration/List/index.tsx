@@ -1,12 +1,11 @@
 import {
   PageHeader,
-  BasicButton,
   EmptyBox,
-  useTypedNavigate
+  useTypedNavigate,
+  ActionButton
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { PlusOutlined } from '@actiontech/icons';
@@ -131,16 +130,16 @@ const PipelineConfigurationList = () => {
       <PageHeader
         title={t('pipelineConfiguration.pageTitle')}
         extra={
-          <Link to={`/sqle/project/${projectID}/pipeline-configuration/create`}>
-            <BasicButton
-              type="primary"
-              icon={
-                <PlusOutlined width={10} height={10} color="currentColor" />
-              }
-            >
-              {t('pipelineConfiguration.createPipeline')}
-            </BasicButton>
-          </Link>
+          <ActionButton
+            type="primary"
+            icon={<PlusOutlined width={10} height={10} color="currentColor" />}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.create,
+              params: { projectID }
+            }}
+            text={t('pipelineConfiguration.createPipeline')}
+          />
         }
       />
       <EmptyBox

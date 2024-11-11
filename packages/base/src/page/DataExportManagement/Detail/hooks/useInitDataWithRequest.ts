@@ -2,16 +2,18 @@ import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTa
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { useParams } from 'react-router-dom';
 import useDataExportDetailReduxManage from './index.redux';
 import { useRequest } from 'ahooks';
 import { useEffect } from 'react';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { useTypedParams } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useInitDataWithRequest = () => {
-  const { workflowID } = useParams<{ workflowID: string }>();
+  const { workflowID } =
+    useTypedParams<typeof ROUTE_PATHS.BASE.DATA_EXPORT.detail>();
   const { projectID } = useCurrentProject();
   const { updateTaskInfos, updateWorkflowInfo, updateTaskStatusNumber } =
     useDataExportDetailReduxManage();

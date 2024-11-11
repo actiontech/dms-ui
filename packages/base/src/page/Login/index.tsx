@@ -15,7 +15,6 @@ import {
 } from '@actiontech/shared';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
@@ -24,7 +23,10 @@ import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import {
+  OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
+  ROUTE_PATHS
+} from '@actiontech/shared/lib/data/routePaths';
 
 const Login = () => {
   const { t } = useTranslation();

@@ -2,9 +2,8 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { TokenCom } from '@actiontech/shared';
+import { TokenCom, TypedLink } from '@actiontech/shared';
 import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { Link } from 'react-router-dom';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   CheckCircleOutlined,
@@ -12,6 +11,7 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 import { Typography } from 'antd';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ConfDetailOverviewColumns: (
   projectID: string
@@ -37,20 +37,25 @@ export const ConfDetailOverviewColumns: (
         if (!ruleTemplate?.name) {
           return '-';
         }
-        const path = ruleTemplate?.is_global_rule_template
-          ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${record.audit_plan_db_type}`
-          : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${record.audit_plan_db_type}`;
+        const path = ruleTemplate.is_global_rule_template
+          ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
+          : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
         return (
-          <Link
+          <TypedLink
             onClick={(e) => {
               e.stopPropagation();
             }}
             target="_blank"
             to={path}
+            params={{
+              projectID,
+              dbType: record.audit_plan_db_type ?? '',
+              templateName: ruleTemplate.name
+            }}
           >
             {ruleTemplate.name}
-          </Link>
+          </TypedLink>
         );
       }
     },

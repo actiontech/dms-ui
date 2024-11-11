@@ -6,16 +6,20 @@ import {
   updateVersionManagementModalStatus,
   updateSelectVersionStageWorkflowList
 } from '../../../../../store/versionManagement';
-import { BasicModal, BasicButton } from '@actiontech/shared';
+import {
+  BasicModal,
+  BasicButton,
+  TypedLink,
+  useTypedParams
+} from '@actiontech/shared';
 import { Space, Typography, message } from 'antd';
-import { Link } from 'react-router-dom';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useBoolean } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { useParams } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const BatchExecuteModal: React.FC = () => {
   const { t } = useTranslation();
@@ -24,7 +28,8 @@ const BatchExecuteModal: React.FC = () => {
 
   const { projectName, projectID } = useCurrentProject();
 
-  const { versionId } = useParams<{ versionId: string }>();
+  const { versionId } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
 
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -103,13 +108,14 @@ const BatchExecuteModal: React.FC = () => {
           {t('versionManagement.execute.currentAllowExecuteWorkflow')}
         </Typography.Text>
         {currentStageWorkflowList?.map((workflow, index) => (
-          <Link
-            to={`/sqle/project/${projectID}/exec-workflow/${workflow.workflow_id}`}
+          <TypedLink
             key={index}
-            target="__blank"
+            to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+            params={{ projectID, workflowId: workflow.workflow_id ?? '' }}
+            target="_blank"
           >
             {workflow.workflow_name}
-          </Link>
+          </TypedLink>
         ))}
       </Space>
     </BasicModal>

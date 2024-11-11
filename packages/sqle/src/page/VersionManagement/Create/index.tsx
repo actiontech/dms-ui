@@ -2,7 +2,8 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  ActionButton
 } from '@actiontech/shared';
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -16,8 +17,8 @@ import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const VersionManagementCreation = () => {
   const { t } = useTranslation();
@@ -95,14 +96,19 @@ const VersionManagementCreation = () => {
               <BasicButton type="primary" key="continue-btn" onClick={onReset}>
                 {t('versionManagement.create.continueText')}
               </BasicButton>,
-              <Link
-                to={`/sqle/project/${projectID}/version-management/detail/${versionId}`}
+              <ActionButton
                 key="check-detail"
-              >
-                <BasicButton type="primary" onClick={onReset}>
-                  {t('versionManagement.create.viewVersionDetail')}
-                </BasicButton>
-              </Link>
+                text={t('versionManagement.create.viewVersionDetail')}
+                type="primary"
+                actionType="navigate-link"
+                link={{
+                  to: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail,
+                  params: {
+                    projectID,
+                    versionId: versionId?.toString() ?? ''
+                  }
+                }}
+              />
             ]}
           />
         }

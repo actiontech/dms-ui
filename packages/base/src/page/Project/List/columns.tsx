@@ -1,14 +1,14 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
-import { Link } from 'react-router-dom';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
-import { BasicTag, BasicToolTips } from '@actiontech/shared';
+import { BasicTag, BasicToolTips, TypedLink } from '@actiontech/shared';
 import { Space } from 'antd';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ProjectListTableColumnFactory =
   (): ActiontechTableColumn<IListProject> => {
@@ -18,7 +18,12 @@ export const ProjectListTableColumnFactory =
         title: () => t('dmsProject.projectForm.name'),
         render(name, record) {
           return (
-            <Link to={`/sqle/project/${record.uid}/overview`}>{name}</Link>
+            <TypedLink
+              to={ROUTE_PATHS.SQLE.PROJECT_OVERVIEW.index}
+              params={{ projectID: record.uid ?? '' }}
+            >
+              {name}
+            </TypedLink>
           );
         }
       },

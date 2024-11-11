@@ -6,13 +6,13 @@ import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/ser
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { useTranslation } from 'react-i18next';
-import { SqlFiledInitialValue } from '../../../../../../data/common';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 import {
   MonacoEditor,
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { NamePath } from 'antd/es/form/interface';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
   fieldPrefixPath,
@@ -41,7 +41,7 @@ const SqlUploadContent: React.FC<SqlUploadContentProps> = ({
       >
         <FormItemNoLabel
           name={generateFieldName('form_data')}
-          initialValue={SqlFiledInitialValue}
+          initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
           rules={[
             {
               required:

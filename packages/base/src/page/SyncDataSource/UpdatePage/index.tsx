@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import { Empty, message, Space, Typography } from 'antd';
 import {
@@ -8,7 +7,8 @@ import {
   BasicButton,
   EmptyBox,
   PageHeader,
-  useTypedNavigate
+  useTypedNavigate,
+  useTypedParams
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useForm } from 'antd/es/form/Form';
@@ -36,7 +36,8 @@ const UpdateSyncTask: React.FC = () => {
   const { updateTaskSourceList, ...taskSourceTips } = useTaskSource();
   const { mergeFromValueIntoParams } = useAsyncParams();
 
-  const { taskId } = useParams<{ taskId: string }>();
+  const { taskId } =
+    useTypedParams<typeof ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update>();
   const [initError, setInitError] = useState('');
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();

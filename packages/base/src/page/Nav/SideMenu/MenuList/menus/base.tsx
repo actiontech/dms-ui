@@ -1,5 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
-import { Link } from 'react-router-dom';
 import {
   MemberFilled,
   ExportFilled,
@@ -9,12 +7,14 @@ import {
 import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
+import { TypedLink } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const dbServiceMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/project/${projectID}/db-services`}>
+    <TypedLink to={ROUTE_PATHS.BASE.DATA_SOURCE.index} params={{ projectID }}>
       {t('dmsMenu.instance')}
-    </Link>
+    </TypedLink>
   ),
   icon: <DatabaseFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/db-services`,
@@ -23,9 +23,9 @@ const dbServiceMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/project/${projectID}/member`}>
+    <TypedLink to={ROUTE_PATHS.BASE.MEMBER.index} params={{ projectID }}>
       {t('dmsMenu.memberAndPermissions')}
-    </Link>
+    </TypedLink>
   ),
   icon: <MemberFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
@@ -34,9 +34,9 @@ const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
 
 const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/project/${projectID}/cloud-beaver`}>
+    <TypedLink to={ROUTE_PATHS.BASE.CLOUD_BEAVER.index} params={{ projectID }}>
       {t('dmsMenu.SQLWorkbench')}
-    </Link>
+    </TypedLink>
   ),
   icon: <ComputerFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/cloud-beaver`,
@@ -45,9 +45,9 @@ const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const dataExportMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/project/${projectID}/data/export`}>
+    <TypedLink to={ROUTE_PATHS.BASE.DATA_EXPORT.index} params={{ projectID }}>
       {t('dmsMenu.dataExportManagement')}
-    </Link>
+    </TypedLink>
   ),
   icon: <ExportFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/export`,

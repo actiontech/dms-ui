@@ -1,4 +1,9 @@
-import { PageHeader, EmptyBox, useTypedNavigate } from '@actiontech/shared';
+import {
+  PageHeader,
+  EmptyBox,
+  useTypedNavigate,
+  useTypedParams
+} from '@actiontech/shared';
 import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 import BackToList from '../Common/BackToList';
 import { useState, useEffect } from 'react';
@@ -25,7 +30,6 @@ import {
 } from '../../../store/versionManagement';
 import { updateVersionFirstStageInstances } from '../../../store/sqlExecWorkflow';
 import { ModalName } from '../../../data/ModalName';
-import { useParams } from 'react-router-dom';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useRequest } from 'ahooks';
 import {
@@ -47,10 +51,6 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import VersionDetailModal from './Modal';
 import { StageNodeData, CustomEdgeData } from './index.type';
-import {
-  WORKFLOW_VERSION_NAME_PATH_KEY,
-  WORKFLOW_VERSION_ID_PATH_KEY
-} from '../../../data/common';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
@@ -59,7 +59,8 @@ const VersionDetail = () => {
 
   const navigate = useTypedNavigate();
 
-  const { versionId } = useParams<{ versionId: string }>();
+  const { versionId } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
 
   const { projectName, projectID } = useCurrentProject();
 

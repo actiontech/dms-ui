@@ -4,7 +4,6 @@ import cloudBeaver from '../../testUtils/mockApi/cloudBeaver';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { enableSqlQueryUrlData } from '../../testUtils/mockApi/cloudBeaver/data';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -12,6 +11,7 @@ import userCenter from '../../testUtils/mockApi/userCenter';
 import dbServices from '../../testUtils/mockApi/dbServices';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from 'sqle/src/hooks/useDatabaseType/index.test.data';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
 
 jest.mock('react-redux', () => {
   return {

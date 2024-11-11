@@ -1,6 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
 import { InferQueriesFromConfig, ObjectRoutePathValue } from '../index.type';
-import { parse2ReactRouterPath } from '../utils';
 import { useCallback } from 'react';
 
 function useTypedQuery() {
@@ -13,16 +12,14 @@ function useTypedQuery() {
       if (!searchParams) {
         return null;
       }
-      let queryString = '';
-      queryString = parse2ReactRouterPath(to).split('?')?.[1];
 
-      if (!queryString) {
+      if (!to.query) {
         return null;
       }
 
       const values: InferQueriesFromConfig<T> = {} as InferQueriesFromConfig<T>;
 
-      queryString.split('&').forEach((key) => {
+      to.query.split('&').forEach((key) => {
         (values as Record<string, string | null>)[key] = searchParams.get(key);
       });
 

@@ -564,7 +564,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   },
   // #if [ee]
   {
-    path: ROUTE_PATHS.SQLE.RULE_KNOWLEDGE,
+    path: ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index.path,
     key: 'ruleKnowledge',
     element: <RuleKnowledge />
   },

@@ -68,6 +68,8 @@ describe('globalAuthInvalid', () => {
       payload: { bindProjects: [] },
       type: 'user/updateBindProjects'
     });
-    expect(window.location.href).toBe('/login?target=/');
+    expect(window.location.href).toBe(
+      `/login?target=${encodeURIComponent('/')}`
+    );
   });
 });

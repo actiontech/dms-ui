@@ -33,7 +33,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/12345678"
-                    target="__blank"
+                    target="_blank"
                     title="DEV1_20241021103951"
                   >
                     DEV1_20241021103951
@@ -196,7 +196,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/12345678"
-                    target="__blank"
+                    target="_blank"
                     title="DEV1_20241021103951"
                   >
                     DEV1_20241021103951
@@ -358,7 +358,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isFirstS
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/12345678"
-                    target="__blank"
+                    target="_blank"
                     title="DEV1_20241021103951"
                   >
                     DEV1_20241021103951
@@ -527,7 +527,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when isLastSt
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/12345678"
-                    target="__blank"
+                    target="_blank"
                     title="DEV1_20241021103951"
                   >
                     DEV1_20241021103951
@@ -750,7 +750,7 @@ exports[`sqle/VersionManagement/Detail/StageNode render stage node when workflow
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/12345678"
-                    target="__blank"
+                    target="_blank"
                     title="DEV1_20241021103951"
                   >
                     DEV1_20241021103951

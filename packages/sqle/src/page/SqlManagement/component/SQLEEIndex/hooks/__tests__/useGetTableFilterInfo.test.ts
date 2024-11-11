@@ -9,10 +9,6 @@ import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
 import { useSearchParams } from 'react-router-dom';
-import {
-  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
-  SQL_MANAGEMENT_SOURCE_PATH_KEY
-} from '../../../../../../data/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -43,8 +39,8 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     });
     useSearchParamsSpy.mockReturnValue([
       new URLSearchParams({
-        [SQL_MANAGEMENT_INSTANCE_PATH_KEY]: '',
-        [SQL_MANAGEMENT_SOURCE_PATH_KEY]: ''
+        instanceId: '',
+        source: ''
       })
     ]);
   });

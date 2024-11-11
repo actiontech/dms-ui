@@ -22,10 +22,6 @@ import {
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';
-import {
-  WORKFLOW_VERSION_NAME_PATH_KEY,
-  WORKFLOW_VERSION_ID_PATH_KEY
-} from '../../../../data/common';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -118,11 +114,9 @@ describe('sqle/VersionManagement/Detail', () => {
     expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${
         mockProjectInfo.projectID
-      }/exec-workflow/create?${WORKFLOW_VERSION_ID_PATH_KEY}=${
+      }/exec-workflow/create?versionId=${
         mockVersionData?.sql_version_id
-      }&${WORKFLOW_VERSION_NAME_PATH_KEY}=${encodeURIComponent(
-        mockVersionData?.version ?? ''
-      )}`
+      }&versionName=${encodeURIComponent(mockVersionData?.version ?? '')}`
     );
   });
 

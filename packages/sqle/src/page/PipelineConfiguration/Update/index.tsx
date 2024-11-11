@@ -2,7 +2,8 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  useTypedParams
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
@@ -17,7 +18,6 @@ import { Spin, Space } from 'antd';
 import { BriefcaseFilled } from '@actiontech/icons';
 import PipelineConfigurationForm from '../Common/ConfigurationForm';
 import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
-import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { omit } from 'lodash';
@@ -27,11 +27,13 @@ import {
   updatePipelineNodeTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import usePipelineConfigurationFormState from '../Common/ConfigurationForm/hooks/usePipelineConfigurationFormState';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
-const CreatePipelineConfiguration = () => {
+const UpdatePipelineConfiguration = () => {
   const { t } = useTranslation();
 
-  const { id } = useParams<{ id: string }>();
+  const { id } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update>();
 
   const {
     form,
@@ -173,4 +175,4 @@ const CreatePipelineConfiguration = () => {
   );
 };
 
-export default CreatePipelineConfiguration;
+export default UpdatePipelineConfiguration;
