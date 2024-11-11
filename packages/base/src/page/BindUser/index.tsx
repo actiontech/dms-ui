@@ -19,15 +19,12 @@ import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
-
-// #if [ee]
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-// #endif
 
 const BindUser = () => {
   const navigate = useTypedNavigate();
