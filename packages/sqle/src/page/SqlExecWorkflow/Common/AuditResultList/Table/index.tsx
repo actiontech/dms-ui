@@ -15,6 +15,8 @@ import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
 import { AuditResultForCreateWorkflowActions } from './actions';
 import { usePermission } from '@actiontech/shared/lib/global';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
@@ -45,7 +47,9 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         return;
       }
       window.open(
-        `/sqle/project/${projectID}/exec-workflow/${taskID}/${sqlNum}/analyze`
+        parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
+          params: { projectID, taskId: taskID ?? '', sqlNum: sqlNum.toString() }
+        })
       );
     },
     [projectID, taskID]

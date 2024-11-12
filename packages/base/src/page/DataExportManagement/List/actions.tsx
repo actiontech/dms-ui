@@ -6,6 +6,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import { MinusCircleOutlined, PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const DataExportManagementTableToolbarActions = ({
   disabled,
@@ -49,7 +50,10 @@ export const DataExportManagementCreateAction = (
         actionType="navigate-link"
         text={t('dmsDataExport.create.button')}
         icon={<PlusOutlined width={10} height={10} color="currentColor" />}
-        link={{ to: `/project/${projectID}/data/export/create` }}
+        link={{
+          to: ROUTE_PATHS.BASE.DATA_EXPORT.create,
+          params: { projectID }
+        }}
       />
     </PermissionControl>
   );

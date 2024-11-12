@@ -27,7 +27,7 @@ type ActionButtonWithTooltip = {
   tooltip: IBasicToolTips;
 };
 
-export type ActionButtonProps<T extends RoutePathValue = RoutePathValue> =
+export type ActionButtonProps<T extends RoutePathValue = string> =
   | (ActionButtonBase & ActionButtonWithNavigateLink<T>)
   | (ActionButtonBase & ActionBUttonWithConfirm)
   | (ActionButtonBase & ActionButtonWithTooltip)

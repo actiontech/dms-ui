@@ -45,7 +45,9 @@ export type InferParamsFromConfig<T> = T extends ObjectRoutePathValue
 
 export type InferQueriesFromConfig<T> = T extends ObjectRoutePathValue
   ? T['query'] extends string
-    ? ExtractPathQueries<T['query']>
+    ? ExtractPathQueries<T['query']> extends object
+      ? ExtractPathQueries<T['query']>
+      : never
     : never
   : never;
 

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';
 import { Popconfirm } from 'antd';
 import BasicToolTips from '../BasicToolTips';
-import { RoutePathValue, TypedLink } from '../TypedRouter';
+import { RoutePathValue, TypedLink, TypedLinkProps } from '../TypedRouter';
 
 const ActionButton = <T extends RoutePathValue>(
   props: ActionButtonProps<T>
@@ -15,8 +15,7 @@ const ActionButton = <T extends RoutePathValue>(
     const { actionType, text, link, ...buttonProps } = props;
 
     return (
-      // todo 类型问题
-      <TypedLink {...(link as any)}>
+      <TypedLink {...(link as TypedLinkProps)}>
         <BasicButton {...buttonProps}>{text}</BasicButton>
       </TypedLink>
     );

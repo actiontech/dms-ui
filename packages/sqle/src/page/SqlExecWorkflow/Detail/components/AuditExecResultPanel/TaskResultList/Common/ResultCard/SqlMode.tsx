@@ -30,9 +30,11 @@ import {
 } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
-  projectName,
+  projectID,
   taskId,
   onUpdateDescription,
   ...props
@@ -54,7 +56,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
 
   const onClickAnalyze = () => {
     window.open(
-      `/sqle/project/${projectName}/exec-workflow/${taskId}/${props.number}/analyze`
+      parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
+        params: {
+          projectID,
+          taskId: taskId ?? '',
+          sqlNum: props.number?.toString() ?? ''
+        }
+      })
     );
   };
 

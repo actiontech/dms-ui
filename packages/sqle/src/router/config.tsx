@@ -504,7 +504,7 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
     path: '*',
     key: 'projectRedirect',
-    element: <Navigate to="/" />
+    element: <Navigate to={ROUTE_PATHS.BASE.HOME} />
   }
 ];
 

@@ -1,13 +1,15 @@
 import {
+  InferParamsFromConfig,
+  InferQueriesFromConfig,
   NavigateTypedOptions,
   ObjectRoutePathValue,
   RoutePathValue,
   TypedLinkProps
 } from './index.type';
 
-type MergeParamsAndQueries = {
-  params?: Record<string, string>;
-  queries?: Record<string, string>;
+type MergeParamsAndQueries<T extends RoutePathValue> = {
+  params?: InferParamsFromConfig<T>;
+  queries?: InferQueriesFromConfig<T>;
 };
 
 const errorLogger = (msg: string) => {
@@ -19,9 +21,9 @@ const errorLogger = (msg: string) => {
   // #endif
 };
 
-export const formatPath = (
+export const formatPath = <T extends RoutePathValue>(
   path: string,
-  values: MergeParamsAndQueries
+  values: MergeParamsAndQueries<T>
 ): string => {
   if (typeof values !== 'object' || values === null) {
     errorLogger('Value must be a non-null object');
@@ -52,8 +54,8 @@ export const formatPath = (
   const formattedQueryParams = queryString
     .split('&')
     .map((paramName) => {
-      if (paramName in queries) {
-        const paramValue = queries[paramName];
+      if (queries && paramName in queries) {
+        const paramValue = (queries as Record<string, string>)[paramName];
         return paramValue ? `${paramName}=${paramValue}` : null;
       }
       return null;
@@ -67,9 +69,9 @@ export const formatPath = (
     : formattedBasePath;
 };
 
-export const parse2ReactRouterPath = (
-  to: ObjectRoutePathValue,
-  values?: MergeParamsAndQueries
+export const parse2ReactRouterPath = <T extends ObjectRoutePathValue>(
+  to: T,
+  values?: MergeParamsAndQueries<T>
 ): string => {
   const { prefix, path, query } = to;
   let fullPath = prefix
@@ -87,9 +89,9 @@ export const parse2ReactRouterPath = (
   return formatPath(fullPath, values);
 };
 
-export const isCustomRoutePathObject = (
-  to: RoutePathValue
-): to is ObjectRoutePathValue => {
+export function isCustomRoutePathObject(
+  to: unknown
+): to is ObjectRoutePathValue {
   if (!to) {
     return false;
   }
@@ -97,27 +99,30 @@ export const isCustomRoutePathObject = (
     return false;
   }
 
-  if ('pathname' in to) {
-    return false;
+  if (typeof to === 'object') {
+    if ('pathname' in to) {
+      return false;
+    }
+
+    if ('path' in to) {
+      return true;
+    }
   }
 
-  if ('path' in to) {
-    return true;
-  }
   return false;
-};
+}
 
 export const getFormatPathValues = <T extends RoutePathValue>(
   options: TypedLinkProps<T> | NavigateTypedOptions<T>
-): MergeParamsAndQueries | undefined => {
-  let values: MergeParamsAndQueries | undefined;
+): MergeParamsAndQueries<T> | undefined => {
+  let values: MergeParamsAndQueries<T> | undefined;
   if ('params' in options) {
     const params = options.params;
     values = { params };
   }
 
   if ('queries' in options) {
-    const queries = options.queries ?? {};
+    const queries = options.queries;
     values = values ? { ...values, queries } : { queries };
   }
 
