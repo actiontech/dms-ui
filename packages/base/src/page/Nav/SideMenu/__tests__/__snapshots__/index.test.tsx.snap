@@ -453,7 +453,6 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 >
                   <a
                     href="/sqle/project/100121/data-source-comparison"
-                    values="[object Object]"
                   >
                     结构对比
                   </a>
@@ -1618,7 +1617,6 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 >
                   <a
                     href="/sqle/project/100121/data-source-comparison"
-                    values="[object Object]"
                   >
                     结构对比
                   </a>
@@ -2783,7 +2781,6 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 >
                   <a
                     href="/sqle/project/100121/data-source-comparison"
-                    values="[object Object]"
                   >
                     结构对比
                   </a>
