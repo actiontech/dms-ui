@@ -1691,7 +1691,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
@@ -1790,7 +1790,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
@@ -3496,7 +3496,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
@@ -3595,7 +3595,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="title"
                         >
                           Action 
-                          SQLE
+                          DMS
                         </div>
                         <p
                           class="cont-tip"
