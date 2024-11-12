@@ -4,12 +4,10 @@
 
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { SqlStatementFormItemProps } from '../index.type';
-import { act, fireEvent, renderHook, screen } from '@testing-library/react';
+import { fireEvent, renderHook, screen } from '@testing-library/react';
 import { Form } from 'antd';
 import SqlStatementFormItem from '..';
 import { superRender } from '../../../../../../testUtils/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { SqlFiledInitialValue } from '../../../../../../data/common';
 
 describe('test SqlStatementFormItem', () => {
   beforeEach(() => {

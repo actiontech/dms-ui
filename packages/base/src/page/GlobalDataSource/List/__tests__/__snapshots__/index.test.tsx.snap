@@ -4678,7 +4678,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-scroll-horizontal"
+            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
@@ -4690,7 +4690,21 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                 <table
                   style="min-width: 100%; table-layout: auto;"
                 >
-                  <colgroup />
+                  <colgroup>
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col
+                      style="width: 204px;"
+                    />
+                  </colgroup>
                   <thead
                     class="ant-table-thead"
                   >
@@ -4755,6 +4769,13 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       >
                         工作台查询审核
                       </th>
+                      <th
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        scope="col"
+                        style="position: sticky; right: 0px;"
+                      >
+                        操作
+                      </th>
                     </tr>
                   </thead>
                   <tbody
@@ -4765,6 +4786,15 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -5006,6 +5036,23 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       >
                         已开启
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              测试数据源连通性
+                            </span>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -5070,6 +5117,23 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       >
                         未开启
                       </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              测试数据源连通性
+                            </span>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -5133,6 +5197,23 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         未开启
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              测试数据源连通性
+                            </span>
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   </tbody>

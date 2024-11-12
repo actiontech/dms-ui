@@ -1,49 +1,61 @@
 import {
   InferParamsFromConfig,
+  InferQueriesFromConfig,
+  NavigateTypedOptions,
   ObjectRoutePathValue,
-  RouteConfig,
-  RoutePathValue
+  RoutePathValue,
+  TypedLinkProps
 } from './index.type';
+
+type MergeParamsAndQueries<T extends RoutePathValue> = {
+  params?: InferParamsFromConfig<T>;
+  queries?: InferQueriesFromConfig<T>;
+};
 
 const errorLogger = (msg: string) => {
   // #if [PROD]
   // eslint-disable-next-line no-console
   console.error(msg);
-  // #elif [DEV]
+  // #else
   throw new Error(msg);
   // #endif
 };
 
-export const formatPath = <T extends RouteConfig[keyof RouteConfig]>(
+export const formatPath = <T extends RoutePathValue>(
   path: string,
-  values: InferParamsFromConfig<T>
+  values: MergeParamsAndQueries<T>
 ): string => {
   if (typeof values !== 'object' || values === null) {
     errorLogger('Value must be a non-null object');
   }
+  const { params, queries } = values;
 
   const [basePath, queryString] = path.split('?');
 
-  const formattedBasePath = basePath.replace(/:([\w]+)/g, (_, key) => {
-    if (!(key in values)) {
-      errorLogger(`Missing value for parameter "${key}" in path`);
-    }
-    const paramValue = values[key];
-    if (paramValue === null || paramValue === undefined) {
-      errorLogger(`Value for parameter "${key}" cannot be null or undefined`);
-    }
+  const formattedBasePath = !params
+    ? basePath
+    : basePath.replace(/:([\w]+)/g, (_, key) => {
+        if (!(key in params)) {
+          errorLogger(`Missing value for parameter "${key}" in path`);
+        }
+        const paramValue = params[key];
+        if (paramValue === null || paramValue === undefined) {
+          errorLogger(
+            `Value for parameter "${key}" cannot be null or undefined`
+          );
+        }
 
-    return String(paramValue);
-  });
+        return String(paramValue);
+      });
 
-  if (!queryString) {
+  if (!queryString || !queries) {
     return formattedBasePath;
   }
   const formattedQueryParams = queryString
     .split('&')
     .map((paramName) => {
-      if (paramName in values) {
-        const paramValue = values[paramName];
+      if (queries && paramName in queries) {
+        const paramValue = (queries as Record<string, string>)[paramName];
         return paramValue ? `${paramName}=${paramValue}` : null;
       }
       return null;
@@ -57,37 +69,62 @@ export const formatPath = <T extends RouteConfig[keyof RouteConfig]>(
     : formattedBasePath;
 };
 
-export const parse2ReactRouterPath = <T extends RouteConfig[keyof RouteConfig]>(
-  to: ObjectRoutePathValue,
-  values?: InferParamsFromConfig<T>
+export const parse2ReactRouterPath = <T extends ObjectRoutePathValue>(
+  to: T,
+  values?: MergeParamsAndQueries<T>
 ): string => {
   const { prefix, path, query } = to;
-
-  let fullPath = prefix ? `${prefix}/${path}` : path;
-  if (query) {
-    fullPath = `${fullPath}?${query}`;
-  }
+  let fullPath = prefix
+    ? `${prefix}${path.startsWith('/') ? path : `/${path}`}`
+    : path;
 
   if (!values) {
     return fullPath;
   }
 
+  if (query) {
+    fullPath = `${fullPath}?${query}`;
+  }
+
   return formatPath(fullPath, values);
 };
 
-export const isCustomRoutePathObject = (
-  to: RoutePathValue
-): to is ObjectRoutePathValue => {
+export function isCustomRoutePathObject(
+  to: unknown
+): to is ObjectRoutePathValue {
+  if (!to) {
+    return false;
+  }
   if (typeof to === 'string') {
     return false;
   }
 
-  if ('pathname' in to) {
-    return false;
+  if (typeof to === 'object') {
+    if ('pathname' in to) {
+      return false;
+    }
+
+    if ('path' in to) {
+      return true;
+    }
   }
 
-  if ('path' in to) {
-    return true;
-  }
   return false;
+}
+
+export const getFormatPathValues = <T extends RoutePathValue>(
+  options: TypedLinkProps<T> | NavigateTypedOptions<T>
+): MergeParamsAndQueries<T> | undefined => {
+  let values: MergeParamsAndQueries<T> | undefined;
+  if ('params' in options) {
+    const params = options.params;
+    values = { params };
+  }
+
+  if ('queries' in options) {
+    const queries = options.queries;
+    values = values ? { ...values, queries } : { queries };
+  }
+
+  return values;
 };

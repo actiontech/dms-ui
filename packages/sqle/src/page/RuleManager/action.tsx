@@ -4,6 +4,7 @@ import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
 import { ReactNode } from 'react';
 import { RuleManagerSegmentedKey } from './index.type';
 import { t } from '../../locale';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const RuleManagerPageHeaderActions = (
   activeKey: RuleManagerSegmentedKey
@@ -21,7 +22,7 @@ export const RuleManagerPageHeaderActions = (
           hidden={activeKey !== RuleManagerSegmentedKey.GlobalRuleTemplate}
           icon={<LoginBoxOutlined />}
           actionType="navigate-link"
-          link={{ to: `/sqle/rule-manager/global-import` }}
+          link={{ to: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.import }}
         />
       </PermissionControl>
     ),
@@ -35,7 +36,7 @@ export const RuleManagerPageHeaderActions = (
           type="primary"
           icon={<PlusOutlined color="currentColor" width={10} height={10} />}
           actionType="navigate-link"
-          link={{ to: `/sqle/rule-manager/global-create` }}
+          link={{ to: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.create }}
         />
       </PermissionControl>
     ),
@@ -48,7 +49,7 @@ export const RuleManagerPageHeaderActions = (
           hidden={activeKey !== RuleManagerSegmentedKey.CustomRule}
           type="primary"
           actionType="navigate-link"
-          link={{ to: `/sqle/rule-manager/custom-create` }}
+          link={{ to: ROUTE_PATHS.SQLE.CUSTOM_RULE.create }}
         />
       </PermissionControl>
     )

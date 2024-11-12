@@ -12,6 +12,7 @@ import {
   LoginBoxOutlined
 } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const RuleTemplateTableActions = (
   onAction: (
@@ -86,7 +87,8 @@ export const RuleTemplatePageHeaderActions = (
         text={t('ruleTemplate.importRuleTemplate.button')}
         actionType="navigate-link"
         link={{
-          to: `/sqle/project/${projectID}/rule/template/import`
+          to: ROUTE_PATHS.SQLE.RULE_TEMPLATE.import,
+          params: { projectID }
         }}
       />
     </PermissionControl>
@@ -101,7 +103,8 @@ export const RuleTemplatePageHeaderActions = (
         text={t('ruleTemplate.createRuleTemplate.button')}
         actionType="navigate-link"
         link={{
-          to: `/sqle/project/${projectID}/rule/template/create`
+          to: ROUTE_PATHS.SQLE.RULE_TEMPLATE.create,
+          params: { projectID }
         }}
       />
     </PermissionControl>

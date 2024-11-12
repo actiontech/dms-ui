@@ -8,6 +8,7 @@ import { t } from '../../../../locale';
 import { PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
 import { ReactNode } from 'react';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const DataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string) => void,
@@ -95,7 +96,8 @@ export const DataSourcePageHeaderActions = (
         text={t('dmsDataSource.batchImportDataSource.buttonText')}
         actionType="navigate-link"
         link={{
-          to: `/project/${projectID}/db-services/batch-import`
+          to: ROUTE_PATHS.BASE.DATA_SOURCE.batch_import,
+          params: { projectID }
         }}
       />
     </PermissionControl>
@@ -117,7 +119,8 @@ export const DataSourcePageHeaderActions = (
         }
         actionType="navigate-link"
         link={{
-          to: `/project/${projectID}/db-services/create`
+          to: ROUTE_PATHS.BASE.DATA_SOURCE.create,
+          params: { projectID }
         }}
       />
     </PermissionControl>

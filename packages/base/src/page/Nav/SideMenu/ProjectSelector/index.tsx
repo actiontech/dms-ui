@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { InputRef, SelectProps } from 'antd';
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox, TypedLink } from '@actiontech/shared';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import {
@@ -14,6 +13,7 @@ import MockSelectItemOptions from './MockSelectItemOptions';
 import { ProjectSelectorProps } from './index.type';
 import { fuzzySearchAndSortByWeight } from '@actiontech/shared/lib/utils/Tool';
 import { ArrowRightOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   value,
@@ -90,8 +90,8 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
           </EmptyBox>
 
           <div className="show-more-project-wrapper">
-            <Link
-              to="/project"
+            <TypedLink
+              to={ROUTE_PATHS.BASE.PROJECT.index}
               onClick={() => {
                 setOpen(false);
                 setSearchValue('');
@@ -100,7 +100,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
               <BasicButton type="primary">
                 {t('dmsMenu.projectSelector.showMoreProjects')}
               </BasicButton>
-            </Link>
+            </TypedLink>
           </div>
         </ProjectSelectorPopupMenuStyleWrapper>
       </>

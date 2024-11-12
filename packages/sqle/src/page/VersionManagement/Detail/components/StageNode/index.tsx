@@ -2,12 +2,12 @@ import { Handle, Position } from '@xyflow/react';
 import {
   BasicButton,
   EmptyBox,
-  BasicTypographyEllipsis
+  BasicTypographyEllipsis,
+  TypedLink
 } from '@actiontech/shared';
 import { Card, Space, Typography } from 'antd';
 import type { Node, NodeProps } from '@xyflow/react';
 import { StageNodeStyleWrapper } from '../../style';
-import { Link } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
@@ -19,6 +19,7 @@ import {
 import { StageNodeData } from '../../index.type';
 import { SqlVersionDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   data,
@@ -70,13 +71,17 @@ const StageNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
               {isNoEmptyWorkflow ? (
                 <>
                   <Space className="card-header">
-                    <Link
-                      to={`/sqle/project/${projectID}/exec-workflow/${workflow.workflow_id}`}
-                      target="__blank"
+                    <TypedLink
+                      target="_blank"
+                      to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+                      params={{
+                        projectID,
+                        workflowId: workflow.workflow_id ?? ''
+                      }}
                       title={workflow.workflow_name}
                     >
                       {workflow.workflow_name}
-                    </Link>
+                    </TypedLink>
                     <WorkflowStatus
                       status={
                         workflow.status as unknown as WorkflowDetailResV1StatusEnum

@@ -1,13 +1,12 @@
 import {
-  BasicButton,
   PageHeader,
   EmptyBox,
-  BasicToolTips
+  BasicToolTips,
+  useTypedParams,
+  ActionButton
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { SqlOptimizationOverviewUrlParams } from '../index.type';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { useRequest } from 'ahooks';
 import { Spin, Col, Row, Statistic, Typography, Card } from 'antd';
@@ -25,13 +24,15 @@ import {
   InfoHexagonOutlined
 } from '@actiontech/icons';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const OptimizationOverview = () => {
   const { t } = useTranslation();
 
   const { sqleTheme } = useThemeStyleData();
 
-  const urlParams = useParams<SqlOptimizationOverviewUrlParams>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview>();
 
   const { projectID, projectName } = useCurrentProject();
 
@@ -72,11 +73,15 @@ const OptimizationOverview = () => {
         <PageHeader
           fixed
           title={
-            <Link to={`/sqle/project/${projectID}/sql-optimization`}>
-              <BasicButton icon={<LeftArrowOutlined />}>
-                {t('sqlOptimization.create.returnButton')}
-              </BasicButton>
-            </Link>
+            <ActionButton
+              icon={<LeftArrowOutlined />}
+              text={t('sqlOptimization.create.returnButton')}
+              actionType="navigate-link"
+              link={{
+                to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index,
+                params: { projectID }
+              }}
+            />
           }
         />
         <DetailComStyleWrapper>

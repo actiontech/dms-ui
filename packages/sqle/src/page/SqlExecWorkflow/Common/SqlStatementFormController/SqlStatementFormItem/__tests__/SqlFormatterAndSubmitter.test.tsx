@@ -8,7 +8,7 @@ import { superRender } from '../../../../../../testUtils/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
-import { SqlFiledInitialValue } from '../../../../../../data/common';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 describe('test SqlFormatterAndSubmitter', () => {
   let getInstanceSpy: jest.SpyInstance;
@@ -142,7 +142,7 @@ describe('test SqlFormatterAndSubmitter', () => {
     );
   });
 
-  it('formats SQL when format button is clicked and form_data value is SqlFiledInitialValue', async () => {
+  it('formats SQL when format button is clicked and form_data value is SQL_EDITOR_PLACEHOLDER_VALUE', async () => {
     customRender({
       isSameSqlForAll: false,
       fieldPrefixPath: '2',
@@ -153,12 +153,14 @@ describe('test SqlFormatterAndSubmitter', () => {
     });
 
     fireEvent.change(screen.getByLabelText('sql语句'), {
-      target: { value: SqlFiledInitialValue }
+      target: { value: SQL_EDITOR_PLACEHOLDER_VALUE }
     });
     const formatButton = screen.getByText('SQL美化');
     fireEvent.click(formatButton);
 
     expect(getInstanceSpy).toHaveBeenCalledTimes(0);
-    expect(screen.getByLabelText('sql语句')).toHaveValue(SqlFiledInitialValue);
+    expect(screen.getByLabelText('sql语句')).toHaveValue(
+      SQL_EDITOR_PLACEHOLDER_VALUE
+    );
   });
 });

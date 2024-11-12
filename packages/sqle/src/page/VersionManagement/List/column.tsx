@@ -5,10 +5,10 @@ import {
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicTypographyEllipsis } from '@actiontech/shared';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { VersionStatusDictionary } from '../index.data';
-import { Link } from 'react-router-dom';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type VersionManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlVersionListV1Params,
@@ -27,11 +27,15 @@ export const VersionManagementTableColumns: (
       className: 'ellipsis-column-width',
       render: (value, record) => {
         return (
-          <Link
-            to={`/sqle/project/${projectID}/version-management/detail/${record.version_id}`}
+          <TypedLink
+            to={ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail}
+            params={{
+              projectID,
+              versionId: record.version_id?.toString() ?? ''
+            }}
           >
             {value}
-          </Link>
+          </TypedLink>
         );
       }
     },
@@ -47,7 +51,7 @@ export const VersionManagementTableColumns: (
     {
       dataIndex: 'status',
       title: () => t('versionManagement.list.column.status'),
-      render: (status, record) => {
+      render: (status) => {
         return VersionStatusDictionary[status!];
       }
     },

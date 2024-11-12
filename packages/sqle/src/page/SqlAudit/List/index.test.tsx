@@ -1,5 +1,4 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import SqlAuditList from '.';
 import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
 import instance from '../../../testUtils/mockApi/instance';
@@ -13,17 +12,19 @@ import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { useLocation, BrowserRouter } from 'react-router-dom';
-import { SQLAuditRecordListUrlParamsKey } from '../../SqlManagement/component/SQLEEIndex/index.data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { superRender } from '../../../testUtils/customRender';
+import { useSelector } from 'react-redux';
+import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useLocation: jest.fn()
-}));
+jest.mock('react-redux', () => {
+  return {
+    ...jest.requireActual('react-redux'),
+    useSelector: jest.fn()
+  };
+});
 
 describe('sqle/SqlAudit/List', () => {
-  const useLocationMock: jest.Mock = useLocation as jest.Mock;
   let sqlAuditRecordsSpy: jest.SpyInstance;
   let mockUseCurrentProjectSpy: jest.SpyInstance;
   beforeEach(() => {
@@ -32,11 +33,18 @@ describe('sqle/SqlAudit/List', () => {
     sqlAuditRecordsSpy = sqlAuditRecord.getSQLAuditRecords();
     mockUseCurrentProjectSpy = mockUseCurrentProject();
     mockUseCurrentUser();
-    useLocationMock.mockReturnValue({
-      pathname: '/',
-      search: '',
-      hash: '',
-      state: null
+
+    (useSelector as jest.Mock).mockImplementation((selector) => {
+      return selector({
+        database: { driverMeta: driverMeta },
+        permission: {
+          moduleFeatureSupport: false,
+          userOperationPermissions: {
+            is_admin: true,
+            op_permission_list: []
+          }
+        }
+      });
     });
   });
 
@@ -45,16 +53,9 @@ describe('sqle/SqlAudit/List', () => {
     cleanup();
   });
 
-  const customRender = () => {
-    return (
-      <BrowserRouter>
-        <SqlAuditList />
-      </BrowserRouter>
-    );
-  };
-
   it('render sql audit record table when request return data', async () => {
-    const { baseElement } = renderWithReduxAndTheme(customRender());
+    const { baseElement } = superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
@@ -80,13 +81,9 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('should request list with url params', async () => {
-    useLocationMock.mockReturnValue({
-      pathname: '/',
-      search: `?${SQLAuditRecordListUrlParamsKey.SQLAuditRecordID}=123456`,
-      hash: '',
-      state: null
+    superRender(<SqlAuditList />, undefined, {
+      routerProps: { initialEntries: ['/sql-audit?SQLAuditRecordID=123456'] }
     });
-    renderWithReduxAndTheme(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
     expect(sqlAuditRecordsSpy).toHaveBeenCalledWith({
@@ -103,14 +100,16 @@ describe('sqle/SqlAudit/List', () => {
     sqlAuditRecordsSpy.mockImplementationOnce(() =>
       createSpyErrorResponse({ message: 'error info' })
     );
-    const { baseElement } = renderWithReduxAndTheme(customRender());
+    const { baseElement } = superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('快捷审核')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render table list when action filter', async () => {
-    const { baseElement } = renderWithReduxAndTheme(customRender());
+    const { baseElement } = superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
     const searchInputEle = getBySelector(
@@ -143,7 +142,8 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('render action when filter item show', async () => {
-    const { baseElement } = renderWithReduxAndTheme(customRender());
+    const { baseElement } = superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
 
@@ -158,7 +158,8 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('should hide link button when project is archived', async () => {
-    renderWithReduxAndTheme(customRender());
+    superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('创建审核')).toBeInTheDocument();
     cleanup();
@@ -173,7 +174,7 @@ describe('sqle/SqlAudit/List', () => {
         }
       ]
     });
-    renderWithReduxAndTheme(customRender());
+    superRender(<SqlAuditList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('创建审核')).not.toBeInTheDocument();
   });
@@ -186,7 +187,8 @@ describe('sqle/SqlAudit/List', () => {
         total_nums: 2
       })
     );
-    renderWithReduxAndTheme(customRender());
+    superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(
       queryBySelector(
@@ -229,7 +231,8 @@ describe('sqle/SqlAudit/List', () => {
           total_nums: 2
         })
       );
-    renderWithReduxAndTheme(customRender());
+    superRender(<SqlAuditList />);
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -248,7 +251,7 @@ describe('sqle/SqlAudit/List', () => {
         total_nums: 2
       })
     );
-    renderWithReduxAndTheme(customRender());
+    superRender(<SqlAuditList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
   });

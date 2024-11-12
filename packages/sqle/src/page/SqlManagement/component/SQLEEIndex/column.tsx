@@ -9,20 +9,24 @@ import { ModalName } from '../../../../data/ModalName';
 import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
-import { Link } from 'react-router-dom';
-import { AvatarCom, EditText, SQLRenderer } from '@actiontech/shared';
+import {
+  AvatarCom,
+  EditText,
+  SQLRenderer,
+  TypedLink
+} from '@actiontech/shared';
 import BasicToolTips, {
   tooltipsCommonProps
 } from '@actiontech/shared/lib/components/BasicToolTips';
 import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
-import { SQLAuditRecordListUrlParamsKey } from './index.data';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   PERMISSIONS,
   PermissionsConstantType
 } from '@actiontech/shared/lib/global';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlManageListV2Params,
@@ -183,23 +187,24 @@ const SqlManagementColumn: (
         ) {
           if (source.sql_source_type === 'sql_audit_record') {
             return (
-              <Link
+              <TypedLink
                 target="_blank"
-                to={`/sqle/project/${projectID}/sql-audit?${
-                  SQLAuditRecordListUrlParamsKey.SQLAuditRecordID
-                }=${source.sql_source_ids.join(',')}`}
+                to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
+                params={{ projectID }}
+                queries={{ SQLAuditRecordID: source.sql_source_ids.join(',') }}
               >
                 {source.sql_source_desc}
-              </Link>
+              </TypedLink>
             );
           }
           return (
-            <Link
+            <TypedLink
               target="_blank"
-              to={`/sqle/project/${projectID}/sql-management-conf/${source.sql_source_ids[0]}`}
+              to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+              params={{ projectID, id: source.sql_source_ids[0] }}
             >
               {source.sql_source_desc ?? source.sql_source_type}
-            </Link>
+            </TypedLink>
           );
         }
         return '-';

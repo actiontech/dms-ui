@@ -576,7 +576,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                             >
                               <a
-                                href="/1"
+                                href="/sqle/project/700300/sql-management-conf/1"
                               >
                                 静态扫描
                               </a>
@@ -698,7 +698,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                             >
                               <a
-                                href="/2"
+                                href="/sqle/project/700300/sql-management-conf/2"
                               >
                                 test instance name
                               </a>
@@ -854,7 +854,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                             >
                               <a
-                                href="/3"
+                                href="/sqle/project/700300/sql-management-conf/3"
                               >
                                 静态扫描
                               </a>
@@ -2893,7 +2893,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                href="/1"
+                                href="/sqle/project/700300/sql-management-conf/1"
                               >
                                 静态扫描
                               </a>
@@ -3015,7 +3015,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                href="/2"
+                                href="/sqle/project/700300/sql-management-conf/2"
                               >
                                 test instance name
                               </a>
@@ -3171,7 +3171,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                href="/3"
+                                href="/sqle/project/700300/sql-management-conf/3"
                               >
                                 静态扫描
                               </a>

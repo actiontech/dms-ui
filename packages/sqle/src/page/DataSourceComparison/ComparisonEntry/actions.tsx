@@ -3,6 +3,7 @@ import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 import { t } from '../../../locale';
 import { compressToEncodedURIComponent } from 'lz-string';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 type CreateWorkflowActionParams = {
   apiParams: IGenDatabaseDiffModifySQLsV1Params;
@@ -42,8 +43,9 @@ export const CreateWorkflowForModifiedSqlAction = (
           'dataSourceComparison.entry.comparisonDetail.actions.createChangeWorkflow'
         )}
         link={{
-          // todo TypedRouter 替换
-          to: `/sqle/project/${projectID}/exec-workflow/create?gen_modified_sql_params=${compressionData}`,
+          to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
+          params: { projectID },
+          queries: { gen_modified_sql_params: compressionData },
           target: '_blank'
         }}
       />

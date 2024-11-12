@@ -22,7 +22,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { projectName } = useCurrentProject();
+  const { projectID } = useCurrentProject();
 
   const {
     data: currentAuditTaskList,
@@ -75,7 +75,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
           <List.Item key={item.number}>
             <ResultCard
               {...item}
-              projectName={projectName}
+              projectID={projectID}
               taskId={auditResultActiveKey}
               onUpdateDescription={refresh}
               executeMode={WorkflowResV2ExecModeEnum.sqls}

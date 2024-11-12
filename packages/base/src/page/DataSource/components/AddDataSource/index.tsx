@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'antd/es/form/Form';
 import { Space, Typography } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -10,7 +9,8 @@ import {
   PageHeader,
   BasicResult,
   EmptyBox,
-  BackButton
+  BackButton,
+  useTypedNavigate
 } from '@actiontech/shared';
 import DataSourceForm from '../Form';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -23,7 +23,7 @@ import { DataSourceFormField } from '../Form/index.type';
 const AddDataSource = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const [form] = useForm<DataSourceFormField>();
 

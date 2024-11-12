@@ -4,7 +4,10 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import {
+  mockCurrentUserReturn,
+  mockProjectInfo
+} from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import GlobalDataSourceList from '../';
 import dms from '../../../../testUtils/mockApi/global';
@@ -15,6 +18,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -53,7 +57,7 @@ describe('page/GlobalDataSource/List', () => {
     cleanup();
   });
 
-  it.only('render list snap', async () => {
+  it('render list snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(1);
@@ -269,7 +273,14 @@ describe('page/GlobalDataSource/List', () => {
     });
 
     it('should not render action when user is not admin and not project manager', async () => {
-      mockUseCurrentUser({ isAdmin: false, isCertainProjectManager: false });
+      mockUseCurrentUser({
+        userRoles: {
+          ...mockCurrentUserReturn.userRoles,
+          [SystemRole.admin]: false,
+          [SystemRole.globalManager]: false,
+          [SystemRole.certainProjectManager]: false
+        }
+      });
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
 

@@ -6,9 +6,13 @@ import {
   CustomLabelContent,
   FormItemLabel
 } from '@actiontech/shared/lib/components/FormCom';
-import { BasicSwitch, EmptyBox, ToggleTokens } from '@actiontech/shared';
+import {
+  BasicSwitch,
+  EmptyBox,
+  ToggleTokens,
+  TypedLink
+} from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -16,6 +20,7 @@ import { ConfirmMethodFormItemLabelStyleWrapper } from './style';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
   enable,
@@ -145,9 +150,10 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
                   }
                 >
                   {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                  <Link
+                  <TypedLink
                     target="_blank"
-                    to="/system?active_tab=process_connection"
+                    to={ROUTE_PATHS.BASE.SYSTEM.index}
+                    queries={{ active_tab: 'process_connection' }}
                   />
                 </Trans>
               }

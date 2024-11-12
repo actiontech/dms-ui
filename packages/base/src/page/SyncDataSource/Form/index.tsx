@@ -1,12 +1,12 @@
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { Alert, Form, Popconfirm, Select, Spin } from 'antd';
 import {
   BasicInput,
   BasicSelect,
   BasicSwitch,
-  EmptyBox
+  EmptyBox,
+  TypedLink
 } from '@actiontech/shared';
 import {
   FormAreaBlockStyleWrapper,
@@ -310,13 +310,13 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               message={
                 <div style={{ fontSize: '12px' }}>
                   {t('dmsSyncDataSource.syncTaskForm.helpTips')}
-                  <Link
+                  <TypedLink
                     to="https://actiontech.github.io/sqle-docs/docs/user-manual/project/instance_syn"
                     target="_blank"
                     rel="noreferrer"
                   >
                     {t('dmsSyncDataSource.pageTitle')}
-                  </Link>
+                  </TypedLink>
                 </div>
               }
               type="info"

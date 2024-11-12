@@ -1,7 +1,7 @@
 import { RuleObject } from 'antd/es/form';
-import { ReactNode } from 'react';
-import { RouteObject } from 'react-router-dom';
 import { PermissionsConstantType } from '../global';
+import { SystemRole } from '../enum';
+import { IndexRouteObject, NonIndexRouteObject } from 'react-router-dom';
 
 export type Dictionary = {
   [key: string]: string | number | boolean | Dictionary | string[] | undefined;
@@ -33,15 +33,19 @@ export type PermissionReduxState = {
   sqlOptimizationIsSupported: boolean;
 };
 
-export type RouterConfigItem = RouteObject & {
-  label?: string;
-  icon?: ReactNode;
-  hideInMenu?: boolean;
+type BaseRouterConfigItem = {
   key: string;
   children?: RouterConfigItem[];
   permission?: PermissionsConstantType;
+  role?: Array<SystemRole>;
 };
 
-export enum RuleUrlParamKey {
-  projectID = 'projectID'
-}
+export type RouterConfigItem =
+  | (Omit<IndexRouteObject, 'children'> &
+      BaseRouterConfigItem & {
+        children?: RouterConfigItem[];
+      })
+  | (Omit<NonIndexRouteObject, 'children'> &
+      BaseRouterConfigItem & {
+        children?: RouterConfigItem[];
+      });

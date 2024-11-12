@@ -9,9 +9,12 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { SqlExecWorkflowListStyleWrapper } from './style';
-import { PageHeader, CustomSegmentedFilter } from '@actiontech/shared';
+import {
+  PageHeader,
+  CustomSegmentedFilter,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { Space, message } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   useCurrentProject,
@@ -45,12 +48,13 @@ import {
   SqlExecWorkflowTableToolbarActions
 } from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectID, projectName } = useCurrentProject();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [filterStatus, setFilterStatus] =
     useState<getWorkflowsV1FilterStatusEnum>();
   const { usernameOptions, updateUsernameList } = useUsername();
@@ -307,9 +311,9 @@ const SqlExecWorkflowList: React.FC = () => {
         onRow={(record) => {
           return {
             onClick() {
-              navigate(
-                `/sqle/project/${projectID}/exec-workflow/${record.workflow_id}`
-              );
+              navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
+                params: { workflowId: record.workflow_id ?? '', projectID }
+              });
             }
           };
         }}

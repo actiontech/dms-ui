@@ -13,10 +13,15 @@ import {
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicToolTips, BasicSelect } from '@actiontech/shared';
-import { Link } from 'react-router-dom';
+import {
+  BasicButton,
+  BasicToolTips,
+  BasicSelect,
+  TypedLink
+} from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import { DataSourceFieldProps } from '../../../index.type';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DataSourceField: React.FC<DataSourceFieldProps> = ({
   fieldNamePath,
@@ -94,15 +99,23 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
     }
 
     const path = ruleTemplate.is_global_rule_template
-      ? `/sqle/rule-manager/global-detail/${ruleTemplate.name}/${dbType}`
-      : `/sqle/project/${projectID}/rule/template/detail/${ruleTemplate.name}/${dbType}`;
+      ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
+      : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
     return (
       <BasicToolTips
         title={
-          <Link to={path} target="_blank">
+          <TypedLink
+            to={path}
+            params={{
+              projectID,
+              dbType,
+              templateName: ruleTemplate.name ?? ''
+            }}
+            target="_blank"
+          >
             {t('rule.form.ruleTemplate')}: {ruleTemplate.name}
-          </Link>
+          </TypedLink>
         }
       >
         <BasicButton

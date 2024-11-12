@@ -180,7 +180,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     expect(navigateSpy).toHaveBeenCalledTimes(2);
     expect(navigateSpy).toHaveBeenNthCalledWith(
       2,
-      { pathname, search: `active_audit_plan_id=9` },
+      '/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=9',
       { replace: true }
     );
   });

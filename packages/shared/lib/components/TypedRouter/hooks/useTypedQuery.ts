@@ -1,48 +1,33 @@
 import { useSearchParams } from 'react-router-dom';
-import {
-  RouteConfig,
-  ExtractQueryParams,
-  ObjectRoutePathValue
-} from '../index.type';
-import { isCustomRoutePathObject, parse2ReactRouterPath } from '../utils';
-
-type InferQueryFormConfig<T> = T extends ObjectRoutePathValue
-  ? T['query'] extends string
-    ? ExtractQueryParams<T['query']>
-    : never
-  : T extends RouteConfig
-  ? { [K in keyof T]: InferQueryFormConfig<T[K]> }[keyof T]
-  : never;
+import { InferQueriesFromConfig, ObjectRoutePathValue } from '../index.type';
+import { useCallback } from 'react';
 
 function useTypedQuery() {
   const [searchParams] = useSearchParams();
 
-  function extractQuery<T extends RouteConfig[keyof RouteConfig]>(
-    to: T
-  ): InferQueryFormConfig<T> | null {
-    if (!searchParams) {
-      return null;
-    }
-    let queryString = '';
-    if (isCustomRoutePathObject(to)) {
-      queryString = parse2ReactRouterPath(to).split('?')?.[1];
-    } else {
-      queryString = to.split('?')?.[1];
-    }
+  const extractQueries = useCallback(
+    <T extends ObjectRoutePathValue>(
+      to: T
+    ): InferQueriesFromConfig<T> | null => {
+      if (!searchParams) {
+        return null;
+      }
 
-    if (!queryString) {
-      return null;
-    }
+      if (!to.query) {
+        return null;
+      }
 
-    const values: InferQueryFormConfig<T> = {} as InferQueryFormConfig<T>;
+      const values: InferQueriesFromConfig<T> = {} as InferQueriesFromConfig<T>;
 
-    queryString.split('&').forEach((key) => {
-      (values as Record<string, string | null>)[key] = searchParams.get(key);
-    });
+      to.query.split('&').forEach((key) => {
+        (values as Record<string, string | null>)[key] = searchParams.get(key);
+      });
 
-    return values;
-  }
+      return values;
+    },
+    [searchParams]
+  );
 
-  return extractQuery;
+  return extractQueries;
 }
 export default useTypedQuery;

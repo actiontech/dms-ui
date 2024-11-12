@@ -1,9 +1,9 @@
-import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
+import { ActionButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { CreateResultStepProps } from './index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import BackToList from '../../../Common/BackToList';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const CreateResultStep: React.FC<CreateResultStepProps> = ({
   workflowID,
@@ -19,16 +19,17 @@ const CreateResultStep: React.FC<CreateResultStepProps> = ({
         status="success"
         title={t('execWorkflow.create.createResult.success')}
         subTitle={desc}
-        extra={[
-          <Link
-            key="jumpToWorkflowDetail"
-            to={`/sqle/project/${projectID}/exec-workflow/${workflowID}`}
-          >
-            <BasicButton type="primary">
-              {t('execWorkflow.create.createResult.guide')}
-            </BasicButton>
-          </Link>
-        ]}
+        extra={
+          <ActionButton
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+              params: { projectID, workflowId: workflowID }
+            }}
+            type="primary"
+            text={t('execWorkflow.create.createResult.guide')}
+          />
+        }
       />
     </>
   );

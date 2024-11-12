@@ -14,28 +14,28 @@ exports[`base/router-base-ee render base route data snap 1`] = `
       userCenter
     </div>,
     "key": "userCenter",
-    "path": "user-center",
+    "path": "/user-center",
   },
   {
     "element": <div>
       system
     </div>,
     "key": "system",
-    "path": "system",
+    "path": "/system",
   },
   {
     "element": <div>
       account
     </div>,
     "key": "account",
-    "path": "account",
+    "path": "/account",
   },
   {
     "element": <div>
       dataSourceManagement
     </div>,
     "key": "dataSourceManagement",
-    "path": "data-source-management",
+    "path": "/data-source-management",
   },
   {
     "element": <div>
@@ -62,7 +62,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
       },
     ],
     "key": "globalDataSource",
-    "path": "global-data-source",
+    "path": "/global-data-source",
     "permission": "page:global_data_source",
   },
   {
@@ -83,7 +83,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
       },
     ],
     "key": "syncDataSource",
-    "path": "sync-data-source",
+    "path": "/sync-data-source",
     "permission": "page:sync_data_source",
   },
   {
@@ -111,7 +111,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
       },
     ],
     "key": "project",
-    "path": "project",
+    "path": "/project",
   },
   {
     "children": [
@@ -203,7 +203,7 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
-    "path": "project/*",
+    "path": "/project/*",
   },
 ]
 `;

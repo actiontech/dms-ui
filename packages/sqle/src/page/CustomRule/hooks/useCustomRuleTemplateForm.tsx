@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Form } from 'antd';
 import {
   CustomRuleFormBaseInfoFields,
@@ -7,9 +6,11 @@ import {
 } from '../CustomRuleForm';
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useCustomRuleTemplateForm = (isUpdate = false) => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [form] = Form.useForm<CustomRuleFormBaseInfoFields>();
   const [editScriptForm] = Form.useForm<EditRuleScriptFields>();
   const [step, setStep] = useState(0);
@@ -54,7 +55,7 @@ const useCustomRuleTemplateForm = (isUpdate = false) => {
 
   const onGoCustomRuleList = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.CustomRule);
-    navigate('/sqle/rule-manager');
+    navigate(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index);
   };
 
   return {

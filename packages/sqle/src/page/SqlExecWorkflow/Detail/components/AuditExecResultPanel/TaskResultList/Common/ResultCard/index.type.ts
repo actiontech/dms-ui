@@ -11,7 +11,7 @@ type BaseProps = {
 export type SqlExecuteResultCardProps = BaseProps &
   IAuditTaskSQLResV2 & {
     onUpdateDescription?: () => void;
-    projectName: string;
+    projectID: string;
   };
 
 export type FileExecuteResultCardProps = BaseProps &

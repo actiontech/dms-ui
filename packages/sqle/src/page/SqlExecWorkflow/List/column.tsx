@@ -17,6 +17,8 @@ import { SqlExecWorkflowListTableFilterParam } from './index.type';
 import { WorkflowNameStyleWrapper } from './style';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { Space } from 'antd';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IWorkflowDetailResV1 & {
@@ -98,9 +100,10 @@ export const SqlExecWorkflowListColumn: (
           <BasicTypographyEllipsis
             textCont={desc}
             linkData={{
-              route: `/sqle/project/${projectID}/exec-workflow/${
-                record.workflow_id ?? ''
-              }`,
+              route: parse2ReactRouterPath(
+                ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+                { params: { projectID, workflowId: record.workflow_id ?? '' } }
+              ),
               text: t('execWorkflow.create.createResult.viewWorkflowDetail')
             }}
           />

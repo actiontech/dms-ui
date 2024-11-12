@@ -11,6 +11,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import instance from '../../../../testUtils/mockApi/instance';
 import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import { resolveThreeSecond } from '../../../../testUtils/mockRequest';
 
 describe('sqle/VersionManagement/Create', () => {
   let createSqlVersionV1: jest.SpyInstance;
@@ -21,6 +22,9 @@ describe('sqle/VersionManagement/Create', () => {
     getInstanceTipListSpy = instance.getInstanceTipList();
     mockUseCurrentProject();
     mockUseDbServiceDriver();
+    createSqlVersionV1.mockImplementation(() =>
+      resolveThreeSecond({ sql_version_id: 1 })
+    );
   });
 
   afterEach(() => {

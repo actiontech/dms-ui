@@ -9,6 +9,7 @@ import { t } from '../../../locale';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { Typography } from 'antd';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const SqlManagementConfPageHeaderActions = (
   projectID: string
@@ -21,7 +22,10 @@ export const SqlManagementConfPageHeaderActions = (
         <ActionButton
           type="primary"
           actionType="navigate-link"
-          link={{ to: `/sqle/project/${projectID}/sql-management-conf/create` }}
+          link={{
+            to: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create,
+            params: { projectID }
+          }}
           text={t('managementConf.list.pageAction.enableAuditPlan')}
         />
       </PermissionControl>

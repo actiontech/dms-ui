@@ -21,7 +21,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   workflowStatus,
   auditResultActiveKey
 }) => {
-  const { projectName } = useCurrentProject();
+  const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
 
   const {
@@ -158,7 +158,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
               <ResultCard
                 {...item}
                 executeMode={WorkflowResV2ExecModeEnum.sqls}
-                projectName={projectName}
+                projectID={projectID}
                 taskId={taskId}
                 onUpdateDescription={() => {
                   onUpdateDescription(item.number!, index + 1);

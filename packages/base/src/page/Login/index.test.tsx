@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import MockDate from 'mockdate';
 import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
@@ -14,13 +14,13 @@ import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
 } from '@actiontech/shared/lib/enum';
-import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/common';
+import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
 
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
     useNavigate: jest.fn(),
-    useLocation: jest.fn()
+    useSearchParams: jest.fn()
   };
 });
 jest.mock('react-redux', () => ({
@@ -32,7 +32,7 @@ describe('page/Login-ee', () => {
   const dispatchSpy = jest.fn();
   const navigateSpy = jest.fn();
   const assignMock = jest.fn();
-  const useLocationMock: jest.Mock = useLocation as jest.Mock;
+  const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
 
   const customRender = (params = {}) => {
     return superRender(<Login />, undefined, { initStore: params });
@@ -42,6 +42,7 @@ describe('page/Login-ee', () => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
+    useSearchParamsSpy.mockReturnValue([new URLSearchParams()]);
     MockDate.set('2023-12-19 12:00:00');
     dms.mockAllApi();
   });
@@ -104,12 +105,12 @@ describe('page/Login-ee', () => {
       const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-      useLocationMock.mockReturnValue({
-        pathname: '/',
-        search: `?target=${encodeURIComponent('/index1')}`,
-        hash: '',
-        state: null
-      });
+
+      useSearchParamsSpy.mockReturnValue([
+        new URLSearchParams({
+          target: encodeURIComponent('/index1')
+        })
+      ]);
 
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));
@@ -158,12 +159,12 @@ describe('page/Login-ee', () => {
       const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-      useLocationMock.mockReturnValue({
-        pathname: '/',
-        search: `?target=${encodeURIComponent('/project/700300/cloud-beaver')}`,
-        hash: '',
-        state: null
-      });
+
+      useSearchParamsSpy.mockReturnValue([
+        new URLSearchParams({
+          target: encodeURIComponent('/project/700300/cloud-beaver')
+        })
+      ]);
 
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));
@@ -214,12 +215,12 @@ describe('page/Login-ee', () => {
       const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-      useLocationMock.mockReturnValue({
-        pathname: '/',
-        search: `?target=${encodeURIComponent('/transit?from=cloudbeaver')}`,
-        hash: '',
-        state: null
-      });
+
+      useSearchParamsSpy.mockReturnValue([
+        new URLSearchParams({
+          target: encodeURIComponent('/transit?from=cloudbeaver')
+        })
+      ]);
 
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3300));

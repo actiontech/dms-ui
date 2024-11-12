@@ -7,13 +7,14 @@ import {
 } from '../../../../../store/pipeline';
 import { ModalName } from '../../../../../data/ModalName';
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useDispatch } from 'react-redux';
 import { PipelineFormType } from '../index.type';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const usePipelineConfigurationFormState = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const dispatch = useDispatch();
 
@@ -44,7 +45,9 @@ const usePipelineConfigurationFormState = () => {
       })
     );
     dispatch(updatePipelineNodeTourStatus({ show: true }));
-    navigate(`/sqle/project/${projectID}/pipeline-configuration`);
+    navigate(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index, {
+      params: { projectID }
+    });
   }, [projectID, navigate, dispatch]);
 
   return {
