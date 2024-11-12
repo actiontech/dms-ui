@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 import { message, Modal, Space } from 'antd';
-import { PageHeader } from '@actiontech/shared';
+import {
+  PageHeader,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import {
   useCurrentProject,
@@ -30,12 +33,13 @@ import {
 } from './columns';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const navigate = useTypedNavigate();
+  const extractQuery = useTypedQuery();
   const [modalApi, modalContextHolder] = Modal.useModal();
   const [messageApi, messageContextHolder] = message.useMessage();
   const { parse2TableActionPermissions } = usePermission();
@@ -62,7 +66,8 @@ const DataSourceList = () => {
     searchKeyword,
     setSearchKeyword
   } = useTableRequestParams<IListDBService, DataSourceListParamType>({
-    defaultSearchKeyword: searchParams.get('address') || ''
+    defaultSearchKeyword:
+      extractQuery(ROUTE_PATHS.BASE.DATA_SOURCE.index)?.address || ''
   });
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -104,7 +109,9 @@ const DataSourceList = () => {
 
   const navigateToUpdatePage = useCallback(
     (dbServiceUid: string) => {
-      navigate(`/project/${projectID}/db-services/update/${dbServiceUid}`);
+      navigate(ROUTE_PATHS.BASE.DATA_SOURCE.update, {
+        params: { projectID, dbServiceUid }
+      });
     },
     [navigate, projectID]
   );
@@ -112,13 +119,14 @@ const DataSourceList = () => {
   const navigateToSqlManagementConf = useCallback(
     (uid: string, business: string, instanceAuditPlanId?: string) => {
       if (instanceAuditPlanId) {
-        navigate(
-          `/sqle/project/${projectID}/sql-management-conf/update/${instanceAuditPlanId}`
-        );
+        navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update, {
+          params: { projectID, id: instanceAuditPlanId }
+        });
       } else {
-        navigate(
-          `/sqle/project/${projectID}/sql-management-conf/create?instance_id=${uid}&business=${business}`
-        );
+        navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create, {
+          params: { projectID },
+          queries: { instance_id: uid, business }
+        });
       }
     },
     [navigate, projectID]

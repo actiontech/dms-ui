@@ -1,38 +1,48 @@
 /* eslint-disable no-console */
 import { useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { HeaderProgress } from '@actiontech/shared';
+import {
+  HeaderProgress,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 const TARGET_DATA = (projectID: string): Record<string, string> => {
   return {
-    create_workflow: `/sqle/project/${projectID}/exec-workflow/create`
+    create_workflow: parse2ReactRouterPath(
+      ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
+      { params: { projectID } }
+    )
   };
 };
 
 const Transit: React.FC = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const navigate = useTypedNavigate();
   const { bindProjects } = useCurrentUser();
+  const extraQueries = useTypedQuery();
 
   useEffect(() => {
-    const from = searchParams.get('from');
-    const to = searchParams.get('to');
-    const compressionData = searchParams.get('compression_data');
-    const projectName = searchParams.get('project_name');
+    const searchParams = extraQueries(ROUTE_PATHS.BASE.TRANSIT.index);
+
+    const from = searchParams?.from;
+    const to = searchParams?.to;
+    const compressionData = searchParams?.compression_data;
+    const projectName = searchParams?.project_name;
 
     if (!from || !to || !compressionData) {
       console.error(
         `Missing required parameters!\n from=${from}\n to=${to}\n compression_data=${compressionData}`
       );
-      navigate('/', { replace: true });
+      navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
       return;
     }
 
     if (!Object.keys(TRANSIT_FROM_CONSTANT).includes(from)) {
       console.error(`Unknown source: ${from}`);
-      navigate('/', { replace: true });
+      navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
       return;
     }
 
@@ -43,7 +53,7 @@ const Transit: React.FC = () => {
 
       if (!projectID) {
         console.error(`Not found project: ${projectName}`);
-        navigate('/', { replace: true });
+        navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
         return;
       }
 
@@ -51,7 +61,7 @@ const Transit: React.FC = () => {
 
       if (!path) {
         console.error(`Not found target path: ${to}`);
-        navigate('/', { replace: true });
+        navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
         return;
       }
 
@@ -60,9 +70,9 @@ const Transit: React.FC = () => {
       });
     } else {
       console.error(`project name is undefined`);
-      navigate('/', { replace: true });
+      navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
     }
-  }, [bindProjects, navigate, searchParams]);
+  }, [bindProjects, navigate, extraQueries]);
 
   return <HeaderProgress />;
 };

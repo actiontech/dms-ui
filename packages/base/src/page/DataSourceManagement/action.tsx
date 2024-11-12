@@ -4,6 +4,7 @@ import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
 import { ReactNode } from 'react';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { t } from '../../locale';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const DataSourceManagementPageHeaderActions = (
   activeKey: DataSourceManagerSegmentedKey
@@ -22,7 +23,7 @@ export const DataSourceManagementPageHeaderActions = (
           icon={<PlusOutlined width={10} height={10} color="currentColor" />}
           hidden={activeKey !== DataSourceManagerSegmentedKey.SyncDataSource}
           actionType="navigate-link"
-          link={{ to: `/sync-data-source/create` }}
+          link={{ to: ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.create }}
         />
       </PermissionControl>
     ),
@@ -34,7 +35,7 @@ export const DataSourceManagementPageHeaderActions = (
           text={t('dmsGlobalDataSource.batchImportDataSource.buttonText')}
           hidden={activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource}
           actionType="navigate-link"
-          link={{ to: `/global-data-source/batch-import` }}
+          link={{ to: ROUTE_PATHS.BASE.GLOBAL_DATA_SOURCE.batch_import }}
         />
       </PermissionControl>
     ),
@@ -48,7 +49,7 @@ export const DataSourceManagementPageHeaderActions = (
           icon={<PlusOutlined width={10} height={10} color="currentColor" />}
           hidden={activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource}
           actionType="navigate-link"
-          link={{ to: `/global-data-source/create` }}
+          link={{ to: ROUTE_PATHS.BASE.GLOBAL_DATA_SOURCE.create }}
         />
       </PermissionControl>
     )

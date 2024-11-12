@@ -53,8 +53,8 @@ describe('test useRenderDatabaseSelectionItems', () => {
     jest.spyOn(useCreationMode, 'default').mockImplementation(() => ({
       isCloneMode: false,
       isAssociationVersionMode: false,
-      versionId: null,
-      versionName: null
+      versionId: undefined,
+      versionName: undefined
     }));
   });
   afterEach(() => {
@@ -360,8 +360,8 @@ describe('test useRenderDatabaseSelectionItems', () => {
     spy.mockImplementation(() => ({
       isCloneMode: true,
       isAssociationVersionMode: false,
-      versionId: null,
-      versionName: null
+      versionId: undefined,
+      versionName: undefined
     }));
     renderHook(() =>
       useRenderDatabaseSelectionItems({

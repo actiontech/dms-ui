@@ -2,9 +2,8 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { DatabaseSelectionItemProps } from '../../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicToolTips, TypedLink } from '@actiontech/shared';
 import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FormListFieldData } from 'antd';
 import system from '@actiontech/shared/lib/api/sqle/service/system';
@@ -17,6 +16,7 @@ import useCreationMode from '../../../../../../hooks/useCreationMode';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../../store';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
@@ -157,15 +157,23 @@ const useRenderDatabaseSelectionItems = ({
     }
 
     const path = rule.is_global_rule_template
-      ? `/sqle/rule-manager/global-detail/${rule.name}/${dbType}`
-      : `/sqle/project/${projectID}/rule/template/detail/${rule.name}/${dbType}`;
+      ? ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail
+      : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
     return (
       <BasicToolTips
         title={
-          <Link to={path} target="_blank">
+          <TypedLink
+            to={path}
+            params={{
+              projectID,
+              dbType,
+              templateName: rule.name ?? ''
+            }}
+            target="_blank"
+          >
             {t('rule.form.ruleTemplate')}: {rule.name}
-          </Link>
+          </TypedLink>
         }
       >
         <BasicButton

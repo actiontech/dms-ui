@@ -1,17 +1,18 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ProjectSelectorModal from './ProjectSelectorModal';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { useMemo, useState } from 'react';
 import { SelectProps } from 'antd';
 import { ProjectSelectorLabelStyleWrapper } from '../../../Nav/SideMenu/ProjectSelector/style';
 import { FlagFilled } from '@actiontech/icons';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const NotFoundRecentlyProject: React.FC<{
   currentProjectID?: string;
   updateRecentlyProject: (id: string, name: string) => void;
 }> = ({ currentProjectID, updateRecentlyProject }) => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { bindProjects } = useCurrentUser();
 

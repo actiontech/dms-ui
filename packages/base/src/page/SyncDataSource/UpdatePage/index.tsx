@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { useNavigate, useParams } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import { Empty, message, Space, Typography } from 'antd';
 import {
   BackButton,
   BasicButton,
   EmptyBox,
-  PageHeader
+  PageHeader,
+  useTypedNavigate,
+  useTypedParams
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useForm } from 'antd/es/form/Form';
@@ -24,17 +25,19 @@ import { IUpdateDBServiceSyncTaskParams } from '@actiontech/shared/lib/api/base/
 import useTaskSource from '../../../hooks/useTaskSource';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { SyncTaskFormFields } from '../Form/index.type';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateSyncTask: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const [messageApi, contextHoler] = message.useMessage();
   const [form] = useForm<SyncTaskFormFields>();
   const { updateTaskSourceList, ...taskSourceTips } = useTaskSource();
   const { mergeFromValueIntoParams } = useAsyncParams();
 
-  const { taskId } = useParams<{ taskId: string }>();
+  const { taskId } =
+    useTypedParams<typeof ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update>();
   const [initError, setInitError] = useState('');
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
@@ -79,12 +82,10 @@ const UpdateSyncTask: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsSyncDataSource.updateSyncTask.successTips'));
-          navigate(
-            `/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`,
-            {
-              replace: true
-            }
-          );
+          navigate(ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index, {
+            queries: { active: DataSourceManagerSegmentedKey.SyncDataSource },
+            replace: true
+          });
         }
       })
       .finally(() => {

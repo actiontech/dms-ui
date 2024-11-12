@@ -52,7 +52,7 @@ describe('sqle/components/CardWrapper', () => {
     fireEvent.click(moreLinkEle);
     await act(async () => jest.advanceTimersByTime(300));
     expect(navigateSpy).toHaveBeenCalled();
-    expect(navigateSpy).toHaveBeenCalledWith('/a', undefined);
+    expect(navigateSpy).toHaveBeenCalledWith('/a');
 
     const tipIcon = getBySelector('.icon-tip', baseElement);
     fireEvent.mouseOver(tipIcon);

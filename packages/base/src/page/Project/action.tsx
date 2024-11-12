@@ -2,6 +2,7 @@ import { ActionButton } from '@actiontech/shared';
 import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 import { ReactNode } from 'react';
 import { t } from '../../locale';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ProjectManagementPageHeaderActions = (
   onExport: () => void,
@@ -22,7 +23,7 @@ export const ProjectManagementPageHeaderActions = (
           actionType="navigate-link"
           text={t('dmsProject.batchImportDataSource.buttonText')}
           link={{
-            to: '/project/batch-import'
+            to: ROUTE_PATHS.BASE.PROJECT.batch_import
           }}
         />
       </PermissionControl>
@@ -46,7 +47,7 @@ export const ProjectManagementPageHeaderActions = (
           actionType="navigate-link"
           text={t('dmsProject.importProject.buttonText')}
           link={{
-            to: '/project/import'
+            to: ROUTE_PATHS.BASE.PROJECT.import
           }}
         />
       </PermissionControl>

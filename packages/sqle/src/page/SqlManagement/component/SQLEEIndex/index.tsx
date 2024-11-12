@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { BasicButton, PageHeader } from '@actiontech/shared';
+import { BasicButton, PageHeader, useTypedQuery } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   useTableFilterContainer,
@@ -55,17 +55,14 @@ import useSqlManagementExceptionRedux from '../../../SqlManagementException/hook
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
 import { SqlManagementTableStyleWrapper } from './style';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useSearchParams } from 'react-router-dom';
-import {
-  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
-  SQL_MANAGEMENT_SOURCE_PATH_KEY
-} from '../../../../data/common';
 import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
 
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const [messageApi, messageContextHolder] = message.useMessage();
   const {
@@ -209,7 +206,9 @@ const SQLEEIndex = () => {
   const jumpToAnalyze = useCallback(
     (sqlManageID: string) => {
       window.open(
-        `/sqle/project/${projectID}/sql-management/${sqlManageID}/analyze`,
+        parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze, {
+          params: { projectID, sqlManageId: sqlManageID }
+        }),
         '_blank'
       );
     },
@@ -410,17 +409,13 @@ const SQLEEIndex = () => {
   );
 
   useEffect(() => {
-    if (
-      !!searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY) &&
-      !!searchParams.get(SQL_MANAGEMENT_SOURCE_PATH_KEY)
-    ) {
+    const searchParams = extraQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
+    if (searchParams && !!searchParams.instance_id && !!searchParams.source) {
       updateAllSelectedFilterItem(true);
       updateTableFilterInfo({
-        filter_source: searchParams.get(
-          SQL_MANAGEMENT_SOURCE_PATH_KEY
-        ) as GetSqlManageListV2FilterSourceEnum,
-        filter_instance_id:
-          searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY) ?? ''
+        filter_source:
+          searchParams.source as GetSqlManageListV2FilterSourceEnum,
+        filter_instance_id: searchParams.instance_id
       });
       setIsHighPriority(true);
     }

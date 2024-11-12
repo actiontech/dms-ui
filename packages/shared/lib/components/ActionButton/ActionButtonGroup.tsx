@@ -1,15 +1,16 @@
 import { Space } from 'antd';
 import ActionButton from './ActionButton';
 import { ActionButtonGroupProps } from './index.type';
+import { RoutePathValue } from '../TypedRouter';
 
-const ActionButtonGroup: React.FC<ActionButtonGroupProps> = ({
+const ActionButtonGroup = <T extends RoutePathValue>({
   actions,
   ...spaceProps
-}) => {
+}: ActionButtonGroupProps<T>) => {
   return (
     <Space {...spaceProps}>
       {actions.map(({ key, ...action }) => {
-        return <ActionButton key={key} {...action} />;
+        return <ActionButton<T> key={key} {...action} />;
       })}
     </Space>
   );

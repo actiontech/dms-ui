@@ -16,7 +16,7 @@ import {
 } from '../../../../../index.type';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useRenderDatabaseSelectionItems from './hooks/useRenderDatabaseSelectionItems';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton, useTypedQuery } from '@actiontech/shared';
 import {
   DatabaseSchemaFilled,
   RingPieFilled,
@@ -27,12 +27,12 @@ import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../store';
 import useCreationMode from '../../../../../hooks/useCreationMode';
-import { useSearchParams } from 'react-router-dom';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
 import { decompressFromEncodedURIComponent } from 'lz-string';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 import useSetFormValuesWithGenModifiedSqlParams from './hooks/useSetFormValuesWithGenModifiedSqlParams';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   handleInstanceNameChange,
@@ -41,7 +41,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
   const { projectName } = useCurrentProject();
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const { sqleTheme } = useThemeStyleData();
 
@@ -123,9 +123,12 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   }, [projectName, updateInstanceList]);
 
   useEffect(() => {
+    const searchParams = extraQueries(
+      ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create
+    );
     if (searchParams) {
-      const compressionData = searchParams.get('compression_data');
-      const from = searchParams.get('from');
+      const compressionData = searchParams?.compression_data;
+      const from = searchParams?.from;
 
       // 处理从 cloud_beaver 跳转至创建工单的情况
       if (
@@ -159,7 +162,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [form, searchParams]);
+  }, [extraQueries, form]);
 
   return (
     <>

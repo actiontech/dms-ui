@@ -1,7 +1,7 @@
 import { useRequest } from 'ahooks';
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { IReduxState } from '../../../../base/src/store';
 import {
   updateBindProjects,
@@ -14,12 +14,13 @@ import {
 } from '../../../../base/src/store/user';
 import { ResponseCode, SupportLanguage, SystemRole } from '../../enum';
 import User from '../../api/base/service/User';
-import { DMS_REDIRECT_KEY_PARAMS_NAME } from '../../data/common';
 import { DEFAULT_LANGUAGE } from '../../locale';
+import { useTypedNavigate } from '../../components/TypedRouter';
+import { ROUTE_PATHS } from '../../data/routePaths';
 
 const useUserInfo = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const location = useLocation();
   const userId = useSelector((state: IReduxState) => state.user.uid);
 
@@ -102,20 +103,18 @@ const useUserInfo = () => {
           dispatch(updateUserInfoFetchStatus(true));
         } else {
           clearUserInfo();
-          navigate(
-            `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${location.pathname}`,
-            { replace: true }
-          );
+          navigate(ROUTE_PATHS.BASE.LOGIN.index, {
+            replace: true,
+            queries: { target: encodeURIComponent(location.pathname) }
+          });
         }
       },
       onError: () => {
         clearUserInfo();
-        navigate(
-          `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${location.pathname}`,
-          {
-            replace: true
-          }
-        );
+        navigate(ROUTE_PATHS.BASE.LOGIN.index, {
+          replace: true,
+          queries: { target: encodeURIComponent(location.pathname) }
+        });
       }
     }
   );

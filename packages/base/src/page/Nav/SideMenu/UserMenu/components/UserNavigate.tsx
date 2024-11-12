@@ -9,7 +9,6 @@ import {
 import { useTranslation } from 'react-i18next';
 import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useUserInfo } from '@actiontech/shared/lib/global';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
@@ -17,7 +16,7 @@ import { ResponseCode, SupportLanguage } from '@actiontech/shared/lib/enum';
 import { useDispatch } from 'react-redux';
 import { updateNavModalStatus } from '../../../../../store/nav';
 import { ModalName } from '../../../../../data/ModalName';
-import { LocalStorageWrapper } from '@actiontech/shared';
+import { LocalStorageWrapper, useTypedNavigate } from '@actiontech/shared';
 import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
@@ -28,6 +27,7 @@ import ContextMenu from './ContextMenu';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { updateLanguage as updateReduxLanguage } from '../../../../../../../base/src/store/user';
 import { Radio } from 'antd';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 type Props = {
   username: string;
@@ -42,7 +42,7 @@ const UserNavigate: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation();
   const { clearUserInfo } = useUserInfo();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const dispatch = useDispatch();
   const [logoutPending, { setFalse: logoutSucceed, setTrue: startLogout }] =
     useBoolean(false);
@@ -54,7 +54,7 @@ const UserNavigate: React.FC<Props> = ({
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           clearUserInfo();
-          navigate('/login', { replace: true });
+          navigate(ROUTE_PATHS.BASE.LOGIN.index, { replace: true });
         }
       })
       .finally(() => {
@@ -141,7 +141,7 @@ const UserNavigate: React.FC<Props> = ({
       key: 'account',
       icon: <UserCircleFilled />,
       text: t('dmsMenu.userNavigate.account'),
-      onClick: () => navigate('/account')
+      onClick: () => navigate(ROUTE_PATHS.BASE.ACCOUNT)
     },
     // #if [ee]
     {

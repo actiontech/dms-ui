@@ -1,11 +1,15 @@
 import { useCallback } from 'react';
-import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Spin, Space } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import classNames from 'classnames';
 import CustomRuleForm from '../CustomRuleForm/CustomRuleForm';
-import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicResult,
+  PageHeader,
+  useTypedParams
+} from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { UpdateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
@@ -13,10 +17,12 @@ import useCustomRuleTemplateForm from '../hooks/useCustomRuleTemplateForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateCustomRule: React.FC = () => {
   const { t } = useTranslation();
-  const { ruleID = '' } = useParams<{ ruleID: string }>();
+  const { ruleID = '' } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.CUSTOM_RULE.update>();
   const {
     form,
     editScriptForm,

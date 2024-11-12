@@ -4,6 +4,8 @@ import {
   PERMISSIONS
 } from '@actiontech/shared/lib/global';
 import { t } from '../../../locale';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 export const SyncTaskListActions: (params: {
   syncAction: (taskId: string) => void;
@@ -19,7 +21,9 @@ export const SyncTaskListActions: (params: {
       permissions: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.EDIT,
       link(record) {
         return {
-          to: `/sync-data-source/update/${record?.uid ?? ''}`
+          to: parse2ReactRouterPath(ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update, {
+            params: { taskId: record?.uid ?? '' }
+          })
         };
       }
     },

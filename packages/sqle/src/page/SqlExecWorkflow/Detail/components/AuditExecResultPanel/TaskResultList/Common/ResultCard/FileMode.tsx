@@ -11,9 +11,10 @@ import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
 import SqlStatementResultTable from '../SqlStatementResultTable';
 import { Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { TasksResultCardStyleWrapper } from './style';
 import { SqlFileOutlined } from '@actiontech/icons';
+import { TypedLink } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const FileMode: React.FC<FileExecuteResultCardProps> = ({
   taskId,
@@ -86,15 +87,16 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
 
               <div className="file-info">
                 <SqlFileOutlined />
-                <Link
+                <TypedLink
                   className="file-info-name"
-                  to={`/sqle/project/${projectID}/exec-workflow/${taskId}/files/${props.file_id}/sqls`}
+                  to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview}
+                  params={{ projectID, taskId, fileId: props.file_id ?? '' }}
                   onClick={(e) => {
                     e.stopPropagation();
                   }}
                 >
                   {props.file_name}
-                </Link>
+                </TypedLink>
               </div>
             </Space>
             <div className="result-card-status-wrap">
@@ -118,8 +120,9 @@ const FileMode: React.FC<FileExecuteResultCardProps> = ({
             caption={
               <div className="flex-display flex-end-horizontal">
                 <Trans i18nKey={'audit.fileModeExecute.sqlsTips'}>
-                  <Link
-                    to={`/sqle/project/${projectID}/exec-workflow/${taskId}/files/${props.file_id}/sqls`}
+                  <TypedLink
+                    to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.sql_files_overview}
+                    params={{ projectID, taskId, fileId: props.file_id ?? '' }}
                   />
                 </Trans>
               </div>

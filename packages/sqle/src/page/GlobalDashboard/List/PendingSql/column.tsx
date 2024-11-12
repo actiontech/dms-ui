@@ -4,15 +4,18 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../../locale';
 import { IGlobalSqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SQLRenderer, BasicTypographyEllipsis } from '@actiontech/shared';
-import { Link } from 'react-router-dom';
-import { SQLAuditRecordListUrlParamsKey } from '../../../SqlManagement/component/SQLEEIndex/index.data';
+import {
+  SQLRenderer,
+  BasicTypographyEllipsis,
+  TypedLink
+} from '@actiontech/shared';
 import StatusTag from '../../../SqlManagement/component/SQLEEIndex/StatusTag';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ProjectPriorityDictionary } from '../../index.data';
 import { ProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { Typography } from 'antd';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const PendingSqlListColumn: (
   onUpdateFilterValue: (projectId?: string, instanceId?: string) => void
@@ -67,23 +70,27 @@ export const PendingSqlListColumn: (
         ) {
           if (source.sql_source_type === 'sql_audit_record') {
             return (
-              <Link
+              <TypedLink
                 target="_blank"
-                to={`/sqle/project/${record.project_uid}/sql-audit?${
-                  SQLAuditRecordListUrlParamsKey.SQLAuditRecordID
-                }=${source.sql_source_ids.join(',')}`}
+                to={ROUTE_PATHS.SQLE.SQL_AUDIT.index}
+                params={{ projectID: record.project_uid ?? '' }}
+                queries={{ SQLAuditRecordID: source.sql_source_ids.join(',') }}
               >
                 {source.sql_source_desc}
-              </Link>
+              </TypedLink>
             );
           }
           return (
-            <Link
+            <TypedLink
               target="_blank"
-              to={`/sqle/project/${record.project_uid}/sql-management-conf/${source.sql_source_ids[0]}`}
+              to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+              params={{
+                projectID: record.project_uid ?? '',
+                id: source.sql_source_ids[0]
+              }}
             >
               {source.sql_source_desc ?? source.sql_source_type}
-            </Link>
+            </TypedLink>
           );
         }
         return '-';

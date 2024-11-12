@@ -23,15 +23,15 @@ import {
 } from './columns';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
-import { PageHeader, BasicButton } from '@actiontech/shared';
+import { PageHeader, useTypedNavigate, ActionButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
 import { PlusOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlOptimizationList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { projectName, projectID } = useCurrentProject();
 
@@ -112,16 +112,16 @@ const SqlOptimizationList = () => {
       <PageHeader
         title={t('sqlOptimization.pageTitle')}
         extra={
-          <Link to={`/sqle/project/${projectID}/sql-optimization/create`}>
-            <BasicButton
-              type="primary"
-              icon={
-                <PlusOutlined color="currentColor" width={10} height={10} />
-              }
-            >
-              {t('sqlOptimization.create.linkButton')}
-            </BasicButton>
-          </Link>
+          <ActionButton
+            type="primary"
+            icon={<PlusOutlined color="currentColor" width={10} height={10} />}
+            text={t('sqlOptimization.create.linkButton')}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.create,
+              params: { projectID }
+            }}
+          />
         }
       />
       <TableToolbar
@@ -163,9 +163,12 @@ const SqlOptimizationList = () => {
         onRow={(record) => {
           return {
             onClick() {
-              navigate(
-                `/sqle/project/${projectID}/sql-optimization/overview/${record.optimization_id}`
-              );
+              navigate(ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview, {
+                params: {
+                  projectID,
+                  optimizationId: record.optimization_id ?? ''
+                }
+              });
             }
           };
         }}

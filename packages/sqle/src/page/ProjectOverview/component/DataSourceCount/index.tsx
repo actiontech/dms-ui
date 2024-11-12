@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton, useTypedNavigate } from '@actiontech/shared';
 import { Column, ColumnConfig } from '@ant-design/plots';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
@@ -15,6 +14,7 @@ import { DBHealthEnum } from './index.enum';
 import { DataSourceCountDataType } from './index.type';
 import ToolTipCustomContent from './ToolTipCustomContent';
 import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 /**
   todo: 柱形图的 柱子宽度 与边距（组之间，单柱子之间）不能同时设置
@@ -27,7 +27,7 @@ import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
 const DataSourceCount = () => {
   const { t } = useTranslation();
   const { currentTheme } = useChangeTheme();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { projectName, projectID } = useCurrentProject();
   const { sharedTheme, sqleTheme } = useThemeStyleData();
@@ -145,7 +145,7 @@ const DataSourceCount = () => {
   }, [data]);
 
   const onGetMore = () => {
-    navigate(`/project/${projectID}/db-services`);
+    navigate(ROUTE_PATHS.BASE.DATA_SOURCE.index, { params: { projectID } });
   };
 
   return (

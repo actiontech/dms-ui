@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useCallback, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import classNames from 'classnames';
 import { Space } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicButton, PageHeader, BasicResult } from '@actiontech/shared';
+import {
+  BasicButton,
+  PageHeader,
+  BasicResult,
+  useTypedParams
+} from '@actiontech/shared';
 import RuleTemplateForm from '../RuleTemplateForm';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
@@ -16,12 +20,14 @@ import {
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateRuleTemplate = () => {
   const { t } = useTranslation();
 
   const { projectName, projectID } = useCurrentProject();
-  const urlParams = useParams<{ templateName: string }>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.update>();
 
   const {
     step,

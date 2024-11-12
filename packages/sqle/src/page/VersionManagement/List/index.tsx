@@ -1,6 +1,6 @@
-import { PageHeader } from '@actiontech/shared';
+import { useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { PageHeader } from '@actiontech/shared';
 import {
   useCurrentProject,
   usePermission
@@ -23,6 +23,7 @@ import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { IGetSqlVersionListV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import {
   VersionManagementPageHeaderActions,
   VersionManagementTableActions
@@ -31,7 +32,7 @@ import {
 const VersionManagementList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { projectID, projectName } = useCurrentProject();
   const { checkActionPermission } = usePermission();
@@ -82,7 +83,9 @@ const VersionManagementList = () => {
     );
 
   const onEdit = (id?: number) => {
-    navigate(`/sqle/project/${projectID}/version-management/update/${id}`);
+    navigate(ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update, {
+      params: { projectID, versionId: id?.toString() ?? '' }
+    });
   };
 
   const onDelete = (id?: number) => {

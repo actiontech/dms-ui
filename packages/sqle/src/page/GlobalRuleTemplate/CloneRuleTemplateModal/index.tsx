@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Col, Form, Row, Space, Typography } from 'antd';
-import { BasicButton, BasicDrawer, BasicInput } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicDrawer,
+  BasicInput,
+  TypedLink
+} from '@actiontech/shared';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { CloneRuleTemplateModalProps } from './index.type';
@@ -38,9 +42,9 @@ const CloneRuleTemplateModal: React.FC<CloneRuleTemplateModalProps> = ({
         <Row>
           <Col>
             {t('ruleTemplate.cloneRuleTemplate.currentTemplateTips')}
-            <Link target="_blank" to={link}>
+            <TypedLink target="_blank" to={link}>
               {templateName}
-            </Link>
+            </TypedLink>
           </Col>
           <Col>
             <Typography.Text type="secondary">

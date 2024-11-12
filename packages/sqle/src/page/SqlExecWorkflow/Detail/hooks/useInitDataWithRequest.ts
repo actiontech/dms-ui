@@ -1,15 +1,17 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useTypedParams } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useInitDataWithRequest = (workflowId?: string) => {
-  const urlParams = useParams<{ workflowId: string }>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail>();
   const { projectName } = useCurrentProject();
   const [taskInfos, setTaskInfos] = useState<IAuditTaskResV1[]>([]);
   const [

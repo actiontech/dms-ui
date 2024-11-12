@@ -1,15 +1,14 @@
 import {
   PageHeader,
-  BasicButton,
   EmptyBox,
   HighlightCode,
-  SQLRenderer
+  SQLRenderer,
+  ActionButton,
+  useTypedParams
 } from '@actiontech/shared';
 import { Spin, Typography, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { SqlOptimizationDetailUrlParams } from '../index.type';
 import { useBoolean, useRequest } from 'ahooks';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import {
@@ -24,13 +23,15 @@ import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 import RecommendIndex from '../components/RecommendIndex';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const OptimizationDetail = () => {
   const { t } = useTranslation();
 
   const { projectID, projectName } = useCurrentProject();
 
-  const urlParams = useParams<SqlOptimizationDetailUrlParams>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.detail>();
 
   const [showRewriteSql, { setTrue: showRewriteSqlTrue }] = useBoolean();
 
@@ -58,13 +59,18 @@ const OptimizationDetail = () => {
         <PageHeader
           fixed
           title={
-            <Link
-              to={`/sqle/project/${projectID}/sql-optimization/overview/${urlParams.optimizationId}`}
-            >
-              <BasicButton icon={<LeftArrowOutlined />}>
-                {t('sqlOptimization.detail.returnButton')}
-              </BasicButton>
-            </Link>
+            <ActionButton
+              icon={<LeftArrowOutlined />}
+              text={t('sqlOptimization.detail.returnButton')}
+              actionType="navigate-link"
+              link={{
+                to: ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.overview,
+                params: {
+                  projectID,
+                  optimizationId: urlParams.optimizationId ?? ''
+                }
+              }}
+            />
           }
         />
         <SqlOptimizationDetailStyleWrapper>

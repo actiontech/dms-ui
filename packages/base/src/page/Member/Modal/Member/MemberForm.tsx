@@ -1,12 +1,17 @@
 import { useEffect } from 'react';
 import { Form } from 'antd';
-import { BasicSelect, BasicSwitch, BasicToolTips } from '@actiontech/shared';
+import {
+  BasicSelect,
+  BasicSwitch,
+  BasicToolTips,
+  TypedLink
+} from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
 import { IMemberFormProps } from '../index.type';
 import useUsername from '../../../../hooks/useUsername';
 import RoleSelector from '../../components/RoleSelector';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
-import { Link } from 'react-router-dom';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const MemberForm: React.FC<IMemberFormProps> = ({
   form,
@@ -37,7 +42,7 @@ const MemberForm: React.FC<IMemberFormProps> = ({
             title={
               <Trans i18nKey={'dmsMember.memberForm.usernameTips'}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-                <Link target="_blank" to="/user-center" />
+                <TypedLink target="_blank" to={ROUTE_PATHS.BASE.USER_CENTER} />
               </Trans>
             }
           >

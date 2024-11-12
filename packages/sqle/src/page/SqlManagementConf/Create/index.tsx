@@ -8,7 +8,8 @@ import {
   BasicButton,
   EmptyBox,
   LazyLoadComponent,
-  PageHeader
+  PageHeader,
+  useTypedQuery
 } from '@actiontech/shared';
 import {
   FormStyleWrapper,
@@ -23,16 +24,16 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
 import { useRef } from 'react';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
-import { useSearchParams } from 'react-router-dom';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
 import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const instanceAuditPlanCreatedId = useRef<string>('');
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const { mergeFromValueIntoParams } = useAsyncParams();
   const { generateSubmitDataWithFormValues } = usePriorityConditionsParams();
@@ -52,7 +53,10 @@ const Create: React.FC = () => {
   } = useSqlManagementConfFormSharedStates();
 
   const onReset = () => {
-    if (!!searchParams.get('instance_id') && !!searchParams.get('business')) {
+    const searchParams = extraQueries(
+      ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
+    );
+    if (!!searchParams?.instance_id && !!searchParams?.business) {
       resetFormExceptFreezingFields();
     } else {
       form.resetFields();

@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useCallback, useContext } from 'react';
-
 import {
   SQLStatementFields,
   SQLStatementFormProps,
@@ -15,8 +14,8 @@ import {
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { FormSubmitStatusContext } from '..';
-import { SqlFiledInitialValue } from '../../../../data/common';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();
@@ -52,7 +51,7 @@ const SqlUploadFileCont = ({ form }: SQLStatementFormProps) => {
             },
             ...whiteSpaceSql()
           ]}
-          initialValue={SqlFiledInitialValue}
+          initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
         >
           <MonacoEditor
             width="100%"

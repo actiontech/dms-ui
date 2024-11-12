@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { SelectProps, Spin } from 'antd';
 import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
@@ -19,9 +18,11 @@ import { useDispatch } from 'react-redux';
 import { updateBindProjects } from '../../../store/user';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import QuickActions from './QuickActions';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SideMenu: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const dispatch = useDispatch();
 
   const { username, theme, updateTheme, bindProjects, language } =
@@ -107,8 +108,12 @@ const SideMenu: React.FC = () => {
     [currentProjectID, getProjectArchived]
   );
 
-  const projectSelectorChangeHandle: CustomSelectProps['onChange'] = (id) => {
-    navigate(`/sqle/project/${id}/overview`);
+  const projectSelectorChangeHandle: CustomSelectProps['onChange'] = (
+    projectID
+  ) => {
+    navigate(ROUTE_PATHS.SQLE.PROJECT_OVERVIEW.index, {
+      params: { projectID }
+    });
   };
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
-import { useNavigate } from 'react-router-dom';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
 import { DefaultSceneStepContainerWrapper } from '../style';
 import StepItems from './components/StepItems';
 import {
@@ -7,10 +7,11 @@ import {
   NormalUserDevopsSteps
 } from './components/StepItems/index.data';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
-import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/global';
+import { useTypedNavigate } from '@actiontech/shared';
 
 const CEDefaultScene: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
+
   const { baseTheme } = useThemeStyleData();
   const { checkActionPermission } = usePermission();
 

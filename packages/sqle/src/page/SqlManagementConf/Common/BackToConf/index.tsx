@@ -1,18 +1,22 @@
-import { BasicButton } from '@actiontech/shared';
+import { ActionButton } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const BackToConf: React.FC = () => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   return (
-    <Link to={`/sqle/project/${projectID}/sql-management-conf`}>
-      <BasicButton icon={<LeftArrowOutlined />}>
-        {t('managementConf.common.backToConf')}
-      </BasicButton>
-    </Link>
+    <ActionButton
+      icon={<LeftArrowOutlined />}
+      text={t('managementConf.common.backToConf')}
+      actionType="navigate-link"
+      link={{
+        to: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index,
+        params: { projectID }
+      }}
+    />
   );
 };
 

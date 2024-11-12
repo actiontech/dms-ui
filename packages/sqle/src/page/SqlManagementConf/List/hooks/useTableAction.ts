@@ -1,9 +1,10 @@
+import { useTypedNavigate } from '@actiontech/shared';
 import { UpdateInstanceAuditPlanStatusReqV1ActiveEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { MessageInstance } from 'antd/es/message/interface';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 type Params = {
   refresh: () => void;
@@ -19,9 +20,11 @@ const useTableAction = ({
   projectName
 }: Params) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const editAction = (id: string) => {
-    navigate(`/sqle/project/${projectID}/sql-management-conf/update/${id}`);
+    navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update, {
+      params: { projectID, id }
+    });
   };
 
   const disabledAction = (id: string) => {

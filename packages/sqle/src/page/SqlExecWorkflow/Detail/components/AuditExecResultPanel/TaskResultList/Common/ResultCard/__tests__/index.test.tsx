@@ -11,7 +11,7 @@ describe('test ExecWorkflow/ResultCard', () => {
           <ResultCard
             executeMode={WorkflowResV2ExecModeEnum.sqls}
             onUpdateDescription={jest.fn()}
-            projectName="default"
+            projectID="700300"
             taskId="123"
           />
         )

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useTypedNavigate } from '../../components/TypedRouter';
 
 const useBack = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const goBack = React.useCallback(() => {
     navigate(-1);

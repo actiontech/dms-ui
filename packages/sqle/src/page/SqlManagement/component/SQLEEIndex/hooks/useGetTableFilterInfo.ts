@@ -9,16 +9,13 @@ import useInstance from '../../../../../hooks/useInstance';
 import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
-import { useSearchParams } from 'react-router-dom';
-import {
-  SQL_MANAGEMENT_INSTANCE_PATH_KEY,
-  SQL_MANAGEMENT_SOURCE_PATH_KEY
-} from '../../../../../data/common';
+import { useTypedQuery } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useGetTableFilterInfo = () => {
   const { projectName } = useCurrentProject();
 
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
 
   const { generateAuditLevelSelectOptions } = useStaticStatus();
 
@@ -55,6 +52,7 @@ const useGetTableFilterInfo = () => {
   ]);
 
   const filterCustomProps = useMemo(() => {
+    const searchParams = extraQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
     return new Map<keyof ExtraFilterMetaType, FilterCustomProps>([
       [
         'filter_business',
@@ -65,7 +63,7 @@ const useGetTableFilterInfo = () => {
         {
           options: instanceIDOptions,
           loading: getInstanceLoading,
-          defaultValue: searchParams.get(SQL_MANAGEMENT_INSTANCE_PATH_KEY)
+          defaultValue: searchParams?.instance_id
         }
       ],
       [
@@ -73,7 +71,7 @@ const useGetTableFilterInfo = () => {
         {
           options: generateSourceSelectOptions,
           loading: getSourceTipsLoading,
-          defaultValue: searchParams.get(SQL_MANAGEMENT_SOURCE_PATH_KEY)
+          defaultValue: searchParams?.source
         }
       ],
       ['filter_audit_level', { options: generateAuditLevelSelectOptions }],
@@ -88,6 +86,7 @@ const useGetTableFilterInfo = () => {
       ]
     ]);
   }, [
+    extraQueries,
     projectBusinessOption,
     getProjectBusinessLoading,
     instanceIDOptions,
@@ -96,8 +95,7 @@ const useGetTableFilterInfo = () => {
     getSourceTipsLoading,
     generateAuditLevelSelectOptions,
     generateRuleTipsSelectOptions,
-    getRuleTipsLoading,
-    searchParams
+    getRuleTipsLoading
   ]);
 
   return {

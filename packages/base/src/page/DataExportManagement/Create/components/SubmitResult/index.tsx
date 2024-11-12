@@ -1,8 +1,8 @@
-import { BasicButton, BasicResult } from '@actiontech/shared';
+import { BasicButton, BasicResult, TypedLink } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ExportWorkflowSubmitResult: React.FC = () => {
   const { t } = useTranslation();
@@ -14,14 +14,15 @@ const ExportWorkflowSubmitResult: React.FC = () => {
       title={t('dmsDataExport.create.result.success')}
       subTitle={formValues?.baseValues.desc}
       extra={[
-        <Link
+        <TypedLink
           key="jumpToOrderDetail"
-          to={`/project/${projectID}/data/export/${workflowID}`}
+          to={ROUTE_PATHS.BASE.DATA_EXPORT.detail}
+          params={{ projectID, workflowID: workflowID ?? '' }}
         >
           <BasicButton type="primary">
             {t('dmsDataExport.create.result.guide')}
           </BasicButton>
-        </Link>
+        </TypedLink>
       ]}
     />
   );

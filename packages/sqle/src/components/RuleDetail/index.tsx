@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { useEffect, useMemo, useState } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
@@ -10,7 +9,8 @@ import {
   PageHeader,
   BasicButton,
   BasicResult,
-  EmptyBox
+  EmptyBox,
+  useTypedParams
 } from '@actiontech/shared';
 import { RuleStatus, RuleTypes, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
@@ -27,6 +27,7 @@ import {
   LeftArrowOutlined
 } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
@@ -34,10 +35,8 @@ const RuleDetail = () => {
   const { goBack } = useBack();
   const [fuzzyKeyword, setFuzzyKeyword] = useState<string>();
 
-  const { templateName, dbType } = useParams<{
-    templateName: string;
-    dbType: string;
-  }>();
+  const { templateName, dbType } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail>();
   const { projectName } = useCurrentProject();
   const {
     ruleStatus,

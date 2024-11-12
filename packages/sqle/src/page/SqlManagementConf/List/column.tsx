@@ -4,8 +4,7 @@ import {
   ActiontechTableFilterMetaValue
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
-import { DatabaseTypeLogo } from '@actiontech/shared';
-import { Link } from 'react-router-dom';
+import { DatabaseTypeLogo, TypedLink } from '@actiontech/shared';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
@@ -17,6 +16,7 @@ import {
 import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ScanTypeTagsCell from './ScanTypeTagsCell';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
@@ -38,21 +38,28 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
 };
 
 export const SqlManagementConfColumns: (
+  projectID: string,
   getLogoUrlByDbType: (dbType: string) => string
 ) => ActiontechTableColumn<
   IInstanceAuditPlanResV1,
   InstanceAuditPlanTableFilterParamType
-> = (getLogoUrlByDbType) => {
+> = (projectID, getLogoUrlByDbType) => {
   return [
     {
       dataIndex: 'instance_name',
       title: () => t('managementConf.list.table.column.dbName'),
       render: (instanceName, record) => {
         return (
-          <Link to={`${record.instance_audit_plan_id}`}>
+          <TypedLink
+            to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+            params={{
+              projectID,
+              id: record.instance_audit_plan_id?.toString() ?? ''
+            }}
+          >
             {instanceName ||
               t('managementConf.list.table.column.staticScanType')}
-          </Link>
+          </TypedLink>
         );
       },
       filterCustomType: 'select',

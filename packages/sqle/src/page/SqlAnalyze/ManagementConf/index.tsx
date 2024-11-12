@@ -1,20 +1,21 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/es/result';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { ResponseCode } from '../../../data/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import SqlAnalyze from '../SqlAnalyze';
-import { AuditPlanReportSqlAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { useTypedParams } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ManagementConfAnalyze = () => {
-  const urlParams = useParams<AuditPlanReportSqlAnalyzeUrlParams>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.analyze>();
   const { projectName } = useCurrentProject();
   const [errorMessage, setErrorMessage] = useState<string>('');
 

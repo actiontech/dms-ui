@@ -15,8 +15,8 @@ import {
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { FormSubmitStatusContext } from '..';
-import { SqlFiledInitialValue } from '../../../../data/common';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
   const { t } = useTranslation();
@@ -52,7 +52,7 @@ const SqlUploadFileCont = ({ form }: SqlUploadFileContProps) => {
             },
             ...whiteSpaceSql()
           ]}
-          initialValue={SqlFiledInitialValue}
+          initialValue={SQL_EDITOR_PLACEHOLDER_VALUE}
         >
           <MonacoEditor
             width="100%"

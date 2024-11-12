@@ -1,4 +1,10 @@
-import { BasicDrawer, BasicButton, BasicInput } from '@actiontech/shared';
+import {
+  BasicDrawer,
+  BasicButton,
+  BasicInput,
+  TypedLink,
+  useTypedParams
+} from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Space, Form, message, SelectProps, Spin, Typography } from 'antd';
 import { ModalName } from '../../../../../data/ModalName';
@@ -11,7 +17,6 @@ import {
   updateSelectVersionStageWorkflowList
 } from '../../../../../store/versionManagement';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { Link } from 'react-router-dom';
 import {
   FormItemLabel,
   CustomLabelContent,
@@ -27,17 +32,18 @@ import { ReleaseWorkflowFormType } from '../../index.type';
 import useTestConnection from './hooks/useTestConnection';
 import { useRequest, useBoolean } from 'ahooks';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
-import { useParams } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ReleaseModal: React.FC = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
-  const { versionId } = useParams<{ versionId: string }>();
+  const { versionId } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
 
   const { projectName, projectID } = useCurrentProject();
 
@@ -242,12 +248,16 @@ const ReleaseModal: React.FC = () => {
                   label={
                     <Space className="workflow-name-wrapper">
                       <RingPieFilled />
-                      <Link
-                        to={`/sqle/project/${projectID}/exec-workflow/${workflow.workflow_id}`}
-                        target="__blank"
+                      <TypedLink
+                        to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+                        params={{
+                          projectID,
+                          workflowId: workflow.workflow_id ?? ''
+                        }}
+                        target="_blank"
                       >
                         {workflow.workflow_name}
-                      </Link>
+                      </TypedLink>
                     </Space>
                   }
                 >

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';
@@ -21,13 +20,17 @@ import {
   ComparisonOutlined
 } from '@actiontech/icons';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
-import { TypedLink, ROUTE_PATHS } from '@actiontech/shared';
+import { TypedLink } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/overview`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.PROJECT_OVERVIEW.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.projectOverview')}
-    </Link>
+    </TypedLink>
   ),
   icon: <OverviewOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/overview`,
@@ -36,9 +39,9 @@ const projectOverviewMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/sql-audit`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.SQL_AUDIT.index} params={{ projectID }}>
       {t('dmsMenu.sqlAudit')}
-    </Link>
+    </TypedLink>
   ),
   icon: <MagnifierFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-audit`,
@@ -47,9 +50,9 @@ const sqlAuditMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/plugin-audit`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.PLUGIN_AUDIT.index} params={{ projectID }}>
       {t('dmsMenu.pluginAudit')}
-    </Link>
+    </TypedLink>
   ),
   icon: <CodeOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/plugin-audit`,
@@ -58,9 +61,12 @@ const pluginAuditMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/sql-optimization`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.SQL_OPTIMIZATION.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.sqlOptimization')}
-    </Link>
+    </TypedLink>
   ),
   icon: <RiseSquareOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-optimization`,
@@ -72,9 +78,12 @@ const sqlOptimizationMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/exec-workflow`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.sqlWorkflow')}
-    </Link>
+    </TypedLink>
   ),
   icon: <BriefcaseFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/exec-workflow`,
@@ -83,9 +92,12 @@ const sqlExecWorkflowMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/sql-management`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.sqlManagement')}
-    </Link>
+    </TypedLink>
   ),
   icon: <ManagementFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management`,
@@ -94,9 +106,9 @@ const sqlManagementMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const projectRuleTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/rule/template`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.RULE_TEMPLATE.index} params={{ projectID }}>
       {t('dmsMenu.ruleTemplate')}
-    </Link>
+    </TypedLink>
   ),
   icon: <ProfileSquareFilled width={18} height={18} fill="none" />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/rule/template`,
@@ -105,9 +117,9 @@ const projectRuleTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/whitelist`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.WHITELIST.index} params={{ projectID }}>
       {t('dmsMenu.whitelist')}
-    </Link>
+    </TypedLink>
   ),
   icon: <ResolveFileFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/whitelist`,
@@ -116,9 +128,12 @@ const whiteListMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqlManagementException: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/sql-management-exception`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_EXCEPTION.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.sqlManagementExcept')}
-    </Link>
+    </TypedLink>
   ),
   icon: <ExceptionFileOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-exception`,
@@ -127,9 +142,9 @@ const sqlManagementException: GenerateMenuItemType = (projectID) => ({
 
 const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/progress`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.PROGRESS.index} params={{ projectID }}>
       {t('dmsMenu.workflowTemplate')}
-    </Link>
+    </TypedLink>
   ),
   icon: <WorkflowFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/progress`,
@@ -138,9 +153,9 @@ const workflowTemplateMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqleOperationRecordMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/operation-record`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.OPERATION_LOG.index} params={{ projectID }}>
       {t('dmsMenu.SQLEOperateRecord')}
-    </Link>
+    </TypedLink>
   ),
   icon: <OperateAuditFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/operation-record`,
@@ -150,9 +165,12 @@ const sqleOperationRecordMenuItem: GenerateMenuItemType = (projectID) => ({
 
 const sqlManagementConf: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/sql-management-conf`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.sqlManagementConf')}
-    </Link>
+    </TypedLink>
   ),
   icon: <PlanFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-management-conf`,
@@ -161,9 +179,9 @@ const sqlManagementConf: GenerateMenuItemType = (projectID) => ({
 
 const pushRuleConfiguration: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/push-rule`}>
+    <TypedLink to={ROUTE_PATHS.SQLE.PUSH_RULE.index} params={{ projectID }}>
       {t('dmsMenu.pushRuleConfiguration')}
-    </Link>
+    </TypedLink>
   ),
   icon: <GearFilled width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/push-rule`,
@@ -172,9 +190,12 @@ const pushRuleConfiguration: GenerateMenuItemType = (projectID) => ({
 
 const pipelineConfiguration: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/pipeline-configuration`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.pipelineConfiguration')}
-    </Link>
+    </TypedLink>
   ),
   icon: <PipelineOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/pipeline-configuration`,
@@ -183,9 +204,12 @@ const pipelineConfiguration: GenerateMenuItemType = (projectID) => ({
 
 const versionManagement: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/sqle/project/${projectID}/version-management`}>
+    <TypedLink
+      to={ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.versionManagement')}
-    </Link>
+    </TypedLink>
   ),
   icon: <FileVersionOutlined width={18} height={18} />,
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/version-management`,
@@ -196,7 +220,7 @@ const dataSourceComparison: GenerateMenuItemType = (projectID) => ({
   label: (
     <TypedLink
       to={ROUTE_PATHS.SQLE.DATA_SOURCE_COMPARISON.index}
-      values={{ projectID }}
+      params={{ projectID }}
     >
       {t('dmsMenu.dataSourceComparison')}
     </TypedLink>

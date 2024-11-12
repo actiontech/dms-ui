@@ -3,7 +3,7 @@ import { IReduxState } from '../../../../../store';
 import { ModalName } from '../../../../../data/ModalName';
 import { useTranslation } from 'react-i18next';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
-import { BasicDrawer, BasicButton } from '@actiontech/shared';
+import { BasicDrawer, BasicButton, useTypedParams } from '@actiontech/shared';
 import { Form, Space, message } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import {
@@ -11,13 +11,13 @@ import {
   updateSelectVersionStageId
 } from '../../../../../store/versionManagement';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { useParams } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import WorkflowTableField from './WorkflowTableField';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const AssociateWorkflowModal: React.FC = () => {
   const { t } = useTranslation();
@@ -33,7 +33,8 @@ const AssociateWorkflowModal: React.FC = () => {
 
   const { projectName } = useCurrentProject();
 
-  const { versionId } = useParams<{ versionId: string }>();
+  const { versionId } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.detail>();
 
   const { stageId, visible } = useSelector((state: IReduxState) => ({
     stageId: state.versionManagement.stageId,

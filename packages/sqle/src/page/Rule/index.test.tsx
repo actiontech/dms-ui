@@ -3,15 +3,13 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import Rule from '.';
 import rule_template from '../../testUtils/mockApi/rule_template';
-import { useLocation, BrowserRouter } from 'react-router-dom';
 import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { renderWithThemeAndRedux } from '../../testUtils/customRender';
+import { superRender } from '../../testUtils/customRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import {
@@ -27,13 +25,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useLocation: jest.fn()
-}));
-
 describe('sqle/Rule', () => {
-  const useLocationMock: jest.Mock = useLocation as jest.Mock;
   let getAllRulesSpy: jest.SpyInstance;
   let getGlobalTemplateListSpy: jest.SpyInstance;
   let getProjectRuleTemplateTipsSpy: jest.SpyInstance;
@@ -97,12 +89,7 @@ describe('sqle/Rule', () => {
         });
       })
     });
-    useLocationMock.mockReturnValue({
-      pathname: '/',
-      search: '',
-      hash: '',
-      state: null
-    });
+    // useSearchParamsMock.mockReturnValue([new URLSearchParams()]);
 
     getAllRulesSpy = rule_template.getRuleList();
     getGlobalTemplateListSpy = rule_template.getRuleTemplateTips();
@@ -132,7 +119,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<Rule />);
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -158,14 +145,14 @@ describe('sqle/Rule', () => {
   it('request return no data', async () => {
     getAllRulesSpy.mockClear();
     getAllRulesSpy.mockImplementation(() => createSpySuccessResponse({}));
-    const { baseElement } = renderWithThemeAndRedux(<Rule />);
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('使用建议')).not.toBeInTheDocument();
   });
 
   it('filter list based on rule name', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<Rule />);
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -258,7 +245,7 @@ describe('sqle/Rule', () => {
         }
       }
     );
-    const { baseElement } = renderWithThemeAndRedux(<Rule />);
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -303,11 +290,7 @@ describe('sqle/Rule', () => {
     getProjectRuleTemplateTipsSpy.mockImplementation(() =>
       createSpySuccessResponse({})
     );
-    const { baseElement: baseElement2 } = renderWithThemeAndRedux(
-      <BrowserRouter>
-        <Rule />
-      </BrowserRouter>
-    );
+    const { baseElement: baseElement2 } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     fireEvent.mouseDown(getBySelector('#project_name', baseElement2));
     await act(async () => jest.advanceTimersByTime(300));
@@ -328,7 +311,7 @@ describe('sqle/Rule', () => {
   });
 
   it('filter list based on template name', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<Rule />);
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -359,7 +342,7 @@ describe('sqle/Rule', () => {
   });
 
   it('filter list based on database type', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<Rule />);
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -407,11 +390,7 @@ describe('sqle/Rule', () => {
     getProjectRuleTemplateTipsSpy.mockImplementation(() =>
       createSpySuccessResponse({})
     );
-    const { baseElement } = renderWithThemeAndRedux(
-      <BrowserRouter>
-        <Rule />
-      </BrowserRouter>
-    );
+    const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     fireEvent.mouseDown(getBySelector('#project_name', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -425,18 +404,9 @@ describe('sqle/Rule', () => {
   });
 
   it('request with url params', async () => {
-    useLocationMock.mockClear();
-    useLocationMock.mockReturnValue({
-      pathname: '/',
-      search: `?${RuleUrlParamKey.projectID}=1`,
-      hash: '',
-      state: null
+    superRender(<Rule />, undefined, {
+      routerProps: { initialEntries: ['/rule?projectID=1'] }
     });
-    renderWithThemeAndRedux(
-      <BrowserRouter>
-        <Rule />
-      </BrowserRouter>
-    );
     await act(async () => jest.advanceTimersByTime(3300));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     expect(getProjectRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);

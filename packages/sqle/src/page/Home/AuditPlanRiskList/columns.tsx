@@ -2,11 +2,12 @@ import { t } from '../../../locale';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { Typography } from 'antd';
-import { Link } from 'react-router-dom';
 import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { ProfileFilled } from '@actiontech/icons';
+import { TypedLink } from '@actiontech/shared';
 
+// todo 智能扫描重构后废置组件，暂不处理 TypedLink 替换 path
 export const AuditPlanRiskColumns: (
   projectID: string
 ) => ActiontechTableColumn<IRiskAuditPlan> = (projectID: string) => {
@@ -22,12 +23,12 @@ export const AuditPlanRiskColumns: (
         return (
           <TableColumnWithIconStyleWrapper>
             <ProfileFilled />
-            <Link
+            <TypedLink
               data-testid="report-time"
               to={`/sqle/project/${projectID}/audit-plan/detail/${record.audit_plan_name}/report/${record.audit_plan_report_id}`}
             >
               {text}
-            </Link>
+            </TypedLink>
           </TableColumnWithIconStyleWrapper>
         );
       }
@@ -42,9 +43,11 @@ export const AuditPlanRiskColumns: (
         }
 
         return (
-          <Link to={`/sqle/project/${projectID}/audit-plan/detail/${name}`}>
+          <TypedLink
+            to={`/sqle/project/${projectID}/audit-plan/detail/${name}`}
+          >
             {name}
-          </Link>
+          </TypedLink>
         );
       }
     },
