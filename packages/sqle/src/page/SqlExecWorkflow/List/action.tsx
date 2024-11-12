@@ -41,7 +41,6 @@ export const SqlExecWorkflowCreateAction = (projectID: string): ReactNode => {
         actionType="navigate-link"
         text={t('execWorkflow.list.createButtonText')}
         icon={<PlusOutlined width={10} height={10} color="currentColor" />}
-        // link={{ to: `/sqle/project/${projectID}/exec-workflow/create` }}
         link={{
           to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
           params: { projectID }

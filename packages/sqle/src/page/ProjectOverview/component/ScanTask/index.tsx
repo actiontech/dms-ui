@@ -19,7 +19,7 @@ export type typeChartChildrenProps = {
   refreshFuc: () => void;
 };
 
-// 智能扫描重构后 处于废弃状态，不进行 useNavigate 调整。
+//todo 智能扫描重构后 处于废弃状态，不进行 useNavigate 调整。
 const ScanTask = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();

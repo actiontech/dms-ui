@@ -14,6 +14,7 @@ import { ProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/serv
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 export const GlobalDashboardPendingWorkflowListColumn: (
   onUpdateFilterValue: (projectId?: string, instanceId?: string) => void
@@ -53,9 +54,15 @@ export const GlobalDashboardPendingWorkflowListColumn: (
           <BasicTypographyEllipsis
             textCont={desc}
             linkData={{
-              route: `/sqle/project/${record.project_uid}/exec-workflow/${
-                record.workflow_id ?? ''
-              }`,
+              route: parse2ReactRouterPath(
+                ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail,
+                {
+                  params: {
+                    projectID: record.project_uid ?? '',
+                    workflowId: record.workflow_id ?? ''
+                  }
+                }
+              ),
               text: t('execWorkflow.create.createResult.viewWorkflowDetail')
             }}
           />

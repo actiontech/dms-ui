@@ -83,7 +83,11 @@ export const PendingSqlListColumn: (
           return (
             <TypedLink
               target="_blank"
-              to={`/sqle/project/${record.project_uid}/sql-management-conf/${source.sql_source_ids[0]}`}
+              to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+              params={{
+                projectID: record.project_uid ?? '',
+                id: source.sql_source_ids[0]
+              }}
             >
               {source.sql_source_desc ?? source.sql_source_type}
             </TypedLink>

@@ -186,9 +186,6 @@ const useCloneExecWorkflowInfo = (
       params: { projectID },
       queries: { sourceWorkflowId: workflowInfo?.workflow_id ?? '' }
     });
-    // navigate(
-    //   `/sqle/project/${projectID}/exec-workflow/create?${SOURCE_WORKFLOW_PATH_KEY}=${workflowInfo?.workflow_id}`
-    // );
   }, [
     taskInfos,
     workflowInfo,

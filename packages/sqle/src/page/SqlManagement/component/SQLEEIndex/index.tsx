@@ -57,6 +57,7 @@ import { SqlManagementTableStyleWrapper } from './style';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -205,7 +206,9 @@ const SQLEEIndex = () => {
   const jumpToAnalyze = useCallback(
     (sqlManageID: string) => {
       window.open(
-        `/sqle/project/${projectID}/sql-management/${sqlManageID}/analyze`,
+        parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.analyze, {
+          params: { projectID, sqlManageId: sqlManageID }
+        }),
         '_blank'
       );
     },

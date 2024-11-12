@@ -10,6 +10,7 @@ import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common
 import { SqlVersionResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ActiontechTableActionsConfig } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { PlusOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const VersionManagementPageHeaderActions = (
   projectID: string
@@ -23,7 +24,10 @@ export const VersionManagementPageHeaderActions = (
           icon={<PlusOutlined width={10} height={10} color="currentColor" />}
           type="primary"
           actionType="navigate-link"
-          link={{ to: `/sqle/project/${projectID}/version-management/create` }}
+          link={{
+            to: ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.create,
+            params: { projectID }
+          }}
           text={t('versionManagement.operation.add')}
         />
       </PermissionControl>

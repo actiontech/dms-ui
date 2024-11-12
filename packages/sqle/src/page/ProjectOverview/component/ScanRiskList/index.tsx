@@ -17,7 +17,7 @@ import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { ScanTaskFilled } from '@actiontech/icons';
 
-// 智能扫描重构后 处于废弃状态，不进行 useNavigate 和 Link 调整。
+//todo 智能扫描重构后 处于废弃状态，不进行 useNavigate 和 Link 调整。
 const ScanRiskList = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();

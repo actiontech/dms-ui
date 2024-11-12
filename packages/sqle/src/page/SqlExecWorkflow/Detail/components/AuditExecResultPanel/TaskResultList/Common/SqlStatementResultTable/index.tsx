@@ -7,6 +7,8 @@ import { useState } from 'react';
 import { SQLStatementResultTableStyleWrapper } from './style';
 import AuditResultDrawer from '../../../../../../Common/AuditResultList/Table/AuditResultDrawer';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
   props
@@ -31,7 +33,13 @@ const SqlStatementResultTable: React.FC<SqlStatementResultTableProps> = (
       return;
     }
     window.open(
-      `/sqle/project/${projectID}/exec-workflow/${props.taskId}/${sqlNum}/analyze`
+      parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze, {
+        params: {
+          projectID,
+          taskId: props.taskId ?? '',
+          sqlNum: sqlNum.toString()
+        }
+      })
     );
   };
 

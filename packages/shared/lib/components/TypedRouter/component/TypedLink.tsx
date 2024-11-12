@@ -1,5 +1,9 @@
 import { Link, To } from 'react-router-dom';
-import { TypedLinkProps, RoutePathValue } from '../index.type';
+import {
+  TypedLinkProps,
+  RoutePathValue,
+  ObjectRoutePathValue
+} from '../index.type';
 import { forwardRef } from 'react';
 import {
   getFormatPathValues,
@@ -12,7 +16,9 @@ const TypedLink = <T extends RoutePathValue>(
   ref: React.Ref<HTMLAnchorElement>
 ) => {
   if (isCustomRoutePathObject(props.to)) {
-    const values = getFormatPathValues(props);
+    const values = getFormatPathValues(
+      props as TypedLinkProps<ObjectRoutePathValue>
+    );
     if ('params' in props && 'queries' in props) {
       const { to, params, queries, ...linkProps } = props;
       return (

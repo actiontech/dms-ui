@@ -8,10 +8,14 @@ import {
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 const TARGET_DATA = (projectID: string): Record<string, string> => {
   return {
-    create_workflow: `/sqle/project/${projectID}/exec-workflow/create`
+    create_workflow: parse2ReactRouterPath(
+      ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create,
+      { params: { projectID } }
+    )
   };
 };
 
