@@ -1,5 +1,4 @@
 import { useRequest } from 'ahooks';
-import { useSearchParams } from 'react-router-dom';
 import databaseCompareService from '@actiontech/shared/lib/api/sqle/service/database_comparison';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 import { decompressFromEncodedURIComponent } from 'lz-string';
@@ -12,6 +11,9 @@ import {
   SqlStatementFields
 } from '../../../../../../index.type';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
+import { useTypedQuery } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useMemo } from 'react';
 
 type Params = {
   form: FormInstance<SqlAuditInfoFormFields>;
@@ -28,7 +30,11 @@ const useSetFormValuesWithGenModifiedSqlParams = ({
   handleInstanceNameChange,
   setGetModifiedSQLsPending
 }: Params) => {
-  const [searchParams] = useSearchParams();
+  const extraQueries = useTypedQuery();
+
+  const searchParams = useMemo(() => {
+    return extraQueries(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create);
+  }, [extraQueries]);
 
   const getExistSchemaName = (schemaList: string[], schemaName?: string) => {
     if (schemaName && schemaList.includes(schemaName)) {
@@ -133,7 +139,7 @@ const useSetFormValuesWithGenModifiedSqlParams = ({
         }
       >(
         decompressFromEncodedURIComponent(
-          searchParams.get('gen_modified_sql_params')!
+          searchParams?.gen_modified_sql_params!
         )
       );
       const { comparisonInstanceName, dbExistingSchemas, ...apiParams } =
@@ -155,7 +161,7 @@ const useSetFormValuesWithGenModifiedSqlParams = ({
         });
     },
     {
-      ready: searchParams.has('gen_modified_sql_params')
+      ready: !!searchParams && !!searchParams?.gen_modified_sql_params
     }
   );
 };

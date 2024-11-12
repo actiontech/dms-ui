@@ -21,7 +21,7 @@ import {
   ScanTypeSqlTableDataSourceItem
 } from './index.type';
 import useBackendTable from '../../../../hooks/useBackendTable';
-import { BasicButton, SQLRenderer } from '@actiontech/shared';
+import { ActionButton, SQLRenderer } from '@actiontech/shared';
 import eventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
@@ -41,7 +41,7 @@ import {
 import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableFilterContainer';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
-import { Link } from 'react-router-dom';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const BEING_AUDITED = 'being_audited';
 
@@ -394,16 +394,21 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
         onClose={closeReportDrawer}
         loading={auditResultInfoLoading}
         extra={
-          <Link
-            to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}/analyze/${currentAuditResultRecord?.['id']}`}
-            target="blank"
-          >
-            <BasicButton>
-              {t(
-                'managementConf.detail.scanTypeSqlCollection.column.action.analysis'
-              )}
-            </BasicButton>
-          </Link>
+          <ActionButton
+            text={t(
+              'managementConf.detail.scanTypeSqlCollection.column.action.analysis'
+            )}
+            actionType="navigate-link"
+            link={{
+              to: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.analyze,
+              target: '_blank',
+              params: {
+                projectID,
+                instanceAuditPlanId,
+                id: currentAuditResultRecord?.id ?? ''
+              }
+            }}
+          />
         }
       />
     </ScanTypeSqlCollectionStyleWrapper>

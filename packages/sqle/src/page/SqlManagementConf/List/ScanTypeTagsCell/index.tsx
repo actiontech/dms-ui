@@ -1,10 +1,15 @@
 import { DashOutlined } from '@actiontech/icons';
-import { BasicButton, BasicTag, BasicToolTips } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicTag,
+  BasicToolTips,
+  TypedLink
+} from '@actiontech/shared';
 import { IAuditPlanTypeResBase } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Space } from 'antd';
-import { Link } from 'react-router-dom';
 import { ScanTypeTagsCellStyleWrapper } from './style';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 type Props = {
   instanceAuditPlanId: string;
@@ -19,12 +24,16 @@ const ScanTypeTagsCell: React.FC<Props> = ({
 
   const renderScanTypeTag = (scanType: IAuditPlanTypeResBase) => {
     return (
-      <Link
+      <TypedLink
         key={scanType.type}
-        to={`/sqle/project/${projectID}/sql-management-conf/${instanceAuditPlanId}?active_audit_plan_id=${scanType.audit_plan_id}`}
+        to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+        params={{ projectID, id: instanceAuditPlanId }}
+        queries={{
+          active_audit_plan_id: scanType.audit_plan_id?.toString() ?? ''
+        }}
       >
         <BasicTag className="pointer">{scanType.desc}</BasicTag>
-      </Link>
+      </TypedLink>
     );
   };
 

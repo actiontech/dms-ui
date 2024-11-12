@@ -1,28 +1,53 @@
-import { Link } from 'react-router-dom';
-import { CustomLinkProps, RouteConfig } from '../index.type';
+import { Link, To } from 'react-router-dom';
+import {
+  TypedLinkProps,
+  RoutePathValue,
+  ObjectRoutePathValue
+} from '../index.type';
 import { forwardRef } from 'react';
-import { isCustomRoutePathObject, parse2ReactRouterPath } from '../utils';
+import {
+  getFormatPathValues,
+  isCustomRoutePathObject,
+  parse2ReactRouterPath
+} from '../utils';
 
-const TypedLink = <T extends RouteConfig[keyof RouteConfig]>(
-  props: CustomLinkProps<T>,
+const TypedLink = <T extends RoutePathValue>(
+  props: TypedLinkProps<T>,
   ref: React.Ref<HTMLAnchorElement>
 ) => {
-  const { to, ...linkProps } = props;
-  if (isCustomRoutePathObject(to)) {
-    if ('values' in props) {
-      const { values } = props;
+  if (isCustomRoutePathObject(props.to)) {
+    const values = getFormatPathValues(
+      props as TypedLinkProps<ObjectRoutePathValue>
+    );
+    if ('params' in props && 'queries' in props) {
+      const { to, params, queries, ...linkProps } = props;
       return (
         <Link {...linkProps} to={parse2ReactRouterPath(to, values)} ref={ref} />
       );
     }
-    return <Link {...linkProps} to={parse2ReactRouterPath(to)} ref={ref} />;
+    if ('params' in props) {
+      const { to, params, ...linkProps } = props;
+      return (
+        <Link {...linkProps} to={parse2ReactRouterPath(to, values)} ref={ref} />
+      );
+    }
+    if ('queries' in props) {
+      const { to, queries, ...linkProps } = props;
+      return (
+        <Link {...linkProps} to={parse2ReactRouterPath(to, values)} ref={ref} />
+      );
+    }
+    const { to, ...linkProps } = props;
+    return (
+      <Link {...linkProps} to={parse2ReactRouterPath(to, values)} ref={ref} />
+    );
   }
-  return <Link {...linkProps} to={to} ref={ref} />;
+
+  const { to, ...linkProps } = props;
+  return <Link {...linkProps} to={to as To} ref={ref} />;
 };
 
-export default forwardRef(TypedLink) as unknown as <
-  T extends RouteConfig[keyof RouteConfig]
->(
-  props: React.PropsWithChildren<CustomLinkProps<T>> &
+export default forwardRef(TypedLink) as unknown as <T extends RoutePathValue>(
+  props: React.PropsWithChildren<TypedLinkProps<T>> &
     React.RefAttributes<HTMLAnchorElement>
 ) => React.ReactElement;

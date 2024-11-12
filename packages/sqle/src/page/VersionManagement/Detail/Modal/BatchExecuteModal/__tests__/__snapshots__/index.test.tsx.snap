@@ -60,7 +60,7 @@ exports[`sqle/VersionManagement/Detail/BatchExecuteModal render init snap shot 1
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/12345678"
-                    target="__blank"
+                    target="_blank"
                   >
                     workflow3
                   </a>

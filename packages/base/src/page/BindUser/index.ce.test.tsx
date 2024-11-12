@@ -8,7 +8,6 @@ import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
 import BindUser from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 
@@ -27,8 +26,10 @@ jest.mock('react-redux', () => ({
 describe('page/BindUser-ce', () => {
   const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
-  const customRender = (params = {}) => {
-    return superRender(<BindUser />, undefined, { initStore: params });
+  const customRender = (path = '/user/bind') => {
+    return superRender(<BindUser />, undefined, {
+      routerProps: { initialEntries: [path] }
+    });
   };
 
   beforeEach(() => {
@@ -100,9 +101,8 @@ describe('page/BindUser-ce', () => {
 
     it('render oauth2_token params submit', async () => {
       const search = `oauth2_token=oauth2_token_val`;
-      window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
       const requestFn = dms.bindUser();
-      const { baseElement } = customRender();
+      const { baseElement } = customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
 
       fireEvent.change(getBySelector('#username', baseElement), {
@@ -145,9 +145,8 @@ describe('page/BindUser-ce', () => {
   describe('render url have search val', () => {
     it('render search have error', async () => {
       const search = `error=error_info`;
-      window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-      customRender();
+      customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
       expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
@@ -163,16 +162,14 @@ describe('page/BindUser-ce', () => {
 
     it('render search have user_exist is not true', async () => {
       const search = `user_exist=false`;
-      window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
-      customRender();
+      customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
     });
 
     it('render search have user_exist is true && token not val', async () => {
       const search = `user_exist=true&dms_token`;
-      window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
       const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
-      customRender();
+      customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
       expect(eventEmitSpy).toHaveBeenCalledTimes(2);
       expect(eventEmitSpy).toHaveBeenCalledWith(
@@ -188,8 +185,7 @@ describe('page/BindUser-ce', () => {
 
     it('render search have user_exist is true && token val', async () => {
       const search = `user_exist=true&dms_token=111111`;
-      window.history.pushState({}, 'Test Page Title', `/user/bind?${search}`);
-      customRender();
+      customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
       expect(dispatchSpy).toHaveBeenCalledTimes(1);
       expect(dispatchSpy).toHaveBeenCalledWith({

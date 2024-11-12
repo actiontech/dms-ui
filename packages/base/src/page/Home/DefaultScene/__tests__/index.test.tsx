@@ -4,7 +4,6 @@ import { superRender } from '../../../../testUtils/customRender';
 import { fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -70,9 +69,7 @@ describe('test base/home/DefaultScene', () => {
     fireEvent.click(screen.getByText('查看审核规则'));
 
     expect(navigateSpy).toHaveBeenCalledTimes(1);
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/sqle/rule?${RuleUrlParamKey.projectID}=1`
-    );
+    expect(navigateSpy).toHaveBeenCalledWith(`/sqle/rule?projectID=1`);
     expect(screen.queryByText('选择项目')).not.toBeInTheDocument();
   });
 });

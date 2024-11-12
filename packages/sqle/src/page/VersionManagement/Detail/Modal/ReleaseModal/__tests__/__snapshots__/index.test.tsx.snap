@@ -142,7 +142,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render init snap s
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/12345678"
-                                      target="__blank"
+                                      target="_blank"
                                     >
                                       workflow3
                                     </a>
@@ -958,7 +958,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/12345678"
-                                      target="__blank"
+                                      target="_blank"
                                     >
                                       workflow3
                                     </a>
@@ -1774,7 +1774,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render release for
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/12345678"
-                                      target="__blank"
+                                      target="_blank"
                                     >
                                       workflow3
                                     </a>
@@ -2934,7 +2934,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/12345678"
-                                      target="__blank"
+                                      target="_blank"
                                     >
                                       workflow3
                                     </a>
@@ -3795,7 +3795,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/12345678"
-                                      target="__blank"
+                                      target="_blank"
                                     >
                                       workflow3
                                     </a>
@@ -4656,7 +4656,7 @@ exports[`sqle/VersionManagement/Detail/AssociateWorkflowModal render test instan
                                   >
                                     <a
                                       href="/sqle/project/700300/exec-workflow/12345678"
-                                      target="__blank"
+                                      target="_blank"
                                     >
                                       workflow3
                                     </a>

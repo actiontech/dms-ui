@@ -12,7 +12,7 @@ import task from '../../../../../../../../../testUtils/mockApi/task';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
-const projectName = 'default';
+const projectID = '700300';
 const taskId = 'task_id_1234';
 
 describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
@@ -22,14 +22,14 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
   const customRender = (
     params: Omit<
       SqlExecuteResultCardProps,
-      'projectName' | 'taskId' | 'onUpdateDescription'
+      'projectID' | 'taskId' | 'onUpdateDescription'
     >
   ) => {
     const someParams: Pick<
       SqlExecuteResultCardProps,
-      'projectName' | 'taskId' | 'onUpdateDescription'
+      'projectID' | 'taskId' | 'onUpdateDescription'
     > = {
-      projectName,
+      projectID,
       taskId,
       onUpdateDescription: onUpdateDescriptionFn
     };
@@ -152,7 +152,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(openSpy).toHaveBeenCalled();
     expect(openSpy).toHaveBeenCalledWith(
-      `/sqle/project/${projectName}/exec-workflow/${taskId}/2/analyze`
+      `/sqle/project/${projectID}/exec-workflow/${taskId}/2/analyze`
     );
     openSpy.mockRestore();
   });

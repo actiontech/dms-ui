@@ -5,7 +5,7 @@ import { Form } from 'antd';
 import SqlStatementFormItem from '..';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { SqlFiledInitialValue } from '../../../../../../data/common';
+import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
 describe('test SqlStatementFormItem', () => {
   beforeEach(() => {
@@ -64,7 +64,7 @@ describe('test SqlStatementFormItem', () => {
     fireEvent.click(screen.getByText('输入SQL语句'));
 
     expect(getBySelector('input.custom-monaco-editor')).toHaveValue(
-      SqlFiledInitialValue
+      SQL_EDITOR_PLACEHOLDER_VALUE
     );
   });
 });

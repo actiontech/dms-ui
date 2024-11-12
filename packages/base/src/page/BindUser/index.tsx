@@ -1,37 +1,44 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { Typography, Form } from 'antd';
 import { OauthLoginFormFields } from './index.type';
 import { updateToken } from '../../store/user';
-import { useNavigate } from 'react-router-dom';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from '../Login/components/LoginLayout';
-import { BasicButton, BasicInput } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicInput,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
-
-// #if [ee]
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum
 } from '@actiontech/shared/lib/enum';
-// #endif
 
 const BindUser = () => {
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { baseTheme } = useThemeStyleData();
 
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
+
+  const extraQueries = useTypedQuery();
+  const urlParams = useMemo(() => {
+    return extraQueries(ROUTE_PATHS.BASE.USER_BIND.index);
+  }, [extraQueries]);
 
   useBrowserVersionTips();
 
@@ -45,8 +52,7 @@ const BindUser = () => {
   };
 
   const login = (values: OauthLoginFormFields) => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const oauth2Token = urlParams.get('oauth2_token');
+    const oauth2Token = urlParams?.oauth2_token;
     loginLock.current = true;
     if (!oauth2Token) {
       eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
@@ -65,7 +71,7 @@ const BindUser = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           dispatch(updateToken({ token: concatToken(res.data.data?.token) }));
-          navigate('/');
+          navigate(ROUTE_PATHS.BASE.HOME);
           // #if [ee]
           LocalStorageWrapper.set(
             StorageKey.SHOW_COMPANY_NOTICE,
@@ -80,8 +86,7 @@ const BindUser = () => {
   };
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const error = urlParams.get('error');
+    const error = urlParams?.error;
     if (error) {
       eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
         message: t('dmsLogin.oauth.errorTitle'),
@@ -90,9 +95,9 @@ const BindUser = () => {
       });
       return;
     }
-    const userExist = urlParams.get('user_exist') === 'true';
+    const userExist = urlParams?.user_exist === 'true';
     if (!userExist) return;
-    const token = urlParams.get('dms_token');
+    const token = urlParams?.dms_token;
     if (!token) {
       eventEmitter.emit(EmitterKey.OPEN_GLOBAL_NOTIFICATION, 'error', {
         message: t('dmsLogin.oauth.errorTitle'),
@@ -102,8 +107,15 @@ const BindUser = () => {
       return;
     }
     dispatch(updateToken({ token: concatToken(token) }));
-    navigate('/');
-  }, [dispatch, navigate, t]);
+    navigate(ROUTE_PATHS.BASE.HOME);
+  }, [
+    dispatch,
+    navigate,
+    t,
+    urlParams?.dms_token,
+    urlParams?.error,
+    urlParams?.user_exist
+  ]);
 
   return (
     <LoginLayout>

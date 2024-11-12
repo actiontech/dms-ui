@@ -8,6 +8,8 @@ import {
   CheckboxMultipleBlankFilled,
   LogoutBoxFilled
 } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
 export const RuleTemplateListActions = (
   onDelete: (name: string) => void,
@@ -22,9 +24,9 @@ export const RuleTemplateListActions = (
         permissions: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EDIT,
         link(record) {
           return {
-            to: `/sqle/rule-manager/global-update/${
-              record?.rule_template_name ?? ''
-            }`
+            to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.RULE_MANAGEMENT.update, {
+              params: { templateName: record?.rule_template_name ?? '' }
+            })
           };
         }
       },

@@ -1,8 +1,8 @@
 import { PopconfirmProps, SpaceProps } from 'antd';
 import { IBasicButton } from '../BasicButton';
-import { LinkProps } from 'react-router-dom';
 import { Key, ReactNode } from 'react';
 import { IBasicToolTips } from '../BasicToolTips';
+import { RoutePathValue, TypedLinkProps } from '../TypedRouter';
 
 type ActionButtonBase = Omit<IBasicButton, 'children'> & {
   text?: ReactNode;
@@ -12,9 +12,9 @@ type ActionButtonWithNormal = {
   actionType?: never;
 };
 
-type ActionButtonWithNavigateLink = {
+type ActionButtonWithNavigateLink<T extends RoutePathValue> = {
   actionType: 'navigate-link';
-  link: LinkProps;
+  link: TypedLinkProps<T>;
 };
 
 type ActionBUttonWithConfirm = {
@@ -27,12 +27,12 @@ type ActionButtonWithTooltip = {
   tooltip: IBasicToolTips;
 };
 
-export type ActionButtonProps =
-  | (ActionButtonBase & ActionButtonWithNavigateLink)
+export type ActionButtonProps<T extends RoutePathValue = string> =
+  | (ActionButtonBase & ActionButtonWithNavigateLink<T>)
   | (ActionButtonBase & ActionBUttonWithConfirm)
   | (ActionButtonBase & ActionButtonWithTooltip)
   | (ActionButtonBase & ActionButtonWithNormal);
 
-export type ActionButtonGroupProps = {
-  actions: Array<ActionButtonProps & { key: Key }>;
+export type ActionButtonGroupProps<T extends RoutePathValue> = {
+  actions: Array<ActionButtonProps<T> & { key: Key }>;
 } & SpaceProps;

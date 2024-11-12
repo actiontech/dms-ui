@@ -2,7 +2,6 @@ import { useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { message } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -28,6 +27,8 @@ import {
   usePermission
 } from '@actiontech/shared/lib/global';
 import { RuleTemplateTableActions } from '../actions';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ProjectTable = () => {
   const { getLogoUrlByDbType } = useDbServiceDriver();
@@ -35,7 +36,7 @@ const ProjectTable = () => {
   const { parse2TableActionPermissions } = usePermission();
 
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
   const [messageApi, contextMessageHolder] = message.useMessage();
   const { projectName, projectID } = useCurrentProject();
   const dispatch = useDispatch();
@@ -137,9 +138,9 @@ const ProjectTable = () => {
         return;
       }
       if (type === 'edit') {
-        navigate(
-          `/sqle/project/${projectID}/rule/template/update/${record?.rule_template_name}`
-        );
+        navigate(ROUTE_PATHS.SQLE.RULE_TEMPLATE.update, {
+          params: { projectID, templateName: record?.rule_template_name ?? '' }
+        });
         return;
       }
       if (type === 'export') {

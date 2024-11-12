@@ -2,7 +2,8 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  useTypedParams
 } from '@actiontech/shared';
 import { Space, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -17,17 +18,18 @@ import { IUpdateSqlVersionV1Params } from '@actiontech/shared/lib/api/sqle/servi
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useParams } from 'react-router-dom';
 import { useMemo } from 'react';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
 import { useState } from 'react';
 import { VersionStage } from '../Common/VersionForm/index.type';
 import { isEqual } from 'lodash';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const VersionManagementUpdate = () => {
   const { t } = useTranslation();
 
-  const { versionId } = useParams<{ versionId: string }>();
+  const { versionId } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.VERSION_MANAGEMENT.update>();
 
   const { projectName } = useCurrentProject();
 

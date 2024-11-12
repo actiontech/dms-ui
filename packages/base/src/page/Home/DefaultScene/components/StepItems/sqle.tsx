@@ -1,11 +1,10 @@
-import { RuleUrlParamKey } from '@actiontech/shared/lib/types/common.type';
 import { t } from '../../../../../locale';
 import {
   DevopsStepsProps,
   UserDevopsStepButtonItem,
   UserDevopsStepChildren
 } from '../../index.type';
-import { ROUTE_PATHS } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const getAuditManageStep: (
   arg: DevopsStepsProps
@@ -26,9 +25,9 @@ export const getAuditManageStep: (
         ),
         action: () => {
           if (projectID) {
-            navigate(
-              `${ROUTE_PATHS.SQLE.RULE}?${RuleUrlParamKey.projectID}=${projectID}`
-            );
+            navigate(ROUTE_PATHS.SQLE.RULE.index, {
+              queries: { projectID }
+            });
           } else {
             setOpenRulePageProjectSelectorModal?.(true);
           }
@@ -39,21 +38,28 @@ export const getAuditManageStep: (
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_1'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/rule/template`)
+        action: () =>
+          navigate(ROUTE_PATHS.SQLE.RULE_TEMPLATE.index, {
+            params: { projectID }
+          })
       },
       {
         key: 'sql-management-conf',
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_2'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/sql-management-conf`)
+        action: () =>
+          navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.index, {
+            params: { projectID }
+          })
       },
       {
         key: 'create-sql-audit',
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_0_3'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/sql-audit/create`)
+        action: () =>
+          navigate(ROUTE_PATHS.SQLE.SQL_AUDIT.create, { params: { projectID } })
       }
     ]
   };
@@ -73,7 +79,8 @@ export const getAuditProgressStep: (
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_2_0'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/progress`)
+        action: () =>
+          navigate(ROUTE_PATHS.SQLE.PROGRESS.index, { params: { projectID } })
       },
       // #else
       {
@@ -81,7 +88,8 @@ export const getAuditProgressStep: (
         label: t(
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_2_1'
         ),
-        action: () => navigate(`/sqle/project/${projectID}/progress`)
+        action: () =>
+          navigate(ROUTE_PATHS.SQLE.PROGRESS.index, { params: { projectID } })
       }
       // #endif
     ]
@@ -104,7 +112,9 @@ export const getDataModifyStep: (
           'dmsHome.defaultScene.steps.queryAndModify.innerContents.action_1_0'
         ),
         action: () =>
-          navigate(`/sqle/project/${projectID}/exec-workflow/create`)
+          navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
+            params: { projectID }
+          })
       }
     ]
   };
@@ -120,7 +130,10 @@ export const getSQLEOperateStepItem = ({
       label: t(
         'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_3'
       ),
-      action: () => navigate(`/sqle/project/${projectID}/operation-record`)
+      action: () =>
+        navigate(ROUTE_PATHS.SQLE.OPERATION_LOG.index, {
+          params: { projectID }
+        })
     }
   ];
 };

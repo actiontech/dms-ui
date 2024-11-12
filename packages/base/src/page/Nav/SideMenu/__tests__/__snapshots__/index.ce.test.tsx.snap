@@ -398,7 +398,6 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
               >
                 <a
                   href="/sqle/project/700300/data-source-comparison"
-                  values="[object Object]"
                 >
                   结构对比
                 </a>
@@ -1532,7 +1531,6 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
               >
                 <a
                   href="/sqle/project/700300/data-source-comparison"
-                  values="[object Object]"
                 >
                   结构对比
                 </a>

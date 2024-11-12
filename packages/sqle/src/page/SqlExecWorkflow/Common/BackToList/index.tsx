@@ -1,18 +1,23 @@
-import { BasicButton } from '@actiontech/shared';
+import { ActionButton } from '@actiontech/shared';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const BackToList: React.FC<{ isAuditing?: boolean }> = ({ isAuditing }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   return (
-    <Link to={`/sqle/project/${projectID}/exec-workflow`}>
-      <BasicButton icon={<LeftArrowOutlined />} disabled={isAuditing}>
-        {t('execWorkflow.create.backToList')}
-      </BasicButton>
-    </Link>
+    <ActionButton
+      icon={<LeftArrowOutlined />}
+      disabled={isAuditing}
+      text={t('execWorkflow.create.backToList')}
+      actionType="navigate-link"
+      link={{
+        to: ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.index,
+        params: { projectID }
+      }}
+    />
   );
 };
 

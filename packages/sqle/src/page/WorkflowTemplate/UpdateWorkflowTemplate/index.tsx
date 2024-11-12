@@ -1,4 +1,10 @@
-import { BasicButton, BasicResult, PageHeader } from '@actiontech/shared';
+import {
+  ActionButton,
+  BasicButton,
+  BasicResult,
+  PageHeader,
+  useTypedParams
+} from '@actiontech/shared';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Col, Row, Space, Spin } from 'antd';
 import React, { useState } from 'react';
@@ -11,7 +17,6 @@ import {
   IWorkFlowStepTemplateResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { Link, useParams } from 'react-router-dom';
 import { BaseFormFields } from './components/BasicInfo/index.type';
 import { AxiosResponse } from 'axios';
 import {
@@ -29,6 +34,7 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { WorkflowTemplateStyleWrapper } from '../WorkflowTemplateDetail/style';
 import useUsername from '../../../hooks/useUsername';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateWorkflowTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -44,7 +50,7 @@ const UpdateWorkflowTemplate: React.FC = () => {
 
   const [updateSuccess, setUpdateSuccess] = useState(false);
 
-  const urlParams = useParams<{ workflowName: string }>();
+  const urlParams = useTypedParams<typeof ROUTE_PATHS.SQLE.PROGRESS.update>();
   const { projectName, projectID } = useCurrentProject();
 
   const {
@@ -247,11 +253,16 @@ const UpdateWorkflowTemplate: React.FC = () => {
       <Spin spinning={getWorkflowTemplateLoading}>
         <PageHeader
           title={
-            <Link to={`/sqle/project/${projectID}/progress`} key="go-back">
-              <BasicButton icon={<ArrowLeftOutlined />}>
-                {t('workflowTemplate.create.title.returnButton')}
-              </BasicButton>
-            </Link>
+            <ActionButton
+              key="go-back"
+              icon={<ArrowLeftOutlined />}
+              text={t('workflowTemplate.create.title.returnButton')}
+              actionType="navigate-link"
+              link={{
+                to: ROUTE_PATHS.SQLE.PROGRESS.index,
+                params: { projectID }
+              }}
+            />
           }
           extra={
             !updateSuccess ? (
@@ -300,16 +311,17 @@ const UpdateWorkflowTemplate: React.FC = () => {
           <BasicResult
             status="success"
             title={t('workflowTemplate.update.result.title')}
-            extra={[
-              <Link
-                key="back-to-workflow-template"
-                to={`/sqle/project/${projectID}/progress`}
-              >
-                <BasicButton type="primary">
-                  {t('workflowTemplate.update.result.showNow')}
-                </BasicButton>
-              </Link>
-            ]}
+            extra={
+              <ActionButton
+                text={t('workflowTemplate.update.result.showNow')}
+                type="primary"
+                actionType="navigate-link"
+                link={{
+                  to: ROUTE_PATHS.SQLE.PROGRESS.index,
+                  params: { projectID }
+                }}
+              />
+            }
           />
         )}
       </Spin>

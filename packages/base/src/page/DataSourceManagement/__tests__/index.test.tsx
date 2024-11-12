@@ -4,7 +4,7 @@ import { superRender } from '../../../testUtils/customRender';
 import dbServices from '../../../testUtils/mockApi/dbServices';
 import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
 import { DataSourceManagerSegmentedKey } from '../index.type';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import eventEmitter from '../../../utils/EventEmitter';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../../data/EmitterKey';
@@ -13,8 +13,7 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
-    useNavigate: jest.fn(),
-    useLocation: jest.fn()
+    useNavigate: jest.fn()
   };
 });
 
@@ -26,9 +25,6 @@ describe('test DataSourceManagement', () => {
     dbServices.mockAllApi();
     syncTaskList.mockAllApi();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
-    (useLocation as jest.Mock).mockReturnValue({
-      pathname: '/data-source-management'
-    });
     mockUsePermission(
       { checkPagePermission: jest.fn().mockReturnValue(true) },
       { useSpyOnMockHooks: true }
@@ -48,10 +44,7 @@ describe('test DataSourceManagement', () => {
     expect(container).toMatchSnapshot();
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(
-      {
-        pathname: '/data-source-management',
-        search: `active=${DataSourceManagerSegmentedKey.SyncDataSource}`
-      },
+      `/data-source-management?active=${DataSourceManagerSegmentedKey.SyncDataSource}`,
       { replace: true }
     );
   });

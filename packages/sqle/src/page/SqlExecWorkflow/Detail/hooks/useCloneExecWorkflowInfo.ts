@@ -11,16 +11,16 @@ import {
   updateClonedExecWorkflowSqlAuditInfo,
   updateClonedExecWorkflowBaseInfo
 } from '../../../../store/sqlExecWorkflow';
-import { useNavigate } from 'react-router-dom';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useCallback } from 'react';
-import { SOURCE_WORKFLOW_PATH_KEY } from '../../../../data/common';
 import { SqlStatementFields } from '../../Create/index.type';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';
 import { ResponseBlobJsonType } from '@actiontech/shared/lib/enum';
+import { useTypedNavigate } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useCloneExecWorkflowInfo = (
   taskInfos: IAuditTaskResV1[],
@@ -28,7 +28,7 @@ const useCloneExecWorkflowInfo = (
 ) => {
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const { projectID, projectName } = useCurrentProject();
 
@@ -182,9 +182,10 @@ const useCloneExecWorkflowInfo = (
         ...sqlStatement
       })
     );
-    navigate(
-      `/sqle/project/${projectID}/exec-workflow/create?${SOURCE_WORKFLOW_PATH_KEY}=${workflowInfo?.workflow_id}`
-    );
+    navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create, {
+      params: { projectID },
+      queries: { sourceWorkflowId: workflowInfo?.workflow_id ?? '' }
+    });
   }, [
     taskInfos,
     workflowInfo,

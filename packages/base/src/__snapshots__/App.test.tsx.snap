@@ -645,7 +645,6 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 >
                   <a
                     href="/sqle/project//data-source-comparison"
-                    values="[object Object]"
                   >
                     结构对比
                   </a>
@@ -2964,7 +2963,6 @@ exports[`App render App when token is existed 1`] = `
                 >
                   <a
                     href="/sqle/project//data-source-comparison"
-                    values="[object Object]"
                   >
                     结构对比
                   </a>

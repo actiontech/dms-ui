@@ -5,7 +5,7 @@ import { CSSProperties, Key, ReactNode } from 'react';
 import { CustomSelectProps } from '../CustomSelect';
 import { IBasicButton } from '../BasicButton';
 import { ICustomInputProps } from '../CustomInput';
-import { LinkProps } from 'react-router-dom';
+import { TypedLinkProps } from '../TypedRouter';
 
 //======================================= utils
 
@@ -256,7 +256,7 @@ export type ActiontechTableToolbarActionMeta = {
   text: ReactNode;
   buttonProps?: Omit<ButtonProps, 'children'>;
   confirm?: PopconfirmProps | false;
-  link?: LinkProps | false;
+  link?: TypedLinkProps | false;
   permissions?: boolean;
 };
 
@@ -308,7 +308,7 @@ export type ActiontechTableActionMeta<T = Record<string, any>> = {
   text: ReactNode;
   buttonProps?: (record?: T) => Omit<ButtonProps, 'children'>;
   confirm?: ((record?: T) => PopconfirmProps) | false;
-  link?: ((record?: T) => LinkProps) | false;
+  link?: ((record?: T) => TypedLinkProps) | false;
   permissions?: (record?: T) => boolean;
 };
 

@@ -14,6 +14,8 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import CloneRuleTemplateModal from '../../../page/GlobalRuleTemplate/CloneRuleTemplateModal';
 import { CloneRuleTemplateFormFields } from '../../../page/GlobalRuleTemplate/CloneRuleTemplateModal/index.type';
+import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const CloneRuleTemplate = () => {
   const { t } = useTranslation();
@@ -79,7 +81,12 @@ const CloneRuleTemplate = () => {
         loading={requestPending}
         onClose={onClose}
         onSubmit={onSubmit}
-        link={`/sqle/project/${projectID}/rule/template/update/${currentRuleTemplate?.rule_template_name}`}
+        link={parse2ReactRouterPath(ROUTE_PATHS.SQLE.RULE_TEMPLATE.update, {
+          params: {
+            projectID,
+            templateName: currentRuleTemplate?.rule_template_name ?? ''
+          }
+        })}
         templateName={currentRuleTemplate?.rule_template_name}
         form={form}
       />

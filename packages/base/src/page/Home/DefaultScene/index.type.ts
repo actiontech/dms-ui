@@ -1,5 +1,5 @@
+import { NavigateFunction } from '@actiontech/shared';
 import { ReactNode } from 'react';
-import { NavigateFunction } from 'react-router-dom';
 
 export type UserDevopsStepsFactory = Array<{
   key: string;
@@ -23,7 +23,7 @@ export type UserDevopsStepButtonItem = {
 
 export type DevopsStepsProps = {
   navigate: NavigateFunction;
-  projectID?: string;
+  projectID: string;
   iconColor?: string;
   setOpenRulePageProjectSelectorModal?: (v: boolean) => void;
 };

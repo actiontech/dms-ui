@@ -482,28 +482,28 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       userCenter
     </div>,
     "key": "userCenter",
-    "path": "user-center",
+    "path": "/user-center",
   },
   {
     "element": <div>
       system
     </div>,
     "key": "system",
-    "path": "system",
+    "path": "/system",
   },
   {
     "element": <div>
       account
     </div>,
     "key": "account",
-    "path": "account",
+    "path": "/account",
   },
   {
     "element": <div>
       dataSourceManagement
     </div>,
     "key": "dataSourceManagement",
-    "path": "data-source-management",
+    "path": "/data-source-management",
   },
   {
     "element": <div>
@@ -577,7 +577,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
-    "path": "project/*",
+    "path": "/project/*",
   },
   {
     "element": <div>
@@ -646,7 +646,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       },
     ],
     "key": "ruleManager",
-    "path": "sqle/rule-manager",
+    "path": "/sqle/rule-manager",
     "permission": "page:rule_management",
   },
   {
@@ -1005,7 +1005,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     ],
     "element": <UNDEFINED />,
     "key": "projectDetail",
-    "path": "sqle/project/*",
+    "path": "/sqle/project/*",
   },
   {
     "children": [

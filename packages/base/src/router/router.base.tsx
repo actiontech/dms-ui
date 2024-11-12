@@ -1,7 +1,8 @@
-import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
+import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 
 // #if [ee]
 const Project = lazy(() => import('../page/Project'));
@@ -57,77 +58,76 @@ const Transit = lazy(() => import('../page/Transit'));
 
 export const BaseRouterConfig: RouterConfigItem[] = [
   {
-    path: '/',
+    path: ROUTE_PATHS.BASE.HOME,
     key: 'home',
     element: <Home />
   },
   {
-    path: 'user-center',
+    path: ROUTE_PATHS.BASE.USER_CENTER,
     key: 'userCenter',
     element: <UserCenter />,
     permission: PERMISSIONS.PAGES.BASE.USER_CENTER
   },
   {
-    path: 'system',
+    path: ROUTE_PATHS.BASE.SYSTEM.index.path,
     key: 'system',
     element: <System />,
     permission: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING
   },
   {
-    path: 'account',
-    hideInMenu: true,
+    path: ROUTE_PATHS.BASE.ACCOUNT,
     key: 'account',
     element: <Account />
   },
   {
-    path: 'data-source-management',
+    path: ROUTE_PATHS.BASE.DATA_SOURCE_MANAGEMENT.index.path,
     key: 'dataSourceManagement',
     permission: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT,
     element: <DataSourceManagement />
   },
   {
-    path: '/transit',
+    path: ROUTE_PATHS.BASE.TRANSIT.index.path,
     key: 'transit',
     element: <Transit />
   },
 
   // #if [ee]
   {
-    path: 'global-data-source',
+    path: ROUTE_PATHS.BASE.GLOBAL_DATA_SOURCE.index,
     key: 'globalDataSource',
     permission: PERMISSIONS.PAGES.BASE.GLOBAL_DATA_SOURCE,
     children: [
       {
-        path: 'batch-import',
+        path: ROUTE_PATHS.BASE.GLOBAL_DATA_SOURCE.batch_import.path,
         key: 'globalBatchImportDataSource',
         element: <GlobalBatchImportDataSource />
       },
       {
-        path: 'create',
+        path: ROUTE_PATHS.BASE.GLOBAL_DATA_SOURCE.create.path,
         element: <GlobalAddDataSource />,
         key: 'globalDataSourceCreate'
       }
-    ] as RouterConfigItem[]
+    ]
   },
   {
-    path: `sync-data-source`,
+    path: ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.index,
     key: 'syncDataSource',
     permission: PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE,
     children: [
       {
-        path: 'create',
+        path: ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.create.path,
         element: <AddSyncTask />,
         key: 'syncDataSourceCreate'
       },
       {
-        path: 'update/:taskId',
+        path: ROUTE_PATHS.BASE.SYNC_DATA_SOURCE.update.path,
         element: <UpdateSyncTask />,
         key: 'syncDataSourceUpdate'
       }
-    ] as RouterConfigItem[]
+    ]
   },
   {
-    path: 'project',
+    path: ROUTE_PATHS.BASE.PROJECT.index,
     key: 'project',
     children: [
       {
@@ -136,12 +136,12 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         element: <Project />
       },
       {
-        path: 'import',
+        path: ROUTE_PATHS.BASE.PROJECT.import.path,
         key: 'projectImport',
         element: <ImportProject />
       },
       {
-        path: 'batch-import',
+        path: ROUTE_PATHS.BASE.PROJECT.batch_import.path,
         key: 'projectBatchImportDataSource',
         element: <ProjectBatchImportDataSource />
       }
@@ -151,16 +151,16 @@ export const BaseRouterConfig: RouterConfigItem[] = [
 
   {
     key: 'projectDetail',
-    path: 'project/*',
+    path: ROUTE_PATHS.BASE.PROJECT_DETAIL,
     element: <ProjectDetail />,
     children: [
       {
-        path: `${PROJECT_ROUTER_PARAM}/member`,
+        path: ROUTE_PATHS.BASE.MEMBER.index.path,
         key: 'member',
         element: <Member />
       },
       {
-        path: `${PROJECT_ROUTER_PARAM}/db-services`,
+        path: ROUTE_PATHS.BASE.DATA_SOURCE.index.path,
         key: 'dataSource',
         element: <DataSource />,
         children: [
@@ -170,18 +170,18 @@ export const BaseRouterConfig: RouterConfigItem[] = [
             key: 'dataSourceList'
           },
           {
-            path: 'create',
+            path: ROUTE_PATHS.BASE.DATA_SOURCE.create.path,
             element: <AddDataSource />,
             key: 'dataSourceCreate'
           },
           {
-            path: 'update/:dbServiceUid',
+            path: ROUTE_PATHS.BASE.DATA_SOURCE.update.path,
             element: <UpdateDataSource />,
             key: 'dataSourceUpdate'
           },
           // #if [ee]
           {
-            path: 'batch-import',
+            path: ROUTE_PATHS.BASE.DATA_SOURCE.batch_import.path,
             element: <BatchImportDataSource />,
             key: 'batchImportDataSource'
           }
@@ -189,7 +189,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         ]
       },
       {
-        path: `${PROJECT_ROUTER_PARAM}/data/export`,
+        path: ROUTE_PATHS.BASE.DATA_EXPORT.index.path,
         key: 'dataExportManagement',
         element: <ExportTaskManagement />,
         // #if [ee]
@@ -200,12 +200,12 @@ export const BaseRouterConfig: RouterConfigItem[] = [
             element: <ExportTaskList />
           },
           {
-            path: 'create',
+            path: ROUTE_PATHS.BASE.DATA_EXPORT.create.path,
             element: <CreateExportTask />,
             key: 'CreateExportTask'
           },
           {
-            path: ':workflowID',
+            path: ROUTE_PATHS.BASE.DATA_EXPORT.detail.path,
             element: <ExportTaskDetail />,
             key: 'ExportTaskDetail'
           }
@@ -213,7 +213,7 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         // #endif
       },
       {
-        path: `${PROJECT_ROUTER_PARAM}/cloud-beaver`,
+        path: ROUTE_PATHS.BASE.CLOUD_BEAVER.index.path,
         key: 'cloudBeaver',
         element: <CloudBeaver />
       },
@@ -224,6 +224,6 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         element: <DataMaskRuleOverview />
       }
       // #endif
-    ] as RouterConfigItem[]
+    ]
   }
 ];

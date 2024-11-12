@@ -9,11 +9,11 @@ import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common'
 import { t } from '../../../locale';
 import { floatRound, floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicToolTips } from '@actiontech/shared';
-import { Link } from 'react-router-dom';
+import { BasicToolTips, TypedLink } from '@actiontech/shared';
 import SqlAuditStatusTag from './component/SqlAuditStatusTag';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import SqlAuditTags from './component/SqlAuditTags';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type SqlAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSQLAuditRecordsV1Params,
@@ -73,9 +73,12 @@ const SqlAuditListColumn: (
           return '-';
         }
         return (
-          <Link to={`/sqle/project/${projectID}/sql-audit/detail/${id}`}>
+          <TypedLink
+            to={ROUTE_PATHS.SQLE.SQL_AUDIT.detail}
+            params={{ projectID, sql_audit_record_id: id }}
+          >
             {id}
-          </Link>
+          </TypedLink>
         );
       },
       width: 200

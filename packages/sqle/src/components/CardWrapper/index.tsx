@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
-import { NavigateOptions, To, useNavigate } from 'react-router-dom';
+import { NavigateOptions, To } from 'react-router-dom';
 import { CardProps, Tooltip } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { CardWrapperStyleWrapper } from './style';
 import { InfoCircleOutlined, DashOutlined } from '@actiontech/icons';
+import { useTypedNavigate } from '@actiontech/shared';
 
 export interface ICardWrapper extends CardProps {
   enabledLoading?: boolean;
@@ -17,7 +18,7 @@ export interface ICardWrapper extends CardProps {
 const CardWrapper = (props: ICardWrapper) => {
   const { enabledLoading, title, moreRouteLink, titleToolTips, extraNode } =
     props;
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const onSkipPage = () => {
     if (!moreRouteLink) return;

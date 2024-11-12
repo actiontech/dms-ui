@@ -3,11 +3,12 @@ import { IAssociatedStageWorkflows } from '@actiontech/shared/lib/api/sqle/servi
 import { useMemo } from 'react';
 import WorkflowStatus from '../../../../List/components/WorkflowStatus';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
 import { EnvironmentFilled } from '@actiontech/icons';
+import { TypedLink } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const AssociatedWorkflows: React.FC<{
   associatedWorkflows?: IAssociatedStageWorkflows[];
@@ -37,12 +38,13 @@ const AssociatedWorkflows: React.FC<{
               {isCurrentWorkflow ? (
                 workflow.workflow_name
               ) : (
-                <Link
-                  to={`/sqle/project/${projectID}/exec-workflow/${workflow.workflow_id}`}
+                <TypedLink
+                  to={ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail}
+                  params={{ projectID, workflowId: workflow.workflow_id ?? '' }}
                   target="__blank"
                 >
                   {workflow.workflow_name}
-                </Link>
+                </TypedLink>
               )}
               <Space>
                 <span className="associated-workflows-wrap-item-label">

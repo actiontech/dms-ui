@@ -2,10 +2,10 @@ import {
   BasicButton,
   PageHeader,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  TypedLink
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
@@ -28,6 +28,7 @@ import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/
 import { importProjectListColumn } from './column';
 import { ImportProjectUploadFileWrapper } from '../style';
 import { LeftArrowOutlined, OverviewOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ImportProject = () => {
   const { t } = useTranslation();
@@ -87,11 +88,11 @@ const ImportProject = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/project`}>
+          <TypedLink to={ROUTE_PATHS.BASE.PROJECT.index}>
             <BasicButton icon={<LeftArrowOutlined />}>
               {t('dmsProject.backToList')}
             </BasicButton>
-          </Link>
+          </TypedLink>
         }
         extra={
           <EmptyBox if={!resultVisible}>
@@ -112,9 +113,9 @@ const ImportProject = () => {
             status="success"
             title={t('dmsProject.importProject.successTitle')}
             subTitle={
-              <Link to={`/project`}>
+              <TypedLink to={ROUTE_PATHS.BASE.PROJECT.index}>
                 {t('dmsProject.importProject.successTips')} {'>'}
-              </Link>
+              </TypedLink>
             }
             extra={[
               <BasicButton

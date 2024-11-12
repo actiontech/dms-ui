@@ -1,11 +1,8 @@
 import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/lib/result';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
 import { ResponseCode } from '../../../data/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { WorkflowSqlAnalyzeUrlParams } from './index.type';
 import {
   IPerformanceStatistics,
   ISQLExplain,
@@ -13,9 +10,12 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 import SqlAnalyze from '../SqlAnalyze';
+import { useTypedParams } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const WorkflowSqlAnalyze = () => {
-  const urlParams = useParams<WorkflowSqlAnalyzeUrlParams>();
+  const urlParams =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.analyze>();
 
   const [errorMessage, setErrorMessage] = useState<string>('');
 

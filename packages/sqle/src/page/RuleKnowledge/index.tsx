@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Card, Typography, Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import RuleUnderstand from './RuleUnderstand';
-import { EmptyBox, PageHeader } from '@actiontech/shared';
+import { EmptyBox, PageHeader, useTypedParams } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { RuleKnowledgeContentStyleWrapper } from './style';
 import { DownTriangleOutlined } from '@actiontech/icons';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const RuleKnowledge: React.FC = () => {
   const { t } = useTranslation();
 
-  const { ruleName = '', dbType = '' } = useParams<{
-    ruleName: string;
-    dbType: string;
-  }>();
+  const { ruleName = '', dbType = '' } =
+    useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index>();
 
   const [isCustomRule, setIsCustomRule] = useState(false);
 
