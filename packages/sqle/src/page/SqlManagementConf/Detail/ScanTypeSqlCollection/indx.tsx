@@ -324,7 +324,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
               return '-';
             }
 
-            if (type === 'time') {
+            if (fieldName === 'last_receive_timestamp') {
               return formatTime(text, '-');
             }
 
