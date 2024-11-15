@@ -38,6 +38,8 @@ export interface ICreateSQLAuditRecordV1Params {
 
   instance_schema?: string;
 
+  rule_template_name?: string;
+
   db_type?: string;
 
   sqls?: string;
