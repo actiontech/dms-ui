@@ -4,7 +4,10 @@ import {
   IListDBServiceTipItem,
   IListGlobalDBService
 } from '@actiontech/shared/lib/api/base/service/common';
-import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import {
+  ListGlobalDBServiceLastConnectionTestStatusEnum,
+  SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export const dbServices: IListDBService[] = [
   {
@@ -99,7 +102,11 @@ export const globalDataSourceMockData: IListGlobalDBService[] = [
     is_enable_masking: false,
     project_name: 'default',
     unfinished_workflow_num: 1,
-    is_enable_audit: true
+    is_enable_audit: true,
+    last_connection_test_error_message: 'error message',
+    last_connection_test_status:
+      ListGlobalDBServiceLastConnectionTestStatusEnum.connect_failed,
+    last_connection_test_time: '2024-11-15T15:28:13.315+08:00'
   },
   {
     uid: '123457',
@@ -115,7 +122,11 @@ export const globalDataSourceMockData: IListGlobalDBService[] = [
     is_enable_masking: false,
     project_name: 'project1',
     unfinished_workflow_num: 0,
-    is_enable_audit: false
+    is_enable_audit: false,
+    last_connection_test_error_message: '',
+    last_connection_test_status:
+      ListGlobalDBServiceLastConnectionTestStatusEnum.connect_success,
+    last_connection_test_time: '2024-11-15T15:28:13.315+08:00'
   },
   {
     uid: '123458',

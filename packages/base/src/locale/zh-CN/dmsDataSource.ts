@@ -10,6 +10,12 @@ export default {
     instanceName: '数据源名',
     address: '地址',
     describe: '描述',
+    lastTestConnectionStatus: '上一次连接状态',
+    lastTestConnectionTime: '测试连通性时间',
+    lastTestConnectionErrorMessage: '测试失败原因',
+    connectSucceed: '连通性测试成功',
+    connectFailed: '连通性测试失败',
+    testConnectionStatusFilterLabel: '数据源连接状态',
     role: '角色',
     type: '数据源类型',
     enabledScanTypes: '启用的扫描类型',
@@ -25,6 +31,7 @@ export default {
   addDatabase: '添加数据源',
   addDatabaseSuccess: '添加数据源成功',
   addDatabaseSuccessGuide: '到数据源列表查看刚刚添加的数据源',
+  batchTestDataSourceConnection: '批量测试数据源连通性',
 
   updateDatabase: {
     title: '编辑数据源',
@@ -70,6 +77,13 @@ export default {
 
   testConnectModal: {
     errorTitle: '数据源{{instanceName}}连通性测试失败'
+  },
+
+  batchTestConnection: {
+    notFoundData: '当前列表无数据！',
+    connectFailed: '连接失败',
+    connectSucceed: '连接成功',
+    batchTestConnectionSuccessTips: '执行批量测试数据源连通性成功！'
   },
 
   deleteDatabase: {

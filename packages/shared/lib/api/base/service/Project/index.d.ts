@@ -1,5 +1,6 @@
 import {
   ListProjectsOrderByEnum,
+  ListProjectsFilterByProjectPriorityEnum,
   ExportProjectsOrderByEnum
 } from './index.enum';
 
@@ -9,6 +10,8 @@ import {
   IAddProjectReply,
   IDBServiceConnectionReq,
   IDBServicesConnectionReply,
+  IDBServicesConnectionReq,
+  IDBServicesConnectionReqReply,
   IImportProjectsReq,
   IGenericResp,
   IImportDBServicesOfProjectsReq,
@@ -27,6 +30,10 @@ export interface IListProjectsParams {
   filter_by_name?: string;
 
   filter_by_uid?: string;
+
+  filter_by_project_uids?: string[];
+
+  filter_by_project_priority?: ListProjectsFilterByProjectPriorityEnum;
 }
 
 export interface IListProjectsReturn extends IListProjectReply {}
@@ -39,6 +46,12 @@ export interface IDBServicesConnectionParams extends IDBServiceConnectionReq {}
 
 export interface IDBServicesConnectionReturn
   extends IDBServicesConnectionReply {}
+
+export interface ICheckGlobalDBServicesConnectionsParams
+  extends IDBServicesConnectionReq {}
+
+export interface ICheckGlobalDBServicesConnectionsReturn
+  extends IDBServicesConnectionReqReply {}
 
 export interface IExportProjectsParams {
   order_by?: ExportProjectsOrderByEnum;

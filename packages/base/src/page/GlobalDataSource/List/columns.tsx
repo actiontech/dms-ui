@@ -9,6 +9,8 @@ import {
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListGlobalDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { DatabaseTypeLogo } from '@actiontech/shared';
+import ConnectionResultColumn from '../../DataSource/components/List/ConnectionResultColumn';
+import { ListDBServiceLastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 export type GLobalDataSourceListParamType = PageInfoWithoutIndexAndSize<
   IListGlobalDBServicesParams & { page_index: number }
@@ -47,6 +49,26 @@ export const GlobalDataSourceColumns = (
       }
     },
     {
+      dataIndex: 'last_connection_test_status',
+      title: () => t('dmsGlobalDataSource.list.lastTestConnectionStatus'),
+      filterCustomType: 'select',
+      filterKey: 'filter_last_connection_test_status',
+      filterLabel: t(
+        'dmsGlobalDataSource.list.testConnectionStatusFilterLabel'
+      ),
+      render: (status, record) => {
+        return (
+          <ConnectionResultColumn
+            connectionStatus={
+              status as ListDBServiceLastConnectionTestStatusEnum | undefined
+            }
+            connectionErrorMessage={record.last_connection_test_error_message}
+            connectionTestTime={record.last_connection_test_time}
+          />
+        );
+      }
+    },
+    {
       dataIndex: 'source',
       title: t('dmsGlobalDataSource.list.source')
     },
@@ -54,7 +76,7 @@ export const GlobalDataSourceColumns = (
       dataIndex: 'desc',
       title: t('dmsGlobalDataSource.list.describe'),
       className: 'ellipsis-column-width',
-      render: (desc: string) => {
+      render: (desc) => {
         return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
       }
     },
@@ -63,7 +85,7 @@ export const GlobalDataSourceColumns = (
       title: t('dmsGlobalDataSource.list.type'),
       filterCustomType: 'select',
       filterKey: 'filter_by_db_type',
-      render: (dbType: string) => {
+      render: (dbType) => {
         if (!dbType) return '-';
 
         return (
