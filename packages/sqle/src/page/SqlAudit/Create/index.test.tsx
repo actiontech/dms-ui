@@ -20,6 +20,8 @@ import {
 } from '../../../testUtils/mockApi/instance/data';
 import configuration from '../../../testUtils/mockApi/configuration';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import rule_template from '../../../testUtils/mockApi/rule_template';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -37,6 +39,8 @@ describe('sqle/SqlAudit/Create', () => {
   let createSQLAuditRecordSpy: jest.SpyInstance;
   let updateSQLAuditRecordSpy: jest.SpyInstance;
   let getDriversSpy: jest.SpyInstance;
+  let getRuleTemplateTipsSpy: jest.SpyInstance;
+  let getGlobalRuleTemplateTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -50,6 +54,26 @@ describe('sqle/SqlAudit/Create', () => {
     getInstanceSpy = instance.getInstance();
     updateSQLAuditRecordSpy = sqlAuditRecord.updateSQLAuditRecord();
     getDriversSpy = configuration.getDrivers();
+    getGlobalRuleTemplateTipsSpy = rule_template.getRuleTemplateTips();
+    getRuleTemplateTipsSpy = rule_template.getProjectRuleTemplateTips();
+
+    getGlobalRuleTemplateTipsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            rule_template_id: '9',
+            rule_template_name: 'custom_template',
+            db_type: 'MySQL'
+          },
+          {
+            rule_template_id: '2',
+            rule_template_name: 'custom_template_b',
+            db_type: 'mysql',
+            is_default_rule_template: true
+          }
+        ]
+      })
+    );
   });
 
   afterEach(() => {
@@ -167,12 +191,33 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+    expect(getBySelector('#ruleTemplate')).toBeDisabled();
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('数据库类型')).toBeInTheDocument();
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
+
+    expect(getRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getRuleTemplateTipsSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      filter_db_type: 'mysql'
+    });
+    expect(getGlobalRuleTemplateTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getGlobalRuleTemplateTipsSpy).toHaveBeenCalledWith({
+      filter_db_type: 'mysql'
+    });
+    expect(getBySelector('#ruleTemplate')).not.toBeDisabled();
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(
+      getBySelector('div[title="custom_template_b"]', baseElement)
+    );
+    await jest.advanceTimersByTime(0);
+
     const sqlValue = 'SELECT 1;';
     await act(async () => {
       fireEvent.input(queryBySelector('.custom-monaco-editor', baseElement)!, {
@@ -197,6 +242,7 @@ describe('sqle/SqlAudit/Create', () => {
       instance_name: undefined,
       instance_schema: undefined,
       project_name: 'default',
+      rule_template_name: 'custom_template_b',
       sqls: formatterSQL(sqlValue, instanceTipsMockData[0].instance_type)
     });
 
@@ -216,7 +262,12 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+    fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(screen.getByText('上传SQL文件'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -258,6 +309,7 @@ describe('sqle/SqlAudit/Create', () => {
       instance_name: undefined,
       instance_schema: undefined,
       project_name: 'default',
+      rule_template_name: 'default_MySQL',
       sqls: undefined
     });
   });
@@ -265,12 +317,21 @@ describe('sqle/SqlAudit/Create', () => {
   it('upload xml file', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('离线审核'));
+    fireEvent.mouseDown(getBySelector('#instanceName', baseElement));
+    fireEvent.click(
+      getBySelector('div[title="mysql-1(10.186.62.13:33061)"]', baseElement)
+    );
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseDown(getBySelector('#dbType', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+
+    expect(getInstanceSchemaSpy).toHaveBeenCalledTimes(1);
+    expect(getInstanceSchemaSpy).toHaveBeenCalledWith({
+      project_name: mockProjectInfo.projectName,
+      instance_name: 'mysql-1'
+    });
+
+    fireEvent.mouseDown(getBySelector('#instanceSchema', baseElement));
+    fireEvent.click(getBySelector('div[title="testSchema"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('上传Mybatis的XML文件'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -286,16 +347,17 @@ describe('sqle/SqlAudit/Create', () => {
     });
     expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
     expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
-      db_type: 'mysql',
+      db_type: undefined,
       git_http_url: undefined,
       git_user_name: undefined,
       git_user_password: undefined,
       input_mybatis_xml_file: file,
       input_sql_file: undefined,
       input_zip_file: undefined,
-      instance_name: undefined,
-      instance_schema: undefined,
+      instance_name: 'mysql-1',
+      instance_schema: 'testSchema',
       project_name: 'default',
+      rule_template_name: undefined,
       sqls: undefined
     });
   });
@@ -308,7 +370,12 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+    fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(screen.getByText('上传ZIP文件'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -334,7 +401,8 @@ describe('sqle/SqlAudit/Create', () => {
       instance_name: undefined,
       instance_schema: undefined,
       project_name: 'default',
-      sqls: undefined
+      sqls: undefined,
+      rule_template_name: 'default_MySQL'
     });
   });
 
@@ -346,7 +414,10 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+    fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('配置GIT仓库'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -382,7 +453,8 @@ describe('sqle/SqlAudit/Create', () => {
       instance_name: undefined,
       instance_schema: undefined,
       project_name: 'default',
-      sqls: undefined
+      sqls: undefined,
+      rule_template_name: 'default_MySQL'
     });
   });
 
@@ -394,7 +466,11 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+    fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(screen.getByText('配置GIT仓库'));
     await act(async () => jest.advanceTimersByTime(300));
 
@@ -470,7 +546,11 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.mouseDown(getBySelector('#dbType', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+    fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     const sqlValue = 'SELECT 1;';
     await act(async () => {
       fireEvent.input(queryBySelector('.custom-monaco-editor', baseElement)!, {
@@ -494,7 +574,8 @@ describe('sqle/SqlAudit/Create', () => {
       instance_name: undefined,
       instance_schema: undefined,
       project_name: 'default',
-      sqls: sqlValue
+      sqls: sqlValue,
+      rule_template_name: 'default_MySQL'
     });
     await act(async () => {
       await jest.advanceTimersByTime(3000);
