@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 
 import {
   AuditTypeEnum,
@@ -13,7 +13,7 @@ import {
   CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
 
-import { Form, Radio, RadioGroupProps, Space } from 'antd';
+import { Form, Radio, RadioGroupProps, SelectProps, Space } from 'antd';
 import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { BasicButton, BasicSelect, BasicToolTips } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
@@ -27,6 +27,8 @@ import {
   formatterSQL
 } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { InfoCircleOutlined } from '@actiontech/icons';
+import useGlobalRuleTemplate from '../../../../hooks/useGlobalRuleTemplate';
+import useRuleTemplate from '../../../../hooks/useRuleTemplate';
 
 const SQLInfoFormItem = ({
   form,
@@ -40,6 +42,8 @@ const SQLInfoFormItem = ({
   const auditType = Form.useWatch('auditType', form);
   const uploadType = Form.useWatch('uploadType', form);
 
+  const selectedDbType = Form.useWatch('dbType', form);
+
   const {
     loading: getDriverMetaLoading,
     updateDriverNameList,
@@ -52,6 +56,18 @@ const SQLInfoFormItem = ({
     loading: instanceLoading
   } = useInstance();
 
+  const {
+    loading: getRuleTemplateTipsPending,
+    ruleTemplateList,
+    updateRuleTemplateList
+  } = useRuleTemplate();
+
+  const {
+    loading: getGlobalRuleTemplateTipsPending,
+    globalRuleTemplateList,
+    updateGlobalRuleTemplateList
+  } = useGlobalRuleTemplate();
+
   useEffect(() => {
     if (auditType === AuditTypeEnum.static) {
       updateDriverNameList();
@@ -63,6 +79,18 @@ const SQLInfoFormItem = ({
       });
     }
   }, [projectName, updateDriverNameList, updateInstanceList, auditType]);
+
+  useEffect(() => {
+    if (selectedDbType) {
+      updateRuleTemplateList(projectName, selectedDbType);
+      updateGlobalRuleTemplateList(selectedDbType);
+    }
+  }, [
+    selectedDbType,
+    projectName,
+    updateGlobalRuleTemplateList,
+    updateRuleTemplateList
+  ]);
 
   const auditTypeChange: RadioGroupProps['onChange'] = () => {
     form.setFieldsValue({
@@ -91,6 +119,30 @@ const SQLInfoFormItem = ({
     });
   };
 
+  const ruleTemplateOptions: SelectProps['options'] = useMemo(() => {
+    const dbTypeDefaultRuleTemplateName = globalRuleTemplateList.find(
+      (v) => v.is_default_rule_template
+    )?.rule_template_name;
+
+    const ruleTemplateTipsOptions: SelectProps['options'] =
+      ruleTemplateList.map((v) => ({
+        label: v.rule_template_name,
+        value: v.rule_template_name
+      }));
+
+    if (!dbTypeDefaultRuleTemplateName) {
+      return ruleTemplateTipsOptions;
+    }
+
+    return [
+      ...(ruleTemplateTipsOptions ?? []),
+      {
+        label: dbTypeDefaultRuleTemplateName,
+        value: dbTypeDefaultRuleTemplateName
+      }
+    ];
+  }, [globalRuleTemplateList, ruleTemplateList]);
+
   return (
     <>
       <FormItemLabel
@@ -103,7 +155,6 @@ const SQLInfoFormItem = ({
           />
         }
         {...formItemLayout.spaceBetween}
-        required={true}
         rules={[
           {
             required: true
@@ -142,6 +193,27 @@ const SQLInfoFormItem = ({
         instanceLoading={instanceLoading}
         instanceOptions={instanceOptions}
       />
+      <FormItemLabel
+        className="has-required-style has-label-tip"
+        rules={[{ required: auditType !== AuditTypeEnum.dynamic }]}
+        name="ruleTemplate"
+        hidden={auditType === AuditTypeEnum.dynamic}
+        label={
+          <CustomLabelContent
+            title={t('sqlAudit.create.sqlInfo.form.ruleTemplate')}
+            tips={t('sqlAudit.create.sqlInfo.form.ruleTemplateDesc')}
+          />
+        }
+        {...formItemLayout.spaceBetween}
+      >
+        <BasicSelect
+          loading={
+            getGlobalRuleTemplateTipsPending || getRuleTemplateTipsPending
+          }
+          disabled={submitLoading || !selectedDbType}
+          options={ruleTemplateOptions}
+        />
+      </FormItemLabel>
       <SQLStatementForm form={form} />
       <Space size={12}>
         <BasicButton

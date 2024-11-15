@@ -8,11 +8,15 @@ import {
   ICreateWorkflowReqV1,
   IBatchCancelWorkflowsReqV1,
   IBatchCompleteWorkflowsReqV1,
+  IBackupSqlListRes,
+  ICreateRollbackWorkflowReq,
+  ICreateRollbackWorkflowRes,
   IGetWorkflowResV1,
   IUpdateWorkflowReqV1,
   IRejectWorkflowReqV1,
   IGetWorkflowTasksResV1,
   IUpdateWorkflowScheduleReqV1,
+  IUpdateSqlBackupStrategyReq,
   IGetWorkflowStatisticOfInstancesResV1,
   ICreateWorkflowReqV2,
   ICreateWorkflowResV2,
@@ -32,7 +36,8 @@ import {
   GetGlobalWorkflowStatisticsFilterStatusListEnum,
   GetGlobalWorkflowStatisticsFilterProjectPriorityEnum,
   getWorkflowsV1FilterStatusEnum,
-  exportWorkflowV1FilterStatusEnum
+  exportWorkflowV1FilterStatusEnum,
+  GetBackupSqlListV1FilterExecStatusEnum
 } from './index.enum';
 
 export interface IGetScheduledTaskDefaultOptionV1Return
@@ -167,6 +172,32 @@ export interface IExportWorkflowV1Params {
   fuzzy_keyword?: string;
 }
 
+export interface IGetBackupSqlListV1Params {
+  filter_exec_status?: GetBackupSqlListV1FilterExecStatusEnum;
+
+  project_name: string;
+
+  workflow_id: string;
+
+  filter_instance_id?: number;
+
+  page_index: string;
+
+  page_size: string;
+}
+
+export interface IGetBackupSqlListV1Return extends IBackupSqlListRes {}
+
+export interface ICreateRollbackWorkflowParams
+  extends ICreateRollbackWorkflowReq {
+  project_name: string;
+
+  workflow_id: string;
+}
+
+export interface ICreateRollbackWorkflowReturn
+  extends ICreateRollbackWorkflowRes {}
+
 export interface ITerminateMultipleTaskByWorkflowV1Params {
   workflow_id: string;
 
@@ -274,6 +305,15 @@ export interface IUpdateWorkflowScheduleV1Params
 }
 
 export interface IUpdateWorkflowScheduleV1Return extends IBaseRes {}
+
+export interface IUpdateSqlBackupStrategyV1Params
+  extends IUpdateSqlBackupStrategyReq {
+  task_id: string;
+
+  sql_id: string;
+}
+
+export interface IUpdateSqlBackupStrategyV1Return extends IBaseRes {}
 
 export interface IGetWorkflowStatisticOfInstancesParams {
   instance_id: string;

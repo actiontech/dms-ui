@@ -43,6 +43,7 @@ const SqlAuditCreate = () => {
       input_zip_file: values.zipFile?.[0],
       instance_name: values.instanceName,
       instance_schema: values.instanceSchema,
+      rule_template_name: values.ruleTemplate,
       db_type: values.dbType,
       git_http_url: values.gitHttpUrl ? values.gitHttpUrl.trim() : undefined,
       git_user_name: values.gitUserName ? values.gitUserName.trim() : undefined,

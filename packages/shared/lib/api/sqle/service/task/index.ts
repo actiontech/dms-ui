@@ -11,12 +11,15 @@ import {
   ICreateAuditTasksV1Return,
   ICreateAndAuditTaskV1Params,
   ICreateAndAuditTaskV1Return,
+  IDownloadBackupFileV1Params,
   IUpdateSqlFileOrderV1Params,
   IUpdateSqlFileOrderV1Return,
   IAuditTaskGroupIdV1Params,
   IAuditTaskGroupIdV1Return,
   IGetAuditTaskV1Params,
   IGetAuditTaskV1Return,
+  IUpdateTaskBackupStrategyV1Params,
+  IUpdateTaskBackupStrategyV1Return,
   IDownloadAuditFileParams,
   IDownloadAuditFileReturn,
   IGetAuditTaskSQLContentV1Params,
@@ -78,6 +81,10 @@ class TaskService extends ServiceBase {
       paramsData.append('instance_schema', params.instance_schema as any);
     }
 
+    if (params.enable_backup != undefined) {
+      paramsData.append('enable_backup', params.enable_backup as any);
+    }
+
     if (params.sql != undefined) {
       paramsData.append('sql', params.sql as any);
     }
@@ -111,6 +118,27 @@ class TaskService extends ServiceBase {
       `/v1/projects/${project_name}/tasks/audits`,
       paramsData,
       config
+    );
+  }
+
+  public downloadBackupFileV1(
+    params: IDownloadBackupFileV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.get<any>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/tasks/${task_id}/backup_files/download`,
+      paramsData,
+      options
     );
   }
 
@@ -157,6 +185,10 @@ class TaskService extends ServiceBase {
       paramsData.append('sql', params.sql as any);
     }
 
+    if (params.enable_backup != undefined) {
+      paramsData.append('enable_backup', params.enable_backup as any);
+    }
+
     if (params.file_order_method != undefined) {
       paramsData.append('file_order_method', params.file_order_method as any);
     }
@@ -192,6 +224,21 @@ class TaskService extends ServiceBase {
     delete paramsData.task_id;
 
     return this.get<IGetAuditTaskV1Return>(
+      `/v1/tasks/audits/${task_id}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateTaskBackupStrategyV1(
+    params: IUpdateTaskBackupStrategyV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.patch<IUpdateTaskBackupStrategyV1Return>(
       `/v1/tasks/audits/${task_id}/`,
       paramsData,
       options
