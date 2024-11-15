@@ -4,8 +4,20 @@ export enum ListGlobalDBServicesOrderByEnum {
   'name' = 'name'
 }
 
+export enum ListGlobalDBServicesFilterLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
 export enum ListDBServicesOrderByEnum {
   'name' = 'name'
+}
+
+export enum ListDBServicesFilterLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
 }
 
 export enum ListDBServiceTipsFunctionalModuleEnum {

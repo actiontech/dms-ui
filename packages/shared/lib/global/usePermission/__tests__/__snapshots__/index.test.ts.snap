@@ -20,6 +20,7 @@ exports[`usePermission should match snapshot 1`] = `
       "DB_SERVICE": {
         "ADD": "action:add_db_service",
         "BATCH_IMPORT": "action:batch_import_db_service",
+        "BATCH_TEST_CONNECT": "action:batch_test_project_db_service",
         "CREATE_AUDIT_PLAN": "action:db_service_create_audit_plan",
         "DELETE": "action:delete_db_service",
         "EDIT": "action:edit_db_service",
@@ -29,6 +30,7 @@ exports[`usePermission should match snapshot 1`] = `
       "GLOBAL_DATA_SOURCE": {
         "ADD": "action:add_global_db_service",
         "BATCH_IMPORT": "action:batch_import_global_db_service",
+        "BATCH_TEST_CONNECT": "action:batch_test_global_db_service",
         "DELETE": "action:delete_global_db_service",
         "EDIT": "action:edit_global_db_service",
         "TEST_IN_MORE_BUTTON": "action:test_global_db_service_in_more_button",
@@ -285,7 +287,7 @@ exports[`usePermission should match snapshot 2`] = `
     "type": "action",
   },
   "action:add_task": {
-    "id": "action:add_global_db_service",
+    "id": "action:add_task",
     "role": [
       "admin",
       "globalManager",
@@ -369,6 +371,24 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:batch_sql_assignment": {
     "id": "action:batch_sql_assignment",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:batch_test_global_db_service": {
+    "id": "action:batch_test_global_db_service",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:batch_test_project_db_service": {
+    "id": "action:batch_test_project_db_service",
     "projectArchived": false,
     "projectManager": true,
     "role": [

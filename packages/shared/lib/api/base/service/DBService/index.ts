@@ -17,6 +17,8 @@ import {
   IAddDBServiceReturn,
   ICheckDBServiceIsConnectableParams,
   ICheckDBServiceIsConnectableReturn,
+  ICheckProjectDBServicesConnectionsParams,
+  ICheckProjectDBServicesConnectionsReturn,
   IImportDBServicesOfOneProjectParams,
   IImportDBServicesOfOneProjectReturn,
   IImportDBServicesOfOneProjectCheckParams,
@@ -99,6 +101,21 @@ class DBServiceService extends ServiceBase {
 
     return this.post<ICheckDBServiceIsConnectableReturn>(
       `/v1/dms/projects/${project_uid}/db_services/connection`,
+      paramsData,
+      options
+    );
+  }
+
+  public CheckProjectDBServicesConnections(
+    params: ICheckProjectDBServicesConnectionsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<ICheckProjectDBServicesConnectionsReturn>(
+      `/v1/dms/projects/${project_uid}/db_services/connections`,
       paramsData,
       options
     );

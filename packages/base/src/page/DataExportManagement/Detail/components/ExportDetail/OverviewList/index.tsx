@@ -1,7 +1,6 @@
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { OverviewListAction, OverviewListColumn } from './column';
-import { IGetDataExportTask } from '@actiontech/shared/lib/api/base/service/common';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import {
   useCurrentProject,
@@ -49,7 +48,7 @@ const OverviewList: React.FC = () => {
           ? OverviewListAction(downloadLoading, downloadAction)
           : undefined
       }
-      onRow={(record: IGetDataExportTask) => {
+      onRow={(record) => {
         return {
           onClick() {
             updateCurTaskID(record.task_uid ?? '');

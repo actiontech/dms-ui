@@ -1,15 +1,13 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { Tag } from 'antd';
 import { t } from '../../../../locale';
-import {
-  IAuditPlanTypes,
-  IListDBService
-} from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
+import ConnectionResultColumn from './ConnectionResultColumn';
 
 /*
  *PS：
@@ -46,6 +44,24 @@ export const DataSourceColumns = (
       }
     },
     {
+      dataIndex: 'last_connection_test_status',
+      title: () => t('dmsDataSource.databaseList.lastTestConnectionStatus'),
+      filterCustomType: 'select',
+      filterKey: 'filter_last_connection_test_status',
+      filterLabel: t(
+        'dmsDataSource.databaseList.testConnectionStatusFilterLabel'
+      ),
+      render: (status, record) => {
+        return (
+          <ConnectionResultColumn
+            connectionStatus={status}
+            connectionErrorMessage={record.last_connection_test_error_message}
+            connectionTestTime={record.last_connection_test_time}
+          />
+        );
+      }
+    },
+    {
       dataIndex: 'source',
       title: () => t('dmsDataSource.databaseList.source')
     },
@@ -53,7 +69,7 @@ export const DataSourceColumns = (
       dataIndex: 'desc',
       title: () => t('dmsDataSource.databaseList.describe'),
       className: 'ellipsis-column-width',
-      render: (desc: string) => {
+      render: (desc) => {
         return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
       }
     },
@@ -62,7 +78,7 @@ export const DataSourceColumns = (
       title: () => t('dmsDataSource.databaseList.type'),
       filterCustomType: 'select',
       filterKey: 'filter_by_db_type',
-      render: (dbType: string) => {
+      render: (dbType) => {
         if (!dbType) return '-';
 
         return (
@@ -77,7 +93,10 @@ export const DataSourceColumns = (
     {
       dataIndex: 'audit_plan_types',
       title: () => t('dmsDataSource.databaseList.enabledScanTypes'),
-      render: (scanTypes: IAuditPlanTypes[], record) => {
+      render: (scanTypes, record) => {
+        if (!scanTypes || scanTypes.length === 0) {
+          return '-';
+        }
         return (
           <ScanTypeTagsCell
             scanTypes={scanTypes}
@@ -100,7 +119,7 @@ export const DataSourceColumns = (
       title: () => t('dmsDataSource.databaseList.dataMask'),
       filterCustomType: 'select',
       filterKey: 'is_enable_masking',
-      render: (value: boolean) => {
+      render: (value) => {
         return value ? t('common.enabled') : t('common.notEnabled');
       }
     },
@@ -108,7 +127,10 @@ export const DataSourceColumns = (
     {
       dataIndex: 'maintenance_times',
       title: () => t('dmsDataSource.databaseList.maintenanceTime'),
-      render(value: IListDBService['maintenance_times']) {
+      render(value) {
+        if (!value || value.length === 0) {
+          return '-';
+        }
         return value?.map((time, i) => (
           <Tag key={i}>
             {timeAddZero(time.maintenance_start_time?.hour ?? 0)}:

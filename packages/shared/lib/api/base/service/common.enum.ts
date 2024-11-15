@@ -1,3 +1,9 @@
+export enum DBServiceIsConnectableReplyConnectionStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
 export enum DMSProxyTargetScenarioEnum {
   'internal_service' = 'internal_service',
 
@@ -40,6 +46,12 @@ export enum GetUserStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum ListDBServiceLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
 export enum ListDataExportWorkflowStatusEnum {
   'wait_for_approve' = 'wait_for_approve',
 
@@ -54,6 +66,12 @@ export enum ListDataExportWorkflowStatusEnum {
   'failed' = 'failed',
 
   'finish' = 'finish'
+}
+
+export enum ListGlobalDBServiceLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
 }
 
 export enum ListMemberRoleWithOpRangeOpRangeTypeEnum {
@@ -81,7 +99,9 @@ export enum ListProjectProjectPriorityEnum {
 
   'medium' = 'medium',
 
-  'low' = 'low'
+  'low' = 'low',
+
+  'unknown' = 'unknown'
 }
 
 export enum ListRoleStatEnum {
@@ -203,7 +223,9 @@ export enum ProjectProjectPriorityEnum {
 
   'medium' = 'medium',
 
-  'low' = 'low'
+  'low' = 'low',
+
+  'unknown' = 'unknown'
 }
 
 export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
@@ -227,7 +249,9 @@ export enum UpdateProjectProjectPriorityEnum {
 
   'medium' = 'medium',
 
-  'low' = 'low'
+  'low' = 'low',
+
+  'unknown' = 'unknown'
 }
 
 export enum WorkflowRecordStatusEnum {

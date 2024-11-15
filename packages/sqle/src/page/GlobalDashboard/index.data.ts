@@ -6,7 +6,8 @@ export const ProjectPriorityDictionary: {
 } = {
   [ProjectProjectPriorityEnum.high]: t('globalDashboard.high'),
   [ProjectProjectPriorityEnum.medium]: t('globalDashboard.medium'),
-  [ProjectProjectPriorityEnum.low]: t('globalDashboard.low')
+  [ProjectProjectPriorityEnum.low]: t('globalDashboard.low'),
+  [ProjectProjectPriorityEnum.unknown]: t('common.unknown')
 };
 
 export const ProjectPriorityOptions: Array<{

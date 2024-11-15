@@ -49,3 +49,5 @@ export type RouterConfigItem =
       BaseRouterConfigItem & {
         children?: RouterConfigItem[];
       });
+
+export type ExcludeSymbol<T> = T extends symbol ? never : T;

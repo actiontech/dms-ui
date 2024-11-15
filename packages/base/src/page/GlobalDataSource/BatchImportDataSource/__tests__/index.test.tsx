@@ -34,7 +34,6 @@ describe('base/GlobalDataSource/BatchImportDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
-    expect(screen.getByText('批量测试数据源连通性')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回全局数据源列表'));
   });
 
@@ -107,33 +106,6 @@ describe('base/GlobalDataSource/BatchImportDataSource', () => {
       screen.getByText(
         '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入'
       )
-    ).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render test connection', async () => {
-    const { baseElement } = superRender(<GlobalBatchImportDataSource />);
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(
-      screen.getByText('批量测试数据源连通性').closest('button')
-    ).toBeDisabled();
-    const file = new File([''], 'test.csv');
-    fireEvent.change(getBySelector('#files', baseElement), {
-      target: { files: [file] }
-    });
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('test.csv')).toBeInTheDocument();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(
-      screen.getByText('批量测试数据源连通性').closest('button')
-    ).not.toBeDisabled();
-    fireEvent.click(screen.getByText('批量测试数据源连通性'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(dbServicesConnectionSpy).toHaveBeenCalledTimes(1);
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('测试连通性成功1个')).toBeInTheDocument();
-    expect(
-      screen.getByText('测试连通性失败1个，数据源为mysql_1')
     ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });

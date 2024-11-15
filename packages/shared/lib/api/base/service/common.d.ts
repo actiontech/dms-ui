@@ -1,9 +1,12 @@
 import {
+  DBServiceIsConnectableReplyConnectionStatusEnum,
   DMSProxyTargetScenarioEnum,
   GetDataExportTaskStatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
+  ListDBServiceLastConnectionTestStatusEnum,
   ListDataExportWorkflowStatusEnum,
+  ListGlobalDBServiceLastConnectionTestStatusEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
   ListProjectProjectPriorityEnum,
@@ -345,6 +348,18 @@ export interface ICheckDBServiceIsConnectableReq {
   db_service?: ICheckDbConnectable;
 }
 
+export interface ICheckDBServicesIsConnectableReply {
+  code?: number;
+
+  data?: IDBServiceIsConnectableReply[];
+
+  message?: string;
+}
+
+export interface ICheckDBServicesIsConnectableReq {
+  db_services?: IDbServiceConnections[];
+}
+
 export interface ICheckDbConnectable {
   additional_params?: IAdditionalParam[];
 
@@ -406,6 +421,8 @@ export interface IDBService {
 
   desc?: string;
 
+  enable_backup?: boolean;
+
   host: string;
 
   is_enable_masking?: boolean;
@@ -425,6 +442,16 @@ export interface IDBService {
 
 export interface IDBServiceConnectionReq {
   db_services?: ICheckDbsConnectable[];
+}
+
+export interface IDBServiceIsConnectableReply {
+  connect_error_message?: string;
+
+  connection_status?: DBServiceIsConnectableReplyConnectionStatusEnum;
+
+  db_service_uid?: string;
+
+  test_connection_time?: string;
 }
 
 export interface IDBServiceSyncTask {
@@ -465,6 +492,18 @@ export interface IDBServicesConnectionReply {
   code?: number;
 
   data?: IDBServicesConnectionItem;
+
+  message?: string;
+}
+
+export interface IDBServicesConnectionReq {
+  db_services?: IDbServiceConnections[];
+}
+
+export interface IDBServicesConnectionReqReply {
+  code?: number;
+
+  data?: IDBServiceIsConnectableReply[];
 
   message?: string;
 }
@@ -513,6 +552,10 @@ export interface IDatabaseDriverOption {
   logo_path?: string;
 
   params?: IDatabaseDriverAdditionalParam[];
+}
+
+export interface IDbServiceConnections {
+  db_service_uid?: string;
 }
 
 export interface IDelDBServicePreCheckReply {
@@ -1056,11 +1099,19 @@ export interface IListDBService {
 
   desc?: string;
 
+  enable_backup?: boolean;
+
   host?: string;
 
   instance_audit_plan_id?: number;
 
   is_enable_masking?: boolean;
+
+  last_connection_test_error_message?: string;
+
+  last_connection_test_status?: ListDBServiceLastConnectionTestStatusEnum;
+
+  last_connection_test_time?: string;
 
   maintenance_times?: IMaintenanceTime[];
 
@@ -1220,11 +1271,19 @@ export interface IListGlobalDBService {
 
   desc?: string;
 
+  enable_backup?: boolean;
+
   host?: string;
 
   is_enable_audit?: boolean;
 
   is_enable_masking?: boolean;
+
+  last_connection_test_error_message?: string;
+
+  last_connection_test_status?: ListGlobalDBServiceLastConnectionTestStatusEnum;
+
+  last_connection_test_time?: string;
 
   maintenance_times?: IMaintenanceTime[];
 
@@ -1879,6 +1938,8 @@ export interface IUpdateDBService {
   db_type: string;
 
   desc?: string;
+
+  enable_backup?: boolean;
 
   host: string;
 

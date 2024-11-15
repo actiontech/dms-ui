@@ -205,7 +205,7 @@ const useTableAction = () => {
           : actions.title ?? (() => t('common.operate')),
         fixed: Array.isArray(actions) ? 'right' : actions.fixed ?? 'right',
         width: Array.isArray(actions) ? maxWidth : actions.width ?? maxWidth,
-        render: (_, record: T) => renderContent(record)
+        render: (_: unknown, record: T) => renderContent(record)
       };
     },
     [renderAction, t]
