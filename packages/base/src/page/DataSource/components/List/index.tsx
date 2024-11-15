@@ -12,7 +12,7 @@ import {
   useDbServiceDriver
 } from '@actiontech/shared/lib/global';
 import useDbService from '../../../../hooks/useDbService';
-import { useRequest } from 'ahooks';
+import { useBoolean, useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
@@ -34,6 +34,7 @@ import {
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useStaticTips from '../../../../hooks/useStaticTips';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -44,6 +45,11 @@ const DataSourceList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { parse2TableActionPermissions } = usePermission();
   const { projectID } = useCurrentProject();
+
+  const [
+    batchTestDatabaseConnectionPending,
+    { setFalse: finishTestConnection, setTrue: startTestConnection }
+  ] = useBoolean();
 
   const {
     dbDriverOptions,
@@ -56,6 +62,8 @@ const DataSourceList = () => {
     loading: getDbServiceOptionsLoading,
     updateDbServiceList
   } = useDbService();
+
+  const { generateDatabaseTestConnectionStatusSelectOptions } = useStaticTips();
 
   const {
     tableFilterInfo,
@@ -214,6 +222,34 @@ const DataSourceList = () => {
     [messageApi, modalApi, projectID, t]
   );
 
+  const batchTestDatabaseConnection = () => {
+    if (!dataSourceList?.list || dataSourceList.list.length === 0) {
+      messageApi.error(t('dmsDataSource.batchTestConnection.notFoundData'));
+      return;
+    }
+    startTestConnection();
+    DBService.CheckProjectDBServicesConnections({
+      project_uid: projectID,
+      db_services:
+        dataSourceList?.list?.map((v) => ({
+          db_service_uid: v.uid!
+        })) ?? []
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          refresh();
+          messageApi.success(
+            t(
+              'dmsDataSource.batchTestConnection.batchTestConnectionSuccessTips'
+            )
+          );
+        }
+      })
+      .finally(() => {
+        finishTestConnection();
+      });
+  };
+
   const columns = useMemo(
     () => DataSourceColumns(getLogoUrlByDbType),
     [getLogoUrlByDbType]
@@ -232,6 +268,10 @@ const DataSourceList = () => {
         'db_type',
         { options: dbDriverOptions, loading: getDriveOptionsLoading }
       ],
+      [
+        'last_connection_test_status',
+        { options: generateDatabaseTestConnectionStatusSelectOptions }
+      ],
       // #if [dms]
       ['is_enable_masking', { options: filterDataMaskOptions }]
       // #endif
@@ -239,6 +279,7 @@ const DataSourceList = () => {
   }, [
     dbDriverOptions,
     dbServiceOptions,
+    generateDatabaseTestConnectionStatusSelectOptions,
     getDbServiceOptionsLoading,
     getDriveOptionsLoading
   ]);
@@ -259,7 +300,11 @@ const DataSourceList = () => {
     testDatabaseConnection,
     navigateToSqlManagementConf
   ]);
-  const pageHeaderActions = DataSourcePageHeaderActions(projectID);
+  const pageHeaderActions = DataSourcePageHeaderActions(
+    projectID,
+    batchTestDatabaseConnection,
+    batchTestDatabaseConnectionPending
+  );
 
   useEffect(() => {
     if (projectID) {
@@ -277,6 +322,7 @@ const DataSourceList = () => {
         title={t('dmsDataSource.databaseListTitle')}
         extra={
           <Space>
+            {pageHeaderActions['batch-test-data-source-connection']}
             {/* #if [ee] */}
             {pageHeaderActions['batch-import-data-source']}
             {/* #endif */}

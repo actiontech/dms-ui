@@ -19,6 +19,8 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { SystemRole } from '@actiontech/shared/lib/enum';
+import eventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -34,6 +36,7 @@ describe('page/GlobalDataSource/List', () => {
   let listGlobalDBServicesSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
   let listGlobalDBServicesTipsSpy: jest.SpyInstance;
+  let CheckGlobalDBServicesConnectionsSpy: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<GlobalDataSourceList />);
@@ -46,6 +49,9 @@ describe('page/GlobalDataSource/List', () => {
     listGlobalDBServicesSpy = dbServices.listGlobalDBServices();
     listGlobalDBServicesTipsSpy = dbServices.listGlobalDBServicesTips();
     getProjectListSpy = project.getProjectList();
+    CheckGlobalDBServicesConnectionsSpy =
+      project.CheckGlobalDBServicesConnections();
+
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     jest.useFakeTimers();
     dms.mockAllApi();
@@ -124,8 +130,45 @@ describe('page/GlobalDataSource/List', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(2);
+    expect(filterItems.length).toBe(3);
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should display an error message and return if dataSourceList is empty or undefined', async () => {
+    listGlobalDBServicesSpy.mockImplementation(() =>
+      createSpySuccessResponse({ data: [] })
+    );
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    act(() => {
+      eventEmitter.emit(EmitterKey.DMS_Batch_Test_Data_Source_Connection);
+    });
+
+    expect(CheckGlobalDBServicesConnectionsSpy).toHaveBeenCalledTimes(0);
+
+    await screen.findByText('当前列表无数据！');
+  });
+
+  it('should initiate the connection test and call DBService.CheckProjectDBServicesConnections when dataSourceList has valid data sources', async () => {
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    act(() => {
+      eventEmitter.emit(EmitterKey.DMS_Batch_Test_Data_Source_Connection);
+    });
+
+    expect(CheckGlobalDBServicesConnectionsSpy).toHaveBeenCalledTimes(1);
+    expect(CheckGlobalDBServicesConnectionsSpy).toHaveBeenCalledWith({
+      db_services: globalDataSourceMockData.map((v) => ({
+        db_service_uid: v.uid!
+      }))
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(listGlobalDBServicesSpy).toHaveBeenCalledTimes(2);
+    await screen.findByText('执行批量测试数据源连通性成功！');
   });
 
   describe('render table for action btn', () => {

@@ -13,7 +13,7 @@ import { InfoCircleOutlined } from '@actiontech/icons';
 
 export const OverviewListColumn: () => ActiontechTableColumn<
   IGetDataExportTask,
-  [],
+  unknown,
   'db_service'
 > = () => {
   return [
@@ -21,7 +21,7 @@ export const OverviewListColumn: () => ActiontechTableColumn<
       dataIndex: 'db_service',
       title: () =>
         t('dmsDataExport.detail.exportResult.overview.column.dbService'),
-      render: (_, record: IGetDataExportTask) => {
+      render: (_, record) => {
         return record.db_info?.name ?? '-';
       }
     },
@@ -29,7 +29,7 @@ export const OverviewListColumn: () => ActiontechTableColumn<
       dataIndex: 'status',
       title: () =>
         t('dmsDataExport.detail.exportResult.overview.column.status'),
-      render: (status: IGetDataExportTask['status']) => {
+      render: (status) => {
         return <ExportTaskStatus status={status} />;
       }
     },
@@ -37,25 +37,25 @@ export const OverviewListColumn: () => ActiontechTableColumn<
       dataIndex: 'export_type',
       title: () =>
         t('dmsDataExport.detail.exportResult.overview.column.exportType'),
-      render: (type: string) => type ?? '-'
+      render: (type) => type ?? '-'
     },
     {
       dataIndex: 'export_file_type',
       title: () =>
         t('dmsDataExport.detail.exportResult.overview.column.exportFileType'),
-      render: (type: string) => type ?? '-'
+      render: (type) => type ?? '-'
     },
     {
       dataIndex: 'export_start_time',
       title: () =>
         t('dmsDataExport.detail.exportResult.overview.column.exportStartTime'),
-      render: (time: string) => formatTime(time, '-')
+      render: (time) => formatTime(time, '-')
     },
     {
       dataIndex: 'export_end_time',
       title: () =>
         t('dmsDataExport.detail.exportResult.overview.column.exportEndTime'),
-      render: (time: string) => formatTime(time, '-')
+      render: (time) => formatTime(time, '-')
     }
   ];
 };

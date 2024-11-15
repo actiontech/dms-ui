@@ -24,6 +24,7 @@ class MockDbServicesApi implements MockSpyApy {
     this.checkDBServiceIsConnectableById();
     this.listGlobalDBServices();
     this.listGlobalDBServicesTips();
+    this.CheckProjectDBServicesConnections();
   }
 
   public ListDBServices() {
@@ -116,6 +117,16 @@ class MockDbServicesApi implements MockSpyApy {
 
   public listGlobalDBServicesTips() {
     const spy = jest.spyOn(DBService, 'ListGlobalDBServicesTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: globalDBServicesTipsMockData
+      })
+    );
+    return spy;
+  }
+
+  public CheckProjectDBServicesConnections() {
+    const spy = jest.spyOn(DBService, 'CheckProjectDBServicesConnections');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: globalDBServicesTipsMockData

@@ -5,7 +5,10 @@ import {
   ICompanyNotice,
   IListDBService
 } from '@actiontech/shared/lib/api/base/service/common';
-import { GetUserAuthenticationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import {
+  GetUserAuthenticationTypeEnum,
+  ListDBServiceLastConnectionTestStatusEnum
+} from '@actiontech/shared/lib/api/base/service/common.enum';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 export const UserInfo = {
@@ -73,7 +76,11 @@ export const DBServicesList: IListDBService[] = [
     instance_audit_plan_id: 1232,
     audit_plan_types: [
       { type: 'mysql_slow_log', desc: '慢日志', audit_plan_id: 1 }
-    ]
+    ],
+    last_connection_test_error_message: '',
+    last_connection_test_status:
+      ListDBServiceLastConnectionTestStatusEnum.connect_success,
+    last_connection_test_time: '2024-11-15T15:05:10.175+08:00'
   },
   {
     uid: '1739531942258282496',
@@ -97,7 +104,11 @@ export const DBServicesList: IListDBService[] = [
         audit_enabled: false
       }
     },
-    is_enable_masking: false
+    is_enable_masking: false,
+    last_connection_test_error_message: 'error message',
+    last_connection_test_status:
+      ListDBServiceLastConnectionTestStatusEnum.connect_failed,
+    last_connection_test_time: '2024-11-15T15:05:10.175+08:00'
   }
 ];
 

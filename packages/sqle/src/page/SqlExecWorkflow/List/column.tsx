@@ -63,14 +63,13 @@ export const SqlExecWorkflowListColumn: (
   projectID: string
 ) => ActiontechTableColumn<
   IWorkflowDetailResV1,
-  SqlExecWorkflowListTableFilterParam,
-  'address'
+  SqlExecWorkflowListTableFilterParam
 > = (projectID) => {
   return [
     {
       dataIndex: 'workflow_id',
       title: () => t('execWorkflow.list.id'),
-      render: (id: string) => {
+      render: (id) => {
         return (
           <TableColumnWithIconStyleWrapper>
             <BriefcaseFilled width={14} height={14} />
@@ -84,7 +83,7 @@ export const SqlExecWorkflowListColumn: (
       dataIndex: 'workflow_name',
       className: 'workflow-list-table-workflow-name-column',
       title: () => t('execWorkflow.list.name'),
-      render: (name: string) => (
+      render: (name) => (
         <WorkflowNameStyleWrapper ellipsis={true}>
           {name}
         </WorkflowNameStyleWrapper>
@@ -95,7 +94,7 @@ export const SqlExecWorkflowListColumn: (
       dataIndex: 'desc',
       title: () => t('execWorkflow.list.desc'),
       className: 'workflow-list-table-desc-column',
-      render: (desc: string, record: IWorkflowDetailResV1) =>
+      render: (desc, record) =>
         desc ? (
           <BasicTypographyEllipsis
             textCont={desc}
@@ -117,7 +116,7 @@ export const SqlExecWorkflowListColumn: (
       title: () => t('execWorkflow.list.version'),
       filterCustomType: 'select',
       filterKey: 'filter_sql_version_id',
-      render: (versionNames: string[]) => {
+      render: (versionNames) => {
         if (!versionNames || versionNames.length === 0) {
           return '-';
         }
@@ -149,7 +148,10 @@ export const SqlExecWorkflowListColumn: (
     {
       dataIndex: 'status',
       title: () => t('execWorkflow.list.status'),
-      render: (status: IWorkflowDetailResV1['status']) => {
+      render: (status) => {
+        if (!status) {
+          return '-';
+        }
         return <WorkflowStatus status={status} />;
       }
     },
@@ -158,7 +160,10 @@ export const SqlExecWorkflowListColumn: (
       title: () => t('execWorkflow.list.assignee'),
       filterCustomType: 'select',
       filterKey: 'filter_current_step_assignee_user_id',
-      render: (list: string[]) => {
+      render: (list) => {
+        if (!list) {
+          return '-';
+        }
         return list?.map((v) => {
           return <AvatarCom key={v} name={v} />;
         });

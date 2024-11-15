@@ -33,7 +33,8 @@ export const PERMISSIONS = {
         DELETE: 'action:delete_global_db_service',
         TEST_IN_MORE_BUTTON: 'action:test_global_db_service_in_more_button',
         ADD: 'action:add_global_db_service',
-        BATCH_IMPORT: 'action:batch_import_global_db_service'
+        BATCH_IMPORT: 'action:batch_import_global_db_service',
+        BATCH_TEST_CONNECT: 'action:batch_test_global_db_service'
       },
       SYNC_DATA_SOURCE: {
         ADD: 'action:add_task',
@@ -48,7 +49,8 @@ export const PERMISSIONS = {
         DELETE: 'action:delete_db_service',
         TEST: 'action:test_db_service',
         TEST_IN_MORE_BUTTON: 'action:test_db_service_in_more_button',
-        CREATE_AUDIT_PLAN: 'action:db_service_create_audit_plan'
+        CREATE_AUDIT_PLAN: 'action:db_service_create_audit_plan',
+        BATCH_TEST_CONNECT: 'action:batch_test_project_db_service'
       },
       SYSTEM: {
         PUSH_NOTIFICATION: {

@@ -65,12 +65,19 @@ const DataSourceManagement: React.FC = () => {
   }, [checkPagePermission, t]);
 
   // #if [ee]
+  const onBatchTestConnection = () => {
+    eventEmitter.emit(EmitterKey.DMS_Batch_Test_Data_Source_Connection);
+  };
   const renderExtra = () => {
-    const pageHeaderActions = DataSourceManagementPageHeaderActions(activeKey);
+    const pageHeaderActions = DataSourceManagementPageHeaderActions(
+      activeKey,
+      onBatchTestConnection
+    );
     return (
       <>
         {pageHeaderActions['add_sync_task']}
         <Space>
+          {pageHeaderActions['batch_test_data_source_connection']}
           {pageHeaderActions['batch_import_db_service']}
           {pageHeaderActions['add_db_service']}
         </Space>

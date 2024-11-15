@@ -34,7 +34,6 @@ describe('base/Project/BatchImportDataSourceForm', () => {
       <BatchImportDataSourceForm
         customRequest={mockCustomRequest}
         form={result.current[0]}
-        dbServices={dbServices}
         uploadCheckStatus={uploadCheckStatus}
         clearUploadCheckStatus={jest.fn()}
       />
@@ -46,10 +45,6 @@ describe('base/Project/BatchImportDataSourceForm', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('请选择导入文件')).toBeInTheDocument();
     expect(screen.getByText('下载导入模板')).toBeInTheDocument();
-    expect(screen.getByText('批量测试数据源连通性')).toBeInTheDocument();
-    expect(
-      screen.getByText('批量测试数据源连通性').closest('button')
-    ).toBeDisabled();
   });
 
   test('render init snap', async () => {
@@ -57,14 +52,6 @@ describe('base/Project/BatchImportDataSourceForm', () => {
     fireEvent.click(screen.getByText('下载导入模板'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getImportDBServicesTemplateSpy).toHaveBeenCalledTimes(1);
-  });
-
-  test('render test connection', async () => {
-    customRender(mockBatchImportDBCheckData);
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(
-      screen.getByText('批量测试数据源连通性').closest('button')
-    ).not.toBeDisabled();
   });
 
   test('render upload file error', async () => {
