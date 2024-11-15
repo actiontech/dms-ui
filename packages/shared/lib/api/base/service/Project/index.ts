@@ -13,6 +13,8 @@ import {
   IAddProjectReturn,
   IDBServicesConnectionParams,
   IDBServicesConnectionReturn,
+  ICheckGlobalDBServicesConnectionsParams,
+  ICheckGlobalDBServicesConnectionsReturn,
   IExportProjectsParams,
   IImportProjectsParams,
   IImportProjectsReturn,
@@ -62,6 +64,18 @@ class ProjectService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<IDBServicesConnectionReturn>(
       '/v1/dms/projects/db_services_connection',
+      paramsData,
+      options
+    );
+  }
+
+  public CheckGlobalDBServicesConnections(
+    params: ICheckGlobalDBServicesConnectionsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ICheckGlobalDBServicesConnectionsReturn>(
+      '/v1/dms/projects/db_services_connections',
       paramsData,
       options
     );

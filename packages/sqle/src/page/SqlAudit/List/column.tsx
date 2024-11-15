@@ -68,7 +68,7 @@ const SqlAuditListColumn: (
     {
       dataIndex: 'sql_audit_record_id',
       title: () => t('sqlAudit.list.columns.auditID'),
-      render: (id: string) => {
+      render: (id) => {
         if (!id) {
           return '-';
         }
@@ -106,15 +106,17 @@ const SqlAuditListColumn: (
     {
       dataIndex: 'sql_audit_status',
       title: () => t('sqlAudit.list.columns.auditStatus'),
-      render: (
-        sql_audit_status: getSQLAuditRecordsV1FilterSqlAuditStatusEnum
-      ) => {
+      render: (sql_audit_status) => {
         if (!sql_audit_status) {
           return '-';
         }
         return (
           <span className="flex-display">
-            <SqlAuditStatusTag status={sql_audit_status} />
+            <SqlAuditStatusTag
+              status={
+                sql_audit_status as getSQLAuditRecordsV1FilterSqlAuditStatusEnum
+              }
+            />
           </span>
         );
       }
@@ -122,7 +124,7 @@ const SqlAuditListColumn: (
     {
       dataIndex: 'tags',
       title: () => t('sqlAudit.list.columns.businessTag'),
-      render: (tags: string[], record) => {
+      render: (tags, record) => {
         return (
           <SqlAuditTags
             projectName={projectName}
@@ -167,7 +169,7 @@ const SqlAuditListColumn: (
     {
       dataIndex: 'created_at',
       title: () => t('sqlAudit.list.columns.auditTime'),
-      render(time: string) {
+      render(time) {
         return formatTime(time, '-');
       },
       width: 200

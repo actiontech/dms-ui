@@ -7,9 +7,13 @@ import { t } from '../../locale';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const DataSourceManagementPageHeaderActions = (
-  activeKey: DataSourceManagerSegmentedKey
+  activeKey: DataSourceManagerSegmentedKey,
+  onBatchTestConnection: () => void
 ): Record<
-  'add_sync_task' | 'batch_import_db_service' | 'add_db_service',
+  | 'add_sync_task'
+  | 'batch_import_db_service'
+  | 'add_db_service'
+  | 'batch_test_data_source_connection',
   ReactNode
 > => {
   return {
@@ -50,6 +54,19 @@ export const DataSourceManagementPageHeaderActions = (
           hidden={activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource}
           actionType="navigate-link"
           link={{ to: ROUTE_PATHS.BASE.GLOBAL_DATA_SOURCE.create }}
+        />
+      </PermissionControl>
+    ),
+    batch_test_data_source_connection: (
+      <PermissionControl
+        permission={
+          PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_TEST_CONNECT
+        }
+      >
+        <ActionButton
+          onClick={onBatchTestConnection}
+          hidden={activeKey !== DataSourceManagerSegmentedKey.GlobalDataSource}
+          text={t('dmsGlobalDataSource.batchTestDataSourceConnection')}
         />
       </PermissionControl>
     )
