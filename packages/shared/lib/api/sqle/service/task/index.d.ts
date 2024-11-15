@@ -6,6 +6,7 @@ import {
   IUpdateSqlFileOrderV1Req,
   IGetSqlFileOrderMethodResV1,
   IAuditTaskGroupResV1,
+  IUpdateTaskBackupStrategyReq,
   IBaseRes,
   IGetAuditTaskSQLContentResV1,
   IGetAuditTaskSQLsResV1,
@@ -40,6 +41,8 @@ export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
 
   instance_schema?: string;
 
+  enable_backup?: boolean;
+
   sql?: string;
 
   input_sql_file?: any;
@@ -54,6 +57,14 @@ export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
 }
 
 export interface ICreateAndAuditTaskV1Return extends IGetAuditTaskResV1 {}
+
+export interface IDownloadBackupFileV1Params {
+  workflow_id: string;
+
+  project_name: string;
+
+  task_id: string;
+}
 
 export interface IUpdateSqlFileOrderV1Params extends IUpdateSqlFileOrderV1Req {
   project_name: string;
@@ -71,6 +82,8 @@ export interface IAuditTaskGroupIdV1Params {
 
   sql?: string;
 
+  enable_backup?: boolean;
+
   file_order_method?: string;
 
   input_sql_file?: any;
@@ -87,6 +100,13 @@ export interface IGetAuditTaskV1Params {
 }
 
 export interface IGetAuditTaskV1Return extends IGetAuditTaskResV1 {}
+
+export interface IUpdateTaskBackupStrategyV1Params
+  extends IUpdateTaskBackupStrategyReq {
+  task_id: string;
+}
+
+export interface IUpdateTaskBackupStrategyV1Return extends IBaseRes {}
 
 export interface IDownloadAuditFileParams {
   task_id: string;

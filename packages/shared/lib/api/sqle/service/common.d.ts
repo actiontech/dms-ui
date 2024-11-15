@@ -8,6 +8,7 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  BackupSqlDataBackupStrategyEnum,
   BatchUpdateSqlManageReqPriorityEnum,
   BatchUpdateSqlManageReqStatusEnum,
   BlacklistResV1TypeEnum,
@@ -54,6 +55,8 @@ import {
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   UpdateReportPushConfigReqV1PushUserTypeEnum,
   UpdateReportPushConfigReqV1TriggerTypeEnum,
+  UpdateSqlBackupStrategyReqStrategyEnum,
+  UpdateTaskBackupStrategyReqStrategyEnum,
   UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum,
   WorkFlowStepTemplateReqV1TypeEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
@@ -76,6 +79,7 @@ import {
   updatePipelineNodeTypeEnum,
   AssociatedStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
+  AuditTaskSQLResV2BackupStrategyEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
@@ -348,6 +352,10 @@ export interface IAuditTaskResV1 {
 
   audit_level?: AuditTaskResV1AuditLevelEnum;
 
+  backup_conflict_with_instance?: boolean;
+
+  enable_backup?: boolean;
+
   exec_end_time?: string;
 
   exec_mode?: string;
@@ -419,6 +427,36 @@ export interface IAuditedSQLCount {
   risk_sql_count?: number;
 
   total_sql_count?: number;
+}
+
+export interface IBackupSqlData {
+  backup_sqls?: string[];
+
+  backup_strategy?: BackupSqlDataBackupStrategyEnum;
+
+  description?: string;
+
+  exec_order?: number;
+
+  exec_sql_id?: number;
+
+  exec_status?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  origin_sql?: string;
+}
+
+export interface IBackupSqlListRes {
+  code?: number;
+
+  data?: IBackupSqlData[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IBatchAssociateWorkflowsWithVersionReqV1 {
@@ -536,6 +574,8 @@ export interface ICreateAuditPlanReqV1 {
 }
 
 export interface ICreateAuditTaskReqV1 {
+  enable_backup?: boolean;
+
   exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
 
   file_order_method?: string;
@@ -625,6 +665,30 @@ export interface ICreateProjectRuleTemplateReqV1 {
   rule_list?: IRuleReqV1[];
 
   rule_template_name?: string;
+}
+
+export interface ICreateRollbackWorkflowReq {
+  desc?: string;
+
+  rollback_sql_ids?: number[];
+
+  sql_version_id?: number;
+
+  task_ids?: number[];
+
+  workflow_subject?: string;
+}
+
+export interface ICreateRollbackWorkflowRes {
+  code?: number;
+
+  data?: ICreateRollbackWorkflowResData;
+
+  message?: string;
+}
+
+export interface ICreateRollbackWorkflowResData {
+  workflow_id?: string;
 }
 
 export interface ICreateRuleTemplateReqV1 {
@@ -2486,6 +2550,8 @@ export interface IRuleTemplateResV1 {
 
   desc?: string;
 
+  is_default_rule_template?: boolean;
+
   rule_template_name?: string;
 }
 
@@ -2493,6 +2559,8 @@ export interface IRuleTemplateTipResV1 {
   db_type?: string;
 
   rule_template_id?: string;
+
+  is_default_rule_template?: boolean;
 
   rule_template_name?: string;
 }
@@ -3055,6 +3123,10 @@ export interface IUpdateSQLAuditRecordReqV1 {
   tags?: string[];
 }
 
+export interface IUpdateSqlBackupStrategyReq {
+  strategy?: UpdateSqlBackupStrategyReqStrategyEnum;
+}
+
 export interface IUpdateSqlFileOrderV1Req {
   files_to_sort?: IFileToSort[];
 }
@@ -3087,6 +3159,10 @@ export interface IUpdateSystemVariablesReqV1 {
   operation_record_expired_hours?: number;
 
   url?: string;
+}
+
+export interface IUpdateTaskBackupStrategyReq {
+  strategy?: UpdateTaskBackupStrategyReqStrategyEnum;
 }
 
 export interface IUpdateWechatConfigurationReqV1 {
@@ -3568,17 +3644,25 @@ export interface IAuditSQLResV2 {
 }
 
 export interface IAuditTaskSQLResV2 {
+  associate_workflow_ids?: string[];
+
   audit_level?: string;
 
   audit_result?: IAuditResult[];
 
   audit_status?: string;
 
+  backup_strategy?: AuditTaskSQLResV2BackupStrategyEnum;
+
+  backup_strategy_tip?: string;
+
   description?: string;
 
   exec_result?: string;
 
   exec_sql?: string;
+
+  exec_sql_id?: number;
 
   exec_status?: string;
 

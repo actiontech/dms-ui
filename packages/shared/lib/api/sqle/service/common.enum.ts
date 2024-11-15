@@ -104,6 +104,16 @@ export enum AuditTaskResV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum BackupSqlDataBackupStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'origin_row' = 'origin_row'
+}
+
 export enum BatchUpdateSqlManageReqPriorityEnum {
   'UNKNOWN' = '',
 
@@ -482,6 +492,26 @@ export enum UpdateReportPushConfigReqV1TriggerTypeEnum {
   'timing' = 'timing'
 }
 
+export enum UpdateSqlBackupStrategyReqStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'origin_row' = 'origin_row'
+}
+
+export enum UpdateTaskBackupStrategyReqStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'origin_row' = 'origin_row'
+}
+
 export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {
   'normal' = 'normal',
 
@@ -674,6 +704,16 @@ export enum AuditResDataV2AuditLevelEnum {
   'error' = 'error',
 
   'UNKNOWN' = ''
+}
+
+export enum AuditTaskSQLResV2BackupStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'origin_row' = 'origin_row'
 }
 
 export enum DirectAuditFileReqV2SqlTypeEnum {

@@ -29,6 +29,7 @@ export type SQLInfoFormFields = {
   zipFile: File[];
   instanceName: string;
   instanceSchema: string;
+  ruleTemplate: string;
   dbType: string;
   gitHttpUrl: string;
   gitUserName: string;
