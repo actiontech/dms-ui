@@ -79,3 +79,21 @@ export enum exportWorkflowV1FilterStatusEnum {
 
   'finished' = 'finished'
 }
+
+export enum GetBackupSqlListV1FilterExecStatusEnum {
+  'initialized' = 'initialized',
+
+  'doing' = 'doing',
+
+  'succeeded' = 'succeeded',
+
+  'failed' = 'failed',
+
+  'manually_executed' = 'manually_executed',
+
+  'terminating' = 'terminating',
+
+  'terminate_succeeded' = 'terminate_succeeded',
+
+  'terminate_failed' = 'terminate_failed'
+}

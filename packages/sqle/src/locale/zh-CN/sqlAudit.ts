@@ -67,7 +67,10 @@ export default {
         instanceSchema: '数据库',
         staticAudit: '离线审核',
         dynamicAudit: '在线审核',
-        uploadType: '选择SQL语句上传方式'
+        uploadType: '选择SQL语句上传方式',
+        ruleTemplate: '审核规则模板',
+        ruleTemplateDesc:
+          '请指定用于本次审核的规则模板，可选用的模板范围为该数据源类型对应的全局审核规则模板及当前项目内的审核规则模板。'
       },
       uploadTypeEnum: {
         sql: '输入SQL语句',

@@ -25,6 +25,10 @@ import {
   IBatchCompleteWorkflowsV1Params,
   IBatchCompleteWorkflowsV1Return,
   IExportWorkflowV1Params,
+  IGetBackupSqlListV1Params,
+  IGetBackupSqlListV1Return,
+  ICreateRollbackWorkflowParams,
+  ICreateRollbackWorkflowReturn,
   ITerminateMultipleTaskByWorkflowV1Params,
   ITerminateMultipleTaskByWorkflowV1Return,
   IGetWorkflowAttachmentParams,
@@ -48,6 +52,8 @@ import {
   IExecuteOneTaskOnWorkflowV1Return,
   IUpdateWorkflowScheduleV1Params,
   IUpdateWorkflowScheduleV1Return,
+  IUpdateSqlBackupStrategyV1Params,
+  IUpdateSqlBackupStrategyV1Return,
   IGetWorkflowStatisticOfInstancesParams,
   IGetWorkflowStatisticOfInstancesReturn,
   ICreateWorkflowV2Params,
@@ -211,6 +217,42 @@ class WorkflowService extends ServiceBase {
 
     return this.get<any>(
       `/v1/projects/${project_name}/workflows/exports`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetBackupSqlListV1(
+    params: IGetBackupSqlListV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    return this.get<IGetBackupSqlListV1Return>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/backup_sqls`,
+      paramsData,
+      options
+    );
+  }
+
+  public CreateRollbackWorkflow(
+    params: ICreateRollbackWorkflowParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const workflow_id = paramsData.workflow_id;
+    delete paramsData.workflow_id;
+
+    return this.post<ICreateRollbackWorkflowReturn>(
+      `/v1/projects/${project_name}/workflows/${workflow_id}/rollback`,
       paramsData,
       options
     );
@@ -445,6 +487,24 @@ class WorkflowService extends ServiceBase {
 
     return this.put<IUpdateWorkflowScheduleV1Return>(
       `/v1/projects/${project_name}/workflows/${workflow_name}/tasks/${task_id}/schedule`,
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateSqlBackupStrategyV1(
+    params: IUpdateSqlBackupStrategyV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    const sql_id = paramsData.sql_id;
+    delete paramsData.sql_id;
+
+    return this.patch<IUpdateSqlBackupStrategyV1Return>(
+      `/v1/tasks/audits/${task_id}/sqls/${sql_id}/`,
       paramsData,
       options
     );

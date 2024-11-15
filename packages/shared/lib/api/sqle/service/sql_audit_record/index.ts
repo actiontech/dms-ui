@@ -57,6 +57,10 @@ class SqlAuditRecordService extends ServiceBase {
       paramsData.append('instance_schema', params.instance_schema as any);
     }
 
+    if (params.rule_template_name != undefined) {
+      paramsData.append('rule_template_name', params.rule_template_name as any);
+    }
+
     if (params.db_type != undefined) {
       paramsData.append('db_type', params.db_type as any);
     }
