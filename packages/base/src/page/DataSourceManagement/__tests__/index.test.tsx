@@ -26,7 +26,10 @@ describe('test DataSourceManagement', () => {
     syncTaskList.mockAllApi();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     mockUsePermission(
-      { checkPagePermission: jest.fn().mockReturnValue(true) },
+      {
+        checkPagePermission: jest.fn().mockReturnValue(true),
+        checkActionPermission: jest.fn().mockReturnValue(true)
+      },
       { useSpyOnMockHooks: true }
     );
   });
@@ -59,6 +62,26 @@ describe('test DataSourceManagement', () => {
     expect(emitSpy).toHaveBeenCalledTimes(1);
     expect(emitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_Global_Data_Source
+    );
+
+    fireEvent.click(getByText('外部数据源同步'));
+    fireEvent.click(getBySelector('.custom-icon-refresh'));
+    expect(emitSpy).toHaveBeenCalledTimes(2);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Refresh_Sync_Data_Source
+    );
+  });
+
+  it('should send emit event when click batch test connect button', () => {
+    const emitSpy = jest.spyOn(eventEmitter, 'emit');
+
+    const { getByText } = superRender(<DataSourceManagement />);
+
+    fireEvent.click(getByText('批量测试数据源连通性'));
+
+    expect(emitSpy).toHaveBeenCalledTimes(1);
+    expect(emitSpy).toHaveBeenCalledWith(
+      EmitterKey.DMS_Batch_Test_Data_Source_Connection
     );
 
     fireEvent.click(getByText('外部数据源同步'));

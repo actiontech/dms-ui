@@ -33,6 +33,7 @@ class MockProjectApi implements MockSpyApy {
     this.importDBServicesOfProjectsCheck();
     this.importDBServicesOfOneProjectCheck();
     this.dbServicesConnection();
+    this.CheckGlobalDBServicesConnections();
   }
 
   public getProjectList() {
@@ -209,6 +210,12 @@ class MockProjectApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockDbServicesConnectionData })
     );
+    return spy;
+  }
+
+  public CheckGlobalDBServicesConnections() {
+    const spy = jest.spyOn(Project, 'CheckGlobalDBServicesConnections');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

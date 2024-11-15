@@ -114,7 +114,6 @@ const BatchImportDataSource = () => {
         <BatchImportDataSourceForm
           form={form}
           customRequest={onUploadCustomRequest}
-          dbServices={dbServices}
           uploadCheckStatus={uploadCheckStatus}
           clearUploadCheckStatus={clearUploadCheckStatus}
         />

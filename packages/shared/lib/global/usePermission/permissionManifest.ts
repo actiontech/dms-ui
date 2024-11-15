@@ -140,6 +140,13 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false
   },
+  [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_TEST_CONNECT]: {
+    id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_TEST_CONNECT,
+    type: 'action',
+    projectArchived: false,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    projectManager: true
+  },
 
   //用户中心
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD]: {
@@ -214,10 +221,15 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.TEST_IN_MORE_BUTTON,
     type: 'action'
   },
+  [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_TEST_CONNECT]: {
+    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_TEST_CONNECT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
 
   // 同步外部数据源
   [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD]: {
-    id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.ADD,
+    id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD,
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
   },

@@ -25,6 +25,7 @@ describe('page/DataSource/DataSourceList', () => {
   const projectID = mockProjectInfo.projectID;
   const navigateSpy = jest.fn();
   const useParamsMock: jest.Mock = useParams as jest.Mock;
+  let CheckProjectDBServicesConnectionsSpy: jest.SpyInstance;
 
   const customRender = (params = {}) => {
     return superRender(<DataSourceList />, undefined, {
@@ -67,6 +68,8 @@ describe('page/DataSource/DataSourceList', () => {
     useParamsMock.mockReturnValue({ projectID });
     dms.mockAllApi();
     dbServices.ListDBServicesTips();
+    CheckProjectDBServicesConnectionsSpy =
+      dbServices.CheckProjectDBServicesConnections();
   });
 
   afterEach(() => {
@@ -197,7 +200,7 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(3);
+    expect(filterItems.length).toBe(4);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -270,9 +273,9 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(3);
+    expect(filterItems.length).toBe(4);
     expect(baseElement).toMatchSnapshot();
-    const enableFilterElement = getBySelector('input', filterItems[2]);
+    const enableFilterElement = getBySelector('input', filterItems[3]);
     fireEvent.mouseDown(enableFilterElement);
     const selectOptions = getAllBySelector('.ant-select-item-option');
     await act(async () => {
@@ -286,6 +289,42 @@ describe('page/DataSource/DataSourceList', () => {
       fuzzy_keyword: '',
       is_enable_masking: true
     });
+  });
+
+  it('should display an error message and return if dataSourceList is empty or undefined', async () => {
+    const requestTableList = dms.getListDBServices();
+    requestTableList.mockImplementation(() =>
+      createSpySuccessResponse({ data: [] })
+    );
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(6300));
+
+    fireEvent.click(screen.getByText('批量测试数据源连通性'));
+    expect(CheckProjectDBServicesConnectionsSpy).toHaveBeenCalledTimes(0);
+    expect(screen.getByText('当前列表无数据！')).toBeInTheDocument();
+  });
+
+  it('should initiate the connection test and call DBService.CheckProjectDBServicesConnections when dataSourceList has valid data sources', async () => {
+    const requestTableList = dms.getListDBServices();
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(6300));
+
+    fireEvent.click(screen.getByText('批量测试数据源连通性'));
+    expect(CheckProjectDBServicesConnectionsSpy).toHaveBeenCalledTimes(1);
+    expect(CheckProjectDBServicesConnectionsSpy).toHaveBeenCalledWith({
+      project_uid: projectID,
+      db_services: DBServicesList.map((v) => ({
+        db_service_uid: v.uid!
+      }))
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestTableList).toHaveBeenCalledTimes(2);
+    expect(
+      screen.getByText('执行批量测试数据源连通性成功！')
+    ).toBeInTheDocument();
   });
 
   describe('render table for action btn', () => {

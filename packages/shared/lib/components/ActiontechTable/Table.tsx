@@ -1,12 +1,10 @@
 import { Result, ConfigProvider } from 'antd';
-import { ActiontechTableProps } from './index.type';
+import { ActiontechTableColumn, ActiontechTableProps } from './index.type';
 import ToolBar from './components/Toolbar';
 import FilterContainer from './components/FilterContainer';
 import { useTranslation } from 'react-i18next';
 import { ActiontechTableStyleWrapper, tableToken } from './style';
-import useTableAction, {
-  ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
-} from './hooks/useTableAction';
+import useTableAction from './hooks/useTableAction';
 import classnames from 'classnames';
 import { useEffect, useMemo } from 'react';
 import useTableSettings from './hooks/useTableSettings';
@@ -14,7 +12,7 @@ import useTableSettings from './hooks/useTableSettings';
 const ActiontechTable = <
   T extends Record<string, any>,
   F extends Record<string, any>,
-  OtherColumnKeys extends string = ''
+  OtherColumnKeys extends string = never
 >({
   className,
   toolbar,
@@ -33,13 +31,15 @@ const ActiontechTable = <
   const { catchDefaultColumnsInfo, localColumns } = useTableSettings<
     T,
     F,
-    OtherColumnKeys | typeof ACTIONTECH_TABLE_OPERATOR_COLUMN_DATA_INDEX
+    OtherColumnKeys
   >(tableName, username);
 
   const mergerColumns = useMemo(() => {
     const operatorColumn = renderActionInTable<T>(props.actions);
 
-    return operatorColumn ? [...columns, operatorColumn] : columns;
+    return (
+      operatorColumn ? [...columns, operatorColumn] : columns
+    ) as ActiontechTableColumn<T, F, OtherColumnKeys>;
   }, [columns, props.actions, renderActionInTable]);
 
   const innerColumns = useMemo(() => {

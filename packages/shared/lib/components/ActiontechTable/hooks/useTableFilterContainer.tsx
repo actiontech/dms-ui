@@ -23,7 +23,7 @@ export const mergeFilterButtonMeta = <
     if (cur.filterCustomType) {
       result.set(cur.dataIndex, {
         checked: false,
-        filterLabel: getColumnsLabel(cur.title),
+        filterLabel: cur.filterLabel ?? getColumnsLabel(cur.title),
         filterCustomType: cur.filterCustomType
       });
     }

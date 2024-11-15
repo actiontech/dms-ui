@@ -133,6 +133,7 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -164,6 +165,12 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -317,6 +324,15 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -341,6 +357,24 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         10.186.62.41:3306
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试失败
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -555,6 +589,24 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试成功
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         SQLE
                       </td>
                       <td
@@ -669,6 +721,11 @@ exports[`page/GlobalDataSource/List render list snap 1`] = `
                         class="ant-table-cell"
                       >
                         vm1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1069,6 +1126,7 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -1100,6 +1158,12 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1253,6 +1317,15 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1277,6 +1350,24 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         10.186.62.41:3306
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试失败
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1491,6 +1582,24 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试成功
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         SQLE
                       </td>
                       <td
@@ -1605,6 +1714,11 @@ exports[`page/GlobalDataSource/List render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         vm1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2037,6 +2151,64 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
       </div>
       <div
         class="ant-space-item"
+        style="margin-right: 12px; padding-bottom: 12px;"
+      >
+        <div
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+        >
+          <div
+            class="ant-select-selector"
+          >
+            <span
+              class="ant-select-selection-search"
+            >
+              <input
+                aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                aria-autocomplete="list"
+                aria-controls="rc_select_TEST_OR_SSR_list"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-owns="rc_select_TEST_OR_SSR_list"
+                autocomplete="off"
+                class="ant-select-selection-search-input"
+                id="rc_select_TEST_OR_SSR"
+                readonly=""
+                role="combobox"
+                style="opacity: 0;"
+                type="search"
+                unselectable="on"
+                value=""
+              />
+            </span>
+            <span
+              class="ant-select-selection-placeholder"
+            >
+              <span
+                class="custom-select-placeholder css-qly0fu"
+              >
+                <span
+                  class="custom-select-placeholder-prefix"
+                >
+                  数据源连接状态
+                </span>
+                <span
+                  class="custom-select-placeholder-value"
+                >
+                  请选择{{name}}
+                </span>
+              </span>
+            </span>
+          </div>
+          <span
+            aria-hidden="true"
+            class="ant-select-arrow"
+            style="user-select: none;"
+            unselectable="on"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
         style="padding-bottom: 12px;"
       >
         <div
@@ -2127,6 +2299,7 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -2158,6 +2331,12 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -2311,6 +2490,15 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -2335,6 +2523,24 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         10.186.62.41:3306
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试失败
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2549,6 +2755,24 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试成功
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         SQLE
                       </td>
                       <td
@@ -2663,6 +2887,11 @@ exports[`page/GlobalDataSource/List render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         vm1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3063,6 +3292,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -3094,6 +3324,12 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -3247,6 +3483,15 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -3271,6 +3516,24 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         class="ant-table-cell"
                       >
                         10.186.62.41:3306
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试失败
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3882,6 +4145,7 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -3913,6 +4177,12 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4066,6 +4336,15 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -4090,6 +4369,24 @@ exports[`page/GlobalDataSource/List render table for action btn render table for
                         class="ant-table-cell"
                       >
                         10.186.62.41:3306
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试失败
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -4701,6 +4998,7 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -4732,6 +5030,12 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4885,6 +5189,15 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -4909,6 +5222,24 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         10.186.62.41:3306
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-red basic-tag-wrapper basic-small-tag-wrapper css-xyvxme css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试失败
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -5081,6 +5412,24 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                       <td
                         class="ant-table-cell"
                       >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              style="height: 32px;"
+                            >
+                              连通性测试成功
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         SQLE
                       </td>
                       <td
@@ -5153,6 +5502,11 @@ exports[`page/GlobalDataSource/List render table for action btn should not rende
                         class="ant-table-cell"
                       >
                         vm1
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
@@ -5511,6 +5865,7 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 204px;"
                     />
@@ -5542,6 +5897,12 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
                         scope="col"
                       >
                         地址
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        上一次连接状态
                       </th>
                       <th
                         class="ant-table-cell"
@@ -5695,13 +6056,22 @@ exports[`page/GlobalDataSource/List render table for api return no data 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="11"
+                        colspan="12"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"

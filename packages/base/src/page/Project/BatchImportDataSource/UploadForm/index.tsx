@@ -1,4 +1,3 @@
-import { BasicButton, ReminderInformation, EmptyBox } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import {
   FormAreaBlockStyleWrapper,
@@ -16,70 +15,16 @@ import {
   FileUploadCheckStatusType
 } from '../index.type';
 import FileUpload from './FileUpload';
-import { UploadProps, Space } from 'antd';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
-import { useBoolean } from 'ahooks';
-import { useState } from 'react';
-import { IDBServicesConnectionItem } from '@actiontech/shared/lib/api/base/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { useEffect } from 'react';
+import { UploadProps } from 'antd';
 import { OverviewOutlined } from '@actiontech/icons';
 
 const BatchImportDataSourceForm: React.FC<{
   form: BatchImportDataSourceFormType;
   customRequest: UploadProps['customRequest'];
-  dbServices?: IDBService[];
   uploadCheckStatus: FileUploadCheckStatusType;
   clearUploadCheckStatus: () => void;
-}> = ({
-  form,
-  customRequest,
-  dbServices,
-  uploadCheckStatus,
-  clearUploadCheckStatus
-}) => {
+}> = ({ form, customRequest, uploadCheckStatus, clearUploadCheckStatus }) => {
   const { t } = useTranslation();
-
-  const [
-    connectionTesting,
-    { setTrue: setConnectionTesting, setFalse: setConnectionTestingDone }
-  ] = useBoolean();
-
-  const [connectionTestResult, setConnectionTestResult] =
-    useState<IDBServicesConnectionItem>();
-
-  const onBatchTestConnection = async () => {
-    await form.validateFields();
-    setConnectionTesting();
-    Project.DBServicesConnection({
-      db_services: dbServices?.map((i) => {
-        return {
-          additional_params: i.additional_params,
-          db_type: i.db_type ?? '',
-          host: i.host,
-          name: i.name,
-          password: i.password,
-          port: i.port,
-          user: i.user
-        };
-      })
-    })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setConnectionTestResult(res.data.data);
-        }
-      })
-      .finally(() => {
-        setConnectionTestingDone();
-      });
-  };
-
-  useEffect(() => {
-    if (!dbServices?.length) {
-      setConnectionTestResult(undefined);
-    }
-  }, [dbServices]);
 
   return (
     <FormAreaBlockStyleWrapper className="fix-header-padding">
@@ -111,50 +56,11 @@ const BatchImportDataSourceForm: React.FC<{
             maxCount={1}
             onRemove={() => {
               clearUploadCheckStatus();
-              setConnectionTestResult(undefined);
             }}
             accept=".csv"
             customRequest={customRequest}
             uploadCheckStatus={uploadCheckStatus}
           />
-        </FormItemLabel>
-        <FormItemLabel
-          label={t('dmsProject.batchImportDataSource.testConnectLabel')}
-        >
-          <Space direction="vertical">
-            <BasicButton
-              disabled={!dbServices?.length}
-              type="primary"
-              onClick={onBatchTestConnection}
-              loading={connectionTesting}
-            >
-              {t('dmsProject.batchImportDataSource.testConnect')}
-            </BasicButton>
-            <EmptyBox
-              if={!connectionTesting && !!connectionTestResult?.successful_num}
-            >
-              <ReminderInformation
-                status="success"
-                message={t(
-                  'dmsProject.batchImportDataSource.testConnectSuccess',
-                  {
-                    count: connectionTestResult?.successful_num
-                  }
-                )}
-              />
-            </EmptyBox>
-            <EmptyBox
-              if={!connectionTesting && !!connectionTestResult?.failed_num}
-            >
-              <ReminderInformation
-                status="error"
-                message={t('dmsProject.batchImportDataSource.testConnectFail', {
-                  count: connectionTestResult?.failed_num,
-                  name: connectionTestResult?.failed_names?.join(',')
-                })}
-              />
-            </EmptyBox>
-          </Space>
         </FormItemLabel>
       </FormStyleWrapper>
     </FormAreaBlockStyleWrapper>

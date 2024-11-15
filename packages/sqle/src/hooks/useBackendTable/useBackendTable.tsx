@@ -9,6 +9,7 @@ import {
   TableFilterContainerProps,
   TypeFilterElement
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import { ExcludeSymbol } from '@actiontech/shared/lib/types/common.type';
 import { Tooltip, Typography } from 'antd';
 import { ColumnType } from 'antd/es/table';
 import { groupBy } from 'lodash';
@@ -108,7 +109,8 @@ const useBackendTable = () => {
             ? options.columnClassName(cell.type)
             : options?.columnClassName;
         return {
-          dataIndex: cell.field_name ?? '',
+          dataIndex: cell.field_name as ExcludeSymbol<keyof DataSourceItem> &
+            string,
           title: (cell.desc || cell.field_name) ?? '',
           render: renderMethod,
           className: cls,

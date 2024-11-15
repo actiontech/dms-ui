@@ -1,10 +1,11 @@
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { message, Modal } from 'antd';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
+import ProjectService from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   ActiontechTable,
@@ -28,6 +29,7 @@ import usePermission from '@actiontech/shared/lib/global/usePermission/usePermis
 import { GlobalDataSourceListActions } from './action';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useStaticTips from '../../../hooks/useStaticTips';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -41,6 +43,8 @@ const GlobalDataSourceList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
 
   const { getLogoUrlByDbType, updateDriverList } = useDbServiceDriver();
+
+  const { generateDatabaseTestConnectionStatusSelectOptions } = useStaticTips();
 
   const {
     updateDbTypeList,
@@ -104,13 +108,18 @@ const GlobalDataSourceList = () => {
       [
         'project_name',
         { options: projectIDOptions, loading: getProjectsLoading }
+      ],
+      [
+        'last_connection_test_status',
+        { options: generateDatabaseTestConnectionStatusSelectOptions }
       ]
     ]);
   }, [
     dbTypeOptions,
     getDbTypeListLoading,
     projectIDOptions,
-    getProjectsLoading
+    getProjectsLoading,
+    generateDatabaseTestConnectionStatusSelectOptions
   ]);
 
   const actions = useMemo(() => {
@@ -219,6 +228,30 @@ const GlobalDataSourceList = () => {
     modalApi
   ]);
 
+  const batchTestDatabaseConnection = useCallback(() => {
+    if (!dataSourceList?.list || dataSourceList.list.length === 0) {
+      messageApi.error(
+        t('dmsGlobalDataSource.batchTestConnection.notFoundData')
+      );
+      return;
+    }
+    ProjectService.CheckGlobalDBServicesConnections({
+      db_services:
+        dataSourceList?.list?.map((v) => ({
+          db_service_uid: v.uid!
+        })) ?? []
+    }).then((res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        refresh();
+        messageApi.success(
+          t(
+            'dmsGlobalDataSource.batchTestConnection.batchTestConnectionSuccessTips'
+          )
+        );
+      }
+    });
+  }, [dataSourceList?.list, messageApi, refresh, t]);
+
   useEffect(() => {
     updateDriverList();
     updateProjects();
@@ -226,15 +259,21 @@ const GlobalDataSourceList = () => {
   }, [updateDbTypeList, updateDriverList, updateProjects]);
 
   useEffect(() => {
-    const { unsubscribe } = eventEmitter.subscribe(
+    const { unsubscribe: unsubscribeRefresh } = eventEmitter.subscribe(
       EmitterKey.DMS_Refresh_Global_Data_Source,
       refresh
     );
 
+    const { unsubscribe: unsubscribeBatchTest } = eventEmitter.subscribe(
+      EmitterKey.DMS_Batch_Test_Data_Source_Connection,
+      batchTestDatabaseConnection
+    );
+
     return () => {
-      unsubscribe();
+      unsubscribeRefresh();
+      unsubscribeBatchTest();
     };
-  }, [refresh]);
+  }, [refresh, batchTestDatabaseConnection]);
 
   return (
     <>

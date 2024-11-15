@@ -13,7 +13,7 @@ import { isEqual } from 'lodash';
 const useTableSettings = <
   T extends Record<string, any>,
   F = Record<string, any>,
-  OtherColumnKeys extends string = ''
+  OtherColumnKeys extends string = never
 >(
   tableName: string,
   username: string

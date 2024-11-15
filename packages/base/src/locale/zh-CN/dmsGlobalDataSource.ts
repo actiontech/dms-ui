@@ -8,6 +8,8 @@ export default {
     instanceName: '数据源名',
     projectName: '项目名称',
     address: '地址',
+    lastTestConnectionStatus: '上一次连接状态',
+    testConnectionStatusFilterLabel: '数据源连接状态',
     describe: '描述',
     role: '角色',
     type: '数据源类型',
@@ -29,7 +31,15 @@ export default {
     deleteSuccessTips: '删除数据源"{{name}}"成功'
   },
 
+  batchTestConnection: {
+    notFoundData: '当前列表无数据！',
+    connectFailed: '连接失败',
+    connectSucceed: '连接成功',
+    batchTestConnectionSuccessTips: '执行批量测试数据源连通性成功！'
+  },
+
   addDatabase: '添加数据源',
+  batchTestDataSourceConnection: '批量测试数据源连通性',
   backToList: '返回全局数据源列表',
   batchImportDataSource: {
     buttonText: '批量导入数据源',

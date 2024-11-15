@@ -6,6 +6,7 @@ import { CustomSelectProps } from '../CustomSelect';
 import { IBasicButton } from '../BasicButton';
 import { ICustomInputProps } from '../CustomInput';
 import { TypedLinkProps } from '../TypedRouter';
+import { ExcludeSymbol } from '../../types/common.type';
 
 //======================================= utils
 
@@ -19,7 +20,7 @@ type ComponentBaseType = {
  */
 export type PageInfoWithoutIndexAndSize<
   T extends TablePagination & Record<string, any>,
-  Other extends keyof T = ''
+  Other extends keyof T = never
 > = Omit<T, keyof TablePagination | Other>;
 
 //=======================================
@@ -201,7 +202,7 @@ export type TableRefreshButtonProps = {
  */
 export type CatchTableColumnValueType<
   T = Record<string, any>,
-  OtherColumnKeys extends string = ''
+  OtherColumnKeys extends string = never
 > = {
   /**
    * key 为用户名
@@ -348,29 +349,39 @@ export type ActiontechTableActionsConfig<
  * 表格 columns props, 当配置 filterCustomType 和 filterKey 启用该列的筛选功能, 通过 useTableFilterContainer 来生成 筛选项的元数据
  * 当需要添加表格列以外的筛选列时, 可以使用 useTableFilterContainer 的第三个参数: extraFilterMeta
  */
-type ExcludeSymbol<T> = T extends symbol ? never : T;
+type ColumnValueType<T, K extends string | keyof T> = K extends keyof T
+  ? T[K]
+  : never;
+
+type BaseColumnType<T, K extends string | keyof T, F = Record<string, any>> = {
+  show?: boolean;
+  dataIndex: ExcludeSymbol<K>;
+  render?: (
+    value: ColumnValueType<T, K>,
+    record: T,
+    index: number
+  ) => ColumnType<T>['render'] extends (...args: any) => infer R
+    ? R
+    : React.ReactNode;
+} & Pick<
+  ActiontechTableFilterMetaValue<F>,
+  'filterCustomType' | 'filterKey' | 'filterLabel'
+>;
+
 export type ActiontechTableColumn<
   T = Record<string, any>,
   F = Record<string, any>,
   OtherColumnKeys extends string = never
 > = Array<
-  Omit<ColumnGroupType<T> | ColumnType<T>, 'render' | 'dataIndex'> &
-    {
-      [K in keyof Required<T>]: {
-        show?: boolean;
-        dataIndex: ExcludeSymbol<K | OtherColumnKeys>;
-        render?: (
-          value: K | OtherColumnKeys extends keyof T ? T[K] : never,
-          record: T,
-          index: number
-        ) => ColumnType<T>['render'] extends (...args: any) => infer R
-          ? R
-          : React.ReactNode;
-      } & Pick<
-        ActiontechTableFilterMetaValue<F>,
-        'filterCustomType' | 'filterKey'
-      >;
-    }[keyof Required<T>]
+  Omit<ColumnGroupType<T> | ColumnType<T>, 'dataIndex' | 'render'> &
+    (
+      | {
+          [K in keyof Required<T>]: BaseColumnType<T, K, F>;
+        }[keyof Required<T>]
+      | {
+          [K in OtherColumnKeys]: BaseColumnType<T, K, F>;
+        }[OtherColumnKeys]
+    )
 >;
 
 export interface ActiontechTableProps<

@@ -86,8 +86,26 @@ export const DataSourceListActions = (
 };
 
 export const DataSourcePageHeaderActions = (
-  projectID: string
-): Record<'batch-import-data-source' | 'add-data-source', ReactNode> => ({
+  projectID: string,
+  batchTestDatabaseConnection: () => void,
+  batchTestDatabaseConnectionPending: boolean
+): Record<
+  | 'batch-import-data-source'
+  | 'add-data-source'
+  | 'batch-test-data-source-connection',
+  ReactNode
+> => ({
+  'batch-test-data-source-connection': (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_TEST_CONNECT}
+    >
+      <ActionButton
+        loading={batchTestDatabaseConnectionPending}
+        onClick={batchTestDatabaseConnection}
+        text={t('dmsDataSource.batchTestDataSourceConnection')}
+      />
+    </PermissionControl>
+  ),
   'batch-import-data-source': (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}

@@ -1,6 +1,8 @@
 import {
   ListGlobalDBServicesOrderByEnum,
+  ListGlobalDBServicesFilterLastConnectionTestStatusEnum,
   ListDBServicesOrderByEnum,
+  ListDBServicesFilterLastConnectionTestStatusEnum,
   ListDBServiceTipsFunctionalModuleEnum
 } from './index.enum';
 
@@ -13,6 +15,8 @@ import {
   IAddDBServiceReply,
   ICheckDBServiceIsConnectableReq,
   ICheckDBServiceIsConnectableReply,
+  ICheckDBServicesIsConnectableReq,
+  ICheckDBServicesIsConnectableReply,
   IImportDBServicesOfOneProjectReq,
   IGenericResp,
   IListDBServiceTipsReply,
@@ -25,6 +29,8 @@ export interface IListGlobalDBServicesParams {
   page_index?: number;
 
   order_by?: ListGlobalDBServicesOrderByEnum;
+
+  filter_last_connection_test_status?: ListGlobalDBServicesFilterLastConnectionTestStatusEnum;
 
   filter_by_business?: string;
 
@@ -63,6 +69,8 @@ export interface IListDBServicesParams {
 
   filter_by_business?: string;
 
+  filter_last_connection_test_status?: ListDBServicesFilterLastConnectionTestStatusEnum;
+
   filter_by_host?: string;
 
   filter_by_uid?: string;
@@ -74,6 +82,8 @@ export interface IListDBServicesParams {
   filter_by_db_type?: string;
 
   project_uid: string;
+
+  filter_by_db_service_ids?: string[];
 
   fuzzy_keyword?: string;
 
@@ -95,6 +105,14 @@ export interface ICheckDBServiceIsConnectableParams
 
 export interface ICheckDBServiceIsConnectableReturn
   extends ICheckDBServiceIsConnectableReply {}
+
+export interface ICheckProjectDBServicesConnectionsParams
+  extends ICheckDBServicesIsConnectableReq {
+  project_uid: string;
+}
+
+export interface ICheckProjectDBServicesConnectionsReturn
+  extends ICheckDBServicesIsConnectableReply {}
 
 export interface IImportDBServicesOfOneProjectParams
   extends IImportDBServicesOfOneProjectReq {
