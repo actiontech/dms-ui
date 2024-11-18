@@ -16,6 +16,7 @@ import {
   IRejectWorkflowReqV1,
   IGetWorkflowTasksResV1,
   IUpdateWorkflowScheduleReqV1,
+  IUpdateTaskBackupStrategyReq,
   IUpdateSqlBackupStrategyReq,
   IGetWorkflowStatisticOfInstancesResV1,
   ICreateWorkflowReqV2,
@@ -305,6 +306,13 @@ export interface IUpdateWorkflowScheduleV1Params
 }
 
 export interface IUpdateWorkflowScheduleV1Return extends IBaseRes {}
+
+export interface IUpdateTaskBackupStrategyV1Params
+  extends IUpdateTaskBackupStrategyReq {
+  task_id: string;
+}
+
+export interface IUpdateTaskBackupStrategyV1Return extends IBaseRes {}
 
 export interface IUpdateSqlBackupStrategyV1Params
   extends IUpdateSqlBackupStrategyReq {
