@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagnosis/OperationTypes render normal type filter 1`] = `
+<div>
+  <div
+    class="css-1ie7pg8"
+  >
+    <div
+      class="css-1c8jyoa"
+    >
+      ALL
+    </div>
+    <div
+      class="css-1uyo3zt"
+    >
+      1
+    </div>
+    <div
+      class="css-1uyo3zt"
+    >
+      2
+    </div>
+    <div
+      class="css-1uyo3zt"
+    >
+      3
+    </div>
+  </div>
+</div>
+`;

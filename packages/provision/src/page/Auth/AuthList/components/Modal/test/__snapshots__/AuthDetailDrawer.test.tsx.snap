@@ -1,0 +1,2375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render close detail render close icon btn 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw"
+      tabindex="-1"
+    >
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render close detail render close text btn 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw"
+      tabindex="-1"
+    >
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render copy btn render click copy password 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          ass
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          business-1
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          ass
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                    <div
+                      class="audit-card"
+                    >
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据源
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            service-1
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据对象
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.columns_priv
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.table1
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.table2
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据操作
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              读取
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              全部
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                    <div
+                      class="audit-card"
+                    >
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接地址
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            10.186.62.27:33061
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接账号名
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            admin
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接域
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            %
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接密码
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="css-1sg2lsz"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="rect-border-wrapper css-1iiq8r2"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M11.333 9.333H8.44A4.002 4.002 0 0 1 .667 8a4 4 0 0 1 7.772-1.333h6.894v2.666H14V12h-2.667zm-6.666 0a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"
+                                        fill="#8A8F99"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                              <span
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              >
+                                <div
+                                  aria-label="Copied"
+                                  class="ant-typography-copy ant-typography-copy-success"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="check"
+                                    class="anticon anticon-check"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="check"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          说明
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            -
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                复制连接串
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when has selectData 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div>
+                  <div
+                    aria-busy="true"
+                    aria-live="polite"
+                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="ant-spin-dot ant-spin-dot-spin"
+                    >
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="ant-spin-container ant-spin-blur"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when has selectData 2`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          ass
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          business-1
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          ass
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                    <div
+                      class="audit-card"
+                    >
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据源
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            service-1
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据对象
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.columns_priv
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.table1
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.table2
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据操作
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              读取
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              全部
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                    <div
+                      class="audit-card"
+                    >
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接地址
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            10.186.62.27:33061
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接账号名
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            admin
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接域
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            %
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接密码
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="css-1sg2lsz"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="rect-border-wrapper css-1iiq8r2"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M11.333 9.333H8.44A4.002 4.002 0 0 1 .667 8a4 4 0 0 1 7.772-1.333h6.894v2.666H14V12h-2.667zm-6.666 0a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"
+                                        fill="#8A8F99"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                              <span
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              >
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          说明
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            -
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                复制连接串
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when no selectData 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div>
+                  <div
+                    aria-busy="true"
+                    aria-live="polite"
+                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="ant-spin-dot ant-spin-dot-spin"
+                    >
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="ant-spin-container ant-spin-blur"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          -
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/Auth/AuthList/AuthDetailDrawer render init snap render snap when no selectData 2`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 480px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-rva8cb"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  查看授权信息
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-spin-container"
+                >
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      基础信息
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权目的
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          ass
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        授权业务
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          business-1
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="css-1m0yqz8"
+                    >
+                      <div
+                        class="audit-info-item-label"
+                      >
+                        使用人
+                      </div>
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                        style="flex-wrap: wrap; margin-bottom: -8px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 8px;"
+                        >
+                          ass
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      数据权限
+                    </div>
+                    <div
+                      class="audit-card"
+                    >
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据源
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            service-1
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据对象
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.columns_priv
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.table1
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              mysql.table2
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          数据操作
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              读取
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            >
+                              全部
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="audit-info-wrapper"
+                  >
+                    <div
+                      class="audit-info-title"
+                    >
+                      连接信息
+                    </div>
+                    <div
+                      class="audit-card"
+                    >
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接地址
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            10.186.62.27:33061
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接账号名
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            admin
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接域
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            %
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          连接密码
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <span
+                              class="css-1sg2lsz"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class="rect-border-wrapper css-1iiq8r2"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M11.333 9.333H8.44A4.002 4.002 0 0 1 .667 8a4 4 0 0 1 7.772-1.333h6.894v2.666H14V12h-2.667zm-6.666 0a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"
+                                        fill="#8A8F99"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </div>
+                              <span
+                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              >
+                                <div
+                                  aria-label="Copy"
+                                  class="ant-typography-copy"
+                                  role="button"
+                                  style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                                  tabindex="0"
+                                >
+                                  <span
+                                    aria-label="copy"
+                                    class="anticon anticon-copy"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="copy"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          说明
+                        </div>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            -
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-1m0yqz8"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                复制连接串
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      全文复制
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
