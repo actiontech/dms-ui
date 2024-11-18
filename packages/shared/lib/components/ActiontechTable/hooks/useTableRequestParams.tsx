@@ -1,6 +1,10 @@
 import { TableProps } from 'antd';
 import { useCallback, useState } from 'react';
-import { TablePagination, UseTableRequestParamsOptions } from '../index.type';
+import {
+  TablePagination,
+  UpdateTableFilterInfoType,
+  UseTableRequestParamsOptions
+} from '../index.type';
 import { SorterResult } from 'antd/es/table/interface';
 import { isEmpty, isEqual } from 'lodash';
 
@@ -29,9 +33,14 @@ const useTableRequestParams = <
     page_size: defaultPageSize
   });
 
-  const updateTableFilterInfo = (filterInfo: F) => {
-    const filterInfoData =
-      typeof filterInfo === 'function' ? filterInfo() : filterInfo;
+  const isFilterInfoUpdaterFunction = (
+    filterInfo: unknown
+  ): filterInfo is (prevFilterInfo: F) => F => typeof filterInfo === 'function';
+
+  const updateTableFilterInfo: UpdateTableFilterInfoType<F> = (filterInfo) => {
+    const filterInfoData = isFilterInfoUpdaterFunction(filterInfo)
+      ? filterInfo(tableFilterInfo)
+      : filterInfo;
     if (
       JSON.stringify(filterInfoData) === '{}' &&
       JSON.stringify(tableFilterInfo) === '{}'

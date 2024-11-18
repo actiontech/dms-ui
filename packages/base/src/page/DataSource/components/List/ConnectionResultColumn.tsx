@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { BasicTag, BasicToolTips } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { Space, Tag, Typography } from 'antd';
+import { Space, Typography } from 'antd';
 import { ListDBServiceLastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 type Props = {
