@@ -38,7 +38,7 @@ export type ICustomSearchInputProps = ICustomInputProps;
  * 更新表格筛选数据的方法, 一般为 useTableRequestParams 导出的 updateTableFilterInfo
  */
 export type UpdateTableFilterInfoType<F = Record<string, any>> = (
-  params: F
+  params: F | ((prevParams: F) => F)
 ) => void;
 
 /**
@@ -102,7 +102,7 @@ export type TableFilterContainerProps<
   /**
    * 更新表格筛选数据
    */
-  updateTableFilterInfo: UpdateTableFilterInfoType;
+  updateTableFilterInfo: UpdateTableFilterInfoType<F>;
 
   /**
    * 表格筛选项的输入组件类型的 props, 目前只有 select 以及 date-range, 可以处理一些 onChange 等事件.

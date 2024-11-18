@@ -21,7 +21,7 @@ export type SqlManagementExceptionTableFilterParamType =
 
 export const SqlManagementExceptionListColumns: () => ActiontechTableColumn<
   IBlacklistResV1,
-  IGetBlacklistV1Params
+  SqlManagementExceptionTableFilterParamType
 > = () => {
   return [
     {
