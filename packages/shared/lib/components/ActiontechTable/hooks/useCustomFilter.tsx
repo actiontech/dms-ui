@@ -21,7 +21,7 @@ const useCustomFilter = () => {
     F extends Record<string, any>
   >(
     meta: ActiontechTableFilterContainerMeta<T, F>[0],
-    updateTableFilterInfo: UpdateTableFilterInfoType,
+    updateTableFilterInfo: UpdateTableFilterInfoType<F>,
     filterCustomProps?: Map<keyof T, FilterCustomProps<'input'>>
   ) => {
     const props = filterCustomProps?.get(meta.dataIndex);
@@ -49,7 +49,7 @@ const useCustomFilter = () => {
     F extends Record<string, any>
   >(
     meta: ActiontechTableFilterContainerMeta<T, F>[0],
-    updateTableFilterInfo: UpdateTableFilterInfoType,
+    updateTableFilterInfo: UpdateTableFilterInfoType<F>,
     filterCustomProps?: Map<keyof T, FilterCustomProps<'search-input'>>
   ) => {
     const props = filterCustomProps?.get(meta.dataIndex);
@@ -89,7 +89,7 @@ const useCustomFilter = () => {
     F extends Record<string, any>
   >(
     meta: ActiontechTableFilterContainerMeta<T, F>[0],
-    updateTableFilterInfo: UpdateTableFilterInfoType,
+    updateTableFilterInfo: UpdateTableFilterInfoType<F>,
     filterCustomProps?: Map<keyof T, FilterCustomProps<'select'>>
   ) => {
     const props = filterCustomProps?.get(meta.dataIndex);
@@ -130,7 +130,7 @@ const useCustomFilter = () => {
     F extends Record<string, any>
   >(
     meta: ActiontechTableFilterContainerMeta<T, F>[0],
-    updateTableFilterInfo: UpdateTableFilterInfoType,
+    updateTableFilterInfo: UpdateTableFilterInfoType<F>,
     filterCustomProps?: Map<keyof T, FilterCustomProps<'date-range'>>
   ) => {
     const disabledDate: RangePickerProps['disabledDate'] = (current) => {
