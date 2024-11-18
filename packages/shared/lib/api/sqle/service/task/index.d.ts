@@ -6,7 +6,6 @@ import {
   IUpdateSqlFileOrderV1Req,
   IGetSqlFileOrderMethodResV1,
   IAuditTaskGroupResV1,
-  IUpdateTaskBackupStrategyReq,
   IBaseRes,
   IGetAuditTaskSQLContentResV1,
   IGetAuditTaskSQLsResV1,
@@ -100,13 +99,6 @@ export interface IGetAuditTaskV1Params {
 }
 
 export interface IGetAuditTaskV1Return extends IGetAuditTaskResV1 {}
-
-export interface IUpdateTaskBackupStrategyV1Params
-  extends IUpdateTaskBackupStrategyReq {
-  task_id: string;
-}
-
-export interface IUpdateTaskBackupStrategyV1Return extends IBaseRes {}
 
 export interface IDownloadAuditFileParams {
   task_id: string;
