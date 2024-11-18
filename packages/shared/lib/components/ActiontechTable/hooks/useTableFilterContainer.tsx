@@ -66,7 +66,7 @@ const useTableFilterContainer = <
   OtherKeys extends string = ''
 >(
   columns: ActiontechTableColumn<T, F, OtherKeys>,
-  updateTableFilterInfo: UpdateTableFilterInfoType,
+  updateTableFilterInfo: UpdateTableFilterInfoType<F>,
   extraFilterMeta?: ActiontechTableFilterMeta<T, F>
 ) => {
   const [filterButtonMeta, setFilterButtonMeta] = useState<
@@ -109,7 +109,7 @@ const useTableFilterContainer = <
 
   const updateAllSelectedFilterItem = useCallback(
     (checked: boolean) => {
-      updateTableFilterInfo((_: F) => ({}));
+      updateTableFilterInfo((_: F) => ({} as F));
       setFilterButtonMeta((meta) => {
         meta.forEach((value, key) => {
           meta.set(key, { ...value, checked });

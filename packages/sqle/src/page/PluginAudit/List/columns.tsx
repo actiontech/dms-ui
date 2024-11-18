@@ -16,9 +16,10 @@ export type PluginAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
 
 export const PluginAuditListColumns: (
   onOpenDrawer: (record: ISqlDEVRecord) => void
-) => ActiontechTableColumn<ISqlDEVRecord, IGetSqlDEVRecordListParams> = (
-  onOpenDrawer
-) => {
+) => ActiontechTableColumn<
+  ISqlDEVRecord,
+  PluginAuditListTableFilterParamType
+> = (onOpenDrawer) => {
   return [
     {
       dataIndex: 'sql_fingerprint',
