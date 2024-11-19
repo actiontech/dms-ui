@@ -9,7 +9,9 @@ export enum getAuditTaskSQLsV1FilterExecStatusEnum {
 
   'failed' = 'failed',
 
-  'manually_executed' = 'manually_executed'
+  'manually_executed' = 'manually_executed',
+
+  'execute_rollback' = 'execute_rollback'
 }
 
 export enum getAuditTaskSQLsV1FilterAuditStatusEnum {
@@ -45,7 +47,9 @@ export enum getAuditTaskSQLsV2FilterExecStatusEnum {
 
   'terminate_succeeded' = 'terminate_succeeded',
 
-  'terminate_failed' = 'terminate_failed'
+  'terminate_failed' = 'terminate_failed',
+
+  'execute_rollback' = 'execute_rollback'
 }
 
 export enum getAuditTaskSQLsV2FilterAuditStatusEnum {

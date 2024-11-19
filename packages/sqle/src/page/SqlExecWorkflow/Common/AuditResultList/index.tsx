@@ -1,4 +1,4 @@
-import { BasicSegmented, EmptyBox } from '@actiontech/shared';
+import { BasicSegmented, EmptyBox, BasicButton } from '@actiontech/shared';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { Divider, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -22,7 +22,9 @@ import {
 const AuditResultList: React.FC<AuditResultListProps> = ({
   tasks,
   updateTaskRecordCount,
-  showTaskTab = true
+  showTaskTab = true,
+  allowSwitchBackupPolicy = false,
+  onBatchSwitchBackupPolicy
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -86,6 +88,18 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         )}
 
         <Space size={4}>
+          {/* #if [ee] */}
+          <EmptyBox if={allowSwitchBackupPolicy && currentTask?.enable_backup}>
+            <BasicButton
+              onClick={() => {
+                onBatchSwitchBackupPolicy?.(currentTaskID);
+              }}
+            >
+              {t('execWorkflow.create.auditResult.switchDatabaseBackupPolicy')}
+            </BasicButton>
+            <Divider type="vertical" style={{ height: 28 }} />
+          </EmptyBox>
+          {/* #endif */}
           <ToggleButtonStyleWrapper
             active={noDuplicate}
             onClick={() => {
@@ -125,6 +139,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         projectID={projectID}
         updateTaskRecordCount={updateTaskRecordCount}
         dbType={currentTask?.instance_db_type}
+        allowSwitchBackupPolicy={allowSwitchBackupPolicy}
       />
     </AuditResultForCreateWorkflowStyleWrapper>
   );

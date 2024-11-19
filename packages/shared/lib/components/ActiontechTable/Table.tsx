@@ -37,8 +37,10 @@ const ActiontechTable = <
   const mergerColumns = useMemo(() => {
     const operatorColumn = renderActionInTable<T>(props.actions);
 
+    const extractedColumns = columns.filter((v) => v.show !== false);
+
     return (
-      operatorColumn ? [...columns, operatorColumn] : columns
+      operatorColumn ? [...extractedColumns, operatorColumn] : extractedColumns
     ) as ActiontechTableColumn<T, F, OtherColumnKeys>;
   }, [columns, props.actions, renderActionInTable]);
 

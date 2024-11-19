@@ -22,3 +22,14 @@ export type SqlFormatterAndSubmitterProps = {
   | 'databaseInfo'
   | 'isSameSqlForAll'
 >;
+
+export type SqlBackupSwitcherProps = Pick<
+  SqlStatementFormItemProps,
+  'fieldPrefixPath' | 'databaseInfo'
+>;
+
+export type SwitcherFieldProps = {
+  checked?: boolean;
+  onChange?: (v: boolean) => void;
+  title?: string;
+};

@@ -17,19 +17,21 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../../store';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
-  sqlStatementTabActiveKey
+  sqlStatementTabActiveKey,
+  instanceList
 }: Pick<
   DatabaseSelectionItemProps,
   'dbSourceInfoCollection' | 'sqlStatementTabActiveKey'
->) => {
+> & { instanceList: IInstanceTipResV1[] }) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();
 
-  const { isCloneMode } = useCreationMode();
+  const { isCloneMode, isRollbackMode } = useCreationMode();
 
   const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
     return {
@@ -39,7 +41,7 @@ const useRenderDatabaseSelectionItems = ({
   });
 
   useEffect(() => {
-    if (isCloneMode) {
+    if (isCloneMode || isRollbackMode) {
       sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo?.databaseInfo?.forEach(
         (database, index) => {
           const key = `${index}`;
@@ -114,7 +116,10 @@ const useRenderDatabaseSelectionItems = ({
         ruleTemplate: undefined,
         dbType: undefined,
         testConnectResult: undefined,
-        isSupportFileModeExecuteSql: true
+        isSupportFileModeExecuteSql: true,
+        enableBackup:
+          instanceList.find((i) => i.instance_name === instanceName)
+            ?.enable_backup ?? false
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);

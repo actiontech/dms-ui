@@ -8,6 +8,7 @@ export type AuditResultTableProps = {
   projectID: string;
   updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   dbType?: string;
+  allowSwitchBackupPolicy?: boolean;
 };
 
 export type AuditResultDrawerProps = {
@@ -16,4 +17,12 @@ export type AuditResultDrawerProps = {
   auditResultRecord?: IAuditTaskSQLResV2;
   dbType?: string;
   clickAnalyze: (sqlNum?: number) => void;
+};
+
+export type SwitchSqlBackupStrategyModalProps = {
+  sqlID?: number;
+  open: boolean;
+  onCancel: () => void;
+  taskID?: string;
+  refresh: () => void;
 };
