@@ -39,7 +39,9 @@ enum EmitterKey {
 
   Refresh_Global_Dashboard_Pending_Work_Order = 'Refresh_Global_Dashboard_Pending_Work_Order',
   Refresh_Global_Dashboard_Pending_Sql = 'Refresh_Global_Dashboard_Pending_Work_Order',
-  Refresh_Global_Dashboard_Initiated_Work_Order = 'Refresh_Global_Dashboard_Initiated_Work_Order'
+  Refresh_Global_Dashboard_Initiated_Work_Order = 'Refresh_Global_Dashboard_Initiated_Work_Order',
+
+  Refresh_Sql_Exec_workflow_Audit_Result_List = 'Refresh_Sql_Exec_workflow_Audit_Result_List'
 }
 
 export default EmitterKey;

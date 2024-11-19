@@ -40,7 +40,8 @@ export default {
     terminate_fail: '中止失败',
     terminate_succ: '中止成功',
     terminating: '正在中止',
-    allStatus: '全部状态'
+    allStatus: '全部状态',
+    rollback: '执行回滚'
   },
 
   auditStatus: {
