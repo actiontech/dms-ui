@@ -9,12 +9,11 @@ import { AuditResultBackupPolicyColumnStyleWrapper } from './style';
 import { EditFilled } from '@actiontech/icons';
 import { BackupStrategyDictionary } from './index.data';
 
-export const BACKUP_STRATEGY_DATA_INDEX = 'backup_strategy';
-
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
-  onSwitchSqlBackupPolicy: (sqlID?: number) => void
+  onSwitchSqlBackupPolicy: (sqlID?: number) => void,
+  showBackupStrategy?: boolean
 ): ActiontechTableColumn<IAuditTaskSQLResV2> => {
   return [
     {
@@ -57,7 +56,7 @@ export const AuditResultForCreateWorkflowColumn = (
     },
     // #if [ee]
     {
-      dataIndex: BACKUP_STRATEGY_DATA_INDEX,
+      dataIndex: 'backup_strategy',
       title: () => (
         <BasicToolTips
           suffixIcon
@@ -83,7 +82,8 @@ export const AuditResultForCreateWorkflowColumn = (
             />
           </AuditResultBackupPolicyColumnStyleWrapper>
         );
-      }
+      },
+      show: showBackupStrategy
     },
     // #endif
     {

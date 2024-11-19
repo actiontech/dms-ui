@@ -18,3 +18,11 @@ export type AuditResultDrawerProps = {
   dbType?: string;
   clickAnalyze: (sqlNum?: number) => void;
 };
+
+export type SwitchSqlBackupStrategyModalProps = {
+  sqlID?: number;
+  open: boolean;
+  onCancel: () => void;
+  taskID?: string;
+  refresh: () => void;
+};

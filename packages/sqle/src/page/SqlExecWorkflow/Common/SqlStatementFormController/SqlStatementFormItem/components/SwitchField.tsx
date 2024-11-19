@@ -2,9 +2,9 @@ import { BasicSwitch } from '@actiontech/shared';
 import { Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { SwitcherField } from './index.type';
+import { SwitcherFieldProps } from './index.type';
 
-const SwitchField: React.FC<SwitcherField> = ({ checked, onChange }) => {
+const SwitchField: React.FC<SwitcherFieldProps> = ({ checked, onChange }) => {
   const { t } = useTranslation();
 
   const [
