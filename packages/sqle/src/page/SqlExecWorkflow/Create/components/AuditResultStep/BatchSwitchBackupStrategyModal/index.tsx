@@ -8,11 +8,15 @@ import { BackupStrategyOptions } from '../../../../Common/AuditResultList/Table/
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 
-const BatchSwitchBackupStrategyModal: React.FC<{
+type BatchSwitchBackupStrategyModalProps = {
   taskID?: string;
   open: boolean;
   onCancel: () => void;
-}> = ({ taskID, open, onCancel }) => {
+};
+
+const BatchSwitchBackupStrategyModal: React.FC<
+  BatchSwitchBackupStrategyModalProps
+> = ({ taskID, open, onCancel }) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();

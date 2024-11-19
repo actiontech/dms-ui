@@ -28,7 +28,7 @@ export type SqlBackupSwitcherProps = Pick<
   'fieldPrefixPath' | 'databaseInfo'
 >;
 
-export type SwitcherField = {
+export type SwitcherFieldProps = {
   checked?: boolean;
   onChange?: (v: boolean) => void;
   title?: string;

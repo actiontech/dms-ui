@@ -5,14 +5,11 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BackupStrategyOptions } from './index.data';
+import { SwitchSqlBackupStrategyModalProps } from './index.type';
 
-const SwitchSqlBackupStrategyModal: React.FC<{
-  sqlID?: number;
-  open: boolean;
-  onCancel: () => void;
-  taskID?: string;
-  refresh: () => void;
-}> = ({ open, onCancel, taskID, sqlID, refresh }) => {
+const SwitchSqlBackupStrategyModal: React.FC<
+  SwitchSqlBackupStrategyModalProps
+> = ({ open, onCancel, taskID, sqlID, refresh }) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
