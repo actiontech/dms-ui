@@ -97,6 +97,31 @@ describe('lib/ActiontechTable', () => {
       expect(onChangeFn).toHaveBeenCalledTimes(1);
       expect(baseElement).toMatchSnapshot();
     });
+
+    it('render filter columns by show attribute', async () => {
+      const { baseElement } = customRender({
+        pagination: false,
+        dataSource: [
+          { name: 'a', age: 11 },
+          { name: 'b', age: 18 },
+          { name: 'c', age: 19 }
+        ],
+        rowKey: 'name',
+        columns: [
+          {
+            dataIndex: 'a',
+            title: '名称'
+          },
+          {
+            dataIndex: 'b',
+            title: '年龄',
+            show: false
+          }
+        ]
+      });
+      expect(baseElement).toMatchSnapshot();
+      expect(screen.queryByText('年龄')).not.toBeInTheDocument();
+    });
   });
 
   describe('-composite table', () => {

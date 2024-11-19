@@ -95,5 +95,7 @@ export enum GetBackupSqlListV1FilterExecStatusEnum {
 
   'terminate_succeeded' = 'terminate_succeeded',
 
-  'terminate_failed' = 'terminate_failed'
+  'terminate_failed' = 'terminate_failed',
+
+  'execute_rollback' = 'execute_rollback'
 }

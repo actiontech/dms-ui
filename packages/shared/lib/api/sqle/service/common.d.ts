@@ -447,6 +447,8 @@ export interface IBackupSqlData {
   instance_name?: string;
 
   origin_sql?: string;
+
+  origin_task_id?: number;
 }
 
 export interface IBackupSqlListRes {
@@ -2092,6 +2094,8 @@ export interface IInstanceTableMeta {
 }
 
 export interface IInstanceTipResV1 {
+  enable_backup?: boolean;
+
   host?: string;
 
   instance_id?: string;
@@ -2550,17 +2554,15 @@ export interface IRuleTemplateResV1 {
 
   desc?: string;
 
-  is_default_rule_template?: boolean;
-
   rule_template_name?: string;
 }
 
 export interface IRuleTemplateTipResV1 {
   db_type?: string;
 
-  rule_template_id?: string;
-
   is_default_rule_template?: boolean;
+
+  rule_template_id?: string;
 
   rule_template_name?: string;
 }
