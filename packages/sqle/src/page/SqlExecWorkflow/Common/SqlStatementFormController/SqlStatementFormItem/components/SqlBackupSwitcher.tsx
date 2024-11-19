@@ -1,4 +1,7 @@
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import {
+  FormItemLabel,
+  CustomLabelContent
+} from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { EmptyBox } from '@actiontech/shared';
 import { Form } from 'antd';
@@ -23,7 +26,7 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   );
   const isSameSqlForAll = Form.useWatch('isSameSqlForAll', form);
 
-  const getInitValue = () => {
+  const getInstanceEnableBackup = () => {
     if (isSameSqlForAll) {
       return databaseInfo.some((item) => item.enableBackup);
     }
@@ -34,15 +37,10 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   };
 
   const enableBackupInstanceName = useMemo(() => {
-    let nameStr = '';
-    databaseInfo.forEach((item, index) => {
-      if (item.enableBackup) {
-        nameStr += `${item.instanceName}${
-          index === databaseInfo.length - 1 ? '' : ','
-        }`;
-      }
-    });
-    return nameStr;
+    return databaseInfo
+      .filter((i) => i.enableBackup)
+      .map((i) => i.instanceName)
+      .join(',');
   }, [databaseInfo]);
 
   return (
@@ -52,12 +50,18 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
       }
     >
       <FormItemLabel
-        label={t('execWorkflow.create.form.sqlInfo.switchSqlBackup')}
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('execWorkflow.create.form.sqlInfo.switchSqlBackup')}
+            tips={t('execWorkflow.create.form.sqlInfo.switchSqlBackupTips')}
+          />
+        }
         labelCol={{ span: 22 }}
         wrapperCol={{ span: 2 }}
         name={[fieldPrefixPath, 'backup']}
         valuePropName="checked"
-        initialValue={getInitValue()}
+        initialValue={getInstanceEnableBackup()}
       >
         <SwitchField
           title={

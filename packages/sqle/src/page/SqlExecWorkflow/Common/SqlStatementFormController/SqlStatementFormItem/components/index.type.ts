@@ -27,3 +27,9 @@ export type SqlBackupSwitcherProps = Pick<
   SqlStatementFormItemProps,
   'fieldPrefixPath' | 'databaseInfo'
 >;
+
+export type SwitcherField = {
+  checked?: boolean;
+  onChange?: (v: boolean) => void;
+  title?: string;
+};

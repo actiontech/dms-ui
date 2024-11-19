@@ -106,6 +106,7 @@ export default {
         executeFileMode: '文件模式',
         selectFileSortMethod: '选择文件排序方式',
         switchSqlBackup: '是否选择开启备份',
+        switchSqlBackupTips: '开启后，数据源上创建的工单将默认开启备份能力',
         cancelSwitchSqlBackupTips:
           '当前应用的数据源已开启备份需求，是否确认关闭备份？',
         cancelSwitchSqlBackupTipsWithInstanceName:

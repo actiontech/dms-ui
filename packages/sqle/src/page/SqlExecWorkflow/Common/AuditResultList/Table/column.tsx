@@ -9,6 +9,8 @@ import { AuditResultBackupPolicyColumnStyleWrapper } from './style';
 import { EditFilled } from '@actiontech/icons';
 import { BackupStrategyDictionary } from './index.data';
 
+export const BACKUP_STRATEGY_DATA_INDEX = 'backup_strategy';
+
 export const AuditResultForCreateWorkflowColumn = (
   updateSqlDescribe: (sqlNum: number, sqlDescribe: string) => void,
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void,
@@ -55,7 +57,7 @@ export const AuditResultForCreateWorkflowColumn = (
     },
     // #if [ee]
     {
-      dataIndex: 'backup_strategy',
+      dataIndex: BACKUP_STRATEGY_DATA_INDEX,
       title: () => (
         <BasicToolTips
           suffixIcon
