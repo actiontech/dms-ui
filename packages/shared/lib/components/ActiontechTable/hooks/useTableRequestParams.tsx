@@ -1,6 +1,10 @@
 import { TableProps } from 'antd';
 import { useCallback, useState } from 'react';
-import { TablePagination, UseTableRequestParamsOptions } from '../index.type';
+import {
+  TablePagination,
+  UpdateTableFilterInfoType,
+  UseTableRequestParamsOptions
+} from '../index.type';
 import { SorterResult } from 'antd/es/table/interface';
 import { isEmpty, isEqual } from 'lodash';
 
@@ -29,12 +33,17 @@ const useTableRequestParams = <
     page_size: defaultPageSize
   });
 
+  const isFilterInfoUpdaterFunction = (
+    filterInfo: unknown
+  ): filterInfo is (prevFilterInfo: F) => F => typeof filterInfo === 'function';
+
   /**
    * @notice: filterInfo 期望 筛选数据的不同，重置 page_index 为 1, 还需要考虑
    */
-  const updateTableFilterInfo = (filterInfo: F) => {
-    const filterInfoData =
-      typeof filterInfo === 'function' ? filterInfo() : filterInfo;
+  const updateTableFilterInfo: UpdateTableFilterInfoType<F> = (filterInfo) => {
+    const filterInfoData = isFilterInfoUpdaterFunction(filterInfo)
+      ? filterInfo(tableFilterInfo)
+      : filterInfo;
     if (
       JSON.stringify(filterInfoData) === '{}' &&
       JSON.stringify(tableFilterInfo) === '{}'

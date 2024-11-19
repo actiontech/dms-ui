@@ -17,9 +17,10 @@ export type VersionManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
 
 export const VersionManagementTableColumns: (
   projectID: string
-) => ActiontechTableColumn<ISqlVersionResV1, IGetSqlVersionListV1Params> = (
-  projectID
-) => {
+) => ActiontechTableColumn<
+  ISqlVersionResV1,
+  VersionManagementTableFilterParamType
+> = (projectID) => {
   return [
     {
       dataIndex: 'version',
