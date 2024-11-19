@@ -1,0 +1,73 @@
+import { BasicModal, BasicButton, BasicSelect } from '@actiontech/shared';
+import { Form, message } from 'antd';
+import { useTranslation } from 'react-i18next';
+import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { BackupStrategyOptions } from './index.data';
+
+const SwitchSqlBackupStrategyModal: React.FC<{
+  sqlID?: number;
+  open: boolean;
+  onCancel: () => void;
+  taskID?: string;
+  refresh: () => void;
+}> = ({ open, onCancel, taskID, sqlID, refresh }) => {
+  const { t } = useTranslation();
+
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const [form] = Form.useForm<{
+    strategy: UpdateSqlBackupStrategyReqStrategyEnum;
+  }>();
+
+  const onSubmit = async () => {
+    const values = await form.validateFields();
+    workflow
+      .UpdateSqlBackupStrategyV1({
+        task_id: taskID ?? '',
+        sql_id: `${sqlID}`,
+        strategy: values.strategy
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(
+            t('execWorkflow.create.auditResult.editBackupStrategySuccessTips')
+          );
+          refresh();
+          onClose();
+        }
+      });
+  };
+
+  const onClose = () => {
+    form.resetFields();
+    onCancel();
+  };
+
+  return (
+    <BasicModal
+      open={open}
+      title={t('execWorkflow.create.auditResult.editBackupStrategy')}
+      footer={
+        <>
+          <BasicButton onClick={onClose}>{t('common.cancel')}</BasicButton>
+          <BasicButton type="primary" onClick={onSubmit}>
+            {t('common.ok')}
+          </BasicButton>
+        </>
+      }
+      centered
+      closable={false}
+    >
+      {contextHolder}
+      <Form form={form} layout="vertical">
+        <Form.Item name="strategy" rules={[{ required: true }]}>
+          <BasicSelect options={BackupStrategyOptions} />
+        </Form.Item>
+      </Form>
+    </BasicModal>
+  );
+};
+
+export default SwitchSqlBackupStrategyModal;

@@ -22,3 +22,8 @@ export type SqlFormatterAndSubmitterProps = {
   | 'databaseInfo'
   | 'isSameSqlForAll'
 >;
+
+export type SqlBackupSwitcherProps = Pick<
+  SqlStatementFormItemProps,
+  'fieldPrefixPath' | 'databaseInfo'
+>;
