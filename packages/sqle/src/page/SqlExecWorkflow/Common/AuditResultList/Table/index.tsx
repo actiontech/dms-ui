@@ -9,7 +9,10 @@ import {
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { AuditResultTableProps } from './index.type';
-import { AuditResultForCreateWorkflowColumn } from './column';
+import {
+  AuditResultForCreateWorkflowColumn,
+  BACKUP_STRATEGY_DATA_INDEX
+} from './column';
 import AuditResultDrawer from './AuditResultDrawer';
 import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
@@ -169,7 +172,9 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     );
     // #if [ee]
     if (!allowSwitchBackupPolicy) {
-      return tableColumns.filter((v) => v.dataIndex !== 'backup_strategy');
+      return tableColumns.filter(
+        (v) => v.dataIndex !== BACKUP_STRATEGY_DATA_INDEX
+      );
     }
     // #endif
     return tableColumns;
