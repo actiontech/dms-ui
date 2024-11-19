@@ -179,7 +179,7 @@ export const ROUTE_PATHS = {
         prefix: '/sqle/project/:projectID/exec-workflow',
         path: 'create',
         query:
-          'sourceWorkflowId&versionId&versionName&compression_data&from&gen_modified_sql_params'
+          'sourceWorkflowId&versionId&versionName&compression_data&from&gen_modified_sql_params&rollbackWorkflowId'
       },
       detail: {
         prefix: '/sqle/project/:projectID/exec-workflow',

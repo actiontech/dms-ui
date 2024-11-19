@@ -16,7 +16,10 @@ import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ICreateWorkflowV2Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
+import {
+  ICreateWorkflowV2Params,
+  ICreateRollbackWorkflowParams
+} from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import useCheckTaskAuditSqlCount from './hooks/useCheckTaskAuditSqlCount';
 import { LazyLoadComponent } from '@actiontech/shared';
 import { useSelector } from 'react-redux';
@@ -33,20 +36,26 @@ const CreateSqlExecWorkflow: React.FC = () => {
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
 
-  const { isCloneMode, isAssociationVersionMode, versionId } =
-    useCreationMode();
+  const {
+    isCloneMode,
+    isAssociationVersionMode,
+    versionId,
+    isRollbackMode,
+    rollbackWorkflowId
+  } = useCreationMode();
 
   const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
     return {
       clonedExecWorkflowSqlAuditInfo:
         state.sqlExecWorkflow.clonedExecWorkflowSqlAuditInfo,
       clonedExecWorkflowBaseInfo:
-        state.sqlExecWorkflow.clonedExecWorkflowBaseInfo
+        state.sqlExecWorkflow.clonedExecWorkflowBaseInfo,
+      workflowRollbackSqlIds: state.sqlExecWorkflow.workflowRollbackSqlIds
     };
   });
 
   useEffect(() => {
-    if (isCloneMode) {
+    if (isCloneMode || isRollbackMode) {
       baseInfoForm.setFieldsValue({
         workflow_subject:
           sqlExecWorkflowReduxState.clonedExecWorkflowBaseInfo
@@ -152,11 +161,30 @@ const CreateSqlExecWorkflow: React.FC = () => {
       return;
     }
 
-    const createWorkflowParam: ICreateWorkflowV2Params = {
+    const commonParams = {
       task_ids: taskInfos.map((v) => v.task_id!),
       desc: baseInfo?.desc,
       workflow_subject: baseInfo?.workflow_subject,
-      project_name: projectName,
+      project_name: projectName
+    };
+
+    if (isRollbackMode) {
+      const params: ICreateRollbackWorkflowParams = {
+        ...commonParams,
+        rollback_sql_ids:
+          sqlExecWorkflowReduxState.workflowRollbackSqlIds ?? [],
+        workflow_id: rollbackWorkflowId ?? ''
+      };
+      return workflow.CreateRollbackWorkflow(params).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          goToCreateResultStep();
+          createdWorkflowID.current = res.data.data?.workflow_id ?? '';
+        }
+      });
+    }
+
+    const createWorkflowParam: ICreateWorkflowV2Params = {
+      ...commonParams,
       sql_version_id: isAssociationVersionMode ? Number(versionId) : undefined
     };
     return workflow.createWorkflowV2(createWorkflowParam).then((res) => {
@@ -174,7 +202,10 @@ const CreateSqlExecWorkflow: React.FC = () => {
     t,
     taskInfos,
     isAssociationVersionMode,
-    versionId
+    versionId,
+    isRollbackMode,
+    rollbackWorkflowId,
+    sqlExecWorkflowReduxState
   ]);
 
   usePrompt(t('execWorkflow.create.auditResult.leaveTip'), isAtAuditResultStep);

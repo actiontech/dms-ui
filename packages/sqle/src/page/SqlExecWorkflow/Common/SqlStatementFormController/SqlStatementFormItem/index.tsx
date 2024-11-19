@@ -14,6 +14,7 @@ import { SqlAuditInfoFormProps } from '../../../Create/components/FormStep/SqlAu
 import SqlExecModeSelector from './components/SqlExecModeSelector';
 import SqlFormatterAndSubmitter from './components/SqlFormatterAndSubmitter';
 import { RingPieFilled } from '@actiontech/icons';
+import SqlBackupSwitcher from './components/SqlBackupSwitcher';
 
 const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   fieldPrefixPath,
@@ -83,7 +84,12 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         isSupportFileModeExecuteSql={isSupportFileModeExecuteSql}
         isAtRejectStep={isAtRejectStep}
       />
-
+      {/* #if [ee] */}
+      <SqlBackupSwitcher
+        fieldPrefixPath={fieldPrefixPath}
+        databaseInfo={databaseInfo}
+      />
+      {/* #endif */}
       <SqlFormatterAndSubmitter
         currentSqlUploadType={currentUploadType}
         fieldPrefixPath={fieldPrefixPath}
