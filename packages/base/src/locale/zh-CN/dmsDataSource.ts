@@ -72,7 +72,10 @@ export default {
     dataMaskConfig: '数据脱敏配置',
     dataMaskConfigLabel: 'SQL工作台是否开启脱敏配置',
     dataMaskConfigTips: '开启后，将对SQL工作台的查询结果进行脱敏',
-    checkDataMaskButton: '查看脱敏规则'
+    checkDataMaskButton: '查看脱敏规则',
+    sqlBackupConfiguration: 'SQL备份配置',
+    enableDataSourceBackup: '是否开启数据源上的SQL备份能力',
+    enableDataSourceBackupTips: '是否开启数据源上的SQL备份能力'
   },
 
   testConnectModal: {

@@ -4,7 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { SwitcherFieldProps } from './index.type';
 
-const SwitchField: React.FC<SwitcherFieldProps> = ({ checked, onChange }) => {
+const SwitchField: React.FC<SwitcherFieldProps> = ({
+  checked,
+  onChange,
+  title
+}) => {
   const { t } = useTranslation();
 
   const [
@@ -14,7 +18,7 @@ const SwitchField: React.FC<SwitcherFieldProps> = ({ checked, onChange }) => {
 
   return (
     <Popconfirm
-      title={t('execWorkflow.create.form.sqlInfo.cancelSwitchSqlBackupTips')}
+      title={title}
       okText={t('common.ok')}
       placement="topRight"
       open={popconfirmOpen}
@@ -26,6 +30,7 @@ const SwitchField: React.FC<SwitcherFieldProps> = ({ checked, onChange }) => {
     >
       <BasicSwitch
         checked={checked}
+        className="backup-switcher"
         onChange={() => {
           if (!checked) {
             onChange?.(true);

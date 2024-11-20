@@ -16,4 +16,5 @@ export type TasksResultListBaseProps = {
   workflowStatus?: WorkflowRecordResV2StatusEnum;
   assigneeUserNames: string[];
   executeMode: WorkflowResV2ExecModeEnum;
+  backupConflict?: boolean;
 };

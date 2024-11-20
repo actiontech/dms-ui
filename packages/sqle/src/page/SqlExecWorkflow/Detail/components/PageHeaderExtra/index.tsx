@@ -15,7 +15,9 @@ import {
   CloseWorkflowAction,
   MarkManuallyExecWorkflowAction,
   RefreshWorkflowAction,
-  TerminateWorkflowAction
+  TerminateWorkflowAction,
+  RollbackWorkflowAction,
+  RetryWorkflowAction
 } from './action';
 
 const WorkflowDetailPageHeaderExtra: React.FC<
@@ -38,6 +40,8 @@ const WorkflowDetailPageHeaderExtra: React.FC<
     manualExecuteWorkflowButtonMeta,
     terminateWorkflowButtonMeta,
     executeInOtherInstanceMeta,
+    rollbackWorkflowButtonMeta,
+    retryWorkflowButtonMeta,
     executable,
     executable_reason
   } = useWorkflowDetailAction({ projectName, ...props });
@@ -54,7 +58,10 @@ const WorkflowDetailPageHeaderExtra: React.FC<
           className="workflow-detail-page-header-divider"
         />
       </div>
-
+      {RetryWorkflowAction(retryWorkflowButtonMeta)}
+      {/* #if [ee] */}
+      {RollbackWorkflowAction(rollbackWorkflowButtonMeta)}
+      {/* #endif */}
       {CloneWorkflowAction(executeInOtherInstanceMeta)}
       {BatchRejectWorkflowAction(rejectWorkflowButtonMeta, openRejectModal)}
       {ApproveWorkflowAction(auditPassWorkflowButtonMeta)}

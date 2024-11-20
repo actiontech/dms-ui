@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { execStatusDictionary } from '../../../../../../../../../hooks/useStaticStatus/index.data';
 
 const execStatusMap: {
-  [key in getAuditTaskSQLsV2FilterExecStatusEnum]?: BasicTagColor;
+  [key in
+    | getAuditTaskSQLsV2FilterExecStatusEnum
+    | 'execute_rollback']?: BasicTagColor;
 } = {
   [getAuditTaskSQLsV2FilterExecStatusEnum.initialized]: 'default',
   [getAuditTaskSQLsV2FilterExecStatusEnum.failed]: 'red',
@@ -14,7 +16,8 @@ const execStatusMap: {
   [getAuditTaskSQLsV2FilterExecStatusEnum.manually_executed]: 'orange',
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminate_failed]: 'red',
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminate_succeeded]: 'green',
-  [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue'
+  [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue',
+  [getAuditTaskSQLsV2FilterExecStatusEnum.execute_rollback]: 'orange'
 };
 
 export interface ExecStatusTagProps {

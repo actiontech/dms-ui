@@ -110,7 +110,7 @@ export default {
         cancelSwitchSqlBackupTips:
           '当前应用的数据源已开启备份需求，是否确认关闭备份？',
         cancelSwitchSqlBackupTipsWithInstanceName:
-          '{instanceName}已开启备份需求，是否确认关闭备份？'
+          '{{instanceName}}已开启备份需求，是否确认关闭备份？'
       },
       tour: {
         modifyName: '修改工单名称',
@@ -131,7 +131,8 @@ export default {
       switchDatabaseBackupPolicy: '切换数据源备份策略',
       switchDatabaseBackupPolicyTips: '统一变更当前数据源上SQL的备份回滚策略为',
       editBackupStrategy: '切换SQL备份回滚策略',
-      editBackupStrategySuccessTips: '切换SQL备份回滚策略成功'
+      editBackupStrategySuccessTips: '切换SQL备份回滚策略成功',
+      switchDatabaseBackupPolicySuccessTips: '切换数据源备份策略成功'
     },
     backupStrategy: {
       reverseSql: '基于反向SQL回滚',

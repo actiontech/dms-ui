@@ -88,6 +88,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
       <SqlBackupSwitcher
         fieldPrefixPath={fieldPrefixPath}
         databaseInfo={databaseInfo}
+        isSameSqlForAll={isSameSqlForAll}
       />
       {/* #endif */}
       <SqlFormatterAndSubmitter

@@ -14,7 +14,8 @@ import SwitchField from './SwitchField';
 
 const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   fieldPrefixPath,
-  databaseInfo
+  databaseInfo,
+  isSameSqlForAll
 }) => {
   const { t } = useTranslation();
 
@@ -24,8 +25,6 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
     [fieldPrefixPath, 'exec_mode'],
     form
   );
-  const isSameSqlForAll = Form.useWatch('isSameSqlForAll', form);
-
   const getInstanceEnableBackup = () => {
     if (isSameSqlForAll) {
       return databaseInfo.some((item) => item.enableBackup);
@@ -66,13 +65,13 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
         <SwitchField
           title={
             isSameSqlForAll
-              ? t('execWorkflow.create.form.sqlInfo.cancelSwitchSqlBackupTips')
-              : t(
+              ? t(
                   'execWorkflow.create.form.sqlInfo.cancelSwitchSqlBackupTipsWithInstanceName',
                   {
                     instanceName: enableBackupInstanceName
                   }
                 )
+              : t('execWorkflow.create.form.sqlInfo.cancelSwitchSqlBackupTips')
           }
         />
       </FormItemLabel>
