@@ -8,12 +8,7 @@ type Props = {
   tagLimit?: number;
 };
 
-const DATA_PERMISSION_TAGS_LIMIT = 4;
-
-const RoleTableTagsCell: React.FC<Props> = ({
-  dataSource,
-  tagLimit = DATA_PERMISSION_TAGS_LIMIT
-}) => {
+const RoleTableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
   const renderScanTypeTag = (permission: string) => {
     return <BasicTag className="pointer">{permission}</BasicTag>;
   };
@@ -23,15 +18,13 @@ const RoleTableTagsCell: React.FC<Props> = ({
       return '-';
     }
 
-    if (dataSource.length <= DATA_PERMISSION_TAGS_LIMIT) {
+    if (dataSource.length <= tagLimit) {
       return <>{dataSource.map((item) => renderScanTypeTag(item))}</>;
     }
 
     return (
       <>
-        {dataSource
-          .slice(0, DATA_PERMISSION_TAGS_LIMIT)
-          .map((item) => renderScanTypeTag(item))}
+        {dataSource.slice(0, tagLimit).map((item) => renderScanTypeTag(item))}
         <BasicToolTips
           trigger={'click'}
           titleWidth={450}
