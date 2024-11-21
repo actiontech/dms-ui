@@ -13,13 +13,17 @@ import {
   DownArrowLineOutlined
 } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
-  taskId
+  taskId,
+  workflowId
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+
+  const { projectName } = useCurrentProject();
 
   const downloadSql = () => {
     task.downloadAuditTaskSQLFileV1(
@@ -42,6 +46,20 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
     setOpen(false);
   };
 
+  // #if [ee]
+  const downloadRollbackSql = () => {
+    task.downloadBackupFileV1(
+      {
+        task_id: taskId,
+        workflow_id: workflowId ?? '',
+        project_name: projectName
+      },
+      { responseType: 'blob' }
+    );
+    setOpen(false);
+  };
+  // #endif
+
   const renderDownloadDropdown = () => {
     return (
       <DownloadDropdownStyleWrapper>
@@ -57,6 +75,12 @@ const DownloadRecord: React.FC<DownloadRecordProps> = ({
           <PanelCardOutlined className="download-record-item-icon" />
           {t('execWorkflow.audit.downloadSql')}
         </div>
+        {/* #if [ee] */}
+        <div className="download-record-item" onClick={downloadRollbackSql}>
+          <PanelCardOutlined className="download-record-item-icon" />
+          {t('execWorkflow.audit.downloadRollbackSql')}
+        </div>
+        {/* #endif */}
       </DownloadDropdownStyleWrapper>
     );
   };

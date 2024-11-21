@@ -9,12 +9,14 @@ type SqlExecWorkflowReduxState = {
   clonedExecWorkflowSqlAuditInfo: SqlAuditInfoFormFields | null;
   clonedExecWorkflowBaseInfo: WorkflowBaseInfoFormFields | null;
   versionFirstStageInstances: IVersionStageInstance[] | null;
+  workflowRollbackSqlIds: number[] | null;
 };
 
 const initialState: SqlExecWorkflowReduxState = {
   clonedExecWorkflowSqlAuditInfo: null,
   clonedExecWorkflowBaseInfo: null,
-  versionFirstStageInstances: null
+  versionFirstStageInstances: null,
+  workflowRollbackSqlIds: null
 };
 const sqlExecWorkflow = createSlice({
   name: 'sqlExecWorkflow',
@@ -41,13 +43,24 @@ const sqlExecWorkflow = createSlice({
       }>
     ) => {
       state.versionFirstStageInstances = versionFirstStageInstances;
+    },
+    updateWorkflowRollbackSqlIds: (
+      state,
+      {
+        payload: { workflowRollbackSqlIds }
+      }: PayloadAction<{
+        workflowRollbackSqlIds: number[] | null;
+      }>
+    ) => {
+      state.workflowRollbackSqlIds = workflowRollbackSqlIds;
     }
   }
 });
 export const {
   updateClonedExecWorkflowSqlAuditInfo,
   updateClonedExecWorkflowBaseInfo,
-  updateVersionFirstStageInstances
+  updateVersionFirstStageInstances,
+  updateWorkflowRollbackSqlIds
 } = sqlExecWorkflow.actions;
 
 export default sqlExecWorkflow.reducer;

@@ -25,7 +25,7 @@ export type SqlFormatterAndSubmitterProps = {
 
 export type SqlBackupSwitcherProps = Pick<
   SqlStatementFormItemProps,
-  'fieldPrefixPath' | 'databaseInfo'
+  'fieldPrefixPath' | 'databaseInfo' | 'isSameSqlForAll'
 >;
 
 export type SwitcherFieldProps = {
