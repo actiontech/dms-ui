@@ -348,7 +348,7 @@ export const operationList: IOperation[] = [
   }
 ];
 
-export const operationSetList: IDataOperationSet[] = [
+export const operationSetList: any = [
   {
     uid: '27',
     name: '查询',

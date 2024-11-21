@@ -76,7 +76,7 @@ export default {
   create: {
     returnText: '返回账号管理列表',
     title: '创建数据库账号',
-    baseInfo: '基础配置',
+    baseInfo: '账户基本信息',
     permissionInfo: '数据权限',
     permissionInfoOverview: '数据权限概览',
     result: {
@@ -112,7 +112,11 @@ export default {
       selectPermission: '选择权限',
       duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',
       permissionTip:
-        '如果您选定了一个Schema，此时再选中该数据源中的所有数据对象将无意义'
+        '如果您选定了一个Schema，此时再选中该数据源中的所有数据对象将无意义',
+      containerName: '容器名',
+      role: '角色',
+      permission: '权限',
+      quickCreateRoles: '快速创建角色'
     },
     previewModal: '账号创建预览'
   },
@@ -134,7 +138,9 @@ export default {
     copyAll: '全文复制',
     authInfo: '授权信息',
     authUser: '授权成员',
-    originPermission: '原始权限'
+    originPermission: '原始权限',
+    role: '角色',
+    permission: '权限'
   },
   authorize: {
     title: '账号授权',

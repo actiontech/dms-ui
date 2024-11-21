@@ -23,7 +23,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
   const { checkDbServicePermission } = usePermission();
 
   const updateServiceList = useCallback(
-    (business?: string) => {
+    (business?: string, onSuccess?: (data?: IListService[]) => void) => {
       setTrue();
       auth
         .AuthListService({
@@ -35,6 +35,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setServiceList(res.data?.data ?? []);
+            onSuccess?.(res.data.data);
           } else {
             setServiceList([]);
           }

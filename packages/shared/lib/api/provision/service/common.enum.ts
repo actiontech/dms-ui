@@ -63,7 +63,9 @@ export enum ListDBAccountStatusEnum {
 export enum ListServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'Oracle' = 'Oracle'
 }
 
 export enum ListServiceTypeEnum {
@@ -119,7 +121,11 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'create_export_task' = 'create_export_task',
 
-  'audit_export_workflow' = 'audit_export_workflow'
+  'audit_export_workflow' = 'audit_export_workflow',
+
+  'create_optimization' = 'create_optimization',
+
+  'view_others_optimization' = 'view_others_optimization'
 }
 
 export enum OpPermissionItemRangeTypeEnum {
@@ -130,6 +136,16 @@ export enum OpPermissionItemRangeTypeEnum {
   'project' = 'project',
 
   'db_service' = 'db_service'
+}
+
+export enum OperationScopeEnum {
+  'Service' = 'Service',
+
+  'Instance' = 'Instance',
+
+  'Database' = 'Database',
+
+  'Table' = 'Table'
 }
 
 export enum OperationInfoDataObjectTypesEnum {
@@ -145,7 +161,9 @@ export enum OperationInfoDataObjectTypesEnum {
 export enum OperationInfoDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'Oracle' = 'Oracle'
 }
 
 export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
@@ -161,7 +179,9 @@ export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
 export enum ServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'Oracle' = 'Oracle'
 }
 
 export enum SyncRuleFieldNameEnum {

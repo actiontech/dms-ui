@@ -124,9 +124,9 @@ const EditTemplate = () => {
   const handleSubmit = async () => {
     setIsUpdated(false);
     const values = await form.validateFields();
-    const permissions: IDataPermission[] = dataPermissions.map((item) => ({
+    const permissions = dataPermissions.map<IDataPermission>((item) => ({
       data_object_uids: item.objectsParams,
-      data_operation_set_uids: item.operationsValue
+      data_operation_uids: item.operationsValue
     }));
     startSubmit();
     try {

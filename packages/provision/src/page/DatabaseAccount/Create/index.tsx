@@ -11,21 +11,32 @@ import { Form, Space } from 'antd';
 import { CreateAccountFormType } from '../index.type';
 import { CreateAccountFormStyleWrapper } from '../style';
 import BaseInfoForm from './BaseInfoForm';
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import {
+  formItemLayout,
+  FormStyleWrapper
+} from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import DataPermissionsForm from './DataPermissionsForm';
-import { useBoolean } from 'ahooks';
-import { useState } from 'react';
+import { useBoolean, useRequest } from 'ahooks';
+import { useEffect, useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import PreviewModal from './PreviewModal';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
+import { IDataPermissionForRole } from '@actiontech/shared/lib/api/provision/service/common';
+import DbAccountService from '@actiontech/shared/lib/api/provision/service/service';
+
+// todo 后续在 dms-ui 调整至shared 后修改这里
+import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
 
 const CreateDatabaseAccount = () => {
   const { t } = useTranslation();
 
   const [params, setParams] = useState<IAuthAddDBAccountParams>();
+
+  const { generateFormValueByParams, mergeFromValueIntoParams } =
+    useAsyncParams();
 
   const [
     submitSuccess,
@@ -35,25 +46,53 @@ const CreateDatabaseAccount = () => {
   const { projectID } = useCurrentProject();
 
   const [form] = Form.useForm<CreateAccountFormType>();
+  const selectedDBServiceID = Form.useWatch('dbServiceID', form);
+  const selectedDBType = Form.useWatch('dbType', form);
+
+  const { data: dbAccountMeta } = useRequest(
+    () =>
+      DbAccountService.AuthGetDBAccountMeta({
+        project_uid: projectID,
+        service_uid: selectedDBServiceID,
+        db_type: selectedDBType
+      }).then((res) => res.data.data?.db_account_metas),
+    {
+      ready: !!selectedDBServiceID && !!selectedDBType,
+      refreshDeps: [selectedDBServiceID]
+    }
+  );
 
   const onSubmit = async () => {
     const values = await form.validateFields();
-    const permissions = values.permissions.map((item) => ({
-      data_object_uids: item.objectsParams,
-      data_operation_set_uids: item.operationsValue
-    }));
+    const dataPermissions = values.operationsPermissions?.reduce<
+      IDataPermissionForRole[]
+    >((acc, cur) => {
+      const operationIDs = [cur[0]];
+      const objectIDs = cur.length > 1 ? cur.slice(1, cur.length) : [];
+
+      const dataPermissionForRole: IDataPermissionForRole = {
+        data_object_uids: objectIDs,
+        data_operation_uids: operationIDs
+      };
+      return [...acc, dataPermissionForRole];
+    }, []);
     setParams({
       project_uid: projectID,
       db_account: {
-        db_service_uid: values.service,
+        db_roles: values.dbRoles,
+        db_service_uid: values.dbServiceID,
         db_account: {
           username: values.username,
           password: values.password,
           hostname: values.hostname,
-          explanation: values.explanation
+          explanation: values.explanation,
+          additional_params: mergeFromValueIntoParams(
+            values.additionalParams,
+            dbAccountMeta ?? []
+          )
         },
         effective_time_day: values.effective_time_day,
-        data_permissions: permissions,
+        data_permissions: dataPermissions,
         password_security_policy:
           values.policy === NORMAL_POLICY_VALUE ? undefined : values.policy
       }
@@ -74,6 +113,14 @@ const CreateDatabaseAccount = () => {
     form.resetFields();
     setSubmitFailed();
   };
+
+  useEffect(() => {
+    if (dbAccountMeta && dbAccountMeta.length > 0) {
+      form.setFieldsValue({
+        additionalParams: generateFormValueByParams(dbAccountMeta)
+      });
+    }
+  }, [dbAccountMeta, form, generateFormValueByParams]);
 
   return (
     <section>
@@ -102,8 +149,7 @@ const CreateDatabaseAccount = () => {
             form={form}
             colon={false}
             labelAlign="left"
-            labelCol={{ span: 14 }}
-            wrapperCol={{ span: 10 }}
+            {...formItemLayout.spaceBetween}
             className="hasTopHeader clearPaddingBottom"
           >
             <CreateAccountFormStyleWrapper>
@@ -111,7 +157,7 @@ const CreateDatabaseAccount = () => {
                 <Icon component={BriefcaseFilled} className="title-icon" />
                 {t('databaseAccount.create.title')}
               </FormItemBigTitle>
-              <BaseInfoForm />
+              <BaseInfoForm dbAccountMeta={dbAccountMeta ?? []} />
               <DataPermissionsForm />
             </CreateAccountFormStyleWrapper>
           </FormStyleWrapper>
@@ -125,6 +171,7 @@ const CreateDatabaseAccount = () => {
               <BasicButton type="primary" onClick={onContinue}>
                 {t('databaseAccount.create.result.continue')}
               </BasicButton>
+              <BasicButton type="primary">查看账号详情</BasicButton>
             </Space>
           }
         />

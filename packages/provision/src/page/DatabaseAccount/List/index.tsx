@@ -46,6 +46,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
 import AccountStatistics from '../components/AccountStatistics';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const DatabaseAccountList = () => {
   const { t } = useTranslation();
@@ -402,7 +403,7 @@ const DatabaseAccountList = () => {
         <ActiontechTable
           rowKey="db_account_uid"
           setting={tableSetting}
-          dataSource={data?.list ?? []}
+          dataSource={data?.list}
           pagination={{
             total: data?.total || 0
           }}

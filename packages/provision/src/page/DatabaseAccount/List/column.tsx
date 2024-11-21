@@ -35,14 +35,14 @@ export const DatabaseAccountListColumns = (
     {
       dataIndex: 'account_info',
       title: t('databaseAccount.list.column.account'),
-      render: (value: IListDBAccount['account_info']) => {
+      render: (value) => {
         return accountNameRender(value);
       }
     },
     {
       dataIndex: 'db_service',
       title: t('databaseAccount.list.column.dbService'),
-      render: (value: IListDBAccount['db_service']) => {
+      render: (value) => {
         return (
           <Typography.Link
             onClick={() => onUpdateFilter('filter_by_db_service', value?.uid)}
@@ -64,7 +64,7 @@ export const DatabaseAccountListColumns = (
     {
       dataIndex: 'password_security_policy',
       title: t('databaseAccount.list.column.policy'),
-      render: (value: IListDBAccount['password_security_policy']) => {
+      render: (value) => {
         return value || '-';
       }
     },
@@ -80,7 +80,7 @@ export const DatabaseAccountListColumns = (
       ),
       filterKey: 'filter_by_status',
       filterCustomType: 'select',
-      render: (value: IListDBAccount['status']) => {
+      render: (value) => {
         return value ? DBAccountStatusDictionary[value] : '-';
       }
     },
@@ -94,7 +94,7 @@ export const DatabaseAccountListColumns = (
           {t('databaseAccount.list.column.deposit')}
         </BasicToolTips>
       ),
-      render: (value: IListDBAccount['platform_managed']) => {
+      render: (value) => {
         return value
           ? t('databaseAccount.list.managed')
           : t('databaseAccount.list.unmanaged');
@@ -108,7 +108,7 @@ export const DatabaseAccountListColumns = (
       title: t('databaseAccount.list.column.auth'),
       filterKey: 'filter_by_user',
       filterCustomType: 'select',
-      render: (value: IListDBAccount['auth_users']) => {
+      render: (value) => {
         if (!value || !value.length) {
           return '-';
         }
@@ -131,7 +131,7 @@ export const DatabaseAccountListColumns = (
     {
       dataIndex: 'explanation',
       title: t('databaseAccount.list.column.desc'),
-      render: (value: IListDBAccount['explanation']) => {
+      render: (value) => {
         return value || '-';
       }
     }
@@ -158,18 +158,24 @@ export const DatabaseAccountListActions = (
       buttonProps: (record) => ({
         onClick: () => onOpenModal(ModalName.DatabaseAccountDetailModal, record)
       })
+    },
+    {
+      key: 'account_authorize',
+      text: t('databaseAccount.list.action.authorize'),
+      buttonProps: (record) => {
+        return {
+          onClick: () =>
+            onOpenModal(ModalName.DatabaseAccountAuthorizeModal, record)
+        };
+      },
+      permissions: (record) =>
+        !!record?.platform_managed &&
+        isHaveServicePermission(record.db_service?.uid)
     }
   ],
   moreButtons: (columnRecord) => {
     return isHaveServicePermission(columnRecord.db_service?.uid)
       ? [
-          {
-            key: 'account_authorize',
-            text: t('databaseAccount.list.action.authorize'),
-            onClick: (record) =>
-              onOpenModal(ModalName.DatabaseAccountAuthorizeModal, record),
-            permissions: (record) => !!record?.platform_managed
-          },
           {
             key: 'modifyPassword',
             text: t('databaseAccount.list.action.modifyPassword'),

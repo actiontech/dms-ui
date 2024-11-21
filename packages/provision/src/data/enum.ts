@@ -29,7 +29,13 @@ export enum ModalName {
 
   DatabaseAccountBatchModifyPasswordModal = 'DatabaseAccountBatchModifyPasswordModal',
 
-  DatabaseAccountManagePasswordModal = 'DatabaseAccountManagePasswordModal'
+  DatabaseAccountManagePasswordModal = 'DatabaseAccountManagePasswordModal',
+
+  DatabaseRoleCreateModal = 'DatabaseRoleCreateModal',
+
+  DatabaseRoleUpdateModal = 'DatabaseRoleUpdateModal',
+
+  DatabaseRoleDetailModal = 'DatabaseRoleDetailModal'
 }
 
 export enum EventEmitterKey {
@@ -41,5 +47,7 @@ export enum EventEmitterKey {
 
   Refresh_Account_Management_List_Table = 'Refresh_Account_Management_List_Table',
 
-  Create_Account_Sync_Service = 'Create_Account_Sync_Service'
+  Create_Account_Sync_Service = 'Create_Account_Sync_Service',
+
+  Refresh_Database_Role_List_Table = 'Refresh_Database_Role_List_Table'
 }

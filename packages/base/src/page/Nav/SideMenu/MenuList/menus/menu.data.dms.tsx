@@ -58,7 +58,7 @@ export const dmsSideMenuData = (projectID: string) => {
       type: 'group',
       label: t('dmsMenu.groupLabel.dataSecurity'),
       group: [
-        'permission-group',
+        'database-role',
         'account-management',
         'password-management',
         'data-mask-rule'

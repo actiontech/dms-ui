@@ -28,7 +28,7 @@ describe('provision/DatabaseAccount/utils', () => {
                 name: '*.*'
               }
             ],
-            data_operation_sets: [
+            data_operations: [
               {
                 uid: '601000',
                 name: '全部'
@@ -46,7 +46,7 @@ describe('provision/DatabaseAccount/utils', () => {
                 name: 'mysql.columns_priv'
               }
             ],
-            data_operation_sets: [
+            data_operations: [
               {
                 uid: '601001',
                 name: '读取'
@@ -73,7 +73,7 @@ describe('provision/DatabaseAccount/utils', () => {
                 name: 'sys.*'
               }
             ],
-            data_operation_sets: [
+            data_operations: [
               {
                 uid: '601000',
                 name: '全部'
@@ -106,7 +106,7 @@ describe('provision/DatabaseAccount/utils', () => {
                 name: 'sys.columns_priv2'
               }
             ],
-            data_operation_sets: [
+            data_operations: [
               {
                 uid: '601000',
                 name: '全部'

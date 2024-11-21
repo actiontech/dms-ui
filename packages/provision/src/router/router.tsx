@@ -1,13 +1,10 @@
-import React, { ReactNode } from 'react';
-import { Navigate, RouteObject } from 'react-router-dom';
-import { DatabaseOutlined } from '@ant-design/icons';
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
-
-const Operation = React.lazy(() => import('../page/Data/Operation'));
+import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 
 const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
-// const ServiceAudit = React.lazy(() => import('~/page/Audit/ServiceAudit'));
 
 const DatabaseAccountList = React.lazy(
   () => import('../page/DatabaseAccount/')
@@ -23,13 +20,7 @@ const DatabaseAccountPassword = React.lazy(
   () => import('../page/DatabaseAccountPassword')
 );
 
-export type RouterConfigItem = RouteObject & {
-  label?: string;
-  icon?: ReactNode;
-  hideInMenu?: boolean;
-  key: string;
-  children?: RouterConfigItem[];
-};
+const DatabaseRole = React.lazy(() => import('../page/DatabaseRole'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   {
@@ -59,46 +50,27 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     element: <DatabaseAccountPassword />
   },
   {
-    label: 'provisionNav.menu.dataObjectWrapper',
-    key: 'dataObjectWrapper',
-    icon: <DatabaseOutlined />,
-    children: [
-      {
-        path: `${PROJECT_ROUTER_PARAM}/data/operation`,
-        key: 'operation',
-        label: 'provisionNav.menu.operation',
-        element: <Operation />
-      }
-    ] as RouterConfigItem[]
-  },
-  {
-    label: 'provisionNav.menu.auditWrapper',
     key: 'auditWrapper',
-    icon: <DatabaseOutlined />,
     children: [
       {
         path: `${PROJECT_ROUTER_PARAM}/audit/auth`,
         key: 'authAudit',
-        label: 'provisionNav.menu.authAudit',
         element: <AuthAudit />
       },
       {
         path: `${PROJECT_ROUTER_PARAM}/audit/template`,
         key: 'templateAudit',
-        label: 'provisionNav.menu.templateAudit',
         element: <TemplateAudit />
       }
-      // {
-      //   path: `${PROJECT_ROUTER_PARAM}/audit/service`,
-      //   key: 'serviceAudit',
-      //   label: 'provisionNav.menu.serviceAudit',
-      //   element: <ServiceAudit />
-      // }
-    ] as RouterConfigItem[]
+    ]
+  },
+  {
+    key: 'databaseRole',
+    path: `${PROJECT_ROUTER_PARAM}/database-role`,
+    element: <DatabaseRole />
   },
   {
     path: '*',
-    hideInMenu: true,
     key: 'null',
     element: <Navigate to="/" />
   }

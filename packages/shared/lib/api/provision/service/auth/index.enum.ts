@@ -49,7 +49,9 @@ export enum AuthListDataOperationSetsOrderByEnum {
 export enum AuthListDataOperationSetsFilterByDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'Oracle' = 'Oracle'
 }
 
 export enum AuthListDataPermissionTemplateOrderByEnum {
@@ -86,6 +88,14 @@ export enum AuthListDatabaseOrderByEnum {
 
 export enum AuthListOperationsOrderByEnum {
   'name' = 'name'
+}
+
+export enum AuthListOperationsDbTypeEnum {
+  'MySQL' = 'MySQL',
+
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'Oracle' = 'Oracle'
 }
 
 export enum AuthListServiceOrderByEnum {

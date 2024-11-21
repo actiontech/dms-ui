@@ -1,5 +1,6 @@
 import { PermissionsConstantType } from '@actiontech/shared/lib/global';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
+import { IProvisionMenuStructTreeKey } from 'provision/src/router/index.type';
 
 export type CustomMenuItemType =
   | (ItemType & {
@@ -21,11 +22,13 @@ export type MenuStructTreeType = Array<
 
 export type GenerateMenuItemType = (projectID: string) => CustomMenuItemType;
 
+// todo 需要在 dms-ui 调整 sqle 的
 export type MenuStructTreeKey =
   | 'instance'
   | 'member'
   | 'cloud-beaver'
   | 'data-export'
+  | 'data-mask-rule'
   | 'project-overview'
   | 'sql-audit'
   | 'plugin-audit'
@@ -39,14 +42,7 @@ export type MenuStructTreeKey =
   | 'sqle-log'
   | 'sql-management-conf'
   | 'push-rule-configuration'
-  | 'permission-group'
-  | 'permission-template'
-  | 'auth-list'
-  | 'data-mask-rule'
-  | 'auth-audit'
-  | 'template-audit'
-  | 'account-management'
-  | 'password-management'
   | 'pipeline-configuration'
   | 'version-management'
-  | 'data-source-comparison';
+  | 'data-source-comparison'
+  | IProvisionMenuStructTreeKey;

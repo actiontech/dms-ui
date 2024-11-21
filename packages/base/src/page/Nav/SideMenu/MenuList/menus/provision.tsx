@@ -2,19 +2,7 @@ import { t } from '../../../../../locale';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { Link } from 'react-router-dom';
 import { GenerateMenuItemType } from './index.type';
-import { LockFilled, LightShieldFilled, KeyFilled } from '@actiontech/icons';
-
-export const permissionGroupMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <Link to={`/provision/project/${projectID}/data/operation`}>
-      {t('dmsMenu.permissionGroup')}
-    </Link>
-  ),
-
-  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/operation`,
-  icon: <LockFilled width={18} height={18} />,
-  structKey: 'permission-group'
-});
+import { LightShieldFilled, KeyFilled } from '@actiontech/icons';
 
 export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
@@ -94,12 +82,38 @@ export const templateAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   structKey: 'template-audit'
 });
 
+export const databaseRole: GenerateMenuItemType = (projectID) => ({
+  label: (
+    <Link to={`/provision/project/${projectID}/database-role`}>
+      {t('dmsMenu.databaseRole')}
+    </Link>
+  ),
+
+  key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-role`,
+  icon: (
+    <svg
+      className="icon"
+      viewBox="0 0 1024 1024"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+    >
+      <path
+        d="M171.236533 1023.998926A123.224231 123.224231 0 0 1 47.498876 900.263417v-687.431425a123.225305 123.225305 0 0 1 123.737657-123.737657h34.092302V219.430259c0 68.743143 54.994514 123.737657 123.737657 124.286528h322.821019a123.225305 123.225305 0 0 0 123.737657-123.737657V89.090039h20.896841a123.225305 123.225305 0 0 1 123.737657 123.737656v386.063637c-40.69594-26.946238-89.088965-47.843079-144.083479-47.843079-13.748629 0-34.09445 0-54.994514 6.59612H253.728304c-20.344748 0-34.09445 13.748629-34.094451 34.099821s13.197609 34.093376 34.094451 34.093376h350.317203c-27.497257 27.497257-47.847375 68.743143-61.597079 109.989028H253.728304c-20.344748 0-34.09445 13.197609-34.094451 34.094451 0 20.350118 13.198683 34.098747 34.094451 34.098747h281.572986c6.60149 109.989028 82.491771 199.63116 179.282116 219.978056z m411.931466-229.566651c0-108.44553 88.222156-196.669834 196.66339-196.669834s196.669834 88.222156 196.669835 196.66339-88.221082 196.669834-196.669835 196.669834-196.66339-88.221082-196.66339-196.66339z m58.896762 93.769943H839.871005a73.389749 73.389749 0 0 1-11.784078-11.148204 72.461717 72.461717 0 0 1-9.022537-13.513398 70.324235 70.324235 0 0 1-7.806644-32.237312 69.525096 69.525096 0 0 1 13.296428-41.053619 115.257546 115.257546 0 0 0-41.156734-17.758287l-24.355481 18.605761-24.354406-18.605761c-53.666912 11.424251-92.623866 60.087951-92.623866 115.709746z m188.549551-61.922534a54.9204 54.9204 0 1 0 54.9204-54.915029 54.983773 54.983773 0 0 0-54.9204 54.915029zM698.85519 713.569932c0 32.72281 27.00424 59.344666 60.19214 59.344666s60.200733-26.620782 60.200733-59.344666-27.00424-59.344666-60.198585-59.344666-60.194288 26.621856-60.194288 59.344666z m173.495876 140.796697L848.571309 829.926293a5.61653 5.61653 0 0 1 0.250268-7.778716 5.254554 5.254554 0 0 1 7.564968-0.255639l19.455384 19.99781 37.659427-37.808728a5.424264 5.424264 0 0 1 7.81631 0.094522 5.800203 5.800203 0 0 1-0.092374 8.035429l-39.543418 39.69272a5.202997 5.202997 0 0 1-0.620837 0.508055 5.901169 5.901169 0 0 1-1.142855 1.693874 5.619752 5.619752 0 0 1-4.013955 1.742209 4.910838 4.910838 0 0 1-3.553161-1.4812zM329.07401 281.57406a61.612116 61.612116 0 0 1-62.143801-61.59493V89.090039h123.737657C397.266134 41.24696 438.513093 0.001074 486.907192 0.001074c54.994514 0 96.790345 41.245886 103.389686 89.090039h123.737657v130.888017a61.489667 61.489667 0 0 1-61.596004 61.59493z"
+        fill="#C3C6CD"
+      ></path>
+    </svg>
+  ),
+  structKey: 'database-role'
+});
+
 const provisionMenusCollection = [
   authAuditMenuItem,
-  permissionGroupMenuItem,
   templateAuditMenuItem,
   accountManagementMenuItem,
-  passwordManagementMenuItem
+  passwordManagementMenuItem,
+  databaseRole
 ];
 
 export default provisionMenusCollection;

@@ -16,7 +16,12 @@ const ServiceFiled: React.FC<ServiceFieldProps> = ({
 
   return (
     <ServiceFieldStyleWrapper>
-      <BasicSelect {...otherProps} disabled={disabled} value={value} />
+      <BasicSelect
+        {...otherProps}
+        disabled={disabled}
+        value={value}
+        allowClear
+      />
       <BasicToolTips title={t('dataObject.syncDataSource.button')}>
         <DrawerFormIconWrapper
           style={{ marginLeft: '12px' }}

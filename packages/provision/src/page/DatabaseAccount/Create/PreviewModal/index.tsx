@@ -2,11 +2,11 @@ import { useRequest, useBoolean } from 'ahooks';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { MonacoEditor } from '@actiontech/shared/lib/components/MonacoEditor';
-import { BasicModal, BasicButton } from '@actiontech/shared';
+import { BasicModal, BasicButton, SQLRenderer } from '@actiontech/shared';
 import { PreviewModalProps } from '../../index.type';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { IAuthGetStatementParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
+import { Spin } from 'antd';
 
 const PreviewModal: React.FC<PreviewModalProps> = ({
   params,
@@ -19,16 +19,17 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
     return {
       project_uid: params?.project_uid ?? '',
       db_accounts: {
+        db_roles: params?.db_account?.db_roles,
         db_service_uid: params?.db_account?.db_service_uid ?? '',
         db_accounts: params?.db_account?.db_account
           ? [params?.db_account?.db_account]
           : [],
-        data_permissions: params?.db_account?.data_permissions ?? []
+        data_permissions: params?.db_account?.data_permissions
       }
     };
   }, [params]);
 
-  const { data: sql } = useRequest(
+  const { data: sql, loading: genSqlStatementPEnding } = useRequest(
     () =>
       dbAccountService.AuthGetStatement(previewParams).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -95,7 +96,9 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
         </>
       }
     >
-      <MonacoEditor height="300px" value={sql} language="sql" />
+      <Spin delay={500} spinning={genSqlStatementPEnding}>
+        <SQLRenderer.ViewOnlyEditor height="300px" sql={sql} />
+      </Spin>
     </BasicModal>
   );
 };

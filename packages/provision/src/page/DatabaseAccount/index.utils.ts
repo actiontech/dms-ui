@@ -83,7 +83,7 @@ export const generateDataPermissionValueByDataPermission = (
 
       const operationsLabel: string[] = [];
       const operationsValue: string[] = [];
-      item.data_operation_sets?.forEach((operation) => {
+      item.data_operations?.forEach((operation) => {
         operationsLabel.push(operation.name ?? '');
         operationsValue.push(operation.uid ?? '');
       });

@@ -5,6 +5,8 @@ import {
 import { SelectProps } from 'antd';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service/common.d';
+import { BackendFormValues } from '../../../../sqle/src/components/BackendForm';
+import { IRolePermissionSelectorBaseFields } from '../../components/RolePermissionSelector/index.type';
 
 export type AccountDiscoveryFormType = {
   business: string;
@@ -27,10 +29,9 @@ export type CreateAccountFormType = {
   effective_time_day: number;
   policy: string;
   explanation: string;
-  permissions: PermissionsType[];
   business: string;
-  service: string;
-};
+  additionalParams: BackendFormValues;
+} & IRolePermissionSelectorBaseFields;
 
 export type PermissionsType = {
   id?: string;
@@ -67,8 +68,8 @@ export type PermissionModalFormType = {
 };
 
 export type ServiceFieldProps = {
-  value?: IDataPermission[];
-  onChange?: (value: IDataPermission[]) => void;
+  value?: string;
+  onChange?: (value: string) => void;
   loading?: boolean;
   options?: SelectProps['options'];
   onSyncService?: () => void;

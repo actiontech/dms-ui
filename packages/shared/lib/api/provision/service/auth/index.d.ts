@@ -15,6 +15,7 @@ import {
   OperateDataResourceHandleOperationTimingEnum,
   AuthListDatabaseOrderByEnum,
   AuthListOperationsOrderByEnum,
+  AuthListOperationsDbTypeEnum,
   AuthListServiceOrderByEnum,
   AuthListTableOrderByEnum
 } from './index.enum';
@@ -384,13 +385,13 @@ export interface IAuthListDatabaseParams {
 export interface IAuthListDatabaseReturn extends IListDatabaseReply {}
 
 export interface IAuthListOperationsParams {
-  data_object_uids?: string[];
-
   page_size: number;
 
   page_index?: number;
 
   order_by?: AuthListOperationsOrderByEnum;
+
+  db_type: AuthListOperationsDbTypeEnum;
 
   keyword?: string;
 }

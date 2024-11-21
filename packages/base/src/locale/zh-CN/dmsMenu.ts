@@ -5,6 +5,7 @@ export default {
   instance: '数据源',
   memberAndPermissions: '成员与权限',
   authAudit: '授权审计',
+  databaseRole: '角色管理',
   templateAudit: '权限模版审计',
   instanceAudit: '数据源操作审计',
   SQLEOperateRecord: 'SQLE操作记录',

@@ -19,7 +19,13 @@ export enum StoreKey {
 
   Database_Account_Management_Modal_Select_Data = 'Database_Account_Management_Modal_Select_Data',
 
-  Database_Account_Management_Modal_Batch_Action_Select_Data = 'Database_Account_Management_Modal_Batch_Action_Select_Data'
+  Database_Account_Management_Modal_Batch_Action_Select_Data = 'Database_Account_Management_Modal_Batch_Action_Select_Data',
+
+  Database_Role_Modal_Status = 'Database_Role_Modal_Status',
+
+  Database_Role_Select_Data = 'Database_Role_Select_Data',
+
+  Database_Role_Filtered_DB_SERVICE_ID = 'Database_Role_Filtered_DB_SERVICE_ID'
 }
 
 export const recoilIsInstanceOfDefaultValue = (
