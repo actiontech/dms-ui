@@ -25,10 +25,9 @@ import {
   FilterCustomProps
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import TableTransfer from './TableTransfer';
-import { BackupSqlType, TableTransferProps } from './index.type';
+import { ExpandedBackupSqlType, TableTransferProps } from './index.type';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { useParams } from 'react-router-dom';
 import { SqlExecStatusOptions } from './index.data';
 import useInstance from '../../../../../hooks/useInstance';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
@@ -58,11 +57,11 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
 
   const [targetKeys, setTargetKeys] = useState<string[]>([]);
 
-  const [selectedList, setSelectedList] = useState<BackupSqlType[]>([]);
+  const [selectedList, setSelectedList] = useState<ExpandedBackupSqlType[]>([]);
 
   const { pagination, tableChange, updateTableFilterInfo, tableFilterInfo } =
     useTableRequestParams<
-      BackupSqlType,
+      ExpandedBackupSqlType,
       WorkflowRollbackSqlTableFilterParamType
     >();
 
@@ -76,8 +75,6 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
 
   const { updateInstanceList, instanceIDOptions, instanceList } = useInstance();
 
-  const urlParams = useParams<{ workflowId: string }>();
-
   const { data, loading, mutate } = useRequest(
     () => {
       return workflow
@@ -86,7 +83,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           project_name: projectName,
-          workflow_id: urlParams.workflowId ?? ''
+          workflow_id: workflowInfo?.workflow_id ?? ''
         })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
@@ -131,7 +128,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
         total: data?.total ?? 0
       });
     } else {
-      const selected: BackupSqlType[] = [];
+      const selected: ExpandedBackupSqlType[] = [];
       const clonedData = cloneDeep(data?.list ?? []);
       moveKeys.forEach((key) => {
         const dataSource = clonedData.find((i) => {
@@ -174,7 +171,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
   }, [taskInfos, instanceIDOptions, instanceList]);
 
   const filterCustomProps = useMemo(() => {
-    return new Map<keyof BackupSqlType, FilterCustomProps>([
+    return new Map<keyof ExpandedBackupSqlType, FilterCustomProps>([
       ['instance_name', { options: taskInstanceIdOptions }],
       ['exec_status', { options: SqlExecStatusOptions }]
     ]);

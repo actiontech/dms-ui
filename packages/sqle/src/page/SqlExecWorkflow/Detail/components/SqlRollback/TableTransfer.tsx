@@ -3,7 +3,7 @@ import { Transfer } from 'antd';
 import {
   TableTransferProps,
   TableRowSelection,
-  BackupSqlType
+  ExpandedBackupSqlType
 } from './index.type';
 
 const TableTransfer: React.FC<TableTransferProps> = (props) => {
@@ -27,7 +27,7 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
       }) => {
         const isLeftTable = direction === 'left';
         const columns = isLeftTable ? leftColumns : rightColumns;
-        const rowSelection: TableRowSelection<BackupSqlType> = {
+        const rowSelection: TableRowSelection<ExpandedBackupSqlType> = {
           getCheckboxProps: isLeftTable
             ? (item) => ({ disabled: item.disabled })
             : undefined,
