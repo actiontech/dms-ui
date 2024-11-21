@@ -4,7 +4,7 @@ import {
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { SQLRenderer, EditText, BasicTag } from '@actiontech/shared';
-import { BackupSqlType } from './index.type';
+import { ExpandedBackupSqlType } from './index.type';
 import { IGetBackupSqlListV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import ExecStatusTag from '../AuditExecResultPanel/TaskResultList/Common/ResultCard/components/ExecStatusTag';
 import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
@@ -22,7 +22,7 @@ export type WorkflowRollbackSqlTableFilterParamType =
   >;
 
 export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
-  BackupSqlType,
+  ExpandedBackupSqlType,
   WorkflowRollbackSqlTableFilterParamType
 > = () => {
   return [
@@ -86,7 +86,7 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
 
 export const WorkflowRollbackSelectedSqlTableColumn: (
   onUpdateSqlRemake: (id: string, remake?: string) => void
-) => ActiontechTableColumn<BackupSqlType> = (onUpdateSqlRemake) => {
+) => ActiontechTableColumn<ExpandedBackupSqlType> = (onUpdateSqlRemake) => {
   const baseColumns = WorkflowRollbackSqlTableColumn();
   return [
     ...baseColumns,

@@ -17,7 +17,7 @@ export type SqlRollbackProps = {
   taskInfos?: IAuditTaskResV1[];
 };
 
-export type BackupSqlType = IBackupSqlData & {
+export type ExpandedBackupSqlType = IBackupSqlData & {
   id?: string;
   disabled?: boolean;
   remark?: string;
@@ -25,13 +25,14 @@ export type BackupSqlType = IBackupSqlData & {
 
 export type TableRowSelection<T extends object> = TableProps<T>['rowSelection'];
 
-export interface TableTransferProps extends TransferProps<BackupSqlType> {
-  dataSource: BackupSqlType[];
-  leftColumns: TableColumnsType<BackupSqlType>;
-  rightColumns: TableColumnsType<BackupSqlType>;
+export interface TableTransferProps
+  extends TransferProps<ExpandedBackupSqlType> {
+  dataSource: ExpandedBackupSqlType[];
+  leftColumns: TableColumnsType<ExpandedBackupSqlType>;
+  rightColumns: TableColumnsType<ExpandedBackupSqlType>;
   loading: boolean;
-  leftDataSource?: BackupSqlType[];
-  rightDataSource?: BackupSqlType[];
+  leftDataSource?: ExpandedBackupSqlType[];
+  rightDataSource?: ExpandedBackupSqlType[];
   leftPagination: TablePaginationConfig;
-  onTableChange: TableProps<BackupSqlType>['onChange'];
+  onTableChange: TableProps<ExpandedBackupSqlType>['onChange'];
 }
