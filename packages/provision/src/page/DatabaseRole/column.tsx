@@ -37,7 +37,7 @@ export const DatabaseRoleTableColumns = (): ActiontechTableColumn<
     {
       title: t('databaseRole.tableColumns.permissions'),
       dataIndex: 'data_permissions',
-      width: '80%',
+      width: '60%',
       render(permissions) {
         return <RoleTableTagsCell dataSource={permissions ?? []} />;
       }

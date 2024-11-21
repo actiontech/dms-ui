@@ -1,7 +1,6 @@
 import { PageHeader } from '@actiontech/shared';
 import {
   ActiontechTable,
-  TableRefreshButton,
   TableToolbar,
   useTableRequestError,
   useTableRequestParams
@@ -13,7 +12,7 @@ import {
   usePermission
 } from '@actiontech/shared/lib/global';
 import { CreateDatabaseRoleAction, DatabaseRoleTableActions } from './action';
-import { message, Space } from 'antd';
+import { message } from 'antd';
 import DbRoleService from '@actiontech/shared/lib/api/provision/service/db_role';
 import { useRequest } from 'ahooks';
 import { IListDBRole } from '@actiontech/shared/lib/api/provision/service/common';
@@ -127,13 +126,7 @@ const DatabaseRole: React.FC = () => {
     <section>
       {messageContextHolder}
       <PageHeader
-        title={
-          <Space>
-            {t('databaseRole.title')}
-
-            <TableRefreshButton refresh={refresh} />
-          </Space>
-        }
+        title={t('databaseRole.title')}
         extra={CreateDatabaseRoleAction(onCreateRole)}
       />
 
