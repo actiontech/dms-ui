@@ -81,7 +81,8 @@ export default {
     permissionInfoOverview: '数据权限概览',
     result: {
       success: '创建账号成功',
-      continue: '继续创建'
+      continue: '继续创建',
+      viewDetail: '查看账号详情'
     },
     normalPolicy: '无',
     form: {

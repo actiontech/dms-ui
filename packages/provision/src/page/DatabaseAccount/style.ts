@@ -105,7 +105,7 @@ export const AccountInfoItemStyleWrapper = styled('div')`
   display: flex;
   line-height: 20px;
   padding: 8px 0;
-  align-items: center;
+  align-items: start;
 
   & .audit-info-item-label {
     width: 160px;

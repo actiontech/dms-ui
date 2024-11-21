@@ -2,7 +2,8 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  useTypedNavigate
 } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +19,7 @@ import {
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import DataPermissionsForm from './DataPermissionsForm';
 import { useBoolean, useRequest } from 'ahooks';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import PreviewModal from './PreviewModal';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
@@ -48,6 +49,7 @@ const CreateDatabaseAccount = () => {
   const [form] = Form.useForm<CreateAccountFormType>();
   const selectedDBServiceID = Form.useWatch('dbServiceID', form);
   const selectedDBType = Form.useWatch('dbType', form);
+  const navigate = useTypedNavigate();
 
   const { data: dbAccountMeta } = useRequest(
     () =>
@@ -114,6 +116,10 @@ const CreateDatabaseAccount = () => {
     setSubmitFailed();
   };
 
+  const jumpToDBAccountDetail = () => {
+    navigate(`/provision/project/${projectID}/database-account`);
+  };
+
   useEffect(() => {
     if (dbAccountMeta && dbAccountMeta.length > 0) {
       form.setFieldsValue({
@@ -171,7 +177,9 @@ const CreateDatabaseAccount = () => {
               <BasicButton type="primary" onClick={onContinue}>
                 {t('databaseAccount.create.result.continue')}
               </BasicButton>
-              <BasicButton type="primary">查看账号详情</BasicButton>
+              <BasicButton onClick={jumpToDBAccountDetail} type="primary">
+                {t('databaseAccount.create.result.viewDetail')}
+              </BasicButton>
             </Space>
           }
         />

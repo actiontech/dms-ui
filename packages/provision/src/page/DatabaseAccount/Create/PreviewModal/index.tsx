@@ -29,7 +29,7 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
     };
   }, [params]);
 
-  const { data: sql, loading: genSqlStatementPEnding } = useRequest(
+  const { data: sql, loading: genSqlStatementPending } = useRequest(
     () =>
       dbAccountService.AuthGetStatement(previewParams).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -79,7 +79,7 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
       footer={
         <>
           <BasicButton
-            disabled={createLoading}
+            disabled={createLoading || genSqlStatementPending}
             onClick={closeModal}
             className="close-preview-button"
           >
@@ -90,13 +90,14 @@ const PreviewModal: React.FC<PreviewModalProps> = ({
             loading={createLoading}
             onClick={onCreate}
             className="submit-preview-button"
+            disabled={genSqlStatementPending}
           >
             {t('common.submit')}
           </BasicButton>
         </>
       }
     >
-      <Spin delay={500} spinning={genSqlStatementPEnding}>
+      <Spin delay={500} spinning={genSqlStatementPending}>
         <SQLRenderer.ViewOnlyEditor height="300px" sql={sql} />
       </Spin>
     </BasicModal>

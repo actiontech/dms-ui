@@ -17,7 +17,10 @@ import { IDatabaseRoleFormFields } from '../Common/index.type';
 import RoleForm from '../Common/RoleForm';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { IDataPermissionForRole } from '@actiontech/shared/lib/api/provision/service/common';
+import {
+  IDataPermissionForRole,
+  IDBAccountDataPermission
+} from '@actiontech/shared/lib/api/provision/service/common';
 
 const UpdateRole: React.FC = () => {
   const { t } = useTranslation();
@@ -82,13 +85,45 @@ const UpdateRole: React.FC = () => {
   };
 
   useEffect(() => {
+    // const generateOperationsPermissionValues = (
+    //   dataPermissions?: IDBAccountDataPermission[]
+    // ): string[][] => {
+    //   return (
+    //     dataPermissions?.flatMap((permission) => {
+    //       const { data_objects, data_operations = [] } = permission;
+
+    //       if (!data_objects) {
+    //         return data_operations.map((operation) => [operation.uid ?? '']);
+    //       }
+
+    //       return data_operations.flatMap((operation) =>
+    //         data_objects.map((object) => [
+    //           operation.uid ?? '',
+    //           object.database_uid ?? '',
+    //           object.table_uid ?? ''
+    //         ])
+    //       );
+    //     }) ?? []
+    //   );
+    // };
+
     if (visible) {
       form.setFieldsValue({
         roleName: selectData?.db_role?.name ?? '',
-        dbServiceID: filteredByDBServiceID ?? ''
+        dbServiceID: filteredByDBServiceID ?? '',
+        dbRoles: selectData?.child_roles?.map((v) => v.uid ?? '') ?? []
+        // operationsPermissions: generateOperationsPermissionValues(
+        //   selectData?.
+        // )
       });
     }
-  }, [form, selectData?.db_role?.name, filteredByDBServiceID, visible]);
+  }, [
+    form,
+    selectData?.db_role?.name,
+    filteredByDBServiceID,
+    visible,
+    selectData?.child_roles
+  ]);
 
   return (
     <BasicDrawer

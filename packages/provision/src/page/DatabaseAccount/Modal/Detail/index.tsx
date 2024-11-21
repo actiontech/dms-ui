@@ -18,16 +18,13 @@ import { useRecoilState } from 'recoil';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import { Popover, Space, Spin, message } from 'antd';
+import { Space, Spin, message } from 'antd';
 import { AccountDetailDrawerStyleWrapper } from '../../style';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import AccountInfoItem from '../../components/AccountInfoItem';
 import json2md, { DataObject } from 'json2md';
 import { accountDetailCustomConfig } from './accountDetailCustomConfig';
-import {
-  IDBAccountDataPermission,
-  IDBRoleDatePermissions
-} from '@actiontech/shared/lib/api/provision/service/common';
+import { IDBAccountDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
 
 const DatabaseAccountDetailModal = () => {
   const { t } = useTranslation();

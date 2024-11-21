@@ -1,7 +1,4 @@
-import {
-  IDBAccountBody,
-  IDataPermission
-} from '@actiontech/shared/lib/api/provision/service/common';
+import { IDBAccountBody } from '@actiontech/shared/lib/api/provision/service/common';
 import { SelectProps } from 'antd';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service/common.d';

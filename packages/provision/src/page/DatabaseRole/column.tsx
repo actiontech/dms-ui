@@ -3,7 +3,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../locale';
 import { Typography } from 'antd';
 import { IDatabaseRoleTableParams } from './index.type';
-import DataPermissionsTagsCell from './DataPermissionsTagsCell';
+import RoleTableTagsCell from './RoleTableTagsCell';
 
 export const DatabaseRoleTableColumns = (): ActiontechTableColumn<
   IListDBRole,
@@ -21,11 +21,25 @@ export const DatabaseRoleTableColumns = (): ActiontechTableColumn<
       }
     },
     {
+      title: t('databaseRole.tableColumns.childRoles'),
+      dataIndex: 'child_roles',
+      render(childRoles) {
+        if (!childRoles || !childRoles.length) {
+          return '-';
+        }
+        return (
+          <RoleTableTagsCell
+            dataSource={childRoles.map((v) => v.name!) ?? []}
+          />
+        );
+      }
+    },
+    {
       title: t('databaseRole.tableColumns.permissions'),
       dataIndex: 'data_permissions',
       width: '80%',
       render(permissions) {
-        return <DataPermissionsTagsCell dataPermissions={permissions ?? []} />;
+        return <RoleTableTagsCell dataSource={permissions ?? []} />;
       }
     }
   ];

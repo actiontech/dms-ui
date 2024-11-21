@@ -4,28 +4,32 @@ import { Space } from 'antd';
 import { DataPermissionsTagsCellStyleWrapper } from './style';
 
 type Props = {
-  dataPermissions: string[];
+  dataSource: string[];
+  tagLimit?: number;
 };
 
-const DATA_PERMISSION_TAGS_LIMIT = 6;
+const DATA_PERMISSION_TAGS_LIMIT = 4;
 
-const DataPermissionsTagsCell: React.FC<Props> = ({ dataPermissions }) => {
+const RoleTableTagsCell: React.FC<Props> = ({
+  dataSource,
+  tagLimit = DATA_PERMISSION_TAGS_LIMIT
+}) => {
   const renderScanTypeTag = (permission: string) => {
     return <BasicTag className="pointer">{permission}</BasicTag>;
   };
 
   const render = () => {
-    if (!dataPermissions || !dataPermissions.length) {
+    if (!dataSource || !dataSource.length) {
       return '-';
     }
 
-    if (dataPermissions.length <= DATA_PERMISSION_TAGS_LIMIT) {
-      return <>{dataPermissions.map((item) => renderScanTypeTag(item))}</>;
+    if (dataSource.length <= DATA_PERMISSION_TAGS_LIMIT) {
+      return <>{dataSource.map((item) => renderScanTypeTag(item))}</>;
     }
 
     return (
       <>
-        {dataPermissions
+        {dataSource
           .slice(0, DATA_PERMISSION_TAGS_LIMIT)
           .map((item) => renderScanTypeTag(item))}
         <BasicToolTips
@@ -33,7 +37,7 @@ const DataPermissionsTagsCell: React.FC<Props> = ({ dataPermissions }) => {
           titleWidth={450}
           title={
             <Space wrap size={[0, 6]}>
-              {dataPermissions.map((item) => renderScanTypeTag(item))}
+              {dataSource.map((item) => renderScanTypeTag(item))}
             </Space>
           }
         >
@@ -54,4 +58,4 @@ const DataPermissionsTagsCell: React.FC<Props> = ({ dataPermissions }) => {
   );
 };
 
-export default DataPermissionsTagsCell;
+export default RoleTableTagsCell;

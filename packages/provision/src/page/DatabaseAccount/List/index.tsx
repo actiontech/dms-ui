@@ -40,18 +40,19 @@ import {
 } from '../../../store/databaseAccount';
 import { EventEmitterKey, ModalName } from '../../../data/enum';
 import EventEmitter from '../../../utils/EventEmitter';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
 import AccountStatistics from '../components/AccountStatistics';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const DatabaseAccountList = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
+
+  const [urlSearchParams] = useSearchParams();
 
   const [messageApi, contextHolder] = message.useMessage();
 

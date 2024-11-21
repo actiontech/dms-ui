@@ -22,7 +22,6 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean, useRequest } from 'ahooks';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { generateDataPermissionValueByDataPermission } from '../index.utils';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';

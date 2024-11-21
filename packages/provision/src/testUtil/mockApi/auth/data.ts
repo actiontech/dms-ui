@@ -1,6 +1,5 @@
 import {
   IDataObjectSource,
-  IDataOperationSet,
   IDatabase,
   IGetAuthorizationReply,
   IGetDataPermissionsInDataPermissionTemplate,
