@@ -14,7 +14,8 @@ const execStatusMap: {
   [getAuditTaskSQLsV2FilterExecStatusEnum.manually_executed]: 'orange',
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminate_failed]: 'red',
   [getAuditTaskSQLsV2FilterExecStatusEnum.terminate_succeeded]: 'green',
-  [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue'
+  [getAuditTaskSQLsV2FilterExecStatusEnum.terminating]: 'geekblue',
+  [getAuditTaskSQLsV2FilterExecStatusEnum.execute_rollback]: 'orange'
 };
 
 export interface ExecStatusTagProps {

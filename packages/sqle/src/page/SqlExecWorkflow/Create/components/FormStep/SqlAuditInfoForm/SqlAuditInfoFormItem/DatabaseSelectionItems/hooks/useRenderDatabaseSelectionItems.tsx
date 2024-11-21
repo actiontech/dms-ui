@@ -26,7 +26,7 @@ const useRenderDatabaseSelectionItems = ({
 }: Pick<
   DatabaseSelectionItemProps,
   'dbSourceInfoCollection' | 'sqlStatementTabActiveKey'
-> & { instanceList: IInstanceTipResV1[] }) => {
+> & { instanceList?: IInstanceTipResV1[] }) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();
@@ -118,7 +118,7 @@ const useRenderDatabaseSelectionItems = ({
         testConnectResult: undefined,
         isSupportFileModeExecuteSql: true,
         enableBackup:
-          instanceList.find((i) => i.instance_name === instanceName)
+          instanceList?.find((i) => i.instance_name === instanceName)
             ?.enable_backup ?? false
       });
       updateSchemaList(key, instanceName);

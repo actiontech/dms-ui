@@ -563,6 +563,16 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
   },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY,
+    type: 'action',
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.ROLLBACK]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.ROLLBACK,
+    type: 'action',
+    projectArchived: false
+  },
 
   // SQL 管控
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT]: {

@@ -39,6 +39,39 @@ export const TasksResultCardStyleWrapper = styled('div')`
     .result-card-content-options {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 16px;
+
+      .segmented-tabs-wrapper {
+        width: 100%;
+
+        .segmented-row-wrapper {
+          padding: 0;
+          border: none;
+          justify-content: space-between;
+          margin-bottom: 12px;
+        }
+
+        pre {
+          margin-bottom: 0;
+        }
+      }
+
+      .backup-conflict-tips {
+        .ant-space-item {
+          display: flex;
+        }
+      }
+
+      .result-card-content-rollback {
+        display: flex !important;
+        width: 100%;
+        align-items: start;
+
+        .ant-space-item:last-of-type {
+          flex: 1;
+          overflow: hidden;
+        }
+      }
     }
 
     & .ant-collapse.result-record-collapse .ant-collapse-header {
