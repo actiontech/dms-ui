@@ -230,7 +230,8 @@ export default {
         '工单关闭后将无法再对工单执行任何操作，是否确认关闭当前工单？',
       closeWorkflowSuccessTips: '工单关闭成功',
       cloneExecWorkflow: '上线到其他实例',
-      associatedWorkflowInfo: '关联工单信息'
+      associatedWorkflowInfo: '关联工单信息',
+      associatedRollbackWorkflowInfo: '关联回滚工单信息'
     },
 
     paginationDisplay: '分页展示',

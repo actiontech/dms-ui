@@ -5,6 +5,10 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { TasksStatusCount } from '../../index.type';
+import {
+  IAssociatedStageWorkflows,
+  IAssociatedRollbackWorkflow
+} from '@actiontech/shared/lib/api/sqle/service/common.d';
 
 export type WorkflowRecordInfoProps = {
   onClose: () => void;
@@ -28,4 +32,13 @@ export type WorkflowStepsProps = {
 
 export type WorkflowHistoryStepsProps = {
   recordHistoryList?: IWorkflowRecordResV2[];
+};
+
+export type AssociatedVersionStageWorkflowsProps = {
+  associatedWorkflows?: IAssociatedStageWorkflows[];
+  workflowId?: string;
+};
+
+export type AssociatedRollbackWorkflowsProps = {
+  associatedWorkflows?: IAssociatedRollbackWorkflow[];
 };

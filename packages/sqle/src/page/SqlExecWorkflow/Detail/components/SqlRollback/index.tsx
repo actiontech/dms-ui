@@ -184,6 +184,10 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     setSelectedList(clonedSelectedList);
   };
 
+  const removeMultilineComments = (sql: string) => {
+    return sql.replace(/\/\*/g, '--').replace(/\*\//g, '');
+  };
+
   const onCreateWorkflow = () => {
     const sqlStatement: { [key: string]: SqlStatementFields } = {};
     let description = '';
@@ -210,9 +214,9 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
       );
       sortedBackupSqlList.forEach((item) => {
         let backupSqlStatement = '';
-        backupSqlStatement += `-- ${t(
+        backupSqlStatement += `/*${t(
           'execWorkflow.detail.rollback.originSql'
-        )}: ${item.origin_sql} \n`;
+        )}: ${removeMultilineComments(item.origin_sql ?? '')}*/ \n`;
         item.backup_sqls?.forEach((i) => (backupSqlStatement += `${i}\n`));
         sqlFormData += backupSqlStatement;
       });
