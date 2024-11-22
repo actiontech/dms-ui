@@ -5,7 +5,8 @@ import {
   BasicTag,
   AvatarCom,
   EmptyBox,
-  BasicToolTips
+  BasicToolTips,
+  BasicTypographyEllipsis
 } from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import { useTranslation } from 'react-i18next';
@@ -199,8 +200,14 @@ const DatabaseAccountDetailModal = () => {
                   key={item.uid}
                   title={item.DBAccountDataPermission?.map(
                     (dataPermission, index) => (
-                      <BasicTag key={index}>
-                        {generatePermissionLabel(dataPermission)}
+                      <BasicTag key={index} style={{ maxWidth: 190 }}>
+                        <BasicTypographyEllipsis
+                          copyable={false}
+                          tooltipsMaxWidth={220}
+                          textCont={
+                            generatePermissionLabel(dataPermission) ?? ''
+                          }
+                        />
                       </BasicTag>
                     )
                   )}
@@ -220,7 +227,13 @@ const DatabaseAccountDetailModal = () => {
                       item.data_operations.length > 0
                     }
                   >
-                    <BasicTag>{generatePermissionLabel(item)}</BasicTag>
+                    <BasicTag style={{ maxWidth: 190 }}>
+                      <BasicTypographyEllipsis
+                        copyable={false}
+                        tooltipsMaxWidth={220}
+                        textCont={generatePermissionLabel(item) ?? ''}
+                      />
+                    </BasicTag>
                   </EmptyBox>
                 );
               })}
