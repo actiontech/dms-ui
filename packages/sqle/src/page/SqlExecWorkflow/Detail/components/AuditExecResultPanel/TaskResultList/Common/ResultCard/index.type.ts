@@ -1,6 +1,7 @@
 import {
   IAuditTaskSQLResV2,
-  IAuditFileStatistic
+  IAuditFileStatistic,
+  IAssociatedRollbackWorkflow
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
@@ -27,3 +28,7 @@ export type ResultCardProps =
   | (FileExecuteResultCardProps & {
       executeMode: WorkflowResV2ExecModeEnum.sql_file;
     });
+
+export type RollbackWorkflowEntryProps = {
+  workflows?: IAssociatedRollbackWorkflow[];
+};

@@ -7,7 +7,8 @@ import { SwitcherFieldProps } from './index.type';
 const SwitchField: React.FC<SwitcherFieldProps> = ({
   checked,
   onChange,
-  title
+  title,
+  disabled = false
 }) => {
   const { t } = useTranslation();
 
@@ -29,6 +30,7 @@ const SwitchField: React.FC<SwitcherFieldProps> = ({
       onCancel={hidePopconfirm}
     >
       <BasicSwitch
+        disabled={disabled}
         checked={checked}
         className="backup-switcher"
         onChange={() => {

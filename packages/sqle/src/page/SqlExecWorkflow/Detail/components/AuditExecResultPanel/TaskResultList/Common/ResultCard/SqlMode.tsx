@@ -28,6 +28,7 @@ import { TaskResultContentTypeEnum } from './index.data';
 import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WarningFilled } from '@actiontech/icons';
+import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -99,6 +100,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
           </div>
         </Space>
         <Space>
+          {/* #if [ee] */}
+          <EmptyBox if={!!props.associated_rollback_workflows?.length}>
+            <RollbackWorkflowEntry
+              workflows={props.associated_rollback_workflows}
+            />
+          </EmptyBox>
+          {/* #endif */}
           <BasicButton size="small" onClick={onCopyExecSql}>
             {t('execWorkflow.audit.copyExecSql')}
           </BasicButton>
@@ -125,12 +133,14 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                 label: t('execWorkflow.audit.table.rollback'),
                 children: (
                   <Space direction="vertical">
+                    {/* #if [ee] */}
                     <EmptyBox if={!!props.backup_strategy_tip}>
                       <Space className="backup-conflict-tips">
                         <WarningFilled width={16} height={16} />
                         {props.backup_strategy_tip}
                       </Space>
                     </EmptyBox>
+                    {/* #endif */}
                     <Space className="result-card-content-rollback">
                       {/* #if [ee] */}
                       <EmptyBox
@@ -158,7 +168,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                       />
                       {/* #endif */}
                       <SQLRenderer
-                        sql={props.rollback_sql?.join('\n')}
+                        sql={props.rollback_sqls?.join('\n')}
                         showLineNumbers
                       />
                     </Space>

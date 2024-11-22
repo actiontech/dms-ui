@@ -58,3 +58,10 @@ export const TaskResultDescribeStyleWrapper = styled('div')`
     font-size: 13px;
   }
 `;
+
+export const RollbackWorkflowItemStyleWrapper = styled('div')`
+  max-width: 300px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`;
