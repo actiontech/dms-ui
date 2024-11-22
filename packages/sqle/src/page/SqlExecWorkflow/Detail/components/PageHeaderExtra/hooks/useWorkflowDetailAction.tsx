@@ -271,12 +271,22 @@ const useWorkflowDetailAction = ({
     if (!workflowInfo?.record?.status) {
       return false;
     }
-    return [
-      WorkflowRecordResV2StatusEnum.finished,
-      WorkflowRecordResV2StatusEnum.exec_failed,
-      WorkflowRecordResV2StatusEnum.canceled
-    ].includes(workflowInfo.record.status);
-  }, [workflowInfo?.record?.status]);
+
+    return (
+      [
+        WorkflowRecordResV2StatusEnum.finished,
+        WorkflowRecordResV2StatusEnum.exec_failed,
+        WorkflowRecordResV2StatusEnum.canceled
+      ].includes(workflowInfo.record.status) &&
+      workflowInfo.record.workflow_step_list
+        ?.find((v) => v.type === WorkflowStepResV2TypeEnum.sql_execute)
+        ?.assignee_user_name_list?.includes(username)
+    );
+  }, [
+    workflowInfo?.record?.status,
+    username,
+    workflowInfo?.record?.workflow_step_list
+  ]);
 
   const rollbackWorkflow = () => {
     startRollback();

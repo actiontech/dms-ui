@@ -3531,6 +3531,12 @@ export interface IUpdatePipelineNode {
   type?: updatePipelineNodeTypeEnum;
 }
 
+export interface IAssociatedRollbackWorkflow {
+  workflow_id?: string;
+
+  workflow_name?: string;
+}
+
 export interface IAssociatedStageWorkflows {
   sql_version_stage_id?: number;
 
@@ -3646,7 +3652,7 @@ export interface IAuditSQLResV2 {
 }
 
 export interface IAuditTaskSQLResV2 {
-  associate_workflow_ids?: string[];
+  associated_rollback_workflows?: IAssociatedRollbackWorkflow[];
 
   audit_level?: string;
 
@@ -3670,7 +3676,7 @@ export interface IAuditTaskSQLResV2 {
 
   number?: number;
 
-  rollback_sql?: string;
+  rollback_sqls?: string[];
 
   sql_source_file?: string;
 
@@ -3974,6 +3980,8 @@ export interface IWorkflowRecordResV2 {
 }
 
 export interface IWorkflowResV2 {
+  associated_rollback_workflows?: IAssociatedRollbackWorkflow[];
+
   associated_stage_workflows?: IAssociatedStageWorkflows[];
 
   create_time?: string;
