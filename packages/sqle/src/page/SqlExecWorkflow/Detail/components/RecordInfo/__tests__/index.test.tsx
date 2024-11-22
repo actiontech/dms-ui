@@ -63,7 +63,7 @@ describe('sqle/SqlExecWorkflow/Detail/RecordInfo', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render snap when has associated stage workflows', () => {
+  it('render snap when has associated stage workflows and rollback workflows', () => {
     const { baseElement } = customRender({
       visibility: true,
       onClose: closeFn,

@@ -16,6 +16,8 @@ describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
   const terminateFn = jest.fn();
   const showWorkflowStepsFn = jest.fn();
   const executeInOtherInstanceFn = jest.fn();
+  const startRollback = jest.fn();
+  const showModifySqlStatementStep = jest.fn();
 
   const customRender = (
     params: Partial<
@@ -52,6 +54,8 @@ describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
         ],
         canRejectWorkflow: false,
         workflowStepsVisibility: false,
+        startRollback,
+        showModifySqlStatementStep,
         ...params
       })
     );

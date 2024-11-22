@@ -48,7 +48,8 @@ describe('store/sqlExecWorkflow', () => {
       {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
-        versionFirstStageInstances: null
+        versionFirstStageInstances: null,
+        workflowRollbackSqlIds: null
       },
       updateClonedExecWorkflowSqlAuditInfo(mockWorkflowSqlAuditInfo)
     );
@@ -73,7 +74,8 @@ describe('store/sqlExecWorkflow', () => {
       {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
-        versionFirstStageInstances: null
+        versionFirstStageInstances: null,
+        workflowRollbackSqlIds: null
       },
       updateClonedExecWorkflowBaseInfo(mockWorkflowBaseInfo)
     );
@@ -102,7 +104,8 @@ describe('store/sqlExecWorkflow', () => {
       {
         clonedExecWorkflowSqlAuditInfo: null,
         clonedExecWorkflowBaseInfo: null,
-        versionFirstStageInstances: null
+        versionFirstStageInstances: null,
+        workflowRollbackSqlIds: null
       },
       updateVersionFirstStageInstances({ versionFirstStageInstances })
     );
