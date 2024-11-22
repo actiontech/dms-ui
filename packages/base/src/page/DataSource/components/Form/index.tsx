@@ -27,7 +27,8 @@ import {
   FormItemBigTitle,
   FormItemLabel,
   FormItemNoLabel,
-  FormItemSubTitle
+  FormItemSubTitle,
+  CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import DatabaseFormItem from './FormItem';
@@ -193,7 +194,10 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         business: props.defaultData.business,
         password: props.defaultData.password,
         // #if [dms]
-        is_enable_masking: props.defaultData.is_enable_masking
+        is_enable_masking: props.defaultData.is_enable_masking,
+        // #endif
+        // #if [sqle && ee]
+        enableBackup: props.defaultData.enable_backup
         // #endif
       });
       setDatabaseType(props.defaultData.db_type ?? '');
@@ -476,6 +480,31 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 );
               })}
             </BasicSelect>
+          </FormItemLabel>
+        </FormAreaBlockStyleWrapper>
+      </FormAreaLineStyleWrapper>
+      {/* #endif */}
+
+      {/* #if [sqle && ee] */}
+      <FormAreaLineStyleWrapper>
+        <FormAreaBlockStyleWrapper>
+          <FormItemSubTitle>
+            {t('dmsDataSource.dataSourceForm.sqlBackupConfiguration')}
+          </FormItemSubTitle>
+          <FormItemLabel
+            className="has-label-tip"
+            label={
+              <CustomLabelContent
+                title={t('dmsDataSource.dataSourceForm.enableDataSourceBackup')}
+                tips={t(
+                  'dmsDataSource.dataSourceForm.enableDataSourceBackupTips'
+                )}
+              />
+            }
+            name="enableBackup"
+            valuePropName="checked"
+          >
+            <BasicSwitch />
           </FormItemLabel>
         </FormAreaBlockStyleWrapper>
       </FormAreaLineStyleWrapper>
