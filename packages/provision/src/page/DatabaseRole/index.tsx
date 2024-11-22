@@ -27,11 +27,12 @@ import {
   DatabaseRoleModalStatus,
   DatabaseRoleSelectData
 } from '../../store/databaseRole';
-import { ModalName } from '../../data/enum';
+import { EventEmitterKey, ModalName } from '../../data/enum';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSearchParams } from 'react-router-dom';
+import eventEmitter from '../../utils/EventEmitter';
 
 const DatabaseRole: React.FC = () => {
   const { t } = useTranslation();
@@ -133,6 +134,16 @@ const DatabaseRole: React.FC = () => {
       [ModalName.DatabaseRoleDetailModal]: false
     });
   }, [initModalStatus]);
+
+  useEffect(() => {
+    const { unsubscribe } = eventEmitter.subscribe(
+      EventEmitterKey.Refresh_Database_Role_List_Table,
+      refresh
+    );
+    return () => {
+      unsubscribe();
+    };
+  }, [refresh]);
 
   return (
     <section>

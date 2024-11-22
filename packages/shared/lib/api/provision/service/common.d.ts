@@ -292,6 +292,22 @@ export interface IDBRoleDatePermissions {
   uid?: string;
 }
 
+export interface IDBRoleDetail {
+  child_roles?: IUidWithName[];
+
+  data_permissions?: IDataPermissionDetail[];
+
+  db_role?: IUidWithName;
+}
+
+export interface IDBRoleDetailReply {
+  code?: number;
+
+  data?: IDBRoleDetail;
+
+  message?: string;
+}
+
 export interface IDMSProxyTarget {
   addr: string;
 
@@ -346,6 +362,12 @@ export interface IDataPermission {
   data_object_uids: string[];
 
   data_operation_uids: string[];
+}
+
+export interface IDataPermissionDetail {
+  data_objects?: IDataObjectInDataPermission[];
+
+  data_operations?: IDataOperationInDataPermission[];
 }
 
 export interface IDataPermissionDifferent {

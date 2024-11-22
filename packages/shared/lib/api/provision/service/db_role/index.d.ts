@@ -5,6 +5,7 @@ import {
   IAddDBRole,
   IAddDBRoleReply,
   IListDBRoleTipsReply,
+  IDBRoleDetailReply,
   IUpdateDBRole,
   IUpdateDBRoleReply,
   IGenericResp
@@ -43,6 +44,16 @@ export interface IAuthListDBRoleTipsParams {
 }
 
 export interface IAuthListDBRoleTipsReturn extends IListDBRoleTipsReply {}
+
+export interface IAuthDBRoleDetailParams {
+  project_uid: string;
+
+  db_service_uid: string;
+
+  db_role_uid: string;
+}
+
+export interface IAuthDBRoleDetailReturn extends IDBRoleDetailReply {}
 
 export interface IAuthUpdateDBRoleParams {
   project_uid: string;

@@ -7,8 +7,8 @@ import {
 } from '../../../../store/databaseRole';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import { useTranslation } from 'react-i18next';
-import { Form, message, Space } from 'antd';
-import { useBoolean } from 'ahooks';
+import { Form, message, Space, Spin } from 'antd';
+import { useBoolean, useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import DbRoleService from '@actiontech/shared/lib/api/provision/service/db_role';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -85,45 +85,59 @@ const UpdateRole: React.FC = () => {
     updateSelectData(null);
   };
 
+  const { data: dbRoleDetailInfo, loading: getDBRoleDetailInfoPending } =
+    useRequest(
+      () =>
+        DbRoleService.AuthDBRoleDetail({
+          project_uid: projectID,
+          db_role_uid: selectData?.db_role?.uid ?? '',
+          db_service_uid: filteredByDBServiceID ?? ''
+        }).then((res) => res.data.data),
+      {
+        ready: !!selectData?.db_role?.uid && visible && !!filteredByDBServiceID
+      }
+    );
+
   useEffect(() => {
-    // const generateOperationsPermissionValues = (
-    //   dataPermissions?: IDBAccountDataPermission[]
-    // ): string[][] => {
-    //   return (
-    //     dataPermissions?.flatMap((permission) => {
-    //       const { data_objects, data_operations = [] } = permission;
+    const generateOperationsPermissionValues = (
+      dataPermissions?: IDBAccountDataPermission[]
+    ): string[][] => {
+      return (
+        dataPermissions?.flatMap((permission) => {
+          const { data_objects, data_operations = [] } = permission;
 
-    //       if (!data_objects) {
-    //         return data_operations.map((operation) => [operation.uid ?? '']);
-    //       }
+          if (!data_objects) {
+            return data_operations.map((operation) => [operation.uid ?? '']);
+          }
 
-    //       return data_operations.flatMap((operation) =>
-    //         data_objects.map((object) => [
-    //           operation.uid ?? '',
-    //           object.database_uid ?? '',
-    //           object.table_uid ?? ''
-    //         ])
-    //       );
-    //     }) ?? []
-    //   );
-    // };
+          return data_operations.flatMap((operation) =>
+            data_objects.map((object) => [
+              operation.uid ?? '',
+              object.database_uid ?? '',
+              object.table_uid ?? ''
+            ])
+          );
+        }) ?? []
+      );
+    };
 
     if (visible) {
       form.setFieldsValue({
-        roleName: selectData?.db_role?.name ?? '',
+        roleName: dbRoleDetailInfo?.db_role?.name ?? '',
         dbServiceID: filteredByDBServiceID ?? '',
-        dbRoles: selectData?.child_roles?.map((v) => v.uid ?? '') ?? []
-        // operationsPermissions: generateOperationsPermissionValues(
-        //   selectData?.
-        // )
+        dbRoles: dbRoleDetailInfo?.child_roles?.map((v) => v.uid ?? '') ?? [],
+        operationsPermissions: generateOperationsPermissionValues(
+          dbRoleDetailInfo?.data_permissions ?? []
+        )
       });
     }
   }, [
     form,
-    selectData?.db_role?.name,
     filteredByDBServiceID,
     visible,
-    selectData?.child_roles
+    dbRoleDetailInfo?.db_role?.name,
+    dbRoleDetailInfo?.child_roles,
+    dbRoleDetailInfo?.data_permissions
   ]);
 
   return (
@@ -145,7 +159,9 @@ const UpdateRole: React.FC = () => {
       }
     >
       {contextHolder}
-      <RoleForm form={form} mode="update" />
+      <Spin spinning={getDBRoleDetailInfoPending} delay={300}>
+        <RoleForm form={form} mode="update" />
+      </Spin>
     </BasicDrawer>
   );
 };

@@ -13,6 +13,8 @@ import {
   IAuthAddDBRoleReturn,
   IAuthListDBRoleTipsParams,
   IAuthListDBRoleTipsReturn,
+  IAuthDBRoleDetailParams,
+  IAuthDBRoleDetailReturn,
   IAuthUpdateDBRoleParams,
   IAuthUpdateDBRoleReturn,
   IAuthDelDBRoleParams,
@@ -69,6 +71,27 @@ class DbRoleService extends ServiceBase {
 
     return this.get<IAuthListDBRoleTipsReturn>(
       `/v1/auth/projects/${project_uid}/db_services/${db_service_uid}/db_roles/tips`,
+      paramsData,
+      options
+    );
+  }
+
+  public AuthDBRoleDetail(
+    params: IAuthDBRoleDetailParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const db_service_uid = paramsData.db_service_uid;
+    delete paramsData.db_service_uid;
+
+    const db_role_uid = paramsData.db_role_uid;
+    delete paramsData.db_role_uid;
+
+    return this.get<IAuthDBRoleDetailReturn>(
+      `/v1/auth/projects/${project_uid}/db_services/${db_service_uid}/db_roles/${db_role_uid}`,
       paramsData,
       options
     );
