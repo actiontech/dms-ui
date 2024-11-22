@@ -19,7 +19,7 @@ import {
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import DataPermissionsForm from './DataPermissionsForm';
 import { useBoolean, useRequest } from 'ahooks';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import PreviewModal from './PreviewModal';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
@@ -30,14 +30,17 @@ import DbAccountService from '@actiontech/shared/lib/api/provision/service/servi
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
+import {
+  BackendFormValues,
+  FormItem
+} from '../../../../../sqle/src/components/BackendForm';
 
 const CreateDatabaseAccount = () => {
   const { t } = useTranslation();
 
   const [params, setParams] = useState<IAuthAddDBAccountParams>();
 
-  const { generateFormValueByParams, mergeFromValueIntoParams } =
-    useAsyncParams();
+  const { generateFormValueByParams } = useAsyncParams();
 
   const [
     submitSuccess,
@@ -78,6 +81,32 @@ const CreateDatabaseAccount = () => {
       };
       return [...acc, dataPermissionForRole];
     }, []);
+
+    const mergeFromValueWithDescIntoParams = () => {
+      return (dbAccountMeta ?? []).map((item) => {
+        const temp = {
+          key: item.key,
+          value: item.value,
+          desc: item.desc
+        };
+        if (
+          item.key &&
+          Object.prototype.hasOwnProperty.call(
+            values.additionalParams,
+            item.key
+          )
+        ) {
+          const tempVal = values.additionalParams[item.key];
+          if (typeof tempVal === 'boolean') {
+            temp.value = tempVal ? 'true' : 'false';
+          } else {
+            temp.value = String(tempVal);
+          }
+        }
+        return temp;
+      });
+    };
+
     setParams({
       project_uid: projectID,
       db_account: {
@@ -88,10 +117,7 @@ const CreateDatabaseAccount = () => {
           password: values.password,
           hostname: values.hostname,
           explanation: values.explanation,
-          additional_params: mergeFromValueIntoParams(
-            values.additionalParams,
-            dbAccountMeta ?? []
-          )
+          additional_params: mergeFromValueWithDescIntoParams()
         },
         effective_time_day: values.effective_time_day,
         data_permissions: dataPermissions,

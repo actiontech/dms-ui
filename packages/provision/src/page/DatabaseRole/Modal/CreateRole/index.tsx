@@ -88,6 +88,7 @@ const CreateRole: React.FC = () => {
 
   return (
     <BasicDrawer
+      size="large"
       open={visible}
       placement="right"
       title={t('databaseRole.createRole.title')}

@@ -31,9 +31,11 @@ import { ModalName } from '../../data/enum';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useSearchParams } from 'react-router-dom';
 
 const DatabaseRole: React.FC = () => {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
   const { parse2TableActionPermissions } = usePermission();
   const { projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -100,7 +102,17 @@ const DatabaseRole: React.FC = () => {
         filter_by_name: searchKeyword
       };
       createSortParams(params);
-      return handleTableRequestError(DbRoleService.AuthListDBRole(params));
+      return handleTableRequestError(DbRoleService.AuthListDBRole(params)).then(
+        (res) => {
+          if (
+            searchParams.has('action') &&
+            searchParams.get('action') === 'create_role'
+          ) {
+            onCreateRole();
+          }
+          return res;
+        }
+      );
     },
     {
       ready: !!filteredByDBServiceID,

@@ -148,6 +148,9 @@ const BaseInfoForm: React.FC<Props> = ({ disabled = false, dbAccountMeta }) => {
           className="has-required-style"
         >
           <BasicSelect
+            onChange={() => {
+              form.setFieldValue('dbServiceID', undefined);
+            }}
             disabled={disabled}
             loading={loading}
             options={businessOptions}

@@ -1,5 +1,5 @@
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
-import { Cascader, Form } from 'antd';
+import { Cascader, CascaderProps, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { BasicCascader, BasicSelect, TypedLink } from '@actiontech/shared';
 import { useEffect } from 'react';
@@ -11,6 +11,7 @@ import {
 import useOperationPermissionTips from '../../hooks/useOperationPermissionTips';
 import useDBAuthRoleTips from '../../hooks/useDBAuthRoleTips';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { CustomCascaderPopupMenuStyleWrapper } from './style';
 
 const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
   form,
@@ -36,11 +37,26 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
     permissionsDisplayRender
   } = useOperationPermissionTips(selectedDbServiceID);
 
+  const cascaderCustomRenderDropdown: CascaderProps['dropdownRender'] = (
+    menu
+  ) => {
+    return (
+      <>
+        <CustomCascaderPopupMenuStyleWrapper>
+          {menu}
+        </CustomCascaderPopupMenuStyleWrapper>
+      </>
+    );
+  };
+
   useEffect(() => {
     if (selectedDbServiceID) {
       updateDBAuthRoleTips(selectedDbServiceID, projectID);
     }
-  }, [selectedDbServiceID, projectID, updateDBAuthRoleTips]);
+
+    form.setFieldValue('operationsPermissions', undefined);
+    form.setFieldValue('dbRoles', undefined);
+  }, [selectedDbServiceID, projectID, updateDBAuthRoleTips, form]);
 
   useEffect(() => {
     if (selectedDBType) {
@@ -57,7 +73,7 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
           showQuickCreateRole ? (
             <TypedLink
               target="_blank"
-              to={`/provision/project/${projectID}/database-role`}
+              to={`/provision/project/${projectID}/database-role?action=create_role`}
             >
               {t('databaseAccount.create.form.quickCreateRoles')}
             </TypedLink>
@@ -72,6 +88,7 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
           filterOption={filterOptionByLabel}
           options={dbAuthRoleOptions}
           loading={getDBAuthRolePending}
+          disabled={!selectedDbServiceID}
         />
       </FormItemLabel>
 
@@ -86,6 +103,8 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
           displayRender={permissionsDisplayRender}
           multiple
           showCheckedStrategy={Cascader.SHOW_CHILD}
+          dropdownRender={cascaderCustomRenderDropdown}
+          disabled={!selectedDbServiceID}
         />
       </FormItemLabel>
     </>

@@ -133,7 +133,7 @@ const useOperationPermissionTips = (dbServiceID: string) => {
       level: 'system' | 'database' | 'table',
       dataSource?: IOperation[]
     ) => {
-      const scope = (operationPermissionList ?? dataSource)?.find(
+      const scope = (dataSource ?? operationPermissionList)?.find(
         (v) => v.uid === permissionId
       )?.scope;
       if (!scope) {
