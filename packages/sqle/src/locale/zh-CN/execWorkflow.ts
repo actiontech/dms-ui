@@ -267,7 +267,8 @@ export default {
       remark: '备注',
       addRemark: '添加备注',
       originSql: '原始SQL'
-    }
+    },
+    associatedRollbackWorkflow: '关联回滚工单'
   },
 
   audit: {
