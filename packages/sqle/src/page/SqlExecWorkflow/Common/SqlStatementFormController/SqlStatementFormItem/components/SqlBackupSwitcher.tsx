@@ -15,7 +15,8 @@ import SwitchField from './SwitchField';
 const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   fieldPrefixPath,
   databaseInfo,
-  isSameSqlForAll
+  isSameSqlForAll,
+  isAtRejectStep
 }) => {
   const { t } = useTranslation();
 
@@ -73,6 +74,7 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
                 )
               : t('execWorkflow.create.form.sqlInfo.cancelSwitchSqlBackupTips')
           }
+          disabled={isAtRejectStep}
         />
       </FormItemLabel>
     </EmptyBox>

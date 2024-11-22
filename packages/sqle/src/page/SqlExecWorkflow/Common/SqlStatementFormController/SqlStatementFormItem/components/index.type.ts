@@ -25,11 +25,12 @@ export type SqlFormatterAndSubmitterProps = {
 
 export type SqlBackupSwitcherProps = Pick<
   SqlStatementFormItemProps,
-  'fieldPrefixPath' | 'databaseInfo' | 'isSameSqlForAll'
+  'fieldPrefixPath' | 'databaseInfo' | 'isSameSqlForAll' | 'isAtRejectStep'
 >;
 
 export type SwitcherFieldProps = {
   checked?: boolean;
   onChange?: (v: boolean) => void;
   title?: string;
+  disabled?: boolean;
 };

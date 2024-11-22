@@ -89,6 +89,7 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         fieldPrefixPath={fieldPrefixPath}
         databaseInfo={databaseInfo}
         isSameSqlForAll={isSameSqlForAll}
+        isAtRejectStep={isAtRejectStep}
       />
       {/* #endif */}
       <SqlFormatterAndSubmitter

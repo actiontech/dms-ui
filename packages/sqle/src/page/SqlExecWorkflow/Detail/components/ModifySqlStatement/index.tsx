@@ -193,7 +193,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
         form.setFieldValue(SAME_SQL_MODE_DEFAULT_FIELD_KEY, {
           currentUploadType: currentTasks?.[0]?.sql_source,
           exec_mode: currentTasks?.[0]?.exec_mode,
-          file_sort_method: currentTasks?.[0]?.file_order_method
+          file_sort_method: currentTasks?.[0]?.file_order_method,
+          backup: currentTasks?.[0]?.enable_backup
         });
       } else {
         sqlStatementTabActiveKey.set(
@@ -204,7 +205,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           form.setFieldValue(item.task_id?.toString() ?? '', {
             currentUploadType: item.sql_source,
             exec_mode: item.exec_mode,
-            file_sort_method: item.file_order_method
+            file_sort_method: item.file_order_method,
+            backup: item.enable_backup
           });
         });
       }
