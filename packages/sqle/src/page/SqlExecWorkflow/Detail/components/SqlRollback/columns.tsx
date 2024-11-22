@@ -94,6 +94,7 @@ export const WorkflowRollbackSelectedSqlTableColumn: (
       dataIndex: 'remark',
       title: t('execWorkflow.detail.rollback.remark'),
       width: 150,
+      className: 'rollback-remark-column',
       render: (remark, record) => {
         return (
           <EditText

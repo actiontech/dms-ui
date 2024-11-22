@@ -7,7 +7,7 @@ export const BackupStrategyDictionary: {
   [UpdateSqlBackupStrategyReqStrategyEnum.reverse_sql]: t(
     'execWorkflow.create.backupStrategy.reverseSql'
   ),
-  [UpdateSqlBackupStrategyReqStrategyEnum.origin_row]: t(
+  [UpdateSqlBackupStrategyReqStrategyEnum.original_row]: t(
     'execWorkflow.create.backupStrategy.originRow'
   ),
   [UpdateSqlBackupStrategyReqStrategyEnum.manual]: t(
@@ -32,9 +32,9 @@ export const BackupStrategyOptions: Array<{
   {
     label:
       BackupStrategyDictionary[
-        UpdateSqlBackupStrategyReqStrategyEnum.origin_row
+        UpdateSqlBackupStrategyReqStrategyEnum.original_row
       ],
-    value: UpdateSqlBackupStrategyReqStrategyEnum.origin_row
+    value: UpdateSqlBackupStrategyReqStrategyEnum.original_row
   },
   {
     label:
