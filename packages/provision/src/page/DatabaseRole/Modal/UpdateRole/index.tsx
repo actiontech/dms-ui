@@ -63,6 +63,7 @@ const UpdateRole: React.FC = () => {
       db_role_uid: selectData?.db_role?.uid ?? '',
       db_service_uid: filteredByDBServiceID ?? '',
       db_role: {
+        child_roles: values.dbRoles,
         data_permissions: dataPermissions
       }
     })

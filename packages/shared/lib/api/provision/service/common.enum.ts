@@ -46,14 +46,6 @@ export enum GetUserStatEnum {
   '未知' = '未知'
 }
 
-export enum ListAuthorizationStatusEnum {
-  'expired' = 'expired',
-
-  'expiring' = 'expiring',
-
-  'effective' = 'effective'
-}
-
 export enum ListDBAccountStatusEnum {
   'lock' = 'lock',
 

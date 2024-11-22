@@ -6,7 +6,6 @@ import {
   StatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
-  ListAuthorizationStatusEnum,
   ListDBAccountStatusEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum,
@@ -67,30 +66,6 @@ export interface IAccountStatics {
   total_account_num?: number;
 
   unlock_account_num?: number;
-}
-
-export interface IAddAuthorization {
-  data_permission_template_uid: string;
-
-  db_account: IDBAccount;
-
-  effective_time_day?: number;
-
-  memo?: string;
-
-  permission_user_uid: string;
-
-  purpose: string;
-}
-
-export interface IAddAuthorizationReply {
-  code?: number;
-
-  data?: {
-    uid?: string;
-  };
-
-  message?: string;
 }
 
 export interface IAddDBAccount {
@@ -337,14 +312,6 @@ export interface IDataObjectInDataPermission {
   table_uid?: string;
 }
 
-export interface IDataObjectService {
-  data_object_service_dns?: string;
-
-  data_object_service_uid?: string;
-
-  data_object_service_user?: string;
-}
-
 export interface IDataObjectSource {
   address?: string;
 
@@ -451,26 +418,6 @@ export interface IGenAccessTokenReply {
 
 export interface IGenericResp {
   code?: number;
-
-  message?: string;
-}
-
-export interface IGetAuthorizationReply {
-  code?: number;
-
-  data?: {
-    businesses?: string;
-
-    data_permissions?: IGetDataPermissionsInDataPermissionTemplate[];
-
-    db_accounts?: IListDBAccountByAuth[];
-
-    memo?: string;
-
-    permission_user?: string;
-
-    purpose?: string;
-  };
 
   message?: string;
 }
@@ -631,28 +578,6 @@ export interface IIPluginDBService {
   User?: string;
 }
 
-export interface IListAuthorization {
-  businesses?: string;
-
-  data_object_service?: IDataObjectService[];
-
-  data_permission_template_names?: string[];
-
-  expiration?: number;
-
-  last_update_at?: string;
-
-  memo?: string;
-
-  permission_user?: string;
-
-  purpose?: string;
-
-  status?: ListAuthorizationStatusEnum;
-
-  uid?: string;
-}
-
 export interface IListAuthorizationEvent {
   data_permission_templates?: IDataPermissionTemplateReply[];
 
@@ -691,16 +616,6 @@ export interface IListAuthorizationEventsReply {
   total_nums?: number;
 }
 
-export interface IListAuthorizationReply {
-  code?: number;
-
-  data?: IListAuthorization[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
 export interface IListBusinessFromDBServiceReply {
   code?: number;
 
@@ -731,32 +646,6 @@ export interface IListDBAccount {
   remaining_days?: string;
 
   status?: ListDBAccountStatusEnum;
-}
-
-export interface IListDBAccountByAuth {
-  connection_cmd?: string;
-
-  data_object_service_dns?: string;
-
-  explanation?: string;
-
-  hostname?: string;
-
-  password?: string;
-
-  uid?: string;
-
-  user?: string;
-}
-
-export interface IListDBAccountByAuthReply {
-  code?: number;
-
-  data?: IListDBAccountByAuth[];
-
-  message?: string;
-
-  total_nums?: number;
 }
 
 export interface IListDBAccountReply {
@@ -1079,16 +968,6 @@ export interface IListTableReply {
   total_nums?: number;
 }
 
-export interface IListTipsByAuthorizationKeyReply {
-  code?: number;
-
-  data?: {
-    tips?: string[];
-  };
-
-  message?: string;
-}
-
 export interface IListUser {
   authentication_type?: ListUserAuthenticationTypeEnum;
 
@@ -1313,20 +1192,6 @@ export interface IUidWithName {
   uid?: string;
 }
 
-export interface IUpdateAuthorization {
-  data_permission_template_uid?: string;
-
-  renewal_effective_time_day?: number;
-
-  update_authorization_user?: IUpdateAuthorizationUser;
-}
-
-export interface IUpdateAuthorizationUser {
-  db_account_password?: string;
-
-  permission_user_uid?: string;
-}
-
 export interface IUpdateDBAccount {
   data_permissions?: IDataPermissionForRole[];
 
@@ -1346,6 +1211,8 @@ export interface IUpdateDBAccount {
 }
 
 export interface IUpdateDBRole {
+  child_roles?: string[];
+
   data_permissions?: IDataPermission[];
 }
 

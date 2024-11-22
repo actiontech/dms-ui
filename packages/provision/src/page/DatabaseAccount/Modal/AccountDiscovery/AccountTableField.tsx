@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { AccountTableFieldProps } from '../../index.type';
 import { useTranslation } from 'react-i18next';
 import { AccountTableFieldStyleWrapper } from '../../style';
-import { IDBAccountBody } from '@actiontech/shared/lib/api/provision/service/common';
+import {
+  IDBAccountBody,
+  IUidWithName
+} from '@actiontech/shared/lib/api/provision/service/common';
 import { BasicTag } from '@actiontech/shared';
 import { Space } from 'antd';
 
@@ -28,6 +31,20 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
     {
       dataIndex: 'user',
       title: t('databaseAccount.list.column.account')
+    },
+    {
+      dataIndex: 'db_roles',
+      title: t('databaseAccount.create.form.role'),
+      render: (dbRoles: IUidWithName[]) => {
+        if (!dbRoles || dbRoles.length === 0)
+          return (
+            <Space>
+              {dbRoles?.map((item) => {
+                return <BasicTag key={item.uid}>{item.name}</BasicTag>;
+              })}
+            </Space>
+          );
+      }
     },
     {
       dataIndex: 'permission_info',
