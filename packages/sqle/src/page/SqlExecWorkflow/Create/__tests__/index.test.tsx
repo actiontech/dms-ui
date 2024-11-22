@@ -53,6 +53,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   let batchCheckInstanceIsConnectableByName: jest.SpyInstance;
   let getSqlFileOrderMethodV1Spy: jest.SpyInstance;
   let requestGetWorkflowTemplateSpy: jest.SpyInstance;
+  let createRollbackWorkflowSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
 
   const customRender = () => {
@@ -85,6 +86,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     batchCheckInstanceIsConnectableByName =
       instance.batchCheckInstanceIsConnectableByName();
     requestGetWorkflowTemplateSpy = execWorkflow.getWorkflowTemplate();
+    createRollbackWorkflowSpy = execWorkflow.createRollbackWorkflow();
 
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -132,7 +134,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
               instances_name: instanceTipsMockData[0].instance_name,
               instances_id: instanceTipsMockData[0].instance_id
             }
-          ]
+          ],
+          workflowRollbackSqlIds: [1, 2]
         },
         permission: {
           moduleFeatureSupport: { sqlOptimization: false },
@@ -317,6 +320,9 @@ describe('sqle/SqlExecWorkflow/Create', () => {
         value: 'select * from user.list join in all'
       }
     });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('.backup-switcher'));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestInstance).toHaveBeenCalledTimes(2);
@@ -339,6 +345,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
+      enable_backup: true,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
@@ -398,7 +405,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       target: { value: 'select * from user' }
     });
     await act(async () => jest.advanceTimersByTime(0));
-
+    fireEvent.click(getBySelector('.backup-switcher'));
+    await act(async () => jest.advanceTimersByTime(0));
     // audit btn
     await act(async () => {
       fireEvent.click(screen.getByText('审 核'));
@@ -414,7 +422,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
-      sql: 'select * from user'
+      sql: 'select * from user',
+      enable_backup: true
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
@@ -452,7 +461,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       input_sql_file: sqlFile,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
-      project_name: 'default'
+      project_name: 'default',
+      enable_backup: true
     });
 
     // 提交工单
@@ -545,7 +555,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
-      sql: 'select * from user'
+      sql: 'select * from user',
+      enable_backup: false
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -634,7 +645,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
-      sql: 'select * from user'
+      sql: 'select * from user',
+      enable_backup: false
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
@@ -846,6 +858,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
+      enable_backup: false,
       task_group_id: 99,
       sql: 'select * from user'
     });
@@ -928,6 +941,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
+      enable_backup: false,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
@@ -1041,5 +1055,92 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(screen.getByText('提交工单').closest('button')).toHaveClass(
       'ant-btn-loading'
     );
+  });
+
+  it('render create rollback workflow', async () => {
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        whitelist: { modalStatus: { [ModalName.Add_Whitelist]: false } },
+        sqlExecWorkflow: {
+          clonedExecWorkflowSqlAuditInfo: {
+            isSameSqlForAll: false,
+            databaseInfo: [
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              }
+            ],
+            '0': {
+              currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
+              form_data: 'SELECT * ',
+              backup: true
+            }
+          },
+          clonedExecWorkflowBaseInfo: {
+            workflow_subject: 'workflow-name-Rollback',
+            desc: 'test desc'
+          },
+          versionFirstStageInstances: [
+            {
+              instances_name: instanceTipsMockData[0].instance_name,
+              instances_id: instanceTipsMockData[0].instance_id
+            }
+          ],
+          workflowRollbackSqlIds: [1, 2]
+        },
+        permission: {
+          moduleFeatureSupport: { sqlOptimization: false },
+          userOperationPermissions: null
+        }
+      })
+    );
+    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/sqle/project/700300/exec-workflow/create?rollbackWorkflowId=1`
+        ]
+      }
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstanceTip).toHaveBeenCalledTimes(1);
+    expect(requestInstanceTip).toHaveBeenCalledWith({
+      functional_module:
+        getInstanceTipListV1FunctionalModuleEnum.create_workflow,
+      project_name: projectName
+    });
+
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(requestAudit).toHaveBeenCalledTimes(1);
+    expect(requestAudit).toHaveBeenNthCalledWith(1, {
+      exec_mode: undefined,
+      instance_name: 'mysql-1',
+      instance_schema: 'test',
+      project_name: 'default',
+      sql: 'SELECT * ',
+      enable_backup: true
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('提交工单'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(createRollbackWorkflowSpy).toHaveBeenCalled();
+    expect(createRollbackWorkflowSpy).toHaveBeenCalledWith({
+      project_name: projectName,
+      task_ids: [18],
+      workflow_subject: 'workflow-name-Rollback',
+      desc: 'test desc',
+      rollback_sql_ids: [1, 2],
+      workflow_id: '1'
+    });
   });
 });

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql 1`] = `
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workflows 1`] = `
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -65,6 +65,31 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             style="margin-right: 8px;"
           >
             <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                关联回滚工单
+              </span>
+              <svg
+                color="currentColor"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
@@ -94,122 +119,162 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
-                      </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="ant-space-item"
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
               >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
-                  -
-                </span>
-              </span>
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-                exec_sql cont
-              </div>
-            </code>
-          </pre>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -288,87 +353,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         >
                           审核结果
                         </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
-          role="tree"
-        >
-          <div>
-            <input
-              aria-label="for screen reader"
-              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
-              tabindex="0"
-              value=""
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            class="ant-tree-treenode"
-            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
-          >
-            <div
-              class="ant-tree-indent"
-            >
-              <div
-                class="ant-tree-indent-unit"
-              />
-            </div>
-          </div>
-          <div
-            class="ant-tree-list"
-            style="position: relative;"
-          >
-            <div
-              class="ant-tree-list-holder"
-            >
-              <div>
-                <div
-                  class="ant-tree-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
-                >
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    />
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <span
-                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
-                      >
-                        <svg
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                            fill="#C3C6CD"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title="执行结果"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        执行结果
                       </span>
                     </span>
                   </div>
@@ -416,11 +400,11 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 </body>
 `;
 
-exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql 2`] = `
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = `
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -479,6 +463,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -510,122 +498,244 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-u9vvlc"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-sljxhh"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
                       </span>
+                      -
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
+            >
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+              >
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <svg
+                        fill="none"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                          fill="#EBAD1C"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      test tips
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                      >
+                        <pre>
+                          <code>
+                            <div
+                              class="code-line"
+                            >
+                              <span
+                                class="code-line-number"
+                              >
+                                1
+                              </span>
+                              rollback_sql cont
+                            </div>
+                          </code>
+                        </pre>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-            >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
-              >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
-                  -
-                </span>
-              </span>
-            </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-                rollback_sql cont
-              </div>
-            </code>
-          </pre>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -704,87 +814,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         >
                           审核结果
                         </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
-          role="tree"
-        >
-          <div>
-            <input
-              aria-label="for screen reader"
-              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
-              tabindex="0"
-              value=""
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            class="ant-tree-treenode"
-            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
-          >
-            <div
-              class="ant-tree-indent"
-            >
-              <div
-                class="ant-tree-indent-unit"
-              />
-            </div>
-          </div>
-          <div
-            class="ant-tree-list"
-            style="position: relative;"
-          >
-            <div
-              class="ant-tree-list-holder"
-            >
-              <div>
-                <div
-                  class="ant-tree-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
-                >
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    />
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <span
-                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
-                      >
-                        <svg
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                            fill="#C3C6CD"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title="执行结果"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        执行结果
                       </span>
                     </span>
                   </div>
@@ -832,11 +861,11 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 </body>
 `;
 
-exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql 3`] = `
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql & exec_result 1`] = `
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -895,6 +924,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -926,122 +959,162 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
-                      </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="ant-space-item"
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
               >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
-                  -
-                </span>
-              </span>
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <pre>
-            <code>
-              <div
-                class="code-line"
-              >
-                <span
-                  class="code-line-number"
-                >
-                  1
-                </span>
-                exec_sql cont
-              </div>
-            </code>
-          </pre>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -1128,8 +1201,363 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="result-card-footer"
+      >
         <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="css-lpwde2"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                  fill="#8A8F99"
+                />
+              </svg>
+              <input
+                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                placeholder="添加说明"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql & exec_result 2`] = `
+<body>
+  <div>
+    <div
+      class="css-hg7c8r"
+    >
+      <div
+        class="result-card-header"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <span
+              class="number"
+            >
+              #
+              1
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="result-card-status-wrap"
+            >
+              <span
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              />
+              <div
+                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                role="separator"
+              />
+              <span
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
+                  />
+                </svg>
+                <span>
+                  审核通过
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="result-card-content"
+      >
+        <div
+          class="result-card-content-options"
+        >
+          <div
+            class="segmented-tabs-wrapper"
+          >
+            <div
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 0px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          >
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
+            >
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+              >
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                />
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <span
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      >
+                        基于反向SQL回滚
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                      >
+                        <pre>
+                          <code>
+                            <div
+                              class="code-line"
+                            >
+                              <span
+                                class="code-line-number"
+                              >
+                                1
+                              </span>
+                              rollback_sql cont
+                            </div>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -1195,12 +1623,901 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                     </span>
                     <span
                       class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title="执行结果"
+                      title=""
                     >
                       <span
                         class="ant-tree-title"
                       >
-                        执行结果
+                        <span
+                          class="audit-result-tree-title"
+                        >
+                          审核结果
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="result-card-footer"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="css-lpwde2"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                  fill="#8A8F99"
+                />
+              </svg>
+              <input
+                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                placeholder="添加说明"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql & exec_result 3`] = `
+<body>
+  <div>
+    <div
+      class="css-hg7c8r"
+    >
+      <div
+        class="result-card-header"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <span
+              class="number"
+            >
+              #
+              1
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="result-card-status-wrap"
+            >
+              <span
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              />
+              <div
+                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                role="separator"
+              />
+              <span
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
+                  />
+                </svg>
+                <span>
+                  审核通过
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="result-card-content"
+      >
+        <div
+          class="result-card-content-options"
+        >
+          <div
+            class="segmented-tabs-wrapper"
+          >
+            <div
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 0px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          >
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+            >
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+              >
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                />
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <span
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      >
+                        基于反向SQL回滚
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                      >
+                        <pre>
+                          <code>
+                            <div
+                              class="code-line"
+                            >
+                              <span
+                                class="code-line-number"
+                              >
+                                1
+                              </span>
+                              rollback_sql cont
+                            </div>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          role="tree"
+        >
+          <div>
+            <input
+              aria-label="for screen reader"
+              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+              tabindex="0"
+              value=""
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            class="ant-tree-treenode"
+            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+          >
+            <div
+              class="ant-tree-indent"
+            >
+              <div
+                class="ant-tree-indent-unit"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-tree-list"
+            style="position: relative;"
+          >
+            <div
+              class="ant-tree-list-holder"
+            >
+              <div>
+                <div
+                  class="ant-tree-list-holder-inner"
+                  style="display: flex; flex-direction: column;"
+                >
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    />
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher_close"
+                    >
+                      <span
+                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
+                      >
+                        <svg
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="#C3C6CD"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      title=""
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        <span
+                          class="audit-result-tree-title"
+                        >
+                          审核结果
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="result-card-footer"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="css-lpwde2"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                  fill="#8A8F99"
+                />
+              </svg>
+              <input
+                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                placeholder="添加说明"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback_sql & exec_result 4`] = `
+<body>
+  <div>
+    <div
+      class="css-hg7c8r"
+    >
+      <div
+        class="result-card-header"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <span
+              class="number"
+            >
+              #
+              1
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="result-card-status-wrap"
+            >
+              <span
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              />
+              <div
+                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                role="separator"
+              />
+              <span
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
+                  />
+                </svg>
+                <span>
+                  审核通过
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="result-card-content"
+      >
+        <div
+          class="result-card-content-options"
+        >
+          <div
+            class="segmented-tabs-wrapper"
+          >
+            <div
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 0px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          >
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
+            >
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+              >
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                />
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <span
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      >
+                        基于反向SQL回滚
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                      >
+                        <pre>
+                          <code>
+                            <div
+                              class="code-line"
+                            >
+                              <span
+                                class="code-line-number"
+                              >
+                                1
+                              </span>
+                              rollback_sql cont
+                            </div>
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+            >
+              success
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          role="tree"
+        >
+          <div>
+            <input
+              aria-label="for screen reader"
+              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+              tabindex="0"
+              value=""
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            class="ant-tree-treenode"
+            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+          >
+            <div
+              class="ant-tree-indent"
+            >
+              <div
+                class="ant-tree-indent-unit"
+              />
+            </div>
+          </div>
+          <div
+            class="ant-tree-list"
+            style="position: relative;"
+          >
+            <div
+              class="ant-tree-list-holder"
+            >
+              <div>
+                <div
+                  class="ant-tree-list-holder-inner"
+                  style="display: flex; flex-direction: column;"
+                >
+                  <div
+                    aria-grabbed="false"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                    draggable="false"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="ant-tree-indent"
+                    />
+                    <span
+                      class="ant-tree-switcher ant-tree-switcher_close"
+                    >
+                      <span
+                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
+                      >
+                        <svg
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="#C3C6CD"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                    <span
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                      title=""
+                    >
+                      <span
+                        class="ant-tree-title"
+                      >
+                        <span
+                          class="audit-result-tree-title"
+                        >
+                          审核结果
+                        </span>
                       </span>
                     </span>
                   </div>
@@ -1252,7 +2569,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -1311,6 +2628,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -1342,113 +2663,153 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
-                      </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="ant-space-item"
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
               >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="empty-sql-placeholder"
                 >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
                   -
                 </span>
-              </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <span
-            class="empty-sql-placeholder"
-          >
-            -
-          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -1527,87 +2888,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                         >
                           审核结果
                         </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
-          role="tree"
-        >
-          <div>
-            <input
-              aria-label="for screen reader"
-              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
-              tabindex="0"
-              value=""
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            class="ant-tree-treenode"
-            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
-          >
-            <div
-              class="ant-tree-indent"
-            >
-              <div
-                class="ant-tree-indent-unit"
-              />
-            </div>
-          </div>
-          <div
-            class="ant-tree-list"
-            style="position: relative;"
-          >
-            <div
-              class="ant-tree-list-holder"
-            >
-              <div>
-                <div
-                  class="ant-tree-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
-                >
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    />
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <span
-                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
-                      >
-                        <svg
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                            fill="#C3C6CD"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title="执行结果"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        执行结果
                       </span>
                     </span>
                   </div>
@@ -1659,7 +2939,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -1718,6 +2998,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -1749,113 +3033,153 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
-                      </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="ant-space-item"
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
               >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="empty-sql-placeholder"
                 >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
                   -
                 </span>
-              </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <span
-            class="empty-sql-placeholder"
-          >
-            -
-          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -1934,87 +3258,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                         >
                           审核结果
                         </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
-          role="tree"
-        >
-          <div>
-            <input
-              aria-label="for screen reader"
-              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
-              tabindex="0"
-              value=""
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            class="ant-tree-treenode"
-            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
-          >
-            <div
-              class="ant-tree-indent"
-            >
-              <div
-                class="ant-tree-indent-unit"
-              />
-            </div>
-          </div>
-          <div
-            class="ant-tree-list"
-            style="position: relative;"
-          >
-            <div
-              class="ant-tree-list-holder"
-            >
-              <div>
-                <div
-                  class="ant-tree-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
-                >
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    />
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <span
-                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
-                      >
-                        <svg
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                            fill="#C3C6CD"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title="执行结果"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        执行结果
                       </span>
                     </span>
                   </div>
@@ -2090,7 +3333,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -2134,6 +3377,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -2165,113 +3412,153 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
-                      </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="ant-space-item"
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
               >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="empty-sql-placeholder"
                 >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
                   -
                 </span>
-              </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <span
-            class="empty-sql-placeholder"
-          >
-            -
-          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -2396,114 +3683,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
             </div>
           </div>
         </div>
-        <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
-          role="tree"
-        >
-          <div>
-            <input
-              aria-label="for screen reader"
-              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
-              tabindex="0"
-              value=""
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            class="ant-tree-treenode"
-            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
-          >
-            <div
-              class="ant-tree-indent"
-            >
-              <div
-                class="ant-tree-indent-unit"
-              />
-            </div>
-          </div>
-          <div
-            class="ant-tree-list"
-            style="position: relative;"
-          >
-            <div
-              class="ant-tree-list-holder"
-            >
-              <div>
-                <div
-                  class="ant-tree-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
-                >
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    />
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <span
-                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
-                      >
-                        <svg
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                            fill="#C3C6CD"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title="执行结果"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        执行结果
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher-noop"
-                    />
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
-                      title="exec_result cont"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        exec_result cont
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div
         class="result-card-footer"
@@ -2547,7 +3726,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -2606,6 +3785,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -2637,113 +3820,153 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
-                      </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
                 </div>
               </div>
             </div>
             <div
-              class="ant-space-item"
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
               >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
+                <span
+                  class="empty-sql-placeholder"
                 >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
                   -
                 </span>
-              </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <span
-            class="empty-sql-placeholder"
-          >
-            -
-          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -2861,114 +4084,6 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
             </div>
           </div>
         </div>
-        <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
-          role="tree"
-        >
-          <div>
-            <input
-              aria-label="for screen reader"
-              style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
-              tabindex="0"
-              value=""
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            class="ant-tree-treenode"
-            style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
-          >
-            <div
-              class="ant-tree-indent"
-            >
-              <div
-                class="ant-tree-indent-unit"
-              />
-            </div>
-          </div>
-          <div
-            class="ant-tree-list"
-            style="position: relative;"
-          >
-            <div
-              class="ant-tree-list-holder"
-            >
-              <div>
-                <div
-                  class="ant-tree-list-holder-inner"
-                  style="display: flex; flex-direction: column;"
-                >
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    />
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <span
-                        class="custom-icon custom-icon-arrow-down ant-tree-switcher-icon css-u3jcp4"
-                      >
-                        <svg
-                          height="16"
-                          viewBox="0 0 16 16"
-                          width="16"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                            fill="#C3C6CD"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title="执行结果"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        执行结果
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher-noop"
-                    />
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
-                      title="-"
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        -
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div
         class="result-card-footer"
@@ -3008,11 +4123,11 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
 </body>
 `;
 
-exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`] = `
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = `
 <body>
   <div>
     <div
-      class="css-10ig619"
+      class="css-hg7c8r"
     >
       <div
         class="result-card-header"
@@ -3071,6 +4186,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
@@ -3102,113 +4221,244 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
           class="result-card-content-options"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="css-sljxhh"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
               >
-                执行语句
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div
-              class="ant-space-item"
-            >
               <div
-                class="css-u9vvlc"
-              >
-                回滚语句
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-          >
-            <div
-              class="ant-space-item"
-              style="margin-right: 0px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
+                  style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
-                      <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <svg
-                          color="#4583FF"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          class="ant-space-item"
                         >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                        <span>
                           <span
-                            class="sql-source-title"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                           >
-                            所在文件
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
                           </span>
-                          -
-                        </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
                       </span>
+                      -
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
+            >
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+              >
+                <pre>
+                  <code>
+                    <div
+                      class="code-line"
+                    >
+                      <span
+                        class="code-line-number"
+                      >
+                        1
+                      </span>
+                      exec_sql cont
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 8px;"
+                />
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
+                        >
+                          <svg
+                            fill="none"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                              fill="#EBAD1C"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          当前SQL未按预期开启备份
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <div
+                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        role="separator"
+                      />
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                      >
+                        <pre>
+                          <code>
+                            <div
+                              class="code-line"
+                            >
+                              <span
+                                class="code-line-number"
+                              >
+                                1
+                              </span>
+                              rollback_sql cont
+                            </div>
+                          </code>
+                        </pre>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-            >
-              <span
-                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
-              >
-                <svg
-                  height="18"
-                  viewBox="0 0 1024 1024"
-                  width="18"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                    fill="#4583FF"
-                  />
-                </svg>
-                <span>
-                  <span
-                    class="sql-source-title"
-                  >
-                    所在行
-                  </span>
-                  -
-                </span>
-              </span>
-            </div>
           </div>
-        </div>
-        <div
-          class="actiontech-sql-renderer-wrapper css-dz7fl9"
-        >
-          <span
-            class="empty-sql-placeholder"
-          >
-            -
-          </span>
         </div>
         <div
           class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
@@ -3295,8 +4545,293 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="result-card-footer"
+      >
         <div
-          class="ant-tree ant-tree-icon-hide css-1fzwdia css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="css-lpwde2"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                  fill="#8A8F99"
+                />
+              </svg>
+              <input
+                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                placeholder="添加说明"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`] = `
+<body>
+  <div>
+    <div
+      class="css-hg7c8r"
+    >
+      <div
+        class="result-card-header"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <span
+              class="number"
+            >
+              #
+              1
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="result-card-status-wrap"
+            >
+              <span
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+              />
+              <div
+                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                role="separator"
+              />
+              <span
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
+                  />
+                </svg>
+                <span>
+                  审核通过
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          />
+          <div
+            class="ant-space-item"
+            style="margin-right: 8px;"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                复制执行语句
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                分 析
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="result-card-content"
+      >
+        <div
+          class="result-card-content-options"
+        >
+          <div
+            class="segmented-tabs-wrapper"
+          >
+            <div
+              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-segmented-group"
+                >
+                  <label
+                    class="ant-segmented-item ant-segmented-item-selected"
+                  >
+                    <input
+                      checked=""
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行语句"
+                    >
+                      执行语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="回滚语句"
+                    >
+                      回滚语句
+                    </div>
+                  </label>
+                  <label
+                    class="ant-segmented-item"
+                  >
+                    <input
+                      class="ant-segmented-item-input"
+                      type="radio"
+                    />
+                    <div
+                      class="ant-segmented-item-label"
+                      title="执行结果"
+                    >
+                      执行结果
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 0px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          <span
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                          >
+                            <svg
+                              color="#4583FF"
+                              height="18"
+                              viewBox="0 0 18 19"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                            <span>
+                              <span
+                                class="sql-source-title"
+                              >
+                                所在文件
+                              </span>
+                              -
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <span
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  >
+                    <svg
+                      height="18"
+                      viewBox="0 0 1024 1024"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                        fill="#4583FF"
+                      />
+                    </svg>
+                    <span>
+                      <span
+                        class="sql-source-title"
+                      >
+                        所在行
+                      </span>
+                      -
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
+            >
+              <div
+                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+              >
+                <span
+                  class="empty-sql-placeholder"
+                >
+                  -
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -3362,12 +4897,16 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                     </span>
                     <span
                       class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title="执行结果"
+                      title=""
                     >
                       <span
                         class="ant-tree-title"
                       >
-                        执行结果
+                        <span
+                          class="audit-result-tree-title"
+                        >
+                          审核结果
+                        </span>
                       </span>
                     </span>
                   </div>

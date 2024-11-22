@@ -3,7 +3,7 @@
 exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
 <div>
   <div
-    class="css-10ig619"
+    class="css-hg7c8r"
   >
     <div
       class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
@@ -166,7 +166,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
 exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
 <div>
   <div
-    class="css-10ig619"
+    class="css-hg7c8r"
   >
     <div
       class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
@@ -329,7 +329,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
 exports[`test TaskResultList/Result/FileMode should render audit result count 1`] = `
 <div>
   <div
-    class="css-10ig619"
+    class="css-hg7c8r"
   >
     <div
       class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
@@ -515,7 +515,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
 exports[`test TaskResultList/Result/FileMode should render collapse children and called request 1`] = `
 <div>
   <div
-    class="css-10ig619"
+    class="css-hg7c8r"
   >
     <div
       class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"

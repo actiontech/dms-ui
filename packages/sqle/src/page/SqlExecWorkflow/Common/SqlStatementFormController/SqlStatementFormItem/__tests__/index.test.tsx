@@ -67,4 +67,13 @@ describe('test SqlStatementFormItem', () => {
       SQL_EDITOR_PLACEHOLDER_VALUE
     );
   });
+
+  it('render backup switcher', () => {
+    customRender({});
+    expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('上传SQL文件'));
+    expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('文件模式'));
+    expect(screen.queryByText('是否选择开启备份')).not.toBeInTheDocument();
+  });
 });

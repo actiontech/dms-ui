@@ -1,7 +1,8 @@
 import {
   IAuditTaskResV1,
   IGetWorkflowTasksItemV2,
-  IWorkflowResV2
+  IWorkflowResV2,
+  IBackupSqlData
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   AuditTaskResV1AuditLevelEnum,
@@ -17,7 +18,9 @@ import {
   WorkflowStepResV2TypeEnum,
   AssociatedStageWorkflowsStatusEnum,
   WorkflowDetailResV1StatusEnum,
-  WorkflowDetailResV1CurrentStepTypeEnum
+  WorkflowDetailResV1CurrentStepTypeEnum,
+  BackupSqlDataBackupStrategyEnum,
+  AssociatedRollbackWorkflowStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const WorkflowListData = [
@@ -99,7 +102,8 @@ export const AuditTaskResData: IAuditTaskResV1[] = [
     sql_source: AuditTaskResV1SqlSourceEnum.form_data,
     status: AuditTaskResV1StatusEnum.exec_failed,
     task_id: 1,
-    exec_mode: 'sqls'
+    exec_mode: 'sqls',
+    enable_backup: true
   },
   {
     audit_level: AuditTaskResV1AuditLevelEnum.warn,
@@ -264,6 +268,18 @@ export const WorkflowsOverviewListData: IWorkflowResV2 = {
       status: AssociatedStageWorkflowsStatusEnum.wait_for_audit,
       sql_version_stage_id: 48,
       stage_sequence: 3
+    }
+  ],
+  associated_rollback_workflows: [
+    {
+      workflow_id: '1839493775269826560',
+      workflow_name: 'v-12-dev-3_Rollback',
+      status: AssociatedRollbackWorkflowStatusEnum.finished
+    },
+    {
+      workflow_name: 'workflow_name_Rollback',
+      workflow_id: '1747444197486497792',
+      status: AssociatedRollbackWorkflowStatusEnum.finished
     }
   ]
 };
@@ -483,5 +499,63 @@ export const mockGlobalWorkflowListData = [
     current_step_type: WorkflowDetailResV1CurrentStepTypeEnum.sql_review,
     current_step_assignee_user_name_list: ['700200'],
     status: WorkflowDetailResV1StatusEnum.wait_for_audit
+  }
+];
+
+export const mockSqlExecWorkflowTasksData = [
+  {
+    audit_level: AuditTaskResV1AuditLevelEnum.warn,
+    exec_end_time: '1970-12-31 00:00:00',
+    exec_start_time: '1970-01-01 00:00:00',
+    instance_db_type: 'mysql',
+    instance_name: 'instance a',
+    instance_schema: 'schema a',
+    pass_rate: 10,
+    score: 30,
+    sql_source: AuditTaskResV1SqlSourceEnum.form_data,
+    status: AuditTaskResV1StatusEnum.audited,
+    task_id: 1,
+    enable_backup: true
+  },
+  {
+    audit_level: AuditTaskResV1AuditLevelEnum.error,
+    exec_end_time: '1970-12-31 00:00:00',
+    exec_start_time: '1970-01-01 00:00:00',
+    instance_db_type: 'mysql',
+    instance_name: 'instance a',
+    instance_schema: 'schema a',
+    pass_rate: 10,
+    score: 30,
+    sql_source: AuditTaskResV1SqlSourceEnum.sql_file,
+    status: AuditTaskResV1StatusEnum.exec_failed,
+    task_id: 2,
+    enable_backup: true
+  }
+];
+
+export const mockRollbackSqlData: IBackupSqlData[] = [
+  {
+    backup_sqls: ['SELECT 1;'],
+    backup_strategy: BackupSqlDataBackupStrategyEnum.reverse_sql,
+    description: '',
+    exec_order: 1,
+    exec_sql_id: 1,
+    exec_status: 'succeeded',
+    origin_task_id: 1,
+    instance_id: '1',
+    instance_name: 'mysql-1',
+    origin_sql: 'SELECT 2;'
+  },
+  {
+    backup_sqls: ['SELECT 1;'],
+    backup_strategy: BackupSqlDataBackupStrategyEnum.original_row,
+    description: '',
+    exec_order: 2,
+    exec_sql_id: 2,
+    exec_status: 'succeeded',
+    origin_task_id: 2,
+    instance_id: '2',
+    instance_name: 'mysql-2',
+    origin_sql: 'SELECT 2;'
   }
 ];
