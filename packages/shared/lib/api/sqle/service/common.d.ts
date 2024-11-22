@@ -77,6 +77,7 @@ import {
   updatePipelineNodeAuditMethodEnum,
   updatePipelineNodeObjectTypeEnum,
   updatePipelineNodeTypeEnum,
+  AssociatedRollbackWorkflowStatusEnum,
   AssociatedStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
   AuditTaskSQLResV2BackupStrategyEnum,
@@ -3532,6 +3533,8 @@ export interface IUpdatePipelineNode {
 }
 
 export interface IAssociatedRollbackWorkflow {
+  status?: AssociatedRollbackWorkflowStatusEnum;
+
   workflow_id?: string;
 
   workflow_name?: string;

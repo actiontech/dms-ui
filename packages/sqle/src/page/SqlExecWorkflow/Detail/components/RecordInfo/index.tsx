@@ -8,6 +8,7 @@ import { EmptyBox, LazyLoadComponent } from '@actiontech/shared';
 import WorkflowHistorySteps from './components/WorkflowHistorySteps';
 import { CloseOutlined } from '@actiontech/icons';
 import AssociatedWorkflows from './components/AssociatedWorkflows';
+import AssociatedRollbackWorkflows from './components/AssociatedRollbackWorkflows';
 
 const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
   visibility,
@@ -49,6 +50,12 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
           <AssociatedWorkflows
             workflowId={workflowInfo?.workflow_id}
             associatedWorkflows={workflowInfo?.associated_stage_workflows}
+          />
+        </EmptyBox>
+
+        <EmptyBox if={!!workflowInfo?.associated_rollback_workflows?.length}>
+          <AssociatedRollbackWorkflows
+            associatedWorkflows={workflowInfo?.associated_rollback_workflows}
           />
         </EmptyBox>
 

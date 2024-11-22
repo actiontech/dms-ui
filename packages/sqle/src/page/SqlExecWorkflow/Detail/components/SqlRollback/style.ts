@@ -28,7 +28,7 @@ export const SqlRollbackTableStyleWrapper = styled('section')`
     }
 
     & .ant-table-wrapper {
-      padding-bottom: 0px;
+      padding-bottom: 0;
     }
 
     & .ant-table-container .ant-table-body {
