@@ -111,7 +111,7 @@ export enum BackupSqlDataBackupStrategyEnum {
 
   'reverse_sql' = 'reverse_sql',
 
-  'origin_row' = 'origin_row'
+  'original_row' = 'original_row'
 }
 
 export enum BatchUpdateSqlManageReqPriorityEnum {
@@ -499,7 +499,7 @@ export enum UpdateSqlBackupStrategyReqStrategyEnum {
 
   'reverse_sql' = 'reverse_sql',
 
-  'origin_row' = 'origin_row'
+  'original_row' = 'original_row'
 }
 
 export enum UpdateTaskBackupStrategyReqStrategyEnum {
@@ -509,7 +509,7 @@ export enum UpdateTaskBackupStrategyReqStrategyEnum {
 
   'reverse_sql' = 'reverse_sql',
 
-  'origin_row' = 'origin_row'
+  'original_row' = 'original_row'
 }
 
 export enum UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum {
@@ -678,6 +678,22 @@ export enum updatePipelineNodeTypeEnum {
   'release' = 'release'
 }
 
+export enum AssociatedRollbackWorkflowStatusEnum {
+  'wait_for_audit' = 'wait_for_audit',
+
+  'wait_for_execution' = 'wait_for_execution',
+
+  'rejected' = 'rejected',
+
+  'canceled' = 'canceled',
+
+  'exec_failed' = 'exec_failed',
+
+  'executing' = 'executing',
+
+  'finished' = 'finished'
+}
+
 export enum AssociatedStageWorkflowsStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 
@@ -713,7 +729,7 @@ export enum AuditTaskSQLResV2BackupStrategyEnum {
 
   'reverse_sql' = 'reverse_sql',
 
-  'origin_row' = 'origin_row'
+  'original_row' = 'original_row'
 }
 
 export enum DirectAuditFileReqV2SqlTypeEnum {
