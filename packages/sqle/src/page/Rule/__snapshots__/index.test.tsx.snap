@@ -370,7 +370,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1vzpr2e"
+            class="rule-list-wrapper css-8rro2x"
           >
             <div
               id="rule-list-wrapper-id"
@@ -1342,7 +1342,7 @@ exports[`sqle/Rule request return no data 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1vzpr2e"
+            class="rule-list-wrapper css-8rro2x"
           >
             <div
               class="css-1br6ibb"
@@ -2162,7 +2162,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
             </div>
           </div>
           <div
-            class="rule-list-wrapper css-1vzpr2e"
+            class="rule-list-wrapper css-8rro2x"
           >
             <div
               id="rule-list-wrapper-id"

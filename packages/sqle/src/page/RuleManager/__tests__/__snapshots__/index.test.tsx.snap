@@ -1030,7 +1030,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="rule-list-wrapper css-1bhqk71"
+                    class="rule-list-wrapper css-8rro2x"
                   >
                     <div
                       id="rule-list-wrapper-id"
