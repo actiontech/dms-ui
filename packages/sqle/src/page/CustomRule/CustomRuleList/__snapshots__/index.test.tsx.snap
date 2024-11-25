@@ -161,7 +161,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
             class="ant-space-item"
           >
             <div
-              class="rule-list-wrapper css-8rro2x"
+              class="rule-list-wrapper css-1bhqk71"
             >
               <div
                 id="rule-list-wrapper-id"
@@ -779,7 +779,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
             class="ant-space-item"
           >
             <div
-              class="rule-list-wrapper css-8rro2x"
+              class="rule-list-wrapper css-1bhqk71"
             >
               <div
                 id="rule-list-wrapper-id"
@@ -1177,7 +1177,7 @@ exports[`sqle/CustomRuleList should render empty tips when request return null 1
             class="ant-space-item"
           >
             <div
-              class="rule-list-wrapper css-8rro2x"
+              class="rule-list-wrapper css-1bhqk71"
             >
               <div
                 class="css-1br6ibb"
