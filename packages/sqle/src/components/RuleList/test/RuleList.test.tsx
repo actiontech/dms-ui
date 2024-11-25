@@ -1,4 +1,4 @@
-import RuleList, { pageRemainingHeight } from '../RuleList';
+import RuleList from '../RuleList';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -181,9 +181,5 @@ describe('sqle/components/RuleList', () => {
     });
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
-  });
-
-  it('page remaining height should increase 128', () => {
-    expect(pageRemainingHeight(100)).toBe(228);
   });
 });
