@@ -460,7 +460,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                 </div>
               </div>
               <div
-                class="rule-list-wrapper css-8rro2x"
+                class="rule-list-wrapper css-ghg9ee"
               >
                 <div
                   class="css-1br6ibb"
@@ -1508,7 +1508,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 </div>
               </div>
               <div
-                class="rule-list-wrapper css-8rro2x"
+                class="rule-list-wrapper css-ghg9ee"
               >
                 <div
                   id="rule-list-wrapper-id"
@@ -3044,7 +3044,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
               class="ant-spin-container"
             >
               <div
-                class="rule-list-wrapper css-8rro2x"
+                class="rule-list-wrapper css-ghg9ee"
               >
                 <div
                   class="css-1br6ibb"

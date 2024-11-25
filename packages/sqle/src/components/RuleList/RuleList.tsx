@@ -36,6 +36,18 @@ import usePermission from '@actiontech/shared/lib/global/usePermission/usePermis
 
 const scrollStepRange = 30;
 
+export const pageRemainingHeight = (
+  pageHeaderHeight: RuleListProps['pageHeaderHeight']
+) => {
+  let headerHeight = pageHeaderHeight;
+  // #if [demo || ce]
+  headerHeight += 184;
+  // #else
+  headerHeight += 128;
+  // #endif
+  return headerHeight;
+};
+
 const RuleList: React.FC<RuleListProps> = ({
   rules = [],
   pageHeaderHeight,
@@ -258,16 +270,10 @@ const RuleList: React.FC<RuleListProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rules]);
 
-  const pageRemainingHeight = useMemo(() => {
-    // #if [demo || ce]
-    return pageHeaderHeight + 184;
-    // #endif
-  }, [pageHeaderHeight]);
-
   return (
     <>
       <RulesStyleWrapper
-        pageHeaderHeight={pageRemainingHeight}
+        pageHeaderHeight={pageRemainingHeight(pageHeaderHeight)}
         className="rule-list-wrapper"
         // #if [demo || ce]
         paddingBottomNone={true}
