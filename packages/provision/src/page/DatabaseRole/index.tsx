@@ -33,6 +33,7 @@ import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSearchParams } from 'react-router-dom';
 import eventEmitter from '../../utils/EventEmitter';
+import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const DatabaseRole: React.FC = () => {
   const { t } = useTranslation();
@@ -48,14 +49,13 @@ const DatabaseRole: React.FC = () => {
     DatabaseRoleFilteredDBServiceID
   );
 
-  const tableColumns = DatabaseRoleTableColumns();
-
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const {
     updateServiceList,
     loading: getServiceOptionsPending,
-    serviceOptions
+    serviceOptions,
+    serviceList
   } = useServiceOptions();
 
   const {
@@ -73,6 +73,11 @@ const DatabaseRole: React.FC = () => {
 
   const editAction = (record: IListDBRole) => {
     toggleModal(ModalName.DatabaseRoleUpdateModal, true);
+    updateSelectData(record);
+  };
+
+  const handleClickDbRoleName = (record: IListDBRole) => {
+    toggleModal(ModalName.DatabaseRoleDetailModal, true);
     updateSelectData(record);
   };
 
@@ -150,7 +155,11 @@ const DatabaseRole: React.FC = () => {
       {messageContextHolder}
       <PageHeader
         title={t('databaseRole.title')}
-        extra={CreateDatabaseRoleAction(onCreateRole)}
+        extra={CreateDatabaseRoleAction(
+          onCreateRole,
+          serviceList.find((v) => v.uid === filteredByDBServiceID)?.db_type !==
+            ListServiceDbTypeEnum.Oracle
+        )}
       />
 
       <TableToolbar
@@ -174,7 +183,7 @@ const DatabaseRole: React.FC = () => {
 
       <ActiontechTable
         errorMessage={requestErrorMessage}
-        columns={tableColumns}
+        columns={DatabaseRoleTableColumns(handleClickDbRoleName)}
         actions={parse2TableActionPermissions(
           DatabaseRoleTableActions({ editAction, deleteAction })
         )}

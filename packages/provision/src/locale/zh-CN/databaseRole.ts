@@ -36,5 +36,9 @@ export default {
   },
   updateRole: {
     title: '更新角色'
+  },
+  roleDetail: {
+    title: '角色详情',
+    roleAndPermissionInfo: '角色与权限信息'
   }
 };

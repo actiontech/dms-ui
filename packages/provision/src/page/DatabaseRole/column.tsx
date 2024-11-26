@@ -5,19 +5,26 @@ import { Typography } from 'antd';
 import { IDatabaseRoleTableParams } from './index.type';
 import RoleTableTagsCell from './RoleTableTagsCell';
 
-export const DatabaseRoleTableColumns = (): ActiontechTableColumn<
-  IListDBRole,
-  IDatabaseRoleTableParams
-> => {
+export const DatabaseRoleTableColumns = (
+  handleClickDbRoleName: (record: IListDBRole) => void
+): ActiontechTableColumn<IListDBRole, IDatabaseRoleTableParams> => {
   return [
     {
       title: t('databaseRole.tableColumns.role'),
       dataIndex: 'db_role',
-      render(role) {
+      render(role, record) {
         if (!role || !role.name) {
           return '-';
         }
-        return <Typography.Link>{role?.name}</Typography.Link>;
+        return (
+          <Typography.Link
+            onClick={() => {
+              handleClickDbRoleName(record);
+            }}
+          >
+            {role?.name}
+          </Typography.Link>
+        );
       }
     },
     {

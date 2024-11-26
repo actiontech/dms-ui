@@ -7,12 +7,16 @@ import {
 import { t } from '../../locale';
 import { IListDBRole } from '@actiontech/shared/lib/api/provision/service/common';
 
-export const CreateDatabaseRoleAction = (onClick: () => void) => {
+export const CreateDatabaseRoleAction = (
+  onClick: () => void,
+  hidden: boolean
+) => {
   return (
     <PermissionControl
       permission={PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE}
     >
       <ActionButton
+        hidden={hidden}
         onClick={onClick}
         text={t('databaseRole.actions.create.label')}
         type="primary"

@@ -1,4 +1,5 @@
 import CreateRole from './CreateRole';
+import RoleDetail from './RoleDetail';
 import UpdateRole from './UpdateRole';
 
 const DatabaseRoleModal: React.FC = () => {
@@ -6,6 +7,7 @@ const DatabaseRoleModal: React.FC = () => {
     <>
       <CreateRole />
       <UpdateRole />
+      <RoleDetail />
     </>
   );
 };
