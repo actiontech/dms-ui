@@ -30,6 +30,8 @@ jest.mock('react-redux', () => ({
 
 describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   const showWorkflowSteps = jest.fn();
+  const startRollback = jest.fn();
+  const showModifySqlStatementStep = jest.fn();
   const customRender = (params: paramsType) => {
     return superRender(
       <WorkflowDetailPageHeaderExtra
@@ -41,6 +43,8 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
         terminateAction={jest.fn(() => Promise.resolve())}
         executeInOtherInstanceAction={jest.fn(() => Promise.resolve())}
         showWorkflowSteps={showWorkflowSteps}
+        startRollback={startRollback}
+        showModifySqlStatementStep={showModifySqlStatementStep}
         {...params}
       />
     );
@@ -472,5 +476,44 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
       fireEvent.click(screen.getByText('上线到其他实例'));
       await jest.advanceTimersByTime(100);
     });
+  });
+
+  it('render rollback button', async () => {
+    mockUseCurrentProject({ projectArchive: false });
+    customRender({
+      workflowStepsVisibility: true,
+      workflowInfo: {
+        record: {
+          status: WorkflowRecordResV2StatusEnum.finished,
+          workflow_step_list: [
+            {
+              number: 1,
+              type: WorkflowStepResV2TypeEnum.sql_execute,
+              assignee_user_name_list: ['admin']
+            }
+          ]
+        }
+      }
+    });
+    expect(screen.getByText('回 滚')).toBeVisible();
+    fireEvent.click(screen.getByText('回 滚'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(startRollback).toHaveBeenCalledTimes(1);
+  });
+
+  it('render retry button', async () => {
+    mockUseCurrentProject({ projectArchive: false });
+    customRender({
+      workflowStepsVisibility: true,
+      workflowInfo: {
+        record: {
+          status: WorkflowRecordResV2StatusEnum.exec_failed
+        }
+      }
+    });
+    expect(screen.getByText('重 试')).toBeVisible();
+    fireEvent.click(screen.getByText('重 试'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(showModifySqlStatementStep).toHaveBeenCalledTimes(1);
   });
 });

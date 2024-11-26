@@ -22,6 +22,24 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </div>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          重 试
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          回 滚
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -224,6 +242,24 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render batch 
       </div>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          重 试
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          回 滚
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -380,6 +416,24 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render execut
       </div>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          重 试
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          回 滚
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -500,6 +554,24 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap 1
       </div>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          重 试
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          回 滚
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -616,6 +688,24 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra render snap w
           role="separator"
         />
       </div>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          重 试
+        </span>
+      </button>
+      <button
+        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        hidden=""
+        type="button"
+      >
+        <span>
+          回 滚
+        </span>
+      </button>
       <button
         class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
         type="button"

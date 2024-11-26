@@ -153,7 +153,8 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       {
         '0': {
           currentUploadType: 'form_data',
-          form_data: 'SELECT 1;'
+          form_data: 'SELECT 1;',
+          backup: true
         },
         databaseInfo: [
           {

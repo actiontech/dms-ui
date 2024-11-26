@@ -2,11 +2,6 @@ import AuditResultList from '..';
 import { AuditResultListProps } from '../index.type';
 import { superRender } from '../../../../../testUtils/customRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import {
-  AuditTaskResV1AuditLevelEnum,
-  AuditTaskResV1SqlSourceEnum,
-  AuditTaskResV1StatusEnum
-} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -19,6 +14,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
+import { mockSqlExecWorkflowTasksData } from '../../../../../testUtils/mockApi/execWorkflow/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -27,39 +23,10 @@ jest.mock('react-redux', () => {
   };
 });
 
-const tasksData = [
-  {
-    audit_level: AuditTaskResV1AuditLevelEnum.warn,
-    exec_end_time: '1970-12-31 00:00:00',
-    exec_start_time: '1970-01-01 00:00:00',
-    instance_db_type: 'mysql',
-    instance_name: 'instance a',
-    instance_schema: 'schema a',
-    pass_rate: 10,
-    score: 30,
-    sql_source: AuditTaskResV1SqlSourceEnum.form_data,
-    status: AuditTaskResV1StatusEnum.audited,
-    task_id: 1
-  },
-  {
-    audit_level: AuditTaskResV1AuditLevelEnum.error,
-    exec_end_time: '1970-12-31 00:00:00',
-    exec_start_time: '1970-01-01 00:00:00',
-    instance_db_type: 'mysql',
-    instance_name: 'instance a',
-    instance_schema: 'schema a',
-    pass_rate: 10,
-    score: 30,
-    sql_source: AuditTaskResV1SqlSourceEnum.sql_file,
-    status: AuditTaskResV1StatusEnum.exec_failed,
-    task_id: 2
-  }
-];
-
 describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
   const updateTaskRecordCountSpy = jest.fn();
   let requestGetAuditTaskSQLs: jest.SpyInstance;
-  const customRender = (params: Pick<AuditResultListProps, 'tasks'>) => {
+  const customRender = (params: AuditResultListProps) => {
     return superRender(
       <AuditResultList
         updateTaskRecordCount={updateTaskRecordCountSpy}
@@ -95,7 +62,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
 
   it('render snap has task', async () => {
     const { baseElement } = customRender({
-      tasks: tasksData
+      tasks: mockSqlExecWorkflowTasksData
     });
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3200));
@@ -133,7 +100,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
       })
     );
     const { baseElement } = customRender({
-      tasks: tasksData
+      tasks: mockSqlExecWorkflowTasksData
     });
     await act(async () => jest.advanceTimersByTime(3200));
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
@@ -188,5 +155,21 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
       page_size: '20',
       task_id: '1'
     });
+  });
+
+  it('render allowSwitchBackupPolicy is true', async () => {
+    const onBatchSwitchBackupPolicySpy = jest.fn();
+    const { baseElement } = customRender({
+      tasks: mockSqlExecWorkflowTasksData,
+      allowSwitchBackupPolicy: true,
+      onBatchSwitchBackupPolicy: onBatchSwitchBackupPolicySpy
+    });
+    expect(baseElement).toMatchSnapshot();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('切换数据源备份策略')).toMatchSnapshot();
+
+    fireEvent.click(screen.getByText('切换数据源备份策略'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(onBatchSwitchBackupPolicySpy).toHaveBeenCalledTimes(1);
   });
 });

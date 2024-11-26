@@ -56,7 +56,8 @@ describe('test useAuditWorkflow', () => {
         exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum.sqls,
         sql_file: [sqlFile],
         zip_file: [zipFile],
-        file_sort_method: 'desc'
+        file_sort_method: 'desc',
+        backup: true
       } as SqlStatementFields,
       databaseInfo: [{ instanceName: 'instance1', instanceSchema: 'schema1' }]
     };
@@ -77,7 +78,8 @@ describe('test useAuditWorkflow', () => {
     expect(mockAuditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(mockAuditTaskGroupId).toHaveBeenNthCalledWith(1, {
       task_group_id: 99,
-      sql: 'SELECT * FROM table'
+      sql: 'SELECT * FROM table',
+      enable_backup: true
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -188,7 +190,8 @@ describe('test useAuditWorkflow', () => {
       2: {
         exec_mode: 'sqls',
         form_data: 'SELECT * FROM table',
-        currentUploadType: AuditTaskResV1SqlSourceEnum.form_data
+        currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
+        backup: true
       } as SqlStatementFields,
       databaseInfo: [
         { instanceName: 'instance1', instanceSchema: 'schema1' },
@@ -232,7 +235,8 @@ describe('test useAuditWorkflow', () => {
       instance_name: 'instance3',
       instance_schema: 'schema3',
       sql: 'SELECT * FROM table',
-      exec_mode: 'sqls'
+      exec_mode: 'sqls',
+      enable_backup: true
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
