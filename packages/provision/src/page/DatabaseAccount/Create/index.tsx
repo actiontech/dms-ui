@@ -2,8 +2,7 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult,
-  useTypedNavigate
+  BasicResult
 } from '@actiontech/shared';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';

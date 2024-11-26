@@ -39,6 +39,9 @@ export default {
   },
   roleDetail: {
     title: '角色详情',
-    roleAndPermissionInfo: '角色与权限信息'
+    roleInfo: '角色信息',
+    roleName: '角色名',
+    dbServiceName: '数据源',
+    dataPermission: '数据权限'
   }
 };

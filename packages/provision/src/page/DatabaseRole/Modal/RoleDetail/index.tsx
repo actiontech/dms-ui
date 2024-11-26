@@ -2,7 +2,8 @@ import {
   BasicButton,
   BasicTag,
   EmptyBox,
-  BasicTypographyEllipsis
+  BasicTypographyEllipsis,
+  TypedLink
 } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import { Spin } from 'antd';
@@ -11,6 +12,7 @@ import { ModalName } from '../../../../data/enum';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import {
   DatabaseRoleFilteredDBServiceID,
+  DatabaseRoleFilteredDBServiceName,
   DatabaseRoleModalStatus,
   DatabaseRoleSelectData
 } from '../../../../store/databaseRole';
@@ -20,6 +22,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { AccountDetailDrawerStyleWrapper } from '../../../DatabaseAccount/style';
 import AccountInfoItem from '../../../DatabaseAccount/components/AccountInfoItem';
 import { IDBAccountDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const RoleDetail: React.FC = () => {
   const { t } = useTranslation();
@@ -32,6 +35,9 @@ const RoleDetail: React.FC = () => {
   const [selectData, updateSelectData] = useRecoilState(DatabaseRoleSelectData);
   const [filteredByDBServiceID] = useRecoilState(
     DatabaseRoleFilteredDBServiceID
+  );
+  const [filteredByDBServiceName] = useRecoilState(
+    DatabaseRoleFilteredDBServiceName
   );
 
   const {
@@ -78,7 +84,28 @@ const RoleDetail: React.FC = () => {
       <Spin spinning={getDBRoleDetailInfoPending} delay={300}>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
-            {t('databaseRole.roleDetail.roleAndPermissionInfo')}
+            {t('databaseRole.roleDetail.roleInfo')}
+          </div>
+          <div className="audit-card">
+            <AccountInfoItem
+              label={t('databaseRole.roleDetail.roleName')}
+              value={selectData?.db_role?.name ?? '-'}
+            />
+            <AccountInfoItem label={t('databaseRole.roleDetail.dbServiceName')}>
+              <TypedLink
+                target="_blank"
+                to={ROUTE_PATHS.BASE.DATA_SOURCE.index}
+                params={{ projectID }}
+                queries={{ name: filteredByDBServiceName ?? '' }}
+              >
+                {filteredByDBServiceName}
+              </TypedLink>
+            </AccountInfoItem>
+          </div>
+        </div>
+        <div className="audit-info-wrapper">
+          <div className="audit-info-title">
+            {t('databaseRole.roleDetail.dataPermission')}
           </div>
           <div className="audit-card">
             <AccountInfoItem label={t('databaseAccount.detail.role')}>

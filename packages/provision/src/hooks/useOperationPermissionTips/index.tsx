@@ -269,7 +269,6 @@ const useOperationPermissionTips = (
     useCallback(
       async (selectedOptions: CustomCascaderOptions[]) => {
         const targetOption = selectedOptions[selectedOptions.length - 1];
-
         if (!targetOption.value) return;
 
         if (targetOption.isDatabase) {

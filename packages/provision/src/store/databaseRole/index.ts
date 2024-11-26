@@ -19,6 +19,11 @@ export const DatabaseRoleSelectData = atom<IListDBRole | null>({
 });
 
 export const DatabaseRoleFilteredDBServiceID = atom<string | null>({
-  key: StoreKey.Database_Role_Filtered_DB_SERVICE_ID,
+  key: StoreKey.Database_Role_Filtered_DB_Service_ID,
+  default: null
+});
+
+export const DatabaseRoleFilteredDBServiceName = atom<string | null>({
+  key: StoreKey.Database_Role_Filtered_DB_Service_Name,
   default: null
 });

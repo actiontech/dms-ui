@@ -25,7 +25,9 @@ export enum StoreKey {
 
   Database_Role_Select_Data = 'Database_Role_Select_Data',
 
-  Database_Role_Filtered_DB_SERVICE_ID = 'Database_Role_Filtered_DB_SERVICE_ID'
+  Database_Role_Filtered_DB_Service_ID = 'Database_Role_Filtered_DB_Service_ID',
+
+  Database_Role_Filtered_DB_Service_Name = 'Database_Role_Filtered_DB_Service_Name'
 }
 
 export const recoilIsInstanceOfDefaultValue = (

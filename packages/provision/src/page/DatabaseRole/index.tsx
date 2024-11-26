@@ -24,6 +24,7 @@ import DatabaseRoleModal from './Modal';
 import useModalStatus from '../../hooks/useModalStatus';
 import {
   DatabaseRoleFilteredDBServiceID,
+  DatabaseRoleFilteredDBServiceName,
   DatabaseRoleModalStatus,
   DatabaseRoleSelectData
 } from '../../store/databaseRole';
@@ -47,6 +48,9 @@ const DatabaseRole: React.FC = () => {
   const updateSelectData = useSetRecoilState(DatabaseRoleSelectData);
   const [filteredByDBServiceID, setFilteredByDBServiceID] = useRecoilState(
     DatabaseRoleFilteredDBServiceID
+  );
+  const [, setFilteredByDBServiceName] = useRecoilState(
+    DatabaseRoleFilteredDBServiceName
   );
 
   const { requestErrorMessage, handleTableRequestError } =
@@ -129,8 +133,9 @@ const DatabaseRole: React.FC = () => {
   useEffect(() => {
     updateServiceList(undefined, (data) => {
       setFilteredByDBServiceID(data?.[0].uid ?? null);
+      setFilteredByDBServiceName(data?.[0].name ?? '');
     });
-  }, [setFilteredByDBServiceID, updateServiceList]);
+  }, [setFilteredByDBServiceID, setFilteredByDBServiceName, updateServiceList]);
 
   useEffect(() => {
     initModalStatus({
@@ -175,7 +180,12 @@ const DatabaseRole: React.FC = () => {
           allowClear={false}
           options={serviceOptions}
           value={filteredByDBServiceID}
-          onChange={setFilteredByDBServiceID}
+          onChange={(value) => {
+            setFilteredByDBServiceID(value);
+            setFilteredByDBServiceName(
+              serviceList.find((v) => v.uid === value)?.name ?? ''
+            );
+          }}
           loading={getServiceOptionsPending}
           prefix={t('databaseRole.tableFilters.dbService')}
         />
