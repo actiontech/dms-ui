@@ -31,12 +31,9 @@ export const DatabaseRoleTableColumns = (
       title: t('databaseRole.tableColumns.childRoles'),
       dataIndex: 'child_roles',
       render(childRoles) {
-        if (!childRoles || !childRoles.length) {
-          return '-';
-        }
         return (
           <RoleTableTagsCell
-            dataSource={childRoles.map((v) => v.name!) ?? []}
+            dataSource={childRoles?.map((v) => v.name!) ?? []}
           />
         );
       }

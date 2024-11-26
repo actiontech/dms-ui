@@ -16,7 +16,8 @@ import { CustomCascaderPopupMenuStyleWrapper } from './style';
 const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
   form,
   projectID,
-  showQuickCreateRole
+  showQuickCreateRole,
+  mode
 }: IRolePermissionSelectorProps<T>) => {
   const { t } = useTranslation();
   const {
@@ -28,14 +29,14 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
   const selectedDbServiceID = Form.useWatch('dbServiceID', form);
   const selectedAuthType = Form.useWatch('authType', form);
   const selectedDBType = Form.useWatch('dbType', form);
-
+  const selectedPermissions = Form.useWatch('operationsPermissions', form);
   const {
     loading: getOperationPermissionPending,
     updateOperationPermission,
     operationPermissionOptions,
     loadDataBaseOnPermissionLevel,
     permissionsDisplayRender
-  } = useOperationPermissionTips(selectedDbServiceID);
+  } = useOperationPermissionTips(selectedDbServiceID, selectedPermissions);
 
   const cascaderCustomRenderDropdown: CascaderProps['dropdownRender'] = (
     menu
@@ -52,11 +53,13 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
   useEffect(() => {
     if (selectedDbServiceID) {
       updateDBAuthRoleTips(selectedDbServiceID, projectID);
+    } else {
+      if (mode === 'create') {
+        form.setFieldValue('operationsPermissions', undefined);
+        form.setFieldValue('dbRoles', undefined);
+      }
     }
-
-    form.setFieldValue('operationsPermissions', undefined);
-    form.setFieldValue('dbRoles', undefined);
-  }, [selectedDbServiceID, projectID, updateDBAuthRoleTips, form]);
+  }, [form, mode, projectID, selectedDbServiceID, updateDBAuthRoleTips]);
 
   useEffect(() => {
     if (selectedDBType) {

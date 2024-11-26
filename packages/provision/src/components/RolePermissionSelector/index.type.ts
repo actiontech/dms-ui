@@ -14,4 +14,5 @@ export interface IRolePermissionSelectorProps<
   form: FormInstance<T>;
   projectID: string;
   showQuickCreateRole?: boolean;
+  mode: 'create' | 'update';
 }

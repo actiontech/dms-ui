@@ -40,7 +40,7 @@ import {
 } from '../../../store/databaseAccount';
 import { EventEmitterKey, ModalName } from '../../../data/enum';
 import EventEmitter from '../../../utils/EventEmitter';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useNavigate } from 'react-router-dom';
@@ -51,8 +51,6 @@ const DatabaseAccountList = () => {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
-
-  const [urlSearchParams] = useSearchParams();
 
   const [messageApi, contextHolder] = message.useMessage();
 

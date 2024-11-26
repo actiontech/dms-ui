@@ -13,8 +13,8 @@ export const accountDetailCustomConfig: IAccountDetailCustomConfig[] = [
     prefix: t('databaseAccount.create.permissionInfo'),
     headers: [
       t('databaseAccount.discovery.service'),
-      t('databaseAccount.create.form.objects'),
-      t('databaseAccount.create.form.operation')
+      t('databaseAccount.detail.roleInfo'),
+      t('databaseAccount.detail.permissionInfo')
     ]
   },
   {

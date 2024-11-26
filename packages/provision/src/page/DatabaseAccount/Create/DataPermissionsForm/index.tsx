@@ -6,10 +6,10 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import RolePermissionSelector from '../../../../components/RolePermissionSelector';
 
 type Props = {
-  disabled?: boolean;
+  mode: 'create' | 'update';
 };
 
-const DataPermissionsForm: React.FC<Props> = ({ disabled }) => {
+const DataPermissionsForm: React.FC<Props> = ({ mode }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const form = Form.useFormInstance<CreateAccountFormType>();
@@ -24,6 +24,7 @@ const DataPermissionsForm: React.FC<Props> = ({ disabled }) => {
         showQuickCreateRole
         form={form}
         projectID={projectID}
+        mode={mode}
       />
     </>
   );

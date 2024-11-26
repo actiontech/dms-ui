@@ -108,29 +108,34 @@ const UpdateDatabaseAccount = () => {
       });
   };
 
-  const generateOperationsPermissionValues = (
-    dataPermissions?: IDBAccountDataPermission[]
-  ): string[][] => {
-    return (
-      dataPermissions?.flatMap((permission) => {
-        const { data_objects, data_operations = [] } = permission;
-
-        if (!data_objects) {
-          return data_operations.map((operation) => [operation.uid ?? '']);
-        }
-
-        return data_operations.flatMap((operation) =>
-          data_objects.map((object) => [
-            operation.uid ?? '',
-            object.database_uid ?? '',
-            object.table_uid ?? ''
-          ])
-        );
-      }) ?? []
-    );
-  };
   useEffect(() => {
     if (urlParams.id) {
+      const generateOperationsPermissionValues = (
+        dataPermissions?: IDBAccountDataPermission[]
+      ): string[][] => {
+        return (
+          dataPermissions?.flatMap((permission) => {
+            const { data_objects, data_operations = [] } = permission;
+
+            if (!data_objects) {
+              return data_operations.map((operation) => [operation.uid ?? '']);
+            }
+
+            return data_operations.flatMap((operation) =>
+              data_objects.map((object) =>
+                object.table_uid
+                  ? [
+                      operation.uid ?? '',
+                      object.database_uid ?? '',
+                      object.table_uid
+                    ]
+                  : [operation.uid ?? '', object.database_uid ?? '']
+              )
+            );
+          }) ?? []
+        );
+      };
+
       startGetDBAccountInfo();
       dbAccountService
         .AuthGetDBAccount({
@@ -167,7 +172,7 @@ const UpdateDatabaseAccount = () => {
   }, []);
 
   const onReset = () => {
-    form.resetFields(['permissions']);
+    form.resetFields(['operationsPermissions', 'dbRoles']);
   };
 
   return (
@@ -215,8 +220,11 @@ const UpdateDatabaseAccount = () => {
                   <Icon component={BriefcaseFilled} className="title-icon" />
                   {t('databaseAccount.update.title')}
                 </FormItemBigTitle>
-                <BaseInfoForm disabled dbAccountMeta={dbAccountMeta ?? []} />
-                <DataPermissionsForm disabled />
+                <BaseInfoForm
+                  mode="update"
+                  dbAccountMeta={dbAccountMeta ?? []}
+                />
+                <DataPermissionsForm mode="update" />
               </CreateAccountFormStyleWrapper>
             </FormStyleWrapper>
           </Spin>
@@ -226,13 +234,11 @@ const UpdateDatabaseAccount = () => {
           status="success"
           title={t('databaseAccount.update.result.success')}
           extra={
-            <Space>
-              <Link to={`/provision/project/${projectID}/database-account`}>
-                <BasicButton type="primary">
-                  {t('databaseAccount.create.returnText')}
-                </BasicButton>
-              </Link>
-            </Space>
+            <Link to={`/provision/project/${projectID}/database-account`}>
+              <BasicButton type="primary">
+                {t('databaseAccount.create.returnText')}
+              </BasicButton>
+            </Link>
           }
         />
       </EmptyBox>

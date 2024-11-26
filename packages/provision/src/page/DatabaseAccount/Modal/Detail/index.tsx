@@ -70,17 +70,15 @@ const DatabaseAccountDetailModal = () => {
         let rows: string[][];
         jsonData.push({ blockquote: `${item.prefix}:` });
         if (item.key === 'data_permissions') {
-          rows =
-            data?.data_permissions?.map((permission) => {
-              return [
-                data.db_service?.name ?? '',
-                permission.data_objects?.map((obj) => obj.name).join('，') ??
-                  '',
-                permission.data_operations
-                  ?.map((operation) => operation.name)
-                  .join('，') ?? ''
-              ];
-            }) ?? [];
+          rows = [
+            [
+              data?.db_service?.name ?? '',
+              data?.db_roles?.map((role) => role.name ?? '').join('，') ?? '',
+              data?.data_permissions
+                ?.flatMap((permission) => generatePermissionLabel(permission)!)
+                .join('，') ?? ''
+            ]
+          ];
         } else {
           rows = [
             [

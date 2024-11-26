@@ -66,7 +66,7 @@ const RoleForm: React.FC<IDatabaseRoleFormProps> = ({ form, mode }) => {
         <BasicInput disabled={mode === 'update'} />
       </Form.Item>
 
-      <RolePermissionSelector form={form} projectID={projectID} />
+      <RolePermissionSelector mode={mode} form={form} projectID={projectID} />
     </Form>
   );
 };

@@ -1,7 +1,7 @@
 import { useRequest } from 'ahooks';
 import AuthService from '@actiontech/shared/lib/api/provision/service/auth';
 import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { DefaultOptionType } from 'antd/es/select';
 import { isEqual } from 'lodash';
 import { CascaderProps } from 'antd';
@@ -28,20 +28,30 @@ interface CustomCascaderOptions extends DefaultOptionType {
   disableCheckbox?: boolean;
 }
 
-const useOperationPermissionTips = (dbServiceID: string) => {
+const useOperationPermissionTips = (
+  dbServiceID: string,
+  selectedPermissions?: string[][]
+) => {
   const { sharedTheme } = useThemeStyleData();
   const [operationPermissionOptions, setOperationPermissionOptions] = useState<
     CustomCascaderOptions[]
   >([]);
+  const [tableLoading, setTableLoading] = useState(false);
 
-  const [selectedPermissionLabels, setSelectedPermissionLabels] = useState<
-    string[]
-  >([]);
+  // 用于存储已加载的数据库选项
+  const databaseOptionsRef = useRef<CustomCascaderOptions[]>([]);
+  // 用于存储表选项的映射，key 为 databaseId
+  const tableOptionsMapRef = useRef<Record<string, CustomCascaderOptions[]>>(
+    {}
+  );
+  // 用于存储操作权限选项的原始数据
+  const operationOptionsRef = useRef<CustomCascaderOptions[]>([]);
 
+  // 获取操作权限列表
   const {
     data: operationPermissionList,
     run: updateOperationPermission,
-    loading
+    loading: operationLoading
   } = useRequest(
     (dbType: AuthListOperationsDbTypeEnum) =>
       AuthService.AuthListOperations({
@@ -49,7 +59,7 @@ const useOperationPermissionTips = (dbServiceID: string) => {
         ...REQUEST_DEFAULT_PARAMS
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          setOperationPermissionOptions(
+          const options =
             res.data.data?.map((item) => ({
               label: item.name,
               value: item.uid,
@@ -63,8 +73,9 @@ const useOperationPermissionTips = (dbServiceID: string) => {
                 'system',
                 res.data.data
               )
-            })) ?? []
-          );
+            })) ?? [];
+          operationOptionsRef.current = options;
+          setOperationPermissionOptions(options);
           return res.data.data;
         }
       }),
@@ -73,58 +84,75 @@ const useOperationPermissionTips = (dbServiceID: string) => {
     }
   );
 
-  const { runAsync: getDatabaseOptionsByDBServiceID } = useRequest(
+  // 获取数据库选项
+  const { runAsync: getDatabaseOptions, loading: databaseLoading } = useRequest(
     () =>
       AuthService.AuthListDatabase({
         service_uid: dbServiceID,
         ...REQUEST_DEFAULT_PARAMS
       }).then((res) => {
-        return res.data.data?.map((item) => ({
-          value: item.uid ?? '',
-          label: (
-            <DatabaseSchemaLabelStyleWrapper>
-              <DatabaseSchemaFilled
-                width={18}
-                height={18}
-                color={sharedTheme.uiToken.colorPrimary}
-              />
-              <span className="content">{item.name}</span>
-            </DatabaseSchemaLabelStyleWrapper>
-          ),
-          isDatabase: true
-        }));
-      }),
-    {
-      manual: true,
-      ready: !!dbServiceID
-    }
-  );
-
-  const { runAsync: getTableOptionsByDatabaseID } = useRequest(
-    (databaseID: string) =>
-      AuthService.AuthListTable({
-        database_uid: databaseID,
-        ...REQUEST_DEFAULT_PARAMS
-      }).then((res) => {
-        return res.data.data?.map((item) => ({
-          value: item.uid ?? '',
-          label: (
-            <DatabaseSchemaLabelStyleWrapper>
-              <DatabaseFilled
-                width={18}
-                height={18}
-                color={sharedTheme.uiToken.colorPrimary}
-              />
-              <span className="content">{item.name}</span>
-            </DatabaseSchemaLabelStyleWrapper>
-          ),
-          isLeaf: true,
-          isTable: true
-        }));
+        const options =
+          res.data.data?.map((item) => ({
+            value: item.uid ?? '',
+            label: (
+              <DatabaseSchemaLabelStyleWrapper>
+                <DatabaseSchemaFilled
+                  width={18}
+                  height={18}
+                  color={sharedTheme.uiToken.colorPrimary}
+                />
+                <span className="content">{item.name}</span>
+              </DatabaseSchemaLabelStyleWrapper>
+            ),
+            isDatabase: true,
+            isLeaf: false
+          })) ?? [];
+        databaseOptionsRef.current = options;
+        return options;
       }),
     {
       manual: true
     }
+  );
+
+  // 获取表选项
+  const getTableOptions = useCallback(
+    async (databaseID: string) => {
+      if (tableOptionsMapRef.current[databaseID]) {
+        return Promise.resolve(tableOptionsMapRef.current[databaseID]);
+      }
+      setTableLoading(true);
+
+      try {
+        const res = await AuthService.AuthListTable({
+          database_uid: databaseID,
+          ...REQUEST_DEFAULT_PARAMS
+        });
+
+        const options =
+          res.data.data?.map((item) => ({
+            value: item.uid ?? '',
+            label: (
+              <DatabaseSchemaLabelStyleWrapper>
+                <DatabaseFilled
+                  width={18}
+                  height={18}
+                  color={sharedTheme.uiToken.colorPrimary}
+                />
+                <span className="content">{item.name}</span>
+              </DatabaseSchemaLabelStyleWrapper>
+            ),
+            isLeaf: true,
+            isTable: true
+          })) ?? [];
+
+        tableOptionsMapRef.current[databaseID] = options;
+        return options;
+      } finally {
+        setTableLoading(false);
+      }
+    },
+    [sharedTheme.uiToken.colorPrimary]
   );
 
   const getOperationPermissionLevel = useCallback(
@@ -179,53 +207,105 @@ const useOperationPermissionTips = (dbServiceID: string) => {
       }
     };
 
+  // 预加载选中项的数据
+  useEffect(() => {
+    if (!selectedPermissions?.length || !dbServiceID) return;
+    let isEffectActive = true; // 添加标志以防止组件卸载后的更新
+
+    const generateOptionsTree = (
+      operations: CustomCascaderOptions[],
+      databases: CustomCascaderOptions[],
+      tablesMap: Record<string, CustomCascaderOptions[]>
+    ) => {
+      return operations.map((option) => {
+        if (option.isLeaf) return option;
+
+        return {
+          ...option,
+          children: databases.map((database) => ({
+            ...database,
+            children: tablesMap[database.value?.toString() ?? ''] ?? []
+          }))
+        };
+      });
+    };
+
+    const loadSelectedData = async () => {
+      if (!isEffectActive) return;
+
+      // 1. 加载数据库选项
+      await getDatabaseOptions();
+
+      // 2. 收集需要加载表数据的数据库ID
+      const databaseIds = new Set(
+        selectedPermissions.map((path) => path[1]).filter(Boolean)
+      );
+      // 3. 并行加载所有需要的表数据
+      await Promise.all(
+        Array.from(databaseIds).map((databaseId) => {
+          return getTableOptions(databaseId);
+        })
+      );
+
+      if (!isEffectActive) return;
+
+      // 4. 使用当前最新的引用更新选项树
+      const newOptions = generateOptionsTree(
+        operationOptionsRef.current,
+        databaseOptionsRef.current,
+        tableOptionsMapRef.current
+      );
+      setOperationPermissionOptions(newOptions);
+    };
+
+    loadSelectedData();
+
+    return () => {
+      isEffectActive = false;
+    };
+  }, [selectedPermissions, dbServiceID, getDatabaseOptions, getTableOptions]);
+
   const loadDataBaseOnPermissionLevel: CascaderProps<CustomCascaderOptions>['loadData'] =
     useCallback(
-      (selectedOptions: CustomCascaderOptions[]) => {
+      async (selectedOptions: CustomCascaderOptions[]) => {
         const targetOption = selectedOptions[selectedOptions.length - 1];
 
-        if (targetOption.value) {
-          if (targetOption.isDatabase && !targetOption.isLeaf) {
-            getTableOptionsByDatabaseID(targetOption.value.toString()).then(
-              (res) => {
-                targetOption.children = res;
-                setOperationPermissionOptions([...operationPermissionOptions]);
-              }
-            );
-          } else {
-            getDatabaseOptionsByDBServiceID().then((res) => {
-              targetOption.children =
-                res?.map((v) => ({
-                  ...v,
-                  isLeaf: getOperationPermissionLevel(
-                    targetOption.value!.toString(),
-                    'table'
-                  )
-                })) ?? [];
-              setOperationPermissionOptions([...operationPermissionOptions]);
-            });
-          }
+        if (!targetOption.value) return;
+
+        if (targetOption.isDatabase) {
+          const tableOptions = await getTableOptions(
+            targetOption.value.toString()
+          );
+          targetOption.children = tableOptions;
+        } else {
+          const databaseOptions = await getDatabaseOptions();
+          targetOption.children = databaseOptions.map((v) => ({
+            ...v,
+            isLeaf: getOperationPermissionLevel(
+              targetOption.value!.toString(),
+              'table'
+            )
+          }));
         }
+
+        setOperationPermissionOptions([...operationPermissionOptions]);
       },
       [
-        getDatabaseOptionsByDBServiceID,
+        getDatabaseOptions,
         getOperationPermissionLevel,
-        getTableOptionsByDatabaseID,
+        getTableOptions,
         operationPermissionOptions
       ]
     );
 
   return {
     updateOperationPermission,
-    loading,
+    loading: operationLoading || databaseLoading || tableLoading,
     operationPermissionList,
     operationPermissionOptions,
     getOperationPermissionLevel,
     loadDataBaseOnPermissionLevel,
-    permissionsDisplayRender,
-    selectedPermissionLabels,
-    setSelectedPermissionLabels
+    permissionsDisplayRender
   };
 };
-
 export default useOperationPermissionTips;

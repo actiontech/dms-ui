@@ -111,11 +111,15 @@ const UpdateRole: React.FC = () => {
           }
 
           return data_operations.flatMap((operation) =>
-            data_objects.map((object) => [
-              operation.uid ?? '',
-              object.database_uid ?? '',
-              object.table_uid ?? ''
-            ])
+            data_objects.map((object) =>
+              object.table_uid
+                ? [
+                    operation.uid ?? '',
+                    object.database_uid ?? '',
+                    object.table_uid
+                  ]
+                : [operation.uid ?? '', object.database_uid ?? '']
+            )
           );
         }) ?? []
       );

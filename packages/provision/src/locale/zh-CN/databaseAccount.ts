@@ -68,10 +68,13 @@ export default {
     business: '业务',
     service: '数据源',
     dbAccount: '数据库账户',
+    dbAccountNumber: '本次发现数据库账号数量：{{number}}',
+    pleaseSelectDBAccount: '请选择本次需要同步的数据库账号',
     syncAccount: '同步账户',
     syncAccountTip:
       '对同一数据源可以进行多次账号发现，账号发现时将会过滤掉已经在平台上的账号',
-    syncSuccess: '同步账户成功'
+    syncSuccess: '同步账户成功',
+    userFilterPlaceholder: '输入账号名进行搜索'
   },
   create: {
     returnText: '返回账号管理列表',
@@ -141,7 +144,9 @@ export default {
     authUser: '授权成员',
     originPermission: '原始权限',
     role: '角色',
-    permission: '权限'
+    roleInfo: '角色信息',
+    permission: '权限',
+    permissionInfo: '权限信息'
   },
   authorize: {
     title: '账号授权',

@@ -27,7 +27,6 @@ const RoleTableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
         {dataSource.slice(0, tagLimit).map((item) => renderScanTypeTag(item))}
         <BasicToolTips
           trigger={'click'}
-          titleWidth={450}
           title={
             <Space wrap size={[0, 6]}>
               {dataSource.map((item) => renderScanTypeTag(item))}

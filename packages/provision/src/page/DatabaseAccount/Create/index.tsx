@@ -30,10 +30,6 @@ import DbAccountService from '@actiontech/shared/lib/api/provision/service/servi
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
-import {
-  BackendFormValues,
-  FormItem
-} from '../../../../../sqle/src/components/BackendForm';
 
 const CreateDatabaseAccount = () => {
   const { t } = useTranslation();
@@ -142,10 +138,6 @@ const CreateDatabaseAccount = () => {
     setSubmitFailed();
   };
 
-  const jumpToDBAccountDetail = () => {
-    navigate(`/provision/project/${projectID}/database-account`);
-  };
-
   useEffect(() => {
     if (dbAccountMeta && dbAccountMeta.length > 0) {
       form.setFieldsValue({
@@ -189,8 +181,8 @@ const CreateDatabaseAccount = () => {
                 <Icon component={BriefcaseFilled} className="title-icon" />
                 {t('databaseAccount.create.title')}
               </FormItemBigTitle>
-              <BaseInfoForm dbAccountMeta={dbAccountMeta ?? []} />
-              <DataPermissionsForm />
+              <BaseInfoForm dbAccountMeta={dbAccountMeta ?? []} mode="create" />
+              <DataPermissionsForm mode="create" />
             </CreateAccountFormStyleWrapper>
           </FormStyleWrapper>
         }
@@ -203,9 +195,11 @@ const CreateDatabaseAccount = () => {
               <BasicButton type="primary" onClick={onContinue}>
                 {t('databaseAccount.create.result.continue')}
               </BasicButton>
-              <BasicButton onClick={jumpToDBAccountDetail} type="primary">
-                {t('databaseAccount.create.result.viewDetail')}
-              </BasicButton>
+              <Link to={`/provision/project/${projectID}/database-account`}>
+                <BasicButton type="primary">
+                  {t('databaseAccount.create.returnText')}
+                </BasicButton>
+              </Link>
             </Space>
           }
         />

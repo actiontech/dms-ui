@@ -16,6 +16,7 @@ export type AccountTableFieldProps = {
   onChange?: (value?: IDBAccountBody[]) => void;
   data?: IDBAccountBody[];
   loading?: boolean;
+  refresh: () => void;
 };
 
 export type CreateAccountFormType = {

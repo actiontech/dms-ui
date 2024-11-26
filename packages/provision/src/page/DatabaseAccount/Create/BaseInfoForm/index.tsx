@@ -31,11 +31,11 @@ import { IDBAccountMeta } from '@actiontech/shared/lib/api/provision/service/com
 import AutoCreatedFormItemByApi from '../../../../../../sqle/src/components/BackendForm';
 
 type Props = {
-  disabled?: boolean;
+  mode: 'create' | 'update';
   dbAccountMeta: IDBAccountMeta[];
 };
 
-const BaseInfoForm: React.FC<Props> = ({ disabled = false, dbAccountMeta }) => {
+const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
   const { t } = useTranslation();
 
   const form = Form.useFormInstance<CreateAccountFormType>();
@@ -48,6 +48,8 @@ const BaseInfoForm: React.FC<Props> = ({ disabled = false, dbAccountMeta }) => {
 
   const { businessOptions, updateBusinessList, loading } = useBusinessOptions();
   const policy = Form.useWatch('policy', form);
+
+  const disabled = mode === 'update';
 
   const {
     updateSecurityPolicyList,
