@@ -26,7 +26,7 @@ for (let i = 0; i < 50; i++) {
     exec_result: 'exec_result' + i,
     exec_sql: 'exec_sql' + i,
     exec_status: 'exec_status' + i,
-    rollback_sql: 'rollback_sql' + i
+    rollback_sqls: ['rollback_sql' + i]
   });
 }
 

@@ -54,7 +54,9 @@ describe('test useRenderDatabaseSelectionItems', () => {
       isCloneMode: false,
       isAssociationVersionMode: false,
       versionId: undefined,
-      versionName: undefined
+      versionName: undefined,
+      rollbackWorkflowId: undefined,
+      isRollbackMode: false
     }));
   });
   afterEach(() => {
@@ -104,7 +106,8 @@ describe('test useRenderDatabaseSelectionItems', () => {
       ruleTemplate: undefined,
       dbType: undefined,
       testConnectResult: undefined,
-      isSupportFileModeExecuteSql: true
+      isSupportFileModeExecuteSql: true,
+      enableBackup: false
     });
 
     await act(() => jest.advanceTimersByTime(3000));
@@ -361,7 +364,9 @@ describe('test useRenderDatabaseSelectionItems', () => {
       isCloneMode: true,
       isAssociationVersionMode: false,
       versionId: undefined,
-      versionName: undefined
+      versionName: undefined,
+      rollbackWorkflowId: undefined,
+      isRollbackMode: false
     }));
     renderHook(() =>
       useRenderDatabaseSelectionItems({
@@ -373,5 +378,66 @@ describe('test useRenderDatabaseSelectionItems', () => {
     expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(2);
     expect(mockGetInstance).toHaveBeenCalledTimes(2);
     expect(mockGetSystemModuleStatus).toHaveBeenCalledTimes(2);
+  });
+
+  it('should get instance info when isRollbackMode is true and instanceList not undefined', async () => {
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        sqlExecWorkflow: {
+          clonedExecWorkflowSqlAuditInfo: {
+            databaseInfo: [
+              {
+                instanceName: 'mysql-1',
+                instanceSchema: 'test'
+              }
+            ]
+          }
+        }
+      })
+    );
+    const mockGetInstanceSchemas = instance.getInstanceSchemas();
+    const mockGetInstance = instance.getInstance();
+    const mockGetSystemModuleStatus = system.getSystemModuleStatus();
+    const spy = jest.spyOn(useCreationMode, 'default');
+    spy.mockImplementation(() => ({
+      isCloneMode: false,
+      isAssociationVersionMode: false,
+      versionId: undefined,
+      versionName: undefined,
+      rollbackWorkflowId: undefined,
+      isRollbackMode: true
+    }));
+    renderHook(() =>
+      useRenderDatabaseSelectionItems({
+        dbSourceInfoCollection: MockSharedStepDetail.dbSourceInfoCollection,
+        sqlStatementTabActiveKey: MockSharedStepDetail.sqlStatementTabActiveKey,
+        instanceList: [
+          {
+            instance_name: 'mysql-1',
+            enable_backup: true
+          }
+        ]
+      })
+    );
+    expect(
+      MockSharedStepDetail.dbSourceInfoCollection.set
+    ).toHaveBeenCalledTimes(2);
+    expect(
+      MockSharedStepDetail.dbSourceInfoCollection.set
+    ).toHaveBeenCalledWith('0', {
+      instanceName: 'mysql-1',
+      schemaName: undefined,
+      getSchemaLoading: true,
+      schemaList: [],
+      ruleTemplate: undefined,
+      dbType: undefined,
+      testConnectResult: undefined,
+      isSupportFileModeExecuteSql: true,
+      enableBackup: true
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(1);
+    expect(mockGetInstance).toHaveBeenCalledTimes(1);
+    expect(mockGetSystemModuleStatus).toHaveBeenCalledTimes(1);
   });
 });

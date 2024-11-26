@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage workflows 1`] = `
+exports[`sqle/SqlExecWorkflow/Detail/AssociatedRollbackWorkflows render associated stage workflows 1`] = `
 <body>
   <div>
     <section
@@ -9,7 +9,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
       <div
         class="associated-workflows-wrap-title"
       >
-        关联工单信息
+        关联回滚工单信息
       </div>
       <ul
         class="ant-timeline css-dev-only-do-not-override-txh9fw"
@@ -27,7 +27,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical 'associated-workflows-wrap-item'"
             >
               <div
                 class="ant-space-item"
@@ -35,103 +35,14 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
               >
                 <div
                   class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
-                  title="v-12-dev-3"
+                  title="v-12-dev-3_Rollback"
                 >
                   <a
                     href="/sqle/project/700300/exec-workflow/1839493775269826560"
                     target="__blank"
                   >
-                    v-12-dev-3
+                    v-12-dev-3_Rollback
                   </a>
-                </div>
-              </div>
-              <div
-                class="ant-space-item"
-              >
-                <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
-                >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px;"
-                  >
-                    <span
-                      class="associated-workflows-wrap-item-label"
-                    >
-                      工单状态
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <div
-                      class="css-3q8fl"
-                    >
-                      <svg
-                        fill="none"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                          stroke="#41BF9A"
-                          stroke-width="1.5"
-                        />
-                        <path
-                          d="m5.083 8 2.084 2.083 4.166-4.166"
-                          stroke="#41BF9A"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
-                        />
-                      </svg>
-                      <span>
-                        上线成功
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li
-          class="ant-timeline-item"
-        >
-          <div
-            class="ant-timeline-item-tail"
-          />
-          <div
-            class="ant-timeline-item-head ant-timeline-item-head-custom ant-timeline-item-head-gray"
-          >
-            <svg
-              height="24"
-              viewBox="0 0 1024 1024"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
-                fill="#4583FF"
-              />
-            </svg>
-          </div>
-          <div
-            class="ant-timeline-item-content"
-          >
-            <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
-            >
-              <div
-                class="ant-space-item"
-                style="margin-bottom: 8px;"
-              >
-                <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
-                  title="workflow_name"
-                >
-                  workflow_name
                 </div>
               </div>
               <div
@@ -198,7 +109,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical 'associated-workflows-wrap-item'"
             >
               <div
                 class="ant-space-item"
@@ -206,13 +117,13 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
               >
                 <div
                   class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
-                  title="v-12-dev-3_生产"
+                  title="workflow_name_Rollback"
                 >
                   <a
-                    href="/sqle/project/700300/exec-workflow/1839543178827403264"
+                    href="/sqle/project/700300/exec-workflow/1747444197486497792"
                     target="__blank"
                   >
-                    v-12-dev-3_生产
+                    workflow_name_Rollback
                   </a>
                 </div>
               </div>
@@ -247,12 +158,18 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                       >
                         <path
                           d="M6.875 1.516a2.25 2.25 0 0 1 2.25 0l3.928 2.267a2.25 2.25 0 0 1 1.125 1.95v4.535a2.25 2.25 0 0 1-1.125 1.948l-3.928 2.269a2.25 2.25 0 0 1-2.25 0l-3.928-2.268a2.25 2.25 0 0 1-1.125-1.95V5.733a2.25 2.25 0 0 1 1.125-1.949z"
-                          stroke="#7453DA"
+                          stroke="#41BF9A"
+                          stroke-width="1.5"
+                        />
+                        <path
+                          d="m5.083 8 2.084 2.083 4.166-4.166"
+                          stroke="#41BF9A"
+                          stroke-linejoin="round"
                           stroke-width="1.5"
                         />
                       </svg>
                       <span>
-                        待审核
+                        上线成功
                       </span>
                     </div>
                   </div>
@@ -267,7 +184,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
 </body>
 `;
 
-exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render init snap 1`] = `
+exports[`sqle/SqlExecWorkflow/Detail/AssociatedRollbackWorkflows render init snap 1`] = `
 <body>
   <div>
     <section
@@ -276,7 +193,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render init snap 1`] = 
       <div
         class="associated-workflows-wrap-title"
       >
-        关联工单信息
+        关联回滚工单信息
       </div>
       <ul
         class="ant-timeline css-dev-only-do-not-override-txh9fw"

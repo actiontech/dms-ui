@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is false 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="1_backup"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  是否选择开启备份
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  开启后，数据源上创建的工单将默认开启备份能力
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="true"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is true 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="1_backup"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  是否选择开启备份
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  开启后，数据源上创建的工单将默认开启备份能力
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="true"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`test SqlBackupSwitcher render init snap 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="1_backup"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  是否选择开启备份
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  开启后，数据源上创建的工单将默认开启备份能力
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="false"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
+
+exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = `
+<body>
+  <div />
+  <div>
+    <form
+      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
+              for="1_backup"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  是否选择开启备份
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  开启后，数据源上创建的工单将默认开启备份能力
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <button
+                  aria-checked="false"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                  disabled=""
+                  role="switch"
+                  type="button"
+                >
+                  <div
+                    class="ant-switch-handle"
+                  />
+                  <span
+                    class="ant-switch-inner"
+                  >
+                    <span
+                      class="ant-switch-inner-checked"
+                    />
+                    <span
+                      class="ant-switch-inner-unchecked"
+                    />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+`;
