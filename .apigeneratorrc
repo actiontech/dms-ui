@@ -11,7 +11,7 @@
   {
     "project": "provision-ui",
     "output": "packages/shared/lib/api/provision/service",
-    "branch": "Oracle_DBAccount",
+    "branch": "shangqi_2411_pre1",
     "swaggerPath": "",
     "swaggerOutput": "",
     "plugin": "",

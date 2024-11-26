@@ -53,7 +53,7 @@ describe('provision/DatabaseAccount/Create', () => {
     );
     return superRender(
       <Form form={result.current[0]}>
-        <DataPermissionsForm />
+        <DataPermissionsForm mode="create" />
       </Form>
     );
   };

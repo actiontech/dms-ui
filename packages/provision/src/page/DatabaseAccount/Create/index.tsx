@@ -48,7 +48,6 @@ const CreateDatabaseAccount = () => {
   const [form] = Form.useForm<CreateAccountFormType>();
   const selectedDBServiceID = Form.useWatch('dbServiceID', form);
   const selectedDBType = Form.useWatch('dbType', form);
-  const navigate = useTypedNavigate();
 
   const { data: dbAccountMeta } = useRequest(
     () =>
