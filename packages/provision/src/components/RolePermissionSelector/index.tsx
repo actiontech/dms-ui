@@ -12,6 +12,7 @@ import useOperationPermissionTips from '../../hooks/useOperationPermissionTips';
 import useDBAuthRoleTips from '../../hooks/useDBAuthRoleTips';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { CustomCascaderPopupMenuStyleWrapper } from './style';
+import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
   form,
@@ -73,7 +74,8 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
         label={t('databaseAccount.create.form.role')}
         name="dbRoles"
         extra={
-          showQuickCreateRole ? (
+          showQuickCreateRole &&
+          selectedDBType === ListServiceDbTypeEnum.Oracle ? (
             <TypedLink
               target="_blank"
               to={`/provision/project/${projectID}/database-role?action=create_role`}
