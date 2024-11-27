@@ -103,7 +103,7 @@ describe('test AuditResultStep', () => {
     expect(updateTaskBackupStrategySpy).toHaveBeenCalledTimes(1);
     expect(updateTaskBackupStrategySpy).toHaveBeenCalledWith({
       task_id: '1',
-      strategy: 'origin_row'
+      strategy: 'original_row'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('切换数据源备份策略成功')).toBeInTheDocument();

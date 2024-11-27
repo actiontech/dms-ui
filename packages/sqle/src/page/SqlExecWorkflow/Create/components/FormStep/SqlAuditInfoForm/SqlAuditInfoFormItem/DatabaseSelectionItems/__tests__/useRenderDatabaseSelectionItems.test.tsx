@@ -73,7 +73,13 @@ describe('test useRenderDatabaseSelectionItems', () => {
     const { result } = renderHook(() =>
       useRenderDatabaseSelectionItems({
         dbSourceInfoCollection: MockSharedStepDetail.dbSourceInfoCollection,
-        sqlStatementTabActiveKey: MockSharedStepDetail.sqlStatementTabActiveKey
+        sqlStatementTabActiveKey: MockSharedStepDetail.sqlStatementTabActiveKey,
+        instanceList: [
+          {
+            instance_name: 'instance1',
+            enable_backup: true
+          }
+        ]
       })
     );
 
@@ -95,7 +101,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(1);
+    ).toHaveBeenCalledTimes(2);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('key1', {
@@ -107,14 +113,14 @@ describe('test useRenderDatabaseSelectionItems', () => {
       dbType: undefined,
       testConnectResult: undefined,
       isSupportFileModeExecuteSql: true,
-      enableBackup: false
+      enableBackup: true
     });
 
     await act(() => jest.advanceTimersByTime(3000));
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(4);
+    ).toHaveBeenCalledTimes(5);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('key1', {
@@ -148,7 +154,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     await act(() => jest.advanceTimersByTime(3000));
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(5);
+    ).toHaveBeenCalledTimes(6);
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
@@ -169,7 +175,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
 
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(1);
+    ).toHaveBeenCalledTimes(2);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('key1', {
@@ -267,7 +273,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     expect(handleClickSpy).not.toHaveBeenCalled();
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).not.toHaveBeenCalled();
+    ).toHaveBeenCalledTimes(1);
     expect(
       MockSharedStepDetail.sqlStatementTabActiveKey.set
     ).not.toHaveBeenCalled();
@@ -298,7 +304,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     expect(handleClickSpy).toHaveBeenCalledTimes(1);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(1);
+    ).toHaveBeenCalledTimes(2);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('1', undefined);
@@ -421,7 +427,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     );
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledTimes(2);
+    ).toHaveBeenCalledTimes(3);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
     ).toHaveBeenCalledWith('0', {

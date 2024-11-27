@@ -32,6 +32,7 @@ describe('test SqlStatementFormItem', () => {
           databaseInfo={[
             { key: '1', instanceName: 'mysql-1', schemaName: 'test' }
           ]}
+          isAtFormStep
           {...params}
         />
       </Form>

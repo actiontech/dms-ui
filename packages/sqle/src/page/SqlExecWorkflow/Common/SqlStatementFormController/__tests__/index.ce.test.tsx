@@ -24,6 +24,7 @@ describe('test SqlStatementFormController ce', () => {
           databaseInfo={[
             { key: '1', instanceName: 'mysql-1', schemaName: 'test' }
           ]}
+          isAtFormStep
         />
       </Form>
     );
