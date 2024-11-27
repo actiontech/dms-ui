@@ -48,11 +48,11 @@ export const customIdGenerator = (
 };
 
 export const generatePrivilegesFormValuesByBackendData = (
-  dataPermissions: IDBAccountDataPermission[],
+  backendData: IDBAccountDataPermission[],
   service: string
 ): ObjectPrivilegeValues[] => {
   return (
-    dataPermissions.map((item) => {
+    backendData.map((item) => {
       const objectsLabel: string[] = [];
       const objectsValue: IDataObjects[] = [];
       item.data_objects?.forEach((object) => {

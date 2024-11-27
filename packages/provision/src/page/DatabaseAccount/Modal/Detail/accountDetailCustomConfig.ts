@@ -10,11 +10,11 @@ export const accountDetailCustomConfig: IAccountDetailCustomConfig[] = [
   {
     key: 'data_permissions',
     type: 'table',
-    prefix: t('databaseAccount.create.permissionInfo'),
+    prefix: t('databaseAccount.create.privilegeInfo'),
     headers: [
       t('databaseAccount.discovery.service'),
       t('databaseAccount.detail.roleInfo'),
-      t('databaseAccount.detail.permissionInfo')
+      t('databaseAccount.detail.privilegeInfo')
     ]
   },
   {

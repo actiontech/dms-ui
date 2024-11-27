@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Form } from 'antd';
 import { CreateAccountFormType } from '../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
-import RolePermissionSelector from '../../../../components/DatabasePrivilegesSelector';
+import DatabasePrivilegesSelector from '../../../../components/DatabasePrivilegesSelector';
 
 type Props = {
   mode: 'create' | 'update';
 };
 
-const DataPermissionsForm: React.FC<Props> = ({ mode }) => {
+const DataPrivilegesForm: React.FC<Props> = ({ mode }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
   const form = Form.useFormInstance<CreateAccountFormType>();
@@ -17,10 +17,10 @@ const DataPermissionsForm: React.FC<Props> = ({ mode }) => {
   return (
     <>
       <FormItemSubTitle>
-        {t('databaseAccount.create.permissionInfo')}
+        {t('databaseAccount.create.privilegeInfo')}
       </FormItemSubTitle>
 
-      <RolePermissionSelector
+      <DatabasePrivilegesSelector
         showQuickCreateRole
         form={form}
         projectID={projectID}
@@ -30,4 +30,4 @@ const DataPermissionsForm: React.FC<Props> = ({ mode }) => {
   );
 };
 
-export default DataPermissionsForm;
+export default DataPrivilegesForm;

@@ -25,6 +25,7 @@ import {
 import { customIdGenerator, getObjectsLabelByDataObjects } from './utils';
 import EventEmitter from '../../../utils/EventEmitter';
 import { EventEmitterKey } from '../../../data/enum';
+import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 const OPTIONS_REQUEST_DEFAULT_PARAMS = {
   page_index: 1,
@@ -38,7 +39,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
   onSubmit,
   service,
   data,
-  getOperationPermissionPending,
+  getOperationPrivilegesPending,
   objectPrivilegeOptions
 }) => {
   const { t } = useTranslation();
@@ -184,7 +185,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
           .flat()
           .filter((i) => !!i) ?? [];
 
-      const curPermission = {
+      const curPrivilege = {
         id:
           editId ??
           customIdGenerator(res.data_objects, res.data_operations || []),
@@ -195,12 +196,12 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
         objectsParams
       };
       if (editId !== undefined) {
-        const permissions = cloneDeep(data);
-        const index = permissions.findIndex((i) => i.id === editId);
-        permissions.splice(index, 1, curPermission);
-        onSubmit?.(permissions);
+        const privileges = cloneDeep(data);
+        const index = privileges.findIndex((i) => i.id === editId);
+        privileges.splice(index, 1, curPrivilege);
+        onSubmit?.(privileges);
       } else {
-        onSubmit?.([...data, curPermission]);
+        onSubmit?.([...data, curPrivilege]);
       }
       handleCancel();
     });
@@ -263,7 +264,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
       size="large"
       title={
         editId !== undefined
-          ? t('databaseAccount.create.form.editDataPermission')
+          ? t('databaseAccount.create.form.editDataPrivileges')
           : t('databaseAccount.create.form.addObjectPrivileges')
       }
       onClose={handleCancel}
@@ -279,13 +280,15 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
       <Form form={form} layout="vertical">
         <Form.Item
           name="data_operations"
-          label={t('databaseAccount.create.form.selectPermission')}
+          label={t('databaseAccount.create.form.selectPrivileges')}
           rules={[{ required: true }]}
         >
           <BasicSelect
             mode="multiple"
-            loading={getOperationPermissionPending}
+            loading={getOperationPrivilegesPending}
             options={objectPrivilegeOptions}
+            filterOption={filterOptionByLabel}
+            showSearch
           />
         </Form.Item>
         <Form.List
@@ -304,7 +307,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                     index === 0 ? (
                       <BasicToolTips
                         suffixIcon
-                        title={t('databaseAccount.create.form.permissionTip')}
+                        title={t('databaseAccount.create.form.privilegesTip')}
                       >
                         {t('databaseAccount.create.form.selectObjects')}
                       </BasicToolTips>
@@ -333,6 +336,8 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                             ...v,
                             disabled: selectedDatabase.includes(v.value)
                           }))}
+                          filterOption={filterOptionByLabel}
+                          showSearch
                         />
                       </Form.Item>
                     </Col>
@@ -348,6 +353,8 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                           options={tableOptions[index]}
                           placeholder="*"
                           mode="multiple"
+                          filterOption={filterOptionByLabel}
+                          showSearch
                         />
                       </Form.Item>
                     </Col>

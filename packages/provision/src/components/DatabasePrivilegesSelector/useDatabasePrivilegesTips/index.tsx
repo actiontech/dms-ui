@@ -6,9 +6,9 @@ import { isEqual } from 'lodash';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { OperationScopeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
-const TABLE_LEVEL_PERMISSION_SCOPE = ['Table'];
-const DATABASE_LEVEL_PERMISSION_SCOPE = ['Database', 'Table'];
-const SYSTEM_LEVEL_PERMISSION_SCOPE = ['Service', 'Instance'];
+const TABLE_LEVEL_PRIVILEGES_SCOPE = ['Table'];
+const DATABASE_LEVEL_PRIVILEGES_SCOPE = ['Database', 'Table'];
+const SYSTEM_LEVEL_PRIVILEGES_SCOPE = ['Service', 'Instance'];
 
 const REQUEST_DEFAULT_PARAMS = {
   page_index: 1,
@@ -25,8 +25,8 @@ const useDatabasePrivilegesTips = () => {
   >([]);
 
   const {
-    data: operationPermissionList,
-    run: updateOperationPermission,
+    data: operationPrivilegesList,
+    run: updateOperationPrivileges,
     loading
   } = useRequest(
     (dbType: AuthListOperationsDbTypeEnum) =>
@@ -39,7 +39,7 @@ const useDatabasePrivilegesTips = () => {
             setSystemPrivilegesOptions(
               res.data.data
                 ?.filter((v) =>
-                  getOperationPermissionLevel(v.scope ?? [], 'system')
+                  getOperationPrivilegesLevel(v.scope ?? [], 'system')
                 )
                 ?.map((v) => ({ label: v.name ?? '', value: v.uid ?? '' })) ??
                 []
@@ -49,8 +49,8 @@ const useDatabasePrivilegesTips = () => {
               res.data.data
                 ?.filter(
                   (v) =>
-                    getOperationPermissionLevel(v.scope ?? [], 'database') ||
-                    getOperationPermissionLevel(v.scope ?? [], 'table')
+                    getOperationPrivilegesLevel(v.scope ?? [], 'database') ||
+                    getOperationPrivilegesLevel(v.scope ?? [], 'table')
                 )
                 ?.map((v) => ({ label: v.name ?? '', value: v.uid ?? '' })) ??
                 []
@@ -72,18 +72,18 @@ const useDatabasePrivilegesTips = () => {
     }
   );
 
-  const getOperationPermissionLevel = useCallback(
+  const getOperationPrivilegesLevel = useCallback(
     (scope: OperationScopeEnum[], level: 'system' | 'database' | 'table') => {
       if (level === 'system') {
-        return isEqual(scope, SYSTEM_LEVEL_PERMISSION_SCOPE);
+        return isEqual(scope, SYSTEM_LEVEL_PRIVILEGES_SCOPE);
       }
 
       if (level === 'database') {
-        return isEqual(scope, DATABASE_LEVEL_PERMISSION_SCOPE);
+        return isEqual(scope, DATABASE_LEVEL_PRIVILEGES_SCOPE);
       }
 
       if (level === 'table') {
-        return isEqual(scope, TABLE_LEVEL_PERMISSION_SCOPE);
+        return isEqual(scope, TABLE_LEVEL_PRIVILEGES_SCOPE);
       }
 
       return false;
@@ -92,12 +92,12 @@ const useDatabasePrivilegesTips = () => {
   );
 
   return {
-    updateOperationPermission,
+    updateOperationPrivileges,
     loading,
-    operationPermissionList,
+    operationPrivilegesList,
     objectPrivilegesOptions,
     systemPrivilegesOptions,
-    getOperationPermissionLevel
+    getOperationPrivilegesLevel
   };
 };
 export default useDatabasePrivilegesTips;

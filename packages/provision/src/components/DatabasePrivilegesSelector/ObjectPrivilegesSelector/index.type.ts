@@ -3,7 +3,7 @@ export type ObjectPrivilegeTableFieldProps = {
   onChange?: (value: ObjectPrivilegeValues[]) => void;
   selectedDBServiceID?: string;
   objectPrivilegeOptions: Array<{ label: string; value: string }>;
-  getOperationPermissionPending: boolean;
+  getOperationPrivilegesPending: boolean;
 };
 
 export type ObjectPrivilegeValues = {
@@ -29,7 +29,7 @@ export type ObjectPrivilegesModalProps = {
   data: ObjectPrivilegeValues[];
 } & Pick<
   ObjectPrivilegeTableFieldProps,
-  'getOperationPermissionPending' | 'objectPrivilegeOptions'
+  'getOperationPrivilegesPending' | 'objectPrivilegeOptions'
 >;
 
 export type ObjectPrivilegesFormFields = {

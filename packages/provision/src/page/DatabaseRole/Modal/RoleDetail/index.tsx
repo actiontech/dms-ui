@@ -62,14 +62,14 @@ const RoleDetail: React.FC = () => {
     updateDBRoleDetailInfo(undefined);
   };
 
-  const generatePermissionLabel = (permission: IDBAccountDataPermission) => {
-    if (permission.data_objects) {
-      return `${permission.data_operations
+  const generatePrivilegeLabel = (privilege: IDBAccountDataPermission) => {
+    if (privilege.data_objects) {
+      return `${privilege.data_operations
         ?.map((v) => v.name)
-        .join(',')} ON ${permission.data_objects.map((v) => v.name).join(',')}`;
+        .join(',')} ON ${privilege.data_objects.map((v) => v.name).join(',')}`;
     }
 
-    return permission.data_operations?.map((v) => v.name).join(',');
+    return privilege.data_operations?.map((v) => v.name).join(',');
   };
 
   return (
@@ -105,10 +105,10 @@ const RoleDetail: React.FC = () => {
         </div>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
-            {t('databaseRole.roleDetail.dataPermission')}
+            {t('databaseRole.roleDetail.dataPrivilege')}
           </div>
           <div className="audit-card">
-            <AccountInfoItem label={t('databaseAccount.detail.role')}>
+            <AccountInfoItem label={t('databaseRole.roleDetail.role')}>
               {dbRoleDetailInfo?.child_roles?.map((role) => (
                 <BasicTag key={role.uid} style={{ maxWidth: 190 }}>
                   <BasicTypographyEllipsis
@@ -119,7 +119,7 @@ const RoleDetail: React.FC = () => {
                 </BasicTag>
               ))}
             </AccountInfoItem>
-            <AccountInfoItem label={t('databaseAccount.detail.permission')}>
+            <AccountInfoItem label={t('databaseRole.roleDetail.privilege')}>
               {dbRoleDetailInfo?.data_permissions?.map((item, index) => {
                 return (
                   <EmptyBox
@@ -134,7 +134,7 @@ const RoleDetail: React.FC = () => {
                       <BasicTypographyEllipsis
                         copyable={false}
                         tooltipsMaxWidth={220}
-                        textCont={generatePermissionLabel(item) ?? ''}
+                        textCont={generatePrivilegeLabel(item) ?? ''}
                       />
                     </BasicTag>
                   </EmptyBox>

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import useServiceOptions from '../../../../hooks/useServiceOptions';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import { useEffect } from 'react';
-import RolePermissionSelector from '../../../../components/DatabasePrivilegesSelector';
+import DatabasePrivilegesSelector from '../../../../components/DatabasePrivilegesSelector';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import {
   FormAreaBlockStyleWrapper,
@@ -86,7 +86,11 @@ const RoleForm: React.FC<IDatabaseRoleFormProps> = ({ form, mode, title }) => {
           <BasicInput disabled={mode === 'update'} />
         </FormItemLabel>
 
-        <RolePermissionSelector mode={mode} form={form} projectID={projectID} />
+        <DatabasePrivilegesSelector
+          mode={mode}
+          form={form}
+          projectID={projectID}
+        />
       </FormAreaBlockStyleWrapper>
     </FormStyleWrapper>
   );

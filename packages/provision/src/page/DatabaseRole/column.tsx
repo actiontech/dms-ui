@@ -37,7 +37,7 @@ export const DatabaseRoleTableColumns = (
       }
     },
     {
-      title: t('databaseRole.tableColumns.permissions'),
+      title: t('databaseRole.tableColumns.privilege'),
       dataIndex: 'data_permissions',
       width: '60%',
       render(permissions) {

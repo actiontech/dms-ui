@@ -34,8 +34,8 @@ const DatabasePrivilegesSelector = <
   const selectedAuthType = Form.useWatch('authType', form);
   const selectedDBType = Form.useWatch('dbType', form);
   const {
-    loading: getOperationPermissionPending,
-    updateOperationPermission,
+    loading: getOperationPrivilegesPending,
+    updateOperationPrivileges,
     systemPrivilegesOptions,
     objectPrivilegesOptions
   } = useDatabasePrivilegesTips();
@@ -45,7 +45,8 @@ const DatabasePrivilegesSelector = <
       updateDBAuthRoleTips(selectedDbServiceID, projectID);
     } else {
       if (mode === 'create') {
-        form.setFieldValue('operationsPermissions', undefined);
+        form.setFieldValue('objectPrivileges', undefined);
+        form.setFieldValue('systemPrivileges', undefined);
         form.setFieldValue('dbRoles', undefined);
       }
     }
@@ -53,9 +54,9 @@ const DatabasePrivilegesSelector = <
 
   useEffect(() => {
     if (selectedDBType) {
-      updateOperationPermission(selectedDBType as AuthListOperationsDbTypeEnum);
+      updateOperationPrivileges(selectedDBType as AuthListOperationsDbTypeEnum);
     }
-  }, [selectedDBType, selectedAuthType, updateOperationPermission]);
+  }, [selectedDBType, selectedAuthType, updateOperationPrivileges]);
 
   return (
     <>
@@ -93,16 +94,17 @@ const DatabasePrivilegesSelector = <
         label={t('databaseAccount.create.form.systemPrivileges')}
       >
         <BasicSelect
-          loading={getOperationPermissionPending}
+          loading={getOperationPrivilegesPending}
           options={systemPrivilegesOptions}
           mode="multiple"
           filterOption={filterOptionByLabel}
+          showSearch
         />
       </FormItemLabel>
 
       <FormItemLabel name="objectPrivileges" wrapperCol={{ span: 24 }}>
         <ObjectPrivilegesField
-          getOperationPermissionPending={getOperationPermissionPending}
+          getOperationPrivilegesPending={getOperationPrivilegesPending}
           objectPrivilegeOptions={objectPrivilegesOptions}
           selectedDBServiceID={selectedDbServiceID}
         />

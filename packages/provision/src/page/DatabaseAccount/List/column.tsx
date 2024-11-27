@@ -194,7 +194,7 @@ export const DatabaseAccountListActions = (
           },
           {
             key: 'modify_permission',
-            text: t('databaseAccount.list.action.modifyPermission'),
+            text: t('databaseAccount.list.action.modifyPrivilege'),
             onClick: (record) => onNavigateToUpdatePage(record?.db_account_uid)
           },
           {

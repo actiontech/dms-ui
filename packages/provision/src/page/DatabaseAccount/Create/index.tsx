@@ -16,7 +16,7 @@ import {
   FormStyleWrapper
 } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
-import DataPermissionsForm from './DataPermissionsForm';
+import DataPrivilegesForm from './DataPrivilegesForm';
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
@@ -171,7 +171,7 @@ const CreateDatabaseAccount = () => {
                 {t('databaseAccount.create.title')}
               </FormItemBigTitle>
               <BaseInfoForm dbAccountMeta={dbAccountMeta ?? []} mode="create" />
-              <DataPermissionsForm mode="create" />
+              <DataPrivilegesForm mode="create" />
             </CreateAccountFormStyleWrapper>
           </FormStyleWrapper>
         }

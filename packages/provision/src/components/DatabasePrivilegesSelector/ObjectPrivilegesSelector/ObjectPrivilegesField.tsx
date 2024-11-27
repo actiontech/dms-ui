@@ -24,7 +24,7 @@ const ObjectPrivilegesField: React.FC<ObjectPrivilegeTableFieldProps> = ({
   onChange,
   selectedDBServiceID,
   objectPrivilegeOptions,
-  getOperationPermissionPending
+  getOperationPrivilegesPending
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -113,7 +113,7 @@ const ObjectPrivilegesField: React.FC<ObjectPrivilegeTableFieldProps> = ({
         data={value}
         editId={editId}
         objectPrivilegeOptions={objectPrivilegeOptions}
-        getOperationPermissionPending={getOperationPermissionPending}
+        getOperationPrivilegesPending={getOperationPrivilegesPending}
       />
     </PrivilegesFieldStyleWrapper>
   );

@@ -27,7 +27,7 @@ export default {
       account: '账号',
       desc: '说明',
       dbService: '数据源',
-      permission: '权限',
+      privilege: '权限',
       expiredTime: '密码有效期',
       remainingDay: '密码有效时间',
       policy: '密码安全策略',
@@ -45,7 +45,7 @@ export default {
       authorize: '授权',
       modifyPassword: '修改密码',
       renewal: '续用当前密码',
-      modifyPermission: '变更账号权限',
+      modifyPrivilege: '变更账号权限',
       disable: '禁用',
       enable: '启用',
       delete: '删除',
@@ -59,8 +59,7 @@ export default {
       modifyPassword: '批量修改密码',
       renewal: '批量续期',
       disable: '禁用',
-      delete: '删除',
-      modifyPermission: '变更账号权限'
+      delete: '删除'
     }
   },
   discovery: {
@@ -80,7 +79,7 @@ export default {
     returnText: '返回账号管理列表',
     title: '创建数据库账号',
     baseInfo: '账户基本信息',
-    permissionInfo: '数据权限',
+    privilegeInfo: '数据权限',
     objectPrivilegesOverview: '对象权限概览',
     result: {
       success: '创建账号成功',
@@ -108,13 +107,13 @@ export default {
       syncSuccessTips: '同步字典数据成功',
       extraEmptyTips: '您还没有为当前账号添加对象权限',
       addObjectPrivileges: '添加对象权限',
-      editDataPermission: '编辑数据权限',
+      editDataPrivileges: '编辑对象权限',
       resetObjectPrivileges: '清除所有对象权限',
       selectObjects: '选择数据库表',
       addDatabaseTable: '添加数据库表',
-      selectPermission: '选择权限',
+      selectPrivileges: '选择对象权限',
       duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',
-      permissionTip:
+      privilegesTip:
         '如果您选定了一个Schema，此时再选中该数据源中的所有数据对象将无意义',
       containerName: '容器名',
       role: '角色',
@@ -142,11 +141,10 @@ export default {
     copyAll: '全文复制',
     authInfo: '授权信息',
     authUser: '授权成员',
-    originPermission: '原始权限',
     role: '角色',
     roleInfo: '角色信息',
-    permission: '权限',
-    permissionInfo: '权限信息'
+    privilege: '权限',
+    privilegeInfo: '权限信息'
   },
   authorize: {
     title: '账号授权',

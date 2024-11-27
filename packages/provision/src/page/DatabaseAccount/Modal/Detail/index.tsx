@@ -189,7 +189,7 @@ const DatabaseAccountDetailModal = () => {
         </div>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
-            {t('databaseAccount.create.permissionInfo')}
+            {t('databaseAccount.create.privilegeInfo')}
           </div>
           <div className="audit-card">
             <AccountInfoItem label={t('databaseAccount.detail.role')}>
@@ -214,7 +214,7 @@ const DatabaseAccountDetailModal = () => {
                 </BasicToolTips>
               ))}
             </AccountInfoItem>
-            <AccountInfoItem label={t('databaseAccount.detail.permission')}>
+            <AccountInfoItem label={t('databaseAccount.detail.privilege')}>
               {data?.data_permissions?.map((item, index) => {
                 return (
                   <EmptyBox

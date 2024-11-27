@@ -29,6 +29,7 @@ import { IDBAccountMeta } from '@actiontech/shared/lib/api/provision/service/com
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import AutoCreatedFormItemByApi from '../../../../../../sqle/src/components/BackendForm';
+import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 type Props = {
   mode: 'create' | 'update';
@@ -156,6 +157,8 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
             disabled={disabled}
             loading={loading}
             options={businessOptions}
+            showSearch
+            filterOption={filterOptionByLabel}
           />
         </FormItemLabel>
       </EmptyBox>
@@ -182,7 +185,6 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         name="username"
         label={t('databaseAccount.create.form.username')}
         rules={[{ required: true }]}
-        dependencies={['data_permission_template_uid', 'hostname']}
         className="has-required-style"
       >
         <BasicInput disabled={disabled} />

@@ -17,7 +17,7 @@ export default {
   tableColumns: {
     role: '角色名',
     childRoles: '子角色',
-    permissions: '权限',
+    privilege: '权限',
     dbService: '数据源',
     containerName: '容器名称'
   },
@@ -30,9 +30,7 @@ export default {
     successTips: '创建角色成功',
     dbService: '数据源',
     roleName: '角色名称',
-    rolePermissions: '角色权限',
     role: '角色',
-    permission: '权限',
     backToRoleList: '返回至角色列表'
   },
   updateRole: {
@@ -45,6 +43,8 @@ export default {
     roleInfo: '角色信息',
     roleName: '角色名',
     dbServiceName: '数据源',
-    dataPermission: '数据权限'
+    dataPrivilege: '数据权限',
+    privilege: '权限',
+    role: '角色'
   }
 };

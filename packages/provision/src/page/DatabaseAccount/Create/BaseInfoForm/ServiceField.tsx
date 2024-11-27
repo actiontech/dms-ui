@@ -4,6 +4,7 @@ import { DrawerFormIconWrapper } from '@actiontech/shared/lib/styleWrapper/eleme
 import { useTranslation } from 'react-i18next';
 import { ServiceFieldStyleWrapper } from '../../style';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 
 const ServiceFiled: React.FC<ServiceFieldProps> = ({
   value,
@@ -21,6 +22,8 @@ const ServiceFiled: React.FC<ServiceFieldProps> = ({
         disabled={disabled}
         value={value}
         allowClear
+        showSearch
+        filterOption={filterOptionByLabel}
       />
       <BasicToolTips title={t('dataObject.syncDataSource.button')}>
         <DrawerFormIconWrapper

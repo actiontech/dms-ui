@@ -47,7 +47,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
     },
     {
       dataIndex: 'permission_info',
-      title: t('databaseAccount.list.column.permission'),
+      title: t('databaseAccount.list.column.privilege'),
       render: (permission: IDBAccountBody['permission_info']) => {
         return (
           <TableTagsCell
