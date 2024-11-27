@@ -9,4 +9,4 @@ export type SqlStatementFormItemProps = {
   isSameSqlForAll: boolean;
   isSupportFileModeExecuteSql: boolean;
   isAtRejectStep?: boolean;
-} & Pick<SqlAuditInfoFormProps, 'isAuditing' | 'auditAction'>;
+} & Pick<SqlAuditInfoFormProps, 'isAuditing' | 'auditAction' | 'isAtFormStep'>;
