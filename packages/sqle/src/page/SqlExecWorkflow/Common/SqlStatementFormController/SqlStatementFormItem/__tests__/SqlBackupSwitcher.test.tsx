@@ -17,7 +17,10 @@ describe('test SqlBackupSwitcher', () => {
   const customRender = (
     databaseInfo: SqlBackupSwitcherProps['databaseInfo'],
     isSameSqlForAll = false,
-    isAtRejectStep = false
+    isAtRejectStep = false,
+    isAuditing = false,
+    isAtFormStep = true,
+    search = ''
   ) => {
     const { result } = renderHook(() => Form.useForm());
     return superRender(
@@ -27,8 +30,20 @@ describe('test SqlBackupSwitcher', () => {
           databaseInfo={databaseInfo}
           isSameSqlForAll={isSameSqlForAll}
           isAtRejectStep={isAtRejectStep}
+          isAuditing={{ set: jest.fn(), value: isAuditing }}
+          isAtFormStep={isAtFormStep}
         />
-      </Form>
+      </Form>,
+      undefined,
+      {
+        routerProps: {
+          initialEntries: [
+            {
+              search
+            }
+          ]
+        }
+      }
     );
   };
 
@@ -73,6 +88,84 @@ describe('test SqlBackupSwitcher', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('mysql-1已开启备份需求，是否确认关闭备份？'));
     fireEvent.click(screen.getByText('确 认'));
+    expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
+      'false'
+    );
+  });
+
+  it('render default checked when isAtFormStep is false', async () => {
+    customRender(
+      [
+        {
+          key: '1',
+          instanceName: 'mysql-1',
+          schemaName: 'test',
+          enableBackup: true
+        },
+        {
+          key: '2',
+          instanceName: 'mysql-2',
+          schemaName: 'test2',
+          enableBackup: false
+        }
+      ],
+      true,
+      false,
+      false,
+      false
+    );
+    expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
+      'false'
+    );
+  });
+
+  it('render default checked when isSameSqlForAll is true and isAuditing is true', async () => {
+    customRender(
+      [
+        {
+          key: '1',
+          instanceName: 'mysql-1',
+          schemaName: 'test',
+          enableBackup: true
+        },
+        {
+          key: '2',
+          instanceName: 'mysql-2',
+          schemaName: 'test2',
+          enableBackup: false
+        }
+      ],
+      true,
+      false,
+      true
+    );
+    expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
+      'false'
+    );
+  });
+
+  it('render default checked when isSameSqlForAll is true and isCloneMode is true', async () => {
+    customRender(
+      [
+        {
+          key: '1',
+          instanceName: 'mysql-1',
+          schemaName: 'test',
+          enableBackup: true
+        },
+        {
+          key: '2',
+          instanceName: 'mysql-2',
+          schemaName: 'test2',
+          enableBackup: false
+        }
+      ],
+      true,
+      false,
+      false,
+      true,
+      '?sourceWorkflowId=111'
+    );
     expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe(
       'false'
     );

@@ -941,7 +941,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
-      enable_backup: false,
+      enable_backup: true,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
