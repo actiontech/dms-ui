@@ -1,7 +1,7 @@
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { BasicSelect, TypedLink } from '@actiontech/shared';
+import { BasicSelect } from '@actiontech/shared';
 import { useEffect } from 'react';
 import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 import {
@@ -13,6 +13,7 @@ import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSele
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import useDatabasePrivilegesTips from './useDatabasePrivilegesTips';
 import ObjectPrivilegesField from './ObjectPrivilegesSelector/ObjectPrivilegesField';
+import { Link } from 'react-router-dom';
 
 const DatabasePrivilegesSelector = <
   T extends IDatabasePrivilegesSelectorBaseFields
@@ -63,13 +64,14 @@ const DatabasePrivilegesSelector = <
         name="dbRoles"
         extra={
           showQuickCreateRole &&
+          selectedDbServiceID &&
           selectedDBType === ListServiceDbTypeEnum.Oracle ? (
-            <TypedLink
+            <Link
               target="_blank"
-              to={`/provision/project/${projectID}/database-role?action=create_role`}
+              to={`/provision/project/${projectID}/database-role/create/${selectedDbServiceID}`}
             >
               {t('databaseAccount.create.form.quickCreateRoles')}
-            </TypedLink>
+            </Link>
           ) : undefined
         }
       >
