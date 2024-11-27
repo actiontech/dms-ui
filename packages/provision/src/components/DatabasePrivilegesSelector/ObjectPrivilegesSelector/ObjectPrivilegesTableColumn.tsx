@@ -2,47 +2,34 @@ import {
   ActiontechTableActionMeta,
   ActiontechTableColumn
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { Space } from 'antd';
-import { BasicTag } from '@actiontech/shared';
-import { t } from '../../../../locale';
-import { PermissionsType } from '../../index.type';
+import { ObjectPrivilegeValues } from './index.type';
+import { t } from '../../../locale';
+import TableTagsCell from '../../TableTagsCell';
 
-export const PermissionTableColumn =
-  (): ActiontechTableColumn<PermissionsType> => {
+export const ObjectPrivilegesTableColumn =
+  (): ActiontechTableColumn<ObjectPrivilegeValues> => {
     return [
       {
         title: () => <>{t('databaseAccount.create.form.objects')}</>,
         dataIndex: 'objectsLabel',
-        render: (objects: PermissionsType['objectsLabel']) => {
-          return (
-            <Space size={0}>
-              {objects.map((item) => {
-                return <BasicTag key={item}>{item}</BasicTag>;
-              })}
-            </Space>
-          );
+        render: (objects: ObjectPrivilegeValues['objectsLabel']) => {
+          return <TableTagsCell dataSource={objects} tagLimit={3} />;
         }
       },
       {
         title: () => <>{t('databaseAccount.create.form.operation')}</>,
         dataIndex: 'operationsLabel',
-        render: (operations: PermissionsType['operationsLabel']) => {
-          return (
-            <Space size={0}>
-              {operations.map((item) => {
-                return <BasicTag key={item}>{item}</BasicTag>;
-              })}
-            </Space>
-          );
+        render: (operations: ObjectPrivilegeValues['operationsLabel']) => {
+          return <TableTagsCell dataSource={operations} tagLimit={3} />;
         }
       }
     ];
   };
 
-export const PermissionTableActions = (
+export const ObjectPrivilegesTableActions = (
   onEdit: (id: string) => void,
   onRemove: (id: string) => void
-): ActiontechTableActionMeta<PermissionsType>[] => {
+): ActiontechTableActionMeta<ObjectPrivilegeValues>[] => {
   return [
     {
       key: 'edit',

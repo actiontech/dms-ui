@@ -31,10 +31,6 @@ export enum ModalName {
 
   DatabaseAccountManagePasswordModal = 'DatabaseAccountManagePasswordModal',
 
-  DatabaseRoleCreateModal = 'DatabaseRoleCreateModal',
-
-  DatabaseRoleUpdateModal = 'DatabaseRoleUpdateModal',
-
   DatabaseRoleDetailModal = 'DatabaseRoleDetailModal'
 }
 

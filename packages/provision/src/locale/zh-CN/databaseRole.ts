@@ -27,15 +27,18 @@ export default {
   },
   createRole: {
     title: '创建角色',
-    successTips: '创建成功',
+    successTips: '创建角色成功',
     dbService: '数据源',
     roleName: '角色名称',
     rolePermissions: '角色权限',
     role: '角色',
-    permission: '权限'
+    permission: '权限',
+    backToRoleList: '返回至角色列表'
   },
   updateRole: {
-    title: '更新角色'
+    title: '更新角色',
+    backToRoleList: '返回至角色列表',
+    successTips: '更新角色成功'
   },
   roleDetail: {
     title: '角色详情',

@@ -1,14 +1,14 @@
 import { DashOutlined } from '@actiontech/icons';
 import { BasicButton, BasicTag, BasicToolTips } from '@actiontech/shared';
 import { Space } from 'antd';
-import { DataPermissionsTagsCellStyleWrapper } from './style';
+import { TableTagsCellStyleWrapper } from './style';
 
 type Props = {
   dataSource: string[];
   tagLimit?: number;
 };
 
-const RoleTableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
+const TableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
   const renderScanTypeTag = (permission: string) => {
     return <BasicTag className="pointer">{permission}</BasicTag>;
   };
@@ -43,11 +43,7 @@ const RoleTableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
     );
   };
 
-  return (
-    <DataPermissionsTagsCellStyleWrapper>
-      {render()}
-    </DataPermissionsTagsCellStyleWrapper>
-  );
+  return <TableTagsCellStyleWrapper>{render()}</TableTagsCellStyleWrapper>;
 };
 
-export default RoleTableTagsCell;
+export default TableTagsCell;

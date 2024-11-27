@@ -32,7 +32,7 @@ import { EventEmitterKey, ModalName } from '../../data/enum';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import eventEmitter from '../../utils/EventEmitter';
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
@@ -52,6 +52,7 @@ const DatabaseRole: React.FC = () => {
   const [, setFilteredByDBServiceName] = useRecoilState(
     DatabaseRoleFilteredDBServiceName
   );
+  const navigate = useNavigate();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -72,12 +73,15 @@ const DatabaseRole: React.FC = () => {
   } = useTableRequestParams<IListDBRole, IDatabaseRoleTableParams>();
 
   const onCreateRole = () => {
-    toggleModal(ModalName.DatabaseRoleCreateModal, true);
+    navigate(
+      `/provision/project/${projectID}/database-role/create/${filteredByDBServiceID}`
+    );
   };
 
   const editAction = (record: IListDBRole) => {
-    toggleModal(ModalName.DatabaseRoleUpdateModal, true);
-    updateSelectData(record);
+    navigate(
+      `/provision/project/${projectID}/database-role/update/${filteredByDBServiceID}/${record.db_role?.uid}`
+    );
   };
 
   const handleClickDbRoleName = (record: IListDBRole) => {
@@ -139,8 +143,6 @@ const DatabaseRole: React.FC = () => {
 
   useEffect(() => {
     initModalStatus({
-      [ModalName.DatabaseRoleCreateModal]: false,
-      [ModalName.DatabaseRoleUpdateModal]: false,
       [ModalName.DatabaseRoleDetailModal]: false
     });
   }, [initModalStatus]);

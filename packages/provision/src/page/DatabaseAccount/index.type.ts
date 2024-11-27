@@ -3,7 +3,7 @@ import { SelectProps } from 'antd';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service/common.d';
 import { BackendFormValues } from '../../../../sqle/src/components/BackendForm';
-import { IRolePermissionSelectorBaseFields } from '../../components/RolePermissionSelector/index.type';
+import { IDatabasePrivilegesSelectorBaseFields } from '../../components/DatabasePrivilegesSelector/index.type';
 
 export type AccountDiscoveryFormType = {
   business: string;
@@ -29,7 +29,7 @@ export type CreateAccountFormType = {
   explanation: string;
   business: string;
   additionalParams: BackendFormValues;
-} & IRolePermissionSelectorBaseFields;
+} & IDatabasePrivilegesSelectorBaseFields;
 
 export type PermissionsType = {
   id?: string;

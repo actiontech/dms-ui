@@ -1,40 +1,38 @@
-import {
-  PermissionTableFieldProps,
-  PermissionsType,
-  CreateAccountFormType
-} from '../../index.type';
-import { Form, Typography, Space, Popconfirm } from 'antd';
+import { Typography, Space, Popconfirm } from 'antd';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
-import {
-  PermissionFieldTitleStyleWrapper,
-  PermissionFieldStyleWrapper
-} from '../../style';
 import { BasicButton } from '@actiontech/shared';
-import {
-  PermissionTableColumn,
-  PermissionTableActions
-} from './PermissionTableColumn';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
-import PermissionModal from './PermissionModal';
+import ObjectPrivilegesModal from './ObjectPrivilegesModal';
 import { useState } from 'react';
 import { cloneDeep } from 'lodash';
+import {
+  PrivilegesFieldStyleWrapper,
+  PrivilegesFieldTitleStyleWrapper
+} from './style';
+import {
+  ObjectPrivilegeTableFieldProps,
+  ObjectPrivilegeValues
+} from './index.type';
+import {
+  ObjectPrivilegesTableActions,
+  ObjectPrivilegesTableColumn
+} from './ObjectPrivilegesTableColumn';
 
-const PermissionsField: React.FC<PermissionTableFieldProps> = ({
+const ObjectPrivilegesField: React.FC<ObjectPrivilegeTableFieldProps> = ({
   value = [],
-  onChange
+  onChange,
+  selectedDBServiceID,
+  objectPrivilegeOptions,
+  getOperationPermissionPending
 }) => {
-  const form = Form.useFormInstance<CreateAccountFormType>();
-
   const [visible, setVisible] = useState<boolean>(false);
 
   const [editId, setEditIndex] = useState<string>();
 
   const { t } = useTranslation();
 
-  const service = Form.useWatch('service', form);
-
-  const onSubmit = (param: PermissionsType[]) => {
+  const onSubmit = (param: ObjectPrivilegeValues[]) => {
     onChange?.(param);
   };
 
@@ -65,10 +63,10 @@ const PermissionsField: React.FC<PermissionTableFieldProps> = ({
   };
 
   return (
-    <PermissionFieldStyleWrapper>
-      <PermissionFieldTitleStyleWrapper>
-        <span className="permission-field-title">
-          {t('databaseAccount.create.permissionInfoOverview')}
+    <PrivilegesFieldStyleWrapper>
+      <PrivilegesFieldTitleStyleWrapper>
+        <span className="privileges-field-title">
+          {t('databaseAccount.create.objectPrivilegesOverview')}
         </span>
         <Space>
           <Popconfirm
@@ -76,51 +74,49 @@ const PermissionsField: React.FC<PermissionTableFieldProps> = ({
             onConfirm={onClear}
             okText={t('common.ok')}
           >
-            <BasicButton
-              danger
-              disabled={!value?.length}
-              className="clear-permission-button"
-            >
-              {t('databaseAccount.create.form.resetPermission')}
+            <BasicButton danger disabled={!value?.length}>
+              {t('databaseAccount.create.form.resetObjectPrivileges')}
             </BasicButton>
           </Popconfirm>
           <BasicButton
             onClick={onAdd}
             type="primary"
-            className="add-permission-button"
+            disabled={!selectedDBServiceID}
           >
-            {t('databaseAccount.create.form.addDataPermission')}
+            {t('databaseAccount.create.form.addObjectPrivileges')}
           </BasicButton>
         </Space>
-      </PermissionFieldTitleStyleWrapper>
+      </PrivilegesFieldTitleStyleWrapper>
       <ActiontechTable
         rowKey={(record) => `${record.id}`}
         dataSource={value}
-        columns={PermissionTableColumn()}
-        actions={PermissionTableActions(onEdit, onRemove)}
+        columns={ObjectPrivilegesTableColumn()}
+        actions={ObjectPrivilegesTableActions(onEdit, onRemove)}
         locale={{
           emptyText: (
-            <BasicEmpty>
-              <>
+            <BasicEmpty
+              emptyCont={
                 <Typography.Paragraph type="secondary">
                   {t('databaseAccount.create.form.extraEmptyTips')}
                 </Typography.Paragraph>
-              </>
-            </BasicEmpty>
+              }
+            />
           )
         }}
         pagination={false}
       />
-      <PermissionModal
+      <ObjectPrivilegesModal
         visible={visible}
         onCancel={onCancel}
-        service={service}
+        service={selectedDBServiceID}
         onSubmit={onSubmit}
         data={value}
         editId={editId}
+        objectPrivilegeOptions={objectPrivilegeOptions}
+        getOperationPermissionPending={getOperationPermissionPending}
       />
-    </PermissionFieldStyleWrapper>
+    </PrivilegesFieldStyleWrapper>
   );
 };
 
-export default PermissionsField;
+export default ObjectPrivilegesField;

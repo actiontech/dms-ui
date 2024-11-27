@@ -5,49 +5,45 @@ import {
   BasicButton,
   BasicToolTips
 } from '@actiontech/shared';
-import { Form, Row, Col, Select, Space, Typography } from 'antd';
-import {
-  PermissionModalFormType,
-  PermissionModalProps,
-  IDataObjects
-} from '../../index.type';
+import { Form, Row, Col, Space, Typography } from 'antd';
 import {
   DrawerFormIconWrapper,
   FormListAddButtonWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRequest } from 'ahooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { DefaultOptionType } from 'antd/es/select';
 import { cloneDeep, isEqual } from 'lodash';
-import {
-  getObjectsLabelByDataObjects,
-  customIdGenerator
-} from '../../index.utils';
-import { EventEmitterKey } from '../../../../data/enum';
-import EventEmitter from '../../../../utils/EventEmitter';
-import { getOperationSetsParamsSerializer } from '../../index.utils';
 import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
+import {
+  IDataObjects,
+  ObjectPrivilegesFormFields,
+  ObjectPrivilegesModalProps
+} from './index.type';
+import { customIdGenerator, getObjectsLabelByDataObjects } from './utils';
+import EventEmitter from '../../../utils/EventEmitter';
+import { EventEmitterKey } from '../../../data/enum';
 
-const defaultParams = {
+const OPTIONS_REQUEST_DEFAULT_PARAMS = {
   page_index: 1,
   page_size: 9999
 };
 
-const PermissionModal: React.FC<PermissionModalProps> = ({
+const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
   visible,
   editId,
   onCancel,
   onSubmit,
   service,
-  data
+  data,
+  getOperationPermissionPending,
+  objectPrivilegeOptions
 }) => {
   const { t } = useTranslation();
 
-  const [form] = Form.useForm<PermissionModalFormType>();
-
-  const dataObjects = Form.useWatch('data_objects', form);
+  const [form] = Form.useForm<ObjectPrivilegesFormFields>();
 
   const [selectedDatabase, setSelectedDatabase] = useState<string[]>([]);
 
@@ -64,7 +60,7 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
       auth
         .AuthListDatabase({
           service_uid: service ?? '',
-          ...defaultParams
+          ...OPTIONS_REQUEST_DEFAULT_PARAMS
         })
         .then((res) => {
           return res.data.data?.map((item) => ({
@@ -83,7 +79,7 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
       auth
         .AuthListTable({
           database_uid: id,
-          ...defaultParams
+          ...OPTIONS_REQUEST_DEFAULT_PARAMS
         })
         .then((res) => {
           return res.data.data?.map((item) => ({
@@ -95,58 +91,6 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
       manual: true
     }
   );
-
-  const objects = useMemo(() => {
-    let objectsFlag: string[] = [];
-    if (dataObjects?.length) {
-      dataObjects.forEach((item) => {
-        if (item?.tables?.length) {
-          objectsFlag = objectsFlag.concat(item.tables);
-        } else if (item?.database) {
-          objectsFlag.push(item.database);
-        }
-      });
-    }
-    if (!objectsFlag.length && service) {
-      objectsFlag.push(service);
-    }
-    return objectsFlag;
-  }, [dataObjects, service]);
-
-  const {
-    data: operationOptions,
-    loading: operationOptionsLoading,
-    refresh: refreshOperationOptions
-  } = useRequest(
-    () =>
-      auth
-        .AuthListDataOperationSets(
-          {
-            data_object_uids: objects,
-            ...defaultParams
-          },
-          {
-            paramsSerializer: getOperationSetsParamsSerializer
-          }
-        )
-        .then((res) => {
-          return res.data.data?.map((item) => ({
-            value: item.uid ?? '',
-            label: item.name ?? ''
-          }));
-        }),
-    {
-      refreshDeps: [objects],
-      ready: !!objects.length
-    }
-  );
-
-  const newDatabaseOptions = useMemo(() => {
-    return databaseOptions?.map((item) => ({
-      ...item,
-      disabled: selectedDatabase.includes(item.value)
-    }));
-  }, [selectedDatabase, databaseOptions]);
 
   const handleDatabaseChange = (index: number, value: string) => {
     const data_objects = form.getFieldValue('data_objects');
@@ -188,16 +132,16 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
     setTableOptions(options);
   };
 
-  const submit = () => {
+  const handleSubmit = () => {
     form.validateFields().then((res) => {
       if (
         data.find((item) => {
           return (
             isEqual(item.objectsValue, res.data_objects) &&
-            isEqual(item.operationsValue, res.data_operations)
+            isEqual(item.operationsValue, res.data_operations) &&
+            item.id !== editId
           );
-        }) &&
-        !editId
+        })
       ) {
         setDuplicateError(true);
         return;
@@ -210,12 +154,12 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
         tableOptions
       );
       const operationsLabel =
-        operationOptions
+        objectPrivilegeOptions
           ?.filter((item) => res.data_operations?.includes(item.value))
           .map((item) => item.label) ?? [];
 
       const operationsValue =
-        operationOptions
+        objectPrivilegeOptions
           ?.filter((item) => res.data_operations?.includes(item.value))
           .map((item) => item.value) ?? [];
 
@@ -308,11 +252,10 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
       EventEmitterKey.Create_Account_Sync_Service,
       () => {
         refreshDatabaseOptions();
-        refreshOperationOptions();
       }
     );
     return unsubscribe;
-  }, [refreshDatabaseOptions, refreshOperationOptions]);
+  }, [refreshDatabaseOptions]);
 
   return (
     <BasicDrawer
@@ -321,19 +264,30 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
       title={
         editId !== undefined
           ? t('databaseAccount.create.form.editDataPermission')
-          : t('databaseAccount.create.form.addDataPermission')
+          : t('databaseAccount.create.form.addObjectPrivileges')
       }
       onClose={handleCancel}
       footer={
         <Space>
           <BasicButton onClick={handleCancel}>{t('common.close')}</BasicButton>
-          <BasicButton type="primary" onClick={submit}>
+          <BasicButton type="primary" onClick={handleSubmit}>
             {t('common.submit')}
           </BasicButton>
         </Space>
       }
     >
       <Form form={form} layout="vertical">
+        <Form.Item
+          name="data_operations"
+          label={t('databaseAccount.create.form.selectPermission')}
+          rules={[{ required: true }]}
+        >
+          <BasicSelect
+            mode="multiple"
+            loading={getOperationPermissionPending}
+            options={objectPrivilegeOptions}
+          />
+        </Form.Item>
         <Form.List
           name="data_objects"
           initialValue={[
@@ -375,17 +329,11 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
                           loading={databaseOptionsLoading}
                           onChange={handleDatabaseChange.bind(null, index)}
                           allowClear={true}
-                        >
-                          {newDatabaseOptions?.map((item) => (
-                            <Select.Option
-                              key={item.value}
-                              disabled={item.disabled}
-                              value={item.value}
-                            >
-                              {item.label}
-                            </Select.Option>
-                          ))}
-                        </BasicSelect>
+                          options={databaseOptions?.map((v) => ({
+                            ...v,
+                            disabled: selectedDatabase.includes(v.value)
+                          }))}
+                        />
                       </Form.Item>
                     </Col>
                     <Col flex={1}>
@@ -433,17 +381,6 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
             </>
           )}
         </Form.List>
-        <Form.Item
-          name="data_operations"
-          label={t('databaseAccount.create.form.selectPermission')}
-          rules={[{ required: true }]}
-        >
-          <BasicSelect
-            mode="multiple"
-            loading={operationOptionsLoading}
-            options={operationOptions}
-          />
-        </Form.Item>
         {duplicateError && (
           <Row>
             <Col>
@@ -458,4 +395,4 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
   );
 };
 
-export default PermissionModal;
+export default ObjectPrivilegesModal;

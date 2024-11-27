@@ -25,11 +25,11 @@ import { useEffect } from 'react';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
-import {
-  IDataPermissionForRole,
-  IDBAccountDataPermission
-} from '@actiontech/shared/lib/api/provision/service/common';
 import DbAccountService from '@actiontech/shared/lib/api/provision/service/service';
+import {
+  generatePrivilegesFormValuesByBackendData,
+  generatePrivilegesSubmitDataByFormValues
+} from '../../../components/DatabasePrivilegesSelector/ObjectPrivilegesSelector/utils';
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
@@ -74,28 +74,21 @@ const UpdateDatabaseAccount = () => {
   const onSubmit = async () => {
     const values = await form.validateFields([
       'dbRoles',
-      'operationsPermissions'
+      'systemPrivileges',
+      'objectPrivileges'
     ]);
     setSubmitPending();
-    const dataPermissions = values.operationsPermissions?.reduce<
-      IDataPermissionForRole[]
-    >((acc, cur) => {
-      const operationIDs = [cur[0]];
-      const objectIDs = cur.length > 1 ? cur.slice(1, cur.length) : [];
 
-      const dataPermissionForRole: IDataPermissionForRole = {
-        data_object_uids: objectIDs,
-        data_operation_uids: operationIDs
-      };
-      return [...acc, dataPermissionForRole];
-    }, []);
     dbAccountService
       .AuthUpdateDBAccount({
         project_uid: projectID,
         db_account_uid: urlParams.id ?? '',
         db_account: {
           db_roles: values.dbRoles,
-          data_permissions: dataPermissions
+          data_permissions: generatePrivilegesSubmitDataByFormValues(
+            values.systemPrivileges ?? [],
+            values.objectPrivileges ?? []
+          )
         }
       })
       .then((res) => {
@@ -110,32 +103,6 @@ const UpdateDatabaseAccount = () => {
 
   useEffect(() => {
     if (urlParams.id) {
-      const generateOperationsPermissionValues = (
-        dataPermissions?: IDBAccountDataPermission[]
-      ): string[][] => {
-        return (
-          dataPermissions?.flatMap((permission) => {
-            const { data_objects, data_operations = [] } = permission;
-
-            if (!data_objects) {
-              return data_operations.map((operation) => [operation.uid ?? '']);
-            }
-
-            return data_operations.flatMap((operation) =>
-              data_objects.map((object) =>
-                object.table_uid
-                  ? [
-                      operation.uid ?? '',
-                      object.database_uid ?? '',
-                      object.table_uid
-                    ]
-                  : [operation.uid ?? '', object.database_uid ?? '']
-              )
-            );
-          }) ?? []
-        );
-      };
-
       startGetDBAccountInfo();
       dbAccountService
         .AuthGetDBAccount({
@@ -154,8 +121,20 @@ const UpdateDatabaseAccount = () => {
               policy: data?.password_security_policy || NORMAL_POLICY_VALUE,
               explanation: data?.account_info?.explanation,
               dbServiceID: data?.db_service?.uid,
-              operationsPermissions: generateOperationsPermissionValues(
+              systemPrivileges:
                 data?.data_permissions
+                  ?.filter((v) => (v.data_objects ?? []).length === 0)
+                  .flatMap(
+                    (v) =>
+                      v.data_operations?.map(
+                        (operation) => operation.uid ?? ''
+                      ) ?? []
+                  ) ?? [],
+              objectPrivileges: generatePrivilegesFormValuesByBackendData(
+                data?.data_permissions?.filter(
+                  (v) => (v.data_objects ?? []).length > 0
+                ) ?? [],
+                data?.db_service?.uid ?? ''
               ),
               additionalParams: generateFormValueByParams(
                 data?.account_info?.additional_params ?? []

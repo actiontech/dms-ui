@@ -28,7 +28,7 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
       auth
         .AuthListService({
           page_index: 1,
-          page_size: 999,
+          page_size: 9999,
           filter_by_namespace: projectID,
           business
         })

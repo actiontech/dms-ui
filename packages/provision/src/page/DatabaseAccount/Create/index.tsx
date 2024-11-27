@@ -24,8 +24,8 @@ import PreviewModal from './PreviewModal';
 import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
-import { IDataPermissionForRole } from '@actiontech/shared/lib/api/provision/service/common';
 import DbAccountService from '@actiontech/shared/lib/api/provision/service/service';
+import { generatePrivilegesSubmitDataByFormValues } from '../../../components/DatabasePrivilegesSelector/ObjectPrivilegesSelector/utils';
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
@@ -63,18 +63,6 @@ const CreateDatabaseAccount = () => {
 
   const onSubmit = async () => {
     const values = await form.validateFields();
-    const dataPermissions = values.operationsPermissions?.reduce<
-      IDataPermissionForRole[]
-    >((acc, cur) => {
-      const operationIDs = [cur[0]];
-      const objectIDs = cur.length > 1 ? cur.slice(1, cur.length) : [];
-
-      const dataPermissionForRole: IDataPermissionForRole = {
-        data_object_uids: objectIDs,
-        data_operation_uids: operationIDs
-      };
-      return [...acc, dataPermissionForRole];
-    }, []);
 
     const mergeFromValueWithDescIntoParams = () => {
       return (dbAccountMeta ?? []).map((item) => {
@@ -114,7 +102,10 @@ const CreateDatabaseAccount = () => {
           additional_params: mergeFromValueWithDescIntoParams()
         },
         effective_time_day: values.effective_time_day,
-        data_permissions: dataPermissions,
+        data_permissions: generatePrivilegesSubmitDataByFormValues(
+          values.systemPrivileges ?? [],
+          values.objectPrivileges ?? []
+        ),
         password_security_policy:
           values.policy === NORMAL_POLICY_VALUE ? undefined : values.policy
       }

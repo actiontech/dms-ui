@@ -21,6 +21,12 @@ const DatabaseAccountPassword = React.lazy(
 );
 
 const DatabaseRole = React.lazy(() => import('../page/DatabaseRole'));
+const CreateRole = React.lazy(
+  () => import('../page/DatabaseRole/components/CreateRole')
+);
+const UpdateRole = React.lazy(
+  () => import('../page/DatabaseRole/components/UpdateRole')
+);
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   {
@@ -67,7 +73,23 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   {
     key: 'databaseRole',
     path: `${PROJECT_ROUTER_PARAM}/database-role`,
-    element: <DatabaseRole />
+    children: [
+      {
+        index: true,
+        key: 'databaseRoleList',
+        element: <DatabaseRole />
+      },
+      {
+        path: 'create/:db_service_id',
+        key: 'createRole',
+        element: <CreateRole />
+      },
+      {
+        path: 'update/:db_service_id/:role_id',
+        key: 'updateRole',
+        element: <UpdateRole />
+      }
+    ]
   },
   {
     path: '*',

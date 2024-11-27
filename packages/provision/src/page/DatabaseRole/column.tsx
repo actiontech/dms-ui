@@ -3,7 +3,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../locale';
 import { Typography } from 'antd';
 import { IDatabaseRoleTableParams } from './index.type';
-import RoleTableTagsCell from './RoleTableTagsCell';
+import TableTagsCell from '../../components/TableTagsCell';
 
 export const DatabaseRoleTableColumns = (
   handleClickDbRoleName: (record: IListDBRole) => void
@@ -32,9 +32,7 @@ export const DatabaseRoleTableColumns = (
       dataIndex: 'child_roles',
       render(childRoles) {
         return (
-          <RoleTableTagsCell
-            dataSource={childRoles?.map((v) => v.name!) ?? []}
-          />
+          <TableTagsCell dataSource={childRoles?.map((v) => v.name!) ?? []} />
         );
       }
     },
@@ -43,7 +41,7 @@ export const DatabaseRoleTableColumns = (
       dataIndex: 'data_permissions',
       width: '60%',
       render(permissions) {
-        return <RoleTableTagsCell dataSource={permissions ?? []} />;
+        return <TableTagsCell dataSource={permissions ?? []} />;
       }
     }
   ];

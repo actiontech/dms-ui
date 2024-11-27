@@ -7,8 +7,6 @@ import { IListDBRole } from '@actiontech/shared/lib/api/provision/service/common
 export const DatabaseRoleModalStatus = atom<ModalStatus>({
   key: StoreKey.Database_Role_Modal_Status,
   default: {
-    [ModalName.DatabaseRoleCreateModal]: false,
-    [ModalName.DatabaseRoleUpdateModal]: false,
     [ModalName.DatabaseRoleDetailModal]: false
   }
 });

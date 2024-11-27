@@ -7,7 +7,7 @@ import {
   IUidWithName
 } from '@actiontech/shared/lib/api/provision/service/common';
 import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
-import RoleTableTagsCell from '../../../DatabaseRole/RoleTableTagsCell';
+import TableTagsCell from '../../../../components/TableTagsCell';
 import { BasicInput } from '@actiontech/shared';
 import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 
@@ -41,7 +41,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
       title: t('databaseAccount.create.form.role'),
       render: (dbRoles: IUidWithName[]) => {
         return (
-          <RoleTableTagsCell dataSource={dbRoles?.map((v) => v.name!) ?? []} />
+          <TableTagsCell dataSource={dbRoles?.map((v) => v.name!) ?? []} />
         );
       }
     },
@@ -50,7 +50,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
       title: t('databaseAccount.list.column.permission'),
       render: (permission: IDBAccountBody['permission_info']) => {
         return (
-          <RoleTableTagsCell
+          <TableTagsCell
             dataSource={permission?.grants?.map((v) => v!) ?? []}
           />
         );

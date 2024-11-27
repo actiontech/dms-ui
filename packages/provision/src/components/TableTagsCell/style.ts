@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 
-export const DataPermissionsTagsCellStyleWrapper = styled('div')`
+export const TableTagsCellStyleWrapper = styled('div')`
   display: flex;
 
   .table-row-scan-types-more-button {

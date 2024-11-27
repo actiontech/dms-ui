@@ -1,25 +1,27 @@
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
-import { Cascader, CascaderProps, Form } from 'antd';
+import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { BasicCascader, BasicSelect, TypedLink } from '@actiontech/shared';
+import { BasicSelect, TypedLink } from '@actiontech/shared';
 import { useEffect } from 'react';
 import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 import {
-  IRolePermissionSelectorBaseFields,
-  IRolePermissionSelectorProps
+  IDatabasePrivilegesSelectorProps,
+  IDatabasePrivilegesSelectorBaseFields
 } from './index.type';
-import useOperationPermissionTips from '../../hooks/useOperationPermissionTips';
 import useDBAuthRoleTips from '../../hooks/useDBAuthRoleTips';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
-import { CustomCascaderPopupMenuStyleWrapper } from './style';
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import useDatabasePrivilegesTips from './useDatabasePrivilegesTips';
+import ObjectPrivilegesField from './ObjectPrivilegesSelector/ObjectPrivilegesField';
 
-const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
+const DatabasePrivilegesSelector = <
+  T extends IDatabasePrivilegesSelectorBaseFields
+>({
   form,
   projectID,
   showQuickCreateRole,
   mode
-}: IRolePermissionSelectorProps<T>) => {
+}: IDatabasePrivilegesSelectorProps<T>) => {
   const { t } = useTranslation();
   const {
     loading: getDBAuthRolePending,
@@ -30,26 +32,12 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
   const selectedDbServiceID = Form.useWatch('dbServiceID', form);
   const selectedAuthType = Form.useWatch('authType', form);
   const selectedDBType = Form.useWatch('dbType', form);
-  const selectedPermissions = Form.useWatch('operationsPermissions', form);
   const {
     loading: getOperationPermissionPending,
     updateOperationPermission,
-    operationPermissionOptions,
-    loadDataBaseOnPermissionLevel,
-    permissionsDisplayRender
-  } = useOperationPermissionTips(selectedDbServiceID, selectedPermissions);
-
-  const cascaderCustomRenderDropdown: CascaderProps['dropdownRender'] = (
-    menu
-  ) => {
-    return (
-      <>
-        <CustomCascaderPopupMenuStyleWrapper>
-          {menu}
-        </CustomCascaderPopupMenuStyleWrapper>
-      </>
-    );
-  };
+    systemPrivilegesOptions,
+    objectPrivilegesOptions
+  } = useDatabasePrivilegesTips();
 
   useEffect(() => {
     if (selectedDbServiceID) {
@@ -98,22 +86,27 @@ const RolePermissionSelector = <T extends IRolePermissionSelectorBaseFields>({
       </FormItemLabel>
 
       <FormItemLabel
-        name="operationsPermissions"
-        label={t('databaseAccount.create.form.permission')}
+        hidden={selectedDBType !== ListServiceDbTypeEnum.Oracle}
+        name="systemPrivileges"
+        label={t('databaseAccount.create.form.systemPrivileges')}
       >
-        <BasicCascader
-          options={operationPermissionOptions}
-          loadData={loadDataBaseOnPermissionLevel}
+        <BasicSelect
           loading={getOperationPermissionPending}
-          displayRender={permissionsDisplayRender}
-          multiple
-          showCheckedStrategy={Cascader.SHOW_CHILD}
-          dropdownRender={cascaderCustomRenderDropdown}
-          disabled={!selectedDbServiceID}
+          options={systemPrivilegesOptions}
+          mode="multiple"
+          filterOption={filterOptionByLabel}
+        />
+      </FormItemLabel>
+
+      <FormItemLabel name="objectPrivileges" wrapperCol={{ span: 24 }}>
+        <ObjectPrivilegesField
+          getOperationPermissionPending={getOperationPermissionPending}
+          objectPrivilegeOptions={objectPrivilegesOptions}
+          selectedDBServiceID={selectedDbServiceID}
         />
       </FormItemLabel>
     </>
   );
 };
 
-export default RolePermissionSelector;
+export default DatabasePrivilegesSelector;
