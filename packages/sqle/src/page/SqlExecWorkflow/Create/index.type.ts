@@ -78,4 +78,5 @@ export type SharedStepDetails = {
   getModifiedSQLsPending: Stateful<boolean>;
 
   resetAllSharedData: () => void;
+  isAtFormStep?: boolean;
 };

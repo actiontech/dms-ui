@@ -211,6 +211,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -272,6 +273,12 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                         scope="col"
                       >
                         数据查询脱敏
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        SQL备份
                       </th>
                       <th
                         class="ant-table-cell"
@@ -395,13 +402,22 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="11"
+                        colspan="12"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"
@@ -686,6 +702,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -747,6 +764,12 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                         scope="col"
                       >
                         数据查询脱敏
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        SQL备份
                       </th>
                       <th
                         class="ant-table-cell"
@@ -870,13 +893,22 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="11"
+                        colspan="12"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"
@@ -1374,6 +1406,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -1440,6 +1473,12 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -1459,6 +1498,15 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -1648,6 +1696,11 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                       <td
                         class="ant-table-cell"
                       >
+                        已启用
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         -
                       </td>
                       <td
@@ -1778,6 +1831,11 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                       >
                         test-2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2489,6 +2547,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -2555,6 +2614,12 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -2574,6 +2639,15 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -2763,6 +2837,11 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        已启用
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         -
                       </td>
                       <td
@@ -2893,6 +2972,11 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                       >
                         test-2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3312,6 +3396,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -3378,6 +3463,12 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -3397,6 +3488,15 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -3586,6 +3686,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       <td
                         class="ant-table-cell"
                       >
+                        已启用
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         -
                       </td>
                       <td
@@ -3674,6 +3779,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         test-2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -4105,6 +4215,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -4171,6 +4282,12 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -4190,6 +4307,15 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -4370,6 +4496,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         test
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -4984,6 +5115,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -5050,6 +5182,12 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -5069,6 +5207,15 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -5249,6 +5396,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                       >
                         test
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -5863,6 +6015,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -5929,6 +6082,12 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -5948,6 +6107,15 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -6137,6 +6305,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        已启用
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         -
                       </td>
                       <td
@@ -6267,6 +6440,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                       >
                         test-2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -6765,6 +6943,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -6831,6 +7010,12 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -6850,6 +7035,15 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -7039,6 +7233,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                       <td
                         class="ant-table-cell"
                       >
+                        已启用
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
                         -
                       </td>
                       <td
@@ -7169,6 +7368,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                       >
                         test-2
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未启用
                       </td>
                       <td
                         class="ant-table-cell"
@@ -7642,6 +7846,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -7703,6 +7908,12 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                         scope="col"
                       >
                         数据查询脱敏
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        SQL备份
                       </th>
                       <th
                         class="ant-table-cell"
@@ -7826,13 +8037,22 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="11"
+                        colspan="12"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"
@@ -8092,6 +8312,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -8153,6 +8374,12 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                         scope="col"
                       >
                         数据查询脱敏
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        SQL备份
                       </th>
                       <th
                         class="ant-table-cell"
@@ -8276,13 +8503,22 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                            
                         </div>
                       </td>
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                     </tr>
                     <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="11"
+                        colspan="12"
                       >
                         <div
                           class="ant-table-expanded-row-fixed"
@@ -8542,6 +8778,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col />
                     <col
                       style="width: 286px;"
                     />
@@ -8608,6 +8845,12 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
+                        SQL备份
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
                         运维时间
                       </th>
                       <th
@@ -8627,6 +8870,15 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                       class="ant-table-measure-row"
                       style="height: 0px; font-size: 0px;"
                     >
+                      <td
+                        style="padding: 0px; border: 0px; height: 0px;"
+                      >
+                        <div
+                          style="height: 0px; overflow: hidden;"
+                        >
+                           
+                        </div>
+                      </td>
                       <td
                         style="padding: 0px; border: 0px; height: 0px;"
                       >
@@ -8845,6 +9097,11 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                         class="ant-table-cell"
                       >
                         test
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        未启用
                       </td>
                       <td
                         class="ant-table-cell"

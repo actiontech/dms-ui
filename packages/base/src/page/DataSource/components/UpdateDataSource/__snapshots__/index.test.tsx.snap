@@ -1288,6 +1288,82 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                 <h1
                   class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
                 >
+                  SQL备份配置
+                </h1>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="enableBackup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否开启数据源上的SQL备份能力
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="enableBackup"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                >
                   数据脱敏配置
                 </h1>
                 <div
@@ -2654,6 +2730,82 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                               </span>
                             </span>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                >
+                  SQL备份配置
+                </h1>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="enableBackup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否开启数据源上的SQL备份能力
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="enableBackup"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -4038,6 +4190,82 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                 <h1
                   class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
                 >
+                  SQL备份配置
+                </h1>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="enableBackup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否开启数据源上的SQL备份能力
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            id="enableBackup"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                >
                   数据脱敏配置
                 </h1>
                 <div
@@ -5312,6 +5540,82 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                               </span>
                             </span>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                >
+                  SQL备份配置
+                </h1>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="enableBackup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否开启数据源上的SQL备份能力
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="enableBackup"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -6897,6 +7201,82 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                 <h1
                   class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
                 >
+                  SQL备份配置
+                </h1>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="enableBackup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否开启数据源上的SQL备份能力
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="enableBackup"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                >
                   数据脱敏配置
                 </h1>
                 <div
@@ -8063,6 +8443,82 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                               </span>
                             </span>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+            <section
+              class="css-1114g56"
+            >
+              <section
+                class="css-bspaai"
+              >
+                <h1
+                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                >
+                  SQL备份配置
+                </h1>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="enableBackup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否开启数据源上的SQL备份能力
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="enableBackup"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </div>

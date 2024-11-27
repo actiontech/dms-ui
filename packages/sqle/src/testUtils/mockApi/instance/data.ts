@@ -7,7 +7,8 @@ export const instanceTipsMockData: IInstanceTipResV1[] = [
     instance_type: 'MySQL',
     workflow_template_id: 1,
     host: '10.186.62.13',
-    port: '33061'
+    port: '33061',
+    enable_backup: true
   },
   {
     instance_id: '1739531942258282496',

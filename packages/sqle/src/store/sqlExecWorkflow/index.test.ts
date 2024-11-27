@@ -1,7 +1,8 @@
 import reducers, {
   updateClonedExecWorkflowSqlAuditInfo,
   updateClonedExecWorkflowBaseInfo,
-  updateVersionFirstStageInstances
+  updateVersionFirstStageInstances,
+  updateWorkflowRollbackSqlIds
 } from '.';
 import {
   AuditTaskResV1SqlSourceEnum,
@@ -56,7 +57,8 @@ describe('store/sqlExecWorkflow', () => {
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: mockWorkflowSqlAuditInfo,
       clonedExecWorkflowBaseInfo: null,
-      versionFirstStageInstances: null
+      versionFirstStageInstances: null,
+      workflowRollbackSqlIds: null
     });
   });
 
@@ -82,7 +84,8 @@ describe('store/sqlExecWorkflow', () => {
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: null,
       clonedExecWorkflowBaseInfo: mockWorkflowBaseInfo,
-      versionFirstStageInstances: null
+      versionFirstStageInstances: null,
+      workflowRollbackSqlIds: null
     });
   });
 
@@ -112,7 +115,32 @@ describe('store/sqlExecWorkflow', () => {
     expect(state).toEqual({
       clonedExecWorkflowSqlAuditInfo: null,
       clonedExecWorkflowBaseInfo: null,
-      versionFirstStageInstances: versionFirstStageInstances
+      versionFirstStageInstances: versionFirstStageInstances,
+      workflowRollbackSqlIds: null
+    });
+  });
+
+  test('should create action when call updateWorkflowRollbackSqlIds', () => {
+    const workflowRollbackSqlIds = [1];
+    expect(updateWorkflowRollbackSqlIds({ workflowRollbackSqlIds })).toEqual({
+      payload: { workflowRollbackSqlIds },
+      type: 'sqlExecWorkflow/updateWorkflowRollbackSqlIds'
+    });
+
+    const state = reducers(
+      {
+        clonedExecWorkflowSqlAuditInfo: null,
+        clonedExecWorkflowBaseInfo: null,
+        versionFirstStageInstances: null,
+        workflowRollbackSqlIds: null
+      },
+      updateWorkflowRollbackSqlIds({ workflowRollbackSqlIds })
+    );
+    expect(state).toEqual({
+      clonedExecWorkflowSqlAuditInfo: null,
+      clonedExecWorkflowBaseInfo: null,
+      versionFirstStageInstances: null,
+      workflowRollbackSqlIds: workflowRollbackSqlIds
     });
   });
 });

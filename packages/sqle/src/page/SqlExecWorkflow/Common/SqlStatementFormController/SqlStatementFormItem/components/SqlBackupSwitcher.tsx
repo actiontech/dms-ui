@@ -8,25 +8,29 @@ import { Form } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { SqlBackupSwitcherProps } from './index.type';
 import { CreateAuditTasksGroupReqV1ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useMemo } from 'react';
-
+import { useEffect, useMemo, useCallback } from 'react';
+import useCreationMode from '../../../../Create/hooks/useCreationMode';
 import SwitchField from './SwitchField';
 
 const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   fieldPrefixPath,
   databaseInfo,
   isSameSqlForAll,
-  isAtRejectStep
+  isAtRejectStep,
+  isAtFormStep,
+  isAuditing
 }) => {
   const { t } = useTranslation();
 
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
 
+  const { isCloneMode } = useCreationMode();
+
   const currentExecuteMode = Form.useWatch(
     [fieldPrefixPath, 'exec_mode'],
     form
   );
-  const getInstanceEnableBackup = () => {
+  const getInstanceEnableBackup = useCallback(() => {
     if (isSameSqlForAll) {
       return databaseInfo.some((item) => item.enableBackup);
     }
@@ -34,7 +38,7 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
       databaseInfo.find((item) => item.key === fieldPrefixPath)?.enableBackup ??
       false
     );
-  };
+  }, [databaseInfo, fieldPrefixPath, isSameSqlForAll]);
 
   const enableBackupInstanceName = useMemo(() => {
     return databaseInfo
@@ -42,6 +46,21 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
       .map((i) => i.instanceName)
       .join(',');
   }, [databaseInfo]);
+
+  useEffect(() => {
+    if (isAtFormStep && !isAuditing.value && !isCloneMode) {
+      const currentEnableBackup = getInstanceEnableBackup();
+
+      form.setFieldValue([fieldPrefixPath, 'backup'], currentEnableBackup);
+    }
+  }, [
+    fieldPrefixPath,
+    getInstanceEnableBackup,
+    form,
+    isCloneMode,
+    isAtFormStep,
+    isAuditing
+  ]);
 
   return (
     <EmptyBox
@@ -61,7 +80,6 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
         wrapperCol={{ span: 2 }}
         name={[fieldPrefixPath, 'backup']}
         valuePropName="checked"
-        initialValue={getInstanceEnableBackup()}
       >
         <SwitchField
           title={
