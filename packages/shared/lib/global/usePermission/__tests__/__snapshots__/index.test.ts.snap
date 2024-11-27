@@ -162,6 +162,8 @@ exports[`usePermission should match snapshot 1`] = `
         "EXEC_TASK": "action:exec_task",
         "EXPORT": "action:export_workflow",
         "MANUALLY_EXEC": "action:manually_exec_workflow",
+        "RETRY": "action:retry_workflow",
+        "ROLLBACK": "action:rollback_workflow",
         "SCHEDULE_TIME_EXEC_TASK": "action:schedule_time_exec_task",
         "TERMINATE_EXEC": "action:terminate_exec_workflow",
         "TERMINATE_EXEC_TASK": "action:terminate_exec_task",
@@ -1058,6 +1060,16 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:reject_data_export": {
     "id": "action:reject_data_export",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:retry_workflow": {
+    "id": "action:retry_workflow",
+    "projectArchived": false,
+    "type": "action",
+  },
+  "action:rollback_workflow": {
+    "id": "action:rollback_workflow",
     "projectArchived": false,
     "type": "action",
   },

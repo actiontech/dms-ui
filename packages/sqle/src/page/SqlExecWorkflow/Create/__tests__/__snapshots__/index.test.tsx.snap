@@ -1120,8 +1120,8 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             role="switch"
                             type="button"
                           >
@@ -2654,8 +2654,8 @@ from
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             role="switch"
                             type="button"
                           >
@@ -4188,8 +4188,8 @@ from
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             role="switch"
                             type="button"
                           >
@@ -8796,7 +8796,37 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                               <td
                                 class="ant-table-cell backup-policy-column"
                               >
-                                -
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-9ttrys"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    >
+                                      基于反向SQL回滚
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <svg
+                                      class="backup-policy-editor"
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                               </td>
                               <td
                                 class="ant-table-cell audit-result-describe-column"
@@ -10908,7 +10938,37 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               <td
                                 class="ant-table-cell backup-policy-column"
                               >
-                                -
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-9ttrys"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    >
+                                      基于反向SQL回滚
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <svg
+                                      class="backup-policy-editor"
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                               </td>
                               <td
                                 class="ant-table-cell audit-result-describe-column"
@@ -13400,7 +13460,37 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               <td
                                 class="ant-table-cell backup-policy-column"
                               >
-                                -
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-9ttrys"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    >
+                                      基于反向SQL回滚
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <svg
+                                      class="backup-policy-editor"
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                               </td>
                               <td
                                 class="ant-table-cell audit-result-describe-column"
@@ -17184,7 +17274,37 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                               <td
                                 class="ant-table-cell backup-policy-column"
                               >
-                                -
+                                <div
+                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-9ttrys"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 8px;"
+                                  >
+                                    <span
+                                      class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    >
+                                      基于反向SQL回滚
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <svg
+                                      class="backup-policy-editor"
+                                      color="currentColor"
+                                      height="16"
+                                      viewBox="0 0 16 16"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
                               </td>
                               <td
                                 class="ant-table-cell audit-result-describe-column"
@@ -22356,8 +22476,8 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             role="switch"
                             type="button"
                           >
@@ -23949,7 +24069,7 @@ from
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -23987,7 +24107,7 @@ from
                         >
                           <button
                             aria-checked="true"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            class="ant-switch basic-switch-wrapper backup-switcher ant-popover-open css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             role="switch"
                             type="button"
                           >
@@ -24482,6 +24602,90 @@ from
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popconfirm css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-arrow"
+        style="position: absolute;"
+      />
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="ant-popconfirm-inner-content"
+            >
+              <div
+                class="ant-popconfirm-message"
+              >
+                <span
+                  class="ant-popconfirm-message-icon"
+                >
+                  <span
+                    aria-label="exclamation-circle"
+                    class="anticon anticon-exclamation-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="exclamation-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="ant-popconfirm-message-text"
+                >
+                  <div
+                    class="ant-popconfirm-title"
+                  >
+                    mysql-1已开启备份需求，是否确认关闭备份？
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-popconfirm-buttons"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    Cancel
+                  </span>
+                </button>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    确 认
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -25579,7 +25783,7 @@ from
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -25617,7 +25821,7 @@ from
                         >
                           <button
                             aria-checked="true"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                            class="ant-switch basic-switch-wrapper backup-switcher ant-popover-open css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                             role="switch"
                             type="button"
                           >
@@ -26681,6 +26885,90 @@ from
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-popover ant-popconfirm css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="ant-popover-arrow"
+        style="position: absolute;"
+      />
+      <div
+        class="ant-popover-content"
+      >
+        <div
+          class="ant-popover-inner"
+          role="tooltip"
+        >
+          <div
+            class="ant-popover-inner-content"
+          >
+            <div
+              class="ant-popconfirm-inner-content"
+            >
+              <div
+                class="ant-popconfirm-message"
+              >
+                <span
+                  class="ant-popconfirm-message-icon"
+                >
+                  <span
+                    aria-label="exclamation-circle"
+                    class="anticon anticon-exclamation-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="exclamation-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <div
+                  class="ant-popconfirm-message-text"
+                >
+                  <div
+                    class="ant-popconfirm-title"
+                  >
+                    mysql-1已开启备份需求，是否确认关闭备份？
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-popconfirm-buttons"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    Cancel
+                  </span>
+                </button>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm"
+                  type="button"
+                >
+                  <span>
+                    确 认
+                  </span>
+                </button>
               </div>
             </div>
           </div>

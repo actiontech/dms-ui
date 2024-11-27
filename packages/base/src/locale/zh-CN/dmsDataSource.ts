@@ -24,7 +24,8 @@ export default {
     maintenanceTime: '运维时间',
     source: '来源',
     business: '所属业务',
-    dataMask: '数据查询脱敏'
+    dataMask: '数据查询脱敏',
+    backup: 'SQL备份'
   },
 
   backDesc: '返回数据源列表',
@@ -75,7 +76,7 @@ export default {
     checkDataMaskButton: '查看脱敏规则',
     sqlBackupConfiguration: 'SQL备份配置',
     enableDataSourceBackup: '是否开启数据源上的SQL备份能力',
-    enableDataSourceBackupTips: '是否开启数据源上的SQL备份能力'
+    enableDataSourceBackupTips: '开启后，数据源上创建的工单将默认开启备份能力'
   },
 
   testConnectModal: {

@@ -222,7 +222,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
           baseInfoForm={baseInfoForm}
           sqlAuditInfoForm={sqlAuditInfoForm}
           auditAction={auditAction}
-          {...sharedStepDetail}
+          {...{ ...sharedStepDetail, isAtFormStep }}
         />
       </LazyLoadComponent>
 
