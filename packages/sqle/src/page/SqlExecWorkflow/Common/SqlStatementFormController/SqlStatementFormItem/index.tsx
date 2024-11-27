@@ -25,7 +25,8 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
   databaseInfo,
   isSameSqlForAll,
   isSupportFileModeExecuteSql,
-  isAtRejectStep
+  isAtRejectStep,
+  isAtFormStep
 }) => {
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormProps>();
@@ -90,6 +91,8 @@ const SqlStatementFormItem: React.FC<SqlStatementFormItemProps> = ({
         databaseInfo={databaseInfo}
         isSameSqlForAll={isSameSqlForAll}
         isAtRejectStep={isAtRejectStep}
+        isAtFormStep={isAtFormStep}
+        isAuditing={isAuditing}
       />
       {/* #endif */}
       <SqlFormatterAndSubmitter
