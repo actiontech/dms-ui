@@ -1,0 +1,427 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useComparisonResultTree should assemble baseline tree data correctly 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "key": "0_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
+                "title": <Styled(div)>
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <span
+                      className="content"
+                    >
+                      task
+                    </span>
+                  </div>
+                </Styled(div)>,
+              },
+            ],
+            "key": "0_TREE_NODE_KEY_SEPARATOR_TABLE",
+            "title": <React.Fragment>
+              <Styled(div)>
+                <FolderFilled
+                  height={18}
+                  width={18}
+                />
+                <span
+                  className="content"
+                >
+                  TABLE
+                </span>
+              </Styled(div)>
+            </React.Fragment>,
+          },
+        ],
+        "key": "0",
+        "title": <Styled(div)>
+          <DatabaseSchemaFilled
+            color="#4583ff"
+          />
+          <span
+            className="content"
+          >
+            test
+          </span>
+        </Styled(div)>,
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "key": "1_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
+                "title": <Styled(div)>
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <span
+                      className="content"
+                    >
+                      task
+                    </span>
+                  </div>
+                </Styled(div)>,
+              },
+            ],
+            "key": "1_TREE_NODE_KEY_SEPARATOR_TABLE",
+            "title": <React.Fragment>
+              <Styled(div)>
+                <FolderFilled
+                  height={18}
+                  width={18}
+                />
+                <span
+                  className="content"
+                >
+                  TABLE
+                </span>
+              </Styled(div)>
+            </React.Fragment>,
+          },
+        ],
+        "key": "1",
+        "title": <Styled(div)>
+          <DatabaseSchemaFilled
+            color="#4583ff"
+          />
+          <span
+            className="content"
+          >
+            test2
+          </span>
+        </Styled(div)>,
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
+                "title": <Styled(div)>
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <span
+                      className="content"
+                    >
+                      task
+                    </span>
+                  </div>
+                </Styled(div)>,
+              },
+              {
+                "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task_copy",
+                "title": <Styled(div)>
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <span
+                      className="content"
+                    >
+                      task_copy
+                    </span>
+                  </div>
+                </Styled(div)>,
+              },
+            ],
+            "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE",
+            "title": <React.Fragment>
+              <Styled(div)>
+                <FolderFilled
+                  height={18}
+                  width={18}
+                />
+                <span
+                  className="content"
+                >
+                  TABLE
+                </span>
+              </Styled(div)>
+            </React.Fragment>,
+          },
+        ],
+        "key": "2",
+        "title": <Styled(div)>
+          <DatabaseSchemaFilled
+            color="#4583ff"
+          />
+          <span
+            className="content"
+          >
+            test3
+          </span>
+        </Styled(div)>,
+      },
+    ],
+    "key": "TREE_PARENT_NODE_KEY",
+    "title": <Styled(div)>
+      <DatabaseFilled
+        color="#4583ff"
+      />
+      <span
+        className="content"
+      >
+        baseline-instance
+      </span>
+    </Styled(div)>,
+  },
+]
+`;
+
+exports[`useComparisonResultTree should assemble comparison tree data correctly 1`] = `
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "key": "0_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
+                "title": <Styled(div)
+                  className="object-comparison-result-pass"
+                >
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <React.Fragment>
+                      <span
+                        className="content"
+                        title="task"
+                      >
+                        task
+                      </span>
+                    </React.Fragment>
+                  </div>
+                  <BasicToolTips
+                    title="查看详情"
+                  >
+                    <MagnifierFilled
+                      className="view-detail-icon"
+                      color="#4583ff"
+                      onClick={[Function]}
+                    />
+                  </BasicToolTips>
+                </Styled(div)>,
+              },
+            ],
+            "key": "0_TREE_NODE_KEY_SEPARATOR_TABLE",
+            "title": <React.Fragment>
+              <Styled(div)>
+                <FolderFilled
+                  height={18}
+                  width={18}
+                />
+                <span
+                  className="content"
+                >
+                  TABLE
+                   (
+                  0
+                  )
+                </span>
+              </Styled(div)>
+            </React.Fragment>,
+          },
+        ],
+        "key": "0",
+        "title": <Styled(div)>
+          <DatabaseSchemaFilled
+            color="#4583ff"
+          />
+          <span
+            className="content"
+          >
+            test
+            (
+            0
+            )
+          </span>
+        </Styled(div)>,
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "key": "1_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
+                "title": <Styled(div)
+                  className="object-comparison-result-pass"
+                >
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <React.Fragment>
+                      <span
+                        className="content"
+                        title="task"
+                      >
+                        task
+                      </span>
+                    </React.Fragment>
+                  </div>
+                  <BasicToolTips
+                    title="查看详情"
+                  >
+                    <MagnifierFilled
+                      className="view-detail-icon"
+                      color="#4583ff"
+                      onClick={[Function]}
+                    />
+                  </BasicToolTips>
+                </Styled(div)>,
+              },
+            ],
+            "key": "1_TREE_NODE_KEY_SEPARATOR_TABLE",
+            "title": <React.Fragment>
+              <Styled(div)>
+                <FolderFilled
+                  height={18}
+                  width={18}
+                />
+                <span
+                  className="content"
+                >
+                  TABLE
+                   (
+                  0
+                  )
+                </span>
+              </Styled(div)>
+            </React.Fragment>,
+          },
+        ],
+        "key": "1",
+        "title": <Styled(div)>
+          <DatabaseSchemaFilled
+            color="#4583ff"
+          />
+          <span
+            className="content"
+          >
+            test2
+            (
+            0
+            )
+          </span>
+        </Styled(div)>,
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
+                "title": <Styled(div)
+                  className="object-comparison-result-diff"
+                >
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <React.Fragment>
+                      <span
+                        className="content"
+                      />
+                    </React.Fragment>
+                  </div>
+                  <BasicToolTips
+                    title="查看详情"
+                  >
+                    <MagnifierFilled
+                      className="view-detail-icon"
+                      color="#4583ff"
+                      onClick={[Function]}
+                    />
+                  </BasicToolTips>
+                </Styled(div)>,
+              },
+              {
+                "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task_copy",
+                "title": <Styled(div)
+                  className="object-comparison-result-diff"
+                >
+                  <div
+                    className="name-container"
+                  >
+                    <DatabaseTableFilled />
+                    <React.Fragment>
+                      <span
+                        className="content"
+                      />
+                    </React.Fragment>
+                  </div>
+                  <BasicToolTips
+                    title="查看详情"
+                  >
+                    <MagnifierFilled
+                      className="view-detail-icon"
+                      color="#4583ff"
+                      onClick={[Function]}
+                    />
+                  </BasicToolTips>
+                </Styled(div)>,
+              },
+            ],
+            "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE",
+            "title": <React.Fragment>
+              <Styled(div)>
+                <FolderFilled
+                  height={18}
+                  width={18}
+                />
+                <span
+                  className="content"
+                >
+                  TABLE
+                   (
+                  2
+                  )
+                </span>
+              </Styled(div)>
+            </React.Fragment>,
+          },
+        ],
+        "key": "2",
+        "title": <Styled(div)>
+          <DatabaseSchemaFilled
+            color="#4583ff"
+          />
+          <span
+            className="content"
+          >
+            test3
+            (
+            2
+            )
+          </span>
+        </Styled(div)>,
+      },
+    ],
+    "key": "TREE_PARENT_NODE_KEY",
+    "title": <Styled(div)>
+      <DatabaseFilled
+        color="#4583ff"
+      />
+      <span
+        className="content"
+      >
+        comparison-instance
+      </span>
+    </Styled(div)>,
+  },
+]
+`;

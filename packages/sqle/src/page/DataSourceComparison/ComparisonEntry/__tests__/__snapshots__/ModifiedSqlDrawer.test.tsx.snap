@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModifiedSqlDrawer should display a loading spinner when generateModifySqlPending is true 1`] = `<div />`;
