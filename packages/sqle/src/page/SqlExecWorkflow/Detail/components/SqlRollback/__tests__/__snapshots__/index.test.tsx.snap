@@ -320,6 +320,12 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                               <col
                                 style="width: 150px;"
                               />
+                              <col
+                                style="width: 120px;"
+                              />
+                              <col
+                                style="width: 100px;"
+                              />
                             </colgroup>
                             <tbody
                               class="ant-table-tbody"
@@ -924,8 +930,12 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                               <col
                                 style="width: 150px;"
                               />
-                              <col />
-                              <col />
+                              <col
+                                style="width: 120px;"
+                              />
+                              <col
+                                style="width: 100px;"
+                              />
                               <col
                                 style="width: 150px;"
                               />
@@ -1377,6 +1387,12 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                               />
                               <col
                                 style="width: 150px;"
+                              />
+                              <col
+                                style="width: 120px;"
+                              />
+                              <col
+                                style="width: 100px;"
                               />
                             </colgroup>
                             <tbody
@@ -1983,8 +1999,12 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                               <col
                                 style="width: 150px;"
                               />
-                              <col />
-                              <col />
+                              <col
+                                style="width: 120px;"
+                              />
+                              <col
+                                style="width: 100px;"
+                              />
                               <col
                                 style="width: 150px;"
                               />

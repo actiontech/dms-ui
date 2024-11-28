@@ -1018,7 +1018,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 class="ant-list-item ant-list-item-no-flex"
               >
                 <div
-                  class="css-hg7c8r"
+                  class="css-1gxdwqg"
                 >
                   <div
                     class="result-card-header"
@@ -2815,7 +2815,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                     class="ant-list-item ant-list-item-no-flex"
                   >
                     <div
-                      class="css-hg7c8r"
+                      class="css-1gxdwqg"
                     >
                       <div
                         class="result-card-header"
