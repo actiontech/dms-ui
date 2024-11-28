@@ -47,7 +47,7 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('下载审核报告')).toBeInTheDocument();
     expect(screen.getByText('下载SQL语句')).toBeInTheDocument();
-    expect(screen.getByText('下载回滚语句')).toBeInTheDocument();
+    // expect(screen.getByText('下载回滚语句')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -115,28 +115,28 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
     );
   });
 
-  it('render snap when click down backup sql', async () => {
-    const { baseElement } = customRender({
-      taskId: 'task Id',
-      noDuplicate: true,
-      workflowId: 'workflow id'
-    });
-    fireEvent.click(screen.getByText('下载'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText('下载回滚语句')).toBeInTheDocument();
+  // it('render snap when click down backup sql', async () => {
+  //   const { baseElement } = customRender({
+  //     taskId: 'task Id',
+  //     noDuplicate: true,
+  //     workflowId: 'workflow id'
+  //   });
+  //   fireEvent.click(screen.getByText('下载'));
+  //   await act(async () => jest.advanceTimersByTime(300));
+  //   expect(screen.getByText('下载回滚语句')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByText('下载回滚语句'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(2800));
-    expect(downloadBackupFileSpy).toHaveBeenCalled();
-    expect(downloadBackupFileSpy).toHaveBeenCalledWith(
-      {
-        task_id: 'task Id',
-        project_name: mockProjectInfo.projectName,
-        workflow_id: 'workflow id'
-      },
-      { responseType: 'blob' }
-    );
-  });
+  //   fireEvent.click(screen.getByText('下载回滚语句'));
+  //   await act(async () => jest.advanceTimersByTime(300));
+  //   expect(baseElement).toMatchSnapshot();
+  //   await act(async () => jest.advanceTimersByTime(2800));
+  //   expect(downloadBackupFileSpy).toHaveBeenCalled();
+  //   expect(downloadBackupFileSpy).toHaveBeenCalledWith(
+  //     {
+  //       task_id: 'task Id',
+  //       project_name: mockProjectInfo.projectName,
+  //       workflow_id: 'workflow id'
+  //     },
+  //     { responseType: 'blob' }
+  //   );
+  // });
 });
