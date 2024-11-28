@@ -267,7 +267,9 @@ export default {
       execStatus: '执行状态',
       remark: '备注',
       addRemark: '添加备注',
-      originSql: '原始SQL'
+      originSql: '原始SQL',
+      rollbackOrder: '回滚次序',
+      sourceOrder: '原始次序'
     },
     associatedRollbackWorkflow: '关联回滚工单'
   },

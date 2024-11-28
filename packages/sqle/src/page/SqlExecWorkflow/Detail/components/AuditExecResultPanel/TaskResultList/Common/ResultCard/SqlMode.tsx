@@ -11,7 +11,7 @@ import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 import { Divider, Space, Spin, message } from 'antd';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { SqlExecuteResultCardProps } from './index.type';
@@ -29,6 +29,7 @@ import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultLi
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WarningFilled } from '@actiontech/icons';
 import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -83,6 +84,10 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       });
   };
 
+  const formattedRollbackSql = useMemo(() => {
+    return props.rollback_sqls?.map((v) => formatterSQL(v))?.join('\n');
+  }, [props.rollback_sqls]);
+
   return (
     <TasksResultCardStyleWrapper>
       {contextHolder}
@@ -132,7 +137,10 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                 value: TaskResultContentTypeEnum.rollback_sql,
                 label: t('execWorkflow.audit.table.rollback'),
                 children: (
-                  <Space direction="vertical">
+                  <Space
+                    direction="vertical"
+                    className="rollback-sql-container"
+                  >
                     {/* #if [ee] */}
                     <EmptyBox if={!!props.backup_strategy_tip}>
                       <Space className="backup-conflict-tips">
@@ -140,9 +148,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                         {props.backup_strategy_tip}
                       </Space>
                     </EmptyBox>
-                    {/* #endif */}
-                    <Space className="result-card-content-rollback">
-                      {/* #if [ee] */}
+                    <Space>
                       <EmptyBox
                         if={props.backupConflict}
                         defaultNode={
@@ -162,16 +168,14 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                           {t('execWorkflow.audit.table.backupConflictTips')}
                         </Space>
                       </EmptyBox>
-                      <Divider
+                      {/* <Divider
                         type="vertical"
                         className="result-card-status-divider"
-                      />
-                      {/* #endif */}
-                      <SQLRenderer
-                        sql={props.rollback_sqls?.join('\n')}
-                        showLineNumbers
-                      />
+                      /> */}
+                      {/* todo 等后端补充 备份结果字段  */}
                     </Space>
+                    {/* #endif */}
+                    <SQLRenderer sql={formattedRollbackSql} showLineNumbers />
                   </Space>
                 )
               },

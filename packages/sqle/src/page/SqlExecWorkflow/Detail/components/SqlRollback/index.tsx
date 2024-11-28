@@ -116,6 +116,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
       const selected = selectedList.filter((i) => {
         return !moveKeys.includes(i.id ?? '');
       });
+
       const clonedData = cloneDeep(data?.list ?? []);
       clonedData.forEach((i) => {
         if (moveKeys.includes(i.id ?? '')) {
@@ -142,7 +143,20 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
           selected.push(dataSource);
         }
       });
-      setSelectedList(selectedList.concat(selected));
+      const taskSqlGroup = groupBy(
+        selectedList.concat(selected),
+        'origin_task_id'
+      );
+      let sortedTaskSql: ExpandedBackupSqlType[] = [];
+      Object.keys(taskSqlGroup).forEach((key) => {
+        sortedTaskSql = [
+          ...sortedTaskSql,
+          ...taskSqlGroup[key]
+            .sort((a, b) => (b?.exec_order ?? 0) - (a?.exec_order ?? 0))
+            .map((item, index) => ({ ...item, rollbackOrder: index + 1 }))
+        ];
+      });
+      setSelectedList(sortedTaskSql);
       mutate({
         list: clonedData,
         total: data?.total ?? 0
@@ -209,14 +223,15 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
 
     taskIds.forEach((id, index) => {
       let sqlFormData = '';
-      const sortedBackupSqlList = taskSqlGroup[id].sort(
-        (a, b) => (a.exec_order ?? 0) - (b.exec_order ?? 0)
-      );
-      sortedBackupSqlList.forEach((item) => {
+      taskSqlGroup[id]?.forEach((item) => {
         let backupSqlStatement = '';
-        backupSqlStatement += `/*${t(
+        backupSqlStatement += `/*\n${t(
+          'execWorkflow.detail.rollback.rollbackOrder'
+        )}: ${item.rollbackOrder}\n${t(
+          'execWorkflow.detail.rollback.sourceOrder'
+        )}: ${item.exec_order}\n${t(
           'execWorkflow.detail.rollback.originSql'
-        )}: ${removeMultilineComments(item.origin_sql ?? '')}*/ \n`;
+        )}: ${removeMultilineComments(item.origin_sql ?? '')}\n*/\n`;
         item.backup_sqls?.forEach((i) => (backupSqlStatement += `${i}\n`));
         sqlFormData += backupSqlStatement;
       });
@@ -227,7 +242,9 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     });
     dispatch(
       updateClonedExecWorkflowBaseInfo({
-        workflow_subject: `${workflowInfo?.workflow_name}_Rollback`,
+        workflow_subject: `${workflowInfo?.workflow_name}_Rollback_${
+          (workflowInfo?.associated_rollback_workflows?.length ?? 0) + 1
+        }`,
         desc: description
       })
     );
