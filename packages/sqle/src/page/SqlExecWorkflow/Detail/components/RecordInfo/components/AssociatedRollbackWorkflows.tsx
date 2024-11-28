@@ -22,7 +22,7 @@ const AssociatedRollbackWorkflows: React.FC<
         children: (
           <Space
             direction="vertical"
-            className="'associated-workflows-wrap-item'"
+            className="associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
           >
             <Typography.Paragraph ellipsis title={workflow.workflow_name}>
               <TypedLink
