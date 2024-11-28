@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -253,36 +253,28 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode ce render init snap 1`] = `
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
                   >
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-                      >
-                        <pre>
-                          <code>
-                            <div
-                              class="code-line"
-                            >
-                              <span
-                                class="code-line-number"
-                              >
-                                1
-                              </span>
-                              rollback_sql cont
-                            </div>
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
+                    <pre>
+                      <code>
+                        <div
+                          class="code-line"
+                        >
+                          <span
+                            class="code-line-number"
+                          >
+                            1
+                          </span>
+                          rollback_sql cont
+                        </div>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>

@@ -57,7 +57,13 @@ describe('sqle/ExecWorkflow/Detail/SqlRollback', () => {
         taskInfos={mockSqlExecWorkflowTasksData}
         workflowInfo={{
           workflow_id: '111',
-          workflow_name: 'workflow_name'
+          workflow_name: 'workflow_name',
+          associated_rollback_workflows: [
+            {
+              workflow_id: '123456',
+              workflow_name: 'Test_workflow'
+            }
+          ]
         }}
       />
     );
@@ -183,7 +189,7 @@ describe('sqle/ExecWorkflow/Detail/SqlRollback', () => {
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
       type: 'sqlExecWorkflow/updateClonedExecWorkflowBaseInfo',
       payload: {
-        workflow_subject: `workflow_name_Rollback`,
+        workflow_subject: 'workflow_name_Rollback_2',
         desc: 'test1;'
       }
     });
@@ -203,11 +209,13 @@ describe('sqle/ExecWorkflow/Detail/SqlRollback', () => {
         ],
         '0': {
           currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-          form_data: '/*原始SQL: SELECT 2;*/ \nSELECT 1;\n'
+          form_data:
+            '/*\n回滚次序: 1\n原始次序: 1\n原始SQL: SELECT 2;\n*/\nSELECT 1;\n'
         },
         '1': {
           currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-          form_data: '/*原始SQL: SELECT 2;*/ \nSELECT 1;\n'
+          form_data:
+            '/*\n回滚次序: 1\n原始次序: 2\n原始SQL: SELECT 2;\n*/\nSELECT 1;\n'
         }
       }
     });
