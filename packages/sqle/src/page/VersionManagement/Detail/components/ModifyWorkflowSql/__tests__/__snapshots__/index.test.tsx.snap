@@ -429,6 +429,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               class="ant-form-item-control-input-content"
                             >
                               <button
+                                aria-checked="false"
                                 class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
                                 disabled=""
                                 role="switch"
@@ -994,6 +995,7 @@ exports[`sqle/VersionManagement/Detail/ModifyWorkflowSql render update workflow 
                               class="ant-form-item-control-input-content"
                             >
                               <button
+                                aria-checked="false"
                                 class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
                                 disabled=""
                                 role="switch"

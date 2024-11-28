@@ -1174,7 +1174,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
             SQL备份配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1211,8 +1211,8 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="enableBackup"
                       role="switch"
                       type="button"
@@ -2576,7 +2576,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
             SQL备份配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2613,8 +2613,8 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="enableBackup"
                       role="switch"
                       type="button"
@@ -3885,7 +3885,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
             SQL备份配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3922,8 +3922,8 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="enableBackup"
                       role="switch"
                       type="button"
@@ -5110,7 +5110,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
             SQL备份配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -5147,8 +5147,8 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="enableBackup"
                       role="switch"
                       type="button"
@@ -6335,7 +6335,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
             SQL备份配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6372,8 +6372,8 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      aria-checked="true"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
                       id="enableBackup"
                       role="switch"
                       type="button"
