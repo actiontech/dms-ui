@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasicTreeSelect should render the not found content when loading is true 1`] = `
+<div
+  class="css-1unimto"
+  data-testid="basic-tree-select-popup-menu-style-wrapper"
+>
+  <div>
+    <div
+      class="ant-select-tree"
+      role="tree"
+    >
+      <div>
+        <input
+          aria-label="for screen reader"
+          disabled=""
+          style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+          value=""
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        class="ant-select-tree-treenode"
+        style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+      >
+        <div
+          class="ant-select-tree-indent"
+        >
+          <div
+            class="ant-select-tree-indent-unit"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-select-tree-list"
+        style="position: relative;"
+      >
+        <div
+          class="ant-select-tree-list-holder"
+          style="max-height: 256px; overflow-y: hidden;"
+        >
+          <div>
+            <div
+              class="ant-select-tree-list-holder-inner"
+              style="display: flex; flex-direction: column;"
+            >
+              <div
+                aria-grabbed="false"
+                class="ant-select-tree-treenode ant-select-tree-treenode-switcher-close ant-select-tree-treenode-leaf-last"
+                draggable="false"
+              >
+                <span
+                  aria-hidden="true"
+                  class="ant-select-tree-indent"
+                />
+                <span
+                  class="ant-select-tree-switcher ant-select-tree-switcher_close"
+                >
+                  <svg
+                    class="ant-select-tree-switcher-icon"
+                    height="16"
+                    viewBox="0 0 14 14"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ant-select-tree-node-content-wrapper ant-select-tree-node-content-wrapper-close"
+                  title="parent 1"
+                >
+                  <span
+                    class="ant-select-tree-title"
+                  >
+                    parent 1
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-select-tree-list-scrollbar"
+          style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+        >
+          <div
+            class="ant-select-tree-list-scrollbar-thumb"
+            style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

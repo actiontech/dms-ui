@@ -44,7 +44,7 @@ const INSTANCE_SCHEMA_SEPARATOR = '_INSTANCE_SCHEMA_SEPARATOR_';
 const useDataSourceSelectorTree = () => {
   const { t } = useTranslation();
   const { getLogoUrlByDbType } = useDatabaseType();
-  const currentInstanceId = useRef('');
+
   const [treeData, setTreeData] = useState<DefaultOptionType[]>([]);
   const { projectName } = useCurrentProject();
   const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
@@ -56,7 +56,6 @@ const useDataSourceSelectorTree = () => {
     'comparisonInstance',
     form
   );
-
   const {
     updateInstanceList,
     loading: instanceLoading,
@@ -72,11 +71,15 @@ const useDataSourceSelectorTree = () => {
     string,
     DefaultOptionType
   >['loadData'] = ({ id }) => {
-    currentInstanceId.current = id;
+    if (treeExpandedKeys.includes(id)) {
+      return Promise.resolve();
+    }
+
     setTreeLoadedKeys((keys) => [...keys, id]);
     const instanceInfo = instanceList.find((v) => v.instance_id === id);
 
     startGetInstanceSchema();
+
     return instance
       .getInstanceSchemasV1({
         instance_name: instanceInfo?.instance_name!,
@@ -112,7 +115,6 @@ const useDataSourceSelectorTree = () => {
         getInstanceSchemaDone();
       });
   };
-
   const onTreeExpand: TreeSelectProps['onTreeExpand'] = (keys) => {
     setTreeExpandedKeys(keys);
   };
@@ -127,7 +129,6 @@ const useDataSourceSelectorTree = () => {
     if (!selectedItem) {
       return treeData;
     }
-
     return treeData.map((item) => {
       if (item.pId === TREE_DATA_PARENT_NODE_ID) {
         return item;
