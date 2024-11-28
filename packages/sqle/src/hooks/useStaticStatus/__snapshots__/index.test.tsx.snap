@@ -558,6 +558,23 @@ exports[`useRuleTemplate should render static option for exec status 2`] = `
                     unselectable="on"
                   />
                 </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="执行回滚"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    执行回滚
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
               </div>
             </div>
           </div>
