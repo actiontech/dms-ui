@@ -65,6 +65,13 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   });
 
   const {
+    loading: instanceTipsLoading,
+    updateInstanceList,
+    instanceOptions,
+    instanceList
+  } = useInstance();
+
+  const {
     handleInstanceChange,
     handleInstanceSchemaChange,
     getInstanceSchemaOptions,
@@ -74,7 +81,8 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     renderAddItemButton
   } = useRenderDatabaseSelectionItems({
     dbSourceInfoCollection: sharedStepDetail.dbSourceInfoCollection,
-    sqlStatementTabActiveKey: sharedStepDetail.sqlStatementTabActiveKey
+    sqlStatementTabActiveKey: sharedStepDetail.sqlStatementTabActiveKey,
+    instanceList
   });
 
   useSetFormValuesWithGenModifiedSqlParams({
@@ -84,12 +92,6 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     handleInstanceNameChange,
     setGetModifiedSQLsPending: sharedStepDetail.getModifiedSQLsPending.set
   });
-
-  const {
-    loading: instanceTipsLoading,
-    updateInstanceList,
-    instanceOptions
-  } = useInstance();
 
   const versionFirstStageInstanceOptions = useMemo(() => {
     const newOptions: SelectProps['options'] = [];

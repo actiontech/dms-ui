@@ -113,6 +113,11 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
           >
             中止失败
           </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            执行回滚
+          </div>
         </div>
       </div>
       <div
@@ -497,6 +502,11 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
             class="custom-segmented-filter-item"
           >
             中止失败
+          </div>
+          <div
+            class="custom-segmented-filter-item"
+          >
+            执行回滚
           </div>
         </div>
       </div>

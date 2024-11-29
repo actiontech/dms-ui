@@ -11,7 +11,8 @@ import {
   WorkflowListData,
   WorkflowsOverviewListData,
   AuditTaskResData,
-  mockGlobalWorkflowListData
+  mockGlobalWorkflowListData,
+  mockRollbackSqlData
 } from './data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { AxiosResponse } from 'axios';
@@ -44,6 +45,11 @@ class MockWorkflowApi implements MockSpyApy {
     this.getWorkflowAttachment();
     this.getGlobalWorkflows();
     this.getGlobalWorkflowStatistics();
+    this.updateSqlBackupStrategy();
+    this.downloadBackupFile();
+    this.createRollbackWorkflow();
+    this.updateTaskBackupStrategy();
+    this.getBackupSqlList();
   }
 
   public getWorkflows() {
@@ -311,6 +317,38 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
       createSpySuccessResponse({
         total_nums: 10
       })
+    );
+    return spy;
+  }
+
+  public updateSqlBackupStrategy() {
+    const spy = jest.spyOn(workflow, 'UpdateSqlBackupStrategyV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public downloadBackupFile() {
+    const spy = jest.spyOn(task, 'downloadBackupFileV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public createRollbackWorkflow() {
+    const spy = jest.spyOn(workflow, 'CreateRollbackWorkflow');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateTaskBackupStrategy() {
+    const spy = jest.spyOn(workflow, 'UpdateTaskBackupStrategyV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getBackupSqlList() {
+    const spy = jest.spyOn(workflow, 'GetBackupSqlListV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockRollbackSqlData })
     );
     return spy;
   }

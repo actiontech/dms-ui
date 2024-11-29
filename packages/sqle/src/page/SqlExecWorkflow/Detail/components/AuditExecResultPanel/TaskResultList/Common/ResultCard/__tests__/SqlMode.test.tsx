@@ -11,6 +11,7 @@ import { superRender } from '../../../../../../../../../testUtils/customRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const projectID = '700300';
 const taskId = 'task_id_1234';
@@ -96,12 +97,9 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     });
 
     const iconArrows = getAllBySelector('.custom-icon-arrow-down', baseElement);
-    expect(iconArrows.length).toBe(2);
+    expect(iconArrows.length).toBe(1);
 
     fireEvent.click(iconArrows[0]);
-    await act(async () => jest.advanceTimersByTime(500));
-
-    fireEvent.click(iconArrows[1]);
     await act(async () => jest.advanceTimersByTime(500));
 
     expect(baseElement).toMatchSnapshot();
@@ -113,22 +111,21 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     });
 
     const iconArrows = getAllBySelector('.custom-icon-arrow-down', baseElement);
-    expect(iconArrows.length).toBe(2);
+    expect(iconArrows.length).toBe(1);
 
     fireEvent.click(iconArrows[0]);
-    await act(async () => jest.advanceTimersByTime(500));
-
-    fireEvent.click(iconArrows[1]);
     await act(async () => jest.advanceTimersByTime(500));
 
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render change exec_sql & rollback_sql', async () => {
+  it('render change exec_sql & rollback_sql & exec_result', async () => {
     const { baseElement } = customRender({
       number: 1,
       exec_sql: 'exec_sql cont',
-      rollback_sql: 'rollback_sql cont'
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+      exec_result: 'success'
     });
 
     expect(screen.getByText('执行语句')).toBeInTheDocument();
@@ -138,6 +135,9 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('执行语句'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('执行结果'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
   });
@@ -171,5 +171,49 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     fireEvent.click(screen.getByText('复制执行语句'));
     expect(mockCopyTextByTextarea).toHaveBeenCalled();
     expect(screen.getByText('复制成功')).toBeInTheDocument();
+  });
+
+  it('render has backup conflict', async () => {
+    const { baseElement } = customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backupConflict: true
+    });
+    fireEvent.click(screen.getByText('回滚语句'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(screen.getByText('当前SQL未按预期开启备份')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render backup strategy tip', async () => {
+    const { baseElement } = customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy_tip: 'test tips'
+    });
+    fireEvent.click(screen.getByText('回滚语句'));
+    await act(async () => jest.advanceTimersByTime(500));
+    expect(screen.getByText('test tips')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render associated rollback workflows', async () => {
+    const { baseElement } = customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy_tip: 'test tips',
+      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+      associated_rollback_workflows: [
+        {
+          workflow_name: 'test_workflow_name',
+          workflow_id: '1'
+        }
+      ]
+    });
+    expect(screen.getByText('关联回滚工单')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
   });
 });

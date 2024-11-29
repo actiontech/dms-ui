@@ -8,6 +8,8 @@ import { useBoolean } from 'ahooks';
 import AuditResultList from '../../../Common/AuditResultList';
 import UpdateFormDrawer from './UpdateFormDrawer';
 import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
+import BatchSwitchBackupStrategyModal from './BatchSwitchBackupStrategyModal';
+import { useState } from 'react';
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
@@ -31,12 +33,27 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
     }
   ] = useBoolean(false);
 
+  const [
+    switchBackupPolicyOpen,
+    {
+      setTrue: openSwitchBackupPolicyModal,
+      setFalse: closeSwitchBackupPolicyModal
+    }
+  ] = useBoolean();
+
+  const [taskID, setTaskID] = useState<string>();
+
   const internalCreateWorkflow = () => {
     startCreate();
 
     createAction().finally(() => {
       finishCreate();
     });
+  };
+
+  const onBatchSwitchBackupPolicy = (currentTaskID?: string) => {
+    openSwitchBackupPolicyModal();
+    setTaskID(currentTaskID);
   };
 
   return (
@@ -72,6 +89,8 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
       <AuditResultList
         tasks={tasks}
         updateTaskRecordCount={updateTaskRecordCount}
+        allowSwitchBackupPolicy
+        onBatchSwitchBackupPolicy={onBatchSwitchBackupPolicy}
       />
 
       <UpdateFormDrawer
@@ -82,6 +101,14 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
         auditAction={auditAction}
         {...sharedStepDetail}
       />
+
+      {/* #if [ee] */}
+      <BatchSwitchBackupStrategyModal
+        open={switchBackupPolicyOpen}
+        taskID={taskID}
+        onCancel={closeSwitchBackupPolicyModal}
+      />
+      {/* #endif */}
     </>
   );
 };

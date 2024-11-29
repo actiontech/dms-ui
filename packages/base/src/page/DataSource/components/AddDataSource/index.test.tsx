@@ -246,6 +246,8 @@ describe('page/DataSource/AddDataSource', () => {
       getBySelector('div[title="custom_template_b"]', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.click(getBySelector('#enableBackup'));
+    await act(async () => jest.advanceTimersByTime(300));
     // submit
     expect(screen.getByText('提 交')).toBeInTheDocument();
     await act(async () => {
@@ -286,7 +288,8 @@ describe('page/DataSource/AddDataSource', () => {
             audit_enabled: undefined
           }
         },
-        user: 'root'
+        user: 'root',
+        enable_backup: true
       },
       project_uid: mockProjectList[0].uid
     });

@@ -4,13 +4,14 @@ import {
   BasicToolTips,
   Copy,
   EmptyBox,
-  SQLRenderer
+  SQLRenderer,
+  SegmentedTabs
 } from '@actiontech/shared';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 import { Divider, Space, Spin, message } from 'antd';
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { SqlExecuteResultCardProps } from './index.type';
@@ -18,20 +19,17 @@ import ExecStatusTag from './components/ExecStatusTag';
 import AuditResultTag from './components/AuditResultTag';
 import AuditResultTree from './components/AuditResultTree';
 import ResultDescribe from './components/ResultDescribe';
-import {
-  TaskResultSqlOptionsStyleWrapper,
-  TasksResultCardStyleWrapper
-} from './style';
-import { TaskAuditResultTreeStyleWrapper } from './components/style';
-import {
-  ProfileSquareFilled,
-  DownOutlined,
-  EnvironmentFilled
-} from '@actiontech/icons';
+import { TasksResultCardStyleWrapper } from './style';
+import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../../../hooks/useThemeStyleData';
-import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { TaskResultContentTypeEnum } from './index.data';
+import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
+import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { WarningFilled } from '@actiontech/icons';
+import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -43,11 +41,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const [showExecSql, { setTrue, setFalse }] = useBoolean(true);
-
   const { sqleTheme } = useThemeStyleData();
 
-  const [loading, { set }] = useBoolean();
+  const [loading, { setTrue: updateDescPending, setFalse: updateDescDone }] =
+    useBoolean();
+
+  const [currentContentKey, setCurrentContentKey] =
+    useState<TaskResultContentTypeEnum>(TaskResultContentTypeEnum.exec_sql);
 
   const onCopyExecSql = () => {
     Copy.copyTextByTextarea(props.exec_sql ?? '');
@@ -67,7 +67,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   };
 
   const updateSqlDescribe = (sqlDescribe: string) => {
-    set(true);
+    updateDescPending();
     task
       .updateAuditTaskSQLsV1({
         number: `${props.number}`,
@@ -80,14 +80,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
         }
       })
       .finally(() => {
-        set(false);
+        updateDescDone();
       });
   };
 
-  const sqlTemplate = useMemo(() => {
-    const renderSql = (showExecSql ? props.exec_sql : props.rollback_sql) || '';
-    return renderSql;
-  }, [props.exec_sql, props.rollback_sql, showExecSql]);
+  const formattedRollbackSql = useMemo(() => {
+    return props.rollback_sqls?.map((v) => formatterSQL(v))?.join('\n');
+  }, [props.rollback_sqls]);
 
   return (
     <TasksResultCardStyleWrapper>
@@ -106,6 +105,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
           </div>
         </Space>
         <Space>
+          {/* #if [ee] */}
+          <EmptyBox if={!!props.associated_rollback_workflows?.length}>
+            <RollbackWorkflowEntry
+              workflows={props.associated_rollback_workflows}
+            />
+          </EmptyBox>
+          {/* #endif */}
           <BasicButton size="small" onClick={onCopyExecSql}>
             {t('execWorkflow.audit.copyExecSql')}
           </BasicButton>
@@ -116,91 +122,122 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       </div>
       <div className="result-card-content">
         <div className="result-card-content-options">
-          <Space size={0}>
-            <TaskResultSqlOptionsStyleWrapper
-              active={showExecSql}
-              onClick={setTrue}
-            >
-              {t('execWorkflow.audit.table.execSql')}
-            </TaskResultSqlOptionsStyleWrapper>
-            <TaskResultSqlOptionsStyleWrapper
-              active={!showExecSql}
-              onClick={setFalse}
-            >
-              {t('execWorkflow.audit.table.rollback')}
-            </TaskResultSqlOptionsStyleWrapper>
-          </Space>
-
-          <Space size={0}>
-            <EmptyBox
-              if={!!props?.sql_source_file}
-              defaultNode={
-                <BasicToolTips
-                  title={t('execWorkflow.audit.sqlFileSource.tips')}
-                >
-                  <Space>
-                    <BasicTag
-                      icon={
-                        <ProfileSquareFilled
-                          width={18}
-                          height={18}
-                          color={sqleTheme.icon.execWorkFlow.fileList}
-                        />
-                      }
-                    >
-                      <span className="sql-source-title">
-                        {t('execWorkflow.audit.sqlFileSource.source')}
-                      </span>
-                      -
-                    </BasicTag>
+          <SegmentedTabs
+            activeKey={currentContentKey}
+            onChange={(v) => {
+              setCurrentContentKey(v as TaskResultContentTypeEnum);
+            }}
+            items={[
+              {
+                value: TaskResultContentTypeEnum.exec_sql,
+                label: t('execWorkflow.audit.table.execSql'),
+                children: <SQLRenderer sql={props.exec_sql} showLineNumbers />
+              },
+              {
+                value: TaskResultContentTypeEnum.rollback_sql,
+                label: t('execWorkflow.audit.table.rollback'),
+                children: (
+                  <Space
+                    direction="vertical"
+                    className="rollback-sql-container"
+                  >
+                    {/* #if [ee] */}
+                    <EmptyBox if={!!props.backup_strategy_tip}>
+                      <Space className="backup-conflict-tips">
+                        <WarningFilled width={16} height={16} />
+                        {props.backup_strategy_tip}
+                      </Space>
+                    </EmptyBox>
+                    <Space>
+                      <EmptyBox
+                        if={props.backupConflict}
+                        defaultNode={
+                          <EmptyBox if={!!props.backup_strategy}>
+                            <BasicTag>
+                              {
+                                BackupStrategyDictionary[
+                                  props.backup_strategy as unknown as UpdateSqlBackupStrategyReqStrategyEnum
+                                ]
+                              }
+                            </BasicTag>
+                          </EmptyBox>
+                        }
+                      >
+                        <Space className="backup-conflict-tips">
+                          <WarningFilled width={16} height={16} />
+                          {t('execWorkflow.audit.table.backupConflictTips')}
+                        </Space>
+                      </EmptyBox>
+                      {/* <Divider
+                        type="vertical"
+                        className="result-card-status-divider"
+                      /> */}
+                      {/* todo 等后端补充 备份结果字段  */}
+                    </Space>
+                    {/* #endif */}
+                    <SQLRenderer sql={formattedRollbackSql} showLineNumbers />
                   </Space>
-                </BasicToolTips>
+                )
+              },
+              {
+                value: TaskResultContentTypeEnum.exec_result,
+                label: t('execWorkflow.audit.table.execResult'),
+                children: props.exec_result || '-'
               }
-            >
-              <BasicTag
-                icon={
-                  <ProfileSquareFilled
-                    width={18}
-                    height={18}
-                    color={sqleTheme.icon.execWorkFlow.fileList}
-                  />
-                }
-              >
-                <span className="sql-source-title">
-                  {t('execWorkflow.audit.sqlFileSource.source')}
-                </span>
-                {props?.sql_source_file}
-              </BasicTag>
-            </EmptyBox>
-            <BasicTag icon={<EnvironmentFilled width={18} height={18} />}>
-              <span className="sql-source-title">
-                {t('execWorkflow.audit.sqlFileSource.fileLine')}
-              </span>
-              {props?.sql_start_line || '-'}
-            </BasicTag>
-          </Space>
-        </div>
-        <SQLRenderer sql={sqlTemplate} showLineNumbers />
-        <AuditResultTree auditResult={props.audit_result} />
-        <TaskAuditResultTreeStyleWrapper
-          treeData={[
-            {
-              title: t('execWorkflow.audit.table.execResult'),
-              key: 'exec_result_wrap',
-              children: [
-                {
-                  title: props.exec_result || '-',
-                  key: 'exec_result'
-                }
-              ]
+            ]}
+            segmentedRowExtraContent={
+              <Space size={0}>
+                <EmptyBox
+                  if={!!props?.sql_source_file}
+                  defaultNode={
+                    <BasicToolTips
+                      title={t('execWorkflow.audit.sqlFileSource.tips')}
+                    >
+                      <Space>
+                        <BasicTag
+                          icon={
+                            <ProfileSquareFilled
+                              width={18}
+                              height={18}
+                              color={sqleTheme.icon.execWorkFlow.fileList}
+                            />
+                          }
+                        >
+                          <span className="sql-source-title">
+                            {t('execWorkflow.audit.sqlFileSource.source')}
+                          </span>
+                          -
+                        </BasicTag>
+                      </Space>
+                    </BasicToolTips>
+                  }
+                >
+                  <BasicTag
+                    icon={
+                      <ProfileSquareFilled
+                        width={18}
+                        height={18}
+                        color={sqleTheme.icon.execWorkFlow.fileList}
+                      />
+                    }
+                  >
+                    <span className="sql-source-title">
+                      {t('execWorkflow.audit.sqlFileSource.source')}
+                    </span>
+                    {props?.sql_source_file}
+                  </BasicTag>
+                </EmptyBox>
+                <BasicTag icon={<EnvironmentFilled width={18} height={18} />}>
+                  <span className="sql-source-title">
+                    {t('execWorkflow.audit.sqlFileSource.fileLine')}
+                  </span>
+                  {props?.sql_start_line || '-'}
+                </BasicTag>
+              </Space>
             }
-          ]}
-          switcherIcon={
-            <CommonIconStyleWrapper className="custom-icon custom-icon-arrow-down">
-              <DownOutlined width={16} height={16} />
-            </CommonIconStyleWrapper>
-          }
-        />
+          />
+        </div>
+        <AuditResultTree auditResult={props.audit_result} />
       </div>
       <div className="result-card-footer">
         <Spin spinning={loading}>

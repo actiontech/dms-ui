@@ -11,6 +11,7 @@ import {
 } from '../../../../testUtils/mockApi/execWorkflow/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import task from '../../../../testUtils/mockApi/task';
 import { workflowTaskDetailMockData } from '../../../../testUtils/mockApi/task/data';
@@ -22,6 +23,7 @@ import {
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import instance from '../../../../testUtils/mockApi/instance';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -52,6 +54,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
     jest.useFakeTimers();
     mockUseCurrentUser();
     mockUseCurrentProject();
+    mockUseDbServiceDriver();
     execWorkflow.mockAllApi();
     task.mockAllApi();
     requestWorkflowInfo = execWorkflow.getWorkflow();
@@ -61,6 +64,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
     getSummaryOfInstanceTasksSpy = execWorkflow.getSummaryOfInstanceTasks();
     executeTasksOnWorkflow = execWorkflow.executeTasksOnWorkflow();
     batchCompleteWorkflowsSpy = execWorkflow.batchCompleteWorkflows();
+    instance.getInstanceTipList();
     terminateMultipleTaskByWorkflowSpy =
       execWorkflow.terminateMultipleTaskByWorkflow();
     getSummaryOfInstanceTasksSpy.mockClear();

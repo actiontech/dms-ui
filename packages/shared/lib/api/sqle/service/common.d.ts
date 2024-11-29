@@ -77,6 +77,7 @@ import {
   updatePipelineNodeAuditMethodEnum,
   updatePipelineNodeObjectTypeEnum,
   updatePipelineNodeTypeEnum,
+  AssociatedRollbackWorkflowStatusEnum,
   AssociatedStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
   AuditTaskSQLResV2BackupStrategyEnum,
@@ -447,6 +448,8 @@ export interface IBackupSqlData {
   instance_name?: string;
 
   origin_sql?: string;
+
+  origin_task_id?: number;
 }
 
 export interface IBackupSqlListRes {
@@ -2092,6 +2095,8 @@ export interface IInstanceTableMeta {
 }
 
 export interface IInstanceTipResV1 {
+  enable_backup?: boolean;
+
   host?: string;
 
   instance_id?: string;
@@ -2550,17 +2555,15 @@ export interface IRuleTemplateResV1 {
 
   desc?: string;
 
-  is_default_rule_template?: boolean;
-
   rule_template_name?: string;
 }
 
 export interface IRuleTemplateTipResV1 {
   db_type?: string;
 
-  rule_template_id?: string;
-
   is_default_rule_template?: boolean;
+
+  rule_template_id?: string;
 
   rule_template_name?: string;
 }
@@ -3529,6 +3532,14 @@ export interface IUpdatePipelineNode {
   type?: updatePipelineNodeTypeEnum;
 }
 
+export interface IAssociatedRollbackWorkflow {
+  status?: AssociatedRollbackWorkflowStatusEnum;
+
+  workflow_id?: string;
+
+  workflow_name?: string;
+}
+
 export interface IAssociatedStageWorkflows {
   sql_version_stage_id?: number;
 
@@ -3644,7 +3655,7 @@ export interface IAuditSQLResV2 {
 }
 
 export interface IAuditTaskSQLResV2 {
-  associate_workflow_ids?: string[];
+  associated_rollback_workflows?: IAssociatedRollbackWorkflow[];
 
   audit_level?: string;
 
@@ -3668,7 +3679,7 @@ export interface IAuditTaskSQLResV2 {
 
   number?: number;
 
-  rollback_sql?: string;
+  rollback_sqls?: string[];
 
   sql_source_file?: string;
 
@@ -3972,6 +3983,8 @@ export interface IWorkflowRecordResV2 {
 }
 
 export interface IWorkflowResV2 {
+  associated_rollback_workflows?: IAssociatedRollbackWorkflow[];
+
   associated_stage_workflows?: IAssociatedStageWorkflows[];
 
   create_time?: string;

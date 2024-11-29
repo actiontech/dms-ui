@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/ExecWorkflow/AuditDetail/RollbackWorkflowEntry render drop down menu 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        关联回滚工单
+      </span>
+      <svg
+        color="currentColor"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`sqle/ExecWorkflow/AuditDetail/RollbackWorkflowEntry render snap when value is empty 1`] = `
+<body>
+  <div>
+    <button
+      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        关联回滚工单
+      </span>
+      <svg
+        color="currentColor"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</body>
+`;

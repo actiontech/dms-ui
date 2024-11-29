@@ -62,7 +62,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
         exec_sql: 'exec sql',
         exec_status: '',
         number: 30,
-        rollback_sql: 'rollback sql',
+        rollback_sqls: ['rollback sql'],
         sql_source_file: 'sql file'
       }
     });

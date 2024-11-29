@@ -104,7 +104,13 @@ export default {
           '当前支持MySQL、Oracle、PG类型数据源按文件模式上线',
         executeSqlMode: 'SQL模式',
         executeFileMode: '文件模式',
-        selectFileSortMethod: '选择文件排序方式'
+        selectFileSortMethod: '选择文件排序方式',
+        switchSqlBackup: '是否选择开启备份',
+        switchSqlBackupTips: '开启后，数据源上创建的工单将默认开启备份能力',
+        cancelSwitchSqlBackupTips:
+          '当前应用的数据源已开启备份需求，是否确认关闭备份？',
+        cancelSwitchSqlBackupTipsWithInstanceName:
+          '{{instanceName}}已开启备份需求，是否确认关闭备份？'
       },
       tour: {
         modifyName: '修改工单名称',
@@ -121,7 +127,18 @@ export default {
       submitWorkflowConfirmationMessage:
         '项目 {{currentProject}} 创建工单时最高只能允许有 {{allowAuditLevel}} 等级的审核错误，但是当前审核结果中最高包含 {{currentAuditLevel}} 等级的审核结果。',
       mustHaveAuditResultTips: '不能对审核结果为空的SQL进行创建工单',
-      leaveTip: '是否离开本页面？当前工单暂未提交！'
+      leaveTip: '是否离开本页面？当前工单暂未提交！',
+      switchDatabaseBackupPolicy: '切换数据源备份策略',
+      switchDatabaseBackupPolicyTips: '统一变更当前数据源上SQL的备份回滚策略为',
+      editBackupStrategy: '切换SQL备份回滚策略',
+      editBackupStrategySuccessTips: '切换SQL备份回滚策略成功',
+      switchDatabaseBackupPolicySuccessTips: '切换数据源备份策略成功'
+    },
+    backupStrategy: {
+      reverseSql: '基于反向SQL回滚',
+      originRow: '基于行级备份回滚',
+      manual: '自行手工备份回滚',
+      none: '无'
     },
     createResult: {
       success: '工单创建成功',
@@ -174,6 +191,8 @@ export default {
       unknown: '未知步骤',
       refreshWorkflow: '刷新工单',
       backToDetail: '返回工单详情',
+      retry: '重试',
+      rollback: '回滚',
 
       maintenanceTime:
         '定时上线的时间点必须在运维时间之内，当前数据源的运维时间为: \n',
@@ -211,7 +230,8 @@ export default {
         '工单关闭后将无法再对工单执行任何操作，是否确认关闭当前工单？',
       closeWorkflowSuccessTips: '工单关闭成功',
       cloneExecWorkflow: '上线到其他实例',
-      associatedWorkflowInfo: '关联工单信息'
+      associatedWorkflowInfo: '关联工单信息',
+      associatedRollbackWorkflowInfo: '关联回滚工单信息'
     },
 
     paginationDisplay: '分页展示',
@@ -237,7 +257,21 @@ export default {
           '当前操作将立即执行该数据源上的SQL语句, 是否确认立即上线'
       }
     },
-    taskResult: {}
+    taskResult: {},
+
+    rollback: {
+      allSql: '全部SQL',
+      selectedRollbackSql: '被选中回滚SQL',
+      backupStrategy: '备份策略',
+      instance: '数据源',
+      execStatus: '执行状态',
+      remark: '备注',
+      addRemark: '添加备注',
+      originSql: '原始SQL',
+      rollbackOrder: '回滚次序',
+      sourceOrder: '原始次序'
+    },
+    associatedRollbackWorkflow: '关联回滚工单'
   },
 
   audit: {
@@ -247,6 +281,7 @@ export default {
     duplicate: '是否去重',
     downloadSql: '下载SQL语句',
     downloadReport: '下载审核报告',
+    downloadRollbackSql: '下载回滚语句',
     table: {
       number: '序号',
       auditLevel: '规则等级',
@@ -260,7 +295,11 @@ export default {
       describe: '说明',
       analyze: '分析',
       addDescribe: '添加说明',
-      createWhitelist: '添加为审核SQL例外'
+      createWhitelist: '添加为审核SQL例外',
+      backupPolicy: '备份回滚策略',
+      backupPolicyTips:
+        '平台将综合评估数据丢失风险及备份成本后，推荐每条SQL适用的备份回滚策略',
+      backupConflictTips: '当前SQL未按预期开启备份'
     },
 
     filterForm: {
@@ -336,7 +375,8 @@ export default {
       terminate_fail: '中止失败',
       terminate_succ: '中止成功',
       terminating: '正在中止',
-      allStatus: '全部状态'
+      allStatus: '全部状态',
+      rollback: '执行回滚'
     }
   }
 };
