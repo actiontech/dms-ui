@@ -41,8 +41,6 @@ export interface IAccountDetail {
 
   explanation?: string;
 
-  hostname?: string;
-
   password?: string;
 
   password_create_time?: string;
@@ -245,8 +243,6 @@ export interface IDBAccount {
 
   explanation?: string;
 
-  hostname?: string;
-
   password: string;
 
   username: string;
@@ -256,8 +252,6 @@ export interface IDBAccountBody {
   additional_param?: IParams;
 
   db_roles?: IUidWithName[];
-
-  hostname?: string;
 
   permission_info?: IPermissionInfo;
 

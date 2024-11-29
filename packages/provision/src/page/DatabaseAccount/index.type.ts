@@ -5,16 +5,18 @@ import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service
 import { BackendFormValues } from '../../../../sqle/src/components/BackendForm';
 import { IDatabasePrivilegesSelectorBaseFields } from '../../components/DatabasePrivilegesSelector/index.type';
 
+export type ExpendedDBAccountBody = IDBAccountBody & { id?: string };
+
 export type AccountDiscoveryFormType = {
   business: string;
   service: string;
-  account: IDBAccountBody[];
+  account: ExpendedDBAccountBody[];
 };
 
 export type AccountTableFieldProps = {
-  value?: IDBAccountBody[];
-  onChange?: (value?: IDBAccountBody[]) => void;
-  data?: IDBAccountBody[];
+  value?: ExpendedDBAccountBody[];
+  onChange?: (value?: ExpendedDBAccountBody[]) => void;
+  data?: ExpendedDBAccountBody[];
   loading?: boolean;
   refresh: () => void;
 };

@@ -16,8 +16,8 @@ export default {
   },
   tableColumns: {
     role: '角色名',
-    childRoles: '子角色',
-    privilege: '权限',
+    childRoles: '已授予的角色',
+    privilege: '已授予权限',
     dbService: '数据源',
     containerName: '容器名称'
   },

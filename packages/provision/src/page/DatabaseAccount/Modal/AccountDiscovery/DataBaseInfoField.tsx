@@ -38,7 +38,10 @@ const DataBaseInfoField: React.FC<{
         db_service_uid: service
       };
       return dbAccountService.AuthDiscoveryDBAccount(params).then((res) => {
-        return res.data.data?.accounts;
+        return res.data.data?.accounts?.map((acc, index) => ({
+          ...acc,
+          id: `${acc.user}_${index}`
+        }));
       });
     },
     {
