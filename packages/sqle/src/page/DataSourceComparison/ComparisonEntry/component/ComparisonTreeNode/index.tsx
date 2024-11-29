@@ -109,7 +109,7 @@ const ComparisonTreeNode: React.FC<Props> = ({
           onClose={resetStateAndCloseComparisonDetailDrawer}
           comparisonResults={comparisonResults}
           selectedBaselineInstanceInfo={selectedBaselineInstanceInfo}
-          selectComparisonInstanceInfo={selectedComparisonInstanceInfo}
+          selectedComparisonInstanceInfo={selectedComparisonInstanceInfo}
           getDetailParams={generateGetComparisonDetailParams(
             selectedObjectNodeKey,
             selectedBaselineInstanceInfo?.instanceId,

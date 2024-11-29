@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useDataSourceSelectorTree should initialize data correctly 1`] = `
+[
+  {
+    "dbType": "MySQL",
+    "disabled": true,
+    "id": "MySQL",
+    "label": "MySQL",
+    "pId": "TREE_DATA_PARENT_NODE_ID",
+    "title": <DatabaseTypeLogo
+      dbType="MySQL"
+    />,
+    "value": "MySQL",
+  },
+  {
+    "dbType": "PostgreSQL",
+    "disabled": true,
+    "id": "PostgreSQL",
+    "label": "PostgreSQL",
+    "pId": "TREE_DATA_PARENT_NODE_ID",
+    "title": <DatabaseTypeLogo
+      dbType="PostgreSQL"
+    />,
+    "value": "PostgreSQL",
+  },
+  {
+    "dbType": "MySQL",
+    "id": "1739531854064652288",
+    "label": "mysql-1",
+    "pId": "MySQL",
+    "title": <Styled(Styled(span))>
+      <DatabaseFilled
+        color="#4583ff"
+        height={18}
+        width={18}
+      />
+      <span
+        className="content"
+      >
+        mysql-1(10.186.62.13:33061)
+      </span>
+    </Styled(Styled(span))>,
+    "value": "1739531854064652288",
+  },
+  {
+    "dbType": "MySQL",
+    "id": "1739531942258282496",
+    "label": "mysql-2",
+    "pId": "MySQL",
+    "title": <Styled(Styled(span))>
+      <DatabaseFilled
+        color="#4583ff"
+        height={18}
+        width={18}
+      />
+      <span
+        className="content"
+      >
+        mysql-2(10.186.62.14:33062)
+      </span>
+    </Styled(Styled(span))>,
+    "value": "1739531942258282496",
+  },
+  {
+    "dbType": "MySQL",
+    "id": "1739833293479612416",
+    "label": "xin-test-database",
+    "pId": "MySQL",
+    "title": <Styled(Styled(span))>
+      <DatabaseFilled
+        color="#4583ff"
+        height={18}
+        width={18}
+      />
+      <span
+        className="content"
+      >
+        xin-test-database(10.186.62.15:33063)
+      </span>
+    </Styled(Styled(span))>,
+    "value": "1739833293479612416",
+  },
+  {
+    "dbType": "PostgreSQL",
+    "id": "1740625330336436224",
+    "label": "progres-1",
+    "pId": "PostgreSQL",
+    "title": <Styled(Styled(span))>
+      <DatabaseFilled
+        color="#4583ff"
+        height={18}
+        width={18}
+      />
+      <span
+        className="content"
+      >
+        progres-1(10.186.62.16:5432)
+      </span>
+    </Styled(Styled(span))>,
+    "value": "1740625330336436224",
+  },
+  {
+    "dbType": "MySQL",
+    "id": "1743145219550875648",
+    "label": "mysql-5",
+    "pId": "MySQL",
+    "title": <Styled(Styled(span))>
+      <DatabaseFilled
+        color="#4583ff"
+        height={18}
+        width={18}
+      />
+      <span
+        className="content"
+      >
+        mysql-5(139.196.241.182:33061)
+      </span>
+    </Styled(Styled(span))>,
+    "value": "1743145219550875648",
+  },
+]
+`;

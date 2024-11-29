@@ -3,7 +3,7 @@ import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { Form, TreeSelectProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { DatabaseComparisonFromFields } from '../../index.type';
-import useDataSourceTreeData from '../../hooks/useDataSourceSelectorTree';
+import useDataSourceSelectorTree from '../../hooks/useDataSourceSelectorTree';
 import { EnvironmentSelectStyleWrapper } from './style';
 import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 
@@ -12,7 +12,7 @@ type Props = {
   updateComparisonResult: (data?: ISchemaObject[]) => void;
   comparisonObjectTreeOnCheck: (keys: string[]) => void;
 } & Pick<
-  ReturnType<typeof useDataSourceTreeData>,
+  ReturnType<typeof useDataSourceSelectorTree>,
   | 'treeLoadedKeys'
   | 'onTreeExpand'
   | 'treeExpandedKeys'
@@ -57,7 +57,6 @@ const EnvironmentSelector: React.FC<Props> = ({
     loading: getTreeDataPending,
     disabled: executeComparisonPending
   };
-
   return (
     <>
       <EnvironmentSelectStyleWrapper>
