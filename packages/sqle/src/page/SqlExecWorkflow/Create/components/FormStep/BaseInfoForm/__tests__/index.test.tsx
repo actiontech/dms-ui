@@ -10,7 +10,9 @@ describe('test BaseInfoForm', () => {
       isCloneMode: false,
       isAssociationVersionMode: false,
       versionId: undefined,
-      versionName: undefined
+      versionName: undefined,
+      isRollbackMode: false,
+      rollbackWorkflowId: undefined
     }));
   });
   it('should match snapshot', () => {
@@ -24,7 +26,9 @@ describe('test BaseInfoForm', () => {
       isCloneMode: false,
       isAssociationVersionMode: true,
       versionId: '1',
-      versionName: 'v1-test'
+      versionName: 'v1-test',
+      isRollbackMode: false,
+      rollbackWorkflowId: undefined
     }));
     mockThemeStyleData();
     const wrapper = shallow(<BaseInfoForm />);

@@ -14,6 +14,9 @@ import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../../data/ModalName';
+import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import EventEmitter from '../../../../../../utils/EventEmitter';
+import EmitterKey from '../../../../../../data/EmitterKey';
 
 jest.mock('react-redux', () => {
   return {
@@ -26,6 +29,7 @@ jest.mock('react-redux', () => {
 describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   let requestUpdateAuditTaskSQLs: jest.SpyInstance;
   let requestGetAuditTaskSQLs: jest.SpyInstance;
+  let updateSqlBackupStrategySpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
 
   const customRender = (params: AuditResultTableProps) => {
@@ -37,6 +41,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     jest.useFakeTimers();
     requestUpdateAuditTaskSQLs = execWorkflow.updateAuditTaskSQLs();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
+    updateSqlBackupStrategySpy = execWorkflow.updateSqlBackupStrategy();
     execWorkflow.mockAllApi();
     rule_template.getRuleList();
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -286,5 +291,83 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       payload: { selectRow: { value: 'SELECT * ' } },
       type: 'whitelist/updateSelectWhitelist'
     });
+  });
+
+  it('render allowSwitchBackupPolicy is true', async () => {
+    requestGetAuditTaskSQLs.mockClear();
+    requestGetAuditTaskSQLs.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            number: 1,
+            exec_sql: 'SELECT * ',
+            sql_source_file: '',
+            audit_level: '',
+            audit_status: 'finished',
+            exec_result: '',
+            exec_status: 'initialized',
+            description: '',
+            audit_result: [
+              {
+                level: 'error',
+                message: '除了自增列及大字段列之外，每个列都必须添加默认值',
+                rule_name: 'ddl_check_column_without_default',
+                db_type: ''
+              }
+            ],
+            backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+            exec_sql_id: 1
+          }
+        ]
+      })
+    );
+    const { baseElement } = customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal,
+      allowSwitchBackupPolicy: true
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('备份回滚策略')).toBeInTheDocument();
+    fireEvent.click(getBySelector('.backup-policy-editor'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('切换SQL备份回滚策略')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.mouseDown(getBySelector('#strategy'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('基于行级备份回滚'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateSqlBackupStrategySpy).toHaveBeenCalledTimes(1);
+    expect(updateSqlBackupStrategySpy).toHaveBeenCalledWith({
+      task_id: 'taskID',
+      sql_id: '1',
+      strategy: 'original_row'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('切换SQL备份回滚策略成功')).toBeInTheDocument();
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(3);
+  });
+
+  it('render refresh list when emit Refresh_Sql_Exec_workflow_Audit_Result_List event', async () => {
+    customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal,
+      allowSwitchBackupPolicy: true
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(2);
+
+    await act(async () => {
+      EventEmitter.emit(EmitterKey.Refresh_Sql_Exec_workflow_Audit_Result_List);
+      await jest.advanceTimersByTime(3000);
+    });
+    expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(3);
   });
 });

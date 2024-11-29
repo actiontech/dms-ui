@@ -30,6 +30,7 @@ describe('test SqlStatementFormItem', () => {
           databaseInfo={[
             { key: '1', instanceName: 'mysql-1', schemaName: 'test' }
           ]}
+          isAtFormStep
           {...params}
         />
       </Form>
@@ -66,5 +67,14 @@ describe('test SqlStatementFormItem', () => {
     expect(getBySelector('input.custom-monaco-editor')).toHaveValue(
       SQL_EDITOR_PLACEHOLDER_VALUE
     );
+  });
+
+  it('render backup switcher', () => {
+    customRender({});
+    expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('上传SQL文件'));
+    expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('文件模式'));
+    expect(screen.queryByText('是否选择开启备份')).not.toBeInTheDocument();
   });
 });

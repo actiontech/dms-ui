@@ -11,6 +11,12 @@ export const AuditResultForCreateWorkflowStyleWrapper = styled('section')`
     cursor: pointer;
   }
 
+  .backup-policy-column {
+    .ant-tag {
+      width: max-content;
+    }
+  }
+
   .instance-segmented-label {
     display: flex;
     align-items: center;

@@ -130,7 +130,11 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
               >
                 {t('execWorkflow.create.auditResult.clearDuplicate')}
               </ToggleButtonStyleWrapper>
-              <DownloadRecord taskId={activeTabKey} noDuplicate={noDuplicate} />
+              <DownloadRecord
+                taskId={activeTabKey}
+                noDuplicate={noDuplicate}
+                workflowId={resetProps.workflowInfo?.workflow_id}
+              />
             </Space>
           </EmptyBox>
 
@@ -196,6 +200,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
             (currentTask?.exec_mode as WorkflowResV2ExecModeEnum) ??
             WorkflowResV2ExecModeEnum.sqls
           }
+          backupConflict={currentTask?.backup_conflict_with_instance}
         />
       </EmptyBox>
     </AuditExecResultPanelStyleWrapper>

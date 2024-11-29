@@ -26,12 +26,14 @@ export type SqlStatementFields = Record<
   exec_mode: CreateAuditTasksGroupReqV1ExecModeEnum;
   file_sort_method: string;
   currentUploadType: AuditTaskResV1SqlSourceEnum;
+  backup?: boolean;
 };
 
 export type CreateWorkflowDatabaseInfo = Array<{
   key: string;
   instanceName?: string;
   schemaName?: string;
+  enableBackup?: boolean;
 }>;
 
 export type SqlAuditInfoFormFields = {
@@ -60,6 +62,7 @@ export type DataSourceSchemaCollection = Record<
     ruleTemplate?: IRuleTemplateV2;
     testConnectResult?: IInstanceConnectionResV1;
     isSupportFileModeExecuteSql?: boolean;
+    enableBackup?: boolean;
   }
 >;
 
@@ -75,4 +78,5 @@ export type SharedStepDetails = {
   getModifiedSQLsPending: Stateful<boolean>;
 
   resetAllSharedData: () => void;
+  isAtFormStep?: boolean;
 };

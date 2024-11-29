@@ -33,12 +33,17 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                 class="ant-space-item"
                 style="margin-bottom: 8px;"
               >
-                <a
-                  href="/sqle/project/700300/exec-workflow/1839493775269826560"
-                  target="__blank"
+                <div
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                  title="v-12-dev-3"
                 >
-                  v-12-dev-3
-                </a>
+                  <a
+                    href="/sqle/project/700300/exec-workflow/1839493775269826560"
+                    target="__blank"
+                  >
+                    v-12-dev-3
+                  </a>
+                </div>
               </div>
               <div
                 class="ant-space-item"
@@ -122,7 +127,12 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                 class="ant-space-item"
                 style="margin-bottom: 8px;"
               >
-                workflow_name
+                <div
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                  title="workflow_name"
+                >
+                  workflow_name
+                </div>
               </div>
               <div
                 class="ant-space-item"
@@ -194,12 +204,17 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                 class="ant-space-item"
                 style="margin-bottom: 8px;"
               >
-                <a
-                  href="/sqle/project/700300/exec-workflow/1839543178827403264"
-                  target="__blank"
+                <div
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                  title="v-12-dev-3_生产"
                 >
-                  v-12-dev-3_生产
-                </a>
+                  <a
+                    href="/sqle/project/700300/exec-workflow/1839543178827403264"
+                    target="__blank"
+                  >
+                    v-12-dev-3_生产
+                  </a>
+                </div>
               </div>
               <div
                 class="ant-space-item"

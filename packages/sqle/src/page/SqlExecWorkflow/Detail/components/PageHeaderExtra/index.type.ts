@@ -21,6 +21,8 @@ export type WorkflowDetailPageHeaderExtraProps = {
   showWorkflowSteps: () => void;
   workflowStepsVisibility: boolean;
   executeInOtherInstanceAction: () => Promise<void>;
+  startRollback: () => void;
+  showModifySqlStatementStep: () => void;
 };
 
 export type WorkflowDetailActionMeta = {
