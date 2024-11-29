@@ -45,7 +45,7 @@ type Props = {
   genModifiedSqlParams: IGenDatabaseDiffModifySQLsV1Params;
   comparisonResults: ISchemaObject[];
   selectedBaselineInstanceInfo?: SelectedInstanceInfo;
-  selectComparisonInstanceInfo?: SelectedInstanceInfo;
+  selectedComparisonInstanceInfo?: SelectedInstanceInfo;
   selectedObjectNodeKey: string;
 };
 
@@ -62,7 +62,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   genModifiedSqlParams,
   comparisonResults,
   selectedBaselineInstanceInfo,
-  selectComparisonInstanceInfo,
+  selectedComparisonInstanceInfo,
   selectedObjectNodeKey
 }) => {
   const { t } = useTranslation();
@@ -149,7 +149,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
                 CollapseItemKeyEnum.comparison
               ) && !comparisonDetail?.comparison_sql?.audit_error
             }
-            instanceType={selectComparisonInstanceInfo?.instanceType ?? ''}
+            instanceType={selectedComparisonInstanceInfo?.instanceType ?? ''}
             auditError={comparisonDetail.comparison_sql.audit_error}
             auditResults={
               comparisonDetail?.comparison_sql?.sql_statement_with_audit
@@ -164,7 +164,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
   }, [
     comparisonDetail?.base_sql,
     comparisonDetail?.comparison_sql,
-    selectComparisonInstanceInfo?.instanceType,
+    selectedComparisonInstanceInfo?.instanceType,
     selectedBaselineInstanceInfo?.instanceType,
     t,
     tableDDLAuditResultActiveKey
@@ -179,7 +179,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
     Download.downloadByCreateElementA(
       modifiedSqls,
       `${
-        selectComparisonInstanceInfo?.instanceName
+        selectedComparisonInstanceInfo?.instanceName
       }-modified-sql-${dayjs().format('YYYYMMDDhhmmss')}.sql`
     );
   };
@@ -209,9 +209,9 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
               projectID,
               apiParams: genModifiedSqlParams,
               comparisonInstanceID:
-                selectComparisonInstanceInfo?.instanceId ?? '',
+                selectedComparisonInstanceInfo?.instanceId ?? '',
               comparisonInstanceName:
-                selectComparisonInstanceInfo?.instanceName ?? '',
+                selectedComparisonInstanceInfo?.instanceName ?? '',
               dbExistingSchemas: filterSchemasInDatabase(
                 [selectedObjectNodeKey],
                 comparisonResults
@@ -289,7 +289,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
             <div className="subtitle-item-wrapper">
               <DatabaseFilled color={sharedTheme.uiToken.colorPrimary} />
               <Typography.Text className="subtitle-item-text">
-                {`${selectComparisonInstanceInfo?.instanceName}.${comparisonSchemaName}`}
+                {`${selectedComparisonInstanceInfo?.instanceName}.${comparisonSchemaName}`}
               </Typography.Text>
             </div>
           </DiffSQLEditorSubTitleStyleWrapper>
@@ -330,7 +330,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
               auditResultCollapseActiveKeysOnChange={
                 setModifiedSqlAuditResultCollapseActiveKeys
               }
-              instanceType={selectComparisonInstanceInfo?.instanceType ?? ''}
+              instanceType={selectedComparisonInstanceInfo?.instanceType ?? ''}
               dataSource={modifiedSqlResult?.[0].modify_sqls ?? []}
             />
           </ModifiedSqlStyleWrapper>

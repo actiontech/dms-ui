@@ -30,7 +30,7 @@ const AuditResult: React.FC<Props> = ({
   const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
     auditResults ?? [],
     instanceType,
-    shouldFetchRules
+    shouldFetchRules && !auditError
   );
 
   if (auditError) {

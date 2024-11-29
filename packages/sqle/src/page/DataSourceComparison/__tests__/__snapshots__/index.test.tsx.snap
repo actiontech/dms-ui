@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataSourceComparison ce should match snapshot 1`] = `
+<section>
+  <PageHeader
+    title="结构对比"
+  />
+  <EnterpriseFeatureDisplay
+    eeFeatureDescription={
+      <ForwardRef
+        className="paragraph"
+      >
+        当您需要快速发现两个环境之间的差异时， 可以使用结构对比功能。
+      </ForwardRef>
+    }
+    featureName="结构对比"
+  >
+    <ComparisonEntry />
+  </EnterpriseFeatureDisplay>
+</section>
+`;

@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlAuditResult should match snapshot when audit error is not empty 1`] = `
+<div>
+  <div
+    class="ant-result ant-result-error css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-result-icon"
+    >
+      <span
+        aria-label="close-circle"
+        class="anticon anticon-close-circle"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          data-icon="close-circle"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="ant-result-title"
+    >
+      审核失败
+    </div>
+    <div
+      class="ant-result-subtitle"
+    >
+      network error
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SqlAuditResult should match snapshot when audit result is empty 1`] = `
+<div>
+  <div
+    class="result-item css-1avyf41"
+  >
+    <span
+      class="icon-wrapper"
+    >
+      <svg
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+          fill="#41BF9A"
+        />
+      </svg>
+    </span>
+    <span
+      class="text-wrapper"
+    >
+      审核通过
+    </span>
+  </div>
+</div>
+`;
+
+exports[`SqlAuditResult should match snapshot when shouldFetchRules is equal false 1`] = `
+<div>
+  <div
+    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-spin-container"
+    >
+      <div
+        class="css-181j9vh"
+      >
+        <div
+          class="result-item has-delete-rule-wrapper css-1v03opz"
+        >
+          <span
+            class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+          >
+            该规则已删除
+          </span>
+          <div
+            class="css-1avyf41"
+          >
+            <span
+              class="icon-wrapper"
+            >
+              <svg
+                fill="none"
+                height="20"
+                viewBox="0 0 16 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                  fill="#EBAD1C"
+                />
+              </svg>
+            </span>
+            <span
+              class="text-wrapper"
+            >
+              message
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SqlAuditResult should match snapshot when shouldFetchRules is equal true 1`] = `
+<div>
+  <div
+    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+  >
+    <div
+      class="ant-spin-container"
+    >
+      <div
+        class="css-181j9vh"
+      >
+        <div
+          class="result-item css-1v03opz"
+        >
+          <div
+            class="css-1avyf41"
+          >
+            <span
+              class="icon-wrapper"
+            >
+              <svg
+                fill="none"
+                height="20"
+                viewBox="0 0 16 16"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                  fill="#EBAD1C"
+                />
+              </svg>
+            </span>
+            <span
+              class="text-wrapper"
+            >
+              message
+            </span>
+          </div>
+          <div
+            class="annotation-wrapper"
+          >
+            <a
+              class="ant-typography css-dev-only-do-not-override-txh9fw"
+              href="/sqle/rule/knowledge/rule1/MySQL"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              查看更多
+            </a>
+          </div>
+        </div>
+        <div
+          class="result-item css-1v03opz"
+        >
+          <div
+            class="css-1avyf41"
+          >
+            <span
+              class="icon-wrapper"
+            >
+              <svg
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                  fill="#41BF9A"
+                />
+              </svg>
+            </span>
+            <span
+              class="text-wrapper"
+            >
+              message
+            </span>
+          </div>
+          <div
+            class="annotation-wrapper"
+          >
+            <a
+              class="ant-typography css-dev-only-do-not-override-txh9fw"
+              href="/sqle/rule/knowledge/rule2/MySQL"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              查看更多
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -41,7 +41,7 @@ const ModifiedSqlAuditResult: React.FC<Props> = ({
             title: `${instanceName}.${item.schema_name}`,
             value: item.schema_name ?? '',
             label: (
-              <Space align="center" size={4}>
+              <Space data-testid={item.schema_name} align="center" size={4}>
                 <CommonIconStyleWrapper>
                   <DatabaseFilled color={sharedTheme.uiToken.colorPrimary} />
                 </CommonIconStyleWrapper>

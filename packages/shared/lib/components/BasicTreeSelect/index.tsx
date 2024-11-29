@@ -20,7 +20,7 @@ const BasicTreeSelect = <V extends string | number>(
   const renderDropdown: TreeSelectProps['dropdownRender'] = (menu) => {
     const customMenu = (
       <>
-        <BasicTreeSelectPopupMenuStyleWrapper>
+        <BasicTreeSelectPopupMenuStyleWrapper data-testid="basic-tree-select-popup-menu-style-wrapper">
           {menu}
         </BasicTreeSelectPopupMenuStyleWrapper>
       </>
