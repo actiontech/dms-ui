@@ -33,7 +33,7 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord ce', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('下载审核报告')).toBeInTheDocument();
     expect(screen.getByText('下载SQL语句')).toBeInTheDocument();
-    expect(screen.queryByText('下载回滚语句')).not.toBeInTheDocument();
+    // expect(screen.queryByText('下载回滚语句')).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 });

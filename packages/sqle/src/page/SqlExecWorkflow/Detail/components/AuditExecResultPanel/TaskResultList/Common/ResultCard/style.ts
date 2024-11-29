@@ -62,14 +62,11 @@ export const TasksResultCardStyleWrapper = styled('div')`
         }
       }
 
-      .result-card-content-rollback {
-        display: flex !important;
+      .rollback-sql-container {
         width: 100%;
-        align-items: start;
 
-        .ant-space-item:last-of-type {
-          flex: 1;
-          overflow: hidden;
+        .ant-tag {
+          width: max-content;
         }
       }
     }

@@ -66,13 +66,15 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
       dataIndex: 'instance_name',
       title: t('execWorkflow.detail.rollback.instance'),
       filterCustomType: 'select',
-      filterKey: 'filter_instance_id'
+      filterKey: 'filter_instance_id',
+      width: 120
     },
     {
       dataIndex: 'exec_status',
       title: t('execWorkflow.detail.rollback.execStatus'),
       filterCustomType: 'select',
       filterKey: 'filter_exec_status',
+      width: 100,
       render: (status) => {
         return (
           <ExecStatusTag
