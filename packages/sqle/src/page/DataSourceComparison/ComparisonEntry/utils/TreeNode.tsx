@@ -126,24 +126,26 @@ export const parseTreeNodeKey = (
 export const getComparisonResultByNodeKey = (
   comparisonResults: ISchemaObject[],
   targetKey: string
-): ObjectDiffResultComparisonResultEnum | undefined => {
+): ObjectDiffResultComparisonResultEnum | null => {
   const [index, objectType, objectName] = targetKey.split(
     TREE_NODE_KEY_SEPARATOR
   );
+  if (!index || isNaN(Number(index))) return null;
 
   const schema = comparisonResults[Number(index)];
-  if (!schema) return undefined;
+  if (!schema) return null;
 
   const diffObject = schema.database_diff_objects?.find(
     (obj) => obj.object_type === objectType
   );
-  if (!diffObject) return undefined;
+
+  if (!diffObject) return null;
 
   const object = diffObject.objects_diff_result?.find(
     (obj) => obj.object_name === objectName
   );
 
-  return object?.comparison_result;
+  return object?.comparison_result ?? null;
 };
 
 export const getComparisonResultSchemaName = (
@@ -171,12 +173,6 @@ export const getComparisonResultSchemaName = (
   if (source === 'comparison') {
     return schemaObj.comparison_schema_name;
   }
-};
-
-export const filteredWithoutSchemaNameNodeKey = (nodeKey: string[]) => {
-  return nodeKey.filter((key) =>
-    key.toString().includes(TREE_NODE_KEY_SEPARATOR)
-  );
 };
 
 export const filteredWithoutParentNodeKey = (nodeKey: string[]) => {

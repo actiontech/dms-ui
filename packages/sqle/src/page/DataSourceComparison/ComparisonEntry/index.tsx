@@ -235,7 +235,6 @@ const ComparisonEntry: React.FC = () => {
       generateModifiedSqlInfoApi();
     }
   };
-
   return (
     <ComparisonEntryStyleWrapper>
       {messageContextHolder}
