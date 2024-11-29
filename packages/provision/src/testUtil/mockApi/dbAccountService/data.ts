@@ -142,14 +142,12 @@ export const databaseAccountDetailMockData = {
 export const discoveryDBAccountMockData: IDBAccountBody[] = [
   {
     user: 'root',
-    hostname: 'localhost',
     permission_info: {
       grants: ['ALL PRIVILEGES ON *.* WITH GRANT OPTION']
     }
   },
   {
     user: 'mysql.session',
-    hostname: 'localhost',
     permission_info: {
       grants: [
         'SUPER ON *.*',

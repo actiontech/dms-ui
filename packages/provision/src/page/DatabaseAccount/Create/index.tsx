@@ -97,7 +97,6 @@ const CreateDatabaseAccount = () => {
         db_account: {
           username: values.username,
           password: values.password,
-          hostname: values.hostname,
           explanation: values.explanation,
           additional_params: mergeFromValueWithDescIntoParams()
         },

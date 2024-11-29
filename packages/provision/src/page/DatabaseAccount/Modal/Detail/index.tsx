@@ -84,7 +84,6 @@ const DatabaseAccountDetailModal = () => {
             [
               data?.account_info?.address ?? '',
               data?.account_info?.user ?? '',
-              data?.account_info?.hostname ?? '',
               data?.account_info?.password ?? '',
               data?.account_info?.explanation ?? ''
             ]

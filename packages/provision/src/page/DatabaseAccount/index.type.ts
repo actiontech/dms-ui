@@ -22,7 +22,6 @@ export type AccountTableFieldProps = {
 };
 
 export type CreateAccountFormType = {
-  hostname: string;
   password: string;
   confirm_password: string;
   username: string;

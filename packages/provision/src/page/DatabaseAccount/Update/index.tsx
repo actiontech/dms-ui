@@ -118,7 +118,6 @@ const UpdateDatabaseAccount = () => {
               username: data?.account_info?.user,
               password: data?.account_info?.password,
               confirm_password: data?.account_info?.password,
-              hostname: data?.account_info?.hostname,
               policy: data?.password_security_policy || NORMAL_POLICY_VALUE,
               explanation: data?.account_info?.explanation,
               dbServiceID: data?.db_service?.uid,
