@@ -403,7 +403,7 @@ export interface IAuditTaskSQLResV1 {
 
   number?: number;
 
-  rollback_sql?: string;
+  rollback_sqls?: string[];
 }
 
 export interface IAuditTasksGroupResV1 {
