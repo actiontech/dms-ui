@@ -88,6 +88,7 @@ export default {
     },
     normalPolicy: '无',
     form: {
+      syncDatabase: '同步数据库最新的库表数据',
       username: '连接账号名',
       usernameExtra: '账号名检测通过',
       hostname: '主机名(host)',

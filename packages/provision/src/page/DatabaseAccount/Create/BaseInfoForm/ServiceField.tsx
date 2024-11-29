@@ -25,11 +25,12 @@ const ServiceFiled: React.FC<ServiceFieldProps> = ({
         showSearch
         filterOption={filterOptionByLabel}
       />
-      <BasicToolTips title={t('dataObject.syncDataSource.button')}>
+      <BasicToolTips title={t('databaseAccount.create.form.syncDatabase')}>
         <DrawerFormIconWrapper
           style={{ marginLeft: '12px' }}
           onClick={onSyncService}
-          disabled={!value || syncServiceLoading || disabled}
+          disabled={!value || disabled}
+          loading={syncServiceLoading}
           icon={
             <CommonIconStyleWrapper>
               <svg
