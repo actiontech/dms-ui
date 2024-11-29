@@ -52,13 +52,13 @@ const WorkflowRecordInfo: React.FC<WorkflowRecordInfoProps> = ({
             associatedWorkflows={workflowInfo?.associated_stage_workflows}
           />
         </EmptyBox>
-
+        {/* #if [ee] */}
         <EmptyBox if={!!workflowInfo?.associated_rollback_workflows?.length}>
           <AssociatedRollbackWorkflows
             associatedWorkflows={workflowInfo?.associated_rollback_workflows}
           />
         </EmptyBox>
-
+        {/* #endif */}
         <EmptyBox if={!!workflowInfo?.record_history_list}>
           <WorkflowHistorySteps
             recordHistoryList={workflowInfo?.record_history_list}

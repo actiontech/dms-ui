@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -404,7 +404,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -657,7 +657,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -692,45 +692,36 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                 </div>
                 <div
                   class="ant-space-item"
+                  style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     />
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
-                    >
-                      <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
-                        role="separator"
-                      />
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-                      >
-                        <pre>
-                          <code>
-                            <div
-                              class="code-line"
-                            >
-                              <span
-                                class="code-line-number"
-                              >
-                                1
-                              </span>
-                              rollback_sql cont
-                            </div>
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  >
+                    <pre>
+                      <code>
+                        <div
+                          class="code-line"
+                        >
+                          <span
+                            class="code-line-number"
+                          >
+                            1
+                          </span>
+                          rollback_sql cont
+                        </div>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>
@@ -865,7 +856,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -1244,7 +1235,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -1497,7 +1488,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -1505,13 +1496,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
                 <div
                   class="ant-space-item"
+                  style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
                       <span
                         class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
@@ -1519,37 +1510,28 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         基于反向SQL回滚
                       </span>
                     </div>
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
-                    >
-                      <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
-                        role="separator"
-                      />
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-                      >
-                        <pre>
-                          <code>
-                            <div
-                              class="code-line"
-                            >
-                              <span
-                                class="code-line-number"
-                              >
-                                1
-                              </span>
-                              rollback_sql cont
-                            </div>
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  >
+                    <pre>
+                      <code>
+                        <div
+                          class="code-line"
+                        >
+                          <span
+                            class="code-line-number"
+                          >
+                            1
+                          </span>
+                          rollback_sql cont
+                        </div>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>
@@ -1684,7 +1666,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -1937,7 +1919,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -1945,13 +1927,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
                 <div
                   class="ant-space-item"
+                  style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
                       <span
                         class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
@@ -1959,37 +1941,28 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         基于反向SQL回滚
                       </span>
                     </div>
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
-                    >
-                      <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
-                        role="separator"
-                      />
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-                      >
-                        <pre>
-                          <code>
-                            <div
-                              class="code-line"
-                            >
-                              <span
-                                class="code-line-number"
-                              >
-                                1
-                              </span>
-                              rollback_sql cont
-                            </div>
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  >
+                    <pre>
+                      <code>
+                        <div
+                          class="code-line"
+                        >
+                          <span
+                            class="code-line-number"
+                          >
+                            1
+                          </span>
+                          rollback_sql cont
+                        </div>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>
@@ -2124,7 +2097,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -2377,7 +2350,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -2385,13 +2358,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
                 <div
                   class="ant-space-item"
+                  style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
                       <span
                         class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
@@ -2399,37 +2372,28 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                         基于反向SQL回滚
                       </span>
                     </div>
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
-                    >
-                      <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
-                        role="separator"
-                      />
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-                      >
-                        <pre>
-                          <code>
-                            <div
-                              class="code-line"
-                            >
-                              <span
-                                class="code-line-number"
-                              >
-                                1
-                              </span>
-                              rollback_sql cont
-                            </div>
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  >
+                    <pre>
+                      <code>
+                        <div
+                          class="code-line"
+                        >
+                          <span
+                            class="code-line-number"
+                          >
+                            1
+                          </span>
+                          rollback_sql cont
+                        </div>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>
@@ -2569,7 +2533,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -2939,7 +2903,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -3333,7 +3297,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -3726,7 +3690,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -4127,7 +4091,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"
@@ -4380,7 +4344,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -4388,13 +4352,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                 />
                 <div
                   class="ant-space-item"
+                  style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center result-card-content-rollback"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
                       <div
                         class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
@@ -4423,37 +4387,28 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 8px;"
-                    >
-                      <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
-                        role="separator"
-                      />
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-                      >
-                        <pre>
-                          <code>
-                            <div
-                              class="code-line"
-                            >
-                              <span
-                                class="code-line-number"
-                              >
-                                1
-                              </span>
-                              rollback_sql cont
-                            </div>
-                          </code>
-                        </pre>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                  >
+                    <pre>
+                      <code>
+                        <div
+                          class="code-line"
+                        >
+                          <span
+                            class="code-line-number"
+                          >
+                            1
+                          </span>
+                          rollback_sql cont
+                        </div>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>
@@ -4588,7 +4543,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
 <body>
   <div>
     <div
-      class="css-hg7c8r"
+      class="css-1gxdwqg"
     >
       <div
         class="result-card-header"

@@ -27,7 +27,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedRollbackWorkflows render associat
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical 'associated-workflows-wrap-item'"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
             >
               <div
                 class="ant-space-item"
@@ -109,7 +109,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedRollbackWorkflows render associat
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical 'associated-workflows-wrap-item'"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
             >
               <div
                 class="ant-space-item"

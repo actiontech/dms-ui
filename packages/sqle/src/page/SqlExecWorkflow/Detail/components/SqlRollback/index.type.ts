@@ -21,6 +21,7 @@ export type ExpandedBackupSqlType = IBackupSqlData & {
   id?: string;
   disabled?: boolean;
   remark?: string;
+  rollbackOrder?: number;
 };
 
 export type TableRowSelection<T extends object> = TableProps<T>['rowSelection'];
