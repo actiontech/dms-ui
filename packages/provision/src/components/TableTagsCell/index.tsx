@@ -9,8 +9,12 @@ type Props = {
 };
 
 const TableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
-  const renderScanTypeTag = (permission: string) => {
-    return <BasicTag className="pointer">{permission}</BasicTag>;
+  const renderScanTypeTag = (permission: string, key: number) => {
+    return (
+      <BasicTag className="pointer" key={key}>
+        {permission}
+      </BasicTag>
+    );
   };
 
   const render = () => {
@@ -19,17 +23,21 @@ const TableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
     }
 
     if (dataSource.length <= tagLimit) {
-      return <>{dataSource.map((item) => renderScanTypeTag(item))}</>;
+      return (
+        <>{dataSource.map((item, index) => renderScanTypeTag(item, index))}</>
+      );
     }
 
     return (
       <>
-        {dataSource.slice(0, tagLimit).map((item) => renderScanTypeTag(item))}
+        {dataSource
+          .slice(0, tagLimit)
+          .map((item, index) => renderScanTypeTag(item, index))}
         <BasicToolTips
           trigger={'click'}
           title={
             <Space wrap size={[0, 6]}>
-              {dataSource.map((item) => renderScanTypeTag(item))}
+              {dataSource.map((item, index) => renderScanTypeTag(item, index))}
             </Space>
           }
         >

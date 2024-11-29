@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { AccountTableFieldProps } from '../../index.type';
+import {
+  AccountTableFieldProps,
+  ExpendedDBAccountBody
+} from '../../index.type';
 import { useTranslation } from 'react-i18next';
 import { AccountTableFieldStyleWrapper } from '../../style';
-import {
-  IDBAccountBody,
-  IUidWithName
-} from '@actiontech/shared/lib/api/provision/service/common';
 import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
 import TableTagsCell from '../../../../components/TableTagsCell';
 import { BasicInput } from '@actiontech/shared';
@@ -25,13 +24,11 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
     onChange?.(
-      data?.filter((i) =>
-        newSelectedRowKeys.includes(`${i?.hostname}${i?.user}` as React.Key)
-      )
+      data?.filter((i) => newSelectedRowKeys.includes(i.id as React.Key))
     );
   };
 
-  const columns: IBasicTable<IDBAccountBody>['columns'] = [
+  const columns: IBasicTable<ExpendedDBAccountBody>['columns'] = [
     {
       dataIndex: 'user',
       title: t('databaseAccount.list.column.account')
@@ -39,7 +36,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
     {
       dataIndex: 'db_roles',
       title: t('databaseAccount.create.form.role'),
-      render: (dbRoles: IUidWithName[]) => {
+      render: (dbRoles: ExpendedDBAccountBody['db_roles']) => {
         return (
           <TableTagsCell dataSource={dbRoles?.map((v) => v.name!) ?? []} />
         );
@@ -48,7 +45,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
     {
       dataIndex: 'permission_info',
       title: t('databaseAccount.list.column.privilege'),
-      render: (permission: IDBAccountBody['permission_info']) => {
+      render: (permission: ExpendedDBAccountBody['permission_info']) => {
         return (
           <TableTagsCell
             dataSource={permission?.grants?.map((v) => v!) ?? []}
@@ -91,9 +88,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
           x: 'max-content',
           y: 540
         }}
-        rowKey={(record: IDBAccountBody) => {
-          return `${record?.hostname}${record?.user}`;
-        }}
+        rowKey="id"
       />
     </>
   );
