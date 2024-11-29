@@ -17,19 +17,21 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../../store';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
-  sqlStatementTabActiveKey
+  sqlStatementTabActiveKey,
+  instanceList
 }: Pick<
   DatabaseSelectionItemProps,
   'dbSourceInfoCollection' | 'sqlStatementTabActiveKey'
->) => {
+> & { instanceList?: IInstanceTipResV1[] }) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();
 
-  const { isCloneMode } = useCreationMode();
+  const { isCloneMode, isRollbackMode } = useCreationMode();
 
   const sqlExecWorkflowReduxState = useSelector((state: IReduxState) => {
     return {
@@ -39,7 +41,7 @@ const useRenderDatabaseSelectionItems = ({
   });
 
   useEffect(() => {
-    if (isCloneMode) {
+    if (isCloneMode || isRollbackMode) {
       sqlExecWorkflowReduxState.clonedExecWorkflowSqlAuditInfo?.databaseInfo?.forEach(
         (database, index) => {
           const key = `${index}`;
@@ -114,13 +116,31 @@ const useRenderDatabaseSelectionItems = ({
         ruleTemplate: undefined,
         dbType: undefined,
         testConnectResult: undefined,
-        isSupportFileModeExecuteSql: true
+        isSupportFileModeExecuteSql: true,
+        enableBackup:
+          instanceList?.find((i) => i.instance_name === instanceName)
+            ?.enable_backup ?? false
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);
       sqlStatementTabActiveKey.set(key);
     }
   };
+
+  useEffect(() => {
+    // 克隆或者回滚时，因为是从store中取instanceName ，此时可能instance list接口还未结束
+    // 导致enableBackup被赋予了默认值false，所以需要在instance list接口完成后，重新设置enableBackup
+    Object.keys(dbSourceInfoCollection.value).forEach((key) => {
+      dbSourceInfoCollection.set(key, {
+        enableBackup:
+          instanceList?.find(
+            (i) =>
+              i.instance_name === dbSourceInfoCollection.value[key].instanceName
+          )?.enable_backup ?? false
+      });
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [instanceList]);
 
   const handleInstanceSchemaChange = (key: string, schemaName?: string) => {
     dbSourceInfoCollection.set(key, {

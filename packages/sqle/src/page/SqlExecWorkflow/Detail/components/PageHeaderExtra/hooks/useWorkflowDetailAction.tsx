@@ -27,7 +27,9 @@ const useWorkflowDetailAction = ({
   terminateAction,
   completeAction,
   maintenanceTimeInfo,
-  executeInOtherInstanceAction
+  executeInOtherInstanceAction,
+  startRollback,
+  showModifySqlStatementStep
 }: WorkflowDetailPageHeaderExtraProps & {
   projectName: string;
 }): {
@@ -39,6 +41,8 @@ const useWorkflowDetailAction = ({
   manualExecuteWorkflowButtonMeta: WorkflowDetailActionMeta;
   terminateWorkflowButtonMeta: WorkflowDetailActionMeta;
   executeInOtherInstanceMeta: WorkflowDetailActionMeta;
+  rollbackWorkflowButtonMeta: WorkflowDetailActionMeta;
+  retryWorkflowButtonMeta: WorkflowDetailActionMeta;
   executable?: boolean;
   executable_reason?: string;
 } => {
@@ -263,6 +267,46 @@ const useWorkflowDetailAction = ({
     return executeInOtherInstanceAction().finally(executeInOtherInstanceFinish);
   };
 
+  const rollbackButtonVisibility = useMemo(() => {
+    if (!workflowInfo?.record?.status) {
+      return false;
+    }
+
+    return (
+      [
+        WorkflowRecordResV2StatusEnum.finished,
+        WorkflowRecordResV2StatusEnum.exec_failed,
+        WorkflowRecordResV2StatusEnum.canceled
+      ].includes(workflowInfo.record.status) &&
+      workflowInfo.record.workflow_step_list
+        ?.find((v) => v.type === WorkflowStepResV2TypeEnum.sql_execute)
+        ?.assignee_user_name_list?.includes(username)
+    );
+  }, [
+    workflowInfo?.record?.status,
+    username,
+    workflowInfo?.record?.workflow_step_list
+  ]);
+
+  const rollbackWorkflow = () => {
+    startRollback();
+    return undefined;
+  };
+
+  const retryButtonVisibility = useMemo(() => {
+    if (!workflowInfo?.record?.status) {
+      return false;
+    }
+    return (
+      workflowInfo.record.status === WorkflowRecordResV2StatusEnum.exec_failed
+    );
+  }, [workflowInfo?.record?.status]);
+
+  const retryWorkflow = () => {
+    showModifySqlStatementStep();
+    return undefined;
+  };
+
   return {
     messageContextHolder,
 
@@ -300,6 +344,16 @@ const useWorkflowDetailAction = ({
       action: executeInOtherInstance,
       loading: executeInOtherInstanceLoading,
       hidden: false
+    },
+    rollbackWorkflowButtonMeta: {
+      action: rollbackWorkflow,
+      loading: false,
+      hidden: !rollbackButtonVisibility
+    },
+    retryWorkflowButtonMeta: {
+      action: retryWorkflow,
+      loading: false,
+      hidden: !retryButtonVisibility
     },
 
     executable: workflowInfo?.record?.executable,

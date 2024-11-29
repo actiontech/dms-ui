@@ -394,6 +394,69 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   </div>
                 </div>
                 <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="0_backup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否选择开启备份
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                            disabled=""
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -489,7 +552,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
             </section>
           </form>
           <section
-            class="css-zgknaj"
+            class="css-avbjmz"
           >
             <div
               class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
@@ -543,6 +606,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 4px;"
+                />
                 <div
                   class="ant-space-item"
                   style="margin-right: 4px;"
@@ -1265,6 +1332,69 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="0_backup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否选择开启备份
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                            disabled=""
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -1360,7 +1490,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </section>
           </form>
           <section
-            class="css-zgknaj"
+            class="css-avbjmz"
           >
             <div
               class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
@@ -1414,6 +1544,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 4px;"
+                />
                 <div
                   class="ant-space-item"
                   style="margin-right: 4px;"
@@ -2131,6 +2265,69 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   </div>
                 </div>
                 <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="0_backup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否选择开启备份
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                            disabled=""
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -2226,7 +2423,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
             </section>
           </form>
           <section
-            class="css-zgknaj"
+            class="css-avbjmz"
           >
             <div
               class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
@@ -2280,6 +2477,10 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 4px;"
+                />
                 <div
                   class="ant-space-item"
                   style="margin-right: 4px;"
@@ -3267,6 +3468,69 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="0_backup"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否选择开启备份
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            开启后，数据源上创建的工单将默认开启备份能力
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                            disabled=""
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
                 >
                   <div
@@ -3362,7 +3626,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </section>
           </form>
           <section
-            class="css-zgknaj"
+            class="css-avbjmz"
           >
             <div
               class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
@@ -3416,6 +3680,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
               >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 4px;"
+                />
                 <div
                   class="ant-space-item"
                   style="margin-right: 4px;"

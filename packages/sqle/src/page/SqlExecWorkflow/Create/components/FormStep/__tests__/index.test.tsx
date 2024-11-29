@@ -12,7 +12,9 @@ describe('test FormStep', () => {
       isCloneMode: false,
       isAssociationVersionMode: false,
       versionId: undefined,
-      versionName: undefined
+      versionName: undefined,
+      rollbackWorkflowId: undefined,
+      isRollbackMode: false
     }));
     const { result: baseInfoFormResult } = renderHook(() => useForm());
     const { result: sqlAuditInfoFormResult } = renderHook(() => useForm());

@@ -171,3 +171,37 @@ export const RefreshWorkflowAction = (refreshWorkflow: () => void) => {
     />
   );
 };
+
+export const RollbackWorkflowAction = (
+  rollbackWorkflowButtonMeta: WorkflowDetailActionMeta
+) => {
+  return (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.ROLLBACK}
+    >
+      <ActionButton
+        text={t('execWorkflow.detail.operator.rollback')}
+        hidden={rollbackWorkflowButtonMeta.hidden}
+        onClick={() => rollbackWorkflowButtonMeta.action()}
+        loading={rollbackWorkflowButtonMeta.loading}
+      />
+    </PermissionControl>
+  );
+};
+
+export const RetryWorkflowAction = (
+  retryWorkflowButtonMeta: WorkflowDetailActionMeta
+) => {
+  return (
+    <PermissionControl
+      permission={PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY}
+    >
+      <ActionButton
+        text={t('execWorkflow.detail.operator.retry')}
+        hidden={retryWorkflowButtonMeta.hidden}
+        onClick={() => retryWorkflowButtonMeta.action()}
+        loading={retryWorkflowButtonMeta.loading}
+      />
+    </PermissionControl>
+  );
+};

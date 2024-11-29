@@ -75,7 +75,10 @@ const UpdateDataSource = () => {
         additional_params: values.asyncParams,
         user: values.user,
         // #if [dms]
-        is_enable_masking: values.is_enable_masking
+        is_enable_masking: values.is_enable_masking,
+        // #endif
+        // #if [sqle && ee]
+        enable_backup: values.enableBackup
         // #endif
       },
       project_uid: projectID

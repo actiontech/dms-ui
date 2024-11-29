@@ -61,7 +61,10 @@ const AddDataSource = () => {
       // #endif
       additional_params: values.asyncParams,
       // #if [dms]
-      is_enable_masking: values.is_enable_masking
+      is_enable_masking: values.is_enable_masking,
+      // #endif
+      // #if [sqle && ee]
+      enable_backup: values.enableBackup
       // #endif
     };
     return DBService.AddDBService({

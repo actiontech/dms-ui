@@ -130,7 +130,8 @@ describe('page/DataSource/UpdateDataSource', () => {
                 type: 'string',
                 value: 'test'
               }
-            ]
+            ],
+            enable_backup: true
           }
         ]
       })

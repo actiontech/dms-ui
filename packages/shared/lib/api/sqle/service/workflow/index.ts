@@ -52,6 +52,8 @@ import {
   IExecuteOneTaskOnWorkflowV1Return,
   IUpdateWorkflowScheduleV1Params,
   IUpdateWorkflowScheduleV1Return,
+  IUpdateTaskBackupStrategyV1Params,
+  IUpdateTaskBackupStrategyV1Return,
   IUpdateSqlBackupStrategyV1Params,
   IUpdateSqlBackupStrategyV1Return,
   IGetWorkflowStatisticOfInstancesParams,
@@ -492,6 +494,21 @@ class WorkflowService extends ServiceBase {
     );
   }
 
+  public UpdateTaskBackupStrategyV1(
+    params: IUpdateTaskBackupStrategyV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    return this.patch<IUpdateTaskBackupStrategyV1Return>(
+      `/v1/tasks/audits/${task_id}/backup_strategy`,
+      paramsData,
+      options
+    );
+  }
+
   public UpdateSqlBackupStrategyV1(
     params: IUpdateSqlBackupStrategyV1Params,
     options?: AxiosRequestConfig
@@ -504,7 +521,7 @@ class WorkflowService extends ServiceBase {
     delete paramsData.sql_id;
 
     return this.patch<IUpdateSqlBackupStrategyV1Return>(
-      `/v1/tasks/audits/${task_id}/sqls/${sql_id}/`,
+      `/v1/tasks/audits/${task_id}/sqls/${sql_id}/backup_strategy`,
       paramsData,
       options
     );

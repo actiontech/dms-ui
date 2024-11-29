@@ -20,6 +20,7 @@ import WorkflowRecordInfo from './components/RecordInfo';
 import ModifySqlStatement from './components/ModifySqlStatement';
 import useAuditExecResultPanelSetup from './hooks/useAuditExecResultPanelSetup';
 import AuditExecResultPanel from './components/AuditExecResultPanel';
+import SqlRollback from './components/SqlRollback';
 
 const SqlWorkflowDetail: React.FC = () => {
   const { username } = useCurrentUser();
@@ -28,6 +29,9 @@ const SqlWorkflowDetail: React.FC = () => {
     workflowStepsVisibility,
     { setFalse: closeWorkflowSteps, setTrue: showWorkflowSteps }
   ] = useBoolean(false);
+
+  const [isAtRollbackStep, { setTrue: startRollback, setFalse: stopRollback }] =
+    useBoolean();
 
   const { taskInfos, workflowInfo, refreshWorkflowInfo, initLoading } =
     useInitDataWithRequest();
@@ -81,7 +85,7 @@ const SqlWorkflowDetail: React.FC = () => {
       {messageContextHolder}
       <WorkflowDetailStyleWrapper
         workflowStepsVisibility={workflowStepsVisibility}
-        hidden={isAtModifySqlStatementStep}
+        hidden={isAtModifySqlStatementStep || isAtRollbackStep}
       >
         <div className="workflow-detail-content">
           <PageHeader
@@ -103,6 +107,8 @@ const SqlWorkflowDetail: React.FC = () => {
                 workflowStepsVisibility={workflowStepsVisibility}
                 showWorkflowSteps={showWorkflowSteps}
                 executeInOtherInstanceAction={executeInOtherInstanceAction}
+                startRollback={startRollback}
+                showModifySqlStatementStep={showModifySqlStatementStep}
               />
             }
           />
@@ -166,6 +172,14 @@ const SqlWorkflowDetail: React.FC = () => {
         refreshOverviewAction={refreshOverviewAction}
         auditExecPanelTabChangeEvent={changeActiveTabKey}
       />
+      {/* #if [ee] */}
+      <SqlRollback
+        isAtRollbackStep={isAtRollbackStep}
+        backToWorkflowDetail={stopRollback}
+        workflowInfo={workflowInfo}
+        taskInfos={taskInfos}
+      />
+      {/* #endif */}
     </Spin>
   );
 };
