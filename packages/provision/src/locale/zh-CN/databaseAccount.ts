@@ -98,6 +98,7 @@ export default {
       password_error: '您输入的两个密码不匹配',
       policy: '密码安全策略',
       effectiveTimeDay: '密码有效期',
+      effectiveTimeDayValidationMessage: '密码有效期必须填写大于0的值。',
       desc: '账号说明',
       descPlaceholder: '点击添加账户说明（选填）',
       removeConfirmTips: '是否确认删除当前对象权限信息?',
@@ -110,6 +111,8 @@ export default {
       editDataPrivileges: '编辑对象权限',
       resetObjectPrivileges: '清除所有对象权限',
       selectObjects: '选择数据库表',
+      oracleTypeSchemaValidationMessage:
+        '添加对象权限时，Oracle类型需选择数据库。',
       addDatabaseTable: '添加数据库表',
       selectPrivileges: '选择对象权限',
       duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',

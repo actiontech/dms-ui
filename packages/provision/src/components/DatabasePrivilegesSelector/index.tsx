@@ -107,6 +107,7 @@ const DatabasePrivilegesSelector = <
           getOperationPrivilegesPending={getOperationPrivilegesPending}
           objectPrivilegeOptions={objectPrivilegesOptions}
           selectedDBServiceID={selectedDbServiceID}
+          selectedDBType={selectedDBType as AuthListOperationsDbTypeEnum}
         />
       </FormItemLabel>
     </>

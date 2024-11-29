@@ -87,7 +87,8 @@ const UpdateDatabaseAccount = () => {
           db_roles: values.dbRoles,
           data_permissions: generatePrivilegesSubmitDataByFormValues(
             values.systemPrivileges ?? [],
-            values.objectPrivileges ?? []
+            values.objectPrivileges ?? [],
+            dbServiceID
           )
         }
       })

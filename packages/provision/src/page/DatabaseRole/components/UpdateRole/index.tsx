@@ -44,7 +44,8 @@ const UpdateRole: React.FC = () => {
         child_roles: values.dbRoles,
         data_permissions: generatePrivilegesSubmitDataByFormValues(
           values.systemPrivileges ?? [],
-          values.objectPrivileges ?? []
+          values.objectPrivileges ?? [],
+          db_service_id ?? ''
         )
       }
     })

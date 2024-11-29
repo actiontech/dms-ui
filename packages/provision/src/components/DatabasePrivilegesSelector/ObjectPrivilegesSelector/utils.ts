@@ -110,7 +110,8 @@ export const generatePrivilegesFormValuesByBackendData = (
 
 export const generatePrivilegesSubmitDataByFormValues = (
   systemPrivileges: string[],
-  objectPrivileges: ObjectPrivilegeValues[]
+  objectPrivileges: ObjectPrivilegeValues[],
+  dbServiceID: string
 ): IDataPermissionForRole[] => {
   const dataPrivileges: IDataPermissionForRole[] = [];
 
@@ -120,17 +121,15 @@ export const generatePrivilegesSubmitDataByFormValues = (
       data_object_uids: []
     });
   });
-
   objectPrivileges?.forEach((item) => {
     dataPrivileges.push({
       data_operation_uids: item.operationsValue,
       data_object_uids:
         item.objectsValue?.flatMap((object) => {
           if (object.tables && object.tables.length > 0) {
-            return object.tables ?? [];
+            return object.tables;
           }
-
-          return [object.database];
+          return object.database ? [object.database] : [dbServiceID];
         }) ?? []
     });
   });

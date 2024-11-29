@@ -26,6 +26,7 @@ import { customIdGenerator, getObjectsLabelByDataObjects } from './utils';
 import EventEmitter from '../../../utils/EventEmitter';
 import { EventEmitterKey } from '../../../data/enum';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 
 const OPTIONS_REQUEST_DEFAULT_PARAMS = {
   page_index: 1,
@@ -40,7 +41,8 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
   service,
   data,
   getOperationPrivilegesPending,
-  objectPrivilegeOptions
+  objectPrivilegeOptions,
+  selectedDBType
 }) => {
   const { t } = useTranslation();
 
@@ -325,6 +327,16 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                         {...field}
                         name={[field.name, 'database']}
                         noStyle
+                        rules={[
+                          {
+                            required:
+                              selectedDBType ===
+                              AuthListOperationsDbTypeEnum.Oracle,
+                            message: t(
+                              'databaseAccount.create.form.oracleTypeSchemaValidationMessage'
+                            )
+                          }
+                        ]}
                       >
                         <BasicSelect
                           data-testid={`database-form-item-database-${index}`}

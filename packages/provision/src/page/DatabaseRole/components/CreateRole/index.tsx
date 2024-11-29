@@ -48,7 +48,8 @@ const CreateRole: React.FC = () => {
         db_role_uids: values.dbRoles,
         data_permissions: generatePrivilegesSubmitDataByFormValues(
           values.systemPrivileges ?? [],
-          values.objectPrivileges ?? []
+          values.objectPrivileges ?? [],
+          db_service_id ?? ''
         )
       }
     })

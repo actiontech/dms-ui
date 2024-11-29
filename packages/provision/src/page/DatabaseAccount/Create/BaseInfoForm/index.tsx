@@ -244,14 +244,28 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
           label={t('databaseAccount.create.form.effectiveTimeDay')}
           name="effective_time_day"
           className="has-required-style"
-          rules={[{ required: true }]}
+          rules={[
+            { required: true },
+
+            {
+              validator: (_, value) => {
+                if (value === undefined || value <= 0) {
+                  return Promise.reject(
+                    t(
+                      'databaseAccount.create.form.effectiveTimeDayValidationMessage'
+                    )
+                  );
+                }
+                return Promise.resolve();
+              }
+            }
+          ]}
         >
           <BasicInputNumber
             disabled={
               (policy !== undefined && policy !== NORMAL_POLICY_VALUE) ||
               disabled
             }
-            min={0}
           />
         </FormItemLabel>
       </EmptyBox>

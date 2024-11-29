@@ -1,7 +1,10 @@
+import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
+
 export type ObjectPrivilegeTableFieldProps = {
   value?: ObjectPrivilegeValues[];
   onChange?: (value: ObjectPrivilegeValues[]) => void;
   selectedDBServiceID?: string;
+  selectedDBType: AuthListOperationsDbTypeEnum;
   objectPrivilegeOptions: Array<{ label: string; value: string }>;
   getOperationPrivilegesPending: boolean;
 };
@@ -29,7 +32,7 @@ export type ObjectPrivilegesModalProps = {
   data: ObjectPrivilegeValues[];
 } & Pick<
   ObjectPrivilegeTableFieldProps,
-  'getOperationPrivilegesPending' | 'objectPrivilegeOptions'
+  'getOperationPrivilegesPending' | 'objectPrivilegeOptions' | 'selectedDBType'
 >;
 
 export type ObjectPrivilegesFormFields = {

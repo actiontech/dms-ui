@@ -104,7 +104,8 @@ const CreateDatabaseAccount = () => {
         effective_time_day: values.effective_time_day,
         data_permissions: generatePrivilegesSubmitDataByFormValues(
           values.systemPrivileges ?? [],
-          values.objectPrivileges ?? []
+          values.objectPrivileges ?? [],
+          values.dbServiceID
         ),
         password_security_policy:
           values.policy === NORMAL_POLICY_VALUE ? undefined : values.policy
