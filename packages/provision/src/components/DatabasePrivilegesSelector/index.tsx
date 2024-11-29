@@ -89,7 +89,6 @@ const DatabasePrivilegesSelector = <
       </FormItemLabel>
 
       <FormItemLabel
-        hidden={selectedDBType !== ListServiceDbTypeEnum.Oracle}
         name="systemPrivileges"
         label={t('databaseAccount.create.form.systemPrivileges')}
       >

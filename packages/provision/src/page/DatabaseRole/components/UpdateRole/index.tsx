@@ -92,8 +92,7 @@ const UpdateRole: React.FC = () => {
       objectPrivileges: generatePrivilegesFormValuesByBackendData(
         dbRoleDetailInfo?.data_permissions?.filter(
           (v) => (v.data_objects ?? []).length > 0
-        ) ?? [],
-        db_service_id ?? ''
+        ) ?? []
       )
     });
   }, [

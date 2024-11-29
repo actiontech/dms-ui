@@ -134,8 +134,7 @@ const UpdateDatabaseAccount = () => {
               objectPrivileges: generatePrivilegesFormValuesByBackendData(
                 data?.data_permissions?.filter(
                   (v) => (v.data_objects ?? []).length > 0
-                ) ?? [],
-                data?.db_service?.uid ?? ''
+                ) ?? []
               ),
               additionalParams: generateFormValueByParams(
                 data?.account_info?.additional_params ?? []

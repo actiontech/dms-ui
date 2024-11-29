@@ -117,7 +117,7 @@ export default {
       selectPrivileges: '选择对象权限',
       duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',
       privilegesTip:
-        '如果您选定了一个Schema，此时再选中该数据源中的所有数据对象将无意义',
+        '当选择的对象权限范围不包含表时，您只能设置数据库级别的权限，而不能选择具体的表对象。',
       containerName: '容器名',
       role: '角色',
       systemPrivileges: '系统权限',

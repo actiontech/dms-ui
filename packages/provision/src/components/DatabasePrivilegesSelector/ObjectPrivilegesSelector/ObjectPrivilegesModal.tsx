@@ -11,7 +11,7 @@ import {
   FormListAddButtonWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { DefaultOptionType } from 'antd/es/select';
@@ -27,6 +27,7 @@ import EventEmitter from '../../../utils/EventEmitter';
 import { EventEmitterKey } from '../../../data/enum';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
+import { OperationScopeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const OPTIONS_REQUEST_DEFAULT_PARAMS = {
   page_index: 1,
@@ -49,10 +50,21 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
   const [form] = Form.useForm<ObjectPrivilegesFormFields>();
 
   const [selectedDatabase, setSelectedDatabase] = useState<string[]>([]);
+  const selectedObjectPrivileges = Form.useWatch('data_operations', form);
 
   const [tableOptions, setTableOptions] = useState<DefaultOptionType[][]>([]);
 
   const [duplicateError, setDuplicateError] = useState(false);
+
+  const allowSelectTableObject = useMemo(() => {
+    const selectObjectPrivilegeOptions = objectPrivilegeOptions.filter((v) =>
+      selectedObjectPrivileges?.includes(v.value)
+    );
+
+    return selectObjectPrivilegeOptions.every((v) =>
+      v.scope.includes(OperationScopeEnum.Table)
+    );
+  }, [objectPrivilegeOptions, selectedObjectPrivileges]);
 
   const {
     data: databaseOptions,
@@ -274,7 +286,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
         <Space>
           <BasicButton onClick={handleCancel}>{t('common.close')}</BasicButton>
           <BasicButton type="primary" onClick={handleSubmit}>
-            {t('common.submit')}
+            {t('common.save')}
           </BasicButton>
         </Space>
       }
@@ -367,6 +379,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                           mode="multiple"
                           filterOption={filterOptionByLabel}
                           showSearch
+                          disabled={!allowSelectTableObject}
                         />
                       </Form.Item>
                     </Col>

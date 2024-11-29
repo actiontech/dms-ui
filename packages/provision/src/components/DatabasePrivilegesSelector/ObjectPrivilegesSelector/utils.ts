@@ -48,8 +48,7 @@ export const customIdGenerator = (
 };
 
 export const generatePrivilegesFormValuesByBackendData = (
-  backendData: IDBAccountDataPermission[],
-  service: string
+  backendData: IDBAccountDataPermission[]
 ): ObjectPrivilegeValues[] => {
   return (
     backendData.map((item) => {
@@ -85,24 +84,13 @@ export const generatePrivilegesFormValuesByBackendData = (
         operationsLabel.push(operation.name ?? '');
         operationsValue.push(operation.uid ?? '');
       });
-      const objectsParams =
-        objectsValue
-          .map((object) => {
-            if (object?.tables?.length) {
-              return object.tables;
-            } else if (object?.database) {
-              return object.database;
-            }
-            return service ?? '';
-          })
-          .flat() ?? [];
+
       return {
         id: customIdGenerator(objectsValue, operationsValue),
         objectsLabel,
         operationsLabel,
         objectsValue,
-        operationsValue,
-        objectsParams
+        operationsValue
       };
     }) ?? []
   );
@@ -129,7 +117,7 @@ export const generatePrivilegesSubmitDataByFormValues = (
           if (object.tables && object.tables.length > 0) {
             return object.tables;
           }
-          return object.database ? [object.database] : [dbServiceID];
+          return !!object.database ? [object.database] : [dbServiceID];
         }) ?? []
     });
   });
