@@ -254,7 +254,7 @@ class WorkflowService extends ServiceBase {
     delete paramsData.workflow_id;
 
     return this.post<ICreateRollbackWorkflowReturn>(
-      `/v1/projects/${project_name}/workflows/${workflow_id}/rollback`,
+      `/v1/projects/${project_name}/workflows/${workflow_id}/create_rollback_workflow`,
       paramsData,
       options
     );
