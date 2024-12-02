@@ -4,13 +4,14 @@ import { t } from '../../locale';
 import { Typography } from 'antd';
 import { IDatabaseRoleTableParams } from './index.type';
 import TableTagsCell from '../../components/TableTagsCell';
+import { BasicToolTips } from '@actiontech/shared';
 
 export const DatabaseRoleTableColumns = (
   handleClickDbRoleName: (record: IListDBRole) => void
 ): ActiontechTableColumn<IListDBRole, IDatabaseRoleTableParams> => {
   return [
     {
-      title: t('databaseRole.tableColumns.role'),
+      title: () => t('databaseRole.tableColumns.role'),
       dataIndex: 'db_role',
       render(role, record) {
         if (!role || !role.name) {
@@ -28,7 +29,7 @@ export const DatabaseRoleTableColumns = (
       }
     },
     {
-      title: t('databaseRole.tableColumns.childRoles'),
+      title: () => t('databaseRole.tableColumns.childRoles'),
       dataIndex: 'child_roles',
       render(childRoles) {
         return (
@@ -37,7 +38,14 @@ export const DatabaseRoleTableColumns = (
       }
     },
     {
-      title: t('databaseRole.tableColumns.privilege'),
+      title: () => (
+        <BasicToolTips
+          suffixIcon
+          title={t('databaseRole.tableColumns.privilegeTips')}
+        >
+          {t('databaseRole.tableColumns.privilege')}
+        </BasicToolTips>
+      ),
       dataIndex: 'data_permissions',
       width: '60%',
       render(permissions) {

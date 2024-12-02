@@ -18,6 +18,7 @@ export default {
     role: '角色名',
     childRoles: '已授予的角色',
     privilege: '已授予权限',
+    privilegeTips: '部分针对系统表的权限不做展示',
     dbService: '数据源',
     containerName: '容器名称'
   },
