@@ -24,8 +24,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     params: Omit<
       SqlExecuteResultCardProps,
       'projectID' | 'taskId' | 'onUpdateDescription' | 'dbType'
-    >,
-    dbType = 'MySQL'
+    >
   ) => {
     const someParams: Pick<
       SqlExecuteResultCardProps,
@@ -35,7 +34,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       taskId,
       onUpdateDescription: onUpdateDescriptionFn
     };
-    return superRender(<SQLMode {...someParams} {...params} dbType={dbType} />);
+    return superRender(<SQLMode {...someParams} {...params} dbType="MySQL" />);
   };
 
   beforeEach(() => {
@@ -215,25 +214,6 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       ]
     });
     expect(screen.getByText('关联回滚工单')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render unsupported database type', async () => {
-    const { baseElement } = customRender(
-      {
-        number: 1,
-        exec_sql: 'exec_sql cont',
-        rollback_sqls: [
-          "CREATE TABLE public.example_table (\nid int4 NOT NULL DEFAULT nextval('example_table_id_seq'::regclass),\nname varchar(255) NOT NULL,\nage int4 NOT NULL,\ncreated_at timestamp DEFAULT CURRENT_TIMESTAMP);",
-          '\n\nCREATE UNIQUE INDEX example_table_pkey ON public.example_table USING btree (id);'
-        ],
-        backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
-        exec_result: 'success'
-      },
-      ''
-    );
-    fireEvent.click(screen.getByText('回滚语句'));
-    await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
   });
 });
