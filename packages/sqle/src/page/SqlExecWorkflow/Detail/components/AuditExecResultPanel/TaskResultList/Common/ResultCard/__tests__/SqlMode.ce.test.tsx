@@ -24,11 +24,12 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode ce', () => {
   ) => {
     const someParams: Pick<
       SqlExecuteResultCardProps,
-      'projectID' | 'taskId' | 'onUpdateDescription'
+      'projectID' | 'taskId' | 'onUpdateDescription' | 'dbType'
     > = {
       projectID,
       taskId,
-      onUpdateDescription: onUpdateDescriptionFn
+      onUpdateDescription: onUpdateDescriptionFn,
+      dbType: 'MySQL'
     };
     return superRender(<SQLMode {...someParams} {...params} />);
   };
