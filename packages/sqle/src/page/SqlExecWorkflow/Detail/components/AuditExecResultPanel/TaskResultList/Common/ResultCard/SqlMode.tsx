@@ -29,10 +29,7 @@ import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultLi
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WarningFilled } from '@actiontech/icons';
 import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
-import {
-  formatterSQL,
-  FormatLanguageSupport
-} from '@actiontech/shared/lib/utils/FormatterSQL';
+import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -88,13 +85,9 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   };
 
   const formattedRollbackSql = useMemo(() => {
-    const supportedLan = Object.keys(FormatLanguageSupport);
-    if (props.dbType && supportedLan.includes(props.dbType)) {
-      return props.rollback_sqls
-        ?.map((v) => formatterSQL(v, props.dbType))
-        ?.join('\n');
-    }
-    return props.rollback_sqls?.join('\n');
+    return props.rollback_sqls
+      ?.map((v) => formatterSQL(v, props.dbType))
+      ?.join('\n');
   }, [props.rollback_sqls, props.dbType]);
 
   return (
