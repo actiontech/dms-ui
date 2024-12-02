@@ -85,7 +85,11 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   };
 
   const formattedRollbackSql = useMemo(() => {
-    return props.rollback_sqls?.map((v) => formatterSQL(v))?.join('\n');
+    try {
+      return props.rollback_sqls?.map((v) => formatterSQL(v))?.join('\n');
+    } catch (error) {
+      return props.rollback_sqls?.join('\n');
+    }
   }, [props.rollback_sqls]);
 
   return (
