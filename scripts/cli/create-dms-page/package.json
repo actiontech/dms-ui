@@ -1,0 +1,42 @@
+{
+  "name": "@actiontech/cli-create-dms-page",
+  "description": "使用自动化流程创建一个 DMS 的页面",
+  "version": "0.0.1",
+  "bin": {
+    "create-dms-page": "./bin/core.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:watch": "tsc -w",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@types/babel__generator": "^7.6.8",
+    "@types/babel__traverse": "^7.20.6",
+    "@types/cli-progress": "^3.11.6"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.25.0",
+    "@babel/parser": "^7.24.8",
+    "@babel/traverse": "^7.24.8",
+    "@babel/types": "^7.24.9",
+    "@faker-js/faker": "^9.0.1",
+    "@gitbeaker/rest": "^40.1.1",
+    "@inquirer/prompts": "^5.1.2",
+    "@octokit/core": "3.5.1",
+    "chalk": "^4.1.2",
+    "cli-progress": "^3.12.0",
+    "clipboardy": "^4.0.0",
+    "commander": "^12.1.0",
+    "node-clipboardy": "^1.0.3",
+    "ora": "^5.4.1 ",
+    "prettier": "^3.3.3",
+    "readline": "^1.3.0",
+    "tar": "^7.4.0",
+    "zod": "^3.23.8"
+  }
+}

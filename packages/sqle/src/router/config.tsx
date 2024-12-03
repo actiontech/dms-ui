@@ -1,3 +1,5 @@
+// @warn/cli/create-dms-page
+
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';

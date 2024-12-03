@@ -26,11 +26,13 @@
     "icon:docs:g": "pnpm --filter @actiontech/icons docs:g",
     "icon:docs": "pnpm --filter @actiontech/icons start",
     "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
-    "icon:build": "pnpm --filter @actiontech/icons build"
+    "icon:build": "pnpm --filter @actiontech/icons build",
+    "dms:g": "pnpm --filter @actiontech/cli-create-dms-page build && create-dms-page"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
+    "@actiontech/cli-create-dms-page": "workspace:^",
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@testing-library/dom": "9.3.4",
     "@testing-library/jest-dom": "6.4.2",
