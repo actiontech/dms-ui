@@ -201,6 +201,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
             WorkflowResV2ExecModeEnum.sqls
           }
           backupConflict={currentTask?.backup_conflict_with_instance}
+          dbType={currentTask?.instance_db_type}
         />
       </EmptyBox>
     </AuditExecResultPanelStyleWrapper>

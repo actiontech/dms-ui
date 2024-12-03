@@ -14,6 +14,7 @@ export type SqlExecuteResultCardProps = BaseProps &
     onUpdateDescription?: () => void;
     projectID: string;
     backupConflict?: boolean;
+    dbType?: string;
   };
 
 export type FileExecuteResultCardProps = BaseProps &
