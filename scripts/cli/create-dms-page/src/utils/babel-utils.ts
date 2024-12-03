@@ -161,9 +161,9 @@ export class BabelUtils {
         })
       ) {
         throw new Error(
-          `当前对象 ${objectName} 存在对象路径为 [${keyPath.join(
+          `The current object ${objectName} has an object path with the value [${keyPath.join(
             ','
-          )}] 的值，无法重复添加！`
+          )}] and cannot be added repeatedly!`
         );
       }
       currentObject.properties.push(

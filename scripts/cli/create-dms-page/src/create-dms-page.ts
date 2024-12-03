@@ -68,8 +68,7 @@ export class CreateDMSPage implements Task {
 
       await orchestrator.createDmsPage();
     } catch (error) {
-      logger.error(handleError(error));
-      process.exit(1);
+      handleError(error);
     }
   }
 }
