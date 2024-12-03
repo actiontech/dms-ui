@@ -23,7 +23,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
   const customRender = (
     params: Omit<
       SqlExecuteResultCardProps,
-      'projectID' | 'taskId' | 'onUpdateDescription'
+      'projectID' | 'taskId' | 'onUpdateDescription' | 'dbType'
     >
   ) => {
     const someParams: Pick<
@@ -34,7 +34,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       taskId,
       onUpdateDescription: onUpdateDescriptionFn
     };
-    return superRender(<SQLMode {...someParams} {...params} />);
+    return superRender(<SQLMode {...someParams} {...params} dbType="MySQL" />);
   };
 
   beforeEach(() => {
