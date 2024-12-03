@@ -2,9 +2,9 @@ import {
   PageHeader,
   BasicButton,
   EmptyBox,
-  BasicResult
+  BasicResult,
+  TypedLink
 } from '@actiontech/shared';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Form, Space } from 'antd';
@@ -26,6 +26,7 @@ import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import DbAccountService from '@actiontech/shared/lib/api/provision/service/service';
 import { generatePrivilegesSubmitDataByFormValues } from '../../../components/DatabasePrivilegesSelector/ObjectPrivilegesSelector/utils';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
@@ -140,11 +141,14 @@ const CreateDatabaseAccount = () => {
       <PageHeader
         fixed
         title={
-          <Link to={`/provision/project/${projectID}/database-account`}>
+          <TypedLink
+            to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index}
+            params={{ projectID }}
+          >
             <BasicButton icon={<LeftArrowOutlined />}>
               {t('databaseAccount.create.returnText')}
             </BasicButton>
-          </Link>
+          </TypedLink>
         }
         extra={
           <Space hidden={submitSuccess}>
@@ -184,11 +188,14 @@ const CreateDatabaseAccount = () => {
               <BasicButton type="primary" onClick={onContinue}>
                 {t('databaseAccount.create.result.continue')}
               </BasicButton>
-              <Link to={`/provision/project/${projectID}/database-account`}>
+              <TypedLink
+                to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index}
+                params={{ projectID }}
+              >
                 <BasicButton type="primary">
                   {t('databaseAccount.create.returnText')}
                 </BasicButton>
-              </Link>
+              </TypedLink>
             </Space>
           }
         />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
 const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
@@ -30,7 +30,7 @@ const UpdateRole = React.lazy(
 
 export const AuthRouterConfig: RouterConfigItem[] = [
   {
-    path: `${PROJECT_ROUTER_PARAM}/database-account`,
+    path: ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index.path,
     key: 'databaseAccount',
     children: [
       {
@@ -39,19 +39,19 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         element: <DatabaseAccountList />
       },
       {
-        path: 'create',
+        path: ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.create.path,
         key: 'createDatabaseAccount',
         element: <CreateDatabaseAccount />
       },
       {
-        path: 'update/:id',
+        path: ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.update.path,
         key: 'updateDatabaseAccount',
         element: <UpdateDatabaseAccount />
       }
     ]
   },
   {
-    path: `${PROJECT_ROUTER_PARAM}/database-account-password`,
+    path: ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT_PASSWORD.index.path,
     key: 'databaseAccountPassword',
     element: <DatabaseAccountPassword />
   },
@@ -59,12 +59,12 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     key: 'auditWrapper',
     children: [
       {
-        path: `${PROJECT_ROUTER_PARAM}/audit/auth`,
+        path: ROUTE_PATHS.PROVISION.AUDIT.auth.path,
         key: 'authAudit',
         element: <AuthAudit />
       },
       {
-        path: `${PROJECT_ROUTER_PARAM}/audit/template`,
+        path: ROUTE_PATHS.PROVISION.AUDIT.template.path,
         key: 'templateAudit',
         element: <TemplateAudit />
       }
@@ -72,7 +72,7 @@ export const AuthRouterConfig: RouterConfigItem[] = [
   },
   {
     key: 'databaseRole',
-    path: `${PROJECT_ROUTER_PARAM}/database-role`,
+    path: ROUTE_PATHS.PROVISION.DATABASE_ROLE.index.path,
     children: [
       {
         index: true,
@@ -80,12 +80,12 @@ export const AuthRouterConfig: RouterConfigItem[] = [
         element: <DatabaseRole />
       },
       {
-        path: 'create/:db_service_id',
+        path: ROUTE_PATHS.PROVISION.DATABASE_ROLE.create.path,
         key: 'createRole',
         element: <CreateRole />
       },
       {
-        path: 'update/:db_service_id/:role_id',
+        path: ROUTE_PATHS.PROVISION.DATABASE_ROLE.update.path,
         key: 'updateRole',
         element: <UpdateRole />
       }

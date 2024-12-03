@@ -1,4 +1,8 @@
-import { PageHeader } from '@actiontech/shared';
+import {
+  PageHeader,
+  useTypedNavigate,
+  useTypedQuery
+} from '@actiontech/shared';
 import {
   ActiontechTable,
   TableToolbar,
@@ -32,13 +36,12 @@ import { EventEmitterKey, ModalName } from '../../data/enum';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 import eventEmitter from '../../utils/EventEmitter';
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DatabaseRole: React.FC = () => {
   const { t } = useTranslation();
-  const [searchParams] = useSearchParams();
   const { parse2TableActionPermissions } = usePermission();
   const { projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
@@ -52,7 +55,10 @@ const DatabaseRole: React.FC = () => {
   const [, setFilteredByDBServiceName] = useRecoilState(
     DatabaseRoleFilteredDBServiceName
   );
-  const navigate = useNavigate();
+
+  const navigate = useTypedNavigate();
+
+  const extraQueries = useTypedQuery();
 
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
@@ -73,15 +79,22 @@ const DatabaseRole: React.FC = () => {
   } = useTableRequestParams<IListDBRole, IDatabaseRoleTableParams>();
 
   const onCreateRole = () => {
-    navigate(
-      `/provision/project/${projectID}/database-role/create/${filteredByDBServiceID}`
-    );
+    navigate(ROUTE_PATHS.PROVISION.DATABASE_ROLE.create, {
+      params: {
+        db_service_id: filteredByDBServiceID ?? '',
+        projectID: projectID
+      }
+    });
   };
 
   const editAction = (record: IListDBRole) => {
-    navigate(
-      `/provision/project/${projectID}/database-role/update/${filteredByDBServiceID}/${record.db_role?.uid}`
-    );
+    navigate(ROUTE_PATHS.PROVISION.DATABASE_ROLE.update, {
+      params: {
+        db_service_id: filteredByDBServiceID ?? '',
+        role_id: record.db_role?.uid ?? '',
+        projectID: projectID
+      }
+    });
   };
 
   const handleClickDbRoleName = (record: IListDBRole) => {
@@ -118,10 +131,10 @@ const DatabaseRole: React.FC = () => {
       createSortParams(params);
       return handleTableRequestError(DbRoleService.AuthListDBRole(params)).then(
         (res) => {
-          if (
-            searchParams.has('action') &&
-            searchParams.get('action') === 'create_role'
-          ) {
+          const searchParams = extraQueries(
+            ROUTE_PATHS.PROVISION.DATABASE_ROLE.index
+          );
+          if (searchParams?.action && searchParams?.action === 'create_role') {
             onCreateRole();
           }
           return res;

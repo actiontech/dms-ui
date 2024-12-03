@@ -368,5 +368,52 @@ export const ROUTE_PATHS = {
         path: ':projectID/data-source-comparison'
       }
     }
+  },
+  PROVISION: {
+    DATABASE_ROLE: {
+      index: {
+        prefix: '/provision/project',
+        path: ':projectID/database-role',
+        query: 'action'
+      },
+      create: {
+        prefix: '/provision/project/:projectID/database-role',
+        path: 'create/:db_service_id'
+      },
+      update: {
+        prefix: '/provision/project/:projectID/database-role',
+        path: 'update/:db_service_id/:role_id'
+      }
+    },
+    DATABASE_ACCOUNT: {
+      index: {
+        prefix: '/provision/project',
+        path: ':projectID/database-account'
+      },
+      create: {
+        prefix: '/provision/project/:projectID/database-account',
+        path: 'create'
+      },
+      update: {
+        prefix: '/provision/project/:projectID/database-account',
+        path: 'update/:id'
+      }
+    },
+    DATABASE_ACCOUNT_PASSWORD: {
+      index: {
+        prefix: '/provision/project',
+        path: ':projectID/database-account-password'
+      }
+    },
+    AUDIT: {
+      auth: {
+        prefix: '/provision/project',
+        path: ':projectID/audit/auth'
+      },
+      template: {
+        prefix: '/provision/project',
+        path: ':projectID/audit/template'
+      }
+    }
   }
 } as const;

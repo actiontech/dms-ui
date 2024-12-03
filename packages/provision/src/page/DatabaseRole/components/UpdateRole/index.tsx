@@ -1,4 +1,9 @@
-import { BackButton, BasicButton, PageHeader } from '@actiontech/shared';
+import {
+  BackButton,
+  BasicButton,
+  PageHeader,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Form, message, Space, Spin } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
@@ -12,8 +17,9 @@ import {
   generatePrivilegesFormValuesByBackendData,
   generatePrivilegesSubmitDataByFormValues
 } from '../../../../components/DatabasePrivilegesSelector/ObjectPrivilegesSelector/utils';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const UpdateRole: React.FC = () => {
   const { t } = useTranslation();
@@ -30,7 +36,7 @@ const UpdateRole: React.FC = () => {
     role_id: string;
   }>();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const onSubmit = async () => {
     const values = await form.validateFields();
@@ -52,7 +58,11 @@ const UpdateRole: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('databaseRole.updateRole.successTips'));
-          navigate(`/provision/project/${projectID}/database-role`);
+          navigate(ROUTE_PATHS.PROVISION.DATABASE_ROLE.index, {
+            params: {
+              projectID
+            }
+          });
         }
       })
       .finally(() => {

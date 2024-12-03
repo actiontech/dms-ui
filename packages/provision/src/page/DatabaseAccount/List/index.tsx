@@ -1,5 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { PageHeader, BasicButton, EmptyBox } from '@actiontech/shared';
+import {
+  PageHeader,
+  BasicButton,
+  EmptyBox,
+  TypedLink,
+  useTypedNavigate
+} from '@actiontech/shared';
 import { Space, message, Spin } from 'antd';
 import {
   ActiontechTable,
@@ -40,17 +46,16 @@ import {
 } from '../../../store/databaseAccount';
 import { EventEmitterKey, ModalName } from '../../../data/enum';
 import EventEmitter from '../../../utils/EventEmitter';
-import { Link } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useNavigate } from 'react-router-dom';
 import AccountStatistics from '../components/AccountStatistics';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DatabaseAccountList = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useTypedNavigate();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -259,7 +264,12 @@ const DatabaseAccountList = () => {
 
   const onNavigateToUpdatePage = useCallback(
     (id?: string) => {
-      navigate(`/provision/project/${projectID}/database-account/update/${id}`);
+      navigate(ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.update, {
+        params: {
+          projectID,
+          id: id ?? ''
+        }
+      });
     },
     [navigate, projectID]
   );
@@ -353,13 +363,14 @@ const DatabaseAccountList = () => {
               >
                 {t('databaseAccount.list.findAccount')}
               </BasicButton>
-              <Link
-                to={`/provision/project/${projectID}/database-account/create`}
+              <TypedLink
+                to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.create}
+                params={{ projectID }}
               >
                 <BasicButton type="primary">
                   {t('databaseAccount.list.createAccount')}
                 </BasicButton>
-              </Link>
+              </TypedLink>
             </Space>
           </EmptyBox>
         }
