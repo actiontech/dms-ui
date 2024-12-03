@@ -27,8 +27,6 @@ export class IconManager implements IIconManager {
       validate: this.validateIconName.bind(this)
     });
 
-    this.validateIconName(iconName);
-
     const match = iconName.match(this.iconNamePattern);
     if (!match || !match[1]) {
       throw new Error(`Unable to extract icon type from: ${iconName}`);
