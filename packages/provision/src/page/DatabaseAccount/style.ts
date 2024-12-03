@@ -27,6 +27,10 @@ export const AccountStatisticsStyleWrapper = styled(Row)`
 export const AccountTableFieldStyleWrapper = styled(BasicTable)`
   &.ant-table-wrapper.actiontech-table-namespace {
     padding-bottom: 0;
+
+    & .ant-table-selection-column::after {
+      display: none;
+    }
   }
 `;
 

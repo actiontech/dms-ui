@@ -40,7 +40,8 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
         return (
           <TableTagsCell dataSource={dbRoles?.map((v) => v.name!) ?? []} />
         );
-      }
+      },
+      width: 100
     },
     {
       dataIndex: 'permission_info',
