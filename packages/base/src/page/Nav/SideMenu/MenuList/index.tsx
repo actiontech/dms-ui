@@ -29,7 +29,7 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
           return checkPagePermission(menu.permission);
         }
 
-        if ((menu as SubMenuType).children) {
+        if ((menu as SubMenuType)?.children) {
           (menu as SubMenuType).children = filterMenusByPermissions(
             (menu as SubMenuType).children as CustomMenuItemType[]
           );
@@ -46,7 +46,7 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
     (config: MenuProps['items'] = [], pathname: string): string[] => {
       for (const route of config) {
         if (!route) {
-          return [];
+          continue;
         }
         const realPath = `/${route?.key}`.replace(
           SIDE_MENU_DATA_PLACEHOLDER_KEY,
