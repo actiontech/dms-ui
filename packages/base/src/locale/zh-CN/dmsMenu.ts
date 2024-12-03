@@ -1,3 +1,4 @@
+// @warn/cli/create-dms-page
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   projectOverview: '项目概览',

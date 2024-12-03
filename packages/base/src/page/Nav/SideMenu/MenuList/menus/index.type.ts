@@ -1,3 +1,5 @@
+// @warn/cli/create-dms-page
+
 import { PermissionsConstantType } from '@actiontech/shared/lib/global';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
 
@@ -21,11 +23,13 @@ export type MenuStructTreeType = Array<
 
 export type GenerateMenuItemType = (projectID: string) => CustomMenuItemType;
 
-export type MenuStructTreeKey =
+type BaseMenuStructTreeKey =
   | 'instance'
   | 'member'
   | 'cloud-beaver'
-  | 'data-export'
+  | 'data-export';
+
+type SqleMenuStructTreeKey =
   | 'project-overview'
   | 'sql-audit'
   | 'plugin-audit'
@@ -42,3 +46,5 @@ export type MenuStructTreeKey =
   | 'pipeline-configuration'
   | 'version-management'
   | 'data-source-comparison';
+
+export type MenuStructTreeKey = BaseMenuStructTreeKey | SqleMenuStructTreeKey;
