@@ -3,8 +3,7 @@ import { Form, Switch } from 'antd';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Rule } from 'antd/es/form';
-import { nameRule, phoneRule } from '@actiontech/shared/lib/utils/FormRule';
+import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
 import { BasicToolTips } from '@actiontech/shared';
 import useOpPermission from '../../../../../hooks/useOpPermission';
@@ -19,21 +18,6 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
     updateOpPermissionList
   } = useOpPermission();
 
-  const userNameRules = (): Rule[] => {
-    const baseRules = [
-      {
-        required: true,
-        message: t('common.form.rule.require', {
-          name: t('dmsUserCenter.user.userForm.username')
-        })
-      }
-    ];
-    if (props.isUpdate) {
-      return baseRules;
-    }
-    return [...baseRules, ...nameRule()];
-  };
-
   useEffect(() => {
     if (props.visible) {
       updateOpPermissionList(ListOpPermissionsFilterByTargetEnum.user);
@@ -46,7 +30,14 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         name="username"
         label={t('dmsUserCenter.user.userForm.username')}
         validateFirst={true}
-        rules={userNameRules()}
+        rules={[
+          {
+            required: true,
+            message: t('common.form.rule.require', {
+              name: t('dmsUserCenter.user.userForm.username')
+            })
+          }
+        ]}
       >
         <BasicInput
           disabled={props.isUpdate}
