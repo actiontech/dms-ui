@@ -997,7 +997,7 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
       },
     ],
     "element": <UNDEFINED />,
-    "key": "projectDetail",
+    "key": "sqleProjectDetail",
     "path": "/sqle/project/*",
   },
   {

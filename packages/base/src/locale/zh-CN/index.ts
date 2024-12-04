@@ -1,3 +1,4 @@
+// @warn/cli/create-dms-page
 import dmsLogin from './dmsLogin';
 import dmsHome from './dmsHome';
 import dmsLayout from './dmsLayout';

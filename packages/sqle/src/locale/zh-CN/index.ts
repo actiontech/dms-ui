@@ -1,3 +1,5 @@
+// @warn/cli/create-dms-page
+
 import audit from './audit';
 import dashboard from './dashboard';
 import menu from './menu';

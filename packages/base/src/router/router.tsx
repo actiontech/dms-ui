@@ -1,7 +1,7 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
-import { BaseRouterConfig } from './router.base';
+import { BaseGlobalRouterConfig, BaseProjectRouterConfig } from './router.base';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 // #if [sqle]
@@ -14,12 +14,18 @@ import {
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 
 export const AuthRouterConfig: RouterConfigItem[] = [
-  ...BaseRouterConfig,
+  ...BaseGlobalRouterConfig,
+  {
+    key: 'projectDetail',
+    path: ROUTE_PATHS.BASE.PROJECT_DETAIL,
+    element: <ProjectDetail />,
+    children: BaseProjectRouterConfig
+  },
 
   // #if [sqle]
   ...SQLEGlobalRouterConfig,
   {
-    key: 'projectDetail',
+    key: 'sqleProjectDetail',
     path: ROUTE_PATHS.BASE.SQLE_PROJECT_DETAIL,
     element: <ProjectDetail />,
     children: SQLEProjectDetailRouterConfig

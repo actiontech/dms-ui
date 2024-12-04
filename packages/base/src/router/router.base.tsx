@@ -1,60 +1,69 @@
+// @warn/cli/create-dms-page
 import { PERMISSIONS } from '@actiontech/shared/lib/global';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
-import { lazy } from 'react';
-
+import React from 'react';
 // #if [ee]
-const Project = lazy(() => import('../page/Project'));
-const ImportProject = lazy(() => import('../page/Project/ImportProject'));
-const ProjectBatchImportDataSource = lazy(
+const Project = React.lazy(() => import('../page/Project'));
+const ImportProject = React.lazy(() => import('../page/Project/ImportProject'));
+const ProjectBatchImportDataSource = React.lazy(
   () => import('../page/Project/BatchImportDataSource')
 );
 
-const ExportTaskList = lazy(() => import('../page/DataExportManagement/List'));
-const CreateExportTask = lazy(
+const ExportTaskList = React.lazy(
+  () => import('../page/DataExportManagement/List')
+);
+const CreateExportTask = React.lazy(
   () => import('../page/DataExportManagement/Create')
 );
-const ExportTaskDetail = lazy(
+const ExportTaskDetail = React.lazy(
   () => import('../page/DataExportManagement/Detail')
 );
 
-const AddSyncTask = lazy(() => import('../page/SyncDataSource/AddPage'));
-const UpdateSyncTask = lazy(() => import('../page/SyncDataSource/UpdatePage'));
-const BatchImportDataSource = lazy(
+const AddSyncTask = React.lazy(() => import('../page/SyncDataSource/AddPage'));
+const UpdateSyncTask = React.lazy(
+  () => import('../page/SyncDataSource/UpdatePage')
+);
+const BatchImportDataSource = React.lazy(
   () => import('../page/DataSource/components/BatchImportDataSource')
 );
 
-const GlobalBatchImportDataSource = lazy(
+const GlobalBatchImportDataSource = React.lazy(
   () => import('../page/GlobalDataSource/BatchImportDataSource')
 );
-const GlobalAddDataSource = lazy(
+const GlobalAddDataSource = React.lazy(
   () => import('../page/DataSource/components/AddDataSource')
 );
 // #endif
 
-const Home = lazy(() => import('../page/Home'));
-const UserCenter = lazy(() => import('../page/UserCenter'));
-const DataSource = lazy(() => import('../page/DataSource'));
-const AddDataSource = lazy(
+const Home = React.lazy(() => import('../page/Home'));
+const UserCenter = React.lazy(() => import('../page/UserCenter'));
+const DataSource = React.lazy(() => import('../page/DataSource'));
+const AddDataSource = React.lazy(
   () => import('../page/DataSource/components/AddDataSource')
 );
-const UpdateDataSource = lazy(
+const UpdateDataSource = React.lazy(
   () => import('../page/DataSource/components/UpdateDataSource')
 );
-const DataSourceList = lazy(() => import('../page/DataSource/components/List'));
+const DataSourceList = React.lazy(
+  () => import('../page/DataSource/components/List')
+);
 
-const Member = lazy(() => import('../page/Member'));
-const ProjectDetail = lazy(() => import('../page/Project/Detail'));
-const System = lazy(() => import('../page/System'));
+const Member = React.lazy(() => import('../page/Member'));
+const System = React.lazy(() => import('../page/System'));
 
-const CloudBeaver = lazy(() => import('../page/CloudBeaver'));
-const Account = lazy(() => import('../page/Account'));
-const ExportTaskManagement = lazy(() => import('../page/DataExportManagement'));
-const DataSourceManagement = lazy(() => import('../page/DataSourceManagement'));
+const CloudBeaver = React.lazy(() => import('../page/CloudBeaver'));
+const Account = React.lazy(() => import('../page/Account'));
+const ExportTaskManagement = React.lazy(
+  () => import('../page/DataExportManagement')
+);
+const DataSourceManagement = React.lazy(
+  () => import('../page/DataSourceManagement')
+);
 
-const Transit = lazy(() => import('../page/Transit'));
+const Transit = React.lazy(() => import('../page/Transit'));
 
-export const BaseRouterConfig: RouterConfigItem[] = [
+export const BaseGlobalRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.BASE.HOME,
     key: 'home',
@@ -144,77 +153,73 @@ export const BaseRouterConfig: RouterConfigItem[] = [
         element: <ProjectBatchImportDataSource />
       }
     ]
-  },
+  }
   // #endif
+];
 
+export const BaseProjectRouterConfig: RouterConfigItem[] = [
   {
-    key: 'projectDetail',
-    path: ROUTE_PATHS.BASE.PROJECT_DETAIL,
-    element: <ProjectDetail />,
+    path: ROUTE_PATHS.BASE.MEMBER.index.path,
+    key: 'member',
+    element: <Member />
+  },
+  {
+    path: ROUTE_PATHS.BASE.DATA_SOURCE.index.path,
+    key: 'dataSource',
+    element: <DataSource />,
     children: [
       {
-        path: ROUTE_PATHS.BASE.MEMBER.index.path,
-        key: 'member',
-        element: <Member />
+        index: true,
+        element: <DataSourceList />,
+        key: 'dataSourceList'
       },
       {
-        path: ROUTE_PATHS.BASE.DATA_SOURCE.index.path,
-        key: 'dataSource',
-        element: <DataSource />,
-        children: [
-          {
-            index: true,
-            element: <DataSourceList />,
-            key: 'dataSourceList'
-          },
-          {
-            path: ROUTE_PATHS.BASE.DATA_SOURCE.create.path,
-            element: <AddDataSource />,
-            key: 'dataSourceCreate'
-          },
-          {
-            path: ROUTE_PATHS.BASE.DATA_SOURCE.update.path,
-            element: <UpdateDataSource />,
-            key: 'dataSourceUpdate'
-          },
-          // #if [ee]
-          {
-            path: ROUTE_PATHS.BASE.DATA_SOURCE.batch_import.path,
-            element: <BatchImportDataSource />,
-            key: 'batchImportDataSource'
-          }
-          // #endif
-        ]
+        path: ROUTE_PATHS.BASE.DATA_SOURCE.create.path,
+        element: <AddDataSource />,
+        key: 'dataSourceCreate'
       },
       {
-        path: ROUTE_PATHS.BASE.DATA_EXPORT.index.path,
+        path: ROUTE_PATHS.BASE.DATA_SOURCE.update.path,
+        element: <UpdateDataSource />,
+        key: 'dataSourceUpdate'
+      },
+      // #if [ee]
+      {
+        path: ROUTE_PATHS.BASE.DATA_SOURCE.batch_import.path,
+        element: <BatchImportDataSource />,
+        key: 'batchImportDataSource'
+      }
+      // #endif
+    ]
+  },
+  {
+    path: ROUTE_PATHS.BASE.DATA_EXPORT.index.path,
+    key: 'dataExportManagement',
+    element: <ExportTaskManagement />,
+    // #if [ee]
+    children: [
+      {
+        index: true,
         key: 'dataExportManagement',
-        element: <ExportTaskManagement />,
-        // #if [ee]
-        children: [
-          {
-            index: true,
-            key: 'dataExportManagement',
-            element: <ExportTaskList />
-          },
-          {
-            path: ROUTE_PATHS.BASE.DATA_EXPORT.create.path,
-            element: <CreateExportTask />,
-            key: 'CreateExportTask'
-          },
-          {
-            path: ROUTE_PATHS.BASE.DATA_EXPORT.detail.path,
-            element: <ExportTaskDetail />,
-            key: 'ExportTaskDetail'
-          }
-        ]
-        // #endif
+        element: <ExportTaskList />
       },
       {
-        path: ROUTE_PATHS.BASE.CLOUD_BEAVER.index.path,
-        key: 'cloudBeaver',
-        element: <CloudBeaver />
+        path: ROUTE_PATHS.BASE.DATA_EXPORT.create.path,
+        element: <CreateExportTask />,
+        key: 'CreateExportTask'
+      },
+      {
+        path: ROUTE_PATHS.BASE.DATA_EXPORT.detail.path,
+        element: <ExportTaskDetail />,
+        key: 'ExportTaskDetail'
       }
     ]
+
+    // #endif
+  },
+  {
+    path: ROUTE_PATHS.BASE.CLOUD_BEAVER.index.path,
+    key: 'cloudBeaver',
+    element: <CloudBeaver />
   }
 ];
