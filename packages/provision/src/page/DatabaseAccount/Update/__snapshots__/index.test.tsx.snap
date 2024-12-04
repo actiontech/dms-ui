@@ -1,0 +1,3045 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/DatabaseAccount/Update render init snap 1`] = `
+<body>
+  <div>
+    <section>
+      <div
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <a
+            href="/provision/project/700300/database-account"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回账号管理列表
+              </span>
+            </button>
+          </a>
+        </div>
+        <div
+          class="extra"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  重 置
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  保 存
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      >
+        <section
+          class="css-bv423q"
+        >
+          <h3
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="anticon title-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                class=""
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 24 28"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            更新数据库账号
+          </h3>
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            基础配置
+          </h1>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="username"
+                  title="连接账号名"
+                >
+                  连接账号名
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      aria-required="true"
+                      class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      disabled=""
+                      id="username"
+                      placeholder="请输入{{name}}"
+                      type="text"
+                      value="test1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="hostname"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      主机名(host)
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      用来指定允许连接的IP地址或主机名
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      disabled=""
+                      id="hostname"
+                      placeholder="请输入{{name}}"
+                      type="text"
+                      value="%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="password"
+                  title="连接密码"
+                >
+                  连接密码
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <span
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                    >
+                      <input
+                        aria-required="true"
+                        class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                        disabled=""
+                        id="password"
+                        placeholder="请输入{{name}}"
+                        type="password"
+                        value="123456"
+                      />
+                      <span
+                        class="ant-input-suffix"
+                      >
+                        <span
+                          aria-label="eye-invisible"
+                          class="anticon anticon-eye-invisible suffix-icon"
+                          role="img"
+                          tabindex="-1"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="eye-invisible"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                            />
+                            <path
+                              d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span>
+                                生 成
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="confirm_password"
+                  title="确认连接密码"
+                >
+                  确认连接密码
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <span
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                    >
+                      <input
+                        aria-required="true"
+                        class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                        disabled=""
+                        id="confirm_password"
+                        placeholder="请输入{{name}}"
+                        type="password"
+                        value="123456"
+                      />
+                      <span
+                        class="ant-input-suffix"
+                      >
+                        <span
+                          aria-label="eye-invisible"
+                          class="anticon anticon-eye-invisible ant-input-password-icon"
+                          role="img"
+                          tabindex="-1"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="eye-invisible"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                            />
+                            <path
+                              d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="policy"
+                  title="密码安全策略"
+                >
+                  密码安全策略
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      aria-required="true"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                    >
+                      <div
+                        class="ant-select-selector"
+                      >
+                        <span
+                          class="ant-select-selection-search"
+                        >
+                          <input
+                            aria-activedescendant="policy_list_0"
+                            aria-autocomplete="list"
+                            aria-controls="policy_list"
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="policy_list"
+                            aria-required="true"
+                            autocomplete="off"
+                            class="ant-select-selection-search-input"
+                            disabled=""
+                            id="policy"
+                            readonly=""
+                            role="combobox"
+                            style="opacity: 0;"
+                            type="search"
+                            unselectable="on"
+                            value=""
+                          />
+                        </span>
+                        <span
+                          class="ant-select-selection-item"
+                          title="无"
+                        >
+                          无
+                        </span>
+                      </div>
+                      <span
+                        aria-hidden="true"
+                        class="ant-select-arrow"
+                        style="user-select: none;"
+                        unselectable="on"
+                      >
+                        <span
+                          aria-label="down"
+                          class="anticon anticon-down ant-select-suffix"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="down"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="explanation"
+                  title="账号说明"
+                >
+                  账号说明
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <textarea
+                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5 ant-input-disabled"
+                      disabled=""
+                      id="explanation"
+                      placeholder="点击添加账户说明（选填）"
+                      style="resize: none; height: -70px; min-height: -6px; max-height: -70px;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据权限
+          </h1>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="service"
+                  title="数据源"
+                >
+                  数据源
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-af3nlx"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="service_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="service_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="service_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                disabled=""
+                                id="service"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="1793883708181188608"
+                            >
+                              1793883708181188608
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                              disabled=""
+                              style="margin-left: 12px;"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <span
+                                  class="css-u3jcp4"
+                                >
+                                  <svg
+                                    fill="none"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M14.6666 6.93337V2.20004C14.6666 1.80004 14.3333 1.46671 13.9333 1.46671H8.99992C8.59992 1.46671 8.26658 1.80004 8.26658 2.20004V6.93337C8.26658 7.33337 8.59992 7.66671 8.99992 7.66671H13.9333C14.3333 7.66671 14.6666 7.33337 14.6666 6.93337ZM2.06659 8.40004C1.66659 8.40004 1.33325 8.73337 1.33325 9.13337V13.8667C1.33325 14.2667 1.66659 14.6 2.06659 14.6H6.99992C7.39992 14.6 7.73325 14.2667 7.73325 13.8667V9.13337C7.73325 8.73337 7.39992 8.40004 6.99992 8.40004H2.06659ZM4.79992 5.20004H4.06659C4.06659 3.93337 5.13325 2.86671 6.39992 2.86671H6.66658C6.86658 2.86671 6.99992 2.73337 6.99992 2.53337V1.66671C6.99992 1.46671 6.86658 1.33337 6.66658 1.33337H6.39992C4.26659 1.33337 2.53325 3.06671 2.53325 5.20004H1.66659C1.53325 5.20004 1.46659 5.33337 1.46659 5.46671C1.46659 5.53337 1.46659 5.53337 1.53325 5.60004L2.99992 7.26671C3.13325 7.40004 3.33325 7.40004 3.46659 7.26671L4.93325 5.60004C4.99992 5.53337 4.99992 5.40004 4.93325 5.33337C4.86659 5.26671 4.86659 5.20004 4.79992 5.20004ZM11.1999 10.8H11.9333C11.9333 12.0667 10.8666 13.1334 9.59992 13.1334H9.33325C9.13325 13.1334 8.99992 13.2667 8.99992 13.4667V14.4C8.99992 14.6 9.13325 14.7334 9.33325 14.7334H9.59992C11.7333 14.7334 13.4666 13 13.4666 10.8667H14.3333C14.4666 10.8667 14.5333 10.8 14.5333 10.6667C14.5333 10.6 14.5333 10.6 14.4666 10.5334L12.9999 8.86671C12.8666 8.73337 12.6666 8.73337 12.5333 8.86671L11.0666 10.5334C10.9999 10.6 10.9999 10.7334 11.0666 10.8C11.0666 10.7334 11.1333 10.8 11.1999 10.8Z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <section
+                      class="css-1ov62z1"
+                    >
+                      <section
+                        class="css-tozcp0"
+                      >
+                        <span
+                          class="permission-field-title"
+                        >
+                          数据权限概览
+                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous clear-permission-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                清除所有权限
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary add-permission-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                添加数据权限
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                      <div
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                      >
+                        <div
+                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                        >
+                          <div
+                            class="ant-spin-container"
+                          >
+                            <div
+                              class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                            >
+                              <div
+                                class="ant-table-container"
+                              >
+                                <div
+                                  class="ant-table-content"
+                                  style="overflow-x: auto; overflow-y: hidden;"
+                                >
+                                  <table
+                                    style="min-width: 100%; table-layout: auto;"
+                                  >
+                                    <colgroup>
+                                      <col />
+                                      <col />
+                                      <col
+                                        style="width: 164px;"
+                                      />
+                                    </colgroup>
+                                    <thead
+                                      class="ant-table-thead"
+                                    >
+                                      <tr>
+                                        <th
+                                          class="ant-table-cell"
+                                          scope="col"
+                                        >
+                                          数据对象
+                                        </th>
+                                        <th
+                                          class="ant-table-cell"
+                                          scope="col"
+                                        >
+                                          数据操作
+                                        </th>
+                                        <th
+                                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                          scope="col"
+                                          style="position: sticky; right: 0px;"
+                                        >
+                                          操作
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody
+                                      class="ant-table-tbody"
+                                    >
+                                      <tr
+                                        aria-hidden="true"
+                                        class="ant-table-measure-row"
+                                        style="height: 0px; font-size: 0px;"
+                                      >
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="ant-table-row ant-table-row-level-0"
+                                        data-row-key="1127"
+                                      >
+                                        <td
+                                          class="ant-table-cell"
+                                        >
+                                          <div
+                                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                          >
+                                            <div
+                                              class="ant-space-item"
+                                            >
+                                              <span
+                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                database-1.table-1
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="ant-table-cell"
+                                        >
+                                          <div
+                                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                          >
+                                            <div
+                                              class="ant-space-item"
+                                            >
+                                              <span
+                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                查询
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                          style="position: sticky; right: 0px;"
+                                        >
+                                          <div
+                                            class="css-new95e"
+                                          >
+                                            <div
+                                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                            >
+                                              <div
+                                                class="ant-space-item"
+                                                style="margin-right: 8px;"
+                                              >
+                                                <button
+                                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                  type="button"
+                                                >
+                                                  <span>
+                                                    编 辑
+                                                  </span>
+                                                </button>
+                                              </div>
+                                              <div
+                                                class="ant-space-item"
+                                              >
+                                                <button
+                                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                  type="button"
+                                                >
+                                                  <span>
+                                                    删 除
+                                                  </span>
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </form>
+    </section>
+  </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+</body>
+`;
+
+exports[`provision/DatabaseAccount/Update update account permissions 1`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div>
+    <section>
+      <div
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <a
+            href="/provision/project/700300/database-account"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回账号管理列表
+              </span>
+            </button>
+          </a>
+        </div>
+        <div
+          class="extra"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  重 置
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  保 存
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form
+        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      >
+        <section
+          class="css-bv423q"
+        >
+          <h3
+            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="anticon title-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                class=""
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 24 28"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                  fill="#C3C6CD"
+                />
+              </svg>
+            </span>
+            更新数据库账号
+          </h3>
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            基础配置
+          </h1>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="username"
+                  title="连接账号名"
+                >
+                  连接账号名
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      aria-required="true"
+                      class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      disabled=""
+                      id="username"
+                      placeholder="请输入{{name}}"
+                      type="text"
+                      value="test1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="hostname"
+                  title=""
+                >
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      主机名(host)
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      用来指定允许连接的IP地址或主机名
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <input
+                      class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      disabled=""
+                      id="hostname"
+                      placeholder="请输入{{name}}"
+                      type="text"
+                      value="%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="password"
+                  title="连接密码"
+                >
+                  连接密码
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <span
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                    >
+                      <input
+                        aria-required="true"
+                        class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                        disabled=""
+                        id="password"
+                        placeholder="请输入{{name}}"
+                        type="password"
+                        value="123456"
+                      />
+                      <span
+                        class="ant-input-suffix"
+                      >
+                        <span
+                          aria-label="eye-invisible"
+                          class="anticon anticon-eye-invisible suffix-icon"
+                          role="img"
+                          tabindex="-1"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="eye-invisible"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                            />
+                            <path
+                              d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                            />
+                          </svg>
+                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              disabled=""
+                              type="button"
+                            >
+                              <span>
+                                生 成
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="confirm_password"
+                  title="确认连接密码"
+                >
+                  确认连接密码
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <span
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                    >
+                      <input
+                        aria-required="true"
+                        class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                        disabled=""
+                        id="confirm_password"
+                        placeholder="请输入{{name}}"
+                        type="password"
+                        value="123456"
+                      />
+                      <span
+                        class="ant-input-suffix"
+                      >
+                        <span
+                          aria-label="eye-invisible"
+                          class="anticon anticon-eye-invisible ant-input-password-icon"
+                          role="img"
+                          tabindex="-1"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="eye-invisible"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                            />
+                            <path
+                              d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="policy"
+                  title="密码安全策略"
+                >
+                  密码安全策略
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      aria-required="true"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                    >
+                      <div
+                        class="ant-select-selector"
+                      >
+                        <span
+                          class="ant-select-selection-search"
+                        >
+                          <input
+                            aria-activedescendant="policy_list_0"
+                            aria-autocomplete="list"
+                            aria-controls="policy_list"
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-owns="policy_list"
+                            aria-required="true"
+                            autocomplete="off"
+                            class="ant-select-selection-search-input"
+                            disabled=""
+                            id="policy"
+                            readonly=""
+                            role="combobox"
+                            style="opacity: 0;"
+                            type="search"
+                            unselectable="on"
+                            value=""
+                          />
+                        </span>
+                        <span
+                          class="ant-select-selection-item"
+                          title="无"
+                        >
+                          无
+                        </span>
+                      </div>
+                      <span
+                        aria-hidden="true"
+                        class="ant-select-arrow"
+                        style="user-select: none;"
+                        unselectable="on"
+                      >
+                        <span
+                          aria-label="down"
+                          class="anticon anticon-down ant-select-suffix"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="down"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                            />
+                          </svg>
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-no-colon"
+                  for="explanation"
+                  title="账号说明"
+                >
+                  账号说明
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <textarea
+                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5 ant-input-disabled"
+                      disabled=""
+                      id="explanation"
+                      placeholder="点击添加账户说明（选填）"
+                      style="resize: none; height: -70px; min-height: -6px; max-height: -70px;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1
+            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          >
+            数据权限
+          </h1>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              >
+                <label
+                  class="ant-form-item-required ant-form-item-no-colon"
+                  for="service"
+                  title="数据源"
+                >
+                  数据源
+                </label>
+              </div>
+              <div
+                class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-af3nlx"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="service_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="service_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="service_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                disabled=""
+                                id="service"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="1793883708181188608"
+                            >
+                              1793883708181188608
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                              disabled=""
+                              style="margin-left: 12px;"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <span
+                                  class="css-u3jcp4"
+                                >
+                                  <svg
+                                    fill="none"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M14.6666 6.93337V2.20004C14.6666 1.80004 14.3333 1.46671 13.9333 1.46671H8.99992C8.59992 1.46671 8.26658 1.80004 8.26658 2.20004V6.93337C8.26658 7.33337 8.59992 7.66671 8.99992 7.66671H13.9333C14.3333 7.66671 14.6666 7.33337 14.6666 6.93337ZM2.06659 8.40004C1.66659 8.40004 1.33325 8.73337 1.33325 9.13337V13.8667C1.33325 14.2667 1.66659 14.6 2.06659 14.6H6.99992C7.39992 14.6 7.73325 14.2667 7.73325 13.8667V9.13337C7.73325 8.73337 7.39992 8.40004 6.99992 8.40004H2.06659ZM4.79992 5.20004H4.06659C4.06659 3.93337 5.13325 2.86671 6.39992 2.86671H6.66658C6.86658 2.86671 6.99992 2.73337 6.99992 2.53337V1.66671C6.99992 1.46671 6.86658 1.33337 6.66658 1.33337H6.39992C4.26659 1.33337 2.53325 3.06671 2.53325 5.20004H1.66659C1.53325 5.20004 1.46659 5.33337 1.46659 5.46671C1.46659 5.53337 1.46659 5.53337 1.53325 5.60004L2.99992 7.26671C3.13325 7.40004 3.33325 7.40004 3.46659 7.26671L4.93325 5.60004C4.99992 5.53337 4.99992 5.40004 4.93325 5.33337C4.86659 5.26671 4.86659 5.20004 4.79992 5.20004ZM11.1999 10.8H11.9333C11.9333 12.0667 10.8666 13.1334 9.59992 13.1334H9.33325C9.13325 13.1334 8.99992 13.2667 8.99992 13.4667V14.4C8.99992 14.6 9.13325 14.7334 9.33325 14.7334H9.59992C11.7333 14.7334 13.4666 13 13.4666 10.8667H14.3333C14.4666 10.8667 14.5333 10.8 14.5333 10.6667C14.5333 10.6 14.5333 10.6 14.4666 10.5334L12.9999 8.86671C12.8666 8.73337 12.6666 8.73337 12.5333 8.86671L11.0666 10.5334C10.9999 10.6 10.9999 10.7334 11.0666 10.8C11.0666 10.7334 11.1333 10.8 11.1999 10.8Z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          >
+            <div
+              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item-control-input"
+                >
+                  <div
+                    class="ant-form-item-control-input-content"
+                  >
+                    <section
+                      class="css-1ov62z1"
+                    >
+                      <section
+                        class="css-tozcp0"
+                      >
+                        <span
+                          class="permission-field-title"
+                        >
+                          数据权限概览
+                        </span>
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous clear-permission-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                清除所有权限
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary add-permission-button basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span>
+                                添加数据权限
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </section>
+                      <div
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                      >
+                        <div
+                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                        >
+                          <div
+                            class="ant-spin-container"
+                          >
+                            <div
+                              class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+                            >
+                              <div
+                                class="ant-table-container"
+                              >
+                                <div
+                                  class="ant-table-content"
+                                  style="overflow-x: auto; overflow-y: hidden;"
+                                >
+                                  <table
+                                    style="min-width: 100%; table-layout: auto;"
+                                  >
+                                    <colgroup>
+                                      <col />
+                                      <col />
+                                      <col
+                                        style="width: 164px;"
+                                      />
+                                    </colgroup>
+                                    <thead
+                                      class="ant-table-thead"
+                                    >
+                                      <tr>
+                                        <th
+                                          class="ant-table-cell"
+                                          scope="col"
+                                        >
+                                          数据对象
+                                        </th>
+                                        <th
+                                          class="ant-table-cell"
+                                          scope="col"
+                                        >
+                                          数据操作
+                                        </th>
+                                        <th
+                                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                          scope="col"
+                                          style="position: sticky; right: 0px;"
+                                        >
+                                          操作
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody
+                                      class="ant-table-tbody"
+                                    >
+                                      <tr
+                                        aria-hidden="true"
+                                        class="ant-table-measure-row"
+                                        style="height: 0px; font-size: 0px;"
+                                      >
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                        <td
+                                          style="padding: 0px; border: 0px; height: 0px;"
+                                        >
+                                          <div
+                                            style="height: 0px; overflow: hidden;"
+                                          >
+                                             
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr
+                                        class="ant-table-row ant-table-row-level-0"
+                                        data-row-key="1127"
+                                      >
+                                        <td
+                                          class="ant-table-cell"
+                                        >
+                                          <div
+                                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                          >
+                                            <div
+                                              class="ant-space-item"
+                                            >
+                                              <span
+                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                database-1.table-1
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="ant-table-cell"
+                                        >
+                                          <div
+                                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                          >
+                                            <div
+                                              class="ant-space-item"
+                                            >
+                                              <span
+                                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                              >
+                                                查询
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td
+                                          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                          style="position: sticky; right: 0px;"
+                                        >
+                                          <div
+                                            class="css-new95e"
+                                          >
+                                            <div
+                                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                            >
+                                              <div
+                                                class="ant-space-item"
+                                                style="margin-right: 8px;"
+                                              >
+                                                <button
+                                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                  type="button"
+                                                >
+                                                  <span>
+                                                    编 辑
+                                                  </span>
+                                                </button>
+                                              </div>
+                                              <div
+                                                class="ant-space-item"
+                                              >
+                                                <button
+                                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                  type="button"
+                                                >
+                                                  <span>
+                                                    删 除
+                                                  </span>
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </form>
+    </section>
+  </div>
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  添加数据权限
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-form-item database-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        title=""
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            选择数据库表
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                          >
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="flex: 0 0 180px; min-width: 0; margin-right: 12px;"
+                            >
+                              <div
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                data-testid="database-form-item-database-0"
+                              >
+                                <div
+                                  class="ant-select-selector"
+                                >
+                                  <span
+                                    class="ant-select-selection-search"
+                                  >
+                                    <input
+                                      aria-activedescendant="data_objects_0_database_list_0"
+                                      aria-autocomplete="list"
+                                      aria-controls="data_objects_0_database_list"
+                                      aria-expanded="false"
+                                      aria-haspopup="listbox"
+                                      aria-owns="data_objects_0_database_list"
+                                      autocomplete="off"
+                                      class="ant-select-selection-search-input"
+                                      id="data_objects_0_database"
+                                      readonly=""
+                                      role="combobox"
+                                      style="opacity: 0;"
+                                      type="search"
+                                      unselectable="on"
+                                      value=""
+                                    />
+                                  </span>
+                                  <span
+                                    class="ant-select-selection-placeholder"
+                                  >
+                                    *
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  class="ant-select-arrow"
+                                  style="user-select: none;"
+                                  unselectable="on"
+                                >
+                                  <span
+                                    aria-label="down"
+                                    class="anticon anticon-down ant-select-suffix"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="down"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="flex: 1 1 auto; min-width: 0;"
+                            >
+                              <div
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                                data-testid="database-form-item-schema-0"
+                              >
+                                <div
+                                  class="ant-select-selector"
+                                >
+                                  <div
+                                    class="ant-select-selection-overflow"
+                                  >
+                                    <div
+                                      class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                                      style="opacity: 1;"
+                                    >
+                                      <div
+                                        class="ant-select-selection-search"
+                                        style="width: 0px;"
+                                      >
+                                        <input
+                                          aria-activedescendant="data_objects_0_tables_list_0"
+                                          aria-autocomplete="list"
+                                          aria-controls="data_objects_0_tables_list"
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-owns="data_objects_0_tables_list"
+                                          autocomplete="off"
+                                          class="ant-select-selection-search-input"
+                                          id="data_objects_0_tables"
+                                          readonly=""
+                                          role="combobox"
+                                          style="opacity: 0;"
+                                          type="search"
+                                          unselectable="on"
+                                          value=""
+                                        />
+                                        <span
+                                          aria-hidden="true"
+                                          class="ant-select-selection-search-mirror"
+                                        >
+                                           
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <span
+                                    class="ant-select-selection-placeholder"
+                                  >
+                                    *
+                                  </span>
+                                </div>
+                                <span
+                                  aria-hidden="true"
+                                  class="ant-select-arrow"
+                                  style="user-select: none;"
+                                  unselectable="on"
+                                >
+                                  <span
+                                    aria-label="down"
+                                    class="anticon anticon-down ant-select-suffix"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="down"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              style="flex: 0 0 48px; min-width: 0;"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
+                            type="button"
+                          >
+                            <span
+                              class="ant-btn-icon"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 13.667A6.667 6.667 0 1 1 7 .334a6.667 6.667 0 0 1 0 13.333m-.667-7.334H3.668v1.334h2.667v2.666h1.333V7.667h2.667V6.333H7.667V3.667H6.334z"
+                                  fill="#4583FF"
+                                />
+                              </svg>
+                            </span>
+                            <span>
+                              添加数据库表
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="data_operations"
+                        title="选择权限"
+                      >
+                        选择权限
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <div
+                                class="ant-select-selection-overflow"
+                              >
+                                <div
+                                  class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                                  style="opacity: 1;"
+                                >
+                                  <div
+                                    class="ant-select-selection-search"
+                                    style="width: 0px;"
+                                  >
+                                    <input
+                                      aria-activedescendant="data_operations_list_0"
+                                      aria-autocomplete="list"
+                                      aria-controls="data_operations_list"
+                                      aria-expanded="false"
+                                      aria-haspopup="listbox"
+                                      aria-owns="data_operations_list"
+                                      aria-required="true"
+                                      autocomplete="off"
+                                      class="ant-select-selection-search-input"
+                                      id="data_operations"
+                                      readonly=""
+                                      role="combobox"
+                                      style="opacity: 0;"
+                                      type="search"
+                                      unselectable="on"
+                                      value=""
+                                    />
+                                    <span
+                                      aria-hidden="true"
+                                      class="ant-select-selection-search-mirror"
+                                    >
+                                       
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      提 交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`provision/DatabaseAccount/Update update account permissions 2`] = `
+<div
+  class="ant-table-content"
+  style="overflow-x: auto; overflow-y: hidden;"
+>
+  <table
+    style="min-width: 100%; table-layout: auto;"
+  >
+    <colgroup>
+      <col />
+      <col />
+      <col
+        style="width: 164px;"
+      />
+    </colgroup>
+    <thead
+      class="ant-table-thead"
+    >
+      <tr>
+        <th
+          class="ant-table-cell"
+          scope="col"
+        >
+          数据对象
+        </th>
+        <th
+          class="ant-table-cell"
+          scope="col"
+        >
+          数据操作
+        </th>
+        <th
+          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+          scope="col"
+          style="position: sticky; right: 0px;"
+        >
+          操作
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="ant-table-tbody"
+    >
+      <tr
+        aria-hidden="true"
+        class="ant-table-measure-row"
+        style="height: 0px; font-size: 0px;"
+      >
+        <td
+          style="padding: 0px; border: 0px; height: 0px;"
+        >
+          <div
+            style="height: 0px; overflow: hidden;"
+          >
+             
+          </div>
+        </td>
+        <td
+          style="padding: 0px; border: 0px; height: 0px;"
+        >
+          <div
+            style="height: 0px; overflow: hidden;"
+          >
+             
+          </div>
+        </td>
+        <td
+          style="padding: 0px; border: 0px; height: 0px;"
+        >
+          <div
+            style="height: 0px; overflow: hidden;"
+          >
+             
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="ant-table-row ant-table-row-level-0"
+        data-row-key="1127"
+      >
+        <td
+          class="ant-table-cell"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              >
+                database-1.table-1
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="ant-table-cell"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              >
+                查询
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+          style="position: sticky; right: 0px;"
+        >
+          <div
+            class="css-new95e"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    编 辑
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    删 除
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="ant-table-row ant-table-row-level-0"
+        data-row-key="2296"
+      >
+        <td
+          class="ant-table-cell"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              >
+                database-2.table-2
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="ant-table-cell"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              >
+                变更
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+          style="position: sticky; right: 0px;"
+        >
+          <div
+            class="css-new95e"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    编 辑
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    删 除
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`provision/DatabaseAccount/Update update account permissions 3`] = `
+<body>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+  <div>
+    <section>
+      <div
+        class="actiontech-page-header-namespace fixed-style css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          <a
+            href="/provision/project/700300/database-account"
+          >
+            <button
+              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span
+                class="ant-btn-icon"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.219 7.333h8.114v1.334H5.22l3.576 3.576-.943.942L2.667 8l5.185-5.185.943.942z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span>
+                返回账号管理列表
+              </span>
+            </button>
+          </a>
+        </div>
+        <div
+          class="extra"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            hidden=""
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  重 置
+                </span>
+              </button>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <button
+                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                type="button"
+              >
+                <span>
+                  保 存
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section
+        class="basic-result-wrapper css-7vto1s"
+      >
+        <div
+          class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-result-icon"
+          >
+            <svg
+              fill="none"
+              height="160"
+              viewBox="0 0 160 160"
+              width="160"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                filter="url(#filter0_d_3998_2816)"
+              >
+                <rect
+                  fill="white"
+                  height="100"
+                  rx="6"
+                  width="128"
+                  x="15"
+                  y="30"
+                />
+                <rect
+                  height="99"
+                  rx="5.5"
+                  stroke="#F2F1F0"
+                  width="127"
+                  x="15.5"
+                  y="30.5"
+                />
+              </g>
+              <circle
+                cx="21.5"
+                cy="36.5"
+                fill="#F66074"
+                r="1.5"
+              />
+              <circle
+                cx="27.5"
+                cy="36.5"
+                fill="#EDB054"
+                r="1.5"
+              />
+              <circle
+                cx="33.5"
+                cy="36.5"
+                fill="#1CB889"
+                r="1.5"
+              />
+              <rect
+                fill="#EBEAE7"
+                height="5"
+                rx="2"
+                width="37"
+                x="27"
+                y="52"
+              />
+              <rect
+                fill="#EBEAE7"
+                height="4"
+                rx="2"
+                width="17"
+                x="27"
+                y="62"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="19"
+                x="70"
+                y="78"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="40"
+                x="27"
+                y="78"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="47"
+                x="42"
+                y="87"
+              />
+              <rect
+                fill="#F66074"
+                height="4"
+                rx="2"
+                width="12"
+                x="27"
+                y="87"
+              />
+              <rect
+                fill="#F66074"
+                height="4"
+                rx="2"
+                width="10"
+                x="79"
+                y="96"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="13"
+                x="63"
+                y="96"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="33"
+                x="27"
+                y="96"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="34"
+                x="55"
+                y="105"
+              />
+              <rect
+                fill="#F66074"
+                height="4"
+                rx="2"
+                width="25"
+                x="27"
+                y="105"
+              />
+              <rect
+                fill="#F2F1EF"
+                height="4"
+                rx="2"
+                width="49"
+                x="27"
+                y="114"
+              />
+              <rect
+                fill="#F7F6F4"
+                height="72"
+                rx="3"
+                width="32"
+                x="99"
+                y="48"
+              />
+              <rect
+                fill="white"
+                height="6"
+                rx="1"
+                stroke="#E8E7E6"
+                width="24"
+                x="103"
+                y="52"
+              />
+              <rect
+                fill="white"
+                height="6"
+                rx="1"
+                stroke="#E8E7E6"
+                width="24"
+                x="103"
+                y="76"
+              />
+              <g
+                filter="url(#filter1_d_3998_2816)"
+              >
+                <rect
+                  fill="#4583FF"
+                  height="8"
+                  rx="2"
+                  width="26"
+                  x="102"
+                  y="63"
+                />
+              </g>
+              <rect
+                fill="white"
+                height="6"
+                rx="1"
+                stroke="#E8E7E6"
+                width="24"
+                x="103"
+                y="87"
+              />
+              <rect
+                fill="white"
+                height="6"
+                rx="1"
+                stroke="#E8E7E6"
+                width="24"
+                x="103"
+                y="98"
+              />
+              <rect
+                fill="white"
+                height="6"
+                rx="1"
+                stroke="#E8E7E6"
+                width="24"
+                x="103"
+                y="109"
+              />
+              <g
+                filter="url(#filter2_d_3998_2816)"
+              >
+                <path
+                  d="M134 136C138.418 136 142.418 134.209 145.314 131.314C148.209 128.418 150 124.418 150 120C150 115.582 148.209 111.582 145.314 108.686C142.418 105.791 138.418 104 134 104C129.582 104 125.582 105.791 122.686 108.686C119.791 111.582 118 115.582 118 120C118 124.418 119.791 128.418 122.686 131.314C125.582 134.209 129.582 136 134 136Z"
+                  fill="#1CB889"
+                />
+              </g>
+              <path
+                d="M128.4 120L132.6 124.2L141 115.8"
+                stroke="white"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+              />
+              <rect
+                fill="url(#paint0_linear_3998_2816)"
+                height="50"
+                width="37"
+                x="27"
+                y="73"
+              />
+              <rect
+                fill="#15C7D4"
+                height="50"
+                width="2"
+                x="62"
+                y="73"
+              />
+              <defs>
+                <filter
+                  color-interpolation-filters="sRGB"
+                  filterUnits="userSpaceOnUse"
+                  height="110"
+                  id="filter0_d_3998_2816"
+                  width="138"
+                  x="10"
+                  y="27"
+                >
+                  <feflood
+                    flood-opacity="0"
+                    result="BackgroundImageFix"
+                  />
+                  <fecolormatrix
+                    in="SourceAlpha"
+                    result="hardAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  />
+                  <feoffset
+                    dy="2"
+                  />
+                  <fegaussianblur
+                    stdDeviation="2.5"
+                  />
+                  <fecomposite
+                    in2="hardAlpha"
+                    operator="out"
+                  />
+                  <fecolormatrix
+                    type="matrix"
+                    values="0 0 0 0 0.2 0 0 0 0 0.173333 0 0 0 0 0.12 0 0 0 0.1 0"
+                  />
+                  <feblend
+                    in2="BackgroundImageFix"
+                    mode="normal"
+                    result="effect1_dropShadow_3998_2816"
+                  />
+                  <feblend
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_3998_2816"
+                    mode="normal"
+                    result="shape"
+                  />
+                </filter>
+                <filter
+                  color-interpolation-filters="sRGB"
+                  filterUnits="userSpaceOnUse"
+                  height="16"
+                  id="filter1_d_3998_2816"
+                  width="34"
+                  x="98"
+                  y="60"
+                >
+                  <feflood
+                    flood-opacity="0"
+                    result="BackgroundImageFix"
+                  />
+                  <fecolormatrix
+                    in="SourceAlpha"
+                    result="hardAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  />
+                  <feoffset
+                    dy="1"
+                  />
+                  <fegaussianblur
+                    stdDeviation="2"
+                  />
+                  <fecomposite
+                    in2="hardAlpha"
+                    operator="out"
+                  />
+                  <fecolormatrix
+                    type="matrix"
+                    values="0 0 0 0 0.270588 0 0 0 0 0.513726 0 0 0 0 1 0 0 0 0.4 0"
+                  />
+                  <feblend
+                    in2="BackgroundImageFix"
+                    mode="normal"
+                    result="effect1_dropShadow_3998_2816"
+                  />
+                  <feblend
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_3998_2816"
+                    mode="normal"
+                    result="shape"
+                  />
+                </filter>
+                <filter
+                  color-interpolation-filters="sRGB"
+                  filterUnits="userSpaceOnUse"
+                  height="44"
+                  id="filter2_d_3998_2816"
+                  width="44"
+                  x="112"
+                  y="100"
+                >
+                  <feflood
+                    flood-opacity="0"
+                    result="BackgroundImageFix"
+                  />
+                  <fecolormatrix
+                    in="SourceAlpha"
+                    result="hardAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  />
+                  <feoffset
+                    dy="2"
+                  />
+                  <fegaussianblur
+                    stdDeviation="3"
+                  />
+                  <fecomposite
+                    in2="hardAlpha"
+                    operator="out"
+                  />
+                  <fecolormatrix
+                    type="matrix"
+                    values="0 0 0 0 0.109804 0 0 0 0 0.721569 0 0 0 0 0.537255 0 0 0 0.4 0"
+                  />
+                  <feblend
+                    in2="BackgroundImageFix"
+                    mode="normal"
+                    result="effect1_dropShadow_3998_2816"
+                  />
+                  <feblend
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_3998_2816"
+                    mode="normal"
+                    result="shape"
+                  />
+                </filter>
+                <lineargradient
+                  gradientUnits="userSpaceOnUse"
+                  id="paint0_linear_3998_2816"
+                  x1="64"
+                  x2="27"
+                  y1="73"
+                  y2="73"
+                >
+                  <stop
+                    stop-color="#1ACEDB"
+                    stop-opacity="0.3"
+                  />
+                  <stop
+                    offset="1"
+                    stop-color="white"
+                    stop-opacity="0"
+                  />
+                </lineargradient>
+              </defs>
+            </svg>
+          </div>
+          <div
+            class="ant-result-title"
+          >
+            变更账号权限成功
+          </div>
+          <div
+            class="ant-result-extra"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <a
+                  href="/provision/project/700300/database-account"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      返回账号管理列表
+                    </span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</body>
+`;
