@@ -7,7 +7,6 @@ import { StyledEngineProvider, ThemeProvider } from '@mui/system';
 import {
   EmptyBox,
   HeaderProgress,
-  LocalStorageWrapper,
   SpinIndicator,
   useTypedNavigate
 } from '@actiontech/shared';
@@ -46,10 +45,9 @@ import usePermission from '@actiontech/shared/lib/global/usePermission/usePermis
 import useFetchPermissionData from './hooks/useFetchPermissionData';
 import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
-import { compressToBase64 } from 'lz-string';
-
-import './index.less';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
+import './index.less';
 
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -69,7 +67,13 @@ export const Wrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
       return;
     }
     setInitRenderApp(false);
-    if (!token && !['/login', '/user/bind'].includes(location.pathname)) {
+    if (
+      !token &&
+      !(
+        location.pathname === ROUTE_PATHS.BASE.LOGIN.index.path ||
+        location.pathname === ROUTE_PATHS.BASE.USER_BIND.index.path
+      )
+    ) {
       const currentPath = location.pathname;
       const currentSearch = location.search;
 
@@ -205,22 +209,7 @@ function App() {
     i18n.changeLanguage(currentLanguage);
   }, [currentLanguage]);
 
-  useEffect(() => {
-    let sqleEdition;
-    // #if [ee]
-    sqleEdition = 'ee';
-    // #elif [ce]
-    sqleEdition = 'ce';
-    // #endif
-    if (sqleEdition !== LocalStorageWrapper.get('DMS_CB_CHANNEL')) {
-      LocalStorageWrapper.set(
-        'DMS_CB_CHANNEL',
-        compressToBase64(
-          JSON.stringify({ type: 'sqle_edition', data: sqleEdition })
-        )
-      );
-    }
-  }, []);
+  useSyncDmsCloudBeaverChannel();
 
   return (
     <Wrapper>

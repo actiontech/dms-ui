@@ -10,8 +10,8 @@ import enUS from './en-US';
 import { TOptions } from 'i18next';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
-import { findDuplicateKeys } from '../utils/findDuplicateKeys';
 import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
+import { findDuplicateKeys } from '@actiontech/shared/lib/utils/Common';
 
 // #if [DEV]
 const zh_dupKeys = findDuplicateKeys([
