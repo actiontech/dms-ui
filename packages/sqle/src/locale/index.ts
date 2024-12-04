@@ -11,8 +11,8 @@ import {
   Dictionary,
   TemplateKeyPath
 } from '@actiontech/shared/lib/types/common.type';
-import { findDuplicateKeys } from '../../../base/src/utils/findDuplicateKeys';
 import { DEFAULT_LANGUAGE } from '@actiontech/shared/lib/locale';
+import { findDuplicateKeys } from '@actiontech/shared/lib/utils/Common';
 
 // #if [DEV]
 const zh_dupKeys = findDuplicateKeys([
