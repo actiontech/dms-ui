@@ -61,7 +61,7 @@ export const SystemStyleWrapper = styled('section')`
           ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
 
         .ant-descriptions-item-container {
-          height: 20px;
+          min-height: 20px;
 
           .ant-descriptions-item-label {
             width: 240px;
