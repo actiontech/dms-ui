@@ -1118,6 +1118,55 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="serverLayoutUrl"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            注销跳转地址
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            用户登出时，系统自动将用户引导至此地址以确认注销操作，并在确认后安全关闭当前会话，以保护您的登录信息不被泄露。格式示例：http://localhost:8080/logout?id_token_hint=\${id_token}&post_logout_redirect_uri=\${sqle_url}
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            id="serverLayoutUrl"
+                            placeholder="请输入注销跳转地址"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="scopes"
                         title=""
                       >
@@ -2650,6 +2699,55 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="serverUserIdUrl"
                             placeholder="请输入OAuth2.0 user id 获取地址"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="serverLayoutUrl"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            注销跳转地址
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            用户登出时，系统自动将用户引导至此地址以确认注销操作，并在确认后安全关闭当前会话，以保护您的登录信息不被泄露。格式示例：http://localhost:8080/logout?id_token_hint=\${id_token}&post_logout_redirect_uri=\${sqle_url}
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <input
+                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            id="serverLayoutUrl"
+                            placeholder="请输入注销跳转地址"
                             type="text"
                             value=""
                           />
