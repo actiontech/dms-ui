@@ -295,7 +295,26 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
         <Form.Item
           name="data_operations"
           label={t('databaseAccount.create.form.selectPrivileges')}
-          rules={[{ required: true }]}
+          rules={[
+            { required: true },
+            {
+              validator(_, value) {
+                if (
+                  value.length === 1 &&
+                  value[0] ===
+                    objectPrivilegeOptions.find((v) => v.label === 'GRANT')
+                      ?.value
+                ) {
+                  return Promise.reject(
+                    t(
+                      'databaseAccount.create.form.objectPrivilegesValidateMessage'
+                    )
+                  );
+                }
+                return Promise.resolve();
+              }
+            }
+          ]}
         >
           <BasicSelect
             mode="multiple"

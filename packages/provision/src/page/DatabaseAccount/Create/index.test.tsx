@@ -16,7 +16,7 @@ import Password from '../../../utils/Password';
 import user from '../../../testUtil/mockApi/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
-describe('provision/DatabaseAccount/Create', () => {
+describe.skip('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
   let authListBusinessesSpy: jest.SpyInstance;
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;

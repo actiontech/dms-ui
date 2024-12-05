@@ -74,7 +74,7 @@ describe('provision/hooks/useServiceOptions', () => {
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 999,
+      page_size: 9999,
       filter_by_namespace: mockProjectInfo.projectID,
       business
     });

@@ -116,6 +116,8 @@ export default {
         '添加对象权限时，Oracle类型需选择数据库。',
       addDatabaseTable: '添加数据库表',
       selectPrivileges: '选择对象权限',
+      objectPrivilegesValidateMessage:
+        'GRANT权限不能单独授予，必须至少伴随一个其他权限。请确保您的权限配置符合要求。',
       duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',
       privilegesTip:
         '当选择的对象权限范围不包含表时，您只能设置数据库级别的权限，而不能选择具体的表对象。',
