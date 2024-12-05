@@ -104,7 +104,7 @@ describe('page/BindUser-ee', () => {
 
     it('render oauth2_token params submit', async () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-      const search = `oauth2_token=oauth2_token_val`;
+      const search = `oauth2_token=oauth2_token_val&id_token=id_token_val`;
       const requestFn = dms.bindUser();
       const { baseElement } = customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
@@ -131,6 +131,7 @@ describe('page/BindUser-ee', () => {
       expect(requestFn).toHaveBeenCalled();
       expect(requestFn).toHaveBeenCalledWith({
         oauth2_token: 'oauth2_token_val',
+        id_token: 'id_token_val',
         user_name: 'oauth2_admin',
         pwd: 'oauth2_admin'
       });

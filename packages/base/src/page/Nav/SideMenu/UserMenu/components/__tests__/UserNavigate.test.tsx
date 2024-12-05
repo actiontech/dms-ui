@@ -13,6 +13,7 @@ import {
 } from '@actiontech/shared/lib/enum';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import account from '../../../../../../testUtils/mockApi/account';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -115,6 +116,39 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     expect(requestDelSession).toHaveBeenCalledTimes(1);
     expect(mockClearUserInfo).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
+  });
+
+  it('render logout btn when delete session return a location', async () => {
+    requestDelSession.mockClear();
+    requestDelSession.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: { location: 'https://www.testaaa.com' }
+      })
+    );
+
+    const originLocation = window.location;
+    Object.defineProperty(window, 'location', {
+      value: {
+        ...originLocation
+      },
+      writable: true
+    });
+
+    const { baseElement } = customRender();
+
+    await act(async () => jest.advanceTimersByTime(3300));
+
+    const iconUserName = getBySelector('.ant-avatar-string', baseElement);
+    fireEvent.click(iconUserName);
+    await act(async () => jest.advanceTimersByTime(500));
+
+    fireEvent.click(screen.getByText('退出登录'));
+
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(requestDelSession).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(window.location.href).toBe('https://www.testaaa.com');
   });
 
   it(`should update the user's language when a language menu item is clicked.`, async () => {
