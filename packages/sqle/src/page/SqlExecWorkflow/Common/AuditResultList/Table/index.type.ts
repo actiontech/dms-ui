@@ -1,5 +1,6 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type AuditResultTableProps = {
   noDuplicate: boolean;
@@ -9,6 +10,7 @@ export type AuditResultTableProps = {
   updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   dbType?: string;
   allowSwitchBackupPolicy?: boolean;
+  supportedBackupPolicies?: InstanceTipResV1SupportedBackupStrategyEnum[];
 };
 
 export type AuditResultDrawerProps = {
@@ -25,4 +27,5 @@ export type SwitchSqlBackupStrategyModalProps = {
   onCancel: () => void;
   taskID?: string;
   refresh: () => void;
+  supportedBackupPolicies?: InstanceTipResV1SupportedBackupStrategyEnum[];
 };

@@ -24,7 +24,8 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   updateTaskRecordCount,
   showTaskTab = true,
   allowSwitchBackupPolicy = false,
-  onBatchSwitchBackupPolicy
+  onBatchSwitchBackupPolicy,
+  tasksSupportedBackupPolicies
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -41,6 +42,10 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
     () => tasks.find((v) => `${v.task_id}` === currentTaskID),
     [currentTaskID, tasks]
   );
+
+  const currentTaskSupportedBackupPolicies = useMemo(() => {
+    return tasksSupportedBackupPolicies?.[currentTask?.task_id ?? 0];
+  }, [tasksSupportedBackupPolicies, currentTask?.task_id]);
 
   const handleChangeCurrentTask = (taskID?: string) => {
     setCurrentTaskID(taskID);
@@ -92,7 +97,10 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
           <EmptyBox if={allowSwitchBackupPolicy && currentTask?.enable_backup}>
             <BasicButton
               onClick={() => {
-                onBatchSwitchBackupPolicy?.(currentTaskID);
+                onBatchSwitchBackupPolicy?.(
+                  currentTaskID,
+                  currentTaskSupportedBackupPolicies
+                );
               }}
             >
               {t('execWorkflow.create.auditResult.switchDatabaseBackupPolicy')}
@@ -140,6 +148,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         updateTaskRecordCount={updateTaskRecordCount}
         dbType={currentTask?.instance_db_type}
         allowSwitchBackupPolicy={allowSwitchBackupPolicy}
+        supportedBackupPolicies={currentTaskSupportedBackupPolicies}
       />
     </AuditResultForCreateWorkflowStyleWrapper>
   );
