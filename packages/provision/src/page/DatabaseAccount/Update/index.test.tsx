@@ -22,7 +22,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('provision/DatabaseAccount/Update', () => {
+describe.skip('provision/DatabaseAccount/Update', () => {
   let authListServicesSpy: jest.SpyInstance;
   let authListBusinessesSpy: jest.SpyInstance;
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;

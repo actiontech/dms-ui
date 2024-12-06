@@ -4,44 +4,28 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   instanceList,
-  authorizationList,
   databaseList,
   tableList,
   DataPermissionList,
-  DBAccountList,
   operationSetList,
-  templateList,
   statementList,
-  AuthorizationDetails,
   dataSourceList,
   businesses,
   authAuditList,
   templateAuditList,
   serviceAuditList,
   userList,
-  accountListByService,
-  tipsList
+  accountListByService
 } from './data';
-import { AxiosResponse } from 'axios';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
-import { IAuthGetAuthorizationReturn } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 
 class MockAuthApi implements MockSpyApy {
   public mockAllApi(): void {
-    this.listAuthorizationReq();
-    this.addAuthorization();
-    this.updateAuthorization();
-    this.removeAuthorization();
-    this.listTipsByAuthorizationKeyReq();
     this.listUsers();
-    this.listDataPermissionTemplate();
     this.getDataPermissionsInDataPermissionTemplate();
-    this.listDBAccountByAuth();
-    this.getAuthorization();
     this.verifyDBAccount();
     this.getStatementsByDataPermissionTemplate();
     this.copyDataPermissionTemplate();
-    this.removeDataPermissionTemplate();
     this.addDataPermissionTemplate();
     this.updateDataPermissionTemplate();
     this.listBusinesses();
@@ -110,39 +94,6 @@ class MockAuthApi implements MockSpyApy {
     return spy;
   }
 
-  public listAuthorizationReq() {
-    const spy = jest.spyOn(auth, 'AuthListAuthorization');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        total_nums: authorizationList.length,
-        data: authorizationList
-      })
-    );
-    return spy;
-  }
-
-  public addAuthorization() {
-    const spy = jest.spyOn(auth, 'AuthAddAuthorization');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        uid: ''
-      })
-    );
-    return spy;
-  }
-
-  public updateAuthorization() {
-    const spy = jest.spyOn(auth, 'AuthUpdateAuthorization');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
-  public removeAuthorization() {
-    const spy = jest.spyOn(auth, 'AuthDelAuthorization');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
   public listDataBases() {
     const spy = jest.spyOn(auth, 'AuthListDatabase');
     spy.mockImplementation(() =>
@@ -179,33 +130,6 @@ class MockAuthApi implements MockSpyApy {
     return spy;
   }
 
-  public listDBAccountByAuth() {
-    const spy = jest.spyOn(auth, 'AuthListDBAccountByAuthorization');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        db_accounts: DBAccountList,
-        total: DBAccountList.length
-      })
-    );
-    return spy;
-  }
-
-  public listDataPermissionTemplate() {
-    const spy = jest.spyOn(auth, 'AuthListDataPermissionTemplate');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: templateList
-      })
-    );
-    return spy;
-  }
-
-  public removeDataPermissionTemplate() {
-    const spy = jest.spyOn(auth, 'AuthDelDataPermissionTemplate');
-    spy.mockImplementation(() => createSpySuccessResponse({}));
-    return spy;
-  }
-
   public addDataPermissionTemplate() {
     const spy = jest.spyOn(auth, 'AuthAddDataPermissionTemplate');
     spy.mockImplementation(() => createSpySuccessResponse({ uid: '123' }));
@@ -231,30 +155,6 @@ class MockAuthApi implements MockSpyApy {
   public copyDataPermissionTemplate() {
     const spy = jest.spyOn(auth, 'AuthCopyDataPermissionTemplate');
     spy.mockImplementation(() => createSpySuccessResponse({ uid: '123' }));
-    return spy;
-  }
-
-  // 这个接口比较特殊，故暂时采用这种写法
-  public getAuthorization() {
-    const spy = jest.spyOn(auth, 'AuthGetAuthorization');
-    spy.mockImplementation(
-      () =>
-        new Promise<AxiosResponse<IAuthGetAuthorizationReturn>>((res) => {
-          setTimeout(() => {
-            res({
-              status: 200,
-              headers: {},
-              config: {},
-              statusText: '',
-              data: {
-                code: 0,
-                message: 'ok',
-                data: AuthorizationDetails
-              }
-            });
-          }, 3000);
-        })
-    );
     return spy;
   }
 
@@ -346,14 +246,6 @@ class MockAuthApi implements MockSpyApy {
         total_nums: templateAuditList.length,
         data: templateAuditList
       })
-    );
-    return spy;
-  }
-
-  public listTipsByAuthorizationKeyReq() {
-    const spy = jest.spyOn(auth, 'ListTipsByAuthorizationKey');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({ data: { tips: tipsList } })
     );
     return spy;
   }

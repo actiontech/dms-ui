@@ -1,36 +1,36 @@
-import {
-  IDBAccountBody,
-  IDataPermission
-} from '@actiontech/shared/lib/api/provision/service/common';
+import { IDBAccountBody } from '@actiontech/shared/lib/api/provision/service/common';
 import { SelectProps } from 'antd';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service/common.d';
+import { BackendFormValues } from '../../../../sqle/src/components/BackendForm';
+import { IDatabasePrivilegesSelectorBaseFields } from '../../components/DatabasePrivilegesSelector/index.type';
+
+export type ExpendedDBAccountBody = IDBAccountBody & { id?: string };
 
 export type AccountDiscoveryFormType = {
   business: string;
   service: string;
-  account: IDBAccountBody[];
+  account: ExpendedDBAccountBody[];
 };
 
 export type AccountTableFieldProps = {
-  value?: IDBAccountBody[];
-  onChange?: (value?: IDBAccountBody[]) => void;
-  data?: IDBAccountBody[];
+  value?: ExpendedDBAccountBody[];
+  onChange?: (value?: ExpendedDBAccountBody[]) => void;
+  data?: ExpendedDBAccountBody[];
   loading?: boolean;
+  refresh: () => void;
 };
 
 export type CreateAccountFormType = {
-  hostname: string;
   password: string;
   confirm_password: string;
   username: string;
   effective_time_day: number;
   policy: string;
   explanation: string;
-  permissions: PermissionsType[];
   business: string;
-  service: string;
-};
+  additionalParams: BackendFormValues;
+} & IDatabasePrivilegesSelectorBaseFields;
 
 export type PermissionsType = {
   id?: string;
@@ -67,8 +67,8 @@ export type PermissionModalFormType = {
 };
 
 export type ServiceFieldProps = {
-  value?: IDataPermission[];
-  onChange?: (value: IDataPermission[]) => void;
+  value?: string;
+  onChange?: (value: string) => void;
   loading?: boolean;
   options?: SelectProps['options'];
   onSyncService?: () => void;

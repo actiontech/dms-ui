@@ -12,32 +12,6 @@ export enum AuditListDataPermissionTemplateEventsOrderByEnum {
   'generated_time' = 'generated_time'
 }
 
-export enum AuthListAuthorizationOrderByEnum {
-  'purpose' = 'purpose'
-}
-
-export enum AuthListAuthorizationFilterByStatusEnum {
-  'expired' = 'expired',
-
-  'expiring' = 'expiring',
-
-  'effective' = 'effective'
-}
-
-export enum ListTipsByAuthorizationKeyKeyEnum {
-  'purpose' = 'purpose',
-
-  'business' = 'business',
-
-  'data_service' = 'data_service'
-}
-
-export enum AuthListDBAccountByAuthorizationOrderByEnum {
-  'name' = 'name',
-
-  'create_at' = 'create_at'
-}
-
 export enum AuthListDataObjectSourcesOrderByEnum {
   'name' = 'name'
 }
@@ -49,11 +23,9 @@ export enum AuthListDataOperationSetsOrderByEnum {
 export enum AuthListDataOperationSetsFilterByDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL'
-}
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
 
-export enum AuthListDataPermissionTemplateOrderByEnum {
-  'name' = 'name'
+  'Oracle' = 'Oracle'
 }
 
 export enum OperateDataResourceHandleDataResourceTypeEnum {
@@ -86,6 +58,14 @@ export enum AuthListDatabaseOrderByEnum {
 
 export enum AuthListOperationsOrderByEnum {
   'name' = 'name'
+}
+
+export enum AuthListOperationsDbTypeEnum {
+  'MySQL' = 'MySQL',
+
+  'OceanBaseMySQL' = 'OceanBaseMySQL',
+
+  'Oracle' = 'Oracle'
 }
 
 export enum AuthListServiceOrderByEnum {

@@ -5,13 +5,12 @@ import { AccountDiscoveryFormType } from '../../index.type';
 import { FormInstance } from 'antd/lib/form/Form';
 import useBusinessOptions from '../../../../hooks/useBusinessOptions';
 import useServiceOptions from '../../../../hooks/useServiceOptions';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import AccountTableField from './AccountTableField';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAuthDiscoveryDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
-import { IDBAccountBody } from '@actiontech/shared/lib/api/provision/service/common';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useRequest } from 'ahooks';
 
 const DataBaseInfoField: React.FC<{
   form: FormInstance<AccountDiscoveryFormType>;
@@ -25,32 +24,31 @@ const DataBaseInfoField: React.FC<{
 
   const business = Form.useWatch('business', form);
 
-  const [data, setData] = useState<IDBAccountBody[]>([]);
-
-  const [accountLoading, setAccountLoading] = useState<boolean>(false);
-
   const { businessOptions, updateBusinessList, loading } = useBusinessOptions();
 
-  useEffect(() => {
-    if (service) {
+  const {
+    data,
+    mutate: setData,
+    loading: accountLoading,
+    refresh
+  } = useRequest(
+    () => {
       const params: IAuthDiscoveryDBAccountParams = {
         project_uid: projectID,
         db_service_uid: service
       };
-      setAccountLoading(true);
-      dbAccountService
-        .AuthDiscoveryDBAccount(params)
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            setData(res.data.data?.accounts ?? []);
-          }
-        })
-        .finally(() => {
-          setAccountLoading(false);
-        });
+      return dbAccountService.AuthDiscoveryDBAccount(params).then((res) => {
+        return res.data.data?.accounts?.map((acc, index) => ({
+          ...acc,
+          id: `${acc.user}_${index}`
+        }));
+      });
+    },
+    {
+      ready: !!service,
+      refreshDeps: [service]
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [service]);
+  );
 
   const {
     serviceOptions,
@@ -66,16 +64,16 @@ const DataBaseInfoField: React.FC<{
     if (business) {
       updateServiceList(business);
       form.resetFields(['service']);
-      setData([]);
+      setData(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [business]);
 
   useEffect(() => {
     if (!visible) {
-      setData([]);
+      setData(undefined);
     }
-  }, [visible]);
+  }, [setData, visible]);
 
   return (
     <Form form={form} layout="vertical">
@@ -110,6 +108,7 @@ const DataBaseInfoField: React.FC<{
           })}
         />
       </Form.Item>
+
       <Form.Item
         label={
           <BasicToolTips
@@ -119,14 +118,26 @@ const DataBaseInfoField: React.FC<{
             {t('databaseAccount.discovery.dbAccount')}
           </BasicToolTips>
         }
+        extra={
+          typeof data?.length === 'number'
+            ? t('databaseAccount.discovery.dbAccountNumber', {
+                number: data?.length
+              })
+            : undefined
+        }
         name="account"
         rules={[
           {
-            required: true
+            required: true,
+            message: t('databaseAccount.discovery.pleaseSelectDBAccount')
           }
         ]}
       >
-        <AccountTableField data={data} loading={accountLoading} />
+        <AccountTableField
+          refresh={refresh}
+          data={data}
+          loading={accountLoading}
+        />
       </Form.Item>
     </Form>
   );

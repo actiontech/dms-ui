@@ -23,7 +23,7 @@ const AccountAuthorizeModal = () => {
 
   const { projectID } = useCurrentProject();
 
-  const [form] = Form.useForm<{ userId: string }>();
+  const [form] = Form.useForm<{ userId: string[] }>();
 
   const { updateUserList, userIDOptions } = useProvisionUser();
 
@@ -50,7 +50,7 @@ const AccountAuthorizeModal = () => {
         db_account_uid: selectData?.db_account_uid ?? '',
         db_account: {
           permission_users: {
-            permission_user_uids: values.userId ? [values.userId] : []
+            permission_user_uids: values.userId ?? []
           }
         }
       })
@@ -80,7 +80,10 @@ const AccountAuthorizeModal = () => {
 
   useEffect(() => {
     if (selectData?.auth_users?.length) {
-      form.setFieldValue('userId', selectData.auth_users[0].uid);
+      form.setFieldValue(
+        'userId',
+        selectData.auth_users.map((v) => v.uid)
+      );
     }
   }, [selectData, form]);
 
@@ -117,6 +120,7 @@ const AccountAuthorizeModal = () => {
           label={t('databaseAccount.authorize.selectUser')}
         >
           <BasicSelect
+            mode="multiple"
             options={userIDOptions}
             showSearch
             optionFilterProp="label"

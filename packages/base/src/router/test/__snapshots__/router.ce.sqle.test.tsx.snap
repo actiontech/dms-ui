@@ -1052,20 +1052,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         "children": [
           {
             "element": <div>
-              operation
-            </div>,
-            "key": "operation",
-            "path": ":projectID/data/operation",
-          },
-        ],
-        "element": undefined,
-        "key": "dataObjectWrapper",
-        "path": undefined,
-      },
-      {
-        "children": [
-          {
-            "element": <div>
               authAudit
             </div>,
             "key": "authAudit",
@@ -1082,6 +1068,38 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         "element": undefined,
         "key": "auditWrapper",
         "path": undefined,
+      },
+      {
+        "children": [
+          {
+            "element": <div>
+              databaseRoleList
+            </div>,
+            "key": "databaseRoleList",
+            "path": "",
+          },
+          {
+            "element": <div>
+              createRole
+            </div>,
+            "key": "createRole",
+            "path": "create/:db_service_id",
+          },
+          {
+            "element": <div>
+              updateRole
+            </div>,
+            "key": "updateRole",
+            "path": "update/:db_service_id/:role_id",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="databaseRole"
+        >
+          <Outlet />
+        </div>,
+        "key": "databaseRole",
+        "path": ":projectID/database-role",
       },
       {
         "element": <div>

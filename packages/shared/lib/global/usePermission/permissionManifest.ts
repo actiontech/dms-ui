@@ -981,5 +981,14 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE,
     type: 'action',
     projectArchived: false
+  },
+
+  // provision
+  [PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.PROVISION.DATABASE_ROLE.CREATE,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager]
   }
 } as const;

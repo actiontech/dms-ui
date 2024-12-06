@@ -43,16 +43,21 @@ type SqleMenuStructTreeKey =
   | 'sqle-log'
   | 'sql-management-conf'
   | 'push-rule-configuration'
-  | 'permission-group'
-  | 'permission-template'
-  | 'auth-list'
-  | 'data-mask-rule'
-  | 'auth-audit'
-  | 'template-audit'
-  | 'account-management'
-  | 'password-management'
   | 'pipeline-configuration'
   | 'version-management'
   | 'data-source-comparison';
 
-export type MenuStructTreeKey = BaseMenuStructTreeKey | SqleMenuStructTreeKey;
+type ProvisionMenuStructTreeKey =
+  | 'database-role'
+  | 'auth-audit'
+  | 'template-audit'
+  | 'account-management'
+  | 'password-management';
+
+type DMSMenuStructTreeKey = 'data-mask-rule';
+
+export type MenuStructTreeKey =
+  | BaseMenuStructTreeKey
+  | SqleMenuStructTreeKey
+  | ProvisionMenuStructTreeKey
+  | DMSMenuStructTreeKey;

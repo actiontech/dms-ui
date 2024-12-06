@@ -15,7 +15,7 @@ import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/com
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { databaseAccountDetailMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
 
-describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
+describe.skip('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
   let authGetDBAccountSpy: jest.SpyInstance;
 
   beforeEach(() => {

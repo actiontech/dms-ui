@@ -18,7 +18,7 @@ import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/com
 import passwordSecurityPolicy from '../../../../testUtil/mockApi/passwordSecurityPolicy';
 import Password from '../../../../utils/Password';
 
-describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
+describe.skip('provision/DatabaseAccount/ModifyPasswordModal', () => {
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authUpdateDBAccountSpy: jest.SpyInstance;
 

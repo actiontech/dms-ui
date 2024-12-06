@@ -7,6 +7,7 @@ import externalDataSource from './externalDataSource';
 import provisionNav from './provisionNav';
 import databaseAccount from './databaseAccount';
 import passwordSecurityPolicy from './passwordSecurityPolicy';
+import databaseRole from './databaseRole';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -19,6 +20,7 @@ export default {
     externalDataSource,
     provisionNav,
     databaseAccount,
-    passwordSecurityPolicy
+    passwordSecurityPolicy,
+    databaseRole
   }
 };

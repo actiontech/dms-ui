@@ -27,7 +27,7 @@ export default {
       account: '账号',
       desc: '说明',
       dbService: '数据源',
-      permission: '权限',
+      privilege: '权限',
       expiredTime: '密码有效期',
       remainingDay: '密码有效时间',
       policy: '密码安全策略',
@@ -45,7 +45,7 @@ export default {
       authorize: '授权',
       modifyPassword: '修改密码',
       renewal: '续用当前密码',
-      modifyPermission: '变更账号权限',
+      modifyPrivilege: '变更账号权限',
       disable: '禁用',
       enable: '启用',
       delete: '删除',
@@ -59,8 +59,7 @@ export default {
       modifyPassword: '批量修改密码',
       renewal: '批量续期',
       disable: '禁用',
-      delete: '删除',
-      modifyPermission: '变更账号权限'
+      delete: '删除'
     }
   },
   discovery: {
@@ -68,23 +67,28 @@ export default {
     business: '业务',
     service: '数据源',
     dbAccount: '数据库账户',
+    dbAccountNumber: '本次发现数据库账号数量：{{number}}',
+    pleaseSelectDBAccount: '请选择本次需要同步的数据库账号',
     syncAccount: '同步账户',
     syncAccountTip:
       '对同一数据源可以进行多次账号发现，账号发现时将会过滤掉已经在平台上的账号',
-    syncSuccess: '同步账户成功'
+    syncSuccess: '同步账户成功',
+    userFilterPlaceholder: '输入账号名进行搜索'
   },
   create: {
     returnText: '返回账号管理列表',
     title: '创建数据库账号',
-    baseInfo: '基础配置',
-    permissionInfo: '数据权限',
-    permissionInfoOverview: '数据权限概览',
+    baseInfo: '账户基本信息',
+    privilegeInfo: '数据权限',
+    objectPrivilegesOverview: '对象权限概览',
     result: {
       success: '创建账号成功',
-      continue: '继续创建'
+      continue: '继续创建',
+      viewDetail: '查看账号详情'
     },
     normalPolicy: '无',
     form: {
+      syncDatabase: '同步数据库最新的库表数据',
       username: '连接账号名',
       usernameExtra: '账号名检测通过',
       hostname: '主机名(host)',
@@ -95,24 +99,33 @@ export default {
       password_error: '您输入的两个密码不匹配',
       policy: '密码安全策略',
       effectiveTimeDay: '密码有效期',
+      effectiveTimeDayValidationMessage: '密码有效期必须填写大于0的值。',
       desc: '账号说明',
       descPlaceholder: '点击添加账户说明（选填）',
-      removeConfirmTips: '是否确认删除当前数据权限信息?',
-      clearConfirmTips: '是否确认清除当前数据权限信息？',
+      removeConfirmTips: '是否确认删除当前对象权限信息?',
+      clearConfirmTips: '是否确认清除当前对象权限信息？',
       objects: '数据对象',
-      operation: '数据操作',
-      permissionErrorTips: '请添加数据权限',
+      operation: '操作权限',
       syncSuccessTips: '同步字典数据成功',
-      extraEmptyTips: '您还没有为当前账号添加数据权限',
-      addDataPermission: '添加数据权限',
-      editDataPermission: '编辑数据权限',
-      resetPermission: '清除所有权限',
+      extraEmptyTips: '您还没有为当前账号添加对象权限',
+      addObjectPrivileges: '添加对象权限',
+      editDataPrivileges: '编辑对象权限',
+      resetObjectPrivileges: '清除所有对象权限',
       selectObjects: '选择数据库表',
+      oracleTypeSchemaValidationMessage:
+        '添加对象权限时，Oracle类型需选择数据库。',
       addDatabaseTable: '添加数据库表',
-      selectPermission: '选择权限',
+      selectPrivileges: '选择对象权限',
+      objectPrivilegesValidateMessage:
+        'GRANT权限不能单独授予，必须至少伴随一个其他权限。请确保您的权限配置符合要求。',
       duplicateError: '已存在相同数据源、相同数据对象、相同数据操作的权限',
-      permissionTip:
-        '如果您选定了一个Schema，此时再选中该数据源中的所有数据对象将无意义'
+      privilegesTip:
+        '当选择的对象权限范围不包含表时，您只能设置数据库级别的权限，而不能选择具体的表对象。',
+      containerName: '容器名',
+      role: '角色',
+      systemPrivileges: '系统权限',
+      objectPrivileges: '对象权限',
+      quickCreateRoles: '快速创建角色'
     },
     previewModal: '账号创建预览'
   },
@@ -134,7 +147,10 @@ export default {
     copyAll: '全文复制',
     authInfo: '授权信息',
     authUser: '授权成员',
-    originPermission: '原始权限'
+    role: '角色',
+    roleInfo: '角色信息',
+    privilege: '权限',
+    privilegeInfo: '权限信息'
   },
   authorize: {
     title: '账号授权',

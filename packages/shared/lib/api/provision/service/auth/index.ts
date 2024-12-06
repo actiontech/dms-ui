@@ -13,22 +13,6 @@ import {
   IAuditListDataObjectServiceEventsReturn,
   IAuditListDataPermissionTemplateEventsParams,
   IAuditListDataPermissionTemplateEventsReturn,
-  IAuthListAuthorizationParams,
-  IAuthListAuthorizationReturn,
-  IAuthAddAuthorizationParams,
-  IAuthAddAuthorizationReturn,
-  IListTipsByAuthorizationKeyParams,
-  IListTipsByAuthorizationKeyReturn,
-  IAuthGetAuthorizationParams,
-  IAuthGetAuthorizationReturn,
-  IAuthUpdateAuthorizationParams,
-  IAuthUpdateAuthorizationReturn,
-  IAuthDelAuthorizationParams,
-  IAuthDelAuthorizationReturn,
-  IAuthAddDataPermissionTemplateToAuthorizationParams,
-  IAuthAddDataPermissionTemplateToAuthorizationReturn,
-  IAuthListDBAccountByAuthorizationParams,
-  IAuthListDBAccountByAuthorizationReturn,
   IAuthListDataObjectSourcesParams,
   IAuthListDataObjectSourcesReturn,
   IAuthAddDataObjectSourceParams,
@@ -41,14 +25,10 @@ import {
   IAuthSyncFromDataObjectSourceReturn,
   IAuthListDataOperationSetsParams,
   IAuthListDataOperationSetsReturn,
-  IAuthListDataPermissionTemplateParams,
-  IAuthListDataPermissionTemplateReturn,
   IAuthAddDataPermissionTemplateParams,
   IAuthAddDataPermissionTemplateReturn,
   IAuthUpdateDataPermissionTemplateParams,
   IAuthUpdateDataPermissionTemplateReturn,
-  IAuthDelDataPermissionTemplateParams,
-  IAuthDelDataPermissionTemplateReturn,
   IAuthCopyDataPermissionTemplateParams,
   IAuthCopyDataPermissionTemplateReturn,
   IAuthGetDataPermissionsInDataPermissionTemplateParams,
@@ -85,9 +65,7 @@ import {
   IDelUserGroupPreCheckParams,
   IDelUserGroupPreCheckReturn,
   IAuthListUserParams,
-  IAuthListUserReturn,
-  IDelUserPreCheckParams,
-  IDelUserPreCheckReturn
+  IAuthListUserReturn
 } from './index.d';
 
 class AuthService extends ServiceBase {
@@ -122,117 +100,6 @@ class AuthService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.get<IAuditListDataPermissionTemplateEventsReturn>(
       '/v1/audit/data_permission_template_events',
-      paramsData,
-      options
-    );
-  }
-
-  public AuthListAuthorization(
-    params: IAuthListAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IAuthListAuthorizationReturn>(
-      '/v1/auth/authorizations',
-      paramsData,
-      options
-    );
-  }
-
-  public AuthAddAuthorization(
-    params: IAuthAddAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.post<IAuthAddAuthorizationReturn>(
-      '/v1/auth/authorizations',
-      paramsData,
-      options
-    );
-  }
-
-  public ListTipsByAuthorizationKey(
-    params: IListTipsByAuthorizationKeyParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IListTipsByAuthorizationKeyReturn>(
-      '/v1/auth/authorizations/tips',
-      paramsData,
-      options
-    );
-  }
-
-  public AuthGetAuthorization(
-    params: IAuthGetAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const authorization_uid = paramsData.authorization_uid;
-    delete paramsData.authorization_uid;
-
-    return this.get<IAuthGetAuthorizationReturn>(
-      `/v1/auth/authorizations/${authorization_uid}`,
-      paramsData,
-      options
-    );
-  }
-
-  public AuthUpdateAuthorization(
-    params: IAuthUpdateAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const authorization_uid = paramsData.authorization_uid;
-    delete paramsData.authorization_uid;
-
-    return this.put<IAuthUpdateAuthorizationReturn>(
-      `/v1/auth/authorizations/${authorization_uid}`,
-      paramsData,
-      options
-    );
-  }
-
-  public AuthDelAuthorization(
-    params: IAuthDelAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const authorization_uid = paramsData.authorization_uid;
-    delete paramsData.authorization_uid;
-
-    return this.delete<IAuthDelAuthorizationReturn>(
-      `/v1/auth/authorizations/${authorization_uid}`,
-      paramsData,
-      options
-    );
-  }
-
-  public AuthAddDataPermissionTemplateToAuthorization(
-    params: IAuthAddDataPermissionTemplateToAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const authorization_uid = paramsData.authorization_uid;
-    delete paramsData.authorization_uid;
-
-    return this.put<IAuthAddDataPermissionTemplateToAuthorizationReturn>(
-      `/v1/auth/authorizations/${authorization_uid}/add_data_permission_template`,
-      paramsData,
-      options
-    );
-  }
-
-  public AuthListDBAccountByAuthorization(
-    params: IAuthListDBAccountByAuthorizationParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const authorization_uid = paramsData.authorization_uid;
-    delete paramsData.authorization_uid;
-
-    return this.get<IAuthListDBAccountByAuthorizationReturn>(
-      `/v1/auth/authorizations/${authorization_uid}/dbaccounts`,
       paramsData,
       options
     );
@@ -319,18 +186,6 @@ class AuthService extends ServiceBase {
     );
   }
 
-  public AuthListDataPermissionTemplate(
-    params: IAuthListDataPermissionTemplateParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IAuthListDataPermissionTemplateReturn>(
-      '/v1/auth/data_permission_templates',
-      paramsData,
-      options
-    );
-  }
-
   public AuthAddDataPermissionTemplate(
     params: IAuthAddDataPermissionTemplateParams,
     options?: AxiosRequestConfig
@@ -353,22 +208,6 @@ class AuthService extends ServiceBase {
     delete paramsData.data_permission_template_uid;
 
     return this.put<IAuthUpdateDataPermissionTemplateReturn>(
-      `/v1/auth/data_permission_templates/${data_permission_template_uid}`,
-      paramsData,
-      options
-    );
-  }
-
-  public AuthDelDataPermissionTemplate(
-    params: IAuthDelDataPermissionTemplateParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const data_permission_template_uid =
-      paramsData.data_permission_template_uid;
-    delete paramsData.data_permission_template_uid;
-
-    return this.delete<IAuthDelDataPermissionTemplateReturn>(
       `/v1/auth/data_permission_templates/${data_permission_template_uid}`,
       paramsData,
       options
@@ -618,18 +457,6 @@ class AuthService extends ServiceBase {
   ) {
     const paramsData = this.cloneDeep(params);
     return this.get<IAuthListUserReturn>('/v1/auth/users', paramsData, options);
-  }
-
-  public DelUserPreCheck(
-    params: IDelUserPreCheckParams,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    return this.get<IDelUserPreCheckReturn>(
-      '/v1/auth/users/precheck/del',
-      paramsData,
-      options
-    );
   }
 }
 

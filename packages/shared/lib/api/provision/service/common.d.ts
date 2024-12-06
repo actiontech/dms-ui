@@ -6,7 +6,6 @@ import {
   StatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
-  ListAuthorizationStatusEnum,
   ListDBAccountStatusEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum,
@@ -14,6 +13,7 @@ import {
   ListUserStatEnum,
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
+  OperationScopeEnum,
   OperationInfoDataObjectTypesEnum,
   OperationInfoDbTypeEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
@@ -31,6 +31,8 @@ export interface IAccessTokenInfo {
 }
 
 export interface IAccountDetail {
+  additional_params?: IParams;
+
   address?: string;
 
   connect_string?: string;
@@ -38,8 +40,6 @@ export interface IAccountDetail {
   expired_time?: string;
 
   explanation?: string;
-
-  hostname?: string;
 
   password?: string;
 
@@ -66,34 +66,12 @@ export interface IAccountStatics {
   unlock_account_num?: number;
 }
 
-export interface IAddAuthorization {
-  data_permission_template_uid: string;
-
-  db_account: IDBAccount;
-
-  effective_time_day?: number;
-
-  memo?: string;
-
-  permission_user_uid: string;
-
-  purpose: string;
-}
-
-export interface IAddAuthorizationReply {
-  code?: number;
-
-  data?: {
-    uid?: string;
-  };
-
-  message?: string;
-}
-
 export interface IAddDBAccount {
-  data_permissions?: IDataPermission[];
+  data_permissions?: IDataPermissionForRole[];
 
   db_account: IDBAccount;
+
+  db_roles?: string[];
 
   db_service_uid: string;
 
@@ -109,6 +87,24 @@ export interface IAddDBAccountReply {
 
   data?: {
     db_account_uid?: string;
+  };
+
+  message?: string;
+}
+
+export interface IAddDBRole {
+  data_permissions?: IDataPermissionForRole[];
+
+  db_role_uids?: string[];
+
+  name: string;
+}
+
+export interface IAddDBRoleReply {
+  code?: number;
+
+  data?: {
+    uid?: string;
   };
 
   message?: string;
@@ -243,9 +239,9 @@ export interface ICopyDataPermissionTemplateReply {
 }
 
 export interface IDBAccount {
-  explanation?: string;
+  additional_params?: IParams;
 
-  hostname: string;
+  explanation?: string;
 
   password: string;
 
@@ -253,7 +249,9 @@ export interface IDBAccount {
 }
 
 export interface IDBAccountBody {
-  hostname?: string;
+  additional_param?: IParams;
+
+  db_roles?: IUidWithName[];
 
   permission_info?: IPermissionInfo;
 
@@ -263,9 +261,45 @@ export interface IDBAccountBody {
 export interface IDBAccountDataPermission {
   data_objects?: IDataObjectInDataPermission[];
 
-  data_operation_sets?: IDataOperationSetInDataPermission[];
+  data_operations?: IDataOperationInDataPermission[];
 
   data_permission_different?: IDataPermissionDifferent;
+}
+
+export interface IDBAccountMeta {
+  desc?: string;
+
+  enums_value?: IEnumsValue[];
+
+  key?: string;
+
+  type?: string;
+
+  value?: string;
+}
+
+export interface IDBRoleDatePermissions {
+  DBAccountDataPermission?: IDBAccountDataPermission[];
+
+  name?: string;
+
+  uid?: string;
+}
+
+export interface IDBRoleDetail {
+  child_roles?: IUidWithName[];
+
+  data_permissions?: IDataPermissionDetail[];
+
+  db_role?: IUidWithName;
+}
+
+export interface IDBRoleDetailReply {
+  code?: number;
+
+  data?: IDBRoleDetail;
+
+  message?: string;
 }
 
 export interface IDMSProxyTarget {
@@ -288,14 +322,6 @@ export interface IDataObjectInDataPermission {
   table_uid?: string;
 }
 
-export interface IDataObjectService {
-  data_object_service_dns?: string;
-
-  data_object_service_uid?: string;
-
-  data_object_service_user?: string;
-}
-
 export interface IDataObjectSource {
   address?: string;
 
@@ -312,6 +338,12 @@ export interface IDataObjectSource {
   version?: string;
 }
 
+export interface IDataOperationInDataPermission {
+  name?: string;
+
+  uid?: string;
+}
+
 export interface IDataOperationSet {
   name?: string;
 
@@ -320,20 +352,26 @@ export interface IDataOperationSet {
   uid?: string;
 }
 
-export interface IDataOperationSetInDataPermission {
-  name?: string;
-
-  uid?: string;
-}
-
 export interface IDataPermission {
   data_object_uids: string[];
 
-  data_operation_set_uids: string[];
+  data_operation_uids: string[];
+}
+
+export interface IDataPermissionDetail {
+  data_objects?: IDataObjectInDataPermission[];
+
+  data_operations?: IDataOperationInDataPermission[];
 }
 
 export interface IDataPermissionDifferent {
   original_data_permission?: string;
+}
+
+export interface IDataPermissionForRole {
+  data_object_uids: string[];
+
+  data_operation_uids: string[];
 }
 
 export interface IDataPermissionTemplateReply {
@@ -380,6 +418,12 @@ export interface IDiscoveryDBAccountReply {
   message?: string;
 }
 
+export interface IEnumsValue {
+  desc?: string;
+
+  value?: string;
+}
+
 export interface IGenAccessTokenReply {
   code?: number;
 
@@ -394,21 +438,11 @@ export interface IGenericResp {
   message?: string;
 }
 
-export interface IGetAuthorizationReply {
+export interface IGetDBAccountMetaReply {
   code?: number;
 
   data?: {
-    businesses?: string;
-
-    data_permissions?: IGetDataPermissionsInDataPermissionTemplate[];
-
-    db_accounts?: IListDBAccountByAuth[];
-
-    memo?: string;
-
-    permission_user?: string;
-
-    purpose?: string;
+    db_account_metas?: IDBAccountMeta[];
   };
 
   message?: string;
@@ -425,6 +459,8 @@ export interface IGetDBAccountReply {
     data_permissions?: IDBAccountDataPermission[];
 
     db_account_uid?: string;
+
+    db_roles?: IDBRoleDatePermissions[];
 
     db_service?: IUidWithName;
 
@@ -443,7 +479,7 @@ export interface IGetDataPermissionsInDataPermissionTemplate {
 
   data_objects?: IDataObjectInDataPermission[];
 
-  data_operation_sets?: IDataOperationSetInDataPermission[];
+  data_operation_sets?: IDataOperationInDataPermission[];
 
   service_name?: string;
 
@@ -462,6 +498,8 @@ export interface IGetStatement {
   data_permissions?: IDataPermission[];
 
   db_accounts?: IDBAccount[];
+
+  db_roles?: string[];
 
   db_service_uid?: string;
 }
@@ -556,28 +594,6 @@ export interface IIPluginDBService {
   User?: string;
 }
 
-export interface IListAuthorization {
-  businesses?: string;
-
-  data_object_service?: IDataObjectService[];
-
-  data_permission_template_names?: string[];
-
-  expiration?: number;
-
-  last_update_at?: string;
-
-  memo?: string;
-
-  permission_user?: string;
-
-  purpose?: string;
-
-  status?: ListAuthorizationStatusEnum;
-
-  uid?: string;
-}
-
 export interface IListAuthorizationEvent {
   data_permission_templates?: IDataPermissionTemplateReply[];
 
@@ -616,16 +632,6 @@ export interface IListAuthorizationEventsReply {
   total_nums?: number;
 }
 
-export interface IListAuthorizationReply {
-  code?: number;
-
-  data?: IListAuthorization[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
 export interface IListBusinessFromDBServiceReply {
   code?: number;
 
@@ -658,32 +664,6 @@ export interface IListDBAccount {
   status?: ListDBAccountStatusEnum;
 }
 
-export interface IListDBAccountByAuth {
-  connection_cmd?: string;
-
-  data_object_service_dns?: string;
-
-  explanation?: string;
-
-  hostname?: string;
-
-  password?: string;
-
-  uid?: string;
-
-  user?: string;
-}
-
-export interface IListDBAccountByAuthReply {
-  code?: number;
-
-  data?: IListDBAccountByAuth[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
 export interface IListDBAccountReply {
   code?: number;
 
@@ -692,6 +672,38 @@ export interface IListDBAccountReply {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IListDBRole {
+  child_roles?: IUidWithName[];
+
+  create_user?: IUidWithName;
+
+  data_permissions?: string[];
+
+  db_role?: IUidWithName;
+}
+
+export interface IListDBRoleReply {
+  code?: number;
+
+  data?: IListDBRole[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListDBRoleTips {
+  db_role?: IUidWithName;
+}
+
+export interface IListDBRoleTipsReply {
+  code?: number;
+
+  data?: IListDBRoleTips[];
+
+  message?: string;
 }
 
 export interface IListDBService {
@@ -972,16 +984,6 @@ export interface IListTableReply {
   total_nums?: number;
 }
 
-export interface IListTipsByAuthorizationKeyReply {
-  code?: number;
-
-  data?: {
-    tips?: string[];
-  };
-
-  message?: string;
-}
-
 export interface IListUser {
   authentication_type?: ListUserAuthenticationTypeEnum;
 
@@ -1053,16 +1055,30 @@ export interface IOperateDataResourceHandleReply {
 export interface IOperation {
   name?: string;
 
+  scope?: OperationScopeEnum[];
+
   uid?: string;
 }
 
 export interface IOperationInfo {
-  data_object_types?: string[];
+  data_object_types?: OperationInfoDataObjectTypesEnum[];
 
   data_operations?: IOperation[];
 
   db_type?: OperationInfoDbTypeEnum;
 }
+
+export interface IParam {
+  desc?: string;
+
+  key?: string;
+
+  type?: string;
+
+  value?: string;
+}
+
+export type IParams = IParam[];
 
 export interface IPasswordConfig {
   db_account_password?: string;
@@ -1192,22 +1208,10 @@ export interface IUidWithName {
   uid?: string;
 }
 
-export interface IUpdateAuthorization {
-  data_permission_template_uid?: string;
-
-  renewal_effective_time_day?: number;
-
-  update_authorization_user?: IUpdateAuthorizationUser;
-}
-
-export interface IUpdateAuthorizationUser {
-  db_account_password?: string;
-
-  permission_user_uid?: string;
-}
-
 export interface IUpdateDBAccount {
-  data_permissions?: IDataPermission[];
+  data_permissions?: IDataPermissionForRole[];
+
+  db_roles?: string[];
 
   explanation?: string;
 
@@ -1220,6 +1224,18 @@ export interface IUpdateDBAccount {
   platform_managed?: IPlatformManaged;
 
   renewal_effective_time_day?: number;
+}
+
+export interface IUpdateDBRole {
+  child_roles?: string[];
+
+  data_permissions?: IDataPermission[];
+}
+
+export interface IUpdateDBRoleReply {
+  code?: number;
+
+  message?: string;
 }
 
 export interface IUpdateDataObjectSource {

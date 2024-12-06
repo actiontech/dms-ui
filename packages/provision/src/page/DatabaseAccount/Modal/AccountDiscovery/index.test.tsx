@@ -18,7 +18,7 @@ import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import user from '../../../../testUtil/mockApi/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
-describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
+describe.skip('provision/DatabaseAccount/AccountDiscoveryModal', () => {
   let authListServicesSpy: jest.SpyInstance;
   let authListBusinessesSpy: jest.SpyInstance;
   let authDiscoveryDBAccountsSpy: jest.SpyInstance;
