@@ -1291,7 +1291,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                   SQL备份配置
                 </h1>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1348,6 +1348,125 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 1`
                               />
                             </span>
                           </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="backupMaxRows"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            回滚行数限制
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            当预计影响行数超过指定值则不回滚
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                          >
+                            <div
+                              class="ant-input-number-handler-wrap"
+                            >
+                              <span
+                                aria-disabled="false"
+                                aria-label="Increase Value"
+                                class="ant-input-number-handler ant-input-number-handler-up"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="up"
+                                  class="anticon anticon-up ant-input-number-handler-up-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="up"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-disabled="false"
+                                aria-label="Decrease Value"
+                                class="ant-input-number-handler ant-input-number-handler-down"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-input-number-handler-down-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-input-number-input-wrap"
+                            >
+                              <input
+                                aria-required="true"
+                                aria-valuemin="0"
+                                aria-valuenow="2000"
+                                autocomplete="off"
+                                class="ant-input-number-input"
+                                id="backupMaxRows"
+                                role="spinbutton"
+                                step="1"
+                                value="2000"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2749,7 +2868,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                   SQL备份配置
                 </h1>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2806,6 +2925,125 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 2`
                               />
                             </span>
                           </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="backupMaxRows"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            回滚行数限制
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            当预计影响行数超过指定值则不回滚
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                          >
+                            <div
+                              class="ant-input-number-handler-wrap"
+                            >
+                              <span
+                                aria-disabled="false"
+                                aria-label="Increase Value"
+                                class="ant-input-number-handler ant-input-number-handler-up"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="up"
+                                  class="anticon anticon-up ant-input-number-handler-up-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="up"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-disabled="false"
+                                aria-label="Decrease Value"
+                                class="ant-input-number-handler ant-input-number-handler-down"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-input-number-handler-down-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-input-number-input-wrap"
+                            >
+                              <input
+                                aria-required="true"
+                                aria-valuemin="0"
+                                aria-valuenow="2000"
+                                autocomplete="off"
+                                class="ant-input-number-input"
+                                id="backupMaxRows"
+                                role="spinbutton"
+                                step="1"
+                                value="2000"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -4193,7 +4431,7 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                   SQL备份配置
                 </h1>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4250,6 +4488,125 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                               />
                             </span>
                           </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-required ant-form-item-no-colon"
+                        for="backupMaxRows"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            回滚行数限制
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            当预计影响行数超过指定值则不回滚
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                          >
+                            <div
+                              class="ant-input-number-handler-wrap"
+                            >
+                              <span
+                                aria-disabled="false"
+                                aria-label="Increase Value"
+                                class="ant-input-number-handler ant-input-number-handler-up"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="up"
+                                  class="anticon anticon-up ant-input-number-handler-up-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="up"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-disabled="false"
+                                aria-label="Decrease Value"
+                                class="ant-input-number-handler ant-input-number-handler-down"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-input-number-handler-down-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-input-number-input-wrap"
+                            >
+                              <input
+                                aria-required="true"
+                                aria-valuemin="0"
+                                aria-valuenow="2000"
+                                autocomplete="off"
+                                class="ant-input-number-input"
+                                id="backupMaxRows"
+                                role="spinbutton"
+                                step="1"
+                                value="2000"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -5540,82 +5897,6 @@ exports[`page/DataSource/UpdateDataSource render edit database snap 1`] = `
                               </span>
                             </span>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </section>
-            <section
-              class="css-1114g56"
-            >
-              <section
-                class="css-bspaai"
-              >
-                <h1
-                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
-                >
-                  SQL备份配置
-                </h1>
-                <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
-                >
-                  <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                  >
-                    <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-no-colon"
-                        for="enableBackup"
-                        title=""
-                      >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            是否开启数据源上的SQL备份能力
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            开启后，数据源上创建的工单将默认开启备份能力
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                            id="enableBackup"
-                            role="switch"
-                            type="button"
-                          >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
-                            >
-                              <span
-                                class="ant-switch-inner-checked"
-                              />
-                              <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -7201,82 +7482,6 @@ exports[`page/DataSource/UpdateDataSource render prepare api 1`] = `
                 <h1
                   class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
                 >
-                  SQL备份配置
-                </h1>
-                <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
-                >
-                  <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                  >
-                    <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-no-colon"
-                        for="enableBackup"
-                        title=""
-                      >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            是否开启数据源上的SQL备份能力
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            开启后，数据源上创建的工单将默认开启备份能力
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
-                            id="enableBackup"
-                            role="switch"
-                            type="button"
-                          >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
-                            >
-                              <span
-                                class="ant-switch-inner-checked"
-                              />
-                              <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </section>
-            <section
-              class="css-1114g56"
-            >
-              <section
-                class="css-bspaai"
-              >
-                <h1
-                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
-                >
                   数据脱敏配置
                 </h1>
                 <div
@@ -8443,82 +8648,6 @@ exports[`page/DataSource/UpdateDataSource return list by click return button 1`]
                               </span>
                             </span>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </section>
-            <section
-              class="css-1114g56"
-            >
-              <section
-                class="css-bspaai"
-              >
-                <h1
-                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
-                >
-                  SQL备份配置
-                </h1>
-                <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
-                >
-                  <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-                  >
-                    <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
-                    >
-                      <label
-                        class="ant-form-item-no-colon"
-                        for="enableBackup"
-                        title=""
-                      >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            是否开启数据源上的SQL备份能力
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            开启后，数据源上创建的工单将默认开启备份能力
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <button
-                            aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
-                            id="enableBackup"
-                            role="switch"
-                            type="button"
-                          >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
-                            >
-                              <span
-                                class="ant-switch-inner-checked"
-                              />
-                              <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
                         </div>
                       </div>
                     </div>
