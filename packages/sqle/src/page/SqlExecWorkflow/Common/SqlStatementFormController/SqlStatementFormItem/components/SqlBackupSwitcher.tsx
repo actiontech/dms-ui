@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { EmptyBox, BasicInputNumber, BasicToolTips } from '@actiontech/shared';
-import { Form, Space } from 'antd';
+import { Form } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { SqlBackupSwitcherProps } from './index.type';
 import { CreateAuditTasksGroupReqV1ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -69,11 +69,16 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
   useEffect(() => {
     if (isAtFormStep && !isAuditing.value && !isCloneMode) {
       const currentEnableBackup = getInstanceEnableBackup();
-      form.setFieldValue([fieldPrefixPath, 'backup'], currentEnableBackup);
-      form.setFieldValue(
-        [fieldPrefixPath, 'backupMaxRows'],
-        getInstanceBackupMaxRows()
-      );
+      if (!form.isFieldTouched([fieldPrefixPath, 'backup'])) {
+        form.setFieldValue([fieldPrefixPath, 'backup'], currentEnableBackup);
+      }
+
+      if (!form.isFieldTouched([fieldPrefixPath, 'backupMaxRows'])) {
+        form.setFieldValue(
+          [fieldPrefixPath, 'backupMaxRows'],
+          getInstanceBackupMaxRows()
+        );
+      }
     }
   }, [
     fieldPrefixPath,
@@ -129,21 +134,19 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
           className="has-label-tip"
           label={
             <CustomLabelContent
-              title={t('execWorkflow.create.form.sqlInfo.backupMaxRowsLimit')}
-              tips={
-                <Space>
-                  <BasicToolTips
-                    title={t(
-                      'execWorkflow.create.form.sqlInfo.backupMaxRowsLimitTooltips'
-                    )}
-                    suffixIcon={<InfoCircleOutlined width={14} height={14} />}
-                  >
-                    {t(
-                      'execWorkflow.create.form.sqlInfo.backupMaxRowsLimitTips'
-                    )}
-                  </BasicToolTips>
-                </Space>
+              title={
+                <BasicToolTips
+                  title={t(
+                    'execWorkflow.create.form.sqlInfo.backupMaxRowsLimitTooltips'
+                  )}
+                  suffixIcon={<InfoCircleOutlined width={14} height={14} />}
+                >
+                  {t('execWorkflow.create.form.sqlInfo.backupMaxRowsLimit')}
+                </BasicToolTips>
               }
+              tips={t(
+                'execWorkflow.create.form.sqlInfo.backupMaxRowsLimitTips'
+              )}
             />
           }
           labelCol={{ span: 14 }}
