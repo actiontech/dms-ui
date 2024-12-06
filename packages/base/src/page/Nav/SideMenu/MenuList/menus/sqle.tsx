@@ -1,3 +1,5 @@
+// @warn/cli/create-dms-page
+
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
 import { t } from '../../../../../locale';
 import { GenerateMenuItemType } from './index.type';

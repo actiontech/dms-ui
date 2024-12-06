@@ -1,6 +1,7 @@
+// @warn/cli/create-dms-page
+
 import { PermissionsConstantType } from '@actiontech/shared/lib/global';
 import { ItemType } from 'antd/es/menu/hooks/useItems';
-import { IProvisionMenuStructTreeKey } from 'provision/src/router/index.type';
 
 export type CustomMenuItemType =
   | (ItemType & {
@@ -22,13 +23,13 @@ export type MenuStructTreeType = Array<
 
 export type GenerateMenuItemType = (projectID: string) => CustomMenuItemType;
 
-// todo 需要在 dms-ui 调整 sqle 的
-export type MenuStructTreeKey =
+type BaseMenuStructTreeKey =
   | 'instance'
   | 'member'
   | 'cloud-beaver'
-  | 'data-export'
-  | 'data-mask-rule'
+  | 'data-export';
+
+type SqleMenuStructTreeKey =
   | 'project-overview'
   | 'sql-audit'
   | 'plugin-audit'
@@ -44,5 +45,19 @@ export type MenuStructTreeKey =
   | 'push-rule-configuration'
   | 'pipeline-configuration'
   | 'version-management'
-  | 'data-source-comparison'
-  | IProvisionMenuStructTreeKey;
+  | 'data-source-comparison';
+
+type ProvisionMenuStructTreeKey =
+  | 'database-role'
+  | 'auth-audit'
+  | 'template-audit'
+  | 'account-management'
+  | 'password-management';
+
+type DMSMenuStructTreeKey = 'data-mask-rule';
+
+export type MenuStructTreeKey =
+  | BaseMenuStructTreeKey
+  | SqleMenuStructTreeKey
+  | ProvisionMenuStructTreeKey
+  | DMSMenuStructTreeKey;

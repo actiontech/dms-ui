@@ -1,3 +1,4 @@
+// @warn/cli/create-dms-page
 import { t } from '../../../../../locale';
 import { MenuStructTreeType } from './index.type';
 import { genMenuItemsWithMenuStructTree } from './common';
