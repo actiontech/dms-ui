@@ -323,6 +323,9 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('.backup-switcher'));
     await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('回滚行数限制')).toBeInTheDocument();
+    expect(getBySelector('.ant-input-number-input')).toBeDisabled();
+    expect(getBySelector('.ant-input-number-input')).toHaveValue('1000');
     fireEvent.click(screen.getByText('SQL美化'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestInstance).toHaveBeenCalledTimes(2);
@@ -346,6 +349,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
       enable_backup: true,
+      backup_max_rows: 1000,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
@@ -405,7 +409,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       target: { value: 'select * from user' }
     });
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('.backup-switcher'));
+    expect(screen.queryByText('是否选择开启备份')).not.toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(0));
     // audit btn
     await act(async () => {
@@ -422,8 +426,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
-      sql: 'select * from user',
-      enable_backup: true
+      sql: 'select * from user'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
@@ -461,8 +464,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       input_sql_file: sqlFile,
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
-      project_name: 'default',
-      enable_backup: true
+      project_name: 'default'
     });
 
     // 提交工单
@@ -555,8 +557,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
-      sql: 'select * from user',
-      enable_backup: false
+      sql: 'select * from user'
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -645,8 +646,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_name: 'mysql-2',
       instance_schema: 'sqle',
       project_name: 'default',
-      sql: 'select * from user',
-      enable_backup: false
+      sql: 'select * from user'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);
@@ -858,7 +858,6 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(auditTaskGroupId).toHaveBeenCalledTimes(1);
     expect(auditTaskGroupId).toHaveBeenCalledWith({
-      enable_backup: false,
       task_group_id: 99,
       sql: 'select * from user'
     });
@@ -942,6 +941,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
     expect(auditTaskGroupId).toHaveBeenCalledWith({
       task_group_id: 99,
       enable_backup: true,
+      backup_max_rows: 1000,
       sql: formatterSQL('select * from user.list join in all', 'MySQL')
     });
 
@@ -1119,7 +1119,8 @@ describe('sqle/SqlExecWorkflow/Create', () => {
       instance_schema: 'test',
       project_name: 'default',
       sql: 'SELECT * ',
-      enable_backup: true
+      enable_backup: true,
+      backup_max_rows: 1000
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAuditTaskSQLsSpy).toHaveBeenCalledTimes(1);

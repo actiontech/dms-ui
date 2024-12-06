@@ -6,10 +6,12 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { BackupStrategyOptions } from './index.data';
 import { SwitchSqlBackupStrategyModalProps } from './index.type';
+import { useMemo } from 'react';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const SwitchSqlBackupStrategyModal: React.FC<
   SwitchSqlBackupStrategyModalProps
-> = ({ open, onCancel, taskID, sqlID, refresh }) => {
+> = ({ open, onCancel, taskID, sqlID, refresh, supportedBackupPolicies }) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -42,6 +44,14 @@ const SwitchSqlBackupStrategyModal: React.FC<
     onCancel();
   };
 
+  const options = useMemo(() => {
+    return BackupStrategyOptions.filter((i) =>
+      supportedBackupPolicies?.includes(
+        i.value as unknown as InstanceTipResV1SupportedBackupStrategyEnum
+      )
+    );
+  }, [supportedBackupPolicies]);
+
   return (
     <BasicModal
       open={open}
@@ -60,7 +70,7 @@ const SwitchSqlBackupStrategyModal: React.FC<
       {contextHolder}
       <Form form={form} layout="vertical">
         <Form.Item name="strategy" rules={[{ required: true }]}>
-          <BasicSelect options={BackupStrategyOptions} />
+          <BasicSelect options={options} />
         </Form.Item>
       </Form>
     </BasicModal>

@@ -104,6 +104,16 @@ export enum AuditTaskResV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum BackupSqlDataBackupStatusEnum {
+  'waiting_for_execution' = 'waiting_for_execution',
+
+  'executing' = 'executing',
+
+  'failed' = 'failed',
+
+  'succeed' = 'succeed'
+}
+
 export enum BackupSqlDataBackupStrategyEnum {
   'none' = 'none',
 
@@ -314,6 +324,16 @@ export enum InstanceAuditPlanResV1ActiveStatusEnum {
   'normal' = 'normal',
 
   'disabled' = 'disabled'
+}
+
+export enum InstanceTipResV1SupportedBackupStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'original_row' = 'original_row'
 }
 
 export enum ModuleRedDotModuleNameEnum {
@@ -720,6 +740,16 @@ export enum AuditResDataV2AuditLevelEnum {
   'error' = 'error',
 
   'UNKNOWN' = ''
+}
+
+export enum AuditTaskSQLResV2BackupStatusEnum {
+  'waiting_for_execution' = 'waiting_for_execution',
+
+  'executing' = 'executing',
+
+  'failed' = 'failed',
+
+  'succeed' = 'succeed'
 }
 
 export enum AuditTaskSQLResV2BackupStrategyEnum {

@@ -21,6 +21,7 @@ import {
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import workflowTemplate from '../../../../../../testUtils/mockApi/workflowTemplate';
+import instance from '../../../../../../testUtils/mockApi/instance';
 
 jest.mock('react-redux', () => {
   return {
@@ -95,6 +96,7 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
     getAuditTaskSQLsSpy = execWorkflow.getAuditTaskSQLs();
     getWorkflowTemplateSpy = workflowTemplate.getWorkflowTemplate();
     updateWorkflowSpy = execWorkflow.updateWorkflow();
+    instance.getInstanceTipList();
   });
 
   afterEach(() => {
