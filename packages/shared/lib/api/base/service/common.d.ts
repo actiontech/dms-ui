@@ -415,6 +415,8 @@ export interface IComponentNameWithVersion {
 export interface IDBService {
   additional_params?: IAdditionalParam[];
 
+  backup_max_rows?: number;
+
   business: string;
 
   db_type: string;
@@ -1093,6 +1095,8 @@ export interface IListDBService {
 
   audit_plan_types?: IAuditPlanTypes[];
 
+  backup_max_rows?: number;
+
   business?: string;
 
   db_type?: string;
@@ -1265,6 +1269,8 @@ export interface IListDataExportWorkflowsReply {
 }
 
 export interface IListGlobalDBService {
+  backup_max_rows?: number;
+
   business?: string;
 
   db_type?: string;
@@ -1932,6 +1938,8 @@ export interface IUpdateCurrentUserReq {
 
 export interface IUpdateDBService {
   additional_params?: IAdditionalParam[];
+
+  backup_max_rows?: number;
 
   business: string;
 
