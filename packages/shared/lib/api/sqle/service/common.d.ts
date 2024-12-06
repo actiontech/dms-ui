@@ -1928,8 +1928,6 @@ export interface ISystemVariablesResV1 {
   operation_record_expired_hours?: number;
 
   url?: string;
-
-  workflow_expired_hours?: number;
 }
 
 export interface ITable {
@@ -2152,8 +2150,6 @@ export interface IUpdateSystemVariablesReqV1 {
   operation_record_expired_hours?: number;
 
   url?: string;
-
-  workflow_expired_hours?: number;
 }
 
 export interface IUpdateWechatConfigurationReqV1 {
