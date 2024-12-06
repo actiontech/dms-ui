@@ -14,7 +14,10 @@ import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../../data/ModalName';
-import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  AuditTaskSQLResV2BackupStrategyEnum,
+  InstanceTipResV1SupportedBackupStrategyEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 
@@ -326,7 +329,11 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       taskID: 'taskID',
       projectID: 'projectID',
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal,
-      allowSwitchBackupPolicy: true
+      allowSwitchBackupPolicy: true,
+      supportedBackupPolicies: [
+        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql,
+        InstanceTipResV1SupportedBackupStrategyEnum.original_row
+      ]
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -338,6 +345,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     expect(baseElement).toMatchSnapshot();
     fireEvent.mouseDown(getBySelector('#strategy'));
     await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.queryByText('自行手工备份回滚')).not.toBeInTheDocument();
     fireEvent.click(screen.getByText('基于行级备份回滚'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('确 认'));
@@ -359,7 +367,10 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       taskID: 'taskID',
       projectID: 'projectID',
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal,
-      allowSwitchBackupPolicy: true
+      allowSwitchBackupPolicy: true,
+      supportedBackupPolicies: [
+        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+      ]
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(2);

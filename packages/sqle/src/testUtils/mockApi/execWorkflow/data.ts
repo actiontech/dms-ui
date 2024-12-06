@@ -20,7 +20,8 @@ import {
   WorkflowDetailResV1StatusEnum,
   WorkflowDetailResV1CurrentStepTypeEnum,
   BackupSqlDataBackupStrategyEnum,
-  AssociatedRollbackWorkflowStatusEnum
+  AssociatedRollbackWorkflowStatusEnum,
+  BackupSqlDataBackupStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const WorkflowListData = [
@@ -103,7 +104,8 @@ export const AuditTaskResData: IAuditTaskResV1[] = [
     status: AuditTaskResV1StatusEnum.exec_failed,
     task_id: 1,
     exec_mode: 'sqls',
-    enable_backup: true
+    enable_backup: true,
+    backup_max_rows: 2000
   },
   {
     audit_level: AuditTaskResV1AuditLevelEnum.warn,
@@ -537,6 +539,8 @@ export const mockRollbackSqlData: IBackupSqlData[] = [
   {
     backup_sqls: ['SELECT 1;'],
     backup_strategy: BackupSqlDataBackupStrategyEnum.reverse_sql,
+    backup_status: BackupSqlDataBackupStatusEnum.succeed,
+    backup_result: '备份成功',
     description: '',
     exec_order: 1,
     exec_sql_id: 1,
@@ -549,6 +553,8 @@ export const mockRollbackSqlData: IBackupSqlData[] = [
   {
     backup_sqls: ['SELECT 1;'],
     backup_strategy: BackupSqlDataBackupStrategyEnum.original_row,
+    backup_status: BackupSqlDataBackupStatusEnum.failed,
+    backup_result: '备份失败',
     description: '',
     exec_order: 2,
     exec_sql_id: 2,
