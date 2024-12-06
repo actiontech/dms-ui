@@ -140,7 +140,7 @@ describe('page/Audit/ServiceAudit', () => {
     expect(serviceListFn).toHaveBeenCalledTimes(1);
     expect(serviceListFn).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 999,
+      page_size: 9999,
       filter_by_namespace: projectID
     });
     expect(businessListFn).toHaveBeenCalledTimes(1);

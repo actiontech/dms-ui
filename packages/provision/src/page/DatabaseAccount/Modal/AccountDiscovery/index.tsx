@@ -11,6 +11,7 @@ import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import DataBaseInfoField from './DataBaseInfoField';
 import { AccountDiscoveryFormType } from '../../index.type';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
+import { omit } from 'lodash';
 
 const AccountDiscoveryModal: React.FC = () => {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ const AccountDiscoveryModal: React.FC = () => {
       .AuthSyncDBAccount({
         project_uid: projectID,
         db_service_uid: values.service,
-        accounts: values.account
+        accounts: values.account.map((i) => omit(i, ['id']))
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

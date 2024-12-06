@@ -81,7 +81,7 @@ export const ROUTE_PATHS = {
       index: {
         prefix: '/project',
         path: ':projectID/db-services',
-        query: 'address'
+        query: 'address&name'
       },
       create: {
         prefix: '/project/:projectID/db-services',

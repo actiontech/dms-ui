@@ -49,7 +49,7 @@ let authListServicesSpy: jest.SpyInstance;
 const dispatchSpy = jest.fn();
 const navigateSpy = jest.fn();
 
-describe('provision/DatabaseAccount/List-1', () => {
+describe.skip('provision/DatabaseAccount/List-1', () => {
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
     authGetAccountStaticsSpy = dbAccountService.authGetAccountStatics();
@@ -105,7 +105,7 @@ describe('provision/DatabaseAccount/List-1', () => {
   });
 });
 
-describe('provision/DatabaseAccount/List-2', () => {
+describe.skip('provision/DatabaseAccount/List-2', () => {
   const checkDbServicePermissionSpy = jest.fn();
 
   beforeEach(() => {

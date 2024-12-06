@@ -4,7 +4,9 @@ import {
   Copy,
   BasicTag,
   AvatarCom,
-  EmptyBox
+  EmptyBox,
+  BasicToolTips,
+  BasicTypographyEllipsis
 } from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import { useTranslation } from 'react-i18next';
@@ -18,14 +20,12 @@ import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_ac
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Space, Spin, message } from 'antd';
-import {
-  AccountDetailDrawerStyleWrapper,
-  OriginalPermissionStyleWrapper
-} from '../../style';
+import { AccountDetailDrawerStyleWrapper } from '../../style';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import AccountInfoItem from '../../components/AccountInfoItem';
 import json2md, { DataObject } from 'json2md';
 import { accountDetailCustomConfig } from './accountDetailCustomConfig';
+import { IDBAccountDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
 
 const DatabaseAccountDetailModal = () => {
   const { t } = useTranslation();
@@ -70,23 +70,20 @@ const DatabaseAccountDetailModal = () => {
         let rows: string[][];
         jsonData.push({ blockquote: `${item.prefix}:` });
         if (item.key === 'data_permissions') {
-          rows =
-            data?.data_permissions?.map((permission) => {
-              return [
-                data.db_service?.name ?? '',
-                permission.data_objects?.map((obj) => obj.name).join('，') ??
-                  '',
-                permission.data_operation_sets
-                  ?.map((operation) => operation.name)
-                  .join('，') ?? ''
-              ];
-            }) ?? [];
+          rows = [
+            [
+              data?.db_service?.name ?? '',
+              data?.db_roles?.map((role) => role.name ?? '').join('，') ?? '',
+              data?.data_permissions
+                ?.flatMap((permission) => generatePermissionLabel(permission)!)
+                .join('，') ?? ''
+            ]
+          ];
         } else {
           rows = [
             [
               data?.account_info?.address ?? '',
               data?.account_info?.user ?? '',
-              data?.account_info?.hostname ?? '',
               data?.account_info?.password ?? '',
               data?.account_info?.explanation ?? ''
             ]
@@ -102,6 +99,16 @@ const DatabaseAccountDetailModal = () => {
     });
     Copy.copyTextByTextarea(json2md(jsonData));
     messageApi.success(t('common.copySuccess'));
+  };
+
+  const generatePermissionLabel = (permission: IDBAccountDataPermission) => {
+    if (permission.data_objects) {
+      return `${permission.data_operations
+        ?.map((v) => v.name)
+        .join(',')} ON ${permission.data_objects.map((v) => v.name).join(',')}`;
+    }
+
+    return permission.data_operations?.map((v) => v.name).join(',');
   };
 
   return (
@@ -132,10 +139,16 @@ const DatabaseAccountDetailModal = () => {
               label={t('databaseAccount.create.form.username')}
               value={data?.account_info?.user}
             />
-            <AccountInfoItem
-              label={t('databaseAccount.create.form.hostname')}
-              value={data?.account_info?.hostname}
-            />
+            {data?.account_info?.additional_params?.map((item) => {
+              return (
+                <AccountInfoItem
+                  key={item.key}
+                  value={item.value ?? '-'}
+                  label={item.desc}
+                />
+              );
+            })}
+
             <AccountInfoItem label={t('databaseAccount.create.form.password')}>
               <EmptyBox if={!!data?.account_info?.password} defaultNode="-">
                 <TokenCom text={data?.account_info?.password ?? ''} />
@@ -175,51 +188,54 @@ const DatabaseAccountDetailModal = () => {
         </div>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
-            {t('databaseAccount.create.permissionInfo')}
+            {t('databaseAccount.create.privilegeInfo')}
           </div>
-          {data?.data_permissions?.map((permission, index) => (
-            <div className="audit-card" key={index}>
-              <AccountInfoItem
-                label={t('databaseAccount.discovery.service')}
-                value={data.db_service?.name}
-              />
-              <AccountInfoItem label={t('databaseAccount.create.form.objects')}>
-                {permission.data_objects?.map((obj) => {
-                  return (
-                    <BasicTag key={`${obj.database_uid}${obj.table_uid}`}>
-                      {obj.name}
-                    </BasicTag>
-                  );
-                })}
-              </AccountInfoItem>
-              <AccountInfoItem
-                label={t('databaseAccount.create.form.operation')}
-              >
-                {permission.data_operation_sets?.map((operation) => {
-                  return (
-                    <BasicTag key={operation.uid}>{operation.name}</BasicTag>
-                  );
-                })}
-              </AccountInfoItem>
-              <EmptyBox
-                if={
-                  !!permission.data_permission_different
-                    ?.original_data_permission
-                }
-              >
-                <AccountInfoItem
-                  label={t('databaseAccount.detail.originPermission')}
+          <div className="audit-card">
+            <AccountInfoItem label={t('databaseAccount.detail.role')}>
+              {data?.db_roles?.map((item) => (
+                <BasicToolTips
+                  key={item.uid}
+                  title={item.DBAccountDataPermission?.map(
+                    (dataPermission, index) => (
+                      <BasicTag key={index} style={{ maxWidth: 190 }}>
+                        <BasicTypographyEllipsis
+                          copyable={false}
+                          tooltipsMaxWidth={220}
+                          textCont={
+                            generatePermissionLabel(dataPermission) ?? ''
+                          }
+                        />
+                      </BasicTag>
+                    )
+                  )}
                 >
-                  <OriginalPermissionStyleWrapper>
-                    {
-                      permission.data_permission_different
-                        ?.original_data_permission
+                  <BasicTag>{item.name}</BasicTag>
+                </BasicToolTips>
+              ))}
+            </AccountInfoItem>
+            <AccountInfoItem label={t('databaseAccount.detail.privilege')}>
+              {data?.data_permissions?.map((item, index) => {
+                return (
+                  <EmptyBox
+                    key={index}
+                    if={
+                      !!item &&
+                      item.data_operations &&
+                      item.data_operations.length > 0
                     }
-                  </OriginalPermissionStyleWrapper>
-                </AccountInfoItem>
-              </EmptyBox>
-            </div>
-          ))}
+                  >
+                    <BasicTag style={{ maxWidth: 190 }}>
+                      <BasicTypographyEllipsis
+                        copyable={false}
+                        tooltipsMaxWidth={220}
+                        textCont={generatePermissionLabel(item) ?? ''}
+                      />
+                    </BasicTag>
+                  </EmptyBox>
+                );
+              })}
+            </AccountInfoItem>
+          </div>
         </div>
         <div className="audit-info-wrapper">
           <div className="audit-info-title">
@@ -228,11 +244,18 @@ const DatabaseAccountDetailModal = () => {
           <div className="audit-card">
             <AccountInfoItem label={t('databaseAccount.detail.authUser')}>
               <EmptyBox if={!!data?.auth_users?.length} defaultNode="-">
-                {data?.auth_users?.map((user, index) => {
-                  return (
-                    <AvatarCom key={index} size="small" name={user ?? ''} />
-                  );
-                })}
+                <div className="flex-display">
+                  {data?.auth_users?.map((user, index) => {
+                    return (
+                      <AvatarCom
+                        style={{ display: 'inline-block', marginRight: 12 }}
+                        key={index}
+                        size="small"
+                        name={user ?? ''}
+                      />
+                    );
+                  })}
+                </div>
               </EmptyBox>
             </AccountInfoItem>
           </div>

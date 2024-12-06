@@ -2,19 +2,15 @@ import {
   AuditListAuthorizationEventsOrderByEnum,
   AuditListDataObjectServiceEventsOrderByEnum,
   AuditListDataPermissionTemplateEventsOrderByEnum,
-  AuthListAuthorizationOrderByEnum,
-  AuthListAuthorizationFilterByStatusEnum,
-  ListTipsByAuthorizationKeyKeyEnum,
-  AuthListDBAccountByAuthorizationOrderByEnum,
   AuthListDataObjectSourcesOrderByEnum,
   AuthListDataOperationSetsOrderByEnum,
   AuthListDataOperationSetsFilterByDbTypeEnum,
-  AuthListDataPermissionTemplateOrderByEnum,
   OperateDataResourceHandleDataResourceTypeEnum,
   OperateDataResourceHandleOperationTypeEnum,
   OperateDataResourceHandleOperationTimingEnum,
   AuthListDatabaseOrderByEnum,
   AuthListOperationsOrderByEnum,
+  AuthListOperationsDbTypeEnum,
   AuthListServiceOrderByEnum,
   AuthListTableOrderByEnum
 } from './index.enum';
@@ -23,21 +19,13 @@ import {
   IListAuthorizationEventsReply,
   IListDataObjectServiceEventsReply,
   IListDataPermissionTemplateEventsReply,
-  IListAuthorizationReply,
-  IAddAuthorization,
-  IAddAuthorizationReply,
-  IListTipsByAuthorizationKeyReply,
-  IGetAuthorizationReply,
-  IUpdateAuthorization,
-  IGenericResp,
-  IListDBAccountByAuthReply,
   IListDataObjectSourcesReply,
   IAddDataObjectSource,
   IAddDataObjectSourceReply,
   IUpdateDataObjectSource,
+  IGenericResp,
   IDelDataObjectSource,
   IListDataOperationSetsReply,
-  IListDataPermissionTemplateReply,
   IAddDataPermissionTemplate,
   IAddDataPermissionTemplateReply,
   IUpdateDataPermissionTemplate,
@@ -137,87 +125,6 @@ export interface IAuditListDataPermissionTemplateEventsParams {
 export interface IAuditListDataPermissionTemplateEventsReturn
   extends IListDataPermissionTemplateEventsReply {}
 
-export interface IAuthListAuthorizationParams {
-  page_size: number;
-
-  page_index?: number;
-
-  order_by?: AuthListAuthorizationOrderByEnum;
-
-  filter_by_purpose?: string;
-
-  filter_by_business?: string;
-
-  filter_by_status?: AuthListAuthorizationFilterByStatusEnum;
-
-  filter_by_data_object_service_dns?: string;
-
-  keyword?: string;
-
-  filter_by_namespace_uid: string;
-}
-
-export interface IAuthListAuthorizationReturn extends IListAuthorizationReply {}
-
-export interface IAuthAddAuthorizationParams {
-  authorization?: IAddAuthorization;
-}
-
-export interface IAuthAddAuthorizationReturn extends IAddAuthorizationReply {}
-
-export interface IListTipsByAuthorizationKeyParams {
-  key?: ListTipsByAuthorizationKeyKeyEnum;
-}
-
-export interface IListTipsByAuthorizationKeyReturn
-  extends IListTipsByAuthorizationKeyReply {}
-
-export interface IAuthGetAuthorizationParams {
-  authorization_uid: string;
-}
-
-export interface IAuthGetAuthorizationReturn extends IGetAuthorizationReply {}
-
-export interface IAuthUpdateAuthorizationParams {
-  authorization_uid: string;
-
-  authorization?: IUpdateAuthorization;
-}
-
-export interface IAuthUpdateAuthorizationReturn extends IGenericResp {}
-
-export interface IAuthDelAuthorizationParams {
-  authorization_uid: string;
-}
-
-export interface IAuthDelAuthorizationReturn extends IGenericResp {}
-
-export interface IAuthAddDataPermissionTemplateToAuthorizationParams {
-  authorization_uid: string;
-
-  data_permission_template_uid: string;
-
-  effective_time_day?: number;
-}
-
-export interface IAuthAddDataPermissionTemplateToAuthorizationReturn
-  extends IGenericResp {}
-
-export interface IAuthListDBAccountByAuthorizationParams {
-  authorization_uid: string;
-
-  page_size: number;
-
-  page_index?: number;
-
-  order_by?: AuthListDBAccountByAuthorizationOrderByEnum;
-
-  keyword?: string;
-}
-
-export interface IAuthListDBAccountByAuthorizationReturn
-  extends IListDBAccountByAuthReply {}
-
 export interface IAuthListDataObjectSourcesParams {
   page_size: number;
 
@@ -279,23 +186,6 @@ export interface IAuthListDataOperationSetsParams {
 export interface IAuthListDataOperationSetsReturn
   extends IListDataOperationSetsReply {}
 
-export interface IAuthListDataPermissionTemplateParams {
-  page_size: number;
-
-  page_index?: number;
-
-  order_by?: AuthListDataPermissionTemplateOrderByEnum;
-
-  filter_by_name?: string;
-
-  filter_by_namespace_uid: string;
-
-  keyword?: string;
-}
-
-export interface IAuthListDataPermissionTemplateReturn
-  extends IListDataPermissionTemplateReply {}
-
 export interface IAuthAddDataPermissionTemplateParams {
   template?: IAddDataPermissionTemplate;
 }
@@ -311,12 +201,6 @@ export interface IAuthUpdateDataPermissionTemplateParams {
 
 export interface IAuthUpdateDataPermissionTemplateReturn
   extends IUpdateDataPermissionTemplateReply {}
-
-export interface IAuthDelDataPermissionTemplateParams {
-  data_permission_template_uid: string;
-}
-
-export interface IAuthDelDataPermissionTemplateReturn extends IGenericResp {}
 
 export interface IAuthCopyDataPermissionTemplateParams {
   data_permission_template_uid: string;
@@ -384,13 +268,13 @@ export interface IAuthListDatabaseParams {
 export interface IAuthListDatabaseReturn extends IListDatabaseReply {}
 
 export interface IAuthListOperationsParams {
-  data_object_uids?: string[];
-
   page_size: number;
 
   page_index?: number;
 
   order_by?: AuthListOperationsOrderByEnum;
+
+  db_type: AuthListOperationsDbTypeEnum;
 
   keyword?: string;
 }
@@ -496,9 +380,3 @@ export interface IAuthListUserParams {
 }
 
 export interface IAuthListUserReturn extends IListInternalUserReply {}
-
-export interface IDelUserPreCheckParams {
-  user_uid?: string;
-}
-
-export interface IDelUserPreCheckReturn extends IGenericResp {}

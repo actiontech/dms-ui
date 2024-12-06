@@ -108,6 +108,11 @@ exports[`usePermission should match snapshot 1`] = `
         },
       },
     },
+    "PROVISION": {
+      "DATABASE_ROLE": {
+        "CREATE": "action:create_db_auth_role",
+      },
+    },
     "SQLE": {
       "CUSTOM_RULE": {
         "CREATE": "action:create_custom_rule",
@@ -490,6 +495,16 @@ exports[`usePermission should match snapshot 2`] = `
   "action:create_data_export": {
     "id": "action:create_data_export",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:create_db_auth_role": {
+    "id": "action:create_db_auth_role",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
     "type": "action",
   },
   "action:create_modified_sql_workflow": {

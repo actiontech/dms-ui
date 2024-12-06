@@ -402,7 +402,7 @@ const DatabaseAccountList = () => {
         <ActiontechTable
           rowKey="db_account_uid"
           setting={tableSetting}
-          dataSource={data?.list ?? []}
+          dataSource={data?.list}
           pagination={{
             total: data?.total || 0
           }}
