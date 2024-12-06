@@ -295,7 +295,6 @@ class MockSystemApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
-          workflow_expired_hours: 7211,
           url: 'http://demo.com',
           operation_record_expired_hours: 3161
         }
