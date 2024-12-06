@@ -18,6 +18,8 @@ import {
 import workflowTemplate from '../../../../../../testUtils/mockApi/workflowTemplate';
 import instance from '../../../../../../testUtils/mockApi/instance';
 import { useSelector } from 'react-redux';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -34,6 +36,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
   const auditExecPanelTabChangeEventFn = jest.fn();
 
   let requestUpdateWorkflow: jest.SpyInstance;
+  let requestInstanceTipSpy: jest.SpyInstance;
 
   const customRender = (
     customParams: Partial<ModifySqlStatementProps> = {}
@@ -61,11 +64,31 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     jest.useFakeTimers();
     mockUseCurrentProject();
     mockUseCurrentUser();
+    mockUseDbServiceDriver();
     execWorkflow.mockAllApi();
     workflowTemplate.getWorkflowTemplate();
     requestUpdateWorkflow = execWorkflow.updateWorkflow();
     instance.getInstance();
-
+    requestInstanceTipSpy = instance.getInstanceTipList();
+    requestInstanceTipSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            instance_id: '1739531854064652288',
+            instance_name: AuditTaskResData[0].instance_name,
+            instance_type: 'MySQL',
+            workflow_template_id: 1,
+            host: '10.186.62.13',
+            port: '33061',
+            enable_backup: true,
+            supported_backup_strategy: [
+              InstanceTipResV1SupportedBackupStrategyEnum.manual
+            ],
+            backup_max_rows: 1000
+          }
+        ]
+      })
+    );
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         whitelist: { modalStatus: {} },
@@ -140,6 +163,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestInstanceTipSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.input(getBySelector('.custom-monaco-editor'), {
       target: { value: 'SELECT 1;' }
@@ -154,7 +178,8 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
         '0': {
           currentUploadType: 'form_data',
           form_data: 'SELECT 1;',
-          backup: true
+          backup: true,
+          backupMaxRows: 2000
         },
         databaseInfo: [
           {
@@ -168,8 +193,11 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       [
         {
           instanceName: 'instance_name b',
-          key: '1',
-          schemaName: 'instance_schema'
+          key: '0',
+          schemaName: 'instance_schema',
+          allowBackup: true,
+          backupMaxRows: 2000,
+          enableBackup: true
         }
       ]
     );

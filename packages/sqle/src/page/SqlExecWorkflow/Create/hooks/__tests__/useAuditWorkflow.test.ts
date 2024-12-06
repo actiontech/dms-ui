@@ -57,7 +57,8 @@ describe('test useAuditWorkflow', () => {
         sql_file: [sqlFile],
         zip_file: [zipFile],
         file_sort_method: 'desc',
-        backup: true
+        backup: true,
+        backupMaxRows: 2000
       } as SqlStatementFields,
       databaseInfo: [{ instanceName: 'instance1', instanceSchema: 'schema1' }]
     };
@@ -79,7 +80,8 @@ describe('test useAuditWorkflow', () => {
     expect(mockAuditTaskGroupId).toHaveBeenNthCalledWith(1, {
       task_group_id: 99,
       sql: 'SELECT * FROM table',
-      enable_backup: true
+      enable_backup: true,
+      backup_max_rows: 2000
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -191,7 +193,8 @@ describe('test useAuditWorkflow', () => {
         exec_mode: 'sqls',
         form_data: 'SELECT * FROM table',
         currentUploadType: AuditTaskResV1SqlSourceEnum.form_data,
-        backup: true
+        backup: true,
+        backupMaxRows: 2000
       } as SqlStatementFields,
       databaseInfo: [
         { instanceName: 'instance1', instanceSchema: 'schema1' },
@@ -236,7 +239,8 @@ describe('test useAuditWorkflow', () => {
       instance_schema: 'schema3',
       sql: 'SELECT * FROM table',
       exec_mode: 'sqls',
-      enable_backup: true
+      enable_backup: true,
+      backup_max_rows: 2000
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
