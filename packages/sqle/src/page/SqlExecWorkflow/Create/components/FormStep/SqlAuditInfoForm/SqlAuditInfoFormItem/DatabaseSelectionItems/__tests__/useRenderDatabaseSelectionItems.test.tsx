@@ -15,6 +15,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { useSelector } from 'react-redux';
 import * as useCreationMode from '../../../../../../hooks/useCreationMode';
 import { instanceTipsMockData } from '../../../../../../../../../testUtils/mockApi/instance/data';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -77,7 +78,14 @@ describe('test useRenderDatabaseSelectionItems', () => {
         instanceList: [
           {
             instance_name: 'instance1',
-            enable_backup: true
+            enable_backup: true,
+            supported_backup_strategy: [
+              InstanceTipResV1SupportedBackupStrategyEnum.manual,
+              InstanceTipResV1SupportedBackupStrategyEnum.none,
+              InstanceTipResV1SupportedBackupStrategyEnum.original_row,
+              InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+            ],
+            backup_max_rows: 2000
           }
         ]
       })
@@ -104,7 +112,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
     ).toHaveBeenCalledTimes(2);
     expect(
       MockSharedStepDetail.dbSourceInfoCollection.set
-    ).toHaveBeenCalledWith('key1', {
+    ).toHaveBeenNthCalledWith(2, 'key1', {
       instanceName: 'instance1',
       schemaName: undefined,
       getSchemaLoading: true,
@@ -113,7 +121,9 @@ describe('test useRenderDatabaseSelectionItems', () => {
       dbType: undefined,
       testConnectResult: undefined,
       isSupportFileModeExecuteSql: true,
-      enableBackup: true
+      enableBackup: true,
+      allowBackup: true,
+      backupMaxRows: 2000
     });
 
     await act(() => jest.advanceTimersByTime(3000));
@@ -420,7 +430,14 @@ describe('test useRenderDatabaseSelectionItems', () => {
         instanceList: [
           {
             instance_name: 'mysql-1',
-            enable_backup: true
+            enable_backup: true,
+            supported_backup_strategy: [
+              InstanceTipResV1SupportedBackupStrategyEnum.manual,
+              InstanceTipResV1SupportedBackupStrategyEnum.none,
+              InstanceTipResV1SupportedBackupStrategyEnum.original_row,
+              InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+            ],
+            backup_max_rows: 2000
           }
         ]
       })
@@ -439,7 +456,9 @@ describe('test useRenderDatabaseSelectionItems', () => {
       dbType: undefined,
       testConnectResult: undefined,
       isSupportFileModeExecuteSql: true,
-      enableBackup: true
+      enableBackup: true,
+      allowBackup: true,
+      backupMaxRows: 2000
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockGetInstanceSchemas).toHaveBeenCalledTimes(1);

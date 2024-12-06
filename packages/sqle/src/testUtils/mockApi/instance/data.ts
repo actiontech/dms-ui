@@ -1,4 +1,5 @@
 import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const instanceTipsMockData: IInstanceTipResV1[] = [
   {
@@ -8,7 +9,14 @@ export const instanceTipsMockData: IInstanceTipResV1[] = [
     workflow_template_id: 1,
     host: '10.186.62.13',
     port: '33061',
-    enable_backup: true
+    enable_backup: true,
+    supported_backup_strategy: [
+      InstanceTipResV1SupportedBackupStrategyEnum.manual,
+      InstanceTipResV1SupportedBackupStrategyEnum.none,
+      InstanceTipResV1SupportedBackupStrategyEnum.original_row,
+      InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+    ],
+    backup_max_rows: 1000
   },
   {
     instance_id: '1739531942258282496',

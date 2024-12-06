@@ -8,6 +8,7 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  BackupSqlDataBackupStatusEnum,
   BackupSqlDataBackupStrategyEnum,
   BatchUpdateSqlManageReqPriorityEnum,
   BatchUpdateSqlManageReqStatusEnum,
@@ -31,6 +32,7 @@ import {
   HighPriorityConditionResV1TypeEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
+  InstanceTipResV1SupportedBackupStrategyEnum,
   ModuleRedDotModuleNameEnum,
   ObjectDiffResultComparisonResultEnum,
   OperationRecordListStatusEnum,
@@ -80,6 +82,7 @@ import {
   AssociatedRollbackWorkflowStatusEnum,
   AssociatedStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
+  AuditTaskSQLResV2BackupStatusEnum,
   AuditTaskSQLResV2BackupStrategyEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -355,6 +358,8 @@ export interface IAuditTaskResV1 {
 
   backup_conflict_with_instance?: boolean;
 
+  backup_max_rows?: number;
+
   enable_backup?: boolean;
 
   exec_end_time?: string;
@@ -431,7 +436,11 @@ export interface IAuditedSQLCount {
 }
 
 export interface IBackupSqlData {
+  backup_result?: string;
+
   backup_sqls?: string[];
+
+  backup_status?: BackupSqlDataBackupStatusEnum;
 
   backup_strategy?: BackupSqlDataBackupStrategyEnum;
 
@@ -577,6 +586,8 @@ export interface ICreateAuditPlanReqV1 {
 }
 
 export interface ICreateAuditTaskReqV1 {
+  backup_max_rows?: number;
+
   enable_backup?: boolean;
 
   exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
@@ -2095,6 +2106,8 @@ export interface IInstanceTableMeta {
 }
 
 export interface IInstanceTipResV1 {
+  backup_max_rows?: number;
+
   enable_backup?: boolean;
 
   host?: string;
@@ -2106,6 +2119,8 @@ export interface IInstanceTipResV1 {
   instance_type?: string;
 
   port?: string;
+
+  supported_backup_strategy?: InstanceTipResV1SupportedBackupStrategyEnum[];
 
   workflow_template_id?: number;
 }
@@ -3662,6 +3677,10 @@ export interface IAuditTaskSQLResV2 {
   audit_result?: IAuditResult[];
 
   audit_status?: string;
+
+  backup_result?: string;
+
+  backup_status?: AuditTaskSQLResV2BackupStatusEnum;
 
   backup_strategy?: AuditTaskSQLResV2BackupStrategyEnum;
 

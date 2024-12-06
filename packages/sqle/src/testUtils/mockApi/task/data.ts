@@ -1,5 +1,8 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  AuditTaskSQLResV2BackupStrategyEnum,
+  AuditTaskSQLResV2BackupStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const AuditTaskSQLsMockData: IAuditTaskSQLResV2[] = [
   {
@@ -21,6 +24,8 @@ export const AuditTaskSQLsMockData: IAuditTaskSQLResV2[] = [
     description: 'test',
     backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
     backup_strategy_tip: 'test tips',
+    backup_status: AuditTaskSQLResV2BackupStatusEnum.succeed,
+    backup_result: '备份成功',
     rollback_sqls: ['SELECT 1;'],
     associated_rollback_workflows: [
       {

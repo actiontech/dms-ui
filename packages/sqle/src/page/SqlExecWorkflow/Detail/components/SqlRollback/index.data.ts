@@ -1,6 +1,7 @@
 import { execStatusDictionary } from '../../../../../hooks/useStaticStatus/index.data';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { t } from '../../../../../locale';
+import { BackupSqlDataBackupStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export const SqlExecStatusOptions: Array<{
   label: string;
@@ -61,3 +62,18 @@ export const SqlExecStatusOptions: Array<{
     value: getAuditTaskSQLsV2FilterExecStatusEnum.terminating
   }
 ];
+
+export const SqlBackupStatusDictionary = {
+  [BackupSqlDataBackupStatusEnum.succeed]: t(
+    'execWorkflow.detail.rollback.backupSucceeded'
+  ),
+  [BackupSqlDataBackupStatusEnum.failed]: t(
+    'execWorkflow.detail.rollback.backupFailed'
+  ),
+  [BackupSqlDataBackupStatusEnum.waiting_for_execution]: t(
+    'execWorkflow.detail.rollback.backupWaitingForExecution'
+  ),
+  [BackupSqlDataBackupStatusEnum.executing]: t(
+    'execWorkflow.detail.rollback.backupExecuting'
+  )
+};

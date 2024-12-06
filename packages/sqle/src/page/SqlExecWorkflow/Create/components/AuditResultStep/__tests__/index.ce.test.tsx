@@ -15,6 +15,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../../../data/ModalName';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -49,6 +50,7 @@ describe('test AuditResultStep ce', () => {
   beforeEach(() => {
     mockUseCurrentUser();
     mockUseCurrentProject();
+    mockUseDbServiceDriver();
     jest.useFakeTimers();
     execWorkflow.mockAllApi();
     (useSelector as jest.Mock).mockImplementation((e) =>

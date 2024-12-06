@@ -9,7 +9,10 @@ import AuditResultList from '../../../Common/AuditResultList';
 import UpdateFormDrawer from './UpdateFormDrawer';
 import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
 import BatchSwitchBackupStrategyModal from './BatchSwitchBackupStrategyModal';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import useInstance from '../../../../../hooks/useInstance';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
@@ -43,6 +46,15 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
 
   const [taskID, setTaskID] = useState<string>();
 
+  const [
+    currentTaskSupportedBackupPolicies,
+    setCurrentTaskSupportedBackupPolicies
+  ] = useState<InstanceTipResV1SupportedBackupStrategyEnum[]>();
+
+  const { instanceList, updateInstanceList } = useInstance();
+
+  const { projectName } = useCurrentProject();
+
   const internalCreateWorkflow = () => {
     startCreate();
 
@@ -51,11 +63,34 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
     });
   };
 
-  const onBatchSwitchBackupPolicy = (currentTaskID?: string) => {
+  const tasksSupportedBackupPolicies = useMemo(() => {
+    const policies: {
+      [key: number]: InstanceTipResV1SupportedBackupStrategyEnum[] | undefined;
+    } = {};
+    tasks.forEach((task) => {
+      if (task.task_id) {
+        policies[task?.task_id] = instanceList.find(
+          (i) => i.instance_name === task.instance_name
+        )?.supported_backup_strategy;
+      }
+    });
+    return policies;
+  }, [instanceList, tasks]);
+
+  const onBatchSwitchBackupPolicy = (
+    currentTaskID?: string,
+    supportedBackupStrategy?: InstanceTipResV1SupportedBackupStrategyEnum[]
+  ) => {
     openSwitchBackupPolicyModal();
     setTaskID(currentTaskID);
+    setCurrentTaskSupportedBackupPolicies(supportedBackupStrategy);
   };
 
+  // #if [ee]
+  useEffect(() => {
+    updateInstanceList({ project_name: projectName });
+  }, [projectName, updateInstanceList]);
+  // #endif
   return (
     <>
       <PageHeader
@@ -91,6 +126,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
         updateTaskRecordCount={updateTaskRecordCount}
         allowSwitchBackupPolicy
         onBatchSwitchBackupPolicy={onBatchSwitchBackupPolicy}
+        tasksSupportedBackupPolicies={tasksSupportedBackupPolicies}
       />
 
       <UpdateFormDrawer
@@ -107,6 +143,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
         open={switchBackupPolicyOpen}
         taskID={taskID}
         onCancel={closeSwitchBackupPolicyModal}
+        currentTaskSupportedBackupPolicies={currentTaskSupportedBackupPolicies}
       />
       {/* #endif */}
     </>

@@ -76,7 +76,9 @@ export default {
     checkDataMaskButton: '查看脱敏规则',
     sqlBackupConfiguration: 'SQL备份配置',
     enableDataSourceBackup: '是否开启数据源上的SQL备份能力',
-    enableDataSourceBackupTips: '开启后，数据源上创建的工单将默认开启备份能力'
+    enableDataSourceBackupTips: '开启后，数据源上创建的工单将默认开启备份能力',
+    lineNumberLimit: '回滚行数限制',
+    lineNumberLimitTips: '当预计影响行数超过指定值则不回滚'
   },
 
   testConnectModal: {

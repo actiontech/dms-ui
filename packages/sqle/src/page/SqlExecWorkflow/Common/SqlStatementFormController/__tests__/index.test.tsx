@@ -57,7 +57,14 @@ describe('test SqlStatementFormController', () => {
     const { container } = customRender({
       isSameSqlForAll: false,
       databaseInfo: [
-        { key: '1', instanceName: 'mysql-1', schemaName: 'test' },
+        {
+          key: '1',
+          instanceName: 'mysql-1',
+          schemaName: 'test',
+          enableBackup: true,
+          allowBackup: true,
+          backupMaxRows: 2000
+        },
         { key: '2', instanceName: 'mysql-2' }
       ],
       activeKey: '2'
