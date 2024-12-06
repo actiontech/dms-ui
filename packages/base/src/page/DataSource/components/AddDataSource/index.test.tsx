@@ -12,6 +12,7 @@ import project from '../../../../testUtils/mockApi/project';
 import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import AddDataSource from '.';
+import system from 'sqle/src/testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -26,6 +27,7 @@ describe('page/DataSource/AddDataSource', () => {
   let getProjectTipsSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
   let requestAddDBServiceSpy: jest.SpyInstance;
+  let getSystemModuleStatusSpy: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<AddDataSource />);
@@ -38,6 +40,7 @@ describe('page/DataSource/AddDataSource', () => {
     getProjectTipsSpy = project.getProjectTips();
     getProjectListSpy = project.getProjectList();
     requestAddDBServiceSpy = dms.AddDBService();
+    getSystemModuleStatusSpy = system.getSystemModuleStatus();
     ruleTemplate.mockAllApi();
     mockUseCurrentProject();
   });
@@ -81,6 +84,8 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(2700));
     // - ip
     await act(async () => {
       fireEvent.change(getBySelector('#ip', baseElement), {
@@ -205,6 +210,8 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(2700));
     // - ip
     await act(async () => {
       fireEvent.change(getBySelector('#ip', baseElement), {
@@ -248,6 +255,14 @@ describe('page/DataSource/AddDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(getBySelector('#enableBackup'));
     await act(async () => jest.advanceTimersByTime(300));
+
+    fireEvent.change(getBySelector('#backupMaxRows', baseElement), {
+      target: {
+        value: '2000'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+
     // submit
     expect(screen.getByText('提 交')).toBeInTheDocument();
     await act(async () => {
@@ -289,7 +304,8 @@ describe('page/DataSource/AddDataSource', () => {
           }
         },
         user: 'root',
-        enable_backup: true
+        enable_backup: true,
+        backup_max_rows: 2000
       },
       project_uid: mockProjectList[0].uid
     });
