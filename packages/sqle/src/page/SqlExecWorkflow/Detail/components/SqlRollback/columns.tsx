@@ -11,6 +11,7 @@ import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicTool
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { BackupStrategyDictionary } from '../../../Common/AuditResultList/Table/index.data';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SqlBackupStatusDictionary } from './index.data';
 
 export type WorkflowRollbackSqlTableFilterParamType =
   PageInfoWithoutIndexAndSize<
@@ -81,6 +82,14 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
             status={status as getAuditTaskSQLsV2FilterExecStatusEnum}
           />
         );
+      }
+    },
+    {
+      dataIndex: 'backup_status',
+      title: t('execWorkflow.detail.rollback.backupStatus'),
+      width: 100,
+      render: (status) => {
+        return status ? SqlBackupStatusDictionary[status] : '-';
       }
     }
   ];

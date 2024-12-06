@@ -56,7 +56,7 @@ const TableTransfer: React.FC<TableTransferProps> = (props) => {
             })}
             pagination={isLeftTable ? leftPagination : undefined}
             onChange={isLeftTable ? onTableChange : undefined}
-            scroll={{ y: '700px' }}
+            scroll={{ y: '700px', x: true }}
             className={isLeftTable ? 'left-table' : 'right-table'}
           />
         );
