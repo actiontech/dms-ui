@@ -1,14 +1,18 @@
 import { t } from '../../../../../locale';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import { Link } from 'react-router-dom';
 import { GenerateMenuItemType } from './index.type';
 import { LightShieldFilled, KeyFilled } from '@actiontech/icons';
+import { TypedLink } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/database-account`}>
+    <TypedLink
+      to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.databaseAccount')}
-    </Link>
+    </TypedLink>
   ),
 
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account`,
@@ -20,9 +24,12 @@ export const passwordManagementMenuItem: GenerateMenuItemType = (
   projectID
 ) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/database-account-password`}>
+    <TypedLink
+      to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT_PASSWORD.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.databaseAccountPassword')}
-    </Link>
+    </TypedLink>
   ),
 
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account-password`,
@@ -32,9 +39,9 @@ export const passwordManagementMenuItem: GenerateMenuItemType = (
 
 export const authAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/audit/auth`}>
+    <TypedLink to={ROUTE_PATHS.PROVISION.AUDIT.auth} params={{ projectID }}>
       {t('dmsMenu.authAudit')}
-    </Link>
+    </TypedLink>
   ),
 
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/auth`,
@@ -58,9 +65,9 @@ export const authAuditMenuItem: GenerateMenuItemType = (projectID) => ({
 
 export const templateAuditMenuItem: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/audit/template`}>
+    <TypedLink to={ROUTE_PATHS.PROVISION.AUDIT.template} params={{ projectID }}>
       {t('dmsMenu.templateAudit')}
-    </Link>
+    </TypedLink>
   ),
 
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/audit/template`,
@@ -84,11 +91,13 @@ export const templateAuditMenuItem: GenerateMenuItemType = (projectID) => ({
 
 export const databaseRole: GenerateMenuItemType = (projectID) => ({
   label: (
-    <Link to={`/provision/project/${projectID}/database-role`}>
+    <TypedLink
+      to={ROUTE_PATHS.PROVISION.DATABASE_ROLE.index}
+      params={{ projectID }}
+    >
       {t('dmsMenu.databaseRole')}
-    </Link>
+    </TypedLink>
   ),
-
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-role`,
   icon: (
     <svg

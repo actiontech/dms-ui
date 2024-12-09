@@ -4,6 +4,7 @@ import {
   UserDevopsStepButtonItem,
   UserDevopsStepChildren
 } from '../../index.type';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const getDatabaseAuthStep: (
   arg: DevopsStepsProps
@@ -19,7 +20,11 @@ export const getDatabaseAuthStep: (
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_1_0'
         ),
         action: () =>
-          navigate(`/provision/project/${projectID}/database-account`)
+          navigate(ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index, {
+            params: {
+              projectID
+            }
+          })
       },
       {
         key: 'auth-list',
@@ -27,7 +32,9 @@ export const getDatabaseAuthStep: (
           'dmsHome.defaultScene.steps.safetyRule.innerContents.action_1_1'
         ),
         action: () =>
-          navigate(`/provision/project/${projectID}/database-account-password`)
+          navigate(ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT_PASSWORD.index, {
+            params: { projectID }
+          })
       }
     ]
   };
@@ -43,14 +50,20 @@ export const getAuthAuditStepItems = ({
       label: t(
         'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_0'
       ),
-      action: () => navigate(`/provision/project/${projectID}/audit/auth`)
+      action: () =>
+        navigate(ROUTE_PATHS.PROVISION.AUDIT.auth, {
+          params: { projectID }
+        })
     },
     {
       key: 'audit-template-list',
       label: t(
         'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_1'
       ),
-      action: () => navigate(`/provision/project/${projectID}/audit/template`)
+      action: () =>
+        navigate(ROUTE_PATHS.PROVISION.AUDIT.template, {
+          params: { projectID }
+        })
     }
     // {
     //   key: 'audit-service-list',

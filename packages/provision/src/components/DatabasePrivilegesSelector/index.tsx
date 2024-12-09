@@ -1,7 +1,7 @@
 import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { BasicSelect } from '@actiontech/shared';
+import { BasicSelect, TypedLink } from '@actiontech/shared';
 import { useEffect } from 'react';
 import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 import {
@@ -13,7 +13,7 @@ import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSele
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import useDatabasePrivilegesTips from './useDatabasePrivilegesTips';
 import ObjectPrivilegesField from './ObjectPrivilegesSelector/ObjectPrivilegesField';
-import { Link } from 'react-router-dom';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const DatabasePrivilegesSelector = <
   T extends IDatabasePrivilegesSelectorBaseFields
@@ -67,12 +67,13 @@ const DatabasePrivilegesSelector = <
           showQuickCreateRole &&
           selectedDbServiceID &&
           selectedDBType === ListServiceDbTypeEnum.Oracle ? (
-            <Link
+            <TypedLink
               target="_blank"
-              to={`/provision/project/${projectID}/database-role/create/${selectedDbServiceID}`}
+              to={ROUTE_PATHS.PROVISION.DATABASE_ROLE.create}
+              params={{ projectID, db_service_id: selectedDbServiceID }}
             >
               {t('databaseAccount.create.form.quickCreateRoles')}
-            </Link>
+            </TypedLink>
           ) : undefined
         }
       >
