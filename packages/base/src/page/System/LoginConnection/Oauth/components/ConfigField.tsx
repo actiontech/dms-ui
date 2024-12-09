@@ -300,7 +300,7 @@ const ConfigField = () => {
       </FormItemLabel>
       <EmptyBox if={autoCreateUser}>
         <FormItemLabel
-          className="has-label-tip has-required-style"
+          className="has-label-tip"
           label={
             <CustomLabelContent
               title={t('dmsSystem.oauth.userPassword')}
@@ -308,14 +308,6 @@ const ConfigField = () => {
             />
           }
           name="userPassword"
-          rules={[
-            {
-              required: true,
-              message: t('common.form.rule.require', {
-                name: t('dmsSystem.oauth.userPassword')
-              })
-            }
-          ]}
         >
           <BasicInput.Password
             placeholder={t('common.form.placeholder.input', {
