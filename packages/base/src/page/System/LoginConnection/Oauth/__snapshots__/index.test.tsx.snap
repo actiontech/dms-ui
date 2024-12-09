@@ -4813,7 +4813,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                 </div>
               </div>
               <div
-                class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
               >
                 <div
                   class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -4822,7 +4822,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                     class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                   >
                     <label
-                      class="ant-form-item-required ant-form-item-no-colon"
+                      class="ant-form-item-no-colon"
                       for="userPassword"
                       title=""
                     >
@@ -4835,7 +4835,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         <div
                           class="tip-content-box"
                         >
-                          系统自动创建的新用户将使用此密码作为初始登录密码。为保证账户安全，建议用户首次登录后及时修改密码。
+                          系统自动创建的新用户将使用此密码作为初始登录密码。为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。
                         </div>
                       </div>
                     </label>
@@ -4853,7 +4853,6 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                           class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                         >
                           <input
-                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-txh9fw"
                             id="userPassword"
                             placeholder="请输入默认登录密码"
