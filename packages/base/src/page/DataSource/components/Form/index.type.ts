@@ -28,6 +28,7 @@ export type DataSourceFormField = {
   needUpdatePassword?: boolean;
   is_enable_masking?: boolean;
   enableBackup?: boolean;
+  backupMaxRows?: number;
 };
 
 export type IDataSourceFormProps = {

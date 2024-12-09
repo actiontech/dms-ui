@@ -11,6 +11,7 @@ import {
 } from '@actiontech/shared/lib/global';
 import {
   BasicInput,
+  BasicInputNumber,
   BasicSelect,
   BasicSwitch,
   EmptyBox,
@@ -46,6 +47,12 @@ import { DatabaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useProjectTips from '../../../../hooks/useProjectTips';
 import { SQLE_INSTANCE_SOURCE_NAME } from '@actiontech/shared/lib/data/common';
+import system from '@actiontech/shared/lib/api/sqle/service/system';
+import {
+  getSystemModuleStatusDbTypeEnum,
+  getSystemModuleStatusModuleNameEnum
+} from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -58,6 +65,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const [auditEnabled, setAuditEnabled] = useState<boolean>(false);
   const [databaseType, setDatabaseType] = useState<string>('');
+  const [currentDBTypeSupportBackup, setCurrentDBTypeSupportBackup] =
+    useState<boolean>(false);
 
   const {
     driverMeta,
@@ -75,6 +84,21 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
 
   const project = Form.useWatch('project', props.form);
 
+  const enableBackup = Form.useWatch('enableBackup', props.form);
+
+  const getBackupSupportStatus = useCallback((value: string) => {
+    system
+      .getSystemModuleStatus({
+        db_type: value as getSystemModuleStatusDbTypeEnum,
+        module_name: getSystemModuleStatusModuleNameEnum.backup
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setCurrentDBTypeSupportBackup(res.data.data?.is_supported ?? false);
+        }
+      });
+  }, []);
+
   const databaseTypeChange = useCallback(
     (value: string) => {
       setDatabaseType(value);
@@ -90,8 +114,11 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         }
       ]);
       // #endif
+      // #if [sqle && ee]
+      getBackupSupportStatus(value);
+      // #endif
     },
-    [props.form]
+    [props.form, getBackupSupportStatus]
   );
   const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
     useAsyncParams();
@@ -197,7 +224,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
         is_enable_masking: props.defaultData.is_enable_masking,
         // #endif
         // #if [sqle && ee]
-        enableBackup: props.defaultData.enable_backup
+        enableBackup: props.defaultData.enable_backup,
+        backupMaxRows: props.defaultData.backup_max_rows
         // #endif
       });
       setDatabaseType(props.defaultData.db_type ?? '');
@@ -219,6 +247,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params, props.defaultData, props.form]);
+
+  // #if [sqle && ee]
+  useEffect(() => {
+    if (props.defaultData?.db_type) {
+      getBackupSupportStatus(props.defaultData?.db_type);
+    }
+  }, [props.defaultData?.db_type, getBackupSupportStatus]);
+  // #endif
 
   const reset = useCallback(() => {
     EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
@@ -486,28 +522,48 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
       {/* #endif */}
 
       {/* #if [sqle && ee] */}
-      <FormAreaLineStyleWrapper>
-        <FormAreaBlockStyleWrapper>
-          <FormItemSubTitle>
-            {t('dmsDataSource.dataSourceForm.sqlBackupConfiguration')}
-          </FormItemSubTitle>
-          <FormItemLabel
-            className="has-label-tip"
-            label={
-              <CustomLabelContent
-                title={t('dmsDataSource.dataSourceForm.enableDataSourceBackup')}
-                tips={t(
-                  'dmsDataSource.dataSourceForm.enableDataSourceBackupTips'
-                )}
-              />
-            }
-            name="enableBackup"
-            valuePropName="checked"
-          >
-            <BasicSwitch />
-          </FormItemLabel>
-        </FormAreaBlockStyleWrapper>
-      </FormAreaLineStyleWrapper>
+      <EmptyBox if={currentDBTypeSupportBackup}>
+        <FormAreaLineStyleWrapper>
+          <FormAreaBlockStyleWrapper>
+            <FormItemSubTitle>
+              {t('dmsDataSource.dataSourceForm.sqlBackupConfiguration')}
+            </FormItemSubTitle>
+            <FormItemLabel
+              className="has-label-tip"
+              label={
+                <CustomLabelContent
+                  title={t(
+                    'dmsDataSource.dataSourceForm.enableDataSourceBackup'
+                  )}
+                  tips={t(
+                    'dmsDataSource.dataSourceForm.enableDataSourceBackupTips'
+                  )}
+                />
+              }
+              name="enableBackup"
+              valuePropName="checked"
+            >
+              <BasicSwitch />
+            </FormItemLabel>
+            <EmptyBox if={enableBackup}>
+              <FormItemLabel
+                className="has-label-tip has-required-style"
+                label={
+                  <CustomLabelContent
+                    title={t('dmsDataSource.dataSourceForm.lineNumberLimit')}
+                    tips={t('dmsDataSource.dataSourceForm.lineNumberLimitTips')}
+                  />
+                }
+                name="backupMaxRows"
+                initialValue={1000}
+                rules={[{ required: true }]}
+              >
+                <BasicInputNumber min={0} />
+              </FormItemLabel>
+            </EmptyBox>
+          </FormAreaBlockStyleWrapper>
+        </FormAreaLineStyleWrapper>
+      </EmptyBox>
       {/* #endif */}
 
       {/* #if [dms] */}

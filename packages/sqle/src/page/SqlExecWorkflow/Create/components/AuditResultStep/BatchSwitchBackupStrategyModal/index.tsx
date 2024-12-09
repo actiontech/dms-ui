@@ -7,16 +7,19 @@ import { UpdateTaskBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/
 import { BackupStrategyOptions } from '../../../../Common/AuditResultList/Table/index.data';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { useMemo } from 'react';
 
 type BatchSwitchBackupStrategyModalProps = {
   taskID?: string;
   open: boolean;
   onCancel: () => void;
+  currentTaskSupportedBackupPolicies?: InstanceTipResV1SupportedBackupStrategyEnum[];
 };
 
 const BatchSwitchBackupStrategyModal: React.FC<
   BatchSwitchBackupStrategyModalProps
-> = ({ taskID, open, onCancel }) => {
+> = ({ taskID, open, onCancel, currentTaskSupportedBackupPolicies }) => {
   const { t } = useTranslation();
 
   const [messageApi, contextHolder] = message.useMessage();
@@ -53,6 +56,14 @@ const BatchSwitchBackupStrategyModal: React.FC<
     onCancel();
   };
 
+  const options = useMemo(() => {
+    return BackupStrategyOptions.filter((i) =>
+      currentTaskSupportedBackupPolicies?.includes(
+        i.value as unknown as InstanceTipResV1SupportedBackupStrategyEnum
+      )
+    );
+  }, [currentTaskSupportedBackupPolicies]);
+
   return (
     <BasicModal
       open={open}
@@ -75,7 +86,7 @@ const BatchSwitchBackupStrategyModal: React.FC<
         </Typography.Text>
         <Form form={form} layout="vertical">
           <Form.Item name="strategy" rules={[{ required: true }]}>
-            <BasicSelect options={BackupStrategyOptions} />
+            <BasicSelect options={options} />
           </Form.Item>
         </Form>
       </Space>

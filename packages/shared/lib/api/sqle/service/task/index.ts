@@ -83,6 +83,10 @@ class TaskService extends ServiceBase {
       paramsData.append('enable_backup', params.enable_backup as any);
     }
 
+    if (params.backup_max_rows != undefined) {
+      paramsData.append('backup_max_rows', params.backup_max_rows as any);
+    }
+
     if (params.sql != undefined) {
       paramsData.append('sql', params.sql as any);
     }
@@ -185,6 +189,10 @@ class TaskService extends ServiceBase {
 
     if (params.enable_backup != undefined) {
       paramsData.append('enable_backup', params.enable_backup as any);
+    }
+
+    if (params.backup_max_rows != undefined) {
+      paramsData.append('backup_max_rows', params.backup_max_rows as any);
     }
 
     if (params.file_order_method != undefined) {

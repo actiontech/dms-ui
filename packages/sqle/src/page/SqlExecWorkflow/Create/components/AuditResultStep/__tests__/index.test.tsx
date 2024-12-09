@@ -17,6 +17,9 @@ import { ModalName } from '../../../../../../data/ModalName';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
+import instance from '../../../../../../testUtils/mockApi/instance';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -49,6 +52,7 @@ describe('test AuditResultStep', () => {
   ]);
 
   let updateTaskBackupStrategySpy: jest.SpyInstance;
+  let requestInstanceTip: jest.SpyInstance;
 
   beforeEach(() => {
     mockUseCurrentUser();
@@ -63,6 +67,30 @@ describe('test AuditResultStep', () => {
           moduleFeatureSupport: { sqlOptimization: false },
           userOperationPermissions: null
         }
+      })
+    );
+    mockUseDbServiceDriver();
+    requestInstanceTip = instance.getInstanceTipList();
+    requestInstanceTip.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            instance_id: '1739531854064652288',
+            instance_name: AuditTaskResData[0].instance_name,
+            instance_type: 'MySQL',
+            workflow_template_id: 1,
+            host: '10.186.62.13',
+            port: '33061',
+            enable_backup: true,
+            supported_backup_strategy: [
+              InstanceTipResV1SupportedBackupStrategyEnum.manual,
+              InstanceTipResV1SupportedBackupStrategyEnum.none,
+              InstanceTipResV1SupportedBackupStrategyEnum.original_row,
+              InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+            ],
+            backup_max_rows: 1000
+          }
+        ]
       })
     );
   });
@@ -86,6 +114,8 @@ describe('test AuditResultStep', () => {
   it('render switch data source backup policy', async () => {
     const emitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = customRender(jest.fn());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestInstanceTip).toHaveBeenCalledTimes(1);
     expect(screen.getByText('切换数据源备份策略')).toBeInTheDocument();
     fireEvent.click(screen.getByText('切换数据源备份策略'));
     await act(async () => jest.advanceTimersByTime(0));

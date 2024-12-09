@@ -42,6 +42,8 @@ export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
 
   enable_backup?: boolean;
 
+  backup_max_rows?: number;
+
   sql?: string;
 
   input_sql_file?: any;
@@ -82,6 +84,8 @@ export interface IAuditTaskGroupIdV1Params {
   sql?: string;
 
   enable_backup?: boolean;
+
+  backup_max_rows?: number;
 
   file_order_method?: string;
 

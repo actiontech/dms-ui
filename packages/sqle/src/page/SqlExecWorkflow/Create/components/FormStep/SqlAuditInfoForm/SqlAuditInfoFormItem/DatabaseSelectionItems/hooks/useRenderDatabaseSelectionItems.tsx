@@ -108,6 +108,9 @@ const useRenderDatabaseSelectionItems = ({
 
   const handleInstanceChange = (key: string, instanceName?: string) => {
     if (instanceName) {
+      const targetInstance = instanceList?.find(
+        (i) => i.instance_name === instanceName
+      );
       dbSourceInfoCollection.set(key, {
         instanceName,
         schemaName: undefined,
@@ -117,9 +120,9 @@ const useRenderDatabaseSelectionItems = ({
         dbType: undefined,
         testConnectResult: undefined,
         isSupportFileModeExecuteSql: true,
-        enableBackup:
-          instanceList?.find((i) => i.instance_name === instanceName)
-            ?.enable_backup ?? false
+        enableBackup: targetInstance?.enable_backup ?? false,
+        backupMaxRows: targetInstance?.backup_max_rows,
+        allowBackup: !!targetInstance?.supported_backup_strategy?.length
       });
       updateSchemaList(key, instanceName);
       updateRuleTemplateNameAndDbType(key, instanceName);
@@ -131,12 +134,14 @@ const useRenderDatabaseSelectionItems = ({
     // 克隆或者回滚时，因为是从store中取instanceName ，此时可能instance list接口还未结束
     // 导致enableBackup被赋予了默认值false，所以需要在instance list接口完成后，重新设置enableBackup
     Object.keys(dbSourceInfoCollection.value).forEach((key) => {
+      const targetInstance = instanceList?.find(
+        (i) =>
+          i.instance_name === dbSourceInfoCollection.value[key].instanceName
+      );
       dbSourceInfoCollection.set(key, {
-        enableBackup:
-          instanceList?.find(
-            (i) =>
-              i.instance_name === dbSourceInfoCollection.value[key].instanceName
-          )?.enable_backup ?? false
+        enableBackup: targetInstance?.enable_backup ?? false,
+        backupMaxRows: targetInstance?.backup_max_rows,
+        allowBackup: !!targetInstance?.supported_backup_strategy?.length
       });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

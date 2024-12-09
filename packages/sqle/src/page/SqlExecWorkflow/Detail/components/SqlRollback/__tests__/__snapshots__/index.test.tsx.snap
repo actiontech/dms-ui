@@ -228,7 +228,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                     class="ant-spin-container"
                   >
                     <div
-                      class="ant-table ant-table-small ant-table-fixed-header"
+                      class="ant-table ant-table-small ant-table-fixed-header ant-table-scroll-horizontal"
                     >
                       <div
                         class="ant-table-container"
@@ -298,16 +298,22 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                 >
                                   执行状态
                                 </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  备份状态
+                                </th>
                               </tr>
                             </thead>
                           </table>
                         </div>
                         <div
                           class="ant-table-body"
-                          style="overflow-y: scroll; max-height: 700px;"
+                          style="overflow-x: auto; overflow-y: scroll; max-height: 700px;"
                         >
                           <table
-                            style="table-layout: fixed;"
+                            style="width: auto; min-width: 100%; table-layout: fixed;"
                           >
                             <colgroup>
                               <col
@@ -326,6 +332,9 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                               <col
                                 style="width: 100px;"
                               />
+                              <col
+                                style="width: 100px;"
+                              />
                             </colgroup>
                             <tbody
                               class="ant-table-tbody"
@@ -335,6 +344,15 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                 class="ant-table-measure-row"
                                 style="height: 0px; font-size: 0px;"
                               >
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
                                 <td
                                   style="padding: 0px; border: 0px; height: 0px;"
                                 >
@@ -476,6 +494,11 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                     执行成功
                                   </span>
                                 </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  备份成功
+                                </td>
                               </tr>
                               <tr
                                 class="ant-table-row ant-table-row-level-0"
@@ -571,6 +594,11 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   >
                                     执行成功
                                   </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  备份失败
                                 </td>
                               </tr>
                             </tbody>
@@ -831,7 +859,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                     class="ant-spin-container"
                   >
                     <div
-                      class="ant-table ant-table-small ant-table-empty ant-table-fixed-header"
+                      class="ant-table ant-table-small ant-table-empty ant-table-fixed-header ant-table-scroll-horizontal"
                     >
                       <div
                         class="ant-table-container"
@@ -903,6 +931,12 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   执行状态
                                 </th>
                                 <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  备份状态
+                                </th>
+                                <th
                                   class="ant-table-cell rollback-remark-column"
                                   scope="col"
                                 >
@@ -914,10 +948,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                         </div>
                         <div
                           class="ant-table-body"
-                          style="overflow-y: scroll; max-height: 700px;"
+                          style="overflow-x: auto; overflow-y: scroll; max-height: 700px;"
                         >
                           <table
-                            style="table-layout: fixed;"
+                            style="width: auto; min-width: 100%; table-layout: fixed;"
                           >
                             <colgroup>
                               <col
@@ -932,6 +966,9 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                               />
                               <col
                                 style="width: 120px;"
+                              />
+                              <col
+                                style="width: 100px;"
                               />
                               <col
                                 style="width: 100px;"
@@ -1002,59 +1039,27 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                      
                                   </div>
                                 </td>
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
                               </tr>
                               <tr
                                 class="ant-table-placeholder"
                               >
                                 <td
                                   class="ant-table-cell"
-                                  colspan="6"
+                                  colspan="7"
                                 >
                                   <div
-                                    class="css-dev-only-do-not-override-bj9uhl ant-empty ant-empty-normal"
-                                  >
-                                    <div
-                                      class="ant-empty-image"
-                                    >
-                                      <svg
-                                        height="41"
-                                        viewBox="0 0 64 41"
-                                        width="64"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <g
-                                          fill="none"
-                                          fill-rule="evenodd"
-                                          transform="translate(0 1)"
-                                        >
-                                          <ellipse
-                                            cx="32"
-                                            cy="33"
-                                            fill="#f5f5f5"
-                                            rx="32"
-                                            ry="7"
-                                          />
-                                          <g
-                                            fill-rule="nonzero"
-                                            stroke="#d9d9d9"
-                                          >
-                                            <path
-                                              d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
-                                            />
-                                            <path
-                                              d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
-                                              fill="#fafafa"
-                                            />
-                                          </g>
-                                        </g>
-                                      </svg>
-                                    </div>
-                                    <div
-                                      class="ant-empty-description"
-                                    >
-                                      No data
-                                    </div>
-                                  </div>
+                                    class="ant-table-expanded-row-fixed"
+                                    style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                  />
                                 </td>
                               </tr>
                             </tbody>
@@ -1295,7 +1300,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                     class="ant-spin-container"
                   >
                     <div
-                      class="ant-table ant-table-small ant-table-fixed-header"
+                      class="ant-table ant-table-small ant-table-fixed-header ant-table-scroll-horizontal"
                     >
                       <div
                         class="ant-table-container"
@@ -1366,16 +1371,22 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                 >
                                   执行状态
                                 </th>
+                                <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  备份状态
+                                </th>
                               </tr>
                             </thead>
                           </table>
                         </div>
                         <div
                           class="ant-table-body"
-                          style="overflow-y: scroll; max-height: 700px;"
+                          style="overflow-x: auto; overflow-y: scroll; max-height: 700px;"
                         >
                           <table
-                            style="table-layout: fixed;"
+                            style="width: auto; min-width: 100%; table-layout: fixed;"
                           >
                             <colgroup>
                               <col
@@ -1394,6 +1405,9 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                               <col
                                 style="width: 100px;"
                               />
+                              <col
+                                style="width: 100px;"
+                              />
                             </colgroup>
                             <tbody
                               class="ant-table-tbody"
@@ -1403,6 +1417,15 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                 class="ant-table-measure-row"
                                 style="height: 0px; font-size: 0px;"
                               >
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
                                 <td
                                   style="padding: 0px; border: 0px; height: 0px;"
                                 >
@@ -1545,6 +1568,11 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     执行成功
                                   </span>
                                 </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  备份成功
+                                </td>
                               </tr>
                               <tr
                                 class="ant-table-row ant-table-row-level-0"
@@ -1641,6 +1669,11 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   >
                                     执行成功
                                   </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  备份失败
                                 </td>
                               </tr>
                             </tbody>
@@ -1901,7 +1934,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                     class="ant-spin-container"
                   >
                     <div
-                      class="ant-table ant-table-small ant-table-fixed-header"
+                      class="ant-table ant-table-small ant-table-fixed-header ant-table-scroll-horizontal"
                     >
                       <div
                         class="ant-table-container"
@@ -1972,6 +2005,12 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   执行状态
                                 </th>
                                 <th
+                                  class="ant-table-cell"
+                                  scope="col"
+                                >
+                                  备份状态
+                                </th>
+                                <th
                                   class="ant-table-cell rollback-remark-column"
                                   scope="col"
                                 >
@@ -1983,10 +2022,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                         </div>
                         <div
                           class="ant-table-body"
-                          style="overflow-y: scroll; max-height: 700px;"
+                          style="overflow-x: auto; overflow-y: scroll; max-height: 700px;"
                         >
                           <table
-                            style="table-layout: fixed;"
+                            style="width: auto; min-width: 100%; table-layout: fixed;"
                           >
                             <colgroup>
                               <col
@@ -2006,6 +2045,9 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                 style="width: 100px;"
                               />
                               <col
+                                style="width: 100px;"
+                              />
+                              <col
                                 style="width: 150px;"
                               />
                             </colgroup>
@@ -2017,6 +2059,15 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                 class="ant-table-measure-row"
                                 style="height: 0px; font-size: 0px;"
                               >
+                                <td
+                                  style="padding: 0px; border: 0px; height: 0px;"
+                                >
+                                  <div
+                                    style="height: 0px; overflow: hidden;"
+                                  >
+                                     
+                                  </div>
+                                </td>
                                 <td
                                   style="padding: 0px; border: 0px; height: 0px;"
                                 >
@@ -2168,6 +2219,11 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   </span>
                                 </td>
                                 <td
+                                  class="ant-table-cell"
+                                >
+                                  备份成功
+                                </td>
+                                <td
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
@@ -2274,6 +2330,11 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   >
                                     执行成功
                                   </span>
+                                </td>
+                                <td
+                                  class="ant-table-cell"
+                                >
+                                  备份失败
                                 </td>
                                 <td
                                   class="ant-table-cell rollback-remark-column"

@@ -34,6 +34,7 @@ import useCheckTaskAuditSqlCount from '../../../Create/hooks/useCheckTaskAuditSq
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../hooks/useAuditExecResultPanelSetup';
 import { BriefcaseFilled, LeftArrowOutlined } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
+import useInstance from '../../../../../hooks/useInstance';
 
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
@@ -53,6 +54,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
+  const { updateInstanceList, instanceList } = useInstance();
+
   const [form] = Form.useForm<{ [key in string]: SqlStatementFields }>();
 
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
@@ -104,15 +107,20 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
 
   const databaseInfo = useMemo<CreateWorkflowDatabaseInfo>(() => {
     return (currentTasks ?? [])
-      .map((item) => {
+      .map((item, index) => {
         return {
-          key: item.task_id?.toString() ?? '',
+          key: isSameSqlForAll ? `${index}` : item.task_id?.toString() ?? '',
           instanceName: item.instance_name,
-          schemaName: item.instance_schema
+          schemaName: item.instance_schema,
+          enableBackup: item.enable_backup,
+          backupMaxRows: item.backup_max_rows,
+          allowBackup: !!instanceList.find(
+            (i) => i.instance_name === item.instance_name
+          )?.supported_backup_strategy?.length
         };
       })
       .filter((v) => !!v.instanceName);
-  }, [currentTasks]);
+  }, [currentTasks, instanceList, isSameSqlForAll]);
 
   const innerAuditAction = async (values: SqlAuditInfoFormFields) => {
     isAuditing.set(true);
@@ -194,7 +202,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           currentUploadType: currentTasks?.[0]?.sql_source,
           exec_mode: currentTasks?.[0]?.exec_mode,
           file_sort_method: currentTasks?.[0]?.file_order_method,
-          backup: currentTasks?.[0]?.enable_backup
+          backup: currentTasks?.[0]?.enable_backup,
+          backupMaxRows: currentTasks?.[0]?.backup_max_rows
         });
       } else {
         sqlStatementTabActiveKey.set(
@@ -206,7 +215,8 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
             currentUploadType: item.sql_source,
             exec_mode: item.exec_mode,
             file_sort_method: item.file_order_method,
-            backup: item.enable_backup
+            backup: item.enable_backup,
+            backupMaxRows: item.backup_max_rows
           });
         });
       }
@@ -221,6 +231,16 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
     resetAllSharedData,
     startGetAllSqlStatement
   ]);
+
+  // #if [ee]
+  useEffect(() => {
+    if (isAtRejectStep) {
+      updateInstanceList({
+        project_name: projectName
+      });
+    }
+  }, [updateInstanceList, projectName, isAtRejectStep]);
+  // #endif
 
   usePrompt(
     t('execWorkflow.create.auditResult.leaveTip'),
