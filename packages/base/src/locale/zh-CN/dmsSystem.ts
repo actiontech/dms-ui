@@ -174,6 +174,16 @@ export default {
     corpSecret: '企业微信应用Secret',
     wechatUserID: '企业微信用户ID'
   },
+  codingDocking: {
+    titleTips: 'SQL管控中的问题SQL',
+    enable: '启用Coding对接',
+    serviceAddress: '服务地址',
+    accessToken: '访问令牌',
+    testSuccess: '当前服务地址和访问令牌验证通过',
+    codingProjectName: '项目名称',
+    testConnection: '测试联通性',
+    testing: '正在测试Coding联通性...'
+  },
 
   license: {
     productName: '数据管控平台1.0',
