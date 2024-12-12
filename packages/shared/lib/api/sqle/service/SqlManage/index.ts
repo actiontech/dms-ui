@@ -18,6 +18,8 @@ import {
   IExportSqlManageV1Params,
   IGetSqlManageRuleTipsParams,
   IGetSqlManageRuleTipsReturn,
+  ISendSqlManageParams,
+  ISendSqlManageReturn,
   IGetSqlManageSqlAnalysisV1Params,
   IGetSqlManageSqlAnalysisV1Return,
   IGetSqlManageListV2Params,
@@ -104,6 +106,21 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageRuleTipsReturn>(
       `/v1/projects/${project_name}/sql_manages/rule_tips`,
+      paramsData,
+      options
+    );
+  }
+
+  public SendSqlManage(
+    params: ISendSqlManageParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.post<ISendSqlManageReturn>(
+      `/v1/projects/${project_name}/sql_manages/send`,
       paramsData,
       options
     );

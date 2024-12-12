@@ -11,6 +11,7 @@ import {
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
+  IGetTaskRewrittenSQLRes,
   IGetAuditFileListRes,
   IGetAuditFileExecStatisticRes,
   IGetAuditTaskSQLsResV2,
@@ -161,6 +162,14 @@ export interface IGetTaskAnalysisDataParams {
 }
 
 export interface IGetTaskAnalysisDataReturn extends IGetTaskAnalysisDataResV1 {}
+
+export interface IGetTaskRewrittenSQLParams {
+  task_id: string;
+
+  number: number;
+}
+
+export interface IGetTaskRewrittenSQLReturn extends IGetTaskRewrittenSQLRes {}
 
 export interface IGetSqlFileOrderMethodV1Return
   extends IGetSqlFileOrderMethodResV1 {}
