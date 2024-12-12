@@ -374,6 +374,24 @@ export enum ReportPushConfigListTriggerTypeEnum {
   'timing' = 'timing'
 }
 
+export enum RewriteSuggestionAuditLevelEnum {
+  'normal' = 'normal',
+
+  'notice' = 'notice',
+
+  'warn' = 'warn',
+
+  'error' = 'error'
+}
+
+export enum RewriteSuggestionTypeEnum {
+  'statement' = 'statement',
+
+  'structure' = 'structure',
+
+  'other' = 'other'
+}
+
 export enum RuleParamResV1TypeEnum {
   'string' = 'string',
 
@@ -400,24 +418,6 @@ export enum SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum {
   'warn' = 'warn',
 
   'error' = 'error'
-}
-
-export enum SQLRewrittenSuggestionAuditLevelEnum {
-  'normal' = 'normal',
-
-  'notice' = 'notice',
-
-  'warn' = 'warn',
-
-  'error' = 'error'
-}
-
-export enum SQLRewrittenSuggestionTypeEnum {
-  'statement' = 'statement',
-
-  'structure' = 'structure',
-
-  'other' = 'other'
 }
 
 export enum ScheduleTaskDefaultOptionDefaultSelectorEnum {
