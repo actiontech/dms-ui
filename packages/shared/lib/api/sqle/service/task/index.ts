@@ -30,8 +30,8 @@ import {
   IUpdateAuditTaskSQLsV1Return,
   IGetTaskAnalysisDataParams,
   IGetTaskAnalysisDataReturn,
-  IGetTaskRewrittenSQLParams,
-  IGetTaskRewrittenSQLReturn,
+  IRewriteSQLParams,
+  IRewriteSQLReturn,
   IGetSqlFileOrderMethodV1Return,
   IGetAuditFileListParams,
   IGetAuditFileListReturn,
@@ -349,10 +349,7 @@ class TaskService extends ServiceBase {
     );
   }
 
-  public getTaskRewrittenSQL(
-    params: IGetTaskRewrittenSQLParams,
-    options?: AxiosRequestConfig
-  ) {
+  public RewriteSQL(params: IRewriteSQLParams, options?: AxiosRequestConfig) {
     const paramsData = this.cloneDeep(params);
     const task_id = paramsData.task_id;
     delete paramsData.task_id;
@@ -360,7 +357,7 @@ class TaskService extends ServiceBase {
     const number = paramsData.number;
     delete paramsData.number;
 
-    return this.get<IGetTaskRewrittenSQLReturn>(
+    return this.post<IRewriteSQLReturn>(
       `/v1/tasks/audits/${task_id}/sqls/${number}/rewrite`,
       paramsData,
       options

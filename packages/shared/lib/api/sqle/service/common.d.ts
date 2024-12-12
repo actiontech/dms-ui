@@ -39,11 +39,11 @@ import {
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
+  RewriteSuggestionAuditLevelEnum,
+  RewriteSuggestionTypeEnum,
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
-  SQLRewrittenSuggestionAuditLevelEnum,
-  SQLRewrittenSuggestionTypeEnum,
   ScheduleTaskDefaultOptionDefaultSelectorEnum,
   SchemaObjectComparisonResultEnum,
   SqlManageAuditStatusEnum,
@@ -558,7 +558,7 @@ export interface ICloneRuleTemplateReqV1 {
 export interface ICodingConfigurationV1 {
   coding_url?: string;
 
-  is_coding_notification_enabled?: boolean;
+  is_coding_enabled?: boolean;
 }
 
 export interface ICodingResp {
@@ -1793,14 +1793,6 @@ export interface IGetTaskAnalysisDataResV1 {
   message?: string;
 }
 
-export interface IGetTaskRewrittenSQLRes {
-  code?: number;
-
-  data?: ITaskRewrittenSQLData;
-
-  message?: string;
-}
-
 export interface IGetUserTipsResV1 {
   code?: number;
 
@@ -2489,6 +2481,44 @@ export interface IRewriteRule {
   violated_queries_str?: string;
 }
 
+export interface IRewriteSQLData {
+  business_desc?: string;
+
+  business_non_equivalent_desc?: string;
+
+  rewritten_sql?: string;
+
+  suggestions?: IRewriteSuggestion[];
+}
+
+export interface IRewriteSQLReq {
+  enable_structure_type?: boolean;
+}
+
+export interface IRewriteSQLRes {
+  code?: number;
+
+  data?: IRewriteSQLData;
+
+  message?: string;
+}
+
+export interface IRewriteSuggestion {
+  audit_level?: RewriteSuggestionAuditLevelEnum;
+
+  ddl_dcl?: string;
+
+  ddl_dcl_desc?: string;
+
+  desc?: string;
+
+  rewritten_sql?: string;
+
+  rule_name?: string;
+
+  type?: RewriteSuggestionTypeEnum;
+}
+
 export interface IRiskAuditPlan {
   audit_plan_name?: string;
 
@@ -2693,22 +2723,6 @@ export interface ISQLQueryConfigResV1 {
   max_pre_query_rows?: number;
 
   query_timeout_second?: number;
-}
-
-export interface ISQLRewrittenSuggestion {
-  audit_level?: SQLRewrittenSuggestionAuditLevelEnum;
-
-  ddl_dcl?: string;
-
-  ddl_dcl_desc?: string;
-
-  desc?: string;
-
-  rewritten_sql?: string;
-
-  rule_name?: string;
-
-  type?: SQLRewrittenSuggestionTypeEnum;
 }
 
 export interface ISQLStatement {
@@ -2993,16 +3007,6 @@ export interface ITargetReleaseInstance {
   target_instance_id?: string;
 
   target_instance_schema?: string;
-}
-
-export interface ITaskRewrittenSQLData {
-  business_non_equivalent_desc?: string;
-
-  rewritten_sql?: string;
-
-  suggestions?: ISQLRewrittenSuggestion[];
-
-  table_metas?: ITableMetas;
 }
 
 export interface ITestAuditPlanNotifyConfigResDataV1 {
