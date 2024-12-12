@@ -199,6 +199,20 @@ exports[`page/SqlManagement render sql management page 1`] = `
                               已人工审核
                             </div>
                           </label>
+                          <label
+                            class="ant-segmented-item"
+                          >
+                            <input
+                              class="ant-segmented-item-input"
+                              type="radio"
+                            />
+                            <div
+                              class="ant-segmented-item-label"
+                              title="已推送至其他平台"
+                            >
+                              已推送至其他平台
+                            </div>
+                          </label>
                         </div>
                       </div>
                     </div>
@@ -341,6 +355,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
                         </div>
                         <div
                           class="ant-space-item"
+                          style="margin-right: 8px;"
                         >
                           <button
                             class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -349,6 +364,19 @@ exports[`page/SqlManagement render sql management page 1`] = `
                           >
                             <span>
                               批量忽略
+                            </span>
+                          </button>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            disabled=""
+                            type="button"
+                          >
+                            <span>
+                              推送到其他平台
                             </span>
                           </button>
                         </div>
@@ -613,7 +641,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
                             style="width: 200px;"
                           />
                           <col
-                            style="width: 100px;"
+                            style="width: 140px;"
                           />
                           <col
                             style="width: 200px;"

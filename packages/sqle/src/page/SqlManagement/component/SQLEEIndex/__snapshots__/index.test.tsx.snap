@@ -198,6 +198,20 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -362,7 +376,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           type="button"
                         >
                           <span>
-                            推送到Coding
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -992,7 +1006,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -1938,6 +1952,20 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -2101,7 +2129,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                           type="button"
                         >
                           <span>
-                            推送到Coding
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -2366,7 +2394,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -2726,6 +2754,20 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -2889,7 +2931,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           type="button"
                         >
                           <span>
-                            推送到Coding
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -3152,7 +3194,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -5559,6 +5601,20 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -5722,7 +5778,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           type="button"
                         >
                           <span>
-                            推送到Coding
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -5985,7 +6041,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -8392,6 +8448,20 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -8555,7 +8625,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           type="button"
                         >
                           <span>
-                            推送到Coding
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -8818,7 +8888,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -11241,6 +11311,20 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -11404,7 +11488,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                           type="button"
                         >
                           <span>
-                            推送到Coding
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -11667,7 +11751,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -12440,6 +12524,20 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -12810,7 +12908,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -13553,6 +13651,20 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -13923,7 +14035,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
