@@ -42,7 +42,7 @@ describe('base/System/components/ConfigTestBtn', () => {
   it('render snap when btn hover', async () => {
     const { baseElement } = customRender(false);
 
-    const btnEle = getBySelector('.ant-btn[type="submit"]');
+    const btnEle = getBySelector('.system-config-button');
     fireEvent.mouseOver(btnEle);
     await act(async () => jest.advanceTimersByTime(500));
     expect(baseElement).toMatchSnapshot();
