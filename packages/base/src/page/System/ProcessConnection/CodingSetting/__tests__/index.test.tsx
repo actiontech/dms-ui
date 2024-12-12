@@ -192,7 +192,7 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
       createSpySuccessResponse({
         data: {
           coding_url: '',
-          is_coding_notification_enabled: false
+          is_coding_enabled: false
         }
       })
     );

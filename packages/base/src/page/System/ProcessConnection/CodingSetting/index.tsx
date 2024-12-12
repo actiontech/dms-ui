@@ -56,7 +56,7 @@ const CodingSetting: React.FC = () => {
       onSuccess(res) {
         if (res) {
           form.setFieldsValue({
-            enabled: !!res.is_coding_notification_enabled
+            enabled: !!res.is_coding_enabled
           });
         }
       }
@@ -64,7 +64,7 @@ const CodingSetting: React.FC = () => {
   );
 
   const isConfigClosed = useMemo(() => {
-    return !codingInfo?.is_coding_notification_enabled;
+    return !codingInfo?.is_coding_enabled;
   }, [codingInfo]);
 
   const setFormDefaultValue = useCallback(() => {
@@ -105,7 +105,7 @@ const CodingSetting: React.FC = () => {
   };
 
   const onConfigSwitchPopoverConfirm = () => {
-    if (!codingInfo?.is_coding_notification_enabled && modifyFlag) {
+    if (!codingInfo?.is_coding_enabled && modifyFlag) {
       handleClickCancel();
       hiddenConfigSwitchPopover();
     } else {
@@ -128,7 +128,7 @@ const CodingSetting: React.FC = () => {
           label: t('dmsSystem.codingDocking.serviceAddress'),
           span: 3,
           dataIndex: 'coding_url',
-          hidden: !codingInfo?.is_coding_notification_enabled,
+          hidden: !codingInfo?.is_coding_enabled,
           render: (val) => (
             <Typography.Paragraph>{val || '--'}</Typography.Paragraph>
           )
