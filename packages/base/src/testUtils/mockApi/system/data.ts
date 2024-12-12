@@ -91,3 +91,8 @@ export const mockModuleRedHotsData = [
     has_red_dot: true
   }
 ];
+
+export const mockCodingConfigurationData = {
+  coding_url: 'https://g-izbz2140.coding.net/',
+  is_coding_notification_enabled: true
+};
