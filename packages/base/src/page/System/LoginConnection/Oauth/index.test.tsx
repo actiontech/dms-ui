@@ -5,6 +5,7 @@ import Oauth from '.';
 import { oauthConfig } from '../../../../testUtils/mockApi/system/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/LoginConnection/Oauth', () => {
   let requestGetOauth2Configuration: jest.SpyInstance;
@@ -34,6 +35,16 @@ describe('base/System/LoginConnection/Oauth', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetOauth2Configuration).toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render snap when enable oauth2 is true', async () => {
+    requestGetOauth2Configuration.mockClear();
+    requestGetOauth2Configuration.mockImplementation(() =>
+      createSpySuccessResponse({ ...oauthConfig, enable_oauth2: true })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -168,6 +179,12 @@ describe('base/System/LoginConnection/Oauth', () => {
         }
       });
 
+      fireEvent.change(getBySelector('#serverLayoutUrl', baseElement), {
+        target: {
+          value: 'server layout url'
+        }
+      });
+
       fireEvent.change(getBySelector('#serverTokenUrl', baseElement), {
         target: {
           value: 'server token url'
@@ -201,6 +218,14 @@ describe('base/System/LoginConnection/Oauth', () => {
       fireEvent.click(getBySelector('#autoCreateUser', baseElement));
       await act(async () => jest.advanceTimersByTime(0));
 
+      expect(screen.getByText('默认登录密码')).toBeInTheDocument();
+
+      fireEvent.change(getBySelector('#userPassword', baseElement), {
+        target: {
+          value: '123'
+        }
+      });
+
       fireEvent.click(getBySelector('#skipCheckState', baseElement));
 
       fireEvent.click(screen.getByText('提 交'));
@@ -224,7 +249,9 @@ describe('base/System/LoginConnection/Oauth', () => {
           user_id_tag: 'user Id Key Name',
           user_wechat_tag: 'user wechat tag',
           auto_create_user: true,
-          skip_check_state: true
+          skip_check_state: true,
+          server_logout_url: 'server layout url',
+          auto_create_user_pwd: '123'
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));

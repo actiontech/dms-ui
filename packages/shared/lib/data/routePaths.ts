@@ -12,7 +12,7 @@ export const ROUTE_PATHS = {
     USER_BIND: {
       index: {
         path: '/user/bind',
-        query: 'oauth2_token&error&user_exist&dms_token'
+        query: 'oauth2_token&error&user_exist&dms_token&id_token'
       }
     },
     HOME: '/',

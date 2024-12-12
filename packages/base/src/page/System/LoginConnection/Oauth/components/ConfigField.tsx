@@ -1,13 +1,16 @@
 import { useTranslation } from 'react-i18next';
 
-import { BasicInput, BasicSwitch } from '@actiontech/shared';
+import { BasicInput, BasicSwitch, EmptyBox } from '@actiontech/shared';
 import {
   FormItemLabel,
   CustomLabelContent
 } from '@actiontech/shared/lib/components/FormCom';
+import { Form } from 'antd';
 
 const ConfigField = () => {
   const { t } = useTranslation();
+
+  const autoCreateUser = Form.useWatch('autoCreateUser');
 
   return (
     <>
@@ -151,6 +154,22 @@ const ConfigField = () => {
         className="has-label-tip"
         label={
           <CustomLabelContent
+            title={t('dmsSystem.oauth.layoutUrl')}
+            tips={t('dmsSystem.oauth.layoutUrlTips')}
+          />
+        }
+        name="serverLayoutUrl"
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.layoutUrl')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
             title={t('dmsSystem.oauth.scopes')}
             tips={t('dmsSystem.oauth.scopesTips')}
           />
@@ -279,6 +298,24 @@ const ConfigField = () => {
       >
         <BasicSwitch />
       </FormItemLabel>
+      <EmptyBox if={autoCreateUser}>
+        <FormItemLabel
+          className="has-label-tip"
+          label={
+            <CustomLabelContent
+              title={t('dmsSystem.oauth.userPassword')}
+              tips={t('dmsSystem.oauth.userPasswordTips')}
+            />
+          }
+          name="userPassword"
+        >
+          <BasicInput.Password
+            placeholder={t('common.form.placeholder.input', {
+              name: t('dmsSystem.oauth.userPassword')
+            })}
+          />
+        </FormItemLabel>
+      </EmptyBox>
       <FormItemLabel
         className="has-label-tip"
         label={
