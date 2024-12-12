@@ -341,6 +341,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -349,6 +350,19 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到Coding
                           </span>
                         </button>
                       </div>
@@ -2066,6 +2080,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2074,6 +2089,19 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到Coding
                           </span>
                         </button>
                       </div>
@@ -2840,6 +2868,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2848,6 +2877,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到Coding
                           </span>
                         </button>
                       </div>
@@ -5659,6 +5701,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -5667,6 +5710,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到Coding
                           </span>
                         </button>
                       </div>
@@ -8478,6 +8534,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -8486,6 +8543,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到Coding
                           </span>
                         </button>
                       </div>
@@ -11313,6 +11383,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -11321,6 +11392,19 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到Coding
                           </span>
                         </button>
                       </div>

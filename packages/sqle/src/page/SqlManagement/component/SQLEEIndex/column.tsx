@@ -344,7 +344,7 @@ const SqlManagementColumn: (
     {
       dataIndex: 'status',
       title: () => t('sqlManagement.table.column.status'),
-      width: 100,
+      width: 140,
       className: 'audit-status',
       render: (status) => {
         if (!status) return '-';
