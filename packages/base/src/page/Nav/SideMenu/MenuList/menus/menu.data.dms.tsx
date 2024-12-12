@@ -82,7 +82,7 @@ export const dmsSideMenuData = (projectID: string) => {
     {
       type: 'group',
       label: t('dmsMenu.groupLabel.operateAndAudit'),
-      group: ['sqle-log', 'auth-audit', 'template-audit']
+      group: ['sqle-log']
     }
   ];
 
