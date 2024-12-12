@@ -774,4 +774,55 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       filter_assignee: undefined
     });
   });
+
+  it('batch Batch push to other platforms', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('推送到其他平台').closest('button')).toBeDisabled();
+    const batchCheckbox = getBySelector('.ant-table-thead .ant-checkbox-input');
+    fireEvent.click(batchCheckbox);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText('推送到其他平台').closest('button')
+    ).not.toBeDisabled();
+    fireEvent.click(screen.getByText('推送到其他平台'));
+    expect(mockDispatch).toHaveBeenCalledTimes(5);
+    expect(mockDispatch).toHaveBeenNthCalledWith(4, {
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.Push_To_Coding,
+        status: true
+      }
+    });
+    expect(mockDispatch).toHaveBeenNthCalledWith(5, {
+      type: 'sqlManagement/setSqlManagementBatchSelectData',
+      payload: [sqlManageListData.data[0]]
+    });
+  });
+
+  it('change push to other platforms when click row button', async () => {
+    const request = sqlManage.getSqlManageList();
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getAllByText('推送到其他平台').length).toBe(2);
+    expect(getAllBySelector('.more-button-item').length).toBe(5);
+    fireEvent.click(getAllBySelector('.more-button-item')[4]);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlManagement/updateModalStatus',
+      payload: {
+        modalName: ModalName.Push_To_Coding,
+        status: true
+      }
+    });
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'sqlManagement/setSqlManagementBatchSelectData',
+      payload: [sqlManageListData.data[0]]
+    });
+  });
 });
