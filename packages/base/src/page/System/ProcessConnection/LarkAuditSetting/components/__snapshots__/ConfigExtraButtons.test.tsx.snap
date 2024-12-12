@@ -18,7 +18,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -289,7 +289,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -560,7 +560,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -836,7 +836,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -1113,7 +1113,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
               disabled=""
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon ant-btn-loading-icon"
@@ -1432,7 +1432,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -1704,7 +1704,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -1781,7 +1781,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons rende
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"

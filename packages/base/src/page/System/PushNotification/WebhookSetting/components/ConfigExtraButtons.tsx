@@ -64,7 +64,6 @@ const ConfigExtraButtons = ({
       <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
         <BasicToolTips title={t('common.test')} titleWidth={54}>
           <BasicButton
-            htmlType="submit"
             type="text"
             className="system-config-button"
             loading={testTing.current}

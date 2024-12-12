@@ -5,6 +5,7 @@ import SystemBasicTitle from '../components/BasicTitle';
 import { EnterpriseFeatureDisplay } from '@actiontech/shared';
 import { Typography } from 'antd';
 import WechatAuditSetting from './WechatAuditSetting';
+import CodingSetting from './CodingSetting';
 
 const ProcessConnection = () => {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ const ProcessConnection = () => {
         <DingTalkSetting />
         <LarkAuditSetting />
         <WechatAuditSetting />
+        <CodingSetting />
       </EnterpriseFeatureDisplay>
     </SystemBasicTitle>
   );

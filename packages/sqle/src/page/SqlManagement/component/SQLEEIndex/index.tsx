@@ -85,6 +85,9 @@ const SQLEEIndex = () => {
   const { setSelectData, setBatchSelectData, updateModalStatus } =
     useSqlManagementRedux();
 
+  const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
+  const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
+
   const {
     openCreateSqlManagementExceptionModal,
     updateSelectSqlManagementExceptionRecord
@@ -238,6 +241,14 @@ const SQLEEIndex = () => {
     [openCreateWhitelistModal, updateSelectWhitelistRecord]
   );
 
+  const onPushToCoding = useCallback(
+    (batch: boolean, record?: ISqlManage) => {
+      updateModalStatus(ModalName.Push_To_Coding, true);
+      setBatchSelectData(batch ? selectedRowData : [record ?? {}]);
+    },
+    [updateModalStatus, setBatchSelectData, selectedRowData]
+  );
+
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
       SqlManagementRowAction(
@@ -246,7 +257,8 @@ const SQLEEIndex = () => {
         onCreateSqlManagementException,
         onCreateWhitelist,
         language,
-        checkActionPermission
+        checkActionPermission,
+        onPushToCoding
       )
     );
   }, [
@@ -256,11 +268,9 @@ const SQLEEIndex = () => {
     onCreateWhitelist,
     language,
     parse2TableActionPermissions,
-    checkActionPermission
+    checkActionPermission,
+    onPushToCoding
   ]);
-
-  const [selectedRowKeys, setSelectedRowKeys] = useState<number[]>([]);
-  const [selectedRowData, setSelectedRowData] = useState<ISqlManage[]>([]);
 
   const updateRemarkProtect = useRef(false);
   const updateRemark = useCallback(
@@ -380,13 +390,13 @@ const SQLEEIndex = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onBatchAssignment = () => {
+  const onBatchAssignment = useCallback(() => {
     updateModalStatus(ModalName.Assignment_Member_Batch, true);
     // selectedRowData
     setBatchSelectData(selectedRowData);
-  };
+  }, [selectedRowData, updateModalStatus, setBatchSelectData]);
 
-  const getTableToolbarActions = () => {
+  const getTableToolbarActions = useMemo(() => {
     return parse2TableToolbarActionPermissions(
       SqlManagementTableToolbarActions(
         selectedRowKeys?.length === 0,
@@ -398,10 +408,22 @@ const SQLEEIndex = () => {
         isAssigneeSelf,
         isHighPriority,
         setAssigneeSelf,
-        setIsHighPriority
+        setIsHighPriority,
+        onPushToCoding
       )
     );
-  };
+  }, [
+    batchIgnoreLoading,
+    batchSolveLoading,
+    selectedRowKeys?.length,
+    isAssigneeSelf,
+    isHighPriority,
+    onBatchAssignment,
+    onBatchIgnore,
+    onBatchSolve,
+    onPushToCoding,
+    parse2TableToolbarActionPermissions
+  ]);
 
   const loading = useMemo(
     () => (polling ? false : getListLoading),
@@ -448,7 +470,7 @@ const SQLEEIndex = () => {
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
         setting={tableSetting}
-        actions={getTableToolbarActions()}
+        actions={getTableToolbarActions}
         filterButton={{
           filterButtonMeta,
           updateAllSelectedFilterItem

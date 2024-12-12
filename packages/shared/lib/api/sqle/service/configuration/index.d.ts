@@ -1,7 +1,11 @@
 import {
+  IGetCodingConfigurationResV1,
+  IUpdateCodingConfigurationReqV1,
+  IBaseRes,
+  ITestCodingConfigurationReqV1,
+  ITestCodingConfigResV1,
   IGetDingTalkConfigurationResV1,
   IUpdateDingTalkConfigurationReqV1,
-  IBaseRes,
   ITestDingTalkConfigResV1,
   IGetDriversResV1,
   IGetFeishuAuditConfigurationResV1,
@@ -18,6 +22,19 @@ import {
   ITestWechatConfigResV1,
   IGetDriversRes
 } from '../common.d';
+
+export interface IGetCodingConfigurationV1Return
+  extends IGetCodingConfigurationResV1 {}
+
+export interface IUpdateCodingConfigurationV1Params
+  extends IUpdateCodingConfigurationReqV1 {}
+
+export interface IUpdateCodingConfigurationV1Return extends IBaseRes {}
+
+export interface ITestCodingConfigV1Params
+  extends ITestCodingConfigurationReqV1 {}
+
+export interface ITestCodingConfigV1Return extends ITestCodingConfigResV1 {}
 
 export interface IGetDingTalkConfigurationV1Return
   extends IGetDingTalkConfigurationResV1 {}

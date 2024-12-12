@@ -62,7 +62,8 @@ export const PERMISSIONS = {
         PROCESS_CONNECTION: {
           ENABLE_DING_TALK: 'action:enable_ding_talk',
           ENABLE_LARK_AUDIT: 'action:enable_lark_audit',
-          ENABLE_WECHAT_AUDIT: 'action:enable_wechat_audit'
+          ENABLE_WECHAT_AUDIT: 'action:enable_wechat_audit',
+          ENABLE_CODING: 'action:enable_coding'
         },
         LOGIN_CONNECTION: {
           ENABLE_LDAP: 'action:enable_ldap',
@@ -165,7 +166,8 @@ export const PERMISSIONS = {
         BATCH_RESOLVE: 'action:batch_resolve',
         BATCH_IGNORE: 'action:batch_ignore',
         ACTION_LAYOUT: 'action:sql_management_action_layout',
-        EDIT_REMARK: 'action:edit_sql_remark'
+        EDIT_REMARK: 'action:edit_sql_remark',
+        PUSH_TO_CODING: 'action:push_to_coding'
       },
       SQL_MANAGEMENT_EXCEPTION: {
         CREATE: 'action:create_sql_management_exception',

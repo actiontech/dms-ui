@@ -25,6 +25,18 @@ exports[`page/SqlManagement/StatusTag render manual_audited status tag 1`] = `
 </body>
 `;
 
+exports[`page/SqlManagement/StatusTag render sent status tag 1`] = `
+<body>
+  <div>
+    <span
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7 css-dev-only-do-not-override-txh9fw"
+    >
+      已推送至其他平台
+    </span>
+  </div>
+</body>
+`;
+
 exports[`page/SqlManagement/StatusTag render solved status tag 1`] = `
 <body>
   <div>
