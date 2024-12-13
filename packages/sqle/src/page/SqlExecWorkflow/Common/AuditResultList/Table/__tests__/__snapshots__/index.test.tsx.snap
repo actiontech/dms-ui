@@ -50,7 +50,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -349,6 +349,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -356,6 +357,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -575,7 +603,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -874,6 +902,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -881,6 +910,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render allowSwitchBackupP
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -1239,7 +1295,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -1475,6 +1531,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -1482,6 +1539,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -1700,7 +1784,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -1936,6 +2020,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -1943,6 +2028,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when add note
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -2161,7 +2273,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when data is 
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -2337,7 +2449,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -2489,7 +2601,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -2703,6 +2815,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2710,6 +2823,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -2912,7 +3052,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List render snap when get tabl
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -3080,7 +3220,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -3294,6 +3434,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -3301,6 +3442,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -3428,6 +3596,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -3435,6 +3604,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -3653,7 +3849,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead
@@ -3867,6 +4063,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -3874,6 +4071,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -4001,6 +4225,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-right: 8px;"
                             >
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -4008,6 +4233,33 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                               >
                                 <span>
                                   添加为审核SQL例外
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span
+                                  class="ant-btn-icon"
+                                >
+                                  <svg
+                                    height="18"
+                                    viewBox="0 0 1024 1024"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                </span>
+                                <span>
+                                  SQL合规重写
                                 </span>
                               </button>
                             </div>
@@ -4403,14 +4655,18 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/List should match snapshot whe
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="SELECT * "
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="SELECT * "
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>

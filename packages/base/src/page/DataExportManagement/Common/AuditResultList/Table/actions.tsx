@@ -1,3 +1,4 @@
+import { RobotOutlined } from '@actiontech/icons';
 import { t } from '../../../../../locale';
 import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
 import {
@@ -6,7 +7,8 @@ import {
 } from '@actiontech/shared/lib/global';
 
 export const AuditResultForCreateOrderActions = (
-  onCreateWhitelist: (record?: IListDataExportTaskSQL) => void
+  onCreateWhitelist: (record?: IListDataExportTaskSQL) => void,
+  handleClickSqlRewritten: (record: IListDataExportTaskSQL) => void
 ): ActiontechTableActionsWithPermissions<IListDataExportTaskSQL> => {
   return [
     {
@@ -21,6 +23,19 @@ export const AuditResultForCreateOrderActions = (
         };
       },
       permissions: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST
+    },
+    {
+      key: 'sqlRewriter',
+      text: t('sqlRewrite.actionName'),
+      buttonProps: (record) => {
+        return {
+          icon: <RobotOutlined height={18} width={18} />,
+          onClick: (e) => {
+            e.stopPropagation();
+            handleClickSqlRewritten(record!);
+          }
+        };
+      }
     }
   ];
 };
