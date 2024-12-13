@@ -15,7 +15,10 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import task from '../../../../testUtils/mockApi/task';
 import { workflowTaskDetailMockData } from '../../../../testUtils/mockApi/task/data';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpySuccessResponse,
+  createSpyErrorResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   WorkflowResV2ModeEnum,
   GetWorkflowTasksItemV2StatusEnum
@@ -483,6 +486,24 @@ describe('sqle/ExecWorkflow/Detail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestWorkflowInfo).toHaveBeenCalledTimes(2);
     expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('render cancel polling request when summary task request return null', async () => {
+    requestWorkflowInfo.mockClear();
+    requestWorkflowInfo.mockImplementation(() =>
+      createSpySuccessResponse({ data: workflowsDetailExecutingData })
+    );
+    getSummaryOfInstanceTasksSpy.mockClear();
+    getSummaryOfInstanceTasksSpy.mockImplementation(() =>
+      createSpyErrorResponse({}, { status: 404 })
+    );
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestWorkflowInfo).toHaveBeenCalledTimes(1);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestWorkflowInfo).toHaveBeenCalledTimes(2);
+    expect(getSummaryOfInstanceTasksSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render polling request when workflow status is not executing or all of task status is not executing', async () => {

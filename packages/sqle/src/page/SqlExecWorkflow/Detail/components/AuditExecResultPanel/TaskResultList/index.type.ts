@@ -1,6 +1,7 @@
 import {
   WorkflowRecordResV2StatusEnum,
-  WorkflowResV2ExecModeEnum
+  WorkflowResV2ExecModeEnum,
+  AuditTaskResV1StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { GetAuditTaskSQLsPrams } from '../index.type';
@@ -18,4 +19,6 @@ export type TasksResultListBaseProps = {
   executeMode: WorkflowResV2ExecModeEnum;
   backupConflict?: boolean;
   dbType?: string;
+  enableBackup?: boolean;
+  taskStatus?: AuditTaskResV1StatusEnum;
 };
