@@ -39,8 +39,9 @@ const useConfigSwitchControls = <T extends Record<string, any>>(
       if (!configEnabled) {
         return;
       }
+      // 每次点击都需要重新设置为true 不然多次点击会导致Switch值异常
+      form.setFieldValue(switchFieldName as string, true);
       if (open) {
-        form.setFieldValue(switchFieldName as string, true);
         showConfigSwitchPopover();
       } else {
         hiddenConfigSwitchPopover();

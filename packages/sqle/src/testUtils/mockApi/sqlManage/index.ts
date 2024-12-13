@@ -17,6 +17,7 @@ class MockSqlManageApi implements MockSpyApy {
     this.exportSqlManage();
     this.getGlobalSqlManageList();
     this.getGlobalSqlManageStatistics();
+    this.sendSqlManage();
   }
 
   public getSqlManageRuleTips() {
@@ -74,6 +75,12 @@ class MockSqlManageApi implements MockSpyApy {
         total_nums: 10
       })
     );
+    return spy;
+  }
+
+  public sendSqlManage() {
+    const spy = jest.spyOn(SqlManage, 'SendSqlManage');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

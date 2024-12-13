@@ -148,7 +148,7 @@ export default {
       '用户登出时，系统自动将浏览器重定向至此地址进行注销操作，以关闭第三方平台的会话信息。格式示例：http://localhost:8080/logout?id_token_hint=${id_token}&post_logout_redirect_uri=${sqle_url}',
     userPassword: '默认登录密码',
     userPasswordTips:
-      '系统自动创建的新用户将使用此密码作为初始登录密码。为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。'
+      '系统自动创建的新用户将使用此密码作为初始登录密码，请妥善保存。此外，为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。'
   },
 
   dingTalk: {
@@ -180,6 +180,16 @@ export default {
     corpID: 'CorpID(微信企业号ID)',
     corpSecret: '企业微信应用Secret',
     wechatUserID: '企业微信用户ID'
+  },
+  codingDocking: {
+    titleTips: 'SQL管控中的问题SQL可以被推送至Coding平台跟踪解决',
+    enable: '启用Coding对接',
+    serviceAddress: '服务地址',
+    accessToken: '访问令牌',
+    testSuccess: '当前服务地址和访问令牌验证通过',
+    codingProjectName: '项目名称',
+    testConnection: '测试联通性',
+    testing: '正在测试Coding联通性...'
   },
 
   license: {

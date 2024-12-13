@@ -18,7 +18,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons render
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -117,7 +117,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons render
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -216,7 +216,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons render
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -332,7 +332,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons render
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"
@@ -409,7 +409,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons render
           >
             <button
               class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-              type="submit"
+              type="button"
             >
               <span
                 class="ant-btn-icon"

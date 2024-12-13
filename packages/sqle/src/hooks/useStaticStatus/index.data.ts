@@ -10,7 +10,7 @@ import {
 import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { StaticEnumDictionary } from './index.type';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
-import { GetSqlManageListFilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { GetSqlManageListV2FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { t } from '../../locale';
 
 export const translateDictionaryI18nLabel = <T extends string>(
@@ -108,14 +108,16 @@ export const sqlAuditStatusDictionary: StaticEnumDictionary<getSQLAuditRecordsV1
       'sqlAudit.list.status.auditStatus.successfully'
   };
 
-export const sqlManagementDictionary: StaticEnumDictionary<GetSqlManageListFilterStatusEnum> =
+export const sqlManagementDictionary: StaticEnumDictionary<GetSqlManageListV2FilterStatusEnum> =
   {
-    [GetSqlManageListFilterStatusEnum.unhandled]:
+    [GetSqlManageListV2FilterStatusEnum.unhandled]:
       'sqlManagement.table.filter.status.unhandled',
-    [GetSqlManageListFilterStatusEnum.solved]:
+    [GetSqlManageListV2FilterStatusEnum.solved]:
       'sqlManagement.table.filter.status.solved',
-    [GetSqlManageListFilterStatusEnum.ignored]:
+    [GetSqlManageListV2FilterStatusEnum.ignored]:
       'sqlManagement.table.filter.status.ignored',
-    [GetSqlManageListFilterStatusEnum.manual_audited]:
-      'sqlManagement.table.filter.status.manual_audited'
+    [GetSqlManageListV2FilterStatusEnum.manual_audited]:
+      'sqlManagement.table.filter.status.manual_audited',
+    [GetSqlManageListV2FilterStatusEnum.sent]:
+      'sqlManagement.table.filter.status.sent'
   };

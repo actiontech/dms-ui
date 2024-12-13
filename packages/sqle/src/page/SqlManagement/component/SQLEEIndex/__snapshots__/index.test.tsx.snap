@@ -198,6 +198,20 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -341,6 +355,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -349,6 +364,19 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -978,7 +1006,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -1924,6 +1952,20 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -2066,6 +2108,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2074,6 +2117,19 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -2338,7 +2394,7 @@ exports[`page/SqlManagement/SQLEEIndex render sql statics data 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -2698,6 +2754,20 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -2840,6 +2910,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2848,6 +2919,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -3110,7 +3194,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -5517,6 +5601,20 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -5659,6 +5757,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -5667,6 +5766,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -5929,7 +6041,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -8336,6 +8448,20 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -8478,6 +8604,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -8486,6 +8613,19 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -8748,7 +8888,7 @@ exports[`page/SqlManagement/SQLEEIndex render table data when preferred language
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -11171,6 +11311,20 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -11313,6 +11467,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                       </div>
                       <div
                         class="ant-space-item"
+                        style="margin-right: 8px;"
                       >
                         <button
                           class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -11321,6 +11476,19 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                         >
                           <span>
                             批量忽略
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          disabled=""
+                          type="button"
+                        >
+                          <span>
+                            推送到其他平台
                           </span>
                         </button>
                       </div>
@@ -11583,7 +11751,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 1`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -12356,6 +12524,20 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -12726,7 +12908,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 2`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"
@@ -13469,6 +13651,20 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                             已人工审核
                           </div>
                         </label>
+                        <label
+                          class="ant-segmented-item"
+                        >
+                          <input
+                            class="ant-segmented-item-input"
+                            type="radio"
+                          />
+                          <div
+                            class="ant-segmented-item-label"
+                            title="已推送至其他平台"
+                          >
+                            已推送至其他平台
+                          </div>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -13839,7 +14035,7 @@ exports[`page/SqlManagement/SQLEEIndex render table with permissions 3`] = `
                           style="width: 200px;"
                         />
                         <col
-                          style="width: 100px;"
+                          style="width: 140px;"
                         />
                         <col
                           style="width: 200px;"

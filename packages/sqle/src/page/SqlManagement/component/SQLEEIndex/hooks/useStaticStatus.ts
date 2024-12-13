@@ -4,8 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { StaticEnumDictionary } from '../../../../../hooks/useStaticStatus/index.type';
 import {
   GetSqlManageListV2FilterAuditLevelEnum,
-  GetSqlManageListV2FilterSourceEnum,
-  GetSqlManageListV2FilterStatusEnum
+  GetSqlManageListV2FilterSourceEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 
 export const sourceDictionary: StaticEnumDictionary<GetSqlManageListV2FilterSourceEnum> =
@@ -26,18 +25,6 @@ export const auditLevelDictionary: StaticEnumDictionary<GetSqlManageListV2Filter
       'sqlManagement.table.filter.auditLevel.warn',
     [GetSqlManageListV2FilterAuditLevelEnum.error]:
       'sqlManagement.table.filter.auditLevel.error'
-  };
-
-export const statusDictionary: StaticEnumDictionary<GetSqlManageListV2FilterStatusEnum> =
-  {
-    [GetSqlManageListV2FilterStatusEnum.unhandled]:
-      'sqlManagement.table.filter.status.unhandled',
-    [GetSqlManageListV2FilterStatusEnum.solved]:
-      'sqlManagement.table.filter.status.solved',
-    [GetSqlManageListV2FilterStatusEnum.ignored]:
-      'sqlManagement.table.filter.status.ignored',
-    [GetSqlManageListV2FilterStatusEnum.manual_audited]:
-      'sqlManagement.table.filter.status.manual_audited'
   };
 
 const useStaticStatus = () => {
