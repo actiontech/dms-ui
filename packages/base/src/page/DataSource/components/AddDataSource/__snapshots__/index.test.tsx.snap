@@ -7448,6 +7448,7 @@ exports[`page/DataSource/AddDataSource render submit when projectID is undefined
                             autocomplete="off"
                             class="ant-input-number-input"
                             id="backupMaxRows"
+                            placeholder="请输入回滚行数限制"
                             role="spinbutton"
                             step="1"
                             value="2000"
