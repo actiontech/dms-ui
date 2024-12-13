@@ -41,4 +41,10 @@ describe('page/SqlManagement/StatusTag', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('未处理')).toBeInTheDocument();
   });
+
+  it('render sent status tag', () => {
+    const { baseElement } = customRender(SqlManageStatusEnum.sent);
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('已推送至其他平台')).toBeInTheDocument();
+  });
 });

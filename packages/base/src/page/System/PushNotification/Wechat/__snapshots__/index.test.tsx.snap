@@ -90,7 +90,7 @@ exports[`base/System/PushNotification/Wechat render snap 1`] = `
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"
@@ -573,7 +573,7 @@ exports[`base/System/PushNotification/Wechat render snap 2`] = `
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"
@@ -1056,7 +1056,7 @@ exports[`base/System/PushNotification/Wechat render snap when user is not admin 
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"
@@ -1539,7 +1539,7 @@ exports[`base/System/PushNotification/Wechat render submit wechat setting render
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"
@@ -2050,7 +2050,7 @@ exports[`base/System/PushNotification/Wechat render switch cancel btn render sna
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"
@@ -2534,7 +2534,7 @@ exports[`base/System/PushNotification/Wechat render switch cancel btn render sna
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"
@@ -3041,7 +3041,7 @@ exports[`base/System/PushNotification/Wechat render switch cancel btn render sna
                                   >
                                     <button
                                       class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
-                                      type="submit"
+                                      type="button"
                                     >
                                       <span
                                         class="ant-btn-icon"

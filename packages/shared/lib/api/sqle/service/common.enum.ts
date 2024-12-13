@@ -293,7 +293,9 @@ export enum GlobalSqlManageStatusEnum {
 
   'ignored' = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  'manual_audited' = 'manual_audited',
+
+  'sent' = 'sent'
 }
 
 export enum HighPriorityConditionReqOperatorEnum {
@@ -445,7 +447,31 @@ export enum SqlManageStatusEnum {
 
   'ignored' = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  'manual_audited' = 'manual_audited',
+
+  'sent' = 'sent'
+}
+
+export enum SqlManageCodingReqPriorityEnum {
+  'LOW' = 'LOW',
+
+  'MEDIUM' = 'MEDIUM',
+
+  'HIGH' = 'HIGH',
+
+  'EMERGENCY' = 'EMERGENCY'
+}
+
+export enum SqlManageCodingReqTypeEnum {
+  'DEFECT' = 'DEFECT',
+
+  'MISSION' = 'MISSION',
+
+  'REQUIREMENT' = 'REQUIREMENT',
+
+  'EPIC' = 'EPIC',
+
+  'SUB_TASK' = 'SUB_TASK'
 }
 
 export enum SqlManageCodingReqPriorityEnum {

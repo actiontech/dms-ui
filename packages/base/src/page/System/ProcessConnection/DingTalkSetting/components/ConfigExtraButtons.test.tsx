@@ -4,7 +4,7 @@ import ConfigExtraButtons, {
 
 import { cleanup, fireEvent, act } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import system from '../../../../../testUtils/mockApi/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -58,7 +58,10 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
         extraButtonsVisible: true
       });
 
-      const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);
+      const btnSubmit = getAllBySelector(
+        '.system-config-button',
+        baseElement
+      )[0];
       fireEvent.mouseOver(btnSubmit);
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
@@ -79,7 +82,10 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
         extraButtonsVisible: true
       });
 
-      const btnSubmit = getBySelector('.ant-btn[type="submit"]', baseElement);
+      const btnSubmit = getAllBySelector(
+        '.system-config-button',
+        baseElement
+      )[0];
       fireEvent.click(btnSubmit);
       await act(async () => jest.advanceTimersByTime(3300));
       expect(requestTestDingTalkConfig).toHaveBeenCalled();

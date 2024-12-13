@@ -18,7 +18,8 @@ export const SqlManagementRowAction = (
   language: SupportLanguage,
   checkActionPermission: (
     requiredPermission: PermissionsConstantType
-  ) => boolean
+  ) => boolean,
+  onPushToCoding: (batch: boolean, record?: ISqlManage) => void
 ): ActiontechTableActionsWithPermissions<ISqlManage> => {
   const getWidth = () => {
     if (
@@ -93,6 +94,12 @@ export const SqlManagementRowAction = (
           onCreateWhitelist(record);
         },
         permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST
+      },
+      {
+        key: 'push-to-coding',
+        text: t('sqlManagement.table.action.batch.pushToCoding'),
+        onClick: (record) => onPushToCoding(false, record),
+        permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
       }
     ]
   };
@@ -108,7 +115,8 @@ export const SqlManagementTableToolbarActions = (
   isAssigneeSelf: boolean,
   isHighPriority: boolean,
   setAssigneeSelf: (value: boolean) => void,
-  setIsHighPriority: (value: boolean) => void
+  setIsHighPriority: (value: boolean) => void,
+  onPushToCoding: (batch: boolean, record?: ISqlManage) => void
 ): ActiontechTableToolbarActionWithPermissions => {
   return [
     {
@@ -171,6 +179,15 @@ export const SqlManagementTableToolbarActions = (
         }
       },
       permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE
+    },
+    {
+      key: 'push-to-coding',
+      text: t('sqlManagement.table.action.batch.pushToCoding'),
+      buttonProps: {
+        disabled,
+        onClick: () => onPushToCoding(true)
+      },
+      permissions: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING
     }
   ];
 };
