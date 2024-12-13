@@ -132,13 +132,17 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                         </span>
                       </div>
                     </div>
-                    <input
-                      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-ndw5g2"
-                      height="400"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false}"
-                      value=""
-                    />
+                    <div
+                      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+                    >
+                      <input
+                        height="400"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+                        theme="editorCustomTheme"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -301,16 +305,20 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                         </span>
                       </div>
                     </div>
-                    <input
-                      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-ndw5g2"
-                      height="400"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false}"
-                      value=""
-                    />
+                    <div
+                      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+                    >
+                      <input
+                        height="400"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+                        theme="editorCustomTheme"
+                        value=""
+                      />
+                    </div>
                   </div>
                   <div
-                    class="ant-collapse ant-collapse-icon-position-start css-1ohn871 css-dev-only-do-not-override-txh9fw"
+                    class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
                   >
                     <div
                       class="ant-collapse-item"
