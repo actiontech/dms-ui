@@ -925,18 +925,14 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                   <div
                     class="wrapper-cont"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
-                        height="100%"
-                        language="sql"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
-                        value="CREATE TABLE task (  id INT AUTO_INCREMENT PRIMARY KEY,  title VARCHAR(255) NOT NULL,  description TEXT,  status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);"
-                        width="100%"
-                      />
-                    </div>
+                    <input
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
+                      height="90%"
+                      language="sql"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value="CREATE TABLE task (  id INT AUTO_INCREMENT PRIMARY KEY,  title VARCHAR(255) NOT NULL,  description TEXT,  status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);"
+                      width="100%"
+                    />
                   </div>
                 </section>
               </div>

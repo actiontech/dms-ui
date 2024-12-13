@@ -28,6 +28,8 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('rehype-sanitize', () => () => jest.fn());
+
 describe('page/RuleUnderstand', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
