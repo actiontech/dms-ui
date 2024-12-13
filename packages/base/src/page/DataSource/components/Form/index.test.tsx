@@ -14,6 +14,7 @@ import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import system from 'sqle/src/testUtils/mockApi/system';
 
 import DataSourceForm from '.';
 
@@ -21,6 +22,7 @@ describe('page/DataSource/DataSourceForm', () => {
   const submitFn = jest.fn();
   let getProjectTipsSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
+  let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
     defaultData?: IListDBService;
@@ -44,6 +46,7 @@ describe('page/DataSource/DataSourceForm', () => {
     jest.useFakeTimers();
     getProjectTipsSpy = project.getProjectTips();
     getProjectListSpy = project.getProjectList();
+    getSystemModuleStatusSpy = system.getSystemModuleStatus();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
     mockUseCurrentProject();
@@ -155,6 +158,10 @@ describe('page/DataSource/DataSourceForm', () => {
     const ruleTemplateId = getBySelector('#ruleTemplateId');
     expect(ruleTemplateName).toHaveAttribute('value', undefined);
     expect(ruleTemplateId).toHaveAttribute('value', undefined);
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(2700));
+    expect(screen.getByText('SQL备份配置')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render change switch when page is update', async () => {

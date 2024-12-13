@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   pageTitle: '系统设置',
@@ -141,7 +142,13 @@ export default {
       '若开启，在通过OAuth2登陆时，若该用户未绑定SQLE用户，SQLE则会根据从OAuth2服务端获取的用户id创建SQLE账户，并且不会跳转到绑定界面，而是进入SQLE主界面。',
     skipCheckState: '跳过请求来源验证',
     skipStateCheckTips:
-      '跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。'
+      '跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。',
+    layoutUrl: '注销跳转地址',
+    layoutUrlTips:
+      '用户登出时，系统自动将浏览器重定向至此地址进行注销操作，以关闭第三方平台的会话信息。格式示例：http://localhost:8080/logout?id_token_hint=${id_token}&post_logout_redirect_uri=${sqle_url}',
+    userPassword: '默认登录密码',
+    userPasswordTips:
+      '系统自动创建的新用户将使用此密码作为初始登录密码。为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。'
   },
 
   dingTalk: {

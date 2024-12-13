@@ -70,7 +70,18 @@ describe('test SqlStatementFormItem', () => {
   });
 
   it('render backup switcher', () => {
-    customRender({});
+    customRender({
+      databaseInfo: [
+        {
+          key: '1',
+          instanceName: 'mysql-1',
+          schemaName: 'test',
+          enableBackup: true,
+          allowBackup: true,
+          backupMaxRows: 2000
+        }
+      ]
+    });
     expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
     fireEvent.click(screen.getByText('上传SQL文件'));
     expect(screen.getByText('是否选择开启备份')).toBeInTheDocument();
