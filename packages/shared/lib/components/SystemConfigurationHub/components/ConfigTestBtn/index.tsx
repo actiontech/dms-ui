@@ -28,7 +28,6 @@ const ConfigTestBtn: React.FC<ConfigTestBtnParams> = ({
     >
       <BasicToolTips title={t('common.test')} titleWidth={54}>
         <BasicButton
-          htmlType="submit"
           type="text"
           className="system-config-button"
           loading={testingRef.current}

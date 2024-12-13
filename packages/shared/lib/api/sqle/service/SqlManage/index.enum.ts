@@ -125,7 +125,9 @@ export enum GetSqlManageListV2FilterStatusEnum {
 
   'ignored' = 'ignored',
 
-  'manual_audited' = 'manual_audited'
+  'manual_audited' = 'manual_audited',
+
+  'sent' = 'sent'
 }
 
 export enum GetSqlManageListV2FilterPriorityEnum {

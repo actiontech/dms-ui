@@ -120,10 +120,10 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
         extraButtonsVisible: true,
         enabled: true
       });
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
+      const btnPopoverOpen = getAllBySelector(
+        '.system-config-button',
         baseElement
-      );
+      )[0];
       fireEvent.click(btnPopoverOpen);
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();

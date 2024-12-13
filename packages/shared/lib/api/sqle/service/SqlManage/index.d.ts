@@ -27,6 +27,8 @@ import {
   IBatchUpdateSqlManageReq,
   IBaseRes,
   IGetSqlManageRuleTipsResp,
+  ISqlManageCodingReq,
+  IPostSqlManageCodingResp,
   IGetSqlManageSqlAnalysisResp
 } from '../common.d';
 
@@ -142,6 +144,12 @@ export interface IGetSqlManageRuleTipsParams {
 
 export interface IGetSqlManageRuleTipsReturn
   extends IGetSqlManageRuleTipsResp {}
+
+export interface ISendSqlManageParams extends ISqlManageCodingReq {
+  project_name: string;
+}
+
+export interface ISendSqlManageReturn extends IPostSqlManageCodingResp {}
 
 export interface IGetSqlManageSqlAnalysisV1Params {
   project_name: string;

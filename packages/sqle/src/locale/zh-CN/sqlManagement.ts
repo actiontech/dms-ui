@@ -25,7 +25,8 @@ export default {
         solveSuccessTips: '批量解决SQL成功',
         ignore: '批量忽略',
         ignoreTips: '是否确认将所选SQL设为已忽略?',
-        ignoreSuccessTips: '批量忽略SQL成功'
+        ignoreSuccessTips: '批量忽略SQL成功',
+        pushToCoding: '推送到其他平台'
       },
       single: {
         assignment: '指派负责人',
@@ -48,7 +49,26 @@ export default {
       },
       analyze: '分析',
       createSqlManagementException: '添加为管控SQL例外',
-      createWhitelist: '添加为审核SQL例外'
+      createWhitelist: '添加为审核SQL例外',
+      pushToCodingForm: {
+        project: '推动至指定项目',
+        type: '推送类型',
+        typeOptions: {
+          defect: '缺陷',
+          requirement: '需求',
+          mission: '任务',
+          epic: '史诗',
+          subTask: '子任务'
+        },
+        urgency: '紧急度',
+        urgencyOptions: {
+          low: '低',
+          medium: '中',
+          high: '高',
+          emergency: '紧急'
+        },
+        successTips: '推送到其他平台成功'
+      }
     },
     column: {
       SQLFingerprint: 'SQL指纹',
@@ -72,7 +92,8 @@ export default {
         unhandled: '未处理',
         solved: '已解决',
         ignored: '已忽略',
-        manual_audited: '已人工审核'
+        manual_audited: '已人工审核',
+        sent: '已推送至其他平台'
       },
       business: '业务',
       instanceName: '数据源',

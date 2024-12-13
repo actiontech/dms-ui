@@ -39,6 +39,8 @@ import {
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
+  RewriteSuggestionAuditLevelEnum,
+  RewriteSuggestionTypeEnum,
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
@@ -46,6 +48,8 @@ import {
   SchemaObjectComparisonResultEnum,
   SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
+  SqlManageCodingReqPriorityEnum,
+  SqlManageCodingReqTypeEnum,
   SqlVersionDetailResV1StatusEnum,
   SqlVersionResV1StatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
@@ -549,6 +553,18 @@ export interface ICloneRuleTemplateReqV1 {
   desc?: string;
 
   new_rule_template_name?: string;
+}
+
+export interface ICodingConfigurationV1 {
+  coding_url?: string;
+
+  is_coding_enabled?: boolean;
+}
+
+export interface ICodingResp {
+  code?: string;
+
+  message?: string;
 }
 
 export interface ICompanyNotice {
@@ -1203,6 +1219,14 @@ export interface IGetBlacklistResV1 {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IGetCodingConfigurationResV1 {
+  code?: number;
+
+  data?: ICodingConfigurationV1;
+
+  message?: string;
 }
 
 export interface IGetCompanyNoticeResp {
@@ -2391,6 +2415,14 @@ export interface IPerformanceStatistics {
   affect_rows?: IAffectRows;
 }
 
+export interface IPostSqlManageCodingResp {
+  code?: number;
+
+  data?: ICodingResp;
+
+  message?: string;
+}
+
 export interface IProjectRuleTemplateResV1 {
   db_type?: string;
 
@@ -2447,6 +2479,44 @@ export interface IRewriteRule {
   rule_name?: string;
 
   violated_queries_str?: string;
+}
+
+export interface IRewriteSQLData {
+  business_desc?: string;
+
+  business_non_equivalent_desc?: string;
+
+  rewritten_sql?: string;
+
+  suggestions?: IRewriteSuggestion[];
+}
+
+export interface IRewriteSQLReq {
+  enable_structure_type?: boolean;
+}
+
+export interface IRewriteSQLRes {
+  code?: number;
+
+  data?: IRewriteSQLData;
+
+  message?: string;
+}
+
+export interface IRewriteSuggestion {
+  audit_level?: RewriteSuggestionAuditLevelEnum;
+
+  ddl_dcl?: string;
+
+  ddl_dcl_desc?: string;
+
+  desc?: string;
+
+  rewritten_sql?: string;
+
+  rule_name?: string;
+
+  type?: RewriteSuggestionTypeEnum;
 }
 
 export interface IRiskAuditPlan {
@@ -2797,6 +2867,16 @@ export interface ISqlManage {
   status?: SqlManageStatusEnum;
 }
 
+export interface ISqlManageCodingReq {
+  coding_project_name?: string;
+
+  priority?: SqlManageCodingReqPriorityEnum;
+
+  sql_manage_id_list?: number[];
+
+  type?: SqlManageCodingReqTypeEnum;
+}
+
 export interface ISqlVersionDetailResV1 {
   desc?: string;
 
@@ -2943,6 +3023,24 @@ export interface ITestAuditPlanNotifyConfigResV1 {
   message?: string;
 }
 
+export interface ITestCodingConfigResDataV1 {
+  error_message?: string;
+
+  is_message_sent_normally?: boolean;
+}
+
+export interface ITestCodingConfigResV1 {
+  code?: number;
+
+  data?: ITestCodingConfigResDataV1;
+
+  message?: string;
+}
+
+export interface ITestCodingConfigurationReqV1 {
+  coding_project_name?: string;
+}
+
 export interface ITestDingTalkConfigResDataV1 {
   is_ding_talk_send_normal?: boolean;
 
@@ -3057,6 +3155,14 @@ export interface IUpdateBlacklistReqV1 {
   desc?: string;
 
   type?: UpdateBlacklistReqV1TypeEnum;
+}
+
+export interface IUpdateCodingConfigurationReqV1 {
+  coding_url?: string;
+
+  is_coding_enabled?: boolean;
+
+  token?: string;
 }
 
 export interface IUpdateCompanyNoticeReq {

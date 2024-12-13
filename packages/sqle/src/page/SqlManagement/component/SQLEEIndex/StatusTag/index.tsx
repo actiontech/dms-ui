@@ -21,7 +21,8 @@ const StatusTag = ({ status }: IStatusTag) => {
     [SqlManageStatusEnum.solved]: t('sqlManagement.table.filter.status.solved'),
     [SqlManageStatusEnum.unhandled]: t(
       'sqlManagement.table.filter.status.unhandled'
-    )
+    ),
+    [SqlManageStatusEnum.sent]: t('sqlManagement.table.filter.status.sent')
   };
 
   const color = useMemo(() => {
@@ -29,7 +30,8 @@ const StatusTag = ({ status }: IStatusTag) => {
       unhandled: 'red',
       solved: 'green',
       ignored: 'gray',
-      manual_audited: 'blue'
+      manual_audited: 'blue',
+      sent: 'geekblue'
     };
     return allColor[status];
   }, [status]);

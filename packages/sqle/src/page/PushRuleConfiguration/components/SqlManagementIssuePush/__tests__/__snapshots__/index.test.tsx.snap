@@ -13,7 +13,7 @@ exports[`test SqlManagementIssuePush should call onSubmit function correctly whe
           class="switch-field-wrapper"
         >
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -502,7 +502,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
         class="switch-field-wrapper"
       >
         <div
-          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1029,7 +1029,7 @@ exports[`test SqlManagementIssuePush should set the form to edit state and fill 
           class="switch-field-wrapper"
         >
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
