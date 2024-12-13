@@ -54,7 +54,11 @@ const UserNavigate: React.FC<Props> = ({
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           clearUserInfo();
-          navigate(ROUTE_PATHS.BASE.LOGIN.index, { replace: true });
+          if (res.data.data?.location) {
+            window.location.href = res.data.data?.location;
+          } else {
+            navigate(ROUTE_PATHS.BASE.LOGIN.index, { replace: true });
+          }
         }
       })
       .finally(() => {

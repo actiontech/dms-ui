@@ -30,6 +30,7 @@ export const oauthConfig = {
   server_auth_url: 'prospero://tpmui.cf/timilp',
   server_token_url: 'mid://juckyny.na/xxsxnmf',
   server_user_id_url: 'cid://hqpbmxvbpl.cd/lcfyjtlkuj',
+  server_logout_url: 'http://10.186.59.87:8080/realms/test/',
   user_id_tag: 'NFkVxY[4Xv^UFU&x&t5y',
   auto_create_user: false,
   skip_check_state: false

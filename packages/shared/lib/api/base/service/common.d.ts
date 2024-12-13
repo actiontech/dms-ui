@@ -261,6 +261,8 @@ export interface IBindOauth2UserReply {
 }
 
 export interface IBindOauth2UserReq {
+  id_token?: string;
+
   oauth2_token?: string;
 
   pwd?: string;
@@ -566,6 +568,16 @@ export interface IDelDBServicePreCheckReply {
   message?: string;
 }
 
+export interface IDelSessionReply {
+  code?: number;
+
+  data?: {
+    location?: string;
+  };
+
+  message?: string;
+}
+
 export interface IDelUserGroupPreCheckReply {
   code?: number;
 
@@ -774,6 +786,8 @@ export interface IGetOauth2ConfigurationResData {
   scopes?: string[];
 
   server_auth_url?: string;
+
+  server_logout_url?: string;
 
   server_token_url?: string;
 
@@ -1613,6 +1627,8 @@ export interface IOauth2Configuration {
 
   auto_create_user?: boolean;
 
+  auto_create_user_pwd?: string;
+
   client_host?: string;
 
   client_id?: string;
@@ -1626,6 +1642,8 @@ export interface IOauth2Configuration {
   scopes?: string[];
 
   server_auth_url?: string;
+
+  server_logout_url?: string;
 
   server_token_url?: string;
 
