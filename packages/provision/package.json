@@ -1,0 +1,20 @@
+{
+  "name": "provision",
+  "private": true,
+  "version": "1.0.0",
+  "main": "src/App.tsx",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "jest --watchAll=true",
+    "test:c": "jest --watchAll=false --coverage",
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
+    "eslint": "eslint -c ./.eslintrc \"src/**/{*.ts,*.tsx,*.js,*.jsx}\"",
+    "moveAntdCss": "node ./scripts/moveAntdCss.js"
+  },
+  "dependencies": {
+    "@actiontech/shared": "workspace:^1.0.0",
+    "@actiontech/icons": "workspace:^"
+  }
+}
