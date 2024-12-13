@@ -5,6 +5,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   AuditTaskSQLsMockData,
+  SqlRewrittenMockDataNoDDL,
   TaskFileListMockData,
   workflowTaskDetailMockData
 } from './data';
@@ -80,6 +81,14 @@ class TaskMockApi implements MockSpyApy {
   public updateSqlFileOrder() {
     const spy = jest.spyOn(task, 'updateSqlFileOrderV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getTaskSQLRewritten() {
+    const spy = jest.spyOn(task, 'RewriteSQL');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: SqlRewrittenMockDataNoDDL })
+    );
     return spy;
   }
 }

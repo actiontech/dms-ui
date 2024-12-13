@@ -412,7 +412,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 246px;"
                       />
                     </colgroup>
                     <thead
@@ -1008,7 +1008,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 246px;"
                       />
                     </colgroup>
                     <thead
@@ -1753,7 +1753,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 246px;"
                     />
                   </colgroup>
                   <thead

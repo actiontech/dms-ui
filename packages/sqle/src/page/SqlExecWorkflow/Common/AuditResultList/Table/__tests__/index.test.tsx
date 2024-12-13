@@ -293,6 +293,21 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     });
   });
 
+  it('should render sql rewriter button', async () => {
+    customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('SQL合规重写'));
+
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
   it('render allowSwitchBackupPolicy is true', async () => {
     requestGetAuditTaskSQLs.mockClear();
     requestGetAuditTaskSQLs.mockImplementation(() =>
