@@ -4898,15 +4898,19 @@ LIMIT
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,SLEEP(11)
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="/* ApplicationName=DBeaver 24.1.2 - SQLEditor <Console> */ select 1,SLEEP(11)
 LIMIT 0, 200"
-                      width="100%"
-                    />
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>

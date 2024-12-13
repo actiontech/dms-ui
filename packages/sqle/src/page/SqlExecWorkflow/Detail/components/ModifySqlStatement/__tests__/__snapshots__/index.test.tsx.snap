@@ -377,16 +377,20 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -809,7 +813,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -1315,16 +1319,20 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1747,7 +1755,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -2247,17 +2255,21 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="INSERT INTO your_table_name (telephone_number, email_address, china_id_card, debit_card_account_number, credit_card, name, mac_address, bitcoin, age)
 VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '1234567890123456', 'John Doe', '00:11:22:33:44:55', '1AbC2dEfG3hI4jK5mN6pQ7rStU8vW9xY0z', 30);"
-                              width="100%"
-                            />
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2680,7 +2692,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -2894,6 +2906,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                     </div>
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -2901,6 +2914,33 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       >
                                         <span>
                                           添加为审核SQL例外
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="18"
+                                            viewBox="0 0 1024 1024"
+                                            width="18"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                              fill="#4583FF"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          SQL合规重写
                                         </span>
                                       </button>
                                     </div>
@@ -3451,16 +3491,20 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -3883,7 +3927,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -4097,6 +4141,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                     </div>
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -4104,6 +4149,33 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                       >
                                         <span>
                                           添加为审核SQL例外
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="18"
+                                            viewBox="0 0 1024 1024"
+                                            width="18"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                              fill="#4583FF"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          SQL合规重写
                                         </span>
                                       </button>
                                     </div>

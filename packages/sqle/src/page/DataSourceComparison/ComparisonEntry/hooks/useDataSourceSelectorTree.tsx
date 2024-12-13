@@ -3,14 +3,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useBoolean } from 'ahooks';
 import { Form, TreeSelectProps } from 'antd';
-import {
-  Key,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState
-} from 'react';
+import { Key, ReactNode, useCallback, useEffect, useState } from 'react';
 import useInstance from '../../../../hooks/useInstance';
 import { DatabaseFilled, DatabaseSchemaFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
