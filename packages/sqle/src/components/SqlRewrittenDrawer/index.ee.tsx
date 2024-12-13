@@ -81,13 +81,13 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
           <OverallRewrittenSuggestion
             originalSql={originSqlInfo?.sql ?? ''}
             businessNonEquivalentDesc={data?.business_non_equivalent_desc}
-            rewrittenSql={data?.rewritten_sql ?? '-'}
+            rewrittenSql={data?.rewritten_sql}
             suggestions={data?.suggestions ?? []}
             optimizedCount={optimizedSuggestions.length}
             remainingCount={remainingSuggestions.length}
             businessCount={businessSuggestions.length}
-            businessDesc={data?.business_desc ?? '-'}
-            rewrittenSqlBusinessDesc={data?.rewritten_sql_business_desc ?? '-'}
+            businessDesc={data?.business_desc ?? ''}
+            rewrittenSqlBusinessDesc={data?.rewritten_sql_business_desc ?? ''}
           />
         )
       },

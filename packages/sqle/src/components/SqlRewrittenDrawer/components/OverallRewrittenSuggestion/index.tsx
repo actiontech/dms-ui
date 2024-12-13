@@ -18,7 +18,7 @@ import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 type Props = {
   originalSql: string;
-  rewrittenSql: string;
+  rewrittenSql?: string;
   businessNonEquivalentDesc?: string;
   suggestions: IRewriteSuggestion[];
   optimizedCount: number;
@@ -80,8 +80,10 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
                 businessCount
               })}
             </li>
-            <li>{businessDesc}</li>
-            <li>{rewrittenSqlBusinessDesc}</li>
+            <li hidden={!businessDesc}>{businessDesc}</li>
+            <li hidden={!rewrittenSqlBusinessDesc}>
+              {rewrittenSqlBusinessDesc}
+            </li>
           </OptimizationSummaryStyleWrapper>
         </OptimizationDescriptionStyleWrapper>
       </OverallRewrittenItem>
@@ -118,7 +120,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
           title={t('sqlRewrite.sqlRewriteResult')}
           action={
             <>
-              <CopySqlAction sql={rewrittenSql} />
+              <CopySqlAction sql={rewrittenSql!} />
               <ShowSqlDifferenceAction
                 showSqlDifference={showSqlDifference}
                 toggleShowSqlDifference={toggleShowSqlDifference}
@@ -129,7 +131,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
           <RewrittenSqlCommonEditor
             showSqlDifference={showSqlDifference}
             originalSql={originalSql}
-            rewrittenSql={rewrittenSql}
+            rewrittenSql={rewrittenSql!}
           />
         </OverallRewrittenItem>
       </EmptyBox>
