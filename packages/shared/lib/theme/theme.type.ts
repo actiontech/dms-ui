@@ -282,6 +282,7 @@ export type UITokenTheme = {
   colorBgLayout: string;
   colorWarningBgHover: string;
   colorErrorBgHover: string;
+  colorSuccessBgHover: string;
 };
 
 export type BasicTheme = {
