@@ -14,8 +14,6 @@ import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
 import { AuditResultForCreateOrderActions } from './actions';
 import { usePermission } from '@actiontech/shared/lib/global';
-import useSqlRewrittenDrawerState from 'sqle/src/components/SqlRewrittenDrawer/hooks/useSqlRewrittenDrawerState';
-import SqlRewrittenDrawer from 'sqle/src/components/SqlRewrittenDrawer';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   taskID,
@@ -24,13 +22,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IListDataExportTaskSQL>();
-  const {
-    sqlRewrittenOpen,
-    handleOpenSqlRewrittenDrawer,
-    handleCloseSqlRewrittenDrawer,
-    originSqlInfo,
-    setOriginInfo
-  } = useSqlRewrittenDrawerState();
   const [
     auditResultDrawerVisibility,
     { setFalse: closeAuditResultDrawer, setTrue: openAuditResultDrawer }
@@ -83,29 +74,11 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     [openCreateWhitelistModal, updateSelectWhitelistRecord]
   );
 
-  const handleClickSqlRewritten = useCallback(
-    (record: IListDataExportTaskSQL) => {
-      handleOpenSqlRewrittenDrawer();
-      setOriginInfo({
-        sql: record.sql ?? '',
-        number: record.uid ?? 0
-      });
-    },
-    [handleOpenSqlRewrittenDrawer, setOriginInfo]
-  );
-
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
-      AuditResultForCreateOrderActions(
-        onCreateWhitelist,
-        handleClickSqlRewritten
-      )
+      AuditResultForCreateOrderActions(onCreateWhitelist)
     );
-  }, [
-    handleClickSqlRewritten,
-    onCreateWhitelist,
-    parse2TableActionPermissions
-  ]);
+  }, [onCreateWhitelist, parse2TableActionPermissions]);
 
   return (
     <>
@@ -128,13 +101,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         auditResultRecord={currentAuditResultRecord}
       />
       <AddWhitelistModal onCreated={refresh} />
-
-      <SqlRewrittenDrawer
-        taskID={taskID ?? ''}
-        open={sqlRewrittenOpen}
-        onClose={handleCloseSqlRewrittenDrawer}
-        originSqlInfo={originSqlInfo}
-      />
     </>
   );
 };

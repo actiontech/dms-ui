@@ -1,4 +1,4 @@
-import { Collapse, Row, Form } from 'antd';
+import { Row, Form } from 'antd';
 import { BasicButton } from '../';
 import { styled } from '@mui/material/styles';
 
@@ -216,23 +216,6 @@ export const CommonIconStyleWrapper = styled('span')`
   }
 `;
 
-export const BasicCollapseStyleWrapper = styled(Collapse)`
-  &.ant-collapse {
-    border: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary} !important;
-
-    .ant-collapse-item {
-      border-bottom: 1px solid
-        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary} !important;
-    }
-
-    .ant-collapse-content {
-      border-top: 1px solid
-        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary} !important;
-    }
-  }
-`;
-
 /**
  * 一个开关按钮 style，某些情况可用以替换 Switch 使用
  */
@@ -262,15 +245,11 @@ export const ToggleButtonStyleWrapper = styled('div')<{
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  box-shadow: ${({ theme, disabled }) =>
-    disabled
-      ? 'none'
-      : `0 1px 4px 0 ${theme.sharedTheme.basic.colorShadowByWhite}`};
-  color: ${({ active, theme, disabled }) =>
+  box-shadow: ${({ theme }) =>
+    `0 1px 4px 0 ${theme.sharedTheme.basic.colorShadowByWhite}`};
+  color: ${({ active, theme }) =>
     !!active
       ? theme.sharedTheme.uiToken.colorPrimary
-      : disabled
-      ? theme.sharedTheme.basic.colorFontGrayByWhite
       : theme.sharedTheme.uiToken.colorTextSecondary};
   background: ${({ active, theme }) =>
     !!active
