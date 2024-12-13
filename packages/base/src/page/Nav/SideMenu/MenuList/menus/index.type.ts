@@ -49,8 +49,6 @@ type SqleMenuStructTreeKey =
 
 type ProvisionMenuStructTreeKey =
   | 'database-role'
-  | 'auth-audit'
-  | 'template-audit'
   | 'account-management'
   | 'password-management';
 

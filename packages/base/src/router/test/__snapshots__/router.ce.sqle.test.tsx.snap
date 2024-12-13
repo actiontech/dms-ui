@@ -1052,27 +1052,6 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
         "children": [
           {
             "element": <div>
-              authAudit
-            </div>,
-            "key": "authAudit",
-            "path": ":projectID/audit/auth",
-          },
-          {
-            "element": <div>
-              templateAudit
-            </div>,
-            "key": "templateAudit",
-            "path": ":projectID/audit/template",
-          },
-        ],
-        "element": undefined,
-        "key": "auditWrapper",
-        "path": undefined,
-      },
-      {
-        "children": [
-          {
-            "element": <div>
               databaseRoleList
             </div>,
             "key": "databaseRoleList",

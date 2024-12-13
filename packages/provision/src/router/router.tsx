@@ -3,9 +3,6 @@ import { Navigate } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
-const AuthAudit = React.lazy(() => import('~/page/Audit/AuthAudit'));
-const TemplateAudit = React.lazy(() => import('~/page/Audit/TemplateAudit'));
-
 const DatabaseAccountList = React.lazy(
   () => import('../page/DatabaseAccount/')
 );
@@ -54,21 +51,6 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT_PASSWORD.index.path,
     key: 'databaseAccountPassword',
     element: <DatabaseAccountPassword />
-  },
-  {
-    key: 'auditWrapper',
-    children: [
-      {
-        path: ROUTE_PATHS.PROVISION.AUDIT.auth.path,
-        key: 'authAudit',
-        element: <AuthAudit />
-      },
-      {
-        path: ROUTE_PATHS.PROVISION.AUDIT.template.path,
-        key: 'templateAudit',
-        element: <TemplateAudit />
-      }
-    ]
   },
   {
     key: 'databaseRole',
