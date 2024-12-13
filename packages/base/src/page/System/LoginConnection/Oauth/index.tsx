@@ -96,12 +96,14 @@ const Oauth = () => {
       server_auth_url: value.serverAuthUrl,
       server_token_url: value.serverTokenUrl,
       server_user_id_url: value.serverUserIdUrl,
+      server_logout_url: value.serverLayoutUrl,
       access_token_tag: value.accessTokenKeyName,
       login_tip: value.loginButtonText,
       user_id_tag: value.userIdKeyName,
       user_email_tag: value.userEmailTag,
       user_wechat_tag: value.userWechatTag,
       auto_create_user: value.autoCreateUser,
+      auto_create_user_pwd: value.userPassword,
       skip_check_state: value.skipCheckState
     };
 
@@ -133,6 +135,7 @@ const Oauth = () => {
       serverAuthUrl: oauthConfig?.server_auth_url,
       serverTokenUrl: oauthConfig?.server_token_url,
       serverUserIdUrl: oauthConfig?.server_user_id_url,
+      serverLayoutUrl: oauthConfig?.server_logout_url,
       scopes: oauthConfig?.scopes?.join(','),
       accessTokenKeyName: oauthConfig?.access_token_tag,
       loginButtonText: oauthConfig?.login_tip,
@@ -140,6 +143,7 @@ const Oauth = () => {
       userEmailTag: oauthConfig?.user_email_tag,
       userWechatTag: oauthConfig?.user_wechat_tag,
       autoCreateUser: oauthConfig?.auto_create_user,
+      // userPassword: oauthConfig?.auto_create_user_pwd,
       skipCheckState: oauthConfig?.skip_check_state
     });
   }, [form, oauthConfig]);
@@ -193,7 +197,7 @@ const Oauth = () => {
           hidden: !oauthConfig?.enable_oauth2
         },
         {
-          label: t('dmsSystem.oauth.clientHostTips'),
+          label: t('dmsSystem.oauth.clientHost'),
           span: 3,
           dataIndex: 'client_host',
           hidden: !oauthConfig?.enable_oauth2
@@ -214,6 +218,12 @@ const Oauth = () => {
           label: t('dmsSystem.oauth.serverUserIdUrl'),
           span: 3,
           dataIndex: 'server_user_id_url',
+          hidden: !oauthConfig?.enable_oauth2
+        },
+        {
+          label: t('dmsSystem.oauth.layoutUrl'),
+          span: 3,
+          dataIndex: 'server_logout_url',
           hidden: !oauthConfig?.enable_oauth2
         },
         {
