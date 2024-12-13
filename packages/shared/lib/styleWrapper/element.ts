@@ -1,4 +1,4 @@
-import { Collapse, Row } from 'antd';
+import { Collapse, Row, Form } from 'antd';
 import { BasicButton } from '../';
 import { styled } from '@mui/material/styles';
 
@@ -172,6 +172,20 @@ export const FormListAddButtonWrapper = styled(BasicButton)`
     background-color: ${({ theme }) =>
       theme.sharedTheme.basic.colorPrimaryBgHover} !important;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
+  }
+`;
+
+/**
+ * 功能: 用于Modal中带有提示信息的FormItem 如provision授权清单中的续期弹窗
+ */
+export const FormItemWithExtraStyleWrapper = styled(Form.Item)`
+  &.ant-form-item .ant-form-item-extra {
+    margin-top: 16px;
+    padding: 4px 8px;
+    border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
+    font-size: 12px;
+    line-height: 20px;
   }
 `;
 

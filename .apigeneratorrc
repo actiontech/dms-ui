@@ -1,0 +1,20 @@
+[
+  {
+    "project": "dms-ui",
+    "output": "packages/shared/lib/api/base/service",
+    "branch": "Oracle_DBAccount",
+    "swaggerPath": "",
+    "swaggerOutput": "",
+    "plugin": "simple-cleaner",
+    "template": "complex"
+  },
+  {
+    "project": "provision-ui",
+    "output": "packages/shared/lib/api/provision/service",
+    "branch": "shangqi_2411_pre1",
+    "swaggerPath": "",
+    "swaggerOutput": "",
+    "plugin": "",
+    "template": "complex"
+  }
+]

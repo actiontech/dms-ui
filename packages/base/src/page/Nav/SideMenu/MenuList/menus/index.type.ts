@@ -47,4 +47,15 @@ type SqleMenuStructTreeKey =
   | 'version-management'
   | 'data-source-comparison';
 
-export type MenuStructTreeKey = BaseMenuStructTreeKey | SqleMenuStructTreeKey;
+type ProvisionMenuStructTreeKey =
+  | 'database-role'
+  | 'account-management'
+  | 'password-management';
+
+type DMSMenuStructTreeKey = 'data-mask-rule';
+
+export type MenuStructTreeKey =
+  | BaseMenuStructTreeKey
+  | SqleMenuStructTreeKey
+  | ProvisionMenuStructTreeKey
+  | DMSMenuStructTreeKey;
