@@ -316,6 +316,55 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
           >
             <label
               class=""
+              for="serverLayoutUrl"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  注销跳转地址
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  用户登出时，系统自动将浏览器重定向至此地址进行注销操作，以关闭第三方平台的会话信息。格式示例：http://localhost:8080/logout?id_token_hint=\${id_token}&post_logout_redirect_uri=\${sqle_url}
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="serverLayoutUrl"
+                  placeholder="请输入注销跳转地址"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
               for="scopes"
               title=""
             >
