@@ -383,7 +383,7 @@ exports[`test AuditResultStep ce render init snap 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead

@@ -21,8 +21,6 @@ import SwitchSqlBackupStrategyModal from './SwitchSqlBackupStrategyModal';
 import { EmptyBox } from '@actiontech/shared';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import SqlRewrittenDrawer from '../../../../../components/SqlRewrittenDrawer/index';
-import useSqlRewrittenDrawerState from '../../../../../components/SqlRewrittenDrawer/hooks/useSqlRewrittenDrawerState';
 
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   noDuplicate,
@@ -34,14 +32,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   allowSwitchBackupPolicy = false,
   supportedBackupPolicies
 }) => {
-  const {
-    sqlRewrittenOpen,
-    handleCloseSqlRewrittenDrawer,
-    handleOpenSqlRewrittenDrawer,
-    originSqlInfo,
-    setOriginInfo
-  } = useSqlRewrittenDrawerState();
-
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IAuditTaskSQLResV2>();
   const [
@@ -139,6 +129,15 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     [openAuditResultDrawer]
   );
 
+  // @feature: useTableRequestParams 整合自定义filter info
+  useEffect(() => {
+    setPagination({
+      page_index: 1,
+      page_size: pagination.page_size
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auditLevelFilterValue, noDuplicate]);
+
   const onCreateWhitelist = useCallback(
     (record?: IAuditTaskSQLResV2) => {
       openCreateWhitelistModal();
@@ -149,31 +148,11 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     [openCreateWhitelistModal, updateSelectWhitelistRecord]
   );
 
-  const handleClickSqlRewritten = useCallback(
-    (record: IAuditTaskSQLResV2) => {
-      handleOpenSqlRewrittenDrawer();
-      setOriginInfo({
-        sql: record.exec_sql ?? '',
-        number: record.number ?? 0
-      });
-    },
-    [handleOpenSqlRewrittenDrawer, setOriginInfo]
-  );
-
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
-      AuditResultForCreateWorkflowActions(
-        handleClickAnalyze,
-        onCreateWhitelist,
-        handleClickSqlRewritten
-      )
+      AuditResultForCreateWorkflowActions(handleClickAnalyze, onCreateWhitelist)
     );
-  }, [
-    parse2TableActionPermissions,
-    handleClickAnalyze,
-    onCreateWhitelist,
-    handleClickSqlRewritten
-  ]);
+  }, [parse2TableActionPermissions, handleClickAnalyze, onCreateWhitelist]);
 
   const onSwitchSqlBackupPolicy = useCallback(
     (sqlId?: number) => {
@@ -196,15 +175,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     onClickAuditResult,
     allowSwitchBackupPolicy
   ]);
-
-  // @feature: useTableRequestParams 整合自定义filter info
-  useEffect(() => {
-    setPagination({
-      page_index: 1,
-      page_size: pagination.page_size
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [auditLevelFilterValue, noDuplicate]);
 
   useEffect(() => {
     if (allowSwitchBackupPolicy) {
@@ -239,14 +209,6 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         clickAnalyze={handleClickAnalyze}
       />
       <AddWhitelistModal onCreated={refresh} />
-
-      <SqlRewrittenDrawer
-        taskID={taskID ?? ''}
-        open={sqlRewrittenOpen}
-        onClose={handleCloseSqlRewrittenDrawer}
-        originSqlInfo={originSqlInfo}
-      />
-
       {/* #if [ee] */}
       <EmptyBox if={allowSwitchBackupPolicy}>
         <SwitchSqlBackupStrategyModal
