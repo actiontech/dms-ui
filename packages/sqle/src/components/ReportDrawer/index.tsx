@@ -176,7 +176,7 @@ const ReportDrawer = ({
               <SQLRenderer.ViewOnlyEditor
                 value={data?.sql}
                 width="100%"
-                height="100%"
+                height="90%"
               />
             </div>
           </section>
