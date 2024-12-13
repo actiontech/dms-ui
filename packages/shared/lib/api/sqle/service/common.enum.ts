@@ -474,28 +474,6 @@ export enum SqlManageCodingReqTypeEnum {
   'SUB_TASK' = 'SUB_TASK'
 }
 
-export enum SqlManageCodingReqPriorityEnum {
-  'LOW' = 'LOW',
-
-  'MEDIUM' = 'MEDIUM',
-
-  'HIGH' = 'HIGH',
-
-  'EMERGENCY' = 'EMERGENCY'
-}
-
-export enum SqlManageCodingReqTypeEnum {
-  'DEFECT' = 'DEFECT',
-
-  'MISSION' = 'MISSION',
-
-  'REQUIREMENT' = 'REQUIREMENT',
-
-  'EPIC' = 'EPIC',
-
-  'SUB_TASK' = 'SUB_TASK'
-}
-
 export enum SqlVersionDetailResV1StatusEnum {
   'is_being_released' = 'is_being_released',
 
