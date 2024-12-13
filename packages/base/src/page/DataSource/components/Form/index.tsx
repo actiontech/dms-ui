@@ -556,7 +556,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 }
                 name="backupMaxRows"
                 initialValue={1000}
-                rules={[{ required: true }]}
+                rules={[
+                  {
+                    required: true,
+                    message: t('common.form.rule.require', {
+                      name: t('dmsDataSource.dataSourceForm.lineNumberLimit')
+                    })
+                  }
+                ]}
               >
                 <BasicInputNumber min={0} />
               </FormItemLabel>

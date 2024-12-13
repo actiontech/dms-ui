@@ -26,7 +26,10 @@ import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRo
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { TaskResultContentTypeEnum } from './index.data';
 import { BackupStrategyDictionary } from '../../../../../../Common/AuditResultList/Table/index.data';
-import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  UpdateSqlBackupStrategyReqStrategyEnum,
+  AuditTaskResV1StatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { WarningFilled } from '@actiontech/icons';
 import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
@@ -85,10 +88,32 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   };
 
   const formattedRollbackSql = useMemo(() => {
-    return props.rollback_sqls
-      ?.map((v) => formatterSQL(v, props.dbType))
-      ?.join('\n');
+    try {
+      return props.rollback_sqls
+        ?.map((v) => formatterSQL(v, props.dbType))
+        ?.join('\n');
+    } catch (error) {
+      // 当切换task时 当新的task sql请求未完成时 这时rollback_sqls还是老的数据 这时如果dbType不同 可能会导致解析sql失败报错
+      return props.rollback_sqls?.join('\n');
+    }
   }, [props.rollback_sqls, props.dbType]);
+
+  const sqlBackupResult = useMemo(() => {
+    if (props.backup_result) {
+      return props.backup_result;
+    }
+    // todo 目前接口定义的AuditTaskResV1StatusEnum.exec_success枚举值和接口实际返回的不一致，接口返回的是exec_succeeded 属于后端历史遗留问题 后端需要考虑影响面再去决定是否统一
+    const taskNotExecuted = props?.taskStatus
+      ? ![
+          'exec_succeeded',
+          AuditTaskResV1StatusEnum.exec_failed,
+          AuditTaskResV1StatusEnum.manually_executed
+        ].includes(props.taskStatus)
+      : true;
+    return taskNotExecuted
+      ? t('execWorkflow.audit.table.backupExecuteBeforeTips')
+      : '';
+  }, [props.taskStatus, props.backup_result, t]);
 
   return (
     <TasksResultCardStyleWrapper>
@@ -170,12 +195,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                           {t('execWorkflow.audit.table.backupConflictTips')}
                         </Space>
                       </EmptyBox>
-                      <Divider
-                        type="vertical"
-                        className="result-card-status-divider"
-                      />
-                      {props.backup_result ||
-                        t('execWorkflow.audit.table.backupExecuteBeforeTips')}
+                      <EmptyBox if={props.enableBackup}>
+                        <Divider
+                          type="vertical"
+                          className="result-card-status-divider"
+                        />
+                        {sqlBackupResult}
+                      </EmptyBox>
                     </Space>
                     {/* #endif */}
                     <SQLRenderer sql={formattedRollbackSql} showLineNumbers />

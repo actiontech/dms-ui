@@ -3,7 +3,10 @@ import {
   IAuditFileStatistic,
   IAssociatedRollbackWorkflow
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  WorkflowResV2ExecModeEnum,
+  AuditTaskResV1StatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 type BaseProps = {
   taskId: string;
@@ -15,6 +18,8 @@ export type SqlExecuteResultCardProps = BaseProps &
     projectID: string;
     backupConflict?: boolean;
     dbType?: string;
+    enableBackup?: boolean;
+    taskStatus?: AuditTaskResV1StatusEnum;
   };
 
 export type FileExecuteResultCardProps = BaseProps &
