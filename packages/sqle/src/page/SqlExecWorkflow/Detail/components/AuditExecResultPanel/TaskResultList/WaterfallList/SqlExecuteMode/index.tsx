@@ -19,7 +19,11 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   noDuplicate,
   currentListLayout,
   workflowStatus,
-  auditResultActiveKey
+  auditResultActiveKey,
+  backupConflict,
+  dbType,
+  enableBackup,
+  taskStatus
 }) => {
   const { projectID } = useCurrentProject();
   const scrollPageNumber = useRef(0);
@@ -163,6 +167,10 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
                 onUpdateDescription={() => {
                   onUpdateDescription(item.number!, index + 1);
                 }}
+                backupConflict={backupConflict}
+                dbType={dbType}
+                enableBackup={enableBackup}
+                taskStatus={taskStatus}
               />
             </List.Item>
           );
