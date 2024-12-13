@@ -34,7 +34,7 @@ const ConfigExtraButtons = ({
   const testing = useRef(false);
   const [testPopoverVisible, toggleTestPopoverVisible] = useState(false);
 
-  const testWechatAuditConfiguration = async () => {
+  const testCodingConfiguration = async () => {
     if (testing.current) {
       return;
     }
@@ -83,7 +83,7 @@ const ConfigExtraButtons = ({
           onPopoverOpenChange={onTestPopoverOpen}
           popoverForm={
             <ConfigTestPopoverForm
-              handleTest={testWechatAuditConfiguration}
+              handleTest={testCodingConfiguration}
               handleCancel={() => {
                 onTestPopoverOpen(false);
               }}
