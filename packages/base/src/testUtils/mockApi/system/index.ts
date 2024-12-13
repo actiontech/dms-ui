@@ -14,7 +14,8 @@ import {
   webhookConfig,
   successWechatTestReturn,
   successWebhookTestReturn,
-  mockModuleRedHotsData
+  mockModuleRedHotsData,
+  mockCodingConfigurationData
 } from './data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import DMSConfiguration from '@actiontech/shared/lib/api/base/service/Configuration';
@@ -57,6 +58,9 @@ class MockSystemApi implements MockSpyApy {
     this.updateWechatAuditConfiguration();
     this.testWechatAuditConfig();
     this.getSystemModuleRedDots();
+    this.getCodingConfiguration();
+    this.updateCodingConfiguration();
+    this.testCodingConfig();
   }
 
   public getLDAPConfig() {
@@ -350,6 +354,34 @@ class MockSystemApi implements MockSpyApy {
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: mockModuleRedHotsData
+      })
+    );
+    return spy;
+  }
+
+  public getCodingConfiguration() {
+    const spy = jest.spyOn(configuration, 'getCodingConfigurationV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockCodingConfigurationData
+      })
+    );
+    return spy;
+  }
+
+  public updateCodingConfiguration() {
+    const spy = jest.spyOn(configuration, 'UpdateCodingConfigurationV1');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public testCodingConfig() {
+    const spy = jest.spyOn(configuration, 'testCodingConfigV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_message_sent_normally: true
+        }
       })
     );
     return spy;

@@ -106,7 +106,7 @@ export function useConfigRender<T extends Record<string, any>>({
           >
             <FormItemLabel
               className={classNames({
-                'has-label-tip': isString(switchFieldLabel)
+                'has-label-tip': !isString(switchFieldLabel)
               })}
               label={switchFieldLabel}
             >

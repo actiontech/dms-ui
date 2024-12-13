@@ -7,6 +7,11 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetCodingConfigurationV1Return,
+  IUpdateCodingConfigurationV1Params,
+  IUpdateCodingConfigurationV1Return,
+  ITestCodingConfigV1Params,
+  ITestCodingConfigV1Return,
   IGetDingTalkConfigurationV1Return,
   IUpdateDingTalkConfigurationV1Params,
   IUpdateDingTalkConfigurationV1Return,
@@ -34,6 +39,38 @@ import {
 } from './index.d';
 
 class ConfigurationService extends ServiceBase {
+  public getCodingConfigurationV1(options?: AxiosRequestConfig) {
+    return this.get<IGetCodingConfigurationV1Return>(
+      '/v1/configurations/coding',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateCodingConfigurationV1(
+    params: IUpdateCodingConfigurationV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateCodingConfigurationV1Return>(
+      '/v1/configurations/coding',
+      paramsData,
+      options
+    );
+  }
+
+  public testCodingConfigV1(
+    params: ITestCodingConfigV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ITestCodingConfigV1Return>(
+      '/v1/configurations/coding/test',
+      paramsData,
+      options
+    );
+  }
+
   public getDingTalkConfigurationV1(options?: AxiosRequestConfig) {
     return this.get<IGetDingTalkConfigurationV1Return>(
       '/v1/configurations/ding_talk',
