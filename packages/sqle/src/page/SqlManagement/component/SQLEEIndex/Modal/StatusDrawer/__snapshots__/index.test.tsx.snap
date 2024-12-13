@@ -190,18 +190,14 @@ exports[`page/SqlManagement/StatusDrawer close modal by click close button 1`] =
                   <div
                     class="wrapper-cont"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
-                        height="100%"
-                        language="sql"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
-                        value=""
-                        width="100%"
-                      />
-                    </div>
+                    <input
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
+                      height="90%"
+                      language="sql"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value=""
+                      width="100%"
+                    />
                   </div>
                 </section>
               </div>
@@ -368,18 +364,14 @@ exports[`page/SqlManagement/StatusDrawer render empty status drawer info 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
-                        height="100%"
-                        language="sql"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
-                        value=""
-                        width="100%"
-                      />
-                    </div>
+                    <input
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
+                      height="90%"
+                      language="sql"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value=""
+                      width="100%"
+                    />
                   </div>
                 </section>
               </div>
@@ -594,18 +586,14 @@ exports[`page/SqlManagement/StatusDrawer render status drawer info 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
-                        height="100%"
-                        language="sql"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
-                        value=""
-                        width="100%"
-                      />
-                    </div>
+                    <input
+                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
+                      height="90%"
+                      language="sql"
+                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value=""
+                      width="100%"
+                    />
                   </div>
                 </section>
               </div>

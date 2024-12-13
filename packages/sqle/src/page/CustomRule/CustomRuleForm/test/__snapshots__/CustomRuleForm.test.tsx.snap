@@ -434,20 +434,16 @@ exports[`sqle/CustomRule/Form should match snap 1`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        aria-required="true"
-                        class="custom-monaco-editor"
-                        height="500px"
-                        id="script"
-                        language="regexp"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
-                        value=""
-                        width="720px"
-                      />
-                    </div>
+                    <input
+                      aria-required="true"
+                      class="custom-monaco-editor css-baixa9"
+                      height="500px"
+                      id="script"
+                      language="regexp"
+                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value=""
+                      width="720px"
+                    />
                   </div>
                 </div>
               </div>
@@ -928,20 +924,16 @@ exports[`sqle/CustomRule/Form should match snap when provide defaultData 1`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        aria-required="true"
-                        class="custom-monaco-editor"
-                        height="500px"
-                        id="script"
-                        language="regexp"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
-                        value="SELECT 1;"
-                        width="720px"
-                      />
-                    </div>
+                    <input
+                      aria-required="true"
+                      class="custom-monaco-editor css-baixa9"
+                      height="500px"
+                      id="script"
+                      language="regexp"
+                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value="SELECT 1;"
+                      width="720px"
+                    />
                   </div>
                 </div>
               </div>
@@ -1422,20 +1414,16 @@ exports[`sqle/CustomRule/Form should match snap when provide defaultData 2`] = `
                   <div
                     class="ant-form-item-control-input-content"
                   >
-                    <div
-                      class="custom-monaco-editor-wrapper css-1esok7i"
-                    >
-                      <input
-                        aria-required="true"
-                        class="custom-monaco-editor"
-                        height="500px"
-                        id="script"
-                        language="regexp"
-                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
-                        value="SELECT 1;"
-                        width="720px"
-                      />
-                    </div>
+                    <input
+                      aria-required="true"
+                      class="custom-monaco-editor css-baixa9"
+                      height="500px"
+                      id="script"
+                      language="regexp"
+                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                      value="SELECT 1;"
+                      width="720px"
+                    />
                   </div>
                 </div>
               </div>

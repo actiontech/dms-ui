@@ -507,7 +507,6 @@ exports[`ReportStatistics/LicenseStatistics/LicenseColumn render tooltip customC
         "colorInfo": "#4583ff",
         "colorPrimary": "#4583ff",
         "colorSuccess": "#1cb889",
-        "colorSuccessBgHover": "#F0FDF4",
         "colorText": "#292C33",
         "colorTextBase": "#292c33",
         "colorTextQuaternary": "#c3c6cd",

@@ -1,19 +1,14 @@
-import classNames from 'classnames';
 import { MonacoDiffEditor } from '../../MonacoEditor';
 import { SQLDiffViewOnlyEditorRendererProps } from '../index.type';
 
 const DiffViewOnlyEditor: React.FC<SQLDiffViewOnlyEditorRendererProps> = ({
   originalSql,
   modifiedSql,
-  className,
   ...props
 }) => {
   return (
     <MonacoDiffEditor
-      className={classNames(
-        'actiontech-diff-sql-view-only-editor-renderer-wrapper',
-        className
-      )}
+      className="actiontech-diff-sql-view-only-editor-renderer-wrapper"
       original={originalSql}
       modified={modifiedSql}
       {...props}

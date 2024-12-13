@@ -209,20 +209,16 @@ exports[`slqe/Whitelist/AddWhitelist should send add whitelist request when clic
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <div
-                            class="custom-monaco-editor-wrapper css-1esok7i"
-                          >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor"
-                              height="500px"
-                              id="sql"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
-                          </div>
+                          <input
+                            aria-required="true"
+                            class="custom-monaco-editor css-baixa9"
+                            height="500px"
+                            id="sql"
+                            language="sql"
+                            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
+                            value="/* input your sql */"
+                            width="100%"
+                          />
                         </div>
                       </div>
                     </div>
