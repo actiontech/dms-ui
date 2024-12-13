@@ -1,17 +1,10 @@
 import { EmptyBox } from '@actiontech/shared';
-import {
-  IRewriteSQLData,
-  IRewriteSuggestion
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useRequest } from 'ahooks';
 import { CollapseProps } from 'antd';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  SqlRewrittenMockDataNoDDL,
-  SqlRewrittenMockDataUseDDL
-} from '../../testUtils/mockApi/task/data';
 import BusinessRewrittenSuggestion from './components/BusinessRewrittenSuggestion';
 import CustomLoadingIndicator from './components/CustomLoadingIndicator';
 import DependDatabaseStructure from './components/DependDatabaseStructure';
@@ -45,22 +38,12 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation();
   const { loading, data } = useRequest(
-    // () =>
-    //   TaskService.RewriteSQL({
-    //     task_id: taskID,
-    //     number: originSqlInfo!.number,
-    //     enable_structure_type: enableStructureOptimize,
-    //   }).then((res) => res.data.data),
     () =>
-      new Promise<IRewriteSQLData>((res) => {
-        setTimeout(() => {
-          res(
-            enableStructureOptimize
-              ? SqlRewrittenMockDataUseDDL
-              : SqlRewrittenMockDataNoDDL
-          );
-        }, 1000);
-      }),
+      TaskService.RewriteSQL({
+        task_id: taskID,
+        number: originSqlInfo!.number,
+        enable_structure_type: enableStructureOptimize
+      }).then((res) => res.data.data),
     {
       ready: open && !!originSqlInfo,
       refreshDeps: [enableStructureOptimize]
