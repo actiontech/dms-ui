@@ -30,6 +30,8 @@ import {
   IUpdateAuditTaskSQLsV1Return,
   IGetTaskAnalysisDataParams,
   IGetTaskAnalysisDataReturn,
+  IRewriteSQLParams,
+  IRewriteSQLReturn,
   IGetSqlFileOrderMethodV1Return,
   IGetAuditFileListParams,
   IGetAuditFileListReturn,
@@ -81,6 +83,10 @@ class TaskService extends ServiceBase {
 
     if (params.enable_backup != undefined) {
       paramsData.append('enable_backup', params.enable_backup as any);
+    }
+
+    if (params.backup_max_rows != undefined) {
+      paramsData.append('backup_max_rows', params.backup_max_rows as any);
     }
 
     if (params.sql != undefined) {
@@ -185,6 +191,10 @@ class TaskService extends ServiceBase {
 
     if (params.enable_backup != undefined) {
       paramsData.append('enable_backup', params.enable_backup as any);
+    }
+
+    if (params.backup_max_rows != undefined) {
+      paramsData.append('backup_max_rows', params.backup_max_rows as any);
     }
 
     if (params.file_order_method != undefined) {
@@ -334,6 +344,21 @@ class TaskService extends ServiceBase {
 
     return this.get<IGetTaskAnalysisDataReturn>(
       `/v1/tasks/audits/${task_id}/sqls/${number}/analysis`,
+      paramsData,
+      options
+    );
+  }
+
+  public RewriteSQL(params: IRewriteSQLParams, options?: AxiosRequestConfig) {
+    const paramsData = this.cloneDeep(params);
+    const task_id = paramsData.task_id;
+    delete paramsData.task_id;
+
+    const number = paramsData.number;
+    delete paramsData.number;
+
+    return this.post<IRewriteSQLReturn>(
+      `/v1/tasks/audits/${task_id}/sqls/${number}/rewrite`,
       paramsData,
       options
     );

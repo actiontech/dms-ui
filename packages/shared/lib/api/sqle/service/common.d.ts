@@ -8,6 +8,7 @@ import {
   AuditTaskResV1AuditLevelEnum,
   AuditTaskResV1SqlSourceEnum,
   AuditTaskResV1StatusEnum,
+  BackupSqlDataBackupStatusEnum,
   BackupSqlDataBackupStrategyEnum,
   BatchUpdateSqlManageReqPriorityEnum,
   BatchUpdateSqlManageReqStatusEnum,
@@ -31,12 +32,15 @@ import {
   HighPriorityConditionResV1TypeEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
+  InstanceTipResV1SupportedBackupStrategyEnum,
   ModuleRedDotModuleNameEnum,
   ObjectDiffResultComparisonResultEnum,
   OperationRecordListStatusEnum,
   RecordSourceNameEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
+  RewriteSuggestionAuditLevelEnum,
+  RewriteSuggestionTypeEnum,
   RuleParamResV1TypeEnum,
   RuleResV1LevelEnum,
   SQLQueryConfigResV1AllowQueryWhenLessThanAuditLevelEnum,
@@ -44,6 +48,8 @@ import {
   SchemaObjectComparisonResultEnum,
   SqlManageAuditStatusEnum,
   SqlManageStatusEnum,
+  SqlManageCodingReqPriorityEnum,
+  SqlManageCodingReqTypeEnum,
   SqlVersionDetailResV1StatusEnum,
   SqlVersionResV1StatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
@@ -80,6 +86,7 @@ import {
   AssociatedRollbackWorkflowStatusEnum,
   AssociatedStageWorkflowsStatusEnum,
   AuditResDataV2AuditLevelEnum,
+  AuditTaskSQLResV2BackupStatusEnum,
   AuditTaskSQLResV2BackupStrategyEnum,
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
@@ -355,6 +362,8 @@ export interface IAuditTaskResV1 {
 
   backup_conflict_with_instance?: boolean;
 
+  backup_max_rows?: number;
+
   enable_backup?: boolean;
 
   exec_end_time?: string;
@@ -431,7 +440,11 @@ export interface IAuditedSQLCount {
 }
 
 export interface IBackupSqlData {
+  backup_result?: string;
+
   backup_sqls?: string[];
+
+  backup_status?: BackupSqlDataBackupStatusEnum;
 
   backup_strategy?: BackupSqlDataBackupStrategyEnum;
 
@@ -542,6 +555,18 @@ export interface ICloneRuleTemplateReqV1 {
   new_rule_template_name?: string;
 }
 
+export interface ICodingConfigurationV1 {
+  coding_url?: string;
+
+  is_coding_enabled?: boolean;
+}
+
+export interface ICodingResp {
+  code?: string;
+
+  message?: string;
+}
+
 export interface ICompanyNotice {
   notice_str?: string;
 }
@@ -577,6 +602,8 @@ export interface ICreateAuditPlanReqV1 {
 }
 
 export interface ICreateAuditTaskReqV1 {
+  backup_max_rows?: number;
+
   enable_backup?: boolean;
 
   exec_mode?: CreateAuditTaskReqV1ExecModeEnum;
@@ -1192,6 +1219,14 @@ export interface IGetBlacklistResV1 {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IGetCodingConfigurationResV1 {
+  code?: number;
+
+  data?: ICodingConfigurationV1;
+
+  message?: string;
 }
 
 export interface IGetCompanyNoticeResp {
@@ -2095,6 +2130,8 @@ export interface IInstanceTableMeta {
 }
 
 export interface IInstanceTipResV1 {
+  backup_max_rows?: number;
+
   enable_backup?: boolean;
 
   host?: string;
@@ -2106,6 +2143,8 @@ export interface IInstanceTipResV1 {
   instance_type?: string;
 
   port?: string;
+
+  supported_backup_strategy?: InstanceTipResV1SupportedBackupStrategyEnum[];
 
   workflow_template_id?: number;
 }
@@ -2376,6 +2415,14 @@ export interface IPerformanceStatistics {
   affect_rows?: IAffectRows;
 }
 
+export interface IPostSqlManageCodingResp {
+  code?: number;
+
+  data?: ICodingResp;
+
+  message?: string;
+}
+
 export interface IProjectRuleTemplateResV1 {
   db_type?: string;
 
@@ -2432,6 +2479,46 @@ export interface IRewriteRule {
   rule_name?: string;
 
   violated_queries_str?: string;
+}
+
+export interface IRewriteSQLData {
+  business_desc?: string;
+
+  business_non_equivalent_desc?: string;
+
+  rewritten_sql?: string;
+
+  rewritten_sql_business_desc?: string;
+
+  suggestions?: IRewriteSuggestion[];
+}
+
+export interface IRewriteSQLReq {
+  enable_structure_type?: boolean;
+}
+
+export interface IRewriteSQLRes {
+  code?: number;
+
+  data?: IRewriteSQLData;
+
+  message?: string;
+}
+
+export interface IRewriteSuggestion {
+  audit_level?: RewriteSuggestionAuditLevelEnum;
+
+  ddl_dcl?: string;
+
+  ddl_dcl_desc?: string;
+
+  desc?: string;
+
+  rewritten_sql?: string;
+
+  rule_name?: string;
+
+  type?: RewriteSuggestionTypeEnum;
 }
 
 export interface IRiskAuditPlan {
@@ -2782,6 +2869,16 @@ export interface ISqlManage {
   status?: SqlManageStatusEnum;
 }
 
+export interface ISqlManageCodingReq {
+  coding_project_name?: string;
+
+  priority?: SqlManageCodingReqPriorityEnum;
+
+  sql_manage_id_list?: number[];
+
+  type?: SqlManageCodingReqTypeEnum;
+}
+
 export interface ISqlVersionDetailResV1 {
   desc?: string;
 
@@ -2928,6 +3025,24 @@ export interface ITestAuditPlanNotifyConfigResV1 {
   message?: string;
 }
 
+export interface ITestCodingConfigResDataV1 {
+  error_message?: string;
+
+  is_message_sent_normally?: boolean;
+}
+
+export interface ITestCodingConfigResV1 {
+  code?: number;
+
+  data?: ITestCodingConfigResDataV1;
+
+  message?: string;
+}
+
+export interface ITestCodingConfigurationReqV1 {
+  coding_project_name?: string;
+}
+
 export interface ITestDingTalkConfigResDataV1 {
   is_ding_talk_send_normal?: boolean;
 
@@ -3042,6 +3157,14 @@ export interface IUpdateBlacklistReqV1 {
   desc?: string;
 
   type?: UpdateBlacklistReqV1TypeEnum;
+}
+
+export interface IUpdateCodingConfigurationReqV1 {
+  coding_url?: string;
+
+  is_coding_enabled?: boolean;
+
+  token?: string;
 }
 
 export interface IUpdateCompanyNoticeReq {
@@ -3662,6 +3785,10 @@ export interface IAuditTaskSQLResV2 {
   audit_result?: IAuditResult[];
 
   audit_status?: string;
+
+  backup_result?: string;
+
+  backup_status?: AuditTaskSQLResV2BackupStatusEnum;
 
   backup_strategy?: AuditTaskSQLResV2BackupStrategyEnum;
 
