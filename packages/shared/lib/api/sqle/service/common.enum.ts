@@ -104,6 +104,16 @@ export enum AuditTaskResV1StatusEnum {
   'manually_executed' = 'manually_executed'
 }
 
+export enum BackupSqlDataBackupStatusEnum {
+  'waiting_for_execution' = 'waiting_for_execution',
+
+  'executing' = 'executing',
+
+  'failed' = 'failed',
+
+  'succeed' = 'succeed'
+}
+
 export enum BackupSqlDataBackupStrategyEnum {
   'none' = 'none',
 
@@ -316,6 +326,16 @@ export enum InstanceAuditPlanResV1ActiveStatusEnum {
   'disabled' = 'disabled'
 }
 
+export enum InstanceTipResV1SupportedBackupStrategyEnum {
+  'none' = 'none',
+
+  'manual' = 'manual',
+
+  'reverse_sql' = 'reverse_sql',
+
+  'original_row' = 'original_row'
+}
+
 export enum ModuleRedDotModuleNameEnum {
   'global_dashboard' = 'global_dashboard'
 }
@@ -350,6 +370,24 @@ export enum ReportPushConfigListTriggerTypeEnum {
   'immediately' = 'immediately',
 
   'timing' = 'timing'
+}
+
+export enum RewriteSuggestionAuditLevelEnum {
+  'normal' = 'normal',
+
+  'notice' = 'notice',
+
+  'warn' = 'warn',
+
+  'error' = 'error'
+}
+
+export enum RewriteSuggestionTypeEnum {
+  'statement' = 'statement',
+
+  'structure' = 'structure',
+
+  'other' = 'other'
 }
 
 export enum RuleParamResV1TypeEnum {
@@ -408,6 +446,28 @@ export enum SqlManageStatusEnum {
   'ignored' = 'ignored',
 
   'manual_audited' = 'manual_audited'
+}
+
+export enum SqlManageCodingReqPriorityEnum {
+  'LOW' = 'LOW',
+
+  'MEDIUM' = 'MEDIUM',
+
+  'HIGH' = 'HIGH',
+
+  'EMERGENCY' = 'EMERGENCY'
+}
+
+export enum SqlManageCodingReqTypeEnum {
+  'DEFECT' = 'DEFECT',
+
+  'MISSION' = 'MISSION',
+
+  'REQUIREMENT' = 'REQUIREMENT',
+
+  'EPIC' = 'EPIC',
+
+  'SUB_TASK' = 'SUB_TASK'
 }
 
 export enum SqlVersionDetailResV1StatusEnum {
@@ -720,6 +780,16 @@ export enum AuditResDataV2AuditLevelEnum {
   'error' = 'error',
 
   'UNKNOWN' = ''
+}
+
+export enum AuditTaskSQLResV2BackupStatusEnum {
+  'waiting_for_execution' = 'waiting_for_execution',
+
+  'executing' = 'executing',
+
+  'failed' = 'failed',
+
+  'succeed' = 'succeed'
 }
 
 export enum AuditTaskSQLResV2BackupStrategyEnum {

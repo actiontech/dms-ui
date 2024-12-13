@@ -11,6 +11,8 @@ import {
   IGetAuditTaskSQLsResV1,
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
+  IRewriteSQLReq,
+  IRewriteSQLRes,
   IGetAuditFileListRes,
   IGetAuditFileExecStatisticRes,
   IGetAuditTaskSQLsResV2,
@@ -41,6 +43,8 @@ export interface ICreateAndAuditTaskV1Params extends ICreateAuditTaskReqV1 {
   instance_schema?: string;
 
   enable_backup?: boolean;
+
+  backup_max_rows?: number;
 
   sql?: string;
 
@@ -82,6 +86,8 @@ export interface IAuditTaskGroupIdV1Params {
   sql?: string;
 
   enable_backup?: boolean;
+
+  backup_max_rows?: number;
 
   file_order_method?: string;
 
@@ -157,6 +163,14 @@ export interface IGetTaskAnalysisDataParams {
 }
 
 export interface IGetTaskAnalysisDataReturn extends IGetTaskAnalysisDataResV1 {}
+
+export interface IRewriteSQLParams extends IRewriteSQLReq {
+  task_id: string;
+
+  number: number;
+}
+
+export interface IRewriteSQLReturn extends IRewriteSQLRes {}
 
 export interface IGetSqlFileOrderMethodV1Return
   extends IGetSqlFileOrderMethodResV1 {}
