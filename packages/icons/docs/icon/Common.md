@@ -312,6 +312,13 @@ import { CodeOutlined } from '@actiontech/icons';
 export default () => <CodeOutlined width={32} height={32} />
 ```
 
+## ComparisonOutlined
+```jsx
+import { ComparisonOutlined } from '@actiontech/icons';
+
+export default () => <ComparisonOutlined width={32} height={32} />
+```
+
 ## DashOutlined
 ```jsx
 import { DashOutlined } from '@actiontech/icons';
@@ -408,6 +415,13 @@ export default () => <RefreshOutlined width={32} height={32} />
 import { RingOutlined } from '@actiontech/icons';
 
 export default () => <RingOutlined width={32} height={32} />
+```
+
+## RobotOutlined
+```jsx
+import { RobotOutlined } from '@actiontech/icons';
+
+export default () => <RobotOutlined width={32} height={32} />
 ```
 
 ## SearchOutlined
