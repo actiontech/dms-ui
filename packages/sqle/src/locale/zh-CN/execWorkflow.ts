@@ -107,6 +107,10 @@ export default {
         selectFileSortMethod: '选择文件排序方式',
         switchSqlBackup: '是否选择开启备份',
         switchSqlBackupTips: '开启后，数据源上创建的工单将默认开启备份能力',
+        backupMaxRowsLimit: '回滚行数限制',
+        backupMaxRowsLimitTips: '当预计影响行数超过指定值则不回滚',
+        backupMaxRowsLimitTooltips:
+          '在相同SQL模式下，系统将自动采用各数据源配置中的最小值作为统一限制。如需对不同数据源设置独立的限制值，请配置不同的SQL模式。',
         cancelSwitchSqlBackupTips:
           '当前应用的数据源已开启备份需求，是否确认关闭备份？',
         cancelSwitchSqlBackupTipsWithInstanceName:
@@ -269,7 +273,12 @@ export default {
       addRemark: '添加备注',
       originSql: '原始SQL',
       rollbackOrder: '回滚次序',
-      sourceOrder: '原始次序'
+      sourceOrder: '原始次序',
+      backupStatus: '备份状态',
+      backupSucceeded: '备份成功',
+      backupFailed: '备份失败',
+      backupWaitingForExecution: '待备份',
+      backupExecuting: '备份中'
     },
     associatedRollbackWorkflow: '关联回滚工单'
   },
@@ -299,7 +308,8 @@ export default {
       backupPolicy: '备份回滚策略',
       backupPolicyTips:
         '平台将综合评估数据丢失风险及备份成本后，推荐每条SQL适用的备份回滚策略',
-      backupConflictTips: '当前SQL未按预期开启备份'
+      backupConflictTips: '当前SQL未按预期开启备份',
+      backupExecuteBeforeTips: '回滚语句将在上线阶段自动生成'
     },
 
     filterForm: {

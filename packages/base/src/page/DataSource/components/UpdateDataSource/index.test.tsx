@@ -18,6 +18,7 @@ import {
 import rule_template from 'sqle/src/testUtils/mockApi/rule_template';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
 import project from '../../../../testUtils/mockApi/project';
+import system from 'sqle/src/testUtils/mockApi/system';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -31,6 +32,7 @@ describe('page/DataSource/UpdateDataSource', () => {
   const projectID = mockProjectInfo.projectID;
   const uId = '1739531854064652288';
   let getProjectTipsSpy: jest.SpyInstance;
+  let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = () => {
     return superRender(<UpdateDataSource />, undefined, {
       routerProps: {
@@ -49,6 +51,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     ruleTemplate.mockAllApi();
     mockUseCurrentProject();
     getProjectTipsSpy = project.getProjectTips();
+    getSystemModuleStatusSpy = system.getSystemModuleStatus();
   });
 
   afterEach(() => {
@@ -131,7 +134,8 @@ describe('page/DataSource/UpdateDataSource', () => {
                 value: 'test'
               }
             ],
-            enable_backup: true
+            enable_backup: true,
+            backup_max_rows: 2000
           }
         ]
       })
@@ -140,6 +144,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(9300));
 
     expect(getProjectTipsSpy).toHaveBeenCalled();
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
     expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
     const needUpdatePassword = getBySelector('#needUpdatePassword');

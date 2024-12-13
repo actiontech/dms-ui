@@ -261,6 +261,8 @@ export interface IBindOauth2UserReply {
 }
 
 export interface IBindOauth2UserReq {
+  id_token?: string;
+
   oauth2_token?: string;
 
   pwd?: string;
@@ -415,6 +417,8 @@ export interface IComponentNameWithVersion {
 export interface IDBService {
   additional_params?: IAdditionalParam[];
 
+  backup_max_rows?: number;
+
   business: string;
 
   db_type: string;
@@ -560,6 +564,16 @@ export interface IDbServiceConnections {
 
 export interface IDelDBServicePreCheckReply {
   code?: number;
+
+  message?: string;
+}
+
+export interface IDelSessionReply {
+  code?: number;
+
+  data?: {
+    location?: string;
+  };
 
   message?: string;
 }
@@ -772,6 +786,8 @@ export interface IGetOauth2ConfigurationResData {
   scopes?: string[];
 
   server_auth_url?: string;
+
+  server_logout_url?: string;
 
   server_token_url?: string;
 
@@ -1093,6 +1109,8 @@ export interface IListDBService {
 
   audit_plan_types?: IAuditPlanTypes[];
 
+  backup_max_rows?: number;
+
   business?: string;
 
   db_type?: string;
@@ -1265,6 +1283,8 @@ export interface IListDataExportWorkflowsReply {
 }
 
 export interface IListGlobalDBService {
+  backup_max_rows?: number;
+
   business?: string;
 
   db_type?: string;
@@ -1607,6 +1627,8 @@ export interface IOauth2Configuration {
 
   auto_create_user?: boolean;
 
+  auto_create_user_pwd?: string;
+
   client_host?: string;
 
   client_id?: string;
@@ -1620,6 +1642,8 @@ export interface IOauth2Configuration {
   scopes?: string[];
 
   server_auth_url?: string;
+
+  server_logout_url?: string;
 
   server_token_url?: string;
 
@@ -1932,6 +1956,8 @@ export interface IUpdateCurrentUserReq {
 
 export interface IUpdateDBService {
   additional_params?: IAdditionalParam[];
+
+  backup_max_rows?: number;
 
   business: string;
 

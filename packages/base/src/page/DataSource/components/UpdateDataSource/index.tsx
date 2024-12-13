@@ -78,7 +78,8 @@ const UpdateDataSource = () => {
         is_enable_masking: values.is_enable_masking,
         // #endif
         // #if [sqle && ee]
-        enable_backup: values.enableBackup
+        enable_backup: values.enableBackup,
+        backup_max_rows: values.backupMaxRows
         // #endif
       },
       project_uid: projectID

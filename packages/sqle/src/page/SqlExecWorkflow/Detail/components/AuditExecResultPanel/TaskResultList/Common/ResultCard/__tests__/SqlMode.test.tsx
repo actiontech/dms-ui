@@ -216,4 +216,24 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     expect(screen.getByText('关联回滚工单')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render sql execution result', async () => {
+    const { baseElement } = customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy_tip: 'test tips',
+      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+      associated_rollback_workflows: [
+        {
+          workflow_name: 'test_workflow_name',
+          workflow_id: '1'
+        }
+      ],
+      backup_result: '备份成功'
+    });
+    fireEvent.click(screen.getByText('回滚语句'));
+    expect(screen.getByText('备份成功')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
 });

@@ -31,7 +31,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   projectID,
   updateTaskRecordCount,
   dbType,
-  allowSwitchBackupPolicy = false
+  allowSwitchBackupPolicy = false,
+  supportedBackupPolicies
 }) => {
   const {
     sqlRewrittenOpen,
@@ -254,6 +255,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
           onCancel={closeSwitchBackupPolicyModal}
           taskID={taskID}
           refresh={refresh}
+          supportedBackupPolicies={supportedBackupPolicies}
         />
       </EmptyBox>
       {/* #endif */}

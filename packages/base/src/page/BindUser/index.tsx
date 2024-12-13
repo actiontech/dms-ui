@@ -65,6 +65,7 @@ const BindUser = () => {
     }
     OAuth2.BindOauth2User({
       oauth2_token: oauth2Token,
+      id_token: urlParams?.id_token,
       user_name: values.username,
       pwd: values.password
     })

@@ -170,11 +170,12 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                           {t('execWorkflow.audit.table.backupConflictTips')}
                         </Space>
                       </EmptyBox>
-                      {/* <Divider
+                      <Divider
                         type="vertical"
                         className="result-card-status-divider"
-                      /> */}
-                      {/* todo 等后端补充 备份结果字段  */}
+                      />
+                      {props.backup_result ||
+                        t('execWorkflow.audit.table.backupExecuteBeforeTips')}
                     </Space>
                     {/* #endif */}
                     <SQLRenderer sql={formattedRollbackSql} showLineNumbers />

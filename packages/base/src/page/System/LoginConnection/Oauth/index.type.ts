@@ -6,6 +6,7 @@ export type OauthFormField = {
   serverAuthUrl: string;
   serverTokenUrl: string;
   serverUserIdUrl: string;
+  serverLayoutUrl?: string;
   scopes: string;
   accessTokenKeyName: string;
   userIdKeyName: string;
@@ -13,5 +14,6 @@ export type OauthFormField = {
   userEmailTag: string;
   userWechatTag: string;
   autoCreateUser: boolean;
+  userPassword?: string;
   skipCheckState: boolean;
 };
