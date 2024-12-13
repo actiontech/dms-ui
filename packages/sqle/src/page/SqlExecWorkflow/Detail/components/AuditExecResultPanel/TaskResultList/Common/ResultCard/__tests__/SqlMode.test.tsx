@@ -12,6 +12,7 @@ import task from '../../../../../../../../../testUtils/mockApi/task';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { AuditTaskResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const projectID = '700300';
 const taskId = 'task_id_1234';
@@ -125,7 +126,8 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       exec_sql: 'exec_sql cont',
       rollback_sqls: ['rollback_sql cont'],
       backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
-      exec_result: 'success'
+      exec_result: 'success',
+      enableBackup: true
     });
 
     expect(screen.getByText('执行语句')).toBeInTheDocument();
@@ -230,10 +232,58 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
           workflow_id: '1'
         }
       ],
-      backup_result: '备份成功'
+      backup_result: '备份成功',
+      enableBackup: true
     });
     fireEvent.click(screen.getByText('回滚语句'));
     expect(screen.getByText('备份成功')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render no sql execution result', async () => {
+    const { baseElement } = customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy_tip: 'test tips',
+      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+      associated_rollback_workflows: [
+        {
+          workflow_name: 'test_workflow_name',
+          workflow_id: '1'
+        }
+      ],
+      backup_result: '',
+      enableBackup: true
+    });
+    fireEvent.click(screen.getByText('回滚语句'));
+    expect(
+      screen.getByText('回滚语句将在上线阶段自动生成')
+    ).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render no sql execution result and task status is executed', async () => {
+    const { baseElement } = customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy_tip: 'test tips',
+      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+      associated_rollback_workflows: [
+        {
+          workflow_name: 'test_workflow_name',
+          workflow_id: '1'
+        }
+      ],
+      backup_result: '',
+      enableBackup: true,
+      taskStatus: AuditTaskResV1StatusEnum.exec_failed
+    });
+    fireEvent.click(screen.getByText('回滚语句'));
+    expect(
+      screen.queryByText('回滚语句将在上线阶段自动生成')
+    ).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 });
