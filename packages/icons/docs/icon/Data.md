@@ -18,6 +18,20 @@ import { CheckDoubleSquareFilled } from '@actiontech/icons';
 export default () => <CheckDoubleSquareFilled width={32} height={32} />
 ```
 
+## DatabaseTableFilled
+```jsx
+import { DatabaseTableFilled } from '@actiontech/icons';
+
+export default () => <DatabaseTableFilled width={32} height={32} />
+```
+
+## DatabaseViewFilled
+```jsx
+import { DatabaseViewFilled } from '@actiontech/icons';
+
+export default () => <DatabaseViewFilled width={32} height={32} />
+```
+
 ## LightShieldFilled
 ```jsx
 import { LightShieldFilled } from '@actiontech/icons';
@@ -135,6 +149,13 @@ export default () => <TrendCardFilled width={32} height={32} />
 import { DoubleDatabaseOutlined } from '@actiontech/icons';
 
 export default () => <DoubleDatabaseOutlined width={32} height={32} />
+```
+
+## EmptyOutlined
+```jsx
+import { EmptyOutlined } from '@actiontech/icons';
+
+export default () => <EmptyOutlined width={32} height={32} />
 ```
 
 ## ExceptionFileOutlined

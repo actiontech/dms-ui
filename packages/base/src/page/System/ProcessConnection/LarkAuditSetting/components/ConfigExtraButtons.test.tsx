@@ -113,10 +113,10 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
         enabled: true
       });
 
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
+      const btnPopoverOpen = getAllBySelector(
+        '.system-config-button',
         baseElement
-      );
+      )[0];
       fireEvent.click(btnPopoverOpen);
       await act(async () => jest.advanceTimersByTime(500));
 
@@ -151,10 +151,10 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       });
 
       await act(async () => jest.advanceTimersByTime(3300));
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
+      const btnPopoverOpen = getAllBySelector(
+        '.system-config-button',
         baseElement
-      );
+      )[0];
       fireEvent.click(btnPopoverOpen);
       await act(async () => jest.advanceTimersByTime(500));
 
@@ -186,10 +186,10 @@ describe('base/System/ProcessConnection/LarkAuditSetting/ConfigExtraButtons', ()
       });
 
       await act(async () => jest.advanceTimersByTime(3300));
-      const btnPopoverOpen = getBySelector(
-        '.ant-btn[type="submit"]',
+      const btnPopoverOpen = getAllBySelector(
+        '.system-config-button',
         baseElement
-      );
+      )[0];
       fireEvent.click(btnPopoverOpen);
       await act(async () => jest.advanceTimersByTime(500));
 

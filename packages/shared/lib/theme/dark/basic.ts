@@ -22,7 +22,8 @@ export const darkThemeUI: { uiToken: UITokenTheme } = {
     colorFillQuaternary: '#fcfbf9',
     colorBgLayout: '#f2f1ef',
     colorWarningBgHover: '#FFF7E0',
-    colorErrorBgHover: '#FEE5E5'
+    colorErrorBgHover: '#FEE5E5',
+    colorSuccessBgHover: '#F0FDF4'
   }
 };
 

@@ -84,6 +84,7 @@ exports[`usePermission should match snapshot 1`] = `
           "PERSONALIZE_TITLE": "action:personalize_title",
         },
         "PROCESS_CONNECTION": {
+          "ENABLE_CODING": "action:enable_coding",
           "ENABLE_DING_TALK": "action:enable_ding_talk",
           "ENABLE_LARK_AUDIT": "action:enable_lark_audit",
           "ENABLE_WECHAT_AUDIT": "action:enable_wechat_audit",
@@ -182,6 +183,7 @@ exports[`usePermission should match snapshot 1`] = `
         "CREATE_SQL_EXCEPTION": "action:create_SQL_exception",
         "CREATE_WHITE_LIST": "action:sql_management_create_white_list",
         "EDIT_REMARK": "action:edit_sql_remark",
+        "PUSH_TO_CODING": "action:push_to_coding",
         "UPDATE_PRIORITY": "action:update_sql_priority",
         "UPDATE_STATUS": "action:update_sql_status",
       },
@@ -818,6 +820,14 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:enable_coding": {
+    "id": "action:enable_coding",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
   "action:enable_ding_talk": {
     "id": "action:enable_ding_talk",
     "role": [
@@ -1066,6 +1076,16 @@ exports[`usePermission should match snapshot 2`] = `
   },
   "action:project_manager_unarchive": {
     "id": "action:project_manager_unarchive",
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:push_to_coding": {
+    "id": "action:push_to_coding",
+    "projectArchived": false,
     "projectManager": true,
     "role": [
       "admin",

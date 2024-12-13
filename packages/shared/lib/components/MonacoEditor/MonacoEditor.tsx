@@ -1,6 +1,9 @@
-import { EditorProps } from '@monaco-editor/react';
+import { EditorProps, OnMount } from '@monaco-editor/react';
+import { MonacoEditorContainerStyleWrapper } from './style';
 import classNames from 'classnames';
-import { MonacoEditorStyleWrapper } from './style';
+import MonacoEditor from '@monaco-editor/react';
+import { editorDefaultOptions } from './config';
+import { CUSTOM_DIFF_EDITOR_THEME_NAME, editorDefaultThemeData } from './theme';
 
 import './monacoEditorConfig';
 
@@ -9,21 +12,28 @@ const CustomMonacoEditor: React.FC<Omit<EditorProps, 'theme'>> = ({
   className,
   ...props
 }) => {
+  const editorDidMount: OnMount = (editor, monaco) => {
+    props.onMount?.(editor, monaco);
+    monaco.editor.defineTheme(
+      CUSTOM_DIFF_EDITOR_THEME_NAME,
+      editorDefaultThemeData
+    );
+    monaco.editor.setTheme(CUSTOM_DIFF_EDITOR_THEME_NAME);
+  };
+
   return (
-    <MonacoEditorStyleWrapper
-      {...props}
-      className={classNames(className, 'custom-monaco-editor')}
-      options={{
-        ...options,
-        automaticLayout: true,
-        minimap: { enabled: false },
-        fontFamily: 'SF Mono',
-        fontSize: 14,
-        fontWeight: '400',
-        lineNumbersMinChars: 2,
-        suggestFontSize: 14
-      }}
-    />
+    <MonacoEditorContainerStyleWrapper className="custom-monaco-editor-wrapper">
+      <MonacoEditor
+        {...props}
+        className={classNames(className, 'custom-monaco-editor')}
+        onMount={editorDidMount}
+        options={{
+          ...editorDefaultOptions,
+
+          ...options
+        }}
+      />
+    </MonacoEditorContainerStyleWrapper>
   );
 };
 export default CustomMonacoEditor;
