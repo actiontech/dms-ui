@@ -1229,7 +1229,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                             <div
                               class="tip-content-box"
                             >
-                              SQL管控中的问题SQL
+                              SQL管控中的问题SQL可以被推送至Coding平台跟踪解决
                             </div>
                           </div>
                         </label>
@@ -2688,7 +2688,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                             <div
                               class="tip-content-box"
                             >
-                              SQL管控中的问题SQL
+                              SQL管控中的问题SQL可以被推送至Coding平台跟踪解决
                             </div>
                           </div>
                         </label>

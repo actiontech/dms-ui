@@ -4835,7 +4835,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                         <div
                           class="tip-content-box"
                         >
-                          系统自动创建的新用户将使用此密码作为初始登录密码。为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。
+                          系统自动创建的新用户将使用此密码作为初始登录密码，请妥善保存。此外，为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。
                         </div>
                       </div>
                     </label>

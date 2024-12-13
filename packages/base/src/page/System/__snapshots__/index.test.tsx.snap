@@ -5750,7 +5750,7 @@ exports[`base/System-ee render snap 3`] = `
                                 <div
                                   class="tip-content-box"
                                 >
-                                  SQL管控中的问题SQL
+                                  SQL管控中的问题SQL可以被推送至Coding平台跟踪解决
                                 </div>
                               </div>
                             </label>
@@ -7422,7 +7422,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
                                 <div
                                   class="tip-content-box"
                                 >
-                                  SQL管控中的问题SQL
+                                  SQL管控中的问题SQL可以被推送至Coding平台跟踪解决
                                 </div>
                               </div>
                             </label>
