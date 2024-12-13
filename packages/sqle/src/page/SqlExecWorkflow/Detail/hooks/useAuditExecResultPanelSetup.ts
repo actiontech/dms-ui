@@ -89,7 +89,9 @@ const useAuditExecResultPanelSetup = () => {
         !!urlParams.workflowId && activeTabKey === WORKFLOW_OVERVIEW_TAB_KEY,
       onSuccess: ({ list }) => {
         getOverviewListSuccessHandle?.(list ?? []);
+        // 接口404时，错误重试次数 pollingErrorRetryCount无效 导致重复抛出404错误提示。所以如果当list不存在时也停止轮询
         if (
+          !list ||
           list?.every(
             (task) => task.status !== GetWorkflowTasksItemV2StatusEnum.executing
           )

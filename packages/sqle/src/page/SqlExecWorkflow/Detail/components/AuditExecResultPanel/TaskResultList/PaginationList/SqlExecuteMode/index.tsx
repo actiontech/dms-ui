@@ -20,7 +20,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   workflowStatus,
   auditResultActiveKey,
   backupConflict,
-  dbType
+  dbType,
+  enableBackup,
+  taskStatus
 }) => {
   const { t } = useTranslation();
 
@@ -83,6 +85,8 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
               executeMode={WorkflowResV2ExecModeEnum.sqls}
               backupConflict={backupConflict}
               dbType={dbType}
+              enableBackup={enableBackup}
+              taskStatus={taskStatus}
             />
           </List.Item>
         );
