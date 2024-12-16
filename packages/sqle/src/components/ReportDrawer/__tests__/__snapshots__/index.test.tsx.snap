@@ -155,14 +155,18 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value=""
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value=""
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>
@@ -347,14 +351,18 @@ exports[`sqle/components/ReportDrawer render snap when has data 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="select 1"
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="select 1"
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>
@@ -618,14 +626,18 @@ exports[`sqle/components/ReportDrawer render snap when has delete rule 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="select 1"
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="select 1"
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>
@@ -811,14 +823,18 @@ exports[`sqle/components/ReportDrawer render snap when has extra 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="select 1"
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="select 1"
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>
@@ -1061,14 +1077,18 @@ exports[`sqle/components/ReportDrawer render snap when loading is true 1`] = `
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="select 1"
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="select 1"
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>
@@ -1311,14 +1331,18 @@ exports[`sqle/components/ReportDrawer render snap when showSourceFile is true 1`
                   <div
                     class="wrapper-cont"
                   >
-                    <input
-                      class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor css-baixa9"
-                      height="90%"
-                      language="sql"
-                      options="{"readOnly":true,"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                      value="select 1"
-                      width="100%"
-                    />
+                    <div
+                      class="custom-monaco-editor-wrapper css-1esok7i"
+                    >
+                      <input
+                        class="actiontech-sql-view-only-editor-renderer-wrapper custom-monaco-editor"
+                        height="100%"
+                        language="sql"
+                        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"readOnly":true}"
+                        value="select 1"
+                        width="100%"
+                      />
+                    </div>
                   </div>
                 </section>
               </div>
