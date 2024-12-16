@@ -24,8 +24,6 @@ jest.mock('react-redux', () => {
   };
 });
 
-jest.mock('rehype-sanitize', () => () => jest.fn());
-
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),
