@@ -1066,16 +1066,20 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2739,20 +2743,24 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="select
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="select
   *
 from
   user.list
   join in all"
-                              width="100%"
-                            />
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -4416,20 +4424,24 @@ exports[`sqle/SqlExecWorkflow/Create render associated version when create workf
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="select
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="select
   *
 from
   user.list
   join in all"
-                              width="100%"
-                            />
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -5139,7 +5151,7 @@ from
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -6683,16 +6695,20 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                             <div
                               class="ant-form-item-control-input-content"
                             >
-                              <input
-                                aria-required="true"
-                                class="custom-monaco-editor css-baixa9"
-                                height="400px"
-                                id="0_form_data"
-                                language="sql"
-                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                value="SELECT * "
-                                width="100%"
-                              />
+                              <div
+                                class="custom-monaco-editor-wrapper css-1esok7i"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="custom-monaco-editor"
+                                  height="400px"
+                                  id="0_form_data"
+                                  language="sql"
+                                  options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                  value="SELECT * "
+                                  width="100%"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -7364,7 +7380,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 1`] = `
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -8624,16 +8640,20 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                             <div
                               class="ant-form-item-control-input-content"
                             >
-                              <input
-                                aria-required="true"
-                                class="custom-monaco-editor css-baixa9"
-                                height="400px"
-                                id="0_form_data"
-                                language="sql"
-                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                value="SELECT * "
-                                width="100%"
-                              />
+                              <div
+                                class="custom-monaco-editor-wrapper css-1esok7i"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="custom-monaco-editor"
+                                  height="400px"
+                                  id="0_form_data"
+                                  language="sql"
+                                  options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                  value="SELECT * "
+                                  width="100%"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -9281,7 +9301,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -9636,6 +9656,7 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                     </div>
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -9643,6 +9664,33 @@ exports[`sqle/SqlExecWorkflow/Create render create rollback workflow 2`] = `
                                       >
                                         <span>
                                           添加为审核SQL例外
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="18"
+                                            viewBox="0 0 1024 1024"
+                                            width="18"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                              fill="#4583FF"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          SQL合规重写
                                         </span>
                                       </button>
                                     </div>
@@ -10909,16 +10957,20 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             <div
                               class="ant-form-item-control-input-content"
                             >
-                              <input
-                                aria-required="true"
-                                class="custom-monaco-editor css-baixa9"
-                                height="400px"
-                                id="0_form_data"
-                                language="sql"
-                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                value="select * from user"
-                                width="100%"
-                              />
+                              <div
+                                class="custom-monaco-editor-wrapper css-1esok7i"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="custom-monaco-editor"
+                                  height="400px"
+                                  id="0_form_data"
+                                  language="sql"
+                                  options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                  value="select * from user"
+                                  width="100%"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -11361,7 +11413,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -11716,6 +11768,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     </div>
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -11723,6 +11776,33 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                       >
                                         <span>
                                           添加为审核SQL例外
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="18"
+                                            viewBox="0 0 1024 1024"
+                                            width="18"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                              fill="#4583FF"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          SQL合规重写
                                         </span>
                                       </button>
                                     </div>
@@ -13369,16 +13449,20 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             <div
                               class="ant-form-item-control-input-content"
                             >
-                              <input
-                                aria-required="true"
-                                class="custom-monaco-editor css-baixa9"
-                                height="400px"
-                                id="0_form_data"
-                                language="sql"
-                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                value="select * from user"
-                                width="100%"
-                              />
+                              <div
+                                class="custom-monaco-editor-wrapper css-1esok7i"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="custom-monaco-editor"
+                                  height="400px"
+                                  id="0_form_data"
+                                  language="sql"
+                                  options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                  value="select * from user"
+                                  width="100%"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -13821,7 +13905,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -14176,6 +14260,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     </div>
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -14183,6 +14268,33 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                       >
                                         <span>
                                           添加为审核SQL例外
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="18"
+                                            viewBox="0 0 1024 1024"
+                                            width="18"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                              fill="#4583FF"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          SQL合规重写
                                         </span>
                                       </button>
                                     </div>
@@ -15839,16 +15951,20 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 <div
                                   class="ant-form-item-control-input-content"
                                 >
-                                  <input
-                                    aria-required="true"
-                                    class="custom-monaco-editor css-baixa9"
-                                    height="400px"
-                                    id="0_form_data"
-                                    language="sql"
-                                    options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                    value="select * from user"
-                                    width="100%"
-                                  />
+                                  <div
+                                    class="custom-monaco-editor-wrapper css-1esok7i"
+                                  >
+                                    <input
+                                      aria-required="true"
+                                      class="custom-monaco-editor"
+                                      height="400px"
+                                      id="0_form_data"
+                                      language="sql"
+                                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                      value="select * from user"
+                                      width="100%"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -17059,16 +17175,20 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             <div
                               class="ant-form-item-control-input-content"
                             >
-                              <input
-                                aria-required="true"
-                                class="custom-monaco-editor css-baixa9"
-                                height="400px"
-                                id="0_form_data"
-                                language="sql"
-                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                value="select * from user"
-                                width="100%"
-                              />
+                              <div
+                                class="custom-monaco-editor-wrapper css-1esok7i"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="custom-monaco-editor"
+                                  height="400px"
+                                  id="0_form_data"
+                                  language="sql"
+                                  options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                  value="select * from user"
+                                  width="100%"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -17511,7 +17631,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -17866,6 +17986,7 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                     </div>
                                     <div
                                       class="ant-space-item"
+                                      style="margin-right: 8px;"
                                     >
                                       <button
                                         class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
@@ -17873,6 +17994,33 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                       >
                                         <span>
                                           添加为审核SQL例外
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            height="18"
+                                            viewBox="0 0 1024 1024"
+                                            width="18"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
+                                              fill="#4583FF"
+                                            />
+                                          </svg>
+                                        </span>
+                                        <span>
+                                          SQL合规重写
                                         </span>
                                       </button>
                                     </div>
@@ -20024,15 +20172,19 @@ exports[`sqle/SqlExecWorkflow/Create should handle form submission and audit act
                                 <div
                                   class="ant-form-item-control-input-content"
                                 >
-                                  <input
-                                    class="custom-monaco-editor css-baixa9"
-                                    height="400px"
-                                    id="0_form_data"
-                                    language="sql"
-                                    options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                    value="/* input your sql */"
-                                    width="100%"
-                                  />
+                                  <div
+                                    class="custom-monaco-editor-wrapper css-1esok7i"
+                                  >
+                                    <input
+                                      class="custom-monaco-editor"
+                                      height="400px"
+                                      id="0_form_data"
+                                      language="sql"
+                                      options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                      value="/* input your sql */"
+                                      width="100%"
+                                    />
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -21504,16 +21656,20 @@ exports[`sqle/SqlExecWorkflow/Create should reset form fields and snapshot UI af
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -22765,16 +22921,20 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -24534,20 +24694,24 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="select
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="select
   *
 from
   user.list
   join in all"
-                              width="100%"
-                            />
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -26391,20 +26555,24 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot UI and perform SQL audit in
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="select
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="select
   *
 from
   user.list
   join in all"
-                              width="100%"
-                            />
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -27114,7 +27282,7 @@ from
                             <col />
                             <col />
                             <col
-                              style="width: 164px;"
+                              style="width: 246px;"
                             />
                           </colgroup>
                           <thead
@@ -28768,16 +28936,20 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              aria-required="true"
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                aria-required="true"
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -30720,16 +30892,20 @@ exports[`sqle/SqlExecWorkflow/Create should snapshot render initial workflow cre
                             <div
                               class="ant-form-item-control-input-content"
                             >
-                              <input
-                                aria-required="true"
-                                class="custom-monaco-editor css-baixa9"
-                                height="400px"
-                                id="0_form_data"
-                                language="sql"
-                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                                value="SELECT * "
-                                width="100%"
-                              />
+                              <div
+                                class="custom-monaco-editor-wrapper css-1esok7i"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="custom-monaco-editor"
+                                  height="400px"
+                                  id="0_form_data"
+                                  language="sql"
+                                  options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                  value="SELECT * "
+                                  width="100%"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -33646,15 +33822,19 @@ exports[`sqle/SqlExecWorkflow/Create should validate "workflow_subject" and prev
                           <div
                             class="ant-form-item-control-input-content"
                           >
-                            <input
-                              class="custom-monaco-editor css-baixa9"
-                              height="400px"
-                              id="0_form_data"
-                              language="sql"
-                              options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14}"
-                              value="/* input your sql */"
-                              width="100%"
-                            />
+                            <div
+                              class="custom-monaco-editor-wrapper css-1esok7i"
+                            >
+                              <input
+                                class="custom-monaco-editor"
+                                height="400px"
+                                id="0_form_data"
+                                language="sql"
+                                options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true}}"
+                                value="/* input your sql */"
+                                width="100%"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>

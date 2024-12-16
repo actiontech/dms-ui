@@ -1,4 +1,5 @@
 export { default as DoubleDatabaseOutlined } from './DoubleDatabaseOutlined';
+export { default as EmptyOutlined } from './EmptyOutlined';
 export { default as ExceptionFileOutlined } from './ExceptionFileOutlined';
 export { default as FileVersionOutlined } from './FileVersionOutlined';
 export { default as HorizontalTripleLineOutlined } from './HorizontalTripleLineOutlined';
