@@ -39,7 +39,7 @@ const ResultIconRender = (props: IResultIconRender) => {
       if={!isAuditing}
       defaultNode={
         <ResultIconTagStyleWrapper size="small" color="geekblue">
-          {t(`sqlAudit.list.status.auditStatus.auditing`)}
+          {t('sqlAudit.list.status.auditStatus.auditing')}
         </ResultIconTagStyleWrapper>
       }
     >

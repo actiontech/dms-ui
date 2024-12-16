@@ -804,7 +804,8 @@ export const mockAuditPlanSQLData: IAuditPlanSQLDataResV1 = {
     },
     {
       id: '1234567',
-      audit_results: 'being_audited',
+      audit_results: '[]',
+      audit_status: 'being_audited',
       counter: '598',
       db_user: '',
       fingerprint: 'SELECT ?,SLEEP(?) LIMIT ?,?',

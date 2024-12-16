@@ -195,7 +195,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       pollingInterval: 1000,
       pollingErrorRetryCount: 3,
       onSuccess: (res) => {
-        if (res.data?.some((i) => i?.audit_results === BEING_AUDITED)) {
+        if (res.data?.some((i) => i?.audit_status === BEING_AUDITED)) {
           startPollRequest();
         } else {
           cancel();
@@ -290,6 +290,19 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     [polling, getFilterMetaListLoading, getTableRowLoading]
   );
 
+  const parseAuditResult = (resultString: string) => {
+    let results: IAuditResult[] = [];
+    try {
+      results = JSON.parse(resultString ?? '[]') as IAuditResult[];
+    } catch (error) {
+      results = [];
+    }
+
+    return results?.map((item) => {
+      return item.level ?? '';
+    });
+  };
+
   return (
     <ScanTypeSqlCollectionStyleWrapper>
       <TableToolbar setting={tableSetting}>
@@ -312,32 +325,21 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
           columnClassName: (type) =>
             type === 'sql' ? 'ellipsis-column-large-width' : undefined,
           customRender: (text, record, fieldName, type) => {
+            const currentAuditStatusIsBeingAudited =
+              record.audit_status === BEING_AUDITED;
             if (fieldName === 'audit_results') {
-              let isAuditing = false;
-              let results: IAuditResult[] = [];
-              if (text === BEING_AUDITED) {
-                isAuditing = true;
-              } else {
-                try {
-                  results = JSON.parse(text ?? '[]') as IAuditResult[];
-                } catch (error) {
-                  results = [];
-                }
-              }
               return (
                 <div
                   data-testid="trigger-open-report-drawer"
                   onClick={() => {
-                    if (!isAuditing) {
+                    if (!currentAuditStatusIsBeingAudited) {
                       onClickAuditResult(record);
                     }
                   }}
                 >
                   <ResultIconRender
-                    iconLevels={results?.map((item) => {
-                      return item.level ?? '';
-                    })}
-                    isAuditing={isAuditing}
+                    iconLevels={parseAuditResult(text)}
+                    isAuditing={currentAuditStatusIsBeingAudited}
                   />
                 </div>
               );
@@ -352,16 +354,12 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
             }
 
             if (type === 'sql') {
-              let isAuditing = false;
-              if (record?.audit_results === BEING_AUDITED) {
-                isAuditing = true;
-              }
               return (
                 <SQLRenderer.Snippet
                   tooltip={false}
                   className="pointer"
                   onClick={() => {
-                    if (!isAuditing) {
+                    if (!currentAuditStatusIsBeingAudited) {
                       onClickAuditResult(record);
                     }
                   }}
