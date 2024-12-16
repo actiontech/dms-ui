@@ -141,7 +141,8 @@ describe('test ScanTypeSqlCollection', () => {
             rows: [
               {
                 ...mockAuditPlanSQLData?.rows?.[0],
-                audit_results: 'being_audited'
+                audit_results: '[]',
+                audit_status: 'being_audited'
               }
             ]
           }
@@ -152,8 +153,7 @@ describe('test ScanTypeSqlCollection', () => {
           data: {
             rows: [
               {
-                ...mockAuditPlanSQLData?.rows?.[0],
-                audit_results: ''
+                ...mockAuditPlanSQLData?.rows?.[0]
               }
             ]
           }
@@ -173,8 +173,7 @@ describe('test ScanTypeSqlCollection', () => {
         data: {
           rows: [
             {
-              ...mockAuditPlanSQLData?.rows?.[0],
-              audit_results: ''
+              ...mockAuditPlanSQLData?.rows?.[0]
             }
           ]
         }
