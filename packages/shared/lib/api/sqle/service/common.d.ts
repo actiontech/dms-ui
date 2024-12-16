@@ -2488,6 +2488,8 @@ export interface IRewriteSQLData {
 
   rewritten_sql?: string;
 
+  rewritten_sql_business_desc?: string;
+
   suggestions?: IRewriteSuggestion[];
 }
 

@@ -8,8 +8,6 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 
-jest.mock('rehype-sanitize', () => () => jest.fn());
-
 describe('page/RuleKnowledge/EditKnowledgeContent', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 

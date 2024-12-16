@@ -1,29 +1,38 @@
-import { DiffEditorProps } from '@monaco-editor/react';
+import { DiffEditor, DiffEditorProps, DiffOnMount } from '@monaco-editor/react';
 import classNames from 'classnames';
-import { MonacoDiffEditorStyleWrapper } from './style';
+import { editorDefaultOptions } from './config';
+import { CUSTOM_DIFF_EDITOR_THEME_NAME, editorDefaultThemeData } from './theme';
 import './monacoEditorConfig';
+import { MonacoEditorContainerStyleWrapper } from './style';
 
 const MonacoDiffEditor: React.FC<Omit<DiffEditorProps, 'theme'>> = ({
   options,
   className,
   ...props
 }) => {
+  const editorDidMount: DiffOnMount = (editor, monaco) => {
+    props.onMount?.(editor, monaco);
+    monaco.editor.defineTheme(
+      CUSTOM_DIFF_EDITOR_THEME_NAME,
+      editorDefaultThemeData
+    );
+    monaco.editor.setTheme(CUSTOM_DIFF_EDITOR_THEME_NAME);
+  };
   return (
-    <MonacoDiffEditorStyleWrapper
-      {...props}
+    <MonacoEditorContainerStyleWrapper
       className={classNames(className, 'custom-diff-monaco-editor')}
-      options={{
-        ...options,
-        automaticLayout: true,
-        minimap: { enabled: false },
-        fontFamily: 'SF Mono',
-        fontSize: 14,
-        fontWeight: '400',
-        lineNumbersMinChars: 2,
-        suggestFontSize: 14,
-        scrollBeyondLastLine: false
-      }}
-    />
+    >
+      <DiffEditor
+        {...props}
+        onMount={editorDidMount}
+        theme={CUSTOM_DIFF_EDITOR_THEME_NAME}
+        options={{
+          ...editorDefaultOptions,
+          renderOverviewRuler: false,
+          ...options
+        }}
+      />
+    </MonacoEditorContainerStyleWrapper>
   );
 };
 export default MonacoDiffEditor;
