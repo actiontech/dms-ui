@@ -37,6 +37,10 @@ export const RuleKnowledgeEditorStyleWrapper = styled(MDEditor)`
     background-color: inherit;
   }
 
+  &.w-md-editor-fullscreen {
+    background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+  }
+
   & .w-md-editor-toolbar {
     border-bottom: 1px solid
       ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
