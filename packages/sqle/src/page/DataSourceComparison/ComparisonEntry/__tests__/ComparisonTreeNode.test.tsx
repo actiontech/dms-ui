@@ -17,6 +17,7 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 import dayjs from 'dayjs';
 import MockDate from 'mockdate';
 import ComparisonTreeNode from '../component/ComparisonTreeNode';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('ComparisonTreeNode', () => {
   describe('ComparisonDetailDrawer', () => {
@@ -140,6 +141,47 @@ describe('ComparisonTreeNode', () => {
         ],
         project_name: mockProjectInfo.projectName
       });
+    });
+
+    it('should render error message when audit_error is not empty', async () => {
+      genDatabaseDiffModifySQLSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: [
+            {
+              schema_name: 'db2',
+              modify_sqls: [
+                {
+                  sql_statement: 'USE db2;\n'
+                },
+                {
+                  sql_statement:
+                    'ALTER TABLE `orders` DROP KEY `fk_orders_customer_id_2`, ADD KEY `fk_orders_customer_id_1` (`customer_id`), DROP FOREIGN KEY `fk_orders_customer_id_2`;\n'
+                },
+                {
+                  sql_statement:
+                    'ALTER TABLE `orders` ADD CONSTRAINT `fk_orders_customer_id_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`);\n'
+                }
+              ],
+              audit_error:
+                'An unknown error occurred, check std.log for details'
+            }
+          ]
+        })
+      );
+
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.click(screen.getByText('生成变更SQL'));
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.queryAllByText('变更SQL语句审核结果')).toHaveLength(3);
+      fireEvent.click(screen.getAllByText('变更SQL语句审核结果')[0]);
+      expect(screen.queryByText('审核失败')).toBeInTheDocument();
+      expect(
+        screen.queryByText(
+          'An unknown error occurred, check std.log for details'
+        )
+      ).toBeInTheDocument();
     });
 
     it('should copy modified SQL to clipboard when copy button is clicked', async () => {
