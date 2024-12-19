@@ -14,13 +14,15 @@ type Props = {
   instanceType: string;
   auditResultCollapseActiveKeys: string[];
   auditResultCollapseActiveKeysOnChange: (keys: string[]) => void;
+  auditError?: string;
 };
 
 const ModifiedSqlAuditResultList: React.FC<Props> = ({
   dataSource,
   instanceType,
   auditResultCollapseActiveKeys,
-  auditResultCollapseActiveKeysOnChange
+  auditResultCollapseActiveKeysOnChange,
+  auditError
 }) => {
   const { t } = useTranslation();
 
@@ -62,6 +64,7 @@ const ModifiedSqlAuditResultList: React.FC<Props> = ({
                           )}
                           instanceType={instanceType ?? ''}
                           auditResults={item.audit_results ?? []}
+                          auditError={auditError}
                         />
                       )
                     }

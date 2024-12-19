@@ -332,6 +332,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
               }
               instanceType={selectedComparisonInstanceInfo?.instanceType ?? ''}
               dataSource={modifiedSqlResult?.[0].modify_sqls ?? []}
+              auditError={modifiedSqlResult?.[0].audit_error}
             />
           </ModifiedSqlStyleWrapper>
         </EmptyBox>

@@ -25,6 +25,10 @@ const ModifiedSqlAuditResult: React.FC<Props> = ({
   const { sharedTheme } = useThemeStyleData();
   const [activeTabKey, setActiveTabKey] = useState('');
 
+  const currentDatabaseDiffModifySqlInfo = dataSource?.find(
+    (v) => v.schema_name === activeTabKey
+  );
+
   useEffect(() => {
     setActiveTabKey(dataSource?.[0]?.schema_name ?? '');
   }, [dataSource]);
@@ -58,10 +62,8 @@ const ModifiedSqlAuditResult: React.FC<Props> = ({
           auditResultCollapseActiveKeysOnChange
         }
         instanceType={instanceType}
-        dataSource={
-          dataSource?.find((v) => v.schema_name === activeTabKey)
-            ?.modify_sqls ?? []
-        }
+        auditError={currentDatabaseDiffModifySqlInfo?.audit_error}
+        dataSource={currentDatabaseDiffModifySqlInfo?.modify_sqls ?? []}
       />
     </>
   );

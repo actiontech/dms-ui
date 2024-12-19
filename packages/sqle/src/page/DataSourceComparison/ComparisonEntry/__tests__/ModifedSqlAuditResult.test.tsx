@@ -203,10 +203,25 @@ describe('ModifiedSqlAuditResult', () => {
         screen.getByTestId(dataSource[1].schema_name!).parentNode?.parentNode
       ).toHaveClass('ant-segmented-item-selected');
     });
+
+    it('should render error message when audit_error is not empty', async () => {
+      customRender(
+        dataSource.map((v) => ({ ...v, audit_error: 'audit error message' }))
+      );
+
+      fireEvent.click(screen.getAllByText('变更SQL语句审核结果')[0]);
+      expect(screen.queryAllByText('审核失败')[0]).toBeInTheDocument();
+      expect(
+        screen.queryAllByText('audit error message')[0]
+      ).toBeInTheDocument();
+    });
   });
 
   describe('list', () => {
-    const customRender = (dataSource?: ISQLStatementWithAuditResult[]) => {
+    const customRender = (
+      dataSource?: ISQLStatementWithAuditResult[],
+      auditError?: string
+    ) => {
       return superRender(
         <ModifiedSqlAuditResultList
           dataSource={dataSource}
@@ -215,6 +230,7 @@ describe('ModifiedSqlAuditResult', () => {
           auditResultCollapseActiveKeysOnChange={
             auditResultCollapseActiveKeysOnChangeSpy
           }
+          auditError={auditError}
         />
       );
     };
@@ -244,6 +260,19 @@ describe('ModifiedSqlAuditResult', () => {
       expect(auditResultCollapseActiveKeysOnChangeSpy).toHaveBeenCalledWith([
         '1'
       ]);
+    });
+
+    it('should render error message when audit_error is not empty', async () => {
+      customRender(dataSource[1].modify_sqls, 'audit error message');
+
+      expect(screen.queryAllByText('变更SQL语句审核结果')).toHaveLength(
+        dataSource[1].modify_sqls?.length!
+      );
+      fireEvent.click(screen.getAllByText('变更SQL语句审核结果')[0]);
+      expect(screen.queryAllByText('审核失败')[0]).toBeInTheDocument();
+      expect(
+        screen.queryAllByText('audit error message')[0]
+      ).toBeInTheDocument();
     });
   });
 });
