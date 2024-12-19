@@ -7,7 +7,8 @@ import { Spin } from 'antd';
 import {
   RuleList,
   RuleStatus,
-  RuleTypes
+  // RuleTypes,
+  RuleFilter
 } from '../../../../components/RuleList';
 import {
   EnumActionType,
@@ -16,13 +17,13 @@ import {
 } from '../../../../components/RuleList/index.type';
 import useRuleList from '../../../../components/RuleList/useRuleList';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ALL_RULE_TYPE_CONSTANT } from '../../../../components/RuleList/RuleTypes';
+// import { ALL_RULE_TYPE_CONSTANT } from '../../../../components/RuleList/RuleTypes';
 import EditRuleTemplate from '../../EditRuleTemplate';
 import { SegmentedRowStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import CustomSearchInput from '../../../../components/RuleDetail/components/CustomSearchInput';
-import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
-import EventEmitter from '../../../../utils/EventEmitter';
-import EmitterKey from '../../../../data/EmitterKey';
+// import CustomSearchInput from '../../../../components/RuleDetail/components/CustomSearchInput';
+// import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
+// import EventEmitter from '../../../../utils/EventEmitter';
+// import EmitterKey from '../../../../data/EmitterKey';
 
 const RuleSelect = (props: RuleSelectProps) => {
   const { t } = useTranslation();
@@ -113,12 +114,13 @@ const RuleSelect = (props: RuleSelectProps) => {
   ]);
 
   const rulesData = useMemo(() => {
-    const dataSource = disabledRuleStatus ? disableRule : props.filteredRule;
-    if (ruleType === ALL_RULE_TYPE_CONSTANT) {
-      return dataSource;
-    }
-    return dataSource.filter((item) => item.type === ruleType);
-  }, [disabledRuleStatus, ruleType, disableRule, props.filteredRule]);
+    // const dataSource = disabledRuleStatus ? disableRule : props.filteredRule;
+    // if (ruleType === ALL_RULE_TYPE_CONSTANT) {
+    //   return dataSource;
+    // }
+    // return dataSource.filter((item) => item.type === ruleType);
+    return disabledRuleStatus ? disableRule : props.filteredRule;
+  }, [disabledRuleStatus, disableRule, props.filteredRule]);
 
   const onAction = (data: IRuleResV1, type: typeActionType) => {
     if (type === EnumActionType.disabled) {
@@ -168,7 +170,7 @@ const RuleSelect = (props: RuleSelectProps) => {
         />
         {renderBatchAction()}
       </SegmentedRowStyleWrapper>
-      <FilterContainerStyleWrapper className="full-width-element">
+      {/* <FilterContainerStyleWrapper className="full-width-element">
         <CustomSearchInput
           onCustomPressEnter={(value) => {
             EventEmitter.emit(
@@ -179,23 +181,24 @@ const RuleSelect = (props: RuleSelectProps) => {
           placeholder={t('rule.form.fuzzy_text_placeholder')}
           allowClear
         />
-      </FilterContainerStyleWrapper>
+      </FilterContainerStyleWrapper> */}
+      <RuleFilter form={props.ruleFilterForm} />
       <Spin spinning={props.listLoading || props.formSubmitLoading}>
-        {props.dbType && (
+        {/* {props.dbType && (
           <RuleTypes
             ruleTypeChange={setRuleType}
             currentRuleType={ruleType}
             allRulesData={props.allRules ?? []}
             rules={disabledRuleStatus ? disableRule : props.filteredRule}
           />
-        )}
+        )} */}
         <RuleList
           isAction
           actionType={ruleStatus}
           rules={rulesData}
           activeDataKeys={rulesData.map((item) => item?.rule_name ?? '')}
           onActionHandle={(record, type) => onAction(record, type)}
-          pageHeaderHeight={110}
+          pageHeaderHeight={50}
         />
       </Spin>
       <EditRuleTemplate

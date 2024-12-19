@@ -13,7 +13,8 @@ const useCreateRuleTemplateForm = () => {
     prevStep,
     nextStep,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   } = useFormStep();
 
   const {
@@ -24,12 +25,13 @@ const useCreateRuleTemplateForm = () => {
     setActiveRule,
     databaseRule,
     setDatabaseRule,
-    dbType,
-    setDbType,
+    // dbType,
+    // setDbType,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
-  } = useRules();
+    setFilteredRule,
+    ruleFilterForm
+  } = useRules(dbType);
 
   const [createLoading, { setFalse: finishSubmit, setTrue: startSubmit }] =
     useBoolean(false);
@@ -38,7 +40,11 @@ const useCreateRuleTemplateForm = () => {
     setBaseInfoFormSubmitLoading(true);
     try {
       const values = await form.validateFields();
-      setDbType(values.db_type);
+      // 去除set db type逻辑 直接用form watch的值
+      // setDbType(values.db_type);
+      // 去除掉下面相关逻辑 应该每次dbType变化都去请求一次all rule 而不是在这里用dbType判断
+
+      // 这里只需要设置activeRule和filteredRule就行
       const tempAllRules =
         allRules?.filter((e) => e.db_type === values.db_type) ?? [];
       setDatabaseRule(tempAllRules);
@@ -60,7 +66,7 @@ const useCreateRuleTemplateForm = () => {
     nextStep,
     setActiveRule,
     setDatabaseRule,
-    setDbType,
+    // setDbType,
     setBaseInfoFormSubmitLoading,
     setFilteredRule,
     activeRule
@@ -69,14 +75,14 @@ const useCreateRuleTemplateForm = () => {
   const resetAll = useCallback(() => {
     setStep(0);
     form.resetFields();
-    setDbType('');
+    // setDbType('');
     clearSearchValue();
     setActiveRule([]);
     setFilteredRule([]);
   }, [
     form,
     setStep,
-    setDbType,
+    // setDbType,
     clearSearchValue,
     setActiveRule,
     setFilteredRule
@@ -113,7 +119,8 @@ const useCreateRuleTemplateForm = () => {
     finishSubmit,
     startSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm
   };
 };
 

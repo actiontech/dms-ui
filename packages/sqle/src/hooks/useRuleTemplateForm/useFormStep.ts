@@ -7,6 +7,8 @@ const SUCCESS_STEP_NUM = 2;
 const useFormStep = () => {
   const [form] = Form.useForm<RuleTemplateBaseInfoFields>();
 
+  const dbType = Form.useWatch('db_type', form);
+
   const [step, setStep] = useState(0);
 
   const [baseInfoFormSubmitLoading, setBaseInfoFormSubmitLoading] =
@@ -30,7 +32,8 @@ const useFormStep = () => {
     nextStep,
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   };
 };
 

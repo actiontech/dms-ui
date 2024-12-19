@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Spin, Form } from 'antd';
+import { Spin, Form, Space } from 'antd';
 import { EmptyBox, PageHeader, TypedLink } from '@actiontech/shared';
 import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
 import useRuleList from '../../components/RuleList/useRuleList';
@@ -48,9 +48,7 @@ const Rule = () => {
           <RuleListFilter
             form={form}
             setShowNorRuleTemplatePage={setShowNorRuleTemplatePage}
-            getTemplateRules={getTemplateRules}
             bindProjects={bindProjects}
-            getAllRules={getAllRules}
           />
           {filterRuleTemplate && (
             <RuleStatus
@@ -88,22 +86,9 @@ const Rule = () => {
             />
           }
         >
-          {filterDbType && (
-            <RuleTypes
-              ruleTypeChange={setRuleType}
-              currentRuleType={ruleType}
-              allRulesData={allRules ?? []}
-              rules={getCurrentStatusRules(
-                allRules,
-                templateRules,
-                filterRuleTemplate
-              )}
-            />
-          )}
-
           <RuleList
             enableCheckDetail
-            pageHeaderHeight={50}
+            pageHeaderHeight={0}
             rules={getCurrentTypeRules(
               allRules,
               templateRules,

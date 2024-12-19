@@ -1,19 +1,37 @@
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { useRequest } from 'ahooks';
-import { IGetRuleListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
+import { useRuleFilterForm } from '../../components/RuleList';
+import { IGetRuleListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 
-const useRules = (manual = false) => {
+type useRulesOptionsType = {
+  manual?: boolean;
+  onSuccess?: (data: IRuleResV1[]) => void;
+  dbType?: string;
+};
+
+const useRules = (
+  dbType: string,
+  manual = false,
+  onSuccess?: (data: IRuleResV1[]) => void
+) => {
+  // 当前选中的Rule 也就是最终会传递给接口的rule
   const [activeRule, setActiveRule] = useState<IRuleResV1[]>([]);
 
+  // 当前数据库类型的rule
   const [databaseRule, setDatabaseRule] = useState<IRuleResV1[]>([]);
 
+  // 当前筛选出的rule 也就是页面页面中展示出来的rule
   const [filteredRule, setFilteredRule] = useState<IRuleResV1[]>([]);
 
-  const [dbType, setDbType] = useState<string>('');
+  const { form: ruleFilterForm, fuzzyKeyword, tags } = useRuleFilterForm();
+
+  // const [dbType, setDbType] = useState<string>('');
+
+  // console.log('dbType11111--->', dbType);
 
   const {
     data: allRules,
@@ -23,10 +41,16 @@ const useRules = (manual = false) => {
   } = useRequest(
     (params: IGetRuleListV1Params) =>
       rule_template
-        .getRuleListV1(params ?? {})
+        .getRuleListV1({
+          filter_db_type: dbType,
+          fuzzy_keyword_rule: fuzzyKeyword,
+          tags
+        })
         .then((res) => res.data.data ?? []),
     {
-      manual
+      manual,
+      onSuccess,
+      refreshDeps: [fuzzyKeyword, tags, dbType]
     }
   );
 
@@ -39,23 +63,8 @@ const useRules = (manual = false) => {
   }, []);
 
   const clearSearchValue = useCallback(() => {
-    EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
-  }, []);
-
-  useEffect(() => {
-    if (!manual) {
-      const { unsubscribe } = EventEmitter.subscribe(
-        EmitterKey.Search_Rule_Template_Rule_Select_List,
-        (value) => {
-          getAllRules({
-            fuzzy_keyword_rule: value
-          });
-        }
-      );
-      return unsubscribe;
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    ruleFilterForm.resetFields();
+  }, [ruleFilterForm]);
 
   return {
     allRules,
@@ -66,12 +75,13 @@ const useRules = (manual = false) => {
     setActiveRule,
     databaseRule,
     setDatabaseRule,
-    dbType,
-    setDbType,
+    // dbType,
+    // setDbType,
     subscribe,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm
   };
 };
 

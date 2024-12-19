@@ -49,36 +49,33 @@ const UpdateRuleTemplate = () => {
     baseInfoFormSubmitLoading,
     submitSuccessStatus,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm
   } = useUpdateRuleTemplateForm();
 
   const { onGotoRuleTemplateList } = useBackToListPage(projectID);
 
-  const getRuleTemplate = useCallback(
-    (fuzzyKeyword?: string) => {
-      rule_template
-        .getProjectRuleTemplateV1({
-          rule_template_name: urlParams.templateName ?? '',
-          project_name: projectName,
-          fuzzy_keyword_rule: fuzzyKeyword
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            const template = res.data.data ?? {};
-            setRuleTemplate(template);
-            setActiveRule(template?.rule_list ?? []);
-            setFilteredRule(template?.rule_list ?? []);
-          }
-        });
-    },
-    [
-      projectName,
-      urlParams.templateName,
-      setActiveRule,
-      setRuleTemplate,
-      setFilteredRule
-    ]
-  );
+  const getRuleTemplate = useCallback(() => {
+    rule_template
+      .getProjectRuleTemplateV1({
+        rule_template_name: urlParams.templateName ?? '',
+        project_name: projectName
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          const template = res.data.data ?? {};
+          setRuleTemplate(template);
+          setActiveRule(template?.rule_list ?? []);
+          setFilteredRule(template?.rule_list ?? []);
+        }
+      });
+  }, [
+    projectName,
+    urlParams.templateName,
+    setActiveRule,
+    setRuleTemplate,
+    setFilteredRule
+  ]);
 
   useEffect(() => {
     getRuleTemplate();
@@ -181,6 +178,7 @@ const UpdateRuleTemplate = () => {
             projectName={projectName}
             defaultData={ruleTemplate}
             mode="update"
+            ruleFilterForm={ruleFilterForm}
           />
         </RuleTemplateContStyleWrapper>
         <div hidden={!submitSuccessStatus}>

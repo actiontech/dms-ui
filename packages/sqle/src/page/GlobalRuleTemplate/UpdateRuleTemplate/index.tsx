@@ -48,7 +48,8 @@ const UpdateRuleTemplate = () => {
     startSubmit,
     finishSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm
   } = useUpdateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
@@ -185,6 +186,7 @@ const UpdateRuleTemplate = () => {
             projectName={projectName}
             defaultData={ruleTemplate}
             mode="update"
+            ruleFilterForm={ruleFilterForm}
           />
         </Spin>
       </RuleTemplateContStyleWrapper>

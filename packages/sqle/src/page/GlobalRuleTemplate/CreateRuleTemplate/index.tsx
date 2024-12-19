@@ -41,7 +41,8 @@ const CreateRuleTemplate = () => {
     startSubmit,
     finishSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm
   } = useCreateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
@@ -139,6 +140,7 @@ const CreateRuleTemplate = () => {
           submit={submit}
           projectName={projectName}
           mode="create"
+          ruleFilterForm={ruleFilterForm}
         />
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>

@@ -25,4 +25,5 @@ export type RuleTemplateFormProps = {
   baseInfoSubmit: () => void;
   submit: () => void;
   children?: ReactNode;
+  ruleFilterForm: FormInstance<any>; // todo 待替换类型
 };

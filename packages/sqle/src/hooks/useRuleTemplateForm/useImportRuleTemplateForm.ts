@@ -37,7 +37,8 @@ const useImportRuleTemplate = () => {
     prevStep,
     nextStep,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   } = useFormStep();
 
   const [ruleTemplateFormVisibility, { setTrue: showRuleTemplateForm }] =
@@ -64,17 +65,22 @@ const useImportRuleTemplate = () => {
 
   const activeRuleRef = useRef<IRuleResV1[]>();
 
+  const getAllRulesSuccessCallback = (res: IRuleResV1[]) => {
+    // todo 替换
+  };
+
   const {
     getAllRulesAsync,
     activeRule,
     setActiveRule,
-    dbType,
-    setDbType,
+    // dbType,
+    // setDbType,
     subscribe,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
-  } = useRules(true);
+    setFilteredRule,
+    ruleFilterForm
+  } = useRules(dbType, true, getAllRulesSuccessCallback);
 
   useEffect(() => {
     activeRuleRef.current = activeRule;
@@ -88,13 +94,15 @@ const useImportRuleTemplate = () => {
       keyword?: string
     ) => {
       startGetAllRules();
+      // todo  新增搜索项
       getAllRulesAsync({
         filter_db_type: type,
         fuzzy_keyword_rule: keyword
       })
         .then((res) => {
-          setAllRules(res ?? []);
+          setAllRules(res ?? []); // todo 不需要这个了吧？直接使用useRules中的allRule可以吗
           if (init) {
+            // 初始化情况下activeRule和filteredRule都是importRuleList
             const activeRules = importRuleList.filter((rule) => {
               return res?.some(
                 (allRule) => allRule.rule_name === rule.rule_name
@@ -103,6 +111,7 @@ const useImportRuleTemplate = () => {
             setActiveRule(activeRules);
             setFilteredRule(activeRules);
           } else {
+            // todo 筛选后的展示  为什么需要ref呢？
             const rules = activeRuleRef.current?.filter((rule) => {
               return res?.some(
                 (allRule) => allRule.rule_name === rule.rule_name
@@ -229,13 +238,13 @@ const useImportRuleTemplate = () => {
     setBaseInfoFormSubmitLoading(true);
     try {
       const values = await ruleTemplateForm.validateFields();
-      setDbType(values.db_type);
+      // setDbType(values.db_type);
       nextStep();
       setBaseInfoFormSubmitLoading(false);
     } catch (error) {
       setBaseInfoFormSubmitLoading(false);
     }
-  }, [ruleTemplateForm, nextStep, setDbType, setBaseInfoFormSubmitLoading]);
+  }, [ruleTemplateForm, nextStep, setBaseInfoFormSubmitLoading]);
 
   const resetAll = () => {
     selectFileForm.resetFields();
@@ -282,7 +291,7 @@ const useImportRuleTemplate = () => {
     baseInfoFormSubmit,
     baseInfoFormSubmitLoading,
     dbType,
-    setDbType,
+    // setDbType,
     createLoading,
     startCreate,
     finishCreate,
@@ -290,7 +299,8 @@ const useImportRuleTemplate = () => {
     setFilteredRule,
     uploadCheckStatus,
     removeUploadFile,
-    uploadFileCustomRequest
+    uploadFileCustomRequest,
+    ruleFilterForm
   };
 };
 

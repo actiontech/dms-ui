@@ -14,7 +14,8 @@ const useUpdateRuleTemplateForm = () => {
     prevStep,
     nextStep,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   } = useFormStep();
 
   const {
@@ -25,12 +26,13 @@ const useUpdateRuleTemplateForm = () => {
     setActiveRule,
     databaseRule,
     setDatabaseRule,
-    dbType,
-    setDbType,
+    // dbType,
+    // setDbType,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
-  } = useRules();
+    setFilteredRule,
+    ruleFilterForm
+  } = useRules(dbType);
 
   const [
     updateTemplateLoading,
@@ -45,7 +47,7 @@ const useUpdateRuleTemplateForm = () => {
     setBaseInfoFormSubmitLoading(true);
     try {
       const values = await form.validateFields();
-      setDbType(values.db_type);
+      // setDbType(values.db_type);
       const tempAllRules =
         allRules?.filter((e) => e.db_type === values.db_type) ?? [];
       setDatabaseRule(tempAllRules);
@@ -59,7 +61,7 @@ const useUpdateRuleTemplateForm = () => {
     nextStep,
     allRules,
     setDatabaseRule,
-    setDbType,
+    // setDbType,
     setBaseInfoFormSubmitLoading
   ]);
 
@@ -69,7 +71,7 @@ const useUpdateRuleTemplateForm = () => {
     form.setFieldsValue({
       templateDesc: ruleTemplate?.desc
     });
-    setDbType('');
+    // setDbType('');
     setActiveRule([...(ruleTemplate?.rule_list ?? [])]);
     setFilteredRule([...(ruleTemplate?.rule_list ?? [])]);
     clearSearchValue();
@@ -78,7 +80,7 @@ const useUpdateRuleTemplateForm = () => {
     ruleTemplate,
     setStep,
     setActiveRule,
-    setDbType,
+    // setDbType,
     clearSearchValue,
     setFilteredRule
   ]);
@@ -122,7 +124,8 @@ const useUpdateRuleTemplateForm = () => {
     startSubmit,
     finishSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm
   };
 };
 

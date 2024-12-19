@@ -1,4 +1,5 @@
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { FormInstance } from 'antd';
 
 export type RuleSelectProps = {
   listLoading: boolean;
@@ -9,4 +10,5 @@ export type RuleSelectProps = {
   updateFilteredRule: (value: IRuleResV1[]) => void;
   dbType: string | undefined;
   formSubmitLoading?: boolean;
+  ruleFilterForm: FormInstance<any>; // todo 待替换类型
 };

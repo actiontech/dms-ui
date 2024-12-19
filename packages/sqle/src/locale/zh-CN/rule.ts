@@ -31,5 +31,38 @@ export default {
   ruleDetail: {
     title: '查看规则',
     knowledge: '规则知识库'
+  },
+  category: {
+    auditAccuracy: '审核模式',
+    auditPurpose: '质量控制目的',
+    operand: '操作对象',
+    sql: 'SQL分类',
+    tag: {
+      online: '在线',
+      offline: '离线',
+      database: '数据库',
+      tableSpace: '表空间',
+      table: '表',
+      column: '字段',
+      index: '索引',
+      view: '视图',
+      procedure: '存储过程',
+      function: '函数',
+      trigger: '触发器',
+      event: '事件',
+      user: '用户',
+      ddl: 'DDL',
+      dcl: 'DCL',
+      dml: 'DML',
+      integrity: '完整性约束',
+      query: '查询',
+      transaction: '事务控制',
+      privilege: '数据权限',
+      management: '数据库管理',
+      correction: '正确性',
+      security: '安全性',
+      maintenance: '可维护性',
+      performance: '性能问题'
+    }
   }
 };

@@ -78,8 +78,8 @@ export const RulesStyleWrapper = styled('div')<{
   align-items: flex-start;
   align-self: stretch;
   height: ${({ pageHeaderHeight }) => `calc(100vh - ${pageHeaderHeight}px)`};
-  padding: 0 30px ${({ paddingBottomNone }) => (paddingBottomNone ? 0 : '8px')}
-    40px;
+  padding: 10px 30px
+    ${({ paddingBottomNone }) => (paddingBottomNone ? 0 : '8px')} 40px;
   overflow: hidden;
 
   .end-bottom-cont {
@@ -250,6 +250,40 @@ export const RuleItemTagStyleWrapper = styled(Space)`
     background-color: ${({ theme }) =>
       theme.sharedTheme.components.basicTag.green.backgroundColor};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.green.color};
+  }
+
+  &.rule-category-sql {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.geekblue.backgroundColor};
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.geekblue.color};
+  }
+
+  &.rule-category-operand {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.purple.backgroundColor};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.purple.color};
+  }
+
+  &.rule-category-audit_purpose {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.orange.backgroundColor};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.orange.color};
+  }
+
+  &.rule-category-audit_accuracy {
+    background-color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.gray.backgroundColor};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.gray.color};
+  }
+
+  &.rule-detail-category {
+    height: auto;
+    align-items: flex-start !important;
+
+    .ant-space-item:last-child {
+      flex: 1;
+    }
   }
 `;
 

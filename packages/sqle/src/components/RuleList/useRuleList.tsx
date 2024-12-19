@@ -7,6 +7,7 @@ const useRuleList = () => {
   const [ruleStatus, setRuleStatus] = useState<RuleStatusEnum>(
     RuleStatusEnum.enabled
   );
+  // todo 删除此状态
   const [ruleType, setRuleType] = useState<string>(ALL_RULE_TYPE_CONSTANT);
 
   const getDisableRules = useCallback(

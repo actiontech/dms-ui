@@ -66,7 +66,8 @@ const ImportRuleTemplate = () => {
     setFilteredRule,
     uploadCheckStatus,
     removeUploadFile,
-    uploadFileCustomRequest
+    uploadFileCustomRequest,
+    ruleFilterForm
   } = useImportRuleTemplateForm();
 
   const fileType = Form.useWatch('fileType', selectFileForm);
@@ -240,6 +241,7 @@ const ImportRuleTemplate = () => {
               submit={submit}
               projectName={projectName}
               mode="import"
+              ruleFilterForm={ruleFilterForm}
             />
           </Spin>
         </EmptyBox>
