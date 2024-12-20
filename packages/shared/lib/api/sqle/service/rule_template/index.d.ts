@@ -19,7 +19,8 @@ import {
   IGetRuleTemplateResV1,
   IUpdateRuleTemplateReqV1,
   ICloneRuleTemplateReqV1,
-  IGetRulesResV1
+  IGetRulesResV1,
+  IGetRuleCategoryStatisticResV1
 } from '../common.d';
 
 import {
@@ -105,6 +106,8 @@ export interface IGetProjectRuleTemplateV1Params {
   rule_template_name: string;
 
   fuzzy_keyword_rule?: string;
+
+  tags?: string;
 }
 
 export interface IGetProjectRuleTemplateV1Return
@@ -210,6 +213,8 @@ export interface IGetRuleTemplateV1Params {
   rule_template_name: string;
 
   fuzzy_keyword_rule?: string;
+
+  tags?: string;
 }
 
 export interface IGetRuleTemplateV1Return extends IGetRuleTemplateResV1 {}
@@ -246,6 +251,11 @@ export interface IGetRuleListV1Params {
   filter_global_rule_template_name?: string;
 
   filter_rule_names?: string;
+
+  tags?: string;
 }
 
 export interface IGetRuleListV1Return extends IGetRulesResV1 {}
+
+export interface IGetCategoryStatisticsReturn
+  extends IGetRuleCategoryStatisticResV1 {}

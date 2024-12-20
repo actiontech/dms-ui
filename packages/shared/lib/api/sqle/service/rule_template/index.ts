@@ -61,7 +61,8 @@ import {
   ICloneRuleTemplateV1Return,
   IExportRuleTemplateV1Params,
   IGetRuleListV1Params,
-  IGetRuleListV1Return
+  IGetRuleListV1Return,
+  IGetCategoryStatisticsReturn
 } from './index.d';
 
 class RuleTemplateService extends ServiceBase {
@@ -510,6 +511,14 @@ class RuleTemplateService extends ServiceBase {
   ) {
     const paramsData = this.cloneDeep(params);
     return this.get<IGetRuleListV1Return>('/v1/rules', paramsData, options);
+  }
+
+  public getCategoryStatistics(options?: AxiosRequestConfig) {
+    return this.get<IGetCategoryStatisticsReturn>(
+      '/v1/rules/categoryStatistics',
+      undefined,
+      options
+    );
   }
 }
 
