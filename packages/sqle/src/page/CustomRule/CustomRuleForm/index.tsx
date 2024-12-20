@@ -8,6 +8,10 @@ export type CustomRuleFormBaseInfoFields = {
   dbType: string;
   ruleType: string;
   level?: CustomRuleResV1LevelEnum;
+  operand: string[];
+  sql: string;
+  auditPurpose: string;
+  auditAccuracy: string;
 };
 
 export type EditRuleScriptFields = {

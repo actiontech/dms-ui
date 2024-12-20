@@ -32,7 +32,7 @@ const UpdateRuleTemplate = () => {
     form,
     getAllRulesLoading,
     activeRule,
-    databaseRule,
+    allRules,
     step,
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
@@ -48,7 +48,9 @@ const UpdateRuleTemplate = () => {
     startSubmit,
     finishSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
   } = useUpdateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
@@ -173,7 +175,7 @@ const UpdateRuleTemplate = () => {
             activeRule={activeRule}
             filteredRule={filteredRule}
             updateFilteredRule={setFilteredRule}
-            allRules={databaseRule ?? []}
+            allRules={allRules ?? []}
             ruleListLoading={getAllRulesLoading}
             submitLoading={updateTemplateLoading}
             baseInfoFormSubmitLoading={baseInfoFormSubmitLoading}
@@ -185,6 +187,8 @@ const UpdateRuleTemplate = () => {
             projectName={projectName}
             defaultData={ruleTemplate}
             mode="update"
+            ruleFilterForm={ruleFilterForm}
+            filterCategoryTags={filterCategoryTags}
           />
         </Spin>
       </RuleTemplateContStyleWrapper>

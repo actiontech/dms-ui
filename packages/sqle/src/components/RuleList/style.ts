@@ -1,6 +1,7 @@
 import { BasicSegmented } from '@actiontech/shared';
 import { Space } from 'antd';
 import { styled } from '@mui/material/styles';
+import { CustomInputStyleWrapper } from '@actiontech/shared/lib/components/CustomInput/style';
 
 export const RuleStatusSegmentedStyleWrapper = styled(BasicSegmented)`
   .ant-segmented-item-selected.enabled-rule {
@@ -78,8 +79,8 @@ export const RulesStyleWrapper = styled('div')<{
   align-items: flex-start;
   align-self: stretch;
   height: ${({ pageHeaderHeight }) => `calc(100vh - ${pageHeaderHeight}px)`};
-  padding: 0 30px ${({ paddingBottomNone }) => (paddingBottomNone ? 0 : '8px')}
-    40px;
+  padding: 10px 30px
+    ${({ paddingBottomNone }) => (paddingBottomNone ? 0 : '8px')} 40px;
   overflow: hidden;
 
   .end-bottom-cont {
@@ -199,7 +200,7 @@ export const RuleItemStyleWrapper = styled('div')`
       }
 
       &.edit-rule-item {
-        display: none;
+        visibility: hidden;
       }
     }
   }
@@ -212,8 +213,7 @@ export const RuleItemStyleWrapper = styled('div')`
 
     .action-wrapper {
       .action-circle-btn.edit-rule-item {
-        display: block;
-        color: pink !important;
+        visibility: visible;
       }
     }
   }
@@ -232,24 +232,98 @@ export const RuleItemTagStyleWrapper = styled(Space)`
   line-height: 19px;
 
   &.rule-param-tag {
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.components.ruleComponent.ruleList.levelContent
-        .paramsBackgroundColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.ruleComponent.ruleList.levelContent
+          .paramsColor};
     color: ${({ theme }) =>
       theme.sharedTheme.components.ruleComponent.ruleList.levelContent
         .paramsColor};
   }
 
   &.rule-audit-tag {
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.components.basicTag.blue.backgroundColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.blue.backgroundColor};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.blue.color};
   }
 
   &.rule-rewrite-tag {
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.components.basicTag.green.backgroundColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.green.backgroundColor};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.green.color};
+  }
+
+  &.rule-category-tag-wrap {
+    .ant-space-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &.rule-category-sql {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.components.basicTag.geekblue.color};
+    color: ${({ theme }) =>
+      theme.sharedTheme.components.basicTag.geekblue.color};
+
+    & .rule-category-active-tag {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.geekblue.color};
+    }
+  }
+
+  &.rule-category-operand {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.components.basicTag.purple.color};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.purple.color};
+
+    & .rule-category-active-tag {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.purple.color};
+    }
+  }
+
+  &.rule-category-audit_purpose {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.components.basicTag.orange.color};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.orange.color};
+
+    & .rule-category-active-tag {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.orange.color};
+    }
+  }
+
+  &.rule-category-audit_accuracy {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.components.basicTag.gray.color};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.gray.color};
+
+    & .rule-category-active-tag {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.gray.color};
+    }
+  }
+
+  .rule-category-active-tag {
+    color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
+    padding: 0 4px;
+    border-radius: 4px;
+  }
+
+  &.rule-detail-category {
+    height: auto;
+    align-items: flex-start !important;
+
+    .ant-space-item:last-child {
+      flex: 1;
+
+      .ant-space-item {
+        white-space: nowrap;
+      }
+    }
   }
 `;
 
@@ -264,4 +338,10 @@ export const EmptyRuleStyleWrapper = styled('div')`
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
+`;
+
+export const RuleFilterCustomInputStyleWrapper = styled(
+  CustomInputStyleWrapper
+)`
+  width: 210px;
 `;

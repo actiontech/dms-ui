@@ -27,7 +27,7 @@ const CreateRuleTemplate = () => {
     form,
     getAllRulesLoading,
     activeRule,
-    databaseRule,
+    allRules,
     step,
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
@@ -41,7 +41,9 @@ const CreateRuleTemplate = () => {
     startSubmit,
     finishSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
   } = useCreateRuleTemplateForm();
 
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
@@ -128,7 +130,7 @@ const CreateRuleTemplate = () => {
           activeRule={activeRule}
           filteredRule={filteredRule}
           updateFilteredRule={setFilteredRule}
-          allRules={databaseRule ?? []}
+          allRules={allRules ?? []}
           ruleListLoading={getAllRulesLoading}
           submitLoading={createLoading}
           baseInfoFormSubmitLoading={baseInfoFormSubmitLoading}
@@ -139,6 +141,8 @@ const CreateRuleTemplate = () => {
           submit={submit}
           projectName={projectName}
           mode="create"
+          ruleFilterForm={ruleFilterForm}
+          filterCategoryTags={filterCategoryTags}
         />
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>

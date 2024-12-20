@@ -5,6 +5,7 @@ import {
   IRuleResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
+import { RuleFilterFieldsType } from '../../../components/RuleList';
 
 export type RuleTemplateFormProps = {
   mode: 'import' | 'update' | 'create';
@@ -25,4 +26,6 @@ export type RuleTemplateFormProps = {
   baseInfoSubmit: () => void;
   submit: () => void;
   children?: ReactNode;
+  ruleFilterForm: FormInstance<RuleFilterFieldsType>;
+  filterCategoryTags?: string;
 };

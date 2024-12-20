@@ -1,10 +1,7 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import {
-  IRuleResV1,
-  IParseProjectRuleTemplateFileResDataV1
-} from '@actiontech/shared/lib/api/sqle/service/common';
+import { IParseProjectRuleTemplateFileResDataV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import {
   MIMETypeEnum,
@@ -12,7 +9,6 @@ import {
   ResponseCode
 } from '@actiontech/shared/lib/enum';
 import { FileUploadCheckStatusType, SelectFileFormFields } from './index.type';
-import { RuleTemplateFormProps } from '../../page/RuleTemplate/RuleTemplateForm/index.type';
 import { Form, UploadProps } from 'antd';
 import useFormStep from './useFormStep';
 import useRules from './useRules';
@@ -37,20 +33,12 @@ const useImportRuleTemplate = () => {
     prevStep,
     nextStep,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   } = useFormStep();
 
   const [ruleTemplateFormVisibility, { setTrue: showRuleTemplateForm }] =
     useBoolean();
-
-  const [
-    getAllRulesLoading,
-    { setTrue: startGetAllRules, setFalse: finishGetAllRules }
-  ] = useBoolean();
-
-  const [allRules, setAllRules] = useState<RuleTemplateFormProps['allRules']>(
-    []
-  );
 
   const importFileData = useRef<IParseProjectRuleTemplateFileResDataV1>();
 
@@ -62,67 +50,17 @@ const useImportRuleTemplate = () => {
       success: false
     });
 
-  const activeRuleRef = useRef<IRuleResV1[]>();
-
   const {
-    getAllRulesAsync,
+    allRules,
+    getAllRulesLoading,
     activeRule,
     setActiveRule,
-    dbType,
-    setDbType,
-    subscribe,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
-  } = useRules(true);
-
-  useEffect(() => {
-    activeRuleRef.current = activeRule;
-  }, [activeRule]);
-
-  const getAllRulesByDbTypeAndFilterActiveRuleList = useCallback(
-    (
-      importRuleList: IRuleResV1[],
-      init: boolean,
-      type?: string,
-      keyword?: string
-    ) => {
-      startGetAllRules();
-      getAllRulesAsync({
-        filter_db_type: type,
-        fuzzy_keyword_rule: keyword
-      })
-        .then((res) => {
-          setAllRules(res ?? []);
-          if (init) {
-            const activeRules = importRuleList.filter((rule) => {
-              return res?.some(
-                (allRule) => allRule.rule_name === rule.rule_name
-              );
-            });
-            setActiveRule(activeRules);
-            setFilteredRule(activeRules);
-          } else {
-            const rules = activeRuleRef.current?.filter((rule) => {
-              return res?.some(
-                (allRule) => allRule.rule_name === rule.rule_name
-              );
-            });
-            setFilteredRule(rules ?? []);
-          }
-        })
-        .finally(() => {
-          finishGetAllRules();
-        });
-    },
-    [
-      finishGetAllRules,
-      getAllRulesAsync,
-      setActiveRule,
-      setFilteredRule,
-      startGetAllRules
-    ]
-  );
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
+  } = useRules(dbType);
 
   const importServicesCheck = useCallback(
     (
@@ -197,23 +135,13 @@ const useImportRuleTemplate = () => {
     await selectFileForm.validateFields();
     showRuleTemplateForm();
     if (importFileData.current) {
-      getAllRulesByDbTypeAndFilterActiveRuleList(
-        importFileData.current.rule_list ?? [],
-        true,
-        importFileData.current.db_type
-      );
       ruleTemplateForm.setFieldsValue({
         templateDesc: importFileData.current.desc,
         templateName: importFileData.current.name,
         db_type: importFileData.current.db_type
       });
     }
-  }, [
-    getAllRulesByDbTypeAndFilterActiveRuleList,
-    ruleTemplateForm,
-    selectFileForm,
-    showRuleTemplateForm
-  ]);
+  }, [ruleTemplateForm, selectFileForm, showRuleTemplateForm]);
 
   const removeUploadFile = useCallback(() => {
     setUploadCheckStatus({
@@ -228,14 +156,31 @@ const useImportRuleTemplate = () => {
   const baseInfoFormSubmit = useCallback(async () => {
     setBaseInfoFormSubmitLoading(true);
     try {
-      const values = await ruleTemplateForm.validateFields();
-      setDbType(values.db_type);
+      await ruleTemplateForm.validateFields();
+      if (!activeRule.length) {
+        const activeRules =
+          importFileData.current?.rule_list?.filter((rule) => {
+            return allRules?.some(
+              (allRule) => allRule.rule_name === rule.rule_name
+            );
+          }) ?? [];
+        setActiveRule(activeRules);
+        setFilteredRule(activeRules);
+      }
       nextStep();
       setBaseInfoFormSubmitLoading(false);
     } catch (error) {
       setBaseInfoFormSubmitLoading(false);
     }
-  }, [ruleTemplateForm, nextStep, setDbType, setBaseInfoFormSubmitLoading]);
+  }, [
+    ruleTemplateForm,
+    nextStep,
+    setBaseInfoFormSubmitLoading,
+    activeRule,
+    allRules,
+    setActiveRule,
+    setFilteredRule
+  ]);
 
   const resetAll = () => {
     selectFileForm.resetFields();
@@ -251,18 +196,6 @@ const useImportRuleTemplate = () => {
     });
     importFileData.current = undefined;
   };
-
-  useEffect(() => {
-    const unsubscribe = subscribe((value: string) => {
-      getAllRulesByDbTypeAndFilterActiveRuleList(
-        importFileData.current?.rule_list ?? [],
-        false,
-        importFileData.current?.db_type,
-        value
-      );
-    });
-    return unsubscribe;
-  }, [getAllRulesByDbTypeAndFilterActiveRuleList, subscribe]);
 
   return {
     ruleTemplateFormVisibility,
@@ -282,7 +215,6 @@ const useImportRuleTemplate = () => {
     baseInfoFormSubmit,
     baseInfoFormSubmitLoading,
     dbType,
-    setDbType,
     createLoading,
     startCreate,
     finishCreate,
@@ -290,7 +222,9 @@ const useImportRuleTemplate = () => {
     setFilteredRule,
     uploadCheckStatus,
     removeUploadFile,
-    uploadFileCustomRequest
+    uploadFileCustomRequest,
+    ruleFilterForm,
+    filterCategoryTags
   };
 };
 

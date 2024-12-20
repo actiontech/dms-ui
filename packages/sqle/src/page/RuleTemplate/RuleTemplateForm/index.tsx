@@ -23,6 +23,7 @@ const RuleTemplateForm = (props: RuleTemplateFormProps) => {
             defaultData={props.defaultData}
             projectName={props.projectName}
             mode={props.mode}
+            ruleListLoading={props.ruleListLoading}
           />
         </FormAreaBlockStyleWrapper>
       </section>
@@ -36,6 +37,8 @@ const RuleTemplateForm = (props: RuleTemplateFormProps) => {
           formSubmitLoading={props.submitLoading}
           filteredRule={props.filteredRule}
           updateFilteredRule={props.updateFilteredRule}
+          ruleFilterForm={props.ruleFilterForm}
+          filterCategoryTags={props.filterCategoryTags}
         />
       </section>
     </>

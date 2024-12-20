@@ -42,43 +42,41 @@ const UpdateRuleTemplate = () => {
     dbType,
     activeRule,
     setActiveRule,
-    databaseRule,
+    allRules,
     updateTemplateLoading,
     finishSubmit,
     startSubmit,
     baseInfoFormSubmitLoading,
     submitSuccessStatus,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
   } = useUpdateRuleTemplateForm();
 
   const { onGotoRuleTemplateList } = useBackToListPage(projectID);
 
-  const getRuleTemplate = useCallback(
-    (fuzzyKeyword?: string) => {
-      rule_template
-        .getProjectRuleTemplateV1({
-          rule_template_name: urlParams.templateName ?? '',
-          project_name: projectName,
-          fuzzy_keyword_rule: fuzzyKeyword
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            const template = res.data.data ?? {};
-            setRuleTemplate(template);
-            setActiveRule(template?.rule_list ?? []);
-            setFilteredRule(template?.rule_list ?? []);
-          }
-        });
-    },
-    [
-      projectName,
-      urlParams.templateName,
-      setActiveRule,
-      setRuleTemplate,
-      setFilteredRule
-    ]
-  );
+  const getRuleTemplate = useCallback(() => {
+    rule_template
+      .getProjectRuleTemplateV1({
+        rule_template_name: urlParams.templateName ?? '',
+        project_name: projectName
+      })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          const template = res.data.data ?? {};
+          setRuleTemplate(template);
+          setActiveRule(template?.rule_list ?? []);
+          setFilteredRule(template?.rule_list ?? []);
+        }
+      });
+  }, [
+    projectName,
+    urlParams.templateName,
+    setActiveRule,
+    setRuleTemplate,
+    setFilteredRule
+  ]);
 
   useEffect(() => {
     getRuleTemplate();
@@ -169,7 +167,7 @@ const UpdateRuleTemplate = () => {
             activeRule={activeRule}
             filteredRule={filteredRule}
             updateFilteredRule={setFilteredRule}
-            allRules={databaseRule ?? []}
+            allRules={allRules ?? []}
             ruleListLoading={getAllRulesLoading}
             submitLoading={updateTemplateLoading}
             baseInfoFormSubmitLoading={baseInfoFormSubmitLoading}
@@ -181,6 +179,8 @@ const UpdateRuleTemplate = () => {
             projectName={projectName}
             defaultData={ruleTemplate}
             mode="update"
+            ruleFilterForm={ruleFilterForm}
+            filterCategoryTags={filterCategoryTags}
           />
         </RuleTemplateContStyleWrapper>
         <div hidden={!submitSuccessStatus}>

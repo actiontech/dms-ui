@@ -15,4 +15,5 @@ export type RuleTemplateBaseInfoFormProps = {
   submitLoading?: boolean;
   projectName: string;
   mode: RuleTemplateFormProps['mode'];
+  ruleListLoading: boolean;
 };
