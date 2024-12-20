@@ -232,9 +232,6 @@ export const RuleItemTagStyleWrapper = styled(Space)`
   line-height: 19px;
 
   &.rule-param-tag {
-    /* background-color: ${({ theme }) =>
-      theme.sharedTheme.components.ruleComponent.ruleList.levelContent
-        .paramsBackgroundColor}; */
     border: 1px solid
       ${({ theme }) =>
         theme.sharedTheme.components.ruleComponent.ruleList.levelContent
@@ -245,14 +242,16 @@ export const RuleItemTagStyleWrapper = styled(Space)`
   }
 
   &.rule-audit-tag {
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.components.basicTag.blue.backgroundColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.blue.backgroundColor};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.blue.color};
   }
 
   &.rule-rewrite-tag {
-    background-color: ${({ theme }) =>
-      theme.sharedTheme.components.basicTag.green.backgroundColor};
+    border: 1px solid
+      ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.green.backgroundColor};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.green.color};
   }
 
@@ -309,7 +308,7 @@ export const RuleItemTagStyleWrapper = styled(Space)`
   }
 
   .rule-category-active-tag {
-    color: white;
+    color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
     padding: 0 4px;
     border-radius: 4px;
   }
