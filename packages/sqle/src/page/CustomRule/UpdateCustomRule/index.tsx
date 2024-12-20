@@ -64,7 +64,13 @@ const UpdateCustomRule: React.FC = () => {
         level: baseInfo.level as UpdateCustomRuleReqV1LevelEnum | undefined,
         annotation: baseInfo.annotation,
         rule_script: values.script,
-        type: baseInfo.ruleType
+        type: baseInfo.ruleType,
+        tags: [
+          ...baseInfo.operand,
+          baseInfo.auditPurpose,
+          baseInfo.auditAccuracy,
+          baseInfo.sql
+        ]
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
