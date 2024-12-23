@@ -39,7 +39,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     handleCloseSqlRewrittenDrawer,
     handleOpenSqlRewrittenDrawer,
     originSqlInfo,
-    setOriginInfo
+    handleChangeOriginInfo
   } = useSqlRewrittenDrawerState();
 
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
@@ -152,12 +152,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const handleClickSqlRewritten = useCallback(
     (record: IAuditTaskSQLResV2) => {
       handleOpenSqlRewrittenDrawer();
-      setOriginInfo({
+      handleChangeOriginInfo({
         sql: record.exec_sql ?? '',
         number: record.number ?? 0
       });
     },
-    [handleOpenSqlRewrittenDrawer, setOriginInfo]
+    [handleOpenSqlRewrittenDrawer, handleChangeOriginInfo]
   );
 
   const actions = useMemo(() => {

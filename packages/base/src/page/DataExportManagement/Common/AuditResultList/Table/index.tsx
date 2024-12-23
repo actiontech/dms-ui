@@ -29,7 +29,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
     handleOpenSqlRewrittenDrawer,
     handleCloseSqlRewrittenDrawer,
     originSqlInfo,
-    setOriginInfo
+    handleChangeOriginInfo
   } = useSqlRewrittenDrawerState();
   const [
     auditResultDrawerVisibility,
@@ -86,12 +86,12 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   const handleClickSqlRewritten = useCallback(
     (record: IListDataExportTaskSQL) => {
       handleOpenSqlRewrittenDrawer();
-      setOriginInfo({
+      handleChangeOriginInfo({
         sql: record.sql ?? '',
         number: record.uid ?? 0
       });
     },
-    [handleOpenSqlRewrittenDrawer, setOriginInfo]
+    [handleChangeOriginInfo, handleOpenSqlRewrittenDrawer]
   );
 
   const actions = useMemo(() => {
