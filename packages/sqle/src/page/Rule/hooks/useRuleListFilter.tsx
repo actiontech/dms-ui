@@ -5,6 +5,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import { FormInstance, Form } from 'antd';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useRuleFilterForm } from '../../../components/RuleList';
 
 const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
   const [showNotRuleTemplatePage, setShowNorRuleTemplatePage] =
@@ -19,6 +20,8 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
   const filterRuleTemplate = Form.useWatch('filter_rule_template', form);
   const filterDbType = Form.useWatch('filter_db_type', form);
 
+  const { tags } = useRuleFilterForm<RuleListFilterForm>(form);
+
   const {
     data: allRules,
     loading: getAllRulesLoading,
@@ -28,13 +31,14 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
       return rule_template
         .getRuleListV1({
           filter_db_type: filterDbType,
-          fuzzy_keyword_rule: fuzzyKeyword
+          fuzzy_keyword_rule: fuzzyKeyword,
+          tags
         })
         .then((res) => res.data?.data ?? []);
     },
     {
       ready: !!filterDbType,
-      refreshDeps: [filterDbType]
+      refreshDeps: [filterDbType, fuzzyKeyword, tags]
     }
   );
 
@@ -43,16 +47,18 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     loading: getTemplateRulesLoading,
     run: getTemplateRules
   } = useRequest(
-    (name?: string, ruleTemplateName?: string, keyword?: string) =>
-      (name
+    () =>
+      (projectName
         ? rule_template.getProjectRuleTemplateV1({
-            rule_template_name: ruleTemplateName ?? '',
-            project_name: name,
-            fuzzy_keyword_rule: keyword
+            rule_template_name: filterRuleTemplate ?? '',
+            project_name: projectName,
+            fuzzy_keyword_rule: fuzzyKeyword,
+            tags
           })
         : rule_template.getRuleTemplateV1({
-            rule_template_name: ruleTemplateName ?? '',
-            fuzzy_keyword_rule: keyword
+            rule_template_name: filterRuleTemplate ?? '',
+            fuzzy_keyword_rule: fuzzyKeyword,
+            tags
           })
       ).then((res) => {
         if (ResponseCode.SUCCESS === res.data.code) {
@@ -61,7 +67,8 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
         }
       }),
     {
-      manual: true
+      ready: !!filterRuleTemplate,
+      refreshDeps: [filterRuleTemplate, fuzzyKeyword, tags]
     }
   );
 
@@ -88,7 +95,8 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     loading,
     setLoading,
     filterDbType,
-    getAllRules
+    getAllRules,
+    tags
   };
 };
 

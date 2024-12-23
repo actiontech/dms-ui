@@ -20,15 +20,11 @@ export const RuleListStyleWrapper = styled('section')`
 
 export const RuleListFilterStyleWrapper = styled(FilterContainerStyleWrapper)`
   border-bottom: 0;
-
+  padding: 0;
   & .ant-form.ant-form-horizontal {
     .ant-select-selector,
     .custom-search-input {
       font-size: 13px !important;
     }
-  }
-
-  & .custom-select-namespace {
-    width: 280px;
   }
 `;

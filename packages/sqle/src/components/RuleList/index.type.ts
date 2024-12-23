@@ -31,12 +31,19 @@ export type RuleListProps = {
   activeDataKeys?: string[];
   onActionHandle?: (record: IRuleResV1, type: typeActionType) => void;
   enableCheckDetail?: boolean;
+  tags?: string;
 };
 
 export type RuleTypesProps = {
   currentRuleType?: string;
   ruleTypeChange?: (type: string) => void;
-  // dbType: string;
   allRulesData: IRuleResV1[]; // 所有的 type 类型
   rules?: IRuleResV1[]; // 当前type类型的有效长度值
+};
+
+export type RuleFilterFieldsType = {
+  fuzzy_keyword: string;
+  operand: string;
+  audit_purpose: string;
+  audit_accuracy: string;
 };
