@@ -6,6 +6,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const edition = process.argv[2] ?? 'ce';
+
 let version = '';
 
 try {
@@ -22,7 +24,7 @@ try {
   }).trim();
 
   // 如果成功获取到 tag，使用 tag + commitId
-  version = `${formattedTag}   ${commitId}`;
+  version = `${formattedTag}-${edition}   ${commitId}`;
 } catch (error) {
   // 如果没有 tag，回退到使用分支名 + commitId
   const branch = execSync('git rev-parse --abbrev-ref HEAD', {
