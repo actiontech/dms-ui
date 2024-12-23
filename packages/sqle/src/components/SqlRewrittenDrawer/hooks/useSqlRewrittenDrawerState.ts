@@ -3,18 +3,17 @@ import { SqlRewrittenDrawerProps } from '../index.type';
 import { useCallback, useState } from 'react';
 
 const useSqlRewrittenDrawerState = () => {
-  const [sqlRewrittenOpen, { setTrue, setFalse }] = useBoolean(false);
+  const [
+    sqlRewrittenOpen,
+    { setTrue: handleOpenSqlRewrittenDrawer, setFalse }
+  ] = useBoolean(false);
 
-  const [originSqlInfo, setOriginInfo] =
+  const [originSqlInfo, handleChangeOriginInfo] =
     useState<SqlRewrittenDrawerProps['originSqlInfo']>();
-
-  const handleOpenSqlRewrittenDrawer = useCallback(() => {
-    setTrue();
-  }, [setTrue]);
 
   const handleCloseSqlRewrittenDrawer = useCallback(() => {
     setFalse();
-    setOriginInfo(undefined);
+    handleChangeOriginInfo(undefined);
   }, [setFalse]);
 
   return {
@@ -22,7 +21,7 @@ const useSqlRewrittenDrawerState = () => {
     handleOpenSqlRewrittenDrawer,
     handleCloseSqlRewrittenDrawer,
     originSqlInfo,
-    setOriginInfo
+    handleChangeOriginInfo
   };
 };
 

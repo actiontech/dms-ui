@@ -1,4 +1,5 @@
 import { styled } from '@mui/material';
+import MDEditor from '@uiw/react-md-editor';
 
 export const RewrittenSuggestionDetailsStyleWrapper = styled('div')`
   border: 1px solid
@@ -35,7 +36,6 @@ export const OptimizationDescriptionStyleWrapper = styled('div')`
 
   .description-content {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase} !important;
-    white-space: pre-wrap;
     font-size: 14px;
     line-height: 1.6;
     background-color: ${({ theme }) =>
@@ -54,14 +54,44 @@ export const OptimizationSummaryStyleWrapper = styled('ul')`
   margin: 0;
 
   li {
-    opacity: 0.85;
+    opacity: 1 !important;
     vertical-align: baseline;
     transition: all 0.1s ease;
     line-height: 30px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase} !important;
 
     &::marker {
-      color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
       font-size: 16px;
+    }
+  }
+`;
+
+export const MarkdownPreviewModeStyleWrapper = styled(MDEditor.Markdown)`
+  &.wmde-markdown {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase} !important;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 22px;
+
+    &::before {
+      content: none;
+    }
+
+    li {
+      opacity: 1 !important;
+      vertical-align: baseline;
+      transition: all 0.1s ease;
+      line-height: 30px;
+
+      &::marker {
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+        font-size: 16px;
+      }
+
+      p {
+        margin: 0;
+      }
     }
   }
 `;

@@ -1,0 +1,55 @@
+import { fireEvent, screen } from '@testing-library/dom';
+import { superRender } from '../../../../testUtils/customRender';
+import BusinessRewrittenSuggestion from '../../components/BusinessRewrittenSuggestion';
+import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
+import { SqlRewrittenMockDataNoDDL } from '../../../../testUtils/mockApi/task/data';
+import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import BusinessRewrittenDetails from '../../components/BusinessRewrittenSuggestion/BusinessRewrittenDetails';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+
+describe('BusinessRewrittenSuggestion', () => {
+  describe('BusinessRewrittenSuggestion and BusinessRewrittenDetails', () => {
+    ignoreConsoleErrors([
+      UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE
+    ]);
+
+    describe('BusinessRewrittenSuggestion', () => {
+      it('should render empty content when dataSource is empty', () => {
+        superRender(<BusinessRewrittenSuggestion dataSource={[]} />);
+        expect(screen.getByText('当前SQL重写无需人工介入')).toBeInTheDocument();
+      });
+
+      it('should render list items when dataSource has items', () => {
+        const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(
+          (v) => v.type === RewriteSuggestionTypeEnum.statement
+        )!;
+        superRender(
+          <BusinessRewrittenSuggestion dataSource={mockDataSource} />
+        );
+        expect(getAllBySelector('.ant-list-items')[0].childElementCount).toBe(
+          mockDataSource.length
+        );
+      });
+    });
+
+    describe('BusinessRewrittenDetails', () => {
+      const mockProps = SqlRewrittenMockDataNoDDL.suggestions![0];
+
+      it('should render markdown content correctly', () => {
+        const { container } = superRender(
+          <BusinessRewrittenDetails {...mockProps} />
+        );
+        expect(container).toMatchSnapshot();
+
+        const ruleItem = screen.getByText(mockProps.rule_name!);
+        fireEvent.click(ruleItem);
+
+        expect(container).toMatchSnapshot();
+      });
+    });
+  });
+});
