@@ -1,6 +1,5 @@
 import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
-import CustomSearchInput from '../../../components/RuleDetail/components/CustomSearchInput';
 import { useTranslation } from 'react-i18next';
 import {
   RuleListFilterStyleWrapper,
@@ -16,18 +15,16 @@ import CustomSelectField from './CustomSelectFiled';
 import { FlagFilled } from '@actiontech/icons';
 import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { RuleFilterCommonFields } from '../../../components/RuleList';
 
 const RuleListFilter: React.FC<RuleListFilterProps> = ({
   setShowNorRuleTemplatePage,
   form,
-  getTemplateRules,
-  bindProjects,
-  getAllRules
+  bindProjects
 }) => {
   const { t } = useTranslation();
   const extraQueries = useTypedQuery();
 
-  const fuzzyKeyword = Form.useWatch('fuzzy_keyword', form);
   const projectName = Form.useWatch('project_name', form);
   const filterRuleTemplate = Form.useWatch('filter_rule_template', form);
   const filterDbType = Form.useWatch('filter_db_type', form);
@@ -104,11 +101,6 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
             ruleTemplateListByProjectName[0]?.db_type
           );
           setShowNorRuleTemplatePage(false);
-          getTemplateRules(
-            name,
-            ruleTemplateListByProjectName[0]?.rule_template_name,
-            fuzzyKeyword
-          );
         } else {
           form.setFieldValue('filter_rule_template', undefined);
           setShowNorRuleTemplatePage(true);
@@ -120,8 +112,6 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   const onTemplateAfterChange = (templateName: string) => {
     if (!templateName) {
       form.setFieldValue('project_name', undefined);
-    } else {
-      getTemplateRules(projectName, templateName, fuzzyKeyword);
     }
   };
 
@@ -142,25 +132,11 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onSearchInputPressEnter = (keyword: string) => {
-    getAllRules();
-    if (!filterRuleTemplate) {
-      return;
-    }
-    getTemplateRules(projectName, filterRuleTemplate, keyword);
-  };
-
   return (
     <RuleListFilterStyleWrapper className="full-width-element">
       <Form form={form}>
-        <Space size={12}>
-          <Form.Item noStyle name="fuzzy_keyword">
-            <CustomSearchInput
-              onCustomPressEnter={onSearchInputPressEnter}
-              placeholder={t('rule.form.fuzzy_text_placeholder')}
-              allowClear
-            />
-          </Form.Item>
+        <Space size={12} wrap>
+          <RuleFilterCommonFields />
           <Form.Item noStyle name="project_name">
             <CustomSelectField
               prefix={t('rule.form.project')}

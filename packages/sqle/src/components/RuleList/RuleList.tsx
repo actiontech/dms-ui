@@ -33,6 +33,7 @@ import {
   CloseCircleFilled
 } from '@actiontech/icons';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { RuleCategoryDictionaryGroup } from '../../hooks/useRuleCategories/index.data';
 
 const scrollStepRange = 30;
 
@@ -55,7 +56,8 @@ const RuleList: React.FC<RuleListProps> = ({
   actionType,
   renderDisableNode,
   onActionHandle,
-  enableCheckDetail
+  enableCheckDetail,
+  tags
 }) => {
   const { t } = useTranslation();
 
@@ -65,6 +67,10 @@ const RuleList: React.FC<RuleListProps> = ({
     () => actionType === RuleStatusEnum.disabled,
     [actionType]
   );
+
+  const currentFilterTagList = useMemo(() => {
+    return tags?.split(',') ?? [];
+  }, [tags]);
 
   const renderLevelIcon = (level?: RuleResV1LevelEnum) => {
     const levelIcon = () => {
@@ -86,6 +92,51 @@ const RuleList: React.FC<RuleListProps> = ({
     );
   };
 
+  const renderRuleCategory = (categories: IRuleResV1['categories']) => {
+    if (!categories) {
+      return;
+    }
+
+    return Object.keys(categories)?.map((category, index) => {
+      return (
+        <RuleItemTagStyleWrapper
+          className={`rule-category-${category} rule-category-tag-wrap`}
+          key={index}
+        >
+          {categories[category].map((item, idx) => {
+            return (
+              <span
+                key={idx}
+                className={classNames({
+                  'rule-category-active-tag':
+                    currentFilterTagList.includes(item)
+                })}
+              >
+                {RuleCategoryDictionaryGroup[category][item]}
+              </span>
+            );
+          })}
+        </RuleItemTagStyleWrapper>
+      );
+    });
+  };
+
+  const renderParams = (params?: IRuleParamResV1[]) => {
+    if (!params) {
+      return undefined;
+    }
+    return (
+      <RuleItemTagStyleWrapper className="rule-param-tag">
+        {params?.map((v) => (
+          <div className="level-content-params-item" key={v.key}>
+            {v.desc} {': '}
+            {v.value}
+          </div>
+        ))}
+      </RuleItemTagStyleWrapper>
+    );
+  };
+
   const renderLevelContent = (rule: IRuleResV1) => {
     return (
       <div className="level-content">
@@ -104,10 +155,16 @@ const RuleList: React.FC<RuleListProps> = ({
           {rule.annotation}
         </Typography.Paragraph>
         <EmptyBox
-          if={!!rule.params || rule.has_audit_power || rule.has_rewrite_power}
+          if={
+            !!rule.params ||
+            rule.has_audit_power ||
+            rule.has_rewrite_power ||
+            !!rule.categories
+          }
         >
-          <Space className="level-content-params">
+          <Space wrap className="level-content-params">
             {renderParams(rule.params)}
+            {renderRuleCategory(rule.categories)}
             <EmptyBox
               if={rule.has_audit_power && moduleFeatureSupport.sqlOptimization}
             >
@@ -127,22 +184,6 @@ const RuleList: React.FC<RuleListProps> = ({
           </Space>
         </EmptyBox>
       </div>
-    );
-  };
-
-  const renderParams = (params?: IRuleParamResV1[]) => {
-    if (!params) {
-      return undefined;
-    }
-    return (
-      <RuleItemTagStyleWrapper className="rule-param-tag">
-        {params?.map((v) => (
-          <div className="level-content-params-item" key={v.key}>
-            {v.desc} {': '}
-            {v.value}
-          </div>
-        ))}
-      </RuleItemTagStyleWrapper>
     );
   };
 

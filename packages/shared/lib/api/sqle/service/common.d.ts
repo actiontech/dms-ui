@@ -1,4 +1,5 @@
 import {
+  RuleCategoryStatisticCategoryEnum,
   AssociateWorkflowsStatusEnum,
   AuditPlanParamResV1TypeEnum,
   AuditPlanReportResV1AuditLevelEnum,
@@ -111,6 +112,14 @@ export interface IAuditResultInfo {
 
 export interface II18nAuditResultInfo {
   [key: string]: any;
+}
+
+export interface IRuleCategoryStatistic {
+  category?: RuleCategoryStatisticCategoryEnum;
+
+  count?: number;
+
+  tag?: string;
 }
 
 export interface IAffectRows {
@@ -660,6 +669,8 @@ export interface ICreateCustomRuleReqV1 {
 
   rule_script?: string;
 
+  tags?: string[];
+
   type?: string;
 }
 
@@ -783,6 +794,10 @@ export interface ICreateWorkflowReqV1 {
 
 export interface ICustomRuleResV1 {
   annotation?: string;
+
+  categories?: {
+    [key: string]: string[];
+  };
 
   db_type?: string;
 
@@ -1587,6 +1602,16 @@ export interface IGetRoleUserCountResV1 {
   code?: number;
 
   data?: IRoleUserCount[];
+
+  message?: string;
+}
+
+export interface IGetRuleCategoryStatisticResV1 {
+  code?: number;
+
+  data?: {
+    [key: string]: IRuleCategoryStatistic[];
+  };
 
   message?: string;
 }
@@ -2602,6 +2627,10 @@ export interface IRuleReqV1 {
 export interface IRuleResV1 {
   annotation?: string;
 
+  categories?: {
+    [key: string]: string[];
+  };
+
   db_type?: string;
 
   desc?: string;
@@ -3179,6 +3208,8 @@ export interface IUpdateCustomRuleReqV1 {
   level?: UpdateCustomRuleReqV1LevelEnum;
 
   rule_script?: string;
+
+  tags?: string[];
 
   type?: string;
 }
