@@ -1030,7 +1030,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="rule-list-wrapper css-1bhqk71"
+                    class="rule-list-wrapper css-1nrh0zh"
                   >
                     <div
                       id="rule-list-wrapper-id"
@@ -1043,7 +1043,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                           style="height: auto; overflow: auto;"
                         >
                           <div
-                            class="has-top-margin css-4znel3"
+                            class="has-top-margin css-11zqvuw"
                             style="cursor: pointer;"
                           >
                             <div
@@ -1147,7 +1147,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                             </section>
                           </div>
                           <div
-                            class="has-top-margin css-4znel3"
+                            class="has-top-margin css-11zqvuw"
                             style="cursor: pointer;"
                           >
                             <div
