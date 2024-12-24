@@ -19,7 +19,6 @@ const useCreateRuleTemplateForm = () => {
 
   const {
     allRules,
-    getAllRules,
     getAllRulesLoading,
     activeRule,
     setActiveRule,
@@ -78,7 +77,6 @@ const useCreateRuleTemplateForm = () => {
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
     dbType,
-    getAllRules,
     setActiveRule,
     prevStep,
     nextStep,
