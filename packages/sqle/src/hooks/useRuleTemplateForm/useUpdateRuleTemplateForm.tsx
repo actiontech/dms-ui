@@ -19,7 +19,6 @@ const useUpdateRuleTemplateForm = () => {
 
   const {
     allRules,
-    getAllRules,
     getAllRulesLoading,
     activeRule,
     setActiveRule,
@@ -77,7 +76,6 @@ const useUpdateRuleTemplateForm = () => {
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
     dbType,
-    getAllRules,
     setActiveRule,
     prevStep,
     nextStep,

@@ -21,6 +21,7 @@ export const RuleListStyleWrapper = styled('section')`
 export const RuleListFilterStyleWrapper = styled(FilterContainerStyleWrapper)`
   border-bottom: 0;
   padding: 0;
+
   & .ant-form.ant-form-horizontal {
     .ant-select-selector,
     .custom-search-input {
