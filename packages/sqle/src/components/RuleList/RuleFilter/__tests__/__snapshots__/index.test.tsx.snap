@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <form
+          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-right: 12px;"
+            >
+              <span
+                class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                style="width: 210px;"
+              >
+                <input
+                  class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                  id="fuzzy_keyword"
+                  placeholder="请输入规则关键词搜索"
+                  type="text"
+                  value=""
+                />
+                <span
+                  class="ant-input-suffix"
+                >
+                  <span
+                    class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                      />
+                    </svg>
+                  </span>
+                  <svg
+                    class="pointer"
+                    height="16"
+                    viewBox="0 0 14 14"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 12px;"
+            >
+              <div
+                class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="operand_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="operand_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="operand_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="operand"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-placeholder"
+                  >
+                    <span
+                      class="custom-select-placeholder css-qly0fu"
+                    >
+                      <span
+                        class="custom-select-placeholder-prefix"
+                      >
+                        操作对象
+                      </span>
+                      <span
+                        class="custom-select-placeholder-value"
+                      >
+                        请选择{{name}}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                />
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 12px;"
+            >
+              <div
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="audit_purpose_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="audit_purpose_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="audit_purpose_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="audit_purpose"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-placeholder"
+                  >
+                    <span
+                      class="custom-select-placeholder css-qly0fu"
+                    >
+                      <span
+                        class="custom-select-placeholder-prefix"
+                      >
+                        质量控制目的
+                      </span>
+                      <span
+                        class="custom-select-placeholder-value"
+                      >
+                        请选择{{name}}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                />
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 12px;"
+            >
+              <div
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="sql_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="sql_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="sql_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="sql"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-placeholder"
+                  >
+                    <span
+                      class="custom-select-placeholder css-qly0fu"
+                    >
+                      <span
+                        class="custom-select-placeholder-prefix"
+                      >
+                        SQL分类
+                      </span>
+                      <span
+                        class="custom-select-placeholder-value"
+                      >
+                        请选择{{name}}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                />
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="audit_accuracy_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="audit_accuracy_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="audit_accuracy_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="audit_accuracy"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-placeholder"
+                  >
+                    <span
+                      class="custom-select-placeholder css-qly0fu"
+                    >
+                      <span
+                        class="custom-select-placeholder-prefix"
+                      >
+                        审核模式
+                      </span>
+                      <span
+                        class="custom-select-placeholder-value"
+                      >
+                        请选择{{name}}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+`;
