@@ -1,13 +1,13 @@
 import { BasicTypographyEllipsis, LazyLoadComponent } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
-import MDEditor from '@uiw/react-md-editor';
 import { useToggle } from 'ahooks';
 import rehypeSanitize from 'rehype-sanitize';
 import RuleLevelIcon from '../../../RuleList/RuleLevelIcon';
 import {
   OptimizationRuleItemStyleWrapper,
   RewrittenSuggestionDetailsStyleWrapper,
-  OptimizationDescriptionStyleWrapper
+  OptimizationDescriptionStyleWrapper,
+  MarkdownPreviewModeStyleWrapper
 } from '../Common/style';
 
 type Props = IRewriteSuggestion;
@@ -35,7 +35,7 @@ const BusinessRewrittenDetails: React.FC<Props> = ({
       <LazyLoadComponent open={showDetails} animation={false}>
         <RewrittenSuggestionDetailsStyleWrapper>
           <OptimizationDescriptionStyleWrapper>
-            <MDEditor.Markdown
+            <MarkdownPreviewModeStyleWrapper
               className="description-content"
               source={desc}
               rehypePlugins={[rehypeSanitize]}

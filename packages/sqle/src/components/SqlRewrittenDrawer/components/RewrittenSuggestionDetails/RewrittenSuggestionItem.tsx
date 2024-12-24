@@ -2,7 +2,8 @@ import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/comm
 import {
   RewrittenSuggestionDetailsStyleWrapper,
   OptimizationDescriptionStyleWrapper,
-  OptimizationRuleItemStyleWrapper
+  OptimizationRuleItemStyleWrapper,
+  MarkdownPreviewModeStyleWrapper
 } from '../Common/style';
 import {
   BasicTypographyEllipsis,
@@ -14,7 +15,6 @@ import RuleLevelIcon from '../../../RuleList/RuleLevelIcon';
 import { useToggle } from 'ahooks';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import MDEditor from '@uiw/react-md-editor';
 import rehypeSanitize from 'rehype-sanitize';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -81,7 +81,7 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
 
           <EmptyBox if={!!desc}>
             <OptimizationDescriptionStyleWrapper>
-              <MDEditor.Markdown
+              <MarkdownPreviewModeStyleWrapper
                 className="description-content"
                 source={desc}
                 rehypePlugins={[rehypeSanitize]}

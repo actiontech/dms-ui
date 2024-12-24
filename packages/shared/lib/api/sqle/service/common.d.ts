@@ -2486,9 +2486,13 @@ export interface IRewriteSQLData {
 
   business_non_equivalent_desc?: string;
 
+  logic_desc?: string;
+
   rewritten_sql?: string;
 
   rewritten_sql_business_desc?: string;
+
+  rewritten_sql_logic_desc?: string;
 
   suggestions?: IRewriteSuggestion[];
 }

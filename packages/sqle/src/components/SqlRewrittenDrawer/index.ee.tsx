@@ -1,4 +1,4 @@
-import { EmptyBox } from '@actiontech/shared';
+import { BasicButton, EmptyBox } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useRequest } from 'ahooks';
@@ -17,7 +17,7 @@ import {
 } from './style';
 import TaskService from '@actiontech/shared/lib/api/sqle/service/task';
 
-type Props = SqlRewrittenDrawerProps & {
+type Props = Omit<SqlRewrittenDrawerProps, 'onClose'> & {
   enableStructureOptimize: boolean;
   toggleEnableStructureOptimize: () => void;
 };
@@ -87,7 +87,8 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
             remainingCount={remainingSuggestions.length}
             businessCount={businessSuggestions.length}
             businessDesc={data?.business_desc ?? ''}
-            rewrittenSqlBusinessDesc={data?.rewritten_sql_business_desc ?? ''}
+            sqlLogicDesc={data?.logic_desc ?? ''}
+            rewrittenSqlLogicDesc={data?.rewritten_sql_logic_desc ?? ''}
           />
         )
       },
@@ -115,17 +116,24 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
       {
         key: CollapseItemKeyEnum.depend_database_structure_optimization,
         label: (
-          <ModuleHeaderTitleStyleWrapper>
-            <span className="title">{t('sqlRewrite.pendingRewriteRules')}</span>
-            <span className="remaining-count count">
-              {remainingSuggestions.length}
-            </span>
-          </ModuleHeaderTitleStyleWrapper>
+          <div className="flex-space-between">
+            <ModuleHeaderTitleStyleWrapper>
+              <span className="title">
+                {t('sqlRewrite.pendingRewriteRules')}
+              </span>
+              <span className="remaining-count count">
+                {remainingSuggestions.length}
+              </span>
+            </ModuleHeaderTitleStyleWrapper>
+
+            <BasicButton onClick={toggleEnableStructureOptimize}>
+              {t('sqlRewrite.enableDatabaseStructureOptimization')}
+            </BasicButton>
+          </div>
         ),
         children: (
           <DependDatabaseStructure
             dataSource={remainingSuggestions}
-            enableStructureOptimize={enableStructureOptimize}
             toggleEnableStructureOptimize={toggleEnableStructureOptimize}
           />
         )
@@ -147,7 +155,7 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
         )
       }
     ].filter((item) => {
-      if (enableStructureOptimize) {
+      if (remainingSuggestions.length === 0) {
         return (
           item.key !==
           CollapseItemKeyEnum.depend_database_structure_optimization
@@ -158,8 +166,9 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
   }, [
     data?.business_desc,
     data?.business_non_equivalent_desc,
+    data?.logic_desc,
     data?.rewritten_sql,
-    data?.rewritten_sql_business_desc,
+    data?.rewritten_sql_logic_desc,
     data?.suggestions,
     enableStructureOptimize,
     originSqlInfo?.number,
