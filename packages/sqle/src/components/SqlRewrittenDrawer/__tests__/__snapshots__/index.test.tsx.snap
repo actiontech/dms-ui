@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SqlRewrittenDrawer should match snapshot 1`] = `
+<BasicDrawer
+  maskClosable={true}
+  onClose={[Function]}
+  open={true}
+  title="重写详情"
+  width={920}
+>
+  <EnterpriseFeatureDisplay
+    eeFeatureDescription={
+      <ForwardRef
+        className="paragraph"
+      >
+        SQL合规重写可以基于触发的规则自动重写SQL，节省开发时间，提高工作效率。
+      </ForwardRef>
+    }
+    featureName="SQL合规重写"
+    isConfigPage={true}
+    showTitle={false}
+  >
+    <SqlRewrittenDrawerEE
+      enableStructureOptimize={false}
+      onClose={[MockFunction]}
+      open={true}
+      originSqlInfo={
+        {
+          "number": 1,
+          "sql": "select * from table",
+        }
+      }
+      taskID="task-123"
+      toggleEnableStructureOptimize={[Function]}
+    />
+  </EnterpriseFeatureDisplay>
+</BasicDrawer>
+`;

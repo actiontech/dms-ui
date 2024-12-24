@@ -1,0 +1,411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverallRewrittenSuggestion should render execution order explanation section 1`] = `
+<div>
+  <section>
+    <div
+      class="css-1wsdew2"
+    >
+      <div
+        class=" css-10u1fz5"
+      >
+        <div
+          class="title-wrapper"
+        >
+          <svg
+            color="#4583ff"
+            fill="none"
+            height="24"
+            viewBox="0 0 14 12"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="currentColor"
+              r="2.5"
+            />
+            <circle
+              cx="6"
+              cy="6"
+              r="4"
+              stroke="currentColor"
+              stroke-opacity="0.2"
+              stroke-width="3"
+            />
+          </svg>
+          <span
+            class="title-text"
+          >
+            总结
+          </span>
+        </div>
+      </div>
+      <div
+        class="css-14chl4v"
+      >
+        <ul
+          class="css-1n1qqm6"
+        >
+          <li>
+            本次 SQL 重写基于 9 条规则进行了优化，目前还有 2 条规则有待进一步优化。此外，有 0 条规则需要人工处理。
+          </li>
+          <li>
+            <div
+              class="css-2p8eea"
+              rehypeplugins="() => jest.fn()"
+            >
+              原始SQL语句的目的是查询2023年创建的用户，这些用户有已完成的订单，订单金额大于100，支付状态不为空，订单描述包含'test'，或者用户邮箱包含'example'。查询结果随机排序，然后按照支付创建时间降序排序，最终返回第501到1500条记录。
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="css-1wsdew2"
+    >
+      <div
+        class="sql-rewritten-title css-10u1fz5"
+      >
+        <div
+          class="title-wrapper"
+        >
+          <svg
+            color="#4583ff"
+            fill="none"
+            height="24"
+            viewBox="0 0 14 12"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="currentColor"
+              r="2.5"
+            />
+            <circle
+              cx="6"
+              cy="6"
+              r="4"
+              stroke="currentColor"
+              stroke-opacity="0.2"
+              stroke-width="3"
+            />
+          </svg>
+          <span
+            class="title-text"
+          >
+            SQL重写结果
+          </span>
+        </div>
+        <div
+          class="action-items-wrapper"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              复 制
+            </span>
+          </button>
+          <div
+            class="toggle-button-wrapper css-14po76i"
+          >
+            查看差异
+          </div>
+          <div
+            class="toggle-button-wrapper css-14po76i"
+          >
+            查看SQL执行顺序解释
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-1f81n1a"
+      >
+        <div
+          class="original css-uq2cw0"
+        >
+          <span
+            class="sql-indicator"
+          />
+          <span
+            class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+          >
+            原始SQL
+          </span>
+        </div>
+        <div
+          class="optimized css-uq2cw0"
+        >
+          <span
+            class="sql-indicator"
+          />
+          <span
+            class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+          >
+            重写后SQL
+          </span>
+        </div>
+      </div>
+      <div
+        class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
+      >
+        <div
+          class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+        >
+          <input
+            height="500"
+            language="sql"
+            modified="WITH random_ids AS (
+    SELECT FLOOR(4988304 * RAND()) + 1 AS id
+    FROM dual
+    LIMIT 1000
+),
+user_ids AS (
+    SELECT u.id,
+           u.name,
+           u.email,
+           u.created_at,
+           u.status,
+           o.id AS order_id,
+           o.amount,
+           o.description,
+           o.created_at AS order_created_at,
+           p.id AS payment_id,
+           p.status,
+           p.payment_method,
+           p.created_at AS payment_created_at
+    FROM users u
+    JOIN orders o ON u.id = o.user_id AND o.status = 'COMPLETED'
+    JOIN payments p ON u.id = p.user_id
+    WHERE 
+        YEAR(u.created_at) = 2023
+        AND o.amount > 100
+        AND p.status IS NOT NULL
+        AND o.description LIKE '%test%'
+        AND u.email = 'example'
+)
+SELECT u.id,
+       u.name,
+       u.email,
+       u.created_at,
+       u.status,
+       o.order_id,
+       o.amount,
+       o.description,
+       o.order_created_at,
+       p.payment_id,
+       p.status,
+       p.payment_method,
+       p.payment_created_at
+FROM users u
+JOIN orders o ON u.id = o.user_id
+JOIN payments p ON u.id = p.user_id
+JOIN random_ids ri ON u.id = ri.id
+ORDER BY p.payment_created_at, u.id
+LIMIT 1000 OFFSET 500;
+"
+            options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+            original="SELECT * FROM table;"
+            theme="editorCustomTheme"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1wsdew2"
+    >
+      <div
+        class="sql-rewritten-title css-10u1fz5"
+      >
+        <div
+          class="title-wrapper"
+        >
+          <svg
+            color="#4583ff"
+            fill="none"
+            height="24"
+            viewBox="0 0 14 12"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="currentColor"
+              r="2.5"
+            />
+            <circle
+              cx="6"
+              cy="6"
+              r="4"
+              stroke="currentColor"
+              stroke-opacity="0.2"
+              stroke-width="3"
+            />
+          </svg>
+          <span
+            class="title-text"
+          >
+            SQL执行顺序解释
+          </span>
+        </div>
+      </div>
+      <div
+        class="css-bv17xn"
+      >
+        <div
+          class="execute-item"
+        >
+          <div
+            class="original css-uq2cw0"
+          >
+            <span
+              class="sql-indicator"
+            />
+            <span
+              class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+            >
+              原始SQL
+            </span>
+          </div>
+          <div
+            class="execute-item-content css-14chl4v"
+          >
+            <div
+              class="description-content css-2p8eea"
+              rehypeplugins="() => jest.fn()"
+            >
+              1. 基础表选择：
+   - 从users表开始，作为主表
+   - 通过JOIN连接orders表获取订单信息
+   - 通过JOIN连接payments表获取支付信息
+
+2. 数据筛选条件：
+   - 用户注册时间限制：created_at在2023年
+   - 订单金额限制：amount大于100
+   - 支付状态不为空：p.status IS NOT NULL
+   - 订单描述包含"test"：o.description LIKE '%test%'
+   - 邮箱地址包含"example"：LOWER(u.email) LIKE '%example%'
+
+3. 连接条件：
+   - users表和orders表通过user_id关联
+   - users表和payments表通过user_id关联
+
+4. 结果排序：
+   - 首先使用ORDER BY RAND()进行随机排序
+   - 然后根据支付创建时间降序排列：p.created_at DESC
+
+5. 结果限制：
+   - LIMIT 1000 OFFSET 500：跳过前500条记录，返回接下来的1000条记录
+
+            </div>
+          </div>
+        </div>
+        <div
+          class="execute-item"
+        >
+          <div
+            class="optimized css-uq2cw0"
+          >
+            <span
+              class="sql-indicator"
+            />
+            <span
+              class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+            >
+              重写后SQL
+            </span>
+          </div>
+          <div
+            class="execute-item-content css-14chl4v"
+          >
+            <div
+              class="description-content css-2p8eea"
+              rehypeplugins="() => jest.fn()"
+            >
+              1. 基础表选择：
+   - 从users表开始，作为主表
+   - 通过JOIN连接orders表获取订单信息
+   - 通过JOIN连接payments表获取支付信息
+
+2. 数据筛选条件：
+   - 用户注册时间限制：created_at在2023年
+   - 订单金额限制：amount大于100
+   - 支付状态不为空：p.status IS NOT NULL
+   - 订单描述包含“test”：o.description LIKE '%test%'
+   - 邮箱地址包含“example”：LOWER(u.email) LIKE '%example%'
+
+3. 连接条件：
+   - users表与orders表通过user_id关联
+   - users表与payments表通过user_id关联
+
+4. 结果排序：
+   - 随机数排序：ORDER BY RAND()
+   - 支付创建时间降序：ORDER BY p.created_at DESC
+
+5. 结果限制：
+   - LIMIT 1000 OFFSET 500：返回第501到第1500条记录
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="css-1wsdew2"
+    >
+      <div
+        class=" css-10u1fz5"
+      >
+        <div
+          class="title-wrapper"
+        >
+          <svg
+            fill="none"
+            height="24"
+            viewBox="0 0 16 16"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+              fill="#EBAD1C"
+            />
+          </svg>
+          <span
+            class="title-text"
+          >
+            风险提示
+          </span>
+        </div>
+      </div>
+      <div
+        class="ant-alert ant-alert-warning ant-alert-no-icon css-1jrzg49 css-dev-only-do-not-override-txh9fw"
+        data-show="true"
+        role="alert"
+      >
+        <div
+          class="ant-alert-content"
+        >
+          <div
+            class="ant-alert-message"
+          >
+            <div
+              class="css-2p8eea"
+              rehypeplugins="() => jest.fn()"
+            >
+              - **数据顺序**: 原SQL使用了\`ORDER BY RAND(), p.created_at DESC\`，而优化后的SQL使用了\`ORDER BY p.payment_created_at, u.id\`。这种差异可能导致结果集的顺序不同，尽管最终选择的数据范围和过滤条件是一致的。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

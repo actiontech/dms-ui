@@ -1,20 +1,30 @@
 import { EmptyBox, SQLRenderer } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BusinessWarningStyleWrapper } from './style';
+import {
+  BusinessWarningStyleWrapper,
+  DiffSQLEditorSubTitleStyleWrapper,
+  ExecuteOrderExplanationStyleWrapper,
+  SqlComparisonTitleStyleWrapper
+} from './style';
 import { useMemo } from 'react';
 import { useToggle } from 'ahooks';
 import { useTranslation } from 'react-i18next';
-import MDEditor from '@uiw/react-md-editor';
 import rehypeSanitize from 'rehype-sanitize';
 import { RingOutlined, WarningFilled } from '@actiontech/icons';
 import OverallRewrittenItem from './OverallRewrittenItem';
-import { CopySqlAction, ShowSqlDifferenceAction } from '../Common/actions';
 import {
+  CopySqlAction,
+  ShowExecuteOrderExplanationAction,
+  ShowSqlDifferenceAction
+} from '../Common/actions';
+import {
+  MarkdownPreviewModeStyleWrapper,
   OptimizationDescriptionStyleWrapper,
   OptimizationSummaryStyleWrapper
 } from '../Common/style';
 import RewrittenSqlCommonEditor from '../Common/RewrittenSqlCommonEditor';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import { Typography } from 'antd';
 
 type Props = {
   originalSql: string;
@@ -25,7 +35,8 @@ type Props = {
   remainingCount: number;
   businessCount: number;
   businessDesc: string;
-  rewrittenSqlBusinessDesc: string;
+  sqlLogicDesc: string;
+  rewrittenSqlLogicDesc: string;
 };
 
 const OverallRewrittenSuggestion: React.FC<Props> = ({
@@ -37,13 +48,26 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
   remainingCount,
   businessCount,
   businessDesc,
-  rewrittenSqlBusinessDesc
+  sqlLogicDesc,
+  rewrittenSqlLogicDesc
 }) => {
   const { t } = useTranslation();
   const { sharedTheme } = useThemeStyleData();
 
+  const TitleCommonIcon = (
+    <RingOutlined
+      color={sharedTheme.uiToken.colorPrimary}
+      height={24}
+      width={24}
+    />
+  );
+
   const [showSqlDifference, { toggle: toggleShowSqlDifference }] =
     useToggle(true);
+  const [
+    showExecuteOrderExplanation,
+    { toggle: toggleShowExecuteOrderExplanation }
+  ] = useToggle(false);
 
   const overallDDL = useMemo(() => {
     return `${suggestions
@@ -62,13 +86,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
   return (
     <section>
       <OverallRewrittenItem
-        icon={
-          <RingOutlined
-            color={sharedTheme.uiToken.colorPrimary}
-            height={24}
-            width={24}
-          />
-        }
+        icon={TitleCommonIcon}
         title={t('sqlRewrite.summary')}
       >
         <OptimizationDescriptionStyleWrapper>
@@ -80,9 +98,11 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
                 businessCount
               })}
             </li>
-            <li hidden={!businessDesc}>{businessDesc}</li>
-            <li hidden={!rewrittenSqlBusinessDesc}>
-              {rewrittenSqlBusinessDesc}
+            <li hidden={!businessDesc}>
+              <MarkdownPreviewModeStyleWrapper
+                source={businessDesc}
+                rehypePlugins={[rehypeSanitize]}
+              />
             </li>
           </OptimizationSummaryStyleWrapper>
         </OptimizationDescriptionStyleWrapper>
@@ -90,13 +110,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
 
       <EmptyBox if={!!overallDDL}>
         <OverallRewrittenItem
-          icon={
-            <RingOutlined
-              color={sharedTheme.uiToken.colorPrimary}
-              height={24}
-              width={24}
-            />
-          }
+          icon={TitleCommonIcon}
           title={t('sqlRewrite.databaseStructureChangeStatement')}
           action={<CopySqlAction sql={overallDDL} />}
         >
@@ -110,13 +124,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
       <EmptyBox if={!!rewrittenSql}>
         <OverallRewrittenItem
           className="sql-rewritten-title"
-          icon={
-            <RingOutlined
-              color={sharedTheme.uiToken.colorPrimary}
-              height={24}
-              width={24}
-            />
-          }
+          icon={TitleCommonIcon}
           title={t('sqlRewrite.sqlRewriteResult')}
           action={
             <>
@@ -125,15 +133,84 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
                 showSqlDifference={showSqlDifference}
                 toggleShowSqlDifference={toggleShowSqlDifference}
               />
+              <ShowExecuteOrderExplanationAction
+                showExecuteOrderExplanation={showExecuteOrderExplanation}
+                toggleShowExecuteOrderExplanation={
+                  toggleShowExecuteOrderExplanation
+                }
+              />
             </>
           }
         >
+          <DiffSQLEditorSubTitleStyleWrapper hidden={!showSqlDifference}>
+            <SqlComparisonTitleStyleWrapper className="original">
+              <span className="sql-indicator"></span>
+              <Typography.Text type="secondary" className="subtitle-item-text">
+                {t('sqlRewrite.originalSql')}
+              </Typography.Text>
+            </SqlComparisonTitleStyleWrapper>
+
+            <SqlComparisonTitleStyleWrapper className="optimized">
+              <span className="sql-indicator"></span>
+              <Typography.Text type="secondary" className="subtitle-item-text">
+                {t('sqlRewrite.rewrittenSql')}
+              </Typography.Text>
+            </SqlComparisonTitleStyleWrapper>
+          </DiffSQLEditorSubTitleStyleWrapper>
           <RewrittenSqlCommonEditor
             showSqlDifference={showSqlDifference}
             originalSql={originalSql}
             rewrittenSql={rewrittenSql!}
           />
         </OverallRewrittenItem>
+
+        <EmptyBox if={showExecuteOrderExplanation}>
+          <OverallRewrittenItem
+            className="sql-rewritten-title"
+            icon={TitleCommonIcon}
+            title={t('sqlRewrite.executionOrderExplanation')}
+          >
+            <ExecuteOrderExplanationStyleWrapper>
+              <div className="execute-item">
+                <SqlComparisonTitleStyleWrapper className="original">
+                  <span className="sql-indicator"></span>
+                  <Typography.Text
+                    type="secondary"
+                    className="subtitle-item-text"
+                  >
+                    {t('sqlRewrite.originalSql')}
+                  </Typography.Text>
+                </SqlComparisonTitleStyleWrapper>
+
+                <OptimizationDescriptionStyleWrapper className="execute-item-content">
+                  <MarkdownPreviewModeStyleWrapper
+                    className="description-content"
+                    source={sqlLogicDesc}
+                    rehypePlugins={[rehypeSanitize]}
+                  />
+                </OptimizationDescriptionStyleWrapper>
+              </div>
+              <div className="execute-item">
+                <SqlComparisonTitleStyleWrapper className="optimized">
+                  <span className="sql-indicator"></span>
+                  <Typography.Text
+                    type="secondary"
+                    className="subtitle-item-text"
+                  >
+                    {t('sqlRewrite.rewrittenSql')}
+                  </Typography.Text>
+                </SqlComparisonTitleStyleWrapper>
+                <OptimizationDescriptionStyleWrapper className="execute-item-content">
+                  <MarkdownPreviewModeStyleWrapper
+                    className="description-content"
+                    source={rewrittenSqlLogicDesc}
+                    rehypePlugins={[rehypeSanitize]}
+                  />
+                </OptimizationDescriptionStyleWrapper>
+              </div>
+            </ExecuteOrderExplanationStyleWrapper>
+          </OverallRewrittenItem>
+        </EmptyBox>
       </EmptyBox>
 
       <EmptyBox if={!!businessNonEquivalentDesc}>
@@ -144,7 +221,7 @@ const OverallRewrittenSuggestion: React.FC<Props> = ({
           <BusinessWarningStyleWrapper
             type="warning"
             message={
-              <MDEditor.Markdown
+              <MarkdownPreviewModeStyleWrapper
                 source={businessNonEquivalentDesc}
                 rehypePlugins={[rehypeSanitize]}
               />

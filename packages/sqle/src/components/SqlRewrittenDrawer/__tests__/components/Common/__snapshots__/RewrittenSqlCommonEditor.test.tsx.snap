@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RewrittenSqlCommonEditor should render DiffViewOnlyEditor when showSqlDifference is true 1`] = `
+<div>
+  <div
+    class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
+  >
+    <div
+      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+    >
+      <input
+        height="500"
+        language="sql"
+        modified="SELECT id, name FROM table WHERE active = true;"
+        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+        original="SELECT * FROM table;"
+        theme="editorCustomTheme"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RewrittenSqlCommonEditor should render ViewOnlyEditor when showSqlDifference is false 1`] = `
+<div>
+  <div
+    class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
+  >
+    <div
+      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+    >
+      <input
+        height="500"
+        language="sql"
+        modified="SELECT id, name FROM table WHERE active = true;"
+        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"vertical":"visible","horizontal":"visible","useShadows":false,"verticalScrollbarSize":12,"horizontalScrollbarSize":12},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+        original="SELECT * FROM table;"
+        theme="editorCustomTheme"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
