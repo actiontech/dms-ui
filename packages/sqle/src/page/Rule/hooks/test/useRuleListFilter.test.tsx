@@ -12,9 +12,11 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('sqle/Rule/hooks/useRuleListFilter', () => {
+  let getRuleListSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
+    getRuleListSpy = rule_template.getRuleList();
   });
 
   afterEach(() => {
@@ -29,20 +31,27 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<RuleListFilterForm>()
     );
-
+    jest.spyOn(Form, 'useWatch').mockImplementation((key) => {
+      switch (key) {
+        case 'filter_rule_template':
+          return 'test';
+        case 'filter_db_type':
+          return 'MySQL';
+      }
+    });
     const { result: hookResult } = renderHooksWithTheme(() =>
       useRuleListFilter(result.current[0])
     );
 
     await act(async () => {
-      hookResult.current.getTemplateRules();
       await jest.advanceTimersByTime(3000);
     });
 
     expect(getRuleTemplateSpy).toHaveBeenCalledTimes(1);
     expect(getRuleTemplateSpy).toHaveBeenCalledWith({
-      rule_template_name: ''
+      rule_template_name: 'test'
     });
+    expect(getRuleListSpy).toHaveBeenCalledTimes(1);
     expect(hookResult.current.templateRules).toEqual([]);
   });
 
@@ -55,21 +64,30 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<RuleListFilterForm>()
     );
-
+    jest.spyOn(Form, 'useWatch').mockImplementation((key) => {
+      switch (key) {
+        case 'filter_rule_template':
+          return 'test';
+        case 'filter_db_type':
+          return 'MySQL';
+        case 'project_name':
+          return mockProjectInfo.projectName;
+      }
+    });
     const { result: hookResult } = renderHooksWithTheme(() =>
       useRuleListFilter(result.current[0])
     );
 
     await act(async () => {
-      hookResult.current.getTemplateRules(mockProjectInfo.projectName);
       await jest.advanceTimersByTime(3000);
     });
 
     expect(getProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     expect(getProjectRuleTemplateSpy).toHaveBeenCalledWith({
-      rule_template_name: '',
+      rule_template_name: 'test',
       project_name: mockProjectInfo.projectName
     });
+    expect(getRuleListSpy).toHaveBeenCalledTimes(1);
     expect(hookResult.current.templateRules).toEqual([]);
   });
 
@@ -87,7 +105,6 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     );
 
     await act(async () => {
-      hookResult.current.getTemplateRules();
       await jest.advanceTimersByTime(3000);
     });
 
