@@ -28,7 +28,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-nllr0m"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
             >
               <div
                 class="ant-space-item"
@@ -924,7 +924,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-nllr0m"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
             >
               <div
                 class="ant-space-item"
@@ -1636,7 +1636,7 @@ exports[`sqle/Rule request return no data 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-nllr0m"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
             >
               <div
                 class="ant-space-item"
@@ -2214,7 +2214,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-nllr0m"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
             >
               <div
                 class="ant-space-item"
@@ -2918,7 +2918,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-nllr0m"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
             >
               <div
                 class="ant-space-item"
