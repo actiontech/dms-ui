@@ -48,7 +48,6 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
         desc: props.defaultData.desc,
         annotation: props.defaultData.annotation,
         dbType: props.defaultData.db_type,
-        ruleType: props.defaultData.type,
         level: props.defaultData.level,
         sql: props.defaultData.categories?.sql?.[0],
         operand: props.defaultData.categories?.operand,
@@ -102,11 +101,6 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
           placeholder={t('common.form.placeholder.select', {
             name: t('customRule.baseInfoForm.dbType')
           })}
-          onChange={() => {
-            props.form.setFieldsValue({
-              ruleType: ''
-            });
-          }}
         >
           {generateDriverSelectOptions()}
         </BasicSelect>

@@ -15,8 +15,6 @@ const useCustomRuleTemplateForm = (isUpdate = false) => {
   const [editScriptForm] = Form.useForm<EditRuleScriptFields>();
   const [step, setStep] = useState(0);
   const submitSuccessStatus = useMemo(() => step === 2, [step]);
-  const [extraRuleTypeList, setExtraRuleTypeList] = useState<string[]>([]);
-  const [extraRuleName, setExtraRuleName] = useState('');
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
 
   const prevStep = useCallback(() => {
@@ -38,20 +36,7 @@ const useCustomRuleTemplateForm = (isUpdate = false) => {
       return;
     }
     form.resetFields();
-    setExtraRuleName('');
-    setExtraRuleTypeList([]);
   };
-
-  const resetExtraInfo = () => {
-    if (!extraRuleName) {
-      return;
-    }
-    setExtraRuleTypeList((v) => [...v, extraRuleName]);
-    setExtraRuleName('');
-  };
-
-  const onExtraRuleNameChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setExtraRuleName(e.target.value);
 
   const onGoCustomRuleList = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.CustomRule);
@@ -63,13 +48,9 @@ const useCustomRuleTemplateForm = (isUpdate = false) => {
     editScriptForm,
     submitSuccessStatus,
     step,
-    extraRuleTypeList,
-    extraRuleName,
     prevStep,
     nextStep,
     baseInfoFormSubmit,
-    resetExtraInfo,
-    onExtraRuleNameChange,
     resetAll,
     onGoCustomRuleList
   };
