@@ -13,10 +13,6 @@ const CustomRuleForm: React.FC<CustomRuleFormProps> = (props) => {
     form,
     editScriptForm,
     defaultData,
-    extraRuleTypeList,
-    extraRuleName,
-    resetExtraInfo,
-    onExtraRuleNameChange,
     prevStep,
     baseInfoSubmit,
     submit,
@@ -35,10 +31,6 @@ const CustomRuleForm: React.FC<CustomRuleFormProps> = (props) => {
             form={form}
             submit={baseInfoSubmit}
             defaultData={defaultData}
-            extraRuleTypeList={extraRuleTypeList}
-            extraRuleName={extraRuleName}
-            resetExtraInfo={resetExtraInfo}
-            onExtraRuleNameChange={onExtraRuleNameChange}
           />
         </div>
 
