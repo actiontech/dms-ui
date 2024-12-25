@@ -155,7 +155,24 @@ export const customRuleMockData = [
     annotation: '',
     db_type: 'MySQL',
     level: 'notice',
-    type: '命名规范'
+    categories: {
+      audit_accuracy: ['online'],
+      sql: ['ddl'],
+      operand: [
+        'database',
+        'table_space',
+        'table',
+        'column',
+        'index',
+        'view',
+        'procedure',
+        'function',
+        'trigger',
+        'event',
+        'user'
+      ],
+      audit_purpose: ['maintenance']
+    }
   },
   {
     rule_id: 'rule_id_234567',
@@ -163,7 +180,12 @@ export const customRuleMockData = [
     annotation: '',
     db_type: 'MySQL',
     level: 'notice',
-    type: '命名规范'
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   }
 ];
 
@@ -285,8 +307,13 @@ export const customRuleDetailMockData = {
   annotation: 'anno',
   db_type: 'mysql',
   level: CustomRuleResV1LevelEnum.error,
-  type: '规范1',
-  rule_script: 'SELECT 1;'
+  rule_script: 'SELECT 1;',
+  categories: {
+    audit_accuracy: ['offline'],
+    sql: ['dcl'],
+    operand: ['database', 'table_space'],
+    audit_purpose: ['correction']
+  }
 };
 
 export const importRuleTemplateMockData = {
