@@ -299,9 +299,21 @@ importers:
       babel-preset-react-app:
         specifier: ^10.0.1
         version: 10.0.1
+      provision:
+        specifier: workspace:^
+        version: link:../provision
       sqle:
         specifier: workspace:^
         version: link:../sqle
+
+  packages/diagnosis:
+    dependencies:
+      '@actiontech/icons':
+        specifier: workspace:^
+        version: link:../icons
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
 
   packages/icons:
     devDependencies:
@@ -314,6 +326,15 @@ importers:
       father:
         specifier: ^4.1.0
         version: 4.1.0(webpack@5.92.0)
+
+  packages/provision:
+    dependencies:
+      '@actiontech/icons':
+        specifier: workspace:^
+        version: link:../icons
+      '@actiontech/shared':
+        specifier: workspace:^1.0.0
+        version: link:../shared
 
   packages/shared:
     dependencies:
@@ -16326,7 +16347,6 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
     dev: true
 
@@ -20805,7 +20825,3 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
