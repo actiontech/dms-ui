@@ -1,12 +1,11 @@
-import { useEffect } from 'react';
 import { Form } from 'antd';
 import { BasicSelect, BasicSwitch, BasicToolTips } from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
 import { IMemberFormProps } from '../index.type';
-import useUsername from '../../../../hooks/useUsername';
 import RoleSelector from '../../components/RoleSelector';
-import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { Link } from 'react-router-dom';
+import { useRequest } from 'ahooks';
+import UserService from '@actiontech/shared/lib/api/base/service/User';
 
 const MemberForm: React.FC<IMemberFormProps> = ({
   form,
@@ -15,17 +14,31 @@ const MemberForm: React.FC<IMemberFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const {
-    loading: getUsernameListLoading,
-    updateUsernameList,
-    generateUsernameSelectOption
-  } = useUsername();
-
   const isProjectAdmin = Form.useWatch('isProjectAdmin', form);
 
-  useEffect(() => {
-    updateUsernameList();
-  }, [updateUsernameList]);
+  const {
+    data: usernameOptions,
+    run: getUsernameOptions,
+    loading: getUsernameListLoading
+  } = useRequest(
+    (filterByNameValue?: string) =>
+      UserService.ListUsers({
+        page_size: 999,
+        filter_by_name_fuzzy: filterByNameValue
+      }).then((res) => {
+        return (res.data.data ?? []).map((v) => ({
+          label: v.name,
+          value: v.uid ?? ''
+        }));
+      }),
+    {
+      debounceWait: 600
+    }
+  );
+
+  const handleSearch = (newValue: string) => {
+    getUsernameOptions(newValue);
+  };
 
   return (
     <Form form={form} layout="vertical">
@@ -57,15 +70,14 @@ const MemberForm: React.FC<IMemberFormProps> = ({
         <BasicSelect
           showSearch={true}
           loading={getUsernameListLoading}
-          optionFilterProp="children"
-          filterOption={filterOptionByLabel}
+          filterOption={false}
           disabled={isUpdate}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsMember.memberForm.username')
           })}
-        >
-          {generateUsernameSelectOption()}
-        </BasicSelect>
+          onSearch={handleSearch}
+          options={usernameOptions}
+        />
       </Form.Item>
 
       <Form.Item

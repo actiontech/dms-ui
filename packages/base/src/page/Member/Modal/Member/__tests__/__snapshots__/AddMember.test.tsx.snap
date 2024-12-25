@@ -998,7 +998,6 @@ exports[`base/Member/Modal/AddMember should send add member request when click s
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
-                  label="test"
                   title="test"
                 >
                   <div
@@ -1016,7 +1015,6 @@ exports[`base/Member/Modal/AddMember should send add member request when click s
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  label="test666"
                   title="test666"
                 >
                   <div
@@ -1034,7 +1032,6 @@ exports[`base/Member/Modal/AddMember should send add member request when click s
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  label="admin"
                   title="admin"
                 >
                   <div
