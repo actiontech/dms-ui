@@ -9,7 +9,10 @@ import { ModalName } from '../../../../../data/ModalName';
 import AddMember from '../AddMember';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  selectOptionByIndex
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -56,6 +59,7 @@ describe('base/Member/Modal/AddMember', () => {
   it('should send add member request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = renderWithReduxAndTheme(<AddMember />);
+    await act(async () => jest.advanceTimersByTime(600));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listUsersSpy).toHaveBeenCalledTimes(1);
     expect(litDBServices).toHaveBeenCalledTimes(1);
@@ -106,6 +110,7 @@ describe('base/Member/Modal/AddMember', () => {
 
   it('should send add member request when click submit button with role', async () => {
     const { baseElement } = renderWithReduxAndTheme(<AddMember />);
+    await act(async () => jest.advanceTimersByTime(600));
     await act(async () => jest.advanceTimersByTime(3000));
     selectOptionByIndex('用户名称', userList[0].name ?? '', 0);
     fireEvent.click(queryBySelector('.member-form-add-button', baseElement)!);
@@ -160,6 +165,30 @@ describe('base/Member/Modal/AddMember', () => {
         modalName: ModalName.DMS_Add_Member,
         status: false
       }
+    });
+  });
+
+  it('should load options when searching', async () => {
+    renderWithReduxAndTheme(<AddMember />);
+
+    await act(async () => jest.advanceTimersByTime(600));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(listUsersSpy).toHaveBeenCalledTimes(1);
+    expect(listUsersSpy).toHaveBeenNthCalledWith(1, {
+      page_size: 999,
+      filter_by_name_fuzzy: undefined
+    });
+
+    fireEvent.change(getBySelector('#userUid'), {
+      target: { value: 'search value' }
+    });
+
+    expect(listUsersSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(600));
+    expect(listUsersSpy).toHaveBeenCalledTimes(2);
+    expect(listUsersSpy).toHaveBeenNthCalledWith(2, {
+      page_size: 999,
+      filter_by_name_fuzzy: 'search value'
     });
   });
 });

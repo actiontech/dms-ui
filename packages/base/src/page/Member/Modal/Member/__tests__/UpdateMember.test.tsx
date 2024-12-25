@@ -53,6 +53,7 @@ describe('base/Member/Modal/UpdateMember', () => {
   it('should send update member request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = renderWithReduxAndTheme(<UpdateMember />);
+    await act(async () => jest.advanceTimersByTime(600));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listUsersSpy).toHaveBeenCalledTimes(1);
     expect(litDBServices).toHaveBeenCalledTimes(1);
