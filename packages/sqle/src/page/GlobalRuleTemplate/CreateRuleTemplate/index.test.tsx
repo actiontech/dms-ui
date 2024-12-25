@@ -50,14 +50,14 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
         }
       })
     );
-     mockUsePermission(
-       {
-         moduleFeatureSupport: { sqlOptimization: true }
-       },
-       {
-         useSpyOnMockHooks: true
-       }
-     );
+    mockUsePermission(
+      {
+        moduleFeatureSupport: { sqlOptimization: true }
+      },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();

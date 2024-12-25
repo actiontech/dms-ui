@@ -30,8 +30,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
   const dispatchSpy = jest.fn();
   let getDriversSpy: jest.SpyInstance;
   let updateCustomRuleSpy: jest.SpyInstance;
-  let getRuleTypeByDBTypeSpy: jest.SpyInstance;
   let getCustomRuleSpy: jest.SpyInstance;
+  let getCategoryStatisticsSpy: jest.SpyInstance;
   const testRuleID = 'test_rule_id';
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -47,7 +47,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     getDriversSpy = configuration.getDrivers();
     updateCustomRuleSpy = rule_template.updateCustomRule();
     getCustomRuleSpy = rule_template.getCustomRule();
-    getRuleTypeByDBTypeSpy = rule_template.getRuleTypeByDBType();
+    getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
@@ -80,21 +80,19 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('reset form values', async () => {
     renderWithThemeAndRedux(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCustomRuleSpy).toHaveBeenCalledTimes(1);
-    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
     const descEle = getBySelector('#desc');
     expect(descEle).toHaveValue('test_custom_rule');
     expect(getBySelector('#dbType')).toBeDisabled();
     expect(descEle).toBeDisabled();
     expect(screen.getByText('anno')).toBeInTheDocument();
     expect(getBySelector('span[title="mysql"]')).toBeInTheDocument();
-    expect(screen.getByText('规范1')).toBeInTheDocument();
-    expect(screen.getByText('错误')).toBeInTheDocument();
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(descEle).toHaveValue('test_custom_rule');
@@ -113,27 +111,31 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
       target: { value: 'anno' }
     });
     expect(annotationEle).toHaveValue('anno');
-    const ruleTypeEle = getBySelector('#ruleType');
 
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(ruleTypeEle).not.toBeDisabled();
-    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
-    await act(async () => {
-      fireEvent.mouseDown(ruleTypeEle);
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="规范1"]'));
-      await jest.advanceTimersByTime(300);
-    });
-    await act(async () => {
-      fireEvent.mouseDown(getBySelector('#level'));
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="告警"]'));
-      await jest.advanceTimersByTime(300);
-    });
+    fireEvent.mouseDown(getBySelector('#operand'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('触发器'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#auditPurpose'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('性能问题'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#sql'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('完整性约束'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#auditAccuracy'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('在线'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#level'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="告警"]'));
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
@@ -158,8 +160,15 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
       level: CreateCustomRuleReqV1LevelEnum.warn,
       annotation: 'anno',
       rule_script: 'SELECT 1',
-      type: '规范1',
-      rule_id: testRuleID
+      rule_id: testRuleID,
+      tags: [
+        'database',
+        'table_space',
+        'trigger',
+        'performance',
+        'online',
+        'integrity'
+      ]
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
     expect(resultTip).not.toBeVisible();
@@ -190,7 +199,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
       level: CreateCustomRuleReqV1LevelEnum.error,
       annotation: 'anno',
       rule_script: 'SELECT 1;',
-      type: '规范1',
+      tags: ['database', 'table_space', 'correction', 'offline', 'dcl'],
       rule_id: testRuleID
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
