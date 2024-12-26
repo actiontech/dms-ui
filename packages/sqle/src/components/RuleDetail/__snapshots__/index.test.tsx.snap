@@ -359,7 +359,7 @@ exports[`sqle/components/RuleDetail click return button 1`] = `
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -474,7 +474,7 @@ exports[`sqle/components/RuleDetail click return button 1`] = `
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -901,7 +901,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -1016,7 +1016,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -1443,7 +1443,7 @@ exports[`sqle/components/RuleDetail render filter rule list by fuzzy keyword 1`]
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -1558,7 +1558,7 @@ exports[`sqle/components/RuleDetail render filter rule list by fuzzy keyword 1`]
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -2124,7 +2124,7 @@ exports[`sqle/components/RuleDetail render global rule template when projectName
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -2239,7 +2239,7 @@ exports[`sqle/components/RuleDetail render global rule template when projectName
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -2667,7 +2667,7 @@ exports[`sqle/components/RuleDetail render global rule template when projectName
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -2782,7 +2782,7 @@ exports[`sqle/components/RuleDetail render global rule template when projectName
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -3347,7 +3347,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -3462,7 +3462,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -3889,7 +3889,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -4004,7 +4004,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -4543,7 +4543,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              质量控制目的
+                              审核目的
                             </span>
                             <span
                               class="custom-select-placeholder-value"
@@ -4658,7 +4658,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                             <span
                               class="custom-select-placeholder-prefix"
                             >
-                              审核模式
+                              审核精度
                             </span>
                             <span
                               class="custom-select-placeholder-value"

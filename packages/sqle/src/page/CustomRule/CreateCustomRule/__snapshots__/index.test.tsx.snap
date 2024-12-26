@@ -444,9 +444,9 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="auditPurpose"
-                      title="质量控制目的"
+                      title="审核目的"
                     >
-                      质量控制目的
+                      审核目的
                     </label>
                   </div>
                   <div
@@ -632,9 +632,9 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="auditAccuracy"
-                      title="审核模式"
+                      title="审核精度"
                     >
-                      审核模式
+                      审核精度
                     </label>
                   </div>
                   <div
@@ -2550,9 +2550,9 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="auditPurpose"
-                      title="质量控制目的"
+                      title="审核目的"
                     >
-                      质量控制目的
+                      审核目的
                     </label>
                   </div>
                   <div
@@ -2738,9 +2738,9 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="auditAccuracy"
-                      title="审核模式"
+                      title="审核精度"
                     >
-                      审核模式
+                      审核精度
                     </label>
                   </div>
                   <div
@@ -4616,9 +4616,9 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="auditPurpose"
-                      title="质量控制目的"
+                      title="审核目的"
                     >
-                      质量控制目的
+                      审核目的
                     </label>
                   </div>
                   <div
@@ -4662,7 +4662,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                             <span
                               class="ant-select-selection-placeholder"
                             >
-                              请选择质量控制目的
+                              请选择审核目的
                             </span>
                           </div>
                           <span
@@ -4802,9 +4802,9 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
                       for="auditAccuracy"
-                      title="审核模式"
+                      title="审核精度"
                     >
-                      审核模式
+                      审核精度
                     </label>
                   </div>
                   <div
@@ -4848,7 +4848,7 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                             <span
                               class="ant-select-selection-placeholder"
                             >
-                              请选择审核模式
+                              请选择审核精度
                             </span>
                           </div>
                           <span
