@@ -74,12 +74,12 @@ describe('test Modal/ExportRuleTemplate', () => {
     expect(screen.getByText('取 消').closest('button')).toBeDisabled();
     expect(screen.getByText('导 出').closest('button')).toBeDisabled();
     expect(
-      screen.getByText(`正在导出模版 "${templateName}"...`)
+      screen.getByText(`正在导出模板 "${templateName}"...`)
     ).toBeInTheDocument();
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
-      screen.queryByText(`正在导出模版 "${templateName}"...`)
+      screen.queryByText(`正在导出模板 "${templateName}"...`)
     ).not.toBeInTheDocument();
     expect(screen.getByText('取 消').closest('button')).not.toBeDisabled();
     expect(screen.getByText('导 出').closest('button')).not.toBeDisabled();

@@ -89,7 +89,7 @@ describe('sqle/RuleManager', () => {
       getBySelector('.ant-segmented-group', baseElement)
     ).toBeInTheDocument();
     expect(screen.getByText('导入规则模板')).toBeInTheDocument();
-    expect(screen.getByText('创建规则模版')).toBeInTheDocument();
+    expect(screen.getByText('创建规则模板')).toBeInTheDocument();
   });
 
   it('click refresh icon', async () => {

@@ -58,8 +58,8 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('正在克隆审核规则模版')).toBeInTheDocument();
-    fireEvent.input(screen.getByLabelText('模版名称'), {
+    expect(screen.getByText('正在克隆审核规则模板')).toBeInTheDocument();
+    fireEvent.input(screen.getByLabelText('模板名称'), {
       target: { value: 'test2' }
     });
     await act(async () => jest.advanceTimersByTime(100));
@@ -99,12 +99,12 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('正在克隆审核规则模版')).toBeInTheDocument();
-    fireEvent.input(screen.getByLabelText('模版名称'), {
+    expect(screen.getByText('正在克隆审核规则模板')).toBeInTheDocument();
+    fireEvent.input(screen.getByLabelText('模板名称'), {
       target: { value: 'test2' }
     });
     await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.input(screen.getByLabelText('模版描述'), {
+    fireEvent.input(screen.getByLabelText('模板描述'), {
       target: { value: 'test desc' }
     });
     await act(async () => jest.advanceTimersByTime(100));

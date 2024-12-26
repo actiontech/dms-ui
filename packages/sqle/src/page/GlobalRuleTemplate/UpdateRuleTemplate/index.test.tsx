@@ -214,7 +214,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
     expect(baseElement).toMatchSnapshot();
     expect(
-      screen.getByText('更新审核规则模版 (test) 成功')
+      screen.getByText('更新审核规则模板 (test) 成功')
     ).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-result .basic-button-wrapper'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);

@@ -41,7 +41,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                         class="ant-table-cell"
                         scope="col"
                       >
-                        模版名称
+                        模板名称
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
@@ -706,7 +706,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                         class="ant-table-cell"
                         scope="col"
                       >
-                        模版名称
+                        模板名称
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
@@ -1166,7 +1166,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList should render empty tips when 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        模版名称
+                        模板名称
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"

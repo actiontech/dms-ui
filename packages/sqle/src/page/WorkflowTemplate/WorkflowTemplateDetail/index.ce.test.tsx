@@ -36,6 +36,6 @@ describe('page/WorkflowTemplate CE', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.queryByText('修改当前审批流程模版')).not.toBeInTheDocument();
+    expect(screen.queryByText('修改当前审批流程模板')).not.toBeInTheDocument();
   });
 });

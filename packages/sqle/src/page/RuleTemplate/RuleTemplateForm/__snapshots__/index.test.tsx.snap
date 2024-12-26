@@ -68,7 +68,7 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                       aria-required="true"
                       class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                       id="templateName"
-                      placeholder="请输入模版名称"
+                      placeholder="请输入模板名称"
                       type="text"
                       value=""
                     />
@@ -89,9 +89,9 @@ exports[`sqle/RuleTemplate/RuleTemplateForm should match snap shot 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="templateDesc"
-                  title="模版描述"
+                  title="模板描述"
                 >
-                  模版描述
+                  模板描述
                 </label>
               </div>
               <div

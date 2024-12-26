@@ -39,7 +39,7 @@ export default {
           action_0_2: ' 查看SQL管控配置',
           action_0_3: '新建SQL审核',
           title_1: '数据源授权管理',
-          content_1: '配置数据权限模版，将数据权限模版授权给指定用户',
+          content_1: '配置数据权限模板，将数据权限模板授权给指定用户',
           action_1_0: '权限模板',
           action_1_1: '授权清单',
           title_2: '审批流程',

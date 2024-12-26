@@ -1,60 +1,60 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  pageTitle: '审批流程模版',
-  pageDesc: '你可以在这里管理默认审批流程模版。',
+  pageTitle: '审批流程模板',
+  pageDesc: '你可以在这里管理默认审批流程模板。',
 
   list: {
     title: {
-      listTable: '审批流程模版列表'
+      listTable: '审批流程模板列表'
     },
 
     table: {
-      workflowTemplateName: '审批流程模版名称',
-      desc: '审批流程模版描述'
+      workflowTemplateName: '审批流程模板名称',
+      desc: '审批流程模板描述'
     },
 
     operator: {
-      create: '创建审批流程模版'
+      create: '创建审批流程模板'
     }
   },
 
   create: {
     title: {
-      returnButton: '返回审批流程模版',
-      wrapper: '创建审批流程模版'
+      returnButton: '返回审批流程模板',
+      wrapper: '创建审批流程模板'
     },
     result: {
-      title: '创建审批流程模版成功',
-      createNew: '再创建一个新的审批流程模版',
-      backToList: '返回列表查看刚刚创建的审批流程模版'
+      title: '创建审批流程模板成功',
+      createNew: '再创建一个新的审批流程模板',
+      backToList: '返回列表查看刚刚创建的审批流程模板'
     }
   },
 
   update: {
     title: {
-      wrapper: '更新审批流程模版'
+      wrapper: '更新审批流程模板'
     },
     result: {
-      title: '更新审批流程模版成功',
-      showNow: '查看刚刚更新的审批流程模版'
+      title: '更新审批流程模板成功',
+      showNow: '查看刚刚更新的审批流程模板'
     }
   },
 
   delete: {
-    confirm: '确认移除审批流程模版 {{name}} ？',
-    deleting: '正在移除审批流程模版 {{name}}...',
-    successTips: '移除审批流程模版 {{name}} 成功'
+    confirm: '确认移除审批流程模板 {{name}} ？',
+    deleting: '正在移除审批流程模板 {{name}}...',
+    successTips: '移除审批流程模板 {{name}} 成功'
   },
 
   detail: {
     title: {
-      wrapper: '审批流程模版详情',
-      base: '审批流程模版基本信息',
-      step: '审批流程模版步骤',
+      wrapper: '审批流程模板详情',
+      base: '审批流程模板基本信息',
+      step: '审批流程模板步骤',
       noticeInfo: '注意事项',
       updateTime: '审批流程模板更新时间'
     },
-    updateTemplate: '修改当前审批流程模版',
+    updateTemplate: '修改当前审批流程模板',
     authLevelInfo: {
       first:
         '若项目管理员对审批流程模板进行了修改，不会对已经在审批流程的工单造成影响；',
@@ -68,7 +68,7 @@ export default {
 
   step: {
     baseFormTitle: '基本信息',
-    baseFormDesc: '设定模版的基本信息',
+    baseFormDesc: '设定模板的基本信息',
 
     progressTitle: '审核节点',
     progressDesc:
@@ -83,8 +83,8 @@ export default {
 
   form: {
     label: {
-      name: '审批流程模版名称',
-      desc: '审批流程模版描述',
+      name: '审批流程模板名称',
+      desc: '审批流程模板描述',
       allowSubmitWhenLessAuditLevel: '允许创建工单的最高审核等级',
       instanceNameList: '应用的数据源',
       reviewUser: '审核人',

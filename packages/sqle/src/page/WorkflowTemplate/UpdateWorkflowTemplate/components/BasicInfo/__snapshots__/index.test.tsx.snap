@@ -18,7 +18,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
         <div
           class="step-title-info"
         >
-          设定模版的基本信息
+          设定模板的基本信息
         </div>
       </div>
       <div
@@ -157,7 +157,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
         <div
           class="step-title-info"
         >
-          设定模版的基本信息
+          设定模板的基本信息
         </div>
       </div>
       <div
