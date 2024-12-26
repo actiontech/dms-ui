@@ -41,7 +41,7 @@ exports[`sqle/RuleTemplate/List/ProjectTable should render empty tips when reque
                         class="ant-table-cell"
                         scope="col"
                       >
-                        模版名称
+                        模板名称
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"

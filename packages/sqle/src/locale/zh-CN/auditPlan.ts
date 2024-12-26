@@ -73,7 +73,7 @@ export default {
       dbType: '数据源类型',
       databaseName: {
         label: '数据源名称',
-        tip: '如果您没有指定数据源，那么该扫描任务将使用您所选择的数据库类型的默认规则模版进行静态审核'
+        tip: '如果您没有指定数据源，那么该扫描任务将使用您所选择的数据库类型的默认规则模板进行静态审核'
       },
       schema: '数据库'
     },
@@ -82,7 +82,7 @@ export default {
     },
     auditTemplate: {
       ruleTemplateName: {
-        label: '审核规则模版',
+        label: '审核规则模板',
         tip: '如果未指定此项会优先使用数据源绑定的模板'
       }
     },
@@ -179,13 +179,13 @@ export default {
       webhooksEnable: '启用Webhooks推送',
       webhooksEnableCe: 'Webhooks推送为企业版功能',
       webhooksUrl: 'Webhooks url',
-      webhooksTemplate: 'webhooks模版(json)',
+      webhooksTemplate: 'webhooks模板(json)',
 
       webhooksTemplateHelp: {
-        title: '填写模版请遵循以下规则',
+        title: '填写模板请遵循以下规则',
         rule1:
-          '请填写正确的json格式的模版, 理论上不限制字段名，字段个数等规则。只需要保证json格式的正确性即可。',
-        rule2: '推送时会自动替换模版中的变量,变更请参考下方的变量说明',
+          '请填写正确的json格式的模板, 理论上不限制字段名，字段个数等规则。只需要保证json格式的正确性即可。',
+        rule2: '推送时会自动替换模板中的变量,变更请参考下方的变量说明',
 
         supportVariable: '目前支持的变量',
         table: {
@@ -197,7 +197,7 @@ export default {
           body: '告警内容'
         },
 
-        reset: '重置模版为默认模版'
+        reset: '重置模板为默认模板'
       },
 
       test: '发送测试消息',

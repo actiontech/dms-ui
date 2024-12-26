@@ -147,7 +147,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="label-cont-custom"
                   >
                     <div>
-                      审核规则模版
+                      审核规则模板
                     </div>
                     <div
                       class="tip-content-box"
@@ -1261,7 +1261,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="label-cont-custom"
                   >
                     <div>
-                      审核规则模版
+                      审核规则模板
                     </div>
                     <div
                       class="tip-content-box"
@@ -1501,7 +1501,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="label-cont-custom"
                   >
                     <div>
-                      审核规则模版
+                      审核规则模板
                     </div>
                     <div
                       class="tip-content-box"
@@ -2675,7 +2675,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="label-cont-custom"
                   >
                     <div>
-                      审核规则模版
+                      审核规则模板
                     </div>
                     <div
                       class="tip-content-box"
@@ -2928,7 +2928,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="label-cont-custom"
                   >
                     <div>
-                      审核规则模版
+                      审核规则模板
                     </div>
                     <div
                       class="tip-content-box"
@@ -4113,7 +4113,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="label-cont-custom"
                   >
                     <div>
-                      审核规则模版
+                      审核规则模板
                     </div>
                     <div
                       class="tip-content-box"

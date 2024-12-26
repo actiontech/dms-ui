@@ -250,7 +250,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
-    expect(screen.getByText('导入审核规则模版成功')).toBeInTheDocument();
+    expect(screen.getByText('导入审核规则模板成功')).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-result .basic-button-wrapper'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });

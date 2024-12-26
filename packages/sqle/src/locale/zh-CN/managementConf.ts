@@ -78,7 +78,7 @@ export default {
       },
       auditTemplate: {
         ruleTemplate: {
-          label: '审核规则模版',
+          label: '审核规则模板',
           tip: '如果未指定此项会优先使用数据源绑定的模板'
         }
       }

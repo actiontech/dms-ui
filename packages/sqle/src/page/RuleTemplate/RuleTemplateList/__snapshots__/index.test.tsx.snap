@@ -16,7 +16,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            审核规则模版
+            审核规则模板
           </div>
           <div
             class="ant-space-item"
@@ -82,9 +82,9 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="项目规则模版"
+                title="项目规则模板"
               >
-                项目规则模版
+                项目规则模板
               </div>
             </label>
             <label
@@ -145,7 +145,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            模版名称
+                            模板名称
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"
@@ -380,7 +380,7 @@ exports[`sqle/RuleTemplate/List render action button with  permissions 1`] = `
                                       </svg>
                                     </span>
                                     <span>
-                                      克隆规则模版
+                                      克隆规则模板
                                     </span>
                                   </button>
                                 </div>
@@ -596,7 +596,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            审核规则模版
+            审核规则模板
           </div>
           <div
             class="ant-space-item"
@@ -692,7 +692,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                   </svg>
                 </span>
                 <span>
-                  创建规则模版
+                  创建规则模板
                 </span>
               </button>
             </a>
@@ -722,9 +722,9 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
               />
               <div
                 class="ant-segmented-item-label"
-                title="项目规则模版"
+                title="项目规则模板"
               >
-                项目规则模版
+                项目规则模板
               </div>
             </label>
             <label
@@ -785,7 +785,7 @@ exports[`sqle/RuleTemplate/List should render project rule template list list wh
                             class="ant-table-cell"
                             scope="col"
                           >
-                            模版名称
+                            模板名称
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"
@@ -1421,7 +1421,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
             class="ant-space-item"
             style="margin-right: 8px;"
           >
-            审核规则模版
+            审核规则模板
           </div>
           <div
             class="ant-space-item"
@@ -1475,9 +1475,9 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="项目规则模版"
+                title="项目规则模板"
               >
-                项目规则模版
+                项目规则模板
               </div>
             </label>
             <label
@@ -1538,7 +1538,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            模版名称
+                            模板名称
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"
@@ -2187,7 +2187,7 @@ exports[`sqle/RuleTemplate/List should render public rule template list 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            模版名称
+                            模板名称
                           </th>
                           <th
                             class="ant-table-cell ellipsis-column-width"

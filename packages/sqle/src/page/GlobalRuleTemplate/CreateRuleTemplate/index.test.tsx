@@ -208,8 +208,8 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     expect(createRuleTemplateSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
-    expect(screen.getByText('创建审核规则模版成功')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('再创建一个新的审核规则模版'));
+    expect(screen.getByText('创建审核规则模板成功')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('再创建一个新的审核规则模板'));
     expect(screen.getByTestId('base-form')).toBeVisible();
   });
 
