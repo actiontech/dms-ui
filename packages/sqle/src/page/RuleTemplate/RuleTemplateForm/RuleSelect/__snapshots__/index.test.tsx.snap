@@ -212,7 +212,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                       <span
                         class="custom-select-placeholder-prefix"
                       >
-                        质量控制目的
+                        审核目的
                       </span>
                       <span
                         class="custom-select-placeholder-value"
@@ -327,7 +327,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                       <span
                         class="custom-select-placeholder-prefix"
                       >
-                        审核模式
+                        审核精度
                       </span>
                       <span
                         class="custom-select-placeholder-value"

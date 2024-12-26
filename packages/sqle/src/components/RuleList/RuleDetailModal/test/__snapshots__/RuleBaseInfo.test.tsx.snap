@@ -202,7 +202,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <span>
-                          审核模式
+                          审核精度
                           :
                         </span>
                       </div>
@@ -320,7 +320,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <span>
-                          质量控制目的
+                          审核目的
                           :
                         </span>
                       </div>

@@ -32,8 +32,8 @@ describe('sqle/components/RuleList/RuleFilterCommonFields', () => {
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('#fuzzy_keyword')).toBeInTheDocument();
     expect(screen.getByText('操作对象')).toBeInTheDocument();
-    expect(screen.getByText('质量控制目的')).toBeInTheDocument();
+    expect(screen.getByText('审核目的')).toBeInTheDocument();
     expect(screen.getByText('SQL分类')).toBeInTheDocument();
-    expect(screen.getByText('审核模式')).toBeInTheDocument();
+    expect(screen.getByText('审核精度')).toBeInTheDocument();
   });
 });

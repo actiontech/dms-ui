@@ -194,7 +194,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    质量控制目的
+                                    审核目的
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -309,7 +309,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    审核模式
+                                    审核精度
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -1090,7 +1090,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    质量控制目的
+                                    审核目的
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -1205,7 +1205,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    审核模式
+                                    审核精度
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -1802,7 +1802,7 @@ exports[`sqle/Rule request return no data 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    质量控制目的
+                                    审核目的
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -1917,7 +1917,7 @@ exports[`sqle/Rule request return no data 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    审核模式
+                                    审核精度
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -2380,7 +2380,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    质量控制目的
+                                    审核目的
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -2495,7 +2495,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    审核模式
+                                    审核精度
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -3084,7 +3084,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    质量控制目的
+                                    审核目的
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
@@ -3199,7 +3199,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                                   <span
                                     class="custom-select-placeholder-prefix"
                                   >
-                                    审核模式
+                                    审核精度
                                   </span>
                                   <span
                                     class="custom-select-placeholder-value"
