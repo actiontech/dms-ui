@@ -22,7 +22,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
-import { BackendFormValues } from '../../../components/BackendForm';
+import {
+  BackendFormRequestParams,
+  BackendFormValues,
+  FormItem
+} from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 
@@ -33,8 +37,39 @@ const Update: React.FC = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const navigate = useNavigate();
 
-  const { mergeFromValueIntoParams, generateFormValueByParams } =
-    useAsyncParams();
+  const { generateFormValueByParams } = useAsyncParams();
+
+  const mergeFromValueIntoParams = (
+    value: BackendFormValues,
+    params: FormItem[]
+  ): BackendFormRequestParams[] => {
+    const results: BackendFormRequestParams[] = [];
+
+    for (const item of params) {
+      const temp = {
+        key: item.key,
+        value: item.value
+      };
+
+      if (!(item.type === 'password' && !value[item.key!])) {
+        // 临时处理密码为空不更新该字段的情况
+        // 存在问题：用户手动更新密码为空的情况无法触发
+        // 下周会通过调整 FormPasswordWithPlaceholder 组件来判断 password 类型的值
+        results.push(temp);
+      }
+
+      if (item.key && Object.prototype.hasOwnProperty.call(value, item.key)) {
+        const tempVal = value[item.key];
+        if (typeof tempVal === 'boolean') {
+          temp.value = tempVal ? 'true' : 'false';
+        } else {
+          temp.value = String(tempVal);
+        }
+      }
+    }
+
+    return results;
+  };
 
   const {
     generateFormValuesWithAPIResponse,
