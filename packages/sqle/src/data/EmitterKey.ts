@@ -24,9 +24,6 @@ enum EmitterKey {
 
   Refresh_SQL_Management = 'Refresh_SQL_Management',
 
-  Search_Rule_Template_Rule_Select_List = 'Search_Rule_Template_Rule_Select_List',
-  Search_Rule_Template_Rule_Clear_Value = 'Search_Rule_Template_Rule_Clear_Value',
-
   Refresh_Sql_Management_Conf_Overview_List = 'Refresh_Sql_Management_Conf_Overview_List',
   Refresh_Sql_Management_Conf_Detail_Sql_List = 'Refresh_Sql_Management_Conf_Detail_Sql_List',
   Export_Sql_Management_Conf_Detail_Sql_List = 'Export_Sql_Management_Conf_Detail_Sql_List',

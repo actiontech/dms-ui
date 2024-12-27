@@ -14,6 +14,7 @@ import configuration from '../../../testUtils/mockApi/configuration';
 import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './BaseInfoForm/index.type';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { RuleFilterFieldsType } from '../../../components/RuleList';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -44,6 +45,9 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<RuleTemplateBaseInfoFields>()
     );
+    const { result: filterResult } = renderHooksWithTheme(() =>
+      Form.useForm<RuleFilterFieldsType>()
+    );
     const { baseElement } = renderWithReduxAndTheme(
       <RuleTemplateForm
         mode="create"
@@ -62,6 +66,8 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
         submit={jest.fn()}
         filteredRule={ruleListMockData}
         updateFilteredRule={jest.fn()}
+        ruleFilterForm={filterResult.current[0]}
+        filterCategoryTags="table,dcl,online"
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));

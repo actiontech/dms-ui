@@ -1,6 +1,5 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState } from 'react';
 import { IRuleTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { cloneDeep } from 'lodash';
 import useRules from './useRules';
 import useFormStep from './useFormStep';
 import { useBoolean } from 'ahooks';
@@ -14,23 +13,21 @@ const useUpdateRuleTemplateForm = () => {
     prevStep,
     nextStep,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   } = useFormStep();
 
   const {
     allRules,
-    getAllRules,
     getAllRulesLoading,
     activeRule,
     setActiveRule,
-    databaseRule,
-    setDatabaseRule,
-    dbType,
-    setDbType,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
-  } = useRules();
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
+  } = useRules(dbType);
 
   const [
     updateTemplateLoading,
@@ -44,24 +41,13 @@ const useUpdateRuleTemplateForm = () => {
   const baseInfoFormSubmit = useCallback(async () => {
     setBaseInfoFormSubmitLoading(true);
     try {
-      const values = await form.validateFields();
-      setDbType(values.db_type);
-      const tempAllRules =
-        allRules?.filter((e) => e.db_type === values.db_type) ?? [];
-      setDatabaseRule(tempAllRules);
+      await form.validateFields();
       nextStep();
       setBaseInfoFormSubmitLoading(false);
     } catch (error) {
       setBaseInfoFormSubmitLoading(false);
     }
-  }, [
-    form,
-    nextStep,
-    allRules,
-    setDatabaseRule,
-    setDbType,
-    setBaseInfoFormSubmitLoading
-  ]);
+  }, [form, nextStep, setBaseInfoFormSubmitLoading]);
 
   const resetAll = useCallback(() => {
     if (!ruleTemplate) return;
@@ -69,7 +55,6 @@ const useUpdateRuleTemplateForm = () => {
     form.setFieldsValue({
       templateDesc: ruleTemplate?.desc
     });
-    setDbType('');
     setActiveRule([...(ruleTemplate?.rule_list ?? [])]);
     setFilteredRule([...(ruleTemplate?.rule_list ?? [])]);
     clearSearchValue();
@@ -78,39 +63,19 @@ const useUpdateRuleTemplateForm = () => {
     ruleTemplate,
     setStep,
     setActiveRule,
-    setDbType,
     clearSearchValue,
     setFilteredRule
   ]);
 
-  useEffect(() => {
-    if (dbType) {
-      const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
-      setDatabaseRule(tempAllRules);
-
-      setFilteredRule(
-        cloneDeep(
-          activeRule.filter((item) => {
-            return tempAllRules.some(
-              (allRule) => allRule.rule_name === item.rule_name
-            );
-          })
-        )
-      );
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allRules]);
-
   return {
     form,
+    allRules,
     getAllRulesLoading,
     activeRule,
-    databaseRule,
     step,
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
     dbType,
-    getAllRules,
     setActiveRule,
     prevStep,
     nextStep,
@@ -122,7 +87,9 @@ const useUpdateRuleTemplateForm = () => {
     startSubmit,
     finishSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
   };
 };
 

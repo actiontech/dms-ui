@@ -301,10 +301,10 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
-                      for="ruleType"
-                      title="规则分类"
+                      for="operand"
+                      title="操作对象"
                     >
-                      规则分类
+                      操作对象
                     </label>
                   </div>
                   <div
@@ -318,14 +318,150 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                         >
-                          <span
-                            aria-live="polite"
-                            style="width: 0px; height: 0px; position: absolute; overflow: hidden; opacity: 0;"
+                          <div
+                            class="ant-select-selector"
                           >
-                            新规范
+                            <div
+                              class="ant-select-selection-overflow"
+                            >
+                              <div
+                                class="ant-select-selection-overflow-item"
+                                style="opacity: 1;"
+                              >
+                                <span
+                                  class="ant-select-selection-item"
+                                  title="数据库"
+                                >
+                                  <span
+                                    class="ant-select-selection-item-content"
+                                  >
+                                    数据库
+                                  </span>
+                                  <span
+                                    aria-hidden="true"
+                                    class="ant-select-selection-item-remove"
+                                    style="user-select: none;"
+                                    unselectable="on"
+                                  >
+                                    <span
+                                      aria-label="close"
+                                      class="anticon anticon-close"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="close"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </span>
+                              </div>
+                              <div
+                                class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                                style="opacity: 1;"
+                              >
+                                <div
+                                  class="ant-select-selection-search"
+                                  style="width: 0px;"
+                                >
+                                  <input
+                                    aria-activedescendant="operand_list_0"
+                                    aria-autocomplete="list"
+                                    aria-controls="operand_list"
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-owns="operand_list"
+                                    aria-required="true"
+                                    autocomplete="off"
+                                    class="ant-select-selection-search-input"
+                                    id="operand"
+                                    role="combobox"
+                                    type="search"
+                                    value=""
+                                  />
+                                  <span
+                                    aria-hidden="true"
+                                    class="ant-select-selection-search-mirror"
+                                  >
+                                     
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
                           </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="auditPurpose"
+                      title="审核目的"
+                    >
+                      审核目的
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
                           <div
                             class="ant-select-selector"
                           >
@@ -333,71 +469,244 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ruleType_list_0"
+                                aria-activedescendant="auditPurpose_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ruleType_list"
+                                aria-controls="auditPurpose_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ruleType_list"
+                                aria-owns="auditPurpose_list"
                                 aria-required="true"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
-                                id="ruleType"
+                                id="auditPurpose"
+                                readonly=""
                                 role="combobox"
+                                style="opacity: 0;"
                                 type="search"
+                                unselectable="on"
                                 value=""
                               />
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="新规范"
+                              title="性能问题"
                             >
-                              新规范
+                              性能问题
                             </span>
                           </div>
                           <span
                             aria-hidden="true"
-                            class="ant-select-arrow ant-select-arrow-loading"
+                            class="ant-select-arrow"
                             style="user-select: none;"
                             unselectable="on"
                           >
                             <span
-                              aria-label="loading"
-                              class="anticon anticon-loading anticon-spin"
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
                               role="img"
                             >
                               <svg
                                 aria-hidden="true"
-                                data-icon="loading"
+                                data-icon="down"
                                 fill="currentColor"
                                 focusable="false"
                                 height="1em"
-                                viewBox="0 0 1024 1024"
+                                viewBox="64 64 896 896"
                                 width="1em"
                               >
                                 <path
-                                  d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
                                 />
                               </svg>
                             </span>
                           </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="sql"
+                      title="SQL分类"
+                    >
+                      SQL分类
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="sql_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="sql_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="sql_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="sql"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="完整性约束"
+                            >
+                              完整性约束
+                            </span>
+                          </div>
                           <span
                             aria-hidden="true"
-                            class="ant-select-clear"
+                            class="ant-select-arrow"
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <svg
-                              fill="currentColor"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
                             >
-                              <path
-                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="auditAccuracy"
+                      title="审核精度"
+                    >
+                      审核精度
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="auditAccuracy_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="auditAccuracy_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="auditAccuracy_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="auditAccuracy"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
                               />
-                            </svg>
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="在线"
+                            >
+                              在线
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
                           </span>
                         </div>
                       </div>
@@ -1078,17 +1387,231 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
     >
       <div>
         <div
-          id="ruleType_list"
+          id="operand_list"
           role="listbox"
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="新规范"
-            aria-selected="true"
-            id="ruleType_list_0"
+            aria-label="字段"
+            aria-selected="false"
+            id="operand_list_0"
             role="option"
           >
-            新规范
+            column
+          </div>
+          <div
+            aria-label="数据库"
+            aria-selected="true"
+            id="operand_list_1"
+            role="option"
+          >
+            database
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div
+              style="height: 264px; position: relative; overflow: hidden;"
+            >
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+              >
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="字段"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    字段
+                  </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="数据库"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    数据库
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="check"
+                      class="anticon anticon-check"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="check"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="事件"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    事件
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="函数"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    函数
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="索引"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    索引
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="存储过程"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    存储过程
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="表"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    表
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="表空间"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    表空间
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="触发器"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    触发器
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="用户"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    用户
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="视图"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    视图
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="auditPurpose_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="正确性"
+            aria-selected="false"
+            id="auditPurpose_list_0"
+            role="option"
+          >
+            correction
+          </div>
+          <div
+            aria-label="可维护性"
+            aria-selected="false"
+            id="auditPurpose_list_1"
+            role="option"
+          >
+            maintenance
           </div>
         </div>
         <div
@@ -1105,14 +1628,65 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
                 style="display: flex; flex-direction: column;"
               >
                 <div
-                  aria-selected="true"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
-                  title="新规范"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="正确性"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    新规范
+                    正确性
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="可维护性"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    可维护性
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="性能问题"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    性能问题
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="安全性"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    安全性
                   </div>
                   <span
                     aria-hidden="true"
@@ -1134,67 +1708,288 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 1`] = `
             />
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
         <div
-          class="ant-divider css-dev-only-do-not-override-v9sov3 ant-divider-horizontal"
-          role="separator"
-          style="margin: 8px 0px;"
-        />
-        <div
-          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center"
-          style="padding: 0px 8px 4px;"
+          id="sql_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            class="ant-space-item"
-            style="margin-right: 8px;"
+            aria-label="DCL"
+            aria-selected="false"
+            id="sql_list_0"
+            role="option"
           >
-            <input
-              class="ant-input ant-input-sm ant-input-status-success css-dev-only-do-not-override-6svbnr basic-input-wrapper css-1pd1cd5"
-              data-testid="add-rule-type"
-              placeholder="请输入需要新增的规则分类名称"
-              type="text"
-              value=""
-            />
+            dcl
           </div>
           <div
-            class="ant-space-item"
+            aria-label="DDL"
+            aria-selected="false"
+            id="sql_list_1"
+            role="option"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-1yfaqef ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
-            >
-              <span
-                class="ant-btn-icon"
+            ddl
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
               >
-                <span
-                  aria-label="plus"
-                  class="anticon anticon-plus"
-                  role="img"
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="DCL"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="plus"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <div
+                    class="ant-select-item-option-content"
                   >
-                    <defs>
-                      <style />
-                    </defs>
-                    <path
-                      d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
-                    />
-                    <path
-                      d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <span>
-                新增规则分类
-              </span>
-            </button>
+                    DCL
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="DDL"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    DDL
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="DML"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    DML
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="完整性约束"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    完整性约束
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="数据库管理"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    数据库管理
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="数据权限"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    数据权限
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="查询"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    查询
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="事务控制"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    事务控制
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="auditAccuracy_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="离线"
+            aria-selected="false"
+            id="auditAccuracy_list_0"
+            role="option"
+          >
+            offline
+          </div>
+          <div
+            aria-label="在线"
+            aria-selected="true"
+            id="auditAccuracy_list_1"
+            role="option"
+          >
+            online
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="离线"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    离线
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="在线"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    在线
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -1612,10 +2407,10 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
-                      for="ruleType"
-                      title="规则分类"
+                      for="operand"
+                      title="操作对象"
                     >
-                      规则分类
+                      操作对象
                     </label>
                   </div>
                   <div
@@ -1629,14 +2424,150 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
                         >
-                          <span
-                            aria-live="polite"
-                            style="width: 0px; height: 0px; position: absolute; overflow: hidden; opacity: 0;"
+                          <div
+                            class="ant-select-selector"
                           >
-                            新规范
+                            <div
+                              class="ant-select-selection-overflow"
+                            >
+                              <div
+                                class="ant-select-selection-overflow-item"
+                                style="opacity: 1;"
+                              >
+                                <span
+                                  class="ant-select-selection-item"
+                                  title="数据库"
+                                >
+                                  <span
+                                    class="ant-select-selection-item-content"
+                                  >
+                                    数据库
+                                  </span>
+                                  <span
+                                    aria-hidden="true"
+                                    class="ant-select-selection-item-remove"
+                                    style="user-select: none;"
+                                    unselectable="on"
+                                  >
+                                    <span
+                                      aria-label="close"
+                                      class="anticon anticon-close"
+                                      role="img"
+                                    >
+                                      <svg
+                                        aria-hidden="true"
+                                        data-icon="close"
+                                        fill="currentColor"
+                                        focusable="false"
+                                        height="1em"
+                                        viewBox="64 64 896 896"
+                                        width="1em"
+                                      >
+                                        <path
+                                          d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                        />
+                                      </svg>
+                                    </span>
+                                  </span>
+                                </span>
+                              </div>
+                              <div
+                                class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                                style="opacity: 1;"
+                              >
+                                <div
+                                  class="ant-select-selection-search"
+                                  style="width: 0px;"
+                                >
+                                  <input
+                                    aria-activedescendant="operand_list_0"
+                                    aria-autocomplete="list"
+                                    aria-controls="operand_list"
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-owns="operand_list"
+                                    aria-required="true"
+                                    autocomplete="off"
+                                    class="ant-select-selection-search-input"
+                                    id="operand"
+                                    role="combobox"
+                                    type="search"
+                                    value=""
+                                  />
+                                  <span
+                                    aria-hidden="true"
+                                    class="ant-select-selection-search-mirror"
+                                  >
+                                     
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
                           </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="auditPurpose"
+                      title="审核目的"
+                    >
+                      审核目的
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
                           <div
                             class="ant-select-selector"
                           >
@@ -1644,26 +2575,29 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ruleType_list_0"
+                                aria-activedescendant="auditPurpose_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ruleType_list"
+                                aria-controls="auditPurpose_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ruleType_list"
+                                aria-owns="auditPurpose_list"
                                 aria-required="true"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
-                                id="ruleType"
+                                id="auditPurpose"
+                                readonly=""
                                 role="combobox"
+                                style="opacity: 0;"
                                 type="search"
+                                unselectable="on"
                                 value=""
                               />
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="新规范"
+                              title="性能问题"
                             >
-                              新规范
+                              性能问题
                             </span>
                           </div>
                           <span
@@ -1692,23 +2626,193 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                               </svg>
                             </span>
                           </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="sql"
+                      title="SQL分类"
+                    >
+                      SQL分类
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="sql_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="sql_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="sql_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="sql"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="完整性约束"
+                            >
+                              完整性约束
+                            </span>
+                          </div>
                           <span
                             aria-hidden="true"
-                            class="ant-select-clear"
+                            class="ant-select-arrow"
                             style="user-select: none;"
                             unselectable="on"
                           >
-                            <svg
-                              fill="currentColor"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
                             >
-                              <path
-                                d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="auditAccuracy"
+                      title="审核精度"
+                    >
+                      审核精度
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="auditAccuracy_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="auditAccuracy_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="auditAccuracy_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="auditAccuracy"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
                               />
-                            </svg>
+                            </span>
+                            <span
+                              class="ant-select-selection-item"
+                              title="在线"
+                            >
+                              在线
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
                           </span>
                         </div>
                       </div>
@@ -2388,17 +3492,231 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
     >
       <div>
         <div
-          id="ruleType_list"
+          id="operand_list"
           role="listbox"
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="新规范"
-            aria-selected="true"
-            id="ruleType_list_0"
+            aria-label="字段"
+            aria-selected="false"
+            id="operand_list_0"
             role="option"
           >
-            新规范
+            column
+          </div>
+          <div
+            aria-label="数据库"
+            aria-selected="true"
+            id="operand_list_1"
+            role="option"
+          >
+            database
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div
+              style="height: 264px; position: relative; overflow: hidden;"
+            >
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+              >
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="字段"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    字段
+                  </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="数据库"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    数据库
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="check"
+                      class="anticon anticon-check"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="check"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="事件"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    事件
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="函数"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    函数
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="索引"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    索引
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="存储过程"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    存储过程
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="表"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    表
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="表空间"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    表空间
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="触发器"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    触发器
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="用户"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    用户
+                  </div>
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="视图"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    视图
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="auditPurpose_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="正确性"
+            aria-selected="false"
+            id="auditPurpose_list_0"
+            role="option"
+          >
+            correction
+          </div>
+          <div
+            aria-label="可维护性"
+            aria-selected="false"
+            id="auditPurpose_list_1"
+            role="option"
+          >
+            maintenance
           </div>
         </div>
         <div
@@ -2415,14 +3733,65 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
                 style="display: flex; flex-direction: column;"
               >
                 <div
-                  aria-selected="true"
-                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
-                  title="新规范"
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="正确性"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    新规范
+                    正确性
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="可维护性"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    可维护性
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="性能问题"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    性能问题
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="安全性"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    安全性
                   </div>
                   <span
                     aria-hidden="true"
@@ -2444,67 +3813,288 @@ exports[`sqle/CustomRule/CreateCustomRule create custom rule 2`] = `
             />
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
         <div
-          class="ant-divider css-dev-only-do-not-override-v9sov3 ant-divider-horizontal"
-          role="separator"
-          style="margin: 8px 0px;"
-        />
-        <div
-          class="ant-space css-dev-only-do-not-override-v9sov3 ant-space-horizontal ant-space-align-center"
-          style="padding: 0px 8px 4px;"
+          id="sql_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            class="ant-space-item"
-            style="margin-right: 8px;"
+            aria-label="DCL"
+            aria-selected="false"
+            id="sql_list_0"
+            role="option"
           >
-            <input
-              class="ant-input ant-input-sm ant-input-status-success css-dev-only-do-not-override-6svbnr basic-input-wrapper css-1pd1cd5"
-              data-testid="add-rule-type"
-              placeholder="请输入需要新增的规则分类名称"
-              type="text"
-              value=""
-            />
+            dcl
           </div>
           <div
-            class="ant-space-item"
+            aria-label="DDL"
+            aria-selected="false"
+            id="sql_list_1"
+            role="option"
           >
-            <button
-              class="ant-btn css-dev-only-do-not-override-1yfaqef ant-btn-default basic-button-wrapper css-geipcv"
-              type="button"
-            >
-              <span
-                class="ant-btn-icon"
+            ddl
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
               >
-                <span
-                  aria-label="plus"
-                  class="anticon anticon-plus"
-                  role="img"
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="DCL"
                 >
-                  <svg
-                    aria-hidden="true"
-                    data-icon="plus"
-                    fill="currentColor"
-                    focusable="false"
-                    height="1em"
-                    viewBox="64 64 896 896"
-                    width="1em"
+                  <div
+                    class="ant-select-item-option-content"
                   >
-                    <defs>
-                      <style />
-                    </defs>
-                    <path
-                      d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
-                    />
-                    <path
-                      d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
-                    />
-                  </svg>
-                </span>
-              </span>
-              <span>
-                新增规则分类
-              </span>
-            </button>
+                    DCL
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="DDL"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    DDL
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="DML"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    DML
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="完整性约束"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    完整性约束
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="数据库管理"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    数据库管理
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="数据权限"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    数据权限
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="查询"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    查询
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="事务控制"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    事务控制
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="auditAccuracy_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="离线"
+            aria-selected="false"
+            id="auditAccuracy_list_0"
+            role="option"
+          >
+            offline
+          </div>
+          <div
+            aria-label="在线"
+            aria-selected="true"
+            id="auditAccuracy_list_1"
+            role="option"
+          >
+            online
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active"
+                  title="离线"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    离线
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-selected"
+                  title="在线"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    在线
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
           </div>
         </div>
       </div>
@@ -2919,10 +4509,10 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
-                      for="ruleType"
-                      title="规则分类"
+                      for="operand"
+                      title="操作对象"
                     >
-                      规则分类
+                      操作对象
                     </label>
                   </div>
                   <div
@@ -2936,7 +4526,113 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <div
+                              class="ant-select-selection-overflow"
+                            >
+                              <div
+                                class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
+                                style="opacity: 1;"
+                              >
+                                <div
+                                  class="ant-select-selection-search"
+                                  style="width: 0px;"
+                                >
+                                  <input
+                                    aria-activedescendant="operand_list_0"
+                                    aria-autocomplete="list"
+                                    aria-controls="operand_list"
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-owns="operand_list"
+                                    aria-required="true"
+                                    autocomplete="off"
+                                    class="ant-select-selection-search-input"
+                                    id="operand"
+                                    role="combobox"
+                                    type="search"
+                                    value=""
+                                  />
+                                  <span
+                                    aria-hidden="true"
+                                    class="ant-select-selection-search-mirror"
+                                  >
+                                     
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              请选择操作对象
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="auditPurpose"
+                      title="审核目的"
+                    >
+                      审核目的
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2945,26 +4641,214 @@ exports[`sqle/CustomRule/CreateCustomRule return to custom list page 1`] = `
                               class="ant-select-selection-search"
                             >
                               <input
-                                aria-activedescendant="ruleType_list_0"
+                                aria-activedescendant="auditPurpose_list_0"
                                 aria-autocomplete="list"
-                                aria-controls="ruleType_list"
+                                aria-controls="auditPurpose_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="ruleType_list"
+                                aria-owns="auditPurpose_list"
                                 aria-required="true"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
-                                disabled=""
-                                id="ruleType"
+                                id="auditPurpose"
+                                readonly=""
                                 role="combobox"
+                                style="opacity: 0;"
                                 type="search"
+                                unselectable="on"
                                 value=""
                               />
                             </span>
                             <span
                               class="ant-select-selection-placeholder"
                             >
-                              请选择规则分类
+                              请选择审核目的
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="sql"
+                      title="SQL分类"
+                    >
+                      SQL分类
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="sql_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="sql_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="sql_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="sql"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              请选择SQL分类
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  >
+                    <label
+                      class="ant-form-item-required ant-form-item-no-colon"
+                      for="auditAccuracy"
+                      title="审核精度"
+                    >
+                      审核精度
+                    </label>
+                  </div>
+                  <div
+                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-form-item-control-input"
+                    >
+                      <div
+                        class="ant-form-item-control-input-content"
+                      >
+                        <div
+                          aria-required="true"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="auditAccuracy_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="auditAccuracy_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="auditAccuracy_list"
+                                aria-required="true"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="auditAccuracy"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              请选择审核精度
                             </span>
                           </div>
                           <span

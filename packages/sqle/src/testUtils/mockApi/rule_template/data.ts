@@ -51,7 +51,13 @@ export const ruleListData = [
     rule_name: ruleNameFirst,
     type: '使用建议',
     has_audit_power: false,
-    has_rewrite_power: false
+    has_rewrite_power: false,
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   },
   {
     annotation:
@@ -66,7 +72,13 @@ export const ruleListData = [
     rule_name: ruleNameSecond,
     type: '使用建议',
     has_audit_power: true,
-    has_rewrite_power: true
+    has_rewrite_power: true,
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   }
 ];
 
@@ -143,7 +155,24 @@ export const customRuleMockData = [
     annotation: '',
     db_type: 'MySQL',
     level: 'notice',
-    type: '命名规范'
+    categories: {
+      audit_accuracy: ['online'],
+      sql: ['ddl'],
+      operand: [
+        'database',
+        'table_space',
+        'table',
+        'column',
+        'index',
+        'view',
+        'procedure',
+        'function',
+        'trigger',
+        'event',
+        'user'
+      ],
+      audit_purpose: ['maintenance']
+    }
   },
   {
     rule_id: 'rule_id_234567',
@@ -151,7 +180,12 @@ export const customRuleMockData = [
     annotation: '',
     db_type: 'MySQL',
     level: 'notice',
-    type: '命名规范'
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   }
 ];
 
@@ -181,7 +215,25 @@ export const ruleListMockData: IRuleResV1[] = [
     rule_name: 'testName1',
     type: '使用建议',
     has_audit_power: true,
-    has_rewrite_power: true
+    has_rewrite_power: true,
+    categories: {
+      audit_accuracy: ['online'],
+      sql: ['ddl'],
+      operand: [
+        'database',
+        'table_space',
+        'table',
+        'column',
+        'index',
+        'view',
+        'procedure',
+        'function',
+        'trigger',
+        'event',
+        'user'
+      ],
+      audit_purpose: ['maintenance']
+    }
   },
   {
     annotation: 'test rule2',
@@ -192,7 +244,13 @@ export const ruleListMockData: IRuleResV1[] = [
     rule_name: 'testName2',
     type: 'DDL规范',
     has_audit_power: true,
-    has_rewrite_power: false
+    has_rewrite_power: false,
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   },
   {
     annotation: 'test rule3',
@@ -203,7 +261,13 @@ export const ruleListMockData: IRuleResV1[] = [
     rule_name: 'testName3',
     type: '命名规范',
     has_audit_power: false,
-    has_rewrite_power: true
+    has_rewrite_power: true,
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   },
   {
     annotation: 'test rule4',
@@ -214,7 +278,13 @@ export const ruleListMockData: IRuleResV1[] = [
     rule_name: 'testName4',
     type: '索引规范',
     has_audit_power: false,
-    has_rewrite_power: false
+    has_rewrite_power: false,
+    categories: {
+      audit_accuracy: ['offline'],
+      sql: ['dcl'],
+      operand: ['database', 'table_space'],
+      audit_purpose: ['correction']
+    }
   }
 ];
 
@@ -237,8 +307,13 @@ export const customRuleDetailMockData = {
   annotation: 'anno',
   db_type: 'mysql',
   level: CustomRuleResV1LevelEnum.error,
-  type: '规范1',
-  rule_script: 'SELECT 1;'
+  rule_script: 'SELECT 1;',
+  categories: {
+    audit_accuracy: ['offline'],
+    sql: ['dcl'],
+    operand: ['database', 'table_space'],
+    audit_purpose: ['correction']
+  }
 };
 
 export const importRuleTemplateMockData = {
@@ -246,4 +321,140 @@ export const importRuleTemplateMockData = {
   desc: '',
   db_type: 'MySQL',
   rule_list: [ruleListData[0]]
+};
+
+export const mockRuleCategoriesData = {
+  audit_accuracy: [
+    {
+      category: 'audit_accuracy',
+      tag: 'offline',
+      count: 82
+    },
+    {
+      category: 'audit_accuracy',
+      tag: 'online',
+      count: 305
+    }
+  ],
+  audit_purpose: [
+    {
+      category: 'audit_purpose',
+      tag: 'correction',
+      count: 2
+    },
+    {
+      category: 'audit_purpose',
+      tag: 'maintenance',
+      count: 8
+    },
+    {
+      category: 'audit_purpose',
+      tag: 'performance',
+      count: 3
+    },
+    {
+      category: 'audit_purpose',
+      tag: 'security',
+      count: 2
+    }
+  ],
+  operand: [
+    {
+      category: 'operand',
+      tag: 'column',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'database',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'event',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'function',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'index',
+      count: 93
+    },
+    {
+      category: 'operand',
+      tag: 'procedure',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'table',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'table_space',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'trigger',
+      count: 55
+    },
+    {
+      category: 'operand',
+      tag: 'user',
+      count: 54
+    },
+    {
+      category: 'operand',
+      tag: 'view',
+      count: 55
+    }
+  ],
+  sql: [
+    {
+      category: 'sql',
+      tag: 'dcl',
+      count: 2
+    },
+    {
+      category: 'sql',
+      tag: 'ddl',
+      count: 80
+    },
+    {
+      category: 'sql',
+      tag: 'dml',
+      count: 131
+    },
+    {
+      category: 'sql',
+      tag: 'integrity',
+      count: 2
+    },
+    {
+      category: 'sql',
+      tag: 'management',
+      count: 2
+    },
+    {
+      category: 'sql',
+      tag: 'privilege',
+      count: 2
+    },
+    {
+      category: 'sql',
+      tag: 'query',
+      count: 2
+    },
+    {
+      category: 'sql',
+      tag: 'transaction',
+      count: 2
+    }
+  ]
 };
