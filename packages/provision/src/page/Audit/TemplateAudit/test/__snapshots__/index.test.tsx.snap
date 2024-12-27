@@ -10,7 +10,7 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -67,9 +67,9 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -81,9 +81,9 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -95,9 +95,9 @@ exports[`page/Auth/TemplateAudit render init snap 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -407,7 +407,7 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -464,9 +464,9 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -478,9 +478,9 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -492,9 +492,9 @@ exports[`page/Auth/TemplateAudit render init snap 2`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -779,7 +779,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -836,9 +836,9 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -850,9 +850,9 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -864,9 +864,9 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -1183,7 +1183,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                               />
                             </svg>
                             <span>
-                              更新权限模版
+                              更新权限模板
                             </span>
                           </div>
                         </td>
@@ -1378,7 +1378,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -1435,9 +1435,9 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -1449,9 +1449,9 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -1463,9 +1463,9 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -1981,7 +1981,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                               />
                             </svg>
                             <span>
-                              创建权限模版
+                              创建权限模板
                             </span>
                           </div>
                         </td>
@@ -2070,7 +2070,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                               />
                             </svg>
                             <span>
-                              更新权限模版
+                              更新权限模板
                             </span>
                           </div>
                         </td>
@@ -2153,7 +2153,7 @@ exports[`page/Auth/TemplateAudit render table list when action filter render act
                               />
                             </svg>
                             <span>
-                              删除权限模版
+                              删除权限模板
                             </span>
                           </div>
                         </td>
@@ -2348,7 +2348,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -2405,9 +2405,9 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -2419,9 +2419,9 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -2433,9 +2433,9 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -2765,7 +2765,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                               />
                             </svg>
                             <span>
-                              创建权限模版
+                              创建权限模板
                             </span>
                           </div>
                         </td>
@@ -2854,7 +2854,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                               />
                             </svg>
                             <span>
-                              更新权限模版
+                              更新权限模板
                             </span>
                           </div>
                         </td>
@@ -2937,7 +2937,7 @@ exports[`page/Auth/TemplateAudit render table list when api return data 1`] = `
                               />
                             </svg>
                             <span>
-                              删除权限模版
+                              删除权限模板
                             </span>
                           </div>
                         </td>
@@ -3132,7 +3132,7 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -3189,9 +3189,9 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -3203,9 +3203,9 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -3217,9 +3217,9 @@ exports[`page/Auth/TemplateAudit render table list when api return error 1`] = `
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -3504,7 +3504,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -3561,9 +3561,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -3575,9 +3575,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -3589,9 +3589,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -3907,7 +3907,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                               />
                             </svg>
                             <span>
-                              更新权限模版
+                              更新权限模板
                             </span>
                           </div>
                         </td>
@@ -4237,7 +4237,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                           />
                         </svg>
                         <span>
-                          更新权限模版
+                          更新权限模板
                         </span>
                       </div>
                     </div>
@@ -4323,7 +4323,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render act
                 <div
                   class="audit-info-title"
                 >
-                  权限模版详情
+                  权限模板详情
                 </div>
                 <div>
                   <div
@@ -4435,7 +4435,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -4492,9 +4492,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -4506,9 +4506,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -4520,9 +4520,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -4852,7 +4852,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                               />
                             </svg>
                             <span>
-                              创建权限模版
+                              创建权限模板
                             </span>
                           </div>
                         </td>
@@ -5080,7 +5080,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -5137,9 +5137,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -5151,9 +5151,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -5165,9 +5165,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render col
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -5669,7 +5669,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
         <div
           class="title"
         >
-          权限模版审计
+          权限模板审计
         </div>
         <div
           class="extra"
@@ -5726,9 +5726,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="创建权限模版"
+                          title="创建权限模板"
                         >
-                          创建权限模版
+                          创建权限模板
                         </div>
                       </label>
                       <label
@@ -5740,9 +5740,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="更新权限模版"
+                          title="更新权限模板"
                         >
-                          更新权限模版
+                          更新权限模板
                         </div>
                       </label>
                       <label
@@ -5754,9 +5754,9 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                         />
                         <div
                           class="ant-segmented-item-label"
-                          title="删除权限模版"
+                          title="删除权限模板"
                         >
-                          删除权限模版
+                          删除权限模板
                         </div>
                       </label>
                     </div>
@@ -6442,7 +6442,7 @@ exports[`page/Auth/TemplateAudit render table list when render column render det
                 <div
                   class="audit-info-title"
                 >
-                  权限模版详情
+                  权限模板详情
                 </div>
                 <div>
                   <div

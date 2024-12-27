@@ -37,7 +37,7 @@ describe('page/Auth/TemplateAudit', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText('权限模版审计')).toBeInTheDocument();
+    expect(screen.getByText('权限模板审计')).toBeInTheDocument();
     expect(screen.getByText('筛选')).toBeInTheDocument();
     expect(
       getBySelector('.custom-icon-refresh', baseElement)
@@ -74,7 +74,7 @@ describe('page/Auth/TemplateAudit', () => {
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(screen.getByText('权限模版审计')).toBeInTheDocument();
+    expect(screen.getByText('权限模板审计')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -148,7 +148,7 @@ describe('page/Auth/TemplateAudit', () => {
       expect(requestListFn).toHaveBeenCalledTimes(1);
 
       await act(async () => {
-        fireEvent.click(screen.getByText('创建权限模版'));
+        fireEvent.click(screen.getByText('创建权限模板'));
         await act(async () => jest.advanceTimersByTime(300));
       });
       expect(baseElement).toMatchSnapshot();
@@ -188,7 +188,7 @@ describe('page/Auth/TemplateAudit', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(screen.getByText('权限模版审计')).toBeInTheDocument();
+      expect(screen.getByText('权限模板审计')).toBeInTheDocument();
       await act(async () => {
         fireEvent.mouseOver(screen.getByText(`service-1`));
         await jest.advanceTimersByTime(300);
@@ -211,7 +211,7 @@ describe('page/Auth/TemplateAudit', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(screen.getByText('权限模版审计')).toBeInTheDocument();
+      expect(screen.getByText('权限模板审计')).toBeInTheDocument();
       expect(baseElement).toMatchSnapshot();
     });
     it('render action when click detail drawer', async () => {
@@ -225,7 +225,7 @@ describe('page/Auth/TemplateAudit', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(screen.getByText('权限模版审计')).toBeInTheDocument();
+      expect(screen.getByText('权限模板审计')).toBeInTheDocument();
       await act(async () => {
         fireEvent.click(screen.getByText('详 情'));
         await jest.advanceTimersByTime(300);
@@ -257,7 +257,7 @@ describe('page/Auth/TemplateAudit', () => {
       );
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(9300));
-      expect(screen.getByText('权限模版审计')).toBeInTheDocument();
+      expect(screen.getByText('权限模板审计')).toBeInTheDocument();
       await act(async () => {
         fireEvent.click(screen.getByText('详 情'));
         await jest.advanceTimersByTime(300);
