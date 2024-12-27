@@ -38,7 +38,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                 <div
                   class="ant-drawer-title"
                 >
-                  克隆规则模版
+                  克隆规则模板
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                     <div
                       class="ant-col css-dev-only-do-not-override-txh9fw"
                     >
-                      正在克隆审核规则模版
+                      正在克隆审核规则模板
                       <a
                         href="/sqle/rule-manager/global-update/default_template"
                         target="_blank"
@@ -95,7 +95,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                       <span
                         class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
                       >
-                        克隆的规则模版只会继承源模版所有启用的规则、以及变更过的规则等级和阈值。克隆出的新规则模版的模版名称等基本信息需要手动填写。
+                        克隆的规则模板只会继承源模板所有启用的规则、以及变更过的规则等级和阈值。克隆出的新规则模板的模板名称等基本信息需要手动填写。
                       </span>
                     </div>
                   </div>
@@ -118,9 +118,9 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                           <label
                             class="ant-form-item-required"
                             for="templateName"
-                            title="模版名称"
+                            title="模板名称"
                           >
-                            模版名称
+                            模板名称
                           </label>
                         </div>
                         <div
@@ -136,7 +136,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                                 aria-required="true"
                                 class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                                 id="templateName"
-                                placeholder="请输入模版名称"
+                                placeholder="请输入模板名称"
                                 type="text"
                                 value=""
                               />
@@ -157,9 +157,9 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                           <label
                             class=""
                             for="templateDesc"
-                            title="模版描述"
+                            title="模板描述"
                           >
-                            模版描述
+                            模板描述
                           </label>
                         </div>
                         <div
@@ -174,7 +174,7 @@ exports[`sqle/GlobalRuleTemplate/CloneRuleTemplate should send clone project rul
                               <textarea
                                 class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
                                 id="templateDesc"
-                                placeholder="请输入模版描述"
+                                placeholder="请输入模板描述"
                               />
                             </div>
                           </div>

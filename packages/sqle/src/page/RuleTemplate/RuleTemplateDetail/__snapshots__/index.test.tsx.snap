@@ -32,7 +32,7 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>

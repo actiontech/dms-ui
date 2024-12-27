@@ -34,7 +34,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                         class="ant-table-cell"
                         scope="col"
                       >
-                        模版名称
+                        模板名称
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"
@@ -493,7 +493,7 @@ exports[`sqle/RuleTemplate/List/CommonTable should render empty tips when reques
                         class="ant-table-cell"
                         scope="col"
                       >
-                        模版名称
+                        模板名称
                       </th>
                       <th
                         class="ant-table-cell ellipsis-column-width"

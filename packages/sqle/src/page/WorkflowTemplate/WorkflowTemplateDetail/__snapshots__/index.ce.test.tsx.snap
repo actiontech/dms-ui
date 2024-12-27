@@ -12,7 +12,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
         <div
           class="title"
         >
-          审批流程模版
+          审批流程模板
         </div>
         <div
           class="extra"

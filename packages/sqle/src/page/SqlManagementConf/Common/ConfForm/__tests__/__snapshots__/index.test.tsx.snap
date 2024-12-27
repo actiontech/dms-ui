@@ -1260,7 +1260,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                       class="label-cont-custom"
                     >
                       <div>
-                        审核规则模版
+                        审核规则模板
                       </div>
                       <div
                         class="tip-content-box"

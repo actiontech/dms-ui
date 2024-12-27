@@ -65,7 +65,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
                     </span>
                   </span>
                   <span>
-                    返回审批流程模版
+                    返回审批流程模板
                   </span>
                 </button>
               </a>
@@ -568,7 +568,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate change workflow template n
                   <div
                     class="step-title-info"
                   >
-                    设定模版的基本信息
+                    设定模板的基本信息
                   </div>
                 </div>
                 <div
@@ -760,7 +760,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate no review node in template
                     </span>
                   </span>
                   <span>
-                    返回审批流程模版
+                    返回审批流程模板
                   </span>
                 </button>
               </a>
@@ -1080,7 +1080,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate no review node in template
                   <div
                     class="step-title-info"
                   >
-                    设定模版的基本信息
+                    设定模板的基本信息
                   </div>
                 </div>
                 <div
@@ -1256,7 +1256,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                     </span>
                   </span>
                   <span>
-                    返回审批流程模版
+                    返回审批流程模板
                   </span>
                 </button>
               </a>
@@ -1759,7 +1759,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                   <div
                     class="step-title-info"
                   >
-                    设定模版的基本信息
+                    设定模板的基本信息
                   </div>
                 </div>
                 <div
@@ -1935,7 +1935,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                     </span>
                   </span>
                   <span>
-                    返回审批流程模版
+                    返回审批流程模板
                   </span>
                 </button>
               </a>
@@ -2438,7 +2438,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate render update workflow tem
                   <div
                     class="step-title-info"
                   >
-                    设定模版的基本信息
+                    设定模板的基本信息
                   </div>
                 </div>
                 <div
@@ -2614,7 +2614,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate update workflow template i
                     </span>
                   </span>
                   <span>
-                    返回审批流程模版
+                    返回审批流程模板
                   </span>
                 </button>
               </a>
@@ -3117,7 +3117,7 @@ exports[`page/WorkflowTemplate/UpdateWorkflowTemplate update workflow template i
                   <div
                     class="step-title-info"
                   >
-                    设定模版的基本信息
+                    设定模板的基本信息
                   </div>
                 </div>
                 <div

@@ -12,7 +12,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
         <div
           class="title"
         >
-          审批流程模版
+          审批流程模板
         </div>
         <div
           class="extra"
@@ -48,7 +48,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                 </span>
               </span>
               <span>
-                修改当前审批流程模版
+                修改当前审批流程模板
               </span>
             </button>
           </a>
@@ -591,7 +591,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
         <div
           class="title"
         >
-          审批流程模版
+          审批流程模板
         </div>
         <div
           class="extra"
@@ -627,7 +627,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                 </span>
               </span>
               <span>
-                修改当前审批流程模版
+                修改当前审批流程模板
               </span>
             </button>
           </a>
@@ -946,7 +946,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
         <div
           class="title"
         >
-          审批流程模版
+          审批流程模板
         </div>
         <div
           class="extra"
@@ -982,7 +982,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
                 </span>
               </span>
               <span>
-                修改当前审批流程模版
+                修改当前审批流程模板
               </span>
             </button>
           </a>
@@ -1525,7 +1525,7 @@ exports[`page/WorkflowTemplate/WorkflowTemplateDetail render workflow template d
         <div
           class="title"
         >
-          审批流程模版
+          审批流程模板
         </div>
         <div
           class="extra"

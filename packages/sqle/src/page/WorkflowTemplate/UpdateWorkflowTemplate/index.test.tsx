@@ -66,7 +66,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('返回审批流程模版')).toBeInTheDocument();
+    expect(screen.getByText('返回审批流程模板')).toBeInTheDocument();
     expect(getBySelector('a')).toBeInTheDocument();
     expect(getBySelector('a')).toHaveAttribute(
       'href',
@@ -87,7 +87,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
         UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum.warn
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('更新审批流程模版成功')).toBeInTheDocument();
+    expect(screen.getByText('更新审批流程模板成功')).toBeInTheDocument();
     expect(getAllBySelector('a').length).toBe(2);
     expect(getAllBySelector('a')?.[1]).toHaveAttribute(
       'href',

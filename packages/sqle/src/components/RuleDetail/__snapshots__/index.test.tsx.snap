@@ -32,7 +32,7 @@ exports[`sqle/components/RuleDetail click return button 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -598,7 +598,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -1140,7 +1140,7 @@ exports[`sqle/components/RuleDetail render filter rule list by fuzzy keyword 1`]
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -1796,7 +1796,7 @@ exports[`sqle/components/RuleDetail render global rule template when projectName
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -2363,7 +2363,7 @@ exports[`sqle/components/RuleDetail render global rule template when projectName
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -3020,7 +3020,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -3586,7 +3586,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -4242,7 +4242,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>

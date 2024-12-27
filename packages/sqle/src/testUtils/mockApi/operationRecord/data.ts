@@ -14,7 +14,7 @@ export const operationRecordListMockData: IOperationRecordList[] = [
       ip: '192.168.22.31'
     },
     operation_type_name: '流程模板',
-    operation_action: '编辑流程模版',
+    operation_action: '编辑流程模板',
     operation_content: '编辑流程模板',
     project_name: 'default',
     status: OperationRecordListStatusEnum.succeeded
@@ -27,7 +27,7 @@ export const operationRecordListMockData: IOperationRecordList[] = [
       ip: '192.168.22.33'
     },
     operation_type_name: '流程模板',
-    operation_action: '编辑流程模版',
+    operation_action: '编辑流程模板',
     operation_content: '编辑流程模板',
     project_name: 'default',
     status: OperationRecordListStatusEnum.failed

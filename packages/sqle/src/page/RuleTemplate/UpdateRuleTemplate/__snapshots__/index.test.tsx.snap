@@ -32,7 +32,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -104,7 +104,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                 </svg>
               </span>
               <span>
-                更新审核规则模版
+                更新审核规则模板
               </span>
             </h3>
             <form
@@ -139,7 +139,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                           class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           disabled=""
                           id="templateName"
-                          placeholder="请输入模版名称"
+                          placeholder="请输入模板名称"
                           type="text"
                           value="default_MySQL"
                         />
@@ -160,9 +160,9 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="templateDesc"
-                      title="模版描述"
+                      title="模板描述"
                     >
-                      模版描述
+                      模板描述
                     </label>
                   </div>
                   <div
@@ -1337,7 +1337,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
             <div
               class="ant-result-title"
             >
-              更新审核规则模版 (test) 成功
+              更新审核规则模板 (test) 成功
             </div>
             <div
               class="ant-result-extra"
@@ -1347,7 +1347,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -1996,7 +1996,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -2054,7 +2054,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
                 </svg>
               </span>
               <span>
-                更新审核规则模版
+                更新审核规则模板
               </span>
             </h3>
             <form
@@ -2089,7 +2089,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
                           class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           disabled=""
                           id="templateName"
-                          placeholder="请输入模版名称"
+                          placeholder="请输入模板名称"
                           type="text"
                           value="default_MySQL"
                         />
@@ -2110,9 +2110,9 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="templateDesc"
-                      title="模版描述"
+                      title="模板描述"
                     >
-                      模版描述
+                      模板描述
                     </label>
                   </div>
                   <div
@@ -3309,7 +3309,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
             <div
               class="ant-result-title"
             >
-              更新审核规则模版 (test) 成功
+              更新审核规则模板 (test) 成功
             </div>
             <div
               class="ant-result-extra"
@@ -3319,7 +3319,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -3363,7 +3363,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -3410,7 +3410,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
                 </svg>
               </span>
               <span>
-                更新审核规则模版
+                更新审核规则模板
               </span>
             </h3>
             <form
@@ -3445,7 +3445,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
                           class="ant-input ant-input-disabled ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           disabled=""
                           id="templateName"
-                          placeholder="请输入模版名称"
+                          placeholder="请输入模板名称"
                           type="text"
                           value="default_MySQL"
                         />
@@ -3466,9 +3466,9 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="templateDesc"
-                      title="模版描述"
+                      title="模板描述"
                     >
-                      模版描述
+                      模板描述
                     </label>
                   </div>
                   <div
@@ -4872,7 +4872,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
             <div
               class="ant-result-title"
             >
-              更新审核规则模版 (test) 成功
+              更新审核规则模板 (test) 成功
             </div>
             <div
               class="ant-result-extra"
@@ -4882,7 +4882,7 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>

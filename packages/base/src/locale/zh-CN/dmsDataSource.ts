@@ -19,7 +19,7 @@ export default {
     role: '角色',
     type: '数据源类型',
     enabledScanTypes: '启用的扫描类型',
-    ruleTemplate: '模版',
+    ruleTemplate: '模板',
     workflow: '工作流',
     maintenanceTime: '运维时间',
     source: '来源',
