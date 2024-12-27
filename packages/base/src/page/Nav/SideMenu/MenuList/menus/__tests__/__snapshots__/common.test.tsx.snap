@@ -94,7 +94,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
             {
               "path": ":projectID/db-services",
               "prefix": "/project",
-              "query": "address",
+              "query": "address&name",
             }
           }
         >
@@ -230,7 +230,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
             {
               "path": ":projectID/db-services",
               "prefix": "/project",
-              "query": "address",
+              "query": "address&name",
             }
           }
         >
@@ -612,7 +612,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
             {
               "path": ":projectID/db-services",
               "prefix": "/project",
-              "query": "address",
+              "query": "address&name",
             }
           }
         >
@@ -1135,7 +1135,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
             {
               "path": ":projectID/db-services",
               "prefix": "/project",
-              "query": "address",
+              "query": "address&name",
             }
           }
         >
