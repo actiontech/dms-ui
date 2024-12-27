@@ -12,12 +12,7 @@ const useRules = (dbType: string) => {
 
   const { form: ruleFilterForm, fuzzyKeyword, tags } = useRuleFilterForm();
 
-  const {
-    data: allRules,
-    loading: getAllRulesLoading,
-    run: getAllRules,
-    runAsync: getAllRulesAsync
-  } = useRequest(
+  const { data: allRules, loading: getAllRulesLoading } = useRequest(
     () =>
       rule_template
         .getRuleListV1({
@@ -45,8 +40,6 @@ const useRules = (dbType: string) => {
   return {
     allRules,
     getAllRulesLoading,
-    getAllRules,
-    getAllRulesAsync,
     activeRule,
     setActiveRule,
     clearSearchValue,

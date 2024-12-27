@@ -9,6 +9,7 @@ export type RuleListFilterForm = {
   operand: string;
   audit_purpose: string;
   audit_accuracy: string;
+  sql: string;
 };
 
 export type RuleListFilterFormKey = keyof RuleListFilterForm;

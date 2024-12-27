@@ -28,13 +28,9 @@ const UpdateCustomRule: React.FC = () => {
     editScriptForm,
     submitSuccessStatus,
     step,
-    extraRuleTypeList,
-    extraRuleName,
     prevStep,
     nextStep,
     baseInfoFormSubmit,
-    resetExtraInfo,
-    onExtraRuleNameChange,
     resetAll,
     onGoCustomRuleList
   } = useCustomRuleTemplateForm(true);
@@ -64,7 +60,6 @@ const UpdateCustomRule: React.FC = () => {
         level: baseInfo.level as UpdateCustomRuleReqV1LevelEnum | undefined,
         annotation: baseInfo.annotation,
         rule_script: values.script,
-        type: baseInfo.ruleType,
         tags: [
           ...baseInfo.operand,
           baseInfo.auditPurpose,
@@ -135,10 +130,6 @@ const UpdateCustomRule: React.FC = () => {
             submit={submit}
             submitLoading={updateLoading}
             baseInfoSubmit={baseInfoFormSubmit}
-            extraRuleTypeList={extraRuleTypeList}
-            extraRuleName={extraRuleName}
-            resetExtraInfo={resetExtraInfo}
-            onExtraRuleNameChange={onExtraRuleNameChange}
           />
         </Spin>
       </RuleTemplateContStyleWrapper>

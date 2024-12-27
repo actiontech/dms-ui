@@ -1,7 +1,10 @@
 import RuleList, { pageRemainingHeight } from '../RuleList';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from '../../../testUtils/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { RuleListProps, RuleStatusEnum } from '../index.type';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -45,6 +48,17 @@ describe('sqle/components/RuleList', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should match snap shot when has tags prop', async () => {
+    const { baseElement } = customRender({
+      pageHeaderHeight: 120,
+      rules: [ruleListMockData[0]],
+      tags: 'database,ddl,maintenance,online'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(getAllBySelector('.rule-category-active-tag').length).toBe(4);
   });
 
   it('should match snap shot when isAction is true', async () => {

@@ -29,16 +29,6 @@ describe('sqle/components/RuleList/useRuleList', () => {
     expect(result.current.ruleStatus).toEqual(RuleStatusEnum.disabled);
   });
 
-  // it('test rule type', async () => {
-  //   const { result } = customRender();
-  //   expect(result.current.ruleType).toEqual(ALL_RULE_TYPE_CONSTANT);
-  //   await act(async () => {
-  //     result.current.setRuleType('使用建议');
-  //     await jest.advanceTimersByTime(100);
-  //   });
-  //   expect(result.current.ruleType).toEqual('使用建议');
-  // });
-
   it('test getCurrentStatusRules', async () => {
     const { result } = customRender();
     const activeRules = [ruleListMockData[0]];
@@ -93,23 +83,4 @@ describe('sqle/components/RuleList/useRuleList', () => {
     });
     expect(rules).toEqual(ruleListMockData.slice(1));
   });
-
-  // it('test getCurrentTypeRules', async () => {
-  //   const { result } = customRender();
-  //   const activeRules = [ruleListMockData[0]];
-  //   await act(async () => {
-  //     result.current.setRuleType('使用建议');
-  //     await jest.advanceTimersByTime(100);
-  //   });
-  //   let rules: IRuleResV1[] = [];
-  //   await act(async () => {
-  //     rules = result.current.getCurrentTypeRules(
-  //       ruleListMockData,
-  //       activeRules,
-  //       'test'
-  //     );
-  //     await jest.advanceTimersByTime(100);
-  //   });
-  //   expect(rules).toEqual(activeRules);
-  // });
 });

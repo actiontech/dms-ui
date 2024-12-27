@@ -46,4 +46,5 @@ export type RuleFilterFieldsType = {
   operand: string;
   audit_purpose: string;
   audit_accuracy: string;
+  sql: string;
 };
