@@ -32,7 +32,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -104,7 +104,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                 </svg>
               </span>
               <span>
-                创建审核规则模版
+                创建审核规则模板
               </span>
             </h3>
             <form
@@ -138,7 +138,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                           aria-required="true"
                           class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="templateName"
-                          placeholder="请输入模版名称"
+                          placeholder="请输入模板名称"
                           type="text"
                           value="test1"
                         />
@@ -159,9 +159,9 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="templateDesc"
-                      title="模版描述"
+                      title="模板描述"
                     >
-                      模版描述
+                      模板描述
                     </label>
                   </div>
                   <div
@@ -1353,7 +1353,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
             <div
               class="ant-result-title"
             >
-              创建审核规则模版成功
+              创建审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -1363,7 +1363,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                 type="button"
               >
                 <span>
-                  再创建一个新的审核规则模版
+                  再创建一个新的审核规则模板
                 </span>
               </button>
               <button
@@ -1371,7 +1371,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -1491,7 +1491,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -1563,7 +1563,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 </svg>
               </span>
               <span>
-                创建审核规则模版
+                创建审核规则模板
               </span>
             </h3>
             <form
@@ -1597,7 +1597,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                           aria-required="true"
                           class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="templateName"
-                          placeholder="请输入模版名称"
+                          placeholder="请输入模板名称"
                           type="text"
                           value="test1"
                         />
@@ -1618,9 +1618,9 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="templateDesc"
-                      title="模版描述"
+                      title="模板描述"
                     >
-                      模版描述
+                      模板描述
                     </label>
                   </div>
                   <div
@@ -2812,7 +2812,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
             <div
               class="ant-result-title"
             >
-              创建审核规则模版成功
+              创建审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -2822,7 +2822,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 type="button"
               >
                 <span>
-                  再创建一个新的审核规则模版
+                  再创建一个新的审核规则模板
                 </span>
               </button>
               <button
@@ -2830,7 +2830,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -3555,7 +3555,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -3613,7 +3613,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                 </svg>
               </span>
               <span>
-                创建审核规则模版
+                创建审核规则模板
               </span>
             </h3>
             <form
@@ -3647,7 +3647,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                           aria-required="true"
                           class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                           id="templateName"
-                          placeholder="请输入模版名称"
+                          placeholder="请输入模板名称"
                           type="text"
                           value=""
                         />
@@ -3668,9 +3668,9 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="templateDesc"
-                      title="模版描述"
+                      title="模板描述"
                     >
-                      模版描述
+                      模板描述
                     </label>
                   </div>
                   <div
@@ -4643,7 +4643,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
             <div
               class="ant-result-title"
             >
-              创建审核规则模版成功
+              创建审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -4653,7 +4653,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                 type="button"
               >
                 <span>
-                  再创建一个新的审核规则模版
+                  再创建一个新的审核规则模板
                 </span>
               </button>
               <button
@@ -4661,7 +4661,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>

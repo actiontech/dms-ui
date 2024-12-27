@@ -109,7 +109,7 @@ describe('sqle/RuleTemplate/List', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('导入规则模板')).toBeInTheDocument();
-    expect(screen.getByText('创建规则模版')).toBeInTheDocument();
+    expect(screen.getByText('创建规则模板')).toBeInTheDocument();
 
     cleanup();
     mockUseCurrentUserSpy.mockClear();
@@ -134,7 +134,7 @@ describe('sqle/RuleTemplate/List', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('导入规则模板')).toBeInTheDocument();
-    expect(screen.getByText('创建规则模版')).toBeInTheDocument();
+    expect(screen.getByText('创建规则模板')).toBeInTheDocument();
 
     cleanup();
     mockUseCurrentUserSpy.mockClear();
@@ -151,7 +151,7 @@ describe('sqle/RuleTemplate/List', () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('导入规则模板')).not.toBeInTheDocument();
-    expect(screen.queryByText('创建规则模版')).not.toBeInTheDocument();
+    expect(screen.queryByText('创建规则模板')).not.toBeInTheDocument();
 
     cleanup();
     mockUseCurrentUserSpy.mockClear();
@@ -179,7 +179,7 @@ describe('sqle/RuleTemplate/List', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('克隆规则模版')).toBeInTheDocument();
+    expect(screen.getByText('克隆规则模板')).toBeInTheDocument();
     expect(screen.getByText('导出规则模板')).toBeInTheDocument();
   });
 });

@@ -122,19 +122,19 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
     fireEvent.click(screen.getByText('删 除'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(
-      screen.getByText(`确认要删除规则模版"${templateName}"么?`)
+      screen.getByText(`确认要删除规则模板"${templateName}"么?`)
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(
-      screen.getByText(`正在删除模版 "${templateName}"...`)
+      screen.getByText(`正在删除模板 "${templateName}"...`)
     ).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(
-      screen.getByText(`删除模版"${templateName}"成功`)
+      screen.getByText(`删除模板"${templateName}"成功`)
     ).toBeInTheDocument();
     expect(
-      screen.queryByText(`正在删除模版 "${templateName}"...`)
+      screen.queryByText(`正在删除模板 "${templateName}"...`)
     ).not.toBeInTheDocument();
     expect(deleteProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     expect(deleteProjectRuleTemplateSpy).toHaveBeenCalledWith({
@@ -204,8 +204,8 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
       getBySelector('.actiontech-table-actions-more-button', baseElement)
     );
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('克隆规则模版')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('克隆规则模版'));
+    expect(screen.getByText('克隆规则模板')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('克隆规则模板'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(dispatchSpy).toHaveBeenCalledTimes(3);
     expect(dispatchSpy).toHaveBeenNthCalledWith(2, {

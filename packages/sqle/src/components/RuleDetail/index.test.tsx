@@ -224,8 +224,8 @@ describe('sqle/components/RuleDetail', () => {
       project_name: 'default',
       rule_template_name: mockRouteParams.templateName
     });
-    expect(screen.getByText('返回规则模版列表')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('返回规则模版列表'));
+    expect(screen.getByText('返回规则模板列表')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('返回规则模板列表'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith(-1);
   });

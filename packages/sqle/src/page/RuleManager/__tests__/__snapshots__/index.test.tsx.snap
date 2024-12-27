@@ -146,7 +146,7 @@ exports[`sqle/RuleManager should hidden action when is not admin 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              模版名称
+                              模板名称
                             </th>
                             <th
                               class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
@@ -805,7 +805,7 @@ exports[`sqle/RuleManager should render custom rule list 1`] = `
                     </svg>
                   </span>
                   <span>
-                    创建规则模版
+                    创建规则模板
                   </span>
                 </button>
               </a>
@@ -1663,7 +1663,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                     </svg>
                   </span>
                   <span>
-                    创建规则模版
+                    创建规则模板
                   </span>
                 </button>
               </a>
@@ -1769,7 +1769,7 @@ exports[`sqle/RuleManager should render global rule template list list when it f
                               class="ant-table-cell"
                               scope="col"
                             >
-                              模版名称
+                              模板名称
                             </th>
                             <th
                               class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
