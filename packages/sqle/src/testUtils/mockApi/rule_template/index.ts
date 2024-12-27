@@ -15,7 +15,8 @@ import {
   projectRuleTemplateListMockData,
   publicRuleTemplateListMockData,
   customRuleMockData,
-  importRuleTemplateMockData
+  importRuleTemplateMockData,
+  mockRuleCategoriesData
 } from './data';
 import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
 import { AxiosResponse } from 'axios';
@@ -51,6 +52,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.createRuleTemplate();
     this.updateRuleTemplate();
     this.getRuleTemplateFile();
+    this.getCategoryStatistics();
   }
 
   public getRuleTemplateTips() {
@@ -309,6 +311,14 @@ class MockRuleTemplateApi implements MockSpyApy {
   public getRuleTemplateFile() {
     const spy = jest.spyOn(rule_template, 'getRuleTemplateFileV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getCategoryStatistics() {
+    const spy = jest.spyOn(rule_template, 'getCategoryStatistics');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockRuleCategoriesData })
+    );
     return spy;
   }
 }

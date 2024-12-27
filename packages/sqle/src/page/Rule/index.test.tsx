@@ -32,6 +32,7 @@ describe('sqle/Rule', () => {
   let getProjectRuleTemplateSpy: jest.SpyInstance;
   let getRuleTemplateSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
+  let getCategoryStatisticsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
@@ -96,7 +97,7 @@ describe('sqle/Rule', () => {
     getProjectRuleTemplateTipsSpy = rule_template.getProjectRuleTemplateTips();
     getProjectRuleTemplateSpy = rule_template.getProjectRuleTemplate();
     getRuleTemplateSpy = rule_template.getRuleTemplate();
-
+    getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     getProjectListSpy = jest.spyOn(Project, 'ListProjects');
     getProjectListSpy.mockImplementation(() =>
       createSpySuccessResponse({
@@ -125,10 +126,9 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
+    expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('查看规则')).toBeInTheDocument();
     expect(screen.getByText('MySQL')).toBeInTheDocument();
-    expect(screen.getByText('ALL')).toBeInTheDocument();
-    expect(screen.getByText('使用建议')).toBeInTheDocument();
     const scrollList = getBySelector(
       '.infinite-scroll-component ',
       baseElement
@@ -148,7 +148,6 @@ describe('sqle/Rule', () => {
     const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     expect(baseElement).toMatchSnapshot();
-    expect(screen.queryByText('使用建议')).not.toBeInTheDocument();
   });
 
   it('filter list based on rule name', async () => {
@@ -272,8 +271,6 @@ describe('sqle/Rule', () => {
     });
     fireEvent.click(screen.getByText('已禁用'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText('ALL')).toBeInTheDocument();
-    expect(screen.getByText('使用建议')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
     const clearBtn = getBySelector(
       '.ant-select-clear',
@@ -306,8 +303,6 @@ describe('sqle/Rule', () => {
     ).not.toBeInTheDocument();
     expect(screen.queryByText('已启用')).not.toBeInTheDocument();
     expect(screen.queryByText('已禁用')).not.toBeInTheDocument();
-    expect(screen.queryByText('ALL')).not.toBeInTheDocument();
-    expect(screen.queryByText('使用建议')).not.toBeInTheDocument();
   });
 
   it('filter list based on template name', async () => {
@@ -355,6 +350,50 @@ describe('sqle/Rule', () => {
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL1',
       fuzzy_keyword_rule: undefined
+    });
+  });
+
+  it('filter list by rule category', async () => {
+    superRender(<Rule />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
+
+    fireEvent.mouseDown(getBySelector('#operand'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#operand_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
+      tags: 'column',
+      filter_db_type: 'MySQL'
+    });
+
+    fireEvent.mouseDown(getBySelector('#audit_purpose'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#audit_purpose_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
+      tags: 'column,correction',
+      filter_db_type: 'MySQL'
+    });
+
+    fireEvent.mouseDown(getBySelector('#sql'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#sql_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
+      tags: 'column,correction,dcl',
+      filter_db_type: 'MySQL'
+    });
+
+    fireEvent.mouseDown(getBySelector('#audit_accuracy'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#audit_accuracy_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(5, {
+      tags: 'column,correction,offline,dcl',
+      filter_db_type: 'MySQL'
     });
   });
 

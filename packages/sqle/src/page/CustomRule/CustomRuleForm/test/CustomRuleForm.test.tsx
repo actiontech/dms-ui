@@ -24,7 +24,7 @@ jest.mock('react-redux', () => ({
 
 describe('sqle/CustomRule/Form', () => {
   let getDriversSpy: jest.SpyInstance;
-  let getRuleTypeByDBTypeSpy: jest.SpyInstance;
+  let getCategoryStatisticsSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseDbServiceDriver();
     mockUsePermission(
@@ -36,7 +36,7 @@ describe('sqle/CustomRule/Form', () => {
       }
     );
     getDriversSpy = configuration.getDrivers();
-    getRuleTypeByDBTypeSpy = rule_template.getRuleTypeByDBType();
+    getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     jest.useFakeTimers();
   });
 
@@ -74,7 +74,7 @@ describe('sqle/CustomRule/Form', () => {
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
+    expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('下一步'));

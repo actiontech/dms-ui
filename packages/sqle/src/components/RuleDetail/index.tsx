@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
@@ -12,15 +12,13 @@ import {
   EmptyBox,
   useTypedParams
 } from '@actiontech/shared';
-import { RuleStatus, RuleTypes, RuleList } from '../RuleList';
+import { RuleStatus, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
 import {
   DetailComStyleWrapper,
   HeaderSpaceTagStyleWrapper,
   RuleTemplateDetailStyleWrapper
 } from './style';
-import { FilterContainerStyleWrapper } from '@actiontech/shared/lib/components/ActiontechTable/components/style';
-import CustomSearchInput from './components/CustomSearchInput';
 import {
   FlagFilled,
   DoubleDatabaseOutlined,
@@ -28,63 +26,60 @@ import {
 } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { RuleFilter, useRuleFilterForm } from '../RuleList';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
   const { sqleTheme } = useThemeStyleData();
   const { goBack } = useBack();
-  const [fuzzyKeyword, setFuzzyKeyword] = useState<string>();
+
+  const { form, fuzzyKeyword, tags } = useRuleFilterForm();
 
   const { templateName, dbType } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail>();
   const { projectName } = useCurrentProject();
-  const {
-    ruleStatus,
-    ruleType,
-    setRuleStatus,
-    setRuleType,
-    getCurrentStatusRules,
-    getCurrentTypeRules
-  } = useRuleList();
+  const { ruleStatus, setRuleStatus, getCurrentStatusRules } = useRuleList();
 
   const {
     data: projectRuleData,
     loading: projectRuleLoading,
-    run: getProjectTemplateRules,
     error: projectRuleError
   } = useRequest(
-    (project?: string, ruleTemplate?: string) =>
+    () =>
       rule_template
         .getProjectRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? '',
-          project_name: project ?? '',
-          fuzzy_keyword_rule: fuzzyKeyword
+          rule_template_name: templateName ?? '',
+          project_name: projectName ?? '',
+          fuzzy_keyword_rule: fuzzyKeyword,
+          tags
         })
         .then((res) => {
           return res.data?.data?.rule_list ?? [];
         }),
     {
-      manual: true
+      ready: !!templateName && !!projectName,
+      refreshDeps: [projectName, templateName, fuzzyKeyword, tags]
     }
   );
 
   const {
     data: globalTemplateRules,
     loading: getGlobalTemplateRulesLoading,
-    run: getGlobalTemplateRules,
     error: globalError
   } = useRequest(
-    (ruleTemplate?: string) =>
+    () =>
       rule_template
         .getRuleTemplateV1({
-          rule_template_name: ruleTemplate ?? '',
-          fuzzy_keyword_rule: fuzzyKeyword
+          rule_template_name: templateName ?? '',
+          fuzzy_keyword_rule: fuzzyKeyword,
+          tags
         })
         .then((res) => {
           return res.data?.data?.rule_list ?? [];
         }),
     {
-      manual: true
+      ready: !!templateName && !projectName,
+      refreshDeps: [templateName, fuzzyKeyword, tags]
     }
   );
 
@@ -97,12 +92,13 @@ const RuleDetail = () => {
       rule_template
         .getRuleListV1({
           filter_db_type: dbType,
-          fuzzy_keyword_rule: fuzzyKeyword
+          fuzzy_keyword_rule: fuzzyKeyword,
+          tags
         })
         .then((res) => res.data?.data ?? []),
     {
       ready: !!dbType,
-      refreshDeps: [dbType, fuzzyKeyword]
+      refreshDeps: [dbType, fuzzyKeyword, tags]
     }
   );
 
@@ -131,18 +127,6 @@ const RuleDetail = () => {
     }
     return globalTemplateRules;
   }, [projectRuleData, globalTemplateRules, projectName]);
-
-  useEffect(() => {
-    projectName
-      ? getProjectTemplateRules(projectName, templateName)
-      : getGlobalTemplateRules(templateName);
-  }, [
-    getProjectTemplateRules,
-    getGlobalTemplateRules,
-    projectName,
-    templateName,
-    fuzzyKeyword
-  ]);
 
   return (
     <RuleTemplateDetailStyleWrapper>
@@ -203,25 +187,12 @@ const RuleDetail = () => {
               </section>
             </section>
           </DetailComStyleWrapper>
-          <FilterContainerStyleWrapper className="full-width-element">
-            <CustomSearchInput
-              onCustomPressEnter={setFuzzyKeyword}
-              placeholder={t('rule.form.fuzzy_text_placeholder')}
-              allowClear
-            />
-          </FilterContainerStyleWrapper>
-          {dbType && (
-            <RuleTypes
-              ruleTypeChange={setRuleType}
-              currentRuleType={ruleType}
-              rules={getCurrentStatusRules(allRules, ruleData, templateName)}
-              allRulesData={allRules ?? []}
-            />
-          )}
+          <RuleFilter form={form} />
           <RuleList
-            pageHeaderHeight={170}
-            rules={getCurrentTypeRules(allRules, ruleData, templateName)}
+            pageHeaderHeight={122}
+            rules={getCurrentStatusRules(allRules, ruleData, templateName)}
             enableCheckDetail
+            tags={tags}
           />
         </EmptyBox>
       </Spin>

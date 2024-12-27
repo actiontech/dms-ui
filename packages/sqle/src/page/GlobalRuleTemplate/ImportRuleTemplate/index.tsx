@@ -66,7 +66,9 @@ const ImportRuleTemplate: React.FC = () => {
     setFilteredRule,
     uploadCheckStatus,
     removeUploadFile,
-    uploadFileCustomRequest
+    uploadFileCustomRequest,
+    ruleFilterForm,
+    filterCategoryTags
   } = useImportRuleTemplateForm();
 
   const fileType = Form.useWatch('fileType', selectFileForm);
@@ -238,6 +240,8 @@ const ImportRuleTemplate: React.FC = () => {
               submit={submit}
               projectName={projectName}
               mode="import"
+              ruleFilterForm={ruleFilterForm}
+              filterCategoryTags={filterCategoryTags}
             />
           </Spin>
         </EmptyBox>
