@@ -39,11 +39,6 @@ export default {
           action_0_1: 'View rule templates',
           action_0_2: 'View SQL management configuration',
           action_0_3: 'Create new SQL audit',
-          title_1: 'DB instance authorization management',
-          content_1:
-            'Configure data permission templates and authorize them to specified users',
-          action_1_0: 'Permission templates',
-          action_1_1: 'Authorization list',
           title_2: 'Approval process',
           content_2:
             'Change the process template according to the actual business flow',
