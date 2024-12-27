@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BusinessRewrittenSuggestion BusinessRewrittenSuggestion and BusinessRewrittenDetails BusinessRewrittenDetails should render markdown content correctly 1`] = `
+<div>
+  <div
+    class="css-3a45f5"
+  >
+    <span
+      aria-label="info-circle"
+      class="anticon anticon-info-circle"
+      role="img"
+      style="font-size: 18px; color: rgb(240, 0, 0);"
+    >
+      <svg
+        aria-hidden="true"
+        data-icon="info-circle"
+        fill="currentColor"
+        focusable="false"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+        />
+        <path
+          d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+        />
+      </svg>
+    </span>
+    <div
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+    >
+      不建议LIMIT的偏移OFFSET大于阈值
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BusinessRewrittenSuggestion BusinessRewrittenSuggestion and BusinessRewrittenDetails BusinessRewrittenDetails should render markdown content correctly 2`] = `
+<div>
+  <div
+    class="css-13usq5j"
+  >
+    <span
+      aria-label="info-circle"
+      class="anticon anticon-info-circle"
+      role="img"
+      style="font-size: 18px; color: rgb(240, 0, 0);"
+    >
+      <svg
+        aria-hidden="true"
+        data-icon="info-circle"
+        fill="currentColor"
+        focusable="false"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+        />
+        <path
+          d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+        />
+      </svg>
+    </span>
+    <div
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+    >
+      不建议LIMIT的偏移OFFSET大于阈值
+    </div>
+  </div>
+  <div
+    class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
+  >
+    <div
+      class="css-1igntjv"
+    >
+      <div
+        class="css-14chl4v"
+      >
+        <div
+          class="description-content css-2p8eea"
+          rehypeplugins="() => jest.fn()"
+        >
+          我们将使用WITH表表达式来先获取主键ID，然后再联接获取完整数据。具体步骤如下：
+1. 使用WITH表表达式来查询满足条件的用户ID。
+2. 通过这些用户ID来获取完整的用户、订单和支付信息。
+3. 确保结果集保持与原始SQL相同，包括结果集的顺序。
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

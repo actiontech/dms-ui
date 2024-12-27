@@ -37,3 +37,22 @@ export const ShowSqlDifferenceAction = ({
     </ToggleButtonStyleWrapper>
   );
 };
+
+export const ShowExecuteOrderExplanationAction = ({
+  showExecuteOrderExplanation,
+  toggleShowExecuteOrderExplanation
+}: {
+  showExecuteOrderExplanation: boolean;
+  toggleShowExecuteOrderExplanation: () => void;
+}) => {
+  const { t } = useTranslation();
+  return (
+    <ToggleButtonStyleWrapper
+      className="toggle-button-wrapper"
+      onClick={toggleShowExecuteOrderExplanation}
+      active={showExecuteOrderExplanation}
+    >
+      {t('sqlRewrite.viewExecuteOrderExplanation')}
+    </ToggleButtonStyleWrapper>
+  );
+};

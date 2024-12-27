@@ -1,17 +1,25 @@
 [
   {
-    "project": "dms-ui",
-    "output": "packages/shared/lib/api/base/service",
-    "branch": "Oracle_DBAccount",
+    "project": "sqle-ui",
+    "output": "packages/shared/lib/api/sqle/service",
+    "branch": "main",
     "swaggerPath": "",
     "swaggerOutput": "",
-    "plugin": "simple-cleaner",
+    "plugin": "dot-remove",
     "template": "complex"
+  },
+  {
+    "project": "dms-ui",
+    "output": "packages/shared/lib/api/base/service",
+    "branch": "main",
+    "swaggerPath": "",
+    "swaggerOutput": "",
+    "plugin": "simple-cleaner"
   },
   {
     "project": "provision-ui",
     "output": "packages/shared/lib/api/provision/service",
-    "branch": "shangqi_2411_pre1",
+    "branch": "main",
     "swaggerPath": "",
     "swaggerOutput": "",
     "plugin": "",
