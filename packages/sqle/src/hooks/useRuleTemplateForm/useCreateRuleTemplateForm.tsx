@@ -13,23 +13,21 @@ const useCreateRuleTemplateForm = () => {
     prevStep,
     nextStep,
     baseInfoFormSubmitLoading,
-    setBaseInfoFormSubmitLoading
+    setBaseInfoFormSubmitLoading,
+    dbType
   } = useFormStep();
 
   const {
     allRules,
-    getAllRules,
     getAllRulesLoading,
     activeRule,
     setActiveRule,
-    databaseRule,
-    setDatabaseRule,
-    dbType,
-    setDbType,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
-  } = useRules();
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
+  } = useRules(dbType);
 
   const [createLoading, { setFalse: finishSubmit, setTrue: startSubmit }] =
     useBoolean(false);
@@ -37,14 +35,10 @@ const useCreateRuleTemplateForm = () => {
   const baseInfoFormSubmit = useCallback(async () => {
     setBaseInfoFormSubmitLoading(true);
     try {
-      const values = await form.validateFields();
-      setDbType(values.db_type);
-      const tempAllRules =
-        allRules?.filter((e) => e.db_type === values.db_type) ?? [];
-      setDatabaseRule(tempAllRules);
+      await form.validateFields();
       if (!activeRule.length) {
         const updateActiveData = cloneDeep(
-          tempAllRules.filter((item) => !item.is_custom_rule)
+          allRules?.filter((item) => !item.is_custom_rule) ?? []
         );
         setActiveRule(updateActiveData);
         setFilteredRule(updateActiveData);
@@ -59,8 +53,6 @@ const useCreateRuleTemplateForm = () => {
     allRules,
     nextStep,
     setActiveRule,
-    setDatabaseRule,
-    setDbType,
     setBaseInfoFormSubmitLoading,
     setFilteredRule,
     activeRule
@@ -69,41 +61,22 @@ const useCreateRuleTemplateForm = () => {
   const resetAll = useCallback(() => {
     setStep(0);
     form.resetFields();
-    setDbType('');
     clearSearchValue();
-    setActiveRule([]);
-    setFilteredRule([]);
-  }, [
-    form,
-    setStep,
-    setDbType,
-    clearSearchValue,
-    setActiveRule,
-    setFilteredRule
-  ]);
+  }, [form, setStep, clearSearchValue]);
 
   useEffect(() => {
-    if (dbType) {
-      const tempAllRules = allRules?.filter((e) => e.db_type === dbType) ?? [];
-      setDatabaseRule(tempAllRules);
-      const showRuleList = activeRule.filter((item) =>
-        tempAllRules.some((i) => i.rule_name === item.rule_name)
-      );
-      setFilteredRule(cloneDeep(showRuleList));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allRules]);
+    setActiveRule([]);
+  }, [dbType, setActiveRule]);
 
   return {
     form,
     getAllRulesLoading,
     activeRule,
-    databaseRule,
+    allRules,
     step,
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
     dbType,
-    getAllRules,
     setActiveRule,
     prevStep,
     nextStep,
@@ -113,7 +86,9 @@ const useCreateRuleTemplateForm = () => {
     finishSubmit,
     startSubmit,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags
   };
 };
 

@@ -23,13 +23,9 @@ const CreateCustomRule: React.FC = () => {
     editScriptForm,
     submitSuccessStatus,
     step,
-    extraRuleTypeList,
-    extraRuleName,
     prevStep,
     nextStep,
     baseInfoFormSubmit,
-    resetExtraInfo,
-    onExtraRuleNameChange,
     resetAll,
     onGoCustomRuleList
   } = useCustomRuleTemplateForm();
@@ -39,7 +35,6 @@ const CreateCustomRule: React.FC = () => {
     const values = await editScriptForm.validateFields();
 
     startCreate();
-
     rule_template
       .createCustomRuleV1({
         db_type: baseInfo.dbType,
@@ -47,7 +42,12 @@ const CreateCustomRule: React.FC = () => {
         level: baseInfo.level as CreateCustomRuleReqV1LevelEnum | undefined,
         annotation: baseInfo.annotation,
         rule_script: values.script,
-        type: baseInfo.ruleType
+        tags: [
+          ...baseInfo.operand,
+          baseInfo.auditPurpose,
+          baseInfo.auditAccuracy,
+          baseInfo.sql
+        ]
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -110,10 +110,6 @@ const CreateCustomRule: React.FC = () => {
           submit={submit}
           baseInfoSubmit={baseInfoFormSubmit}
           submitLoading={createLoading}
-          extraRuleTypeList={extraRuleTypeList}
-          extraRuleName={extraRuleName}
-          resetExtraInfo={resetExtraInfo}
-          onExtraRuleNameChange={onExtraRuleNameChange}
         />
       </RuleTemplateContStyleWrapper>
       <div hidden={!submitSuccessStatus}>

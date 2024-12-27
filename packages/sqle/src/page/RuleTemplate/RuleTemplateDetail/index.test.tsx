@@ -18,6 +18,7 @@ jest.mock('react-router-dom', () => {
 describe('sqle/RuleTemplate/RuleTemplateDetail', () => {
   let requestGetProjectRule: jest.SpyInstance;
   let requestGetAllRule: jest.SpyInstance;
+  let getCategoryStatisticsSpy: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   beforeEach(() => {
     jest.useFakeTimers();
@@ -28,6 +29,7 @@ describe('sqle/RuleTemplate/RuleTemplateDetail', () => {
     });
     requestGetProjectRule = rule_template.getProjectRuleTemplate();
     requestGetAllRule = rule_template.getRuleList();
+    getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     useParamsMock.mockReturnValue({
       templateName: 'template-a',
       dbType: 'mysql'
@@ -45,5 +47,6 @@ describe('sqle/RuleTemplate/RuleTemplateDetail', () => {
     expect(baseElement).toMatchSnapshot();
     expect(requestGetProjectRule).toHaveBeenCalledTimes(1);
     expect(requestGetAllRule).toHaveBeenCalledTimes(1);
+    expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
   });
 });

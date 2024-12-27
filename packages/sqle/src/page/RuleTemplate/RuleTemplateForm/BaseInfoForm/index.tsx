@@ -114,7 +114,7 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
       <BasicButton
         type="primary"
         onClick={props.submit}
-        loading={!!props.submitLoading}
+        loading={!!props.submitLoading || props.ruleListLoading}
         disabled={!!props.submitLoading}
       >
         {t('common.nextStep')}

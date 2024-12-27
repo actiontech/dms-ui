@@ -1,77 +1,52 @@
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { useRequest } from 'ahooks';
-import { IGetRuleListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useState, useCallback, useEffect } from 'react';
-import EventEmitter from '../../utils/EventEmitter';
-import EmitterKey from '../../data/EmitterKey';
+import { useState, useCallback } from 'react';
+import { useRuleFilterForm } from '../../components/RuleList';
+import { cloneDeep } from 'lodash';
 
-const useRules = (manual = false) => {
+const useRules = (dbType: string) => {
   const [activeRule, setActiveRule] = useState<IRuleResV1[]>([]);
-
-  const [databaseRule, setDatabaseRule] = useState<IRuleResV1[]>([]);
 
   const [filteredRule, setFilteredRule] = useState<IRuleResV1[]>([]);
 
-  const [dbType, setDbType] = useState<string>('');
+  const { form: ruleFilterForm, fuzzyKeyword, tags } = useRuleFilterForm();
 
-  const {
-    data: allRules,
-    loading: getAllRulesLoading,
-    run: getAllRules,
-    runAsync: getAllRulesAsync
-  } = useRequest(
-    (params: IGetRuleListV1Params) =>
+  const { data: allRules, loading: getAllRulesLoading } = useRequest(
+    () =>
       rule_template
-        .getRuleListV1(params ?? {})
+        .getRuleListV1({
+          filter_db_type: dbType,
+          fuzzy_keyword_rule: fuzzyKeyword,
+          tags
+        })
         .then((res) => res.data.data ?? []),
     {
-      manual
+      onSuccess: (res) => {
+        const showRuleList = activeRule.filter((item) =>
+          res.some((i) => i.rule_name === item.rule_name)
+        );
+        setFilteredRule(cloneDeep(showRuleList));
+      },
+      refreshDeps: [fuzzyKeyword, tags, dbType],
+      ready: !!dbType
     }
   );
 
-  const subscribe = useCallback((callBack: (value: string) => void) => {
-    const { unsubscribe } = EventEmitter.subscribe(
-      EmitterKey.Search_Rule_Template_Rule_Select_List,
-      callBack
-    );
-    return unsubscribe;
-  }, []);
-
   const clearSearchValue = useCallback(() => {
-    EventEmitter.emit(EmitterKey.Search_Rule_Template_Rule_Clear_Value);
-  }, []);
-
-  useEffect(() => {
-    if (!manual) {
-      const { unsubscribe } = EventEmitter.subscribe(
-        EmitterKey.Search_Rule_Template_Rule_Select_List,
-        (value) => {
-          getAllRules({
-            fuzzy_keyword_rule: value
-          });
-        }
-      );
-      return unsubscribe;
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    ruleFilterForm.resetFields();
+  }, [ruleFilterForm]);
 
   return {
     allRules,
     getAllRulesLoading,
-    getAllRules,
-    getAllRulesAsync,
     activeRule,
     setActiveRule,
-    databaseRule,
-    setDatabaseRule,
-    dbType,
-    setDbType,
-    subscribe,
     clearSearchValue,
     filteredRule,
-    setFilteredRule
+    setFilteredRule,
+    ruleFilterForm,
+    filterCategoryTags: tags
   };
 };
 

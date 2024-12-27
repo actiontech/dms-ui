@@ -91,7 +91,7 @@ export const SegmentedRowStyleWrapper = styled(Row)`
 `;
 
 export const RuleStatusWrapperStyleWrapper = styled('div')`
-  padding-right: 40px;
+  padding: 10px 40px;
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
 `;
