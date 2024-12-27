@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Spin, Form } from 'antd';
 import { EmptyBox, PageHeader, TypedLink } from '@actiontech/shared';
-import { RuleStatus, RuleList, RuleTypes } from '../../components/RuleList';
+import { RuleStatus, RuleList } from '../../components/RuleList';
 import useRuleList from '../../components/RuleList/useRuleList';
 import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
@@ -15,29 +15,20 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Rule = () => {
   const { t } = useTranslation();
-  const {
-    ruleStatus,
-    ruleType,
-    setRuleStatus,
-    setRuleType,
-    getCurrentStatusRules,
-    getCurrentTypeRules
-  } = useRuleList();
+  const { ruleStatus, setRuleStatus, getCurrentStatusRules } = useRuleList();
 
   const [form] = Form.useForm<RuleListFilterForm>();
 
   const {
     showNotRuleTemplatePage,
     setShowNorRuleTemplatePage,
-    getTemplateRules,
     bindProjects,
     loading,
     projectID,
     filterRuleTemplate,
-    filterDbType,
     allRules,
     templateRules,
-    getAllRules
+    tags
   } = useRuleListFilter(form);
 
   return (
@@ -48,9 +39,7 @@ const Rule = () => {
           <RuleListFilter
             form={form}
             setShowNorRuleTemplatePage={setShowNorRuleTemplatePage}
-            getTemplateRules={getTemplateRules}
             bindProjects={bindProjects}
-            getAllRules={getAllRules}
           />
           {filterRuleTemplate && (
             <RuleStatus
@@ -88,27 +77,15 @@ const Rule = () => {
             />
           }
         >
-          {filterDbType && (
-            <RuleTypes
-              ruleTypeChange={setRuleType}
-              currentRuleType={ruleType}
-              allRulesData={allRules ?? []}
-              rules={getCurrentStatusRules(
-                allRules,
-                templateRules,
-                filterRuleTemplate
-              )}
-            />
-          )}
-
           <RuleList
             enableCheckDetail
-            pageHeaderHeight={50}
-            rules={getCurrentTypeRules(
+            pageHeaderHeight={0}
+            rules={getCurrentStatusRules(
               allRules,
               templateRules,
               filterRuleTemplate
             )}
+            tags={tags}
           />
         </EmptyBox>
       </Spin>

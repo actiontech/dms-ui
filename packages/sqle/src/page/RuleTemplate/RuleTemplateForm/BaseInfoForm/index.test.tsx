@@ -44,6 +44,7 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
         projectName={mockProjectInfo.projectName}
         submitLoading={false}
         submit={jest.fn()}
+        ruleListLoading={false}
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -62,6 +63,7 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
         projectName={mockProjectInfo.projectName}
         submitLoading={false}
         submit={jest.fn()}
+        ruleListLoading={false}
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));

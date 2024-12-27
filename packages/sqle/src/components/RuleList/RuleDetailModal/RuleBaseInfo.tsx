@@ -6,6 +6,11 @@ import { ReactNode } from 'react';
 import { EmptyBox } from '@actiontech/shared';
 import { RuleItemTagStyleWrapper } from '../style';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import {
+  RuleCategoryDictionaryGroup,
+  RuleCategoryDictionary
+} from '../../../hooks/useRuleCategories/index.data';
+import { isEmpty } from 'lodash';
 
 export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;
@@ -21,6 +26,32 @@ const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
   const { t } = useTranslation();
 
   const { moduleFeatureSupport } = usePermission();
+
+  const renderRuleCategory = (categories: IRuleResV1['categories']) => {
+    if (!categories || isEmpty(categories)) {
+      return;
+    }
+    return Object.keys(categories)?.map((category, index) => {
+      return (
+        <RuleItemTagStyleWrapper
+          className={`rule-category-${category} rule-detail-category`}
+          key={index}
+          wrap
+        >
+          <span>{RuleCategoryDictionary[category]}:</span>
+          <Space wrap>
+            {categories[category].map((item, idx) => {
+              return (
+                <span key={idx}>
+                  {RuleCategoryDictionaryGroup[category][item]}
+                </span>
+              );
+            })}
+          </Space>
+        </RuleItemTagStyleWrapper>
+      );
+    });
+  };
 
   return (
     <>
@@ -76,9 +107,9 @@ const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
       </EmptyBox>
       {/* #endif */}
       <Form.Item label={t('ruleTemplate.editModal.ruleTypeLabel')} name="type">
-        <RuleDetailItemStyleWrapper>
-          {dataSource?.type}
-        </RuleDetailItemStyleWrapper>
+        <Space direction="vertical">
+          {renderRuleCategory(dataSource?.categories)}
+        </Space>
       </Form.Item>
       <Form.Item label={t('ruleTemplate.editModal.ruleDbType')} name="db_type">
         <RuleDetailItemStyleWrapper>
