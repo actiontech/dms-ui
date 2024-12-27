@@ -13,7 +13,7 @@ const RuleFilterCommonFields = () => {
     operandOptions,
     sqlOptions,
     auditPurposeOptions
-  } = useRuleCategories(true);
+  } = useRuleCategories();
 
   return (
     <Space size={12}>

@@ -51,8 +51,8 @@ export default {
     addExtraRuleType: '新增规则分类',
     addExtraRuleTypePlaceholder: '请输入需要新增的规则分类名称',
     category: {
-      auditAccuracy: '审核模式',
-      auditPurpose: '质量控制目的',
+      auditAccuracy: '审核精度',
+      auditPurpose: '审核目的',
       operand: '操作对象',
       sql: 'SQL分类'
     }

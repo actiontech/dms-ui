@@ -1,9 +1,11 @@
-import { act, cleanup } from '@testing-library/react';
+import { act, cleanup, renderHook } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import RuleSelect from '.';
 import { ruleListMockData } from '../../../../testUtils/mockApi/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { Form } from 'antd';
+import { RuleFilterFieldsType } from '../../../../components/RuleList';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -26,6 +28,7 @@ describe('sqle/RuleTemplate/RuleSelect', () => {
   });
 
   it('should match snap shot', async () => {
+    const { result } = renderHook(() => Form.useForm<RuleFilterFieldsType>());
     const { baseElement } = renderWithReduxAndTheme(
       <RuleSelect
         dbType="MySQL"
@@ -35,6 +38,8 @@ describe('sqle/RuleTemplate/RuleSelect', () => {
         updateActiveRule={jest.fn()}
         updateFilteredRule={jest.fn()}
         listLoading={false}
+        ruleFilterForm={result.current[0]}
+        filterCategoryTags="table,dcl,online"
       />
     );
     await act(async () => jest.advanceTimersByTime(3000));

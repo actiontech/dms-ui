@@ -22,11 +22,7 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
 
   const { tags } = useRuleFilterForm<RuleListFilterForm>(form);
 
-  const {
-    data: allRules,
-    loading: getAllRulesLoading,
-    run: getAllRules
-  } = useRequest(
+  const { data: allRules, loading: getAllRulesLoading } = useRequest(
     () => {
       return rule_template
         .getRuleListV1({
@@ -42,11 +38,7 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     }
   );
 
-  const {
-    data: templateRules,
-    loading: getTemplateRulesLoading,
-    run: getTemplateRules
-  } = useRequest(
+  const { data: templateRules, loading: getTemplateRulesLoading } = useRequest(
     () =>
       (projectName
         ? rule_template.getProjectRuleTemplateV1({
@@ -89,13 +81,11 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     projectName,
     templateRules,
     getTemplateRulesLoading,
-    getTemplateRules,
     bindProjects,
     projectID,
     loading,
     setLoading,
     filterDbType,
-    getAllRules,
     tags
   };
 };

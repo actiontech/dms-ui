@@ -30,7 +30,7 @@ const useRuleCategories = (showOptionCount = false) => {
       if (showOptionCount) {
         return (
           <RuleCategoryOptionStyleWrapper>
-            {dictionary[tag]}{' '}
+            {dictionary[tag]}
             <Typography.Text type="secondary">{count}</Typography.Text>
           </RuleCategoryOptionStyleWrapper>
         );
