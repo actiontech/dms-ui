@@ -32,7 +32,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -144,7 +144,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                               aria-required="true"
                               class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                               id="templateName"
-                              placeholder="请输入模版名称"
+                              placeholder="请输入模板名称"
                               type="text"
                               value="test1"
                             />
@@ -165,9 +165,9 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                         <label
                           class="ant-form-item-no-colon"
                           for="templateDesc"
-                          title="模版描述"
+                          title="模板描述"
                         >
-                          模版描述
+                          模板描述
                         </label>
                       </div>
                       <div
@@ -368,7 +368,6 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                 </div>
                 <button
                   class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
-                  disabled=""
                   type="button"
                 >
                   <span>
@@ -382,48 +381,294 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                 <div
                   class="ant-space-item"
                 >
-                  <span
-                    class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-ulo9hd ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                  <form
+                    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
                   >
-                    <input
-                      class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
-                      placeholder="请输入规则关键词搜索"
-                      type="text"
-                      value=""
-                    />
-                    <span
-                      class="ant-input-suffix"
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                     >
-                      <span
-                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
-                        role="button"
-                        tabindex="-1"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <span
+                          class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                          style="width: 210px;"
                         >
-                          <path
-                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          <input
+                            class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                            id="fuzzy_keyword"
+                            placeholder="请输入规则关键词搜索"
+                            type="text"
+                            value=""
                           />
-                        </svg>
-                      </span>
-                      <svg
-                        class="pointer"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="ant-input-suffix"
+                          >
+                            <span
+                              class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <svg
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                />
+                              </svg>
+                            </span>
+                            <svg
+                              class="pointer"
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
                       >
-                        <path
-                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                        />
-                      </svg>
-                    </span>
-                  </span>
+                        <div
+                          class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="operand_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="operand_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="operand_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="operand"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  操作对象
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="audit_purpose_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="audit_purpose_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="audit_purpose_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="audit_purpose"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  审核目的
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="sql_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="sql_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="sql_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="sql"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  SQL分类
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="audit_accuracy_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="audit_accuracy_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="audit_accuracy_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="audit_accuracy"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  审核精度
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
               <div
@@ -433,79 +678,254 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                   class="ant-spin-container"
                 >
                   <div
-                    class="css-1yvqaly"
+                    class="rule-list-wrapper css-1dhi3sr"
                   >
                     <div
-                      class="css-1n3gq8r"
-                    >
-                      ALL
-                      <span
-                        class="number-wrapper"
-                      >
-                        0
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="rule-list-wrapper css-ghg9ee"
-                  >
-                    <div
-                      class="css-1br6ibb"
+                      id="rule-list-wrapper-id"
                     >
                       <div
-                        class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                        class="infinite-scroll-component__outerdiv"
                       >
                         <div
-                          class="ant-empty-image"
+                          class="infinite-scroll-component "
+                          style="height: auto; overflow: auto;"
                         >
-                          <svg
-                            fill="none"
-                            height="80"
-                            viewBox="0 0 80 80"
-                            width="80"
-                            xmlns="http://www.w3.org/2000/svg"
+                          <div
+                            class="has-top-margin css-11zqvuw"
+                            style="cursor: pointer;"
                           >
-                            <g
-                              clip-path="url(#clip0_1412_15009)"
+                            <div
+                              class="level-icon"
                             >
-                              <path
-                                d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
-                                fill="#EBEAE7"
-                              />
-                              <path
-                                d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
-                                fill="#F2F1EF"
-                              />
-                              <path
-                                d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
-                                fill="#E6E4E3"
-                              />
-                            </g>
-                            <defs>
-                              <clippath
-                                id="clip0_1412_15009"
+                              <svg
+                                height="19"
+                                viewBox="0 0 16 16"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <rect
-                                  fill="white"
-                                  height="80"
-                                  width="80"
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
                                 />
-                              </clippath>
-                            </defs>
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-empty-description"
-                        >
-                          <span
-                            class="no-data-cont"
+                              </svg>
+                              <span
+                                class="level-icon-text"
+                              >
+                                error
+                              </span>
+                            </div>
+                            <div
+                              class="level-content"
+                            >
+                              <span
+                                class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                              >
+                                绑定的变量个数不建议超过阈值
+                              </span>
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                              >
+                                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+                              </div>
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <div
+                                        class="level-content-params-item"
+                                      >
+                                        最大绑定变量数量
+                                         
+                                        : 
+                                        100
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        离线
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        DCL
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        数据库
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        表空间
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        正确性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                />
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                />
+                              </div>
+                            </div>
+                            <section
+                              class="action-wrapper"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 10px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            class="icon-edit custom-icon custom-icon-edit"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                              fill="#8A8F99"
+                                            />
+                                          </svg>
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <button
+                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="ant-btn-icon"
+                                        >
+                                          <svg
+                                            class="icon-disabled"
+                                            fill="currentColor"
+                                            height="16"
+                                            viewBox="0 0 14 14"
+                                            width="16"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                            />
+                                          </svg>
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                          </div>
+                          <section
+                            class="end-bottom-cont"
                           >
                             暂无更多规则
-                          </span>
+                          </section>
                         </div>
-                        <div
-                          class="ant-empty-footer"
-                        />
                       </div>
                     </div>
                   </div>
@@ -922,7 +1342,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
             <div
               class="ant-result-title"
             >
-              导入审核规则模版成功
+              导入审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -932,7 +1352,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -976,7 +1396,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -1614,7 +2034,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 1`] = `
             <div
               class="ant-result-title"
             >
-              导入审核规则模版成功
+              导入审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -1624,7 +2044,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -1668,7 +2088,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 2`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -2413,7 +2833,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 2`] = `
             <div
               class="ant-result-title"
             >
-              导入审核规则模版成功
+              导入审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -2423,7 +2843,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate reset form values 2`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -2467,7 +2887,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
               </svg>
             </span>
             <span>
-              返回规则模版列表
+              返回规则模板列表
             </span>
           </button>
         </div>
@@ -2579,7 +2999,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                               aria-required="true"
                               class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
                               id="templateName"
-                              placeholder="请输入模版名称"
+                              placeholder="请输入模板名称"
                               type="text"
                               value="test1"
                             />
@@ -2600,9 +3020,9 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                         <label
                           class="ant-form-item-no-colon"
                           for="templateDesc"
-                          title="模版描述"
+                          title="模板描述"
                         >
-                          模版描述
+                          模板描述
                         </label>
                       </div>
                       <div
@@ -2816,48 +3236,294 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                 <div
                   class="ant-space-item"
                 >
-                  <span
-                    class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-ulo9hd ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                  <form
+                    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
                   >
-                    <input
-                      class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
-                      placeholder="请输入规则关键词搜索"
-                      type="text"
-                      value=""
-                    />
-                    <span
-                      class="ant-input-suffix"
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                     >
-                      <span
-                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
-                        role="button"
-                        tabindex="-1"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
                       >
-                        <svg
-                          fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <span
+                          class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                          style="width: 210px;"
                         >
-                          <path
-                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          <input
+                            class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                            id="fuzzy_keyword"
+                            placeholder="请输入规则关键词搜索"
+                            type="text"
+                            value=""
                           />
-                        </svg>
-                      </span>
-                      <svg
-                        class="pointer"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                          <span
+                            class="ant-input-suffix"
+                          >
+                            <span
+                              class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <svg
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                />
+                              </svg>
+                            </span>
+                            <svg
+                              class="pointer"
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
                       >
-                        <path
-                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                        />
-                      </svg>
-                    </span>
-                  </span>
+                        <div
+                          class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="operand_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="operand_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="operand_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="operand"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  操作对象
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="audit_purpose_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="audit_purpose_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="audit_purpose_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="audit_purpose"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  审核目的
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 12px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="sql_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="sql_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="sql_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="sql"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  SQL分类
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="audit_accuracy_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="audit_accuracy_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="audit_accuracy_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="audit_accuracy"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  审核精度
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
               <div
@@ -2867,31 +3533,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                   class="ant-spin-container"
                 >
                   <div
-                    class="css-1yvqaly"
-                  >
-                    <div
-                      class="css-1n3gq8r"
-                    >
-                      ALL
-                      <span
-                        class="number-wrapper"
-                      >
-                        1
-                      </span>
-                    </div>
-                    <div
-                      class="css-zvt316"
-                    >
-                      使用建议
-                      <span
-                        class="number-wrapper"
-                      >
-                        1
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="rule-list-wrapper css-ghg9ee"
+                    class="rule-list-wrapper css-1dhi3sr"
                   >
                     <div
                       id="rule-list-wrapper-id"
@@ -2904,7 +3546,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                           style="height: auto; overflow: auto;"
                         >
                           <div
-                            class="has-top-margin css-4znel3"
+                            class="has-top-margin css-11zqvuw"
                             style="cursor: pointer;"
                           >
                             <div
@@ -2942,13 +3584,14 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                               </div>
                               <div
                                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
                                   class="ant-space-item"
-                                  style="margin-right: 8px;"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-rncbf4"
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-1yzh26w"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -2966,10 +3609,93 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                                 </div>
                                 <div
                                   class="ant-space-item"
-                                  style="margin-right: 8px;"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        离线
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        DCL
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px;"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        数据库
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        表空间
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                    >
+                                      <span
+                                        class=""
+                                      >
+                                        正确性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
                                 />
                                 <div
                                   class="ant-space-item"
+                                  style="padding-bottom: 8px;"
                                 />
                               </div>
                             </div>
@@ -3471,7 +4197,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
             <div
               class="ant-result-title"
             >
-              导入审核规则模版成功
+              导入审核规则模板成功
             </div>
             <div
               class="ant-result-extra"
@@ -3481,7 +4207,7 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                 type="button"
               >
                 <span>
-                  返回规则模版列表
+                  返回规则模板列表
                 </span>
               </button>
             </div>
@@ -3703,13 +4429,167 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <section
-                            class="css-lk9s71"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                             id="type"
                             value="使用建议"
                           >
-                            使用建议
-                          </section>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    审核精度
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        离线
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    SQL分类
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        DCL
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    操作对象
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        数据库
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        表空间
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    审核目的
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        正确性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

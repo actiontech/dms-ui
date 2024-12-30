@@ -807,7 +807,7 @@ exports[`page/auth/AuthAudit render action when click detail drawer 1`] = `
                   <div
                     class="audit-info-item-label"
                   >
-                    权限模版
+                    权限模板
                   </div>
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"

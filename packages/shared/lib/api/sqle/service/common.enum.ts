@@ -1,3 +1,13 @@
+export enum RuleCategoryStatisticCategoryEnum {
+  'audit_accuracy' = 'audit_accuracy',
+
+  'audit_purpose' = 'audit_purpose',
+
+  'operand' = 'operand',
+
+  'sql' = 'sql'
+}
+
 export enum AssociateWorkflowsStatusEnum {
   'wait_for_audit' = 'wait_for_audit',
 

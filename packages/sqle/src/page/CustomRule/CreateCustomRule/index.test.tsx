@@ -30,13 +30,13 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
   const dispatchSpy = jest.fn();
   let getDriversSpy: jest.SpyInstance;
   let createCustomRuleSpy: jest.SpyInstance;
-  let getRuleTypeByDBTypeSpy: jest.SpyInstance;
+  let getCategoryStatisticsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     mockUseDbServiceDriver();
     getDriversSpy = configuration.getDrivers();
     createCustomRuleSpy = rule_template.createCustomRule();
-    getRuleTypeByDBTypeSpy = rule_template.getRuleTypeByDBType();
+    getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
@@ -73,6 +73,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('reset form values', async () => {
@@ -105,58 +106,45 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     const { baseElement } = renderWithThemeAndRedux(<CreateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     const descEle = getBySelector('#desc');
-
-    await act(async () => {
-      fireEvent.input(descEle, {
-        target: { value: 'test_custom_rule' }
-      });
-      await jest.advanceTimersByTime(300);
+    fireEvent.input(descEle, {
+      target: { value: 'test_custom_rule' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
 
     expect(descEle).toHaveValue('test_custom_rule');
     const annotationEle = getBySelector('#annotation');
-    await act(async () => {
-      fireEvent.input(annotationEle, {
-        target: { value: 'anno' }
-      });
-      await jest.advanceTimersByTime(300);
+    fireEvent.input(annotationEle, {
+      target: { value: 'anno' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
     expect(annotationEle).toHaveValue('anno');
-    const ruleTypeEle = getBySelector('#ruleType');
-    expect(ruleTypeEle).toBeDisabled();
+
     const dbTypeEle = getBySelector('#dbType');
-    await act(async () => {
-      fireEvent.mouseDown(dbTypeEle);
-      await jest.advanceTimersByTime(300);
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('span[title="mysql"]'));
-      await jest.advanceTimersByTime(3000);
-    });
-    expect(ruleTypeEle).not.toBeDisabled();
-    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
-    await act(async () => {
-      fireEvent.mouseDown(ruleTypeEle);
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.click(screen.getByText('新增规则分类'));
-      await jest.advanceTimersByTime(300);
-    });
-    await act(async () => {
-      fireEvent.input(screen.getByTestId('add-rule-type'), {
-        target: { value: '新规范' }
-      });
-      await jest.advanceTimersByTime(300);
-    });
-    await act(async () => {
-      fireEvent.click(screen.getByText('新增规则分类'));
-      await jest.advanceTimersByTime(300);
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="新规范"]'));
-      await jest.advanceTimersByTime(300);
-    });
+    fireEvent.mouseDown(dbTypeEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('span[title="mysql"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#operand'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('数据库'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#auditPurpose'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('性能问题'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#sql'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('完整性约束'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#auditAccuracy'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('在线'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     await act(async () => {
       fireEvent.mouseDown(getBySelector('#level'));
       await jest.advanceTimersByTime(100);
@@ -192,7 +180,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
       level: CreateCustomRuleReqV1LevelEnum.warn,
       annotation: 'anno',
       rule_script: 'SELECT 1',
-      type: '新规范'
+      tags: ['database', 'performance', 'online', 'integrity']
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
     expect(resultTip).not.toBeVisible();
@@ -223,29 +211,38 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     fireEvent.input(annotationEle, {
       target: { value: 'anno' }
     });
-    const ruleTypeEle = getBySelector('#ruleType');
+
     const dbTypeEle = getBySelector('#dbType');
     fireEvent.mouseDown(dbTypeEle);
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(getBySelector('span[title="mysql"]'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getRuleTypeByDBTypeSpy).toHaveBeenCalledTimes(1);
-    await act(async () => {
-      fireEvent.mouseDown(ruleTypeEle);
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="规范1"]'));
-      await jest.advanceTimersByTime(300);
-    });
-    await act(async () => {
-      fireEvent.mouseDown(getBySelector('#level'));
-      await jest.advanceTimersByTime(100);
-    });
-    await act(async () => {
-      fireEvent.click(getBySelector('div[title="告警"]'));
-      await jest.advanceTimersByTime(300);
-    });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#operand'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('触发器'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#auditPurpose'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('性能问题'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#sql'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('DCL'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#auditAccuracy'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('离线'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#level'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="告警"]'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(300));
     await act(async () => {
@@ -266,7 +263,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
       level: CreateCustomRuleReqV1LevelEnum.warn,
       annotation: 'anno',
       rule_script: 'SELECT 1',
-      type: '规范1'
+      tags: ['trigger', 'performance', 'offline', 'dcl']
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
     expect(resultTip).not.toBeVisible();

@@ -51,7 +51,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('审批流程模版')).toBeInTheDocument();
+    expect(screen.getByText('审批流程模板')).toBeInTheDocument();
     expect(getBySelector('a')).toBeInTheDocument();
     expect(getBySelector('a')).toHaveAttribute(
       'href',
@@ -83,7 +83,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.queryByText('修改当前审批流程模版')).not.toBeInTheDocument();
+    expect(screen.queryByText('修改当前审批流程模板')).not.toBeInTheDocument();
 
     // project manager
     cleanup();
@@ -104,7 +104,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
       ]
     });
     customRender();
-    expect(screen.getByText('修改当前审批流程模版')).toBeInTheDocument();
+    expect(screen.getByText('修改当前审批流程模板')).toBeInTheDocument();
 
     // project is archived
     cleanup();
@@ -125,7 +125,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
       ]
     });
     customRender();
-    expect(screen.queryByText('修改当前审批流程模版')).not.toBeInTheDocument();
+    expect(screen.queryByText('修改当前审批流程模板')).not.toBeInTheDocument();
   });
 
   it('render workflow template detail with not projectArchive', async () => {
@@ -137,7 +137,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     expect(getInfoRequest).toHaveBeenCalled();
     expect(userInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('审批流程模版')).toBeInTheDocument();
+    expect(screen.getByText('审批流程模板')).toBeInTheDocument();
   });
 
   it('render workflow template detail with no review step', async () => {
@@ -156,7 +156,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInfoRequest).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('审批流程模版')).toBeInTheDocument();
+    expect(screen.getByText('审批流程模板')).toBeInTheDocument();
     expect(screen.getByText('执行上线')).toBeInTheDocument();
   });
 });

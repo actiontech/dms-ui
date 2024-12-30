@@ -44,6 +44,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   let getDriversSpy: jest.SpyInstance;
   let createRuleTemplateSpy: jest.SpyInstance;
   let importProjectRuleTemplateSpy: jest.SpyInstance;
+  let getCategoryStatisticsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -69,6 +70,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     createRuleTemplateSpy = rule_template.createRuleTemplate();
     importProjectRuleTemplateSpy = rule_template.importProjectRuleTemplate();
+    getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     getDriversSpy.mockImplementation(() =>
       createSpySuccessResponse({
         data: [
@@ -115,6 +117,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
 
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
+    expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByTestId('base-form')).toBeVisible();
@@ -143,9 +146,6 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('import global rule template', async () => {
-    getAllRuleSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [] })
-    );
     const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
     const file = new File([''], 'test.json');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
@@ -161,40 +161,13 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     fireEvent.input(getBySelector('#templateName'), {
       target: { value: 'test1' }
     });
-    await act(async () => jest.advanceTimersByTime(0));
-
-    fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
 
-    getAllRuleSpy.mockClear();
-    getAllRuleSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: ruleListData })
-    );
-
-    const searchInput = getBySelector(
-      'input[placeholder="请输入规则关键词搜索"]'
-    );
-    fireEvent.input(searchInput, {
-      target: { value: 'test' }
-    });
-    await act(async () => jest.advanceTimersByTime(100));
-    await act(async () => {
-      fireEvent.keyDown(searchInput, {
-        key: 'Enter',
-        code: 'Enter',
-        keyCode: 13
-      });
-      await act(() => jest.advanceTimersByTime(300));
-    });
-    expect(getAllRuleSpy).toHaveBeenCalledWith({
-      filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
-    });
-
-    await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('禁用全部规则'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('暂无更多规则')).toBeInTheDocument();
@@ -250,7 +223,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
-    expect(screen.getByText('导入审核规则模版成功')).toBeInTheDocument();
+    expect(screen.getByText('导入审核规则模板成功')).toBeInTheDocument();
     fireEvent.click(getBySelector('.ant-result .basic-button-wrapper'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
   });
@@ -271,10 +244,10 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     fireEvent.input(getBySelector('#templateName'), {
       target: { value: 'test1' }
     });
-    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(screen.getByText('下一步'));
-    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByTestId('base-form')).not.toBeVisible();
     expect(screen.getByTestId('rule-list')).toBeVisible();
     fireEvent.click(screen.getByText('上一步'));
@@ -406,5 +379,89 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('error message')).toBeInTheDocument();
+  });
+
+  it('rule list action', async () => {
+    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const file = new File([''], 'test.json');
+    fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
+      target: { files: [file] }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(importProjectRuleTemplateSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('导 入'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByLabelText('数据库类型')).toBeDisabled();
+    fireEvent.input(getBySelector('#templateName'), {
+      target: { value: 'test1' }
+    });
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(1, {
+      filter_db_type: 'MySQL'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('下一步'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(screen.getByTestId('base-form')).not.toBeVisible();
+    expect(screen.getByTestId('rule-list')).toBeVisible();
+
+    const searchInput = getBySelector('#fuzzy_keyword');
+    fireEvent.input(searchInput, {
+      target: { value: 'test' }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.keyDown(searchInput, {
+      key: 'Enter',
+      code: 'Enter',
+      keyCode: 13
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
+      filter_db_type: 'MySQL',
+      fuzzy_keyword_rule: 'test'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseDown(getBySelector('#operand'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#operand_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(3, {
+      tags: 'column',
+      filter_db_type: 'MySQL',
+      fuzzy_keyword_rule: 'test'
+    });
+
+    fireEvent.mouseDown(getBySelector('#audit_purpose'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#audit_purpose_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(4, {
+      tags: 'column,correction',
+      filter_db_type: 'MySQL',
+      fuzzy_keyword_rule: 'test'
+    });
+
+    fireEvent.mouseDown(getBySelector('#sql'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#sql_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(5, {
+      tags: 'column,correction,dcl',
+      filter_db_type: 'MySQL',
+      fuzzy_keyword_rule: 'test'
+    });
+
+    fireEvent.mouseDown(getBySelector('#audit_accuracy'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#audit_accuracy_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(6, {
+      tags: 'column,correction,offline,dcl',
+      filter_db_type: 'MySQL',
+      fuzzy_keyword_rule: 'test'
+    });
   });
 });

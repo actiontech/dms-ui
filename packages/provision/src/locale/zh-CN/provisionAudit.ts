@@ -17,14 +17,14 @@ export default {
     }
   },
   templateAudit: {
-    title: '权限模版审计',
+    title: '权限模板审计',
     columns: {
       template: '模板名称'
     },
     type: {
-      templateCreated: '创建权限模版',
-      templateUpdated: '更新权限模版',
-      templateDeleted: '删除权限模版'
+      templateCreated: '创建权限模板',
+      templateUpdated: '更新权限模板',
+      templateDeleted: '删除权限模板'
     }
   },
   serviceAudit: {
@@ -46,7 +46,7 @@ export default {
     purpose: '目的或用途',
     authUser: '使用人',
     actionUser: '操作用户',
-    template: '权限模版',
+    template: '权限模板',
     memo: '备注',
     details: '数据库账号详情',
     columns: {
@@ -57,8 +57,8 @@ export default {
     }
   },
   templateAuditDetail: {
-    title: '模版详情',
-    templateDetail: '权限模版详情'
+    title: '模板详情',
+    templateDetail: '权限模板详情'
   },
   serviceAuditDetail: {
     title: '数据源操作详情',

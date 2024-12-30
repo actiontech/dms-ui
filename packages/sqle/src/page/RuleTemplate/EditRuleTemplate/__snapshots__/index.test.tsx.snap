@@ -216,13 +216,239 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <section
-                            class="css-lk9s71"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                             id="type"
                             value="使用建议"
                           >
-                            使用建议
-                          </section>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    审核精度
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        在线
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    SQL分类
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        DDL
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    操作对象
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        数据库
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        表空间
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        表
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        字段
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        索引
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        视图
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        存储过程
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        函数
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        触发器
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        事件
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        用户
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    审核目的
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        可维护性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -668,13 +894,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when dataSource is empty object 1`] 
                       >
                         <div
                           class="ant-form-item-control-input-content"
-                        >
-                          <section
-                            class="css-lk9s71"
-                            id="type"
-                            value=""
-                          />
-                        </div>
+                        />
                       </div>
                     </div>
                   </div>
@@ -1073,13 +1293,239 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                         <div
                           class="ant-form-item-control-input-content"
                         >
-                          <section
-                            class="css-lk9s71"
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
                             id="type"
                             value="使用建议"
                           >
-                            使用建议
-                          </section>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    审核精度
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        在线
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    SQL分类
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        DDL
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    操作对象
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        数据库
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        表空间
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        表
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        字段
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        索引
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        视图
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        存储过程
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        函数
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        触发器
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="margin-right: 8px; padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        事件
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        用户
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-1yzh26w"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    审核目的
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        可维护性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

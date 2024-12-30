@@ -6,8 +6,11 @@ export type CustomRuleFormBaseInfoFields = {
   annotation: string;
   desc: string;
   dbType: string;
-  ruleType: string;
   level?: CustomRuleResV1LevelEnum;
+  operand: string[];
+  sql: string;
+  auditPurpose: string;
+  auditAccuracy: string;
 };
 
 export type EditRuleScriptFields = {
@@ -21,10 +24,6 @@ export type CustomRuleFormProps = {
   defaultData?: ICustomRuleResV1;
   step: number;
   prevStep: () => void;
-  extraRuleTypeList: string[];
-  extraRuleName: string;
-  resetExtraInfo: () => void;
-  onExtraRuleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   submit: () => void;
   baseInfoSubmit: () => void;
   submitLoading: boolean;
@@ -32,15 +31,7 @@ export type CustomRuleFormProps = {
 
 export type BaseInfoFormProps = {
   submit: () => void;
-} & Pick<
-  CustomRuleFormProps,
-  | 'form'
-  | 'defaultData'
-  | 'extraRuleTypeList'
-  | 'extraRuleName'
-  | 'resetExtraInfo'
-  | 'onExtraRuleNameChange'
->;
+} & Pick<CustomRuleFormProps, 'form' | 'defaultData'>;
 
 export type EditRuleScriptProps = {
   form: FormInstance<EditRuleScriptFields>;

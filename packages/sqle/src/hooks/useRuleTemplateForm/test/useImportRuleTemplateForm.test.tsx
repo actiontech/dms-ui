@@ -17,8 +17,8 @@ describe('sqle/hooks/useRuleTemplateForm/useImportRuleTemplateForm', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.activeRule).toEqual([]);
     expect(result.current.getAllRulesLoading).toEqual(false);
-    expect(result.current.allRules).toEqual([]);
-    expect(result.current.dbType).toEqual('');
+    expect(result.current.allRules).toEqual(undefined);
+    expect(result.current.dbType).toEqual(undefined);
     expect(result.current.step).toEqual(0);
     expect(result.current.submitSuccessStatus).toEqual(false);
     expect(result.current.createLoading).toEqual(false);

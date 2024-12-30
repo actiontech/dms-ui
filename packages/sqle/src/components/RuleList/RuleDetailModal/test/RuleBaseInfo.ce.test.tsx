@@ -77,4 +77,29 @@ describe('sqle/components/RuleList/RuleBaseInfo', () => {
     });
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('render snap when current rule has categories', () => {
+    const { baseElement } = customRender({
+      showKnowledge: true,
+      dataSource: {
+        annotation: 'annotation text',
+        db_type: 'mysql',
+        desc: 'desc cont',
+        is_custom_rule: true,
+        level: RuleResV1LevelEnum.error,
+        rule_name: 'rule_name_a',
+        type: 'a',
+        has_audit_power: true,
+        has_rewrite_power: true,
+        categories: {
+          audit_accuracy: ['offline'],
+          sql: ['dcl'],
+          operand: ['database', 'table_space'],
+          audit_purpose: ['correction']
+        }
+      },
+      children: <span>child note a</span>
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
 });
