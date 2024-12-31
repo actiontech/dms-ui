@@ -106,11 +106,19 @@ export const databaseAccountDetailMockData = {
     password_create_time: '2024-06-03T13:24:26.000+08:00',
     expired_time: '2024-07-03T13:24:26.000+08:00',
     connect_string: 'mysql -u test1 -h 127.0.0.1:3306 -P 3306 -p',
-    explanation: ''
+    explanation: '',
+    additional_params: [
+      {
+        key: 'hostname',
+        value: '%',
+        desc: '主机名',
+        type: ''
+      }
+    ]
   },
   db_service: {
-    uid: '1793883708181188608',
-    name: 'test'
+    name: 'Julian Lueilwitz',
+    uid: '42343'
   },
   data_permissions: [
     {
@@ -121,22 +129,40 @@ export const databaseAccountDetailMockData = {
           name: 'database-1.table-1'
         }
       ],
-      data_operation_sets: [
+      data_operations: [
         {
-          uid: '27',
-          name: '查询'
+          uid: '600010',
+          name: 'ALL'
         }
       ],
       data_permission_different: {
         original_data_permission:
           'SELECT, INSERT, UPDATE, CREATE, REFERENCES, INDEX, ALTER, CREATE VIEW, SHOW VIEW, TRIGGER ON `test_db`.*'
       }
+    },
+    {
+      data_objects: null,
+      data_operations: [
+        {
+          uid: '600033',
+          name: 'CREATE_USER'
+        }
+      ],
+      data_permission_different: {
+        original_data_permission: ''
+      }
     }
   ],
   password_security_policy: '',
   status: 'unlock',
   password_managed: false,
-  auth_users: ['t3']
+  auth_users: ['t3'],
+  db_roles: [
+    {
+      name: 'role1',
+      uid: '123'
+    }
+  ]
 };
 
 export const discoveryDBAccountMockData: IDBAccountBody[] = [

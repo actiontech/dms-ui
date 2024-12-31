@@ -18,7 +18,7 @@ import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import user from '../../../../testUtil/mockApi/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
-describe.skip('provision/DatabaseAccount/AccountDiscoveryModal', () => {
+describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
   let authListServicesSpy: jest.SpyInstance;
   let authListBusinessesSpy: jest.SpyInstance;
   let authDiscoveryDBAccountsSpy: jest.SpyInstance;
@@ -78,7 +78,7 @@ describe.skip('provision/DatabaseAccount/AccountDiscoveryModal', () => {
       business: 'business-1',
       filter_by_namespace: mockProjectInfo.projectID,
       page_index: 1,
-      page_size: 999
+      page_size: 9999
     });
     await act(async () => jest.advanceTimersByTime(2900));
     fireEvent.mouseDown(getBySelector('#service'));
@@ -117,6 +117,51 @@ describe.skip('provision/DatabaseAccount/AccountDiscoveryModal', () => {
       'filter_by_db_service',
       '42343'
     );
+  });
+
+  it('render filter account table field', async () => {
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const filterInput = getBySelector(
+      'input[placeholder="输入账号名进行搜索"]'
+    );
+    expect(filterInput).not.toBeVisible();
+    expect(getBySelector('.ant-btn-icon-only')).not.toBeVisible();
+    selectOptionByIndex('业务', 'business-1', 1);
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
+      business: 'business-1',
+      filter_by_namespace: mockProjectInfo.projectID,
+      page_index: 1,
+      page_size: 9999
+    });
+    await act(async () => jest.advanceTimersByTime(2900));
+    fireEvent.mouseDown(getBySelector('#service'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    ).toBeInTheDocument();
+    fireEvent.click(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    );
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenNthCalledWith(1, {
+      db_service_uid: '42343',
+      project_uid: mockProjectInfo.projectID
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getBySelector('.ant-btn-icon-only')).toBeVisible();
+    expect(filterInput).toBeVisible();
+    expect(screen.getByText('mysql.session')).toBeInTheDocument();
+    expect(screen.getByText('root')).toBeInTheDocument();
+    fireEvent.input(getBySelector('input[placeholder="输入账号名进行搜索"]'), {
+      target: { value: 'root' }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.queryByText('mysql.session')).not.toBeInTheDocument();
+    expect(screen.getByText('root')).toBeInTheDocument();
   });
 
   it('render sync account error', async () => {

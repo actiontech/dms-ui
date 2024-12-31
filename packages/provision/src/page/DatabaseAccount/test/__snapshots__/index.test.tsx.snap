@@ -363,7 +363,7 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 122px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead

@@ -151,7 +151,7 @@ const UpdateDatabaseAccount = () => {
   }, []);
 
   const onReset = () => {
-    form.resetFields(['operationsPermissions', 'dbRoles']);
+    form.resetFields(['objectPrivileges', 'systemPrivileges', 'dbRoles']);
   };
 
   return (
@@ -177,6 +177,7 @@ const UpdateDatabaseAccount = () => {
               type="primary"
               loading={submitLoading}
               onClick={onSubmit}
+              className="create-account-submit"
             >
               {t('common.save')}
             </BasicButton>

@@ -15,7 +15,8 @@ import {
   templateAuditList,
   serviceAuditList,
   userList,
-  accountListByService
+  accountListByService,
+  mockDBOperationsData
 } from './data';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 
@@ -45,6 +46,7 @@ class MockAuthApi implements MockSpyApy {
     this.listDataPermissionTemplateEvents();
     this.listDataObjectSources();
     this.delDataObjectSource();
+    this.authListOperations();
   }
 
   public listUsers() {
@@ -254,6 +256,14 @@ class MockAuthApi implements MockSpyApy {
     const spy = jest.spyOn(auth, 'AuthListBusiness');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: { businesses } })
+    );
+    return spy;
+  }
+
+  public authListOperations() {
+    const spy = jest.spyOn(auth, 'AuthListOperations');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockDBOperationsData })
     );
     return spy;
   }

@@ -319,7 +319,39 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-table-wrapper actiontech-table-namespace css-1h1jqio css-dev-only-do-not-override-bj9uhl"
+                            class="flex-space-between"
+                            hidden=""
+                          >
+                            <input
+                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              placeholder="输入账号名进行搜索"
+                              style="width: 300px;"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="custom-icon custom-icon-refresh"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6 css-dev-only-do-not-override-bj9uhl"
                           >
                             <div
                               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -381,6 +413,12 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                                               class="ant-table-cell"
                                               scope="col"
                                             >
+                                              角色
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
                                               权限
                                             </th>
                                           </tr>
@@ -397,6 +435,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                                         <colgroup>
                                           <col
                                             class="ant-table-selection-col"
+                                          />
+                                          <col />
+                                          <col
+                                            style="width: 100px;"
                                           />
                                         </colgroup>
                                         <tbody
@@ -434,13 +476,22 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                                                  
                                               </div>
                                             </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
                                           </tr>
                                           <tr
                                             class="ant-table-placeholder"
                                           >
                                             <td
                                               class="ant-table-cell"
-                                              colspan="3"
+                                              colspan="4"
                                             >
                                               <div
                                                 class="ant-table-expanded-row-fixed"
@@ -826,7 +877,39 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-table-wrapper actiontech-table-namespace css-1h1jqio css-dev-only-do-not-override-bj9uhl"
+                            class="flex-space-between"
+                            hidden=""
+                          >
+                            <input
+                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              placeholder="输入账号名进行搜索"
+                              style="width: 300px;"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="custom-icon custom-icon-refresh"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6 css-dev-only-do-not-override-bj9uhl"
                           >
                             <div
                               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
@@ -888,6 +971,12 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                                               class="ant-table-cell"
                                               scope="col"
                                             >
+                                              角色
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
                                               权限
                                             </th>
                                           </tr>
@@ -904,6 +993,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                                         <colgroup>
                                           <col
                                             class="ant-table-selection-col"
+                                          />
+                                          <col />
+                                          <col
+                                            style="width: 100px;"
                                           />
                                         </colgroup>
                                         <tbody
@@ -941,13 +1034,22 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                                                  
                                               </div>
                                             </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
                                           </tr>
                                           <tr
                                             class="ant-table-placeholder"
                                           >
                                             <td
                                               class="ant-table-cell"
-                                              colspan="3"
+                                              colspan="4"
                                             >
                                               <div
                                                 class="ant-table-expanded-row-fixed"

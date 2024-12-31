@@ -153,7 +153,11 @@ const CreateDatabaseAccount = () => {
         extra={
           <Space hidden={submitSuccess}>
             <BasicButton onClick={onReset}>{t('common.reset')}</BasicButton>
-            <BasicButton type="primary" onClick={onSubmit}>
+            <BasicButton
+              type="primary"
+              onClick={onSubmit}
+              className="create-account-submit"
+            >
               {t('common.save')}
             </BasicButton>
           </Space>
