@@ -76,7 +76,13 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
     return [
       {
         key: CollapseItemKeyEnum.overall_rewritten_suggestion,
-        label: t('sqlRewrite.overallRewriteSuggestions'),
+        label: (
+          <ModuleHeaderTitleStyleWrapper>
+            <span className="title">
+              {t('sqlRewrite.overallRewriteSuggestions')}
+            </span>
+          </ModuleHeaderTitleStyleWrapper>
+        ),
         children: (
           <OverallRewrittenSuggestion
             originalSql={originSqlInfo?.sql ?? ''}
