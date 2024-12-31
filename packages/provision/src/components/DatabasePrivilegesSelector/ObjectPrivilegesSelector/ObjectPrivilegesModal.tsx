@@ -285,7 +285,11 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
       footer={
         <Space>
           <BasicButton onClick={handleCancel}>{t('common.close')}</BasicButton>
-          <BasicButton type="primary" onClick={handleSubmit}>
+          <BasicButton
+            type="primary"
+            onClick={handleSubmit}
+            className="object-privileges-modal-submit"
+          >
             {t('common.save')}
           </BasicButton>
         </Space>
