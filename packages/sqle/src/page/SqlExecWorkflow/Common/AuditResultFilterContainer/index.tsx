@@ -8,9 +8,10 @@ import classNames from 'classnames';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { floatRound } from '@actiontech/shared/lib/utils/Math';
 import { useTranslation } from 'react-i18next';
+import { CustomSegmentedFilterBaseValue } from '@actiontech/shared/lib/components/CustomSegmentedFilter/index.type';
 
 const AuditResultFilterContainer = <
-  T extends string | number | undefined = string
+  T extends CustomSegmentedFilterBaseValue = string
 >(
   props: AuditResultFilterContainerProps<T>
 ) => {

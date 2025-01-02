@@ -15,6 +15,7 @@ describe('test PaginationList/FileExecuteMode', () => {
     const _params: FileExecuteModeProps = {
       taskId: '123',
       currentListLayout: TaskResultListLayoutEnum.pagination,
+      execStatusFilterValue: null,
       auditResultActiveKey: '123',
       noDuplicate: false,
       pagination: { page_index: 1, page_size: 20 },
