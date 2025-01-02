@@ -20,6 +20,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
+import task from '../../../../../../testUtils/mockApi/task';
 
 jest.mock('react-redux', () => {
   return {
@@ -45,6 +46,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     requestUpdateAuditTaskSQLs = execWorkflow.updateAuditTaskSQLs();
     requestGetAuditTaskSQLs = execWorkflow.getAuditTaskSQLs();
     updateSqlBackupStrategySpy = execWorkflow.updateSqlBackupStrategy();
+    task.getTaskSQLRewritten();
     execWorkflow.mockAllApi();
     rule_template.getRuleList();
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -69,7 +71,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     const { baseElement } = customRender({
       noDuplicate: true,
       projectID: 'projectID',
-      auditLevelFilterValue: undefined
+      auditLevelFilterValue: null
     });
     expect(baseElement).toMatchSnapshot();
   });
