@@ -19,6 +19,7 @@ describe('test WaterfallList/FileExecuteMode', () => {
       noDuplicate: false,
       assigneeUserNames: [mockCurrentUserReturn.username],
       workflowStatus: WorkflowRecordResV2StatusEnum.wait_for_execution,
+      execStatusFilterValue: null,
       ...params
     };
     return superRender(<FileExecuteMode {..._params} />);
