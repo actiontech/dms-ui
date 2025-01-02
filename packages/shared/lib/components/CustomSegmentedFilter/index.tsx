@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import {
+  CustomSegmentedFilterBaseValue,
   CustomSegmentedFilterDefaultOptionsType,
   CustomSegmentedFilterProps
 } from './index.type';
@@ -8,8 +9,11 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SegmentedProps } from 'antd';
 import BasicSegmented from '../BasicSegmented';
+import { SegmentedValue } from 'antd/es/segmented';
 
-const CustomSegmentedFilter = <V extends string | number | undefined = string>(
+const CustomSegmentedFilter = <
+  V extends CustomSegmentedFilterBaseValue = string
+>(
   props: CustomSegmentedFilterProps<V>
 ) => {
   const { t } = useTranslation();
@@ -65,20 +69,18 @@ const CustomSegmentedFilter = <V extends string | number | undefined = string>(
         }
       });
 
-    if (withAll === undefined || withAll === false) {
+    if (!withAll) {
       return transformOptions;
     }
 
     if (withAll === true) {
-      // Segmented 组件会将 value 设置为 each 组件时的 key，当 value 为 undefined 时 key 设置失败。
       return [
-        { label: t('common.all'), value: undefined as V },
+        {
+          label: t('common.all'),
+          value: null as V
+        },
         ...transformOptions
       ];
-    }
-
-    if (typeof withAll === 'string') {
-      return [{ label: withAll, value: withAll as V }, ...transformOptions];
     }
 
     return [withAll, ...transformOptions];
@@ -114,8 +116,8 @@ const CustomSegmentedFilter = <V extends string | number | undefined = string>(
     return (
       <BasicSegmented
         className={mergeClassNames}
-        value={value}
-        defaultValue={props.defaultValue}
+        value={value as SegmentedValue}
+        defaultValue={props.defaultValue as SegmentedValue}
         onChange={(val) => {
           onChange(val as V);
         }}

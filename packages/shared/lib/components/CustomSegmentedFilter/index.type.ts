@@ -1,11 +1,20 @@
 import { CSSProperties, ReactNode } from 'react';
 
+export type CustomSegmentedFilterBaseValue = string | number | null;
+
+export type CustomSegmentedFilterWithAllConfig<
+  V extends CustomSegmentedFilterBaseValue = string
+> = {
+  label: ReactNode;
+  value: V;
+};
+
 export type CustomSegmentedFilterDefaultOptionsType<
-  V extends string | number | undefined = string
+  V extends CustomSegmentedFilterBaseValue = string
 > = Array<{ label: ReactNode; value: V }>;
 
 export type CustomSegmentedFilterProps<
-  V extends string | number | undefined = string
+  V extends CustomSegmentedFilterBaseValue = string
 > = {
   value?: V;
 
@@ -41,14 +50,12 @@ export type CustomSegmentedFilterProps<
   options: CustomSegmentedFilterDefaultOptionsType<V> | string[];
 
   /**
-   * 是否自动添加 “全部” 项作为筛选项
-   * 默认值： false
-   *
-   * 当为 true 时，默认添加的 “全部” 筛选项对应的 option 为 {label:'全部', value: undefined}
-   * 当为 string 类型数据 时，默认添加的 “全部” 筛选项对应的 option 为 {label: `${withAll}`, value: `${withAll}`}
-   * 当为 Record 时，会将该对象合并进入 options
+   * 是否添加"全部"选项
+   * - true: 使用默认配置，label为"全部"，value为 null
+   * - WithAllConfig: 自定义配置
+   * - false: 不显示全部选项
    */
-  withAll?: boolean | CustomSegmentedFilterDefaultOptionsType<V>[0] | string;
+  withAll?: boolean | CustomSegmentedFilterWithAllConfig<V>;
 
   /**
    * 是否清空样式
