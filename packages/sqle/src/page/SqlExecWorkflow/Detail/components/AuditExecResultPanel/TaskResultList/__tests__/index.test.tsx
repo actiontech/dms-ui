@@ -18,6 +18,7 @@ describe('test ExecWorkflow/TaskResultList', () => {
         tableFilterInfo={{}}
         pagination={{ page_index: 1, page_size: 10 }}
         assigneeUserNames={[mockCurrentUserReturn.username]}
+        execStatusFilterValue={null}
       />
     );
 
@@ -36,6 +37,7 @@ describe('test ExecWorkflow/TaskResultList', () => {
         tableFilterInfo={{}}
         pagination={{ page_index: 1, page_size: 10 }}
         assigneeUserNames={[mockCurrentUserReturn.username]}
+        execStatusFilterValue={null}
       />
     );
 

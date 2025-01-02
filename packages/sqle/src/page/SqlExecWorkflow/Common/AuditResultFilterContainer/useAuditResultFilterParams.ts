@@ -7,9 +7,9 @@ import { useState } from 'react';
 const useAuditResultFilterParams = () => {
   const [noDuplicate, setNoDuplicate] = useState(false);
   const [auditLevelFilterValue, setAuditLevelFilterValue] =
-    useState<getAuditTaskSQLsV2FilterAuditLevelEnum>();
+    useState<getAuditTaskSQLsV2FilterAuditLevelEnum | null>(null);
   const [execStatusFilterValue, setExecStatusFilterValue] =
-    useState<getAuditTaskSQLsV2FilterExecStatusEnum>();
+    useState<getAuditTaskSQLsV2FilterExecStatusEnum | null>(null);
 
   return {
     noDuplicate,

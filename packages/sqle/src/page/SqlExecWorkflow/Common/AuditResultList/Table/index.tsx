@@ -87,7 +87,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       handleTableRequestError(
         task.getAuditTaskSQLsV2({
           task_id: taskID!,
-          filter_audit_level: auditLevelFilterValue,
+          filter_audit_level: auditLevelFilterValue ?? undefined,
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           no_duplicate: noDuplicate
@@ -97,7 +97,7 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       ready: typeof taskID === 'string',
       refreshDeps: [pagination, taskID],
       onSuccess(res) {
-        if (auditLevelFilterValue === undefined) {
+        if (auditLevelFilterValue === null) {
           updateTaskRecordCount?.(taskID ?? '', res.total ?? 0);
         }
       },

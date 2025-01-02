@@ -19,7 +19,8 @@ describe('test PaginationList/SQLExecuteMode', () => {
       tableFilterInfo: {},
       pagination: { page_index: 1, page_size: 20 },
       tableChange: jest.fn(),
-      assigneeUserNames: [mockCurrentUserReturn.username]
+      assigneeUserNames: [mockCurrentUserReturn.username],
+      execStatusFilterValue: null
     };
     return superRender(<SQLExecuteMode {...{ ..._params, ...params }} />);
   };

@@ -166,9 +166,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
             WorkflowResV2ExecModeEnum.sqls
           }
         >
-          <AuditResultFilterContainer<
-            getAuditTaskSQLsV2FilterExecStatusEnum | undefined
-          >
+          <AuditResultFilterContainer
             className="audit-result-filter-container-borderless"
             passRate={currentTask?.pass_rate}
             score={currentTask?.score}
@@ -179,7 +177,7 @@ const AuditExecResultPanel: React.FC<AuditExecResultPanelProps> = ({
             options={Object.keys(getAuditTaskSQLsV2FilterExecStatusEnum)}
             withAll={{
               label: t('audit.execStatus.allStatus'),
-              value: undefined
+              value: null
             }}
             labelDictionary={translateDictionaryI18nLabel(execStatusDictionary)}
           />
