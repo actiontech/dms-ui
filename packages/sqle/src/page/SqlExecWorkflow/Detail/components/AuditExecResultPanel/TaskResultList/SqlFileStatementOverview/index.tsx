@@ -85,7 +85,7 @@ const SqlFileStatementOverview: React.FC = () => {
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           filter_audit_level: tableFilterInfo.filter_audit_level,
-          filter_exec_status: execStatusFilterValue,
+          filter_exec_status: execStatusFilterValue ?? undefined,
           no_duplicate: noDuplicate
         })
       ),
@@ -122,15 +122,13 @@ const SqlFileStatementOverview: React.FC = () => {
 
       <SegmentedRowStyleWrapper justify="space-between">
         <AuditResultFilterContainerStyleWrapper className="audit-result-filter-container-borderless clear-padding">
-          <CustomSegmentedFilter<
-            getAuditTaskSQLsV2FilterExecStatusEnum | undefined
-          >
+          <CustomSegmentedFilter
             noStyle
             className="audit-result-filter-option"
             options={Object.keys(getAuditTaskSQLsV2FilterExecStatusEnum)}
             withAll={{
               label: t('audit.execStatus.allStatus'),
-              value: undefined
+              value: null
             }}
             labelDictionary={translateDictionaryI18nLabel(execStatusDictionary)}
             onChange={setExecStatusFilterValue}
