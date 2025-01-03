@@ -3,7 +3,7 @@ import { act, screen, cleanup } from '@testing-library/react';
 import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { shallow } from 'enzyme';
+import userCenter from '../../testUtils/mockApi/userCenter';
 
 describe('base/router-sqle-ee', () => {
   const projectID = mockProjectInfo.projectID;
@@ -20,6 +20,7 @@ describe('base/router-sqle-ee', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    userCenter.getUserOpPermission();
   });
 
   afterEach(() => {
@@ -148,7 +149,7 @@ describe('base/router-sqle-ee', () => {
         expect(screen.getByText('projectOverview')).toBeInTheDocument();
       });
 
-      describe.only('render route workflow', () => {
+      describe('render route workflow', () => {
         it('render route list', async () => {
           const { baseElement } = customRender([
             `/sqle/project/${projectID}/exec-workflow`
