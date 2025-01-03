@@ -50,7 +50,7 @@ const DatabaseFormItem: React.FC<{
     props.form.setFieldsValue({ needUpdatePassword: check });
   };
 
-  const { dmsMergeFromValueIntoParams } = useAsyncParams();
+  const { mergeFromValueIntoParams } = useAsyncParams();
 
   const testDatabaseConnect = async () => {
     const values = await props.form.validateFields([
@@ -63,10 +63,10 @@ const DatabaseFormItem: React.FC<{
     ]);
 
     if (values.params && props.currentAsyncParams) {
-      values.asyncParams = dmsMergeFromValueIntoParams(
+      values.asyncParams = mergeFromValueIntoParams(
         values.params,
         props.currentAsyncParams
-      );
+      ).map((v) => ({ name: v.key, value: v.value }));
       delete values.params;
     }
 
