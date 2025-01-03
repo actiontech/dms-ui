@@ -934,3 +934,28 @@ export const mockDBOperationsData = [
     scope: ['Service', 'Instance', 'Database', 'Table', 'Column']
   }
 ];
+
+export const mockOracleInstanceData = [
+  {
+    uid: '123456',
+    name: 'oracle-1',
+    type: ListServiceTypeEnum.Service,
+    db_type: ListServiceDbTypeEnum.Oracle,
+    address: '10.186.62.3:33061',
+    user: 'root',
+    business: 'test',
+    last_sync_data_result: '',
+    last_sync_data_time: '0001-01-01T08:05:43.000+08:05'
+  },
+  {
+    uid: '123456789',
+    name: 'mysql-1',
+    type: ListServiceTypeEnum.Service,
+    db_type: ListServiceDbTypeEnum.MySQL,
+    address: '10.186.62.3:33062',
+    user: 'root',
+    business: 'test',
+    last_sync_data_result: '',
+    last_sync_data_time: '0001-01-01T08:05:43.000+08:05'
+  }
+];

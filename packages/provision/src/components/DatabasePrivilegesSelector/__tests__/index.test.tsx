@@ -147,7 +147,6 @@ describe('provision/DatabasePrivilegesSelector', () => {
         page_index: 1,
         page_size: 9999
       });
-      // expect(authListOperationSetsSpy).toHaveBeenCalled();
       await act(async () => jest.advanceTimersByTime(2900));
 
       fireEvent.mouseDown(getBySelector('#data_objects_0_tables'));
