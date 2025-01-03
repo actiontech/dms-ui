@@ -450,6 +450,7 @@ exports[`sqle/components/BackendForm render type is password render form mode is
                 >
                   <input
                     class="ant-input css-dev-only-do-not-override-txh9fw"
+                    id="params_input1"
                     placeholder="请输入{{name}}"
                     type="password"
                     value=""
@@ -540,6 +541,7 @@ exports[`sqle/components/BackendForm render type is password render layout is fu
                 >
                   <input
                     class="ant-input css-dev-only-do-not-override-txh9fw"
+                    id="params_input1"
                     placeholder="请输入{{name}}"
                     type="password"
                     value=""
@@ -631,6 +633,7 @@ exports[`sqle/components/BackendForm render type is password render layout is sp
                   <input
                     class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
                     disabled=""
+                    id="params_input2"
                     placeholder="请输入{{name}}"
                     type="password"
                     value=""
