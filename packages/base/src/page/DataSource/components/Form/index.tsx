@@ -120,7 +120,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     },
     [props.form, getBackupSupportStatus]
   );
-  const { generateFormValueByParams, dmsMergeFromValueIntoParams } =
+  const { generateFormValueByParams, mergeFromValueIntoParams } =
     useAsyncParams();
 
   // #if [sqle]
@@ -267,12 +267,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     const values = await props.form.validateFields();
     delete values.needSqlAuditService;
     if (values.params) {
-      values.asyncParams = dmsMergeFromValueIntoParams(values.params, params);
+      values.asyncParams = mergeFromValueIntoParams(values.params, params).map(
+        (v) => ({ name: v.key, value: v.value })
+      );
       delete values.params;
     }
-
     props.submit(values);
-  }, [dmsMergeFromValueIntoParams, params, props]);
+  }, [mergeFromValueIntoParams, params, props]);
 
   useEffect(() => {
     const { unsubscribe: unsubscribeReset } = EventEmitter.subscribe(

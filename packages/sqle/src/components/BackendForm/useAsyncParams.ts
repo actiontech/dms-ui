@@ -3,48 +3,30 @@ import { BackendFormRequestParams, BackendFormValues, FormItem } from '.';
 import { useCallback } from 'react';
 
 const useAsyncParams = () => {
-  //todo: 临时处理，后需待优化
-  const dmsMergeFromValueIntoParams = (
-    value: BackendFormValues,
-    params: FormItem[]
-  ): BackendFormRequestParams[] => {
-    return params.map((item) => {
-      const temp = {
-        name: item.key,
-        value: item.value
-      };
-      if (item.key && Object.prototype.hasOwnProperty.call(value, item.key)) {
-        const tempVal = value[item.key];
-        if (typeof tempVal === 'boolean') {
-          temp.value = tempVal ? 'true' : 'false';
-        } else {
-          temp.value = String(tempVal);
+  const mergeFromValueIntoParams = useCallback(
+    (
+      value: BackendFormValues,
+      params: FormItem[]
+    ): BackendFormRequestParams[] => {
+      return params.map((item) => {
+        const temp = {
+          key: item.key,
+          value: item.value
+        };
+        if (item.key && Object.prototype.hasOwnProperty.call(value, item.key)) {
+          const tempVal = value[item.key];
+          if (typeof tempVal === 'boolean') {
+            temp.value = tempVal ? 'true' : 'false';
+          } else {
+            temp.value = String(tempVal);
+          }
         }
-      }
-      return temp;
-    });
-  };
+        return temp;
+      });
+    },
+    []
+  );
 
-  const mergeFromValueIntoParams = (
-    value: BackendFormValues,
-    params: FormItem[]
-  ): BackendFormRequestParams[] => {
-    return params.map((item) => {
-      const temp = {
-        key: item.key,
-        value: item.value
-      };
-      if (item.key && Object.prototype.hasOwnProperty.call(value, item.key)) {
-        const tempVal = value[item.key];
-        if (typeof tempVal === 'boolean') {
-          temp.value = tempVal ? 'true' : 'false';
-        } else {
-          temp.value = String(tempVal);
-        }
-      }
-      return temp;
-    });
-  };
   const generateFormValueByParams = useCallback(
     <T extends { key?: string; value?: string; type?: string }>(
       params: T[]
@@ -66,7 +48,6 @@ const useAsyncParams = () => {
 
   return {
     mergeFromValueIntoParams,
-    dmsMergeFromValueIntoParams,
     generateFormValueByParams
   };
 };

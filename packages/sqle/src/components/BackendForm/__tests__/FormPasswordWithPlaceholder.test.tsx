@@ -62,7 +62,7 @@ describe('FormPasswordWithPlaceholder', () => {
     fireEvent.change(getBySelector('.ant-input'), {
       target: { value: 'new value' }
     });
-    expect(onChange.mock.calls[0][0].target.value).toBe('new value');
+    expect(onChange.mock.calls[0][0]).toBe('new value');
   });
 
   it('should not react to focus or blur events when disabled', () => {
