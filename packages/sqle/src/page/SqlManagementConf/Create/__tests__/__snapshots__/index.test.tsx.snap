@@ -1372,6 +1372,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                           >
                             <input
                               class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="ali_rds_mysql_slow_log_access_key_id"
                               placeholder="请输入{{name}}"
                               type="password"
                               value="123"
@@ -1450,6 +1451,7 @@ exports[`test sqle/SqlManagementConf/Create create audit plan when current url h
                           >
                             <input
                               class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="ali_rds_mysql_slow_log_access_key_secret"
                               placeholder="请输入{{name}}"
                               type="password"
                               value="456"
@@ -4925,6 +4927,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                           >
                             <input
                               class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="ali_rds_mysql_slow_log_access_key_id"
                               placeholder="请输入{{name}}"
                               type="password"
                             />
@@ -5002,6 +5005,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 2`] = `
                           >
                             <input
                               class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="ali_rds_mysql_slow_log_access_key_secret"
                               placeholder="请输入{{name}}"
                               type="password"
                             />
@@ -7546,6 +7550,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                           >
                             <input
                               class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="ali_rds_mysql_slow_log_access_key_id"
                               placeholder="请输入{{name}}"
                               type="password"
                             />
@@ -7623,6 +7628,7 @@ exports[`test sqle/SqlManagementConf/Create render create audit plan 3`] = `
                           >
                             <input
                               class="ant-input css-dev-only-do-not-override-txh9fw"
+                              id="ali_rds_mysql_slow_log_access_key_secret"
                               placeholder="请输入{{name}}"
                               type="password"
                             />
