@@ -14,6 +14,8 @@ import UpdateDatabaseAccount from './index';
 import { useParams } from 'react-router-dom';
 import { databaseAccountDetailMockData } from '../../../testUtil/mockApi/dbAccountService/data';
 import user from '../../../testUtil/mockApi/user';
+import service from '../../../testUtil/mockApi/service';
+import dbRole from '../../../testUtil/mockApi/dbRole';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -22,15 +24,18 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe.skip('provision/DatabaseAccount/Update', () => {
+describe('provision/DatabaseAccount/Update', () => {
   let authListServicesSpy: jest.SpyInstance;
   let authListBusinessesSpy: jest.SpyInstance;
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authListDatabasesSpy: jest.SpyInstance;
   let authListTableSpy: jest.SpyInstance;
-  let authListOperationSetsSpy: jest.SpyInstance;
   let authUpdateDBAccountSpy: jest.SpyInstance;
   let authGetDBAccountSpy: jest.SpyInstance;
+  let authGetDBAccountMetaSpy: jest.SpyInstance;
+  let authListDBRoleTipsSpy: jest.SpyInstance;
+  let authListOperationsSpy: jest.SpyInstance;
+
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   const accountId = databaseAccountDetailMockData.db_account_uid;
 
@@ -39,11 +44,13 @@ describe.skip('provision/DatabaseAccount/Update', () => {
     authListBusinessesSpy = auth.listBusinesses();
     authListDatabasesSpy = auth.listDataBases();
     authListTableSpy = auth.listTables();
-    authListOperationSetsSpy = auth.listOperationSets();
     authListPasswordSecurityPoliciesSpy =
       passwordSecurityPolicy.authListPasswordSecurityPolicies();
     authGetDBAccountSpy = dbAccountService.authGetDBAccount();
     authUpdateDBAccountSpy = dbAccountService.authUpdateDBAccount();
+    authGetDBAccountMetaSpy = service.authGetDBAccountMeta();
+    authListDBRoleTipsSpy = dbRole.authListDBRoleTips();
+    authListOperationsSpy = auth.authListOperations();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseDbServiceDriver();
@@ -65,6 +72,7 @@ describe.skip('provision/DatabaseAccount/Update', () => {
     expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalled();
     expect(authListBusinessesSpy).toHaveBeenCalled();
     expect(authGetDBAccountSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     expect(authGetDBAccountSpy).toHaveBeenNthCalledWith(1, {
       project_uid: mockProjectInfo.projectID,
       db_account_uid: accountId
@@ -75,6 +83,11 @@ describe.skip('provision/DatabaseAccount/Update', () => {
       page_index: 1,
       page_size: 9999
     });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(authGetDBAccountMetaSpy).toHaveBeenCalledTimes(1);
+    expect(authListDBRoleTipsSpy).toHaveBeenCalledTimes(1);
+    expect(authListOperationsSpy).toHaveBeenCalledTimes(1);
+
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('#username')).toHaveValue('test1');
     expect(getBySelector('#username')).toHaveAttribute('disabled');
@@ -82,26 +95,37 @@ describe.skip('provision/DatabaseAccount/Update', () => {
     expect(screen.queryByText('密码有效期')).not.toBeInTheDocument();
     expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
     expect(
-      screen.getByText('清除所有权限').closest('button')
+      screen.getByText('清除所有对象权限').closest('button')
     ).not.toHaveAttribute('disabled');
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#username')).toHaveValue('test1');
     expect(getBySelector('#username')).toHaveAttribute('disabled');
     expect(screen.queryByText('database-1.table-1')).not.toBeInTheDocument();
-    expect(screen.getByText('清除所有权限').closest('button')).toHaveAttribute(
-      'disabled'
-    );
+    expect(
+      screen.getByText('清除所有对象权限').closest('button')
+    ).toHaveAttribute('disabled');
   });
 
   it('update account permissions', async () => {
     const { baseElement } = superRender(<UpdateDatabaseAccount />);
-    await act(async () => jest.advanceTimersByTime(6000));
+    await act(async () => jest.advanceTimersByTime(3000));
+    await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.click(screen.getByText('添加数据权限'));
+    fireEvent.mouseDown(getBySelector('#dbRoles', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('role2'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.mouseDown(getBySelector('#systemPrivileges', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('RELOAD'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('添加对象权限'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('选择数据库表')).toBeInTheDocument();
-    expect(screen.getByText('选择权限')).toBeInTheDocument();
+    expect(screen.getByText('选择对象权限')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.mouseDown(getBySelector('#data_objects_0_database'));
@@ -115,7 +139,6 @@ describe.skip('provision/DatabaseAccount/Update', () => {
       page_index: 1,
       page_size: 9999
     });
-    expect(authListOperationSetsSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(2900));
 
     fireEvent.mouseDown(getBySelector('#data_objects_0_tables'));
@@ -132,19 +155,19 @@ describe.skip('provision/DatabaseAccount/Update', () => {
 
     fireEvent.mouseDown(getBySelector('#data_operations'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('变更')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('变更'));
+    expect(screen.getByText('CREATE')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('CREATE'));
     await act(async () => jest.advanceTimersByTime(100));
 
-    fireEvent.click(screen.getByText('提 交'));
+    fireEvent.click(getBySelector('.object-privileges-modal-submit'));
     await act(async () => jest.advanceTimersByTime(100));
 
     expect(getBySelector('.ant-table-content')).toMatchSnapshot();
     expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
     expect(
-      screen.getByText('清除所有权限').closest('button')
+      screen.getByText('清除所有对象权限').closest('button')
     ).not.toHaveAttribute('disabled');
-    fireEvent.click(screen.getByText('保 存'));
+    fireEvent.click(getBySelector('.create-account-submit'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(authUpdateDBAccountSpy).toHaveBeenNthCalledWith(1, {
       project_uid: mockProjectInfo.projectID,
@@ -152,14 +175,23 @@ describe.skip('provision/DatabaseAccount/Update', () => {
       db_account: {
         data_permissions: [
           {
+            data_object_uids: [],
+            data_operation_uids: ['600033']
+          },
+          {
+            data_object_uids: [],
+            data_operation_uids: ['600037']
+          },
+          {
             data_object_uids: ['1'],
-            data_operation_set_uids: ['27']
+            data_operation_uids: ['600010']
           },
           {
             data_object_uids: ['2'],
-            data_operation_set_uids: ['96']
+            data_operation_uids: ['600016']
           }
-        ]
+        ],
+        db_roles: ['123', '1234']
       }
     });
     await act(async () => jest.advanceTimersByTime(3000));

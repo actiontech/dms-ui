@@ -17,7 +17,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import passwordSecurityPolicy from '../../../../testUtil/mockApi/passwordSecurityPolicy';
 
-describe.skip('provision/DatabaseAccount/ManagePasswordModal', () => {
+describe('provision/DatabaseAccount/ManagePasswordModal', () => {
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authUpdateDBAccountSpy: jest.SpyInstance;
 

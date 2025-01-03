@@ -49,7 +49,7 @@ let authListServicesSpy: jest.SpyInstance;
 const dispatchSpy = jest.fn();
 const navigateSpy = jest.fn();
 
-describe.skip('provision/DatabaseAccount/List-1', () => {
+describe('provision/DatabaseAccount/List-1', () => {
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
     authGetAccountStaticsSpy = dbAccountService.authGetAccountStatics();
@@ -105,7 +105,7 @@ describe.skip('provision/DatabaseAccount/List-1', () => {
   });
 });
 
-describe.skip('provision/DatabaseAccount/List-2', () => {
+describe('provision/DatabaseAccount/List-2', () => {
   const checkDbServicePermissionSpy = jest.fn();
 
   beforeEach(() => {
@@ -321,11 +321,8 @@ describe.skip('provision/DatabaseAccount/List-2', () => {
   test('render authorize', async () => {
     const { modalStatusChangeSpy } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('授权')).toBeInTheDocument();
-    expect(getBySelector('.ant-popover .ant-popover-inner')).toMatchSnapshot();
-    fireEvent.click(screen.getByText('授权'));
+    expect(screen.getByText('授 权')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('授 权'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(modalStatusChangeSpy).toHaveBeenCalledTimes(2);
     expect(modalStatusChangeSpy).toHaveBeenNthCalledWith(2, {

@@ -86,7 +86,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                       class="audit-card"
                     >
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -106,12 +106,12 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
                         >
-                          主机名(host)
+                          主机名
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
@@ -126,7 +126,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -203,7 +203,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -223,7 +223,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -243,7 +243,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
@@ -278,32 +278,12 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                       class="audit-card"
                     >
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
                         >
-                          数据源
-                        </div>
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
-                          style="flex-wrap: wrap; margin-bottom: -8px;"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="padding-bottom: 8px;"
-                          >
-                            test
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="css-2kjdpz"
-                      >
-                        <div
-                          class="audit-info-item-label"
-                        >
-                          数据对象
+                          角色
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
@@ -316,55 +296,51 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                             <span
                               class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                             >
-                              database-1.table-1
+                              role1
                             </span>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
                         >
-                          数据操作
+                          权限
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
                           style="flex-wrap: wrap; margin-bottom: -8px;"
                         >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                              style="max-width: 190px;"
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                ALL ON database-1.table-1
+                              </div>
+                            </span>
+                          </div>
                           <div
                             class="ant-space-item"
                             style="padding-bottom: 8px;"
                           >
                             <span
                               class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                              style="max-width: 190px;"
                             >
-                              查询
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="css-2kjdpz"
-                      >
-                        <div
-                          class="audit-info-item-label"
-                        >
-                          原始权限
-                        </div>
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
-                          style="flex-wrap: wrap; margin-bottom: -8px;"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="padding-bottom: 8px;"
-                          >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-573pb6 css-dev-only-do-not-override-txh9fw"
-                            >
-                              SELECT, INSERT, UPDATE, CREATE, REFERENCES, INDEX, ALTER, CREATE VIEW, SHOW VIEW, TRIGGER ON \`test_db\`.*
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                CREATE_USER
+                              </div>
                             </span>
                           </div>
                         </div>
@@ -383,7 +359,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                       class="audit-card"
                     >
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -399,21 +375,26 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                             style="padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="flex-display"
                             >
                               <div
-                                class="ant-space-item"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
-                                <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                                <div
+                                  class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar-string"
-                                    style="transform: scale(1) translateX(-50%);"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                                    style="display: inline-block; margin-right: 12px;"
                                   >
-                                    T
+                                    <span
+                                      class="ant-avatar-string"
+                                      style="transform: scale(1) translateX(-50%);"
+                                    >
+                                      T
+                                    </span>
                                   </span>
-                                </span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -557,7 +538,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                       class="audit-card"
                     >
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -577,12 +558,12 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
                         >
-                          主机名(host)
+                          主机名
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
@@ -597,7 +578,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -674,7 +655,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -694,7 +675,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -714,7 +695,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
@@ -749,32 +730,12 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                       class="audit-card"
                     >
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
                         >
-                          数据源
-                        </div>
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
-                          style="flex-wrap: wrap; margin-bottom: -8px;"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="padding-bottom: 8px;"
-                          >
-                            test
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="css-2kjdpz"
-                      >
-                        <div
-                          class="audit-info-item-label"
-                        >
-                          数据对象
+                          角色
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
@@ -787,55 +748,51 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                             <span
                               class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                             >
-                              database-1.table-1
+                              role1
                             </span>
                           </div>
                         </div>
                       </div>
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
                         >
-                          数据操作
+                          权限
                         </div>
                         <div
                           class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
                           style="flex-wrap: wrap; margin-bottom: -8px;"
                         >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px; padding-bottom: 8px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                              style="max-width: 190px;"
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                ALL ON database-1.table-1
+                              </div>
+                            </span>
+                          </div>
                           <div
                             class="ant-space-item"
                             style="padding-bottom: 8px;"
                           >
                             <span
                               class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                              style="max-width: 190px;"
                             >
-                              查询
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="css-2kjdpz"
-                      >
-                        <div
-                          class="audit-info-item-label"
-                        >
-                          原始权限
-                        </div>
-                        <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-info-item-value"
-                          style="flex-wrap: wrap; margin-bottom: -8px;"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="padding-bottom: 8px;"
-                          >
-                            <span
-                              class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-573pb6 css-dev-only-do-not-override-txh9fw"
-                            >
-                              SELECT, INSERT, UPDATE, CREATE, REFERENCES, INDEX, ALTER, CREATE VIEW, SHOW VIEW, TRIGGER ON \`test_db\`.*
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              >
+                                CREATE_USER
+                              </div>
                             </span>
                           </div>
                         </div>
@@ -854,7 +811,7 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                       class="audit-card"
                     >
                       <div
-                        class="css-2kjdpz"
+                        class="css-13u4jk2"
                       >
                         <div
                           class="audit-info-item-label"
@@ -870,21 +827,26 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                             style="padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="flex-display"
                             >
                               <div
-                                class="ant-space-item"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
-                                <span
-                                  class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                                <div
+                                  class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar-string"
-                                    style="transform: scale(1) translateX(-50%);"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                                    style="display: inline-block; margin-right: 12px;"
                                   >
-                                    T
+                                    <span
+                                      class="ant-avatar-string"
+                                      style="transform: scale(1) translateX(-50%);"
+                                    >
+                                      T
+                                    </span>
                                   </span>
-                                </span>
+                                </div>
                               </div>
                             </div>
                           </div>

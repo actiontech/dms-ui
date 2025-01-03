@@ -791,3 +791,171 @@ export const serviceAuditList: IListDataObjectServiceEvent[] = [
     operation: 'select * '
   }
 ];
+
+export const mockDBOperationsData = [
+  {
+    uid: '600010',
+    name: 'ALL',
+    scope: ['Service', 'Instance', 'Database', 'Table', 'Routine']
+  },
+  {
+    uid: '600015',
+    name: 'ALTER',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600024',
+    name: 'ALTER_ROUTINE',
+    scope: ['Service', 'Instance', 'Database', 'Routine']
+  },
+  {
+    uid: '600016',
+    name: 'CREATE',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600032',
+    name: 'CREATE_TEMPORARY_TABLES',
+    scope: ['Service', 'Instance', 'Database']
+  },
+  {
+    uid: '600033',
+    name: 'CREATE_USER',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600020',
+    name: 'CREATE_VIEW',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600013',
+    name: 'DELETE',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600017',
+    name: 'DROP',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600035',
+    name: 'EVENT',
+    scope: ['Service', 'Instance', 'Database']
+  },
+  {
+    uid: '600025',
+    name: 'EXECUTE',
+    scope: ['Service', 'Instance', 'Database', 'Routine']
+  },
+  {
+    uid: '600027',
+    name: 'FILE',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600018',
+    name: 'GRANT',
+    scope: ['Service', 'Instance', 'Database', 'Table', 'Routine']
+  },
+  {
+    uid: '600021',
+    name: 'INDEX',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600012',
+    name: 'INSERT',
+    scope: ['Service', 'Instance', 'Database', 'Table', 'Column']
+  },
+  {
+    uid: '600026',
+    name: 'LOCK_TABLES',
+    scope: ['Service', 'Instance', 'Database']
+  },
+  {
+    uid: '600036',
+    name: 'PROCESS',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600019',
+    name: 'REFERENCES',
+    scope: ['Service', 'Instance', 'Database', 'Table', 'Column']
+  },
+  {
+    uid: '600037',
+    name: 'RELOAD',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600038',
+    name: 'REPLICATION_CLIENT',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600039',
+    name: 'REPLICATION_SLAVE',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600011',
+    name: 'SELECT',
+    scope: ['Service', 'Instance', 'Database', 'Table', 'Column']
+  },
+  {
+    uid: '600029',
+    name: 'SHOW_DATABASES',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600022',
+    name: 'SHOW_VIEW',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600040',
+    name: 'SHUTDOWN',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600041',
+    name: 'SUPER',
+    scope: ['Service', 'Instance']
+  },
+  {
+    uid: '600023',
+    name: 'TRIGGER',
+    scope: ['Service', 'Instance', 'Database', 'Table']
+  },
+  {
+    uid: '600014',
+    name: 'UPDATE',
+    scope: ['Service', 'Instance', 'Database', 'Table', 'Column']
+  }
+];
+
+export const mockOracleInstanceData = [
+  {
+    uid: '123456',
+    name: 'oracle-1',
+    type: ListServiceTypeEnum.Service,
+    db_type: ListServiceDbTypeEnum.Oracle,
+    address: '10.186.62.3:33061',
+    user: 'root',
+    business: 'test',
+    last_sync_data_result: '',
+    last_sync_data_time: '0001-01-01T08:05:43.000+08:05'
+  },
+  {
+    uid: '123456789',
+    name: 'mysql-1',
+    type: ListServiceTypeEnum.Service,
+    db_type: ListServiceDbTypeEnum.MySQL,
+    address: '10.186.62.3:33062',
+    user: 'root',
+    business: 'test',
+    last_sync_data_result: '',
+    last_sync_data_time: '0001-01-01T08:05:43.000+08:05'
+  }
+];

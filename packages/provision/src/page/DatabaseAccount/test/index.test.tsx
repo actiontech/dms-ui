@@ -9,7 +9,7 @@ import DatabaseAccount from '..';
 import { cleanup, act } from '@testing-library/react';
 import user from '../../../testUtil/mockApi/user';
 
-describe.skip('provision/DatabaseAccount/DatabaseAccount', () => {
+describe('provision/DatabaseAccount/DatabaseAccount', () => {
   beforeEach(() => {
     dbAccountService.mockAllApi();
     passwordSecurityPolicy.mockAllApi();

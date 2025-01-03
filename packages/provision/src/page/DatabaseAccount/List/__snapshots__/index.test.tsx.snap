@@ -397,7 +397,7 @@ exports[`provision/DatabaseAccount/List-1 render table moreButtons 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 122px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -754,14 +754,35 @@ exports[`provision/DatabaseAccount/List-1 render table moreButtons 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span>
-                                  查 看
-                                </span>
-                              </button>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      授 权
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                 type="button"
@@ -945,14 +966,35 @@ exports[`provision/DatabaseAccount/List-1 render table moreButtons 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span>
-                                  查 看
-                                </span>
-                              </button>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      授 权
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                 type="button"
@@ -1141,107 +1183,6 @@ exports[`provision/DatabaseAccount/List-1 render table moreButtons 1`] = `
 </body>
 `;
 
-exports[`provision/DatabaseAccount/List-2 render authorize 1`] = `
-<div
-  class="ant-popover-inner"
-  role="tooltip"
-  style="padding: 0px;"
->
-  <div
-    class="ant-popover-inner-content"
-  >
-    <div
-      class="css-1vlcj9c"
-    >
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          授权
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          修改密码
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          续用当前密码
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          变更账号权限
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          启用
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          删除
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          取消托管
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`provision/DatabaseAccount/List-2 render cancel managed 1`] = `
 <div
   class="ant-popover-inner"
@@ -1254,18 +1195,6 @@ exports[`provision/DatabaseAccount/List-2 render cancel managed 1`] = `
     <div
       class="css-1vlcj9c"
     >
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          授权
-        </span>
-      </div>
       <div
         class="more-button-item"
       >
@@ -1706,7 +1635,7 @@ exports[`provision/DatabaseAccount/List-2 render create and discovery button 1`]
                         <col />
                         <col />
                         <col
-                          style="width: 122px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -2805,7 +2734,7 @@ exports[`provision/DatabaseAccount/List-2 render init snap 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 122px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -3162,14 +3091,35 @@ exports[`provision/DatabaseAccount/List-2 render init snap 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span>
-                                  查 看
-                                </span>
-                              </button>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      授 权
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                 type="button"
@@ -3374,14 +3324,35 @@ exports[`provision/DatabaseAccount/List-2 render init snap 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span>
-                                  查 看
-                                </span>
-                              </button>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      授 权
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                 type="button"
@@ -3591,18 +3562,6 @@ exports[`provision/DatabaseAccount/List-2 render lock account 1`] = `
         <span
           class="more-button-item-text"
         >
-          授权
-        </span>
-      </div>
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
           修改密码
         </span>
       </div>
@@ -3772,18 +3731,6 @@ exports[`provision/DatabaseAccount/List-2 render unlock account 1`] = `
     <div
       class="css-1vlcj9c"
     >
-      <div
-        class="more-button-item"
-      >
-        <span
-          class="more-button-item-icon"
-        />
-        <span
-          class="more-button-item-text"
-        >
-          授权
-        </span>
-      </div>
       <div
         class="more-button-item"
       >
@@ -4573,7 +4520,7 @@ exports[`provision/DatabaseAccount/List-2 render update table filter 1`] = `
                         <col />
                         <col />
                         <col
-                          style="width: 122px;"
+                          style="width: 204px;"
                         />
                       </colgroup>
                       <thead
@@ -4930,14 +4877,35 @@ exports[`provision/DatabaseAccount/List-2 render update table filter 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span>
-                                  查 看
-                                </span>
-                              </button>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      授 权
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                 type="button"
@@ -5142,14 +5110,35 @@ exports[`provision/DatabaseAccount/List-2 render update table filter 1`] = `
                             <div
                               class="css-new95e"
                             >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
+                              <div
+                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
                               >
-                                <span>
-                                  查 看
-                                </span>
-                              </button>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px;"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      查 看
+                                    </span>
+                                  </button>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      授 权
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
                               <button
                                 class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                 type="button"

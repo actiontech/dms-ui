@@ -218,6 +218,7 @@ const DatabaseRole: React.FC = () => {
         dataSource={databaseRoles?.list}
         loading={loading}
         onChange={tableChange}
+        rowKey={(row) => row.db_role?.uid ?? ''}
       />
 
       <DatabaseRoleModal />

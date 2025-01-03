@@ -10,7 +10,7 @@ import { DatabaseAccountModalStatus } from '../../../store/databaseAccount';
 import { ModalName } from '../../../data/enum';
 import user from '../../../testUtil/mockApi/user';
 
-describe.skip('provision/DatabaseAccount/DatabaseAccountModal', () => {
+describe('provision/DatabaseAccount/DatabaseAccountModal', () => {
   beforeEach(() => {
     dbAccountService.mockAllApi();
     passwordSecurityPolicy.mockAllApi();
