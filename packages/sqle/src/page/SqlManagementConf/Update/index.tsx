@@ -26,10 +26,14 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
-import { BackendFormValues } from '../../../components/BackendForm';
+import {
+  BackendFormRequestParams,
+  BackendFormValues
+} from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();
@@ -74,6 +78,15 @@ const Update: React.FC = () => {
               ...paramValues
             } = values[item] as ScanTypeParams;
 
+            const auditPlanParamsWithScanType =
+              scanTypeMetas?.find((v) => v.audit_plan_type === item)
+                ?.audit_plan_params ?? [];
+
+            const mergedBackendAdditionalParams = mergeFromValueIntoParams(
+              paramValues as BackendFormValues,
+              auditPlanParamsWithScanType
+            );
+
             const params: IAuditPlan = {
               audit_plan_type: item,
               rule_template_name: ruleTemplateName,
@@ -81,10 +94,18 @@ const Update: React.FC = () => {
               high_priority_conditions: markHighPrioritySql
                 ? generateSubmitDataWithFormValues(prioritySqlConditions)
                 : undefined,
-              audit_plan_params: mergeFromValueIntoParams(
-                paramValues as BackendFormValues,
-                scanTypeMetas?.find((v) => v.audit_plan_type === item)
-                  ?.audit_plan_params ?? []
+              audit_plan_params: mergedBackendAdditionalParams.filter(
+                (backendAdditionalParam) => {
+                  const type = auditPlanParamsWithScanType.find(
+                    (auditPlanParam) =>
+                      auditPlanParam.key === backendAdditionalParam.key
+                  )?.type;
+
+                  return !(
+                    type === AuditPlanParamResV1TypeEnum.password &&
+                    !backendAdditionalParam.value
+                  );
+                }
               )
             };
             return params;

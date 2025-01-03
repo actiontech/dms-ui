@@ -332,6 +332,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <input
                       class="ant-input css-dev-only-do-not-override-txh9fw ant-input-password basic-input-wrapper css-1pd1cd5"
+                      id="ali_rds_mysql_slow_log_access_key_id"
                       placeholder="请输入{{name}}"
                       type="password"
                       value="PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE"
@@ -379,6 +380,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <input
                       class="ant-input css-dev-only-do-not-override-txh9fw ant-input-password basic-input-wrapper css-1pd1cd5"
+                      id="ali_rds_mysql_slow_log_access_key_secret"
                       placeholder="请输入{{name}}"
                       type="password"
                       value="PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE"
@@ -1689,6 +1691,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     >
                       <input
                         class="ant-input css-dev-only-do-not-override-txh9fw"
+                        id="ali_rds_mysql_slow_log_access_key_id"
                         placeholder="请输入{{name}}"
                         type="password"
                       />
@@ -1766,6 +1769,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     >
                       <input
                         class="ant-input css-dev-only-do-not-override-txh9fw"
+                        id="ali_rds_mysql_slow_log_access_key_secret"
                         placeholder="请输入{{name}}"
                         type="password"
                       />
@@ -3119,6 +3123,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                       <input
                         class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
                         disabled=""
+                        id="ali_rds_mysql_slow_log_access_key_id"
                         placeholder="请输入{{name}}"
                         type="password"
                       />
@@ -3197,6 +3202,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                       <input
                         class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
                         disabled=""
+                        id="ali_rds_mysql_slow_log_access_key_secret"
                         placeholder="请输入{{name}}"
                         type="password"
                       />
