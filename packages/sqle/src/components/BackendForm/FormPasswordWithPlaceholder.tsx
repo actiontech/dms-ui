@@ -1,6 +1,5 @@
 import { BasicInput } from '@actiontech/shared';
 import { useState } from 'react';
-import { PasswordProps } from 'antd/es/input/Password';
 
 export const PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE =
   'PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE';
@@ -23,12 +22,25 @@ export const PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE =
  *
  * 暂时先放在 BackendForm 中，如果后续有必要可以调整至 shared
  */
-const FormPasswordWithPlaceholder: React.FC<
-  PasswordProps & { enabled: boolean }
-> = ({ enabled, ...props }) => {
+
+type Props = {
+  id?: string;
+  enabled: boolean;
+  value?: string;
+  onChange?: (value: string) => void;
+  disabled?: boolean;
+};
+
+const FormPasswordWithPlaceholder: React.FC<Props> = ({
+  enabled,
+  id,
+  value,
+  onChange,
+  disabled
+}) => {
   const [innerValue, setInnerValue] = useState(() => {
-    if (!!props.value) {
-      return props.value;
+    if (!!value) {
+      return value;
     }
 
     if (enabled) {
@@ -40,6 +52,7 @@ const FormPasswordWithPlaceholder: React.FC<
 
   return (
     <BasicInput.Password
+      id={id}
       onFocus={() => {
         if (innerValue === PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE && enabled) {
           setInnerValue('');
@@ -52,10 +65,10 @@ const FormPasswordWithPlaceholder: React.FC<
       }}
       onChange={(e) => {
         setInnerValue(e.target.value);
-        props.onChange?.(e);
+        onChange?.(e.target.value);
       }}
       value={innerValue}
-      disabled={props.disabled}
+      disabled={disabled}
       visibilityToggle={!enabled}
     />
   );
