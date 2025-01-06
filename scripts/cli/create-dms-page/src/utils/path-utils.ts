@@ -179,8 +179,8 @@ export class PathUtils {
       'src',
       'page',
       'Nav',
-      'sideMenu',
-      'menuList',
+      'SideMenu',
+      'MenuList',
       'menus',
       `${type}.tsx`
     );
@@ -199,8 +199,8 @@ export class PathUtils {
       'src',
       'page',
       'Nav',
-      'sideMenu',
-      'menuList',
+      'SideMenu',
+      'MenuList',
       'menus',
       `index.type.ts`
     );
