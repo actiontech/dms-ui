@@ -6,6 +6,7 @@ import { act, screen, cleanup } from '@testing-library/react';
 import mockUseRoutes, { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import userCenter from '../../testUtils/mockApi/userCenter';
 
 describe('base/router-sqle-ce', () => {
   const projectID = mockProjectInfo.projectID;
@@ -22,6 +23,7 @@ describe('base/router-sqle-ce', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
+    userCenter.getUserOpPermission();
   });
 
   afterEach(() => {
