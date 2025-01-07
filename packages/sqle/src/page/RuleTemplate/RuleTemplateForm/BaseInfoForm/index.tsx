@@ -8,12 +8,12 @@ import useDatabaseType from '../../../../hooks/useDatabaseType';
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   FormInputBotBorder,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 
 const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
   const { t } = useTranslation();

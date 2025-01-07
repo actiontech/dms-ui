@@ -1,4 +1,4 @@
-import { EditorProps, OnMount } from '@monaco-editor/react';
+import { OnMount } from '@monaco-editor/react';
 import { MonacoEditorContainerStyleWrapper } from './style';
 import classNames from 'classnames';
 import MonacoEditor from '@monaco-editor/react';
@@ -6,8 +6,9 @@ import { editorDefaultOptions } from './config';
 import { CUSTOM_DIFF_EDITOR_THEME_NAME, editorDefaultThemeData } from './theme';
 
 import './monacoEditorConfig';
+import { CustomMonacoEditorProps } from './MonacoEditor.types';
 
-const CustomMonacoEditor: React.FC<Omit<EditorProps, 'theme'>> = ({
+const CustomMonacoEditor: React.FC<CustomMonacoEditorProps> = ({
   options,
   className,
   ...props

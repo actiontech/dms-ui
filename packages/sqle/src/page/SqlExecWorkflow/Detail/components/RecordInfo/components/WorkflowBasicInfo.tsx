@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { WorkflowBasicInfoProps } from '../index.type';
-import { AvatarCom } from '@actiontech/shared';
+import { CustomAvatar } from '@actiontech/shared';
 import { Space } from 'antd';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import WorkflowStatus from '../../../../List/components/WorkflowStatus';
@@ -25,7 +25,7 @@ const WorkflowBasicInfo: React.FC<WorkflowBasicInfoProps> = ({
           {t('execWorkflow.detail.operator.baseInfo.createUser')}
         </div>
         <Space className="workflow-steps-basic-info-item-value" align="center">
-          <AvatarCom size={20} name={createUserName} noTips />
+          <CustomAvatar size={20} name={createUserName} noTips />
           <span>{createUserName}</span>
         </Space>
       </div>

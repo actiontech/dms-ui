@@ -1,9 +1,6 @@
 import { Checkbox, CheckboxProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-
 import { CatchTableColumnValueType } from '../index.type';
-import { getColumnsLabel } from '../utils';
-
 import classNames from 'classnames';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -12,8 +9,9 @@ import {
   VerticalAlignMiddleOutlined,
   VerticalAlignTopOutlined
 } from '@ant-design/icons';
-import BasicToolTips from '../../BasicToolTips';
 import { DragOutlined } from '@actiontech/icons';
+import { getColumnsLabel } from '../utils';
+import { BasicToolTip } from '../../BasicToolTip';
 
 export type typeFixed = 'left' | 'right' | 'no-fixed';
 export interface IColumnsItems<T> {
@@ -76,28 +74,28 @@ const ColumnsItems = <T extends Record<string, any>>({
       </div>
       <div className="fixed-options">
         <span hidden={!['left', 'right'].includes(type)}>
-          <BasicToolTips title={t('common.actiontechTable.setting.noFixed')}>
+          <BasicToolTip title={t('common.actiontechTable.setting.noFixed')}>
             <VerticalAlignMiddleOutlined
               className="fixed-icon"
               onClick={() => onFixedClick('no-fixed', data.dataIndex)}
             />
-          </BasicToolTips>
+          </BasicToolTip>
         </span>
         <span hidden={!['right', 'no-fixed'].includes(type)}>
-          <BasicToolTips title={t('common.actiontechTable.setting.fixedLeft')}>
+          <BasicToolTip title={t('common.actiontechTable.setting.fixedLeft')}>
             <VerticalAlignTopOutlined
               className="fixed-icon"
               onClick={() => onFixedClick('left', data.dataIndex)}
             />
-          </BasicToolTips>
+          </BasicToolTip>
         </span>
         <span hidden={!['left', 'no-fixed'].includes(type)}>
-          <BasicToolTips title={t('common.actiontechTable.setting.fixedRight')}>
+          <BasicToolTip title={t('common.actiontechTable.setting.fixedRight')}>
             <VerticalAlignBottomOutlined
               className="fixed-icon"
               onClick={() => onFixedClick('right', data.dataIndex)}
             />
-          </BasicToolTips>
+          </BasicToolTip>
         </span>
       </div>
     </div>

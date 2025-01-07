@@ -17,4 +17,4 @@ export { TextArea, Password };
 BasicInput.TextArea = TextArea;
 BasicInput.Password = Password;
 
-export default BasicInput;
+export { BasicInput };

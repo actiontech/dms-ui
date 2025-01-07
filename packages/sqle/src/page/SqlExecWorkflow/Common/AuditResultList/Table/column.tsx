@@ -1,10 +1,13 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { EditText, SQLRenderer } from '@actiontech/shared';
-import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
+import {
+  EditText,
+  SQLRenderer,
+  basicTooltipCommonProps
+} from '@actiontech/shared';
 import { t } from '../../../../../locale';
 import ResultIconRender from '../../../../../components/AuditResultMessage/ResultIconRender';
-import { BasicToolTips, BasicTag } from '@actiontech/shared';
+import { BasicToolTip, BasicTag } from '@actiontech/shared';
 import { AuditResultBackupPolicyColumnStyleWrapper } from './style';
 import { EditFilled } from '@actiontech/icons';
 import { BackupStrategyDictionary } from './index.data';
@@ -58,12 +61,12 @@ export const AuditResultForCreateWorkflowColumn = (
     {
       dataIndex: 'backup_strategy',
       title: () => (
-        <BasicToolTips
+        <BasicToolTip
           suffixIcon
           title={t('execWorkflow.audit.table.backupPolicyTips')}
         >
           {t('execWorkflow.audit.table.backupPolicy')}
-        </BasicToolTips>
+        </BasicToolTip>
       ),
       className: 'backup-policy-column',
       render: (backupStrategy, record) => {
@@ -107,7 +110,7 @@ export const AuditResultForCreateWorkflowColumn = (
               expandable: false,
               tooltip: {
                 arrow: false,
-                ...tooltipsCommonProps(description, 500)
+                ...basicTooltipCommonProps(description, 500)
               },
               rows: 1
             }}

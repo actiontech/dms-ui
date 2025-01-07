@@ -1,7 +1,7 @@
 import {
   BasicButton,
   BasicTag,
-  BasicToolTips,
+  BasicToolTip,
   Copy,
   EmptyBox,
   SQLRenderer,
@@ -219,7 +219,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                 <EmptyBox
                   if={!!props?.sql_source_file}
                   defaultNode={
-                    <BasicToolTips
+                    <BasicToolTip
                       title={t('execWorkflow.audit.sqlFileSource.tips')}
                     >
                       <Space>
@@ -238,7 +238,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                           -
                         </BasicTag>
                       </Space>
-                    </BasicToolTips>
+                    </BasicToolTip>
                   }
                 >
                   <BasicTag

@@ -3,11 +3,15 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { SQLRenderer, EditText, BasicTag } from '@actiontech/shared';
+import {
+  SQLRenderer,
+  EditText,
+  BasicTag,
+  basicTooltipCommonProps
+} from '@actiontech/shared';
 import { ExpandedBackupSqlType } from './index.type';
 import { IGetBackupSqlListV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import ExecStatusTag from '../AuditExecResultPanel/TaskResultList/Common/ResultCard/components/ExecStatusTag';
-import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { BackupStrategyDictionary } from '../../../Common/AuditResultList/Table/index.data';
 import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -123,7 +127,7 @@ export const WorkflowRollbackSelectedSqlTableColumn: (
               expandable: false,
               tooltip: {
                 arrow: false,
-                ...tooltipsCommonProps(remark, 500)
+                ...basicTooltipCommonProps(remark, 500)
               },
               rows: 1
             }}

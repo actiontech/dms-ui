@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Spin, Typography } from 'antd';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
+import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';

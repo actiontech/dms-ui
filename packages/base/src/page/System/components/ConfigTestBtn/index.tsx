@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { MutableRefObject } from 'react';
 import { Popover } from 'antd';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/shared';
 import { ThunderBoltFilled } from '@actiontech/icons';
 
 interface ConfigTestBtnParams {
@@ -30,7 +30,7 @@ const ConfigTestBtn: React.FC<ConfigTestBtnParams> = ({
       onOpenChange={onPopoverOpenChange}
       content={popoverForm}
     >
-      <BasicToolTips title={t('common.test')} titleWidth={54}>
+      <BasicToolTip title={t('common.test')} titleWidth={54}>
         <BasicButton
           type="text"
           className="system-config-button"
@@ -38,7 +38,7 @@ const ConfigTestBtn: React.FC<ConfigTestBtnParams> = ({
           disabled={testingRef.current}
           icon={<ThunderBoltFilled />}
         />
-      </BasicToolTips>
+      </BasicToolTip>
     </Popover>
   );
 };

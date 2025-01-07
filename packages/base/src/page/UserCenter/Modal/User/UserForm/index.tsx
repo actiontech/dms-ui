@@ -1,11 +1,10 @@
 import { IUserFormProps } from './index.type';
 import { Form, Switch } from 'antd';
-import { BasicInput, BasicSelect } from '@actiontech/shared';
+import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/shared';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
-import EmptyBox from '@actiontech/shared/lib/components/EmptyBox';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 
@@ -172,13 +171,13 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         <Form.Item
           name="isDisabled"
           label={
-            <BasicToolTips
+            <BasicToolTip
               suffixIcon
               titleWidth={280}
               title={t('dmsUserCenter.user.userForm.disabledTips')}
             >
               {t('dmsUserCenter.user.userForm.isDisabled')}
-            </BasicToolTips>
+            </BasicToolTip>
           }
           valuePropName="checked"
         >

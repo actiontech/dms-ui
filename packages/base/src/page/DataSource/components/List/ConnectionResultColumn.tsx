@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { BasicTag, BasicToolTips } from '@actiontech/shared';
+import { BasicTag, BasicToolTip } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { Space, Typography } from 'antd';
 import { ListDBServiceLastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
@@ -22,7 +22,7 @@ const ConnectionStatusColumn: React.FC<Props> = ({
     ListDBServiceLastConnectionTestStatusEnum.connect_success
   ) {
     return (
-      <BasicToolTips
+      <BasicToolTip
         titleWidth={270}
         title={
           <Typography.Text>
@@ -34,7 +34,7 @@ const ConnectionStatusColumn: React.FC<Props> = ({
         <BasicTag style={{ height: 32 }} color="green" size="small">
           {t('dmsDataSource.databaseList.connectSucceed')}
         </BasicTag>
-      </BasicToolTips>
+      </BasicToolTip>
     );
   }
 
@@ -43,7 +43,7 @@ const ConnectionStatusColumn: React.FC<Props> = ({
     ListDBServiceLastConnectionTestStatusEnum.connect_failed
   ) {
     return (
-      <BasicToolTips
+      <BasicToolTip
         titleWidth={330}
         title={
           <Space direction="vertical">
@@ -64,7 +64,7 @@ const ConnectionStatusColumn: React.FC<Props> = ({
         <BasicTag style={{ height: 32 }} color="red" size="small">
           {t('dmsDataSource.databaseList.connectFailed')}
         </BasicTag>
-      </BasicToolTips>
+      </BasicToolTip>
     );
   }
 

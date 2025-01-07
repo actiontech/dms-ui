@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { SQLRendererProps } from '../index.type';
+import { SQLRendererProps } from '../SQLRenderer.types';
 import { useCallback } from 'react';
-import CopyIcon from '../../CopyIcon';
 import Copy from '../../../utils/Copy';
+import { CopyIcon } from '../../CopyIcon';
 
 const useRenderCopyIcon = (
   params: Pick<

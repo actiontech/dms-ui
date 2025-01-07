@@ -4,7 +4,7 @@ import { BasicInput, BasicSwitch, EmptyBox } from '@actiontech/shared';
 import {
   FormItemLabel,
   CustomLabelContent
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { Form } from 'antd';
 
 const ConfigField = () => {

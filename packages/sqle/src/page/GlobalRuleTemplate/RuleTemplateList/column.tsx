@@ -6,8 +6,11 @@ import {
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { Space } from 'antd';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
-import { DatabaseTypeLogo, TypedLink } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  DatabaseTypeLogo,
+  TypedLink
+} from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import {
   ProfileSquareFilled,

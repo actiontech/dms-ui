@@ -1,8 +1,12 @@
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { InputRef, SelectProps } from 'antd';
-import { BasicButton, EmptyBox, TypedLink } from '@actiontech/shared';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import {
+  BasicButton,
+  BasicEmpty,
+  EmptyBox,
+  TypedLink
+} from '@actiontech/shared';
 import CustomSelectSearchInput from '@actiontech/shared/lib/components/CustomSelect/CustomSelectSearchInput';
 import {
   ProjectSelectorPopupMenuStyleWrapper,

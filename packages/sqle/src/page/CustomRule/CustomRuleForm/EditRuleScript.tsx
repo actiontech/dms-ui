@@ -9,9 +9,9 @@ import {
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import { FormInstance } from 'antd';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 
 const EditRuleScript: React.FC<EditRuleScriptProps> = (props) => {
   const { t } = useTranslation();

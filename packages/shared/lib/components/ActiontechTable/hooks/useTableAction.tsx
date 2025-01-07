@@ -5,7 +5,6 @@ import {
   ActiontechTableToolbarActionMeta,
   InlineActiontechTableMoreActionsButtonMeta
 } from '../index.type';
-import BasicButton from '../../BasicButton';
 import { useTranslation } from 'react-i18next';
 import { Popconfirm, Popover, Space } from 'antd';
 import classnames from 'classnames';
@@ -14,11 +13,12 @@ import {
   InlineTableActionButtonsStyleWrapper,
   InlineTableActionMoreButtonPopoverStyleWrapper
 } from '../components/style';
-import EmptyBox from '../../EmptyBox';
+import EmptyBox from '../../EmptyBox/EmptyBox';
 import { checkButtonPermissions, checkButtonDisabled } from '../utils';
 import classNames from 'classnames';
 import { DashOutlined } from '@actiontech/icons';
 import { ActionButton, ActionButtonProps } from '../../ActionButton';
+import { BasicButton } from '../../BasicButton';
 
 export const ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH = 82;
 export const ACTIONTECH_TABLE_MORE_BUTTON_WIDTH = 40;

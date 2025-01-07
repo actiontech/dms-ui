@@ -10,14 +10,13 @@ import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/servi
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import {
-  AvatarCom,
+  BasicToolTip,
+  CustomAvatar,
   EditText,
   SQLRenderer,
-  TypedLink
+  TypedLink,
+  basicTooltipCommonProps
 } from '@actiontech/shared';
-import BasicToolTips, {
-  tooltipsCommonProps
-} from '@actiontech/shared/lib/components/BasicToolTips';
 import { Avatar, Space } from 'antd';
 import StatusTag from './StatusTag';
 import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
@@ -303,12 +302,12 @@ const SqlManagementColumn: (
           return '-';
         }
         if (assignees.length === 1) {
-          return <AvatarCom key={assignees[0]} name={assignees[0]} />;
+          return <CustomAvatar key={assignees[0]} name={assignees[0]} />;
         }
         return (
           <Avatar.Group maxCount={4}>
             {assignees.map((v) => (
-              <AvatarCom key={v} name={v} />
+              <CustomAvatar key={v} name={v} />
             ))}
           </Avatar.Group>
         );
@@ -324,7 +323,7 @@ const SqlManagementColumn: (
         }
 
         return (
-          <BasicToolTips
+          <BasicToolTip
             title={
               endpoints.length > 1 ? (
                 <Space wrap>
@@ -337,7 +336,7 @@ const SqlManagementColumn: (
           >
             <BasicTag style={{ marginRight: 0 }}>{endpoints[0]}</BasicTag>
             {endpoints.length > 1 ? '...' : null}
-          </BasicToolTips>
+          </BasicToolTip>
         );
       }
     },
@@ -376,7 +375,7 @@ const SqlManagementColumn: (
               expandable: false,
               tooltip: {
                 arrow: false,
-                ...tooltipsCommonProps(remark, 250)
+                ...basicTooltipCommonProps(remark, 250)
               },
               rows: 1
             }}

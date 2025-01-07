@@ -6,7 +6,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { AvatarCom, BasicTypographyEllipsis } from '@actiontech/shared';
+import { CustomAvatar, BasicTypographyEllipsis } from '@actiontech/shared';
 import WorkflowStatus from '../Common/WorkflowStatus';
 import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
@@ -129,7 +129,7 @@ export const ExportWorkflowListColumn: (
           return '-';
         }
         return list.map((v) => {
-          return <AvatarCom key={v.uid} name={v.name} />;
+          return <CustomAvatar key={v.uid} name={v.name} />;
         });
       }
     }

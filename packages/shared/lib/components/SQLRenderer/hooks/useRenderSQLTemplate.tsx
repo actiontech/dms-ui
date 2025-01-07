@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { SQLRendererProps } from '../index.type';
+import { SQLRendererProps } from '../SQLRenderer.types';
 import HighlightCode from '../../../utils/HighlightCode';
 
 const useRenderSQLTemplate = (

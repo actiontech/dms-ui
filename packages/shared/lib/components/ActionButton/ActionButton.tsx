@@ -1,10 +1,10 @@
-import { ActionButtonProps } from './index.type';
-import BasicButton from '../BasicButton';
+import { ActionButtonProps } from './ActionButton.types';
 import { useTranslation } from 'react-i18next';
 import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';
 import { Popconfirm } from 'antd';
-import BasicToolTips from '../BasicToolTips';
 import { RoutePathValue, TypedLink, TypedLinkProps } from '../TypedRouter';
+import { BasicButton } from '../BasicButton';
+import { BasicToolTip } from '../BasicToolTip';
 
 const ActionButton = <T extends RoutePathValue>(
   props: ActionButtonProps<T>
@@ -47,9 +47,9 @@ const ActionButton = <T extends RoutePathValue>(
     const { actionType, text, tooltip, ...buttonProps } = props;
 
     return (
-      <BasicToolTips {...tooltip}>
+      <BasicToolTip {...tooltip}>
         <BasicButton {...buttonProps}>{text}</BasicButton>
-      </BasicToolTips>
+      </BasicToolTip>
     );
   }
 

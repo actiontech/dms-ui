@@ -2,7 +2,7 @@ import { DashOutlined } from '@actiontech/icons';
 import {
   BasicButton,
   BasicTag,
-  BasicToolTips,
+  BasicToolTip,
   TypedLink
 } from '@actiontech/shared';
 import { IAuditPlanTypeResBase } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -49,7 +49,7 @@ const ScanTypeTagsCell: React.FC<Props> = ({
     return (
       <>
         {scanTypes.slice(0, 2).map((item) => renderScanTypeTag(item))}
-        <BasicToolTips
+        <BasicToolTip
           trigger={'click'}
           title={
             <Space wrap size={[0, 6]}>
@@ -62,7 +62,7 @@ const ScanTypeTagsCell: React.FC<Props> = ({
             className="table-row-scan-types-more-button"
             icon={<DashOutlined />}
           />
-        </BasicToolTips>
+        </BasicToolTip>
       </>
     );
   };

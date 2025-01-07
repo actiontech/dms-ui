@@ -3,7 +3,7 @@ import { SqlUploadContentProps } from './index.type';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { CustomDraggerUpload, LazyLoadComponent } from '@actiontech/shared';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { useTranslation } from 'react-i18next';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';

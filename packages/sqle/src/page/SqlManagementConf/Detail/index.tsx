@@ -2,13 +2,13 @@ import {
   EmptyBox,
   PageHeader,
   SegmentedTabs,
+  SegmentedTabsProps,
   useTypedNavigate,
   useTypedParams,
   useTypedQuery
 } from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
-import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import ConfDetailOverview from './Overview';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useCallback, useState } from 'react';

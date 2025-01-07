@@ -1,10 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import {
+  BasicInput,
   CustomLabelContent,
   FormItemLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/FormCom';
-import { useTranslation } from 'react-i18next';
-import { BasicInput } from '@actiontech/shared';
+} from '@actiontech/shared';
 import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
 
 const VersionBaseInfo: React.FC = () => {

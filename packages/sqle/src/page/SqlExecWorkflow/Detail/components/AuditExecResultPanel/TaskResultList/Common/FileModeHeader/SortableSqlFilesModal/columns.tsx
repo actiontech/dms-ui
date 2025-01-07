@@ -1,11 +1,11 @@
-import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
+import { BasicTableProps } from '@actiontech/shared/lib/components/BasicTable';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { IAuditFileStatistic } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../../../../../../locale';
 import { SqlFileOutlined } from '@actiontech/icons';
 
-export const SortableSqlFilesModalColumns: () => IBasicTable<
+export const SortableSqlFilesModalColumns: () => BasicTableProps<
   IAuditFileStatistic & { index: number }
 >['columns'] = () => {
   return [

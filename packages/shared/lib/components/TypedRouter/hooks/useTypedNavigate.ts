@@ -8,7 +8,7 @@ import {
   NavigateTypedOptions,
   ObjectRoutePathValue,
   NavigateFunction
-} from '../index.type';
+} from '../TypedRouter.types';
 import { useCallback } from 'react';
 
 const useTypedNavigate = () => {

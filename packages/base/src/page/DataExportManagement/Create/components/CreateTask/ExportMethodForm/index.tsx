@@ -1,10 +1,10 @@
 import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import { CreateExportTaskFormEntryProps } from '../index.type';
 import { useTranslation } from 'react-i18next';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
 
 import ExportMethodFormItem from './ExportMethodFormItem';
 

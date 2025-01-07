@@ -6,7 +6,7 @@ import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
 import {
-  AvatarCom,
+  CustomAvatar,
   BasicButton,
   TypedLink,
   useTypedNavigate
@@ -88,7 +88,7 @@ const OrderRiskList = () => {
         align: 'left',
         render(create_user_name: string) {
           if (!create_user_name) return '-';
-          return <AvatarCom name={create_user_name} />;
+          return <CustomAvatar name={create_user_name} />;
         }
       }
     ];

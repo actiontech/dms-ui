@@ -11,7 +11,7 @@ import {
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import {
   BasicSwitch,
-  BasicToolTips,
+  BasicToolTip,
   ReadOnlyConfigColumnsType,
   useConfigRender
 } from '@actiontech/shared';
@@ -65,14 +65,14 @@ const WorkflowUpdateNotifier: React.FC<WorkflowUpdateNotifierProps> = ({
   const { renderConfigForm } = useConfigRender<WorkflowUpdateNotifierFields>({
     switchFieldName,
     switchFieldLabel: (
-      <BasicToolTips
+      <BasicToolTip
         title={t('pushRule.pushRule.workflowUpdateNotifier.labelTips')}
         suffixIcon={
           <InfoCircleOutlined color={sharedTheme.uiToken.colorTextTertiary} />
         }
       >
         <span>{t('pushRule.pushRule.workflowUpdateNotifier.label')}</span>
-      </BasicToolTips>
+      </BasicToolTip>
     )
   });
 

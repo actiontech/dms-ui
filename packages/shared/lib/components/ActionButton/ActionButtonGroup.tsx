@@ -1,6 +1,6 @@
 import { Space } from 'antd';
 import ActionButton from './ActionButton';
-import { ActionButtonGroupProps } from './index.type';
+import { ActionButtonGroupProps } from './ActionButton.types';
 import { RoutePathValue } from '../TypedRouter';
 
 const ActionButtonGroup = <T extends RoutePathValue>({

@@ -1,10 +1,10 @@
 import { useBoolean } from 'ahooks';
 import { ConfigItemStyledWrapper } from './style';
 import { Col, Space } from 'antd';
-import { ConfigItemProps } from './index.type';
-import BasicButton from '../BasicButton';
+import { ConfigItemProps } from './ConfigItem.types';
 import useHideConfigInputNode from './hooks/useHideConfigInputNode';
 import { EditFilled } from '@actiontech/icons';
+import { BasicButton } from '../BasicButton';
 
 const ConfigItem: React.FC<ConfigItemProps> = ({
   label,

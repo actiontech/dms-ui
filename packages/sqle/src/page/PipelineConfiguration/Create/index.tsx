@@ -11,8 +11,8 @@ import {
   formItemLayout,
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import { Space } from 'antd';
 import { BriefcaseFilled } from '@actiontech/icons';
 import PipelineConfigurationForm from '../Common/ConfigurationForm';

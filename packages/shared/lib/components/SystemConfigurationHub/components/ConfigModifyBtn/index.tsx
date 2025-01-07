@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { EditFilled } from '@actiontech/icons';
-import BasicToolTips from '../../../BasicToolTips';
 import { SystemConfigModifyBtnStyleWrapper } from './style';
-import { IBasicButton } from '../../../BasicButton';
+import { BasicToolTip } from '../../../BasicToolTip';
+import { BasicButtonProps } from '../../../BasicButton';
 
-type Props = Omit<IBasicButton, 'type' | 'icon'>;
+type Props = Omit<BasicButtonProps, 'type' | 'icon'>;
 
 const ConfigModifyBtn: React.FC<Props> = (props) => {
   const { t } = useTranslation();
   return (
-    <BasicToolTips title={t('common.modify')} titleWidth={54}>
+    <BasicToolTip title={t('common.modify')} titleWidth={54}>
       <SystemConfigModifyBtnStyleWrapper
         {...props}
         type="text"
@@ -18,7 +18,7 @@ const ConfigModifyBtn: React.FC<Props> = (props) => {
         // 2. 除了 shared 外，所有项目都存在自己的 useThemeStyleData hooks
         icon={<EditFilled color="#292c33" />}
       />
-    </BasicToolTips>
+    </BasicToolTip>
   );
 };
 

@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import classNames from 'classnames';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { EmptyBox, BasicButton } from '@actiontech/shared';
-import BasicToolTips, {
-  tooltipsCommonProps
-} from '@actiontech/shared/lib/components/BasicToolTips';
+import {
+  EmptyBox,
+  BasicButton,
+  basicTooltipCommonProps,
+  BasicToolTip,
+  BasicEmpty
+} from '@actiontech/shared';
 import { RuleListProps, RuleStatusEnum, EnumActionType } from './index.type';
 import {
   EmptyRuleStyleWrapper,
@@ -19,7 +22,6 @@ import {
   IRuleParamResV1,
   IRuleResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import RuleDetailModal from './RuleDetailModal';
 import { useBoolean } from 'ahooks';
 import { isEqual } from 'lodash';
@@ -147,7 +149,7 @@ const RuleList: React.FC<RuleListProps> = ({
           ellipsis={{
             tooltip: {
               placement: 'topLeft',
-              ...tooltipsCommonProps(rule.annotation, 640)
+              ...basicTooltipCommonProps(rule.annotation, 640)
             }
           }}
           className="level-content-annotation"
@@ -192,7 +194,7 @@ const RuleList: React.FC<RuleListProps> = ({
       <section className="action-wrapper">
         <Space size={10}>
           {actionType === RuleStatusEnum.enabled && (
-            <BasicToolTips title={t('ruleTemplate.ruleTemplateForm.editRule')}>
+            <BasicToolTip title={t('ruleTemplate.ruleTemplateForm.editRule')}>
               <BasicButton
                 shape="circle"
                 className="action-circle-btn edit-rule-item"
@@ -205,12 +207,10 @@ const RuleList: React.FC<RuleListProps> = ({
                   onActionHandle?.(rule, EnumActionType.edit);
                 }}
               ></BasicButton>
-            </BasicToolTips>
+            </BasicToolTip>
           )}
           {isDisabled ? (
-            <BasicToolTips
-              title={t('ruleTemplate.ruleTemplateForm.activeRule')}
-            >
+            <BasicToolTip title={t('ruleTemplate.ruleTemplateForm.activeRule')}>
               <BasicButton
                 shape="circle"
                 className="action-circle-btn enabled-rule-item"
@@ -227,11 +227,11 @@ const RuleList: React.FC<RuleListProps> = ({
                   onActionHandle?.(rule, EnumActionType.enabled);
                 }}
               ></BasicButton>
-            </BasicToolTips>
+            </BasicToolTip>
           ) : renderDisableNode ? (
             renderDisableNode(rule)
           ) : (
-            <BasicToolTips
+            <BasicToolTip
               title={t('ruleTemplate.ruleTemplateForm.disableRule')}
             >
               <BasicButton
@@ -250,7 +250,7 @@ const RuleList: React.FC<RuleListProps> = ({
                   onActionHandle?.(rule, EnumActionType.disabled);
                 }}
               ></BasicButton>
-            </BasicToolTips>
+            </BasicToolTip>
           )}
         </Space>
       </section>

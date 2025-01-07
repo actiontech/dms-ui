@@ -1,8 +1,8 @@
-import { AvatarCom } from '@actiontech/shared';
+import { CustomAvatar } from '@actiontech/shared';
 
 import { styled } from '@mui/material/styles';
 
-export const UserAvatarStyleWrapper = styled(AvatarCom)`
+export const UserAvatarStyleWrapper = styled(CustomAvatar)`
   &.work-flow-auth-avatar.ant-avatar {
     border: ${({ theme }) =>
       theme.sqleTheme.workflowTemplate.stepCard.userAvatarBorder};

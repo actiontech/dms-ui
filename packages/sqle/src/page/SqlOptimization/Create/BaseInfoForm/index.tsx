@@ -1,14 +1,14 @@
-import {
-  FormAreaBlockStyleWrapper,
-  FormAreaLineStyleWrapper,
-  FormStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { BaseForm } from '../../index.type';
 import BaseInfoFormItem from './BaseInfoFormItem';
 import { BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
+import {
+  FormAreaBlockStyleWrapper,
+  FormAreaLineStyleWrapper,
+  FormStyleWrapper
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared';
 
 const BaseInfoForm: React.FC<{ form: BaseForm }> = ({ form }) => {
   const { t } = useTranslation();

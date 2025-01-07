@@ -22,7 +22,7 @@ import {
   FormAreaLineStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   FormInputBotBorder,
   FormItemBigTitle,
@@ -30,7 +30,7 @@ import {
   FormItemNoLabel,
   FormItemSubTitle,
   CustomLabelContent
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import DatabaseFormItem from './FormItem';
 import MaintenanceTimePicker from './MaintenanceTimePicker';

@@ -1,5 +1,5 @@
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { styled } from '@mui/material/styles';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 
 export const VersionFormAreaBlockStyleWrapper = styled(
   FormAreaBlockStyleWrapper

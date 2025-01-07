@@ -1,7 +1,7 @@
 import { RuleTemplateFormProps } from './index.type';
 
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import BaseInfoForm from './BaseInfoForm';
 import RuleSelect from './RuleSelect';

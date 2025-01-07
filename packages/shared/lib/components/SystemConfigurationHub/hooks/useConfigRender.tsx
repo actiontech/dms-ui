@@ -2,8 +2,8 @@ import { Descriptions, Form, Space } from 'antd';
 import { DescriptionsItemProps } from 'antd/lib/descriptions/Item';
 import { useBoolean } from 'ahooks';
 import { isString } from 'lodash';
-import { formItemLayout } from '../../FormCom/style';
-import { FormItemLabel } from '../../FormCom';
+import { formItemLayout } from '../../CustomForm/style';
+import { FormItemLabel } from '../../CustomForm';
 import {
   SystemConfigFormStyleWrapper,
   SystemConfigReadonlyModeStyleWrapper

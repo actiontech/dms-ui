@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { MonacoDiffEditor } from '../../MonacoEditor';
-import { SQLDiffViewOnlyEditorRendererProps } from '../index.type';
+import { SQLDiffViewOnlyEditorRendererProps } from '../SQLRenderer.types';
 
 const DiffViewOnlyEditor: React.FC<SQLDiffViewOnlyEditorRendererProps> = ({
   originalSql,

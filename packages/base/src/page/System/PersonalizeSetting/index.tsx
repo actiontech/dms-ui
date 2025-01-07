@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Spin } from 'antd';
 import { ConfigItem } from '@actiontech/shared';
 import {
+  ConfigFieldMapMeta,
   EditInput,
   ImageUploader,
   LabelContent
@@ -17,7 +18,6 @@ import {
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import useSystemConfig from '../../../hooks/useSystemConfig';
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
-import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/BasicInfo/index.d';
 import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';

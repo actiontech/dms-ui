@@ -1,12 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { Spin, Form } from 'antd';
-import { EmptyBox, PageHeader, TypedLink } from '@actiontech/shared';
+import {
+  BasicEmpty,
+  EmptyBox,
+  PageHeader,
+  TypedLink
+} from '@actiontech/shared';
 import { RuleStatus, RuleList } from '../../components/RuleList';
 import useRuleList from '../../components/RuleList/useRuleList';
 import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { RuleListStyleWrapper } from './style';
-
 import RuleListFilter from './RuleListFilter';
 import useRuleListFilter from './hooks/useRuleListFilter';
 import { RuleListFilterForm } from './index.type';

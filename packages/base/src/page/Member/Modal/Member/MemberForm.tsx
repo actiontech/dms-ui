@@ -3,7 +3,7 @@ import { Form } from 'antd';
 import {
   BasicSelect,
   BasicSwitch,
-  BasicToolTips,
+  BasicToolTip,
   TypedLink
 } from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
@@ -37,7 +37,7 @@ const MemberForm: React.FC<IMemberFormProps> = ({
       <Form.Item
         name="userUid"
         label={
-          <BasicToolTips
+          <BasicToolTip
             suffixIcon
             title={
               <Trans i18nKey={'dmsMember.memberForm.usernameTips'}>
@@ -47,7 +47,7 @@ const MemberForm: React.FC<IMemberFormProps> = ({
             }
           >
             {t('dmsMember.memberForm.username')}
-          </BasicToolTips>
+          </BasicToolTip>
         }
         validateFirst={true}
         rules={[

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useBoolean, useKeyPress } from 'ahooks';
 import { Spin } from 'antd';
-import { IConfigItemEditInputNumberProps } from '../index.type';
-import BasicInputNumber from '../../BasicInputNumber';
+import { ConfigItemEditInputNumberProps } from '../ConfigItem.types';
+import BasicInputNumber from '../../BasicInputNumber/BasicInputNumber';
 
-const EditInputNumber: React.FC<IConfigItemEditInputNumberProps> = ({
+const EditInputNumber: React.FC<ConfigItemEditInputNumberProps> = ({
   fieldValue,
   hideField,
   validator,

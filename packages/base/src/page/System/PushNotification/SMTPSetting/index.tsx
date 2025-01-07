@@ -8,7 +8,7 @@ import useConfigRender, {
 import { SMTPSettingFormFields } from './index.type';
 import { switchFieldName } from './index.data';
 import { ISMTPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import useConfigSwitch from '../../hooks/useConfigSwitch';
 import ConfigSwitch from '../../components/ConfigSwitch';
 import ConfigField from './components/ConfigField';
@@ -80,7 +80,7 @@ const SMTPSetting = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.smtp.skipVerifyTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -91,7 +91,7 @@ const SMTPSetting = () => {
               }
             >
               {t('dmsSystem.smtp.isSkipVerify')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'is_skip_verify',

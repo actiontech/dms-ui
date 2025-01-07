@@ -5,7 +5,7 @@ import {
 } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Form, message } from 'antd';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { useRequest } from 'ahooks';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useDatabaseType from '../../../../../../hooks/useDatabaseType';

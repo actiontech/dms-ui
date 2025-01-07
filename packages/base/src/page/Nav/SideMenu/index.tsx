@@ -6,7 +6,6 @@ import ProjectSelector from './ProjectSelector';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
 import { useCurrentUser } from '@actiontech/shared/lib/global';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
-import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';
 import MenuList from './MenuList';
@@ -18,7 +17,7 @@ import { useDispatch } from 'react-redux';
 import { updateBindProjects } from '../../../store/user';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import QuickActions from './QuickActions';
-import { useTypedNavigate } from '@actiontech/shared';
+import { CustomSelectProps, useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const SideMenu: React.FC = () => {

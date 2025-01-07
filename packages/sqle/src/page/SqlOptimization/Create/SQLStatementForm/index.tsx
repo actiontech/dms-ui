@@ -1,14 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { useContext, useEffect } from 'react';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { SQLStatementFormProps, UploadTypeEnum } from '../../index.type';
-import { BasicInput, EmptyBox, ModeSwitcher } from '@actiontech/shared';
+import {
+  BasicInput,
+  EmptyBox,
+  FormItemLabel,
+  ModeSwitcher
+} from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
 import { RingPieFilled } from '@actiontech/icons';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 
 const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
   const { t } = useTranslation();

@@ -5,7 +5,6 @@ import { useBoolean } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
 import { ModalName } from '../../../../../../data/ModalName';
-import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -14,6 +13,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
+import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
 
 export type ChangeStatusFields = {
   status: BatchUpdateSqlManageReqStatusEnum;

@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/dom';
 import { getBySelector, queryBySelector } from '../../../testUtil/customQuery';
 import { superRender } from '../../../testUtil/customRender';
 import SQLRenderer from '../SQLRenderer';
-import { SQLRendererProps } from '../index.type';
+import { SQLRendererProps } from '../SQLRenderer.types';
 import { act } from '@testing-library/react';
 
 describe('test SQLRenderer', () => {

@@ -2,7 +2,7 @@ import { BasicButton, BasicModal } from '@actiontech/shared';
 import { ExportRuleTemplateProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Form, Radio } from 'antd';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { exportRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 
 const ExportRuleTemplate: React.FC<ExportRuleTemplateProps> = ({

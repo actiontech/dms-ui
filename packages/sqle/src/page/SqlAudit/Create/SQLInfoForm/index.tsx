@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { SQLInfoFormProps } from './index.type';
 import SQLInfoFormItem from './SQLInfoFormItem';
 import { SqlInfoFormStyleWrapper } from './style';

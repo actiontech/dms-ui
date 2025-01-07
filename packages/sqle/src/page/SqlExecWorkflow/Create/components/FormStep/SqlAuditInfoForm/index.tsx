@@ -1,5 +1,5 @@
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { useTranslation } from 'react-i18next';
 import SqlAuditInfoFormItem from './SqlAuditInfoFormItem';
 import { SqlAuditInfoFormProps } from './index.type';

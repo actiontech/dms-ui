@@ -2,7 +2,7 @@ import {
   CustomLabelContent,
   FormItemLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { BasicInput } from '@actiontech/shared';
 import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';

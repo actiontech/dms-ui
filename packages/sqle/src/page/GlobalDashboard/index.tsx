@@ -1,9 +1,12 @@
-import { PageHeader, SegmentedTabs } from '@actiontech/shared';
+import {
+  PageHeader,
+  SegmentedTabs,
+  SegmentedTabsProps
+} from '@actiontech/shared';
 import useDashboardFilter from './hooks/useDashboardFilter';
 import GlobalDashboardTableFilter from './components/TableFilter';
 import { useState, useMemo } from 'react';
 import { GlobalDashBoardSegmentedEnum } from './index.type';
-import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
 import PendingWorkOrder from './List/PendingWorkOrder';

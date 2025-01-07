@@ -9,8 +9,8 @@ import { IHighPriorityConditionResV1 } from '@actiontech/shared/lib/api/sqle/ser
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { Col, Divider, Form, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {

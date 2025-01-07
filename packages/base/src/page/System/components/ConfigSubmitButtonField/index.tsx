@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Space } from 'antd';
 import { BasicButton } from '@actiontech/shared';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
 
 interface ConfigSubmitButtonFieldProps {
   submitLoading: boolean;

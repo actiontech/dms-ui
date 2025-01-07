@@ -1,10 +1,10 @@
-import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { t } from '../../../../../locale';
 import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
+import { ModeSwitcherOptionsType } from '@actiontech/shared';
 
 export const SAME_SQL_MODE_DEFAULT_FIELD_KEY = '0';
 

@@ -13,7 +13,7 @@ import {
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
-import { AvatarCom } from '@actiontech/shared';
+import { CustomAvatar } from '@actiontech/shared';
 import InstanceTasksStatus from './InstanceTasksStatus';
 import dayjs from 'dayjs';
 import { checkTimeInWithMaintenanceTime } from '../../../../Common/utils';
@@ -244,7 +244,7 @@ export const auditResultOverviewColumn: () => ActiontechTableColumn<IGetWorkflow
         title: () => t('execWorkflow.detail.overview.table.assigneeUserName'),
         render: (list) => {
           return list?.map((v) => {
-            return <AvatarCom key={v} name={v} />;
+            return <CustomAvatar key={v} name={v} />;
           });
         }
       },

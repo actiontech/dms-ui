@@ -9,7 +9,7 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import ResultIconRender from 'sqle/src/components/AuditResultMessage/ResultIconRender';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
-  AvatarCom,
+  CustomAvatar,
   SQLRenderer,
   BasicTypographyEllipsis
 } from '@actiontech/shared';
@@ -29,7 +29,7 @@ export const CBOperationListColumns = (
       dataIndex: 'operation_person',
       title: t('dmsCloudBeaver.operationList.column.operationUser'),
       render: (value: ICBOperationLog['operation_person']) => {
-        return <AvatarCom size="small" name={value?.name ?? ''} />;
+        return <CustomAvatar size="small" name={value?.name ?? ''} />;
       },
       filterCustomType: 'select',
       filterKey: 'filter_operation_person_uid'

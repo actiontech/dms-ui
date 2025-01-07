@@ -3,8 +3,8 @@ import { BasicSelect } from '@actiontech/shared';
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { IAuditTemplateProps } from './index.type';
 import { useMemo } from 'react';
 
