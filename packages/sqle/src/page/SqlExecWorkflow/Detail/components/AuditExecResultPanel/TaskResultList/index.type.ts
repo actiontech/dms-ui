@@ -13,7 +13,7 @@ export type TasksResultListBaseProps = {
   auditResultActiveKey: string;
   noDuplicate: boolean;
   tableFilterInfo: GetAuditTaskSQLsPrams;
-  execStatusFilterValue?: getAuditTaskSQLsV2FilterExecStatusEnum;
+  execStatusFilterValue: getAuditTaskSQLsV2FilterExecStatusEnum | null;
   workflowStatus?: WorkflowRecordResV2StatusEnum;
   assigneeUserNames: string[];
   executeMode: WorkflowResV2ExecModeEnum;

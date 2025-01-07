@@ -124,9 +124,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         </Space>
       </SegmentedRowStyleWrapper>
       {/* todo: options 中部分数据需要后端接口支持 http://10.186.18.11/jira/browse/DMS-424*/}
-      <AuditResultFilterContainer<
-        getAuditTaskSQLsV2FilterAuditLevelEnum | undefined
-      >
+      <AuditResultFilterContainer
         passRate={currentTask?.pass_rate}
         score={currentTask?.score}
         instanceSchemaName={currentTask?.instance_schema}
@@ -136,7 +134,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         options={Object.keys(getAuditTaskSQLsV2FilterAuditLevelEnum)}
         withAll={{
           label: t('execWorkflow.create.auditResult.allLevel'),
-          value: undefined
+          value: null
         }}
         labelDictionary={translateDictionaryI18nLabel(auditLevelDictionary)}
       />
