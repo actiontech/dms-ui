@@ -7,7 +7,7 @@ import {
   FolderFilled,
   MagnifierFilled
 } from '@actiontech/icons';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Key, useCallback, useState } from 'react';
 import {
@@ -124,7 +124,7 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
 
       const renderViewDetail = (key: string) => {
         return (
-          <BasicToolTips title={t('common.showDetail')}>
+          <BasicToolTip title={t('common.showDetail')}>
             <MagnifierFilled
               color={sharedTheme.uiToken.colorPrimary}
               onClick={(e) => {
@@ -133,7 +133,7 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
               }}
               className="view-detail-icon"
             />
-          </BasicToolTips>
+          </BasicToolTip>
         );
       };
 

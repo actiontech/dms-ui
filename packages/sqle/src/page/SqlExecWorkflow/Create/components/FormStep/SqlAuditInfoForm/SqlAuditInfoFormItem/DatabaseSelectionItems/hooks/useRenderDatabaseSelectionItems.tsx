@@ -2,7 +2,7 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { DatabaseSelectionItemProps } from '../../../index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicToolTips, TypedLink } from '@actiontech/shared';
+import { BasicButton, BasicToolTip, TypedLink } from '@actiontech/shared';
 import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
 import { FormListFieldData } from 'antd';
@@ -186,7 +186,7 @@ const useRenderDatabaseSelectionItems = ({
       : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
     return (
-      <BasicToolTips
+      <BasicToolTip
         title={
           <TypedLink
             to={path}
@@ -211,7 +211,7 @@ const useRenderDatabaseSelectionItems = ({
             />
           }
         />
-      </BasicToolTips>
+      </BasicToolTip>
     );
   };
 

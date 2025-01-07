@@ -8,7 +8,7 @@ import ExportTaskStatus from '../../../../Common/TaskStatus';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import dayjs from 'dayjs';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { InfoCircleOutlined } from '@actiontech/icons';
 
 export const OverviewListColumn: () => ActiontechTableColumn<
@@ -77,14 +77,14 @@ export const OverviewListAction: (
   return {
     title: () => (
       <>
-        <BasicToolTips
+        <BasicToolTip
           title={t(
             'dmsDataExport.detail.exportResult.overview.column.action.downloadTips'
           )}
           suffixIcon={<InfoCircleOutlined width={14} height={14} />}
         >
           {t('common.operate')}
-        </BasicToolTips>
+        </BasicToolTip>
       </>
     ),
     buttons: [

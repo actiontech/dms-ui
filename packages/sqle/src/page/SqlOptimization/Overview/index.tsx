@@ -1,7 +1,7 @@
 import {
   PageHeader,
   EmptyBox,
-  BasicToolTips,
+  BasicToolTip,
   useTypedParams,
   ActionButton
 } from '@actiontech/shared';
@@ -205,12 +205,12 @@ const OptimizationOverview = () => {
           />
           <section className="last-title">
             <Typography.Title level={5} className="title-wrap">
-              <BasicToolTips
+              <BasicToolTip
                 title={t('sqlOptimization.overview.recommendedIndexTips')}
                 suffixIcon
               >
                 {t('sqlOptimization.overview.recommendedIndex')}
-              </BasicToolTips>
+              </BasicToolTip>
             </Typography.Title>
             <RecommendIndex
               recommendations={optimizationRecord?.index_recommendations}

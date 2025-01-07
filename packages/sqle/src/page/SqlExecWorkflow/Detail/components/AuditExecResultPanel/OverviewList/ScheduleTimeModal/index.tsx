@@ -8,16 +8,16 @@ import {
   BasicButton,
   BasicModal,
   BasicTag,
-  EmptyBox
+  EmptyBox,
+  ToggleTokensOptionsType
 } from '@actiontech/shared';
 import { ScheduleTimeFormFields, ScheduleTimeModalProps } from './index.type';
-import { FormItemNoLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
+import { FormItemNoLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
 import dayjs, { Dayjs } from 'dayjs';
 import { BasicDatePicker } from '@actiontech/shared';
 import ConfirmationSettingForm from './components/ConfirmationSettingForm';
 import { useEffect, useState } from 'react';
-import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { ScheduleTimeModelDescribeStyleWrapper } from './style';
 import { checkTimeInWithMaintenanceTime } from '../../../../../Common/utils';
 

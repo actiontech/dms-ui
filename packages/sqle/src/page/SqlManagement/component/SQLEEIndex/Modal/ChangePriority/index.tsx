@@ -12,8 +12,8 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import { BasicButton, BasicModal } from '@actiontech/shared';
-import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import { useEffect } from 'react';
+import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
 
 enum SqlManagePriority {
   high = 'high',

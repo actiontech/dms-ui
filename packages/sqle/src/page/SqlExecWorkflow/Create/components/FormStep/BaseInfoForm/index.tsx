@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import BaseInfoFormItem from './BaseInfoFormItem';
 import { BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';

@@ -1,4 +1,4 @@
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import BaseInfoForm from './BaseInfoForm';
 import { CreateWorkflowFormStepProps } from './index.type';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';

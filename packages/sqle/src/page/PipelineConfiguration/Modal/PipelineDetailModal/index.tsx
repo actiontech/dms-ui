@@ -13,7 +13,7 @@ import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { PipelineNodeTableColumn } from './column';
 import EventEmitter from '../../../../utils/EventEmitter';

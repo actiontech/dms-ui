@@ -4,7 +4,7 @@ import { SqlInfoFormProps } from '../../index.type';
 import { UploadTypeEnum } from '../../../SqlAudit/Create/SQLInfoForm/index.type';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Form, Space } from 'antd';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
@@ -70,7 +70,7 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
           <BasicButton onClick={formatSql} loading={submitLoading}>
             {t('sqlOptimization.create.sqlInfo.format')}
           </BasicButton>
-          <BasicToolTips
+          <BasicToolTip
             prefixIcon={<InfoCircleOutlined />}
             title={t('sqlOptimization.create.sqlInfo.formatTips', {
               supportType: Object.keys(FormatLanguageSupport).join('、')

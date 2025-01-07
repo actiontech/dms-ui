@@ -1,28 +1,5 @@
 //type
-export {
-  type ActiontechTableProps,
-  type TableRefreshButtonProps,
-  type ColumnsSettingProps,
-  type TableToolbarProps,
-  type TableFilterButtonProps,
-  type TableFilterContainerProps,
-  type ActiontechTableActionMeta,
-  type ActiontechTableFilterMeta,
-  type ActiontechTableColumn,
-  type PageInfoWithoutIndexAndSize,
-  type ActiontechTableFilterMetaValue,
-  type FilterCustomProps,
-  type UpdateTableFilterInfoType,
-  type ActiontechTableFilterButtonMeta,
-  type ActiontechTableFilterContainerMeta,
-  type UseTableRequestParamsOptions,
-  type TablePagination,
-  type TableSearchInputProps,
-  type CatchTableColumnValueType,
-  type CatchTableColumnsType,
-  type ActiontechTableToolbarActionMeta,
-  type InlineActiontechTableMoreActionsButtonMeta
-} from './index.type';
+export type * from './index.type';
 
 //components
 export { default as ActiontechTable } from './Table';

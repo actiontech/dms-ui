@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useBoolean, useKeyPress } from 'ahooks';
 import { Spin } from 'antd';
-import { IConfigItemEditInputProps } from '../index.type';
-import BasicInput from '../../BasicInput';
+import { ConfigItemEditInputProps } from '../ConfigItem.types';
+import { BasicInput } from '../../BasicInput';
 
-const EditInput: React.FC<IConfigItemEditInputProps> = ({
+const EditInput: React.FC<ConfigItemEditInputProps> = ({
   fieldValue,
   hideField,
   validator,

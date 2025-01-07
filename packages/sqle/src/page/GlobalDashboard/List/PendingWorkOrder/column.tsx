@@ -4,7 +4,7 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   BasicTypographyEllipsis,
-  BasicToolTips,
+  BasicToolTip,
   TypedLink
 } from '@actiontech/shared';
 import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
@@ -85,7 +85,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
           return '-';
         }
         return (
-          <BasicToolTips
+          <BasicToolTip
             title={
               instances.length > 1 ? (
                 <Space wrap>
@@ -116,7 +116,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
               </Typography.Link>
               {instances.length > 1 ? '...' : null}
             </Space>
-          </BasicToolTips>
+          </BasicToolTip>
         );
       }
     },

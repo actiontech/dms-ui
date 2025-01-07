@@ -1,5 +1,5 @@
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
+import { BasicButton, BasicToolTip } from '@actiontech/shared';
+import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
@@ -81,7 +81,7 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
         </BasicButton>
 
         {currentSqlUploadType === AuditTaskResV1SqlSourceEnum.form_data && (
-          <BasicToolTips
+          <BasicToolTip
             suffixIcon
             title={t('execWorkflow.create.form.sqlInfo.formatTips', {
               supportType: Object.keys(FormatLanguageSupport).join('、')
@@ -93,7 +93,7 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
             >
               {t('execWorkflow.create.form.sqlInfo.format')}
             </BasicButton>
-          </BasicToolTips>
+          </BasicToolTip>
         )}
       </Space>
     </FormItemNoLabel>

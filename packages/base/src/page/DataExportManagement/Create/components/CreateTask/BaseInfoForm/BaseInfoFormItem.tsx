@@ -1,9 +1,9 @@
-import { BasicInput } from '@actiontech/shared';
 import {
+  BasicInput,
   FormInputBotBorder,
-  FormItemNoLabel,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+  FormItemLabel,
+  FormItemNoLabel
+} from '@actiontech/shared';
 import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';

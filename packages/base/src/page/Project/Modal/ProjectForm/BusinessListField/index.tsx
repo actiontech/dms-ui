@@ -2,7 +2,7 @@ import { EditInput } from '@actiontech/shared/lib/components/ConfigItem';
 import { Space } from 'antd';
 import { useBoolean } from 'ahooks';
 import { DrawerFormIconWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { BasicInput, EmptyBox, BasicToolTips } from '@actiontech/shared';
+import { BasicInput, EmptyBox, BasicToolTip } from '@actiontech/shared';
 import useHideConfigInputNode from '@actiontech/shared/lib/components/ConfigItem/hooks/useHideConfigInputNode';
 import { useTranslation } from 'react-i18next';
 import { EditFilled, MinusCircleFilled } from '@actiontech/icons';
@@ -65,7 +65,7 @@ const BusinessListField: React.FC<BusinessListFieldProps> = ({
       <EmptyBox
         if={deletable && !lastItem}
         defaultNode={
-          <BasicToolTips
+          <BasicToolTip
             titleWidth={280}
             title={!deletable ? t('dmsProject.projectForm.deleteTip') : null}
           >
@@ -74,7 +74,7 @@ const BusinessListField: React.FC<BusinessListFieldProps> = ({
               disabled
               icon={<MinusCircleFilled />}
             />
-          </BasicToolTips>
+          </BasicToolTip>
         }
       >
         <DrawerFormIconWrapper

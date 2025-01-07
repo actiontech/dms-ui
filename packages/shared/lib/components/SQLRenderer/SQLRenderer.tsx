@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { SQLRendererProps } from './index.type';
+import { SQLRendererProps } from './SQLRenderer.types';
 import { SQLRendererStyleWrapper } from './style';
 import { Spin } from 'antd';
 import useRenderSQLTemplate from './hooks/useRenderSQLTemplate';

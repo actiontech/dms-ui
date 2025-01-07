@@ -1,13 +1,11 @@
-import {
-  FormItemSubTitle,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import {
   BasicInput,
   BasicButton,
   BasicSelect,
-  EmptyBox
+  EmptyBox,
+  FormItemSubTitle,
+  FormItemLabel
 } from '@actiontech/shared';
 import { Form, Row, Col } from 'antd';
 import { MinusCircleFilled, PlusCircleFilled } from '@actiontech/icons';

@@ -1,5 +1,5 @@
+import { BasicButton } from '../../BasicButton';
 import { TableRefreshButtonProps } from '../index.type';
-import BasicButton from '../../BasicButton';
 import { RefreshOutlined } from '@actiontech/icons';
 
 const RefreshButton: React.FC<TableRefreshButtonProps> = ({

@@ -2,7 +2,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IReduxState } from '../../../../../store';
 import { ModalName } from '../../../../../data/ModalName';
 import { useTranslation } from 'react-i18next';
-import { BasicModal, BasicButton, BasicInput } from '@actiontech/shared';
+import {
+  BasicModal,
+  BasicButton,
+  BasicInput,
+  FormItemLabel
+} from '@actiontech/shared';
 import { Form, Space, message } from 'antd';
 import { useBoolean } from 'ahooks';
 import {
@@ -14,7 +19,6 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 
 const OfflineExecModal = () => {

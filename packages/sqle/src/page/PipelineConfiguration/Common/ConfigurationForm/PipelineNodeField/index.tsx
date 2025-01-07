@@ -1,14 +1,13 @@
 import { PipelineNodeFieldProps } from '../index.type';
 import { PipelineNodeTableColumn, PipelineNodeTableActions } from './column';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { Space, Form, Typography } from 'antd';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton, BasicEmpty } from '@actiontech/shared';
 import { PipelineNodeListStyleWrapper } from '../../style';
 import NodeModal from './NodeModal';
 import { useBoolean } from 'ahooks';
 import React, { useMemo, useState } from 'react';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import { DndContext } from '@dnd-kit/core';
 import {
   arrayMove,

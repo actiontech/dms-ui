@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import BasicButton from '../../../BasicButton';
+import { BasicButton } from '../../../BasicButton';
 
 export const SystemConfigModifyBtnStyleWrapper = styled(BasicButton)`
   &.basic-button-wrapper {

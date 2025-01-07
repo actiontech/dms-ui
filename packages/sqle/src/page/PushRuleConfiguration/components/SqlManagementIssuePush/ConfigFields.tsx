@@ -3,9 +3,9 @@ import { BasicSelect } from '@actiontech/shared';
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
-import CronInputCom from '@actiontech/shared/lib/components/CronInput';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
+import CronInputCom from '@actiontech/shared/lib/components/CronInput/CronInput';
 
 type Props = {
   submitPending: boolean;

@@ -2,7 +2,7 @@ import { fireEvent } from '@testing-library/dom';
 import { getBySelector } from '../../../testUtil/customQuery';
 import { superRender } from '../../../testUtil/customRender';
 import Snippet from '../component/Snippet';
-import { SQLSnippetRendererProps } from '../index.type';
+import { SQLSnippetRendererProps } from '../SQLRenderer.types';
 
 describe('test SQLRenderer.Snippet', () => {
   const customRender = (params?: Partial<SQLSnippetRendererProps>) => {

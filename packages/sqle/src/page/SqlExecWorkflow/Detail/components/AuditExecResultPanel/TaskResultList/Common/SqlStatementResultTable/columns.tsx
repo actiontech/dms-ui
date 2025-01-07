@@ -1,14 +1,13 @@
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import ExecStatusTag from '../ResultCard/components/ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { SQLRenderer } from '@actiontech/shared';
-import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
+import { BasicTableProps, SQLRenderer } from '@actiontech/shared';
 import { t } from '../../../../../../../../locale';
 import ResultIconRender from '../../../../../../../../components/AuditResultMessage/ResultIconRender';
 
 export const SQLStatementResultColumns = (
   onClickAuditResult: (record: IAuditTaskSQLResV2) => void
-): IBasicTable<IAuditTaskSQLResV2>['columns'] => {
+): BasicTableProps<IAuditTaskSQLResV2>['columns'] => {
   return [
     {
       dataIndex: 'number',

@@ -2,7 +2,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { TokenCom, TypedLink } from '@actiontech/shared';
+import { SensitiveDisplay, TypedLink } from '@actiontech/shared';
 import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
@@ -96,7 +96,7 @@ export const ConfDetailOverviewColumns: (
       title: () => t('managementConf.detail.overview.column.connectionInfo'),
       render: (text) => {
         if (!text) return '-';
-        return <TokenCom text={text} />;
+        return <SensitiveDisplay text={text} />;
       }
     },
     {

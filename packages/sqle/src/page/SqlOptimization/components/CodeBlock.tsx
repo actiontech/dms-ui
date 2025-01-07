@@ -1,6 +1,5 @@
-import { HighlightCode } from '@actiontech/shared';
+import { CopyIcon, HighlightCode } from '@actiontech/shared';
 import { SqlOptimizationCodeBlockStyleWrapper } from '../style';
-import CopyIcon from '@actiontech/shared/lib/components/CopyIcon';
 
 const CodeBlock: React.FC<{ code: string }> = ({ code }) => {
   return (

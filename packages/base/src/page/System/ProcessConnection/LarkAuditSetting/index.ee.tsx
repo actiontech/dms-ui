@@ -3,7 +3,7 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
 import ConfigSwitch from '../../components/ConfigSwitch';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
+import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import ConfigField from './components/ConfigField';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import ConfigExtraButtons from './components/ConfigExtraButtons';

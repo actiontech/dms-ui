@@ -1,14 +1,14 @@
 import { Card, Space, Typography, Col, Row } from 'antd';
-import { EnterpriseFeatureDisplayProps } from './index.type';
+import { EnterpriseFeatureDisplayProps } from './EnterpriseFeatureDisplay.types';
 import { useTranslation } from 'react-i18next';
 import { CEIndexStyleWrapper } from './style';
 import Icon from '@ant-design/icons';
-import BasicButton from '../BasicButton';
 import { DMS_DEFAULT_WEB_TITLE } from '../../data/common';
-import EmptyBox from '../EmptyBox';
+import EmptyBox from '../EmptyBox/EmptyBox';
 import VersionComparison from './components/VersionComparison';
 import classNames from 'classnames';
 import { HeadphoneOutlined, BookMarkOutlined } from '@actiontech/icons';
+import { BasicButton } from '../BasicButton';
 
 const EnterpriseFeatureDisplay: React.FC<EnterpriseFeatureDisplayProps> = ({
   children,

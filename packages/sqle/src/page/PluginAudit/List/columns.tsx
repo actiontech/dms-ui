@@ -7,7 +7,7 @@ import { IGetSqlDEVRecordListParams } from '@actiontech/shared/lib/api/sqle/serv
 import { t } from '../../../locale';
 import ResultIconRender from '../../../components/AuditResultMessage/ResultIconRender';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { AvatarCom, SQLRenderer } from '@actiontech/shared';
+import { CustomAvatar, SQLRenderer } from '@actiontech/shared';
 
 export type PluginAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSqlDEVRecordListParams,
@@ -117,7 +117,7 @@ export const PluginAuditListColumns: (
       filterCustomType: 'select',
       filterKey: 'filter_creator',
       render: (creator: ISqlDEVRecord['creator']) => {
-        return creator ? <AvatarCom name={creator} /> : '-';
+        return creator ? <CustomAvatar name={creator} /> : '-';
       }
     }
   ];

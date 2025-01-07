@@ -1,11 +1,10 @@
 import { Popconfirm } from 'antd';
-import { FormItemLabel } from '../../../FormCom';
-import { BasicSwitch } from '../../../..';
-import { IBasicSwitch } from '../../../BasicSwitch';
+import { FormItemLabel } from '../../../CustomForm';
+import { BasicSwitch, BasicSwitchProps } from '../../../..';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-export interface ConfigSwitchParams extends Omit<IBasicSwitch, 'onChange'> {
+export interface ConfigSwitchParams extends Omit<BasicSwitchProps, 'onChange'> {
   title: string;
   switchFieldName: string;
   submitLoading: boolean;

@@ -3,7 +3,7 @@ import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/ser
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { defaultUploadTypeOptions } from './index.data';
 import { SqlStatementFormItemProps } from './index.type';

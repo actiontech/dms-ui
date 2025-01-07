@@ -2,7 +2,7 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { IPipelineNodeDetail } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../../locale/index';
 import { PipelineNodeTypeDictionary } from '../../Common/ConfigurationForm/index.data';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { Typography } from 'antd';
 import { PipelineDetailModalIntegrationInfoStyleWrapper } from './style';
 
@@ -29,7 +29,7 @@ export const PipelineNodeTableColumn =
         dataIndex: 'integration_info',
         render: (value) => {
           return (
-            <BasicToolTips
+            <BasicToolTip
               trigger="click"
               placement="topLeft"
               titleWidth={360}
@@ -44,7 +44,7 @@ export const PipelineNodeTableColumn =
               <Typography.Link>
                 {t('pipelineConfiguration.modal.view')}
               </Typography.Link>
-            </BasicToolTips>
+            </BasicToolTip>
           );
         }
       }

@@ -1,15 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useState } from 'react';
 import { Popover } from 'antd';
-
-import BasicButton from '../../BasicButton';
 import { CatchTableColumnValueType, ColumnsSettingProps } from '../index.type';
 import useTableSettings from '../hooks/useTableSettings';
 import { ColumnsSettingDropdownStyleWrapper } from './style';
-
 import { eventEmitter } from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-
 import { cloneDeep } from 'lodash';
 import type { DragEndEvent, DragMoveEvent } from '@dnd-kit/core';
 import {
@@ -27,6 +23,7 @@ import {
 import ColumnsItems, { typeFixed } from './ColumnsItems';
 import { DownOutlined, UpOutlined, SettingOutlined } from '@actiontech/icons';
 import { ColumnsSettingStyleWrapper } from './style';
+import { BasicButton } from '../../BasicButton';
 
 /**
  * todo:

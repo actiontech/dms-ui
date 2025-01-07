@@ -10,7 +10,7 @@ import { PipelineNodeModalProps } from '../../index.type';
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import {
   PipelineNodeTypeOptions,

@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Space } from 'antd';
 import BasicInput from '../../BasicInput/Input';
-import BasicRangePicker from '../../BasicRangePicker';
+import BasicRangePicker from '../../BasicRangePicker/BasicRangePicker';
 
 export const FilterContainerStyleWrapper = styled(Space)`
   border-bottom: ${({ theme }) =>

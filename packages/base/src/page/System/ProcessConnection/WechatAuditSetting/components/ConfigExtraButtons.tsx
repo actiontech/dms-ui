@@ -8,8 +8,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import { TestFormFields } from '../index.type';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;

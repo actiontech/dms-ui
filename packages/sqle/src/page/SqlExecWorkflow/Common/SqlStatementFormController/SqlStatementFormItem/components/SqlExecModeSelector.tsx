@@ -1,13 +1,18 @@
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { SqlExecModeSelectorProps } from './index.type';
 import {
   AuditTaskResV1SqlSourceEnum,
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { BasicSelect, EmptyBox, ModeSwitcher } from '@actiontech/shared';
+import {
+  BasicSelect,
+  EmptyBox,
+  ModeSwitcher,
+  basicTooltipCommonProps
+} from '@actiontech/shared';
 import { sqlExecModeOptions } from '../index.data';
 import { useTranslation } from 'react-i18next';
 import { Form, Tooltip } from 'antd';
@@ -16,7 +21,6 @@ import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useEffect } from 'react';
-import { tooltipsCommonProps } from '@actiontech/shared/lib/components/BasicToolTips';
 import { RingPieFilled } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 
@@ -117,7 +121,7 @@ const SqlExecModeSelector: React.FC<SqlExecModeSelectorProps> = ({
         <Tooltip
           className="full-width-element"
           trigger="hover"
-          {...tooltipsCommonProps(
+          {...basicTooltipCommonProps(
             t('execWorkflow.create.form.sqlInfo.execModeDisabledTips')
           )}
         >

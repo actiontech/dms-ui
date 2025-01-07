@@ -2,8 +2,8 @@ import Icon from '@ant-design/icons';
 import { CustomRuleFormProps } from '.';
 import BaseInfoForm from './BaseInfoForm';
 import EditRuleScript from './EditRuleScript';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import { ProfileSquareFilled } from '@actiontech/icons';
 
 const CustomRuleForm: React.FC<CustomRuleFormProps> = (props) => {

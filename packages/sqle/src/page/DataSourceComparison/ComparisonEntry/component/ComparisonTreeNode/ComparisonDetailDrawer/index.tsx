@@ -9,7 +9,7 @@ import {
 import {
   BasicButton,
   BasicDrawer,
-  BasicToolTips,
+  BasicToolTip,
   Copy,
   Download,
   EmptyBox,
@@ -237,7 +237,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
             comparisonResults,
             selectedObjectNodeKey
           ) === ObjectDiffResultComparisonResultEnum.same ? (
-            <BasicToolTips
+            <BasicToolTip
               title={t(
                 'dataSourceComparison.entry.comparisonDetail.generateSQLDisabledTips'
               )}
@@ -245,7 +245,7 @@ const ComparisonDetailDrawer: React.FC<Props> = ({
               <BasicButton type="primary" disabled>
                 {t('dataSourceComparison.entry.comparisonDetail.generateSQL')}
               </BasicButton>
-            </BasicToolTips>
+            </BasicToolTip>
           ) : (
             <BasicButton
               type="primary"

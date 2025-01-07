@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import {
   PageHeader,
   SegmentedTabs,
+  SegmentedTabsProps,
   useTypedNavigate,
   useTypedQuery
 } from '@actiontech/shared';
@@ -13,7 +14,6 @@ import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import GlobalDataSource from '../GlobalDataSource';
 import SyncDataSource from '../SyncDataSource';
-import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import {
   PERMISSIONS,
   PermissionsConstantType

@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { FormAreaLineStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
 import { BriefcaseFilled } from '@actiontech/icons';
 import VersionBaseInfo from './BaseInfo';
 import DeploymentConf from './DeploymentConf';
 import { VersionFormAreaBlockStyleWrapper } from './style';
+import { FormAreaLineStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared';
 
 const VersionForm: React.FC<{
   isUpdate?: boolean;

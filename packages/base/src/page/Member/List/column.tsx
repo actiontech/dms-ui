@@ -8,7 +8,7 @@ import {
 } from '@actiontech/shared/lib/api/base/service/common';
 import renderRolesInfo from '../Common/renderRolesInfo';
 import IsProjectAdmin from '../components/IsProjectAdmin';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { MemberPermissionStyleWrapper } from '../style';
 
 const commonRoleOperateRangesRender = (
@@ -54,7 +54,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     className: 'ellipsis-column-width',
     title: () => {
       return (
-        <BasicToolTips
+        <BasicToolTip
           suffixIcon
           titleWidth={280}
           title={
@@ -65,7 +65,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
           }
         >
           {t('dmsMember.memberList.columns.opRanges')}
-        </BasicToolTips>
+        </BasicToolTip>
       );
     },
     render: (roles = [], record: IListMember) => {
@@ -109,7 +109,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
     className: 'ellipsis-column-width',
     title: () => {
       return (
-        <BasicToolTips
+        <BasicToolTip
           suffixIcon
           titleWidth={280}
           title={
@@ -120,7 +120,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
           }
         >
           {t('dmsMember.memberGroupList.columns.opRanges')}
-        </BasicToolTips>
+        </BasicToolTip>
       );
     },
     render: (roles = [], record: IListMemberGroup) => {

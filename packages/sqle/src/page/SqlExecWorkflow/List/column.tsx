@@ -1,6 +1,6 @@
 import {
   BasicTypographyEllipsis,
-  AvatarCom,
+  CustomAvatar,
   BasicTag
 } from '@actiontech/shared';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -165,7 +165,7 @@ export const SqlExecWorkflowListColumn: (
           return '-';
         }
         return list?.map((v) => {
-          return <AvatarCom key={v} name={v} />;
+          return <CustomAvatar key={v} name={v} />;
         });
       }
     }

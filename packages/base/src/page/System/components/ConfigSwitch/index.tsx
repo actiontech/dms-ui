@@ -1,6 +1,6 @@
 import { Popconfirm } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { BasicSwitch } from '@actiontech/shared';
 
 export interface ConfigSwitchParams {

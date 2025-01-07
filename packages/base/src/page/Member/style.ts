@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Row } from 'antd';
-import { BasicDrawer, BasicToolTips } from '@actiontech/shared';
+import { BasicDrawer, BasicToolTip } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
   .ant-tabs-nav {
@@ -40,7 +40,7 @@ export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
   }
 `;
 
-export const MemberPermissionStyleWrapper = styled(BasicToolTips)`
+export const MemberPermissionStyleWrapper = styled(BasicToolTip)`
   max-width: 100%;
 
   .ant-space,

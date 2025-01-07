@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import BasicInput from '../BasicInput';
+import { BasicInput } from '../BasicInput';
 
 export const CustomInputStyleWrapper = styled(BasicInput)`
   &.ant-input-affix-wrapper-borderless.custom-input-namespace {

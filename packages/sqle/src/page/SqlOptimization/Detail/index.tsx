@@ -4,7 +4,8 @@ import {
   HighlightCode,
   SQLRenderer,
   ActionButton,
-  useTypedParams
+  useTypedParams,
+  CopyIcon
 } from '@actiontech/shared';
 import { Spin, Typography, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +18,6 @@ import {
   TriggeredRuleStyleWrapper
 } from '../style';
 import CardWrapper from '../../../components/CardWrapper';
-import CopyIcon from '@actiontech/shared/lib/components/CopyIcon';
 import CodeBlock from '../components/CodeBlock';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { jsonParse } from '@actiontech/shared/lib/utils/Common';

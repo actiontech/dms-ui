@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { LoadingOutlined, UploadOutlined } from '@ant-design/icons';
 import { useBoolean } from 'ahooks';
 import { Space, Upload } from 'antd';
-import { IConfigItemImageUploaderProps } from '../index.type';
+import { ConfigItemImageUploaderProps } from '../ConfigItem.types';
 
-const ImageUploader: React.FC<IConfigItemImageUploaderProps> = ({
+const ImageUploader: React.FC<ConfigItemImageUploaderProps> = ({
   submitLoading,
   onSubmit,
   url,

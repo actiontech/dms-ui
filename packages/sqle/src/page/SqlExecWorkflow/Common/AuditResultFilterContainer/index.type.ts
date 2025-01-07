@@ -1,8 +1,8 @@
-import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   CustomSegmentedFilterBaseValue,
   CustomSegmentedFilterProps
-} from '@actiontech/shared/lib/components/CustomSegmentedFilter/index.type';
+} from '@actiontech/shared';
+import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 export type AuditResultFilterContainerProps<
   T extends CustomSegmentedFilterBaseValue = string

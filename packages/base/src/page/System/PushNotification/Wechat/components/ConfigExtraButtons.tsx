@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 
 import { Form, message, Space } from 'antd';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';

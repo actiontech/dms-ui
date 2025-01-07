@@ -1,5 +1,5 @@
+import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { styled } from '@mui/material/styles';
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 
 export const VersionDetailStyleWrapper = styled('section')`
   width: 100%;

@@ -3,7 +3,12 @@ import { IReduxState } from '../../../../../store';
 import { ModalName } from '../../../../../data/ModalName';
 import { useTranslation } from 'react-i18next';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
-import { BasicDrawer, BasicButton, useTypedParams } from '@actiontech/shared';
+import {
+  BasicDrawer,
+  BasicButton,
+  useTypedParams,
+  FormItemNoLabel
+} from '@actiontech/shared';
 import { Form, Space, message } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import {
@@ -15,7 +20,6 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import WorkflowTableField from './WorkflowTableField';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

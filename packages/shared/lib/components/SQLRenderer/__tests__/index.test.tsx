@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import SQLRenderer from '..';
+import { SQLRenderer } from '..';
 
 describe('test SQLrenderer', () => {
   it('should match snapshot', () => {

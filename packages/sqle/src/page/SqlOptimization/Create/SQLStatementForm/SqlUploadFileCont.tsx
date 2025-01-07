@@ -5,13 +5,16 @@ import {
   SQLStatementFormProps,
   UploadTypeEnum
 } from '../../index.type';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { Form } from 'antd';
 import {
   MonacoEditor,
   useMonacoEditor
 } from '@actiontech/shared/lib/components/MonacoEditor';
-import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
+import {
+  CustomDraggerUpload,
+  EmptyBox,
+  FormItemNoLabel
+} from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { FormSubmitStatusContext } from '..';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
