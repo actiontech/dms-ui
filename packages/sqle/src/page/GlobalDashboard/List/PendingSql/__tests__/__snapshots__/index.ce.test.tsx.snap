@@ -1054,7 +1054,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"
@@ -1153,7 +1153,7 @@ exports[`sqle/GlobalDashboard/PendingSqlList render init snap shot 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"

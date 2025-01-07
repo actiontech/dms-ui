@@ -1,0 +1,9 @@
+unit-test:
+  script:
+    - make docker_test
+  after_script:
+    - make docker_clean
+  only:
+    - merge_request
+  tags:
+    - docker
