@@ -56,7 +56,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
     const { baseElement } = customRender({
       noDuplicate: true,
       projectID: 'projectID',
-      auditLevelFilterValue: undefined
+      auditLevelFilterValue: null
     });
     expect(baseElement).toMatchSnapshot();
   });

@@ -38,7 +38,8 @@ describe('test WaterfallList/SQLExecuteMode', () => {
       auditResultActiveKey: '123',
       noDuplicate: false,
       tableFilterInfo: {},
-      assigneeUserNames: [mockCurrentUserReturn.username]
+      assigneeUserNames: [mockCurrentUserReturn.username],
+      execStatusFilterValue: null
     };
     return superRender(<SqlExecuteMode {...{ ..._params, ...params }} />);
   };

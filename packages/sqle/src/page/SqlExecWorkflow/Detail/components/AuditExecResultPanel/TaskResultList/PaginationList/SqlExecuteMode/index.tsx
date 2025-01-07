@@ -41,7 +41,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
           page_index: pagination.page_index.toString(),
           page_size: pagination.page_size.toString(),
           no_duplicate: noDuplicate,
-          filter_exec_status: execStatusFilterValue
+          filter_exec_status: execStatusFilterValue ?? undefined
         })
         .then((res) => {
           return {

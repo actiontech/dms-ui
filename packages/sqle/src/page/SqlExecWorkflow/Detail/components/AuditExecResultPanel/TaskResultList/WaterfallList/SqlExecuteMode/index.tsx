@@ -58,7 +58,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
           page_index: `${page}`,
           page_size: '20',
           no_duplicate: noDuplicate,
-          filter_exec_status: execStatusFilterValue
+          filter_exec_status: execStatusFilterValue ?? undefined
         })
         .then((res) => {
           return {
@@ -98,7 +98,7 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
           page_index: `${page}`,
           page_size: '20',
           no_duplicate: noDuplicate,
-          filter_exec_status: execStatusFilterValue
+          filter_exec_status: execStatusFilterValue ?? undefined
         })
         .then((res) => {
           const { data } = res.data;

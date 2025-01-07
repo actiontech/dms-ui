@@ -30,6 +30,7 @@ import {
   FormStyleWrapper,
   formItemLayout
 } from '@actiontech/shared/lib/components/CustomForm/style';
+import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();
@@ -74,6 +75,15 @@ const Update: React.FC = () => {
               ...paramValues
             } = values[item] as ScanTypeParams;
 
+            const auditPlanParamsWithScanType =
+              scanTypeMetas?.find((v) => v.audit_plan_type === item)
+                ?.audit_plan_params ?? [];
+
+            const mergedBackendAdditionalParams = mergeFromValueIntoParams(
+              paramValues as BackendFormValues,
+              auditPlanParamsWithScanType
+            );
+
             const params: IAuditPlan = {
               audit_plan_type: item,
               rule_template_name: ruleTemplateName,
@@ -81,10 +91,18 @@ const Update: React.FC = () => {
               high_priority_conditions: markHighPrioritySql
                 ? generateSubmitDataWithFormValues(prioritySqlConditions)
                 : undefined,
-              audit_plan_params: mergeFromValueIntoParams(
-                paramValues as BackendFormValues,
-                scanTypeMetas?.find((v) => v.audit_plan_type === item)
-                  ?.audit_plan_params ?? []
+              audit_plan_params: mergedBackendAdditionalParams.filter(
+                (backendAdditionalParam) => {
+                  const type = auditPlanParamsWithScanType.find(
+                    (auditPlanParam) =>
+                      auditPlanParam.key === backendAdditionalParam.key
+                  )?.type;
+
+                  return !(
+                    type === AuditPlanParamResV1TypeEnum.password &&
+                    !backendAdditionalParam.value
+                  );
+                }
               )
             };
             return params;

@@ -5,7 +5,7 @@ import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/
 export type AuditResultTableProps = {
   noDuplicate: boolean;
   taskID?: string;
-  auditLevelFilterValue?: getAuditTaskSQLsV2FilterAuditLevelEnum;
+  auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum | null;
   projectID: string;
   updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
   dbType?: string;

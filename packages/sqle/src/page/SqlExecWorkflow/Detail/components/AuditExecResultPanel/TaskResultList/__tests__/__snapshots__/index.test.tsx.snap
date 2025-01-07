@@ -9,6 +9,7 @@ exports[`test ExecWorkflow/TaskResultList should match snapshot when currentList
   }
   auditResultActiveKey="123"
   currentListLayout="pagination"
+  execStatusFilterValue={null}
   executeMode="sqls"
   noDuplicate={false}
   pagination={
@@ -32,6 +33,7 @@ exports[`test ExecWorkflow/TaskResultList should match snapshot when currentList
   }
   auditResultActiveKey="123"
   currentListLayout="scroll"
+  execStatusFilterValue={null}
   executeMode="sqls"
   noDuplicate={false}
   pagination={

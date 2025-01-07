@@ -15,6 +15,7 @@ exports[`test ExecWorkflow/TaskResultList/PaginationList should match snapshot 1
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        execStatusFilterValue={null}
         noDuplicate={false}
         pagination={
           {
@@ -36,6 +37,7 @@ exports[`test ExecWorkflow/TaskResultList/PaginationList should match snapshot 1
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        execStatusFilterValue={null}
         noDuplicate={false}
         pagination={
           {
@@ -67,6 +69,7 @@ exports[`test ExecWorkflow/TaskResultList/PaginationList should match snapshot 2
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        execStatusFilterValue={null}
         noDuplicate={false}
         pagination={
           {
@@ -88,6 +91,7 @@ exports[`test ExecWorkflow/TaskResultList/PaginationList should match snapshot 2
         }
         auditResultActiveKey="123"
         currentListLayout="pagination"
+        execStatusFilterValue={null}
         noDuplicate={false}
         pagination={
           {

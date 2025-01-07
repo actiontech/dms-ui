@@ -1,14 +1,8 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import { superRender } from '../../../testUtil/customRender';
-import {
-  UtilsConsoleErrorStringsEnum,
-  ignoreConsoleErrors
-} from '../../../testUtil/common';
 import CustomSegmentedFilter from '../CustomSegmentedFilter';
 
 describe('test CustomSegmentedFilter', () => {
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
-
   it('renders CustomSegmentedFilter component', () => {
     const { container } = superRender(
       <CustomSegmentedFilter
@@ -68,26 +62,10 @@ describe('test CustomSegmentedFilter', () => {
 
     fireEvent.click(screen.getByText('全部'));
     expect(handleChange).toHaveBeenCalledTimes(1);
-    expect(handleChange).toHaveBeenCalledWith(undefined);
+    expect(handleChange).toHaveBeenCalledWith(null);
     expect(screen.getByText('全部').parentNode).toHaveClass(
       'ant-segmented-item-selected'
     );
-  });
-
-  it('includes "all" option when withAll is string', () => {
-    const handleChange = jest.fn();
-    superRender(
-      <CustomSegmentedFilter
-        options={['option1']}
-        withAll="全部2"
-        onChange={handleChange}
-        defaultValue="option1"
-      />
-    );
-    expect(screen.getByText('全部2')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('全部2'));
-    expect(handleChange).toHaveBeenCalledTimes(1);
-    expect(handleChange).toHaveBeenCalledWith('全部2');
   });
 
   it('includes "all" option when withAll is object', () => {

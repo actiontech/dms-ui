@@ -8,6 +8,7 @@ import { spawnWrapper } from '../../utils/spawn-util';
 import { Template } from '../../template';
 import { StrUtils } from '../../utils/str-utils';
 import { readdir } from 'fs/promises';
+import { isWindows } from '../../utils/platform';
 
 export class IconManager implements IIconManager {
   private readonly iconNamePattern = /^[A-Z][a-zA-Z]*(Filled|Outlined)$/;
@@ -97,7 +98,8 @@ export class IconManager implements IIconManager {
     try {
       await this.getIconConfig();
       await this.createIconSvgFile();
-      await spawnWrapper('pnpm', ['icon:g']);
+      const command = isWindows ? 'pnpm.cmd' : 'pnpm';
+      await spawnWrapper(command, ['icon:g']);
     } catch (error) {
       throw new Error(`generate menu icon: ${error}`);
     }
