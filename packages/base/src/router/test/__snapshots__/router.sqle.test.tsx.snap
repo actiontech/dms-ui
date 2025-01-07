@@ -1321,36 +1321,33 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         "children": [
           {
             "element": <div>
-              operation
+              databaseRoleList
             </div>,
-            "key": "operation",
-            "path": ":projectID/data/operation",
-          },
-        ],
-        "element": undefined,
-        "key": "dataObjectWrapper",
-        "path": undefined,
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              authAudit
-            </div>,
-            "key": "authAudit",
-            "path": ":projectID/audit/auth",
+            "key": "databaseRoleList",
+            "path": "",
           },
           {
             "element": <div>
-              templateAudit
+              createRole
             </div>,
-            "key": "templateAudit",
-            "path": ":projectID/audit/template",
+            "key": "createRole",
+            "path": "create/:db_service_id",
+          },
+          {
+            "element": <div>
+              updateRole
+            </div>,
+            "key": "updateRole",
+            "path": "update/:db_service_id/:role_id",
           },
         ],
-        "element": undefined,
-        "key": "auditWrapper",
-        "path": undefined,
+        "element": <div
+          data-test-parent-id="databaseRole"
+        >
+          <Outlet />
+        </div>,
+        "key": "databaseRole",
+        "path": ":projectID/database-role",
       },
       {
         "element": <div>
