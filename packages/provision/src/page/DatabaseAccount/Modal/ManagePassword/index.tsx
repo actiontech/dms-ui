@@ -7,7 +7,7 @@ import {
   BasicButton,
   BasicDrawer,
   BasicInput,
-  BasicToolTips
+  BasicToolTip
 } from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import {
@@ -107,12 +107,12 @@ const ManagePasswordModal: React.FC = () => {
         <Form.Item
           name="password"
           label={
-            <BasicToolTips
+            <BasicToolTip
               suffixIcon
               title={t('databaseAccount.manageAccount.passwordTip')}
             >
               {t('databaseAccount.create.form.password')}
-            </BasicToolTips>
+            </BasicToolTip>
           }
           rules={[{ required: true }]}
         >

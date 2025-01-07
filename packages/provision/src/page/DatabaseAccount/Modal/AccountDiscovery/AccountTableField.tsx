@@ -5,9 +5,8 @@ import {
 } from '../../index.type';
 import { useTranslation } from 'react-i18next';
 import { AccountTableFieldStyleWrapper } from '../../style';
-import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
 import TableTagsCell from '../../../../components/TableTagsCell';
-import { BasicInput } from '@actiontech/shared';
+import { BasicInput, BasicTableProps } from '@actiontech/shared';
 import RefreshButton from '@actiontech/shared/lib/components/ActiontechTable/components/RefreshButton';
 
 const AccountTableField: React.FC<AccountTableFieldProps> = ({
@@ -28,7 +27,7 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
     );
   };
 
-  const columns: IBasicTable<ExpendedDBAccountBody>['columns'] = [
+  const columns: BasicTableProps<ExpendedDBAccountBody>['columns'] = [
     {
       dataIndex: 'user',
       title: t('databaseAccount.list.column.account')

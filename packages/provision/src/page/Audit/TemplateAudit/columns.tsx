@@ -8,7 +8,7 @@ import { IListDataPermissionTemplateEvent } from '@actiontech/shared/lib/api/pro
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '~/locale';
 import { IAuditListDataPermissionTemplateEventsParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
-import { AvatarCom, EmptyBox, BasicToolTips } from '@actiontech/shared';
+import { CustomAvatar, EmptyBox, BasicToolTip } from '@actiontech/shared';
 import EventType, { EventTypeEnum } from './components/EventType';
 
 export type TemplateAuditTableFilterParamType = PageInfoWithoutIndexAndSize<
@@ -46,7 +46,7 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
       permissions = uniqBy(permissions, 'data_object_service_name');
       return (
         <EmptyBox if={!!permissions && permissions.length !== 0}>
-          <BasicToolTips
+          <BasicToolTip
             title={
               permissions?.length &&
               permissions.length > 1 && (
@@ -63,7 +63,7 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
           >
             {permissions?.[0].data_object_service_name}
             {permissions?.length && permissions.length > 1 ? '...' : ''}
-          </BasicToolTips>
+          </BasicToolTip>
         </EmptyBox>
       );
     },
@@ -74,7 +74,7 @@ export const TemplateAuditTableColumns: ActiontechTableColumn<
     dataIndex: 'executing_user_name',
     title: t('provisionAudit.authAudit.columns.actionUser'),
     render: (value) => {
-      return <AvatarCom name={value} />;
+      return <CustomAvatar name={value} />;
     },
     filterCustomType: 'select',
     filterKey: 'filter_by_create_user'

@@ -1,4 +1,4 @@
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { BasicSelect, TypedLink } from '@actiontech/shared';

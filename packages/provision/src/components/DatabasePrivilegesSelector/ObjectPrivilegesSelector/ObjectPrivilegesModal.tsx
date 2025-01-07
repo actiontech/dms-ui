@@ -3,7 +3,7 @@ import {
   BasicSelect,
   EmptyBox,
   BasicButton,
-  BasicToolTips
+  BasicToolTip
 } from '@actiontech/shared';
 import { Form, Row, Col, Space, Typography } from 'antd';
 import {
@@ -342,12 +342,12 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                 <Form.Item
                   label={
                     index === 0 ? (
-                      <BasicToolTips
+                      <BasicToolTip
                         suffixIcon
                         title={t('databaseAccount.create.form.privilegesTip')}
                       >
                         {t('databaseAccount.create.form.selectObjects')}
-                      </BasicToolTips>
+                      </BasicToolTip>
                     ) : (
                       ''
                     )

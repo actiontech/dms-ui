@@ -1,5 +1,5 @@
 import { AuthAuditDetailItemStyleWrapper } from './style';
-import { AvatarCom, EmptyBox } from '@actiontech/shared';
+import { CustomAvatar, EmptyBox } from '@actiontech/shared';
 import { Space } from 'antd';
 import AuditActionIcon from './AuditActionIcon';
 import { AuditDetailItemProps } from './AuditDetailItem.d';
@@ -16,7 +16,7 @@ export const AuditDetailItem: React.FC<AuditDetailItemProps> = ({
       case 'date':
         return <ClockCircleOutlined />;
       case 'user':
-        return <AvatarCom name={value} />;
+        return <CustomAvatar name={value} />;
       case 'action':
         return <AuditActionIcon value={value} />;
       default:

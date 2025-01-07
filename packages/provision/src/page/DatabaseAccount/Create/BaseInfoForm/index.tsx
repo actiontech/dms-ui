@@ -1,7 +1,7 @@
 import {
   FormItemLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { Form, message } from 'antd';
 import {

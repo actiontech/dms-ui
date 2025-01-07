@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
 import { PasswordProps } from 'antd/lib/input';
-import { BasicToolTips, BasicButton, Copy } from '@actiontech/shared';
+import { BasicToolTip, BasicButton, Copy } from '@actiontech/shared';
 import { Space } from 'antd';
 import { PasswordWidthGenerateStyleWrapper } from './style';
 
@@ -43,7 +43,7 @@ const InputPassword: FC<IInputPassword> = ({
               onClick={() => setIsEye(true)}
             />
           )}
-          <BasicToolTips
+          <BasicToolTip
             open={tipVisible}
             placement="topRight"
             title={
@@ -79,7 +79,7 @@ const InputPassword: FC<IInputPassword> = ({
             >
               {t('common.generate')}
             </BasicButton>
-          </BasicToolTips>
+          </BasicToolTip>
         </>
       )}
     />

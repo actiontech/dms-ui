@@ -1,5 +1,5 @@
 import { ServiceFieldProps } from '../../index.type';
-import { BasicSelect, BasicToolTips } from '@actiontech/shared';
+import { BasicSelect, BasicToolTip } from '@actiontech/shared';
 import { DrawerFormIconWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useTranslation } from 'react-i18next';
 import { ServiceFieldStyleWrapper } from '../../style';
@@ -25,7 +25,7 @@ const ServiceFiled: React.FC<ServiceFieldProps> = ({
         showSearch
         filterOption={filterOptionByLabel}
       />
-      <BasicToolTips title={t('databaseAccount.create.form.syncDatabase')}>
+      <BasicToolTip title={t('databaseAccount.create.form.syncDatabase')}>
         <DrawerFormIconWrapper
           style={{ marginLeft: '12px' }}
           onClick={onSyncService}
@@ -50,7 +50,7 @@ const ServiceFiled: React.FC<ServiceFieldProps> = ({
             </CommonIconStyleWrapper>
           }
         />
-      </BasicToolTips>
+      </BasicToolTip>
     </ServiceFieldStyleWrapper>
   );
 };

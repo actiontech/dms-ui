@@ -1,8 +1,7 @@
 import { Typography, Space, Popconfirm } from 'antd';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useTranslation } from 'react-i18next';
-import { BasicButton } from '@actiontech/shared';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import { BasicButton, BasicEmpty } from '@actiontech/shared';
 import ObjectPrivilegesModal from './ObjectPrivilegesModal';
 import { useState } from 'react';
 import { cloneDeep } from 'lodash';

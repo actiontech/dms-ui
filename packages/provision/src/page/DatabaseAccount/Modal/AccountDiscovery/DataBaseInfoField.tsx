@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import { BasicSelect, BasicToolTips } from '@actiontech/shared';
+import { BasicSelect, BasicToolTip } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { AccountDiscoveryFormType } from '../../index.type';
 import { FormInstance } from 'antd/lib/form/Form';
@@ -111,12 +111,12 @@ const DataBaseInfoField: React.FC<{
 
       <Form.Item
         label={
-          <BasicToolTips
+          <BasicToolTip
             suffixIcon
             title={t('databaseAccount.discovery.syncAccountTip')}
           >
             {t('databaseAccount.discovery.dbAccount')}
-          </BasicToolTips>
+          </BasicToolTip>
         }
         extra={
           typeof data?.length === 'number'

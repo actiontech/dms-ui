@@ -1,4 +1,4 @@
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'antd';
 import { CreateAccountFormType } from '../../index.type';
