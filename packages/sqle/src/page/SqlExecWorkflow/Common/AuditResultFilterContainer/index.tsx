@@ -1,14 +1,17 @@
 import { Space } from 'antd';
 import { AuditResultFilterContainerStyleWrapper } from './style';
 import { AuditResultFilterContainerProps } from './index.type';
-import { CustomSegmentedFilter, EmptyBox } from '@actiontech/shared';
+import {
+  CustomSegmentedFilter,
+  CustomSegmentedFilterBaseValue,
+  EmptyBox
+} from '@actiontech/shared';
 import { useMemo } from 'react';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import classNames from 'classnames';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { floatRound } from '@actiontech/shared/lib/utils/Math';
 import { useTranslation } from 'react-i18next';
-import { CustomSegmentedFilterBaseValue } from '@actiontech/shared/lib/components/CustomSegmentedFilter/index.type';
 
 const AuditResultFilterContainer = <
   T extends CustomSegmentedFilterBaseValue = string

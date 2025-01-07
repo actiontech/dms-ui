@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/TokenCom render copy token 1`] = `
+exports[`lib/SensitiveDisplay render copy token 1`] = `
 <body>
   <div>
     <span
@@ -65,7 +65,7 @@ exports[`lib/TokenCom render copy token 1`] = `
 </body>
 `;
 
-exports[`lib/TokenCom render hide token 1`] = `
+exports[`lib/SensitiveDisplay render hide token 1`] = `
 <body>
   <div>
     <span
@@ -152,7 +152,7 @@ exports[`lib/TokenCom render hide token 1`] = `
 </body>
 `;
 
-exports[`lib/TokenCom render show token 1`] = `
+exports[`lib/SensitiveDisplay render show token 1`] = `
 <body>
   <div>
     <span
