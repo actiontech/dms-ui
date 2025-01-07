@@ -7,7 +7,7 @@ import { Divider, Spin } from 'antd';
 import BaseInfoFormItem from '../../CreateTask/BaseInfoForm/BaseInfoFormItem';
 import { useTranslation } from 'react-i18next';
 import ExportSourceFormItem from '../../CreateTask/ExportSourceForm/ExportSourceFormItem';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import ExportMethodFormItem from '../../CreateTask/ExportMethodForm/ExportMethodFormItem';
 import {
   UpdateBseInfoFormStyleWrapper,

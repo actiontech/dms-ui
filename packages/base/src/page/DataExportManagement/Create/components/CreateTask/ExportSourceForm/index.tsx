@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { CreateExportTaskFormEntryProps } from '../index.type';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
 import ExportTaskFormItem from './ExportSourceFormItem';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import { ExportSourceFormStyleWrapper } from './style';
 
 const ExportSourceForm: React.FC<

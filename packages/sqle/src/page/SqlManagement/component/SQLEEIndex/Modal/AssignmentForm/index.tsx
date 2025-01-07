@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { Form } from 'antd';
-import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/FormCom/FormItemCom/style';
 import { BasicSelect } from '@actiontech/shared';
-
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import useUsername from '../../../../../../hooks/useUsername';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { IAssignmentForm } from './index.type';
+import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
 
 const AssignmentForm = ({ form, submitLoading, ...props }: IAssignmentForm) => {
   const { t } = useTranslation();

@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox, TokenCom } from '@actiontech/shared';
+import { BasicButton, EmptyBox, SensitiveDisplay } from '@actiontech/shared';
 import { LabelContent } from '@actiontech/shared/lib/components/ConfigItem';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { useTranslation } from 'react-i18next';
@@ -37,7 +37,7 @@ const AccessToken: React.FC<AccessTokenProps> = ({
           <div className="token-content">
             <div className="token-content-item">
               <span className="token-content-item-label">Token</span>
-              <TokenCom text={token!} />
+              <SensitiveDisplay text={token!} />
             </div>
             <div className="token-content-item">
               <span className="token-content-item-label">

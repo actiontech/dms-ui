@@ -1,14 +1,14 @@
 import { Typography, Space, Divider } from 'antd';
-import BasicButton from '../../BasicButton';
 import {
   VersionComparisonStyleWrapper,
   VersionComparisonItemCardStyleWrapper
 } from '../style';
 import { useTranslation } from 'react-i18next';
-import BasicTag from '../../BasicTag';
-import { versionList } from '../index.data';
-import { VersionComparisonItem } from '../index.type';
+import { VersionComparisonItem } from '../EnterpriseFeatureDisplay.types';
 import { CheckStrongOutlined } from '@actiontech/icons';
+import { BasicButton } from '../../BasicButton';
+import { BasicTag } from '../../BasicTag';
+import { versionList } from '../EnterpriseFeatureDisplay.data';
 
 const VersionComparison: React.FC = () => {
   const { t } = useTranslation();

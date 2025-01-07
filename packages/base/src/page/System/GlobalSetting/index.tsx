@@ -5,12 +5,12 @@ import useHideConfigInputNode from '../../../../../shared/lib/components/ConfigI
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { ConfigFieldMapMeta } from '@actiontech/shared/lib/components/ConfigItem/index.type';
 import { Spin } from 'antd';
 import SystemBasicTitle from '../components/BasicTitle';
 import OperationRecordExpiredHours from './components/OperationRecordExpiredHours';
 import UrlAddressPrefixTips from './components/UrlAddressPrefixTips';
 import CBOperationLogsExpiredHours from './components/CBOperationLogsExpiredHours';
+import { ConfigFieldMapMeta } from '@actiontech/shared';
 
 const GlobalSetting = () => {
   const { t } = useTranslation();

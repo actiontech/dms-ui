@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { BasicInput, BasicInputNumber } from '@actiontech/shared';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 
 const ConfigField = () => {
   const { t } = useTranslation();

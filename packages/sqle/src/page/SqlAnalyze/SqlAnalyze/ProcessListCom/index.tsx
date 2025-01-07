@@ -1,5 +1,9 @@
-import { BasicTable, EmptyBox, SQLRenderer } from '@actiontech/shared';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import {
+  BasicEmpty,
+  BasicTable,
+  EmptyBox,
+  SQLRenderer
+} from '@actiontech/shared';
 
 import { ProcessListComStyleWrapper } from './style';
 

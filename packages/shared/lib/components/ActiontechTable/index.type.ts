@@ -3,10 +3,10 @@ import { RangePickerProps } from 'antd/es/date-picker';
 import { ColumnGroupType, ColumnType } from 'antd/es/table';
 import { CSSProperties, Key, ReactNode } from 'react';
 import { CustomSelectProps } from '../CustomSelect';
-import { IBasicButton } from '../BasicButton';
-import { ICustomInputProps } from '../CustomInput';
+import { BasicButtonProps } from '../BasicButton';
 import { TypedLinkProps } from '../TypedRouter';
 import { ExcludeSymbol } from '../../types/common.type';
+import { CustomInputProps } from '../CustomInput';
 
 //======================================= utils
 
@@ -32,7 +32,7 @@ export type TypeFilterElement =
   | 'input'
   | 'search-input';
 
-export type ICustomSearchInputProps = ICustomInputProps;
+export type ICustomSearchInputProps = CustomInputProps;
 
 /**
  * 更新表格筛选数据的方法, 一般为 useTableRequestParams 导出的 updateTableFilterInfo
@@ -120,7 +120,7 @@ export type FilterCustomProps<C = TypeFilterElement> = C extends 'select'
   : C extends 'date-range'
   ? RangePickerProps
   : C extends 'input'
-  ? ICustomInputProps
+  ? CustomInputProps
   : C extends 'search-input'
   ? ICustomSearchInputProps
   : never;
@@ -195,7 +195,7 @@ export type TableSearchInputProps = {
  */
 export type TableRefreshButtonProps = {
   refresh?: () => void;
-} & Omit<IBasicButton, 'onClick'>;
+} & Omit<BasicButtonProps, 'onClick'>;
 
 /**
  * 表格列缓存数据格式

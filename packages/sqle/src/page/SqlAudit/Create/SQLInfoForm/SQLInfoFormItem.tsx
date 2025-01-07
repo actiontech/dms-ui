@@ -11,11 +11,11 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import {
   FormItemLabel,
   CustomLabelContent
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 
 import { Form, Radio, RadioGroupProps, SelectProps, Space } from 'antd';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { BasicButton, BasicSelect, BasicToolTips } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { BasicButton, BasicSelect, BasicToolTip } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import useInstance from '../../../../hooks/useInstance';
@@ -227,7 +227,7 @@ const SQLInfoFormItem = ({
           <BasicButton onClick={formatSql} loading={submitLoading}>
             {t('sqlAudit.create.sqlInfo.format')}
           </BasicButton>
-          <BasicToolTips
+          <BasicToolTip
             prefixIcon={<InfoCircleOutlined />}
             title={t('sqlAudit.create.sqlInfo.formatTips', {
               supportType: Object.keys(FormatLanguageSupport).join('、')

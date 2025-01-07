@@ -1,9 +1,12 @@
 import { t } from '../../../locale';
-import { EmptyBox, TypedLink } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  EmptyBox,
+  TypedLink
+} from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IWorkflowDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

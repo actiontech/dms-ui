@@ -3,9 +3,8 @@ import { Tag } from 'antd';
 import { t } from '../../../../locale';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
 

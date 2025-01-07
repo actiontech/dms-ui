@@ -1,4 +1,4 @@
-import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
+import { ToggleTokensOptionsType } from '@actiontech/shared';
 
 export type ConfirmationSettingFormProps = {
   enable: boolean;

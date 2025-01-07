@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/shared';
 import { EditFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
@@ -12,14 +12,14 @@ const ConfigModifyBtn: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const { baseTheme } = useThemeStyleData();
 
   return (
-    <BasicToolTips title={t('common.modify')} titleWidth={54}>
+    <BasicToolTip title={t('common.modify')} titleWidth={54}>
       <BasicButton
         type="text"
         className="system-config-button"
         onClick={onClick}
         icon={<EditFilled color={baseTheme.icon.system.modify} />}
       />
-    </BasicToolTips>
+    </BasicToolTip>
   );
 };
 

@@ -1,18 +1,18 @@
-import {
-  CustomLabelContent,
-  FormItemLabel,
-  FormItemSubTitle
-} from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import {
   EmptyDataTipsStyleWrapper,
   ScanTypesSelectorStyleWrapper
 } from './style';
 import { Form, Spin } from 'antd';
-import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
 import { useContext, useMemo } from 'react';
 import { ConfFormContext } from '../context';
-import { BasicTypographyEllipsis } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  CustomLabelContent,
+  FormItemLabel,
+  FormItemSubTitle,
+  ToggleTokensOptionsType
+} from '@actiontech/shared';
 import { ScanTypeParams, SqlManagementConfFormFields } from '../index.type';
 import classNames from 'classnames';
 import { useRequest } from 'ahooks';

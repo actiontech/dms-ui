@@ -7,7 +7,7 @@ import {
   ArrowRightOutlined
 } from '@actiontech/icons';
 import { useTranslation } from 'react-i18next';
-import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
+import { CustomAvatarStyleWrapper } from '@actiontech/shared/lib/components/CustomAvatar/style';
 import { useState } from 'react';
 import { useUserInfo } from '@actiontech/shared/lib/global';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
@@ -210,9 +210,9 @@ const UserNavigate: React.FC<Props> = ({
       items={menus}
       header={username}
     >
-      <AvatarStyleWrapper className="action-avatar">
+      <CustomAvatarStyleWrapper className="action-avatar">
         {username?.[0]?.toUpperCase()}
-      </AvatarStyleWrapper>
+      </CustomAvatarStyleWrapper>
     </ContextMenu>
   );
 };

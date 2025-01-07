@@ -17,7 +17,7 @@ import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
 import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';

@@ -1,11 +1,12 @@
-import { DiffEditor, DiffEditorProps, DiffOnMount } from '@monaco-editor/react';
+import { DiffEditor, DiffOnMount } from '@monaco-editor/react';
 import classNames from 'classnames';
 import { editorDefaultOptions } from './config';
 import { CUSTOM_DIFF_EDITOR_THEME_NAME, editorDefaultThemeData } from './theme';
 import './monacoEditorConfig';
 import { MonacoEditorContainerStyleWrapper } from './style';
+import { MonacoDiffEditorProps } from './MonacoEditor.types';
 
-const MonacoDiffEditor: React.FC<Omit<DiffEditorProps, 'theme'>> = ({
+const MonacoDiffEditor: React.FC<MonacoDiffEditorProps> = ({
   options,
   className,
   ...props

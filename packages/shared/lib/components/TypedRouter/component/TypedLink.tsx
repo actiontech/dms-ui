@@ -3,7 +3,7 @@ import {
   TypedLinkProps,
   RoutePathValue,
   ObjectRoutePathValue
-} from '../index.type';
+} from '../TypedRouter.types';
 import { forwardRef } from 'react';
 import {
   getFormatPathValues,

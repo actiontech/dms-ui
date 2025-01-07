@@ -4,7 +4,7 @@ import {
   ComparisonEntryStyleWrapper,
   ComparisonSelectorFormStyleWrapper
 } from './style';
-import { BasicButton, BasicToolTips, EmptyBox } from '@actiontech/shared';
+import { BasicButton, BasicToolTip, EmptyBox } from '@actiontech/shared';
 import { message } from 'antd';
 import { ToggleButtonStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -281,13 +281,13 @@ const ComparisonEntry: React.FC = () => {
         </BasicButton> */}
 
           {filteredWithoutParentNodeKey(checkedObjectNodeKeys).length === 0 ? (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dataSourceComparison.entry.generateSQLDisabledTips')}
             >
               <BasicButton disabled={true}>
                 {t('dataSourceComparison.entry.generateSQL')}
               </BasicButton>
-            </BasicToolTips>
+            </BasicToolTip>
           ) : (
             <BasicButton onClick={generateModifiedSqlEvent}>
               {t('dataSourceComparison.entry.generateSQL')}

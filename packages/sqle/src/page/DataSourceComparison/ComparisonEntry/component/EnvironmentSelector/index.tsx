@@ -1,5 +1,5 @@
 import { BasicTreeSelect } from '@actiontech/shared';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { Form, TreeSelectProps, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { DatabaseComparisonFromFields } from '../../index.type';

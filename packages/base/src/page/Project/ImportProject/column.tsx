@@ -1,9 +1,8 @@
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/common';
-import { BasicTag } from '@actiontech/shared';
+import { BasicTag, BasicTypographyEllipsis } from '@actiontech/shared';
 import { Space } from 'antd';
 import { t } from '../../../locale';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 
 export const importProjectListColumn: ActiontechTableColumn<IPreviewImportProjects> =
   [

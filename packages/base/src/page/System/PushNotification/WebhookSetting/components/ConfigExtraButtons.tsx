@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { message, Space } from 'antd';
 
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/shared';
 
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -62,7 +62,7 @@ const ConfigExtraButtons = ({
     <>
       {messageContextHolder}
       <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
-        <BasicToolTips title={t('common.test')} titleWidth={54}>
+        <BasicToolTip title={t('common.test')} titleWidth={54}>
           <BasicButton
             type="text"
             className="system-config-button"
@@ -74,7 +74,7 @@ const ConfigExtraButtons = ({
               test();
             }}
           />
-        </BasicToolTips>
+        </BasicToolTip>
         <ConfigModifyBtn onClick={handleClickModify} />
       </Space>
     </>

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ExportFormActionProps } from './index.type';
-import { BasicButton, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicToolTip } from '@actiontech/shared';
 import { Space } from 'antd';
 import { FormatLanguageSupport } from '@actiontech/shared/lib/utils/FormatterSQL';
 import { InfoCircleOutlined } from '@actiontech/icons';
@@ -21,7 +21,7 @@ const ExportFormAction: React.FC<ExportFormActionProps> = ({
       <BasicButton onClick={formatSQLAction} loading={auditLoading}>
         {t('dmsDataExport.create.form.action.format')}
       </BasicButton>
-      <BasicToolTips
+      <BasicToolTip
         prefixIcon={
           <InfoCircleOutlined
             width={14}

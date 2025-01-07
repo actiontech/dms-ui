@@ -4,7 +4,7 @@ import { BasicInput, BasicSwitch } from '@actiontech/shared';
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
 

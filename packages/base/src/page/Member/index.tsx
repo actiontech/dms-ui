@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import MemberModal from './Modal';
 import { Space } from 'antd';
-import { PageHeader, SegmentedTabs } from '@actiontech/shared';
+import {
+  PageHeader,
+  SegmentedTabs,
+  SegmentedTabsProps
+} from '@actiontech/shared';
 import { ProjectMemberStyleWrapper } from './style';
 import { MemberListTypeEnum } from './index.enum';
 import MemberList from './List/MemberList';
@@ -13,7 +17,6 @@ import { ModalName } from '../../data/ModalName';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import EventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
-import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import { MemberListPageHeaderActions } from './actions';
 
 const Member: React.FC = () => {

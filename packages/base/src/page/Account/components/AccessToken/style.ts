@@ -1,5 +1,5 @@
+import { FormItemLabel } from '@actiontech/shared';
 import { ConfigItemStyledWrapper } from '@actiontech/shared/lib/components/ConfigItem/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
 import { styled } from '@mui/material/styles';
 
 export const AccessTokenConfigStyleWrapper = styled(ConfigItemStyledWrapper)`

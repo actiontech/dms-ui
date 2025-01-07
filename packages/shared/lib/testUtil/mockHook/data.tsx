@@ -5,7 +5,7 @@ import {
   OpPermissionItemRangeTypeEnum
 } from '../../api/base/service/common.enum';
 import { OpPermissionTypeUid, SupportTheme, SystemRole } from '../../enum';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
+import DatabaseTypeLogo from '../../components/DatabaseTypeLogo/DatabaseTypeLogo';
 import { SupportLanguage } from '../../enum';
 
 export const mockCurrentUserReturn = {

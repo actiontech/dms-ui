@@ -6,7 +6,7 @@ import {
   SqlUploadFileContProps,
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { Form } from 'antd';
 import {
   MonacoEditor,

@@ -1,9 +1,9 @@
 import { TableFilterButtonProps } from '../index.type';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import BasicButton from '../../BasicButton';
 import { DownOutlined, UpOutlined } from '@actiontech/icons';
 import { ColumnsSettingStyleWrapper } from './style';
+import { BasicButton } from '../../BasicButton';
 
 const FilterButton = <T extends Record<string, any>>({
   filterButtonMeta = new Map(),
