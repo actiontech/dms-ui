@@ -3,6 +3,7 @@ import { useState, useMemo, useRef } from 'react';
 
 import {
   BasicButton,
+  BasicEmpty,
   BasicInput,
   BasicTag,
   EmptyBox
@@ -11,7 +12,6 @@ import { PlusOutlined } from '@ant-design/icons';
 import { SqlAuditTagsButton, SqlAuditTagsPopoverCont } from './style';
 import { Divider, Form, InputRef, Popover, Space, Spin, message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
 import useSQLAuditRecordTag from '../../../../../hooks/useSQLAuditRecordTag';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';
 

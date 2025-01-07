@@ -7,7 +7,7 @@ import { RuleDetailItemStyleWrapper } from './style';
 import RuleBaseInfo from './RuleBaseInfo';
 import { ruleLevelDictionary } from '../../../hooks/useStaticStatus/index.data';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import classNames from 'classnames';
 
 export type IEditRuleTemplate = {

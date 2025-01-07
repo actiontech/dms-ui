@@ -13,7 +13,7 @@ import { FormListAddButtonWrapper } from '@actiontech/shared/lib/styleWrapper/el
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { PlusCircleFilled } from '@actiontech/icons';
 import { ProjectPriorityOptions } from 'sqle/src/page/GlobalDashboard/index.data';
 

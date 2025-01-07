@@ -6,7 +6,7 @@ import {
   BasicInput,
   TypedLink
 } from '@actiontech/shared';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { CloneRuleTemplateModalProps } from './index.type';
 

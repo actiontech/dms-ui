@@ -1,8 +1,8 @@
 import { Descriptions, Form, Space } from 'antd';
 import { DescriptionsItemProps } from 'antd/lib/descriptions/Item';
 import { useBoolean } from 'ahooks';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { isString } from 'lodash';
 
 type RenderReadOnlyElementConfig<T> = {

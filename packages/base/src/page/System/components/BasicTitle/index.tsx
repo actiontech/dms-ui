@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Space, Row } from 'antd';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
@@ -25,13 +25,13 @@ const SystemBasicTitle = (props: SystemBasicTitleProps) => {
         <Space>
           {title}
           {titleTip && (
-            <BasicToolTips title={titleTip}>
+            <BasicToolTip title={titleTip}>
               <InfoCircleOutlined
                 width={14}
                 height={14}
                 color={baseTheme.icon.system.basicTitleTips}
               />
-            </BasicToolTips>
+            </BasicToolTip>
           )}
         </Space>
         {titleExtra}

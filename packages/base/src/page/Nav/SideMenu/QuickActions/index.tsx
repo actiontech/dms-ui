@@ -5,7 +5,7 @@ import {
   RingOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
-import { BasicToolTips, EmptyBox, useTypedNavigate } from '@actiontech/shared';
+import { BasicToolTip, EmptyBox, useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -92,7 +92,7 @@ const QuickActions = () => {
         <Space className="action-space-wrapper">
           {actionItems.map((action) => {
             return (
-              <BasicToolTips key={action.key} title={action.title}>
+              <BasicToolTip key={action.key} title={action.title}>
                 <div
                   className={classNames('action-item', {
                     'action-item-active': location.pathname === action.path
@@ -104,7 +104,7 @@ const QuickActions = () => {
                     <RingOutlined className="action-item-dot" />
                   </EmptyBox>
                 </div>
-              </BasicToolTips>
+              </BasicToolTip>
             );
           })}
         </Space>

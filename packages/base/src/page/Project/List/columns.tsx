@@ -2,10 +2,14 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
-import { BasicTag, BasicToolTips, TypedLink } from '@actiontech/shared';
+import {
+  BasicTag,
+  BasicToolTip,
+  BasicTypographyEllipsis,
+  TypedLink
+} from '@actiontech/shared';
 import { Space } from 'antd';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -35,7 +39,7 @@ export const ProjectListTableColumnFactory =
             return '-';
           }
           return (
-            <BasicToolTips
+            <BasicToolTip
               title={
                 business.length > 1 ? (
                   <Space wrap>
@@ -52,7 +56,7 @@ export const ProjectListTableColumnFactory =
                 </BasicTag>
                 {business.length > 1 ? '...' : null}
               </Space>
-            </BasicToolTips>
+            </BasicToolTip>
           );
         }
       },

@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import BasicSelect from '../BasicSelect';
 import BasicInput from '../BasicInput/Input';
+import { BasicSelect } from '../BasicSelect';
 
 export const CustomSelectStyleWrapper = styled(BasicSelect)`
   &.ant-select-borderless.custom-select-namespace .ant-select-selector {

@@ -9,8 +9,8 @@ import {
 } from '../index.type';
 import { CustomSelect, CustomSelectProps } from '../../CustomSelect';
 import { CustomFilterRangePickerStyleWrapper } from '../components/style';
-import CustomInput from '../../CustomInput';
 import { SearchOutlined } from '@actiontech/icons';
+import { CustomInput } from '../../CustomInput';
 
 const useCustomFilter = () => {
   const { t } = useTranslation();

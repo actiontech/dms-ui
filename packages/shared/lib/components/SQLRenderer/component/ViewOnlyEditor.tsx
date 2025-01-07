@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { MonacoEditor } from '../../MonacoEditor';
-import { SQLViewOnlyEditorRendererProps } from '../index.type';
+import { SQLViewOnlyEditorRendererProps } from '../SQLRenderer.types';
 
 const ViewOnlyEditor: React.FC<SQLViewOnlyEditorRendererProps> = ({
   sql,

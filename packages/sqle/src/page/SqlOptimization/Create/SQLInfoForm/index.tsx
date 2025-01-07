@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
 import { SqlInfoFormProps } from '../../index.type';
 import SQLInfoFormItem from './SQLInfoFormItem';
 import { SqlInfoFormStyleWrapper } from './style';
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemSubTitle } from '@actiontech/shared';
 
 const SQLInfoForm = (props: SqlInfoFormProps) => {
   const { t } = useTranslation();

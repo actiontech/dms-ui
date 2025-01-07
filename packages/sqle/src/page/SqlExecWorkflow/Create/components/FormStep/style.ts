@@ -1,4 +1,4 @@
-import { FormStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { styled } from '@mui/material/styles';
 
 export const SqlAuditInfoFormStyleWrapper = styled(FormStyleWrapper)`

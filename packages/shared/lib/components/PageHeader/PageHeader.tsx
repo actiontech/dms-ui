@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { PageHeaderProps } from './index.type';
+import { PageHeaderProps } from './PageHeader.types';
 import { PageHeaderStyleWrapper } from './style';
 
 const PageHeader: React.FC<PageHeaderProps> = ({ title, extra, fixed }) => {

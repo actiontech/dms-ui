@@ -2,7 +2,7 @@ import { t } from 'i18next';
 import {
   CustomSelectSearchInputRefType,
   CustomSelectSearchInputProps
-} from './index.type';
+} from './CustomSelect.types';
 import { CustomSelectSearchInputStyleWrapper } from './style';
 import { forwardRef } from 'react';
 

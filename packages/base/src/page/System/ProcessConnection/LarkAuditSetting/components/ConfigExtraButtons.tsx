@@ -12,11 +12,11 @@ import { BasicInput, EmptyBox } from '@actiontech/shared';
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import ConfigTestBtn from '../../../components/ConfigTestBtn';
 import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { TestFeishuConfigurationReqV1AccountTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';

@@ -3,9 +3,9 @@ import { ConfFormContext } from '../context';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import { useTranslation } from 'react-i18next';
-import { FormItemSubTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemSubTitle } from '@actiontech/shared/lib/components/CustomForm';
 import AutoCreatedFormItemByApi, {
   FormItem
 } from '../../../../../components/BackendForm';

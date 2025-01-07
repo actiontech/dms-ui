@@ -1,7 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { Space, Divider, Form } from 'antd';
-import { FormItemNoLabel } from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
@@ -15,9 +14,10 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   BasicButton,
-  BasicToolTips,
+  BasicToolTip,
   BasicSelect,
-  TypedLink
+  TypedLink,
+  FormItemNoLabel
 } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import { DataSourceFieldProps } from '../../../index.type';
@@ -103,7 +103,7 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
       : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
     return (
-      <BasicToolTips
+      <BasicToolTip
         title={
           <TypedLink
             to={path}
@@ -129,7 +129,7 @@ const DataSourceField: React.FC<DataSourceFieldProps> = ({
           }
           loading={getInstanceInfoLoading}
         />
-      </BasicToolTips>
+      </BasicToolTip>
     );
   };
 

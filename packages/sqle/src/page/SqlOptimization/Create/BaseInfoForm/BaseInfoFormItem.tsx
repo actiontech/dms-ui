@@ -1,9 +1,6 @@
-import {
-  FormInputBotBorder,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
 import { useTranslation } from 'react-i18next';
 import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
+import { FormInputBotBorder, FormItemNoLabel } from '@actiontech/shared';
 
 const BaseInfoFormItem = () => {
   const { t } = useTranslation();

@@ -1,5 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
-import { InferQueriesFromConfig, ObjectRoutePathValue } from '../index.type';
+import {
+  InferQueriesFromConfig,
+  ObjectRoutePathValue
+} from '../TypedRouter.types';
 import { useCallback } from 'react';
 
 function useTypedQuery() {

@@ -3,7 +3,7 @@ import {
   FormInputBotBorder,
   FormItemNoLabel,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { workflowNameRule } from '@actiontech/shared/lib/utils/FormRule';
 import { ReactNode, forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';

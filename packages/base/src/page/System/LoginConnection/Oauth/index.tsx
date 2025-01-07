@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form, Space, Spin, Tag, Typography } from 'antd';
 import {
-  BasicToolTips,
+  BasicToolTip,
   EmptyBox,
   EnterpriseFeatureDisplay
 } from '@actiontech/shared';
@@ -179,7 +179,7 @@ const Oauth = () => {
       return [
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.oauth.clientIdTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -190,7 +190,7 @@ const Oauth = () => {
               }
             >
               {t('dmsSystem.oauth.clientId')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'client_id',
@@ -245,7 +245,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.oauth.accessTokenKeyNameTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -256,7 +256,7 @@ const Oauth = () => {
               }
             >
               {t('dmsSystem.oauth.accessTokenKeyName')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'access_token_tag',
@@ -264,7 +264,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.oauth.userIdKeyNameTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -275,7 +275,7 @@ const Oauth = () => {
               }
             >
               {t('dmsSystem.oauth.userIdKeyName')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'user_id_tag',
@@ -283,7 +283,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.oauth.userEmailTagNameTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -294,7 +294,7 @@ const Oauth = () => {
               }
             >
               {t('dmsSystem.oauth.userEmailTagName')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'user_email_tag',
@@ -302,7 +302,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.oauth.userWechatTagNameTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -313,7 +313,7 @@ const Oauth = () => {
               }
             >
               {t('dmsSystem.oauth.userWechatTagName')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'user_wechat_tag',
@@ -321,7 +321,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               title={t('dmsSystem.oauth.loginButtonTextTips')}
               suffixIcon={
                 <InfoCircleOutlined
@@ -332,7 +332,7 @@ const Oauth = () => {
               }
             >
               {t('dmsSystem.oauth.loginButtonText')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'login_tip',
@@ -340,7 +340,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               suffixIcon={
                 <InfoCircleOutlined
                   width={14}
@@ -351,7 +351,7 @@ const Oauth = () => {
               title={t('dmsSystem.oauth.autoCreateUserTips')}
             >
               {t('dmsSystem.oauth.autoCreateUser')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'auto_create_user',
@@ -362,7 +362,7 @@ const Oauth = () => {
         },
         {
           label: (
-            <BasicToolTips
+            <BasicToolTip
               suffixIcon={
                 <InfoCircleOutlined
                   width={14}
@@ -373,7 +373,7 @@ const Oauth = () => {
               title={t('dmsSystem.oauth.skipStateCheckTips')}
             >
               {t('dmsSystem.oauth.skipCheckState')}
-            </BasicToolTips>
+            </BasicToolTip>
           ),
           span: 3,
           dataIndex: 'skip_check_state',

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { BasicInput } from '@actiontech/shared';
 
 const ConfigField = () => {

@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 import { Form, message, Radio, RadioGroupProps, Space } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { BasicInput, EmptyBox } from '@actiontech/shared';
 import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 

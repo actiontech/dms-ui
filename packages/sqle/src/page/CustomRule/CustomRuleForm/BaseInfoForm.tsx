@@ -8,12 +8,12 @@ import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/comm
 import {
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   FormInputBotBorder,
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { BasicButton, BasicInput, BasicSelect } from '@actiontech/shared';
 import useRuleCategories from '../../../hooks/useRuleCategories';
 

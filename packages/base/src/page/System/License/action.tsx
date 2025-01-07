@@ -1,11 +1,10 @@
-import { ActionButton } from '@actiontech/shared';
+import { ActionButton, BasicTooltipProps } from '@actiontech/shared';
 import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
-import { IBasicToolTips } from '@actiontech/shared/lib/components/BasicToolTips';
 
 type Params = {
-  collectActionTooltipProps: IBasicToolTips;
+  collectActionTooltipProps: BasicTooltipProps;
   collectAction: {
     onClick: () => void;
     loading: boolean;

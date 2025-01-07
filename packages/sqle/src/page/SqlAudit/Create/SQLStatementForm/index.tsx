@@ -1,18 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { useContext, useEffect } from 'react';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import {
   SQLStatementFormProps,
   UploadTypeEnum
 } from '../SQLInfoForm/index.type';
 import {
   BasicInput,
-  BasicToolTips,
+  BasicToolTip,
   EmptyBox,
   ModeSwitcher
 } from '@actiontech/shared';
 import SqlUploadFileCont from './SqlUploadFileCont';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { FormSubmitStatusContext } from '..';
 import { Form } from 'antd';
 import { uploadTypeOptions } from './index.data';
@@ -75,12 +75,12 @@ const SQLStatementFormWrapper = ({ form }: SQLStatementFormProps) => {
           ]}
           {...formItemLayout.fullLine}
           label={
-            <BasicToolTips
+            <BasicToolTip
               suffixIcon
               title={t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrlTips')}
             >
               {t('sqlAudit.create.sqlInfo.uploadLabelEnum.gitUrl')}
-            </BasicToolTips>
+            </BasicToolTip>
           }
         >
           <BasicInput

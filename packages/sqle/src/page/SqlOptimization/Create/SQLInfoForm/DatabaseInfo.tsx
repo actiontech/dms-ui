@@ -1,9 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { DatabaseInfoProps } from '../../index.type';
-import {
-  FormItemLabel,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
 import { useCallback, useContext, useState } from 'react';
 import { Alert, Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
@@ -12,7 +8,13 @@ import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicToolTips, TypedLink } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicToolTip,
+  FormItemLabel,
+  FormItemNoLabel,
+  TypedLink
+} from '@actiontech/shared';
 import { FormSubmitStatusContext } from '..';
 import {
   DatabaseSchemaFilled,
@@ -68,7 +70,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
       : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
     return (
-      <BasicToolTips
+      <BasicToolTip
         title={
           <TypedLink
             to={path}
@@ -93,7 +95,7 @@ const DatabaseInfo: React.FC<DatabaseInfoProps> = ({
             />
           }
         />
-      </BasicToolTips>
+      </BasicToolTip>
     );
   }, [instanceInfo, projectID, t, sqleTheme]);
 

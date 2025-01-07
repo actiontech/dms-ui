@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/CustomAvatar should render avatar for default params 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+  >
+    <div
+      class="ant-space-item"
+    >
+      <span
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        style="width: 20px; height: 20px; line-height: 20px; font-size: 18px;"
+      >
+        <span
+          class="ant-avatar-string"
+          style="line-height: 20px; transform: scale(1) translateX(-50%);"
+        >
+          张
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/CustomAvatar should render avatar for english name 1`] = `
+<div>
+  <div
+    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+  >
+    <div
+      class="ant-space-item"
+    >
+      <span
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="ant-avatar-string"
+          style="transform: scale(1) translateX(-50%);"
+        >
+          L
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lib/CustomAvatar should render avatar no tip 1`] = `
+<div>
+  <span
+    class="ant-avatar ant-avatar-circle custom-self-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+  >
+    <span
+      class="ant-avatar-string"
+      style="transform: scale(1) translateX(-50%);"
+    >
+      李
+    </span>
+  </span>
+</div>
+`;

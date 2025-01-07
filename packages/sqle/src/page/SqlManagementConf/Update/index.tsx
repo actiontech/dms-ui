@@ -12,10 +12,6 @@ import {
 } from '@actiontech/shared';
 import BackToConf from '../Common/BackToConf';
 import { Space, Spin, message } from 'antd';
-import {
-  FormStyleWrapper,
-  formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
 import ConfForm from '../Common/ConfForm';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import {
@@ -30,6 +26,10 @@ import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import {
+  FormStyleWrapper,
+  formItemLayout
+} from '@actiontech/shared/lib/components/CustomForm/style';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();

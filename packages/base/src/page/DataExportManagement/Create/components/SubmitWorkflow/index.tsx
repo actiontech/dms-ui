@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import UpdateInfoDrawer from './UpdateInfoDrawer';
 import {
   BasicButton,
-  BasicToolTips,
+  BasicToolTip,
   EmptyBox,
   PageHeader
 } from '@actiontech/shared';
@@ -80,13 +80,13 @@ const SubmitExportWorkflow: React.FC = () => {
             <EmptyBox
               if={executeSQLsIsDQL}
               defaultNode={
-                <BasicToolTips
+                <BasicToolTip
                   title={t('dmsDataExport.create.update.submitTips')}
                 >
                   <BasicButton disabled={true} type="primary">
                     {t('dmsDataExport.create.update.submitAction')}
                   </BasicButton>
-                </BasicToolTips>
+                </BasicToolTip>
               }
             >
               <BasicButton

@@ -3,7 +3,10 @@ import {
   BasicButton,
   BasicInput,
   TypedLink,
-  useTypedParams
+  useTypedParams,
+  CustomLabelContent,
+  FormItemLabel,
+  FormItemNoLabel
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { Space, Form, message, SelectProps, Spin, Typography } from 'antd';
@@ -17,11 +20,6 @@ import {
   updateSelectVersionStageWorkflowList
 } from '../../../../../store/versionManagement';
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
-import {
-  FormItemLabel,
-  CustomLabelContent,
-  FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
 import { RingPieFilled } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/global';

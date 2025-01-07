@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 
 import { BackendFormProps } from '.';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
 import useRuleParams from './useRuleParams';
 import FormPasswordWithPlaceholder from './FormPasswordWithPlaceholder';

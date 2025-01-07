@@ -2,7 +2,7 @@ import {
   CustomLabelContent,
   FormItemLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { BasicSelect, useTypedQuery } from '@actiontech/shared';
 import {

@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import { SqlAuditInfoFormItemProps } from '../index.type';
 import DatabaseSelectionItem from './DatabaseSelectionItems';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { BasicSwitch } from '@actiontech/shared';
 import { useEffect, useMemo } from 'react';

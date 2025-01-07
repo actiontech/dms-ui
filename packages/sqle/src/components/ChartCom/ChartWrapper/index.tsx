@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Box } from '@mui/system';
 import { ChartWrapperStyleWrapper } from './style';
-import BasicEmpty from '@actiontech/shared/lib/components/BasicEmpty';
+import { BasicEmpty } from '@actiontech/shared';
 
 export interface IChartWrapper {
   loading: boolean;
