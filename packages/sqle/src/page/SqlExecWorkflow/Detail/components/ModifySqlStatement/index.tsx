@@ -22,8 +22,8 @@ import { usePrompt } from '@actiontech/shared/lib/hooks';
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import useSharedStepDetail from '../../../Create/hooks/useSharedStepDetail';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import task from '@actiontech/shared/lib/api/sqle/service/task';

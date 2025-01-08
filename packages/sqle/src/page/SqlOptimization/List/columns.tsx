@@ -9,7 +9,7 @@ import {
 import { IGetOptimizationRecordsParams } from '@actiontech/shared/lib/api/sqle/service/sql_optimization/index.d';
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { AvatarCom, DatabaseTypeLogo } from '@actiontech/shared';
+import { CustomAvatar, DatabaseTypeLogo } from '@actiontech/shared';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import OptimizationStatus from '../components/OptimizationStatus';
 import { SqlOptimizationStatusEnum } from '../index.data';
@@ -85,7 +85,7 @@ export const SqlOptimizationListColumns: (
       dataIndex: 'created_user',
       title: () => t('sqlOptimization.table.creator'),
       render: (creator: ISqlDEVRecord['creator']) => {
-        return creator ? <AvatarCom name={creator} /> : '-';
+        return creator ? <CustomAvatar name={creator} /> : '-';
       }
     }
   ];

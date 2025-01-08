@@ -1,4 +1,4 @@
-import { BasicButton, EmptyBox, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, EmptyBox, BasicToolTip } from '@actiontech/shared';
 import type { Node, NodeProps } from '@xyflow/react';
 import { CustomActionNodeStyleWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
@@ -15,7 +15,7 @@ const CustomActionNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
   return (
     <CustomActionNodeStyleWrapper>
       <EmptyBox if={!!onExecute}>
-        <BasicToolTips
+        <BasicToolTip
           title={
             !allowExecute ? t('versionManagement.execute.disableTips') : ''
           }
@@ -31,7 +31,7 @@ const CustomActionNode: React.FC<NodeProps<Node<StageNodeData>>> = ({
           >
             {t('versionManagement.detail.execute')}
           </BasicButton>
-        </BasicToolTips>
+        </BasicToolTip>
       </EmptyBox>
     </CustomActionNodeStyleWrapper>
   );

@@ -1,6 +1,6 @@
 import { Collapse, Row, Form } from 'antd';
-import { BasicButton } from '../';
 import { styled } from '@mui/material/styles';
+import { BasicButton } from '../components/BasicButton';
 
 /**
  * 使用介绍: packages/sqle/src/page/AuditPlan/PlanList/TableTaskTypeFilter/index.tsx

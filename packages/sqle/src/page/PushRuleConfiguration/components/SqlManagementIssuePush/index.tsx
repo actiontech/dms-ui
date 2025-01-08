@@ -9,8 +9,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import { useTranslation } from 'react-i18next';
 import {
-  AvatarCom,
-  BasicToolTips,
+  CustomAvatar,
+  BasicToolTip,
   ConfigModifyBtn,
   ConfigSubmitButtonField,
   ConfigSwitch,
@@ -64,14 +64,14 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
   } = useConfigRender<SqlManagementIssuePushFields>({
     switchFieldName,
     switchFieldLabel: (
-      <BasicToolTips
+      <BasicToolTip
         title={t('pushRule.pushRule.sqlManagementIssuePush.labelTips')}
         suffixIcon={
           <InfoCircleOutlined color={sharedTheme.uiToken.colorTextTertiary} />
         }
       >
         <span>{t('pushRule.pushRule.sqlManagementIssuePush.label')}</span>
-      </BasicToolTips>
+      </BasicToolTip>
     )
   });
 
@@ -90,7 +90,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
       ? [
           {
             label: (
-              <BasicToolTips
+              <BasicToolTip
                 title={t(
                   'pushRule.pushRule.workflowUpdateNotifier.pushFrequencyTips'
                 )}
@@ -103,7 +103,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
                 }
               >
                 {t('pushRule.pushRule.workflowUpdateNotifier.pushFrequency')}
-              </BasicToolTips>
+              </BasicToolTip>
             ),
             dataIndex: 'trigger_type',
             render(_, record) {
@@ -142,7 +142,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
                     const name = usernameList.find(
                       (v) => v.user_id === id
                     )?.user_name;
-                    return <AvatarCom size="small" key={id} name={name} />;
+                    return <CustomAvatar size="small" key={id} name={name} />;
                   })}
                 </Space>
               );

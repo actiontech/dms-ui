@@ -6,9 +6,8 @@ import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
 import { IListGlobalDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
 import ConnectionResultColumn from '../../DataSource/components/List/ConnectionResultColumn';
 import { ListDBServiceLastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 

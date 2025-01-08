@@ -9,7 +9,7 @@ import { ISQLAuditRecord } from '@actiontech/shared/lib/api/sqle/service/common'
 import { t } from '../../../locale';
 import { floatRound, floatToPercent } from '@actiontech/shared/lib/utils/Math';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { BasicToolTips, TypedLink } from '@actiontech/shared';
+import { BasicToolTip, TypedLink } from '@actiontech/shared';
 import SqlAuditStatusTag from './component/SqlAuditStatusTag';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import SqlAuditTags from './component/SqlAuditTags';
@@ -92,11 +92,11 @@ const SqlAuditListColumn: (
         }
 
         return record.instance?.db_host && record.instance.db_port ? (
-          <BasicToolTips
+          <BasicToolTip
             title={`${record.instance?.db_host}:${record.instance?.db_port}`}
           >
             {record.task?.instance_name}
-          </BasicToolTips>
+          </BasicToolTip>
         ) : (
           record.task?.instance_name
         );

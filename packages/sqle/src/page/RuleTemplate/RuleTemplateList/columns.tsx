@@ -6,8 +6,11 @@ import { IGetProjectRuleTemplateListV1Params } from '@actiontech/shared/lib/api/
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { t } from '../../../locale';
 import { Space } from 'antd';
-import BasicTypographyEllipsis from '@actiontech/shared/lib/components/BasicTypographyEllipsis';
-import { DatabaseTypeLogo, TypedLink } from '@actiontech/shared';
+import {
+  BasicTypographyEllipsis,
+  DatabaseTypeLogo,
+  TypedLink
+} from '@actiontech/shared';
 import { ProfileSquareFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

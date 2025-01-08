@@ -1,9 +1,8 @@
 import { IAssociateWorkflows } from '@actiontech/shared/lib/api/sqle/service/common';
-import { BasicTable } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import WorkflowStatus from '../../../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { IBasicTable } from '@actiontech/shared/lib/components/BasicTable';
+import { BasicTable, BasicTableProps } from '@actiontech/shared';
 
 const WorkflowTableField: React.FC<{
   value?: React.Key[];
@@ -17,7 +16,7 @@ const WorkflowTableField: React.FC<{
     onChange?.(keys);
   };
 
-  const columns: IBasicTable<IAssociateWorkflows>['columns'] = [
+  const columns: BasicTableProps<IAssociateWorkflows>['columns'] = [
     {
       dataIndex: 'workflow_name',
       title: t('versionManagement.associateWorkflow.workflowName')

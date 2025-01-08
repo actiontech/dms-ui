@@ -5,6 +5,7 @@ import {
   BasicInput,
   BasicSelect,
   BasicSwitch,
+  CronInput,
   EmptyBox,
   TypedLink
 } from '@actiontech/shared';
@@ -13,7 +14,7 @@ import {
   FormAreaLineStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   CustomLabelContent,
   FormInputBotBorder,
@@ -21,8 +22,7 @@ import {
   FormItemLabel,
   FormItemNoLabel,
   FormItemSubTitle
-} from '@actiontech/shared/lib/components/FormCom';
-import CronInputCom from '@actiontech/shared/lib/components/CronInput';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { checkCron } from '@actiontech/shared/lib/components/CronInput/useCron/cron.tool';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
 import EmitterKey from '../../../data/EmitterKey';
@@ -435,7 +435,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               ]}
               {...formItemLayout.fullLine}
             >
-              <CronInputCom />
+              <CronInput />
             </FormItemLabel>
           </FormAreaBlockStyleWrapper>
         </FormAreaLineStyleWrapper>

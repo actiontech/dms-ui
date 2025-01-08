@@ -3,7 +3,7 @@ import { AuditTypeEnum, DatabaseInfoProps } from './index.type';
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
@@ -12,7 +12,7 @@ import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { BasicButton, BasicToolTips, TypedLink } from '@actiontech/shared';
+import { BasicButton, BasicToolTip, TypedLink } from '@actiontech/shared';
 import { FormSubmitStatusContext } from '..';
 import {
   DatabaseSchemaFilled,
@@ -76,7 +76,7 @@ const DatabaseInfo = ({
       : ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail;
 
     return (
-      <BasicToolTips
+      <BasicToolTip
         title={
           <TypedLink
             to={path}
@@ -101,7 +101,7 @@ const DatabaseInfo = ({
             />
           }
         />
-      </BasicToolTips>
+      </BasicToolTip>
     );
   }, [instanceInfo, projectID, t, sqleTheme]);
 

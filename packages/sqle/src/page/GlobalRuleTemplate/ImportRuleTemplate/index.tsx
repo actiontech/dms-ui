@@ -13,7 +13,7 @@ import {
   CustomLabelContent,
   FormItemBigTitle,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -25,7 +25,7 @@ import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import Icon from '@ant-design/icons';
 import {
   useImportRuleTemplateForm,

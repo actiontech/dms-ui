@@ -2,7 +2,7 @@ import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IListDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { BasicTag, BasicToolTips, DatabaseTypeLogo } from '@actiontech/shared';
+import { BasicTag, BasicToolTip, DatabaseTypeLogo } from '@actiontech/shared';
 import { useDbServiceDriver } from '@actiontech/shared/lib/global';
 import { Space } from 'antd';
 
@@ -44,9 +44,9 @@ export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDB
         render: (lastSyncErr, record) => {
           if (lastSyncErr) {
             return (
-              <BasicToolTips title={lastSyncErr}>
+              <BasicToolTip title={lastSyncErr}>
                 <BasicTag color="red">{t('common.fail')}</BasicTag>
-              </BasicToolTips>
+              </BasicToolTip>
             );
           }
 

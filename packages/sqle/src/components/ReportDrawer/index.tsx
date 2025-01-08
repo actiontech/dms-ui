@@ -4,7 +4,7 @@ import {
   BasicDrawer,
   BasicTag,
   EmptyBox,
-  BasicToolTips,
+  BasicToolTip,
   SQLRenderer,
   BasicTypographyEllipsis
 } from '@actiontech/shared';
@@ -115,7 +115,7 @@ const ReportDrawer = ({
                   <EmptyBox
                     if={!!data?.sqlSourceFile}
                     defaultNode={
-                      <BasicToolTips
+                      <BasicToolTip
                         title={t('auditPlan.report.drawer.sourceTip')}
                       >
                         <Space>
@@ -137,7 +137,7 @@ const ReportDrawer = ({
                             -
                           </BasicTag>
                         </Space>
-                      </BasicToolTips>
+                      </BasicToolTip>
                     }
                   >
                     <BasicTag

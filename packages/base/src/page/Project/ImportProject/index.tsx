@@ -10,12 +10,12 @@ import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,
   formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import { Form } from 'antd';
 import {
   FormItemBigTitle,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import Icon from '@ant-design/icons';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';

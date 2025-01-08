@@ -7,7 +7,7 @@ import {
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { t } from '../../../locale';
-import { AvatarCom, BasicToolTips } from '@actiontech/shared';
+import { CustomAvatar, BasicToolTip } from '@actiontech/shared';
 import { Space, Typography } from 'antd';
 import { DBAccountStatusDictionary } from '../index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
@@ -71,12 +71,12 @@ export const DatabaseAccountListColumns = (
     {
       dataIndex: 'status',
       title: () => (
-        <BasicToolTips
+        <BasicToolTip
           suffixIcon
           title={t('databaseAccount.list.column.statusTips')}
         >
           {t('databaseAccount.list.column.status')}
-        </BasicToolTips>
+        </BasicToolTip>
       ),
       filterKey: 'filter_by_status',
       filterCustomType: 'select',
@@ -87,12 +87,12 @@ export const DatabaseAccountListColumns = (
     {
       dataIndex: 'platform_managed',
       title: () => (
-        <BasicToolTips
+        <BasicToolTip
           suffixIcon
           title={t('databaseAccount.list.column.depositTips')}
         >
           {t('databaseAccount.list.column.deposit')}
-        </BasicToolTips>
+        </BasicToolTip>
       ),
       render: (value) => {
         return value
@@ -116,7 +116,7 @@ export const DatabaseAccountListColumns = (
           <Space>
             {value.map((i) => {
               return (
-                <AvatarCom
+                <CustomAvatar
                   onClick={() => onUpdateFilter('filter_by_user', i?.uid)}
                   key={i.uid}
                   size="small"

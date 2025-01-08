@@ -1,5 +1,5 @@
 import { InputRef, SelectProps } from 'antd';
-import { CustomSelectProps } from './index.type';
+import { CustomSelectProps } from './CustomSelect.types';
 import { useTranslation } from 'react-i18next';
 import { useMemo, useRef, useState } from 'react';
 import CustomPlaceholder from './CustomPlaceholder';

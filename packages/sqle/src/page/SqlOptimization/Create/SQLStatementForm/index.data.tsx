@@ -1,8 +1,8 @@
 import { SettingOutlined } from '@ant-design/icons';
 import { t } from '../../../../locale/index';
-import { ModeSwitcherOptionsType } from '@actiontech/shared/lib/components/ModeSwitcher/index.type';
 import { UploadTypeEnum } from '../../index.type';
 import { FileUploadFilled, PanelCardOutlined } from '@actiontech/icons';
+import { ModeSwitcherOptionsType } from '@actiontech/shared';
 
 export const uploadTypeOptions: ModeSwitcherOptionsType = [
   {

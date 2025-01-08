@@ -14,8 +14,8 @@ import BaseInfoForm from './BaseInfoForm';
 import {
   formItemLayout,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import DataPrivilegesForm from './DataPrivilegesForm';
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useState } from 'react';

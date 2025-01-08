@@ -1,7 +1,7 @@
 import BaseInfoForm from './BaseInfoForm';
 import ExportMethodForm from './ExportMethodForm';
 import ExportSourceForm from './ExportSourceForm';
-import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/FormCom/style';
+import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import useCreateExportTaskForm from '../../hooks/useCreateExportTaskForm';
 import ExportFormAction from './ExportFormAction';
 import { Spin } from 'antd';

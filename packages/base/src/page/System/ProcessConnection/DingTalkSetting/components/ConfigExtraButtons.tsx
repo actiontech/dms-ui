@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 
 import { message, Space } from 'antd';
-import { BasicToolTips, BasicButton } from '@actiontech/shared';
+import { BasicToolTip, BasicButton } from '@actiontech/shared';
 import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
@@ -51,7 +51,7 @@ const ConfigExtraButtons = ({
     <>
       {messageContextHolder}
       <Space size={12} hidden={isConfigClosed || !extraButtonsVisible}>
-        <BasicToolTips title={t('common.test')} titleWidth={54}>
+        <BasicToolTip title={t('common.test')} titleWidth={54}>
           <BasicButton
             type="text"
             className="system-config-button"
@@ -60,7 +60,7 @@ const ConfigExtraButtons = ({
             icon={<ThunderBoltFilled />}
             onClick={testDingTalkConfiguration}
           />
-        </BasicToolTips>
+        </BasicToolTip>
         <ConfigModifyBtn onClick={handleClickModify} />
       </Space>
     </>

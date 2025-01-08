@@ -14,8 +14,8 @@ import BaseInfoForm from '../Create/BaseInfoForm';
 import {
   formItemLayout,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import DataPermissionsForm from '../Create/DataPrivilegesForm';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

@@ -5,16 +5,16 @@ import configuration from '@actiontech/shared/lib/api/sqle/service/configuration
 import {
   CustomLabelContent,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import {
   BasicSwitch,
   EmptyBox,
   ToggleTokens,
+  ToggleTokensOptionsType,
   TypedLink
 } from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
-import { ToggleTokensOptionsType } from '@actiontech/shared/lib/components/ToggleTokens/index.type';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ConfirmMethodFormItemLabelStyleWrapper } from './style';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';

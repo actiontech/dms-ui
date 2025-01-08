@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { FormItemNoLabel } from '../../../FormCom';
-import BasicButton from '../../../BasicButton';
+import { FormItemNoLabel } from '../../../CustomForm';
+import { BasicButton } from '../../../BasicButton';
 
 interface ConfigSubmitButtonFieldProps {
   submitLoading: boolean;

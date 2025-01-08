@@ -1,12 +1,12 @@
 import {
   BasicButton,
-  TokenCom,
   Copy,
   BasicTag,
-  AvatarCom,
   EmptyBox,
-  BasicToolTips,
-  BasicTypographyEllipsis
+  BasicToolTip,
+  BasicTypographyEllipsis,
+  SensitiveDisplay,
+  CustomAvatar
 } from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import { useTranslation } from 'react-i18next';
@@ -151,7 +151,7 @@ const DatabaseAccountDetailModal = () => {
 
             <AccountInfoItem label={t('databaseAccount.create.form.password')}>
               <EmptyBox if={!!data?.account_info?.password} defaultNode="-">
-                <TokenCom text={data?.account_info?.password ?? ''} />
+                <SensitiveDisplay text={data?.account_info?.password ?? ''} />
               </EmptyBox>
             </AccountInfoItem>
             <AccountInfoItem
@@ -193,7 +193,7 @@ const DatabaseAccountDetailModal = () => {
           <div className="audit-card">
             <AccountInfoItem label={t('databaseAccount.detail.role')}>
               {data?.db_roles?.map((item) => (
-                <BasicToolTips
+                <BasicToolTip
                   key={item.uid}
                   title={item.DBAccountDataPermission?.map(
                     (dataPermission, index) => (
@@ -210,7 +210,7 @@ const DatabaseAccountDetailModal = () => {
                   )}
                 >
                   <BasicTag>{item.name}</BasicTag>
-                </BasicToolTips>
+                </BasicToolTip>
               ))}
             </AccountInfoItem>
             <AccountInfoItem label={t('databaseAccount.detail.privilege')}>
@@ -247,7 +247,7 @@ const DatabaseAccountDetailModal = () => {
                 <div className="flex-display">
                   {data?.auth_users?.map((user, index) => {
                     return (
-                      <AvatarCom
+                      <CustomAvatar
                         style={{ display: 'inline-block', marginRight: 12 }}
                         key={index}
                         size="small"

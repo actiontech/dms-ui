@@ -11,10 +11,6 @@ import {
   PageHeader,
   useTypedQuery
 } from '@actiontech/shared';
-import {
-  FormStyleWrapper,
-  formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
 import ConfForm from '../Common/ConfForm';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { ScanTypeParams } from '../Common/ConfForm/index.type';
@@ -28,6 +24,10 @@ import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicPara
 import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import {
+  FormStyleWrapper,
+  formItemLayout
+} from '@actiontech/shared/lib/components/CustomForm/style';
 
 const Create: React.FC = () => {
   const { t } = useTranslation();

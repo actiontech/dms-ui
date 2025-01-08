@@ -8,10 +8,6 @@ import {
 import { Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
-import {
-  FormStyleWrapper,
-  formItemLayout
-} from '@actiontech/shared/lib/components/FormCom/style';
 import VersionForm from '../Common/VersionForm';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useCurrentProject } from '@actiontech/shared/lib/global';
@@ -19,6 +15,10 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
 import { useState } from 'react';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import {
+  FormStyleWrapper,
+  formItemLayout
+} from '@actiontech/shared/lib/components/CustomForm/style';
 
 const VersionManagementCreation = () => {
   const { t } = useTranslation();

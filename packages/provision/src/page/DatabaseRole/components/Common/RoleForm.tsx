@@ -10,11 +10,11 @@ import {
   FormAreaBlockStyleWrapper,
   formItemLayout,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   FormItemBigTitle,
   FormItemLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 
 const RoleForm: React.FC<IDatabaseRoleFormProps> = ({ form, mode, title }) => {
   const { t } = useTranslation();

@@ -5,8 +5,8 @@ import { useBoolean } from 'ahooks';
 import { useMemo, useCallback, useState } from 'react';
 import { IListInternalUser } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { AvatarCom } from '@actiontech/shared';
 import { UserSelectOptionLabelStyleWrapper } from './style';
+import { CustomAvatar } from '@actiontech/shared';
 
 const useProvisionUser = () => {
   const { projectID } = useCurrentProject();
@@ -55,7 +55,7 @@ const useProvisionUser = () => {
           text: user.name,
           label: (
             <UserSelectOptionLabelStyleWrapper>
-              <AvatarCom size="small" name={user.name?.[0] ?? ''} />
+              <CustomAvatar size="small" name={user.name?.[0] ?? ''} />
               <Typography.Text>{user.name}</Typography.Text>
             </UserSelectOptionLabelStyleWrapper>
           )

@@ -6,11 +6,11 @@ import {
   BasicInput,
   ConfigModifyBtn
 } from '@actiontech/shared';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { useRef, useState } from 'react';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { formItemLayout } from '@actiontech/shared/lib/components/FormCom/style';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;

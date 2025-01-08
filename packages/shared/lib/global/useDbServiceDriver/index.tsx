@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { updateDriverMeta } from '../../../../base/src/store/database';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../base/src/store';
-import DatabaseTypeLogo from '../../components/DatabaseTypeLogo';
+import DatabaseTypeLogo from '../../components/DatabaseTypeLogo/DatabaseTypeLogo';
 import { Select } from 'antd';
 
 const useDbServiceDriver = () => {

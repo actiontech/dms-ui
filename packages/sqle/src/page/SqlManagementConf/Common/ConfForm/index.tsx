@@ -1,10 +1,10 @@
 import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
+} from '@actiontech/shared/lib/components/CustomForm/style';
 import { useTranslation } from 'react-i18next';
 import DataSourceSelection from './DataSourceSelection';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import ScanTypesSelection from './ScanTypesSelection';
 import { PlanFilled } from '@actiontech/icons';
 import ScanTypesDynamicParams from './ScanTypesDynamicParams';

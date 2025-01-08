@@ -1,9 +1,9 @@
 import {
   FormItemLabel,
   CustomLabelContent
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicInputNumber, BasicToolTips } from '@actiontech/shared';
+import { EmptyBox, BasicInputNumber, BasicToolTip } from '@actiontech/shared';
 import { Form } from 'antd';
 import { SqlAuditInfoFormFields } from '../../../../Create/index.type';
 import { SqlBackupSwitcherProps } from './index.type';
@@ -135,14 +135,14 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
           label={
             <CustomLabelContent
               title={
-                <BasicToolTips
+                <BasicToolTip
                   title={t(
                     'execWorkflow.create.form.sqlInfo.backupMaxRowsLimitTooltips'
                   )}
                   suffixIcon={<InfoCircleOutlined width={14} height={14} />}
                 >
                   {t('execWorkflow.create.form.sqlInfo.backupMaxRowsLimit')}
-                </BasicToolTips>
+                </BasicToolTip>
               }
               tips={t(
                 'execWorkflow.create.form.sqlInfo.backupMaxRowsLimitTips'

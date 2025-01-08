@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Space } from 'antd';
-import { PageHeader, SegmentedTabs } from '@actiontech/shared';
+import {
+  PageHeader,
+  SegmentedTabs,
+  SegmentedTabsProps
+} from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +14,6 @@ import { updateUserManageModalStatus } from '../../store/userCenter';
 import UserList from './components/UserList/List';
 import RoleList from './components/RoleList/List';
 import { ModalName } from '../../data/ModalName';
-import { SegmentedTabsProps } from '@actiontech/shared/lib/components/SegmentedTabs/index.type';
 import PermissionList from './components/PermissionList/List';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';

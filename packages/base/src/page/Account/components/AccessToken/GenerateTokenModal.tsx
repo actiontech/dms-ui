@@ -1,9 +1,13 @@
-import { BasicButton, BasicDrawer, BasicInputNumber } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicDrawer,
+  BasicInputNumber,
+  CustomLabelContent
+} from '@actiontech/shared';
 import { GenerateTokenFields, GenerateTokenModalProps } from '../../index.type';
 import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/FormCom';
 import User from '@actiontech/shared/lib/api/base/service/User';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { AccessTokenModalFormItemLabelStyleWrapper } from './style';

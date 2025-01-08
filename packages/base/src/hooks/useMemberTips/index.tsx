@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { Select, Space, Typography } from 'antd';
 import Member from '@actiontech/shared/lib/api/base/service/Member';
-import { AvatarCom } from '@actiontech/shared';
+import { CustomAvatar } from '@actiontech/shared';
 import { IListMemberTipsParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import { IListMemberTipsItem } from '@actiontech/shared/lib/api/base/service/common';
 
@@ -51,7 +51,7 @@ const useMemberTips = () => {
       text: member.user_name,
       label: (
         <Space>
-          <AvatarCom noTips size="small" name={member.user_name} />
+          <CustomAvatar noTips size="small" name={member.user_name} />
           <Typography.Text>{member.user_name}</Typography.Text>
         </Space>
       ),

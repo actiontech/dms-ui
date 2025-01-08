@@ -1,5 +1,5 @@
 import { BasicSelect } from '@actiontech/shared';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import useDbService from '../../../../../../hooks/useDbService';
 import { useEffect, useMemo } from 'react';

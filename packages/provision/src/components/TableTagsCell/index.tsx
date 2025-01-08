@@ -1,5 +1,5 @@
 import { DashOutlined } from '@actiontech/icons';
-import { BasicButton, BasicTag, BasicToolTips } from '@actiontech/shared';
+import { BasicButton, BasicTag, BasicToolTip } from '@actiontech/shared';
 import { Space } from 'antd';
 import { TableTagsCellStyleWrapper } from './style';
 
@@ -33,7 +33,7 @@ const TableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
         {dataSource
           .slice(0, tagLimit)
           .map((item, index) => renderScanTypeTag(item, index))}
-        <BasicToolTips
+        <BasicToolTip
           trigger={'click'}
           title={
             <Space wrap size={[0, 6]}>
@@ -46,7 +46,7 @@ const TableTagsCell: React.FC<Props> = ({ dataSource, tagLimit = 4 }) => {
             className="table-row-scan-types-more-button"
             icon={<DashOutlined />}
           />
-        </BasicToolTips>
+        </BasicToolTip>
       </>
     );
   };

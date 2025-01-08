@@ -1,7 +1,7 @@
 import {
   FormItemLabel,
   FormItemNoLabel
-} from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { DatabaseSelectionItemProps } from '../../index.type';
 import { Divider, Form, Space, SelectProps } from 'antd';

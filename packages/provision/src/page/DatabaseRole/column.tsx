@@ -4,7 +4,7 @@ import { t } from '../../locale';
 import { Typography } from 'antd';
 import { IDatabaseRoleTableParams } from './index.type';
 import TableTagsCell from '../../components/TableTagsCell';
-import { BasicToolTips } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 
 export const DatabaseRoleTableColumns = (
   handleClickDbRoleName: (record: IListDBRole) => void
@@ -39,12 +39,12 @@ export const DatabaseRoleTableColumns = (
     },
     {
       title: () => (
-        <BasicToolTips
+        <BasicToolTip
           suffixIcon
           title={t('databaseRole.tableColumns.privilegeTips')}
         >
           {t('databaseRole.tableColumns.privilege')}
-        </BasicToolTips>
+        </BasicToolTip>
       ),
       dataIndex: 'data_permissions',
       width: '60%',

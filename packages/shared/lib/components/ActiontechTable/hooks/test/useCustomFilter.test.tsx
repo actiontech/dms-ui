@@ -1,8 +1,7 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
-
 import useCustomFilter from '../useCustomFilter';
 import { TypeFilterElement } from '../../index.type';
-import { ICustomInputProps } from '../../../CustomInput';
+import { CustomInputProps } from '../../../CustomInput';
 
 describe('lib/ActiontechTable-hooks', () => {
   beforeEach(() => {
@@ -39,7 +38,7 @@ describe('lib/ActiontechTable-hooks', () => {
         mockVal,
         updateTableFilterInfoFn,
         new Map([
-          ['test-input', { className: 'input-demo' } as ICustomInputProps]
+          ['test-input', { className: 'input-demo' } as CustomInputProps]
         ])
       );
       expect(elementResult).toMatchSnapshot();

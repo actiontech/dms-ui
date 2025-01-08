@@ -5,10 +5,10 @@ import {
   FormAreaBlockStyleWrapper,
   FormAreaLineStyleWrapper,
   FormStyleWrapper
-} from '@actiontech/shared/lib/components/FormCom/style';
-import { FormItemLabel } from '@actiontech/shared/lib/components/FormCom';
+} from '@actiontech/shared/lib/components/CustomForm/style';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { SqlAuditBaseInfoFormProps } from './index.type';
-import { FormItemBigTitle } from '@actiontech/shared/lib/components/FormCom';
+import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import {
   BasicSelect,
   BasicInput,

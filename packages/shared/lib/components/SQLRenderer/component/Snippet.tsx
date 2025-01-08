@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import useRenderCopyIcon from '../hooks/useRenderCopyIcon';
 import useRenderSQLTemplate from '../hooks/useRenderSQLTemplate';
-import { SQLSnippetRendererProps } from '../index.type';
+import { SQLSnippetRendererProps } from '../SQLRenderer.types';
 import { SQLRendererStyleWrapper } from '../style';
 import { Spin, Typography } from 'antd';
-import { tooltipsCommonProps } from '../../BasicToolTips';
 import HighlightCode from '../../../utils/HighlightCode';
 import { useMemo } from 'react';
 import { isNumber } from 'lodash';
+import { basicTooltipCommonProps } from '../../BasicToolTip';
 
 const Snippet: React.FC<SQLSnippetRendererProps> = ({
   rows = 10,
@@ -64,7 +64,7 @@ const Snippet: React.FC<SQLSnippetRendererProps> = ({
               tooltip: tooltip
                 ? {
                     arrow: false,
-                    ...tooltipsCommonProps(renderSQLTemplateContent(), 640)
+                    ...basicTooltipCommonProps(renderSQLTemplateContent(), 640)
                   }
                 : false,
               rows

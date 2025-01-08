@@ -1,10 +1,10 @@
 import { Popover } from 'antd';
 import { PopoverInnerStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import { useTranslation } from 'react-i18next';
-import { AvatarStyleWrapper } from '@actiontech/shared/lib/components/AvatarCom/style';
 import { useState } from 'react';
 import useGetUserInfo from '../../../../hooks/useGetUserInfo';
 import { UserCircleFilled } from '@actiontech/icons';
+import { CustomAvatarStyleWrapper } from '@actiontech/shared/lib/components/CustomAvatar/style';
 
 const UserNavigate: React.FC<{
   username: string;
@@ -42,9 +42,9 @@ const UserNavigate: React.FC<{
       }
       overlayInnerStyle={{ padding: 0 }}
     >
-      <AvatarStyleWrapper className="action-avatar">
+      <CustomAvatarStyleWrapper className="action-avatar">
         {username?.[0]?.toUpperCase()}
-      </AvatarStyleWrapper>
+      </CustomAvatarStyleWrapper>
     </Popover>
   );
 };
