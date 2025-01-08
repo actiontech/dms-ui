@@ -129,12 +129,14 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       />
       <AddWhitelistModal onCreated={refresh} />
 
-      <SqlRewrittenDrawer
-        taskID={taskID ?? ''}
-        open={sqlRewrittenOpen}
-        onClose={handleCloseSqlRewrittenDrawer}
-        originSqlInfo={originSqlInfo}
-      />
+      {originSqlInfo && (
+        <SqlRewrittenDrawer
+          taskID={taskID ?? ''}
+          open={sqlRewrittenOpen}
+          onClose={handleCloseSqlRewrittenDrawer}
+          originSqlInfo={originSqlInfo}
+        />
+      )}
     </>
   );
 };

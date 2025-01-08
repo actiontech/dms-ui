@@ -26,10 +26,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import usePriorityConditionsParams from '../Common/ConfForm/ScanTypesDynamicParams/HighPriorityConditions/hooks';
-import {
-  BackendFormRequestParams,
-  BackendFormValues
-} from '../../../components/BackendForm';
+import { BackendFormValues } from '../../../components/BackendForm';
 import { IAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SCAN_TYPE_ALL_OPTION_VALUE } from '../Common/ConfForm/ScanTypesSelection/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
