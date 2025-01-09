@@ -189,7 +189,9 @@ export enum FilterMetaFilterInputTypeEnum {
 
   'string' = 'string',
 
-  'date_time' = 'date_time'
+  'date_time' = 'date_time',
+
+  'day_range' = 'day_range'
 }
 
 export enum FilterMetaFilterOpTypeEnum {

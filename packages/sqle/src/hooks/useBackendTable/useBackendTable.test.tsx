@@ -307,6 +307,13 @@ describe('useBackendTable', () => {
           filter_input_type: FilterMetaFilterInputTypeEnum.date_time,
           filter_op_type: FilterMetaFilterOpTypeEnum.between,
           filter_tip_list: []
+        },
+        {
+          filter_name: 'first_receive_day',
+          desc: '最初匹配日期',
+          filter_input_type: FilterMetaFilterInputTypeEnum.day_range,
+          filter_op_type: FilterMetaFilterOpTypeEnum.between,
+          filter_tip_list: []
         }
       ])
     ).toMatchSnapshot();
@@ -435,6 +442,13 @@ describe('useBackendTable', () => {
             filter_name: 'last_receive_timestamp',
             desc: '最后匹配时间',
             filter_input_type: FilterMetaFilterInputTypeEnum.date_time,
+            filter_op_type: FilterMetaFilterOpTypeEnum.between,
+            filter_tip_list: []
+          },
+          {
+            filter_name: 'first_receive_day',
+            desc: '最初匹配日期',
+            filter_input_type: FilterMetaFilterInputTypeEnum.day_range,
             filter_op_type: FilterMetaFilterOpTypeEnum.between,
             filter_tip_list: []
           }

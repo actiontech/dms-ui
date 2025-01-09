@@ -51,6 +51,12 @@ exports[`useBackendTable should create table filter meta and custom props based 
       "filterKey": "last_receive_timestamp",
       "filterLabel": "最后匹配时间",
     },
+    "first_receive_day" => {
+      "checked": false,
+      "filterCustomType": "date-range",
+      "filterKey": "first_receive_day",
+      "filterLabel": "最初匹配日期",
+    },
   },
   "tableFilterCustomProps": Map {
     "sql" => undefined,
@@ -128,6 +134,9 @@ exports[`useBackendTable should create table filter meta and custom props based 
     "row_examined_avg" => undefined,
     "last_receive_timestamp" => {
       "showTime": true,
+    },
+    "first_receive_day" => {
+      "showTime": false,
     },
   },
 }
@@ -184,6 +193,12 @@ exports[`useBackendTable should create table filter meta and custom props based 
       "filterKey": "last_receive_timestamp",
       "filterLabel": "最后匹配时间",
     },
+    "first_receive_day" => {
+      "checked": true,
+      "filterCustomType": "date-range",
+      "filterKey": "first_receive_day",
+      "filterLabel": "最初匹配日期",
+    },
   },
   "tableFilterCustomProps": Map {
     "sql" => undefined,
@@ -261,6 +276,9 @@ exports[`useBackendTable should create table filter meta and custom props based 
     "row_examined_avg" => undefined,
     "last_receive_timestamp" => {
       "showTime": true,
+    },
+    "first_receive_day" => {
+      "showTime": false,
     },
   },
 }
