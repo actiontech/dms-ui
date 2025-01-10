@@ -47,6 +47,7 @@ import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
+import { cloneDeep } from 'lodash';
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -149,7 +150,7 @@ function App() {
       });
     };
     if (isUserInfoFetched && isFeatureSupportFetched) {
-      return filterRoutesByPermission(AuthRouterConfig);
+      return filterRoutesByPermission(cloneDeep(AuthRouterConfig));
     }
     return AuthRouterConfig;
   }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
