@@ -160,6 +160,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
           structkey="project-overview"
           style="padding-left: 24px;"
           tabindex="-1"
+          to="/sqle/project/700300/overview"
         >
           <svg
             class="ant-menu-item-icon"
@@ -212,6 +213,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="cloud-beaver"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/cloud-beaver"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -248,6 +250,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-export"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data/export"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -278,6 +281,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -312,6 +316,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="plugin-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/plugin-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -346,6 +351,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-optimization"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-optimization"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -380,6 +386,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-source-comparison"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/data-source-comparison"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -427,6 +434,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/exec-workflow"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -457,6 +465,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="version-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/version-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -508,6 +517,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="pipeline-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/pipeline-configuration"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -555,6 +565,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -593,6 +604,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-conf"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-conf"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -647,6 +659,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="database-role"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-role"
             >
               <svg
                 class="icon ant-menu-item-icon"
@@ -678,6 +691,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="account-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -714,6 +728,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="password-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account-password"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -744,6 +759,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-mask-rule"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data-mask-rule-overview"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -797,6 +813,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="instance"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/db-services"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -827,6 +844,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="rule-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/rule/template"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -858,6 +876,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="workflow-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/progress"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -893,6 +912,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="member"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/member"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -927,6 +947,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="push-rule-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/push-rule"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -957,6 +978,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="whitelist"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/whitelist"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -996,6 +1018,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-exception"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-exception"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1211,6 +1234,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
           structkey="project-overview"
           style="padding-left: 24px;"
           tabindex="-1"
+          to="/sqle/project/700300/overview"
         >
           <svg
             class="ant-menu-item-icon"
@@ -1263,6 +1287,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="cloud-beaver"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/cloud-beaver"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1299,6 +1324,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-export"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data/export"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1329,6 +1355,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1363,6 +1390,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="plugin-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/plugin-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1397,6 +1425,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-optimization"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-optimization"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1431,6 +1460,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-source-comparison"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/data-source-comparison"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1478,6 +1508,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/exec-workflow"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1508,6 +1539,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="version-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/version-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1559,6 +1591,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="pipeline-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/pipeline-configuration"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1606,6 +1639,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1644,6 +1678,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-conf"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-conf"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1698,6 +1733,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="database-role"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-role"
             >
               <svg
                 class="icon ant-menu-item-icon"
@@ -1729,6 +1765,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="account-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1765,6 +1802,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="password-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account-password"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1795,6 +1833,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-mask-rule"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data-mask-rule-overview"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1848,6 +1887,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="instance"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/db-services"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1878,6 +1918,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="rule-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/rule/template"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1909,6 +1950,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="workflow-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/progress"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1944,6 +1986,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="member"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/member"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -1978,6 +2021,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="push-rule-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/push-rule"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2008,6 +2052,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="whitelist"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/whitelist"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2047,6 +2092,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-exception"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-exception"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2292,6 +2338,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
           structkey="project-overview"
           style="padding-left: 24px;"
           tabindex="-1"
+          to="/sqle/project/700300/overview"
         >
           <svg
             class="ant-menu-item-icon"
@@ -2344,6 +2391,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="cloud-beaver"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/cloud-beaver"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2380,6 +2428,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-export"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data/export"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2410,6 +2459,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2444,6 +2494,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="plugin-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/plugin-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2478,6 +2529,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-optimization"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-optimization"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2512,6 +2564,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-source-comparison"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/data-source-comparison"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2559,6 +2612,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/exec-workflow"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2589,6 +2643,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="version-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/version-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2640,6 +2695,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="pipeline-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/pipeline-configuration"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2687,6 +2743,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2725,6 +2782,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-conf"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-conf"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2779,6 +2837,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="database-role"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-role"
             >
               <svg
                 class="icon ant-menu-item-icon"
@@ -2810,6 +2869,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="account-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2846,6 +2906,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="password-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account-password"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2876,6 +2937,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-mask-rule"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data-mask-rule-overview"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2929,6 +2991,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="instance"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/db-services"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2959,6 +3022,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="rule-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/rule/template"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -2990,6 +3054,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="workflow-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/progress"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3025,6 +3090,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="member"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/member"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3059,6 +3125,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="push-rule-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/push-rule"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3089,6 +3156,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="whitelist"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/whitelist"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3128,6 +3196,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-exception"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-exception"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3183,6 +3252,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sqle-log"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/operation-record"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3448,6 +3518,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
           structkey="project-overview"
           style="padding-left: 24px;"
           tabindex="-1"
+          to="/sqle/project/700300/overview"
         >
           <svg
             class="ant-menu-item-icon"
@@ -3500,6 +3571,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="cloud-beaver"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/cloud-beaver"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3536,6 +3608,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-export"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data/export"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3566,6 +3639,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3600,6 +3674,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="plugin-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/plugin-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3634,6 +3709,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-optimization"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-optimization"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3668,6 +3744,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-source-comparison"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/data-source-comparison"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3715,6 +3792,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/exec-workflow"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3745,6 +3823,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="version-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/version-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3796,6 +3875,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="pipeline-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/pipeline-configuration"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3843,6 +3923,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3881,6 +3962,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-conf"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-conf"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -3935,6 +4017,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="database-role"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-role"
             >
               <svg
                 class="icon ant-menu-item-icon"
@@ -3966,6 +4049,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="account-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4002,6 +4086,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="password-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/700300/database-account-password"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4032,6 +4117,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="data-mask-rule"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/data-mask-rule-overview"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4085,6 +4171,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="instance"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/db-services"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4115,6 +4202,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="rule-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/rule/template"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4146,6 +4234,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="workflow-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/progress"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4181,6 +4270,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="member"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/700300/member"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4215,6 +4305,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="push-rule-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/push-rule"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4245,6 +4336,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="whitelist"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/whitelist"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4284,6 +4376,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sql-management-exception"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/sql-management-exception"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4339,6 +4432,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
               structkey="sqle-log"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/700300/operation-record"
             >
               <svg
                 class="ant-menu-item-icon"

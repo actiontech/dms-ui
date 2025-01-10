@@ -4,282 +4,106 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 1`] = `[]`;
 
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 2`] = `[]`;
 
-exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `[]`;
+exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `
+[
+  null,
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <ComputerFilled
+          height={18}
+          width={18}
+        />,
+        "key": "project/projectID/cloud-beaver",
+        "label": <ForwardRef(TypedLink)
+          to="/project/600300/cloud-beaver"
+        >
+          SQL工作台
+        </ForwardRef(TypedLink)>,
+        "structKey": "cloud-beaver",
+        "to": "/project/600300/cloud-beaver",
+      },
+      {
+        "icon": <ExportFilled
+          height={18}
+          width={18}
+        />,
+        "key": "project/projectID/data/export",
+        "label": <ForwardRef(TypedLink)
+          to="/project/600300/data/export"
+        >
+          数据导出
+        </ForwardRef(TypedLink)>,
+        "structKey": "data-export",
+        "to": "/project/600300/data/export",
+      },
+      null,
+      null,
+      null,
+      null,
+    ],
+    "label": "SQL开发",
+    "permission": undefined,
+    "type": "group",
+  },
+  null,
+  null,
+  null,
+  {
+    "type": "divider",
+  },
+  {
+    "children": [
+      {
+        "icon": <DatabaseFilled
+          height={18}
+          width={18}
+        />,
+        "key": "project/projectID/db-services",
+        "label": <ForwardRef(TypedLink)
+          to="/project/600300/db-services"
+        >
+          数据源
+        </ForwardRef(TypedLink)>,
+        "structKey": "instance",
+        "to": "/project/600300/db-services",
+      },
+      null,
+      null,
+      {
+        "icon": <MemberFilled
+          height={18}
+          width={18}
+        />,
+        "key": "project/projectID/member",
+        "label": <ForwardRef(TypedLink)
+          to="/project/600300/member"
+        >
+          成员与权限
+        </ForwardRef(TypedLink)>,
+        "structKey": "member",
+        "to": "/project/600300/member",
+      },
+      null,
+      null,
+      null,
+    ],
+    "label": "项目配置",
+    "permission": undefined,
+    "type": "group",
+  },
+  {
+    "type": "divider",
+  },
+  null,
+]
+`;
 
 exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
 [
-  null,
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <ComputerFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/cloud-beaver",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/cloud-beaver",
-              "prefix": "/project",
-              "query": "open_cloud_beaver",
-            }
-          }
-        >
-          SQL工作台
-        </ForwardRef(TypedLink)>,
-        "structKey": "cloud-beaver",
-      },
-      {
-        "icon": <ExportFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/data/export",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/data/export",
-              "prefix": "/project",
-            }
-          }
-        >
-          数据导出
-        </ForwardRef(TypedLink)>,
-        "structKey": "data-export",
-      },
-      null,
-      null,
-      null,
-      null,
-    ],
-    "label": "SQL开发",
-    "permission": undefined,
-    "type": "group",
-  },
-  null,
-  null,
-  null,
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <DatabaseFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/db-services",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/db-services",
-              "prefix": "/project",
-              "query": "address&name",
-            }
-          }
-        >
-          数据源
-        </ForwardRef(TypedLink)>,
-        "structKey": "instance",
-      },
-      null,
-      null,
-      {
-        "icon": <MemberFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/member",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/member",
-              "prefix": "/project",
-            }
-          }
-        >
-          成员与权限
-        </ForwardRef(TypedLink)>,
-        "structKey": "member",
-      },
-      null,
-      null,
-      null,
-    ],
-    "label": "项目配置",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "type": "divider",
-  },
-  null,
-]
-`;
-
-exports[`test genMenuItemsWithMenuStructTree should match snapshot 5`] = `
-[
-  null,
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <ComputerFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/cloud-beaver",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/cloud-beaver",
-              "prefix": "/project",
-              "query": "open_cloud_beaver",
-            }
-          }
-        >
-          SQL工作台
-        </ForwardRef(TypedLink)>,
-        "structKey": "cloud-beaver",
-      },
-      {
-        "icon": <ExportFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/data/export",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/data/export",
-              "prefix": "/project",
-            }
-          }
-        >
-          数据导出
-        </ForwardRef(TypedLink)>,
-        "structKey": "data-export",
-      },
-      null,
-      null,
-      null,
-      null,
-    ],
-    "label": "SQL开发",
-    "permission": undefined,
-    "type": "group",
-  },
-  null,
-  null,
-  null,
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <DatabaseFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/db-services",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/db-services",
-              "prefix": "/project",
-              "query": "address&name",
-            }
-          }
-        >
-          数据源
-        </ForwardRef(TypedLink)>,
-        "structKey": "instance",
-      },
-      null,
-      null,
-      {
-        "icon": <MemberFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/member",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/member",
-              "prefix": "/project",
-            }
-          }
-        >
-          成员与权限
-        </ForwardRef(TypedLink)>,
-        "structKey": "member",
-      },
-      null,
-      null,
-      null,
-    ],
-    "label": "项目配置",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "type": "divider",
-  },
-  null,
-]
-`;
-
-exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
-[
   {
     "icon": <OverviewOutlined
       height={18}
@@ -287,21 +111,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
     />,
     "key": "sqle/project/projectID/overview",
     "label": <ForwardRef(TypedLink)
-      params={
-        {
-          "projectID": "600300",
-        }
-      }
-      to={
-        {
-          "path": ":projectID/overview",
-          "prefix": "/sqle/project",
-        }
-      }
+      to="/sqle/project/600300/overview"
     >
       项目概览
     </ForwardRef(TypedLink)>,
     "structKey": "project-overview",
+    "to": "/sqle/project/600300/overview",
   },
   {
     "type": "divider",
@@ -315,22 +130,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "project/projectID/cloud-beaver",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/cloud-beaver",
-              "prefix": "/project",
-              "query": "open_cloud_beaver",
-            }
-          }
+          to="/project/600300/cloud-beaver"
         >
           SQL工作台
         </ForwardRef(TypedLink)>,
         "structKey": "cloud-beaver",
+        "to": "/project/600300/cloud-beaver",
       },
       {
         "icon": <ExportFilled
@@ -339,21 +144,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "project/projectID/data/export",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/data/export",
-              "prefix": "/project",
-            }
-          }
+          to="/project/600300/data/export"
         >
           数据导出
         </ForwardRef(TypedLink)>,
         "structKey": "data-export",
+        "to": "/project/600300/data/export",
       },
       {
         "icon": <MagnifierFilled
@@ -362,22 +158,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/sql-audit",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-audit",
-              "prefix": "/sqle/project",
-              "query": "SQLAuditRecordID",
-            }
-          }
+          to="/sqle/project/600300/sql-audit"
         >
           快捷审核
         </ForwardRef(TypedLink)>,
         "structKey": "sql-audit",
+        "to": "/sqle/project/600300/sql-audit",
       },
       {
         "icon": <CodeOutlined
@@ -386,21 +172,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/plugin-audit",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/plugin-audit",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/plugin-audit"
         >
           IDE审核
         </ForwardRef(TypedLink)>,
         "structKey": "plugin-audit",
+        "to": "/sqle/project/600300/plugin-audit",
       },
       {
         "icon": <RiseSquareOutlined
@@ -409,22 +186,13 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/sql-optimization",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-optimization",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/sql-optimization"
         >
           智能调优
         </ForwardRef(TypedLink)>,
         "permission": "page:sql_optimization",
         "structKey": "sql-optimization",
+        "to": "/sqle/project/600300/sql-optimization",
       },
       {
         "icon": <ComparisonOutlined
@@ -433,21 +201,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/data-source-comparison",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/data-source-comparison",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/data-source-comparison"
         >
           结构对比
         </ForwardRef(TypedLink)>,
         "structKey": "data-source-comparison",
+        "to": "/sqle/project/600300/data-source-comparison",
       },
     ],
     "label": "SQL开发",
@@ -463,21 +222,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/exec-workflow",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/exec-workflow",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/exec-workflow"
         >
           SQL工单
         </ForwardRef(TypedLink)>,
         "structKey": "exec-workflow",
+        "to": "/sqle/project/600300/exec-workflow",
       },
       {
         "icon": <FileVersionOutlined
@@ -486,21 +236,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/version-management",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/version-management",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/version-management"
         >
           版本管理
         </ForwardRef(TypedLink)>,
         "structKey": "version-management",
+        "to": "/sqle/project/600300/version-management",
       },
     ],
     "label": "SQL上线",
@@ -516,21 +257,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/pipeline-configuration",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/pipeline-configuration",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/pipeline-configuration"
         >
           流水线配置
         </ForwardRef(TypedLink)>,
         "structKey": "pipeline-configuration",
+        "to": "/sqle/project/600300/pipeline-configuration",
       },
     ],
     "label": "CI/CD集成",
@@ -546,22 +278,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/sql-management",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-management",
-              "prefix": "/sqle/project",
-              "query": "instance_id&source",
-            }
-          }
+          to="/sqle/project/600300/sql-management"
         >
           SQL管控
         </ForwardRef(TypedLink)>,
         "structKey": "sql-management",
+        "to": "/sqle/project/600300/sql-management",
       },
       {
         "icon": <PlanFilled
@@ -570,21 +292,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/sql-management-conf",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-management-conf",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/sql-management-conf"
         >
           SQL管控配置
         </ForwardRef(TypedLink)>,
         "structKey": "sql-management-conf",
+        "to": "/sqle/project/600300/sql-management-conf",
       },
     ],
     "label": "SQL管控",
@@ -603,22 +316,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "project/projectID/db-services",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/db-services",
-              "prefix": "/project",
-              "query": "address&name",
-            }
-          }
+          to="/project/600300/db-services"
         >
           数据源
         </ForwardRef(TypedLink)>,
         "structKey": "instance",
+        "to": "/project/600300/db-services",
       },
       {
         "icon": <ProfileSquareFilled
@@ -628,21 +331,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/rule/template",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/rule/template",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/rule/template"
         >
           审核规则模板
         </ForwardRef(TypedLink)>,
         "structKey": "rule-template",
+        "to": "/sqle/project/600300/rule/template",
       },
       {
         "icon": <WorkflowFilled
@@ -651,21 +345,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/progress",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/progress",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/progress"
         >
           审批流程模板
         </ForwardRef(TypedLink)>,
         "structKey": "workflow-template",
+        "to": "/sqle/project/600300/progress",
       },
       {
         "icon": <MemberFilled
@@ -674,21 +359,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "project/projectID/member",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/member",
-              "prefix": "/project",
-            }
-          }
+          to="/project/600300/member"
         >
           成员与权限
         </ForwardRef(TypedLink)>,
         "structKey": "member",
+        "to": "/project/600300/member",
       },
       {
         "icon": <GearFilled
@@ -697,21 +373,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/push-rule",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/push-rule",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/push-rule"
         >
           推送规则
         </ForwardRef(TypedLink)>,
         "structKey": "push-rule-configuration",
+        "to": "/sqle/project/600300/push-rule",
       },
       {
         "icon": <ResolveFileFilled
@@ -720,21 +387,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/whitelist",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/whitelist",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/whitelist"
         >
           审核SQL例外
         </ForwardRef(TypedLink)>,
         "structKey": "whitelist",
+        "to": "/sqle/project/600300/whitelist",
       },
       {
         "icon": <ExceptionFileOutlined
@@ -743,21 +401,12 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/sql-management-exception",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-management-exception",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/sql-management-exception"
         >
           管控SQL例外
         </ForwardRef(TypedLink)>,
         "structKey": "sql-management-exception",
+        "to": "/sqle/project/600300/sql-management-exception",
       },
     ],
     "label": "项目配置",
@@ -776,545 +425,13 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 6`] = `
         />,
         "key": "sqle/project/projectID/operation-record",
         "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/operation-record",
-              "prefix": "/sqle/project",
-            }
-          }
+          to="/sqle/project/600300/operation-record"
         >
           SQLE操作记录
         </ForwardRef(TypedLink)>,
         "permission": "page:operation_record",
         "structKey": "sqle-log",
-      },
-    ],
-    "label": "操作与审计",
-    "permission": "page:operation_record",
-    "type": "group",
-  },
-]
-`;
-
-exports[`test genMenuItemsWithMenuStructTree should match snapshot 7`] = `
-[
-  {
-    "icon": <OverviewOutlined
-      height={18}
-      width={18}
-    />,
-    "key": "sqle/project/projectID/overview",
-    "label": <ForwardRef(TypedLink)
-      params={
-        {
-          "projectID": "600300",
-        }
-      }
-      to={
-        {
-          "path": ":projectID/overview",
-          "prefix": "/sqle/project",
-        }
-      }
-    >
-      项目概览
-    </ForwardRef(TypedLink)>,
-    "structKey": "project-overview",
-  },
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <ComputerFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/cloud-beaver",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/cloud-beaver",
-              "prefix": "/project",
-              "query": "open_cloud_beaver",
-            }
-          }
-        >
-          SQL工作台
-        </ForwardRef(TypedLink)>,
-        "structKey": "cloud-beaver",
-      },
-      {
-        "icon": <ExportFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/data/export",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/data/export",
-              "prefix": "/project",
-            }
-          }
-        >
-          数据导出
-        </ForwardRef(TypedLink)>,
-        "structKey": "data-export",
-      },
-      {
-        "icon": <MagnifierFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-audit",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-audit",
-              "prefix": "/sqle/project",
-              "query": "SQLAuditRecordID",
-            }
-          }
-        >
-          快捷审核
-        </ForwardRef(TypedLink)>,
-        "structKey": "sql-audit",
-      },
-      {
-        "icon": <CodeOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/plugin-audit",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/plugin-audit",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          IDE审核
-        </ForwardRef(TypedLink)>,
-        "structKey": "plugin-audit",
-      },
-      {
-        "icon": <RiseSquareOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-optimization",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-optimization",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          智能调优
-        </ForwardRef(TypedLink)>,
-        "permission": "page:sql_optimization",
-        "structKey": "sql-optimization",
-      },
-      {
-        "icon": <ComparisonOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/data-source-comparison",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/data-source-comparison",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          结构对比
-        </ForwardRef(TypedLink)>,
-        "structKey": "data-source-comparison",
-      },
-    ],
-    "label": "SQL开发",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "children": [
-      {
-        "icon": <BriefcaseFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/exec-workflow",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/exec-workflow",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          SQL工单
-        </ForwardRef(TypedLink)>,
-        "structKey": "exec-workflow",
-      },
-      {
-        "icon": <FileVersionOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/version-management",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/version-management",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          版本管理
-        </ForwardRef(TypedLink)>,
-        "structKey": "version-management",
-      },
-    ],
-    "label": "SQL上线",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "children": [
-      {
-        "icon": <PipelineOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/pipeline-configuration",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/pipeline-configuration",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          流水线配置
-        </ForwardRef(TypedLink)>,
-        "structKey": "pipeline-configuration",
-      },
-    ],
-    "label": "CI/CD集成",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "children": [
-      {
-        "icon": <ManagementFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-management",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-management",
-              "prefix": "/sqle/project",
-              "query": "instance_id&source",
-            }
-          }
-        >
-          SQL管控
-        </ForwardRef(TypedLink)>,
-        "structKey": "sql-management",
-      },
-      {
-        "icon": <PlanFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-management-conf",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-management-conf",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          SQL管控配置
-        </ForwardRef(TypedLink)>,
-        "structKey": "sql-management-conf",
-      },
-    ],
-    "label": "SQL管控",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <DatabaseFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/db-services",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/db-services",
-              "prefix": "/project",
-              "query": "address&name",
-            }
-          }
-        >
-          数据源
-        </ForwardRef(TypedLink)>,
-        "structKey": "instance",
-      },
-      {
-        "icon": <ProfileSquareFilled
-          fill="none"
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/rule/template",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/rule/template",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          审核规则模板
-        </ForwardRef(TypedLink)>,
-        "structKey": "rule-template",
-      },
-      {
-        "icon": <WorkflowFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/progress",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/progress",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          审批流程模板
-        </ForwardRef(TypedLink)>,
-        "structKey": "workflow-template",
-      },
-      {
-        "icon": <MemberFilled
-          height={18}
-          width={18}
-        />,
-        "key": "project/projectID/member",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/member",
-              "prefix": "/project",
-            }
-          }
-        >
-          成员与权限
-        </ForwardRef(TypedLink)>,
-        "structKey": "member",
-      },
-      {
-        "icon": <GearFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/push-rule",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/push-rule",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          推送规则
-        </ForwardRef(TypedLink)>,
-        "structKey": "push-rule-configuration",
-      },
-      {
-        "icon": <ResolveFileFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/whitelist",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/whitelist",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          审核SQL例外
-        </ForwardRef(TypedLink)>,
-        "structKey": "whitelist",
-      },
-      {
-        "icon": <ExceptionFileOutlined
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/sql-management-exception",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/sql-management-exception",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          管控SQL例外
-        </ForwardRef(TypedLink)>,
-        "structKey": "sql-management-exception",
-      },
-    ],
-    "label": "项目配置",
-    "permission": undefined,
-    "type": "group",
-  },
-  {
-    "type": "divider",
-  },
-  {
-    "children": [
-      {
-        "icon": <OperateAuditFilled
-          height={18}
-          width={18}
-        />,
-        "key": "sqle/project/projectID/operation-record",
-        "label": <ForwardRef(TypedLink)
-          params={
-            {
-              "projectID": "600300",
-            }
-          }
-          to={
-            {
-              "path": ":projectID/operation-record",
-              "prefix": "/sqle/project",
-            }
-          }
-        >
-          SQLE操作记录
-        </ForwardRef(TypedLink)>,
-        "permission": "page:operation_record",
-        "structKey": "sqle-log",
+        "to": "/sqle/project/600300/operation-record",
       },
     ],
     "label": "操作与审计",

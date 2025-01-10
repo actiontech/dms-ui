@@ -278,6 +278,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
             structkey="project-overview"
             style="padding-left: 24px;"
             tabindex="-1"
+            to="/sqle/project/100121/overview"
           >
             <svg
               class="ant-menu-item-icon"
@@ -330,6 +331,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/cloud-beaver"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -366,6 +368,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="data-export"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/data/export"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -396,6 +399,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="sql-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -430,6 +434,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="plugin-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/plugin-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -465,6 +470,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="sql-optimization"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-optimization"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -499,6 +505,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="data-source-comparison"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/data-source-comparison"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -546,6 +553,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/exec-workflow"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -576,6 +584,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="version-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/version-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -627,6 +636,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="pipeline-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/pipeline-configuration"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -674,6 +684,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="sql-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -712,6 +723,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management-conf"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -766,6 +778,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="database-role"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-role"
               >
                 <svg
                   class="icon ant-menu-item-icon"
@@ -797,6 +810,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-account"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -833,6 +847,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="password-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-account-password"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -863,6 +878,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="data-mask-rule"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/data-mask-rule-overview"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -916,6 +932,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="instance"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/db-services"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -946,6 +963,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="rule-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/rule/template"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -977,6 +995,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="workflow-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/progress"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1012,6 +1031,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="member"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/member"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1046,6 +1066,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="push-rule-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/push-rule"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1076,6 +1097,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="whitelist"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/whitelist"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1115,6 +1137,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="sql-management-exception"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management-exception"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1170,6 +1193,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/operation-record"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1500,6 +1524,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
             structkey="project-overview"
             style="padding-left: 24px;"
             tabindex="-1"
+            to="/sqle/project/100121/overview"
           >
             <svg
               class="ant-menu-item-icon"
@@ -1552,6 +1577,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/cloud-beaver"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1588,6 +1614,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="data-export"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/data/export"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1618,6 +1645,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="sql-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1652,6 +1680,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="plugin-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/plugin-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1687,6 +1716,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="sql-optimization"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-optimization"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1721,6 +1751,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="data-source-comparison"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/data-source-comparison"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1768,6 +1799,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/exec-workflow"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1798,6 +1830,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="version-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/version-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1849,6 +1882,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="pipeline-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/pipeline-configuration"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1896,6 +1930,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="sql-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1934,6 +1969,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management-conf"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1988,6 +2024,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="database-role"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-role"
               >
                 <svg
                   class="icon ant-menu-item-icon"
@@ -2019,6 +2056,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-account"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2055,6 +2093,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="password-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-account-password"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2085,6 +2124,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="data-mask-rule"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/data-mask-rule-overview"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2138,6 +2178,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="instance"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/db-services"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2168,6 +2209,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="rule-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/rule/template"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2199,6 +2241,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="workflow-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/progress"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2234,6 +2277,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="member"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/member"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2268,6 +2312,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="push-rule-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/push-rule"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2298,6 +2343,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="whitelist"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/whitelist"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2337,6 +2383,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="sql-management-exception"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management-exception"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2392,6 +2439,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/operation-record"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2722,6 +2770,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
             structkey="project-overview"
             style="padding-left: 24px;"
             tabindex="-1"
+            to="/sqle/project/100121/overview"
           >
             <svg
               class="ant-menu-item-icon"
@@ -2774,6 +2823,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/cloud-beaver"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2810,6 +2860,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="data-export"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/data/export"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2840,6 +2891,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="sql-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2874,6 +2926,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="plugin-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/plugin-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2909,6 +2962,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="sql-optimization"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-optimization"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2943,6 +2997,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="data-source-comparison"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/data-source-comparison"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2990,6 +3045,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/exec-workflow"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3020,6 +3076,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="version-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/version-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3071,6 +3128,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="pipeline-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/pipeline-configuration"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3118,6 +3176,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="sql-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3156,6 +3215,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management-conf"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3210,6 +3270,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="database-role"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-role"
               >
                 <svg
                   class="icon ant-menu-item-icon"
@@ -3241,6 +3302,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-account"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3277,6 +3339,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="password-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project/100121/database-account-password"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3307,6 +3370,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="data-mask-rule"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/data-mask-rule-overview"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3360,6 +3424,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="instance"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/db-services"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3390,6 +3455,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="rule-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/rule/template"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3421,6 +3487,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="workflow-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/progress"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3456,6 +3523,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="member"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project/100121/member"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3490,6 +3558,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="push-rule-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/push-rule"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3520,6 +3589,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="whitelist"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/whitelist"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3559,6 +3629,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="sql-management-exception"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/sql-management-exception"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3614,6 +3685,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project/100121/operation-record"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -4175,6 +4247,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
           structkey="project-overview"
           style="padding-left: 24px;"
           tabindex="-1"
+          to="/sqle/project/100121/overview"
         >
           <svg
             class="ant-menu-item-icon"
@@ -4227,6 +4300,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="cloud-beaver"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/cloud-beaver"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4263,6 +4337,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="data-export"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/data/export"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4293,6 +4368,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4327,6 +4403,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="plugin-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/plugin-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4361,6 +4438,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="data-source-comparison"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/data-source-comparison"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4408,6 +4486,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/exec-workflow"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4438,6 +4517,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="version-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/version-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4489,6 +4569,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="pipeline-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/pipeline-configuration"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4536,6 +4617,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4574,6 +4656,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-management-conf"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-management-conf"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4628,6 +4711,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="database-role"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/100121/database-role"
             >
               <svg
                 class="icon ant-menu-item-icon"
@@ -4659,6 +4743,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="account-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/100121/database-account"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4695,6 +4780,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="password-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/100121/database-account-password"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4725,6 +4811,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="data-mask-rule"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/data-mask-rule-overview"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4778,6 +4865,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="instance"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/db-services"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4808,6 +4896,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="rule-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/rule/template"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4839,6 +4928,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="workflow-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/progress"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4874,6 +4964,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="member"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/member"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4908,6 +4999,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="push-rule-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/push-rule"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4938,6 +5030,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="whitelist"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/whitelist"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -4977,6 +5070,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-management-exception"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-management-exception"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5255,6 +5349,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
           structkey="project-overview"
           style="padding-left: 24px;"
           tabindex="-1"
+          to="/sqle/project/100121/overview"
         >
           <svg
             class="ant-menu-item-icon"
@@ -5307,6 +5402,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="cloud-beaver"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/cloud-beaver"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5343,6 +5439,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="data-export"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/data/export"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5373,6 +5470,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5407,6 +5505,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="plugin-audit"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/plugin-audit"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5441,6 +5540,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="data-source-comparison"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/data-source-comparison"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5488,6 +5588,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="exec-workflow"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/exec-workflow"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5518,6 +5619,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="version-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/version-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5569,6 +5671,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="pipeline-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/pipeline-configuration"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5616,6 +5719,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-management"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5654,6 +5758,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-management-conf"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-management-conf"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5708,6 +5813,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="database-role"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/100121/database-role"
             >
               <svg
                 class="icon ant-menu-item-icon"
@@ -5739,6 +5845,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="account-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/100121/database-account"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5775,6 +5882,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="password-management"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/provision/project/100121/database-account-password"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5805,6 +5913,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="data-mask-rule"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/data-mask-rule-overview"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5858,6 +5967,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="instance"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/db-services"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5888,6 +5998,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="rule-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/rule/template"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5919,6 +6030,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="workflow-template"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/progress"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5954,6 +6066,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="member"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/project/100121/member"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -5988,6 +6101,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="push-rule-configuration"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/push-rule"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -6018,6 +6132,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="whitelist"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/whitelist"
             >
               <svg
                 class="ant-menu-item-icon"
@@ -6057,6 +6172,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               structkey="sql-management-exception"
               style="padding-left: 24px;"
               tabindex="-1"
+              to="/sqle/project/100121/sql-management-exception"
             >
               <svg
                 class="ant-menu-item-icon"

@@ -441,6 +441,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             structkey="project-overview"
             style="padding-left: 24px;"
             tabindex="-1"
+            to="/sqle/project//overview"
           >
             <svg
               class="ant-menu-item-icon"
@@ -493,6 +494,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//cloud-beaver"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -529,6 +531,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="data-export"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//data/export"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -559,6 +562,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="sql-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -593,6 +597,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="plugin-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//plugin-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -627,6 +632,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="data-source-comparison"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//data-source-comparison"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -674,6 +680,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//exec-workflow"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -704,6 +711,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="version-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//version-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -755,6 +763,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="pipeline-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//pipeline-configuration"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -802,6 +811,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="sql-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -840,6 +850,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-management-conf"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -894,6 +905,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="database-role"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project//database-role"
               >
                 <svg
                   class="icon ant-menu-item-icon"
@@ -925,6 +937,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project//database-account"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -961,6 +974,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="password-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project//database-account-password"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -991,6 +1005,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="data-mask-rule"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//data-mask-rule-overview"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1044,6 +1059,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="instance"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//db-services"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1074,6 +1090,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="rule-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//rule/template"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1105,6 +1122,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="workflow-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//progress"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1140,6 +1158,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="member"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//member"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1174,6 +1193,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="push-rule-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//push-rule"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1204,6 +1224,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="whitelist"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//whitelist"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -1243,6 +1264,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 structkey="sql-management-exception"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-management-exception"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2642,6 +2664,7 @@ exports[`App render App when token is existed 1`] = `
             structkey="project-overview"
             style="padding-left: 24px;"
             tabindex="-1"
+            to="/sqle/project//overview"
           >
             <svg
               class="ant-menu-item-icon"
@@ -2694,6 +2717,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="cloud-beaver"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//cloud-beaver"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2730,6 +2754,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="data-export"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//data/export"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2760,6 +2785,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="sql-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2794,6 +2820,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="plugin-audit"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//plugin-audit"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2829,6 +2856,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="sql-optimization"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-optimization"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2863,6 +2891,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="data-source-comparison"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//data-source-comparison"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2910,6 +2939,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="exec-workflow"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//exec-workflow"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2940,6 +2970,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="version-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//version-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -2991,6 +3022,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="pipeline-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//pipeline-configuration"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3038,6 +3070,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="sql-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-management"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3076,6 +3109,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="sql-management-conf"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-management-conf"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3130,6 +3164,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="database-role"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project//database-role"
               >
                 <svg
                   class="icon ant-menu-item-icon"
@@ -3161,6 +3196,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="account-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project//database-account"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3197,6 +3233,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="password-management"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/provision/project//database-account-password"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3227,6 +3264,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="data-mask-rule"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//data-mask-rule-overview"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3280,6 +3318,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="instance"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//db-services"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3310,6 +3349,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="rule-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//rule/template"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3341,6 +3381,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="workflow-template"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//progress"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3376,6 +3417,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="member"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/project//member"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3410,6 +3452,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="push-rule-configuration"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//push-rule"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3440,6 +3483,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="whitelist"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//whitelist"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3479,6 +3523,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="sql-management-exception"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//sql-management-exception"
               >
                 <svg
                   class="ant-menu-item-icon"
@@ -3534,6 +3579,7 @@ exports[`App render App when token is existed 1`] = `
                 structkey="sqle-log"
                 style="padding-left: 24px;"
                 tabindex="-1"
+                to="/sqle/project//operation-record"
               >
                 <svg
                   class="ant-menu-item-icon"
