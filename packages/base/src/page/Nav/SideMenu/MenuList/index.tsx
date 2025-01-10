@@ -23,7 +23,9 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
     // #else
     menus = dmsSideMenuData(projectID);
     // #endif
-    const filterMenusByPermissions = (requiredMenus: CustomMenuItemType[]) => {
+    const filterMenusByPermissions = (
+      requiredMenus: CustomMenuItemType[]
+    ): CustomMenuItemType[] => {
       return requiredMenus.filter((menu) => {
         if (menu?.permission) {
           return checkPagePermission(menu.permission);
@@ -39,7 +41,12 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       });
     };
 
-    return filterMenusByPermissions(menus);
+    return filterMenusByPermissions(menus).filter((menu) => {
+      if (menu && 'children' in menu) {
+        return (menu as SubMenuType).children.length > 0;
+      }
+      return true;
+    });
   }, [projectID, checkPagePermission]);
 
   const selectMenu = useCallback(
