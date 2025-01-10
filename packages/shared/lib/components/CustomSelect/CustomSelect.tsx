@@ -21,6 +21,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   onDropdownVisibleChange,
   searchValue,
   onSearch,
+  optionCustomLabel,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -41,7 +42,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         typeof option.label === 'string'
           ? option.label
           : option.text ?? option.value;
-
       if (
         !showLabel.toLowerCase().includes(innerSearchValue?.toLowerCase() ?? '')
       ) {
@@ -52,7 +52,10 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         optionLabel: !!props.mode ? (
           showLabel
         ) : (
-          <CustomOptionLabel prefix={valuePrefix} label={showLabel} />
+          <CustomOptionLabel
+            prefix={valuePrefix}
+            label={optionCustomLabel ? optionCustomLabel(option) : showLabel}
+          />
         )
       };
     };
@@ -75,7 +78,13 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         }
       })
       .filter((v) => !!v) as SelectProps['options'];
-  }, [props.mode, props.options, innerSearchValue, valuePrefix]);
+  }, [
+    props.mode,
+    props.options,
+    innerSearchValue,
+    valuePrefix,
+    optionCustomLabel
+  ]);
 
   const renderDropdown: SelectProps['dropdownRender'] = (menu) => {
     const customMenu = (

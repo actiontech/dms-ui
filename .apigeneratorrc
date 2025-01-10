@@ -14,7 +14,15 @@
     "branch": "main",
     "swaggerPath": "",
     "swaggerOutput": "",
-    "plugin": "simple-cleaner",
+    "plugin": "simple-cleaner"
+  },
+  {
+    "project": "provision-ui",
+    "output": "packages/shared/lib/api/provision/service",
+    "branch": "main",
+    "swaggerPath": "",
+    "swaggerOutput": "",
+    "plugin": "",
     "template": "complex"
   }
 ]

@@ -52,7 +52,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+          class="ant-row css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -203,7 +203,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+          class="ant-row css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -297,7 +297,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+          class="ant-row css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -400,6 +400,63 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
             <div
               class="sub-title"
             >
+              数据源账号管理
+            </div>
+            <div
+              class="desc"
+            >
+              兼顾账号发现及管理，监控数据源账号安全
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px; padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      账号列表
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      临期列表
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="sub-title"
+            >
               审批流程
             </div>
             <div
@@ -487,7 +544,356 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+          class="ant-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="sub-title"
+            >
+              SQL窗口
+            </div>
+            <div
+              class="desc"
+            >
+              使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      进入SQL工作台
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="sub-title"
+            >
+              数据变更
+            </div>
+            <div
+              class="desc"
+            >
+              在线提起SQL变更申请，经由审批流程完成上线
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      发起SQL工单
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="sub-title"
+            >
+              数据导出
+            </div>
+            <div
+              class="desc"
+            >
+              发起数据导出工单，审核通过后获取数据集。
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      发起导出工单
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="sub-title"
+            >
+              数据脱敏
+            </div>
+            <div
+              class="desc"
+            >
+              开启脱敏，保障敏感数据安全
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      查看脱敏规则
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+        style="flex: 0 0 40px; min-width: 0;"
+      >
+        <span
+          class="step-icon css-u3jcp4"
+        >
+          <svg
+            color="#ffffff"
+            fill="currentColor"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.33 3.271a3.5 3.5 0 0 1 4.472 4.474L20.647 18.59l-2.122 2.121L7.68 9.867a3.5 3.5 0 0 1-4.472-4.474L5.444 7.63a1.5 1.5 0 1 0 2.12-2.121L5.33 3.27zm10.367 1.884 3.182-1.768 1.414 1.414-1.768 3.182-1.768.354-2.12 2.121-1.415-1.414 2.12-2.121zm-7.071 7.778 2.12 2.122-4.95 4.95A1.5 1.5 0 0 1 3.58 17.99l.097-.107z"
+            />
+            <path
+              d="m15.697 5.155 3.182-1.768 1.414 1.414-1.768 3.182-1.768.354-2.12 2.121-1.415-1.414 2.12-2.121zm-7.071 7.778 2.12 2.122-4.95 4.95A1.5 1.5 0 0 1 3.58 17.99l.097-.107z"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+        style="flex-basis: auto; min-width: 0;"
+      >
+        <div
+          class="title-wrapper"
+        >
+          <div
+            class="inner-title-wrapper"
+          >
+            <div
+              class="step-index"
+            >
+              STEP5
+            </div>
+            <div
+              class="step-title"
+            >
+              运维与审计
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="sub-title"
+            >
+              操作审计
+            </div>
+            <div
+              class="desc"
+            >
+              审计平台内用户操作
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              style="flex-wrap: wrap; margin-bottom: -8px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px; padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      授权审计
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px; padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      权限模板审计
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 8px;"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  type="button"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      SQLE操作记录
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`test base/home/CEDefaultScene should match snapshot when role is not admin and global manager 1`] = `
+<div>
+  <section
+    class="css-1wil037"
+  >
+    <div
+      class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    >
+      <div
+        class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+        style="flex: 0 0 40px; min-width: 0;"
+      >
+        <span
+          class="step-icon css-u3jcp4"
+        >
+          <svg
+            color="#ffffff"
+            fill="currentColor"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.833 1.5c-.736 0-1.333.597-1.333 1.333V3.5h13.667c.736 0 1.333.597 1.333 1.333v15.334q0 .172-.042.333h.709c.736 0 1.333-.597 1.333-1.333V2.833c0-.736-.597-1.333-1.333-1.333z"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M3.833 3.5c-.736 0-1.333.597-1.333 1.333v16.334c0 .736.597 1.333 1.333 1.333h14.334c.736 0 1.333-.597 1.333-1.333V4.833c0-.736-.597-1.333-1.333-1.333zM7 9.667C7 9.298 7.298 9 7.667 9h6.666c.368 0 .667.298.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 10.333zm0 5c0-.368.298-.667.667-.667h3.666c.368 0 .667.299.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 15.333z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+        style="flex-basis: auto; min-width: 0;"
+      >
+        <div
+          class="title-wrapper"
+        >
+          <div
+            class="inner-title-wrapper"
+          >
+            <div
+              class="step-index"
+            >
+              STEP1
+            </div>
+            <div
+              class="step-title"
+            >
+              数据查询与变更
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -646,7 +1052,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
             <div
               class="step-index"
             >
-              STEP5
+              STEP2
             </div>
             <div
               class="step-title"
@@ -656,7 +1062,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+          class="ant-row css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
@@ -677,7 +1083,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
             >
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
+                style="margin-right: 8px; padding-bottom: 8px;"
               >
                 <button
                   class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
@@ -689,96 +1095,11 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                     <div
                       class="ant-space-item"
                     >
-                      SQLE操作记录
+                      授权审计
                     </div>
                   </div>
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-`;
-
-exports[`test base/home/CEDefaultScene should match snapshot when role is not admin and global manager 1`] = `
-<div>
-  <section
-    class="css-1wil037"
-  >
-    <div
-      class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
-    >
-      <div
-        class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
-        style="flex: 0 0 40px; min-width: 0;"
-      >
-        <span
-          class="step-icon css-u3jcp4"
-        >
-          <svg
-            color="#ffffff"
-            fill="currentColor"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.833 1.5c-.736 0-1.333.597-1.333 1.333V3.5h13.667c.736 0 1.333.597 1.333 1.333v15.334q0 .172-.042.333h.709c.736 0 1.333-.597 1.333-1.333V2.833c0-.736-.597-1.333-1.333-1.333z"
-            />
-            <path
-              clip-rule="evenodd"
-              d="M3.833 3.5c-.736 0-1.333.597-1.333 1.333v16.334c0 .736.597 1.333 1.333 1.333h14.334c.736 0 1.333-.597 1.333-1.333V4.833c0-.736-.597-1.333-1.333-1.333zM7 9.667C7 9.298 7.298 9 7.667 9h6.666c.368 0 .667.298.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 10.333zm0 5c0-.368.298-.667.667-.667h3.666c.368 0 .667.299.667.667v.666a.667.667 0 0 1-.667.667H7.667A.667.667 0 0 1 7 15.333z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </span>
-      </div>
-      <div
-        class="ant-col step-box css-dev-only-do-not-override-txh9fw"
-        style="flex-basis: auto; min-width: 0;"
-      >
-        <div
-          class="title-wrapper"
-        >
-          <div
-            class="inner-title-wrapper"
-          >
-            <div
-              class="step-index"
-            >
-              STEP1
-            </div>
-            <div
-              class="step-title"
-            >
-              数据查询与变更
-            </div>
-          </div>
-        </div>
-        <div
-          class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
-        >
-          <div
-            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
-          >
-            <div
-              class="sub-title"
-            >
-              SQL窗口
-            </div>
-            <div
-              class="desc"
-            >
-              使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
-            </div>
-            <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
-            >
               <div
                 class="ant-space-item"
                 style="padding-bottom: 8px;"
@@ -793,83 +1114,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is not ad
                     <div
                       class="ant-space-item"
                     >
-                      进入SQL工作台
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
-          >
-            <div
-              class="sub-title"
-            >
-              数据变更
-            </div>
-            <div
-              class="desc"
-            >
-              在线提起SQL变更申请，经由审批流程完成上线
-            </div>
-            <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
-            >
-              <div
-                class="ant-space-item"
-                style="padding-bottom: 8px;"
-              >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                  type="button"
-                >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
-                  >
-                    <div
-                      class="ant-space-item"
-                    >
-                      发起SQL工单
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
-          >
-            <div
-              class="sub-title"
-            >
-              数据导出
-            </div>
-            <div
-              class="desc"
-            >
-              发起数据导出工单，审核通过后获取数据集。
-            </div>
-            <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
-            >
-              <div
-                class="ant-space-item"
-                style="padding-bottom: 8px;"
-              >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                  type="button"
-                >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
-                  >
-                    <div
-                      class="ant-space-item"
-                    >
-                      发起导出工单
+                      权限模板审计
                     </div>
                   </div>
                 </button>
