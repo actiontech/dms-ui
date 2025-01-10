@@ -1275,22 +1275,6 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           <li
             class="ant-menu-item-divider"
           />
-          <li
-            class="ant-menu-item-group"
-            role="presentation"
-          >
-            <div
-              class="ant-menu-item-group-title"
-              role="presentation"
-              title="操作与审计"
-            >
-              操作与审计
-            </div>
-            <ul
-              class="ant-menu-item-group-list"
-              role="group"
-            />
-          </li>
         </ul>
         <div
           aria-hidden="true"
