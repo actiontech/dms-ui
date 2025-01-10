@@ -1,4 +1,7 @@
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import {
+  CustomLabelContent,
+  FormItemLabel
+} from '@actiontech/shared/lib/components/CustomForm';
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { BasicSelect, TypedLink } from '@actiontech/shared';
@@ -61,8 +64,14 @@ const DatabasePrivilegesSelector = <
   return (
     <>
       <FormItemLabel
-        label={t('databaseAccount.create.form.role')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.role')}
+            tips={t('databaseAccount.create.form.roleTips')}
+          />
+        }
         name="dbRoles"
+        className="has-label-tip"
         extra={
           showQuickCreateRole &&
           selectedDbServiceID &&
@@ -91,7 +100,13 @@ const DatabasePrivilegesSelector = <
 
       <FormItemLabel
         name="systemPrivileges"
-        label={t('databaseAccount.create.form.systemPrivileges')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.systemPrivileges')}
+            tips={t('databaseAccount.create.form.systemPrivilegesTips')}
+          />
+        }
+        className="has-label-tip"
       >
         <BasicSelect
           loading={getOperationPrivilegesPending}

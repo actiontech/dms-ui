@@ -246,7 +246,7 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
             >
               <div
                 class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -257,9 +257,20 @@ exports[`provision/CreateRole render create role 1`] = `
                   <label
                     class="ant-form-item-no-colon"
                     for="dbRoles"
-                    title="角色"
+                    title=""
                   >
-                    角色
+                    <div
+                      class="label-cont-custom"
+                    >
+                      <div>
+                        角色
+                      </div>
+                      <div
+                        class="tip-content-box"
+                      >
+                        分配账号对应的角色及预设权限
+                      </div>
+                    </div>
                   </label>
                 </div>
                 <div
@@ -407,7 +418,7 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
             >
               <div
                 class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -418,9 +429,20 @@ exports[`provision/CreateRole render create role 1`] = `
                   <label
                     class="ant-form-item-no-colon"
                     for="systemPrivileges"
-                    title="系统权限"
+                    title=""
                   >
-                    系统权限
+                    <div
+                      class="label-cont-custom"
+                    >
+                      <div>
+                        系统权限
+                      </div>
+                      <div
+                        class="tip-content-box"
+                      >
+                        设置账号在系统层面的权限，如访问控制、资源使用等
+                      </div>
+                    </div>
                   </label>
                 </div>
                 <div
@@ -1917,7 +1939,7 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1928,9 +1950,20 @@ exports[`provision/CreateRole render init snap 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="dbRoles"
-                  title="角色"
+                  title=""
                 >
-                  角色
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      角色
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      分配账号对应的角色及预设权限
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -2024,7 +2057,7 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2035,9 +2068,20 @@ exports[`provision/CreateRole render init snap 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="systemPrivileges"
-                  title="系统权限"
+                  title=""
                 >
-                  系统权限
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      系统权限
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置账号在系统层面的权限，如访问控制、资源使用等
+                    </div>
+                  </div>
                 </label>
               </div>
               <div

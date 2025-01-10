@@ -208,9 +208,7 @@ const BatchModifyPasswordModal: React.FC = () => {
                               }
                               return Promise.reject(
                                 new Error(
-                                  t(
-                                    'databaseAccount.create.form.password_error'
-                                  )
+                                  t('databaseAccount.create.form.passwordError')
                                 )
                               );
                             }

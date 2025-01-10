@@ -92,7 +92,7 @@ describe('provision/DatabaseAccount/Update', () => {
     expect(getBySelector('#username')).toHaveValue('test1');
     expect(getBySelector('#username')).toHaveAttribute('disabled');
     expect(screen.queryByText('业务')).not.toBeInTheDocument();
-    expect(screen.queryByText('密码有效期')).not.toBeInTheDocument();
+    expect(screen.queryByText('密码有效期（天）')).not.toBeInTheDocument();
     expect(screen.getByText('database-1.table-1')).toBeInTheDocument();
     expect(
       screen.getByText('清除所有对象权限').closest('button')

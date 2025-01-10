@@ -1311,9 +1311,9 @@ exports[`provision/DatabaseAccount/DatabaseAccountModal render batch modify pass
                       <label
                         class="ant-form-item-required"
                         for="effective_time_day"
-                        title="密码有效期"
+                        title="密码有效期（天）"
                       >
-                        密码有效期
+                        密码有效期（天）
                       </label>
                     </div>
                     <div
@@ -1659,9 +1659,9 @@ exports[`provision/DatabaseAccount/DatabaseAccountModal render manage password m
                       <label
                         class="ant-form-item-required"
                         for="effective_time_day"
-                        title="密码有效期"
+                        title="密码有效期（天）"
                       >
-                        密码有效期
+                        密码有效期（天）
                       </label>
                     </div>
                     <div
@@ -2084,9 +2084,9 @@ exports[`provision/DatabaseAccount/DatabaseAccountModal render modify password m
                       <label
                         class="ant-form-item-required"
                         for="effective_time_day"
-                        title="密码有效期"
+                        title="密码有效期（天）"
                       >
-                        密码有效期
+                        密码有效期（天）
                       </label>
                     </div>
                     <div
@@ -2277,9 +2277,9 @@ exports[`provision/DatabaseAccount/DatabaseAccountModal render modify password m
                       <label
                         class="ant-form-item-required"
                         for="confirm_password"
-                        title="确认连接密码"
+                        title="databaseAccount.create.form.confirm_password"
                       >
-                        确认连接密码
+                        databaseAccount.create.form.confirm_password
                       </label>
                     </div>
                     <div

@@ -1,4 +1,5 @@
 import {
+  CustomLabelContent,
   FormItemLabel,
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/CustomForm';
@@ -183,18 +184,28 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
 
       <FormItemLabel
         name="username"
-        label={t('databaseAccount.create.form.username')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.username')}
+            tips={t('databaseAccount.create.form.usernameTips')}
+          />
+        }
         rules={[{ required: true }]}
-        className="has-required-style"
+        className="has-required-style has-label-tip"
       >
         <BasicInput disabled={disabled} />
       </FormItemLabel>
 
       <FormItemLabel
         name="password"
-        label={t('databaseAccount.create.form.password')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.password')}
+            tips={t('databaseAccount.create.form.passwordTips')}
+          />
+        }
         rules={[{ required: true }]}
-        className="has-required-style"
+        className="has-required-style has-label-tip"
       >
         <InputPassword
           disabled={disabled}
@@ -203,7 +214,12 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
       </FormItemLabel>
       <FormItemLabel
         name="confirm_password"
-        label={t('databaseAccount.create.form.confirm_password')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.confirmPassword')}
+            tips={t('databaseAccount.create.form.confirmPasswordTips')}
+          />
+        }
         rules={[
           { required: true },
           ({ getFieldValue }) => ({
@@ -212,13 +228,13 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error(t('databaseAccount.create.form.password_error'))
+                new Error(t('databaseAccount.create.form.passwordError'))
               );
             }
           })
         ]}
         dependencies={['password']}
-        className="has-required-style"
+        className="has-required-style has-label-tip"
       >
         <BasicInput.Password disabled={disabled} />
       </FormItemLabel>
@@ -232,18 +248,28 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
       </EmptyBox>
 
       <FormItemLabel
-        label={t('databaseAccount.create.form.policy')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.policy')}
+            tips={t('databaseAccount.create.form.policyTips')}
+          />
+        }
         name="policy"
         rules={[{ required: true }]}
-        className="has-required-style"
+        className="has-required-style has-label-tip"
       >
         <BasicSelect options={securityPolicyOptions()} disabled={disabled} />
       </FormItemLabel>
       <EmptyBox if={!disabled}>
         <FormItemLabel
-          label={t('databaseAccount.create.form.effectiveTimeDay')}
+          label={
+            <CustomLabelContent
+              title={t('databaseAccount.create.form.effectiveTimeDay')}
+              tips={t('databaseAccount.create.form.effectiveTimeDayTips')}
+            />
+          }
           name="effective_time_day"
-          className="has-required-style"
+          className="has-required-style has-label-tip"
           rules={[
             { required: true },
 
@@ -270,8 +296,14 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         </FormItemLabel>
       </EmptyBox>
       <FormItemLabel
-        label={t('databaseAccount.create.form.desc')}
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.desc')}
+            tips={t('databaseAccount.create.form.descTips')}
+          />
+        }
         name="explanation"
+        className="has-label-tip"
       >
         <BasicInput.TextArea
           disabled={disabled}
