@@ -2,16 +2,21 @@ import { PERMISSIONS } from '@actiontech/shared/lib/global';
 import { t } from '../../../../../../locale';
 import baseMenusCollection from '../base';
 import { genMenuItemsWithMenuStructTree } from '../common';
-import { MenuStructTreeType } from '../index.type';
+import {
+  GenerateMenuItemI18nConfig,
+  MenuItemTranslatedConfig,
+  MenuTreeTranslated
+} from '../index.type';
 import sqleMenusCollection from '../sqle';
+import { TypedLink } from '@actiontech/shared';
 
-const menuStruct: MenuStructTreeType = [
+const menuStruct: MenuTreeTranslated[] = [
   'project-overview',
   { type: 'divider' },
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLDev'),
-    group: [
+    groups: [
       'cloud-beaver',
       'data-export',
       'sql-audit',
@@ -23,23 +28,23 @@ const menuStruct: MenuStructTreeType = [
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLExecute'),
-    group: ['exec-workflow', 'version-management']
+    groups: ['exec-workflow', 'version-management']
   },
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.CICDIntegration'),
-    group: ['pipeline-configuration']
+    groups: ['pipeline-configuration']
   },
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.SQLManagement'),
-    group: ['sql-management', 'sql-management-conf']
+    groups: ['sql-management', 'sql-management-conf']
   },
   { type: 'divider' },
   {
     type: 'group',
     label: t('dmsMenu.groupLabel.projectConfigure'),
-    group: [
+    groups: [
       'instance',
       'rule-template',
       'workflow-template',
@@ -54,41 +59,42 @@ const menuStruct: MenuStructTreeType = [
     type: 'group',
     permission: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD,
     label: t('dmsMenu.groupLabel.operateAndAudit'),
-    group: ['sqle-log']
+    groups: ['sqle-log']
   }
 ];
 
 describe('test genMenuItemsWithMenuStructTree', () => {
+  const translatedMenuItem = (
+    requiredMenus: GenerateMenuItemI18nConfig[]
+  ): MenuItemTranslatedConfig[] => {
+    return requiredMenus.map((item) => {
+      const menu = item('600300');
+      return {
+        ...menu,
+        label: <TypedLink to={menu.to}>{t(menu.label)}</TypedLink>
+      };
+    });
+  };
+
   it('should match snapshot', () => {
-    expect(genMenuItemsWithMenuStructTree('600300', [], [])).toMatchSnapshot();
+    expect(genMenuItemsWithMenuStructTree([], [])).toMatchSnapshot();
     expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [])
-    ).toMatchSnapshot();
-
-    expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, [])
-    ).toMatchSnapshot();
-
-    expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, menuStruct)
-    ).toMatchSnapshot();
-
-    expect(
-      genMenuItemsWithMenuStructTree('600300', baseMenusCollection, menuStruct)
+      genMenuItemsWithMenuStructTree(
+        translatedMenuItem(baseMenusCollection),
+        []
+      )
     ).toMatchSnapshot();
 
     expect(
       genMenuItemsWithMenuStructTree(
-        '600300',
-        [...baseMenusCollection, ...sqleMenusCollection],
+        translatedMenuItem(baseMenusCollection),
         menuStruct
       )
     ).toMatchSnapshot();
 
     expect(
       genMenuItemsWithMenuStructTree(
-        '600300',
-        [...baseMenusCollection, ...sqleMenusCollection],
+        translatedMenuItem([...baseMenusCollection, ...sqleMenusCollection]),
         menuStruct
       )
     ).toMatchSnapshot();
