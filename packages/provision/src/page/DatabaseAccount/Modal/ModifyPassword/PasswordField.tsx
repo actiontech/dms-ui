@@ -39,7 +39,7 @@ const PasswordField = () => {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error(t('databaseAccount.create.form.password_error'))
+                new Error(t('databaseAccount.create.form.passwordError'))
               );
             }
           })

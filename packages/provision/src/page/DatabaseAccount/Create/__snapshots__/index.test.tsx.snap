@@ -399,7 +399,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -410,9 +410,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="username"
-                  title="连接账号名"
+                  title=""
                 >
-                  连接账号名
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接账号名
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      输入唯一且符合规范的数据库登录用户名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -438,7 +449,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -449,9 +460,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="password"
-                  title="连接密码"
+                  title=""
                 >
-                  连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置符合复杂度要求的密码，保障账号安全
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -524,7 +546,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -535,9 +557,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="confirm_password"
-                  title="确认连接密码"
+                  title=""
                 >
-                  确认连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      确认连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      再次输入密码确保两次一致
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -642,7 +675,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -653,9 +686,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="policy"
-                  title="密码安全策略"
+                  title=""
                 >
-                  密码安全策略
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码安全策略
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择密码有效期等级，定期更换密码
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -736,7 +780,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -747,9 +791,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="effective_time_day"
-                  title="密码有效期"
+                  title=""
                 >
-                  密码有效期
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码有效期（天）
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置密码有效天数，超期需更换
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -843,7 +898,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -854,9 +909,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="explanation"
-                  title="账号说明"
+                  title=""
                 >
-                  账号说明
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      账号说明
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      填写账号用途、项目等描述信息
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -887,7 +953,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             数据权限
           </h1>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -898,9 +964,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="dbRoles"
-                  title="角色"
+                  title=""
                 >
-                  角色
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      角色
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      分配账号对应的角色及预设权限
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -1048,7 +1125,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1059,9 +1136,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="systemPrivileges"
-                  title="系统权限"
+                  title=""
                 >
-                  系统权限
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      系统权限
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置账号在系统层面的权限，如访问控制、资源使用等
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3311,7 +3399,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3322,9 +3410,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="username"
-                  title="连接账号名"
+                  title=""
                 >
-                  连接账号名
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接账号名
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      输入唯一且符合规范的数据库登录用户名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3350,7 +3449,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3361,9 +3460,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="password"
-                  title="连接密码"
+                  title=""
                 >
-                  连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置符合复杂度要求的密码，保障账号安全
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3436,7 +3546,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3447,9 +3557,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="confirm_password"
-                  title="确认连接密码"
+                  title=""
                 >
-                  确认连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      确认连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      再次输入密码确保两次一致
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3554,7 +3675,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3565,9 +3686,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="policy"
-                  title="密码安全策略"
+                  title=""
                 >
-                  密码安全策略
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码安全策略
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择密码有效期等级，定期更换密码
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3648,7 +3780,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3659,9 +3791,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="effective_time_day"
-                  title="密码有效期"
+                  title=""
                 >
-                  密码有效期
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码有效期（天）
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置密码有效天数，超期需更换
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3755,7 +3898,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3766,9 +3909,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="explanation"
-                  title="账号说明"
+                  title=""
                 >
-                  账号说明
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      账号说明
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      填写账号用途、项目等描述信息
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3799,7 +3953,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             数据权限
           </h1>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3810,9 +3964,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="dbRoles"
-                  title="角色"
+                  title=""
                 >
-                  角色
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      角色
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      分配账号对应的角色及预设权限
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3960,7 +4125,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -3971,9 +4136,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="systemPrivileges"
-                  title="系统权限"
+                  title=""
                 >
-                  系统权限
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      系统权限
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置账号在系统层面的权限，如访问控制、资源使用等
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6207,7 +6383,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6218,9 +6394,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="username"
-                  title="连接账号名"
+                  title=""
                 >
-                  连接账号名
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接账号名
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      输入唯一且符合规范的数据库登录用户名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6246,7 +6433,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6257,9 +6444,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="password"
-                  title="连接密码"
+                  title=""
                 >
-                  连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置符合复杂度要求的密码，保障账号安全
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6331,7 +6529,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6342,9 +6540,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="confirm_password"
-                  title="确认连接密码"
+                  title=""
                 >
-                  确认连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      确认连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      再次输入密码确保两次一致
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6400,7 +6609,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6411,9 +6620,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="policy"
-                  title="密码安全策略"
+                  title=""
                 >
-                  密码安全策略
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码安全策略
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择密码有效期等级，定期更换密码
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6493,7 +6713,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6504,9 +6724,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="effective_time_day"
-                  title="密码有效期"
+                  title=""
                 >
-                  密码有效期
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码有效期（天）
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置密码有效天数，超期需更换
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6599,7 +6830,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6610,9 +6841,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="explanation"
-                  title="账号说明"
+                  title=""
                 >
-                  账号说明
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      账号说明
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      填写账号用途、项目等描述信息
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6641,7 +6883,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             数据权限
           </h1>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6652,9 +6894,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="dbRoles"
-                  title="角色"
+                  title=""
                 >
-                  角色
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      角色
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      分配账号对应的角色及预设权限
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -6749,7 +7002,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -6760,9 +7013,20 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 <label
                   class="ant-form-item-no-colon"
                   for="systemPrivileges"
-                  title="系统权限"
+                  title=""
                 >
-                  系统权限
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      系统权限
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置账号在系统层面的权限，如访问控制、资源使用等
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7452,7 +7716,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7463,9 +7727,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="username"
-                  title="连接账号名"
+                  title=""
                 >
-                  连接账号名
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接账号名
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      输入唯一且符合规范的数据库登录用户名
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7491,7 +7766,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7502,9 +7777,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="password"
-                  title="连接密码"
+                  title=""
                 >
-                  连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置符合复杂度要求的密码，保障账号安全
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7576,7 +7862,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7587,9 +7873,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="confirm_password"
-                  title="确认连接密码"
+                  title=""
                 >
-                  确认连接密码
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      确认连接密码
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      再次输入密码确保两次一致
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7645,7 +7942,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7656,9 +7953,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="policy"
-                  title="密码安全策略"
+                  title=""
                 >
-                  密码安全策略
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码安全策略
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      选择密码有效期等级，定期更换密码
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7738,7 +8046,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7749,9 +8057,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
                   for="effective_time_day"
-                  title="密码有效期"
+                  title=""
                 >
-                  密码有效期
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      密码有效期（天）
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置密码有效天数，超期需更换
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7844,7 +8163,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7855,9 +8174,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-no-colon"
                   for="explanation"
-                  title="账号说明"
+                  title=""
                 >
-                  账号说明
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      账号说明
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      填写账号用途、项目等描述信息
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -7886,7 +8216,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             数据权限
           </h1>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -7897,9 +8227,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-no-colon"
                   for="dbRoles"
-                  title="角色"
+                  title=""
                 >
-                  角色
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      角色
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      分配账号对应的角色及预设权限
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -8006,7 +8347,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
           >
             <div
               class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -8017,9 +8358,20 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 <label
                   class="ant-form-item-no-colon"
                   for="systemPrivileges"
-                  title="系统权限"
+                  title=""
                 >
-                  系统权限
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      系统权限
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      设置账号在系统层面的权限，如访问控制、资源使用等
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
