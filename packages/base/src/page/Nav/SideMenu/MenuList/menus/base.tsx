@@ -6,51 +6,46 @@ import {
   DatabaseFilled,
   ComputerFilled
 } from '@actiontech/icons';
-import { t } from '../../../../../locale';
-import { GenerateMenuItemType } from './index.type';
+import { GenerateMenuItemI18nConfig } from './index.type';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import { TypedLink } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { parse2ReactRouterPath } from '@actiontech/shared';
 
-const dbServiceMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <TypedLink to={ROUTE_PATHS.BASE.DATA_SOURCE.index} params={{ projectID }}>
-      {t('dmsMenu.instance')}
-    </TypedLink>
-  ),
+const dbServiceMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
+  to: parse2ReactRouterPath(ROUTE_PATHS.BASE.DATA_SOURCE.index, {
+    params: { projectID }
+  }),
+  label: 'dmsMenu.instance',
   icon: <DatabaseFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/db-services`,
   structKey: 'instance'
 });
 
-const memberManagementMenItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <TypedLink to={ROUTE_PATHS.BASE.MEMBER.index} params={{ projectID }}>
-      {t('dmsMenu.memberAndPermissions')}
-    </TypedLink>
-  ),
+const memberManagementMenItem: GenerateMenuItemI18nConfig = (projectID) => ({
+  to: parse2ReactRouterPath(ROUTE_PATHS.BASE.MEMBER.index, {
+    params: { projectID }
+  }),
+  label: 'dmsMenu.memberAndPermissions',
   icon: <MemberFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/member`,
   structKey: 'member'
 });
 
-const cloudBeaverMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <TypedLink to={ROUTE_PATHS.BASE.CLOUD_BEAVER.index} params={{ projectID }}>
-      {t('dmsMenu.SQLWorkbench')}
-    </TypedLink>
-  ),
+const cloudBeaverMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
+  to: parse2ReactRouterPath(ROUTE_PATHS.BASE.CLOUD_BEAVER.index, {
+    params: { projectID }
+  }),
+  label: 'dmsMenu.SQLWorkbench',
   icon: <ComputerFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/cloud-beaver`,
   structKey: 'cloud-beaver'
 });
 
-const dataExportMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <TypedLink to={ROUTE_PATHS.BASE.DATA_EXPORT.index} params={{ projectID }}>
-      {t('dmsMenu.dataExportManagement')}
-    </TypedLink>
-  ),
+const dataExportMenuItem: GenerateMenuItemI18nConfig = (projectID) => ({
+  to: parse2ReactRouterPath(ROUTE_PATHS.BASE.DATA_EXPORT.index, {
+    params: { projectID }
+  }),
+  label: 'dmsMenu.dataExportManagement',
   icon: <ExportFilled width={18} height={18} />,
   key: `project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data/export`,
   structKey: 'data-export'

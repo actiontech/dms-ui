@@ -1,12 +1,23 @@
 import { MenuProps, Menu } from 'antd';
 import { SubMenuType } from 'antd/lib/menu/hooks/useItems';
 import { useMemo, useCallback } from 'react';
-import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './menus/common';
+import {
+  SIDE_MENU_DATA_PLACEHOLDER_KEY,
+  genMenuItemsWithMenuStructTree
+} from './menus/common';
 import { useLocation } from 'react-router-dom';
-import { CustomMenuItemType } from './menus/index.type';
-import { sideMenuData } from './menus/menu.data';
-import { dmsSideMenuData } from './menus/menu.data.dms';
+import {
+  CustomMenuItemType,
+  GenerateMenuItemI18nConfig,
+  MenuItemTranslatedConfig,
+  MenuTreeI18n,
+  MenuTreeTranslated
+} from './menus/index.type';
+import { SQLE_ALL_MENUS, SQLE_MENU_STRUCT } from './menus/menu.data';
+import { DMS_ALL_MENUS, DMS_MENU_STRUCT } from './menus/menu.data.dms';
 import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { useTranslation } from 'react-i18next';
+import { TypedLink } from '@actiontech/shared';
 
 type Props = {
   projectID: string;
@@ -15,13 +26,47 @@ type Props = {
 const MenuList: React.FC<Props> = ({ projectID }) => {
   const location = useLocation();
   const { checkPagePermission } = usePermission();
+  const { t } = useTranslation();
+
   const menuItems = useMemo(() => {
     let menus: CustomMenuItemType[] = [];
 
+    const translatedMenuStruct = (
+      menuTree: MenuTreeI18n[]
+    ): MenuTreeTranslated[] => {
+      return menuTree.map((tree) => {
+        if (typeof tree !== 'string' && tree.type === 'group') {
+          return {
+            ...tree,
+            label: t(tree.groupLabelKey)
+          };
+        }
+        return tree;
+      });
+    };
+
+    const translatedMenuItem = (
+      requiredMenus: GenerateMenuItemI18nConfig[]
+    ): MenuItemTranslatedConfig[] => {
+      return requiredMenus.map((item) => {
+        const menu = item(projectID);
+        return {
+          ...menu,
+          label: <TypedLink to={menu.to}>{t(menu.label)}</TypedLink>
+        };
+      });
+    };
+
     // #if [sqle && !dms]
-    menus = sideMenuData(projectID);
+    menus = genMenuItemsWithMenuStructTree(
+      translatedMenuItem(SQLE_ALL_MENUS),
+      translatedMenuStruct(SQLE_MENU_STRUCT)
+    );
     // #else
-    menus = dmsSideMenuData(projectID);
+    menus = genMenuItemsWithMenuStructTree(
+      translatedMenuItem(DMS_ALL_MENUS),
+      translatedMenuStruct(DMS_MENU_STRUCT)
+    );
     // #endif
     const filterMenusByPermissions = (
       requiredMenus: CustomMenuItemType[]
@@ -47,7 +92,7 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       }
       return true;
     });
-  }, [projectID, checkPagePermission]);
+  }, [projectID, t, checkPagePermission]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {
