@@ -134,7 +134,12 @@ const useBackendTable = () => {
         if (filterTips?.length) {
           return 'select';
         }
-        if (filterInputType === FilterMetaFilterInputTypeEnum.date_time) {
+        if (
+          [
+            FilterMetaFilterInputTypeEnum.date_time,
+            FilterMetaFilterInputTypeEnum.day_range
+          ].includes(filterInputType)
+        ) {
           return 'date-range';
         }
 
@@ -169,6 +174,12 @@ const useBackendTable = () => {
         if (filterInputType === FilterMetaFilterInputTypeEnum.date_time) {
           return {
             showTime: true
+          };
+        }
+
+        if (filterInputType === FilterMetaFilterInputTypeEnum.day_range) {
+          return {
+            showTime: false
           };
         }
       };
