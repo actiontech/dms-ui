@@ -1,51 +1,41 @@
-import { t } from '../../../../../locale';
 import { SIDE_MENU_DATA_PLACEHOLDER_KEY } from './common';
-import { GenerateMenuItemType } from './index.type';
+import { GenerateMenuItemI18nConfig } from './index.type';
 import { LightShieldFilled, KeyFilled } from '@actiontech/icons';
-import { TypedLink } from '@actiontech/shared';
+import { parse2ReactRouterPath } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
-export const accountManagementMenuItem: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <TypedLink
-      to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index}
-      params={{ projectID }}
-    >
-      {t('dmsMenu.databaseAccount')}
-    </TypedLink>
-  ),
-
+export const accountManagementMenuItem: GenerateMenuItemI18nConfig = (
+  projectID
+) => ({
+  to: parse2ReactRouterPath(ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index, {
+    params: { projectID }
+  }),
+  label: 'dmsMenu.databaseAccount',
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account`,
   icon: <KeyFilled width={18} height={18} />,
   structKey: 'account-management'
 });
 
-export const passwordManagementMenuItem: GenerateMenuItemType = (
+export const passwordManagementMenuItem: GenerateMenuItemI18nConfig = (
   projectID
 ) => ({
-  label: (
-    <TypedLink
-      to={ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT_PASSWORD.index}
-      params={{ projectID }}
-    >
-      {t('dmsMenu.databaseAccountPassword')}
-    </TypedLink>
+  to: parse2ReactRouterPath(
+    ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT_PASSWORD.index,
+    {
+      params: { projectID }
+    }
   ),
-
+  label: 'dmsMenu.databaseAccountPassword',
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-account-password`,
   icon: <LightShieldFilled width={18} height={18} />,
   structKey: 'password-management'
 });
 
-export const databaseRole: GenerateMenuItemType = (projectID) => ({
-  label: (
-    <TypedLink
-      to={ROUTE_PATHS.PROVISION.DATABASE_ROLE.index}
-      params={{ projectID }}
-    >
-      {t('dmsMenu.databaseRole')}
-    </TypedLink>
-  ),
+export const databaseRole: GenerateMenuItemI18nConfig = (projectID) => ({
+  to: parse2ReactRouterPath(ROUTE_PATHS.PROVISION.DATABASE_ROLE.index, {
+    params: { projectID }
+  }),
+  label: 'dmsMenu.databaseRole',
   key: `provision/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/database-role`,
   icon: (
     <svg

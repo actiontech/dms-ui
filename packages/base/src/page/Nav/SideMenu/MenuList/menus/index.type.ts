@@ -44,7 +44,12 @@ interface MenuTreeGroupTranslated
 interface MenuTreeDivider {
   type: 'divider';
 }
-export type MenuTreeKey = BaseMenuStructTreeKey | SqleMenuStructTreeKey;
+export type MenuTreeKey =
+  | BaseMenuStructTreeKey
+  | SqleMenuStructTreeKey
+  | ProvisionMenuStructTreeKey
+  | DMSMenuStructTreeKey;
+
 export type MenuTreeI18n = MenuTreeKey | MenuTreeGroupI18n | MenuTreeDivider;
 export type MenuTreeTranslated =
   | MenuTreeKey
@@ -74,3 +79,10 @@ type SqleMenuStructTreeKey =
   | 'pipeline-configuration'
   | 'version-management'
   | 'data-source-comparison';
+
+type ProvisionMenuStructTreeKey =
+  | 'database-role'
+  | 'account-management'
+  | 'password-management';
+
+type DMSMenuStructTreeKey = 'data-mask-rule';
