@@ -93,11 +93,15 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
+                />
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
                 >
                   <h3
                     class="header-title"
                   >
-                    执行计划
+                    当前执行计划
                   </h3>
                 </div>
                 <div

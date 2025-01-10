@@ -24,7 +24,15 @@ export default {
   executePlan: {
     title: '执行计划{{index}}',
     sql: 'SQL语句',
-    sqlExplain: '执行计划',
+    planCost: 'SQL执行计划 Cost趋势',
+    twentyFourHours: '24小时',
+    sevenDays: '7天',
+    thirtyDays: '30天',
+    costValue: 'Cost值',
+    emptyText: '暂无数据，选择其他时间段查看',
+    compareDifference: '对比执行计划',
+    historyExecPlan: '历史执行计划',
+    sqlExplain: '当前执行计划',
     performanceStatistics: '性能统计',
     affectRows: '影响行数',
     affectRowTips: '区别于执行计划的rows列，显示SQL的实际影响行数'

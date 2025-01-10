@@ -13,6 +13,9 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import SqlAnalyze from '../SqlAnalyze';
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { useRequest } from 'ahooks';
+import dayjs, { Dayjs } from 'dayjs';
+import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 
 const SQLManageAnalyze = () => {
   const urlParams =
@@ -24,6 +27,7 @@ const SQLManageAnalyze = () => {
   const [tableMetas, setTableMetas] = useState<ITableMetas>();
   const [performanceStatistics, setPerformancesStatistics] =
     useState<IPerformanceStatistics>();
+
   const [
     loading,
     { setTrue: startGetSqlAnalyze, setFalse: getSqlAnalyzeFinish }
@@ -60,6 +64,27 @@ const SQLManageAnalyze = () => {
     urlParams.sqlManageId
   ]);
 
+  const {
+    data,
+    loading: getSqlExecPlanCostDataSourceLoading,
+    run: getSqlExecPlanCostDataSource,
+    error: getSqlExecPlanCostDataSourceError
+  } = useRequest((startTime?: Dayjs, endTime?: Dayjs) =>
+    SqlManage.GetSqlManageSqlAnalysisChartV1({
+      sql_manage_id: urlParams.sqlManageId ?? '',
+      project_name: projectName,
+      metric_name: 'explain_cost',
+      start_time: translateTimeForRequest(
+        startTime ?? dayjs().subtract(24, 'hour')
+      ),
+      end_time: translateTimeForRequest(endTime ?? dayjs())
+    }).then((res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        return res.data.data;
+      }
+    })
+  );
+
   useEffect(() => {
     getSqlAnalyze();
   }, [getSqlAnalyze]);
@@ -72,6 +97,13 @@ const SQLManageAnalyze = () => {
       errorMessage={errorMessage}
       performanceStatistics={performanceStatistics}
       loading={loading}
+      sqlExecPlanCostDataSource={data?.points}
+      getSqlExecPlanCostDataSourceLoading={getSqlExecPlanCostDataSourceLoading}
+      getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
+      getSqlExecPlanCostDataSourceError={
+        getSqlExecPlanCostDataSourceError?.message
+      }
+      showExecPlanCostChart
     />
   );
 };

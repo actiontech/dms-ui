@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
 import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -15,6 +15,9 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageSqlAnalyzeData } from '../__testData__';
 import SQLManageAnalyze from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import sqlManageMock from '../../../testUtils/mockApi/sqlManage';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 jest.mock('react-router', () => {
   return {
@@ -30,7 +33,10 @@ describe('SqlAnalyze/SQLManage', () => {
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
+  let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
+
   beforeEach(() => {
+    MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
     jest.useFakeTimers();
     mockUseCurrentProject();
     useParamsMock.mockReturnValue({
@@ -38,12 +44,15 @@ describe('SqlAnalyze/SQLManage', () => {
       sqlNum: '123',
       projectName
     });
+    getSqlManageSqlAnalysisChartSpy =
+      sqlManageMock.getSqlManageSqlAnalysisChart();
   });
 
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
+    MockDate.reset();
   });
 
   const mockGetAnalyzeData = () => {
@@ -62,7 +71,7 @@ describe('SqlAnalyze/SQLManage', () => {
       project_name: projectName,
       sql_manage_id: 'sqlManageId1'
     });
-
+    expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(300));
     expect(container).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));

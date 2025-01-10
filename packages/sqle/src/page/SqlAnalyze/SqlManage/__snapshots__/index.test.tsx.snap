@@ -118,10 +118,256 @@ exports[`SqlAnalyze/SQLManage should get analyze data from origin 1`] = `
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
                 >
+                  <section
+                    class="css-1pqpq6o"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <h3>
+                          SQL执行计划 Cost趋势
+                        </h3>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <div
+                              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-segmented-group"
+                              >
+                                <label
+                                  class="ant-segmented-item ant-segmented-item-selected"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="24小时"
+                                  >
+                                    24小时
+                                  </div>
+                                </label>
+                                <label
+                                  class="ant-segmented-item"
+                                >
+                                  <input
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="7天"
+                                  >
+                                    7天
+                                  </div>
+                                </label>
+                                <label
+                                  class="ant-segmented-item"
+                                >
+                                  <input
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="30天"
+                                  >
+                                    30天
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="css-1y8q0oh"
+                            >
+                              <div
+                                class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                              >
+                                <div
+                                  class="ant-picker-input ant-picker-input-active"
+                                >
+                                  <input
+                                    autocomplete="off"
+                                    placeholder="Start date"
+                                    readonly=""
+                                    size="21"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-picker-range-separator"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    width="14"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="ant-picker-input"
+                                >
+                                  <input
+                                    autocomplete="off"
+                                    placeholder="End date"
+                                    readonly=""
+                                    size="21"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-picker-active-bar"
+                                  style="left: 0px; width: 0px; position: absolute;"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="chart-wrapper"
+                    >
+                      <div
+                        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div>
+                          <div
+                            aria-busy="true"
+                            aria-live="polite"
+                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                          >
+                            <span
+                              class="ant-spin-dot ant-spin-dot-spin"
+                            >
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                              <i
+                                class="ant-spin-dot-item"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-spin-container ant-spin-blur"
+                        >
+                          <div
+                            class="chart-wrapper css-1hgbe7b"
+                          >
+                            <div
+                              class="icon-center-wrapper MuiBox-root css-0"
+                            >
+                              <div
+                                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                              >
+                                <div
+                                  class="ant-empty-image"
+                                >
+                                  <svg
+                                    fill="none"
+                                    height="80"
+                                    viewBox="0 0 80 80"
+                                    width="80"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <g
+                                      clip-path="url(#clip0_1412_15009)"
+                                    >
+                                      <path
+                                        d="M0 56.5643C0 61.4398 17.8769 65.3152 40.0043 65.3152C62.1316 65.3152 80.0086 61.4398 80.0086 56.5643C80.0086 51.6887 62.1317 47.8134 40.0043 47.8134C17.8768 47.8134 0 51.6888 0 56.5643Z"
+                                        fill="#EBEAE7"
+                                      />
+                                      <path
+                                        d="M52.0055 35.1869C52.0055 33.1867 53.2557 31.5615 54.7558 31.5615H68.7573V54.189C68.7573 56.8142 67.1322 59.0645 65.132 59.0645H15.0016C13.0014 59.0645 11.2512 56.9393 11.2512 54.189V31.5615H25.2527C26.7528 31.5615 28.003 33.1867 28.003 35.1869C28.003 37.1871 29.2531 38.8123 30.7533 38.8123H49.2553C50.7554 38.8123 52.0055 37.1871 52.0055 35.1869Z"
+                                        fill="#F2F1EF"
+                                      />
+                                      <path
+                                        d="M56.6311 16.56C56.0061 15.4349 55.0059 14.8098 53.6308 14.6848H26.3779C25.1277 14.8098 24.0026 15.4349 23.5026 16.56L10.6262 30.9365V54.189C10.6262 57.1893 12.5014 59.6896 15.0016 59.6896H65.007C67.3823 59.6896 69.2575 57.1893 69.2575 54.189V30.9365L56.6311 16.56ZM24.3777 17.3101C24.8777 16.435 25.5028 16.0599 26.3779 15.935H53.6308C54.5059 15.935 55.131 16.435 55.506 17.1851L67.6323 30.9365H54.7559C52.8807 30.9365 51.3805 32.8117 51.3805 35.187C51.3805 36.8122 50.3804 38.1873 49.2553 38.1873H30.7533C29.5032 38.1873 28.6281 36.8122 28.6281 35.187C28.6281 32.8117 27.128 30.9365 25.2528 30.9365H12.3763L24.3777 17.3101ZM68.1323 54.189C68.1323 56.4393 66.7572 58.4395 65.132 58.4395H15.0016C13.2515 58.4395 11.8763 56.5643 11.8763 54.189V32.1867H25.2528C26.3779 32.1867 27.378 33.5618 27.378 35.312C27.378 37.6873 28.8781 39.5625 30.7533 39.5625H49.2553C51.1306 39.5625 52.6307 37.6873 52.6307 35.312C52.6307 33.6868 53.6308 32.3117 54.7559 32.3117H68.0073V54.189H68.1323Z"
+                                        fill="#E6E4E3"
+                                      />
+                                    </g>
+                                    <defs>
+                                      <clippath
+                                        id="clip0_1412_15009"
+                                      >
+                                        <rect
+                                          fill="white"
+                                          height="80"
+                                          width="80"
+                                        />
+                                      </clippath>
+                                    </defs>
+                                  </svg>
+                                </div>
+                                <div
+                                  class="ant-empty-description"
+                                >
+                                  <span
+                                    class="no-data-cont tip-without-title"
+                                  >
+                                    暂无数据，选择其他时间段查看
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-empty-footer"
+                                >
+                                  <button
+                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                    type="button"
+                                  >
+                                    <span>
+                                      刷新
+                                    </span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
+                >
                   <h3
                     class="header-title"
                   >
-                    执行计划
+                    当前执行计划
                   </h3>
                 </div>
                 <div
@@ -445,10 +691,171 @@ exports[`SqlAnalyze/SQLManage should get analyze data from origin 2`] = `
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
                 >
+                  <section
+                    class="css-1pqpq6o"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <h3>
+                          SQL执行计划 Cost趋势
+                        </h3>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <div
+                              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                            >
+                              <div
+                                class="ant-segmented-group"
+                              >
+                                <label
+                                  class="ant-segmented-item ant-segmented-item-selected"
+                                >
+                                  <input
+                                    checked=""
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="24小时"
+                                  >
+                                    24小时
+                                  </div>
+                                </label>
+                                <label
+                                  class="ant-segmented-item"
+                                >
+                                  <input
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="7天"
+                                  >
+                                    7天
+                                  </div>
+                                </label>
+                                <label
+                                  class="ant-segmented-item"
+                                >
+                                  <input
+                                    class="ant-segmented-item-input"
+                                    type="radio"
+                                  />
+                                  <div
+                                    class="ant-segmented-item-label"
+                                    title="30天"
+                                  >
+                                    30天
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <div
+                              class="css-1y8q0oh"
+                            >
+                              <div
+                                class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                              >
+                                <div
+                                  class="ant-picker-input ant-picker-input-active"
+                                >
+                                  <input
+                                    autocomplete="off"
+                                    placeholder="Start date"
+                                    readonly=""
+                                    size="21"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-picker-range-separator"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    height="14"
+                                    viewBox="0 0 14 14"
+                                    width="14"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                                    />
+                                  </svg>
+                                </div>
+                                <div
+                                  class="ant-picker-input"
+                                >
+                                  <input
+                                    autocomplete="off"
+                                    placeholder="End date"
+                                    readonly=""
+                                    size="21"
+                                    value=""
+                                  />
+                                </div>
+                                <div
+                                  class="ant-picker-active-bar"
+                                  style="left: 0px; width: 0px; position: absolute;"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="chart-wrapper"
+                    >
+                      <div
+                        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-spin-container"
+                        >
+                          <div
+                            class="chart-wrapper css-1hgbe7b"
+                          >
+                            <div
+                              class="chart-box"
+                            >
+                              <div
+                                data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06T09:22:53.713Z","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07T09:32:53.713Z","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07T09:42:53.713Z","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07T09:52:53.713Z","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"range":[0,1]},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"slider":{"start":0,"end":1},"annotations":[{"type":"line","start":["min",2.95],"end":["max",2.95],"style":{"stroke":"#4583ff","lineWidth":2,"lineDash":[5,5]}},{"type":"text","position":["max",2.95],"content":2.95,"offsetY":-10,"style":{"fill":"#4583ff","fontSize":12}},{"type":"text","content":5.2,"position":["2025-01-07T09:52:53.713Z",5.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-07T09:52:53.713Z",5.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false},{"type":"text","content":1.2,"position":["2025-01-06T09:22:53.713Z",1.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-06T09:22:53.713Z",1.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false}],"tooltip":{"fields":["created_time","cost","id"],"enterable":true},"theme":"light"}"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
+                >
                   <h3
                     class="header-title"
                   >
-                    执行计划
+                    当前执行计划
                   </h3>
                 </div>
                 <div

@@ -1,4 +1,4 @@
-import { Space } from 'antd';
+import { Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import {
   EmptyBox,
@@ -8,13 +8,30 @@ import {
 } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
-import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
+import {
+  IPerformanceStatistics,
+  IChartPoint
+} from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';
+import ExecPlanCostChart from './ExecPlanCostChart';
+import { ExecPlanParams } from './index';
+import { useState } from 'react';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import classNames from 'classnames';
 
-const useSQLExecPlan = () => {
+const useSQLExecPlan = (params: ExecPlanParams) => {
+  const {
+    sqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSourceLoading,
+    showExecPlanCostChart,
+    getSqlExecPlanCostDataSourceError
+  } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
+
+  const [historyExecPlan, setHistoryExecPlan] = useState<IChartPoint>();
 
   const generateSQLExecPlanContent = <
     T extends Pick<SQLExecPlanItem, 'sql' | 'classic_result' | 'err_message'> &
@@ -35,12 +52,34 @@ const useSQLExecPlan = () => {
       );
     };
 
-    const renderSQLExplain = () => {
+    const renderSqlCostChart = () => {
+      return (
+        <ExecPlanCostChart
+          sqlExecPlanCostDataSource={sqlExecPlanCostDataSource}
+          getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
+          getSqlExecPlanCostDataSourceLoading={
+            getSqlExecPlanCostDataSourceLoading
+          }
+          setHistoryExecPlan={setHistoryExecPlan}
+          getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
+        />
+      );
+    };
+
+    const renderHistoryExecPlan = () => {
+      if (!historyExecPlan) {
+        return;
+      }
       return (
         <>
-          <h3 className="header-title">
-            {t('sqlQuery.executePlan.sqlExplain')}
-          </h3>
+          <Space>
+            <Space className="header-title">
+              {t('sqlQuery.executePlan.historyExecPlan')}
+              <Typography.Text type="secondary">
+                {historyExecPlan?.x}
+              </Typography.Text>
+            </Space>
+          </Space>
           <EmptyBox
             if={!err_message}
             defaultNode={<BasicResult status="error" title={err_message} />}
@@ -48,6 +87,43 @@ const useSQLExecPlan = () => {
             <BasicTable
               columns={tableColumnFactory(explain?.head ?? [], {
                 customRender: (v) => v || '-'
+              })}
+              dataSource={historyExecPlan.info}
+              pagination={false}
+            />
+          </EmptyBox>
+        </>
+      );
+    };
+
+    const renderSQLExecPlan = () => {
+      return (
+        <>
+          <Space className="header-title">
+            {t('sqlQuery.executePlan.sqlExplain')}
+            <Typography.Text type="secondary">
+              {formatTime(new Date())}
+            </Typography.Text>
+          </Space>
+          <EmptyBox
+            if={!err_message}
+            defaultNode={<BasicResult status="error" title={err_message} />}
+          >
+            <BasicTable
+              columns={tableColumnFactory(explain?.head ?? [], {
+                customRender: (v, record, index, fieldName) => {
+                  const historyRecord = historyExecPlan?.info?.[index];
+                  return (
+                    <span
+                      className={classNames({
+                        'diff-highlight':
+                          historyRecord && historyRecord[fieldName] !== v
+                      })}
+                    >
+                      {v || '-'}
+                    </span>
+                  );
+                }
               })}
               dataSource={explain?.rows ?? []}
               pagination={false}
@@ -101,14 +177,20 @@ const useSQLExecPlan = () => {
     return (
       <Space direction="vertical" className="full-width-element" size={0}>
         {renderSQL()}
-        {renderSQLExplain()}
+        <EmptyBox if={showExecPlanCostChart}>
+          {renderSqlCostChart()}
+          {renderHistoryExecPlan()}
+        </EmptyBox>
+        {renderSQLExecPlan()}
         {!err_message && renderPerformanceStatistics()}
       </Space>
     );
   };
 
   return {
-    generateSQLExecPlanContent
+    generateSQLExecPlanContent,
+    historyExecPlan,
+    setHistoryExecPlan
   };
 };
 

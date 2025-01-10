@@ -29,7 +29,8 @@ import {
   IGetSqlManageRuleTipsResp,
   ISqlManageCodingReq,
   IPostSqlManageCodingResp,
-  IGetSqlManageSqlAnalysisResp
+  IGetSqlManageSqlAnalysisResp,
+  ISqlManageAnalysisChartResp
 } from '../common.d';
 
 export interface IGetGlobalSqlManageListParams {
@@ -159,6 +160,21 @@ export interface IGetSqlManageSqlAnalysisV1Params {
 
 export interface IGetSqlManageSqlAnalysisV1Return
   extends IGetSqlManageSqlAnalysisResp {}
+
+export interface IGetSqlManageSqlAnalysisChartV1Params {
+  project_name: string;
+
+  sql_manage_id: string;
+
+  start_time: string;
+
+  end_time: string;
+
+  metric_name: string;
+}
+
+export interface IGetSqlManageSqlAnalysisChartV1Return
+  extends ISqlManageAnalysisChartResp {}
 
 export interface IGetSqlManageListV2Params {
   project_name: string;

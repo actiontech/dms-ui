@@ -88,6 +88,20 @@ const RingProgressWithCustomRenderCalled = (options) => (props) => {
   return <div data-custom-params={params} />;
 };
 
+const LineWithCustomRenderCalled = (options) => (props) => {
+  const clonePropsData = cloneDeep(props);
+
+  const tooltipCustomContent = clonePropsData?.tooltip?.customContent?.(
+    ...(options?.tooltip?.customContent?.(props) ?? [])
+  );
+
+  const params = JSON.stringify(clonePropsData);
+  if (tooltipCustomContent) {
+    return <div data-custom-params={params}>{tooltipCustomContent}</div>;
+  }
+  return <div data-custom-params={params} />;
+};
+
 export {
   Line,
   Pie,
@@ -103,7 +117,8 @@ export {
   PieWithCustomRenderCalled,
   BarWithCustomRenderCalled,
   AreaWithCustomRenderCalled,
-  RingProgressWithCustomRenderCalled
+  RingProgressWithCustomRenderCalled,
+  LineWithCustomRenderCalled
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
