@@ -36,5 +36,6 @@ export default {
   executionOrderExplanation: 'SQL执行顺序解释',
   viewExecuteOrderExplanation: '查看SQL执行顺序解释',
   originalSql: '原始SQL',
-  rewrittenSql: '重写后SQL'
+  rewrittenSql: '重写后SQL',
+  updateRewrittenResult: '更新重写结果'
 };
