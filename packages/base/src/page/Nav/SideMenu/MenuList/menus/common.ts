@@ -1,23 +1,21 @@
 import {
   CustomMenuItemType,
-  GenerateMenuItemType,
-  MenuStructTreeKey,
-  MenuStructTreeType
+  MenuItemTranslatedConfig,
+  MenuTreeKey,
+  MenuTreeTranslated
 } from './index.type';
 
 export const SIDE_MENU_DATA_PLACEHOLDER_KEY = 'projectID';
 
 export const genMenuItemsWithMenuStructTree = (
-  projectID: string,
-  allMenuItems: GenerateMenuItemType[],
-  menuStructTree: MenuStructTreeType
+  allMenuItems: MenuItemTranslatedConfig[],
+  menuStructTree: MenuTreeTranslated[]
 ): CustomMenuItemType[] => {
-  const getMenuItemWithKey = (key: MenuStructTreeKey): CustomMenuItemType => {
+  const getMenuItemWithKey = (key: MenuTreeKey): CustomMenuItemType => {
     return (
-      allMenuItems.find((item) => {
-        const menu = item(projectID);
+      allMenuItems.find((menu) => {
         return menu?.structKey === key;
-      })?.(projectID) ?? null
+      }) ?? null
     );
   };
 
@@ -27,7 +25,7 @@ export const genMenuItemsWithMenuStructTree = (
     }
 
     if (item.type === 'group') {
-      const children = item.group.map(getMenuItemWithKey);
+      const children = item.groups.map(getMenuItemWithKey);
       if (children.every((v) => v === null)) {
         return null;
       }
