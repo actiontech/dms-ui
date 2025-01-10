@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import App, { Wrapper } from './App';
-import { act, screen } from '@testing-library/react';
+import { act, cleanup, screen } from '@testing-library/react';
 import mockDMSGlobalApi from './testUtils/mockApi/global';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
@@ -22,6 +22,9 @@ import baseSystem from './testUtils/mockApi/system';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { compressToBase64 } from 'lz-string';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/routePaths';
+import { SystemRole } from '@actiontech/shared/lib/enum';
+import { AuthRouterConfig } from './router/router';
+import { cloneDeep } from 'lodash';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -252,5 +255,26 @@ describe('App', () => {
     superRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(0);
+  });
+
+  it('verify route permission should not modify the route datasource', async () => {
+    const routerConfigBackup = cloneDeep(AuthRouterConfig);
+    superRender(<App />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(AuthRouterConfig).toEqual(routerConfigBackup);
+
+    cleanup();
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false,
+        [SystemRole.createProject]: false
+      }
+    });
+    superRender(<App />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(AuthRouterConfig).toEqual(routerConfigBackup);
   });
 });
