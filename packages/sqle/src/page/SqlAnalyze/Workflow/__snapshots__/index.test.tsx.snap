@@ -81,7 +81,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-nzcwff"
+              class="css-ooqjkw"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
@@ -117,12 +117,30 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
+                />
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
                 >
-                  <h3
-                    class="header-title"
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center header-title full-width-element"
                   >
-                    执行计划
-                  </h3>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      当前执行计划
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      >
+                        2025-01-09 12:00:00
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div
                   class="ant-space-item"
@@ -366,7 +384,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-nzcwff"
+              class="css-ooqjkw"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
@@ -444,12 +462,30 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
+                />
+                <div
+                  class="ant-space-item"
+                  style="margin-bottom: 0px;"
                 >
-                  <h3
-                    class="header-title"
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center header-title full-width-element"
                   >
-                    执行计划
-                  </h3>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      当前执行计划
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      >
+                        2025-01-09 12:00:00
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div
                   class="ant-space-item"
@@ -680,62 +716,110 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      1
+                                      <span
+                                        class=""
+                                      >
+                                        1
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      SIMPLE
+                                      <span
+                                        class=""
+                                      >
+                                        SIMPLE
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      tasks
+                                      <span
+                                        class=""
+                                      >
+                                        tasks
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      -
+                                      <span
+                                        class=""
+                                      >
+                                        -
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      ALL
+                                      <span
+                                        class=""
+                                      >
+                                        ALL
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      -
+                                      <span
+                                        class=""
+                                      >
+                                        -
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      -
+                                      <span
+                                        class=""
+                                      >
+                                        -
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      -
+                                      <span
+                                        class=""
+                                      >
+                                        -
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      -
+                                      <span
+                                        class=""
+                                      >
+                                        -
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      1
+                                      <span
+                                        class=""
+                                      >
+                                        1
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      100.00
+                                      <span
+                                        class=""
+                                      >
+                                        100.00
+                                      </span>
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      -
+                                      <span
+                                        class=""
+                                      >
+                                        -
+                                      </span>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -6516,7 +6600,7 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 3`] = `
             class="tab-cont-wrapper"
           >
             <section
-              class="css-nzcwff"
+              class="css-ooqjkw"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
