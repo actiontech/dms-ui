@@ -1,5 +1,4 @@
 import { AxiosResponse } from 'axios';
-import moment from 'moment';
 import {
   cleanEmptyParams,
   emailValidate,
@@ -19,6 +18,7 @@ import {
 import { act } from '@testing-library/react';
 import 'blob-polyfill';
 import { MIMETypeEnum } from '../../enum';
+import dayjs from 'dayjs';
 
 describe('utils/Common', () => {
   test('should check params is a email address', () => {
@@ -54,8 +54,8 @@ describe('utils/Common', () => {
     expect(formatTime(undefined, '--')).toBe('--');
   });
 
-  test('should format a time from moment to YYYY-MM-DDTHH:mm:ssZ', () => {
-    expect(translateTimeForRequest(moment('2021-06-09 08:11:52'))).toBe(
+  test('should format a time from dayjs to YYYY-MM-DDTHH:mm:ssZ', () => {
+    expect(translateTimeForRequest(dayjs('2021-06-09 08:11:52'))).toBe(
       `2021-06-09T08:11:52+08:00`
     );
     expect(translateTimeForRequest(undefined)).toBe(undefined);
