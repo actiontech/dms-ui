@@ -3,10 +3,14 @@ import { superRender } from '../../../../testUtils/customRender';
 import RewrittenSuggestionDetails from '../../components/RewrittenSuggestionDetails';
 import {
   SqlRewrittenMockDataNoDDL,
-  SqlRewrittenMockDataUseDDL
+  SqlRewrittenMockDataUseDDL,
+  SqlRewrittenMockDataWithNotRewriter
 } from '../../../../testUtils/mockApi/task/data';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import RewrittenSuggestionItem from '../../components/RewrittenSuggestionDetails/RewrittenSuggestionItem';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -134,8 +138,10 @@ LIMIT 1000 OFFSET 500;
 
       const ruleItem = screen.getByText(mockDataSource.rule_name);
       fireEvent.click(ruleItem);
-
-      const copyButton = screen.getByText('复 制');
+      expect(
+        screen.getByText('复制重写后SQL').closest('button')
+      ).not.toHaveAttribute('hidden');
+      const copyButton = screen.getByText('复制重写后SQL');
       fireEvent.click(copyButton);
 
       expect(mockCopyTextByTextareaSpy).toHaveBeenCalledWith(
@@ -152,6 +158,8 @@ LIMIT 1000 OFFSET 500;
       );
       const ruleItem = screen.getByText(mockUseDDLDataSource.rule_name);
       fireEvent.click(ruleItem);
+
+      expect(screen.getByText('查看差异')).not.toHaveAttribute('hidden');
 
       const diffToggle = screen.getByText('查看差异');
       fireEvent.click(diffToggle);
@@ -174,6 +182,33 @@ LIMIT 1000 OFFSET 500;
         'href',
         `/sqle/project/700300/exec-workflow/${mockProps.taskID}/${mockProps.sqlNumber}/analyze`
       );
+    });
+
+    it('should not render SQL difference related components when rewrittenSQL is equal originalSQL', () => {
+      const dataSource = SqlRewrittenMockDataWithNotRewriter.suggestions![1];
+      superRender(
+        <RewrittenSuggestionItem
+          {...mockProps}
+          originalSql={dataSource.rewritten_sql!}
+          dataSource={dataSource}
+        />
+      );
+
+      const ruleItem = screen.getByText(dataSource.rule_name!);
+      fireEvent.click(ruleItem);
+
+      expect(
+        screen.getByText('复制重写后SQL').closest('button')
+      ).toHaveAttribute('hidden');
+      expect(screen.getByText('查看差异')).toHaveAttribute('hidden');
+      expect(
+        queryBySelector(
+          '.actiontech-diff-sql-view-only-editor-renderer-wrapper'
+        )
+      ).not.toBeInTheDocument();
+      expect(
+        queryBySelector('.actiontech-sql-view-only-editor-renderer-wrapper')
+      ).not.toBeInTheDocument();
     });
   });
 });
