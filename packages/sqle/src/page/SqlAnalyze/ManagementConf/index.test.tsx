@@ -14,6 +14,8 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 jest.mock('react-router', () => {
   return {
@@ -30,7 +32,8 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
     mockUseCurrentProject();
     useParamsMock.mockReturnValue({
       instanceAuditPlanId: '1',
@@ -43,6 +46,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
+    MockDate.reset();
   });
 
   const mockGetAnalyzeData = () => {
