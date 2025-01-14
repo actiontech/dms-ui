@@ -31,7 +31,7 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInputNumber min={0} max={5} />
+        <BasicInputNumber integer min={0} max={5} />
       </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
@@ -43,7 +43,7 @@ const ConfigField = () => {
           }
         ]}
       >
-        <BasicInputNumber min={1} max={5} />
+        <BasicInputNumber integer min={1} max={5} />
       </FormItemLabel>
       <FormItemLabel label="token" name="token">
         <BasicInput
