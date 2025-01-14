@@ -7,6 +7,9 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IGetDatabaseDriverLogosParams,
+  IGetDatabaseDriverLogosReturn,
+  IGetDatabaseDriverOptionsReturn,
   IGetInstanceTipListV1Params,
   IGetInstanceTipListV1Return,
   IBatchCheckInstanceIsConnectableByNameParams,
@@ -26,6 +29,26 @@ import {
 } from './index.d';
 
 class InstanceService extends ServiceBase {
+  public GetDatabaseDriverLogos(
+    params: IGetDatabaseDriverLogosParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetDatabaseDriverLogosReturn>(
+      '/v1/database_driver_logos',
+      paramsData,
+      options
+    );
+  }
+
+  public getDatabaseDriverOptions(options?: AxiosRequestConfig) {
+    return this.get<IGetDatabaseDriverOptionsReturn>(
+      '/v1/database_driver_options',
+      undefined,
+      options
+    );
+  }
+
   public getInstanceTipListV1(
     params: IGetInstanceTipListV1Params,
     options?: AxiosRequestConfig
