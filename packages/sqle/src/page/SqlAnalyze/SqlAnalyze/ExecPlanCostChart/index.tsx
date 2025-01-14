@@ -1,5 +1,4 @@
 import { Space, Button, Spin } from 'antd';
-import { useTranslation } from 'react-i18next';
 import { BasicSegmented, BasicRangePicker } from '@actiontech/shared';
 import { Line, LineConfig, Tooltip } from '@ant-design/plots';
 import { useChangeTheme } from '@actiontech/shared/lib/hooks';
@@ -13,9 +12,9 @@ import { useState, useMemo } from 'react';
 import { IChartPoint } from '@actiontech/shared/lib/api/sqle/service/common';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
-import i18n from 'i18next';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { t } from '../../../../locale/index';
 
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
@@ -39,14 +38,14 @@ const renderTooltipCustomContent = (
       }}
       listData={[
         {
-          label: i18n.t('sqlQuery.executePlan.costValue') as string,
+          label: t('sqlQuery.executePlan.costValue'),
           value: data.y
         },
         {
           label: '',
           value: (
             <Button size="small" onClick={() => setHistoryExecPlan(data)}>
-              {i18n.t('sqlQuery.executePlan.compareDifference') as string}
+              {t('sqlQuery.executePlan.compareDifference')}
             </Button>
           )
         }
@@ -71,8 +70,6 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
   setHistoryExecPlan,
   getSqlExecPlanCostDataSourceError
 }) => {
-  const { t } = useTranslation();
-
   const { currentTheme } = useChangeTheme();
 
   const { sharedTheme } = useThemeStyleData();
