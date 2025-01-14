@@ -6,7 +6,8 @@ import {
 import {
   ruleTipsData,
   sqlManageListData,
-  mockGlobalSqlManageListData
+  mockGlobalSqlManageListData,
+  mockSqlManageSqlAnalysisChartData
 } from './data';
 
 class MockSqlManageApi implements MockSpyApy {
@@ -18,6 +19,7 @@ class MockSqlManageApi implements MockSpyApy {
     this.getGlobalSqlManageList();
     this.getGlobalSqlManageStatistics();
     this.sendSqlManage();
+    this.getSqlManageSqlAnalysisChart();
   }
 
   public getSqlManageRuleTips() {
@@ -81,6 +83,14 @@ class MockSqlManageApi implements MockSpyApy {
   public sendSqlManage() {
     const spy = jest.spyOn(SqlManage, 'SendSqlManage');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public getSqlManageSqlAnalysisChart() {
+    const spy = jest.spyOn(SqlManage, 'GetSqlManageSqlAnalysisChartV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockSqlManageSqlAnalysisChartData })
+    );
     return spy;
   }
 }

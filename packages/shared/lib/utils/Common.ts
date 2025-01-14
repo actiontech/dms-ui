@@ -2,6 +2,7 @@ import { AxiosResponse } from 'axios';
 import moment from 'moment';
 import i18n from 'i18next';
 import { MIMETypeEnum, ResponseBlobJsonType } from '../enum';
+import { Dayjs } from 'dayjs';
 
 export const emailValidate = (email: string): boolean => {
   if (!email || typeof email !== 'string') {
@@ -50,13 +51,11 @@ export const formatTime = (
 };
 
 export function translateTimeForRequest(time: undefined): undefined;
-export function translateTimeForRequest(time: moment.Moment): string;
+export function translateTimeForRequest(time: Dayjs): string;
 export function translateTimeForRequest(
-  time: moment.Moment | undefined
+  time: Dayjs | undefined
 ): string | undefined;
-export function translateTimeForRequest(
-  time?: moment.Moment
-): string | undefined {
+export function translateTimeForRequest(time?: Dayjs): string | undefined {
   if (!time) {
     return;
   }
