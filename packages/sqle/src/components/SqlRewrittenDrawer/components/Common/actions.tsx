@@ -3,7 +3,13 @@ import { ToggleButtonStyleWrapper } from '@actiontech/shared/lib/styleWrapper/el
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-export const CopySqlAction = ({ sql }: { sql: string }) => {
+export const CopySqlAction = ({
+  sql,
+  hidden = false
+}: {
+  sql: string;
+  hidden?: boolean;
+}) => {
   const { t } = useTranslation();
   const [messageApi, messageContextHolder] = message.useMessage();
 
@@ -14,21 +20,26 @@ export const CopySqlAction = ({ sql }: { sql: string }) => {
   return (
     <>
       {messageContextHolder}
-      <BasicButton onClick={handleCopySql}>{t('sqlRewrite.copy')}</BasicButton>
+      <BasicButton hidden={hidden} onClick={handleCopySql}>
+        {t('sqlRewrite.copy')}
+      </BasicButton>
     </>
   );
 };
 
 export const ShowSqlDifferenceAction = ({
   showSqlDifference,
-  toggleShowSqlDifference
+  toggleShowSqlDifference,
+  hidden = false
 }: {
+  hidden?: boolean;
   showSqlDifference: boolean;
   toggleShowSqlDifference: () => void;
 }) => {
   const { t } = useTranslation();
   return (
     <ToggleButtonStyleWrapper
+      hidden={hidden}
       className="toggle-button-wrapper"
       onClick={toggleShowSqlDifference}
       active={showSqlDifference}
