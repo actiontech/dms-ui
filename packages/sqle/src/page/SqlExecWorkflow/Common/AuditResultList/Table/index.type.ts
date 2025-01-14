@@ -19,7 +19,7 @@ export type AuditResultDrawerProps = {
   auditResultRecord?: IAuditTaskSQLResV2;
   dbType?: string;
   clickAnalyze: (sqlNum?: number) => void;
-  handleClickSqlRewritten: (record: IAuditTaskSQLResV2) => void;
+  handleClickSqlRewritten?: (record: IAuditTaskSQLResV2) => void;
 };
 
 export type SwitchSqlBackupStrategyModalProps = {

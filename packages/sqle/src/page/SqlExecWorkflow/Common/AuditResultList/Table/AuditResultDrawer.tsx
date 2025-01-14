@@ -43,15 +43,17 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       loading={loading}
       extra={
         <Space>
-          <BasicButton
-            icon={<RobotOutlined height={18} width={18} />}
-            onClick={() => {
-              handleClickSqlRewritten(auditResultRecord!);
-              onClose();
-            }}
-          >
-            {t('sqlRewrite.actionName')}
-          </BasicButton>
+          {handleClickSqlRewritten && (
+            <BasicButton
+              icon={<RobotOutlined height={18} width={18} />}
+              onClick={() => {
+                handleClickSqlRewritten(auditResultRecord!);
+                onClose();
+              }}
+            >
+              {t('sqlRewrite.actionName')}
+            </BasicButton>
+          )}
           <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
             {t('execWorkflow.audit.table.analyze')}
           </BasicButton>
