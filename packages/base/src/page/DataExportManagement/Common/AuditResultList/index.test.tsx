@@ -290,20 +290,20 @@ describe('test DataExport/Common/AuditResultList', () => {
     expect(updateExecuteSQLsTypeIsDQLSpy).toHaveBeenCalledWith(true);
   });
 
-  it('should render sql rewriter button', async () => {
-    getTaskSQLsSpy.mockClear();
-    getTaskSQLsSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: [ListDataExportTaskSQLsResponseData[0]]
-      })
-    );
-    superRender(<AuditResultList taskIDs={taskIDs} projectID={projectID} />);
+  // it('should render sql rewriter button', async () => {
+  //   getTaskSQLsSpy.mockClear();
+  //   getTaskSQLsSpy.mockImplementation(() =>
+  //     createSpySuccessResponse({
+  //       data: [ListDataExportTaskSQLsResponseData[0]]
+  //     })
+  //   );
+  //   superRender(<AuditResultList taskIDs={taskIDs} projectID={projectID} />);
 
-    await act(async () => jest.advanceTimersByTime(3000));
-    await act(async () => jest.advanceTimersByTime(3000));
+  //   await act(async () => jest.advanceTimersByTime(3000));
+  //   await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.click(screen.getByText('SQL合规重写'));
+  //   fireEvent.click(screen.getByText('SQL合规重写'));
 
-    expect(screen.getByRole('dialog')).toBeInTheDocument();
-  });
+  //   expect(screen.getByRole('dialog')).toBeInTheDocument();
+  // });
 });

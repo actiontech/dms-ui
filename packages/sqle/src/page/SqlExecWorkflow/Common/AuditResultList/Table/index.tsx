@@ -237,18 +237,15 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         auditResultRecord={currentAuditResultRecord}
         dbType={dbType}
         clickAnalyze={handleClickAnalyze}
+        handleClickSqlRewritten={handleClickSqlRewritten}
       />
       <AddWhitelistModal onCreated={refresh} />
-
-      {originSqlInfo && (
-        <SqlRewrittenDrawer
-          taskID={taskID ?? ''}
-          open={sqlRewrittenOpen}
-          onClose={handleCloseSqlRewrittenDrawer}
-          originSqlInfo={originSqlInfo}
-        />
-      )}
-
+      <SqlRewrittenDrawer
+        taskID={taskID ?? ''}
+        open={sqlRewrittenOpen}
+        onClose={handleCloseSqlRewrittenDrawer}
+        originSqlInfo={originSqlInfo}
+      />
       {/* #if [ee] */}
       <EmptyBox if={allowSwitchBackupPolicy}>
         <SwitchSqlBackupStrategyModal
