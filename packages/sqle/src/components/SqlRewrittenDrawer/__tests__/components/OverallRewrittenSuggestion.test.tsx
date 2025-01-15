@@ -74,7 +74,7 @@ describe('OverallRewrittenSuggestion', () => {
     superRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     expect(screen.getByText('SQL重写结果')).toBeInTheDocument();
-    expect(screen.getByText('复 制')).toBeInTheDocument();
+    expect(screen.getByText('复制重写后SQL')).toBeInTheDocument();
     expect(screen.getByText('查看差异')).toBeInTheDocument();
     expect(
       queryBySelector('.actiontech-diff-sql-view-only-editor-renderer-wrapper')
@@ -100,11 +100,11 @@ describe('OverallRewrittenSuggestion', () => {
       <OverallRewrittenSuggestion {...mockProps} />
     );
 
-    expect(screen.queryByText('SQL执行顺序解释')).not.toBeInTheDocument();
+    expect(screen.queryByText('SQL执行解释')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByText('查看SQL执行顺序解释'));
+    fireEvent.click(screen.getByText('查看SQL执行解释'));
 
-    expect(screen.queryByText('SQL执行顺序解释')).toBeInTheDocument();
+    expect(screen.queryByText('SQL执行解释')).toBeInTheDocument();
 
     expect(container).toMatchSnapshot();
   });
@@ -126,7 +126,7 @@ describe('OverallRewrittenSuggestion', () => {
 
     superRender(<OverallRewrittenSuggestion {...mockProps} />);
 
-    const copyButton = screen.getByText('复 制');
+    const copyButton = screen.getByText('复制重写后SQL');
     fireEvent.click(copyButton);
 
     expect(mockCopyTextByTextarea).toHaveBeenCalledWith(mockProps.rewrittenSql);
@@ -145,7 +145,7 @@ describe('OverallRewrittenSuggestion', () => {
       />
     );
 
-    const copyButtons = screen.getAllByText('复 制');
+    const copyButtons = screen.getAllByText('复制重写后SQL');
     expect(copyButtons).toHaveLength(2);
     fireEvent.click(copyButtons[0]);
 
