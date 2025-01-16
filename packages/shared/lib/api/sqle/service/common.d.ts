@@ -4,6 +4,8 @@ import {
   AuditPlanParamResV1TypeEnum,
   AuditPlanReportResV1AuditLevelEnum,
   AuditPlanSQLHeadV1TypeEnum,
+  AuditPlanTypeResBaseActiveStatusEnum,
+  AuditPlanTypeResBaseLastCollectionStatusEnum,
   AuditPlanTypesV1InstanceTypeEnum,
   AuditResDataV1AuditLevelEnum,
   AuditTaskResV1AuditLevelEnum,
@@ -32,6 +34,7 @@ import {
   HighPriorityConditionReqOperatorEnum,
   HighPriorityConditionResV1TypeEnum,
   InstanceAuditPlanInfoActiveStatusEnum,
+  InstanceAuditPlanInfoLastCollectionStatusEnum,
   InstanceAuditPlanResV1ActiveStatusEnum,
   InstanceTipResV1SupportedBackupStrategyEnum,
   ModuleRedDotModuleNameEnum,
@@ -120,6 +123,12 @@ export interface IRuleCategoryStatistic {
   count?: number;
 
   tag?: string;
+}
+
+export interface IAbnormalAuditPlanInstance {
+  instance_audit_plan_id?: number;
+
+  instance_name?: string;
 }
 
 export interface IAffectRows {
@@ -301,9 +310,13 @@ export interface IAuditPlanSQLResV1 {
 }
 
 export interface IAuditPlanTypeResBase {
+  active_status?: AuditPlanTypeResBaseActiveStatusEnum;
+
   audit_plan_id?: number;
 
   desc?: string;
+
+  last_collection_status?: AuditPlanTypeResBaseLastCollectionStatusEnum;
 
   token?: string;
 
@@ -1070,6 +1083,14 @@ export interface IGenModifylSQLReqV1 {
   comparison_instance_id?: string;
 
   database_schema_objects?: IDatabaseSchemaObject[];
+}
+
+export interface IGetAbnormalAuditPlanInstancesResp {
+  code?: number;
+
+  data?: IAbnormalAuditPlanInstance[];
+
+  message?: string;
 }
 
 export interface IGetAuditPlanAnalysisDataResV1 {
@@ -2119,6 +2140,8 @@ export interface IInstanceAuditPlanInfo {
 
   id?: number;
 
+  last_collection_status?: InstanceAuditPlanInfoLastCollectionStatusEnum;
+
   last_collection_time?: string;
 
   total_sql_nums?: number;
@@ -2852,6 +2875,10 @@ export interface ISqlAnalysis {
 
 export interface ISqlAnalysisChart {
   points?: IChartPoint[];
+
+  x_info?: string;
+
+  y_info?: string;
 }
 
 export interface ISqlAnalysisResDataV1 {
@@ -3990,6 +4017,8 @@ export interface IExecResultCount {
 
 export interface IFullSyncAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
+
+  error_message?: string;
 }
 
 export interface IGetAuditFileExecStatisticRes {
@@ -4178,6 +4207,8 @@ export interface IUpdateWorkflowScheduleReqV2 {
 
 export interface IUploadInstanceAuditPlanSQLsReqV2 {
   audit_plan_sql_list?: IAuditPlanSQLReqV2[];
+
+  error_message?: string;
 }
 
 export interface IWorkflowRecordResV2 {
