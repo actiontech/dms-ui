@@ -1,4 +1,5 @@
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IAbnormalAuditPlanInstance } from '@actiontech/shared/lib/api/sqle/service/common.d';
 
 export const ruleTipsData = [
   {
@@ -319,3 +320,15 @@ export const mockSqlManageSqlAnalysisChartData = {
     }
   ]
 };
+
+export const mockAbnormalInstanceAuditPlansData: IAbnormalAuditPlanInstance[] =
+  [
+    {
+      instance_audit_plan_id: 1,
+      instance_name: 'mysql-1'
+    },
+    {
+      instance_audit_plan_id: 2,
+      instance_name: 'mysql-2'
+    }
+  ];
