@@ -1,20 +1,28 @@
-import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   SharedStepDetails,
   SqlAuditInfoFormFields,
   WorkflowBaseInfoFormFields
 } from '../../index.type';
+import { SubmitWorkflowButtonProps } from '../../../Common/SubmitWorkflowButton/index.type';
+import { AuditResultListProps } from '../../../Common/AuditResultList/index.type';
 
-export type AuditResultStepProps = {
-  tasks: IAuditTaskResV1[];
-  updateTaskRecordCount?: (taskId: string, sqlNumber: number) => void;
+export interface AuditResultStepProps
+  extends Pick<
+      SubmitWorkflowButtonProps,
+      | 'isConfirmationRequiredForSubmission'
+      | 'submitWorkflowConfirmationMessage'
+      | 'hasExceptionAuditRule'
+    >,
+    SharedStepDetails,
+    Pick<
+      AuditResultListProps,
+      'updateTaskAuditRuleExceptionStatus' | 'updateTaskRecordCount' | 'tasks'
+    > {
   baseFormValues?: WorkflowBaseInfoFormFields;
   sqlAuditInfoFormValues?: SqlAuditInfoFormFields;
-  isConfirmationRequiredForSubmission: boolean;
-  submitWorkflowConfirmationMessage: string;
   createAction: () => Promise<void>;
   auditAction: (
     value: SqlAuditInfoFormFields,
     baseInfo?: WorkflowBaseInfoFormFields
   ) => Promise<void>;
-} & SharedStepDetails;
+}

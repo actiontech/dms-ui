@@ -131,7 +131,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer render snap 
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-1lblrgt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
