@@ -1,6 +1,6 @@
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { DatabaseSelectionItemProps } from '../../../index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTip, TypedLink } from '@actiontech/shared';
 import { MinusCircleFilled, ProfileSquareFilled } from '@actiontech/icons';

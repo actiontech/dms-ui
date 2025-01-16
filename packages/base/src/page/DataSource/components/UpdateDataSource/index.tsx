@@ -15,7 +15,7 @@ import DataSourceForm from '../Form';
 import { useForm } from 'antd/es/form/Form';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 

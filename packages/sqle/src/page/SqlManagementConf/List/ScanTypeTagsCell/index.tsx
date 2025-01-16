@@ -6,7 +6,7 @@ import {
   TypedLink
 } from '@actiontech/shared';
 import { IAuditPlanTypeResBase } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space } from 'antd';
 import { ScanTypeTagsCellStyleWrapper } from './style';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

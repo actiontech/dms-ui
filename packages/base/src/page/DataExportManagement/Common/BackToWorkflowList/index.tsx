@@ -1,5 +1,5 @@
 import { BasicButton, TypedLink } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

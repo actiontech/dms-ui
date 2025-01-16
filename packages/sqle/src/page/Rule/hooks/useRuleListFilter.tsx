@@ -4,7 +4,7 @@ import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import { FormInstance, Form } from 'antd';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useRuleFilterForm } from '../../../components/RuleList';
 
 const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {

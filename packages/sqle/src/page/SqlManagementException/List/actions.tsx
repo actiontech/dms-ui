@@ -4,7 +4,7 @@ import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS,
   PermissionControl
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { PlusOutlined } from '@actiontech/icons';
 

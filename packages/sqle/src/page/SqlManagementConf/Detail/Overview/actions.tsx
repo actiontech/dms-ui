@@ -2,7 +2,7 @@ import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../../locale';
 import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 

@@ -6,7 +6,7 @@ import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import {
   PluginAuditListColumns,
   PluginAuditListTableFilterParamType
@@ -34,7 +34,7 @@ import {
 import { ResponseCode } from '../../../data/common';
 import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
 import useWhitelistRedux from '../../Whitelist/hooks/useWhitelistRedux';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 import { PluginAuditListActions } from './actions';
 
 const PluginAuditList = () => {

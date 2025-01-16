@@ -16,7 +16,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { GlobalDashboardListProps } from '../../index.type';
 import { GlobalDashboardPendingWorkflowListColumn } from '../PendingWorkOrder/column';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { paramsSerializer } from '../../utils';
 
 const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({

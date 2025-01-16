@@ -7,7 +7,7 @@ import ProjectTitle from './ProjectTitle';
 import UserMenu from './UserMenu';
 import { CEModeProjectWrapperStyleWrapper } from './style';
 import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import MenuList from './MenuList';
 import { FlagFilled } from '@actiontech/icons';
 import QuickActions from './QuickActions';

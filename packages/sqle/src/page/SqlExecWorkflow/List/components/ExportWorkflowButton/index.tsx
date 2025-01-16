@@ -1,7 +1,7 @@
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { IExportWorkflowV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';

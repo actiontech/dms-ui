@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useBoolean } from 'ahooks';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';

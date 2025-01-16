@@ -2,7 +2,7 @@ import useDataExportDetailReduxManage from '../../hooks/index.redux';
 import useExportDetailAction from '../../hooks/useExportDetailAction';
 import { useMemo } from 'react';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { MessageInstance } from 'antd/es/message/interface';
 import { ActionMeta } from './index.type';
 

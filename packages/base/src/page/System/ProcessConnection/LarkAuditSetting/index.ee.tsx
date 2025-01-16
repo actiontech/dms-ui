@@ -16,7 +16,10 @@ import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IFeishuConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const LarkAuditSettingEEIndex = () => {
   const { t } = useTranslation();

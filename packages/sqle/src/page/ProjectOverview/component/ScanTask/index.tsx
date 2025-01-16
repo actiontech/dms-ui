@@ -6,7 +6,7 @@ import CardWrapper from '../../../../components/CardWrapper';
 import { ScanTaskStyleWrapper } from './style';
 import TaskDetail from './charts/TaskDetail';
 import TaskList from './charts/TaskList';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { defaultItemKey } from './index.data';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';

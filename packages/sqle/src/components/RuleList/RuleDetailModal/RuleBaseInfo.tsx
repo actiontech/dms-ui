@@ -10,7 +10,7 @@ import {
   RuleCategoryDictionary
 } from '../../../hooks/useRuleCategories/index.data';
 import { isEmpty } from 'lodash';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 
 export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;

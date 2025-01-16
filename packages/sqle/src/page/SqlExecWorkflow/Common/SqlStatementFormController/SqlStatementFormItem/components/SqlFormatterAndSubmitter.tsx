@@ -10,7 +10,7 @@ import {
   formatterSQL
 } from '@actiontech/shared/lib/utils/FormatterSQL';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 

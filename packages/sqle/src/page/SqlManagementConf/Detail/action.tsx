@@ -1,6 +1,9 @@
 import { ActionButton } from '@actiontech/shared';
 import { t } from '../../../locale';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 
 type Params = {

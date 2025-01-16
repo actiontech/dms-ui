@@ -12,7 +12,7 @@ import { MinusCircleFilled, PlusCircleFilled } from '@actiontech/icons';
 import { DownTriangleOutlined } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import { useEffect } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import classNames from 'classnames';
 import { VersionDeploymentConfStyleWrapper } from '../style';

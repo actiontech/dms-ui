@@ -4,7 +4,7 @@ import { Form } from 'antd';
 import { BasicSelect } from '@actiontech/shared';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import useUsername from '../../../../../../hooks/useUsername';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAssignmentForm } from './index.type';
 import { FormItemLabelStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/FormItem/style';
 

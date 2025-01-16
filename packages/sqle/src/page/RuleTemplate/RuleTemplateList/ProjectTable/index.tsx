@@ -25,7 +25,7 @@ import {
   useCurrentProject,
   useDbServiceDriver,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { RuleTemplateTableActions } from '../actions';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

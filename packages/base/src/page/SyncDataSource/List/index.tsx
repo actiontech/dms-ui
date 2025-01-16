@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { SyncTaskListActions } from './action';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 
 const SyncTaskList: React.FC = () => {
   const { t } = useTranslation();

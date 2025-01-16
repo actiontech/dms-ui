@@ -14,7 +14,7 @@ import AuditResultDrawer from './AuditResultDrawer';
 import useWhitelistRedux from '../../../../Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from '../../../../Whitelist/Drawer/AddWhitelist';
 import { AuditResultForCreateWorkflowActions } from './actions';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import SwitchSqlBackupStrategyModal from './SwitchSqlBackupStrategyModal';

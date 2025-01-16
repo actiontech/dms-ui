@@ -4,7 +4,7 @@ import { PageHeader } from '@actiontech/shared';
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import {
   VersionManagementTableFilterParamType,
   VersionManagementTableColumns

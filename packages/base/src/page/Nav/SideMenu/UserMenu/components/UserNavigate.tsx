@@ -9,7 +9,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { CustomAvatarStyleWrapper } from '@actiontech/shared/lib/components/CustomAvatar/style';
 import { useState } from 'react';
-import { useUserInfo } from '@actiontech/shared/lib/global';
+import { useUserInfo } from '@actiontech/shared/lib/features';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
 import CompanyNotice from '@actiontech/shared/lib/api/base/service/CompanyNotice';
 import { ResponseCode, SupportLanguage } from '@actiontech/shared/lib/enum';

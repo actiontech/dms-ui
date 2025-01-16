@@ -1,4 +1,4 @@
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import useInitDataWithRequest from './hooks/useInitDataWithRequest';
 import { Spin } from 'antd';

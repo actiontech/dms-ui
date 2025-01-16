@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
 import { UserCenterListEnum } from './index.enum';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { t } from '../../locale';
 import { ModalName } from '../../data/ModalName';

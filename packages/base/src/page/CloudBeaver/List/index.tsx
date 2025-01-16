@@ -14,7 +14,7 @@ import {
   useCurrentProject,
   useCurrentUser,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import {
   CBOperationListFilterParamType,

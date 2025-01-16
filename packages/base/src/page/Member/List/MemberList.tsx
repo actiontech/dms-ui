@@ -12,7 +12,7 @@ import {
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
 import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';

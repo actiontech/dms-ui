@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IListDBServiceTipItem } from '@actiontech/shared/lib/api/base/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';

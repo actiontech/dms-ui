@@ -1,4 +1,4 @@
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
 import { useCallback, useEffect, useState } from 'react';
 import UpdateInfoDrawer from './UpdateInfoDrawer';

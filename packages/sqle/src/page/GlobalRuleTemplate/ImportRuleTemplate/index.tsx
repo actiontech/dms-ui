@@ -20,7 +20,7 @@ import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTemplate/style';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   FormAreaBlockStyleWrapper,
   FormStyleWrapper,

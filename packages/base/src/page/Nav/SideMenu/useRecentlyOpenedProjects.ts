@@ -1,6 +1,6 @@
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { StorageKey } from '@actiontech/shared/lib/enum';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { cloneDeep, remove } from 'lodash';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import EventEmitter from '../../../utils/EventEmitter';

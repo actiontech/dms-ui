@@ -1,7 +1,7 @@
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useDataExportDetailReduxManage from './index.redux';
 import { useRequest } from 'ahooks';
 import { useEffect } from 'react';

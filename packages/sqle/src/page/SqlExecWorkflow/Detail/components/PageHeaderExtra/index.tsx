@@ -5,7 +5,7 @@ import { useBoolean } from 'ahooks';
 import { WorkflowPageHeaderExtraStyleWrapper } from './style';
 import { WorkflowDetailPageHeaderExtraProps } from './index.type';
 import useWorkflowDetailAction from './hooks/useWorkflowDetailAction';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import RejectWorkflowModal from './RejectWorkflowModal';
 import {
   ApproveWorkflowAction,

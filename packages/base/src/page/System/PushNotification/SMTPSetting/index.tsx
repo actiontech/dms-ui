@@ -18,7 +18,10 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const SMTPSetting = () => {
   const { t } = useTranslation();

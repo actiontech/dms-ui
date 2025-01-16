@@ -1,7 +1,7 @@
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';

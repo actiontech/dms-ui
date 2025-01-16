@@ -2,7 +2,7 @@ import { IListUser } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../../locale';
 import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
 

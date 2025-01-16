@@ -12,7 +12,7 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { IMemberFormFields } from '../index.type';
 import MemberForm from './MemberForm';
 import formatMemberRole from '../../Common/formatMemberRole';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BasicButton } from '@actiontech/shared';
 import { MemberDrawerStyledWrapper } from '../../style';
 import { IUpdateMemberParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';

@@ -6,7 +6,7 @@ import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
 import { Space, message, Form } from 'antd';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../../data/EmitterKey';
 import { ModalName } from '../../../../data/ModalName';
 import { IReduxState } from '../../../../store';

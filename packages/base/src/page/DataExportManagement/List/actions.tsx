@@ -3,7 +3,7 @@ import {
   PERMISSIONS,
   ActiontechTableToolbarActionWithPermissions,
   PermissionControl
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { MinusCircleOutlined, PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

@@ -10,7 +10,10 @@ import { ICodingConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { switchFieldName } from './index.data';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import {
   useConfigRender,
   ReadOnlyConfigColumnsType,

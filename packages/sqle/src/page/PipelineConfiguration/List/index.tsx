@@ -7,7 +7,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
 import { useEffect } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { PlusOutlined } from '@actiontech/icons';
 import DefaultPrompts from '../Common/DefaultPrompts';
 import EventEmitter from '../../../utils/EventEmitter';

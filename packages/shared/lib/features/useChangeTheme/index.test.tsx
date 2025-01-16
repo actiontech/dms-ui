@@ -1,6 +1,5 @@
 import { renderHooksWithRedux } from '../../testUtil/customRender';
 import { act } from '@testing-library/react';
-
 import { SupportTheme } from '../../enum';
 import useChangeTheme from '.';
 import { mockUseCurrentUser } from '../../testUtil/mockHook/mockUseCurrentUser';

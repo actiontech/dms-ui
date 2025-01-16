@@ -2,7 +2,7 @@ import { t } from '../../../locale';
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import {
   IListMember,
   IListMemberGroup

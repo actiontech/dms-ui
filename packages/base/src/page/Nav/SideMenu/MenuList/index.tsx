@@ -6,7 +6,7 @@ import {
   genMenuItemsWithMenuStructTree
 } from './menus/common';
 import { useLocation } from 'react-router-dom';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 import {
   CustomMenuItemType,
   GenerateMenuItemI18nConfig,

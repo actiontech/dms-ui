@@ -1,6 +1,6 @@
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';

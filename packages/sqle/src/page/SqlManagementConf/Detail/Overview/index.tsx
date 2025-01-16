@@ -7,7 +7,7 @@ import { ConfDetailOverviewColumns } from './column';
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ConfDetailOverviewProps } from './index.type';
 import { useRequest } from 'ahooks';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';

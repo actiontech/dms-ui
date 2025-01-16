@@ -9,7 +9,7 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { usePermission, useUserInfo } from '@actiontech/shared/lib/global';
+import { usePermission, useUserInfo } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
 import { useCallback, useEffect } from 'react';

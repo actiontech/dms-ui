@@ -18,7 +18,7 @@ import { useEffect } from 'react';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ConfirmMethodFormItemLabelStyleWrapper } from './style';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

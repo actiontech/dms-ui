@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useState, useMemo } from 'react';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import ChartContTitle from '../../../../page/ReportStatistics/EEIndex/component/base/ChartContTitle';

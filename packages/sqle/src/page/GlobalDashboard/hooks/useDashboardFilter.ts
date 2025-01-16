@@ -1,4 +1,4 @@
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useMemo, useEffect, useCallback, useState } from 'react';
 import useInstance from '../../../hooks/useInstance';
 import { Form } from 'antd';

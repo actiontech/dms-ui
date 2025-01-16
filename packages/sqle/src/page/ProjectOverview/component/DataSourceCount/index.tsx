@@ -7,7 +7,7 @@ import { Column, ColumnConfig } from '@ant-design/plots';
 import {
   useChangeTheme,
   useCurrentProject
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';

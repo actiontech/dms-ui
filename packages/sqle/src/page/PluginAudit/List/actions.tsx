@@ -2,7 +2,7 @@ import { t } from '../../../locale';
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ISqlDEVRecord } from '@actiontech/shared/lib/api/sqle/service/common';
 
 export const PluginAuditListActions: (

@@ -1,5 +1,8 @@
 import { ActionButton } from '@actiontech/shared';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 import { compressToEncodedURIComponent } from 'lz-string';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';

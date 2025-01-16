@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import BackToList from '../Common/BackToList';
 import VersionForm from '../Common/VersionForm';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';
 import { useState } from 'react';

@@ -11,7 +11,7 @@ import {
   updateClonedExecWorkflowSqlAuditInfo,
   updateClonedExecWorkflowBaseInfo
 } from '../../../../store/sqlExecWorkflow';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useCallback } from 'react';
 import { SqlStatementFields } from '../../Create/index.type';
 import task from '@actiontech/shared/lib/api/sqle/service/task';

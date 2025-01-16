@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import ProjectSelectorModal from './ProjectSelectorModal';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useMemo, useState } from 'react';
 import { SelectProps } from 'antd';
 import { ProjectSelectorLabelStyleWrapper } from '../../../Nav/SideMenu/ProjectSelector/style';

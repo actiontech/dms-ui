@@ -14,7 +14,7 @@ import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '../../../../locale/index';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {

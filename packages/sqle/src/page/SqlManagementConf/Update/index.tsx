@@ -1,4 +1,4 @@
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';

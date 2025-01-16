@@ -4,7 +4,7 @@ import useStaticStatus from './useStaticStatus';
 import {
   useCurrentProject,
   useProjectBusinessTips
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useInstance from '../../../../../hooks/useInstance';
 import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';

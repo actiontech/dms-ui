@@ -8,7 +8,7 @@ import {
   ISQLExplain,
   ITableMetas
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import SqlAnalyze from '../SqlAnalyze';
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
 import { useMemo } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { Spin } from 'antd';
 import {

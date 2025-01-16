@@ -20,7 +20,7 @@ import {
   FileVersionOutlined,
   ComparisonOutlined
 } from '@actiontech/icons';
-import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

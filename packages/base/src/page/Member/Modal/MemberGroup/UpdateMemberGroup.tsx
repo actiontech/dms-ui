@@ -11,7 +11,7 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { IMemberGroupFormFields } from '../index.type';
 import MemberGroupForm from './MemberGroupForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import formatMemberRole from '../../Common/formatMemberRole';
 import { IUpdateMemberGroupParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';
 import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';

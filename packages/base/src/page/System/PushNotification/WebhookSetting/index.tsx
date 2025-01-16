@@ -15,7 +15,10 @@ import Configuration from '@actiontech/shared/lib/api/base/service/Configuration
 import { IWebHookConfigurationData } from '@actiontech/shared/lib/api/base/service/common';
 import { WebhookFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { TypedLink } from '@actiontech/shared';
 
 const WebHook: React.FC = () => {

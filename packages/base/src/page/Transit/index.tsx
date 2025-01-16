@@ -5,7 +5,7 @@ import {
   useTypedNavigate,
   useTypedQuery
 } from '@actiontech/shared';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { TRANSIT_FROM_CONSTANT } from '@actiontech/shared/lib/data/common';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';

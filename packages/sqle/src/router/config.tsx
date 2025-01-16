@@ -3,7 +3,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
-import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Home = React.lazy(

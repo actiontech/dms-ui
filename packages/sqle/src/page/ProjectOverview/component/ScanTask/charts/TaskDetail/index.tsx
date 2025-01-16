@@ -10,7 +10,7 @@ import {
   renderTooltipCustomContent,
   renderTooltipFormatter
 } from './index.data';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 export interface ITaskDetail extends typeChartChildrenProps {
   dataSource: IDBTypeAuditPlan;

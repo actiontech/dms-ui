@@ -14,7 +14,7 @@ import AuditResultStep from './components/AuditResultStep';
 import { usePrompt } from '@actiontech/shared/lib/hooks';
 import { useTranslation } from 'react-i18next';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   ICreateWorkflowV2Params,

@@ -9,7 +9,7 @@ import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import {
   useChangeTheme,
   useCurrentProject
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { PopoverTooltipStyleWrapper } from '../../../../components/ChartCom/ChartTooltip/style';
