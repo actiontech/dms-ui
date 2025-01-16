@@ -1565,6 +1565,23 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  title="custom_template"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    custom_template
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
                   title="custom_template_b"
                 >
                   <div
@@ -5732,6 +5749,23 @@ exports[`sqle/SqlAudit/Create select static audit type 2`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
+                  title="custom_template"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    custom_template
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
                   title="custom_template_b"
                 >
                   <div
@@ -7213,6 +7247,23 @@ exports[`sqle/SqlAudit/Create upload sql file 1`] = `
                     class="ant-select-item-option-content"
                   >
                     default_MySQL1
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="custom_template"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    custom_template
                   </div>
                   <span
                     aria-hidden="true"
@@ -10419,6 +10470,23 @@ exports[`sqle/SqlAudit/Create upload zip file 1`] = `
                     class="ant-select-item-option-content"
                   >
                     default_MySQL1
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="custom_template"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    custom_template
                   </div>
                   <span
                     aria-hidden="true"
