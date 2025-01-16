@@ -13,6 +13,8 @@ import {
   IGetGlobalSqlManageStatisticsReturn,
   IGetSqlManageListParams,
   IGetSqlManageListReturn,
+  IGetAbnormalInstanceAuditPlansV1Params,
+  IGetAbnormalInstanceAuditPlansV1Return,
   IBatchUpdateSqlManageParams,
   IBatchUpdateSqlManageReturn,
   IExportSqlManageV1Params,
@@ -63,6 +65,21 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageListReturn>(
       `/v1/projects/${project_name}/sql_manages`,
+      paramsData,
+      options
+    );
+  }
+
+  public getAbnormalInstanceAuditPlansV1(
+    params: IGetAbnormalInstanceAuditPlansV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetAbnormalInstanceAuditPlansV1Return>(
+      `/v1/projects/${project_name}/sql_manages/abnormal_audit_plan_instance`,
       paramsData,
       options
     );
